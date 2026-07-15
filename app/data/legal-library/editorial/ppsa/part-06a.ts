@@ -8,7 +8,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
   entries: [
     {
       provisionId: "ppsa-art-222",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -32,11 +32,11 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-223",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 223 § 1–2 stosuje przepisy art. 220 i art. 222, gdy obowiązek uiszczenia lub uzupełnienia opłaty powstaje wskutek ustalenia wyższej wartości przedmiotu zaskarżenia, cofnięcia przyznanego prawa pomocy albo uchylenia kurateli przed wyznaczeniem terminu rozprawy; nieuiszczoną opłatę sąd nakazuje ściągnąć w orzeczeniu kończącym postępowanie w danej instancji.",
+          text: "Art. 223 § 1–2 stosuje odpowiednio przepisy art. 220 i art. 222, gdy obowiązek uiszczenia lub uzupełnienia opłaty powstanie wskutek ustalenia wyższej wartości przedmiotu zaskarżenia, cofnięcia przyznanego prawa pomocy albo uchylenia kurateli przed wyznaczeniem terminu rozprawy; nieuiszczoną opłatę sąd nakazuje w orzeczeniu kończącym postępowanie w danej instancji ściągnąć od strony zobowiązanej do jej uiszczenia albo od innej strony, jeżeli z tego orzeczenia wynika obowiązek poniesienia przez nią kosztów postępowania.",
           sourceLocator: "Art. 223 § 1–2",
         },
       ],
@@ -61,7 +61,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-224",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -85,11 +85,11 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-225",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 225 nakazuje z urzędu zwrócić stronie opłatę prawomocnie uchyloną w całości lub w części, różnicę między kosztami pobranymi a należnymi oraz pozostałość zaliczki wpłaconej na pokrycie wydatków.",
+          text: "Art. 225 nakazuje z urzędu zwrócić stronie, na jej koszt, opłatę prawomocnie uchyloną w całości lub w części, różnicę między kosztami pobranymi a kosztami należnymi oraz pozostałość zaliczki wpłaconej na pokrycie wydatków.",
           sourceLocator: "Art. 225",
         },
       ],
@@ -109,7 +109,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-226",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -138,7 +138,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-227",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -167,7 +167,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-228",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -191,7 +191,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-229",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -220,7 +220,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-230",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -249,7 +249,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-231",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -273,7 +273,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-232",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -307,7 +307,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-233",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -336,11 +336,11 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-234",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 234 § 1–4 передбачає opłatę kancelaryjną за stwierdzenie prawomocności та видачу документів на підставі akt; окремо регулює odpis orzeczenia z uzasadnieniem, витребуваний протягом семи днів від ogłoszenia, звільняє від opłata відпис, який вручається з urzędu, і дозволяє referendarz sądowy виконувати дії з § 2.",
+          text: "Art. 234 § 1–4 передбачає opłatę kancelaryjną за stwierdzenie prawomocności та видачу документів на підставі akt; за odpis orzeczenia z uzasadnieniem, витребуваний протягом семи днів від ogłoszenia, opłatę сплачують під час wniosku, а за її відсутності przewodniczący після wezwania наказує стягнення без застосування art. 220; відпис, який вручається з urzędu, не оплачується, а дії з § 2 може виконувати referendarz sądowy.",
           sourceLocator: "Art. 234 § 1–4",
         },
       ],
@@ -370,7 +370,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-235",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -394,7 +394,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-235a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -418,7 +418,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-236",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -447,7 +447,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-237",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -476,7 +476,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-238",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -510,7 +510,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-239",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -544,7 +544,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-240",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -568,7 +568,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-241",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -592,7 +592,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-242",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -616,7 +616,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-243",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -645,7 +645,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-244",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -679,7 +679,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-245",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",

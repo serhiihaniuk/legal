@@ -8,7 +8,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
   entries: [
     {
       provisionId: "ppsa-art-275",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -37,7 +37,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-276",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -66,7 +66,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-277",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -95,7 +95,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-278",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -124,7 +124,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-279",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -153,7 +153,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-280",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -182,7 +182,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-281",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -211,11 +211,11 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-282",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 282 § 1 обмежує повторний розгляд справи межами podstawy wznowienia. За § 2 після повторного розгляду sąd oddala skargę o wznowienie або uwzględnia її за відповідними правилами, а також може uchylić оскаржене orzeczenie й odrzucić skargę або umorzyć postępowanie. § 3 для випадку Art. 273 § 3 визначає спеціальні варіанти щодо кількох prawomocne orzeczenia.",
+          text: "Art. 282 § 1 обмежує повторний розгляд справи межами podstawy wznowienia. За § 2 після повторного розгляду sąd oddala skargę o wznowienie або uwzględnia її та змінює оскаржене orzeczenie із відповідним застосуванням правил про провадження в суді першої інстанції; додатково може uchylić оскаржене orzeczenie, а за потреби odrzucić skargę або umorzyć postępowanie. § 3 для випадку Art. 273 § 3 визначає спеціальний наслідок щодо кількох prawomocnych orzeczeń у тій самій справі.",
           sourceLocator: "Art. 282 § 1–3",
         },
       ],
@@ -240,7 +240,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-283",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -264,7 +264,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-284",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -293,7 +293,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -322,7 +322,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-286",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -351,7 +351,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-287",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -375,7 +375,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-288",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -404,7 +404,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-289",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -433,7 +433,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-290",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -462,7 +462,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-291",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -486,7 +486,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-292",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -515,7 +515,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-293",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -544,7 +544,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-294",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -573,7 +573,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-295",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -602,7 +602,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-296",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -631,7 +631,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-297",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -660,11 +660,11 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-298",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 298 дозволяє повторно wniesienie skarga або środka odwoławczego протягом тридцяти днів від prawomocność postanowienie, якщо akta неможливо відтворити або відтворено їх недостатньо для dalsze postępowanie. В інших випадках sąd продовжує postępowanie настільки, наскільки це можливо з урахуванням збережених і відтворених akt; на postanowienie про podjęcie dalszego postępowania przysługuje zażalenie.",
+          text: "Art. 298 передбачає, що на wniosek strony, поданий протягом тридцяти днів від prawomocność postanowienie про неможливість odtworzenie akt або їх недостатність для dalsze postępowanie, sąd постановляє про повторне wszczęcie postępowania, у якому сторона може повторно wniesienie skarga або środka odwoławczego. В інших випадках sąd продовжує postępowanie настільки, наскільки це можливо з урахуванням збережених і відтворених akt; на postanowienie про podjęcie dalszego postępowania przysługuje zażalenie.",
           sourceLocator: "Art. 298",
         },
       ],
@@ -689,7 +689,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-299",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
