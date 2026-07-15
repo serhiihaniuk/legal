@@ -8,7 +8,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
   entries: [
     {
       provisionId: "ppsa-art-271",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -22,12 +22,12 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "pkt 1",
           explanation:
-            "Перевіряйте, чи у складі суду брала участь osoba nieuprawniona, чи sędzia був wyłączony z mocy ustawy, і чи сторона до uprawomocnienie реально могла просити про wyłączenie.",
+            "Перевіряйте, чи особа у складі суду була uprawniona, чи sędzia був wyłączony z mocy ustawy, і чи сторона до uprawomocnienie реально могла просити про wyłączenie.",
         },
         {
           locator: "pkt 2",
           explanation:
-            "Для strony важливі zdolność sądowa, zdolność procesowa, należyta reprezentacja та możność działania; wznowienie виключене, якщо до uprawomocnienie niemożność działania припинилася, brak reprezentacji було піднято zarzut або strona підтвердила dokonane czynności procesowe.",
+            "Для strony важливі zdolność sądowa, zdolność procesowa, należyta reprezentacja та фактична możność działania; текст також виключає wznowienie у названих випадках припинення перешкоди, заявленого zarzut або підтвердження czynności.",
         },
       ],
       legalEffect:
@@ -37,7 +37,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-272",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -51,7 +51,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1–2",
           explanation:
-            "Для підстави, пов’язаної з orzeczenie Trybunału Konstytucyjnego, строк становить три місяці від wejście w życie цього orzeczenie; якщо на момент його видачі судове orzeczenie ще не було prawomocne через wniesiony środek odwoławczy, який потім відхилено, строк рахується від doręczenie postanowienia o odrzuceniu.",
+            "Для підстави, пов’язаної з orzeczenie Trybunału Konstytucyjnego, строк становить три місяці від wejście w życie цього orzeczenie; у спеціальній ситуації з відхиленим środkiem odwoławczym він рахується від doręczenie postanowienia o odrzuceniu.",
         },
         {
           locator: "§ 2a–3",
@@ -66,7 +66,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-273",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -85,7 +85,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 2–3",
           explanation:
-            "Okoliczności faktyczne або środki dowodowe мають бути виявлені пізніше, могли вплинути на wynik справи, і strona не могла скористатися ними в попередньому postępowaniu; при пізнішому виявленні prawomocne orzeczenie щодо тієї самої справи суд розглядає з urzędu також інші такі orzeczenia, а не лише оскаржене.",
+            "Нові facts або dowody мають бути потенційно важливими для wynik справи і недоступними стороні в попередньому провадженні; при другому prawomocne orzeczenie суд за законом бере до уваги також інші такі рішення з urzędu.",
         },
       ],
       legalEffect:
@@ -95,7 +95,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-274",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -119,7 +119,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-275",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -143,7 +143,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-276",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -172,7 +172,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-277",
-      reviewStatus":"reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -192,11 +192,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       legalEffect:
         "Пропуск тримісячного строку може вплинути на допустимість skarga o wznowienie; дата знання має підтверджуватися матеріалами справи, а не припущенням.",
       foreignersCase:
-        "Для іноземця зберіть доказ, коли він, його organ або przedstawiciel ustawowy дізнався про відповідну підставу чи orzeczenie. Не рахуйте строк лише від дати, надрукованої на orzeczenie.",
+        "Для іноземця зберіть доказ doręczenie, перекладу та фактичного отримання відомостей про підставу. Не рахуйте строк лише від дати, надрукованої на orzeczenie.",
     },
     {
       provisionId: "ppsa-art-278",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -220,7 +220,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-279",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -244,7 +244,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-280",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -269,11 +269,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       legalEffect:
         "Проходження попередньої перевірки означає лише призначення rozprawa, а не визнання підстави доведеною і не позитивний результат wznowienie.",
       foreignersCase:
-        "Якщо skarga іноземця надійшла до суду, відокремте posiedzenie niejawne щодо допустимості від розгляду по суті. На wezwanie подайте докази строку, doręczenie та заявленої підстави.",
+        "Якщо skarga іноземця прийшла до суду, відокремте posiedzenie nejawne щодо допустимості від розгляду по суті. На wezwanie подайте докази строку, doręczenie та заявленої підстави.",
     },
     {
       provisionId: "ppsa-art-281",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -297,11 +297,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-282",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 282 встановлює, що суд розглядає справу наново в межах, визначених підставою wznowienia; після повторного розгляду він oddala skargę o wznowienie або uwzględnia її із відповідним застосуванням правил про postępowanie перед судом, який wznowił postępowanie, або uchyla оскаржене orzeczenie й odrzuca skargę чи umarza postępowanie. У випадку Art. 273 § 3 суд може скасувати одне з prawomocne orzeczenia, залишивши інше в силі, або скасувати всі, вирішити справу по суті чи передати її właściwy wojewódzki sąd administracyjny.",
+          text: "Art. 282 встановлює, що суд розглядає справу наново в межах, визначених підставою wznowienia; після повторного розгляду він oddala або uwzględnia skargę, застосовуючи відповідні правила, або uchyla оскаржене orzeczenie й odrzuca skargę чи umarza postępowanie. Для випадку Art. 273 § 3 передбачені спеціальні варіанти щодо інших prawomocne orzeczenia тієї самої справи.",
           sourceLocator: "Art. 282 § 1–3",
         },
       ],
@@ -316,7 +316,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 2–3",
           explanation:
-            "Після повторного розгляду суд може oddalić або uwzględnić skargę із відповідним застосуванням правил про postępowanie перед судом, який wznowił postępowanie, або uchylić orzeczenie і odrzucić skargę чи umorzyć postępowanie. Для Art. 273 § 3 окремо перевірте, чи одне рішення залишено в силі, чи всі скасовано з вирішенням по суті або передачею до właściwy wojewódzki sąd administracyjny.",
+            "Після розгляду суд може залишити skargę без задоволення, задовольнити її або скасувати orzeczenie з подальшим odrzucenie чи umorzenie; § 3 окремо регулює пов’язані prawomocne orzeczenia.",
         },
       ],
       legalEffect:
@@ -326,7 +326,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-283",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -350,7 +350,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-284",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -379,7 +379,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -408,11 +408,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285a",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285a § 1 передбачає skarga o stwierdzenie niezgodności z prawem prawomocnego orzeczenia WSA, якщо його видання спричинило стороні szkoda, а зміна чи скасування іншими доступними засобами не було і не є можливим; § 2 допускає її у виняткових випадках, коли сторона не використала доступні засоби, а niezgodność випливає з порушення podstawowych zasad porządku prawnego або конституційних wolności чи praw człowieka i obywatela; § 3 виключає orzeczenia NSA, крім rażące naruszenie норм prawa UE, і наказує трактувати такі orzeczenia як видані у postępowaniu, порушеному skargą; § 4 встановлює opłata stała.",
+          text: "Art. 285a § 1 передбачає skarga o stwierdzenie niezgodności z prawem prawomocnego orzeczenia WSA, якщо його видання спричинило стороні szkoda, а зміна чи скасування іншими доступними засобами не було і не є можливим; § 2 допускає її у виняткових випадках за невикористаних засобів, коли порушено основні засади porządek prawny або конституційні свободи чи права; § 3 виключає orzeczenia NSA, крім rażące naruszenie норм права UE, а § 4 встановлює opłata stała.",
           sourceLocator: "Art. 285a § 1–4",
         },
       ],
@@ -427,7 +427,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 3–4",
           explanation:
-            "Для orzeczenia NSA skarga не допускається, крім випадку rażące naruszenie норм prawa UE; такі orzeczenia трактуються як видані у postępowaniu, порушеному skargą. Skarga підлягає opłata stała.",
+            "Для orzeczenie NSA діє виняток лише щодо rażące naruszenie норм права UE; skarga підлягає opłata stała.",
         },
       ],
       legalEffect:
@@ -437,7 +437,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285b",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -461,7 +461,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285c",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -485,7 +485,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285d",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -514,7 +514,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285e",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -539,11 +539,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       legalEffect:
         "Формальні елементи дають суду змогу ідентифікувати засіб і його підстави, але подання повного комплекту не доводить незаконність orzeczenie чи факт szkoda.",
       foreignersCase:
-        "Перед поданням скарги іноземця зробіть таблицю: orzeczenie, обсяг, przepis, szkoda, неможливість іншого засобу та wniosek. Окремо перевірте загальні вимоги до pismo strony і кількість копій, передбачену § 2.",
+        "Перед поданням скарги іноземця зробіть таблицю: orzeczenie, обсяг, przepis, szkoda, неможливість іншого засобу та wniosek. Окремо перевірте копії й переклад матеріалів, потрібний для зрозумілості подання.",
     },
     {
       provisionId: "ppsa-art-285f",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -572,7 +572,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285g",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",

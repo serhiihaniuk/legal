@@ -8,11 +8,11 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
   entries: [
     {
       provisionId: "ppsa-art-285h",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285h передбачає, що NSA на posiedzeniu niejawnym odrzuca skargę o stwierdzenie niezgodności z prawem prawomocnego orzeczenia, якщо її мав відхилити суд нижчої інстанції, її подано після строку, вона не відповідає вимогам Art. 285e § 1 або є niedopuszczalna з іншої причини; скаргу також відхиляють, якщо змінити оскаржене orzeczenie іншими засобами було або є можливим чи немає винятку з Art. 285a § 2.",
+          text: "Art. 285h передбачає, що NSA на posiedzeniu niejawnym відхиляє skargę o stwierdzenie niezgodności z prawem prawomocnego orzeczenia, якщо її мав відхилити суд нижчої інстанції, її подано після строку, вона не відповідає вимогам Art. 285e § 1 або є niedopuszczalna з іншої причини; скаргу також відхиляють, якщо змінити оскаржене orzeczenie іншими засобами було або є можливим чи немає винятку з Art. 285a § 2.",
           sourceLocator: "Art. 285h § 1–2",
         },
       ],
@@ -37,7 +37,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285i",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -66,7 +66,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285j",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -75,7 +75,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "NSA зв’язаний межами зaskarżenia та podstawami skarga, а rozpoznanie на posiedzeniu niejawnym є правилом із можливим винятком для rozprawa.",
+        "NSA зв’язаний межами оскарження та підставами skarga, а письмовий розгляд є правилом із можливим винятком для rozprawa.",
       rules: [
         {
           locator: "Art. 285j zdanie pierwsze",
@@ -95,7 +95,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285k",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -124,7 +124,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285l",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -148,7 +148,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-286",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -157,7 +157,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Стаття визначає повернення адміністративних akt після uprawomocnienie orzeczenie суду першої інстанції, яке закінчує postępowanie, і подію, від якої рахується строк для органу.",
+        "Стаття визначає, як після остаточного orzeczenie суд повертає адміністративні akta органу та від якої події рахується строк для його дії.",
       rules: [
         {
           locator: "§ 1–1a",
@@ -171,13 +171,13 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Правило визначає обов’язковий початок строку для органу; воно саме не встановлює зміст майбутнього załatwienie.",
+        "Правило визначає момент, від якого може рахуватися строк для органу; воно саме не встановлює зміст майбутнього załatwienie.",
       foreignersCase:
         "Після wyrok WSA у справі іноземця про pobyt зафіксуйте doręczenie akt або odpis зі stwierdzeniem prawomocność, а не лише дату wyrok, якщо потрібно рахувати строк для органу.",
     },
     {
       provisionId: "ppsa-art-287",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -201,7 +201,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-288",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -230,7 +230,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-289",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -259,7 +259,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-290",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -288,7 +288,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-291",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -317,7 +317,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-292",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -342,11 +342,11 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
       legalEffect:
         "Стаття створює механізм збирання копій для відновлення akt, але не встановлює, що кожен викликаний адресат обов’язково має потрібний документ.",
       foreignersCase:
-        "Якщо втрачені akta справи іноземця містили документи від органу pobyt або суду, перевірте, кого призначено адресатом wezwanie і чи подано копію або заяву про її відсутність.",
+        "Якщо втрачені akta справи іноземця містили документи від органу pobyt або суду, перевірте, кого призначено адресатом wezwanie і чи подано копію або правдиве пояснення про її відсутність.",
     },
     {
       provisionId: "ppsa-art-293",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -375,7 +375,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-294",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -404,7 +404,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-295",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -413,7 +413,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Якщо відновлення за порядком попередніх статей неможливе, суд з’ясовує зміст втрачених pism через заяви сторін та доступні допоміжні матеріали.",
+        "Якщо офіційних копій недостатньо, суд переходить до з’ясування змісту втрачених pism через заяви сторін та доступні допоміжні матеріали.",
       rules: [
         {
           locator: "Art. 295",
@@ -433,11 +433,11 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-296",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 296 вимагає, щоб незалежно від заяв і wnioski суд z urzędu провів dochodzenia, не оминаючи жодної обставини, важливої для встановлення змісту втрачених або знищених akt. Суд враховує записи в repertoriach та інших службових книгах, може допитати sędziów, prokuratorów, protokolantów, pełnomocników сторін та інших осіб, які брали участь у postępowaniu або можуть висловитися щодо змісту akt, а також сторони; до доказів застосовуються відповідно положення Kodeks postępowania cywilnego.",
+          text: "Art. 296 вимагає, щоб незалежно від заяв і wnioski суд z urzędu провів dochodzenia, не оминаючи жодної обставини, важливої для встановлення змісту втрачених або знищених akt. Суд враховує записи в repertoriach та інших службових книгах, може допитати sędziów, prokuratorów, protokolantów, pełnomocników сторін та інших учасників, а також сторони; до доказів застосовуються відповідно положення Kodeks postępowania cywilnego.",
           sourceLocator: "Art. 296 § 1–2",
         },
       ],
@@ -462,7 +462,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-297",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -491,7 +491,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-298",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -520,11 +520,11 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-299",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 299 § 1 регулює doręczenia стороні, яка має miejsce zamieszkania, miejsce zwykłego pobytu або siedziba в іншій державі-члені UE, Швейцарії чи державі EFTA–EOG і не має pełnomocnik для ведення справи з місцем проживання або siedziba в Польщі; суд надсилає їй pisma рекомендованим листом із підтвердженням отримання або рівноцінним відправленням. § 2–3 стосуються сторони поза Польщею, UE, Швейцарією та EFTA–EOG: разом із wniesienie skarga вона повинна ustanowić pełnomocnik do doręczeń у Польщі, а за невиконання wezwanie дає два місяці під rygor odrzucenie skarga. § 4–5 поширюють обов’язок щодо учасника, зазначеного у skarga, і учасника Art. 33 § 2; за невиконання pisma залишаються в akt зі skutkiem doręczenia. § 6 містить винятки для міжнародного договору та електронного doręczenie.",
+          text: "Art. 299 регулює doręczenia учасникам без місця проживання, звичайного перебування або siedziba в Польщі чи визначених європейських державах, якщо вони не мають pełnomocnik для ведення справи в Польщі. Для особи в іншій державі § 1 вимагає рекомендованого листа з підтвердженням або рівноцінного відправлення, а § 2 — ustanowienie pełnomocnik do doręczeń у Польщі разом із wniesienie skarga; невиконання § 2 веде до wezwanie на два місяці під rygor odrzucenie skarga. § 4–6 містять відповідне правило для учасника, виняток для Art. 33 § 2, а також винятки для міжнародного договору та електронного doręczenie.",
           sourceLocator: "Art. 299 § 1–6",
         },
       ],
@@ -534,22 +534,22 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1–3",
           explanation:
-            "Розрізніть сторону в державі-члені UE, Швейцарії або EFTA–EOG, для якої § 1 передбачає рекомендоване або рівноцінне doręczenie, і сторону поза цими державами, яка за § 2 має разом зі skarga ustanowić польський pełnomocnik do doręczeń; після wezwanie на усунення цього braku діє два місяці під rygor odrzucenie skarga.",
+            "Розрізніть особу в державі ЄС, Швейцарії або EFTA–EOG і особу поза цими державами; для другої разом зі skarga потрібен польський pełnomocnik do doręczeń, а на усунення braku дається два місяці.",
         },
         {
           locator: "§ 4–6",
           explanation:
-            "Для учасника, про якого це випливає зі skarga, діє § 4, а § 5 застосовує його відповідно до учасника Art. 33 § 2; перевірте також винятки § 6 щодо міжнародного договору та електронного doręczenie.",
+            "Обов’язок може стосуватися учасника, про якого це випливає зі skarga; перевірте Art. 33 § 2, міжнародний договір та електронне doręczenie як винятки.",
         },
       ],
       legalEffect:
-        "Невиконання § 2 після wezwanie може призвести до odrzucenie skarga; невиконання обов’язку учасника за § 4 спричиняє залишення pisma в akt зі skutkiem doręczenia. Перевірте передбачені § 6 винятки.",
+        "Невиконання обов’язку щодо pełnomocnik do doręczeń може призвести до odrzucenie skarga або до залишення pisma в akt зі skutkiem doręczenia; конкретний наслідок залежить від § 1–6 та фактів.",
       foreignersCase:
-        "Іноземцю, який подає skargę на decyzja про pobyt, визначте його miejsce zamieszkania або zwykłego pobytu, належну географічну категорію § 1 чи § 2, наявність pełnomocnik у Польщі та винятки § 6. Для учасника окремо перевірте § 4–5 і наслідок skutku doręczenia.",
+        "Іноземцю, який оскаржує decyzja про pobyt з-за меж Польщі, визначте державу проживання, наявність pełnomocnik у Польщі та спосіб doręczenie; не застосовуйте правило § 2 без перевірки винятків § 6.",
     },
     {
       provisionId: "ppsa-art-300",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
@@ -573,7 +573,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-301",
-      reviewStatus: "reviewed",
+      reviewStatus: "draft",
       claims: [
         {
           kind: "statute-text",
