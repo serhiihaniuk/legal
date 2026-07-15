@@ -16,10 +16,23 @@ export type LegalLearningSection = {
   warning?: string
 }
 
-export type LegalLearningInlineReference = {
-  label: string
-  target: LegalDocumentReference | LegalProvisionReference
-}
+type LegalLearningReferenceTarget =
+  | LegalDocumentReference
+  | LegalProvisionReference
+
+export type LegalLearningInlineReference =
+  | {
+      label: string
+      target: LegalLearningReferenceTarget
+    }
+  | {
+      label: string
+      range: {
+        start: { label: string; target: LegalProvisionReference }
+        separator: string
+        end: { label: string; target: LegalProvisionReference }
+      }
+    }
 
 export type LegalLearningModule = {
   id: string

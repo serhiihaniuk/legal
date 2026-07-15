@@ -75,12 +75,24 @@ function LearningText({ text }: { text: string }) {
   for (const match of selected) {
     if (match.start > cursor) content.push(text.slice(cursor, match.start))
     content.push(
-      <LegalLink
-        key={`${match.start}-${match.reference.label}`}
-        reference={match.reference.target}
-      >
-        {text.slice(match.start, match.end)}
-      </LegalLink>
+      "target" in match.reference ? (
+        <LegalLink
+          key={`${match.start}-${match.reference.label}`}
+          reference={match.reference.target}
+        >
+          {text.slice(match.start, match.end)}
+        </LegalLink>
+      ) : (
+        <span key={`${match.start}-${match.reference.label}`}>
+          <LegalLink reference={match.reference.range.start.target}>
+            {match.reference.range.start.label}
+          </LegalLink>
+          {match.reference.range.separator}
+          <LegalLink reference={match.reference.range.end.target}>
+            {match.reference.range.end.label}
+          </LegalLink>
+        </span>
+      )
     )
     cursor = match.end
   }
@@ -238,7 +250,9 @@ export function LegalLearningModuleContent({
       <header id={legalLearningSectionIds.overview}>
         <div data-not-typeset className="mb-3 flex flex-wrap items-center gap-2">
           <Badge variant="secondary">Модуль {module.order}</Badge>
-          <Badge variant="outline">{module.provisionScope}</Badge>
+          <Badge variant="outline">
+            <LearningText text={module.provisionScope} />
+          </Badge>
           <span className="text-xs text-muted-foreground">
             Стан права: {module.legalState}
           </span>

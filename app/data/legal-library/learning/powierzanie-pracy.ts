@@ -240,7 +240,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       order: 5,
       title: "Зміни та безперервність роботи",
       polish: "zmiana warunków; przedłużenie; dalsze wykonywanie pracy",
-      provisionScope: "Art. 30–39, 58, 70–79",
+      provisionScope: "Art. 30–39, Art. 58, Art. 70–79",
       outcome:
         "Розрізняє дозволену зміну, обов'язок повідомити, потребу в новому документі та випадок, коли закон окремо регулює продовження.",
       caseQuestion:
@@ -291,6 +291,60 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       ],
       exercise:
         "На анонімній часовій шкалі познач чинність pobyt, документа роботи, umowa, зміну умов і подання; сформулюй, що доведено, а що потребує окремої підстави.",
+      references: [
+        {
+          label: "Art. 30–39",
+          range: {
+            start: {
+              label: "Art. 30",
+              target: {
+                kind: "legal-provision",
+                documentId: "powierzanie-pracy",
+                provisionId: "powierzanie-pracy-art-30",
+              },
+            },
+            separator: "–",
+            end: {
+              label: "39",
+              target: {
+                kind: "legal-provision",
+                documentId: "powierzanie-pracy",
+                provisionId: "powierzanie-pracy-art-39",
+              },
+            },
+          },
+        },
+        {
+          label: "Art. 58",
+          target: {
+            kind: "legal-provision",
+            documentId: "powierzanie-pracy",
+            provisionId: "powierzanie-pracy-art-58",
+          },
+        },
+        {
+          label: "Art. 70–79",
+          range: {
+            start: {
+              label: "Art. 70",
+              target: {
+                kind: "legal-provision",
+                documentId: "powierzanie-pracy",
+                provisionId: "powierzanie-pracy-art-70",
+              },
+            },
+            separator: "–",
+            end: {
+              label: "79",
+              target: {
+                kind: "legal-provision",
+                documentId: "powierzanie-pracy",
+                provisionId: "powierzanie-pracy-art-79",
+              },
+            },
+          },
+        },
+      ],
     },
     {
       id: "kontrola-i-sankcje",
