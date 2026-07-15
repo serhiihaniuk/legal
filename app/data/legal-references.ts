@@ -50,6 +50,81 @@ const superscriptDigits: Record<string, string> = {
   "⁹": "9",
 }
 
+type MaintainedDocumentId =
+  | "kpa"
+  | "ppsa"
+  | "ustawa-o-cudzoziemcach"
+  | "powierzanie-pracy"
+  | "rozporzadzenie-wniosek-pobyt-czasowy"
+type MaintainedActDocumentId = Exclude<
+  MaintainedDocumentId,
+  "rozporzadzenie-wniosek-pobyt-czasowy"
+>
+
+type MaintainedReferenceDefinition = {
+  documentId: MaintainedDocumentId
+  aliases: readonly string[]
+}
+
+const maintainedReferenceDefinitions: readonly MaintainedReferenceDefinition[] = [
+  {
+    documentId: "kpa",
+    aliases: [
+      "KPA",
+      "Kodeks postępowania administracyjnego",
+      "Kodeksu postępowania administracyjnego",
+      "Kodeksie postępowania administracyjnego",
+    ],
+  },
+  {
+    documentId: "ppsa",
+    aliases: [
+      "PPSA",
+      "p.p.s.a.",
+      "Prawo o postępowaniu przed sądami administracyjnymi",
+      "Prawa o postępowaniu przed sądami administracyjnymi",
+      "Prawie o postępowaniu przed sądami administracyjnymi",
+    ],
+  },
+  {
+    documentId: "ustawa-o-cudzoziemcach",
+    aliases: [
+      "ustawa o cudzoziemcach",
+      "ustawy o cudzoziemcach",
+      "ustawie o cudzoziemcach",
+      "ustawą o cudzoziemcach",
+      "ustawę o cudzoziemcach",
+    ],
+  },
+  {
+    documentId: "powierzanie-pracy",
+    aliases: [
+      "ustawa o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawie o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawą o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawę o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawa z 20 marca 2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawy z 20 marca 2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawie z 20 marca 2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawa z dnia 20 marca 2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawy z dnia 20 marca 2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+      "ustawa z 20.03.2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom",
+    ],
+  },
+  {
+    documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
+    aliases: [
+      "rozporządzenie w sprawie wniosku o udzielenie cudzoziemcowi zezwolenia na pobyt czasowy",
+      "rozporządzenia w sprawie wniosku o udzielenie cudzoziemcowi zezwolenia na pobyt czasowy",
+      "rozporządzeniu w sprawie wniosku o udzielenie cudzoziemcowi zezwolenia na pobyt czasowy",
+      "rozporządzenie w sprawie wniosku o pobyt czasowy",
+      "rozporządzenia w sprawie wniosku o pobyt czasowy",
+      "rozporządzeniu w sprawie wniosku o pobyt czasowy",
+    ],
+  },
+]
+
 function kpaProvisionId(article: string) {
   const normalized = article.toLocaleLowerCase("pl-PL")
   const base = normalized.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+$/u, "")
@@ -129,9 +204,59 @@ type LegalReferenceMatch = LegalReferenceTarget & {
 
 const articlePattern =
   /\b(?:Art\.|art\.)\s*(\d+[a-z]?)(?:\s*[\u2013-]\s*(\d+[a-z]?))?/gu
+const paragraphPattern = /(?<![\p{L}\p{N}])§\s*(\d+[a-z]?)/gu
 
 function escapeRegex(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+function maintainedDocumentIdInContext(
+  text: string,
+  start: number,
+  end: number
+): MaintainedDocumentId | undefined {
+  const contextStart = Math.max(0, start - 80)
+  const context = text.slice(
+    contextStart,
+    Math.min(text.length, end + 120)
+  )
+  const referenceStart = start - contextStart
+  const referenceEnd = end - contextStart
+  const candidates: Array<{
+    documentId: MaintainedDocumentId
+    distance: number
+    aliasLength: number
+  }> = []
+
+  for (const definition of maintainedReferenceDefinitions) {
+    for (const alias of definition.aliases) {
+      const pattern = new RegExp(
+        `(?<![\\p{L}\\p{N}])${escapeRegex(alias)}(?=$|[^\\p{L}\\p{N}])`,
+        "giu"
+      )
+      for (const match of context.matchAll(pattern)) {
+        const aliasStart = match.index ?? 0
+        const aliasEnd = aliasStart + match[0].length
+        const distance =
+          aliasEnd < referenceStart
+            ? referenceStart - aliasEnd
+            : aliasStart > referenceEnd
+              ? aliasStart - referenceEnd
+              : 0
+        candidates.push({
+          documentId: definition.documentId,
+          distance,
+          aliasLength: match[0].length,
+        })
+      }
+    }
+  }
+
+  candidates.sort(
+    (left, right) =>
+      left.distance - right.distance || right.aliasLength - left.aliasLength
+  )
+  return candidates[0]?.documentId
 }
 
 function articleExists(article: string) {
@@ -151,7 +276,7 @@ function isKpaContext(text: string, start: number, end: number) {
     return true
   }
 
-  return !/ustaw(?:y|ie|ą)|kodeksu pracy|rozporządzen|p\.p\.s\.a\.|prawo o postępowaniu|dz\.u\./.test(
+  return !/\bustaw\p{L}*|kodeksu pracy|rozporządzen|p\.p\.s\.a\.|prawo o postępowaniu|dz\.u\./u.test(
     normalized
   )
 }
@@ -163,24 +288,101 @@ const cukrArticleReferences = new Map<string, LegalReference>(
   })
 )
 
+function registeredProvisionTarget(
+  documentId: MaintainedDocumentId,
+  provisionId: string
+): LegalReferenceTarget | undefined {
+  if (!isRegisteredLegalProvisionId(documentId, provisionId)) return undefined
+
+  return legalReferenceTarget({
+    kind: "legal-provision",
+    documentId,
+    provisionId,
+  } as LegalProvisionReference)
+}
+
+function articleProvisionTarget(
+  documentId: MaintainedActDocumentId,
+  article: string
+) {
+  const normalizedArticle = article.toLocaleLowerCase("pl-PL")
+  const provisionId =
+    documentId === "kpa"
+      ? kpaProvisionId(normalizedArticle)
+      : `${documentId}-art-${normalizedArticle}`
+  return provisionId
+    ? registeredProvisionTarget(documentId, provisionId)
+    : undefined
+}
+
 function articleReference(
   article: string,
   text: string,
   start: number,
   end: number
 ) {
-  const normalizedArticle = article.toLowerCase()
-  if (articleExists(normalizedArticle) && isKpaContext(text, start, end)) {
-    return legalReferenceTarget({
-      kind: "legacy-kpa-article",
-      article: normalizedArticle,
-    })
+  const normalizedArticle = article.toLocaleLowerCase("pl-PL")
+  const contextDocumentId = maintainedDocumentIdInContext(text, start, end)
+
+  if (contextDocumentId && contextDocumentId !== "rozporzadzenie-wniosek-pobyt-czasowy") {
+    const target = articleProvisionTarget(contextDocumentId, normalizedArticle)
+    if (target) return target
+  } else if (!contextDocumentId && isKpaContext(text, start, end)) {
+    const target = articleProvisionTarget("kpa", normalizedArticle)
+    if (target) return target
   }
 
   const specialActReference = cukrArticleReferences.get(normalizedArticle)
   return specialActReference
     ? legalReferenceTarget(specialActReference)
     : undefined
+}
+
+function paragraphReference(
+  paragraph: string,
+  text: string,
+  start: number,
+  end: number
+) {
+  if (
+    maintainedDocumentIdInContext(text, start, end) !==
+    "rozporzadzenie-wniosek-pobyt-czasowy"
+  ) {
+    return undefined
+  }
+
+  return registeredProvisionTarget(
+    "rozporzadzenie-wniosek-pobyt-czasowy",
+    `rozporzadzenie-wniosek-pobyt-czasowy-par-${paragraph.toLocaleLowerCase("pl-PL")}`
+  )
+}
+
+function paragraphMatches(text: string): LegalReferenceMatch[] {
+  const matches: LegalReferenceMatch[] = []
+
+  for (const match of text.matchAll(paragraphPattern)) {
+    const fullLabel = match[0]
+    const start = match.index ?? 0
+    const paragraph = match[1].toLocaleLowerCase("pl-PL")
+    const paragraphStart = start + fullLabel.indexOf(match[1])
+    const paragraphEnd = paragraphStart + match[1].length
+    const target = paragraphReference(
+      paragraph,
+      text,
+      start,
+      start + fullLabel.length
+    )
+    if (target) {
+      matches.push({
+        ...target,
+        start: paragraphStart,
+        end: paragraphEnd,
+        label: text.slice(paragraphStart, paragraphEnd),
+      })
+    }
+  }
+
+  return matches
 }
 
 function articleMatches(text: string): LegalReferenceMatch[] {
@@ -272,6 +474,14 @@ const namedReferencePatterns = [
     url: cukrFaqUrl ?? "https://www.gov.pl/web/udsc/cukr-QA",
   }),
   namedReferencePattern("CUKR", { kind: "case-route", routeId: "cukr" }),
+  ...maintainedReferenceDefinitions.flatMap(({ documentId, aliases }) =>
+    aliases.map((label) =>
+      namedReferencePattern(label, {
+        kind: "legal-document",
+        documentId,
+      } as LegalDocumentReference)
+    )
+  ),
   ...(mosDocument
     ? [
         namedReferencePattern("MOS", {
@@ -324,11 +534,31 @@ function documentMatches(text: string): LegalReferenceMatch[] {
 }
 
 function nonOverlappingMatches(text: string) {
+  const namedMatches = namedReferenceMatches(text)
+  const maintainedActMatches = namedMatches.filter(
+    ({ reference }) => reference.kind === "legal-document"
+  )
   const candidates = [
     ...articleMatches(text),
-    ...documentMatches(text),
-    ...namedReferenceMatches(text),
-  ].sort((left, right) => left.start - right.start || right.end - right.start)
+    ...paragraphMatches(text),
+    ...namedMatches,
+    ...documentMatches(text).filter(
+      (candidate) =>
+        !maintainedActMatches.some(
+          (maintainedActMatch) =>
+            candidate.start < maintainedActMatch.end &&
+            candidate.end > maintainedActMatch.start
+        )
+    ),
+  ].sort((left, right) => {
+    if (left.start !== right.start) return left.start - right.start
+    const leftIsMaintainedAct = left.reference.kind === "legal-document"
+    const rightIsMaintainedAct = right.reference.kind === "legal-document"
+    if (leftIsMaintainedAct !== rightIsMaintainedAct) {
+      return rightIsMaintainedAct ? 1 : -1
+    }
+    return right.end - right.start - (left.end - left.start)
+  })
   const selected: LegalReferenceMatch[] = []
 
   for (const candidate of candidates) {

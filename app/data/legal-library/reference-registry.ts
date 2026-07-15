@@ -1,5 +1,6 @@
 import { legalReferenceRegistry } from "~/data/legal-corpus/reference-registry.generated"
 
+import { getDocumentHomePath } from "./navigation"
 import type {
   LegalDocumentId,
   LegalDocumentReference,
@@ -49,7 +50,7 @@ export function resolveRegisteredLegalHref(
 
   if (candidate.kind === "legal-document") {
     return isRegisteredLegalDocumentId(candidate.documentId)
-      ? `/law/${encodeURIComponent(candidate.documentId)}`
+      ? getDocumentHomePath(candidate.documentId)
       : undefined
   }
 
