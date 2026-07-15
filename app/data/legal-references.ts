@@ -7,9 +7,19 @@ import {
 } from "~/data/document-index"
 import { documentGuides } from "~/data/document-guides"
 import { kpaArticleIndex } from "~/data/kpa-article-index"
+import {
+  getOfficialSource,
+  resolveLegalReference,
+  type LegalDocumentReference,
+  type LegalProvisionReference,
+  type OfficialSourceReference,
+} from "~/data/legal-library"
 import { nodeById } from "~/data/legal-index"
 
 export type LegalReference =
+  | LegalDocumentReference
+  | LegalProvisionReference
+  | OfficialSourceReference
   | { kind: "article"; article: string }
   | { kind: "document"; documentId: string }
   | { kind: "map-node"; nodeId: string }
@@ -30,6 +40,19 @@ export function legalReferenceTarget(
   reference: LegalReference
 ): LegalReferenceTarget | undefined {
   switch (reference.kind) {
+    case "legal-document":
+    case "legal-provision": {
+      const resolution = resolveLegalReference(reference)
+      return resolution.status === "resolved"
+        ? { reference, href: resolution.href }
+        : undefined
+    }
+    case "official-source": {
+      const source = getOfficialSource(reference.sourceId)
+      return source
+        ? { reference, href: source.url, external: true }
+        : undefined
+    }
     case "article":
       return kpaArticleIndex.some(
         (entry) => entry.article === reference.article

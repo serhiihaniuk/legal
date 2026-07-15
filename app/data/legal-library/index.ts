@@ -1,4 +1,5 @@
 export * from "./contracts"
+export * from "./official-sources"
 export {
   buildCanonicalPdfHref,
   buildCanonicalPdfLocator,
