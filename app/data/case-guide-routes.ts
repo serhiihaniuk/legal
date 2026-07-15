@@ -297,16 +297,94 @@ function authorLegacyCaseText(value: string): LegalTextValue {
   }
 }
 
-function authorCaseContent<T>(value: T): T {
-  if (typeof value === "string") {
-    return neutralizeLegacyCaseText(authorLegacyCaseText(value)) as T
+function authorCaseText(value: LegalTextValue): LegalTextValue {
+  return typeof value === "string"
+    ? neutralizeLegacyCaseText(authorLegacyCaseText(value))
+    : value
+}
+
+function authorCaseRoute(route: CaseGuideRoute): CaseGuideRoute {
+  const authorDocument = (document: CaseGuideDocument): CaseGuideDocument => ({
+    ...document,
+    item: authorCaseText(document.item),
+    owner: authorCaseText(document.owner),
+    proves: authorCaseText(document.proves),
+    law: authorCaseText(document.law),
+  })
+  const authorMaterial = (material: CaseGuideMaterial): CaseGuideMaterial => ({
+    ...material,
+    description: authorCaseText(material.description),
+  })
+
+  return {
+    ...route,
+    subtitle: authorCaseText(route.subtitle),
+    overview: route.overview.map(authorCaseText),
+    result: authorCaseText(route.result),
+    forWhom: authorCaseText(route.forWhom),
+    notFor: authorCaseText(route.notFor),
+    profile: {
+      ...route.profile,
+      description: authorCaseText(route.profile.description),
+      facts: route.profile.facts.map((fact) => ({
+        ...fact,
+        value: authorCaseText(fact.value),
+      })),
+      assumption: authorCaseText(route.profile.assumption),
+    },
+    choice: {
+      why: authorCaseText(route.choice.why),
+      closestAlternative: authorCaseText(route.choice.closestAlternative),
+      gate: authorCaseText(route.choice.gate),
+    },
+    metrics: route.metrics.map((metric) => ({
+      ...metric,
+      value: authorCaseText(metric.value),
+    })),
+    stages: route.stages.map((stage) => ({
+      ...stage,
+      question: authorCaseText(stage.question),
+      explanation: stage.explanation.map(authorCaseText),
+      actor: authorCaseText(stage.actor),
+      actions: stage.actions.map(authorCaseText),
+      outcome: authorCaseText(stage.outcome),
+      documents: stage.documents.map(authorDocument),
+      risks: stage.risks.map((risk) => ({
+        ...risk,
+        explanation: authorCaseText(risk.explanation),
+        check: authorCaseText(risk.check),
+      })),
+      materials: stage.materials.map(authorMaterial),
+    })),
+    conditions: route.conditions.map((condition) => ({
+      ...condition,
+      condition: authorCaseText(condition.condition),
+      modelFact: authorCaseText(condition.modelFact),
+      evidence: authorCaseText(condition.evidence),
+      risk: authorCaseText(condition.risk),
+      law: authorCaseText(condition.law),
+    })),
+    documents: route.documents.map(authorDocument),
+    deadlines: route.deadlines.map((deadline) => ({
+      ...deadline,
+      period: authorCaseText(deadline.period),
+      trigger: authorCaseText(deadline.trigger),
+      action: authorCaseText(deadline.action),
+      consequence: authorCaseText(deadline.consequence),
+      law: authorCaseText(deadline.law),
+    })),
+    negativeBranches: route.negativeBranches.map((branch) => ({
+      ...branch,
+      trigger: authorCaseText(branch.trigger),
+      consequence: authorCaseText(branch.consequence),
+      response: authorCaseText(branch.response),
+      material: branch.material ? authorMaterial(branch.material) : undefined,
+    })),
+    sources: route.sources.map((source) => ({
+      ...source,
+      note: authorCaseText(source.note),
+    })),
   }
-  if (!value || typeof value !== "object") return value
-  if ("kind" in value && value.kind === "authored-legal-text") return value
-  if (Array.isArray(value)) return value.map(authorCaseContent) as T
-  return Object.fromEntries(
-    Object.entries(value).map(([key, item]) => [key, authorCaseContent(item)])
-  ) as T
 }
 
 function sourceWithLegalNote(source: OfficialSource): CaseGuideSource {
@@ -1972,16 +2050,24 @@ const routeSpecs: RouteSpec[] = [
 export const caseGuideRoutes = defineLegalTextContent(
   routeSpecs.map<CaseGuideRoute>((spec) => {
     const documents = makeDocuments(spec)
+    const {
+      primaryNode,
+      secondaryNode,
+      stageFocus: _stageFocus,
+      documentItems: _documentItems,
+      postDecisionMaterial: _postDecisionMaterial,
+      ...route
+    } = spec
 
-    return authorCaseContent({
-      ...spec,
+    return authorCaseRoute({
+      ...route,
       stages: makeStages(spec, documents),
       documents,
       deadlines: makeDeadlines(spec),
       negativeBranches: makeNegativeBranches(spec),
       sources: sourcesFor([
-        spec.primaryNode,
-        spec.secondaryNode ?? "temporary-common",
+        primaryNode,
+        secondaryNode ?? "temporary-common",
         "mos-procedure",
       ]),
     })

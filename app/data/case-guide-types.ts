@@ -99,7 +99,7 @@ export type CaseGuideRoute = {
   tab: string
   eyebrow: string
   title: string
-  subtitle: string
+  subtitle: LegalTextValue
   overview: LegalTextValue[]
   result: LegalTextValue
   forWhom: LegalTextValue

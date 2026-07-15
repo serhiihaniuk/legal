@@ -152,7 +152,9 @@ function DocumentRegister({ documents }: { documents: CaseGuideDocument[] }) {
           </TableHeader>
           <TableBody>
             {documents.map((document) => (
-              <TableRow key={`${document.item}-${document.owner}`}>
+              <TableRow
+                key={`${legalTextPlainText(document.item)}-${legalTextPlainText(document.owner)}`}
+              >
                 <TableCell className="align-top font-medium whitespace-normal">
                   <LegalText text={document.item} />
                 </TableCell>
@@ -176,7 +178,10 @@ function DocumentRegister({ documents }: { documents: CaseGuideDocument[] }) {
 
       <div className="divide-y border-y xl:hidden">
         {documents.map((document) => (
-          <article key={`${document.item}-${document.owner}`} className="py-4">
+          <article
+            key={`${legalTextPlainText(document.item)}-${legalTextPlainText(document.owner)}`}
+            className="py-4"
+          >
             <div className="flex items-start justify-between gap-3">
               <h3 className="text-base font-semibold">
                 <LegalText text={document.item} />
@@ -224,7 +229,7 @@ function DeadlineRegister({ deadlines }: { deadlines: CaseGuideDeadline[] }) {
     <div data-not-typeset className="mt-6 divide-y border-y">
       {deadlines.map((deadline) => (
         <article
-          key={`${deadline.period}-${deadline.trigger}`}
+          key={`${legalTextPlainText(deadline.period)}-${legalTextPlainText(deadline.trigger)}`}
           className="grid gap-4 py-5 lg:grid-cols-[9rem_minmax(0,1fr)_minmax(0,1fr)]"
         >
           <div className="py-2 sm:px-3">
@@ -320,7 +325,7 @@ function StageDetails({ stage }: { stage: CaseGuideStage }) {
 
                     return (
                       <Field
-                        key={`${document.item}-${document.owner}`}
+                        key={`${legalTextPlainText(document.item)}-${legalTextPlainText(document.owner)}`}
                         orientation="horizontal"
                         className="items-start py-4"
                       >
@@ -551,7 +556,9 @@ function ConditionsMatrix({
           </TableHeader>
           <TableBody>
             {conditions.map((condition) => (
-              <TableRow key={`${condition.condition}-${condition.law}`}>
+              <TableRow
+                key={`${legalTextPlainText(condition.condition)}-${legalTextPlainText(condition.law)}`}
+              >
                 <TableCell className="align-top font-medium whitespace-normal">
                   <LegalText text={condition.condition} />
                 </TableCell>
@@ -587,7 +594,7 @@ function ConditionsMatrix({
       <div className="divide-y border-y xl:hidden">
         {conditions.map((condition) => (
           <article
-            key={`${condition.condition}-${condition.law}`}
+            key={`${legalTextPlainText(condition.condition)}-${legalTextPlainText(condition.law)}`}
             className="py-5"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
@@ -654,7 +661,9 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
           {route.eyebrow}
         </p>
         <h1>{route.title}</h1>
-        <p className="text-muted-foreground">{route.subtitle}</p>
+        <p className="text-muted-foreground">
+          <LegalText text={route.subtitle} />
+        </p>
         {route.overview.map((paragraph) => (
           <p key={legalTextPlainText(paragraph)}>
             <LegalText text={paragraph} />
