@@ -8,11 +8,11 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
   entries: [
     {
       provisionId: "powierzanie-pracy-art-1",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 1 ust. 1 визначає предмет ustawy: умови доступу cudzoziemców до rynku pracy, właściwe organy та tryb postępowania. Ust. 2 залишає правила в'їзду й pobytu у зв'язку з роботою та більшість наслідків незаконного powierzenia роботи окремим законам, ust. 3 передбачає спеціальні заходи активізації та інтеграції, а ust. 4 перелічує випадки, до яких ustawa не застосовується; ust. 5 уповноважує ministra właściwego do spraw pracy надавати wyjaśnienia щодо застосування ustawy.",
+          text: "Art. 1 ust. 1 визначає предмет ustawy: умови доступу cudzoziemców до rynku pracy, właściwe organy та tryb postępowania. Ust. 2 відсилає правила в'їзду й pobytu у зв'язку з роботою та наслідки powierzenia роботи особі, яка перебуває нелегально, крім kar za wykroczenia з art. 84 ust. 1 і 3, до окремих законів; ust. 3 передбачає спеціальні заходи aktywizacji та integracji, ust. 4 перелічує винятки із застосування ustawy, а ust. 5 уповноважує ministra właściwego do spraw pracy надавати wyjaśnienia для jednolitego stosowania ustawy.",
           sourceLocator: "Art. 1 ust. 1–5",
         },
       ],
@@ -42,7 +42,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-2",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -76,7 +76,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-3",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -110,7 +110,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-4",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -144,7 +144,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-5",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -178,7 +178,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-6",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -212,7 +212,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-7",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -246,7 +246,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-8",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -280,7 +280,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-9",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -319,7 +319,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-10",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -353,7 +353,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-11",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -377,7 +377,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-12",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -406,7 +406,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-13",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -455,7 +455,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-14",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -479,7 +479,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-15",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -503,7 +503,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-16",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -527,7 +527,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-17",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -566,7 +566,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-18",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -600,7 +600,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-19",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -629,7 +629,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-20",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -658,7 +658,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-21",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -692,7 +692,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-22",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -716,7 +716,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
         {
           locator: "ust. 1 pkt 6–8",
           explanation:
-            "Підставами також можуть бути інформація art. 19, чинний wpis до wykaz небажаних осіб та відсутність у podmiot діяльності, що обґрунтовує повірення роботи, включно з призупиненням, викресленням або ліквідацією.",
+            "Підставами є інформація art. 19, чинний wpis до wykaz небажаних осіб та відсутність у podmiot діяльності, що обґрунтовує powierzenie роботи, включно з призупиненням, викресленням або ліквідацією.",
         },
         {
           locator: "ust. 2–3",
@@ -731,7 +731,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-23",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -755,11 +755,11 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-24",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 24 встановлює, що zezwolenie na pracę wygasa z mocy prawa в день надання cudzoziemiec zezwolenie na pobyt rezydenta długoterminowego UE або pobyt stały, а також у день надання визначеного zezwolenie na pobyt czasowy, якщо воно стосується роботи у того самого polski podmiot і на тому самому stanowisko.",
+          text: "Art. 24 встановлює, що zezwolenie na pracę wygasa z mocy prawa в день udzielenia cudzoziemcowi zezwolenia na pobyt rezydenta długoterminowego UE або pobyt stały, а також zezwolenia na pobyt czasowy з art. 114 ust. 1, art. 126 ust. 1 і 3 або art. 127 ustawy o cudzoziemcach, якщо воно стосується роботи у того самого polski podmiot і на тому самому stanowisko.",
           sourceLocator: "Art. 24 pkt 1–2",
         },
       ],
@@ -774,7 +774,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
         {
           locator: "pkt 2",
           explanation:
-            "Те саме стосується лише названих видів zezwolenie na pobyt czasowy, коли вони пов'язані з роботою у того самого polski podmiot і на тому самому stanowisko.",
+            "Те саме стосується лише zezwolenie na pobyt czasowy з art. 114 ust. 1, art. 126 ust. 1 і 3 або art. 127 ustawy o cudzoziemcach, коли воно пов'язане з роботою у того самого polski podmiot і на тому самому stanowisko.",
         },
       ],
       legalEffect:
@@ -784,7 +784,7 @@ export const powierzaniePracyPart01a = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-25",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",

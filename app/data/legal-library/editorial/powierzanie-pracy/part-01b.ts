@@ -8,7 +8,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
   entries: [
     {
       provisionId: "powierzanie-pracy-art-26",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -37,7 +37,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-27",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -71,7 +71,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-28",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -105,7 +105,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-29",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -134,7 +134,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-30",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -168,7 +168,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-31",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -177,7 +177,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
         },
       ],
       summary:
-        "Місцевий список дефіцитних або обмежених професій може стати обов'язковою підставою відмови. Потрібно перевірити правильний powiat, дату публікації та можливий виняток у rozporządzenie.",
+        "Місцевий список zawodów, для яких відмовляють у zezwolenie через складну ситуацію на локальному rynku pracy, може стати обов'язковою підставою відмови. Потрібно перевірити правильний powiat, дату публікації та можливий виняток у rozporządzenie.",
       rules: [
         {
           locator: "ust. 1–2",
@@ -202,7 +202,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-32",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -236,7 +236,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-33",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -270,7 +270,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-34",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -284,7 +284,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
         {
           locator: "ust. 1 pkt 1–2",
           explanation:
-            "Якщо виконується хоча б одна назва умова — діяльність podmiot коротша за рік або час не більше 1/2 чи 20 годин на тиждень — zezwolenie може бути лише на визначений строк до одного року.",
+            "Якщо виконується хоча б одна названа умова — діяльність podmiot коротша за рік або час не більше 1/2 чи 20 годин на тиждень — zezwolenie видається на визначений строк не довший за один рік.",
         },
         {
           locator: "ust. 2",
@@ -299,7 +299,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-35",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -323,7 +323,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-36",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -357,7 +357,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-37",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -386,7 +386,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-38",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -410,7 +410,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-39",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -434,11 +434,11 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-40",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 40 ust. 1 передбачає zezwolenie для cudzoziemiec, якого zatrudnia podmiot zagraniczny, який працює для нього поза Польщею та буде delegowany до oddział, zakład або podmiot пов'язаний, для usługa eksportowa або з іншою метою. Ust. 2 виключає відкриття або вимагає umorzenie провадження для діяльності за art. 45 ust. 2 та функцій art. 2 pkt 9 lit. c–e; ust. 3 визначає usługa eksportowa, а ust. 4–5 — właściwość wojewoda.",
+          text: "Art. 40 ust. 1 передбачає zezwolenie для cudzoziemiec, якого zatrudnia podmiot zagraniczny, який працює для нього поза Польщею та буде delegowany до oddział, zakład або podmiot пов'язаний, для usługa eksportowa або з іншою метою, яка не є świadczeniem usług. Ust. 2 виключає відкриття або вимагає umorzenie провадження для діяльності за art. 45 ust. 2 та функцій art. 2 pkt 9 lit. c–e; ust. 3 визначає usługa eksportowa, а ust. 4–5 — właściwość wojewoda.",
           sourceLocator: "Art. 40 ust. 1 pkt 1–3, ust. 2–5",
         },
       ],
@@ -468,11 +468,11 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-41",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 41 вимагає для zezwolenie при delegowanie дотримання умов art. 4 ust. 1 і art. 5 ust. 2 pkt 1–8 ustawy o delegowaniu pracowników, wynagrodzenie не нижче 70% актуального середнього місячного wynagrodzenie у województwo на день wniosek та вказання особи в Польщі, уповноваженої представляти podmiot zagraniczny перед wojewoda й іншими органами.",
+          text: "Art. 41 вимагає для zezwolenie при delegowanie дотримання умов art. 4 ust. 1 і ust. 2 pkt 1–8 та art. 5 ustawy o delegowaniu pracowników, wynagrodzenie не нижче 70% актуального середнього місячного wynagrodzenie у województwo на день wniosek та вказання особи в Польщі, уповноваженої представляти podmiot zagraniczny перед wojewoda й іншими органами.",
           sourceLocator: "Art. 41 pkt 1–3",
         },
       ],
@@ -482,7 +482,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
         {
           locator: "pkt 1",
           explanation:
-            "Умови виконання роботи мають відповідати названим нормам ustawy o delegowaniu pracowników; їх зміст треба читати в тому окремому акті.",
+            "Умови виконання роботи мають відповідати art. 4 ust. 1 і ust. 2 pkt 1–8 та art. 5 ustawy o delegowaniu pracowników; їх зміст треба читати в тому окремому акті."
         },
         {
           locator: "pkt 2",
@@ -502,7 +502,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-42",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -536,7 +536,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-43",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -560,7 +560,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-44",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -594,7 +594,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-45",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -628,7 +628,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-46",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -652,7 +652,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-47",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -686,7 +686,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-48",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -710,7 +710,7 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-49",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -734,11 +734,11 @@ export const powierzaniePracyPart01b = defineEditorialPart<"powierzanie-pracy">(
     },
     {
       provisionId: "powierzanie-pracy-art-50",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 50 ust. 1–2 передбачає wpis wniosku до ewidencji wniosków і видачу zaświadczenie o wpisie, коли cudzoziemiec проситиме сезонну візу або планує ruch bezwizowy, виконані умови art. 45 ust. 1 і немає обставин art. 13 ust. 1–3 та art. 14; zaświadczenie містить дані podmiot і cudzoziemiec, miejsce, підставу, час, оплату, обов'язки, періоди та дату wpis. Ust. 3–6 встановлюють строки 7 днів робочих для нескладної справи, wezwanie на усунення braków до 7 днів і 30 днів для справи, що потребує пояснень.",
+          text: "Art. 50 ust. 1–2 передбачає wpis wniosku до ewidencji wniosków і видачу zaświadczenie o wpisie, коли cudzoziemiec проситиме візу з art. 60 ust. 1 pkt 5a ustawy o cudzoziemcach для sezonowa praca або планує ruch bezwizowy, виконані умови art. 45 ust. 1 і немає обставин art. 13 ust. 1–3 та art. 14; zaświadczenie містить дані podmiot і cudzoziemiec, miejsce, підставу, час, оплату, обов'язки, періоди та дату wpis. Ust. 3–6 встановлюють строки 7 днів робочих для нескладної справи, wezwanie на усунення braków до 7 днів і 30 днів для справи, що потребує пояснень.",
           sourceLocator: "Art. 50 ust. 1–6",
         },
       ],
