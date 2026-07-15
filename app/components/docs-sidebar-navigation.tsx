@@ -128,8 +128,10 @@ export function DocsSidebarItem({
         onClick={onClick}
         nativeButton={!href}
         render={href ? <Link to={href} /> : undefined}
-        aria-current={ariaCurrent ?? (active ? "page" : undefined)}
-        aria-pressed={ariaPressed}
+        aria-current={
+          href ? (ariaCurrent ?? (active ? "page" : undefined)) : undefined
+        }
+        aria-pressed={ariaPressed ?? (!href ? active : undefined)}
         className={`h-auto min-h-9 w-full justify-start px-2 py-1.5 text-left whitespace-normal ${className}`}
       >
         <span className="min-w-0 break-words">{children}</span>

@@ -4,6 +4,7 @@ import type {
   LegalProvisionId,
   LegalProvisionReference,
 } from "./contracts"
+import type { EvidenceDocumentReference } from "~/data/document-library/contracts"
 
 type ProvisionKeyFromId<
   Id,
@@ -27,6 +28,7 @@ export type LegalTextPart =
       target:
         | LegalDocumentReference
         | LegalProvisionReference
+        | EvidenceDocumentReference
         | { kind: "external"; url: string }
     }
 

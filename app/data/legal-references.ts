@@ -1,6 +1,9 @@
 import { caseGuideRouteById } from "~/data/case-guide-routes"
 import type { CaseGuideRouteId } from "~/data/case-guide-types"
-import { documentById } from "~/data/document-index"
+import {
+  resolveEvidenceDocumentReference,
+  type EvidenceDocumentReference,
+} from "~/data/document-library"
 import { kpaArticleIndex } from "~/data/kpa-article-index"
 import type {
   LegalDocumentReference,
@@ -20,8 +23,8 @@ export type LegalReference =
   | LegalDocumentReference
   | LegalProvisionReference
   | OfficialSourceReference
+  | EvidenceDocumentReference
   | { kind: "legacy-kpa-article"; article: string }
-  | { kind: "document"; documentId: string }
   | { kind: "map-node"; nodeId: string }
   | { kind: "case-route"; routeId: CaseGuideRouteId }
   | { kind: "external"; url: string }
@@ -53,9 +56,7 @@ function kpaProvisionId(article: string) {
     ? `${base}-${[...suffix].map((digit) => superscriptDigits[digit]).join("-")}`
     : base
   const candidate = `kpa-art-${key}`
-  return isRegisteredLegalProvisionId("kpa", candidate)
-    ? candidate
-    : undefined
+  return isRegisteredLegalProvisionId("kpa", candidate) ? candidate : undefined
 }
 
 const kpaProvisionIdByArticle = new Map(
@@ -101,10 +102,12 @@ export function legalReferenceTarget(
       )
         ? { reference, href: legacyKpaArticleHref(reference.article) }
         : undefined
-    case "document":
-      return documentById.has(reference.documentId)
-        ? { reference, href: `/documents/${reference.documentId}` }
+    case "evidence-document": {
+      const result = resolveEvidenceDocumentReference(reference)
+      return result.status === "resolved"
+        ? { reference: result.reference, href: result.href }
         : undefined
+    }
     case "map-node":
       return nodeById.has(reference.nodeId)
         ? { reference, href: `/map/${reference.nodeId}` }

@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
+import { Link } from "react-router"
 
 import type { TocItem } from "~/components/docs-layout"
 import {
@@ -6,14 +7,28 @@ import {
   LegalText,
 } from "~/components/legal-reference-text"
 import { OfficialSourceEntry } from "~/components/official-source"
+import {
+  DocsSidebar,
+  DocsSidebarBackLink,
+  DocsSidebarItem,
+  DocsSidebarList,
+  DocsSidebarSection,
+} from "~/components/docs-sidebar-navigation"
 import { Badge } from "~/components/ui/badge"
+import { Button } from "~/components/ui/button"
+import {
+  documentCategoryLabels,
+  getEvidenceDocument,
+  getEvidenceDocumentNavigation,
+  getEvidenceDocumentPath,
+  listEvidenceDocumentCategories,
+  type EvidenceDocumentCategory,
+  type EvidenceDocumentId,
+} from "~/data/document-library"
 import {
   documentCatalog,
-  documentEntryForTitle,
   documentsForCategory,
-  documentCategoryLabels,
   type DocumentCatalogEntry,
-  type DocumentCategory,
 } from "~/data/document-index"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 
@@ -30,14 +45,17 @@ export function documentDetailToc(document: DocumentCatalogEntry): TocItem[] {
       : []),
     { href: "#document-purpose", label: "Роль і межі доказу" },
     { href: "#document-elements", label: "Як перевіряти" },
+    ...(document.contexts.length || document.caseContexts.length
+      ? [{ href: "#document-contexts", label: "Де використовується" }]
+      : []),
     { href: "#document-regulation", label: "Правове регулювання" },
     { href: "#document-sources", label: "Офіційні джерела" },
   ]
 }
 
-const categories = Object.entries(documentCategoryLabels) as Array<
-  [DocumentCategory, string]
->
+const categories = listEvidenceDocumentCategories().map(
+  (id) => [id, documentCategoryLabels[id]] as [EvidenceDocumentCategory, string]
+)
 
 function pluralizeUkrainian(
   count: number,
@@ -59,69 +77,62 @@ export function DocumentCatalogNavigation({
   onCategorySelect,
   onDocumentSelect,
 }: {
-  selectedCategory: DocumentCategory | "all"
+  selectedCategory: EvidenceDocumentCategory | "all"
   selectedDocumentId?: string
-  onCategorySelect: (category: DocumentCategory | "all") => void
+  onCategorySelect: (category: EvidenceDocumentCategory | "all") => void
   onDocumentSelect: (documentId: string) => void
 }) {
-  const documents = documentsForCategory(selectedCategory)
-
   return (
-    <nav aria-label="Навігація каталогу документів" className="pb-10">
-      <section>
-        <p className="px-2 text-xs font-medium text-muted-foreground">
-          Категорії
-        </p>
-        <ul className="mt-2 grid gap-0.5">
-          <li>
-            <button
-              type="button"
-              data-active={selectedCategory === "all"}
-              onClick={() => onCategorySelect("all")}
-              className="flex min-h-8 w-full items-center rounded-md px-2 py-1 text-left text-[0.8rem] font-medium hover:bg-accent data-[active=true]:bg-accent"
-            >
-              Усі документи
-            </button>
-          </li>
-          {categories.map(([id, label]) => (
-            <li key={id}>
-              <button
-                type="button"
-                data-active={selectedCategory === id}
+    <DocsSidebar ariaLabel="Навігація каталогу документів">
+      <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
+      <DocsSidebarSection title="Категорії" className="mt-0">
+        <DocsSidebarList>
+          <DocsSidebarItem
+            active={selectedCategory === "all"}
+            onClick={() => onCategorySelect("all")}
+          >
+            Усі документи
+          </DocsSidebarItem>
+          {categories.map(([id, label]) => {
+            const documents = documentsForCategory(id)
+            const nested =
+              selectedCategory === id ? (
+                <div className="ml-3 border-l pl-2">
+                  <DocsSidebarList>
+                    {documents.map((document) => (
+                      <DocsSidebarItem
+                        key={document.id}
+                        active={selectedDocumentId === document.id}
+                        href={getEvidenceDocumentPath(document.id)}
+                        size="sm"
+                      >
+                        <span className="line-clamp-2 text-[0.8rem]">
+                          {document.title}
+                        </span>
+                      </DocsSidebarItem>
+                    ))}
+                  </DocsSidebarList>
+                </div>
+              ) : undefined
+            return (
+              <DocsSidebarItem
+                key={id}
+                active={selectedCategory === id}
                 onClick={() => onCategorySelect(id)}
-                className="flex min-h-8 w-full items-center rounded-md px-2 py-1 text-left text-[0.8rem] font-medium hover:bg-accent data-[active=true]:bg-accent"
+                nested={nested}
               >
-                {label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mt-8">
-        <p className="px-2 text-xs font-medium text-muted-foreground">
-          {pluralizeUkrainian(documents.length, [
-            "позиція",
-            "позиції",
-            "позицій",
-          ])}
-        </p>
-        <ul className="mt-2 grid gap-0.5">
-          {documents.map((document) => (
-            <li key={document.id}>
-              <button
-                type="button"
-                data-active={selectedDocumentId === document.id}
-                onClick={() => onDocumentSelect(document.id)}
-                className="flex min-h-8 w-full items-center rounded-md px-2 py-1 text-left text-[0.8rem] font-medium hover:bg-accent data-[active=true]:bg-accent"
-              >
-                <span className="line-clamp-2">{document.title}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </nav>
+                <span className="flex min-w-0 items-center justify-between gap-2">
+                  <span>{label}</span>
+                  <span className="text-xs text-muted-foreground tabular-nums">
+                    {documents.length}
+                  </span>
+                </span>
+              </DocsSidebarItem>
+            )
+          })}
+        </DocsSidebarList>
+      </DocsSidebarSection>
+    </DocsSidebar>
   )
 }
 
@@ -132,9 +143,9 @@ export function MobileDocumentNavigation({
   onDocumentSelect,
   onOverviewSelect,
 }: {
-  selectedCategory: DocumentCategory | "all"
+  selectedCategory: EvidenceDocumentCategory | "all"
   selectedDocumentId?: string
-  onCategorySelect: (category: DocumentCategory | "all") => void
+  onCategorySelect: (category: EvidenceDocumentCategory | "all") => void
   onDocumentSelect: (documentId: string) => void
   onOverviewSelect: () => void
 }) {
@@ -142,6 +153,7 @@ export function MobileDocumentNavigation({
 
   return (
     <div className="grid min-w-0 gap-3 lg:hidden">
+      <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
       <label className="grid gap-1.5">
         <span className="text-xs font-medium text-muted-foreground">
           Категорія
@@ -149,7 +161,9 @@ export function MobileDocumentNavigation({
         <select
           value={selectedCategory}
           onChange={(event) =>
-            onCategorySelect(event.target.value as DocumentCategory | "all")
+            onCategorySelect(
+              event.target.value as EvidenceDocumentCategory | "all"
+            )
           }
           className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
         >
@@ -189,7 +203,7 @@ export function DocumentCatalogOverview({
   category,
   onDocumentSelect,
 }: {
-  category: DocumentCategory | "all"
+  category: EvidenceDocumentCategory | "all"
   onDocumentSelect: (documentId: string) => void
 }) {
   const documents = documentsForCategory(category)
@@ -257,12 +271,11 @@ export function DocumentDetailContent({
   document: DocumentCatalogEntry
   onDocumentSelect: (documentId: string) => void
 }) {
-  const relatedDocuments = (document.guide?.relatedDocuments ?? []).map(
-    (title) => ({
-      title,
-      entry: documentEntryForTitle(title),
-    })
-  )
+  const relatedDocuments = document.relatedDocuments.flatMap((documentId) => {
+    const related = getEvidenceDocument(documentId)
+    return related ? [{ entry: related }] : []
+  })
+  const { previous, next } = getEvidenceDocumentNavigation(document.id)
 
   return (
     <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
@@ -376,25 +389,74 @@ export function DocumentDetailContent({
               умови не повинні суперечити одне одному.
             </p>
             <ul data-not-typeset className="not-typeset mt-5 divide-y border-y">
-              {relatedDocuments.map(({ title, entry }) => (
-                <li key={title} className="py-3">
-                  {entry ? (
-                    <span className="group flex items-start justify-between gap-4 text-left text-sm font-medium">
-                      {entry.title}
-                      <LegalReferenceArrow
-                        reference={{ kind: "document", documentId: entry.id }}
-                        label={`Відкрити документ: ${entry.title}`}
-                      />
-                    </span>
-                  ) : (
-                    <span className="text-sm font-medium">{title}</span>
-                  )}
+              {relatedDocuments.map(({ entry }) => (
+                <li key={entry.id} className="py-3">
+                  <span className="group flex items-start justify-between gap-4 text-left text-sm font-medium">
+                    {entry.title}
+                    <LegalReferenceArrow
+                      reference={{
+                        kind: "evidence-document",
+                        documentId: entry.id,
+                      }}
+                      label={`Відкрити документ: ${entry.title}`}
+                    />
+                  </span>
                 </li>
               ))}
             </ul>
           </>
         ) : null}
       </section>
+
+      {document.contexts.length || document.caseContexts.length ? (
+        <section id="document-contexts">
+          <h2>Де цей документ використовується</h2>
+          <p>
+            Це контекстні переходи до тем і типів справ. Вони не змінюють
+            канонічну назву або правову роль документа.
+          </p>
+          <ul data-not-typeset className="not-typeset mt-5 divide-y border-y">
+            {document.contexts.map((context) => (
+              <li
+                key={`map-${context.node.id}`}
+                className="flex items-start justify-between gap-4 py-3 text-sm"
+              >
+                <span>
+                  <span className="block font-medium">
+                    {context.node.title}
+                  </span>
+                  <span className="mt-1 block text-xs text-muted-foreground">
+                    Карта права
+                  </span>
+                </span>
+                <LegalReferenceArrow
+                  reference={{ kind: "map-node", nodeId: context.node.id }}
+                  label={`Відкрити тему карти: ${context.node.title}`}
+                />
+              </li>
+            ))}
+            {document.caseContexts.map((context) => (
+              <li
+                key={`case-${context.routeId}-${legalTextPlainText(context.item)}`}
+                className="flex items-start justify-between gap-4 py-3 text-sm"
+              >
+                <span>
+                  <span className="block font-medium">
+                    {context.routeTitle}
+                  </span>
+                  <span className="mt-1 block text-xs text-muted-foreground">
+                    Тип справи
+                  </span>
+                </span>
+                <LegalReferenceArrow
+                  reference={{ kind: "case-route", routeId: context.routeId }}
+                  label={`Відкрити тип справи: ${context.routeTitle}`}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section id="document-regulation">
         <h2>Правове регулювання</h2>
@@ -436,6 +498,43 @@ export function DocumentDetailContent({
           </p>
         )}
       </section>
+
+      <nav
+        data-not-typeset
+        aria-label="Попередній і наступний документ"
+        className="not-typeset mt-10 flex items-center justify-between gap-3 border-t pt-6"
+      >
+        {previous ? (
+          <Button
+            variant="ghost"
+            nativeButton={false}
+            render={<Link to={getEvidenceDocumentPath(previous.id)!} />}
+          >
+            <ArrowLeft data-icon="inline-start" aria-hidden="true" />
+            <span className="line-clamp-1">{previous.title}</span>
+          </Button>
+        ) : (
+          <Button variant="ghost" disabled>
+            <ArrowLeft data-icon="inline-start" aria-hidden="true" />
+            Початок
+          </Button>
+        )}
+        {next ? (
+          <Button
+            variant="ghost"
+            nativeButton={false}
+            render={<Link to={getEvidenceDocumentPath(next.id)!} />}
+          >
+            <span className="line-clamp-1">{next.title}</span>
+            <ArrowRight data-icon="inline-end" aria-hidden="true" />
+          </Button>
+        ) : (
+          <Button variant="ghost" disabled>
+            Кінець
+            <ArrowRight data-icon="inline-end" aria-hidden="true" />
+          </Button>
+        )}
+      </nav>
     </article>
   )
 }

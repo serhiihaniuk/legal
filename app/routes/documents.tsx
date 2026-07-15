@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useState } from "react"
-import { useNavigate, useParams } from "react-router"
+import {
+  redirect,
+  useNavigate,
+  useParams,
+  type LoaderFunctionArgs,
+} from "react-router"
 
 import {
   DocumentCatalogNavigation,
@@ -10,7 +15,27 @@ import {
   MobileDocumentNavigation,
 } from "~/components/document-catalog-content"
 import { DocsLayout } from "~/components/docs-layout"
-import { documentById, type DocumentCategory } from "~/data/document-index"
+import {
+  getEvidenceDocument,
+  getEvidenceDocumentPath,
+  legacyEvidenceDocumentIdMap,
+  type EvidenceDocumentCategory,
+} from "~/data/document-library"
+import { documentById } from "~/data/document-index"
+
+export function loader({ params }: LoaderFunctionArgs) {
+  const documentId = params.documentId
+  if (!documentId) return null
+
+  const legacyDocumentId = legacyEvidenceDocumentIdMap.get(documentId)
+  if (legacyDocumentId) {
+    throw redirect(getEvidenceDocumentPath(legacyDocumentId) ?? "/documents")
+  }
+  if (!getEvidenceDocument(documentId)) {
+    throw new Response("Evidence document not found", { status: 404 })
+  }
+  return null
+}
 
 function scrollToTop() {
   requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))
@@ -19,9 +44,14 @@ function scrollToTop() {
 export default function DocumentsPage() {
   const navigate = useNavigate()
   const { documentId } = useParams<{ documentId?: string }>()
-  const selectedDocument = documentId ? documentById.get(documentId) : undefined
+  const canonicalDocument = documentId
+    ? getEvidenceDocument(documentId)
+    : undefined
+  const selectedDocument = canonicalDocument
+    ? documentById.get(canonicalDocument.id)
+    : undefined
   const [selectedCategory, setSelectedCategory] = useState<
-    DocumentCategory | "all"
+    EvidenceDocumentCategory | "all"
   >(selectedDocument?.category ?? "all")
 
   useEffect(() => {
@@ -36,16 +66,20 @@ export default function DocumentsPage() {
     [selectedDocument]
   )
 
-  function selectCategory(category: DocumentCategory | "all") {
+  function selectCategory(category: EvidenceDocumentCategory | "all") {
     setSelectedCategory(category)
     navigate("/documents")
     scrollToTop()
   }
 
   function selectDocument(nextDocumentId: string) {
-    const nextDocument = documentById.get(nextDocumentId)
-    if (nextDocument) setSelectedCategory(nextDocument.category)
-    navigate(`/documents/${nextDocumentId}`)
+    const nextDocument = getEvidenceDocument(nextDocumentId)
+    const nextPath = nextDocument
+      ? getEvidenceDocumentPath(nextDocument.id)
+      : undefined
+    if (!nextDocument || !nextPath) return
+    setSelectedCategory(nextDocument.category)
+    navigate(nextPath)
     scrollToTop()
   }
 

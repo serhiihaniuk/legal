@@ -1,9 +1,9 @@
 import {
   createLegalTextAuthor,
   defineLegalTextContent,
-  type LegalTextValue,
 } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/legal-types"
+import type { DocumentGuide } from "~/data/document-library/contracts"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const regulationLaw = createLegalTextAuthor(
@@ -12,31 +12,6 @@ const regulationLaw = createLegalTextAuthor(
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 const kpaLaw = createLegalTextAuthor("kpa")
 const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
-
-export type DocumentGuide = {
-  matches: string[]
-  displayTitle?: string
-  category?:
-    | "identity"
-    | "procedure"
-    | "work"
-    | "company"
-    | "financial"
-    | "evidence"
-    | "other"
-  documentType?: LegalTextValue
-  description: LegalTextValue
-  preparedBy: LegalTextValue
-  howToObtain?: LegalTextValue[]
-  formAndValidity?: LegalTextValue[]
-  purpose: LegalTextValue[]
-  doesNotProve: LegalTextValue[]
-  legalBasis: LegalTextValue[]
-  keyChecks: LegalTextValue[]
-  relatedDocuments?: string[]
-  sources: OfficialSource[]
-  verifiedAt: string
-}
 
 const OFFICIAL = {
   aliens: {
@@ -153,7 +128,10 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
     {
-      matches: ["załącznik nr 1"],
+      id: "employment-annex-1",
+      title: "Załącznik nr 1",
+      category: "work",
+      aliases: ["załącznik nr 1"],
       description:
         "Структурована частина заяви про pobyt czasowy i pracę, у якій роботодавець офіційно подає дані про суб’єкта та заявлені умови праці.",
       preparedBy:
@@ -187,7 +165,10 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["umowa o pracę"],
+      id: "employment-contract",
+      title: "Umowa o pracę",
+      category: "work",
+      aliases: ["umowa o pracę"],
       description:
         "Договір між працівником і роботодавцем, який визначає вид праці, місце, винагороду, час та дату початку роботи.",
       preparedBy:
@@ -222,8 +203,10 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["wniosek mos", "електронна заява mos"],
-      displayTitle: "Wniosek o zezwolenie na pobyt czasowy w MOS",
+      id: "mos-application",
+      title: "Wniosek o zezwolenie na pobyt czasowy w MOS",
+      category: "procedure",
+      aliases: ["wniosek mos", "електронна заява mos"],
       description:
         "Електронна заява формулює żądanie, вид дозволу та дані, на яких заявник будує справу. Вона запускає процедуру, але не замінює докази матеріальних умов.",
       preparedBy:
@@ -248,14 +231,16 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: [
+      id: "passport",
+      title: "Ważny dokument podróży / закордонний паспорт",
+      category: "identity",
+      aliases: [
         "паспорт",
         "дійсний закордонний паспорт",
         "скани всіх сторінок дійсного паспорта",
         "паспорт або документ подорожі",
         "паспорт і фото",
       ],
-      displayTitle: "Ważny dokument podróży / закордонний паспорт",
       description:
         "Основний документ для встановлення особи, громадянства і реквізитів документа подорожі. У MOS потрібні цифрові копії всіх сторінок, а оригінал показують органу.",
       preparedBy:
@@ -277,8 +262,10 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["upo / urzędowe poświadczenie", "upo та akta sprawy"],
-      displayTitle: "UPO — Urzędowe Poświadczenie Odbioru",
+      id: "upo",
+      title: "UPO — Urzędowe Poświadczenie Odbioru",
+      category: "procedure",
+      aliases: ["upo / urzędowe poświadczenie", "upo та akta sprawy"],
       description:
         "Системне підтвердження технічного отримання електронного документа. Його треба зберігати разом із PDF/XML надісланої заяви.",
       preparedBy: "Формує MOS після правильного технічного надсилання.",
@@ -299,8 +286,10 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["powiadomienie pup"],
-      displayTitle: "Powiadomienie o pracy obywatela Ukrainy",
+      id: "ukraine-work-notification",
+      title: "Powiadomienie o pracy obywatela Ukrainy",
+      category: "work",
+      aliases: ["powiadomienie pup"],
       description:
         "Електронне повідомлення роботодавця до właściwego PUP про доручення роботи громадянину України. Це окремий обов’язок щодо легальності праці.",
       preparedBy: "Подає роботодавець або його представник через praca.gov.pl.",
@@ -326,8 +315,10 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["wezwanie"],
-      displayTitle: "Wezwanie organu",
+      id: "authority-summons",
+      title: "Wezwanie organu",
+      category: "procedure",
+      aliases: ["wezwanie"],
       description:
         "Офіційне письмо органу, яке вимагає конкретної дії, документа, пояснення або особистої явки у визначеній справі.",
       preparedBy:
@@ -350,12 +341,14 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: [
+      id: "delivery-proof",
+      title: "Dowód doręczenia",
+      category: "procedure",
+      aliases: [
         "підтвердження doręczenia",
         "конверт і awizo",
         "підтвердження e-doręczenia",
       ],
-      displayTitle: "Dowód doręczenia",
       description:
         "Доказ способу й юридичної дати вручення листа. Саме з цією датою закон часто пов’язує початок процесуального строку.",
       preparedBy:
@@ -383,8 +376,10 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["pełnomocnictwo"],
-      displayTitle: "Pełnomocnictwo",
+      id: "power-of-attorney",
+      title: "Pełnomocnictwo",
+      category: "procedure",
+      aliases: ["pełnomocnictwo"],
       description:
         "Документ, яким mocodawca уповноважує конкретну фізичну особу діяти від його імені у визначеному обсязі.",
       preparedBy:
@@ -413,8 +408,10 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["рішення"],
-      displayTitle: "Decyzja administracyjna",
+      id: "administrative-decision",
+      title: "Decyzja administracyjna",
+      category: "procedure",
+      aliases: ["рішення"],
       description:
         "Владне розstrzygnięcie адміністративної справи. Її треба читати як ціле: sentencja, встановлені факти, оцінка доказів, норми, uzasadnienie і pouczenie.",
       preparedBy:
@@ -435,13 +432,14 @@ export const documentGuides: readonly DocumentGuide[] =
       verifiedAt: "2026-07-14",
     },
     {
-      matches: [
+      id: "zus-confirmation",
+      title: "Zaświadczenie / potwierdzenie danych z ZUS",
+      category: "work",
+      aliases: [
         "підтвердження zus",
         "страхування/zus за потреби",
         "доказ виплат і zus",
       ],
-      displayTitle: "Zaświadczenie / potwierdzenie danych z ZUS",
-      category: "work",
       documentType:
         "Електронне підтвердження даних із системи ZUS; конкретний вид документа залежить від факту, який треба довести.",
       description:
@@ -474,18 +472,19 @@ export const documentGuides: readonly DocumentGuide[] =
         "Особа, płatnik, код zgłoszenia, дати та відсутність розбіжностей з umową і фактичною роботою.",
         "Можливість перевірити походження електронного файла.",
       ],
-      relatedDocuments: ["Umowa o pracę", "Załącznik nr 1"],
+      relatedDocuments: ["employment-contract", "employment-annex-1"],
       sources: [OFFICIAL.zus, OFFICIAL.aliens],
       verifiedAt: "2026-07-14",
     },
     {
-      matches: [
+      id: "business-register-information",
+      title: "Informacja z KRS albo CEIDG",
+      category: "company",
+      aliases: [
         "інформація krs / ceidg",
         "дані krs/ceidg роботодавця",
         "krs/ceidg, повноваження підписанта",
       ],
-      displayTitle: "Informacja z KRS albo CEIDG",
-      category: "company",
       documentType:
         "Офіційна інформація з державного реєстру про юридичну особу або підприємця.",
       description:
@@ -518,14 +517,19 @@ export const documentGuides: readonly DocumentGuide[] =
         "Назва, NIP/KRS/REGON, адреса та спосіб reprezentacji.",
         "Чи потрібен спільний підпис, prokura або окреме pełnomocnictwo.",
       ],
-      relatedDocuments: ["Pełnomocnictwo", "Załącznik nr 1", "Umowa o pracę"],
+      relatedDocuments: [
+        "power-of-attorney",
+        "employment-annex-1",
+        "employment-contract",
+      ],
       sources: [OFFICIAL.krs, OFFICIAL.ceidg],
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["інформація з crbr", "krs/crbr і схема powiązań"],
-      displayTitle: "Informacja z CRBR i схема powiązań",
+      id: "crbr-information",
+      title: "Informacja z CRBR i схема powiązań",
       category: "company",
+      aliases: ["інформація з crbr", "krs/crbr і схема powiązań"],
       documentType:
         "Реєстрова інформація про beneficjenta rzeczywistego та окремо підготовлена схема корпоративних зв’язків.",
       description:
@@ -558,17 +562,15 @@ export const documentGuides: readonly DocumentGuide[] =
         "Чи кожен елемент схеми має документальне джерело.",
         "Чи відділено власність від фактичного kierownictwa і відповідальності за процес.",
       ],
-      relatedDocuments: [
-        "Informacja z KRS albo CEIDG",
-        "Umowa між компаніями й додатки",
-      ],
+      relatedDocuments: ["business-register-information"],
       sources: [OFFICIAL.crbr, OFFICIAL.krs],
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["підтвердження opłaty skarbowej", "оплата скарбова за дозвіл"],
-      displayTitle: "Dowód opłaty skarbowej za zezwolenie",
+      id: "stamp-duty-proof",
+      title: "Dowód opłaty skarbowej za zezwolenie",
       category: "financial",
+      aliases: ["підтвердження opłaty skarbowej", "оплата скарбова за дозвіл"],
       documentType:
         "Підтвердження сплати opłaty skarbowej за конкретну адміністративну дію.",
       description:
@@ -598,17 +600,15 @@ export const documentGuides: readonly DocumentGuide[] =
       keyChecks: [
         "Вид заяви, правильна ставка, рахунок, одержувач, дата, призначення й дані заявника.",
       ],
-      relatedDocuments: [
-        "Wniosek o zezwolenie na pobyt czasowy w MOS",
-        "Dowód opłaty za kartę pobytu",
-      ],
+      relatedDocuments: ["mos-application", "residence-card-fee-proof"],
       sources: [OFFICIAL.stampFee, OFFICIAL.payments],
       verifiedAt: "2026-07-14",
     },
     {
-      matches: ["підтвердження opłaty za kartę", "оплата за карту"],
-      displayTitle: "Dowód opłaty za wydanie karty pobytu",
+      id: "residence-card-fee-proof",
+      title: "Dowód opłaty za wydanie karty pobytu",
       category: "financial",
+      aliases: ["підтвердження opłaty za kartę", "оплата за карту"],
       documentType:
         "Підтвердження окремої opłaty за виготовлення або видачу документа pobytowego.",
       description:
@@ -635,21 +635,19 @@ export const documentGuides: readonly DocumentGuide[] =
       keyChecks: [
         "Вид карти, ставка, можливе zwolnienie, рахунок, призначення, дані особи та дата.",
       ],
-      relatedDocuments: [
-        "Karta pobytu",
-        "Dowód opłaty skarbowej za zezwolenie",
-      ],
+      relatedDocuments: ["residence-card", "stamp-duty-proof"],
       sources: [OFFICIAL.cardFee, OFFICIAL.payments],
       verifiedAt: "2026-07-14",
     },
     {
-      matches: [
+      id: "pesel-ukr-confirmation",
+      title: "Potwierdzenie danych PESEL i statusu UKR",
+      category: "identity",
+      aliases: [
         "підтвердження pesel ukr",
         "активний pesel ukr та історія status ukr",
         "паспорт і pesel ukr",
       ],
-      displayTitle: "Potwierdzenie danych PESEL i statusu UKR",
-      category: "identity",
       documentType:
         "Електронний або урядовий документ із даними, внесеними до rejestru PESEL; статус UKR є окремою реєстровою ознакою.",
       description:
@@ -679,21 +677,19 @@ export const documentGuides: readonly DocumentGuide[] =
       keyChecks: [
         "Ім’я, дата народження, громадянство, номер документа, status UKR, дата перевірки та історія змін.",
       ],
-      relatedDocuments: [
-        "Ważny dokument podróży / закордонний паспорт",
-        "Karta CUKR",
-      ],
+      relatedDocuments: ["passport"],
       sources: [OFFICIAL.pesel, OFFICIAL.cukrQa],
       verifiedAt: "2026-07-14",
     },
     {
-      matches: [
+      id: "residence-card",
+      title: "Karta pobytu",
+      category: "identity",
+      aliases: [
         "karta pobytu",
         "карта/документ перебування",
         "карта побиту як документ дозволу",
       ],
-      displayTitle: "Karta pobytu",
-      category: "identity",
       documentType:
         "Документ pobytowy, який видається після виникнення відповідного статусу або дозволу; не є самим адміністративним рішенням.",
       description:
@@ -723,21 +719,22 @@ export const documentGuides: readonly DocumentGuide[] =
         "Особа, номер, вид документа, organ wydający, дати, adnotacje та відповідність decyzji.",
       ],
       relatedDocuments: [
-        "Decyzja administracyjna",
-        "Dowód opłaty za kartę pobytu",
-        "Ważny dokument podróży / закордонний паспорт",
+        "administrative-decision",
+        "residence-card-fee-proof",
+        "passport",
       ],
       sources: [OFFICIAL.cardMos, OFFICIAL.cardUdsc, OFFICIAL.aliens],
       verifiedAt: "2026-07-14",
     },
     {
-      matches: [
+      id: "sworn-translation",
+      title: "Tłumaczenie przysięgłe і документи іноземною мовою",
+      category: "evidence",
+      aliases: [
         "tłumaczenie przysięgłe",
         "зрозумілий переклад/версія",
         "tłumaczenie, apostille, legalizacja",
       ],
-      displayTitle: "Tłumaczenie przysięgłe і документи іноземною мовою",
-      category: "evidence",
       documentType:
         "Переклад, виконаний особою, уповноваженою відповідно до польських правил, або інша допустима мовна версія — залежно від вимоги.",
       description:
@@ -767,7 +764,7 @@ export const documentGuides: readonly DocumentGuide[] =
       keyChecks: [
         "Повнота оригіналу, особа перекладача, мова, номери сторінок, печатки, додатки та потреба apostille/legalizacji.",
       ],
-      relatedDocuments: ["Umowa o pracę", "Акти цивільного стану"],
+      relatedDocuments: ["employment-contract"],
       sources: [
         OFFICIAL.translatorList,
         OFFICIAL.work,
