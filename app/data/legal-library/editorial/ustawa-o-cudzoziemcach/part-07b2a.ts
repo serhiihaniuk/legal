@@ -10,7 +10,7 @@ export const foreignersActPart07b2a = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-228",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -39,7 +39,7 @@ export const foreignersActPart07b2a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-229",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -48,7 +48,7 @@ export const foreignersActPart07b2a = defineEditorialPart<
         },
         {
           kind: "statute-text",
-          text: "Tymczasowy polski dokument podróży dla cudzoziemca для особи, яка підлягає relokacji або przesiedleniu, видають на wniosek Szefa Urzędu; для особи з Art. 268 pkt 2 його також можна видати z urzędu. Перед першою kartą pobytu у названих випадках міжнародного захисту wojewoda діє через Szefa Urzędu щодо іншої держави-члена UE, а для karty pobytu особи з Art. 195 ust. 1 pkt 9 картку видають після повернення Karty Polaka.",
+          text: "Tymczasowy polski dokument podróży dla cudzoziemca для особи, яка підлягає relokacji або przesiedleniu, видають на wniosek Szefa Urzędu; для особи з Art. 268 pkt 2 його також можна видати z urzędu. Перед першою kartą pobytu у названих випадках міжнародного захисту wojewoda діє через Szefa Urzędu щодо іншої держави-члена UE: перевіряє, чи особу не позбавили захисту, а в окремому випадку особи з Art. 127 або 137a також повідомляє іншу державу та перевіряє це питання. Для karty pobytu особи з Art. 195 ust. 1 pkt 9 картку видають після повернення Karty Polaka.",
           sourceLocator: "Art. 229 ust. 5–7",
         },
       ],
@@ -78,7 +78,7 @@ export const foreignersActPart07b2a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-230",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -107,7 +107,7 @@ export const foreignersActPart07b2a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-231",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -146,7 +146,7 @@ export const foreignersActPart07b2a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-232",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -180,7 +180,7 @@ export const foreignersActPart07b2a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-233",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",

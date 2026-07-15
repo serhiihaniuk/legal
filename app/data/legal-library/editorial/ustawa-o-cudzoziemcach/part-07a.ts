@@ -10,11 +10,11 @@ export const foreignersActPart07a = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-194",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 194 уповноважує ministra właściwego do spraw wewnętrznych визначити в rozporządzeniu мінімальні кошти для витрат на повернення або транзит іноземця з art. 186 ust. 1 pkt 6–7 чи art. 187 pkt 1 lit. a та членів його сім’ї, а також документи для підтвердження можливості отримати ці кошти й кошти на utrzymanie.",
+          text: "Art. 194 уповноважує ministra właściwego do spraw wewnętrznych визначити в rozporządzeniu мінімальні кошти для витрат на повернення або транзит іноземця з art. 186 ust. 1 pkt 6–7 чи art. 187 pkt 1 lit. a та членів його сім’ї, які перебувають на його утриманні, а також документи для підтвердження можливості отримати ці кошти й кошти на utrzymanie.",
           sourceLocator: "Art. 194 pkt 1–2",
         },
       ],
@@ -39,7 +39,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-195",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -78,7 +78,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-196",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -87,7 +87,7 @@ export const foreignersActPart07a = defineEditorialPart<
         },
         {
           kind: "statute-text",
-          text: "Винятки стосуються, зокрема, особи з azyl, окремих дітей, особи польського походження та неподання odcisków linii papilarnych у строк, визначений art. 203 ust. 5.",
+          text: "Окремі винятки стосуються, зокрема, особи з azyl, визначених у статті дітей та особи польського походження; крім того, відмовляють у wszczęciu за неподання odcisków linii papilarnych під час подання або у строк, визначений art. 203 ust. 5.",
           sourceLocator: "Art. 196 ust. 2–5",
         },
       ],
@@ -117,7 +117,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-197",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -156,7 +156,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-198",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -190,7 +190,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-199",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -229,7 +229,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-200",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -253,7 +253,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-201",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -287,7 +287,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-202",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -326,11 +326,11 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-203",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 203 визначає зміст formularz wniosku про pobyt stały: дані cudzoziemca і małżonek, дані документа подорожі, подорожі та pobyty zagraniczne за 5 років, попередній і поточний pobyt, заходи примусу або ув’язнення, podatki та wzór podpisu.",
+          text: "Art. 203 визначає зміст formularz wniosku про pobyt stały: дані cudzoziemca і małżonka, дані документа подорожі, подорожі та pobyty zagraniczne за 5 років, попередній і поточний pobyt, zatrzymanie, перебування в strzeżony ośrodek або areszt dla cudzoziemców, zakaz opuszczania kraju, позбавлення волі чи tymczasowe aresztowanie, podatki та wzór podpisu.",
           sourceLocator: "Art. 203 ust. 1 pkt 1–7",
         },
         {
@@ -365,7 +365,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-204",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -399,7 +399,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-205",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -428,7 +428,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-206",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -462,7 +462,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-207",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -501,7 +501,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-207a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -525,7 +525,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-208",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -559,7 +559,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-208a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -578,7 +578,7 @@ export const foreignersActPart07a = defineEditorialPart<
         {
           locator: "pkt 2–3",
           explanation:
-            "Без такої заборони орган повідомляє про рішення або намір надати pobyt stały за відповідним SIS-сценарієм.",
+            "Якщо заборона повторного в’їзду супроводжує рішення, орган повідомляє про наданий pobyt stały; якщо заборони немає, повідомляє про намір надати або про надання pobyt stały за відповідним SIS-сценарієм.",
         },
       ],
       legalEffect:
@@ -588,7 +588,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-208b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -622,7 +622,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-209",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -646,7 +646,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-210",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -680,7 +680,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-211",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -719,11 +719,11 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-212",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 212 визначає, які періоди входять до 5-річного pobyt для rezydent długoterminowy UE: у названих випадках сумарний legalny pobyt в UE за Blue Card, adnotacja «naukowiec» або міжнародний захист, період провадження про ochronę międzynarodową понад 18 місяців, а також повністю або наполовину окремі періоди в Польщі чи іншій державі-члені.",
+          text: "Art. 212 визначає, які періоди входять до 5-річного pobyt для rezydent długoterminowy UE: у названих випадках сумарний legalny pobyt в UE за Blue Card, adnotacja «naukowiec», міжнародний захист або документ іншої держави-члена для працівника високої кваліфікації, період провадження про ochronę międzynarodową понад 18 місяців, а також повністю або наполовину окремі періоди в Польщі чи іншій державі-члені.",
           sourceLocator: "Art. 212 ust. 1 pkt 1–4",
         },
         {
@@ -738,7 +738,7 @@ export const foreignersActPart07a = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1–2",
           explanation:
-            "Для Blue Card, naukowiec та міжнародного захисту перевірте весь період у UE, мінімальний польський період і спеціальну підставу наступного wniosek.",
+            "Для Blue Card, adnotacja «naukowiec», міжнародного захисту та названого висококваліфікованого pobytu перевірте весь період у UE, мінімальний польський період і спеціальну підставу наступного wniosek.",
         },
         {
           locator: "ust. 1 pkt 3–4",
@@ -758,7 +758,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-213",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -797,7 +797,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-214",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -826,7 +826,7 @@ export const foreignersActPart07a = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-214a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",

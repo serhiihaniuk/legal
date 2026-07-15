@@ -10,11 +10,11 @@ export const foreignersActPart07b2b = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-234",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Особа, яка знайшла чужий документ із Art. 226 pkt 1–3 або 5, невідкладно передає його wojewoda, відповідному komendant Policji, іншому organ administracji publicznej або konsul Rzeczypospolitej Polskiej. Ці суб’єкти невідкладно передають знайдений документ органу, який його видав, для unieważnienia.",
+          text: "Особа, яка знайшла чужий документ із Art. 226 pkt 1–3 або 5, невідкладно передає його wojewoda, komendant wojewódzki (Stołeczny), komendant powiatowy (miejski) або komendant komisariatu Policji, іншому organ administracji publicznej чи konsul Rzeczypospolitej Polskiej. Ці суб’єкти невідкладно передають знайдений документ органу, який його видав, для unieważnienia.",
           sourceLocator: "Art. 234 ust. 1–2",
         },
       ],
@@ -39,7 +39,7 @@ export const foreignersActPart07b2b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-235",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -68,7 +68,7 @@ export const foreignersActPart07b2b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-236",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -107,7 +107,7 @@ export const foreignersActPart07b2b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-236a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -131,7 +131,7 @@ export const foreignersActPart07b2b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-237",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -165,7 +165,7 @@ export const foreignersActPart07b2b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-238",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -183,7 +183,7 @@ export const foreignersActPart07b2b = defineEditorialPart<
         },
       ],
       legalEffect:
-        "За умовами Art. 238 плата за обмін може бути підвищена до 300% базової opłata, встановленої на підставі Art. 239 ust. 1.",
+        "За умовами Art. 238 плата за обмін підвищується до 300% базової opłata, встановленої на підставі Art. 239 ust. 1.",
       foreignersCase:
         "У справі визначте вид утраченого або знищеного документа, причину події та чи встановлена вина. Для wymianę перевірте базову opłata за Art. 239 і застосування підвищення за Art. 238.",
     },

@@ -10,11 +10,11 @@ export const foreignersActPart07b1 = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-215",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 215 передбачає cofnięcie zezwolenia na pobyt rezydenta długoterminowego UE, зокрема коли дозвіл набуто незаконно, cudzoziemiec становить rzeczywiste i poważne zagrożenie, надовго залишив Польщу або територію ЄС, отримав такий дозвіл в іншій державі-члені UE чи втратив status uchodźcy або ochronę uzupełniającą, якщо дозвіл було пов’язано з цим захистом.",
+          text: "Art. 215 передбачає cofnięcie zezwolenia na pobyt rezydenta długoterminowego UE, зокрема коли дозвіл набуто незаконно, cudzoziemiec становить rzeczywiste i poważne zagrożenie, залишив Польщу понад 6 років або територію ЄС послідовно на 12 місяців (чи на 24 місяці для названого висококваліфікованого pobytu та члена його сім’ї), отримав такий дозвіл в іншій державі-члені UE чи втратив status uchodźcy або ochronę uzupełniającą, якщо дозвіл було пов’язано з цим захистом.",
           sourceLocator: "Art. 215 ust. 1 pkt 1–6",
         },
         {
@@ -34,7 +34,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 3–5",
           explanation:
-            "Перевіряйте фактичні строки залишення території RP або UE та наявність дозволу rezydenta długoterminowego UE в іншій державі-члені; виняток у pkt 4 lit. b стосується названого висококваліфікованого pobytu і його сім’ї.",
+            "Перевіряйте точні строки залишення території RP або UE: понад 6 років для RP, 12 послідовних місяців для UE або 24 місяці для названого висококваліфікованого pobytu та члена його сім’ї; також перевіряйте наявність дозволу rezydenta długoterminowego UE в іншій державі-члені.",
         },
         {
           locator: "ust. 1 pkt 6; ust. 3",
@@ -49,7 +49,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-216",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -78,7 +78,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-217",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -102,7 +102,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-218",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -136,7 +136,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-219",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -145,7 +145,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
         },
         {
           kind: "statute-text",
-          text: "Разом із wnioskiem cudzoziemiec обґрунтовує його, подає письмове oświadczenie під rygor відповідальності за складання неправдивих заяв, важливий dokument podróży і tytuł prawny до житла, додає актуальну фотографію та документи для підтвердження даних і обставин. Umowa użyczenia не визнається таким титулом, крім позики від прямо названих близьких осіб.",
+          text: "Разом із wnioskiem cudzoziemiec обґрунтовує його, подає письмове oświadczenie під rygor відповідальності за складання неправдивих заяв, важливий dokument podróży і tytuł prawny до житла, додає актуальну фотографію та документи для підтвердження даних і обставин. Umowa użyczenia не визнається таким титулом, крім випадку, коли użyczającym є прямо названий близький родич: zstępny, wstępny, małżonek, rodzice małżonka або rodzeństwo cudzoziemca.",
           sourceLocator: "Art. 219 ust. 2–4",
         },
         {
@@ -180,7 +180,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-220",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -204,7 +204,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-221",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -228,7 +228,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-222",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -262,7 +262,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-223",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -291,7 +291,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-224",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -315,7 +315,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-225",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -339,7 +339,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-226",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -363,7 +363,7 @@ export const foreignersActPart07b1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-227",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
