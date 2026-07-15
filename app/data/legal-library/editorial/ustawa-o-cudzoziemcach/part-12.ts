@@ -1460,7 +1460,7 @@ export const foreignersActPart12 = defineEditorialPart<
         },
       ],
       summary:
-        "Art. 445 втратила чинність: у чинному тексті corpus зазначено лише «(uchylony)»."
+        "Art. 445 втратила чинність: у чинному тексті corpus зазначено лише «(uchylony)».",
       rules: [
         {
           locator: "Art. 445",

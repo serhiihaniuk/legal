@@ -10,7 +10,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-1",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -44,7 +44,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-2",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -78,7 +78,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-3",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -112,7 +112,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-4",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -141,7 +141,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-5",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -170,7 +170,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-6",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -199,7 +199,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-7",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -233,7 +233,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-8",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -267,7 +267,7 @@ export const temporaryResidenceApplicationPart01 = defineEditorialPart<
     },
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-9",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
