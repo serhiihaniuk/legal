@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion"
+import { LegalText } from "~/components/legal-reference-text"
 import type { KpaArticleExplanation } from "~/data/kpa-article-explanations/types"
 import { kpaArticleIndex } from "~/data/kpa-article-index"
 
@@ -85,7 +86,7 @@ export function KpaModuleArticleGuide({
                       {entry?.shortTitle ?? explanation.summary}
                     </span>
                     <span className="text-sm leading-6 font-normal text-muted-foreground">
-                      {explanation.summary}
+                      <LegalText text={explanation.summary} />
                     </span>
                   </span>
                   <span className="text-xs leading-6 font-normal whitespace-nowrap text-muted-foreground">
@@ -106,7 +107,7 @@ export function KpaModuleArticleGuide({
                       Що встановлює стаття
                     </h3>
                     <p className="mt-2 text-base leading-7 text-muted-foreground">
-                      {explanation.summary}
+                      <LegalText text={explanation.summary} />
                     </p>
                   </section>
 
@@ -137,7 +138,7 @@ export function KpaModuleArticleGuide({
                                 {rule.locator}
                               </p>
                               <p className="text-base leading-7 text-muted-foreground">
-                                {rule.explanation}
+                                <LegalText text={rule.explanation} />
                               </p>
                             </div>
                           </li>
@@ -161,7 +162,7 @@ export function KpaModuleArticleGuide({
                       Правовий наслідок
                     </h3>
                     <p className="mt-2 text-base leading-7 text-muted-foreground">
-                      {explanation.legalEffect}
+                      <LegalText text={explanation.legalEffect} />
                     </p>
                   </section>
 
@@ -176,7 +177,7 @@ export function KpaModuleArticleGuide({
                       Значення у справі іноземця
                     </h3>
                     <p className="mt-2 text-base leading-7 text-muted-foreground">
-                      {explanation.foreignersCase}
+                      <LegalText text={explanation.foreignersCase} />
                     </p>
                   </section>
                 </div>

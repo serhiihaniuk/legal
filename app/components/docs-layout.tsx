@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react"
 
 import { cn } from "~/lib/utils"
+import { ScrollArea } from "~/components/ui/scroll-area"
 
 export type TocItem = {
   href: string
@@ -67,9 +68,12 @@ export function DocsLayout({
       >
         <aside className="sticky top-[calc(var(--header-height)+0.6rem)] z-30 hidden h-[calc(100svh-10rem)] overflow-hidden overscroll-none bg-transparent lg:flex">
           <div className="absolute top-12 right-2 bottom-0 hidden h-full w-px bg-[linear-gradient(to_bottom,transparent_0%,var(--border)_10%,var(--border)_90%,transparent_100%)] lg:flex" />
-          <div className="w-(--sidebar-menu-width) overflow-x-hidden overflow-y-auto pt-12 pr-2 pl-2.5 [scrollbar-gutter:stable]">
+          <ScrollArea
+            showScrollbar={false}
+            className="h-full w-(--sidebar-menu-width) pt-12 pr-2 pl-2.5"
+          >
             {navigation}
-          </div>
+          </ScrollArea>
         </aside>
 
         <div data-slot="docs" className="flex scroll-mt-24 items-stretch pb-8 text-[1.05rem] sm:text-[15px] xl:w-full">

@@ -1,8 +1,10 @@
-import { ArrowLeft, ArrowRight, ExternalLink, FileText } from "lucide-react"
+import { ArrowLeft, ArrowRight, FileText } from "lucide-react"
 
 import type { TocItem } from "~/components/docs-layout"
+import { LegalText } from "~/components/legal-reference-text"
+import { OfficialSourceLink } from "~/components/official-source"
 import { Badge } from "~/components/ui/badge"
-import { Button, buttonVariants } from "~/components/ui/button"
+import { Button } from "~/components/ui/button"
 import {
   Combobox,
   ComboboxContent,
@@ -23,7 +25,6 @@ import type { KpaArticleExplanation } from "~/data/kpa-article-explanations"
 import { getLegalSourceManifest } from "~/data/legal-corpus"
 import { kpaArticleIndex, type KpaArticleEntry } from "~/data/kpa-article-index"
 import { kpaArticleTexts, kpaArticleTextSource } from "~/data/kpa-article-text"
-import { cn } from "~/lib/utils"
 
 const kpaSource = getLegalSourceManifest("kpa-2025-1691")!
 
@@ -202,15 +203,10 @@ export function KpaArticlesContent({
               />
             </DialogContent>
           </Dialog>
-          <a
-            href={kpaSource.officialPageUrl}
-            target="_blank"
-            rel="noreferrer"
-            className={cn(buttonVariants({ variant: "ghost" }), "no-underline")}
-          >
-            Офіційна сторінка ELI
-            <ExternalLink data-icon="inline-end" aria-hidden="true" />
-          </a>
+          <OfficialSourceLink
+            label="Офіційна сторінка ELI"
+            url={kpaSource.officialPageUrl}
+          />
         </div>
       </header>
 
@@ -226,7 +222,7 @@ export function KpaArticlesContent({
         <section id="article-explanation">
           <h2>Що встановлює art. {entry.article}</h2>
           <p className="text-lg leading-8 text-foreground">
-            {explanation.summary}
+            <LegalText text={explanation.summary} />
           </p>
         </section>
 
@@ -246,7 +242,7 @@ export function KpaArticlesContent({
                     {rule.locator}
                   </p>
                   <p className="text-sm leading-6 text-foreground">
-                    {rule.explanation}
+                    <LegalText text={rule.explanation} />
                   </p>
                 </div>
               ))}
@@ -267,7 +263,7 @@ export function KpaArticlesContent({
                 Юридичний ефект
               </h3>
               <p className="mt-2 text-sm leading-7 text-foreground">
-                {explanation.legalEffect}
+                <LegalText text={explanation.legalEffect} />
               </p>
             </div>
             <div className="py-5">
@@ -275,7 +271,7 @@ export function KpaArticlesContent({
                 У справі іноземця
               </h3>
               <p className="mt-2 text-sm leading-7 text-foreground">
-                {explanation.foreignersCase}
+                <LegalText text={explanation.foreignersCase} />
               </p>
             </div>
           </div>
@@ -297,7 +293,7 @@ export function KpaArticlesContent({
                 lang="pl"
                 className="text-sm leading-7 whitespace-pre-line text-foreground"
               >
-                {articleText}
+                {articleText ? <LegalText text={articleText} /> : null}
               </p>
             </div>
           ) : (

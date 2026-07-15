@@ -245,6 +245,23 @@ const documentByNormalizedTitle = new Map(
   documentCatalog.map((entry) => [entry.normalizedTitle, entry])
 )
 
+export type DocumentMentionPattern = {
+  label: string
+  entry: DocumentCatalogEntry
+}
+
+export const documentMentionPatterns: DocumentMentionPattern[] = [
+  ...new Map(
+    documentCatalog.flatMap((entry) => {
+      const labels = [entry.title, ...(entry.guide?.matches ?? [])]
+      return labels.map(
+        (label) =>
+          [`${entry.id}:${normalizeTitle(label)}`, { label, entry }] as const
+      )
+    })
+  ).values(),
+].sort((left, right) => right.label.length - left.label.length)
+
 export function documentEntryForTitle(title: string) {
   return documentByNormalizedTitle.get(normalizeTitle(title))
 }

@@ -162,4 +162,9 @@
     font-weight: inherit;
     text-decoration-line: none;
   }
+
+  .legal-reference-link {
+    color: var(--color-primary);
+    text-decoration-thickness: 1px;
+  }
 }

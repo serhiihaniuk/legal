@@ -1,13 +1,25 @@
 {
-  "id": "kpa-2025-1691",
+  "schemaVersion": 2,
+  "documentId": "kpa",
+  "editionId": "kpa-2025-1691",
   "shortName": "KPA",
   "title": "Kodeks postępowania administracyjnego",
   "citation": "Dz.U. 2025 poz. 1691",
   "publisher": "DU",
   "year": 2025,
   "position": 1691,
-  "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/1691/ogl",
-  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1691",
-  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
-  "checkedAt": "2026-07-14"
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/1691/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1691",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf"
+  },
+  "checkedAt": "2026-07-14",
+  "legalStateDate": "2026-07-14",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 306,
+    "expectedTextCoverage": 0.98,
+    "expectedPageCount": 46
+  }
 }

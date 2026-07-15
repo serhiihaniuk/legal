@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "documentId": "kpa",
+  "editionId": "kpa-2025-1691",
+  "profile": "polish-statute-art-v1",
+  "expected": {
+    "provisionCount": 306,
+    "pageCount": 46,
+    "textCoverage": 0.98
+  },
+  "observed": {
+    "pageCount": 46,
+    "textLayerPageCount": 46,
+    "textCoverage": 1,
+    "provisionCount": 306,
+    "articleCount": 306,
+    "promotedProvisionCount": 306,
+    "promotedPageCount": 45
+  },
+  "entries": [],
+  "fatal": [],
+  "warnings": []
+}

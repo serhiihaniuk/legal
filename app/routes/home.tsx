@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { useNavigate } from "react-router"
 
+import { LegalText } from "~/components/legal-reference-text"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import { Separator } from "~/components/ui/separator"
@@ -138,7 +139,7 @@ export default function Home() {
                   {section.title}
                 </h3>
                 <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-                  {section.description}
+                  <LegalText text={section.description} />
                 </p>
               </div>
               {"action" in section ? (
@@ -187,7 +188,7 @@ export default function Home() {
                   {index + 1}. {step.label}
                 </p>
                 <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
-                  {step.text}
+                  <LegalText text={step.text} />
                 </p>
               </li>
             ))}

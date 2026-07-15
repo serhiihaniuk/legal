@@ -1,13 +1,8 @@
-import {
-  ArrowRight,
-  CheckCircle2,
-  ExternalLink,
-  FileCheck2,
-  Map,
-  Scale,
-} from "lucide-react"
+import { ArrowRight, CheckCircle2, FileCheck2, Map, Scale } from "lucide-react"
 
 import type { TocItem } from "~/components/docs-layout"
+import { LegalText } from "~/components/legal-reference-text"
+import { OfficialSourceEntry } from "~/components/official-source"
 import {
   Accordion,
   AccordionContent,
@@ -272,10 +267,10 @@ function StageTopicRow({
             {node.title}
           </span>
           <span className="mt-1 block text-xs leading-5 text-muted-foreground">
-            {node.polish}
+            <LegalText text={node.polish} />
           </span>
           <span className="mt-1.5 block text-sm leading-6 text-muted-foreground">
-            {node.summary}
+            <LegalText text={node.summary} />
           </span>
         </span>
         <ArrowRight data-icon="inline-end" />
@@ -386,17 +381,17 @@ export function LegalMapOverview({
                         <Badge variant="outline">{nodes.length} тем</Badge>
                       </span>
                       <span className="mt-2 block text-sm leading-6">
-                        {stage.question}
+                        <LegalText text={stage.question} />
                       </span>
                       <span className="mt-2 block text-xs leading-5 text-muted-foreground">
-                        Результат: {stage.outcome}
+                        Результат: <LegalText text={stage.outcome} />
                       </span>
                     </span>
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pl-[3.25rem]">
                   <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
-                    {stage.description}
+                    <LegalText text={stage.description} />
                   </p>
                   <ol className="mt-4 border-t">
                     {nodes.map((node) => (
@@ -440,7 +435,7 @@ function LinkedNodeRows({
                 {node.title}
               </strong>
               <span className="mt-1 block text-xs leading-5 text-muted-foreground">
-                {node.polish}
+                <LegalText text={node.polish} />
               </span>
             </span>
             <ArrowRight data-icon="inline-end" />
@@ -458,11 +453,15 @@ function StatementBlock({ title, items }: { title: string; items: string[] }) {
     <div className="grid gap-3 border-b py-5 last:border-b-0 md:grid-cols-[11rem_minmax(0,1fr)] md:gap-6">
       <h3 className="m-0 text-sm font-medium">{title}</h3>
       {items.length === 1 ? (
-        <p className="m-0">{items[0]}</p>
+        <p className="m-0">
+          <LegalText text={items[0]} />
+        </p>
       ) : (
         <ul className="m-0">
           {items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              <LegalText text={item} />
+            </li>
           ))}
         </ul>
       )}
@@ -490,9 +489,21 @@ function ModelExplanation({
 
   return (
     <div>
-      {subject.length ? <p>{subject.join(" ")}</p> : null}
-      {activation.length ? <p>{activation.join(" ")}</p> : null}
-      {boundaryAndEffect.length ? <p>{boundaryAndEffect.join(" ")}</p> : null}
+      {subject.length ? (
+        <p>
+          <LegalText text={subject.join(" ")} />
+        </p>
+      ) : null}
+      {activation.length ? (
+        <p>
+          <LegalText text={activation.join(" ")} />
+        </p>
+      ) : null}
+      {boundaryAndEffect.length ? (
+        <p>
+          <LegalText text={boundaryAndEffect.join(" ")} />
+        </p>
+      ) : null}
     </div>
   )
 }
@@ -552,19 +563,27 @@ export function LegalNodeContent({
           ))}
         </p>
         <h1>{node.title}</h1>
-        <p className="lead">{node.polish}</p>
+        <p className="lead">
+          <LegalText text={node.polish} />
+        </p>
         {introduction.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>
+            <LegalText text={paragraph} />
+          </p>
         ))}
         <div data-not-typeset className="not-typeset mt-6 border-y py-5">
           <p className="text-xs font-medium text-muted-foreground">
             Питання етапу
           </p>
-          <p className="mt-2 text-sm leading-6">{stage.question}</p>
+          <p className="mt-2 text-sm leading-6">
+            <LegalText text={stage.question} />
+          </p>
           <p className="mt-4 text-xs font-medium text-muted-foreground">
             Результат етапу
           </p>
-          <p className="mt-2 text-sm leading-6">{stage.outcome}</p>
+          <p className="mt-2 text-sm leading-6">
+            <LegalText text={stage.outcome} />
+          </p>
         </div>
         <div data-not-typeset className="not-typeset mt-5">
           <Button
@@ -628,7 +647,9 @@ export function LegalNodeContent({
                   className="flex gap-3 border-b py-4 last:border-b-0"
                 >
                   <FileCheck2 className="mt-0.5 shrink-0 text-muted-foreground" />
-                  <p className="text-sm leading-6">{item}</p>
+                  <p className="text-sm leading-6">
+                    <LegalText text={item} />
+                  </p>
                 </div>
               ))}
             </div>
@@ -640,7 +661,9 @@ export function LegalNodeContent({
                 {node.checkpoints.map((item) => (
                   <li key={item} className="flex gap-3 text-sm leading-6">
                     <CheckCircle2 className="mt-1 shrink-0 text-muted-foreground" />
-                    <span>{item}</span>
+                    <span>
+                      <LegalText text={item} />
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -674,24 +697,14 @@ export function LegalNodeContent({
       <section id="node-regulation">
         <h2>Правова основа й офіційні джерела</h2>
         <p>
-          <strong>Локатор у праві:</strong> {node.polish}
+          <strong>Локатор у праві:</strong> <LegalText text={node.polish} />
         </p>
         {node.sources?.length ? (
           <ul data-not-typeset className="not-typeset mt-5 grid gap-4">
             {node.sources.map((source, index) => (
               <li key={`${source.url}-${index}`}>
                 {index > 0 ? <Separator className="mb-4" /> : null}
-                <a
-                  href={source.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium"
-                >
-                  {source.label} <ExternalLink />
-                </a>
-                <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                  {source.note}
-                </p>
+                <OfficialSourceEntry source={source} />
               </li>
             ))}
           </ul>

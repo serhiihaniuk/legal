@@ -20,3 +20,21 @@ node scripts/legal-corpus/build-document.mjs \
 
 The official PDF remains the visual source of truth. Extracted text is an index
 for navigation and learning, not a replacement for checking the page itself.
+
+## Future multi-document workflow
+
+The implementation source of truth for evolving `/guide/kpa` into the multi-document
+library is [the legal-library architecture blueprint](../docs/architecture/legal-library.md).
+The reusable review packet is [the add/update document work-order prompt](prompts/add-or-update-document.md).
+
+The intended workflow is: deterministic preparation of an immutable edition and
+its diagnostics; human/AI editorial review in the explicitly approved explanation
+scope; deterministic validation of source facts, references, and explanations; and
+an explicit, human-approved promotion step. For an update, stable provision IDs and
+normalized source hashes classify added, changed, removed, and unchanged provisions;
+changed provisions and known dependants require review. A fetched or generated
+edition does not silently become current.
+
+Target commands such as `corpus:prepare`, `corpus:validate`, `corpus:diff`, and
+`corpus:promote` are described in the blueprint but are **not currently implemented**.
+The KPA example above remains the currently available build command.

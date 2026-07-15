@@ -1,13 +1,7 @@
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Clock3,
-  ExternalLink,
-  FileText,
-  Scale,
-} from "lucide-react"
+import { ArrowRight, ArrowUpRight, Clock3, FileText, Scale } from "lucide-react"
 import { Link } from "react-router"
 
+import { OfficialSourceEntry } from "~/components/official-source"
 import {
   Accordion,
   AccordionContent,
@@ -41,6 +35,7 @@ import type {
   CaseGuideStage,
 } from "~/data/case-guide-types"
 import type { CaseDeadline, CaseDocument } from "~/data/legal-types"
+import { LegalText } from "~/components/legal-reference-text"
 import { cn } from "~/lib/utils"
 
 export const caseStudySectionIds = {
@@ -152,19 +147,19 @@ function DocumentRegister({ documents }: { documents: CaseDocument[] }) {
             {documents.map((document) => (
               <TableRow key={`${document.item}-${document.owner}`}>
                 <TableCell className="align-top font-medium whitespace-normal">
-                  {document.item}
+                  <LegalText text={document.item} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal">
                   <DocumentStatus document={document} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
-                  {document.owner}
+                  <LegalText text={document.owner} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal">
-                  {document.proves}
+                  <LegalText text={document.proves} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
-                  {document.law}
+                  <LegalText text={document.law} />
                 </TableCell>
               </TableRow>
             ))}
@@ -176,23 +171,29 @@ function DocumentRegister({ documents }: { documents: CaseDocument[] }) {
         {documents.map((document) => (
           <article key={`${document.item}-${document.owner}`} className="py-4">
             <div className="flex items-start justify-between gap-3">
-              <h3 className="text-base font-semibold">{document.item}</h3>
+              <h3 className="text-base font-semibold">
+                <LegalText text={document.item} />
+              </h3>
               <DocumentStatus document={document} />
             </div>
             <dl className="mt-3 grid gap-2 text-sm leading-6">
               <div>
                 <dt className="inline font-medium">Хто і коли:</dt>{" "}
                 <dd className="inline text-muted-foreground">
-                  {document.owner}
+                  <LegalText text={document.owner} />
                 </dd>
               </div>
               <div>
                 <dt className="inline font-medium">Доводить:</dt>{" "}
-                <dd className="inline">{document.proves}</dd>
+                <dd className="inline">
+                  <LegalText text={document.proves} />
+                </dd>
               </div>
               <div>
                 <dt className="inline font-medium">Правова роль:</dt>{" "}
-                <dd className="inline text-muted-foreground">{document.law}</dd>
+                <dd className="inline text-muted-foreground">
+                  <LegalText text={document.law} />
+                </dd>
               </div>
             </dl>
           </article>
@@ -229,15 +230,22 @@ function DeadlineRegister({ deadlines }: { deadlines: CaseDeadline[] }) {
           <div className="grid gap-3 text-sm leading-6">
             <p>
               <strong>Початок відліку:</strong>{" "}
-              <span className="text-muted-foreground">{deadline.trigger}</span>
+              <span className="text-muted-foreground">
+                <LegalText text={deadline.trigger} />
+              </span>
             </p>
-            <p>{deadline.action}</p>
+            <p>
+              <LegalText text={deadline.action} />
+            </p>
           </div>
           <div className="grid gap-2 text-sm leading-6">
             <p className="border-l-2 border-primary pl-3">
-              <strong>Якщо пропустити:</strong> {deadline.consequence}
+              <strong>Якщо пропустити:</strong>{" "}
+              <LegalText text={deadline.consequence} />
             </p>
-            <p className="text-xs text-muted-foreground">{deadline.law}</p>
+            <p className="text-xs text-muted-foreground">
+              <LegalText text={deadline.law} />
+            </p>
           </div>
         </article>
       ))}
@@ -314,7 +322,7 @@ function StageDetails({ stage }: { stage: CaseGuideStage }) {
                               htmlFor={checkboxId}
                               className="text-base"
                             >
-                              {document.item}
+                              <LegalText text={document.item} />
                             </FieldLabel>
                             <DocumentStatus document={document} />
                           </div>
@@ -322,25 +330,25 @@ function StageDetails({ stage }: { stage: CaseGuideStage }) {
                             <strong className="font-medium text-foreground">
                               Навіщо на цьому етапі:
                             </strong>{" "}
-                            {document.proves}
+                            <LegalText text={document.proves} />
                           </FieldDescription>
                           <dl className="mt-2 grid gap-2 text-sm leading-6 lg:grid-cols-2">
                             <div>
                               <dt className="font-medium">Хто і коли</dt>
                               <dd className="text-muted-foreground">
-                                {document.owner}
+                                <LegalText text={document.owner} />
                               </dd>
                             </div>
                             <div>
                               <dt className="font-medium">Правова роль</dt>
                               <dd className="text-muted-foreground">
-                                {document.law}
+                                <LegalText text={document.law} />
                               </dd>
                             </div>
                           </dl>
                           <p className="mt-2 text-sm leading-6">
                             <strong>Перед відміткою:</strong>{" "}
-                            {documentChecklistHint(document)}
+                            <LegalText text={documentChecklistHint(document)} />
                           </p>
                         </FieldContent>
                       </Field>
@@ -376,10 +384,11 @@ function StageDetails({ stage }: { stage: CaseGuideStage }) {
                       {riskIndex + 1}. {risk.title}
                     </h4>
                     <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                      {risk.explanation}
+                      <LegalText text={risk.explanation} />
                     </p>
                     <p className="mt-2 text-sm leading-6">
-                      <strong>Що перевірити:</strong> {risk.check}
+                      <strong>Що перевірити:</strong>{" "}
+                      <LegalText text={risk.check} />
                     </p>
                   </li>
                 ))}
@@ -409,14 +418,16 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
             {index + 1}
           </div>
           <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Етап {index + 1} · {stage.question}
+            Етап {index + 1} · <LegalText text={stage.question} />
           </p>
           <h3 id={`case-stage-${stage.id}-heading`} className="mt-2">
             {stage.title}
           </h3>
 
           {stage.explanation.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p key={paragraph}>
+              <LegalText text={paragraph} />
+            </p>
           ))}
 
           <div
@@ -427,13 +438,17 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
               <p className="text-xs font-medium text-muted-foreground">
                 Хто веде етап
               </p>
-              <p className="mt-1 font-medium">{stage.actor}</p>
+              <p className="mt-1 font-medium">
+                <LegalText text={stage.actor} />
+              </p>
             </div>
             <div className="border-t py-3 md:border-t-0 md:border-l md:pl-4">
               <p className="text-xs font-medium text-muted-foreground">
                 Результат етапу
               </p>
-              <p className="mt-1 font-medium">{stage.outcome}</p>
+              <p className="mt-1 font-medium">
+                <LegalText text={stage.outcome} />
+              </p>
             </div>
           </div>
 
@@ -450,7 +465,9 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
                 className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-2 py-2"
               >
                 <span className="text-muted-foreground">{actionIndex + 1}</span>
-                <span>{action}</span>
+                <span>
+                  <LegalText text={action} />
+                </span>
               </li>
             ))}
           </ol>
@@ -484,7 +501,9 @@ function DefinitionRows({ items }: { items: DefinitionGridItem[] }) {
                 <dt className="text-xs font-medium text-muted-foreground">
                   {item.label}
                 </dt>
-                <dd className="mt-1 leading-6 font-medium">{item.value}</dd>
+                <dd className="mt-1 leading-6 font-medium">
+                  <LegalText text={item.value} />
+                </dd>
               </div>
             ))}
           </div>
@@ -525,13 +544,13 @@ function ConditionsMatrix({
             {conditions.map((condition) => (
               <TableRow key={`${condition.condition}-${condition.law}`}>
                 <TableCell className="align-top font-medium whitespace-normal">
-                  {condition.condition}
+                  <LegalText text={condition.condition} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal">
-                  {condition.modelFact}
+                  <LegalText text={condition.modelFact} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
-                  {condition.evidence}
+                  <LegalText text={condition.evidence} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal">
                   <Badge
@@ -543,8 +562,12 @@ function ConditionsMatrix({
                   </Badge>
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
-                  <p>{condition.risk}</p>
-                  <p className="mt-2 text-xs">{condition.law}</p>
+                  <p>
+                    <LegalText text={condition.risk} />
+                  </p>
+                  <p className="mt-2 text-xs">
+                    <LegalText text={condition.law} />
+                  </p>
                 </TableCell>
               </TableRow>
             ))}
@@ -559,7 +582,9 @@ function ConditionsMatrix({
             className="py-5"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
-              <h3 className="text-base font-semibold">{condition.condition}</h3>
+              <h3 className="text-base font-semibold">
+                <LegalText text={condition.condition} />
+              </h3>
               <Badge
                 variant={
                   condition.status === "confirmed" ? "secondary" : "outline"
@@ -571,24 +596,26 @@ function ConditionsMatrix({
             <dl className="mt-3 grid gap-2 text-sm leading-6">
               <div>
                 <dt className="inline font-medium">Факт:</dt>{" "}
-                <dd className="inline">{condition.modelFact}</dd>
+                <dd className="inline">
+                  <LegalText text={condition.modelFact} />
+                </dd>
               </div>
               <div>
                 <dt className="inline font-medium">Доказ:</dt>{" "}
                 <dd className="inline text-muted-foreground">
-                  {condition.evidence}
+                  <LegalText text={condition.evidence} />
                 </dd>
               </div>
               <div>
                 <dt className="inline font-medium">Ризик:</dt>{" "}
                 <dd className="inline text-muted-foreground">
-                  {condition.risk}
+                  <LegalText text={condition.risk} />
                 </dd>
               </div>
               <div>
                 <dt className="inline font-medium">Норма:</dt>{" "}
                 <dd className="inline text-muted-foreground">
-                  {condition.law}
+                  <LegalText text={condition.law} />
                 </dd>
               </div>
             </dl>
@@ -620,12 +647,15 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
         <h1>{route.title}</h1>
         <p className="text-muted-foreground">{route.subtitle}</p>
         {route.overview.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>
+            <LegalText text={paragraph} />
+          </p>
         ))}
 
         <blockquote>
           <p>
-            <strong>Результат маршруту.</strong> {route.result}
+            <strong>Результат маршруту.</strong>{" "}
+            <LegalText text={route.result} />
           </p>
           <p>
             Це навчальний гайд по типовому правовому маршруту. У кожній реальній
@@ -667,7 +697,9 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
         aria-labelledby="case-facts-heading"
       >
         <h2 id="case-facts-heading">Факти, які треба встановити у справі</h2>
-        <p>{route.profile.description}</p>
+        <p>
+          <LegalText text={route.profile.description} />
+        </p>
         <div
           data-not-typeset
           className="mt-5 overflow-hidden rounded-md border text-sm"
@@ -678,7 +710,7 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
                 Профіль маршруту
               </dt>
               <dd className="mt-1 leading-6 font-medium">
-                {route.profile.name}
+                <LegalText text={route.profile.name} />
               </dd>
             </div>
             <DefinitionRows items={route.profile.facts} />
@@ -696,7 +728,9 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
         aria-labelledby="case-choice-heading"
       >
         <h2 id="case-choice-heading">Чому обираємо саме цю підставу</h2>
-        <p>{route.choice.why}</p>
+        <p>
+          <LegalText text={route.choice.why} />
+        </p>
         <div
           data-not-typeset
           className="mt-6 divide-y border-y text-sm leading-6"
@@ -704,12 +738,14 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
           <div className="grid gap-2 py-4 md:grid-cols-[11rem_minmax(0,1fr)]">
             <h3 className="text-sm font-semibold">Найближча альтернатива</h3>
             <p className="text-muted-foreground">
-              {route.choice.closestAlternative}
+              <LegalText text={route.choice.closestAlternative} />
             </p>
           </div>
           <div className="grid gap-2 py-4 md:grid-cols-[11rem_minmax(0,1fr)]">
             <h3 className="text-sm font-semibold">Вирішальний критерій</h3>
-            <p className="text-muted-foreground">{route.choice.gate}</p>
+            <p className="text-muted-foreground">
+              <LegalText text={route.choice.gate} />
+            </p>
           </div>
         </div>
       </section>
@@ -814,23 +850,10 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
           Внутрішні матеріали пояснюють механізм, але юридичне твердження завжди
           звіряємо з актуальним офіційним текстом і датою факту.
         </p>
-        <ul className="list-none p-0">
+        <ul data-not-typeset className="not-typeset list-none p-0">
           {route.sources.map((source) => (
             <li key={source.url} className="border-t py-5 first:border-t-0">
-              <h3>{source.label}</h3>
-              <p>{source.note}</p>
-              <div data-not-typeset>
-                <Button
-                  nativeButton={false}
-                  variant="outline"
-                  render={
-                    <a href={source.url} target="_blank" rel="noreferrer" />
-                  }
-                >
-                  Відкрити офіційне джерело
-                  <ExternalLink data-icon="inline-end" aria-hidden="true" />
-                </Button>
-              </div>
+              <OfficialSourceEntry source={source} />
             </li>
           ))}
         </ul>

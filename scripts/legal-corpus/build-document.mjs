@@ -1,37 +1,55 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto"
-import { mkdir, readFile, writeFile } from "node:fs/promises"
+import {
+  access,
+  mkdir,
+  mkdtemp,
+  readFile,
+  rename,
+  rm,
+  stat,
+  writeFile,
+} from "node:fs/promises"
+import os from "node:os"
 import path from "node:path"
 import process from "node:process"
 
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs"
 
-const ARTICLE_PATTERN = /^Art\.\s+(\d+)(?:\s*([a-z]{1,2})|\s+([1-9]))?\s*\./gm
-const SUPERSCRIPT_DIGITS = {
-  1: "¹",
-  2: "²",
-  3: "³",
-  4: "⁴",
-  5: "⁵",
-  6: "⁶",
-  7: "⁷",
-  8: "⁸",
-  9: "⁹",
-}
-
-function normalizeText(value) {
-  return value
-    .replaceAll("\u00ad", "")
-    .replace(/\r\n?/g, "\n")
-    .replace(/[ \t]+/g, " ")
-    .replace(/ *\n */g, "\n")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim()
-}
+import { buildManifest, buildObservedFacts, buildStructure, projectArticles } from "./lib/artifacts.mjs"
+import {
+  validateConfig,
+  ConfigValidationError,
+} from "./lib/config.mjs"
+import { extractPages, extractProvisions } from "./lib/extraction.mjs"
+import {
+  assertNoFatalDiagnostics,
+  diagnostic,
+  makeDiagnostics,
+  validateCorpusFacts,
+} from "./lib/validation.mjs"
 
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"))
+}
+
+async function readOptionalJson(filePath) {
+  try {
+    return await readJson(filePath)
+  } catch (error) {
+    if (error?.code === "ENOENT") return undefined
+    throw error
+  }
+}
+
+async function pathExists(filePath) {
+  try {
+    await access(filePath)
+    return true
+  } catch {
+    return false
+  }
 }
 
 async function writeJson(filePath, value) {
@@ -51,101 +69,112 @@ async function fetchBytes(url) {
   return new Uint8Array(await response.arrayBuffer())
 }
 
-async function extractPages(pdfBytes) {
-  const loadingTask = getDocument({
-    data: pdfBytes,
-    disableWorker: true,
-    useSystemFonts: true,
-  })
-  const pdf = await loadingTask.promise
-  const pages = []
-
-  try {
-    for (let pdfPage = 1; pdfPage <= pdf.numPages; pdfPage += 1) {
-      const page = await pdf.getPage(pdfPage)
-      const content = await page.getTextContent()
-      const rawText = content.items
-        .map((item) => {
-          if (!("str" in item)) return ""
-          return `${item.str}${item.hasEOL ? "\n" : " "}`
-        })
-        .join("")
-      const text = normalizeText(rawText)
-
-      pages.push({
-        pdfPage,
-        text,
-        characterCount: text.length,
-        hasTextLayer: text.length > 0,
-      })
-    }
-  } finally {
-    await loadingTask.destroy()
-  }
-
-  return pages
+function sha256Bytes(bytes) {
+  return createHash("sha256").update(bytes).digest("hex")
 }
 
-function extractArticles(pages) {
-  const articles = []
-  let current = null
+async function readExistingEditionState({ dataDirectory, publicDirectory }) {
+  const manifests = []
+  const errors = []
+  const manifestPaths = [
+    path.join(dataDirectory, "manifest.json"),
+    path.join(publicDirectory, "manifest.json"),
+  ]
 
-  for (const page of pages) {
-    const matches = Array.from(page.text.matchAll(ARTICLE_PATTERN))
-
-    if (matches.length === 0) {
-      if (current && page.text) {
-        current.textParts.push(page.text)
-        current.endPdfPage = page.pdfPage
-      }
-      continue
-    }
-
-    const leading = page.text.slice(0, matches[0].index).trim()
-    if (current && leading) {
-      current.textParts.push(leading)
-      current.endPdfPage = page.pdfPage
-    }
-
-    matches.forEach((match, index) => {
-      if (current) articles.push(current)
-
-      const next = matches[index + 1]
-      const end = next?.index ?? page.text.length
-      current = {
-        article: `${match[1]}${match[2] ?? SUPERSCRIPT_DIGITS[match[3]] ?? ""}`,
-        pdfPage: page.pdfPage,
-        endPdfPage: page.pdfPage,
-        textParts: [page.text.slice(match.index, end).trim()],
-      }
-    })
+  for (const manifestPath of manifestPaths) {
+    const manifest = await readOptionalJson(manifestPath)
+    if (manifest) manifests.push({ path: manifestPath, value: manifest })
   }
 
-  if (current) articles.push(current)
-
-  const seenArticles = new Set()
-  const deduplicated = [...articles]
-    .reverse()
-    .filter((article) => {
-      if (seenArticles.has(article.article)) return false
-      seenArticles.add(article.article)
-      return true
-    })
-    .reverse()
-
-  return deduplicated.map(({ textParts, ...article }) => {
-    const text = normalizeText(textParts.join("\n"))
-    return {
-      ...article,
-      status:
-        /^Art\.\s+\d+\s*[a-z]{0,2}\s*\d?\s*\.\s*\(uchylon(?:y|a|e)\)/i.test(
-          text
+  for (const directory of [dataDirectory, publicDirectory]) {
+    if (!(await pathExists(directory))) continue
+    const manifestPath = path.join(directory, "manifest.json")
+    if (!(await pathExists(manifestPath))) {
+      errors.push(
+        diagnostic(
+          "fatal",
+          "identity.existing-directory-without-manifest",
+          `Existing edition directory ${directory} has no manifest.json`,
+          manifestPath
         )
-          ? "repealed"
-          : "active",
-      text,
+      )
     }
-  })
+  }
+
+  const sourcePath = path.join(publicDirectory, "source.pdf")
+  const publicManifest = manifests.find(({ path: manifestPath }) =>
+    manifestPath === path.join(publicDirectory, "manifest.json")
+  )
+  if (publicManifest && (await pathExists(sourcePath))) {
+    const sourceBytes = new Uint8Array(await readFile(sourcePath))
+    const actualChecksum = sha256Bytes(sourceBytes)
+    if (publicManifest.value.pdfSha256 && publicManifest.value.pdfSha256 !== actualChecksum) {
+      errors.push(
+        diagnostic(
+          "fatal",
+          "identity.local-pdf-checksum-mismatch",
+          "Existing source.pdf does not match its existing manifest checksum",
+          sourcePath,
+          { manifest: publicManifest.value.pdfSha256, actual: actualChecksum }
+        )
+      )
+    }
+  }
+
+  return { manifests: manifests.map(({ value }) => value), errors }
+}
+
+function nowWithoutMilliseconds() {
+  return new Date().toISOString().replace(/\.\d{3}Z$/, "Z")
+}
+
+async function publishEdition({
+  dataDirectory,
+  publicDirectory,
+  stagedDataDirectory,
+  stagedPublicDirectory,
+}) {
+  const token = `${process.pid}-${Date.now()}-${Math.random().toString(16).slice(2)}`
+  const targets = [
+    { target: dataDirectory, staged: stagedDataDirectory },
+    { target: publicDirectory, staged: stagedPublicDirectory },
+  ]
+  const backups = []
+  const installed = []
+
+  await mkdir(path.dirname(dataDirectory), { recursive: true })
+  await mkdir(path.dirname(publicDirectory), { recursive: true })
+
+  try {
+    for (const { target } of targets) {
+      if (!(await pathExists(target))) continue
+      const backup = `${target}.backup-${token}`
+      await rename(target, backup)
+      backups.push({ target, backup })
+    }
+
+    for (const { target, staged } of targets) {
+      await rename(staged, target)
+      installed.push(target)
+    }
+
+    await Promise.all(backups.map(({ backup }) => rm(backup, { recursive: true, force: true })))
+  } catch (error) {
+    for (const target of installed) {
+      await rm(target, { recursive: true, force: true }).catch(() => {})
+    }
+    for (const { target, backup } of backups.reverse()) {
+      if (await pathExists(backup)) {
+        await rename(backup, target).catch(() => {})
+      }
+    }
+    throw error
+  }
+}
+
+function asValidationError(error) {
+  if (error instanceof ConfigValidationError) return error
+  return error
 }
 
 async function main() {
@@ -158,69 +187,129 @@ async function main() {
 
   const projectRoot = process.cwd()
   const configPath = path.resolve(projectRoot, configArgument)
-  const config = await readJson(configPath)
-  const documentId = config.id
+  const rawConfig = await readJson(configPath)
+  const config = validateConfig(rawConfig)
   const dataDirectory = path.join(
     projectRoot,
     "app/data/legal-corpus",
-    documentId
+    config.editionId
   )
   const publicDirectory = path.join(
     projectRoot,
     "public/legal-sources",
-    documentId
+    config.editionId
   )
-  await Promise.all([
-    mkdir(dataDirectory, { recursive: true }),
-    mkdir(publicDirectory, { recursive: true }),
-  ])
-
-  const [metadataBytes, pdfBytes] = await Promise.all([
-    fetchBytes(config.metadataUrl),
-    fetchBytes(config.pdfUrl),
-  ])
-  const metadata = JSON.parse(new TextDecoder().decode(metadataBytes))
-  const pdfSha256 = createHash("sha256").update(pdfBytes).digest("hex")
-
-  await writeFile(path.join(publicDirectory, "source.pdf"), pdfBytes)
-
-  const pages = await extractPages(pdfBytes.slice())
-  const articles = extractArticles(pages)
-  const manifest = {
-    ...config,
-    localPdfUrl: `/legal-sources/${documentId}/source.pdf`,
-    pageCount: pages.length,
-    textLayerPageCount: pages.filter((page) => page.hasTextLayer).length,
-    detectedArticleCount: articles.length,
-    pdfSha256,
-    builtAt: new Date().toISOString().replace(/\.\d{3}Z$/, "Z"),
-    eli: {
-      identifier: metadata.ELI,
-      status: metadata.status,
-      inForce: metadata.inForce,
-      legalStatusDate: metadata.legalStatusDate,
-      textHTML: metadata.textHTML,
-      textPDF: metadata.textPDF,
-    },
+  const existing = await readExistingEditionState({ dataDirectory, publicDirectory })
+  if (existing.errors.length > 0) {
+    const error = new Error("Existing edition identity validation failed")
+    error.name = "CorpusValidationError"
+    error.diagnostics = { fatal: existing.errors }
+    throw error
   }
 
-  await Promise.all([
-    writeJson(path.join(dataDirectory, "manifest.json"), manifest),
-    writeJson(path.join(dataDirectory, "metadata.json"), metadata),
-    writeJson(path.join(dataDirectory, "pages.json"), pages),
-    writeJson(path.join(dataDirectory, "articles.json"), articles),
-    writeJson(path.join(publicDirectory, "manifest.json"), manifest),
+  const [metadataBytes, pdfBytes] = await Promise.all([
+    fetchBytes(config.source.metadataUrl),
+    fetchBytes(config.source.pdfUrl),
   ])
+  let metadata
+  try {
+    metadata = JSON.parse(new TextDecoder().decode(metadataBytes))
+  } catch (error) {
+    const wrapped = new Error(`Official metadata is not valid JSON: ${error.message}`)
+    wrapped.name = "CorpusValidationError"
+    wrapped.diagnostics = {
+      fatal: [diagnostic("fatal", "source.metadata-invalid-json", wrapped.message, "metadata")],
+    }
+    throw wrapped
+  }
+
+  const pdfSha256 = sha256Bytes(pdfBytes)
+  const pages = await extractPages(pdfBytes.slice(), getDocument)
+  const provisions = extractProvisions(pages, {
+    documentId: config.documentId,
+    editionId: config.editionId,
+    sourcePdfSha256: pdfSha256,
+  })
+  const observed = buildObservedFacts(pages, provisions)
+  const structure = buildStructure(provisions, {
+    schemaVersion: config.schemaVersion,
+    documentId: config.documentId,
+    editionId: config.editionId,
+    profile: config.extraction.profile,
+  })
+  const validation = validateCorpusFacts({
+    config,
+    metadata,
+    pdfBytes,
+    pdfSha256,
+    pages,
+    provisions,
+    structure,
+    observed,
+    existingManifests: existing.manifests,
+  })
+  assertNoFatalDiagnostics(validation)
+
+  const diagnostics = makeDiagnostics({ config, observed, result: validation })
+  const manifest = buildManifest({
+    config,
+    metadata,
+    pdfSha256,
+    observed,
+    diagnostics: validation,
+    builtAt: nowWithoutMilliseconds(),
+  })
+  const articles = projectArticles(provisions)
+  const stageRoot = await mkdtemp(path.join(os.tmpdir(), `legal-corpus-${config.editionId}-`))
+  const stagedDataDirectory = path.join(stageRoot, "data")
+  const stagedPublicDirectory = path.join(stageRoot, "public")
+
+  try {
+    await Promise.all([
+      mkdir(stagedDataDirectory, { recursive: true }),
+      mkdir(stagedPublicDirectory, { recursive: true }),
+    ])
+    await Promise.all([
+      writeJson(path.join(stagedDataDirectory, "manifest.json"), manifest),
+      writeJson(path.join(stagedDataDirectory, "metadata.json"), metadata),
+      writeJson(path.join(stagedDataDirectory, "pages.json"), pages),
+      writeJson(path.join(stagedDataDirectory, "provisions.json"), provisions),
+      writeJson(path.join(stagedDataDirectory, "structure.json"), structure),
+      writeJson(path.join(stagedDataDirectory, "diagnostics.json"), diagnostics),
+      writeJson(path.join(stagedDataDirectory, "articles.json"), articles),
+      writeJson(path.join(stagedPublicDirectory, "manifest.json"), manifest),
+      writeFile(path.join(stagedPublicDirectory, "source.pdf"), pdfBytes),
+    ])
+    await publishEdition({
+      dataDirectory,
+      publicDirectory,
+      stagedDataDirectory,
+      stagedPublicDirectory,
+    })
+  } finally {
+    await rm(stageRoot, { recursive: true, force: true })
+  }
 
   process.stdout.write(
     `${JSON.stringify({
-      document: documentId,
-      pages: pages.length,
-      pagesWithText: manifest.textLayerPageCount,
-      articles: articles.length,
+      document: config.documentId,
+      edition: config.editionId,
+      pages: observed.pageCount,
+      pagesWithText: observed.textLayerPageCount,
+      provisions: observed.provisionCount,
+      articles: observed.articleCount,
       pdfSha256,
     })}\n`
   )
 }
 
-await main()
+try {
+  await main()
+} catch (error) {
+  const normalizedError = asValidationError(error)
+  if (normalizedError?.diagnostics?.fatal) {
+    process.stderr.write(`${JSON.stringify(normalizedError.diagnostics, null, 2)}\n`)
+  }
+  process.stderr.write(`${error.stack ?? error}\n`)
+  process.exitCode = 1
+}

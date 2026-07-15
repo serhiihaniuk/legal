@@ -5,6 +5,7 @@ import {
   caseStudyTableOfContents,
 } from "~/components/case-study-content"
 import { DocsLayout } from "~/components/docs-layout"
+import { LegalText } from "~/components/legal-reference-text"
 import { Button } from "~/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
 import { caseGuideCases, getCaseGuideCase } from "~/data/case-guide-navigation"
@@ -51,7 +52,7 @@ export default function CasePage() {
                   <span className="block">{item.label}</span>
                   {isActive ? (
                     <span className="mt-1 block text-xs font-normal text-muted-foreground">
-                      {item.description}
+                      <LegalText text={item.description} />
                     </span>
                   ) : null}
                 </span>
@@ -68,7 +69,7 @@ export default function CasePage() {
       <div data-not-typeset className="border-b pb-4">
         <nav
           aria-label="Види справ на малому екрані"
-          className="-mx-4 mb-4 flex gap-1 overflow-x-auto px-4 lg:hidden"
+          className="-mx-4 mb-4 flex gap-1 overflow-x-auto overflow-y-hidden px-4 lg:hidden"
         >
           {caseGuideCases.map((item) => (
             <Button
@@ -87,7 +88,7 @@ export default function CasePage() {
           {activeCase.label} · оберіть підставу
         </p>
         <Tabs value={route.id} onValueChange={selectRoute}>
-          <div className="-mx-4 [scrollbar-width:thin] overflow-x-auto px-4">
+          <div className="-mx-4 overflow-x-auto overflow-y-hidden px-4">
             <TabsList
               variant="line"
               className="h-10 w-max min-w-full justify-start"

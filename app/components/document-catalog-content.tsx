@@ -1,6 +1,11 @@
-import { ArrowRight, ExternalLink } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 import type { TocItem } from "~/components/docs-layout"
+import {
+  LegalReferenceArrow,
+  LegalText,
+} from "~/components/legal-reference-text"
+import { OfficialSourceEntry } from "~/components/official-source"
 import { Badge } from "~/components/ui/badge"
 import {
   documentCatalog,
@@ -269,8 +274,12 @@ export function DocumentDetailContent({
         </div>
         <h1>{document.title}</h1>
         <p className="lead">
-          {document.guide?.description ??
-            "Окрема довідка про роль документа в матеріалах атласу та його зв’язок із правовими умовами конкретної справи."}
+          <LegalText
+            text={
+              document.guide?.description ??
+              "Окрема довідка про роль документа в матеріалах атласу та його зв’язок із правовими умовами конкретної справи."
+            }
+          />
         </p>
         {document.guide?.documentType ? (
           <p>
@@ -279,7 +288,8 @@ export function DocumentDetailContent({
         ) : null}
         {document.guide ? (
           <p>
-            <strong>Хто готує або видає:</strong> {document.guide.preparedBy}
+            <strong>Хто готує або видає:</strong>{" "}
+            <LegalText text={document.guide.preparedBy} />
           </p>
         ) : null}
       </header>
@@ -289,7 +299,9 @@ export function DocumentDetailContent({
           <h2>Як отримати або підготувати</h2>
           <ol>
             {document.guide.howToObtain.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>
+                <LegalText text={item} />
+              </li>
             ))}
           </ol>
           {document.guide.formAndValidity?.length ? (
@@ -297,7 +309,9 @@ export function DocumentDetailContent({
               <h3>Форма, актуальність і строк</h3>
               <ul>
                 {document.guide.formAndValidity.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}>
+                    <LegalText text={item} />
+                  </li>
                 ))}
               </ul>
             </>
@@ -312,13 +326,17 @@ export function DocumentDetailContent({
             <h3>Що підтверджує або для чого потрібний</h3>
             <ul>
               {document.guide.purpose.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  <LegalText text={item} />
+                </li>
               ))}
             </ul>
             <h3>Чого сам по собі не доводить</h3>
             <ul>
               {document.guide.doesNotProve.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  <LegalText text={item} />
+                </li>
               ))}
             </ul>
           </>
@@ -326,7 +344,8 @@ export function DocumentDetailContent({
           <ul>
             {document.caseContexts.map((context) => (
               <li key={`${context.routeId}-${context.proves}`}>
-                <strong>{context.routeTitle}:</strong> {context.proves}
+                <strong>{context.routeTitle}:</strong>{" "}
+                <LegalText text={context.proves} />
               </li>
             ))}
           </ul>
@@ -342,7 +361,9 @@ export function DocumentDetailContent({
         <h2>Як перевіряти цей документ</h2>
         <ol>
           {(document.guide?.keyChecks ?? []).map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              <LegalText text={item} />
+            </li>
           ))}
         </ol>
         {relatedDocuments.length ? (
@@ -356,14 +377,13 @@ export function DocumentDetailContent({
               {relatedDocuments.map(({ title, entry }) => (
                 <li key={title} className="py-3">
                   {entry ? (
-                    <button
-                      type="button"
-                      onClick={() => onDocumentSelect(entry.id)}
-                      className="group flex w-full items-start justify-between gap-4 text-left text-sm font-medium"
-                    >
+                    <span className="group flex items-start justify-between gap-4 text-left text-sm font-medium">
                       {entry.title}
-                      <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
-                    </button>
+                      <LegalReferenceArrow
+                        reference={{ kind: "document", documentId: entry.id }}
+                        label={`Відкрити документ: ${entry.title}`}
+                      />
+                    </span>
                   ) : (
                     <span className="text-sm font-medium">{title}</span>
                   )}
@@ -383,7 +403,9 @@ export function DocumentDetailContent({
         {document.guide ? (
           <ul>
             {document.guide.legalBasis.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>
+                <LegalText text={item} />
+              </li>
             ))}
           </ul>
         ) : null}
@@ -400,19 +422,7 @@ export function DocumentDetailContent({
           <ul data-not-typeset className="not-typeset mt-5 grid gap-3">
             {document.sources.map((source) => (
               <li key={source.url} className="min-w-0 border-l pl-4">
-                <div>
-                  <a
-                    href={source.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium"
-                  >
-                    {source.label} <ExternalLink className="size-3.5" />
-                  </a>
-                  <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                    {source.note}
-                  </p>
-                </div>
+                <OfficialSourceEntry source={source} />
               </li>
             ))}
           </ul>

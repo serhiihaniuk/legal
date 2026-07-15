@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { useNavigate } from "react-router"
 
+import { LegalText } from "~/components/legal-reference-text"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import { Separator } from "~/components/ui/separator"
@@ -57,7 +58,9 @@ export function StudyPlanContent({
           </span>
         </div>
         <h1>{module.title}</h1>
-        <p className="text-muted-foreground">{module.outcome}</p>
+        <p className="text-muted-foreground">
+          <LegalText text={module.outcome} />
+        </p>
         <p>
           Курс проходиться послідовно. Кожен модуль дає одну робочу модель,
           конкретний результат і критерії, за якими можна перевірити себе до
@@ -73,7 +76,9 @@ export function StudyPlanContent({
       >
         <h2 id="study-material-heading">Що треба зрозуміти</h2>
         {module.introduction.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>
+            <LegalText text={paragraph} />
+          </p>
         ))}
 
         {module.lessons.map((lesson, index) => (
@@ -82,7 +87,9 @@ export function StudyPlanContent({
             aria-labelledby={`${module.id}-lesson-${index + 1}`}
           >
             <h3 id={`${module.id}-lesson-${index + 1}`}>{lesson.title}</h3>
-            <p>{lesson.explanation}</p>
+            <p>
+              <LegalText text={lesson.explanation} />
+            </p>
           </section>
         ))}
 
@@ -106,11 +113,14 @@ export function StudyPlanContent({
       >
         <h2 id="study-practice-heading">Практичне завдання</h2>
         <p>
-          <strong>Матеріал для роботи.</strong> {module.assignment.material}
+          <strong>Матеріал для роботи.</strong>{" "}
+          <LegalText text={module.assignment.material} />
         </p>
         <ol>
           {module.assignment.steps.map((step) => (
-            <li key={step}>{step}</li>
+            <li key={step}>
+              <LegalText text={step} />
+            </li>
           ))}
         </ol>
         <div
@@ -121,7 +131,7 @@ export function StudyPlanContent({
             Що має залишитися після вправи
           </p>
           <p className="mt-2 max-w-3xl text-sm leading-7">
-            {module.assignment.deliverable}
+            <LegalText text={module.assignment.deliverable} />
           </p>
         </div>
       </section>
@@ -140,13 +150,17 @@ export function StudyPlanContent({
         <h3>Критерії</h3>
         <ul>
           {module.assignment.rubric.map((criterion) => (
-            <li key={criterion}>{criterion}</li>
+            <li key={criterion}>
+              <LegalText text={criterion} />
+            </li>
           ))}
         </ul>
         <h3>Типові помилки</h3>
         <ul>
           {module.assignment.commonMistakes.map((mistake) => (
-            <li key={mistake}>{mistake}</li>
+            <li key={mistake}>
+              <LegalText text={mistake} />
+            </li>
           ))}
         </ul>
       </section>
@@ -158,7 +172,9 @@ export function StudyPlanContent({
         aria-labelledby="study-review-heading"
       >
         <h2 id="study-review-heading">Повторення через 7 днів</h2>
-        <p>{module.reviewPrompt}</p>
+        <p>
+          <LegalText text={module.reviewPrompt} />
+        </p>
         <p>
           Якщо не вдається відновити логіку без підказки, повторіть завдання на
           іншому прикладі. Переходьте далі лише тоді, коли можете пояснити не

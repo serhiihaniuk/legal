@@ -17,3 +17,5 @@ build
 
 # typescript
 *.tsbuildinfo
+
+.pi-subagents

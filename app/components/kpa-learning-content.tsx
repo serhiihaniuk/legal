@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
+import { LegalText } from "~/components/legal-reference-text"
 import { KpaModuleArticleGuide } from "~/components/kpa-module-article-guide"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
@@ -112,10 +113,11 @@ export function KpaLearningContent({
         </div>
         <h1>{guideModule.title}</h1>
         <p className="text-muted-foreground" lang="pl">
-          {guideModule.polish}
+          <LegalText text={guideModule.polish} />
         </p>
         <p className="text-lg leading-8">
-          <strong>Після цього модуля:</strong> {guideModule.outcome}
+          <strong>Після цього модуля:</strong>{" "}
+          <LegalText text={guideModule.outcome} />
         </p>
       </header>
 
@@ -127,25 +129,27 @@ export function KpaLearningContent({
           {moduleContext.stage}
         </p>
         <h2 id="kpa-position-heading">Де ця тема знаходиться в процедурі</h2>
-        <p>{layers.beginner.practice}</p>
+        <p>
+          <LegalText text={layers.beginner.practice} />
+        </p>
 
         <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
           <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
             <p className="text-sm font-medium">Питання модуля</p>
             <p className="text-sm leading-6 text-muted-foreground">
-              {guideModule.outcome}
+              <LegalText text={guideModule.outcome} />
             </p>
           </div>
           <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
             <p className="text-sm font-medium">Коли це потрібно</p>
             <p className="text-sm leading-6 text-muted-foreground">
-              {layers.practical.practice}
+              <LegalText text={layers.practical.practice} />
             </p>
           </div>
           <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
             <p className="text-sm font-medium">Чого тема не вирішує</p>
             <p className="text-sm leading-6 text-muted-foreground">
-              {layers.beginner.pitfall}
+              <LegalText text={layers.beginner.pitfall} />
             </p>
           </div>
         </div>
@@ -170,7 +174,7 @@ export function KpaLearningContent({
                   </span>
                   <strong className="text-sm leading-6">{phase.title}</strong>
                   <span className="text-sm leading-6 text-muted-foreground">
-                    {phase.description}
+                    <LegalText text={phase.description} />
                   </span>
                   <Badge variant="outline">{phase.modules}</Badge>
                 </li>
@@ -186,7 +190,9 @@ export function KpaLearningContent({
       >
         <h2 id="kpa-mechanism-heading">Як працює цей правовий механізм</h2>
         {lesson.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>
+            <LegalText text={paragraph} />
+          </p>
         ))}
 
         <div data-not-typeset className="not-typeset mt-7 divide-y border-y">
@@ -195,7 +201,7 @@ export function KpaLearningContent({
               Основне правило
             </p>
             <p className="mt-2 max-w-4xl text-base leading-7">
-              {layers.beginner.law}
+              <LegalText text={layers.beginner.law} />
             </p>
           </div>
           <div className="py-5">
@@ -203,7 +209,7 @@ export function KpaLearningContent({
               Як воно працює на практиці
             </p>
             <p className="mt-2 max-w-4xl text-base leading-7">
-              {layers.practical.law}
+              <LegalText text={layers.practical.law} />
             </p>
           </div>
           <div className="py-5">
@@ -211,7 +217,7 @@ export function KpaLearningContent({
               Межа або важливий виняток
             </p>
             <p className="mt-2 max-w-4xl text-base leading-7">
-              {layers.advanced.law}
+              <LegalText text={layers.advanced.law} />
             </p>
           </div>
         </div>
@@ -221,7 +227,9 @@ export function KpaLearningContent({
           {lesson.terms.map((item) => (
             <div key={item.term}>
               <dt lang="pl">{item.term}</dt>
-              <dd>{item.meaning}</dd>
+              <dd>
+                <LegalText text={item.meaning} />
+              </dd>
             </div>
           ))}
         </dl>
@@ -240,8 +248,12 @@ export function KpaLearningContent({
         <dl>
           {lesson.articles.map((article) => (
             <div key={article.reference}>
-              <dt lang="pl">{article.reference}</dt>
-              <dd>{article.role}</dd>
+              <dt lang="pl">
+                <LegalText text={article.reference} />
+              </dt>
+              <dd>
+                <LegalText text={article.role} />
+              </dd>
             </div>
           ))}
         </dl>
@@ -262,21 +274,21 @@ export function KpaLearningContent({
             <span className="font-mono text-xs text-muted-foreground">01</span>
             <strong className="text-sm">Факти</strong>
             <p className="text-sm leading-6 text-muted-foreground">
-              {lesson.caseExample.facts}
+              <LegalText text={lesson.caseExample.facts} />
             </p>
           </div>
           <div className="grid gap-2 py-5 sm:grid-cols-[3rem_8rem_minmax(0,1fr)] sm:gap-5">
             <span className="font-mono text-xs text-muted-foreground">02</span>
             <strong className="text-sm">Аналіз</strong>
             <p className="text-sm leading-6 text-muted-foreground">
-              {lesson.caseExample.analysis}
+              <LegalText text={lesson.caseExample.analysis} />
             </p>
           </div>
           <div className="grid gap-2 py-5 sm:grid-cols-[3rem_8rem_minmax(0,1fr)] sm:gap-5">
             <span className="font-mono text-xs text-muted-foreground">03</span>
             <strong className="text-sm">Висновок</strong>
             <p className="text-sm leading-6 text-foreground">
-              {lesson.caseExample.lesson}
+              <LegalText text={lesson.caseExample.lesson} />
             </p>
           </div>
         </div>
@@ -288,19 +300,28 @@ export function KpaLearningContent({
       >
         <h2 id="kpa-nuances-heading">Нюанси й типові помилки</h2>
         <ul>
-          <li>{layers.beginner.pitfall}</li>
-          <li>{layers.practical.pitfall}</li>
-          <li>{layers.advanced.pitfall}</li>
+          <li>
+            <LegalText text={layers.beginner.pitfall} />
+          </li>
+          <li>
+            <LegalText text={layers.practical.pitfall} />
+          </li>
+          <li>
+            <LegalText text={layers.advanced.pitfall} />
+          </li>
         </ul>
 
         <h3>Як застосувати знання до своєї справи</h3>
         <ol>
           {guideModule.method.map((step) => (
-            <li key={step}>{step}</li>
+            <li key={step}>
+              <LegalText text={step} />
+            </li>
           ))}
         </ol>
         <p>
-          <strong>Поглиблений рівень.</strong> {layers.advanced.focus}
+          <strong>Поглиблений рівень.</strong>{" "}
+          <LegalText text={layers.advanced.focus} />
         </p>
       </section>
 

@@ -55,7 +55,7 @@
 ## Content architecture
 
 - Źródło jest dowodem dla twierdzenia, nie substytutem wyjaśnienia. Linki grupujemy w jeden zwarty rejestr na końcu, a przy konkretnych tezach podajemy dokładny locator: artykuł, paragraf lub punkt.
-- Linki w treści prowadzą wyłącznie do zewnętrznych źródeł oficjalnych. Przejścia między wewnętrznymi materiałami są elementem nawigacji — menu, indeksu, selektora lub wyraźnej kontrolki — a nie linkiem osadzonym w akapicie.
+- Внутрішні правові посилання є частиною змісту: згадка конкретної статті KPA веде на сторінку статті, а згадка підготовленого документа — на його сторінку в каталозі. Посиланням є лише точний збіг правового терміна, а не весь абзац або рядок таблиці. Невизначене посилання на інший акт залишається текстом. Офіційні зовнішні джерела показуємо компактним inline-посиланням: назва джерела, іконка зовнішнього переходу та примітка під ними, без окремої кнопки для кожного джерела.
 - Kontrolka lokalizatora prawnego otwiera wersjonowany lokalny PDF bezpośrednio w dużym modalnym czytniku shadcn `Dialog`, bez pośredniej strony. Czytnik zaczyna od dokładnej strony artykułu, a obok kontrolki pozostaje oficjalna strona ELI do weryfikacji.
 - Nie używamy jednego obowiązkowego szablonu sekcji dla wszystkich instytucji. Struktura zależy od rodzaju materiału: norma KPA, materialna podstawa pobytu, dokument, case, termin lub porównanie.
 - Nie tworzymy osobnego nagłówka dla jednego ogólnego zdania. Powiązane warunki, wyjątki i skutki łączymy w jeden model decyzji, tabelę albo spójny rozdział.
@@ -98,7 +98,7 @@
 ## Components
 
 - Existing components to reuse: shadcn `base-vega` primitives in `app/components/ui`
-- New/changed components: app shell, global header/navigation menu, mobile selectors, docs-style KPA guide, article selector, article reader, map index, node detail, source links, case profile, route tabs, legal summary, document register, deadline register, exclusions, timeline accordion
+- New/changed components: app shell, global header/navigation menu, mobile selectors, docs-style KPA guide, article selector, article reader, map index, node detail, shared official-source entry/link, case profile, route tabs, legal summary, document register, deadline register, exclusions, timeline accordion, shared inline legal-reference renderer
 - Variants and states: selected, matched, dimmed, overview/full-depth, expanded/collapsed, foundational, procedural, practical, active case route, positive/negative procedural branch
 - Token/component ownership: semantyczne CSS variables i Tailwind v4 theme tokens w `app/app.css`
 
@@ -137,7 +137,7 @@
 ## Implementation constraints
 
 - Framework/styling system: Vite, React, TypeScript, React Router, Tailwind CSS v4, shadcn `base-vega`
-- Design-token constraints: semantyczne klasy i centralne CSS custom properties; brak surowych kolorów w komponentach
+- Design-token constraints: semantyczne klasy i centralne CSS custom properties; brak surowych kolorów w komponentach; wewnętrzne linki prawne korzystają z jednego resolvera rejestrów danych i jednego wzorca fokusu
 - Performance constraints: dane lokalne, brak zapytań API, rozsądny podział stron i komponentów
 - Compatibility constraints: współczesne Chrome, Safari, Firefox, Edge
 - Test/screenshot expectations: typecheck, production build, sprawdzenie tras, deep linków, interakcji, konsoli, responsywności i klawiatury
