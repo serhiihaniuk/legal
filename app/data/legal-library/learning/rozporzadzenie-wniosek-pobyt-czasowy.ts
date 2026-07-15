@@ -1,4 +1,9 @@
+import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
+
+const regulationLaw = createLegalLearningTextAuthor(
+  "rozporzadzenie-wniosek-pobyt-czasowy"
+)
 
 export const temporaryResidenceApplicationLearningCurriculum =
   defineLegalLearningCurriculum({
@@ -12,7 +17,7 @@ export const temporaryResidenceApplicationLearningCurriculum =
         order: 1,
         title: "Що насправді регулює цей акт",
         polish: "zakres rozporządzenia i wzór wniosku",
-        provisionScope: "§ 1–3 та додатки",
+        provisionScope: regulationLaw.text`${regulationLaw.paragraphRange("1", "3")} та додатки`,
         outcome:
           "Ви відрізняєте вимоги до форми заяви від умов отримання конкретного zezwolenia na pobyt czasowy.",
         caseQuestion:
@@ -52,7 +57,7 @@ export const temporaryResidenceApplicationLearningCurriculum =
         order: 2,
         title: "Вибрати правильний wzór і додаток",
         polish: "formularz główny, załącznik, pouczenie",
-        provisionScope: "§ 2–4 та załączniki 1–11",
+        provisionScope: regulationLaw.text`${regulationLaw.paragraphRange("2", "4")} та ${regulationLaw.annexRange("1", "11")}`,
         outcome:
           "Ви визначаєте, які частини комплекту стосуються заявника, роботодавця або іншого учасника.",
         caseQuestion:

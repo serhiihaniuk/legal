@@ -1,4 +1,7 @@
+import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
+
+const ppsaLaw = createLegalLearningTextAuthor("ppsa")
 
 export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
   documentId: "ppsa",
@@ -11,11 +14,10 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
       order: 1,
       title: "Коли WSA контролює administrację",
       polish: "sprawa sądowoadministracyjna; skarga",
-      provisionScope: "Art. 1–3",
+      provisionScope: ppsaLaw.text`${ppsaLaw.articleRange("1", "3")}`,
       outcome:
         "Ви відрізняєте адміністративну проблему від предмета контролю WSA і називаєте акт, дію або бездіяльність, які треба перевірити.",
-      caseQuestion:
-        "Що саме зробив або не зробив organ у справі про pobyt і чи належить це до предмета skargi за Art. 3?",
+      caseQuestion: ppsaLaw.text`Що саме зробив або не зробив organ у справі про pobyt і чи належить це до предмета skargi за ${ppsaLaw.article("3")}?`,
       placeInWork:
         "Перший фільтр перед обчисленням строку: без правильної кваліфікації документа не можна обрати судовий шлях.",
       sections: [
@@ -24,50 +26,52 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           title: "Факт → предмет контролю",
           paragraphs: [
             "Почніть із факту: у вас є decyzja, postanowienie, інший акт або czynność, чи орган не діє. Поняття sprawa sądowoadministracyjna означає справу судового контролю, а не новий розгляд заяви з нуля.",
-            "Art. 3 § 1–2 окреслює контроль sądów administracyjnych над діяльністю administracji publicznej та основні категорії skarg. Назва документа сама по собі не відповідає на питання про допустимість.",
+            ppsaLaw.text`${ppsaLaw.article("3", "Art. 3 § 1–2")} окреслює контроль sądów administracyjnych над діяльністю administracji publicznej та основні категорії skarg. Назва документа сама по собі не відповідає на питання про допустимість.`,
           ],
           questions: [
             "Який орган є автором дії та який конкретний результат або пропуск ви оскаржуєте?",
-            "Чи є це рішенням, postanowienie, бездіяльністю, przewlekłość або іншою категорією з Art. 3?",
+            ppsaLaw.text`Чи є це рішенням, postanowienie, бездіяльністю, przewlekłość або іншою категорією з ${ppsaLaw.article("3")}?`,
           ],
           steps: [
             "Зафіксуйте факт і документ із датою doręczenie.",
-            "Назвіть правове поняття предмета skargi та звірте його з Art. 3.",
+            ppsaLaw.text`Назвіть правове поняття предмета skargi та звірте його з ${ppsaLaw.article("3")}.`,
             "Лише потім перевіряйте спеціальну умову, шлях подання і строк.",
           ],
           evidence: [
             "decyzja або postanowienie з повним uzasadnienie",
             "підтвердження doręczenie, подана заява та листування про bezczynność",
           ],
-          warning:
-            "Art. 3 дає рамку контролю, але не замінює правил про допустимість, строк і форму skargi.",
+          warning: ppsaLaw.text`${ppsaLaw.article("3")} дає рамку контролю, але не замінює правил про допустимість, строк і форму skargi.`,
         },
         {
           id: "choose-remedy",
           title: "Норма → дія → засіб захисту",
           paragraphs: [
             "Після кваліфікації прив’яжіть кожну вимогу до норми й доказу: який недолік органу видно з akt, яку дію має виконати суд і який наслідок можливий. WSA контролює законність у межах PPSA, а не обіцяє конкретний дозвіл на pobyt.",
-            "Якщо предмет не входить до Art. 3 або інша умова skargi не виконана, процесуальна реакція може настати ще до оцінки суті. Тому remedy треба обирати після перевірки всього ланцюга.",
+            ppsaLaw.text`Якщо предмет не входить до ${ppsaLaw.article("3")} або інша умова skargi не виконана, процесуальна реакція може настати ще до оцінки суті. Тому remedy треба обирати після перевірки всього ланцюга.`,
           ],
-          questions: ["Який ефект ви просите: контроль рішення, бездіяльності чи іншої дії?"],
+          questions: [
+            "Який ефект ви просите: контроль рішення, бездіяльності чи іншої дії?",
+          ],
           steps: [
-            "Складіть ланцюг: факт → поняття → Art. 3 → доказ → процесуальна дія.",
+            ppsaLaw.text`Складіть ланцюг: факт → поняття → ${ppsaLaw.article("3")} → доказ → процесуальна дія.`,
             "Перевірте, який результат WSA юридично може надати.",
           ],
-          evidence: ["текст прохання (żądanie) та документи, що підтверджують порушення"],
+          evidence: [
+            "текст прохання (żądanie) та документи, що підтверджують порушення",
+          ],
           warning:
             "Судовий контроль і право на бажаний результат у справі про pobyt — різні питання.",
         },
       ],
-      exercise:
-        "Візьміть анонімізоване pismo organu: однією фразою назвіть факт, предмет за Art. 3, доказ і можливий судовий remedy.",
+      exercise: ppsaLaw.text`Візьміть анонімізоване pismo organu: однією фразою назвіть факт, предмет за ${ppsaLaw.article("3")}, доказ і можливий судовий remedy.`,
     },
     {
       id: "admissibility",
       order: 2,
       title: "Допустимість, exhaustion і маршрут skargi",
       polish: "wyczerpanie środków zaskarżenia; wniesienie skargi",
-      provisionScope: "Art. 46, 52–54, 57–58",
+      provisionScope: ppsaLaw.text`${ppsaLaw.article("46")}, ${ppsaLaw.articleRange("52", "54", { start: "52" })}, ${ppsaLaw.articleRange("57", "58", { start: "57" })}`,
       outcome:
         "Ви будуєте перевірку admissibility: чи вичерпано засоби, які маршрут подання діє, які формальні дані й строк треба перевірити без вигадування універсального числа днів.",
       caseQuestion:
@@ -79,8 +83,8 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "preconditions",
           title: "Факт → умова допустимості",
           paragraphs: [
-            "Перевірте, який акт і який адміністративний шлях уже пройдено. Wyczerpanie środków zaskarżenia за Art. 52 означає спершу використати доступний у справі засіб, якщо закон вимагає цього; винятки та спеціальні правила треба читати разом із конкретною процедурою.",
-            "Art. 53 пов’язує wniesienie skargi зі строком, а Art. 58 перелічує процесуальні підстави odrzucenie. Не підставляйте до кожної справи один «типовий» строк: встановіть норму, подію doręczenie і чинну редакцію.",
+            ppsaLaw.text`Перевірте, який акт і який адміністративний шлях уже пройдено. Wyczerpanie środków zaskarżenia за ${ppsaLaw.article("52")} означає спершу використати доступний у справі засіб, якщо закон вимагає цього; винятки та спеціальні правила треба читати разом із конкретною процедурою.`,
+            ppsaLaw.text`${ppsaLaw.article("53")} пов’язує wniesienie skargi зі строком, а ${ppsaLaw.article("58")} перелічує процесуальні підстави odrzucenie. Не підставляйте до кожної справи один «типовий» строк: встановіть норму, подію doręczenie і чинну редакцію.`,
           ],
           questions: [
             "Чи є рішенням остаточним результат адміністративного оскарження і чи існує доступний środek zaskarżenia?",
@@ -88,8 +92,8 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           ],
           steps: [
             "Зберіть chronologia: подання, decyzja, odwołanie або zażalenie, doręczenie.",
-            "Зіставте її з Art. 52–53 та перевірте особливе правило для предмета skargi.",
-            "Окремо перевірте формальні вимоги Art. 46 і ризики Art. 58.",
+            ppsaLaw.text`Зіставте її з ${ppsaLaw.articleRange("52", "53")} та перевірте особливе правило для предмета skargi.`,
+            ppsaLaw.text`Окремо перевірте формальні вимоги ${ppsaLaw.article("46")} і ризики ${ppsaLaw.article("58")}.`,
           ],
           evidence: [
             "decyzja та роз’яснення про засіб оскарження",
@@ -102,29 +106,32 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "filing-route",
           title: "Доказ → подання → наслідок",
           paragraphs: [
-            "Skarga має відповідати вимогам pisma та містити зрозуміле żądanie, фактичні й правові підстави та потрібні додатки. За Art. 54 skarga подається за pośrednictwem organu, діяльність якого оскаржується, якщо спеціальне правило не встановлює інакше.",
+            ppsaLaw.text`Skarga має відповідати вимогам pisma та містити зрозуміле żądanie, фактичні й правові підстави та потрібні додатки. За ${ppsaLaw.article("54")} skarga подається за pośrednictwem organu, діяльність якого оскаржується, якщо спеціальне правило не встановлює інакше.`,
             "Орган передає skargę та akta до суду за процесуальним маршрутом. Неправильне подання, невиправлений brak formalny або пропуск строку можуть закрити доступ до оцінки суті.",
           ],
-          questions: ["Куди фактично подається skarga і як ви доведете її своєчасність?"],
+          questions: [
+            "Куди фактично подається skarga і як ви доведете її своєчасність?",
+          ],
           steps: [
             "Підготуйте skarga, dowód opłaty якщо він потрібен, і перелік додатків.",
             "Подайте її належним маршрутом та збережіть dowód wniesienia.",
             "На wezwanie реагуйте в указаний судом строк і перевірте наслідок його пропуску.",
           ],
-          evidence: ["копія skargi, dowód wniesienia, dowód opłaty та підтвердження повноважень"],
+          evidence: [
+            "копія skargi, dowód wniesienia, dowód opłaty та підтвердження повноважень",
+          ],
           warning:
             "Подання skargi не означає автоматичного зупинення виконання оскарженого акта.",
         },
       ],
-      exercise:
-        "Зробіть таблицю з чотирма колонками: подія, Art. 52–53, доказ, наступна дія; не вписуйте строк, якого немає в перевіреному джерелі.",
+      exercise: ppsaLaw.text`Зробіть таблицю з чотирма колонками: подія, ${ppsaLaw.articleRange("52", "53")}, доказ, наступна дія; не вписуйте строк, якого немає в перевіреному джерелі.`,
     },
     {
       id: "parties-and-file",
       order: 3,
       title: "Сторони та akta sprawy",
       polish: "skarżący; organ; uczestnik postępowania; akta sprawy",
-      provisionScope: "Art. 32–37, 54, 133",
+      provisionScope: ppsaLaw.text`${ppsaLaw.articleRange("32", "37")}, ${ppsaLaw.article("54", "54")}, ${ppsaLaw.article("133", "133")}`,
       outcome:
         "Ви визначаєте skarżący, organ і можливого uczestnik, перевіряєте представництво та працюєте з повним адміністративним матеріалом.",
       caseQuestion:
@@ -136,7 +143,7 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "roles",
           title: "Факт → процесуальна роль",
           paragraphs: [
-            "Art. 32 називає сторонами skarżący та organ, дія, бездіяльність або przewlekłość якого є предметом skargi. За Art. 33 особа, на чий interes prawny впливає результат, може бути учасником на правах сторони за умовами норми.",
+            ppsaLaw.text`${ppsaLaw.article("32")} називає сторонами skarżący та organ, дія, бездіяльність або przewlekłość якого є предметом skargi. За ${ppsaLaw.article("33")} особа, на чий interes prawny впливає результат, може бути учасником на правах сторони за умовами норми.`,
             "Не плутайте фактичний інтерес із interes prawny. Спочатку покажіть, який правовий наслідок для особи випливає з предмета спору, а потім визначайте її процесуальну роль.",
           ],
           questions: [
@@ -145,9 +152,11 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           ],
           steps: [
             "Випишіть усі особи з рішення та akt адміністративної справи.",
-            "Кожній особі поставте роль за Art. 32–33 і зафіксуйте підставу.",
+            ppsaLaw.text`Кожній особі поставте роль за ${ppsaLaw.articleRange("32", "33")} і зафіксуйте підставу.`,
           ],
-          evidence: ["оскаржений akt, akta адміністративної справи, документи про правовий інтерес"],
+          evidence: [
+            "оскаржений akt, akta адміністративної справи, документи про правовий інтерес",
+          ],
           warning:
             "Сімейний, трудовий або економічний зв’язок сам по собі не доводить участі на правах сторони.",
         },
@@ -155,16 +164,20 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "representation-file",
           title: "Представництво → akta → дія",
           paragraphs: [
-            "Art. 34–37 регулюють особисту дію та pełnomocnik і момент долучення повноваження до akt. Перевірте вид і обсяг pełnomocnictwo, підпис та повноваження особи, яка підписує першу процесуальну дію.",
-            "Art. 54 пов’язує подання skargi з передачею суду akt, а Art. 133 вимагає читати матеріал справи як основу судового розгляду. Ваша позиція має показати: факт, норму, конкретний документ у akt і висновок.",
+            ppsaLaw.text`${ppsaLaw.articleRange("34", "37")} регулюють особисту дію та pełnomocnik і момент долучення повноваження до akt. Перевірте вид і обсяг pełnomocnictwo, підпис та повноваження особи, яка підписує першу процесуальну дію.`,
+            ppsaLaw.text`${ppsaLaw.article("54")} пов’язує подання skargi з передачею суду akt, а ${ppsaLaw.article("133")} вимагає читати матеріал справи як основу судового розгляду. Ваша позиція має показати: факт, норму, конкретний документ у akt і висновок.`,
           ],
-          questions: ["Якого документа бракує в akt, щоб підтвердити кожну умову вашої тези?"],
+          questions: [
+            "Якого документа бракує в akt, щоб підтвердити кожну умову вашої тези?",
+          ],
           steps: [
             "Перевірте pełnomocnictwo й його долучення до akt.",
             "Звірте опис доказів із фактичним вмістом переданих akt.",
             "Попросіть процесуальну реакцію, якщо істотний матеріал відсутній або помилково прочитаний.",
           ],
-          evidence: ["pełnomocnictwo, підтвердження його подання, повний spis akt і ключові сторінки"],
+          evidence: [
+            "pełnomocnictwo, підтвердження його подання, повний spis akt і ключові сторінки",
+          ],
           warning:
             "Суд не перетворює skarga на необмежене збирання нової справи; спершу працюйте з актами та належно поданими твердженнями.",
         },
@@ -177,7 +190,7 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
       order: 4,
       title: "Межі судового контролю та wstrzymanie",
       polish: "granice kontroli sądu; wstrzymanie wykonania",
-      provisionScope: "Art. 61, 134–135",
+      provisionScope: ppsaLaw.text`${ppsaLaw.article("61")}, ${ppsaLaw.articleRange("134", "135", { start: "134" })}`,
       outcome:
         "Ви відділяєте перевірку законності від повторного ведення адміністративної справи та обґрунтовуєте, коли потрібен wniosek o wstrzymanie wykonania.",
       caseQuestion:
@@ -189,8 +202,8 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "review-scope",
           title: "Поняття → норма → доказ",
           paragraphs: [
-            "Art. 134 визначає обсяг перевірки суду: WSA не обмежується лише названими сторонами підставами в межах встановленої законом рамки. Це не звільняє від точного викладу факту, порушеної норми та його доказу.",
-            "Art. 135 дає суду процесуальний інструмент для повного розгляду справи в необхідних межах. Не просіть суд замінити organ у виборі адміністративного рішення, якщо закон вимагає повторного розгляду.",
+            ppsaLaw.text`${ppsaLaw.article("134")} визначає обсяг перевірки суду: WSA не обмежується лише названими сторонами підставами в межах встановленої законом рамки. Це не звільняє від точного викладу факту, порушеної норми та його доказу.`,
+            ppsaLaw.text`${ppsaLaw.article("135")} дає суду процесуальний інструмент для повного розгляду справи в необхідних межах. Не просіть суд замінити organ у виборі адміністративного рішення, якщо закон вимагає повторного розгляду.`,
           ],
           questions: [
             "Яка норма регулює умову pobyt, а яка — процедуру її перевірки?",
@@ -199,9 +212,11 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           steps: [
             "Розкладіть тезу на факт, поняття, норму й доказ.",
             "Відокремте вимогу скасувати акт від бажаного адміністративного результату.",
-            "Перевірте, чи потрібна суду дія за Art. 135 для повного контролю.",
+            ppsaLaw.text`Перевірте, чи потрібна суду дія за ${ppsaLaw.article("135")} для повного контролю.`,
           ],
-          evidence: ["decyzja з uzasadnienie, протокол процесуальних дій, документи з akt та норма матеріального права"],
+          evidence: [
+            "decyzja з uzasadnienie, протокол процесуальних дій, документи з akt та норма матеріального права",
+          ],
           warning:
             "Ширший контроль WSA не означає автоматичне встановлення всіх фактів замість administracji.",
         },
@@ -209,29 +224,31 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "suspension",
           title: "Ризик → wniosek → тимчасовий ефект",
           paragraphs: [
-            "За Art. 61 wstrzymanie wykonania — окреме процесуальне питання. Покажіть не лише незгоду з рішенням, а конкретний ризик значної шкоди або наслідків, які важко відвернути чи усунути, якщо акт буде виконано.",
+            ppsaLaw.text`За ${ppsaLaw.article("61")} wstrzymanie wykonania — окреме процесуальне питання. Покажіть не лише незгоду з рішенням, а конкретний ризик значної шкоди або наслідків, які важко відвернути чи усунути, якщо акт буде виконано.`,
             "Зв’яжіть кожен ризик із доказом і просіть про wstrzymanie у належній процесуальній формі, не очікуючи, що сама skarga зупиняє виконання. Тимчасовий ефект не є рішенням по суті.",
           ],
-          questions: ["Яка дія виконання створює ризик, коли вона може настати і чим це підтверджено?"],
+          questions: [
+            "Яка дія виконання створює ризик, коли вона може настати і чим це підтверджено?",
+          ],
           steps: [
             "Опишіть факт виконання та конкретну шкоду.",
-            "Перевірте умови Art. 61 і подайте wniosek разом із доказами.",
+            ppsaLaw.text`Перевірте умови ${ppsaLaw.article("61")} і подайте wniosek разом із доказами.`,
             "Окремо продовжуйте доводити незаконність акта та контролюйте doręczenia.",
           ],
-          evidence: ["акт, повідомлення про виконання, підтвердження невідворотного наслідку та документи про особисту ситуацію"],
-          warning:
-            "Art. 61 не створює універсального автоматичного захисту; результат залежить від предмета та доведеного ризику.",
+          evidence: [
+            "акт, повідомлення про виконання, підтвердження невідворотного наслідку та документи про особисту ситуацію",
+          ],
+          warning: ppsaLaw.text`${ppsaLaw.article("61")} не створює універсального автоматичного захисту; результат залежить від предмета та доведеного ризику.`,
         },
       ],
-      exercise:
-        "Напишіть два абзаци: перший — порушення законності за Art. 134–135, другий — окремий доказаний ризик для wstrzymanie за Art. 61.",
+      exercise: ppsaLaw.text`Напишіть два абзаци: перший — порушення законності за ${ppsaLaw.articleRange("134", "135")}, другий — окремий доказаний ризик для wstrzymanie за ${ppsaLaw.article("61")}.`,
     },
     {
       id: "judgments-and-effects",
       order: 5,
       title: "Wyrok і його наслідки",
       polish: "wyrok; uchylenie; oddalenie; ocena prawna",
-      provisionScope: "Art. 141, 145–153, 170",
+      provisionScope: ppsaLaw.text`${ppsaLaw.article("141")}, ${ppsaLaw.articleRange("145", "153", { start: "145" })}, ${ppsaLaw.article("170", "170")}`,
       outcome:
         "Ви читаєте sentencja та uzasadnienie, розрізняєте uchylenie, przekazanie, oddalenie і розумієте обов’язковість правової оцінки без обіцянки конкретного дозволу.",
       caseQuestion:
@@ -243,16 +260,20 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "read-judgment",
           title: "Факт → вид wyrok → ефект",
           paragraphs: [
-            "Спочатку прочитайте sentencja, потім узгодьте її з uzasadnienie за Art. 141. За Art. 145 та пов’язаними нормами задоволення skargi може вести до uchylenie або іншого передбаченого законом результату; Art. 151 стосується oddalenie, коли підстав для задоволення немає.",
+            ppsaLaw.text`Спочатку прочитайте sentencja, потім узгодьте її з uzasadnienie за ${ppsaLaw.article("141")}. За ${ppsaLaw.article("145")} та пов’язаними нормами задоволення skargi може вести до uchylenie або іншого передбаченого законом результату; ${ppsaLaw.article("151")} стосується oddalenie, коли підстав для задоволення немає.`,
             "Uchylenie decyzja не дорівнює автоматичному наданню pobyt. Встановіть, який акт усунуто, чи передано справу на повторний розгляд і яку помилку organ має виправити.",
           ],
-          questions: ["Чи результатом є uchylenie, oddalenie або інший ефект, прямо зазначений у sentencja?"],
+          questions: [
+            "Чи результатом є uchylenie, oddalenie або інший ефект, прямо зазначений у sentencja?",
+          ],
           steps: [
             "Випишіть operative part і дату doręczenie wyrok.",
             "Знайдіть у uzasadnienie факт, норму, доказ і причину результату.",
             "Сформулюйте наступну дію organ або сторони без розширення змісту wyrok.",
           ],
-          evidence: ["sentencja, uzasadnienie, підтвердження doręczenie та оскаржений akt"],
+          evidence: [
+            "sentencja, uzasadnienie, підтвердження doręczenie та оскаржений akt",
+          ],
           warning:
             "Мотиви допомагають зрозуміти wyrok, але процесуальний ефект визначається законом і змістом постановленої sentencja.",
         },
@@ -260,16 +281,20 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "binding-assessment",
           title: "Правова оцінка → повторний розгляд → remedy",
           paragraphs: [
-            "Art. 153 пов’язує повторний розгляд із правовою оцінкою та вказівками суду в межах, визначених нормою. Art. 170 описує обов’язковість остаточного судового рішення. Перетворіть це на робочий список: кожна вказівка — факт, доказ, процесуальна дія organ.",
+            ppsaLaw.text`${ppsaLaw.article("153")} пов’язує повторний розгляд із правовою оцінкою та вказівками суду в межах, визначених нормою. ${ppsaLaw.article("170")} описує обов’язковість остаточного судового рішення. Перетворіть це на робочий список: кожна вказівка — факт, доказ, процесуальна дія organ.`,
             "Якщо висновок або його наслідок не відповідає вашій справі, перевірте доступний remedy, зокрема умови skarga kasacyjna, замість того щоб ігнорувати wyrok.",
           ],
-          questions: ["Яка частина правової оцінки є обов’язковою і який доказ підтвердить її виконання?"],
+          questions: [
+            "Яка частина правової оцінки є обов’язковою і який доказ підтвердить її виконання?",
+          ],
           steps: [
             "Виділіть із wyrok обов’язкову оцінку та вказівки.",
             "Порівняйте їх із новою дією organ і зафіксуйте невиконане.",
             "Перевірте доступний remedy та його процесуальну умову і строк.",
           ],
-          evidence: ["текст wyrok, новий akt organ, листування про виконання та порівняльна таблиця вказівок"],
+          evidence: [
+            "текст wyrok, новий akt organ, листування про виконання та порівняльна таблиця вказівок",
+          ],
           warning:
             "Не називайте строк remedy без перевірки дати doręczenie та конкретної норми PPSA.",
         },
@@ -282,7 +307,7 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
       order: 6,
       title: "Skarga kasacyjna та NSA",
       polish: "skarga kasacyjna; Naczelny Sąd Administracyjny",
-      provisionScope: "Art. 173–177, 183–185, 190",
+      provisionScope: ppsaLaw.text`${ppsaLaw.articleRange("173", "177")}, ${ppsaLaw.articleRange("183", "185", { start: "183" })}, ${ppsaLaw.article("190", "190")}`,
       outcome:
         "Ви відрізняєте касаційний контроль від третьої інстанції по фактах, формулюєте підставу, перевіряєте представництво й маршрут до NSA.",
       caseQuestion:
@@ -294,35 +319,41 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "cassation-grounds",
           title: "Помилка → касаційна підстава → доказ",
           paragraphs: [
-            "Art. 173–176 встановлюють skarga kasacyjna від wyrok WSA, її підстави, вимоги та правила представництва. Побудуйте аргумент так: факт із akt → правове поняття → порушена норма → конкретний фрагмент wyrok або procedura → вплив на результат.",
+            ppsaLaw.text`${ppsaLaw.articleRange("173", "176")} встановлюють skarga kasacyjna від wyrok WSA, її підстави, вимоги та правила представництва. Побудуйте аргумент так: факт із akt → правове поняття → порушена норма → конкретний фрагмент wyrok або procedura → вплив на результат.`,
             "Касація не є автоматичним повторенням оцінки всіх фактів. Перевірте, чи помилка належить до передбаченої законом підстави та чи може бути перевірена NSA.",
           ],
-          questions: ["Яка конкретна норма порушена WSA і де в wyrok видно це порушення?"],
+          questions: [
+            "Яка конкретна норма порушена WSA і де в wyrok видно це порушення?",
+          ],
           steps: [
             "Зіставте sentencja й uzasadnienie з матеріалами akt.",
             "Сформулюйте окремо кожну касаційну підставу і żądanie.",
-            "Перевірте допустимого pełnomocnik та всі формальні елементи Art. 176.",
+            ppsaLaw.text`Перевірте допустимого pełnomocnik та всі формальні елементи ${ppsaLaw.article("176")}.`,
           ],
-          evidence: ["wyrok WSA з uzasadnienie, akta, протокол або ключові документи і повноваження pełnomocnik"],
-          warning:
-            "Сам факт несприятливого wyrok не є касаційною підставою.",
+          evidence: [
+            "wyrok WSA з uzasadnienie, akta, протокол або ключові документи і повноваження pełnomocnik",
+          ],
+          warning: "Сам факт несприятливого wyrok не є касаційною підставою.",
         },
         {
           id: "nsa-route",
           title: "Doręczenie → маршрут → ефект NSA",
           paragraphs: [
-            "За Art. 177 skarga kasacyjna подається до NSA за pośrednictwem WSA; строк і його початок перевіряйте за чинною нормою та фактом doręczenie. Не замінюйте цей розрахунок пам’ятним «стандартним» числом.",
-            "Art. 183–185 описують межі розгляду NSA та можливі результати, а Art. 190 — обов’язковість правової оцінки NSA у подальшій справі в умовах норми. Висновок має охоплювати і remedy, і його очікуваний процесуальний ефект.",
+            ppsaLaw.text`За ${ppsaLaw.article("177")} skarga kasacyjna подається до NSA за pośrednictwem WSA; строк і його початок перевіряйте за чинною нормою та фактом doręczenie. Не замінюйте цей розрахунок пам’ятним «стандартним» числом.`,
+            ppsaLaw.text`${ppsaLaw.articleRange("183", "185")} описують межі розгляду NSA та можливі результати, а ${ppsaLaw.article("190")} — обов’язковість правової оцінки NSA у подальшій справі в умовах норми. Висновок має охоплювати і remedy, і його очікуваний процесуальний ефект.`,
           ],
-          questions: ["Коли і ким отримано wyrok з uzasadnienie, через який суд подається касація і чого саме ви просите від NSA?"],
+          questions: [
+            "Коли і ким отримано wyrok з uzasadnienie, через який суд подається касація і чого саме ви просите від NSA?",
+          ],
           steps: [
-            "Зафіксуйте doręczenie та перевірте строк за Art. 177.",
+            ppsaLaw.text`Зафіксуйте doręczenie та перевірте строк за ${ppsaLaw.article("177")}.`,
             "Подайте skarga kasacyjna належним маршрутом із доказом подання.",
             "Підготуйтеся до результату NSA: oddalenie або скасування з наслідком, визначеним wyrok.",
           ],
-          evidence: ["підтвердження doręczenie, skarga kasacyjna, dowód wniesienia, wyrok WSA і повноваження"],
-          warning:
-            "Skarga kasacyjna не гарантує скасування wyrok; перевірте кожну вимогу Art. 173–177 до подання.",
+          evidence: [
+            "підтвердження doręczenie, skarga kasacyjna, dowód wniesienia, wyrok WSA і повноваження",
+          ],
+          warning: ppsaLaw.text`Skarga kasacyjna не гарантує скасування wyrok; перевірте кожну вимогу ${ppsaLaw.articleRange("173", "177")} до подання.`,
         },
       ],
       exercise:
@@ -333,7 +364,7 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
       order: 7,
       title: "Виконання wyrok і koszty",
       polish: "wykonanie orzeczenia; niewykonanie wyroku; koszty postępowania",
-      provisionScope: "Art. 154–161, 200–205",
+      provisionScope: ppsaLaw.text`${ppsaLaw.articleRange("154", "161")}, ${ppsaLaw.articleRange("200", "205", { start: "200" })}`,
       outcome:
         "Ви перетворюєте остаточний wyrok на контрольований план виконання та окремо перевіряєте розподіл kosztów і можливий remedy при невиконанні.",
       caseQuestion:
@@ -345,16 +376,20 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "execute-judgment",
           title: "Wyrok → обов’язок organ → доказ",
           paragraphs: [
-            "Прочитайте обов’язок із sentencja разом із Art. 153 та Art. 154–161: чи має organ повторно розглянути справу, прийняти акт або виконати іншу вказану дію. Факт невиконання треба відділити від незгоди з новим, але вже прийнятим рішенням.",
-            "Якщо organ не виконує wyrok, перевірте спеціальний remedy за Art. 154–155 і його умови. Дійте за строком або вимогою, яку прямо встановлює застосовна норма чи wezwanie; універсальний строк тут не вигадується.",
+            ppsaLaw.text`Прочитайте обов’язок із sentencja разом із ${ppsaLaw.article("153")} та ${ppsaLaw.articleRange("154", "161")}: чи має organ повторно розглянути справу, прийняти акт або виконати іншу вказану дію. Факт невиконання треба відділити від незгоди з новим, але вже прийнятим рішенням.`,
+            ppsaLaw.text`Якщо organ не виконує wyrok, перевірте спеціальний remedy за ${ppsaLaw.articleRange("154", "155")} і його умови. Дійте за строком або вимогою, яку прямо встановлює застосовна норма чи wezwanie; універсальний строк тут не вигадується.`,
           ],
-          questions: ["Яку конкретну дію вимагає wyrok, коли її не виконано і що відповів organ?"],
+          questions: [
+            "Яку конкретну дію вимагає wyrok, коли її не виконано і що відповів organ?",
+          ],
           steps: [
             "Зробіть чекліст вказівок wyrok і дат doręczenie.",
             "Надішліть organ чітке звернення, якщо це доречно, та збережіть підтвердження.",
-            "За факту niewykonanie зіставте докази з Art. 154–161 і оберіть remedy.",
+            ppsaLaw.text`За факту niewykonanie зіставте докази з ${ppsaLaw.articleRange("154", "161")} і оберіть remedy.`,
           ],
-          evidence: ["остаточний wyrok, підтвердження doręczenie, листування з organ і новий акт або його відсутність"],
+          evidence: [
+            "остаточний wyrok, підтвердження doręczenie, листування з organ і новий акт або його відсутність",
+          ],
           warning:
             "Скасування акта не означає, що орган зобов’язаний видати саме бажаний дозвіл; межі випливають із wyrok і закону.",
         },
@@ -362,16 +397,20 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
           id: "costs",
           title: "Витрата → вимога → процесуальний ефект",
           paragraphs: [
-            "Art. 200–205 регулюють koszty postępowania та їх розподіл залежно від результату й процесуальної ситуації. Розділіть факт витрати, правову підставу вимоги та документ, який підтверджує оплату; суд не присуджує невизначені суми автоматично.",
+            ppsaLaw.text`${ppsaLaw.articleRange("200", "205")} регулюють koszty postępowania та їх розподіл залежно від результату й процесуальної ситуації. Розділіть факт витрати, правову підставу вимоги та документ, який підтверджує оплату; суд не присуджує невизначені суми автоматично.`,
             "Перевірте в sentencja, чи є рішення про koszty, і чи доступна окрема процесуальна дія. Потім поєднайте фінансовий ефект із основним remedy: виграш у kosztach не змінює змісту рішення про pobyt.",
           ],
-          questions: ["Які koszty реально понесені, хто їх заявив і який результат справи впливає на розподіл?"],
+          questions: [
+            "Які koszty реально понесені, хто їх заявив і який результат справи впливає на розподіл?",
+          ],
           steps: [
             "Зберіть dowód opłaty та інші документи про фактичні koszty.",
-            "Зіставте вимогу з Art. 200–205 і процесуальним результатом.",
+            ppsaLaw.text`Зіставте вимогу з ${ppsaLaw.articleRange("200", "205")} і процесуальним результатом.`,
             "Перевірте sentencja, порядок і строк окремого оскарження або виконання вимоги.",
           ],
-          evidence: ["dowód opłaty sądowej, рахунок або інший допустимий документ, sentencja щодо kosztów"],
+          evidence: [
+            "dowód opłaty sądowej, рахунок або інший допустимий документ, sentencja щодо kosztów",
+          ],
           warning:
             "Право на zwrot kosztów залежить від норми та результату конкретної процесуальної дії; не обіцяйте його наперед.",
         },

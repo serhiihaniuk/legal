@@ -1,4 +1,7 @@
+import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
+
+const foreignersLaw = createLegalLearningTextAuthor("ustawa-o-cudzoziemcach")
 
 export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
   documentId: "ustawa-o-cudzoziemcach",
@@ -11,7 +14,7 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 1,
       title: "В’їзд не дорівнює поточній підставі перебування",
       polish: "wjazd, tytuł pobytowy, podstawa pobytu, cel pobytu",
-      provisionScope: "art. 6–16 та art. 98–109",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("6", "16", { start: "art. 6" })} та ${foreignersLaw.articleRange("98", "109", { start: "art. 98" })}`,
       outcome:
         "Уміти розкласти справу на спосіб wjazd, чинний документ, правову підставу і фактичний cel pobytu.",
       caseQuestion:
@@ -75,7 +78,7 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 2,
       title: "Визнач мету pobyt czasowy",
       polish: "zezwolenie na pobyt czasowy, cel pobytu",
-      provisionScope: "art. 98–113 та art. 114–189",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("98", "113", { start: "art. 98" })} та ${foreignersLaw.articleRange("114", "189", { start: "art. 114" })}`,
       outcome:
         "Уміти обрати напрям аналізу за реальною метою pobytu, а не за назвою бланка чи порадою роботодавця.",
       caseQuestion:
@@ -138,13 +141,12 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 3,
       title: "Відокрем право на pobyt від права на pracę",
       polish: "legalny pobyt, dostęp do rynku pracy, zezwolenie na pracę",
-      provisionScope: "art. 98–146",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("98", "146", { start: "art. 98" })}`,
       outcome:
         "Уміти перевірити два окремі питання: чи законний pobyt і чи дозволена конкретна pracę.",
       caseQuestion:
         "Який документ підтверджує legalny pobyt, а яка норма та умови дають доступ до конкретної pracę?",
-      placeInWork:
-        "Перевірка наслідків перед початком або зміною роботи.",
+      placeInWork: "Перевірка наслідків перед початком або зміною роботи.",
       sections: [
         {
           id: "two-questions",
@@ -203,13 +205,12 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 4,
       title: "Заява, докази й процедура",
       polish: "wniosek, braki formalne, postępowanie, wezwanie",
-      provisionScope: "art. 98–109 та art. 114–189",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("98", "109", { start: "art. 98" })} та ${foreignersLaw.articleRange("114", "189", { start: "art. 114" })}`,
       outcome:
         "Уміти перетворити умову zezwolenie на перевірюваний пакет фактів, доказів і процесуальних дій.",
       caseQuestion:
         "Яку умову треба довести, яким документом і що робити після wezwanie або зміни обставин?",
-      placeInWork:
-        "Підготовка справи та контроль листування з органом.",
+      placeInWork: "Підготовка справи та контроль листування з органом.",
       sections: [
         {
           id: "condition-evidence",
@@ -268,7 +269,7 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 5,
       title: "Сім’я, навчання, дослідження та бізнес",
       polish: "pobyt rodzinny, studia, naukowiec, działalność gospodarcza",
-      provisionScope: "art. 114–189",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("114", "189", { start: "art. 114" })}`,
       outcome:
         "Уміти розрізняти спеціальні категорії pobyt czasowy за їхньою реальною функцією та умовами.",
       caseQuestion:
@@ -333,7 +334,7 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 6,
       title: "Pobyt stały та rezydent długoterminowy UE",
       polish: "zezwolenie na pobyt stały, rezydent długoterminowy UE",
-      provisionScope: "art. 195–220",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("195", "220", { start: "art. 195" })}`,
       outcome:
         "Уміти відрізняти дві самостійні підстави довготривалого статусу і перевіряти їхні власні умови.",
       caseQuestion:
@@ -398,7 +399,7 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 7,
       title: "Karta pobytu та інші документи",
       polish: "karta pobytu, dokument podróży, dokumenty cudzoziemca",
-      provisionScope: "art. 229–249",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("229", "249", { start: "art. 229" })}`,
       outcome:
         "Уміти визначити функцію кожного документа, його чинність і дію після втрати, зміни даних або завершення статусу.",
       caseQuestion:
@@ -463,13 +464,12 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       order: 8,
       title: "Odmowa, cofnięcie, wygaśnięcie та засоби захисту",
       polish: "odmowa udzielenia, cofnięcie zezwolenia, wygaśnięcie, odwołanie",
-      provisionScope: "art. 99–103 та art. 198–220",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("99", "103", { start: "art. 99" })} та ${foreignersLaw.articleRange("198", "220", { start: "art. 198" })}`,
       outcome:
         "Уміти відрізнити вид негативного наслідку, його підставу, момент дії та доступний засіб захисту.",
       caseQuestion:
         "Це odmowa, cofnięcie чи wygaśnięcie, і що саме написано про оскарження?",
-      placeInWork:
-        "Розбір рішення та підготовка процесуальної реакції.",
+      placeInWork: "Розбір рішення та підготовка процесуальної реакції.",
       sections: [
         {
           id: "name-the-effect",
@@ -527,8 +527,9 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
       id: "return-and-date-sensitive-analysis",
       order: 9,
       title: "Powrót і аналіз за датою",
-      polish: "zobowiązanie do powrotu, zakaz ponownego wjazdu, przepisy przejściowe",
-      provisionScope: "art. 294–353",
+      polish:
+        "zobowiązanie do powrotu, zakaz ponownego wjazdu, przepisy przejściowe",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("294", "353", { start: "art. 294" })}`,
       outcome:
         "Уміти аналізувати справу за датою кожної події, чинною редакцією та окремим питанням про powrót.",
       caseQuestion:

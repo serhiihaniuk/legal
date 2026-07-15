@@ -1,5 +1,18 @@
+import {
+  createLegalLearningTextAuthor,
+  type LegalLearningText,
+} from "./legal-text"
+import { defineLegalLearningContent } from "./types"
 import type { AuthoredLearningDocumentId, LegalLearningModule } from "./types"
 import type { LegalLearningCoursePhase } from "./view-types"
+
+const ppsaLaw = createLegalLearningTextAuthor("ppsa")
+const kpaLaw = createLegalLearningTextAuthor("kpa")
+const foreignersLaw = createLegalLearningTextAuthor("ustawa-o-cudzoziemcach")
+const workLaw = createLegalLearningTextAuthor("powierzanie-pracy")
+const regulationLaw = createLegalLearningTextAuthor(
+  "rozporzadzenie-wniosek-pobyt-czasowy"
+)
 
 export type DocumentReadingGuide = {
   module: LegalLearningModule
@@ -8,23 +21,21 @@ export type DocumentReadingGuide = {
   terms: readonly { term: string; meaning: string }[]
   caseExample: {
     title: string
-    facts: string
-    analysis: string
-    lesson: string
+    facts: LegalLearningText
+    analysis: LegalLearningText
+    lesson: LegalLearningText
   }
 }
 
-export const documentReadingGuides: Record<
-  AuthoredLearningDocumentId,
-  DocumentReadingGuide
-> = {
+export const documentReadingGuides = defineLegalLearningContent({
   ppsa: {
     module: {
       id: "read-the-act",
       order: 1,
       title: "Як читати PPSA і будувати шлях до WSA",
-      polish: "mapa p.p.s.a.; przedmiot skargi; dopuszczalność; rozpoznanie; orzeczenie",
-      provisionScope: "art. 1–3, 46–58, 61, 133–154, 173–193 PPSA",
+      polish:
+        "mapa p.p.s.a.; przedmiot skargi; dopuszczalność; rozpoznanie; orzeczenie",
+      provisionScope: ppsaLaw.text`${ppsaLaw.articleRange("1", "3", { start: "art. 1" })}, ${ppsaLaw.articleRange("46", "58", { start: "46" })}, ${ppsaLaw.article("61", "61")}, ${ppsaLaw.articleRange("133", "154", { start: "133" })}, ${ppsaLaw.articleRange("173", "193", { start: "173" })} PPSA`,
       outcome:
         "Ви читаєте PPSA як маршрут судового контролю: предмет skargi → допустимість → wniesienie → розгляд WSA → wyrok → подальший засіб і виконання.",
       caseQuestion:
@@ -36,8 +47,8 @@ export const documentReadingGuides: Record<
           id: "ppsa-map",
           title: "Спочатку знайдіть стадію, а не номер статті",
           paragraphs: [
-            "PPSA регулює postępowanie sądowoadministracyjne. Тому перше питання не «яка стаття допоможе виграти справу про pobyt», а «на якій стадії судового контролю ми знаходимося». Art. 1–3 задають предмет і межі цього контролю; подальші норми ведуть через wniesienie skargi, розгляд, orzeczenie, засоби оскарження, koszty та виконання.",
-            "Один фактичний конфлікт проходить через кілька груп норм. Art. 3 допомагає назвати предмет контролю, але не відповідає за строк. Art. 52–54 регулюють процесуальний вхід, але не визначають, як WSA оцінить законність decyzji. Після wyroku треба перейти до норм про його skutek, uzasadnienie, prawomocność або skargę kasacyjną.",
+            ppsaLaw.text`${ppsaLaw.document("PPSA")} регулює postępowanie sądowoadministracyjne. Тому перше питання не «яка стаття допоможе виграти справу про pobyt», а «на якій стадії судового контролю ми знаходимося». ${ppsaLaw.articleRange("1", "3")} задають предмет і межі цього контролю; подальші норми ведуть через wniesienie skargi, розгляд, orzeczenie, засоби оскарження, koszty та виконання.`,
+            ppsaLaw.text`Один фактичний конфлікт проходить через кілька груп норм. ${ppsaLaw.article("3")} допомагає назвати предмет контролю, але не відповідає за строк. ${ppsaLaw.articleRange("52", "54")} регулюють процесуальний вхід, але не визначають, як WSA оцінить законність decyzji. Після wyroku треба перейти до норм про його skutek, uzasadnienie, prawomocność або skargę kasacyjną.`,
           ],
           questions: [
             "Що саме оскаржується: decyzja, postanowienie, czynność, bezczynność чи przewlekłość?",
@@ -72,55 +83,73 @@ export const documentReadingGuides: Record<
           id: "ppsa-not-kpa",
           title: "Тримайте поруч три різні акти",
           paragraphs: [
-            "У справі іноземця матеріальна norma зазвичай походить з ustawy o cudzoziemcach або іншого спеціального акту. KPA регулює адміністративне провадження перед organem. PPSA починає працювати на рівні sądowej kontroli. Одне порушення треба описати мовою кожного відповідного шару.",
+            ppsaLaw.text`У справі іноземця матеріальна norma зазвичай походить з ${foreignersLaw.document("ustawy o cudzoziemcach")} або іншого спеціального акту. ${kpaLaw.document("KPA")} регулює адміністративне провадження перед organem. ${ppsaLaw.document("PPSA")} починає працювати на рівні sądowej kontroli. Одне порушення треба описати мовою кожного відповідного шару.`,
           ],
-          warning:
-            "Не переносіть автоматично поняття й строки KPA до PPSA. Odwołanie і skarga, organ odwoławczy і WSA, decyzja і wyrok виконують різні функції.",
+          warning: ppsaLaw.text`Не переносіть автоматично поняття й строки ${kpaLaw.document("KPA")} до ${ppsaLaw.document("PPSA")}. Odwołanie і skarga, organ odwoławczy і WSA, decyzja і wyrok виконують різні функції.`,
         },
       ],
-      exercise:
-        "Для анонімізованої decyzji про pobyt побудуйте односторінкову карту: lex specialis → KPA → остаточний акт → Art. 3 PPSA → bramka dopuszczalności → можливий wyrok → наступний засіб.",
-      references: [
-        {
-          label: "KPA",
-          target: { kind: "legal-document", documentId: "kpa" },
-        },
-        {
-          label: "ustawy o cudzoziemcach",
-          target: {
-            kind: "legal-document",
-            documentId: "ustawa-o-cudzoziemcach",
-          },
-        },
-        {
-          label: "Art. 3 PPSA",
-          target: {
-            kind: "legal-provision",
-            documentId: "ppsa",
-            provisionId: "ppsa-art-3",
-          },
-        },
-      ],
+      exercise: ppsaLaw.text`Для анонімізованої decyzji про pobyt побудуйте односторінкову карту: lex specialis → ${kpaLaw.document("KPA")} → остаточний акт → ${ppsaLaw.article("3", "Art. 3 PPSA")} → bramka dopuszczalności → можливий wyrok → наступний засіб.`,
     },
     phases: [
-      { number: "01", title: "Відкрити судовий шлях", description: "Предмет kontroli, вид skargi, legitymacja, exhaustion, строк і маршрут wniesienia.", modules: "Модулі 1–3" },
-      { number: "02", title: "Підготувати матеріал", description: "Учасники, pełnomocnictwo, akta, żądanie та wniosek про wstrzymanie.", modules: "Модулі 4–5" },
-      { number: "03", title: "Прочитати результат WSA", description: "Межі rozpoznania, види orzeczeń, skutek wyroku та зв’язаність organu.", modules: "Модулі 6–7" },
-      { number: "04", title: "Перевірити, що далі", description: "Skarga kasacyjna, NSA, prawomocność, виконання і koszty.", modules: "Модулі 8" },
+      {
+        number: "01",
+        title: "Відкрити судовий шлях",
+        description:
+          "Предмет kontroli, вид skargi, legitymacja, exhaustion, строк і маршрут wniesienia.",
+        modules: "Модулі 1–3",
+      },
+      {
+        number: "02",
+        title: "Підготувати матеріал",
+        description:
+          "Учасники, pełnomocnictwo, akta, żądanie та wniosek про wstrzymanie.",
+        modules: "Модулі 4–5",
+      },
+      {
+        number: "03",
+        title: "Прочитати результат WSA",
+        description:
+          "Межі rozpoznania, види orzeczeń, skutek wyroku та зв’язаність organu.",
+        modules: "Модулі 6–7",
+      },
+      {
+        number: "04",
+        title: "Перевірити, що далі",
+        description: "Skarga kasacyjna, NSA, prawomocność, виконання і koszty.",
+        modules: "Модулі 8",
+      },
     ],
     courseDescription:
       "Курс іде шляхом sądowej kontroli: від визначення предмета skargi до виконання prawomocnego orzeczenia.",
     terms: [
-      { term: "przedmiot skargi", meaning: "Конкретний акт, дія, бездіяльність або przewlekłość, законність яких має контролювати суд." },
-      { term: "dopuszczalność", meaning: "Сукупність процесуальних умов, без яких суд не переходить до оцінки zarzutów по суті." },
-      { term: "sentencja", meaning: "Резолютивна частина orzeczenia; саме її треба відрізняти від пояснень у uzasadnieniu." },
-      { term: "skarga kasacyjna", meaning: "Окремий формалізований засіб до NSA, а не повторне звичайне odwołanie від рішення органу." },
+      {
+        term: "przedmiot skargi",
+        meaning:
+          "Конкретний акт, дія, бездіяльність або przewlekłość, законність яких має контролювати суд.",
+      },
+      {
+        term: "dopuszczalność",
+        meaning:
+          "Сукупність процесуальних умов, без яких суд не переходить до оцінки zarzutów по суті.",
+      },
+      {
+        term: "sentencja",
+        meaning:
+          "Резолютивна частина orzeczenia; саме її треба відрізняти від пояснень у uzasadnieniu.",
+      },
+      {
+        term: "skarga kasacyjna",
+        meaning:
+          "Окремий формалізований засіб до NSA, а не повторне звичайне odwołanie від рішення органу.",
+      },
     ],
     caseExample: {
       title: "Від decyzji wojewody до карти судового контролю",
-      facts: "Іноземець отримав остаточну decyzję про відмову в pobyt. У письмі є pouczenie, а в aktach — документи, яких organ не обговорив в uzasadnieniu.",
-      analysis: "Спочатку відділяємо матеріальну умову з ustawy o cudzoziemcach від процесуального порушення KPA. Потім за Art. 3 PPSA визначаємо предмет skargi, окремо перевіряємо dopuszczalność, строк і маршрут, формулюємо zarzut через конкретний матеріал akt та встановлюємо, який skutek WSA може надати.",
-      lesson: "PPSA читається не від випадкового номера статті, а як послідовність процесуальних воріт. Пропуск одного ворота може закрити шлях до оцінки порушення по суті.",
+      facts:
+        "Іноземець отримав остаточну decyzję про відмову в pobyt. У письмі є pouczenie, а в aktach — документи, яких organ не обговорив в uzasadnieniu.",
+      analysis: ppsaLaw.text`Спочатку відділяємо матеріальну умову з ${foreignersLaw.document("ustawy o cudzoziemcach")} від процесуального порушення ${kpaLaw.document("KPA")}. Потім за ${ppsaLaw.article("3", "Art. 3 PPSA")} визначаємо предмет skargi, окремо перевіряємо dopuszczalność, строк і маршрут, формулюємо zarzut через конкретний матеріал akt та встановлюємо, який skutek WSA може надати.`,
+      lesson:
+        "PPSA читається не від випадкового номера статті, а як послідовність процесуальних воріт. Пропуск одного ворота може закрити шлях до оцінки порушення по суті.",
     },
   },
 
@@ -130,7 +159,7 @@ export const documentReadingGuides: Record<
       order: 1,
       title: "Як читати ustawę o cudzoziemcach",
       polish: "status cudzoziemca; wjazd; pobyt; cel pobytu; decyzja; powrót",
-      provisionScope: "art. 1–16 та тематичні działy ustawy o cudzoziemcach",
+      provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("1", "16", { start: "art. 1" })} та тематичні działy ustawy o cudzoziemcach`,
       outcome:
         "Ви знаходите в законі правильну правову трасу: особа і дата → поточний status → фактичний cel → конкретний вид pobytu → спільні умови → відмова, cofnięcie, документ і засіб захисту.",
       caseQuestion:
@@ -186,42 +215,69 @@ export const documentReadingGuides: Record<
       ],
       exercise:
         "Для однієї анонімізованої справи намалюйте трасу по закону: definicja/status → cel → спеціальна підстава → кожна przesłanka → odmowa/cofnięcie → документ → засіб захисту.",
-      references: [
-        {
-          label: "ustawy o cudzoziemcach",
-          target: {
-            kind: "legal-document",
-            documentId: "ustawa-o-cudzoziemcach",
-          },
-        },
-        {
-          label: "ustawie o cudzoziemcach",
-          target: {
-            kind: "legal-document",
-            documentId: "ustawa-o-cudzoziemcach",
-          },
-        },
-      ],
     },
     phases: [
-      { number: "01", title: "Встановити status і дату", description: "Wjazd, поточна podstawa pobytu, документ, chronologia та застосовна редакція.", modules: "Модулі 1–2" },
-      { number: "02", title: "Вибрати правову трасу", description: "Фактичний cel, pobyt czasowy, сім’я, навчання, праця, бізнес або інша підстава.", modules: "Модулі 3–6" },
-      { number: "03", title: "Довести умови", description: "Wniosek, позитивні й негативні przesłanki, докази, процедура і зміни фактів.", modules: "Модулі 7–8" },
-      { number: "04", title: "Прочитати наслідок", description: "Decyzja, karta, odmowa, cofnięcie, wygaśnięcie, powrót і засіб захисту.", modules: "Модулі 9–10" },
+      {
+        number: "01",
+        title: "Встановити status і дату",
+        description:
+          "Wjazd, поточна podstawa pobytu, документ, chronologia та застосовна редакція.",
+        modules: "Модулі 1–2",
+      },
+      {
+        number: "02",
+        title: "Вибрати правову трасу",
+        description:
+          "Фактичний cel, pobyt czasowy, сім’я, навчання, праця, бізнес або інша підстава.",
+        modules: "Модулі 3–6",
+      },
+      {
+        number: "03",
+        title: "Довести умови",
+        description:
+          "Wniosek, позитивні й негативні przesłanki, докази, процедура і зміни фактів.",
+        modules: "Модулі 7–8",
+      },
+      {
+        number: "04",
+        title: "Прочитати наслідок",
+        description:
+          "Decyzja, karta, odmowa, cofnięcie, wygaśnięcie, powrót і засіб захисту.",
+        modules: "Модулі 9–10",
+      },
     ],
     courseDescription:
       "Курс повторює роботу зі status cudzoziemca: від часової лінії та celu до рішення, документа і негативної гілки.",
     terms: [
-      { term: "podstawa pobytu", meaning: "Конкретна норма або документ, завдяки яким перебування особи є законним у визначений час." },
-      { term: "cel pobytu", meaning: "Фактична мета перебування, яку треба кваліфікувати за відповідним інститутом закону." },
-      { term: "zezwolenie", meaning: "Правовий status, що виникає з decyzji за виконання умов; його не слід ототожнювати з пластиковою kartą." },
-      { term: "przesłanka", meaning: "Окрема позитивна або негативна умова правового результату, яку потрібно перевірити на фактах і доказах." },
+      {
+        term: "podstawa pobytu",
+        meaning:
+          "Конкретна норма або документ, завдяки яким перебування особи є законним у визначений час.",
+      },
+      {
+        term: "cel pobytu",
+        meaning:
+          "Фактична мета перебування, яку треба кваліфікувати за відповідним інститутом закону.",
+      },
+      {
+        term: "zezwolenie",
+        meaning:
+          "Правовий status, що виникає з decyzji за виконання умов; його не слід ототожнювати з пластиковою kartą.",
+      },
+      {
+        term: "przesłanka",
+        meaning:
+          "Окрема позитивна або негативна умова правового результату, яку потрібно перевірити на фактах і доказах.",
+      },
     ],
     caseExample: {
       title: "Клієнт каже: «Мені потрібна karta pobytu для роботи»",
-      facts: "Особа в’їхала за візою, змінила роботодавця і приносить umowę. Вона називає бажаний документ, але не пояснює часову лінію та фактичну організацію роботи.",
-      analysis: "Не починаємо з formularza. Встановлюємо wjazd і поточний pobyt, кваліфікуємо фактичний cel, знаходимо спеціальну підставу pobytu czasowego, читаємо її разом зі спільними та негативними умовами, а право до pracy перевіряємо окремо за відповідним актом.",
-      lesson: "Правильне читання ustawy починається не з назви карти або статті, а з факту, statusu, celu і ланцюга взаємопов’язаних норм.",
+      facts:
+        "Особа в’їхала за візою, змінила роботодавця і приносить umowę. Вона називає бажаний документ, але не пояснює часову лінію та фактичну організацію роботи.",
+      analysis:
+        "Не починаємо з formularza. Встановлюємо wjazd і поточний pobyt, кваліфікуємо фактичний cel, знаходимо спеціальну підставу pobytu czasowego, читаємо її разом зі спільними та негативними умовами, а право до pracy перевіряємо окремо за відповідним актом.",
+      lesson:
+        "Правильне читання ustawy починається не з назви карти або статті, а з факту, statusu, celu і ланцюга взаємопов’язаних норм.",
     },
   },
 
@@ -230,8 +286,9 @@ export const documentReadingGuides: Record<
       id: "read-the-act",
       order: 1,
       title: "Як читати ustawę про powierzanie pracy",
-      polish: "podmiot powierzający pracę; cudzoziemiec; legalne powierzenie; zezwolenie; oświadczenie",
-      provisionScope: "art. 1–25 та rozdziały 2–11 ustawy z 20 marca 2025 r.",
+      polish:
+        "podmiot powierzający pracę; cudzoziemiec; legalne powierzenie; zezwolenie; oświadczenie",
+      provisionScope: workLaw.text`${workLaw.articleRange("1", "25", { start: "art. 1" })} та rozdziały 2–11 ustawy z 20 marca 2025 r.`,
       outcome:
         "Ви читаєте акт як перевірку конкретної моделі праці: учасники → pobyt → підстава доступу → умови документа → фактична робота → обов’язки → зміна → контроль і наслідок.",
       caseQuestion:
@@ -259,7 +316,7 @@ export const documentReadingGuides: Record<
           title: "Читайте від definicji до sankcji",
           paragraphs: [
             "Для кожної моделі побудуйте ланцюг: definicja учасника і pracy → загальна умова допустимості → właściwy instrument або zwolnienie → дані й умови, які він охоплює → обов’язки до і після початку → правила зміни → підстава uchylenia/wygaśnięcia → kontrola і sankcja.",
-            "Якщо стаття містить перелік, не зливайте пункти в одну загальну вимогу. Якщо норма відсилає до ustawy o cudzoziemcach, Kodeksu pracy або правил про pracę tymczasową, відкрийте цей акт і запишіть, яке окреме питання він вирішує.",
+            ppsaLaw.text`Якщо стаття містить перелік, не зливайте пункти в одну загальну вимогу. Якщо норма відсилає до ${foreignersLaw.document("ustawy o cudzoziemcach")}, Kodeksu pracy або правил про pracę tymczasową, відкрийте цей акт і запишіть, яке окреме питання він вирішує.`,
           ],
           steps: [
             "Намалюйте фактичні відносини між cudzoziemcem, podmiotem, клієнтом і місцем роботи.",
@@ -287,35 +344,69 @@ export const documentReadingGuides: Record<
       ],
       exercise:
         "Для однієї моделі роботи зробіть таблицю: учасник → роль за definicją → instrument → умови → доказ → обов’язок → зміна → можливий наслідок.",
-      references: [
-        {
-          label: "ustawy o cudzoziemcach",
-          target: {
-            kind: "legal-document",
-            documentId: "ustawa-o-cudzoziemcach",
-          },
-        },
-      ],
     },
     phases: [
-      { number: "01", title: "Побудувати модель", description: "Учасники, pobyt, місце, керівництво, умова і фактичний спосіб wykonywania pracy.", modules: "Модулі 1–3" },
-      { number: "02", title: "Вибрати instrument", description: "Zezwolenie, oświadczenie, praca sezonowa, delegowanie або точне zwolnienie.", modules: "Модулі 4" },
-      { number: "03", title: "Підтримувати відповідність", description: "Umowa, повідомлення, реєстри, зміни умов і ciągłość uprawnienia.", modules: "Модулі 5–6" },
-      { number: "04", title: "Перевірити ризик", description: "Kontrola, sankcje, outsourcing, praca tymczasowa та перехідні правила.", modules: "Модулі 7–8" },
+      {
+        number: "01",
+        title: "Побудувати модель",
+        description:
+          "Учасники, pobyt, місце, керівництво, умова і фактичний спосіб wykonywania pracy.",
+        modules: "Модулі 1–3",
+      },
+      {
+        number: "02",
+        title: "Вибрати instrument",
+        description:
+          "Zezwolenie, oświadczenie, praca sezonowa, delegowanie або точне zwolnienie.",
+        modules: "Модулі 4",
+      },
+      {
+        number: "03",
+        title: "Підтримувати відповідність",
+        description:
+          "Umowa, повідомлення, реєстри, зміни умов і ciągłość uprawnienia.",
+        modules: "Модулі 5–6",
+      },
+      {
+        number: "04",
+        title: "Перевірити ризик",
+        description:
+          "Kontrola, sankcje, outsourcing, praca tymczasowa та перехідні правила.",
+        modules: "Модулі 7–8",
+      },
     ],
     courseDescription:
       "Курс повторює перевірку legalności pracy: від фактичної моделі та instrumentu до обов’язків, змін і контролю.",
     terms: [
-      { term: "podmiot powierzający pracę", meaning: "Особа або організація, роль якої визначається законом; її не завжди можна встановити лише з назви договору." },
-      { term: "powierzenie pracy", meaning: "Юридично значуща модель допуску cudzoziemca до pracy, яку оцінюють разом із фактичними умовами." },
-      { term: "zezwolenie na pracę", meaning: "Адміністративний instrument, що охоплює визначену модель та умови, а не загальне право працювати будь-де." },
-      { term: "oświadczenie", meaning: "Окремий реєстраційний instrument для передбачених законом випадків; його застосовність треба встановити за всіма умовами." },
+      {
+        term: "podmiot powierzający pracę",
+        meaning:
+          "Особа або організація, роль якої визначається законом; її не завжди можна встановити лише з назви договору.",
+      },
+      {
+        term: "powierzenie pracy",
+        meaning:
+          "Юридично значуща модель допуску cudzoziemca до pracy, яку оцінюють разом із фактичними умовами.",
+      },
+      {
+        term: "zezwolenie na pracę",
+        meaning:
+          "Адміністративний instrument, що охоплює визначену модель та умови, а не загальне право працювати будь-де.",
+      },
+      {
+        term: "oświadczenie",
+        meaning:
+          "Окремий реєстраційний instrument для передбачених законом випадків; його застосовність треба встановити за всіма умовами.",
+      },
     ],
     caseExample: {
       title: "Umowa o świadczenie usług, але роботою керує клієнт",
-      facts: "Польський podmiot уклав із cudzoziemcem umowę і направив його на постійний об’єкт клієнта. Графік, завдання і щоденний контроль визначає клієнт, хоча договір названо outsourcingiem.",
-      analysis: "Спочатку встановлюємо ролі за definicjami та фактичне керівництво. Потім окремо перевіряємо pobyt, instrument доступу до pracy, відповідність stanowiska і miejsca, обов’язки podmiotu та норми про kierowanie do pracy, pracę tymczasową і sankcje.",
-      lesson: "Закон читається через факти моделі. Назва umowy не замінює перевірку того, хто реально powierza і організовує pracę.",
+      facts:
+        "Польський podmiot уклав із cudzoziemcem umowę і направив його на постійний об’єкт клієнта. Графік, завдання і щоденний контроль визначає клієнт, хоча договір названо outsourcingiem.",
+      analysis:
+        "Спочатку встановлюємо ролі за definicjami та фактичне керівництво. Потім окремо перевіряємо pobyt, instrument доступу до pracy, відповідність stanowiska і miejsca, обов’язки podmiotu та норми про kierowanie do pracy, pracę tymczasową і sankcje.",
+      lesson:
+        "Закон читається через факти моделі. Назва umowy не замінює перевірку того, хто реально powierza і організовує pracę.",
     },
   },
 
@@ -324,8 +415,8 @@ export const documentReadingGuides: Record<
       id: "read-the-act",
       order: 1,
       title: "Як читати rozporządzenie, formularz і załączniki",
-      polish: "część normatywna § 1–9; wzory; załączniki; pouczenia; pola formularza",
-      provisionScope: "§ 1–9 та załączniki nr 1–11",
+      polish: regulationLaw.text`część normatywna ${regulationLaw.paragraphRange("1", "9")}; wzory; załączniki; pouczenia; pola formularza`,
+      provisionScope: regulationLaw.text`${regulationLaw.paragraphRange("1", "9")} та ${regulationLaw.annexRange("1", "11")}`,
       outcome:
         "Ви працюєте з rozporządzeniem у двох шарах: §§ визначають, які wzory встановлено, а załączniki показують структуру відомостей; матеріальні умови дозволу шукаєте в ustawie.",
       caseQuestion:
@@ -337,8 +428,8 @@ export const documentReadingGuides: Record<
           id: "regulation-map",
           title: "Читайте частину normatywną разом із відповідним załącznikiem",
           paragraphs: [
-            "§§ 1–9 встановлюють предмет регулювання і пов’язують конкретні wzory з відповідними załącznikami. Załącznik не є довільним шаблоном: це частина aktu, яку треба читати разом із paragrafem, що на неї вказує, та з pouczeniami всередині форми.",
-            "Załączniki nr 1–11 мають різні функції. Тому не починайте з копіювання старого PDF. Спершу встановіть фактичний cel і materialną podstawę в ustawie o cudzoziemcach, потім знайдіть paragraf і właściwy wzór, а вже після цього визначте, хто заповнює кожну частину.",
+            regulationLaw.text`${regulationLaw.paragraphRange("1", "9", { start: "§§ 1" })} встановлюють предмет регулювання і пов’язують конкретні wzory з відповідними załącznikami. Załącznik не є довільним шаблоном: це частина aktu, яку треба читати разом із paragrafem, що на неї вказує, та з pouczeniami всередині форми.`,
+            ppsaLaw.text`Załączniki nr 1–11 мають різні функції. Тому не починайте з копіювання старого PDF. Спершу встановіть фактичний cel і materialną podstawę в ${foreignersLaw.document("ustawie o cudzoziemcach")}, потім знайдіть paragraf і właściwy wzór, а вже після цього визначте, хто заповнює кожну частину.`,
           ],
           questions: [
             "Який paragraf установлює потрібний wzór?",
@@ -373,7 +464,7 @@ export const documentReadingGuides: Record<
           id: "form-boundary",
           title: "Формальна повнота і матеріальне доведення — різні перевірки",
           paragraphs: [
-            "Заповнений formularz може бути формально повним, але не доводити умови zezwolenia. І навпаки, сильні докази не виправляють відсутнього підпису або неправильного wzoru. При wezwanie спочатку класифікуйте, яку саме прогалину назвав organ. Для brak formalny відкрийте art. 64 KPA і перевірте його окремо від матеріальної норми ustawy.",
+            ppsaLaw.text`Заповнений formularz може бути формально повним, але не доводити умови zezwolenia. І навпаки, сильні докази не виправляють відсутнього підпису або неправильного wzoru. При wezwanie спочатку класифікуйте, яку саме прогалину назвав organ. Для brak formalny відкрийте ${kpaLaw.article("64", "art. 64 KPA")} і перевірте його окремо від матеріальної норми ustawy.`,
           ],
           warning:
             "Не обіцяйте позитивного результату лише тому, що всі поля заповнені і всі załączniki додані.",
@@ -381,43 +472,69 @@ export const documentReadingGuides: Record<
       ],
       exercise:
         "Оберіть одне pole: знайдіть paragraf і załącznik, назвіть факт, materialną normę, первинний dowód, відповідальну особу та наслідок суперечності.",
-      references: [
-        {
-          label: "ustawie o cudzoziemcach",
-          target: {
-            kind: "legal-document",
-            documentId: "ustawa-o-cudzoziemcach",
-          },
-        },
-        {
-          label: "art. 64 KPA",
-          target: {
-            kind: "legal-provision",
-            documentId: "kpa",
-            provisionId: "kpa-art-64",
-          },
-        },
-      ],
     },
     phases: [
-      { number: "01", title: "Визначити функцію акту", description: "Відділити wzór і спосіб подання від materialnych warunków ustawy.", modules: "Модулі 1–2" },
-      { number: "02", title: "Вибрати wzór", description: "Знайти paragraf, właściwy załącznik, адресата полів і підписанта.", modules: "Модулі 3" },
-      { number: "03", title: "З’єднати факти", description: "Перевірити spójność wniosku, załączników і первинних документів.", modules: "Модулі 4–5" },
-      { number: "04", title: "Перевірити комплект", description: "Окремо аудит форми, доказів матеріальних умов, подання і відкритих ризиків.", modules: "Модулі 6" },
+      {
+        number: "01",
+        title: "Визначити функцію акту",
+        description:
+          "Відділити wzór і спосіб подання від materialnych warunków ustawy.",
+        modules: "Модулі 1–2",
+      },
+      {
+        number: "02",
+        title: "Вибрати wzór",
+        description:
+          "Знайти paragraf, właściwy załącznik, адресата полів і підписанта.",
+        modules: "Модулі 3",
+      },
+      {
+        number: "03",
+        title: "З’єднати факти",
+        description:
+          "Перевірити spójność wniosku, załączników і первинних документів.",
+        modules: "Модулі 4–5",
+      },
+      {
+        number: "04",
+        title: "Перевірити комплект",
+        description:
+          "Окремо аудит форми, доказів матеріальних умов, подання і відкритих ризиків.",
+        modules: "Модулі 6",
+      },
     ],
     courseDescription:
       "Курс іде від частини normatywnej через właściwy wzór до узгодженого, доказово підкріпленого комплекту.",
     terms: [
-      { term: "wzór", meaning: "Нормативно встановлена структура документа; її потрібно відрізняти від довільного офісного шаблону." },
-      { term: "załącznik", meaning: "Частина rozporządzenia або комплекту, функцію якої визначають paragraf, назва і зміст полів." },
-      { term: "pole formularza", meaning: "Місце для повідомлення конкретного факту; саме заповнення поля не є автоматичним доказом цього факту." },
-      { term: "pouczenie", meaning: "Інструкція всередині wzoru щодо заповнення або подання, яку треба читати разом із paragrafem та ustawą." },
+      {
+        term: "wzór",
+        meaning:
+          "Нормативно встановлена структура документа; її потрібно відрізняти від довільного офісного шаблону.",
+      },
+      {
+        term: "załącznik",
+        meaning:
+          "Частина rozporządzenia або комплекту, функцію якої визначають paragraf, назва і зміст полів.",
+      },
+      {
+        term: "pole formularza",
+        meaning:
+          "Місце для повідомлення конкретного факту; саме заповнення поля не є автоматичним доказом цього факту.",
+      },
+      {
+        term: "pouczenie",
+        meaning:
+          "Інструкція всередині wzoru щодо заповнення або подання, яку треба читати разом із paragrafem та ustawą.",
+      },
     ],
     caseExample: {
       title: "Старий załącznik і нові факти працевлаштування",
-      facts: "Заявник використав збережений formularz зі старої справи. Роботодавець і умови роботи змінилися, але частина полів та załącznik залишилися скопійованими.",
-      analysis: "Встановлюємо aktualny cel і materialną podstawę, знаходимо відповідний paragraf та чинний wzór, порівнюємо кожне повторюване поле з первинними документами і будуємо окрему матрицю доказів умов ustawy.",
-      lesson: "Правильна робота з rozporządzeniem — це читання зв’язку § → załącznik → pole → факт → materialna norma → dowód, а не механічне заповнення PDF.",
+      facts:
+        "Заявник використав збережений formularz зі старої справи. Роботодавець і умови роботи змінилися, але частина полів та załącznik залишилися скопійованими.",
+      analysis:
+        "Встановлюємо aktualny cel і materialną podstawę, знаходимо відповідний paragraf та чинний wzór, порівнюємо кожне повторюване поле з первинними документами і будуємо окрему матрицю доказів умов ustawy.",
+      lesson:
+        "Правильна робота з rozporządzeniem — це читання зв’язку § → załącznik → pole → факт → materialna norma → dowód, а не механічне заповнення PDF.",
     },
   },
-}
+}) satisfies Record<AuthoredLearningDocumentId, DocumentReadingGuide>

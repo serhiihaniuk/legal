@@ -530,6 +530,22 @@ Required behavior:
 
 Document-specific learning modules and practice content live in the document's editorial package. The generic shell may offer `learn` and `practice` slots, but it must render only the slots that a document declares. KPA's article-by-article guide is not a mandatory template for a regulation, an EU instrument, or a document checklist.
 
+### 9.1 Authored legal citations in learning prose
+
+`app/data/legal-library/learning/legal-text.ts` is the authoring Module for inline legal citations. Its Interface is deliberately small: choose a document once with `createLegalLearningTextAuthor(documentId)`, then compose ordinary prose with `text`, `article`, `articleRange`, `paragraph`, `paragraphRange`, `annex`, `annexRange`, or `document`. Provision arguments are generated-registry literal unions, so an article that does not belong to the selected document cannot compile.
+
+```ts
+const workLaw = createLegalLearningTextAuthor("powierzanie-pracy")
+const kpaLaw = createLegalLearningTextAuthor("kpa")
+
+workLaw.text`${workLaw.article("6")} визначає модель, але ${kpaLaw.article("64", "art. 64 KPA")} регулює brak formalny.`
+workLaw.text`Перевірте ${workLaw.articleRange("30", "39")}.`
+```
+
+The tagged template stores text and typed targets as structured parts. The renderer does not parse article numbers and does not infer a target from the active route. A cross-document citation therefore requires the author for that other document. A range renders two links—its head and tail—without generating ten noisy links. Curriculum definition validates plain segments and fails closed on a bare numbered `Art.`, `§`, or `załącznik`; this prevents a new unlinked citation from silently reaching the learning UI.
+
+The deletion test explains the Module's Depth: deleting it would spread template parsing, range presentation, generated-ID typing, cross-act safety, and bare-citation validation back across every curriculum and renderer. Keeping those rules behind one Interface gives both Leverage and Locality.
+
 ## 10. Routes and learner experience
 
 ### 10.1 Canonical routes

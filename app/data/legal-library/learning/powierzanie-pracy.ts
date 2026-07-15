@@ -1,4 +1,7 @@
+import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
+
+const workLaw = createLegalLearningTextAuthor("powierzanie-pracy")
 
 export const workActLearningCurriculum = defineLegalLearningCurriculum({
   documentId: "powierzanie-pracy",
@@ -11,7 +14,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       order: 1,
       title: "Legalny pobyt не дорівнює доступу до rynku pracy",
       polish: "legalny pobyt; dostęp do rynku pracy; uprawnienie do pracy",
-      provisionScope: "Art. 1–5",
+      provisionScope: workLaw.text`${workLaw.articleRange("1", "5")}`,
       outcome:
         "Розрізняє право перебувати, право працювати та відповідність умовам конкретної роботи.",
       caseQuestion:
@@ -35,7 +38,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Визначити підставу uprawnienia do pracy.",
             "Порівняти її з реальною роботою та umowa.",
           ],
-          evidence: ["Документ pobyt", "Підстава доступу до роботи", "Umowa та опис фактичної роботи"],
+          evidence: [
+            "Документ pobyt",
+            "Підстава доступу до роботи",
+            "Umowa та опис фактичної роботи",
+          ],
           warning:
             "Жоден окремий документ, включно з umowa або zezwolenie, не гарантує повної законності без перевірки всіх ланок.",
         },
@@ -43,7 +50,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           id: "legality-chain",
           title: "Ланцюг законності",
           paragraphs: [
-            "Art. 2 пов'язує nielegalne powierzenie з незаконним pobyt, підставою pobytu без права працювати, відсутністю потрібного zezwolenie або oświadczenie, відхиленням від його умов чи відсутністю письмової umowa у визначених випадках.",
+            workLaw.text`${workLaw.article("2")} пов'язує nielegalne powierzenie з незаконним pobyt, підставою pobytu без права працювати, відсутністю потрібного zezwolenie або oświadczenie, відхиленням від його умов чи відсутністю письмової umowa у визначених випадках.`,
             "Отже, перевірка не закінчується на назві документа: потрібно зіставити особу, pobyt, роботу, роботодавця, умови та форму договору.",
           ],
           questions: [
@@ -55,7 +62,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Перевірити документ роботи або виняток.",
             "Перевірити фактичне виконання та письмову umowa.",
           ],
-          evidence: ["Хронологія pobyt", "Документ роботи", "Графіки, umowa та фактичні обов'язки"],
+          evidence: [
+            "Хронологія pobyt",
+            "Документ роботи",
+            "Графіки, umowa та фактичні обов'язки",
+          ],
           warning:
             "Legalny pobyt не усуває можливого браку uprawnienia do pracy або невідповідності його умовам.",
         },
@@ -69,7 +80,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       title: "Актори та дефініції",
       polish:
         "cudzoziemiec; podmiot powierzający pracę; podmiot zagraniczny; pracodawca użytkownik; pracownik tymczasowy",
-      provisionScope: "Art. 2–6",
+      provisionScope: workLaw.text`${workLaw.articleRange("2", "6")}`,
       outcome:
         "Правильно визначає ролі учасників і не плутає того, хто укладає umowa, з тим, хто організовує щоденну роботу.",
       caseQuestion:
@@ -90,10 +101,14 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           ],
           steps: [
             "Назвати кожен залучений podmiot.",
-            "Зіставити його статус із визначеннями Art. 2.",
+            workLaw.text`Зіставити його статус із визначеннями ${workLaw.article("2")}.`,
             "Встановити зв'язок між podmiot, cudzoziemiec і місцем роботи.",
           ],
-          evidence: ["Umowy між усіма podmiot", "Організаційна схема", "Фактичні вказівки та місце роботи"],
+          evidence: [
+            "Umowy між усіма podmiot",
+            "Організаційна схема",
+            "Фактичні вказівки та місце роботи",
+          ],
           warning:
             "Термін outsourcing або назва umowa не доводять самі по собі, що це не є powierzenie pracy.",
         },
@@ -101,7 +116,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           id: "scope-of-work",
           title: "Що вважається powierzanie pracy",
           paragraphs: [
-            "Art. 2 охоплює працю за stosunek pracy, stosunek służbowy, umowa o pracę nakładczą, цивільними договорами, окремими функціями в spółka та роботу в межах delegowanie.",
+            workLaw.text`${workLaw.article("2")} охоплює працю за stosunek pracy, stosunek służbowy, umowa o pracę nakładczą, цивільними договорами, окремими функціями в spółka та роботу в межах delegowanie.`,
             "Тому спочатку описують факти, а вже потім підбирають правовий інструмент і перевіряють, чи діє ustawa.",
           ],
           questions: [
@@ -113,7 +128,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Визначити вид правового зв'язку.",
             "Перевірити спеціальний режим для цієї моделі.",
           ],
-          evidence: ["Опис процесу", "Umowa та додатки", "Листування про організацію роботи"],
+          evidence: [
+            "Опис процесу",
+            "Umowa та додатки",
+            "Листування про організацію роботи",
+          ],
           warning:
             "Одна й та сама назва послуги може мати різний правовий результат залежно від фактичної організації.",
         },
@@ -125,8 +144,9 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       id: "instrumenty-dostepu",
       order: 3,
       title: "Zezwolenie, oświadczenie та звільнення",
-      polish: "zezwolenie na pracę; oświadczenie o powierzeniu pracy; zwolnienie z obowiązku",
-      provisionScope: "Art. 3, 6, 13–25, 45–50, 62–73",
+      polish:
+        "zezwolenie na pracę; oświadczenie o powierzeniu pracy; zwolnienie z obowiązku",
+      provisionScope: workLaw.text`${workLaw.article("3")}, ${workLaw.article("6", "6")}, ${workLaw.articleRange("13", "25", { start: "13" })}, ${workLaw.articleRange("45", "50", { start: "45" })}, ${workLaw.articleRange("62", "73", { start: "62" })}`,
       outcome:
         "Класифікує основні інструменти доступу до роботи й перевіряє передумови кожного, не підміняючи їх один одним.",
       caseQuestion:
@@ -138,7 +158,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           id: "choose-instrument",
           title: "Обрати правильний інструмент",
           paragraphs: [
-            "Art. 6 називає основні моделі для zezwolenie na pracę: робота з polski podmiot або agencja, окремі функції в spółka, delegowanie та sezonowa praca. Oświadczenie має власні вимоги щодо громадянства й моделі роботи.",
+            workLaw.text`${workLaw.article("6")} називає основні моделі для zezwolenie na pracę: робота з polski podmiot або agencja, окремі функції в spółka, delegowanie та sezonowa praca. Oświadczenie має власні вимоги щодо громадянства й моделі роботи.`,
             "Вибір роблять за фактами, а не за побажанням роботодавця або назвою посади.",
           ],
           questions: [
@@ -146,11 +166,15 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Чи є це звичайна, сезонна, делегована або тимчасова робота?",
           ],
           steps: [
-            "Встановити модель за Art. 6.",
+            workLaw.text`Встановити модель за ${workLaw.article("6")}.`,
             "Перевірити громадянство та чинні виконавчі переліки для oświadczenie.",
             "Зіставити обраний інструмент із pobyt.",
           ],
-          evidence: ["Громадянство і документ pobyt", "Umowa з podmiot", "Опис роботи та місця її виконання"],
+          evidence: [
+            "Громадянство і документ pobyt",
+            "Umowa з podmiot",
+            "Опис роботи та місця її виконання",
+          ],
           warning:
             "Oświadczenie не є спрощеною універсальною заміною zezwolenie і не легалізує pobyt.",
         },
@@ -158,8 +182,8 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           id: "exemptions",
           title: "Перевірити zwolnienie",
           paragraphs: [
-            "Art. 3 передбачає swobodny dostęp до rynku pracy для перелічених категорій та окремі випадки роботи без zezwolenie або oświadczenie, зокрема за Kartą Polaka, окремими освітніми статусами, міжнародними договорами й виконавчими приписами.",
-            "Art. 1 також містить випадки, до яких ustawa не застосовується. Кожен виняток треба прив'язати до конкретної особи й фактів.",
+            workLaw.text`${workLaw.article("3")} передбачає swobodny dostęp до rynku pracy для перелічених категорій та окремі випадки роботи без zezwolenie або oświadczenie, зокрема за Kartą Polaka, окремими освітніми статусами, міжнародними договорами й виконавчими приписами.`,
+            workLaw.text`${workLaw.article("1")} також містить випадки, до яких ustawa не застосовується. Кожен виняток треба прив'язати до конкретної особи й фактів.`,
           ],
           questions: [
             "Який точний пункт дає swobodny доступ або zwolnienie?",
@@ -170,7 +194,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Перевірити документи та їхню чинність.",
             "Зафіксувати межі винятку для конкретної роботи.",
           ],
-          evidence: ["Dokument підтвердження статусу", "Підстава pobyt", "Підтвердження громадянства або освіти"],
+          evidence: [
+            "Dokument підтвердження статусу",
+            "Підстава pobyt",
+            "Підтвердження громадянства або освіти",
+          ],
           warning:
             "Посилання на загальний статус без перевірки конкретного пункту не доводить звільнення від документа роботи.",
         },
@@ -182,8 +210,9 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       id: "obowiazki-podmiotu",
       order: 4,
       title: "Обов'язки podmiot і повідомлення",
-      polish: "obowiązki podmiotu powierzającego pracę; powiadomienie; dokumentacja",
-      provisionScope: "Art. 4–5, 9–11, 17–25, 33–44, 60–79",
+      polish:
+        "obowiązki podmiotu powierzającego pracę; powiadomienie; dokumentacja",
+      provisionScope: workLaw.text`${workLaw.articleRange("4", "5")}, ${workLaw.articleRange("9", "11", { start: "9" })}, ${workLaw.articleRange("17", "25", { start: "17" })}, ${workLaw.articleRange("33", "44", { start: "33" })}, ${workLaw.articleRange("60", "79", { start: "60" })}`,
       outcome:
         "Будує практичний пакет перевірки: особа, pobyt, umowa, умови роботи, зберігання документів і передбачені powiadomienie.",
       caseQuestion:
@@ -207,7 +236,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Перевірити pobyt та підставу роботи.",
             "Підписати зрозумілу письмову umowa до допуску.",
           ],
-          evidence: ["Копії документів", "Письмова umowa і переклад", "Підтвердження підстави роботи"],
+          evidence: [
+            "Копії документів",
+            "Письмова umowa і переклад",
+            "Підтвердження підстави роботи",
+          ],
           warning:
             "Зібрана папка документів не виправляє фактичну роботу поза межами дозволу або oświadczenie.",
         },
@@ -227,7 +260,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Знайти відповідний обов'язок повідомлення в акті.",
             "Зберегти доказ подання та пов'язану документацію.",
           ],
-          evidence: ["Копія powiadomienie", "Підтвердження подання", "Актуальні записи часу, оплати й обов'язків"],
+          evidence: [
+            "Копія powiadomienie",
+            "Підтвердження подання",
+            "Актуальні записи часу, оплати й обов'язків",
+          ],
           warning:
             "Не можна переносити строк або спосіб повідомлення з одного режиму на інший без перевірки відповідних приписів.",
         },
@@ -240,7 +277,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       order: 5,
       title: "Зміни та безперервність роботи",
       polish: "zmiana warunków; przedłużenie; dalsze wykonywanie pracy",
-      provisionScope: "Art. 30–39, Art. 58, Art. 70–79",
+      provisionScope: workLaw.text`${workLaw.articleRange("30", "39")}, ${workLaw.article("58")}, ${workLaw.articleRange("70", "79")}`,
       outcome:
         "Розрізняє дозволену зміну, обов'язок повідомити, потребу в новому документі та випадок, коли закон окремо регулює продовження.",
       caseQuestion:
@@ -253,7 +290,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           title: "Порівнювати документ із фактами",
           paragraphs: [
             "Zezwolenie фіксує podmiot, cudzoziemiec, stanowisko або rodzaj pracy, czas, wynagrodzenie, rodzaj umowy та okres ważności; для pracy tymczasowej важливий також pracodawca użytkownik.",
-            "Зміна будь-якого елемента потребує перевірки Art. 30–39 і відповідного режиму, а не автоматичного продовження старого документа.",
+            workLaw.text`Зміна будь-якого елемента потребує перевірки ${workLaw.articleRange("30", "39")} і відповідного режиму, а не автоматичного продовження старого документа.`,
           ],
           questions: [
             "Що саме змінилося: podmiot, посада, час, оплата, umowa чи строк?",
@@ -264,7 +301,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Перевірити допустиму зміну та процедуру.",
             "Не допускати роботу за новими умовами до правової перевірки.",
           ],
-          evidence: ["Чинне zezwolenie або oświadczenie", "Нова umowa чи aneks", "Доказ зміни фактичної роботи"],
+          evidence: [
+            "Чинне zezwolenie або oświadczenie",
+            "Нова umowa чи aneks",
+            "Доказ зміни фактичної роботи",
+          ],
           warning:
             "Подання заяви або powiadomienie не означає автоматично, що будь-яка нова робота вже є legalna.",
         },
@@ -284,74 +325,25 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Перевірити спеціальну норму про продовження.",
             "Обмежити висновок лише тією роботою, яку охоплює норма.",
           ],
-          evidence: ["Дати чинності", "Підтвердження своєчасного подання", "Безперервні записи фактичної роботи"],
+          evidence: [
+            "Дати чинності",
+            "Підтвердження своєчасного подання",
+            "Безперервні записи фактичної роботи",
+          ],
           warning:
             "Незавершене провадження саме по собі не продовжує pobyt і не створює загального права працювати.",
         },
       ],
       exercise:
         "На анонімній часовій шкалі познач чинність pobyt, документа роботи, umowa, зміну умов і подання; сформулюй, що доведено, а що потребує окремої підстави.",
-      references: [
-        {
-          label: "Art. 30–39",
-          range: {
-            start: {
-              label: "Art. 30",
-              target: {
-                kind: "legal-provision",
-                documentId: "powierzanie-pracy",
-                provisionId: "powierzanie-pracy-art-30",
-              },
-            },
-            separator: "–",
-            end: {
-              label: "39",
-              target: {
-                kind: "legal-provision",
-                documentId: "powierzanie-pracy",
-                provisionId: "powierzanie-pracy-art-39",
-              },
-            },
-          },
-        },
-        {
-          label: "Art. 58",
-          target: {
-            kind: "legal-provision",
-            documentId: "powierzanie-pracy",
-            provisionId: "powierzanie-pracy-art-58",
-          },
-        },
-        {
-          label: "Art. 70–79",
-          range: {
-            start: {
-              label: "Art. 70",
-              target: {
-                kind: "legal-provision",
-                documentId: "powierzanie-pracy",
-                provisionId: "powierzanie-pracy-art-70",
-              },
-            },
-            separator: "–",
-            end: {
-              label: "79",
-              target: {
-                kind: "legal-provision",
-                documentId: "powierzanie-pracy",
-                provisionId: "powierzanie-pracy-art-79",
-              },
-            },
-          },
-        },
-      ],
     },
     {
       id: "kontrola-i-sankcje",
       order: 6,
       title: "Контроль і санкції",
-      polish: "kontrola; nielegalne powierzenie pracy; odpowiedzialność; sankcje",
-      provisionScope: "Art. 1–2, 80–89",
+      polish:
+        "kontrola; nielegalne powierzenie pracy; odpowiedzialność; sankcje",
+      provisionScope: workLaw.text`${workLaw.articleRange("1", "2")}, ${workLaw.articleRange("80", "89", { start: "80" })}`,
       outcome:
         "Відрізняє nielegalne powierzenie від nielegalne wykonywanie роботи та оцінює ризик без вигаданих висновків про санкцію.",
       caseQuestion:
@@ -363,7 +355,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           id: "two-violations",
           title: "Розділити дії podmiot і cudzoziemiec",
           paragraphs: [
-            "Art. 2 окремо описує nielegalne powierzenie pracy і nielegalne wykonywanie pracy. Порушення можуть стосуватися pobyt, підстави роботи, відсутності документа або невідповідності умовам.",
+            workLaw.text`${workLaw.article("2")} окремо описує nielegalne powierzenie pracy і nielegalne wykonywanie pracy. Порушення можуть стосуватися pobyt, підстави роботи, відсутності документа або невідповідності умовам.`,
             "Одна й та сама ситуація може вимагати окремого аналізу дій podmiot, cudzoziemiec і відповідальних осіб.",
           ],
           questions: [
@@ -375,7 +367,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Порівняти pobyt, uprawnienie і фактичні умови.",
             "Розділити можливі порушення за особами та ролями.",
           ],
-          evidence: ["Документи pobyt і роботи", "Umowa, графіки та виплати", "Пояснення учасників і фактичні інструкції"],
+          evidence: [
+            "Документи pobyt і роботи",
+            "Umowa, графіки та виплати",
+            "Пояснення учасників і фактичні інструкції",
+          ],
           warning:
             "Наявність одного правильного документа не доводить відсутність усіх інших порушень.",
         },
@@ -383,7 +379,7 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           id: "consequences",
           title: "Наслідок залежить від факту",
           paragraphs: [
-            "Art. 80–89 містять приписи про контроль і відповідальність за порушення, а Art. 1 відсилає частину наслідків до окремих актів. Вид і розмір наслідку залежать від конкретної дії, періоду, ролі та доведених обставин.",
+            workLaw.text`${workLaw.articleRange("80", "89")} містять приписи про контроль і відповідальність за порушення, а ${workLaw.article("1")} відсилає частину наслідків до окремих актів. Вид і розмір наслідку залежать від конкретної дії, періоду, ролі та доведених обставин.`,
             "Навчальний висновок має показувати ризик і потрібну перевірку, а не наперед проголошувати санкцію.",
           ],
           questions: [
@@ -395,7 +391,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Знайти відповідний припис про контроль або відповідальність.",
             "Перевірити спеціальний закон і всі обставини справи.",
           ],
-          evidence: ["Акт контролю або запит", "Повний комплект кадрових документів", "Хронологія подій і пояснення"],
+          evidence: [
+            "Акт контролю або запит",
+            "Повний комплект кадрових документів",
+            "Хронологія подій і пояснення",
+          ],
           warning:
             "Не називай конкретну санкцію гарантованою без встановленого складу порушення та чинного права на відповідну дату.",
         },
@@ -407,8 +407,9 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
       id: "outsourcing-a-praca-tymczasowa",
       order: 7,
       title: "Outsourcing і praca tymczasowa: аналіз фактів",
-      polish: "outsourcing procesowy; agencja pracy tymczasowej; pracodawca użytkownik; delegowanie",
-      provisionScope: "Art. 2, 6, 9, 32, 40–44, 62–79",
+      polish:
+        "outsourcing procesowy; agencja pracy tymczasowej; pracodawca użytkownik; delegowanie",
+      provisionScope: workLaw.text`${workLaw.article("2")}, ${workLaw.article("6", "6")}, ${workLaw.article("9", "9")}, ${workLaw.article("32", "32")}, ${workLaw.articleRange("40", "44", { start: "40" })}, ${workLaw.articleRange("62", "79", { start: "62" })}`,
       outcome:
         "Оцінює фактичну організацію роботи та відрізняє послугу від kierowanie працівника, не покладаючись на етикетку договору.",
       caseQuestion:
@@ -430,9 +431,13 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
           steps: [
             "Описати процес без слова outsourcing.",
             "Встановити керування, ризик результату, оплату й місце роботи.",
-            "Зіставити факти з дефініціями Art. 2 та відповідним режимом.",
+            workLaw.text`Зіставити факти з дефініціями ${workLaw.article("2")} та відповідним режимом.`,
           ],
-          evidence: ["Технічне завдання і SLA", "Інструкції, графіки та доступи", "Umowy між усіма podmiot"],
+          evidence: [
+            "Технічне завдання і SLA",
+            "Інструкції, графіки та доступи",
+            "Umowy між усіма podmiot",
+          ],
           warning:
             "Формальний напис outsourcing не усуває правил про powierzenie pracy, якщо факти показують надання працівника.",
         },
@@ -452,7 +457,11 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
             "Зіставити карту з документом pobyt та документом роботи.",
             "За розбіжності зупинити автоматичний висновок і перевірити потрібну зміну або новий режим.",
           ],
-          evidence: ["Zezwolenie або oświadczenie", "Umowy та підтвердження виплат", "Фактичні дані про місце й керування"],
+          evidence: [
+            "Zezwolenie або oświadczenie",
+            "Umowy та підтвердження виплат",
+            "Фактичні дані про місце й керування",
+          ],
           warning:
             "Ні umowa, ні zezwolenie, ні oświadczenie окремо не гарантують legalności моделі outsourcing або pracy tymczasowej.",
         },

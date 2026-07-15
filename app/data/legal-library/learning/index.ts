@@ -62,6 +62,16 @@ export function getLegalLearningModule(
   )
 }
 
+export {
+  concatLegalLearningText,
+  createLegalLearningTextAuthor,
+  joinLegalLearningText,
+  legalLearningPlainText,
+  legalLearningProvisionReferences,
+  legalLearningTextSlice,
+} from "./legal-text"
+export type { LegalLearningText } from "./legal-text"
+
 export type {
   AuthoredLearningDocumentId,
   LegalLearningCurriculum,

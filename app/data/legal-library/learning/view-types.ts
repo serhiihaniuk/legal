@@ -1,26 +1,26 @@
 import type { LegalProvisionReference } from "../contracts"
-import type { LegalLearningInlineReference } from "./types"
+import type { LegalLearningText } from "./legal-text"
 
 export type LegalLearningCoursePhase = {
   number: string
   title: string
-  description: string
+  description: LegalLearningText
   modules: string
 }
 
 export type LegalLearningLayer = {
   label: string
-  text: string
+  text: LegalLearningText
 }
 
 export type LegalLearningTerm = {
   term: string
-  meaning: string
+  meaning: LegalLearningText
 }
 
 export type LegalLearningArticleGroup = {
-  reference: string
-  role: string
+  reference: LegalLearningText
+  role: LegalLearningText
   target?: LegalProvisionReference
 }
 
@@ -28,30 +28,29 @@ export type LegalLearningProvisionGuideItem = {
   id: string
   reference: string
   title: string
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
+  summary: LegalLearningText
+  rules: readonly { locator: string; explanation: LegalLearningText }[]
+  legalEffect: LegalLearningText
+  foreignersCase: LegalLearningText
   target?: LegalProvisionReference
 }
 
 export type LegalLearningModuleView = {
   order: number
   title: string
-  polish: string
-  provisionScope: string
+  polish: LegalLearningText
+  provisionScope: LegalLearningText
   legalState: string
-  inlineReferences: readonly LegalLearningInlineReference[]
-  outcome: string
+  outcome: LegalLearningText
   stage: string
-  positionIntro: string
-  question: string
-  neededWhen: string
-  boundary: string
+  positionIntro: LegalLearningText
+  question: LegalLearningText
+  neededWhen: LegalLearningText
+  boundary: LegalLearningText
   courseTitle?: string
   courseDescription?: string
   coursePhases?: readonly LegalLearningCoursePhase[]
-  mechanismParagraphs: readonly string[]
+  mechanismParagraphs: readonly LegalLearningText[]
   layers: readonly LegalLearningLayer[]
   terms: readonly LegalLearningTerm[]
   articleGroups: readonly LegalLearningArticleGroup[]
@@ -63,10 +62,10 @@ export type LegalLearningModuleView = {
   }
   caseExample: {
     title: string
-    facts: string
-    analysis: string
-    lesson: string
+    facts: LegalLearningText
+    analysis: LegalLearningText
+    lesson: LegalLearningText
   }
-  pitfalls: readonly string[]
-  method: readonly string[]
+  pitfalls: readonly LegalLearningText[]
+  method: readonly LegalLearningText[]
 }

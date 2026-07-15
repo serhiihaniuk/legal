@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { createContext, useContext, type ReactNode } from "react"
+import type { ReactNode } from "react"
 
 import { LegalLink } from "~/components/legal-link"
 import {
@@ -10,7 +10,10 @@ import {
 } from "~/components/ui/accordion"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
-import type { LegalLearningInlineReference } from "~/data/legal-library/learning/types"
+import {
+  legalLearningPlainText,
+  type LegalLearningText,
+} from "~/data/legal-library/learning/legal-text"
 import type { LegalLearningModuleView } from "~/data/legal-library/learning/view-types"
 
 export const legalLearningSectionIds = {
@@ -26,75 +29,57 @@ export const legalLearningContentToc = [
   { href: `#${legalLearningSectionIds.overview}`, label: "Про тему" },
   { href: `#${legalLearningSectionIds.position}`, label: "Місце в процедурі" },
   { href: `#${legalLearningSectionIds.mechanism}`, label: "Як це працює" },
-  { href: `#${legalLearningSectionIds.provisions}`, label: "Норми крок за кроком" },
+  {
+    href: `#${legalLearningSectionIds.provisions}`,
+    label: "Норми крок за кроком",
+  },
   { href: `#${legalLearningSectionIds.example}`, label: "Повний приклад" },
   { href: `#${legalLearningSectionIds.nuances}`, label: "Нюанси й помилки" },
 ] as const
 
-const LearningReferenceContext = createContext<
-  readonly LegalLearningInlineReference[]
->([])
+function LearningText({ text }: { text: LegalLearningText }) {
+  if (typeof text === "string") return <>{text}</>
 
-function LearningText({ text }: { text: string }) {
-  const references = useContext(LearningReferenceContext)
-  const candidates = references
-    .flatMap((reference) => {
-      const matches: Array<{
-        start: number
-        end: number
-        reference: LegalLearningInlineReference
-      }> = []
-      let cursor = 0
-      while (cursor < text.length) {
-        const start = text.indexOf(reference.label, cursor)
-        if (start === -1) break
-        matches.push({
-          start,
-          end: start + reference.label.length,
-          reference,
-        })
-        cursor = start + reference.label.length
-      }
-      return matches
-    })
-    .sort(
-      (left, right) =>
-        left.start - right.start || right.end - right.start - (left.end - left.start)
-    )
-  const selected = candidates.filter(
-    (candidate, index) =>
-      !candidates.slice(0, index).some(
-        (other) => candidate.start < other.end && candidate.end > other.start
-      )
+  return (
+    <>
+      {text.parts.map((part, index) =>
+        "target" in part ? (
+          <LegalLink key={`${index}-${part.text}`} reference={part.target}>
+            {part.text}
+          </LegalLink>
+        ) : (
+          <span key={`${index}-${part.text}`}>{part.text}</span>
+        )
+      )}
+    </>
   )
+}
 
-  if (!selected.length) return <>{text}</>
+function ProvisionText({
+  text,
+  reference,
+  target,
+}: {
+  text: LegalLearningText
+  reference: string
+  target?: LegalLearningModuleView["provisionGuide"]["items"][number]["target"]
+}) {
+  if (typeof text !== "string" || !target || !text.includes(reference)) {
+    return <LearningText text={text} />
+  }
 
   const content: ReactNode[] = []
   let cursor = 0
-  for (const match of selected) {
-    if (match.start > cursor) content.push(text.slice(cursor, match.start))
+  let matchIndex = text.indexOf(reference)
+  while (matchIndex !== -1) {
+    if (matchIndex > cursor) content.push(text.slice(cursor, matchIndex))
     content.push(
-      "target" in match.reference ? (
-        <LegalLink
-          key={`${match.start}-${match.reference.label}`}
-          reference={match.reference.target}
-        >
-          {text.slice(match.start, match.end)}
-        </LegalLink>
-      ) : (
-        <span key={`${match.start}-${match.reference.label}`}>
-          <LegalLink reference={match.reference.range.start.target}>
-            {match.reference.range.start.label}
-          </LegalLink>
-          {match.reference.range.separator}
-          <LegalLink reference={match.reference.range.end.target}>
-            {match.reference.range.end.label}
-          </LegalLink>
-        </span>
-      )
+      <LegalLink key={`${matchIndex}-${reference}`} reference={target}>
+        {reference}
+      </LegalLink>
     )
-    cursor = match.end
+    cursor = matchIndex + reference.length
+    matchIndex = text.indexOf(reference, cursor)
   }
   if (cursor < text.length) content.push(text.slice(cursor))
   return <>{content}</>
@@ -150,7 +135,9 @@ function ProvisionGuide({
               <span className="grid min-w-0 flex-1 gap-2 pr-5 text-left sm:grid-cols-[8rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5">
                 <span className="font-mono text-sm font-medium text-foreground">
                   {item.target ? (
-                    <LegalLink reference={item.target}>{item.reference}</LegalLink>
+                    <LegalLink reference={item.target}>
+                      {item.reference}
+                    </LegalLink>
                   ) : (
                     item.reference
                   )}
@@ -160,7 +147,11 @@ function ProvisionGuide({
                     {item.title}
                   </span>
                   <span className="text-sm leading-6 font-normal text-muted-foreground">
-                    <LearningText text={item.summary} />
+                    <ProvisionText
+                      text={item.summary}
+                      reference={item.reference}
+                      target={item.target}
+                    />
                   </span>
                 </span>
                 <span className="text-xs leading-6 font-normal whitespace-nowrap text-muted-foreground">
@@ -172,15 +163,23 @@ function ProvisionGuide({
             <AccordionContent className="border-t bg-muted/40 px-4 pt-5 pb-7 sm:px-6">
               <div className="flex w-full min-w-0 flex-col gap-7">
                 <section>
-                  <h4 className="text-sm font-semibold">Що встановлює ця частина</h4>
+                  <h4 className="text-sm font-semibold">
+                    Що встановлює ця частина
+                  </h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
-                    <LearningText text={item.summary} />
+                    <ProvisionText
+                      text={item.summary}
+                      reference={item.reference}
+                      target={item.target}
+                    />
                   </p>
                 </section>
 
                 {item.rules.length ? (
                   <section>
-                    <h4 className="text-sm font-semibold">Структура механізму</h4>
+                    <h4 className="text-sm font-semibold">
+                      Структура механізму
+                    </h4>
                     <ol className="mt-3 flex flex-col border-y">
                       {item.rules.map((rule, index) => (
                         <li
@@ -191,9 +190,15 @@ function ProvisionGuide({
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <div className="flex min-w-0 flex-col gap-1">
-                            <p className="text-sm font-semibold">{rule.locator}</p>
+                            <p className="text-sm font-semibold">
+                              {rule.locator}
+                            </p>
                             <p className="text-base leading-7 text-muted-foreground">
-                              <LearningText text={rule.explanation} />
+                              <ProvisionText
+                                text={rule.explanation}
+                                reference={item.reference}
+                                target={item.target}
+                              />
                             </p>
                           </div>
                         </li>
@@ -205,7 +210,11 @@ function ProvisionGuide({
                 <section className="border-t pt-6">
                   <h4 className="text-sm font-semibold">Правовий наслідок</h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
-                    <LearningText text={item.legalEffect} />
+                    <ProvisionText
+                      text={item.legalEffect}
+                      reference={item.reference}
+                      target={item.target}
+                    />
                   </p>
                 </section>
 
@@ -214,7 +223,11 @@ function ProvisionGuide({
                     Значення у справі іноземця
                   </h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
-                    <LearningText text={item.foreignersCase} />
+                    <ProvisionText
+                      text={item.foreignersCase}
+                      reference={item.reference}
+                      target={item.target}
+                    />
                   </p>
                   {item.target ? (
                     <p className="mt-4">
@@ -245,10 +258,12 @@ export function LegalLearningModuleContent({
   navigation: ModuleNavigation
 }) {
   return (
-    <LearningReferenceContext.Provider value={module.inlineReferences}>
-      <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
+    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
       <header id={legalLearningSectionIds.overview}>
-        <div data-not-typeset className="mb-3 flex flex-wrap items-center gap-2">
+        <div
+          data-not-typeset
+          className="mb-3 flex flex-wrap items-center gap-2"
+        >
           <Badge variant="secondary">Модуль {module.order}</Badge>
           <Badge variant="outline">
             <LearningText text={module.provisionScope} />
@@ -331,7 +346,7 @@ export function LegalLearningModuleContent({
       <section id={legalLearningSectionIds.mechanism}>
         <h2>Як працює цей правовий механізм</h2>
         {module.mechanismParagraphs.map((paragraph) => (
-          <p key={paragraph}>
+          <p key={legalLearningPlainText(paragraph)}>
             <LearningText text={paragraph} />
           </p>
         ))}
@@ -374,16 +389,24 @@ export function LegalLearningModuleContent({
         </p>
         <dl>
           {module.articleGroups.map((group) => (
-            <div key={`${group.reference}-${group.role}`}>
+            <div
+              key={`${legalLearningPlainText(group.reference)}-${legalLearningPlainText(group.role)}`}
+            >
               <dt lang="pl">
                 {group.target ? (
-                  <LegalLink reference={group.target}>{group.reference}</LegalLink>
+                  <LegalLink reference={group.target}>
+                    <LearningText text={group.reference} />
+                  </LegalLink>
                 ) : (
-                  group.reference
+                  <LearningText text={group.reference} />
                 )}
               </dt>
               <dd>
-                <LearningText text={group.role} />
+                <ProvisionText
+                  text={group.role}
+                  reference={legalLearningPlainText(group.reference)}
+                  target={group.target}
+                />
               </dd>
             </div>
           ))}
@@ -397,10 +420,18 @@ export function LegalLearningModuleContent({
         <h3>{module.caseExample.title}</h3>
         <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
           {[
-            ["01", "Факти", module.caseExample.facts],
-            ["02", "Аналіз", module.caseExample.analysis],
-            ["03", "Висновок", module.caseExample.lesson],
-          ].map(([number, label, text]) => (
+            { number: "01", label: "Факти", text: module.caseExample.facts },
+            {
+              number: "02",
+              label: "Аналіз",
+              text: module.caseExample.analysis,
+            },
+            {
+              number: "03",
+              label: "Висновок",
+              text: module.caseExample.lesson,
+            },
+          ].map(({ number, label, text }) => (
             <div
               key={number}
               className="grid gap-2 py-5 sm:grid-cols-[3rem_8rem_minmax(0,1fr)] sm:gap-5"
@@ -423,7 +454,7 @@ export function LegalLearningModuleContent({
         <h2>Нюанси й типові помилки</h2>
         <ul>
           {module.pitfalls.map((pitfall) => (
-            <li key={pitfall}>
+            <li key={legalLearningPlainText(pitfall)}>
               <LearningText text={pitfall} />
             </li>
           ))}
@@ -431,7 +462,7 @@ export function LegalLearningModuleContent({
         <h3>Як застосувати знання до своєї справи</h3>
         <ol>
           {module.method.map((step) => (
-            <li key={step}>
+            <li key={legalLearningPlainText(step)}>
               <LearningText text={step} />
             </li>
           ))}
@@ -466,7 +497,6 @@ export function LegalLearningModuleContent({
           </Button>
         )}
       </nav>
-      </article>
-    </LearningReferenceContext.Provider>
+    </article>
   )
 }

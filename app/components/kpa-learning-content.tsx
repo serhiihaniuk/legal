@@ -116,7 +116,6 @@ export function KpaLearningContent({
     polish: guideModule.polish,
     provisionScope: guideModule.articles,
     legalState: kpaGuideLegalState,
-    inlineReferences: [],
     outcome: guideModule.outcome,
     stage: moduleContext.stage,
     positionIntro: layers.beginner.practice,

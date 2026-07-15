@@ -5,26 +5,52 @@ import type {
 } from "../contracts"
 import { parseLegalProvisionReference } from "../query"
 import { getDocumentReadingGuide } from "./index"
+import {
+  concatLegalLearningText,
+  joinLegalLearningText,
+  legalLearningPlainText,
+  legalLearningProvisionReferences,
+  legalLearningTextSlice,
+  type LegalLearningText,
+} from "./legal-text"
 import type { LegalLearningModule } from "./types"
-import type {
-  LegalLearningModuleView,
-  LegalLearningTerm,
-} from "./view-types"
+import type { LegalLearningModuleView, LegalLearningTerm } from "./view-types"
 
 type ReviewedProvision = {
   provision: LegalProvision
   explanation: LegalExplanation
 }
 
-function unique(items: readonly (string | undefined)[]): string[] {
+function uniqueStrings(items: readonly (string | undefined)[]): string[] {
   return [...new Set(items.filter((item): item is string => Boolean(item)))]
 }
 
-function sentences(text: string): string[] {
-  return text
-    .split(/(?<=[.!?])\s+/)
-    .map((item) => item.trim())
-    .filter(Boolean)
+function uniqueTexts(
+  items: readonly (LegalLearningText | undefined)[]
+): LegalLearningText[] {
+  const seen = new Set<string>()
+  return items.filter((item): item is LegalLearningText => {
+    if (item === undefined) return false
+    const plainText = legalLearningPlainText(item)
+    if (seen.has(plainText)) return false
+    seen.add(plainText)
+    return true
+  })
+}
+
+function sentenceContaining(
+  text: LegalLearningText,
+  token: string
+): LegalLearningText | undefined {
+  const plainText = legalLearningPlainText(text)
+  for (const match of plainText.matchAll(/[^.!?]+[.!?]?/gu)) {
+    const sentence = match[0].trim()
+    if (!sentence.toLocaleLowerCase("pl").includes(token)) continue
+    const leadingSpace = match[0].length - match[0].trimStart().length
+    const start = (match.index ?? 0) + leadingSpace
+    return legalLearningTextSlice(text, start, start + sentence.length)
+  }
+  return undefined
 }
 
 function explanationTitle(
@@ -47,17 +73,21 @@ function explanationTitle(
 
 function buildTerms(
   module: LegalLearningModule,
-  paragraphs: readonly string[]
+  paragraphs: readonly LegalLearningText[]
 ): LegalLearningTerm[] {
-  return unique(module.polish.split(/[;,]/).map((term) => term.trim()))
+  return uniqueStrings(
+    legalLearningPlainText(module.polish)
+      .split(/[;,]/)
+      .map((term) => term.trim())
+  )
     .slice(0, 6)
     .map((term) => {
       const token = term.split(/\s+/)[0]?.toLocaleLowerCase("pl")
-      const matchingSentence = paragraphs
-        .flatMap(sentences)
-        .find((sentence) =>
-          token ? sentence.toLocaleLowerCase("pl").includes(token) : false
-        )
+      const matchingSentence = token
+        ? paragraphs
+            .map((paragraph) => sentenceContaining(paragraph, token))
+            .find((sentence) => sentence !== undefined)
+        : undefined
       return {
         term,
         meaning:
@@ -79,7 +109,7 @@ export function findModuleProvisions(
   module: LegalLearningModule,
   provisions: readonly LegalProvision[]
 ): LegalProvision[] {
-  const text = [
+  const authoredTexts: LegalLearningText[] = [
     module.provisionScope,
     module.outcome,
     module.caseQuestion,
@@ -92,8 +122,13 @@ export function findModuleProvisions(
       ...(section.steps ?? []),
       ...(section.warning ? [section.warning] : []),
     ]),
-  ].join(" ")
-
+  ]
+  const text = authoredTexts.map(legalLearningPlainText).join(" ")
+  const explicitProvisionIds = new Set(
+    authoredTexts
+      .flatMap(legalLearningProvisionReferences)
+      .map((reference) => reference.provisionId)
+  )
   const locators = new Set<string>()
   for (const match of text.matchAll(/\bart\.\s*(\d+[a-z]?)/gi)) {
     locators.add(`art. ${match[1].toLocaleLowerCase("pl")}`)
@@ -106,18 +141,31 @@ export function findModuleProvisions(
   }
 
   return provisions
-    .filter((provision) => locators.has(normalizedLocator(provision.locator)))
+    .filter(
+      (provision) =>
+        explicitProvisionIds.has(provision.id) ||
+        locators.has(normalizedLocator(provision.locator))
+    )
     .slice(0, 10)
 }
 
-function formatAnalysis(steps: readonly string[]): string {
+function formatAnalysis(
+  steps: readonly LegalLearningText[]
+): LegalLearningText {
   if (!steps.length) {
     return "Визначаємо факт, знаходимо поняття і норму, розкладаємо її на умови, додаємо докази, дію, наслідок та доступний засіб захисту."
   }
-  return steps
-    .map((step, index) => `${index + 1}) ${step.replace(/[.]$/, "")}`)
-    .join("; ")
-    .concat(".")
+  const numberedSteps = steps.map((step, index) => {
+    const plainText = legalLearningPlainText(step)
+    const withoutFinalPeriod = plainText.endsWith(".")
+      ? legalLearningTextSlice(step, 0, plainText.length - 1)
+      : step
+    return concatLegalLearningText(`${index + 1}) `, withoutFinalPeriod)
+  })
+  return concatLegalLearningText(
+    joinLegalLearningText(numberedSteps, "; "),
+    "."
+  )
 }
 
 export function buildLegalLearningModuleView({
@@ -138,12 +186,16 @@ export function buildLegalLearningModuleView({
 
   const isReadingModule = module.id === readingGuide.module.id
   const paragraphs = module.sections.flatMap((section) => section.paragraphs)
-  const warnings = unique(module.sections.map((section) => section.warning))
-  const steps = unique(module.sections.flatMap((section) => section.steps ?? []))
-  const evidence = unique(
+  const warnings = uniqueTexts(
+    module.sections.map((section) => section.warning)
+  )
+  const steps = uniqueTexts(
+    module.sections.flatMap((section) => section.steps ?? [])
+  )
+  const evidence = uniqueTexts(
     module.sections.flatMap((section) => section.evidence ?? [])
   )
-  const questions = unique(
+  const questions = uniqueTexts(
     module.sections.flatMap((section) => section.questions ?? [])
   )
 
@@ -183,11 +235,10 @@ export function buildLegalLearningModuleView({
     polish: module.polish,
     provisionScope: module.provisionScope,
     legalState,
-    inlineReferences: module.references ?? [],
     outcome: module.outcome,
     stage: isReadingModule
       ? "Орієнтація в документі"
-      : firstSection?.title ?? "Робота з правовим механізмом",
+      : (firstSection?.title ?? "Робота з правовим механізмом"),
     positionIntro: firstSection?.paragraphs[0] ?? module.placeInWork,
     question: module.caseQuestion,
     neededWhen: module.placeInWork,
@@ -241,16 +292,22 @@ export function buildLegalLearningModuleView({
           title: `Робоча ситуація: ${module.title}`,
           facts: module.caseQuestion,
           analysis: formatAnalysis(steps.length ? steps : questions),
-          lesson: `${module.outcome} Практична перевірка: ${module.exercise}`,
+          lesson: concatLegalLearningText(
+            module.outcome,
+            " Практична перевірка: ",
+            module.exercise
+          ),
         },
-    pitfalls: warnings.length
-      ? warnings
-      : [boundary],
+    pitfalls: warnings.length ? warnings : [boundary],
     method: steps.length
       ? steps
       : [
-          ...questions.map((question) => `Дайте відповідь: ${question}`),
-          ...evidence.map((item) => `Перевірте документ: ${item}`),
+          ...questions.map((question) =>
+            concatLegalLearningText("Дайте відповідь: ", question)
+          ),
+          ...evidence.map((item) =>
+            concatLegalLearningText("Перевірте документ: ", item)
+          ),
         ],
   }
 }
