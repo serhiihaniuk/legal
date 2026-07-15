@@ -141,7 +141,7 @@ export function validateOfficialIdentity(config, metadata, pdfBytes) {
       )
     }
 
-    for (const field of ["status", "inForce", "legalStatusDate"]) {
+    for (const field of ["status", "inForce"]) {
       if (typeof metadata[field] !== "string" || metadata[field].trim() === "") {
         diagnostics.push(
           diagnostic(
@@ -152,6 +152,20 @@ export function validateOfficialIdentity(config, metadata, pdfBytes) {
           )
         )
       }
+    }
+
+    if (
+      typeof metadata.legalStatusDate !== "string" ||
+      metadata.legalStatusDate.trim() === ""
+    ) {
+      diagnostics.push(
+        diagnostic(
+          "warning",
+          "source.missing-legal-status-date",
+          "Official metadata does not expose legalStatusDate; ingestion may continue but promotion requires separate legal-state evidence",
+          "metadata.legalStatusDate"
+        )
+      )
     }
   }
 

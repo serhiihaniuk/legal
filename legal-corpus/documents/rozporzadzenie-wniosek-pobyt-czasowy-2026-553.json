@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+  "editionId": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+  "shortName": "Wniosek o pobyt czasowy — rozporządzenie",
+  "title": "Rozporządzenie w sprawie wniosku o udzielenie cudzoziemcowi zezwolenia na pobyt czasowy",
+  "citation": "Dz.U. 2026 poz. 553",
+  "publisher": "DU",
+  "year": 2026,
+  "position": 553,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/553/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf"
+  },
+  "checkedAt": "2026-07-14",
+  "legalStateDate": "2026-07-14",
+  "extraction": {
+    "profile": "polish-regulation-paragraph-v1",
+    "expectedProvisionCount": 20,
+    "expectedTextCoverage": 1,
+    "expectedPageCount": 72
+  }
+}

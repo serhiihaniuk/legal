@@ -1,0 +1,68 @@
+{
+  "id": "powierzanie-pracy-2025-621",
+  "schemaVersion": 2,
+  "documentId": "powierzanie-pracy",
+  "editionId": "powierzanie-pracy-2025-621",
+  "shortName": "Powierzanie pracy",
+  "title": "Ustawa o warunkach dopuszczalności powierzania pracy cudzoziemcom na terytorium Rzeczypospolitej Polskiej",
+  "citation": "Dz.U. 2025 poz. 621",
+  "publisher": "DU",
+  "year": 2025,
+  "position": 621,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf"
+  },
+  "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
+  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+  "checkedAt": "2026-07-14",
+  "legalStateDate": "2026-07-14",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 114,
+    "expectedTextCoverage": 1,
+    "expectedPageCount": 52,
+    "observedProvisionCount": 114,
+    "observedPageCount": 52,
+    "observedTextCoverage": 1,
+    "textLayerPageCount": 52
+  },
+  "extractionProfile": "polish-statute-art-v1",
+  "localPdfUrl": "/legal-sources/powierzanie-pracy-2025-621/source.pdf",
+  "pageCount": 52,
+  "textLayerPageCount": 52,
+  "textCoverage": 1,
+  "detectedArticleCount": 114,
+  "detectedProvisionCount": 114,
+  "provisionCount": 114,
+  "promotedProvisionCount": 114,
+  "pdfSha256": "e1efecc8382f88f4b2ef9287be551e10d4f2aa837241f871d289e636dd01c797",
+  "sourcePdfSha256": "e1efecc8382f88f4b2ef9287be551e10d4f2aa837241f871d289e636dd01c797",
+  "builtAt": "2026-07-15T12:42:26Z",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": null,
+    "consolidatedTextIdentifier": "DU/2025/621",
+    "checkedAt": "2026-07-14",
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
+    "unresolved": [
+      "metadata.legalStatusDate"
+    ]
+  },
+  "diagnostics": {
+    "fatalCount": 0,
+    "warningCount": 1
+  },
+  "eli": {
+    "identifier": "DU/2025/621",
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": null,
+    "textHTML": false,
+    "textPDF": true
+  }
+}

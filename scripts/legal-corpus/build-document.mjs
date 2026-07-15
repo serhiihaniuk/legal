@@ -229,6 +229,7 @@ async function main() {
     documentId: config.documentId,
     editionId: config.editionId,
     sourcePdfSha256: pdfSha256,
+    profile: config.extraction.profile,
   })
   const observed = buildObservedFacts(pages, provisions)
   const structure = buildStructure(provisions, {

@@ -23,6 +23,8 @@ const ARTICLE_LOCATOR_PATTERN =
   /^Art\.\s*(\d+)(?:\s*([a-z]{1,2})|\s+([0-9]+)|\s*([⁰¹²³⁴⁵⁶⁷⁸⁹]+))?\s*\.?$/iu
 const REPEALED_ARTICLE_PATTERN =
   /^Art\.\s+\d+\s*(?:[a-z]{1,2})?\s*(?:[0-9]+|[⁰¹²³⁴⁵⁶⁷⁸⁹]+)?\s*\.\s*\(uchylon(?:y|a|e)\)/iu
+const PARAGRAPH_PATTERN = /^§\s*(\d+)([a-z]{0,2})?\s*\./gimu
+const ANNEX_PATTERN = /^Załącznik nr\s+(\d+[a-z]?)/imu
 const URL_SAFE_DOCUMENT_ID = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/
 
 export function normalizeText(value) {
@@ -99,6 +101,16 @@ export function createProvisionId(documentId, locator, kind = "article") {
 
   if (kind === "article") {
     return `${documentId}-art-${normalizeArticleKey(locator)}`
+  }
+  if (kind === "paragraph") {
+    const match = String(locator).match(/^§\s*(\d+[a-z]{0,2})/iu)
+    if (!match) throw new TypeError(`Unsupported paragraph locator: ${locator}`)
+    return `${documentId}-par-${match[1].toLowerCase()}`
+  }
+  if (kind === "annex") {
+    const match = String(locator).match(/^Załącznik nr\s+(\d+[a-z]?)/iu)
+    if (!match) throw new TypeError(`Unsupported annex locator: ${locator}`)
+    return `${documentId}-annex-${match[1].toLowerCase()}`
   }
 
   const normalizedLocator = normalizeText(locator)
@@ -177,9 +189,81 @@ export function extractArticles(pages) {
     })
 }
 
+function extractParagraphLedUnits(pages) {
+  const units = []
+  let current = null
+
+  for (const page of pages) {
+    const markers = [...page.text.matchAll(PARAGRAPH_PATTERN)].map((match) => ({
+      index: match.index ?? 0,
+      kind: "paragraph",
+      locator: `§ ${match[1]}${match[2] ?? ""}`,
+    }))
+    const annex = page.text.match(ANNEX_PATTERN)
+    if (annex && (annex.index ?? Infinity) < 1000) {
+      markers.push({
+        index: annex.index ?? 0,
+        kind: "annex",
+        locator: `Załącznik nr ${annex[1]}`,
+      })
+    }
+    markers.sort((left, right) => left.index - right.index)
+
+    if (markers.length === 0) {
+      if (current && page.text) {
+        current.textParts.push(page.text)
+        current.endPdfPage = page.pdfPage
+      }
+      continue
+    }
+
+    const leading = page.text.slice(0, markers[0].index).trim()
+    if (current && leading) {
+      current.textParts.push(leading)
+      current.endPdfPage = page.pdfPage
+    }
+
+    markers.forEach((marker, index) => {
+      if (current) units.push(current)
+      const next = markers[index + 1]
+      current = {
+        ...marker,
+        startPdfPage: page.pdfPage,
+        endPdfPage: page.pdfPage,
+        textParts: [
+          page.text.slice(marker.index, next?.index ?? page.text.length).trim(),
+        ],
+      }
+    })
+  }
+  if (current) units.push(current)
+
+  const seen = new Set()
+  return units.filter((unit) => {
+    const key = `${unit.kind}:${unit.locator}`
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  }).map(({ textParts, index: _index, ...unit }) => {
+    const text = normalizeText(textParts.join("\n"))
+    return {
+      ...unit,
+      status: /^§[^.]*\.\s*\(uchylon(?:y|a|e)\)/iu.test(text)
+        ? "repealed"
+        : "active",
+      text,
+    }
+  })
+}
+
 export function extractProvisions(
   pages,
-  { documentId, editionId, sourcePdfSha256 } = {}
+  {
+    documentId,
+    editionId,
+    sourcePdfSha256,
+    profile = "polish-statute-art-v1",
+  } = {}
 ) {
   if (!documentId || !editionId || !sourcePdfSha256) {
     throw new TypeError(
@@ -187,21 +271,31 @@ export function extractProvisions(
     )
   }
 
-  return extractArticles(pages).map((article, index) => {
-    const locator = `Art. ${article.article}`
-    const text = normalizeText(article.text)
+  const units = profile === "polish-regulation-paragraph-v1"
+    ? extractParagraphLedUnits(pages)
+    : extractArticles(pages).map((article) => ({
+        kind: "article",
+        locator: `Art. ${article.article}`,
+        startPdfPage: article.pdfPage,
+        endPdfPage: article.endPdfPage,
+        status: article.status,
+        text: article.text,
+      }))
+
+  return units.map((unit, index) => {
+    const text = normalizeText(unit.text)
     return {
-      id: createProvisionId(documentId, locator, "article"),
+      id: createProvisionId(documentId, unit.locator, unit.kind),
       documentId,
       editionId,
-      kind: "article",
-      locator,
+      kind: unit.kind,
+      locator: unit.locator,
       parentId: null,
       childIds: [],
       order: index + 1,
-      startPdfPage: article.pdfPage,
-      endPdfPage: article.endPdfPage,
-      status: article.status,
+      startPdfPage: unit.startPdfPage,
+      endPdfPage: unit.endPdfPage,
+      status: unit.status,
       sourcePdfSha256,
       sourceTextHash: sha256(text),
       text,

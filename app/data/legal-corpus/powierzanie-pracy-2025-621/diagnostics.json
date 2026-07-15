@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "documentId": "powierzanie-pracy",
+  "editionId": "powierzanie-pracy-2025-621",
+  "profile": "polish-statute-art-v1",
+  "expected": {
+    "provisionCount": 114,
+    "pageCount": 52,
+    "textCoverage": 1
+  },
+  "observed": {
+    "pageCount": 52,
+    "textLayerPageCount": 52,
+    "textCoverage": 1,
+    "provisionCount": 114,
+    "articleCount": 114,
+    "promotedProvisionCount": 114,
+    "promotedPageCount": 52
+  },
+  "entries": [
+    {
+      "severity": "warning",
+      "code": "source.missing-legal-status-date",
+      "message": "Official metadata does not expose legalStatusDate; ingestion may continue but promotion requires separate legal-state evidence",
+      "path": "metadata.legalStatusDate"
+    }
+  ],
+  "fatal": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "code": "source.missing-legal-status-date",
+      "message": "Official metadata does not expose legalStatusDate; ingestion may continue but promotion requires separate legal-state evidence",
+      "path": "metadata.legalStatusDate"
+    }
+  ]
+}

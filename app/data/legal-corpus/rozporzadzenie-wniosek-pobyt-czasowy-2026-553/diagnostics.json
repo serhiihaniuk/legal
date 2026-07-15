@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+  "editionId": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+  "profile": "polish-regulation-paragraph-v1",
+  "expected": {
+    "provisionCount": 20,
+    "pageCount": 72,
+    "textCoverage": 1
+  },
+  "observed": {
+    "pageCount": 72,
+    "textLayerPageCount": 72,
+    "textCoverage": 1,
+    "provisionCount": 20,
+    "articleCount": 0,
+    "promotedProvisionCount": 20,
+    "promotedPageCount": 72
+  },
+  "entries": [
+    {
+      "severity": "warning",
+      "code": "source.missing-legal-status-date",
+      "message": "Official metadata does not expose legalStatusDate; ingestion may continue but promotion requires separate legal-state evidence",
+      "path": "metadata.legalStatusDate"
+    }
+  ],
+  "fatal": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "code": "source.missing-legal-status-date",
+      "message": "Official metadata does not expose legalStatusDate; ingestion may continue but promotion requires separate legal-state evidence",
+      "path": "metadata.legalStatusDate"
+    }
+  ]
+}

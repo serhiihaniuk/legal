@@ -5,12 +5,14 @@ import { buildStructure, projectArticles } from "../lib/artifacts.mjs"
 import { ConfigValidationError, validateConfig } from "../lib/config.mjs"
 import {
   createProvisionId,
+  extractProvisions,
   normalizeArticleKey,
   normalizeArticleLocator,
   sha256,
 } from "../lib/extraction.mjs"
 import {
   assertNoFatalDiagnostics,
+  validateOfficialIdentity,
   validateProvisionFacts,
   validateStructure,
 } from "../lib/validation.mjs"
@@ -86,6 +88,29 @@ test("validates the schema-v2 config and rejects guessed or non-HTTPS sources", 
   )
 })
 
+test("allows ingestion when ELI omits legalStatusDate but records a warning", () => {
+  const diagnostics = validateOfficialIdentity(
+    baseConfig,
+    {
+      ELI: "DU/2025/1691",
+      displayAddress: baseConfig.citation,
+      status: "obowiązujący",
+      inForce: "IN_FORCE",
+    },
+    new Uint8Array(new TextEncoder().encode("%PDF-test"))
+  )
+  assert.equal(
+    diagnostics.some(({ severity }) => severity === "fatal"),
+    false
+  )
+  assert.ok(
+    diagnostics.some(
+      ({ code, severity }) =>
+        code === "source.missing-legal-status-date" && severity === "warning"
+    )
+  )
+})
+
 test("normalizes lettered and superscript article locators into stable IDs", () => {
   assert.equal(normalizeArticleLocator("Art. 2a."), "Art. 2a")
   assert.equal(normalizeArticleLocator("Art. 39 1 ."), "Art. 39¹")
@@ -93,6 +118,48 @@ test("normalizes lettered and superscript article locators into stable IDs", () 
   assert.equal(normalizeArticleKey("Art. 39¹"), "39-1")
   assert.equal(createProvisionId("kpa", "Art. 2a"), "kpa-art-2a")
   assert.equal(createProvisionId("kpa", "Art. 39¹"), "kpa-art-39-1")
+})
+
+test("extracts paragraph-led regulations and annexes with stable IDs", () => {
+  const provisions = extractProvisions(
+    [
+      {
+        pdfPage: 1,
+        text: "§ 1. Pierwszy przepis.\n§ 2. Drugi przepis.",
+        hasTextLayer: true,
+      },
+      {
+        pdfPage: 2,
+        text: "Załącznik nr 1\nWZÓR FORMULARZA",
+        hasTextLayer: true,
+      },
+      {
+        pdfPage: 3,
+        text: "Dalsza część formularza",
+        hasTextLayer: true,
+      },
+    ],
+    {
+      documentId: "regulation",
+      editionId: "regulation-2026-1",
+      sourcePdfSha256: "a".repeat(64),
+      profile: "polish-regulation-paragraph-v1",
+    }
+  )
+  assert.deepEqual(
+    provisions.map(({ id, kind, locator, startPdfPage, endPdfPage }) => ({
+      id,
+      kind,
+      locator,
+      startPdfPage,
+      endPdfPage,
+    })),
+    [
+      { id: "regulation-par-1", kind: "paragraph", locator: "§ 1", startPdfPage: 1, endPdfPage: 1 },
+      { id: "regulation-par-2", kind: "paragraph", locator: "§ 2", startPdfPage: 1, endPdfPage: 1 },
+      { id: "regulation-annex-1", kind: "annex", locator: "Załącznik nr 1", startPdfPage: 2, endPdfPage: 3 },
+    ]
+  )
 })
 
 test("fails duplicate IDs/locators and out-of-range page spans", () => {

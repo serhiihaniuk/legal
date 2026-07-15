@@ -4,7 +4,12 @@ import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises"
 import os from "node:os"
 import path from "node:path"
 
-import { groupEditions, renderRegistry, scanCorpusEditions } from "../generate-registry.mjs"
+import {
+  groupEditions,
+  renderReferenceRegistry,
+  renderRegistry,
+  scanCorpusEditions,
+} from "../generate-registry.mjs"
 
 const manifest = (documentId, editionId) => ({
   id: editionId,
@@ -91,5 +96,10 @@ test("renders deterministic imports and preserves source provision order", async
     const second = renderRegistry(groups, root, path.join(root, "registry.generated.ts"))
     assert.equal(first, second)
     assert.ok(first.indexOf('provisionIds: ["alpha-art-2", "alpha-art-1"]') > 0)
+
+    const lightweight = renderReferenceRegistry(groups)
+    assert.match(lightweight, /Lightweight IDs only/u)
+    assert.doesNotMatch(lightweight, /import .*provisions\.json/u)
+    assert.match(lightweight, /"alpha-art-1"/u)
   })
 })

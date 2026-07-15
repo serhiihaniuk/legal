@@ -1,0 +1,61 @@
+{
+  "address": "WDU20260000553",
+  "announcementDate": "2026-04-10",
+  "changeDate": "2026-04-23T10:33:14",
+  "displayAddress": "Dz.U. 2026 poz. 553",
+  "pos": 553,
+  "promulgation": "2026-04-22",
+  "publisher": "DU",
+  "status": "obowiązujący",
+  "textHTML": false,
+  "textPDF": true,
+  "title": "Rozporządzenie Ministra Spraw Wewnętrznych i Administracji z dnia 10 kwietnia 2026 r. w sprawie wniosku o udzielenie cudzoziemcowi zezwolenia na pobyt czasowy",
+  "type": "Rozporządzenie",
+  "volume": 0,
+  "year": 2026,
+  "authorizedBody": [],
+  "directives": [],
+  "entryIntoForce": "2026-04-27",
+  "inForce": "IN_FORCE",
+  "keywords": [
+    "cudzoziemcy",
+    "zezwolenia"
+  ],
+  "keywordsNames": [],
+  "obligated": [],
+  "previousTitle": [],
+  "prints": [],
+  "references": {
+    "Akty uznane za uchylone": [
+      {
+        "id": "DU/2025/1647",
+        "date": "2026-04-27"
+      }
+    ],
+    "Podstawa prawna": [
+      {
+        "id": "DU/2013/1650"
+      }
+    ],
+    "Podstawa prawna z art.": [
+      {
+        "id": "DU/2013/1650",
+        "art": "art. 107 ust. 1"
+      }
+    ]
+  },
+  "releasedBy": [
+    "MIN. SPRAW WEWNĘTRZNYCH I ADMINISTRACJI"
+  ],
+  "texts": [
+    {
+      "fileName": "D20260553.pdf",
+      "type": "O"
+    },
+    {
+      "fileName": "D20260553.pdf",
+      "type": "I"
+    }
+  ],
+  "ELI": "DU/2026/553"
+}

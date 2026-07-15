@@ -2,6 +2,10 @@ import { URL } from "node:url"
 
 export const SCHEMA_VERSION = 2
 export const EXTRACTION_PROFILE = "polish-statute-art-v1"
+export const EXTRACTION_PROFILES = new Set([
+  EXTRACTION_PROFILE,
+  "polish-regulation-paragraph-v1",
+])
 
 const ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/
@@ -147,12 +151,12 @@ export function validateConfig(config) {
       message: "extraction must declare a named profile and expectations",
     })
   } else {
-    if (config.extraction.profile !== EXTRACTION_PROFILE) {
+    if (!EXTRACTION_PROFILES.has(config.extraction.profile)) {
       diagnostics.push({
         severity: "fatal",
         code: "config.unsupported-profile",
         path: "extraction.profile",
-        message: `Expected extraction profile ${EXTRACTION_PROFILE}`,
+        message: `Unsupported extraction profile ${config.extraction.profile}`,
       })
     }
 

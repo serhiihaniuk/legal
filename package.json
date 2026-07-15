@@ -5,6 +5,12 @@
   "scripts": {
     "build": "react-router build",
     "corpus:kpa": "node scripts/legal-corpus/build-document.mjs legal-corpus/documents/kpa-2025-1691.json",
+    "corpus:build": "node scripts/legal-corpus/build-document.mjs",
+    "corpus:prepare": "node scripts/legal-corpus/workflow.mjs prepare",
+    "corpus:validate": "node scripts/legal-corpus/workflow.mjs validate",
+    "corpus:diff": "node scripts/legal-corpus/workflow.mjs diff",
+    "corpus:generate": "node scripts/legal-corpus/generate-registry.mjs",
+    "corpus:promote": "node scripts/legal-corpus/workflow.mjs promote",
     "test:corpus": "node --test scripts/legal-corpus/test/*.test.mjs",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",

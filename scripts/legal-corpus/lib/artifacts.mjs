@@ -97,7 +97,7 @@ export function buildManifest({
     identifier: metadata.ELI,
     status: metadata.status,
     inForce: metadata.inForce,
-    legalStatusDate: metadata.legalStatusDate,
+    legalStatusDate: metadata.legalStatusDate ?? null,
     textHTML: Boolean(metadata.textHTML),
     textPDF: Boolean(metadata.textPDF),
   }
@@ -143,11 +143,13 @@ export function buildManifest({
     legalStatusEvidence: {
       status: metadata.status,
       inForce: metadata.inForce,
-      legalStatusDate: metadata.legalStatusDate,
+      legalStatusDate: metadata.legalStatusDate ?? null,
       consolidatedTextIdentifier: metadata.ELI,
       checkedAt: config.checkedAt,
       sourceUrl: source.officialPageUrl,
-      unresolved: [],
+      unresolved: metadata.legalStatusDate
+        ? []
+        : ["metadata.legalStatusDate"],
     },
     diagnostics: {
       fatalCount: diagnostics.fatal.length,

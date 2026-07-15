@@ -24,9 +24,15 @@ import {
 import type { KpaArticleExplanation } from "~/data/kpa-article-explanations"
 import { getLegalSourceManifest } from "~/data/legal-corpus"
 import { kpaArticleIndex, type KpaArticleEntry } from "~/data/kpa-article-index"
-import { kpaArticleTexts, kpaArticleTextSource } from "~/data/kpa-article-text"
+import { listProvisions } from "~/data/legal-library"
 
 const kpaSource = getLegalSourceManifest("kpa-2025-1691")!
+const kpaCorpusProvisionByArticle = new Map(
+  listProvisions("kpa").map((provision) => [
+    provision.locator.replace(/^Art\.\s*/u, ""),
+    provision,
+  ])
+)
 
 const articleOptions = kpaArticleIndex.map((entry) => ({
   article: entry.article,
@@ -149,9 +155,12 @@ export function KpaArticlesContent({
   const entry =
     kpaArticleIndex.find((article) => article.article === selectedArticle) ??
     kpaArticleIndex[0]
-  const articleText = kpaArticleTexts[entry.article]
-  const sourcePage = entry.pdfPage
-  const localPdfUrl = `${kpaSource.localPdfUrl}#page=${sourcePage}&zoom=page-width`
+  const corpusProvision = kpaCorpusProvisionByArticle.get(entry.article)
+  const articleText = corpusProvision?.text
+  const sourcePage = corpusProvision?.startPdfPage ?? entry.pdfPage
+  const localPdfUrl =
+    corpusProvision?.canonicalPdfLocator ??
+    `${kpaSource.localPdfUrl}#page=${sourcePage}&zoom=page-width`
 
   return (
     <>
@@ -204,8 +213,8 @@ export function KpaArticlesContent({
             </DialogContent>
           </Dialog>
           <OfficialSourceLink
+            sourceId="eli-kpa"
             label="Офіційна сторінка ELI"
-            url={kpaSource.officialPageUrl}
           />
         </div>
       </header>
@@ -281,8 +290,8 @@ export function KpaArticlesContent({
           <h2>Текст art. {entry.article} польською</h2>
           <p>
             Робоче відтворення з редакції
-            <strong> {kpaArticleTextSource.citation}</strong>. Для дослівного
-            цитування звірте текст із PDF.
+            <strong> {kpaSource.citation}</strong>. Для дослівного цитування
+            звірте текст із PDF.
           </p>
           {articleText ? (
             <div

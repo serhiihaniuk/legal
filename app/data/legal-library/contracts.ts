@@ -1,10 +1,10 @@
-import { legalLibraryRegistry } from "~/data/legal-corpus/registry.generated"
+import { legalReferenceRegistry } from "~/data/legal-corpus/reference-registry.generated"
 
-export type LegalDocumentId = keyof typeof legalLibraryRegistry & string
+export type LegalDocumentId = keyof typeof legalReferenceRegistry & string
 export type LegalEditionId<D extends LegalDocumentId> =
-  (typeof legalLibraryRegistry)[D]["editionIds"][number]
+  (typeof legalReferenceRegistry)[D]["editionIds"][number]
 export type LegalProvisionId<D extends LegalDocumentId> =
-  (typeof legalLibraryRegistry)[D]["provisionIds"][number]
+  (typeof legalReferenceRegistry)[D]["provisionIds"][number]
 
 /** A distributive member keeps document, edition, and provision identities together. */
 export type LegalProvisionReference = {
@@ -49,6 +49,15 @@ export type LegalCorpusManifest = {
   pdfSha256: string
   sourcePdfSha256: string
   builtAt: string
+  legalStatusEvidence?: {
+    status?: string | null
+    inForce?: string | null
+    legalStatusDate?: string | null
+    consolidatedTextIdentifier?: string | null
+    checkedAt?: string
+    sourceUrl?: string
+    unresolved?: string[]
+  }
   [key: string]: unknown
 }
 

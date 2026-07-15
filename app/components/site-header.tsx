@@ -15,7 +15,7 @@ import { cn } from "~/lib/utils"
 
 const routes = [
   { label: "Legalizacja", href: "/" },
-  { label: "KPA", href: "/guide/kpa" },
+  { label: "Право", href: "/law" },
   { label: "Карта права", href: "/map" },
   { label: "Документи", href: "/documents" },
   {

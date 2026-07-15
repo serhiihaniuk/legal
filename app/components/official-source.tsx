@@ -5,7 +5,7 @@ import { legalReferenceTarget } from "~/data/legal-references"
 import {
   getOfficialSource,
   type OfficialSourceId,
-} from "~/data/legal-library"
+} from "~/data/legal-library/official-sources"
 import type { OfficialSource } from "~/data/legal-types"
 
 const officialSourceLabelClassName = "text-sm font-medium"

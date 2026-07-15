@@ -29,8 +29,11 @@ The current product uses Vite, React, TypeScript, React Router, Tailwind CSS v4,
 - `app/data/kpa-article-index.ts` — the 306-entry article index;
 - `legal-corpus/documents/` — versioned ELI source configurations;
 - `scripts/legal-corpus/build-document.mjs` — Node-only ELI/PDF ingestion pipeline;
-- `app/data/legal-corpus/` and `public/legal-sources/` — generated article data and local PDFs;
-- `app/components/kpa-articles-content.tsx` — article selector and focused article reader;
+- `scripts/legal-corpus/workflow.mjs` — deterministic prepare/diff/validate/promote workflow;
+- `app/data/legal-corpus/` and `public/legal-sources/` — generated provision data and local PDFs;
+- `app/data/legal-library/` — typed document/provision contracts and the canonical query/resolution module;
+- `app/routes/law*.tsx` — multi-document catalog, provision reader, and KPA compatibility routes;
+- `app/components/kpa-articles-content.tsx` — legacy-compatible KPA selector and reader;
 - `app/data/legal-types.ts` — the content schema;
 - `app/data/legal-index.ts` — recursive indexing;
 - `app/app.css` — Tailwind v4 theme tokens and global accessibility rules;
@@ -38,7 +41,7 @@ The current product uses Vite, React, TypeScript, React Router, Tailwind CSS v4,
 
 Use the existing stack. Do not reintroduce global browser data, inline data scripts, or parallel legacy implementations.
 
-Build the KPA proof-of-concept corpus with `npm run corpus:kpa`. The importer must remain Node-only so the project does not require a second runtime. Generated article text is a locator and learning aid; the source reader must retain the official ELI link for legal verification.
+Build the KPA corpus with `npm run corpus:kpa` or any schema-v2 edition with `npm run corpus:build -- <config>`. Regenerate typed registries with `npm run corpus:generate`; use `corpus:prepare`, `corpus:validate`, and explicit `corpus:promote` for edition changes. The importer must remain Node-only so the project does not require a second runtime. Generated provision text is a locator and learning aid; the source reader must retain the official ELI link for legal verification. New editions never become current merely because they were fetched or built.
 
 ## Core learning model
 

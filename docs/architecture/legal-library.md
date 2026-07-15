@@ -1,10 +1,12 @@
 # Multi-document legal library architecture
 
-**Status:** implementation source of truth for the future library  
-**Scope:** evolve the KPA proof of concept into a local, versioned library of legal documents without changing the legal-source or editorial safety rules.  
+**Status:** implemented source of truth; phases 1–6 active as of 2026-07-15
+
+**Scope:** maintain the local, versioned multi-document library without changing the legal-source or editorial safety rules.
+
 **Audience:** the implementer of the corpus pipeline, the library data module, routes, and the editorial workflow.
 
-This document describes a target architecture. It does not claim that the target scripts, routes, registry, or query module already exist. The current repository still has the KPA-specific builder and `/guide/kpa` implementation described in [Current state](#current-state-and-constraints).
+This document defines the active architecture. The repository now has generic corpus profiles, generated typed registries, the `legal-library` query Module, canonical `/law` routes, KPA compatibility, and the deterministic review/promotion workflow. Sections describing the former KPA-only state remain as migration history.
 
 ## 1. Purpose and governing invariants
 
@@ -626,20 +628,20 @@ The human reviewer owns legal judgment. AI output is a draft until the review st
 
 Validation runs after editorial review and before promotion. It verifies both generated facts and editorial references. A promotion recommendation is `BLOCK` whenever a source, locator, status, transition rule, explanation, or write-scope issue is uncertain.
 
-### 11.5 Target commands (not currently implemented)
+### 11.5 Implemented commands
 
-The eventual command names may be:
+The repository exposes:
 
 ```text
 npm run corpus:build -- <edition-config>
-npm run corpus:prepare -- --mode add|update <edition-config>
-npm run corpus:validate -- <work-order-or-edition>
-npm run corpus:generate -- <validated-edition>
-npm run corpus:diff -- <old-edition> <new-edition>
-npm run corpus:promote -- <documentId> <editionId>
+npm run corpus:prepare -- --mode add|update --config <edition-config> --scope <exact-editorial-file>[,<file>]
+npm run corpus:validate -- --work-order <work-order.json>
+npm run corpus:generate
+npm run corpus:diff -- --old <old-edition> --new <new-edition>
+npm run corpus:promote -- --work-order <work-order.json> --approve <documentId>@<editionId> --approved-by <reviewer>
 ```
 
-These are target commands only. The current KPA example remains `npm run corpus:kpa` until the migration implements compatible commands. `corpus:promote` must require an explicit reviewed work order and must refuse a packet with fatal diagnostics or unresolved issues.
+`corpus:promote` requires an explicit reviewed work order, complete structured legal-status evidence, exact approval identity, and a changed-file scope check. It refuses packets with fatal diagnostics or unresolved issues. `npm run corpus:kpa` remains a convenience command for rebuilding the KPA edition.
 
 ## 12. Edition diff and update semantics
 

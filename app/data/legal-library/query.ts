@@ -1,6 +1,7 @@
 import { getKpaArticleExplanation } from "~/data/kpa-article-explanations"
 import { legalLibraryRegistry } from "~/data/legal-corpus/registry.generated"
 
+import { getEditorialExplanation } from "./editorial"
 import type {
   CanonicalPdfLocator,
   CorpusProvision,
@@ -554,7 +555,33 @@ export async function getExplanation(
   const provision = getProvision(documentId, reference.provisionId, requestedEditionId)
   if (!provision) return explanationFailure("mismatched-provision", requestedEditionId)
 
-  if (documentId !== "kpa") return explanationFailure("source-only", requestedEditionId, provision)
+  if (documentId !== "kpa") {
+    const editorial = await getEditorialExplanation(
+      documentId,
+      provision.id as LegalProvisionId<typeof documentId>
+    )
+    if (!editorial) {
+      return explanationFailure("source-only", requestedEditionId, provision)
+    }
+    if (
+      editorial.sourceEditionId !== requestedEditionId ||
+      editorial.reviewStatus !== "reviewed"
+    ) {
+      return explanationFailure(
+        "stale-explanation",
+        requestedEditionId,
+        provision
+      )
+    }
+    return {
+      status: "reviewed",
+      state: "reviewed",
+      explanation: editorial,
+      sourceEditionId: editorial.sourceEditionId,
+      requestedEditionId,
+      provision,
+    }
+  }
   if (requestedEditionId !== REVIEWED_KPA_EDITION) return explanationFailure("stale-explanation", requestedEditionId, provision)
 
   const source = await getKpaArticleExplanation(articleForProvision(provision))

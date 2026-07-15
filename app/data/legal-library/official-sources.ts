@@ -1,3 +1,5 @@
+import type { LegalDocumentId } from "./contracts"
+
 export const officialSourceRegistry = {
   "eli-kpa": {
     label: "Kodeks postępowania administracyjnego — ELI",
@@ -15,6 +17,10 @@ export const officialSourceRegistry = {
     label: "Prawo o postępowaniu przed sądami administracyjnymi — ELI",
     url: "https://eli.gov.pl/eli/DU/2026/143/ogl",
   },
+  "eli-rozporzadzenie-wniosek-pobyt-czasowy": {
+    label: "Rozporządzenie w sprawie wniosku o pobyt czasowy — ELI",
+    url: "https://eli.gov.pl/eli/DU/2026/553/ogl",
+  },
   "udsc-mos-qa": {
     label: "UdSC — MOS pytania i odpowiedzi",
     url: "https://www.gov.pl/web/udsc/mos-qa",
@@ -22,6 +28,15 @@ export const officialSourceRegistry = {
 } as const
 
 export type OfficialSourceId = keyof typeof officialSourceRegistry
+
+export const officialSourceIdByLegalDocument = {
+  kpa: "eli-kpa",
+  "ustawa-o-cudzoziemcach": "eli-ustawa-o-cudzoziemcach",
+  "powierzanie-pracy": "eli-powierzanie-pracy",
+  ppsa: "eli-ppsa",
+  "rozporzadzenie-wniosek-pobyt-czasowy":
+    "eli-rozporzadzenie-wniosek-pobyt-czasowy",
+} as const satisfies Record<LegalDocumentId, OfficialSourceId>
 
 export type OfficialSourceReference = {
   kind: "official-source"

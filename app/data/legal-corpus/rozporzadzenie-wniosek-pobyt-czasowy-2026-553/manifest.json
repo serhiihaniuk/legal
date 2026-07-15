@@ -1,0 +1,68 @@
+{
+  "id": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+  "schemaVersion": 2,
+  "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+  "editionId": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+  "shortName": "Wniosek o pobyt czasowy — rozporządzenie",
+  "title": "Rozporządzenie w sprawie wniosku o udzielenie cudzoziemcowi zezwolenia na pobyt czasowy",
+  "citation": "Dz.U. 2026 poz. 553",
+  "publisher": "DU",
+  "year": 2026,
+  "position": 553,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/553/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf"
+  },
+  "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/553/ogl",
+  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+  "checkedAt": "2026-07-14",
+  "legalStateDate": "2026-07-14",
+  "extraction": {
+    "profile": "polish-regulation-paragraph-v1",
+    "expectedProvisionCount": 20,
+    "expectedTextCoverage": 1,
+    "expectedPageCount": 72,
+    "observedProvisionCount": 20,
+    "observedPageCount": 72,
+    "observedTextCoverage": 1,
+    "textLayerPageCount": 72
+  },
+  "extractionProfile": "polish-regulation-paragraph-v1",
+  "localPdfUrl": "/legal-sources/rozporzadzenie-wniosek-pobyt-czasowy-2026-553/source.pdf",
+  "pageCount": 72,
+  "textLayerPageCount": 72,
+  "textCoverage": 1,
+  "detectedArticleCount": 0,
+  "detectedProvisionCount": 20,
+  "provisionCount": 20,
+  "promotedProvisionCount": 20,
+  "pdfSha256": "56ad73becd064acea037fdd001767e688f991a6c088578b2da29a65c52ddc57e",
+  "sourcePdfSha256": "56ad73becd064acea037fdd001767e688f991a6c088578b2da29a65c52ddc57e",
+  "builtAt": "2026-07-15T12:47:14Z",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": null,
+    "consolidatedTextIdentifier": "DU/2026/553",
+    "checkedAt": "2026-07-14",
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2026/553/ogl",
+    "unresolved": [
+      "metadata.legalStatusDate"
+    ]
+  },
+  "diagnostics": {
+    "fatalCount": 0,
+    "warningCount": 1
+  },
+  "eli": {
+    "identifier": "DU/2026/553",
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": null,
+    "textHTML": false,
+    "textPDF": true
+  }
+}

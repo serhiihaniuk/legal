@@ -7,20 +7,25 @@ import {
 } from "~/data/document-index"
 import { documentGuides } from "~/data/document-guides"
 import { kpaArticleIndex } from "~/data/kpa-article-index"
+import type {
+  LegalDocumentReference,
+  LegalProvisionReference,
+} from "~/data/legal-library/contracts"
 import {
   getOfficialSource,
-  resolveLegalReference,
-  type LegalDocumentReference,
-  type LegalProvisionReference,
   type OfficialSourceReference,
-} from "~/data/legal-library"
+} from "~/data/legal-library/official-sources"
+import {
+  isRegisteredLegalProvisionId,
+  resolveRegisteredLegalHref,
+} from "~/data/legal-library/reference-registry"
 import { nodeById } from "~/data/legal-index"
 
 export type LegalReference =
   | LegalDocumentReference
   | LegalProvisionReference
   | OfficialSourceReference
-  | { kind: "article"; article: string }
+  | { kind: "legacy-kpa-article"; article: string }
   | { kind: "document"; documentId: string }
   | { kind: "map-node"; nodeId: string }
   | { kind: "case-route"; routeId: CaseGuideRouteId }
@@ -32,8 +37,48 @@ export type LegalReferenceTarget = {
   external?: boolean
 }
 
+const superscriptDigits: Record<string, string> = {
+  "⁰": "0",
+  "¹": "1",
+  "²": "2",
+  "³": "3",
+  "⁴": "4",
+  "⁵": "5",
+  "⁶": "6",
+  "⁷": "7",
+  "⁸": "8",
+  "⁹": "9",
+}
+
+function kpaProvisionId(article: string) {
+  const normalized = article.toLocaleLowerCase("pl-PL")
+  const base = normalized.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+$/u, "")
+  const suffix = normalized.slice(base.length)
+  const key = suffix
+    ? `${base}-${[...suffix].map((digit) => superscriptDigits[digit]).join("-")}`
+    : base
+  const candidate = `kpa-art-${key}`
+  return isRegisteredLegalProvisionId("kpa", candidate)
+    ? candidate
+    : undefined
+}
+
+const kpaProvisionIdByArticle = new Map(
+  kpaArticleIndex.flatMap((entry) => {
+    const provisionId = kpaProvisionId(entry.article)
+    return provisionId
+      ? [[entry.article.toLocaleLowerCase("pl-PL"), provisionId] as const]
+      : []
+  })
+)
+
 export function articleHref(article: string) {
-  return `/guide/kpa?view=articles&article=${encodeURIComponent(article)}`
+  const provisionId = kpaProvisionIdByArticle.get(
+    article.toLocaleLowerCase("pl-PL")
+  )
+  return provisionId
+    ? `/law/kpa/provisions/${encodeURIComponent(provisionId)}`
+    : "/law/kpa"
 }
 
 export function legalReferenceTarget(
@@ -42,10 +87,8 @@ export function legalReferenceTarget(
   switch (reference.kind) {
     case "legal-document":
     case "legal-provision": {
-      const resolution = resolveLegalReference(reference)
-      return resolution.status === "resolved"
-        ? { reference, href: resolution.href }
-        : undefined
+      const href = resolveRegisteredLegalHref(reference)
+      return href ? { reference, href } : undefined
     }
     case "official-source": {
       const source = getOfficialSource(reference.sourceId)
@@ -53,7 +96,7 @@ export function legalReferenceTarget(
         ? { reference, href: source.url, external: true }
         : undefined
     }
-    case "article":
+    case "legacy-kpa-article":
       return kpaArticleIndex.some(
         (entry) => entry.article === reference.article
       )
@@ -129,7 +172,7 @@ function articleReference(
   const normalizedArticle = article.toLowerCase()
   if (articleExists(normalizedArticle) && isKpaContext(text, start, end)) {
     return legalReferenceTarget({
-      kind: "article",
+      kind: "legacy-kpa-article",
       article: normalizedArticle,
     })
   }

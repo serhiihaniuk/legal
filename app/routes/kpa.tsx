@@ -1,6 +1,8 @@
 import { useMemo, type ReactNode } from "react"
 import {
   useLoaderData,
+  useNavigate,
+  useParams,
   useSearchParams,
   type LoaderFunctionArgs,
 } from "react-router"
@@ -25,6 +27,7 @@ import {
   getKpaArticleExplanations,
 } from "~/data/kpa-article-explanations"
 import { kpaArticleIndex, kpaArticleSections } from "~/data/kpa-article-index"
+import { listProvisions } from "~/data/legal-library"
 import {
   kpaGuideModuleArticles,
   type KpaGuideModuleId,
@@ -45,9 +48,21 @@ const practiceNavigation = [
   { id: "practice-check", label: "Самоперевірка" },
 ]
 
-export async function loader({ request }: LoaderFunctionArgs) {
+const kpaProvisionIdByArticle = new Map(
+  listProvisions("kpa").map((provision) => [
+    provision.locator.replace(/^Art\.\s*/u, ""),
+    provision.id,
+  ])
+)
+
+export async function loader({ request, params }: LoaderFunctionArgs) {
   const searchParams = new URL(request.url).searchParams
-  const requestedMode = searchParams.get("view")
+  const routeMode: KpaMode | undefined = params.practiceId
+    ? "practice"
+    : params.moduleId
+      ? "learning"
+      : undefined
+  const requestedMode = routeMode ?? searchParams.get("view")
   const mode: KpaMode = modes.some((item) => item.id === requestedMode)
     ? (requestedMode as KpaMode)
     : "learning"
@@ -57,7 +72,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   )
     ? (requestedArticle as string)
     : (kpaArticleIndex[0]?.article ?? "1")
-  const requestedModule = searchParams.get("module")
+  const requestedModule = params.moduleId ?? searchParams.get("module")
   const selectedModule = kpaGuideModules.some(
     (item) => item.id === requestedModule
   )
@@ -387,11 +402,19 @@ export default function KpaGuide() {
   const { explanation, moduleArticleExplanations } =
     useLoaderData<typeof loader>()
   const [searchParams, setSearchParams] = useSearchParams()
-  const requestedMode = searchParams.get("view")
+  const navigate = useNavigate()
+  const params = useParams()
+  const canonicalLawMode = Boolean(params.moduleId || params.practiceId)
+  const routeMode: KpaMode | undefined = params.practiceId
+    ? "practice"
+    : params.moduleId
+      ? "learning"
+      : undefined
+  const requestedMode = routeMode ?? searchParams.get("view")
   const mode: KpaMode = modes.some((item) => item.id === requestedMode)
     ? (requestedMode as KpaMode)
     : "learning"
-  const requestedModule = searchParams.get("module")
+  const requestedModule = params.moduleId ?? searchParams.get("module")
   const selectedModule = kpaGuideModules.some(
     (item) => item.id === requestedModule
   )
@@ -411,6 +434,23 @@ export default function KpaGuide() {
   }, [mode])
 
   function changeMode(nextMode: KpaMode) {
+    if (canonicalLawMode) {
+      if (nextMode === "learning") {
+        navigate(`/law/kpa/learn/${selectedModule}`)
+      } else if (nextMode === "practice") {
+        navigate("/law/kpa/practice/case-workflow")
+      } else {
+        const provisionId = kpaProvisionIdByArticle.get(selectedArticle)
+        navigate(
+          provisionId
+            ? `/law/kpa/provisions/${provisionId}`
+            : "/law/kpa"
+        )
+      }
+      scrollToTop()
+      return
+    }
+
     const next = new URLSearchParams(searchParams)
     if (nextMode === "learning") {
       next.delete("view")
@@ -427,6 +467,12 @@ export default function KpaGuide() {
   }
 
   function changeModule(id: string) {
+    if (canonicalLawMode) {
+      navigate(`/law/kpa/learn/${id}`)
+      scrollToTop()
+      return
+    }
+
     const next = new URLSearchParams(searchParams)
     next.delete("view")
     next.set("module", id)
@@ -436,6 +482,15 @@ export default function KpaGuide() {
   }
 
   function changeArticle(article: string) {
+    if (canonicalLawMode) {
+      const provisionId = kpaProvisionIdByArticle.get(article)
+      navigate(
+        provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa"
+      )
+      scrollToTop()
+      return
+    }
+
     const next = new URLSearchParams(searchParams)
     next.set("view", "articles")
     next.set("article", article)
