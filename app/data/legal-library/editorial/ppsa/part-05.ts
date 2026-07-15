@@ -8,1348 +8,1303 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
   entries: [
     {
       provisionId: "ppsa-art-177",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 177 встановлює, що skargę kasacyjną подають до суду, який ухвалив оскаржене orzeczenie, протягом тридцяти днів від doręczenie відпису orzeczenia з uzasadnieniem; окремо врегульовано строки для prokuratora, Rzecznika Praw Obywatelskich, Rzecznika Praw Dziecka, pełnomocnika з prawa pomocy та випадок відмови у такій допомозі.",
+          text: "Skargę kasacyjną wnosi się do sądu, który wydał zaskarżony wyrok lub postanowienie, w terminie trzydziestu dni od doręczenia stronie odpisu orzeczenia z uzasadnieniem. Przepis określa też odrębny początek biegu terminu dla prokuratora, Rzecznika Praw Obywatelskich, Rzecznika Praw Dziecka oraz w kilku sytuacjach prawa pomocy.",
           sourceLocator: "Art. 177 § 1–6",
         },
       ],
       summary:
-        "Норма визначає, куди і коли подається skarga kasacyjna, а також спеціальні правила перебігу строку в окремих процесуальних ситуаціях.",
+        "Art. 177 wyznacza sąd właściwy do wniesienia skargi kasacyjnej i podstawowy trzydziestodniowy termin, z wyjątkami dotyczącymi określonych podmiotów i prawa pomocy.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Основний строк становить тридцять днів від doręczenie відпису wyroku або postanowienia з uzasadnieniem; скаргу подають до суду, який видав це orzeczenie.",
+            "Punktem wyjścia jest doręczenie odpisu orzeczenia z uzasadnieniem, a pismo wnosi się do sądu, który wydał zaskarżone orzeczenie.",
         },
         {
-          locator: "§ 3–6",
+          locator: "§ 2–6",
           explanation:
-            "Коли після orzeczenie призначено pełnomocnika в рамках prawa pomocy або в цьому проханні відмовлено, закон визначає спеціальний момент, від якого може рахуватися строк.",
+            "Przy ustalaniu terminu trzeba sprawdzić, czy działa reguła dla organów ochrony prawnej, ustanowionego pełnomocnika z prawa pomocy, opinii o braku podstaw albo odmowy ustanowienia pełnomocnika.",
         },
       ],
       legalEffect:
-        "Пропуск визначеного строку може перешкодити розгляду skargi kasacyjnej; сама стаття не замінює перевірки doręczenie, права на засіб і вимог до змісту скарги.",
+        "Termin i jego początek wynikają z konkretnego sposobu doręczenia oraz sytuacji procesowej; sama data na orzeczeniu nie przesądza o jego rozpoczęciu.",
       foreignersCase:
-        "У справі іноземця про pobyt зафіксуйте дату doręczenie wyroku WSA з uzasadnieniem і не обчислюйте тридцятиденний строк лише від дати, надрукованої на рішенні.",
+        "W sprawie pobytowej ustal datę doręczenia odpisu z uzasadnieniem, status pełnomocnika i ewentualne postanowienie w sprawie prawa pomocy. Nie obliczaj terminu wyłącznie od daty wydania wyroku.",
     },
     {
       provisionId: "ppsa-art-177a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 177a передбачає wezwanie до усунення недоліків skargi kasacyjnej, які стосуються вимог Art. 176, крім przytoczenie podstaw kasacyjnych та їх uzasadnienie; строк становить сім днів, а наслідком невиконання є odrzucenie skargi.",
+          text: "Jeżeli skarga kasacyjna nie spełnia wymagań art. 176 innych niż przytoczenie podstaw kasacyjnych i ich uzasadnienie, przewodniczący wzywa stronę do usunięcia braków w terminie siedmiu dni pod rygorem odrzucenia skargi.",
           sourceLocator: "Art. 177a",
         },
       ],
       summary:
-        "Це спеціальне wezwanie стосується формальних вимог касаційної скарги, але не дозволяє доповнювати або виправляти самі касаційні підстави та їх обґрунтування.",
+        "Art. 177a pozwala uzupełnić wskazane wymagania formalne skargi kasacyjnej, ale wyłącza z tego wezwania same podstawy kasacyjne i ich uzasadnienie.",
       rules: [
         {
           locator: "Art. 177a",
           explanation:
-            "На усунення охопленого нормою недоліку надається сім днів; у wezwanie має бути зрозуміло, що саме потрібно виправити.",
-        },
-        {
-          locator: "Art. 177a",
-          explanation:
-            "Якщо недолік не усунуто в строк, передбачений rygor wezwania, skarga kasacyjna підлягає odrzucenie.",
+            "Wezwanie dotyczy wymagań art. 176 innych niż podstawy kasacyjne i ich uzasadnienie; termin na reakcję wynosi siedem dni i ma określony rygor.",
         },
       ],
       legalEffect:
-        "Норма створює можливість усунути певні braki formalne, але не гарантує прийняття скарги й не поширюється на виклад касаційних підстав.",
+        "Niewykonanie prawidłowego wezwania w terminie może doprowadzić do odrzucenia skargi kasacyjnej; przepis nie otwiera drogi do późniejszego uzupełniania podstaw kasacyjnych.",
       foreignersCase:
-        "Якщо pełnomocnik іноземця отримав wezwanie щодо skargi kasacyjnej, треба окремо звірити семиденний строк і перелік braki, не намагаючись додати нові підстави касації під виглядом виправлення форми.",
+        "Po doręczeniu wezwania w sprawie pobytowej zapisz jego zakres i datę doręczenia. Uzupełniaj tylko wskazane braki, nie przedstawiając nowych podstaw kasacyjnych jako poprawy formy.",
     },
     {
       provisionId: "ppsa-art-178",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 178 зобов'язує wojewódzki sąd administracyjny на posiedzeniu niejawnym відхилити skargę kasacyjną, подану після строку або недопустиму з іншої причини, а також скаргу, недоліки якої не усунуто в призначений строк.",
+          text: "Wojewódzki sąd administracyjny na posiedzeniu niejawnym odrzuca skargę kasacyjną wniesioną po terminie lub z innych przyczyn niedopuszczalną, a także skargę, której braków strona nie uzupełniła w wyznaczonym terminie.",
           sourceLocator: "Art. 178",
         },
       ],
       summary:
-        "Стаття визначає випадки, коли WSA не передає касаційну скаргу далі через строк, недопустимість або неусунені недоліки.",
+        "Art. 178 reguluje odrzucenie skargi kasacyjnej przez WSA z powodu spóźnienia, niedopuszczalności albo nieusunięcia braków.",
       rules: [
         {
           locator: "Art. 178",
           explanation:
-            "Прострочення, інша niedopuszczalność або невиконання wezwanie щодо braki є окремими підставами для odrzucenie.",
-        },
-        {
-          locator: "Art. 178",
-          explanation:
-            "Рішення про odrzucenie приймається WSA на posiedzeniu niejawnym.",
+            "Sąd bada przesłanki formalne przed przekazaniem skargi kasacyjnej; przepis wskazuje trzy grupy przyczyn odrzucenia.",
         },
       ],
       legalEffect:
-        "Odrzucenie припиняє шлях цієї skargi kasacyjnej до розгляду по суті; оцінка факту строку та усунення недоліків потребує перевірки матеріалів вручення.",
+        "Odrzucenie kończy bieg tej skargi kasacyjnej bez rozpoznania jej podstaw; przed oceną skutku trzeba sprawdzić doręczenia, dopuszczalność i wykonanie wezwania.",
       foreignersCase:
-        "У спорі іноземця щодо decyzja o pobycie перевірте, чи WSA відхилив skargę kasacyjną через строк або форму, а не через оцінку права на pobyt по суті.",
+        "W sprawie o pobyt odróżnij odrzucenie kasacji przez WSA od oddalenia jej przez NSA co do podstaw. Zabezpiecz dowody doręczenia i uzupełnienia braków.",
     },
     {
       provisionId: "ppsa-art-178a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 178a вимагає umorzenie postępowania kasacyjnego на posiedzeniu niejawnym, якщо сторона ефективно відкликала skargę kasacyjną до її передачі разом з aktami справи Naczelnemu Sądowi Administracyjnemu; на postanowienie доступне zażalenie.",
+          text: "WSA na posiedzeniu niejawnym umarza postępowanie kasacyjne, jeżeli strona skutecznie cofnęła skargę kasacyjną przed przedstawieniem jej wraz z aktami sprawy NSA. Na postanowienie przysługuje zażalenie.",
           sourceLocator: "Art. 178a",
         },
       ],
       summary:
-        "Відкликання касаційної скарги до передачі справи до NSA веде до umorzenie касаційного провадження.",
+        "Skuteczne cofnięcie skargi kasacyjnej przed przekazaniem jej z aktami do NSA prowadzi do umorzenia postępowania kasacyjnego.",
       rules: [
         {
           locator: "Art. 178a",
           explanation:
-            "Важливі і момент відкликання, і його skuteczność: після передачі akt умова цієї статті вже не описує ситуацію.",
-        },
-        {
-          locator: "Art. 178a",
-          explanation:
-            "Umorzenie відбувається на posiedzeniu niejawnym, а на відповідне postanowienie можна подати zażalenie.",
+            "Trzeba łącznie ustalić skuteczność cofnięcia i moment przed przedstawieniem skargi z aktami NSA; przepis przewiduje posiedzenie niejawne.",
         },
       ],
       legalEffect:
-        "Стаття визначає процесуальний наслідок skuteczne cofnięcie, але не вирішує, чи було відкликання допустимим за іншими правилами.",
+        "Umorzenie dotyczy tego postępowania kasacyjnego i nie jest merytorycznym rozstrzygnięciem prawa do pobytu; na postanowienie ustawa daje zażalenie.",
       foreignersCase:
-        "Якщо іноземець відкликає skargę kasacyjną у справі про pobyt після отримання нового рішення органу, встановіть, чи akt ще не передали до NSA, і пам'ятайте про окреме postanowienie.",
+        "Jeżeli w sprawie pobytowej rozważasz cofnięcie kasacji, ustal w aktach, czy WSA nie przedstawił jej już NSA. Przeczytaj także pouczenie o zażaleniu na postanowienie.",
     },
     {
       provisionId: "ppsa-art-179",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 179 дозволяє стороні, яка не подала skargi kasacyjnej, подати до WSA відповідь на неї протягом чотирнадцяти днів від doręczenie; після спливу строку або doręczenie відповіді WSA невідкладно передає skargę, відповідь і akta до NSA.",
+          text: "Strona, która nie wniosła skargi kasacyjnej, może wnieść do WSA odpowiedź na skargę w terminie czternastu dni od jej doręczenia. Po upływie tego terminu albo po zarządzeniu doręczenia odpowiedzi wnoszącemu skargę WSA niezwłocznie przedstawia skargę, odpowiedź i akta NSA.",
           sourceLocator: "Art. 179",
         },
       ],
       summary:
-        "Норма дає іншій стороні короткий строк для odpowiedź na skargę kasacyjną і визначає подальшу передачу матеріалів до NSA.",
+        "Art. 179 daje stronie niekasującej czternaście dni na odpowiedź i określa moment przekazania materiałów do NSA.",
       rules: [
         {
           locator: "Art. 179",
           explanation:
-            "Строк відповіді становить чотирнадцять днів від її doręczenie стороні, яка не подала skargi kasacyjnej.",
-        },
-        {
-          locator: "Art. 179",
-          explanation:
-            "Після відповіді або завершення строку WSA передає до NSA skargę kasacyjną, відповідь і akta справи.",
+            "Termin odpowiedzi biegnie od jej doręczenia stronie, która nie wniosła skargi kasacyjnej; potem WSA przekazuje skargę wraz z odpowiedzią i aktami.",
         },
       ],
       legalEffect:
-        "Відповідь є процесуальною можливістю заперечити касаційні доводи; пропуск строку не перетворює відповідь на нову skargę kasacyjną.",
+        "Odpowiedź jest możliwością przedstawienia stanowiska przed przekazaniem sprawy NSA, a nie odrębną skargą kasacyjną. Brak odpowiedzi nie zatrzymuje przewidzianego przekazania.",
       foreignersCase:
-        "У справі про odmowa pobytu орган або інша сторона має відстежити doręczenie skargi kasacyjnej, щоб вчасно подати відповідь і викласти, чому рішення WSA слід зберегти.",
+        "W sporze o decyzję pobytową ustal datę doręczenia kasacji każdej stronie i czternastodniowy termin na odpowiedź. Treść odpowiedzi powinna odnosić się do konkretnych podstaw kasacyjnych.",
     },
     {
       provisionId: "ppsa-art-179a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 179a дозволяє WSA до передачі skargi kasacyjnej до NSA самому скасувати оскаржене wyrok або postanowienie, якщо виявлено nieważność postępowania або очевидно виправдані підстави касації, і повторно розглянути справу; на нове orzeczenie доступна skarga kasacyjna.",
+          text: "Jeżeli przed przedstawieniem skargi kasacyjnej NSA WSA stwierdzi nieważność postępowania albo oczywiste usprawiedliwienie podstaw kasacyjnych, uchyla zaskarżony wyrok lub postanowienie, na wniosek strony rozstrzyga także o zwrocie kosztów postępowania kasacyjnego i na tym samym posiedzeniu ponownie rozpoznaje sprawę. Od tego orzeczenia przysługuje skarga kasacyjna.",
           sourceLocator: "Art. 179a",
         },
       ],
       summary:
-        "До передачі касаційної скарги WSA може скористатися особливим самовиправленням при nieważność або очевидно обґрунтованій касації.",
+        "Art. 179a pozwala WSA na samokontrolę przed przekazaniem kasacji NSA w razie nieważności albo oczywiście usprawiedliwionych podstaw kasacyjnych.",
       rules: [
         {
           locator: "Art. 179a",
           explanation:
-            "Самоперегляд можливий лише до передачі skargi kasacyjnej та за однією з двох названих у статті підстав.",
-        },
-        {
-          locator: "Art. 179a",
-          explanation:
-            "WSA скасовує попереднє orzeczenie, за потреби вирішує zwrot kosztów postępowania kasacyjnego та розглядає справу знову.",
+            "Warunkiem jest chwila przed przedstawieniem kasacji NSA oraz jedna z dwóch przesłanek. WSA uchyla orzeczenie i od razu ponownie rozpoznaje sprawę.",
         },
       ],
       legalEffect:
-        "Механізм може змінити ситуацію ще до розгляду NSA, але його застосування не означає автоматичного задоволення первісної skargi.",
+        "Mechanizm może zmienić zaskarżone orzeczenie jeszcze w WSA, ale nie oznacza automatycznego uwzględnienia skargi administracyjnej ani przyznania pobytu.",
       foreignersCase:
-        "Якщо в касації щодо pobyt виявлено істотний процесуальний дефект, перевірте, чи WSA ще не передав матеріали до NSA і чи нове orzeczenie містить потрібний спосіб захисту.",
+        "W kasacji dotyczącej pobytu sprawdź, czy akta nie zostały jeszcze przedstawione NSA. Jeżeli WSA wyda nowe orzeczenie, oceniaj je jako nowe rozstrzygnięcie z własnym środkiem zaskarżenia.",
     },
     {
       provisionId: "ppsa-art-180",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 180 передбачає, що NSA на posiedzeniu niejawnym відхиляє skargę kasacyjną, якщо її мав відхилити WSA, або повертає її до WSA для усунення виявлених недоліків.",
+          text: "NSA na posiedzeniu niejawnym odrzuca skargę kasacyjną, jeżeli podlegała ona odrzuceniu przez WSA, albo zwraca ją temu sądowi w celu usunięcia dostrzeżonych braków.",
           sourceLocator: "Art. 180",
         },
       ],
       summary:
-        "NSA перевіряє попередню процесуальну реакцію WSA: може сам відхилити касацію або повернути її для усунення недоліків.",
+        "NSA może sam odrzucić kasację, która powinna zostać odrzucona w WSA, albo zwrócić ją WSA do usunięcia dostrzeżonych braków.",
       rules: [
         {
           locator: "Art. 180",
           explanation:
-            "Якщо підстава для odrzucenie вже існувала на рівні WSA, NSA може відхилити skargę на posiedzeniu niejawnym.",
-        },
-        {
-          locator: "Art. 180",
-          explanation:
-            "За виявлених braki NSA може повернути скаргу WSA, щоб їх усунути.",
+            "Przepis dotyczy kontroli formalnej i nie jest jeszcze rozpoznaniem podstaw kasacyjnych co do meritum.",
         },
       ],
       legalEffect:
-        "Норма розмежовує попередню перевірку допустимості та розгляд касаційних підстав по суті; сама передача до NSA не гарантує такого розгляду.",
+        "Samo przedstawienie kasacji NSA nie gwarantuje jej merytorycznego rozpoznania; dalszy bieg zależy od wyniku tej kontroli.",
       foreignersCase:
-        "У касації іноземця щодо decyzja pobytowa з'ясуйте, чи NSA вже вирішив питання допустимості, чи лише повернув матеріали WSA для виправлення формального недоліку.",
+        "W sprawie pobytowej ustal, czy NSA wydał postanowienie o odrzuceniu, czy zwrócił kasację WSA do usunięcia braków. To inna sytuacja niż ocena legalności decyzji pobytowej.",
     },
     {
       provisionId: "ppsa-art-181",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 181 встановлює, що NSA розглядає skargę kasacyjną на rozprawie у складі трьох sędziów, якщо спеціальна норма не встановлює іншого; за результатом щодо wyroku видається wyrok, а щодо postanowienia — postanowienie.",
+          text: "NSA rozpoznaje skargę kasacyjną na rozprawie w składzie trzech sędziów, chyba że przepis szczególny stanowi inaczej. Od wyroku wydaje wyrok, a od postanowienia — postanowienie.",
           sourceLocator: "Art. 181 § 1–2",
         },
       ],
       summary:
-        "Стаття визначає типовий склад NSA і форму його фінального orzeczenie під час касаційного розгляду.",
+        "Art. 181 określa zasadniczy skład NSA i formę orzeczenia zależną od rodzaju zaskarżonego orzeczenia.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Загальне правило — rozprawa і склад трьох sędziów; спеціальний припис може відступити від нього.",
+            "Regułą jest rozprawa w składzie trzech sędziów, z zastrzeżeniem przepisu szczególnego.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Вид оскарженого orzeczenie визначає вид рішення NSA: wyrok для wyroku, postanowienie для postanowienia.",
+            "Kasacja od wyroku kończy się wyrokiem NSA, a kasacja od postanowienia — postanowieniem NSA.",
         },
       ],
       legalEffect:
-        "Склад і форма рішення випливають зі статті, але вона не відповідає на питання, чи касацію задовольнять.",
+        "Przepis opisuje formę i skład rozpoznania, nie przesądza wyniku kasacji ani materialnego prawa strony.",
       foreignersCase:
-        "У матеріалах іноземця про skarga kasacyjna не плутайте postanowienie NSA про процесуальне питання з wyrokiem, яким вирішено касацію проти wyroku WSA.",
+        "W aktach sprawy o pobyt odróżnij wyrok NSA od postanowienia NSA i przeczytaj sentencję oraz uzasadnienie, zamiast wywodzić wynik z samej nazwy dokumentu.",
     },
     {
       provisionId: "ppsa-art-182",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 182 визначає випадки розгляду skargi kasacyjnej на posiedzeniu niejawnym: щодо окремих postanowienie WSA, після відмови від rozprawa за відсутності вимоги інших сторін, а також щодо wyroku про sprzeciw; він також встановлює склад одного або трьох sędziów.",
+          text: "NSA może rozpoznać na posiedzeniu niejawnym kasację od kończącego postępowanie postanowienia WSA. Rozpoznaje ją tak także po zrzeczeniu się rozprawy przez wnoszącego, gdy pozostałe strony w czternastu dniach od doręczenia kasacji nie zażądały rozprawy, oraz w kasacji od wyroku WSA oddalającego sprzeciw od decyzji lub postanowienia. Na posiedzeniu niejawnym orzeka jeden sędzia, a w przypadku z § 2 — trzech.",
           sourceLocator: "Art. 182 § 1–3",
         },
       ],
       summary:
-        "Норма описує винятки та умови, за яких касаційний розгляд відбувається без rozprawa, і пов'язує з ними склад суду.",
+        "Art. 182 wskazuje trzy sytuacje rozpoznania kasacji bez rozprawy i wiąże z nimi skład NSA.",
       rules: [
         {
           locator: "§ 1–2a",
           explanation:
-            "Посилання на posiedzenie niejawne залежить від виду оскарженого postanowienie або wyroku та від процесуальної позиції сторін.",
+            "Sprawdź rodzaj kończącego postępowanie postanowienia, zrzeczenie się rozprawy i czternastodniowy brak żądania rozprawy albo sprawę sprzeciwu od decyzji lub postanowienia.",
         },
         {
           locator: "§ 3",
           explanation:
-            "На posiedzeniu niejawnym типовий склад — один sędzia, а у випадку відмови від rozprawa з § 2 — три sędziów.",
+            "Na posiedzeniu niejawnym skład jednego sędziego jest regułą, lecz przy § 2 ustawa wymaga trzech sędziów.",
         },
       ],
       legalEffect:
-        "Відсутність rozprawa за цією статтею є передбаченим законом способом розгляду, а не сама по собі ознакою відсутності судового контролю.",
+        "Posiedzenie niejawne jest ustawowym trybem rozpoznania w określonych sytuacjach i samo w sobie nie oznacza braku kontroli sądowej.",
       foreignersCase:
-        "Коли іноземець оскаржує sprzeciw від decyzja чи postanowienie, перевірте, чи справа підпадає під спеціальне правило Art. 182 про posiedzenie niejawne.",
+        "W sprawie pobytowej ustal, czy kasacja dotyczy kończącego postępowanie postanowienia, sprawy sprzeciwu, czy zrzeczenia się rozprawy. Nie zakładaj rozprawy, gdy działa § 2 albo § 2a.",
     },
     {
       provisionId: "ppsa-art-182a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 182a вимагає, щоб NSA розглянув skargę kasacyjną на wyrok WSA, який відхилив sprzeciw від decyzji або sprzeciw від postanowienia, протягом тридцяти днів від її надходження.",
+          text: "NSA rozpoznaje skargę kasacyjną od wyroku WSA oddalającego sprzeciw od decyzji lub sprzeciw od postanowienia w terminie trzydziestu dni od dnia wpływu.",
           sourceLocator: "Art. 182a",
         },
       ],
       summary:
-        "Для касації у вузькій категорії спорів про sprzeciw закон називає тридцятиденний строк від надходження skargi до NSA.",
+        "Dla kasacji od wyroku WSA oddalającego sprzeciw ustawa wskazuje trzydziestodniowy termin rozpoznania liczony od wpływu do NSA.",
       rules: [
         {
           locator: "Art. 182a",
           explanation:
-            "Строк прив'язаний до дня wpływu skargi kasacyjnej до NSA, а не до дня її складення чи відправлення стороною.",
+            "Termin dotyczy rozpoznania przez NSA i biegnie od wpływu kasacji do tego sądu, nie od jej sporządzenia ani wysłania.",
         },
       ],
       legalEffect:
-        "Норма встановлює строк розгляду для названої категорії; вона не змінює строку подання skargi kasacyjnej за Art. 177.",
+        "Art. 182a określa termin działania sądu w tej kategorii spraw; nie przedłuża ani nie zastępuje terminu wniesienia kasacji z art. 177.",
       foreignersCase:
-        "У справі іноземця про sprzeciw до decyzja про pobyt відокремте тридцятиденний строк розгляду NSA від строку, у який сама касація мала бути подана.",
+        "Jeżeli sprawa pobytowa dotyczy sprzeciwu od decyzji lub postanowienia, odnotuj osobno datę wniesienia kasacji i datę jej wpływu do NSA.",
     },
     {
       provisionId: "ppsa-art-183",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 183 обмежує розгляд NSA межами skargi kasacyjnej, але зобов'язує суд ex officio врахувати nieważność postępowania; стаття перелічує випадки nieważność і дозволяє сторонам навести нове uzasadnienie вже заявлених podstaw kasacyjnych.",
+          text: "NSA rozpoznaje sprawę w granicach skargi kasacyjnej, lecz z urzędu bierze pod rozwagę nieważność postępowania; strony mogą przytaczać nowe uzasadnienie podstaw kasacyjnych. § 2 wymienia sześć przypadków nieważności, w tym niedopuszczalność drogi sądowej, brak zdolności lub umocowania, wcześniejsze postępowanie albo prawomocne osądzenie, wadliwy skład, pozbawienie obrony praw oraz orzekanie przez WSA w sprawie właściwej dla NSA.",
           sourceLocator: "Art. 183 § 1–2",
         },
       ],
       summary:
-        "Касаційний суд не розглядає справу безмежно: він рухається в межах скарги, однак сам перевіряє перелічені особливо тяжкі дефекти провадження.",
+        "Zakres kasacji wyznacza skarga, ale nieważność postępowania NSA bada z urzędu w zamkniętym katalogu art. 183 § 2.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Нові міркування можуть пояснювати вже наведені podstawy kasacyjne; стаття не проголошує вільного додавання нових підстав.",
+            "Nowe uzasadnienie może rozwijać już przytoczone podstawy kasacyjne; przepis nie pozwala przez samo uzasadnienie dowolnie dodać nowej podstawy.",
         },
         {
           locator: "§ 2 pkt 1–6",
           explanation:
-            "Nieważność охоплює, зокрема, недопустимість судового шляху, відсутність процесуальної здатності або належного umocowanie, повторну справу, неправильний склад, позбавлення захисту та порушення компетенції NSA/WSA.",
+            "Każdy zarzut nieważności trzeba porównać z konkretnym punktem katalogu, a nie z każdą niekorzystną czynnością procesową.",
         },
       ],
       legalEffect:
-        "Виявлена nieważność може бути врахована навіть без окремого доводу, але не кожна процесуальна помилка є nieważność за цим вичерпним переліком.",
+        "Nieważność może być uwzględniona bez osobnego zarzutu, lecz zwykłe uchybienie procesowe nie staje się przez to nieważnością.",
       foreignersCase:
-        "В оскарженні іноземцем рішення про legalizacja pobytu відокремте нове пояснення вже заявленої підстави від нової підстави, а доступ до перекладача та участь у процесі оцінюйте за матеріалами справи.",
+        "W kasacji dotyczącej pobytu odróżnij nowe uzasadnienie istniejącej podstawy od nowej podstawy. Kwestie reprezentacji, składu i możliwości obrony oceniaj na podstawie akt, nie samego poczucia niesprawiedliwości.",
     },
     {
       provisionId: "ppsa-art-184",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 184 передбачає oddalenie skargi kasacyjnej, якщо вона не має виправданих podstaw або якщо оскаржене orzeczenie, попри помилкове uzasadnienie, відповідає праву.",
+          text: "NSA oddala skargę kasacyjną, jeżeli nie ma ona usprawiedliwionych podstaw albo jeżeli zaskarżone orzeczenie, mimo błędnego uzasadnienia, odpowiada prawu.",
           sourceLocator: "Art. 184",
         },
       ],
       summary:
-        "NSA відхиляє касацію, коли заявлені підстави не виправдовують її або результат рішення є законним, навіть якщо його мотивування помилкове.",
+        "Błędne uzasadnienie nie wystarcza do uchylenia orzeczenia, jeżeli sam wynik odpowiada prawu i kasacja nie ma usprawiedliwionych podstaw.",
       rules: [
         {
           locator: "Art. 184",
           explanation:
-            "Потрібно відрізняти помилку в uzasadnienie від помилки в самому правовому результаті: перша не обов'язково веде до скасування.",
+            "Analizuj oddzielnie zarzuty wobec wyniku orzeczenia i zarzuty wobec uzasadnienia; ustawowy skutek zależy od obu przesłanek wskazanych w przepisie.",
         },
       ],
       legalEffect:
-        "Oddalenie залишає оскаржене orzeczenie в силі; стаття не означає, що кожне неточне мотивування є безрезультатним для касації.",
+        "Oddalenie pozostawia zaskarżone orzeczenie w mocy; nie oznacza, że każde uchybienie uzasadnienia jest prawnie obojętne w każdej sprawie.",
       foreignersCase:
-        "Якщо іноземець оскаржує wyrok WSA у справі про pobyt, касаційні доводи мають показати юридично значущу підставу, а не лише незгоду з формулюванням uzasadnienie.",
+        "W kasacji od wyroku WSA w sprawie pobytowej pokaż wpływ błędu na prawidłowość rozstrzygnięcia, a nie tylko niezadowolenie z języka uzasadnienia.",
     },
     {
       provisionId: "ppsa-art-185",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 185 встановлює, що при задоволенні skargi kasacyjnej NSA скасовує оскаржене orzeczenie повністю або частково і передає справу для повторного розгляду суду, який його видав, або іншому суду; повторний розгляд відбувається в іншому складі.",
+          text: "W razie uwzględnienia skargi kasacyjnej NSA uchyla zaskarżone orzeczenie w całości lub części i przekazuje sprawę do ponownego rozpoznania sądowi, który je wydał, a gdy ten nie może rozpoznać sprawy w innym składzie — innemu sądowi. Sąd rozpoznaje sprawę ponownie w innym składzie.",
           sourceLocator: "Art. 185 § 1–2",
         },
       ],
       summary:
-        "Типовий наслідок успішної касації — uchylenie та przekazanie справи назад для нового розгляду, а не автоматичне надання дозволу чи pobytu.",
+        "Typowym skutkiem uwzględnienia kasacji jest uchylenie i przekazanie sprawy do ponownego rozpoznania w innym składzie.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "NSA визначає обсяг скасування — повний або частковий — і суд, якому повертається справа.",
+            "NSA określa zakres uchylenia i sąd, do którego wraca sprawa; inny sąd jest przewidziany, gdy właściwy nie może orzekać w innym składzie.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Суд, який повторно розглядає передану справу, має діяти в іншому складі.",
+            "Przy przekazaniu ponowne rozpoznanie musi nastąpić w innym składzie sądu.",
         },
       ],
       legalEffect:
-        "Скасування і повернення відкриває новий розгляд у межах встановленої процедури; воно саме по собі не встановлює остаточний результат адміністративної справи.",
+        "Uchylenie i przekazanie otwiera ponowne rozpoznanie sądowe, ale samo nie zmienia automatycznie decyzji organu ani nie przyznaje pobytu.",
       foreignersCase:
-        "Після успішної касації у справі іноземця про pobyt очікуйте повторного судового розгляду, а не автоматичної зміни decyzja wojewody чи Szefa UdSC.",
+        "Po wygranej kasacji w sprawie pobytowej przygotuj się na ponowne rozpoznanie przez WSA. Sprawdź zakres wskazany w sentencji, zamiast traktować ją jako końcową decyzję administracyjną.",
     },
     {
       provisionId: "ppsa-art-186",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 186 зобов'язує NSA при розгляді skargi kasacyjnej скасувати також незаскаржену частину wyroku, якщо існує nieważność postępowania.",
+          text: "Rozpoznając skargę kasacyjną, NSA uchyla wyrok także w części niezaskarżonej, jeżeli zachodzi nieważność postępowania.",
           sourceLocator: "Art. 186",
         },
       ],
       summary:
-        "Nieważność може поширити скасування NSA на частину рішення, яку сторона прямо не оскаржила.",
+        "Nieważność postępowania może rozszerzyć uchylenie wyroku NSA na niezaskarżoną jego część.",
       rules: [
         {
           locator: "Art. 186",
           explanation:
-            "Умова — саме nieważność postępowania; одного звичайного доводу про помилку в незаскарженій частині недостатньо за текстом цієї статті.",
+            "Warunkiem odstępstwa od granic zaskarżenia jest nieważność postępowania; sama niezgoda z niezaskarżoną częścią nie wystarcza.",
         },
       ],
       legalEffect:
-        "Норма є винятком із обмеження розгляду межами касації та може змінити обсяг uchylenie; її застосування залежить від встановлення nieważność.",
+        "Przepis może zwiększyć zakres uchylenia, ale nie ustanawia ogólnego prawa NSA do ponownego badania każdej niezaskarżonej części.",
       foreignersCase:
-        "Якщо рішення WSA щодо побиту містить кілька взаємопов'язаних частин, перевірте, чи заявлена або виявлена nieważność може охопити незаскаржену частину.",
+        "Jeśli wyrok w sprawie pobytowej ma kilka części, sprawdź, czy ustalona nieważność rzeczywiście obejmuje część niezaskarżoną.",
     },
     {
       provisionId: "ppsa-art-187",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 187 дозволяє NSA при серйозних сумнівах щодо правового питання відкласти розгляд і передати питання складу семи sędziów; ухвала цього складу є обов'язковою в даній справі, а склад семи sędziów може перебрати справу до розгляду.",
+          text: "Gdy przy rozpoznawaniu kasacji powstanie zagadnienie prawne budzące poważne wątpliwości, NSA może odroczyć sprawę i przedstawić je składowi siedmiu sędziów. Uchwała tego składu wiąże w danej sprawie, a skład siedmiu sędziów może przejąć sprawę do rozpoznania.",
           sourceLocator: "Art. 187 § 1–3",
         },
       ],
       summary:
-        "Стаття дає NSA механізм вирішення складного правового питання розширеним складом і визначає силу такої uchwała в конкретній справі.",
+        "Art. 187 ustanawia mechanizm przekazania poważnie wątpliwego zagadnienia prawnego składowi siedmiu sędziów NSA.",
       rules: [
         {
           locator: "§ 1–2",
           explanation:
-            "Передача можлива за poważne wątpliwości; прийнята uchwała пов'язує суд саме в цій справі.",
+            "To NSA ocenia, czy zagadnienie budzi poważne wątpliwości; przyjęta uchwała wiąże sąd w tej konkretnej sprawie.",
         },
         {
           locator: "§ 3",
           explanation:
-            "Склад семи sędziów може сам перебрати справу для розгляду.",
+            "Skład siedmiu sędziów może przejąć całą sprawę do rozpoznania, co nie oznacza z góry określonego wyniku.",
         },
       ],
       legalEffect:
-        "Механізм узгоджує правове питання в конкретній касації, але стаття не встановлює наперед, яке рішення буде прийнято щодо pobytu.",
+        "Uchwała porządkuje rozstrzygnięcie zagadnienia w danej sprawie, ale art. 187 nie przesądza o prawie do pobytu ani o wyniku kasacji.",
       foreignersCase:
-        "У повторюваній категорії спорів іноземців про доступ до sądu або побyt стежте, чи NSA передав спірне правове питання складу семи sędziów у вашій справі.",
+        "W powtarzalnym sporze pobytowym sprawdź, czy NSA przekazał konkretne zagadnienie składowi siedmiu sędziów i jaki zakres ma uchwała w tej sprawie.",
     },
     {
       provisionId: "ppsa-art-188",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 188 дозволяє NSA, задовольняючи skargę kasacyjną та скасовуючи оскаржене orzeczenie, самому розглянути skargę, якщо визнає, що суть справи достатньо з'ясована.",
+          text: "NSA, uwzględniając skargę kasacyjną i uchylając zaskarżone orzeczenie, rozpoznaje skargę, jeżeli uzna, że istota sprawy jest dostatecznie wyjaśniona.",
           sourceLocator: "Art. 188",
         },
       ],
       summary:
-        "Замість повернення справи NSA може сам розглянути skargę, але лише коли istota sprawy достатньо з'ясована.",
+        "Jeżeli po uchyleniu orzeczenia istota sprawy jest dostatecznie wyjaśniona, NSA może sam rozpoznać skargę zamiast przekazywać ją do WSA.",
       rules: [
         {
           locator: "Art. 188",
           explanation:
-            "Спочатку має бути задоволена skarga kasacyjna й скасоване оскаржене orzeczenie; далі NSA оцінює достатність з'ясування суті.",
+            "Najpierw musi dojść do uwzględnienia kasacji i uchylenia orzeczenia; dopiero potem NSA ocenia dostateczne wyjaśnienie istoty sprawy.",
         },
       ],
       legalEffect:
-        "Норма допускає безпосереднє вирішення skargi, але не перетворює кожне скасування на обов'язок NSA розглядати факти заново.",
+        "Przepis daje NSA możliwość bezpośredniego rozpoznania skargi, lecz nie nakazuje tego w każdej sprawie i nie gwarantuje korzystnego rozstrzygnięcia administracyjnego.",
       foreignersCase:
-        "У касації іноземця про odmowa pobytu не припускайте, що NSA одразу надасть потрібний статус: це можливо лише за передумови достатньо з'ясованої суті справи.",
+        "W kasacji dotyczącej odmowy pobytu nie zakładaj automatycznego przyznania statusu. Sprawdź, czy z akt wynika dostatecznie wyjaśniona istota sprawy.",
     },
     {
       provisionId: "ppsa-art-189",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 189 вимагає, щоб NSA postanowieniem скасував orzeczenie WSA і відхилив skargę або umorzył postępowanie, якщо skarga підлягала odrzucenie або вже існували підстави для umorzenie перед WSA.",
+          text: "Jeżeli skarga podlegała odrzuceniu albo przed WSA istniały podstawy do umorzenia postępowania, NSA postanowieniem uchyla wydane orzeczenie oraz odrzuca skargę albo umarza postępowanie.",
           sourceLocator: "Art. 189",
         },
       ],
       summary:
-        "NSA може виправити ситуацію, коли WSA розглянув по суті справу, яка мала бути відхилена або припинена.",
+        "NSA może usunąć orzeczenie WSA wydane w sprawie, która już na etapie WSA powinna zostać odrzucona albo umorzona.",
       rules: [
         {
           locator: "Art. 189",
           explanation:
-            "Перевіряється не лише правильність мотивів, а й наявність підстав для odrzucenie або umorzenie вже на стадії WSA.",
-        },
-        {
-          locator: "Art. 189",
-          explanation:
-            "Наслідок оформлюється postanowienie: скасування попереднього orzeczenie разом з odrzucenie skargi або umorzenie.",
+            "Badaj istnienie przesłanki odrzucenia lub umorzenia przed WSA, nie tylko poprawność merytorycznego uzasadnienia jego orzeczenia.",
         },
       ],
       legalEffect:
-        "Норма може усунути рішення по суті через процесуальну недопустимість справи; вона не є способом довести матеріальне право на pobyt.",
+        "Skutek ma formę postanowienia i kończy sprawę przez odrzucenie skargi albo umorzenie; nie jest rozstrzygnięciem materialnego prawa do pobytu.",
       foreignersCase:
-        "У справі іноземця перевірте, чи спір про decyzja не був уже безпредметним або недопустимим на момент розгляду WSA, навіть якщо суд помилково перейшов до суті.",
+        "W sprawie pobytowej sprawdź, czy skarga nie była bezprzedmiotowa lub niedopuszczalna już przed WSA, nawet jeśli WSA przeszedł do argumentacji merytorycznej.",
     },
     {
       provisionId: "ppsa-art-190",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 190 пов'язує суд, якому справу передано, правовим тлумаченням, зробленим NSA у цій справі, і забороняє будувати наступну skargę kasacyjną на підставах, суперечних цьому тлумаченню.",
+          text: "Sąd, któremu przekazano sprawę, jest związany wykładnią prawa dokonaną w tej sprawie przez NSA. Nie można oprzeć kolejnej skargi kasacyjnej od orzeczenia po ponownym rozpoznaniu na podstawach sprzecznych z tą wykładnią.",
           sourceLocator: "Art. 190",
         },
       ],
       summary:
-        "Після przekazanie справи правове тлумачення NSA стає орієнтиром, обов'язковим для суду повторного розгляду в цій справі.",
+        "Po przekazaniu sprawy wykładnia prawa NSA wiąże sąd ponownie rozpoznający i ogranicza sprzeczne podstawy kolejnej kasacji.",
       rules: [
         {
           locator: "Art. 190",
           explanation:
-            "Зв'язування стосується sprawy, яку передано; повторний суд не може ігнорувати викладене NSA тлумачення права.",
-        },
-        {
-          locator: "Art. 190",
-          explanation:
-            "Наступну skargę kasacyjną не можна засновувати на доводах, що суперечать установленому в цій справі тлумаченню.",
+            "Związanie dotyczy sprawy przekazanej i wykładni ustalonej w tej sprawie; nie zastępuje sądu w ocenie faktów w granicach ponownego rozpoznania.",
         },
       ],
       legalEffect:
-        "Стаття звужує допустимий напрям повторного розгляду, але не визначає замість WSA оцінку всіх доказів і фактів.",
+        "Przepis wyznacza prawne ramy ponownego rozpoznania, ale nie rozstrzyga samodzielnie wszystkich dowodów ani końcowego wyniku sprawy.",
       foreignersCase:
-        "Після повернення справи про pobyt до WSA порівняйте нове uzasadnienie з правовим тлумаченням NSA і не будуйте наступну касацію на протилежній правовій тезі.",
+        "Po uchyleniu wyroku w sprawie pobytowej porównaj nowe orzeczenie WSA z wykładnią NSA. Kolejną kasację buduj bez tezy sprzecznej z tą wykładnią.",
     },
     {
       provisionId: "ppsa-art-191",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 191 дозволяє NSA за клопотанням сторони розглянути також ті postanowienia WSA, які не підлягали оскарженню через zażalenie, але вплинули на вирішення справи.",
+          text: "Na wniosek strony NSA rozpoznaje także te postanowienia WSA, które nie podlegały zaskarżeniu zażaleniem, ale miały wpływ na rozstrzygnięcie sprawy.",
           sourceLocator: "Art. 191",
         },
       ],
       summary:
-        "Окремі проміжні postanowienia, які самі не оскаржуються zażalenie, можуть бути охоплені касаційною перевіркою, якщо вплинули на результат.",
+        "Niektóre niezaskarżalne odrębnie postanowienia WSA mogą zostać zbadane w kasacji, jeżeli wpłynęły na rozstrzygnięcie sprawy.",
       rules: [
         {
           locator: "Art. 191",
           explanation:
-            "Потрібні клопотання сторони і вплив postanowienie на вирішення справи; сама незгода з проміжним актом не достатня.",
+            "Potrzebne są zarówno wniosek strony, jak i wykazanie wpływu postanowienia na wynik; przepis nie tworzy odrębnego zażalenia.",
         },
       ],
       legalEffect:
-        "Норма розширює предмет перевірки в конкретній касації, але не робить кожне postanowienie окремо оскаржуваним.",
+        "Art. 191 rozszerza przedmiot kontroli w konkretnej kasacji, ale nie czyni każdego postanowienia samodzielnie zaskarżalnym.",
       foreignersCase:
-        "Якщо у справі іноземця WSA відмовив у процесуальному кроці, який не мав окремого zażalenie, поясніть у касації його реальний вплив на фінальний wyrok.",
+        "Jeśli postanowienie w sprawie pobytowej nie miało własnego zażalenia, wskaż w kasacji jego konkretny wpływ na wyrok, zamiast poprzestać na samej krytyce czynności.",
     },
     {
       provisionId: "ppsa-art-192",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 192 встановлює, що провадження перед NSA, крім випадків з Art. 123–125, зупиняється лише за узгодженим клопотанням сторін.",
+          text: "Z wyjątkiem przypadków określonych w art. 123–125 postępowanie przed NSA ulega zawieszeniu jedynie na zgodny wniosek stron.",
           sourceLocator: "Art. 192",
         },
       ],
       summary:
-        "Для стадії NSA закон обмежує добровільне zawieszenie postępowania спільним клопотанням сторін, крім прямо названих випадків.",
+        "Na etapie NSA dobrowolne zawieszenie postępowania wymaga zgodnego wniosku wszystkich stron, z wyjątkiem art. 123–125.",
       rules: [
         {
           locator: "Art. 192",
           explanation:
-            "Одностороннього прохання сторони само по собі недостатньо для zawieszenie за загальним правилом статті.",
-        },
-        {
-          locator: "Art. 123–125",
-          explanation:
-            "Винятки треба перевіряти окремо за названими нормами, а не виводити з цього правила автоматично.",
+            "Jednostronny wniosek nie spełnia tej ogólnej przesłanki; najpierw sprawdź, czy zachodzi jeden z ustawowych wyjątków.",
         },
       ],
       legalEffect:
-        "Стаття визначає вузький процесуальний шлях до зупинення на стадії NSA, але не регулює всі можливі підстави zawieszenie поза її текстом.",
+        "Przepis ogranicza zawieszenie na zgodny wniosek w NSA, ale nie zastępuje analizy szczególnych podstaw zawieszenia z art. 123–125.",
       foreignersCase:
-        "Якщо іноземець просить не розглядати касацію до завершення іншої справи про pobyt, перевірте, чи є узгоджене клопотання всіх сторін або виняток Art. 123–125.",
+        "Jeżeli chcesz odroczyć kasację do czasu innej sprawy pobytowej, ustal, czy wszystkie strony złożą zgodny wniosek albo czy działa wyjątek ustawowy.",
     },
     {
       provisionId: "ppsa-art-193",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 193 відсилає за відсутності спеціальних правил до відповідного застосування норм провадження перед WSA, зобов'язує NSA ex officio обґрунтовувати wyroki й postanowienia протягом тридцяти днів і вимагає оцінки касаційних zarzuty в uzasadnienie wyroku про oddalenie skargi kasacyjnej.",
+          text: "Jeżeli brak szczególnych przepisów postępowania przed NSA, odpowiednio stosuje się przepisy postępowania przed WSA. NSA z urzędu uzasadnia wyroki i postanowienia w terminie trzydziestu dni, a uzasadnienie wyroku oddalającego skargę kasacyjną zawiera ocenę jej zarzutów.",
           sourceLocator: "Art. 193",
         },
       ],
       summary:
-        "Це правило-заповнювач для стадії NSA: застосовуються відповідні правила WSA, а обґрунтування рішень має спеціальні вимоги.",
+        "Art. 193 jest regułą odpowiedniego stosowania przepisów WSA i nakłada na NSA szczególny obowiązek uzasadnienia orzeczeń.",
       rules: [
         {
           locator: "Art. 193",
           explanation:
-            "Відсилання працює лише там, де немає спеціального правила про NSA, і є відповідним, а не механічним копіюванням.",
+            "Najpierw szukaj przepisu szczególnego dla NSA; dopiero przy jego braku stosuj regulację WSA odpowiednio, a nie mechanicznie.",
         },
         {
-          locator: "Art. 193",
+          locator: "Art. 193 zdanie drugie",
           explanation:
-            "NSA сам складає uzasadnienie wyroków і postanowienia протягом тридцяти днів; у wyrok про oddalenie мають бути оцінені zarzuty.",
+            "NSA uzasadnia z urzędu wyroki i postanowienia w trzydzieści dni, a przy oddaleniu kasacji uzasadnienie ma oceniać jej zarzuty.",
         },
       ],
       legalEffect:
-        "Стаття допомагає визначити процедуру NSA, але спочатку треба перевірити, чи конкретне питання вже врегульоване спеціальною нормою.",
+        "Przepis pomaga określić tryb NSA, lecz nie tworzy samodzielnie podstawy do uwzględnienia kasacji ani nie zastępuje oceny konkretnego uzasadnienia.",
       foreignersCase:
-        "Отримавши wyrok NSA у справі про побyt, іноземець може перевірити, чи uzasadnienie відповідає вимозі оцінити саме заявлені zarzuty skargi kasacyjnej.",
+        "Po otrzymaniu orzeczenia NSA w sprawie pobytowej sprawdź, czy uzasadnienie oddalenia odnosi się do zarzutów faktycznie sformułowanych w kasacji.",
     },
     {
       provisionId: "ppsa-art-194",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 194 перелічує postanowienia WSA, на які доступне zażalenie до NSA, встановлює семиденний строк, вимоги до змісту та професійне представництво для zażalenie на odrzucenie skargi kasacyjnej; пункт § 1 pkt 3 прямо позначений як (uchylony).",
-          sourceLocator: "Art. 194 § 1 pkt 1–10, § 2–4",
+          text: "Zażalenie do NSA przysługuje na postanowienia WSA w przypadkach przewidzianych w ustawie oraz na wskazane w art. 194 przedmioty, m.in. przekazanie sprawy, odrzucenie skargi w art. 58 § 1 pkt 2–4 i art. 220 § 3, umorzenie, wstrzymanie wykonania, odmowę uzasadnienia, sprostowanie lub wykładnię, uzupełnienie wyroku, wyłączenie sędziego, odrzucenie skargi kasacyjnej lub zażalenia, zwrot kosztów i ukaranie grzywną. § 1 pkt 3 jest uchylony.",
+          sourceLocator: "Art. 194 § 1 pkt 1, 1a–10, § 2–4",
         },
       ],
       summary:
-        "Стаття визначає не загальне право оскаржувати будь-яке postanowienie, а конкретний перелік випадків zażalenie до NSA. Позиція § 1 pkt 3 є скасованою — (uchylony).",
+        "Art. 194 zawiera zamknięty katalog wskazanych postanowień WSA, na które przysługuje zażalenie do NSA, oraz określa termin i wymagania pisma.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "§ 1 pkt 1, 1a–2, 3 (uchylony), 4–10",
           explanation:
-            "Zażalenie охоплює лише названі категорії, зокрема przekazanie справи, umorzenie, wstrzymanie виконання, окремі відмови та odrzucenie; § 1 pkt 3 — (uchylony), тобто скасований.",
+            "Porównaj przedmiot postanowienia z konkretną pozycją katalogu; uchylony pkt 3 nie jest czynną podstawą zażalenia.",
         },
         {
           locator: "§ 2–4",
           explanation:
-            "Строк становить сім днів від doręczenie postanowienia; скарга має назвати оскаржене postanowienie, вимогу і коротке uzasadnienie, а для odrzucenie skargi kasacyjnej діє правило про adwokat або radca prawny.",
+            "Zażalenie wnosi się w siedem dni od doręczenia, wskazuje postanowienie, żądanie i zwięzłe uzasadnienie; odrzucenie skargi kasacyjnej wymaga adwokata lub radcy prawnego.",
         },
       ],
       legalEffect:
-        "Спершу треба знайти конкретну категорію з § 1 і перевірити строк та форму; позначка (uchylony) не створює чинної підстави для zażalenie.",
+        "Samo nazwanie dokumentu postanowieniem nie tworzy prawa do zażalenia; trzeba znaleźć ustawową kategorię, zachować termin i spełnić wymagania formy.",
       foreignersCase:
-        "У справі іноземця про pobyt назва postanowienie сама не доводить права на zażalenie: зіставте його предмет із чинним переліком Art. 194 і врахуйте професійне представництво для odrzucenie касації.",
+        "W sprawie pobytowej odczytaj przedmiot postanowienia i pouczenie, a następnie porównaj je z czynnym katalogiem art. 194. Przy odrzuceniu kasacji uwzględnij wymóg profesjonalnego sporządzenia.",
     },
     {
       provisionId: "ppsa-art-195",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 195 визначає передачу akt справи та zażalenie до NSA після doręczenie іншим сторонам, дозволяє відповідь безпосередньо до NSA протягом семи днів, а також дає WSA можливість самостійно скасувати postanowienie при nieważność або очевидно обґрунтованому zażalenie та umorzyć безпредметне заżaleniowe провадження до передачі akt.",
+          text: "WSA przedstawia NSA akta wraz z zażaleniem po doręczeniu go pozostałym stronom; odpowiedź można wnieść bezpośrednio do NSA w siedem dni od doręczenia zażalenia. Przed przekazaniem akt WSA może na posiedzeniu niejawnym uchylić postanowienie przy nieważności lub oczywistym uzasadnieniu zażalenia, a gdy postępowanie zażaleniowe stało się bezprzedmiotowe — umorzyć je; na wskazane postanowienia przysługuje zażalenie.",
           sourceLocator: "Art. 195 § 1–3",
         },
       ],
       summary:
-        "Перед передачею справи WSA забезпечує doręczenie та може сам виправити очевидну або нікчемну ситуацію; окремо врегульовано втрату предмета zażalenie.",
+        "Art. 195 reguluje doręczenie i przekazanie zażalenia, samokontrolę WSA oraz umorzenie bezprzedmiotowego postępowania zażaleniowego przed przekazaniem akt.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Інші сторони отримують zażalenie, а відповідь можна подати прямо до NSA протягом семи днів від doręczenie.",
+            "Akta idą do NSA po doręczeniu zażalenia pozostałym stronom, a odpowiedź ma siedmiodniowy termin i może trafić wprost do NSA.",
         },
         {
           locator: "§ 2–3",
           explanation:
-            "До передачі akt WSA може скасувати оскаржене postanowienie за названих підстав або umorzyć безпредметне провадження; на повторне postanowienie діють звичайні засоби.",
+            "Sprawdź, czy przed przedstawieniem akt zachodzi nieważność, oczywiste uzasadnienie albo bezprzedmiotowość postępowania zażaleniowego.",
         },
       ],
       legalEffect:
-        "Процесуальний результат може настати ще в WSA, але лише за умов, названих у статті; відповідь сторони не гарантує передачі справи з певним результатом.",
+        "Zażalenie może zostać rozstrzygnięte jeszcze przez WSA, lecz tylko przy przesłankach z § 2–3; sama odpowiedź strony nie przesądza dalszego wyniku.",
       foreignersCase:
-        "Якщо в спорі іноземця про виконання postanowienie органу подано zażalenie, відстежте doręczenie іншим сторонам і можливість самовиправлення WSA до передачі akt.",
+        "W sprawie pobytowej pilnuj doręczenia zażalenia wszystkim stronom i siedmiodniowego terminu odpowiedzi. Sprawdź także, czy WSA nie skorzystał z samokontroli przed przekazaniem akt.",
     },
     {
       provisionId: "ppsa-art-196",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 196 дозволяє WSA зупинити виконання оскарженого postanowienie до вирішення zażalenie; таке postanowienie може бути прийнято на posiedzeniu niejawnym.",
+          text: "WSA może wstrzymać wykonanie zaskarżonego postanowienia do czasu rozstrzygnięcia zażalenia; takie postanowienie może zapaść na posiedzeniu niejawnym.",
           sourceLocator: "Art. 196",
         },
       ],
       summary:
-        "Поки NSA не вирішив zażalenie, WSA може тимчасово зупинити виконання оскарженого postanowienie.",
+        "Złożenie zażalenia nie wstrzymuje samo przez się wykonania postanowienia; WSA może zrobić to osobnym postanowieniem.",
       rules: [
         {
           locator: "Art. 196",
           explanation:
-            "Зупинення є можливістю WSA, а не автоматичним наслідком подання zażalenie.",
-        },
-        {
-          locator: "Art. 196",
-          explanation:
-            "Питання може вирішуватися без відкритого засідання — на posiedzeniu niejawnym.",
+            "Wstrzymanie jest kompetencją WSA do czasu rozpoznania zażalenia i może być rozstrzygnięte bez rozprawy.",
         },
       ],
       legalEffect:
-        "До окремого postanowienie про зупинення оскаржене postanowienie не вважається зупиненим лише через подання zażalenie.",
+        "Dopóki WSA nie wstrzyma wykonania, zaskarżone postanowienie nie jest automatycznie zawieszone przez samo wniesienie zażalenia.",
       foreignersCase:
-        "Якщо виконання postanowienie може вплинути на статус або документи іноземця, у zażalenie окремо просіть WSA про wstrzymanie і не виходьте з автоматичної зупинки.",
+        "Jeżeli wykonanie postanowienia może wpłynąć na dokumenty lub status cudzoziemca, rozważ osobny wniosek o wstrzymanie i nie zakładaj skutku automatycznego.",
     },
     {
       provisionId: "ppsa-art-197",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 197 передбачає розгляд zażalenie NSA на posiedzeniu niejawnym і відповідне застосування правил про skargę kasacyjną, крім Art. 185 § 2.",
+          text: "NSA rozpoznaje zażalenie na posiedzeniu niejawnym. Do postępowania wywołanego zażaleniem odpowiednio stosuje się przepisy o skardze kasacyjnej, z wyłączeniem art. 185 § 2.",
           sourceLocator: "Art. 197 § 1–2",
         },
       ],
       summary:
-        "Для zażalenie діє спрощена модель розгляду NSA та відсилання до касаційних правил із прямо названим винятком.",
+        "Art. 197 ustanawia niejawny tryb rozpoznania zażalenia i odpowiednie odesłanie do reguł skargi kasacyjnej z jednym wyłączeniem.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "NSA розглядає zażalenie без rozprawa — на posiedzeniu niejawnym.",
+            "Trybem rozpoznania zażalenia przez NSA jest posiedzenie niejawne.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Касаційні правила застосовуються odpowiednio; Art. 185 § 2 про інший склад при повторному розгляді виключений.",
+            "Przepisy kasacyjne stosuje się odpowiednio, a art. 185 § 2 o innym składzie przy ponownym rozpoznaniu jest wyłączony.",
         },
       ],
       legalEffect:
-        "Відсилання не скасовує перевірку сумісності правила з природою zażalenie і не робить автоматично застосовними всі наслідки skargi kasacyjnej.",
+        "Odesłanie wymaga dopasowania reguły kasacyjnej do charakteru zażalenia; nie oznacza automatycznego przeniesienia każdego skutku kasacji.",
       foreignersCase:
-        "У провадженні іноземця про zażalenie на postanowienie WSA підготуйте письмові доводи, бо стаття передбачає posiedzenie niejawne, а не обов'язкову rozprawa.",
+        "W zażaleniu dotyczącym postanowienia WSA w sprawie pobytowej przedstaw pisemne, konkretne argumenty, bo ustawa nie przewiduje tu obowiązkowej rozprawy.",
     },
     {
       provisionId: "ppsa-art-198",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 198 наказує відповідно застосовувати правила цього розділу до zażalenia на zarządzenia przewodniczącego, якщо закон передбачає подання такого zażalenie.",
+          text: "Przepisy działu o zażaleniu stosuje się odpowiednio do zażaleń na zarządzenia przewodniczącego, jeżeli ustawa przewiduje wniesienie zażalenia.",
           sourceLocator: "Art. 198",
         },
       ],
       summary:
-        "Заżalenie на розпорядження головуючого підпорядковується правилам розділу лише тоді, коли сама ustawa відкриває такий засіб.",
+        "Art. 198 nie tworzy ogólnego zażalenia na każde zarządzenie przewodniczącego; odsyła do tego działu tylko wtedy, gdy ustawa przewiduje taki środek.",
       rules: [
         {
           locator: "Art. 198",
           explanation:
-            "Спершу перевірте спеціальну норму, яка дозволяє зажаліти zarządzenie; без неї відсилання не створює права на zażalenie.",
-        },
-        {
-          locator: "Art. 198",
-          explanation:
-            "Після встановлення права на засіб правила розділу застосовуються відповідно, з урахуванням характеру zarządzenie.",
+            "Najpierw znajdź szczególny przepis otwierający zażalenie na dane zarządzenie, a dopiero potem stosuj reguły działu odpowiednio.",
         },
       ],
       legalEffect:
-        "Стаття є відсилочною і не перетворює кожне zarządzenie на окремо оскаржуване.",
+        "Przepis jest odesłaniem proceduralnym i samodzielnie nie przesądza dopuszczalności zażalenia na konkretne zarządzenie.",
       foreignersCase:
-        "Якщо іноземець не погоджується з zarządzenie przewodniczącego у справі про pobyt, спочатку знайдіть у PPSA спеціальну підставу для zażalenie, а не подавайте його автоматично.",
+        "Jeśli w sprawie pobytowej kwestionujesz zarządzenie przewodniczącego, wskaż konkretną podstawę ustawową zażalenia przed obliczaniem terminu.",
     },
     {
       provisionId: "ppsa-art-199",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 199 встановлює загальне правило, за яким сторони несуть koszty postępowania, пов'язані з їх участю у справі, якщо спеціальна норма не передбачає іншого.",
+          text: "Strony ponoszą koszty postępowania związane ze swoim udziałem w sprawie, chyba że przepis szczególny stanowi inaczej.",
           sourceLocator: "Art. 199",
         },
       ],
       summary:
-        "Витрати за замовчуванням пов'язані з участю конкретної сторони; виняток можливий лише за спеціальним приписом.",
+        "Art. 199 ustanawia zasadę ponoszenia własnych kosztów udziału, z zastrzeżeniem szczególnych reguł o ich zwrocie lub rozdziale.",
       rules: [
         {
           locator: "Art. 199",
           explanation:
-            "Для планування справи відокремлюйте власні витрати від можливого zwrot kosztów за іншими статтями.",
+            "Oddziel koszty poniesione przez stronę od ewentualnego zwrotu zasądzonego na podstawie dalszych przepisów działu V.",
         },
       ],
       legalEffect:
-        "Сам факт виграшу чи програшу не змінює автоматично всі витрати: треба перевірити спеціальні правила про їх zwrot.",
+        "Przepis nie ustala samodzielnie, kto ostatecznie otrzyma zwrot ani jaka będzie jego kwota; trzeba sprawdzić wynik sprawy i przepisy szczególne.",
       foreignersCase:
-        "Іноземцю, який оскаржує decyzja про pobyt, варто заздалегідь врахувати власні opłaty, переклад і представництво незалежно від подальшого рішення суду.",
+        "Planując skargę na decyzję pobytową, uwzględnij własne opłaty, tłumaczenia i pełnomocnika niezależnie od późniejszego rozstrzygnięcia o zwrocie.",
     },
     {
       provisionId: "ppsa-art-200",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 200 надає skarżącemu право на zwrot необхідних kosztów від органу, якщо суд першої інстанції задовольнив skargę щодо оскарженого акта, czynność, bezczynność або przewlekłe prowadzenie postępowania.",
+          text: "W razie uwzględnienia skargi przez sąd pierwszej instancji skarżącemu przysługuje od organu, który wydał zaskarżony akt, podjął czynność, dopuścił się bezczynności lub przewlekłego prowadzenia postępowania, zwrot niezbędnych kosztów do celowego dochodzenia praw.",
           sourceLocator: "Art. 200",
         },
       ],
       summary:
-        "Коли суд першої інстанції задовольняє skargę, закон передбачає повернення необхідних витрат від органу, пов'язаних із цілеспрямованим захистом права.",
+        "Uwzględnienie skargi przez sąd pierwszej instancji może dać skarżącemu prawo do zwrotu niezbędnych kosztów od właściwego organu.",
       rules: [
         {
           locator: "Art. 200",
           explanation:
-            "Норма охоплює не лише акт чи czynność, а й bezczynność та przewlekłość органу.",
-        },
-        {
-          locator: "Art. 200",
-          explanation:
-            "Йдеться про koszty необхідні для celowe dochodzenie praw, тому склад і розмір треба обґрунтувати окремо.",
+            "Przepis obejmuje zaskarżony akt, czynność, bezczynność i przewlekłe prowadzenie postępowania; zakres zwrotu dotyczy kosztów niezbędnych do celowego dochodzenia praw.",
         },
       ],
       legalEffect:
-        "Задоволення skargi створює підставу для вимоги про zwrot, але не означає автоматичного відшкодування кожної понесеної суми.",
+        "Uwzględnienie skargi tworzy ustawową podstawę zwrotu, ale nie oznacza automatycznej refundacji każdej faktycznie poniesionej kwoty.",
       foreignersCase:
-        "Якщо WSA задовольнив skargę іноземця на бездіяльність у справі про pobyt, зберігайте підтвердження необхідних витрат і заявіть вимогу про їх zwrot у належний момент.",
+        "Po wygraniu skargi dotyczącej pobytu zachowaj dowody niezbędnych kosztów i sprawdź, czy wniosek o ich zwrot został zgłoszony w wymaganym czasie.",
     },
     {
       provisionId: "ppsa-art-201",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 201 передбачає zwrot kosztów skarżącemu від органу також при umorzenie через Art. 54 § 3; при umorzenie у випадку Art. 118 § 2 наказує відповідно застосувати Art. 206.",
+          text: "Zwrot kosztów przysługuje skarżącemu od organu także przy umorzeniu postępowania z przyczyny określonej w art. 54 § 3. Przy umorzeniu w przypadku art. 118 § 2 art. 206 stosuje się odpowiednio.",
           sourceLocator: "Art. 201 § 1–2",
         },
       ],
       summary:
-        "Навіть без фінального розгляду skargi по суті окремі види umorzenie можуть мати наслідок щодо zwrot kosztów.",
+        "Nie każde umorzenie ma taki sam skutek kosztowy: art. 201 wskazuje dwa szczególne odesłania i ich różne konsekwencje.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Спеціальна підстава — umorzenie з причини Art. 54 § 3; її треба відрізняти від інших способів припинення.",
+            "Najpierw ustal, czy umorzenie nastąpiło z przyczyny art. 54 § 3, bo wtedy przepis przyznaje skarżącemu zwrot od organu.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Для випадку Art. 118 § 2 результат щодо витрат визначається через відповідне застосування Art. 206.",
+            "Przy art. 118 § 2 wynik kosztowy ocenia się przez odpowiednie zastosowanie art. 206, a nie przez automatyczny zwrot.",
         },
       ],
       legalEffect:
-        "Umorzenie не дає однакового результату в кожній справі: вирішальними є конкретна законна підстава та правила про витрати.",
+        "Słowo umorzenie samo nie rozstrzyga o kosztach; potrzebna jest dokładna podstawa prawna wskazana w postanowieniu.",
       foreignersCase:
-        "Якщо орган змінив свою позицію у справі іноземця про pobyt і провадження припинили, встановіть точну підставу umorzenie перед вимогою про zwrot kosztów.",
+        "Jeśli organ zmienił swoje rozstrzygnięcie w sprawie pobytowej i sąd umorzył sprawę, odczytaj podstawę umorzenia przed żądaniem zwrotu kosztów.",
     },
     {
       provisionId: "ppsa-art-202",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 202 регулює zwrot kosztów, коли на стороні skarżąca є кілька uprawnionych: кожен отримує його відповідно до участі, а за спільних прав або обов'язків щодо предмета оскарження zwrot належить їм solidarnie.",
+          text: "Jeżeli po stronie skarżącej występuje kilku uprawnionych, zwrot kosztów przysługuje każdemu odpowiednio do udziału w sprawie. Jeżeli ich uprawnienia lub obowiązki związane z przedmiotem zaskarżenia są wspólne, zwrot następuje na ich rzecz solidarnie.",
           sourceLocator: "Art. 202 § 1–2",
         },
       ],
       summary:
-        "Норма розрізняє індивідуальну участь кількох скаржників і спільні права чи обов'язки, пов'язані з предметом skarga.",
+        "Art. 202 rozróżnia podział zwrotu według udziału od solidarnego zwrotu przy wspólnych uprawnieniach lub obowiązkach skarżących.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "За окремої участі кожного skarżący розмір zwrot визначається відповідно до його udział у справі.",
+            "Przy kilku niezależnych uprawnionych ustal udział każdego w sprawie przed określeniem zwrotu.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Коли права або обов'язки спільні, zwrot має характер solidarność.",
+            "Wspólny związek uprawnień lub obowiązków z przedmiotem zaskarżenia prowadzi do zwrotu na rzecz skarżących solidarnie.",
         },
       ],
       legalEffect:
-        "Розподіл витрат залежить від процесуального зв'язку між скаржниками, а не лише від кількості осіб у заголовку skarga.",
+        "Sposób rozdzielenia kosztów zależy od charakteru uprawnień procesowych, a nie od samej liczby osób podpisanych pod skargą.",
       foreignersCase:
-        "Якщо кілька членів родини-іноземців разом оскаржують пов'язані decyzje про pobyt, визначте, чи їхні права є спільними для правила про solidarny zwrot.",
+        "Gdy członkowie rodziny wspólnie skarżą decyzje pobytowe, porównaj ich uprawnienia i obowiązki z przedmiotem zaskarżenia przed przyjęciem solidarnego zwrotu.",
     },
     {
       provisionId: "ppsa-art-203",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 203 визначає право сторони, яка подала skargę kasacyjną, вимагати zwrot kosztów від органу, коли внаслідок задоволення касації NSA скасовано wyrok WSA і справу передано на повторний розгляд.",
-          sourceLocator: "Art. 203",
+          text: "Stronie, która wniosła skargę kasacyjną, należy się zwrot poniesionych niezbędnych kosztów postępowania kasacyjnego: od organu, gdy po uwzględnieniu kasacji uchylono wyrok sądu pierwszej instancji oddalający skargę, albo od skarżącego, gdy uchylono wyrok sądu pierwszej instancji uwzględniający skargę.",
+          sourceLocator: "Art. 203 pkt 1–2",
         },
       ],
       summary:
-        "Успішна skarga kasacyjna з uchylenie wyroku і przekazanie справи може відкрити окреме право на повернення касаційних витрат.",
+        "Art. 203 wiąże zwrot niezbędnych kosztów kasacji z tym, jaki wyrok pierwszej instancji został uchylony i kto powinien ponieść koszt.",
       rules: [
         {
-          locator: "Art. 203",
+          locator: "Art. 203 pkt 1–2",
           explanation:
-            "Потрібні саме задоволення skargi kasacyjnej NSA, скасування wyroku WSA і передача справи для повторного розгляду.",
+            "Przy uchyleniu wyroku oddalającego skargę zwrot jest od organu, a przy uchyleniu wyroku uwzględniającego skargę — od skarżącego; w obu wariantach kasacja musi zostać uwzględniona.",
         },
       ],
       legalEffect:
-        "Наслідок щодо kosztów прив'язаний до результату касації, а не просто до факту її подання; конкретний обсяг витрат визначається іншими нормами.",
+        "Samo wniesienie kasacji nie daje prawa do zwrotu; znaczenie ma wynik NSA, rodzaj uchylonego wyroku i wykazanie niezbędnych kosztów.",
       foreignersCase:
-        "Після скасування wyroku WSA у справі іноземця про pobyt перевірте, чи його касаційний результат відповідає умовам Art. 203 для zwrot kosztów.",
+        "Po korzystnym wyroku NSA w sprawie pobytowej sprawdź, czy uchylony wyrok WSA oddalał czy uwzględniał skargę, bo od tego zależy wskazany w art. 203 płatnik.",
     },
     {
       provisionId: "ppsa-art-204",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 204 покладає на сторону, чию skargę kasacyjną відхилено NSA, обов'язок повернути органу понесені ним koszty postępowania kasacyjnego; якщо касацію подав орган, він повертає витрати протилежній стороні.",
-          sourceLocator: "Art. 204",
+          text: "Jeżeli skarga kasacyjna zostaje oddalona, strona, która ją wniosła, zwraca niezbędne koszty postępowania kasacyjnego poniesione przez organ, gdy zaskarżono wyrok pierwszej instancji oddalający skargę, albo przez skarżącego, gdy zaskarżono wyrok uwzględniający skargę.",
+          sourceLocator: "Art. 204 pkt 1–2",
         },
       ],
       summary:
-        "Стаття пов'язує oddalenie skargi kasacyjnej з можливим обов'язком компенсувати іншій стороні її касаційні витрати.",
+        "Przy oddaleniu kasacji jej wnoszący może zostać obciążony niezbędnymi kosztami drugiej strony, zależnie od rodzaju zaskarżonego wyroku WSA.",
       rules: [
         {
-          locator: "Art. 204",
+          locator: "Art. 204 pkt 1–2",
           explanation:
-            "Коли касацію подала сторона і її відхилено, витрати органу відшкодовує ця сторона.",
-        },
-        {
-          locator: "Art. 204",
-          explanation:
-            "Коли касацію подавав орган, за названої умови він відшкодовує касаційні витрати протилежної сторони.",
+            "Kasacja od wyroku oddalającego skargę oznacza zwrot kosztów organu, a kasacja od wyroku uwzględniającego skargę — zwrot kosztów skarżącego.",
         },
       ],
       legalEffect:
-        "Відхилення касації може мати фінансовий наслідок, але стаття не встановлює автоматично розмір витрат без їх належного визначення.",
+        "Oddalenie kasacji może powodować obowiązek zwrotu kosztów, ale wysokość obejmuje tylko koszty niezbędne ustalone według dalszych przepisów.",
       foreignersCase:
-        "Іноземцю, який вирішує подавати касацію у справі про odmowa pobytu, потрібно врахувати можливий zwrot kosztów органу при oddalenie.",
+        "Przed kasacją w sprawie odmowy pobytu uwzględnij ryzyko kosztowe i ustal, czy zaskarżany wyrok WSA oddalił, czy uwzględnił skargę.",
     },
     {
       provisionId: "ppsa-art-205",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 205 визначає, які витрати є необхідними: зокрема винагорода та витрати професійного pełnomocnik у межах правил, а для сторони без такого представника — судові витрати, проїзд до суду і еквівалент втраченого заробітку в межах, передбачених статтею.",
-          sourceLocator: "Art. 205 § 1–5",
+          text: "Do niezbędnych kosztów strony działającej osobiście lub przez pełnomocnika innego niż adwokat lub radca prawny zalicza się koszty sądowe, przejazdy do sądu oraz równowartość utraconego zarobku lub dochodu. Przy adwokacie lub radcy prawnym dochodzą ich wynagrodzenie w ustawowych granicach, wydatki jednego pełnomocnika, koszty sądowe i nakazane osobiste stawiennictwo; § 3–4 określają dalsze zasady i odpowiednie zastosowanie dla doradcy podatkowego, rzecznika patentowego i Prokuratorii Generalnej.",
+          sourceLocator: "Art. 205 § 1–4",
         },
       ],
       summary:
-        "Стаття формує рамку для розрахунку необхідних kosztów залежно від того, чи сторону представляє adwokat, radca prawny, doradca podatkowy, rzecznik patentowy або інша особа.",
+        "Art. 205 wylicza kategorie niezbędnych kosztów i odrębnie traktuje osobisty udział, adwokata lub radcę prawnego oraz pozostałych profesjonalnych pełnomocników.",
       rules: [
         {
-          locator: "Art. 205 § 1–3",
+          locator: "§ 1–2",
           explanation:
-            "До різних видів представництва та особистої участі застосовуються різні категорії необхідних витрат; розмір не випливає лише з поданої квитанції.",
+            "Rodzaj reprezentacji wpływa na katalog kosztów i limit wynagrodzenia; przy pełnomocniku zawodowym przepis wymienia także wydatki jednego adwokata lub radcy.",
         },
         {
-          locator: "Art. 205 § 4–5",
+          locator: "§ 3–4",
           explanation:
-            "Винагорода й витрати pełnomocnik визначаються за правилами статті та окремими приписами, з урахуванням меж і вимог до їх призначення.",
+            "Przejazdy i utracony zarobek rozlicza się według wskazanych przepisów o kosztach cywilnych, a § 2–3 stosuje się odpowiednio do trzech wymienionych podmiotów.",
         },
       ],
       legalEffect:
-        "Норма обмежує вимогу про zwrot категоріями необхідних витрат; вона не гарантує відшкодування кожної фактичної витрати на переклад чи консультацію.",
+        "Zwrot obejmuje tylko kategorie niezbędnych kosztów i granice ustawy; nie każda faktura, konsultacja lub tłumaczenie staje się automatycznie kosztem podlegającym zwrotowi.",
       foreignersCase:
-        "Іноземцю у справі про pobyt варто окремо підтверджувати судові opłaty, професійну допомогу та необхідні переклади, не змішуючи їх автоматично в одну суму zwrot.",
+        "W sprawie pobytowej zbieraj osobno opłaty sądowe, przejazdy, utracony dochód i wynagrodzenie pełnomocnika. Oceń możliwość zwrotu według kategorii art. 205, nie według samej sumy wydatków.",
     },
     {
       provisionId: "ppsa-art-206",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 206 дозволяє суду в uzasadnione przypadki odstąpić від присудження zwrot kosztów postępowania повністю або частково.",
+          text: "Sąd może w uzasadnionych przypadkach odstąpić od zasądzenia zwrotu kosztów postępowania w całości lub części, w szczególności gdy skarga została uwzględniona w części niewspółmiernej do wartości przedmiotu sporu ustalonej dla pobrania wpisu.",
           sourceLocator: "Art. 206",
         },
       ],
       summary:
-        "Навіть за наявності загальної підстави для розподілу витрат суд може в обґрунтованій ситуації не присудити їх повністю або частково.",
+        "Art. 206 daje sądowi możliwość ograniczenia albo pominięcia zwrotu kosztów w uzasadnionej sytuacji, zwłaszcza przy niewspółmiernym częściowym uwzględnieniu skargi.",
       rules: [
         {
           locator: "Art. 206",
           explanation:
-            "Це дискреційна можливість суду, а не автоматичний результат кожного спору про koszty.",
+            "To kompetencja sądu zależna od okoliczności; przepis podaje przykład relacji między zakresem uwzględnienia a wartością przedmiotu sporu dla wpisu.",
         },
       ],
       legalEffect:
-        "Посилання на Art. 206 не означає наперед ні повного zwrot, ні його відсутності; значення мають обставини конкретної справи та мотивування суду.",
+        "Nawet istnienie ogólnej podstawy zwrotu nie gwarantuje pełnej kwoty, lecz nie przesądza też z góry o odmowie.",
       foreignersCase:
-        "У справі іноземця про pobyt навіть виграш skargi не дозволяє точно обіцяти повний zwrot kosztów, якщо суд застосує Art. 206.",
+        "Po częściowym wygraniu skargi pobytowej nie obiecuj pełnego zwrotu. Sprawdź uzasadnienie WSA i relację zakresu uwzględnienia do wartości przyjętej dla wpisu.",
     },
     {
       provisionId: "ppsa-art-207",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 207 регулює розподіл kosztów при частковому uwzględnieniu skargi та допускає в uzasadnione przypadki присудження або відмову від zwrot залежно від перебігу процесу, зокрема невиконанням skarżący обов'язку, названого в статті.",
+          text: "Przepisy art. 202, 205 i 206 stosuje się odpowiednio w przypadkach z art. 203 i 204. W przypadkach szczególnie uzasadnionych sąd może odstąpić od zasądzenia zwrotu kosztów postępowania kasacyjnego w całości lub części.",
           sourceLocator: "Art. 207 § 1–2",
         },
       ],
       summary:
-        "Частковий виграш не дає простого правила «усі витрати переможцю»: суд може розподілити їх частково або інакше за умов статті.",
+        "Art. 207 uzupełnia reguły kosztów kasacyjnych o odesłanie do zasad rozdziału i szczególną możliwość odstąpienia od zwrotu.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "За часткового задоволення skargi суд може в обґрунтованих випадках присудити частину витрат або повний zwrot.",
+            "Przy kosztach z art. 203–204 odpowiednio uwzględnia się reguły o kilku uprawnionych, niezbędnych kosztach i odstąpieniu z art. 202, 205–206.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Суд може врахувати названі статтею процесуальні обставини й відступити від звичайного розподілу навіть при uwzględnieniu skargi.",
+            "Odstąpienie od zwrotu kasacyjnego wymaga przypadku szczególnie uzasadnionego i może być całkowite albo częściowe.",
         },
       ],
       legalEffect:
-        "Фінансовий результат залежить від обсягу задоволення та мотивованої оцінки суду; часткове скасування рішення не дорівнює автоматичній пропорції.",
+        "Art. 207 nie ustanawia automatycznej proporcji kosztów; modyfikuje ich rozliczenie w konkretnym wyniku kasacji i pozostawia sądowi ocenę szczególnej sytuacji.",
       foreignersCase:
-        "Якщо skarga іноземця щодо pobyt задоволена лише частково, зіставте кожну вимогу й процесуальну поведінку з мотивами WSA перед розрахунком очікуваного zwrot.",
+        "Przy kasacji w sprawie pobytowej sprawdź najpierw art. 203 lub 204, a potem odpowiednie odesłania art. 207. Nie przedstawiaj częściowego wyniku jako gwarancji określonego zwrotu.",
     },
     {
       provisionId: "ppsa-art-208",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 208 визначає застосування правил про koszty до випадку umorzenie postępowania та вимагає враховувати підставу, з якої провадження було припинено.",
+          text: "Niezależnie od wyników spraw wskazanych w art. 200, 203, 204 i 207 sąd może nałożyć na stronę obowiązek zwrotu w całości lub części kosztów wywołanych jej niesumiennym lub oczywiście niewłaściwym postępowaniem.",
           sourceLocator: "Art. 208",
         },
       ],
       summary:
-        "При припиненні судового провадження питання витрат не вирішується лише за словом umorzenie: треба встановити конкретну процесуальну підставу і відповідне правило розділу.",
+        "Niesumienne albo oczywiście niewłaściwe zachowanie strony może uzasadnić osobne obciążenie wywołanymi przez nie kosztami, niezależnie od wyniku sprawy.",
       rules: [
         {
           locator: "Art. 208",
           explanation:
-            "Спочатку ідентифікуйте причину umorzenie у postanowienie, потім визначайте наслідки щодо kosztów за пов'язаними нормами.",
+            "Trzeba wskazać konkretne zachowanie strony i koszty przez nie wywołane; sam przegrany lub wygrany wynik nie wystarcza.",
         },
       ],
       legalEffect:
-        "Стаття не дає універсальної суми чи автоматичного zwrot для всіх видів umorzenie; результат потребує читання разом із названою підставою припинення.",
+        "Art. 208 może zmienić rozliczenie kosztów w całości lub części, ale wymaga oceny zachowania jako niesumiennego albo oczywiście niewłaściwego.",
       foreignersCase:
-        "Якщо суд припинив справу іноземця про pobyt після зміни decyzja органом, не оцінюйте zwrot kosztów без точного посилання на підставу umorzenie.",
+        "W sprawie pobytowej dokumentuj terminowe i rzetelne działania. Nie zakładaj, że wynik skargi sam rozstrzyga o kosztach wywołanych konkretnym zachowaniem strony.",
     },
     {
       provisionId: "ppsa-art-209",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 209 зобов'язує суд вирішувати питання про zwrot kosztów postępowania в кожному orzeczenie, яке закінчує справу в інстанції.",
+          text: "Wniosek strony o zwrot kosztów sąd rozstrzyga w każdym orzeczeniu uwzględniającym skargę oraz w orzeczeniu, o którym mowa w art. 201, 203 i 204.",
           sourceLocator: "Art. 209",
         },
       ],
       summary:
-        "Фінальне orzeczenie в інстанції має охоплювати питання про повернення процесуальних витрат, якщо для нього є підстава.",
+        "Art. 209 wskazuje orzeczenia, w których sąd rozstrzyga zgłoszony wniosek o zwrot kosztów.",
       rules: [
         {
           locator: "Art. 209",
           explanation:
-            "Перевіряйте резолютивну частину кожного orzeczenie, що завершує інстанцію, окремо від мотивів щодо основного спору.",
+            "Sprawdź sentencję orzeczenia uwzględniającego skargę oraz orzeczenia objęte art. 201, 203 lub 204; sam wniosek nie zastępuje wykazania należnych kosztów.",
         },
       ],
       legalEffect:
-        "Норма визначає момент вирішення про koszty, але не замінює спеціальні умови права на zwrot і вимоги до заявлення.",
+        "Przepis określa moment rozstrzygnięcia wniosku i nie tworzy samodzielnie prawa do zwrotu bez spełnienia warunków właściwej podstawy.",
       foreignersCase:
-        "Отримавши wyrok WSA у справі іноземця про pobyt, перевірте його окрему частину про koszty, а не припускайте, що питання вирішиться пізніше органом.",
+        "Po wyroku w sprawie pobytowej sprawdź rozstrzygnięcie o kosztach w sentencji, zwłaszcza gdy sprawa zakończyła się na podstawie art. 201, 203 albo 204.",
     },
     {
       provisionId: "ppsa-art-210",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 210 передбачає втрату права вимагати zwrot kosztów, якщо сторона не подала wniosek про присудження належних витрат не пізніше закриття rozprawa, що безпосередньо передує ухваленню orzeczenie.",
+          text: "Strona traci uprawnienie do żądania zwrotu kosztów, jeżeli najpóźniej przed zamknięciem rozprawy bezpośrednio poprzedzającej orzeczenie nie zgłosi wniosku; sąd powinien pouczyć stronę bez profesjonalnego pełnomocnika o skutkach zaniechania. Reguła ta nie działa przy orzekaniu na posiedzeniu niejawnym, gdy strona nie jest reprezentowana przez adwokata, radcę prawnego, doradcę podatkowego lub rzecznika patentowego — wtedy sąd orzeka o należnych kosztach z urzędu.",
           sourceLocator: "Art. 210 § 1–2",
         },
       ],
       summary:
-        "Вимога про повернення витрат має бути заявлена вчасно; стаття прив'язує наслідок пропуску до моменту перед закриттям відповідної rozprawa.",
+        "Art. 210 określa termin zgłoszenia wniosku o zwrot kosztów i wyjątek, w którym na posiedzeniu niejawnym sąd rozstrzyga koszty z urzędu.",
       rules: [
         {
-          locator: "Art. 210 § 1",
+          locator: "§ 1",
           explanation:
-            "Кінцевий момент — закриття rozprawa, що безпосередньо передує orzeczenie; пізніше поданий wniosek може бути запізнілим.",
+            "Zwykły termin kończy się przed zamknięciem rozprawy bezpośrednio poprzedzającej orzeczenie; osoba bez profesjonalnego pełnomocnika powinna otrzymać pouczenie.",
         },
         {
-          locator: "Art. 210 § 2",
+          locator: "§ 2",
           explanation:
-            "Застосування правила потребує перевірки винятку або спеціальної ситуації, передбаченої другим параграфом.",
+            "Przy posiedzeniu niejawnym i braku wskazanego pełnomocnika wniosek nie jest wymagany na zasadzie § 1, bo sąd orzeka z urzędu.",
         },
       ],
       legalEffect:
-        "Пропуск моменту для wniosek може позбавити права вимагати zwrot, тому його не слід відкладати до після отримання wyrok.",
+        "Późny wniosek może oznaczać utratę uprawnienia, lecz przed zastosowaniem § 1 trzeba sprawdzić tryb orzekania i reprezentację strony.",
       foreignersCase:
-        "Представник іноземця має заявити wniosek про zwrot kosztów у справі про pobyt до закриття відповідної rozprawa, навіть якщо розмір витрат ще потрібно чітко обґрунтувати.",
+        "W sprawie pobytowej pełnomocnik powinien zgłosić wniosek przed zamknięciem rozprawy. Jeżeli nie ma profesjonalnego pełnomocnika i sprawa jest na posiedzeniu niejawnym, sprawdź zastosowanie § 2.",
     },
     {
       provisionId: "ppsa-art-211",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 211 визначає, що koszty sądowe складаються з opłaty sądowe та zwrot wydatków.",
+          text: "Koszty sądowe obejmują opłaty sądowe i zwrot wydatków.",
           sourceLocator: "Art. 211",
         },
       ],
       summary:
-        "Судові витрати мають дві законні частини: opłaty sądowe та повернення wydatki.",
+        "Art. 211 dzieli koszty sądowe na opłaty sądowe i zwrot wydatków.",
       rules: [
         {
           locator: "Art. 211",
           explanation:
-            "У розрахунку не змішуйте opłata sądowa з wydatki: це різні складові koszty sądowe.",
+            "Przy analizie płatności rozdziel opłatę sądową od wydatku, bo dalsze przepisy mogą traktować je odmiennie.",
         },
       ],
       legalEffect:
-        "Стаття дає базову класифікацію витрат, але не визначає для конкретної skarga ні ставку, ні право на звільнення.",
+        "Klasyfikacja nie podaje stawki ani zwolnienia dla konkretnego pisma; te kwestie wymagają dalszych przepisów.",
       foreignersCase:
-        "У справі іноземця про legalizacja pobytu складіть окремий список opłata за skarga та документально підтверджених wydatki, пов'язаних із судом.",
+        "W sprawie pobytowej prowadź osobno listę wpisu lub opłaty kancelaryjnej i wydatków, np. należności tłumacza ustanowionego przez sąd.",
     },
     {
       provisionId: "ppsa-art-212",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 212 називає opłaty sądowe: це wpis і opłata kancelaryjna.",
-          sourceLocator: "Art. 212",
+          text: "Opłatami sądowymi są wpis i opłata kancelaryjna; opłaty sądowe są dochodami budżetu państwa.",
+          sourceLocator: "Art. 212 § 1–2",
         },
       ],
       summary:
-        "У межах судових платежів закон розрізняє wpis та opłata kancelaryjna.",
+        "Art. 212 rozróżnia wpis i opłatę kancelaryjną oraz określa ich publicznoprawny charakter jako dochodów budżetu państwa.",
       rules: [
         {
-          locator: "Art. 212",
+          locator: "§ 1",
           explanation:
-            "Визначте, чи конкретна вимога суду є wpis за подання або opłata kancelaryjna за канцелярську дію.",
+            "Najpierw ustal, czy konkretna należność jest wpisem, czy opłatą kancelaryjną; są to dwie kategorie opłat sądowych.",
+        },
+        {
+          locator: "§ 2",
+          explanation:
+            "Przepis wskazuje odbiorcę dochodu, ale nie ustala stawki konkretnego pisma.",
         },
       ],
       legalEffect:
-        "Класифікація важлива для подальшої ставки й строку сплати, але сама стаття їх не встановлює.",
+        "Art. 212 nie przesądza wysokości opłaty ani prawa do zwolnienia; służy klasyfikacji należności.",
       foreignersCase:
-        "Іноземцю, який подає skargę на decyzja pobytowa, не слід називати будь-який платіж «вписом» без перевірки, чи це wpis або opłata kancelaryjna.",
+        "Przy składaniu skargi na decyzję pobytową nazwij żądany i uiszczony rodzaj opłaty zgodnie z ustawą, nie utożsamiając każdego płatnego pisma z wpisem.",
     },
     {
       provisionId: "ppsa-art-213",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 213 покладає обов'язок сплатити koszty sądowe на сторону, яка подає до суду письмо, що підлягає оплаті або спричиняє wydatki, якщо ustawa не встановлює іншого.",
-          sourceLocator: "Art. 213",
+          text: "Do wydatków zalicza się w szczególności należności tłumaczy i kuratorów ustanowionych w sprawie oraz koszty ogłoszeń, a także diety i koszty podróży sędziów i pracowników sądowych związane z czynnościami poza budynkiem sądu, określone w odrębnych przepisach.",
+          sourceLocator: "Art. 213 pkt 1–2",
         },
       ],
       summary:
-        "Відправною точкою є сторона, яка подає платне письмо або спричиняє витрати, але спеціальний закон може змінити це правило.",
+        "Art. 213 podaje przykładowe wydatki sądowe, w tym należności sądowego tłumacza lub kuratora i koszty czynności poza sądem.",
       rules: [
         {
-          locator: "Art. 213",
+          locator: "Art. 213 pkt 1–2",
           explanation:
-            "Перед поданням визначте, чи письмо підлягає opłata або викликає wydatki, і перевірте можливий спеціальний виняток.",
+            "Należność tłumacza lub kuratora musi dotyczyć osoby ustanowionej w danej sprawie; pozostałe wskazane wydatki podlegają odrębnym zasadom.",
         },
       ],
       legalEffect:
-        "Обов'язок не означає, що сторона неодмінно платить остаточно: питання zwolnienie та повернення регулюються іншими нормами.",
+        "Przepis klasyfikuje przykładowe wydatki, nie ustanawia automatycznego zwrotu prywatnych kosztów tłumaczenia ani nie określa ich stawek.",
       foreignersCase:
-        "Коли іноземець подає skargę на decyzja про pobyt, спочатку визначте платника за Art. 213, а потім перевірте право на prawo pomocy або інше звільнення.",
+        "Jeżeli sąd ustanowił tłumacza w sprawie pobytowej, odróżnij jego należność jako wydatek sądowy od prywatnego tłumaczenia dokumentów przez stronę.",
     },
     {
       provisionId: "ppsa-art-214",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 214 визначає обов'язок uiszczenie kosztów sądowych при поданні письма до sąd, якщо для нього передбачено opłata або воно спричиняє wydatki, з урахуванням спеціальних правил ustawa.",
-          sourceLocator: "Art. 214",
+          text: "Jeżeli ustawa nie stanowi inaczej, koszty sądowe uiszcza ten, kto wnosi do sądu pismo podlegające opłacie lub powodujące wydatki. Pismo kilku osób o wspólnych uprawnieniach lub obowiązkach podlega jednej opłacie; w przeciwnym razie każda osoba uiszcza opłatę oddzielnie stosownie do swojego uprawnienia lub obowiązku.",
+          sourceLocator: "Art. 214 § 1–2",
         },
       ],
       summary:
-        "Норма пов'язує сплату з конкретною процесуальною дією — внесенням платного або витратного письма до суду.",
+        "Art. 214 wskazuje podstawowego płatnika i rozdziela jedną albo odrębne opłaty przy piśmie wniesionym przez kilka osób.",
       rules: [
         {
-          locator: "Art. 214",
+          locator: "§ 1",
           explanation:
-            "Оцінюйте обов'язок саме на момент wniesienie pisma та не відривайте його від винятків, які може містити ustawa.",
+            "Co do zasady płaci wnoszący pismo, chyba że inna ustawa przewiduje wyjątek; dotyczy to opłaty albo pisma powodującego wydatek.",
+        },
+        {
+          locator: "§ 2",
+          explanation:
+            "Wspólne uprawnienia lub obowiązki oznaczają jedną opłatę, a brak wspólności — opłatę każdej osoby według jej zakresu.",
         },
       ],
       legalEffect:
-        "Стаття не визначає розмір платежу і не скасовує можливі механізми zwolnienie; вона окреслює момент і зв'язок обов'язку.",
+        "Przepis ustala obowiązek uiszczenia, lecz nie rozstrzyga zwolnienia ani ostatecznego zwrotu kosztów; te kwestie wymagają osobnej podstawy.",
       foreignersCase:
-        "Перед поданням іноземцем skarga у справі про pobyt перевірте, який документ є wszczynające pismo і чи саме на нього припадає обов'язок uiszczenie.",
+        "Przy wspólnej skardze członków rodziny ustal, czy ich uprawnienia lub obowiązki wobec zaskarżenia są wspólne. Od tego zależy jedna albo odrębne opłaty.",
     },
     {
       provisionId: "ppsa-art-215",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 215 передбачає pobieranie wpis від pism, які розпочинають postępowanie перед sąd administracyjny у відповідній інстанції.",
-          sourceLocator: "Art. 215",
+          text: "W każdym piśmie wszczynającym postępowanie sądowe w danej instancji należy podać wartość przedmiotu zaskarżenia, jeżeli od tej wartości zależy wysokość opłaty; wartość zaokrągla się w górę do pełnych złotych.",
+          sourceLocator: "Art. 215 § 1–2",
         },
       ],
       summary:
-        "Wpis пов'язаний із письмом, що відкриває провадження в конкретній інстанції, а не з кожним листом у вже відкритій справі.",
+        "Art. 215 wymaga podania wartości przedmiotu zaskarżenia tylko wtedy, gdy od niej zależy wysokość opłaty, i nakazuje zaokrąglenie w górę.",
       rules: [
         {
-          locator: "Art. 215",
+          locator: "§ 1",
           explanation:
-            "Визначте інстанцію та чи є письмо wszczynające postępowanie; від цього залежить застосування правила про wpis.",
+            "Obowiązek dotyczy pisma wszczynającego postępowanie w konkretnej instancji i zależy od sposobu wyliczenia opłaty.",
+        },
+        {
+          locator: "§ 2",
+          explanation:
+            "Podaną wartość zaokrągla się w górę do pełnych złotych, a nie do najbliższej kwoty według zwykłego zaokrąglenia.",
         },
       ],
       legalEffect:
-        "Стаття встановлює предмет, з якого pobieraється wpis, але не відповідає сама на питання про його вид або ставку.",
+        "Art. 215 nie ustala sam stawki; błędne pominięcie lub oznaczenie wartości może wymagać reakcji według przepisów o brakach i opłacie.",
       foreignersCase:
-        "Іноземець, який оскаржує decyzja про pobyt у WSA, має відрізнити skargę, що відкриває інстанцію, від наступного письма, яке не обов'язково має той самий wpis.",
+        "Przed wniesieniem pisma w sprawie pobytowej ustal, czy opłata zależy od wartości przedmiotu zaskarżenia. Nie wyliczaj jej z osobistej wagi decyzji bez podstawy ustawowej.",
     },
     {
       provisionId: "ppsa-art-216",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 216 розмежовує спосіб визначення wpis залежно від предмета оскарження, зокрема передбачає застосування правил про wpis stały або wpis stosunkowy у випадках, встановлених законом.",
+          text: "Jeżeli przedmiotem zaskarżenia jest należność pieniężna, stanowi ona wartość przedmiotu zaskarżenia.",
           sourceLocator: "Art. 216",
         },
       ],
       summary:
-        "Вид wpis залежить від законної категорії предмета спору; для фінансового розрахунку потрібен текст відповідної норми та ставки.",
+        "Przy zaskarżeniu należności pieniężnej wartość przedmiotu zaskarżenia odpowiada tej należności.",
       rules: [
         {
           locator: "Art. 216",
           explanation:
-            "Не визначайте тип wpis лише за назвою рішення: зіставте предмет skarga з категорією, передбаченою законом.",
+            "Najpierw ustal, czy przedmiot zaskarżenia rzeczywiście jest należnością pieniężną; wtedy jej wartość jest wartością przedmiotu zaskarżenia.",
         },
       ],
       legalEffect:
-        "Норма задає рамку класифікації платежу, але не гарантує конкретної суми без перевірки спеціального тарифу.",
+        "Przepis dotyczy wyłącznie sposobu oznaczenia wartości i nie przesądza wysokości wpisu bez zastosowania właściwej taryfy.",
       foreignersCase:
-        "У спорі іноземця про odmowa pobytu опишіть предмет skarga перед вибором wpis stały чи stosunkowy, а не виходьте з вартості особистих наслідків рішення.",
+        "W sporze pobytowym nie przypisuj decyzji niemajątkowej wartości pieniężnej tylko dlatego, że ma skutki finansowe; art. 216 działa przy należności pieniężnej jako przedmiocie zaskarżenia.",
     },
     {
       provisionId: "ppsa-art-217",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 217 пов'язує opłata kancelaryjna з видачею або виконанням канцелярських дій суду в провадженні, для яких закон передбачає таку оплату.",
+          text: "Do wartości przedmiotu zaskarżenia nie wlicza się odsetek i kosztów związanych z należnością główną.",
           sourceLocator: "Art. 217",
         },
       ],
       summary:
-        "Opłata kancelaryjna стосується не самого відкриття справи, а визначеної канцелярської дії або документа суду.",
+        "Przy obliczaniu wartości przedmiotu zaskarżenia pomija się odsetki i koszty związane z należnością główną.",
       rules: [
         {
           locator: "Art. 217",
           explanation:
-            "Перед оплатою встановіть, яка саме czynność kancelaryjna була замовлена та чи охоплена вона законом.",
+            "Oddziel należność główną od odsetek i kosztów ubocznych; tylko ta pierwsza wchodzi do wartości według tego przepisu.",
         },
       ],
       legalEffect:
-        "Саме прохання про копію чи інший документ не дозволяє без перевірки визначити суму opłata kancelaryjna.",
+        "Art. 217 ogranicza składniki wartości, ale nie podaje stawki wpisu ani nie rozstrzyga dopuszczalności samej skargi.",
       foreignersCase:
-        "Якщо іноземцю потрібна копія orzeczenie або матеріалів справи про pobyt, уточніть, чи запит є czynność, за яку Art. 217 допускає opłata kancelaryjna.",
+        "Jeśli sprawa cudzoziemca dotyczy należności pieniężnej, przy oznaczaniu wartości nie dodawaj odsetek ani kosztów związanych z należnością główną.",
     },
     {
       provisionId: "ppsa-art-218",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 218 встановлює правила справляння opłata kancelaryjna за документи та інші канцелярські дії, передбачені законом, і визначає, що її розмір випливає з відповідних приписів про судові платежі.",
+          text: "Przewodniczący może sprawdzić wartość przedmiotu zaskarżenia oznaczoną w piśmie i zarządzić w tym celu dochodzenie.",
           sourceLocator: "Art. 218",
         },
       ],
       summary:
-        "Стаття уточнює режим opłata kancelaryjna: її виникнення та розмір залежать від визначеної законом канцелярської дії.",
+        "Art. 218 pozwala przewodniczącemu zweryfikować oznaczoną w piśmie wartość przedmiotu zaskarżenia.",
       rules: [
         {
           locator: "Art. 218",
           explanation:
-            "Відокремте факт отримання документа від питання, чи закон передбачає за це оплату і в якому розмірі.",
+            "Podana przez stronę wartość nie wiąże sądu bez kontroli; przewodniczący może zarządzić dochodzenie dla jej sprawdzenia.",
         },
       ],
       legalEffect:
-        "Норма не створює загальної плати за будь-який контакт із судом; потрібна конкретна передбачена дія та застосовний тариф.",
+        "Przepis daje narzędzie weryfikacji wartości, ale sam nie ustala jej prawidłowej kwoty ani automatycznego skutku błędnego oznaczenia.",
       foreignersCase:
-        "У справі іноземця про pobyt перевірте підставу opłata kancelaryjna перед замовленням копій, особливо якщо документи потрібні для іншого органу.",
+        "Jeżeli w piśmie dotyczącym pobytu podano wartość przedmiotu zaskarżenia, zachowaj dokumenty uzasadniające wyliczenie i reaguj na zarządzenie przewodniczącego.",
     },
     {
       provisionId: "ppsa-art-219",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 219 вимагає uiszczenie należna opłata при внесенні до суду письма, що підлягає оплаті, і передбачає підтвердження сплати відповідно до правил судових платежів.",
-          sourceLocator: "Art. 219",
+          text: "Opłatę sądową uiszcza się przy wniesieniu do sądu pisma podlegającego opłacie. Opłatę można uiścić gotówką w kasie właściwego sądu administracyjnego albo na jego rachunek bankowy, a końcówki opłat zaokrągla się w górę do pełnych złotych.",
+          sourceLocator: "Art. 219 § 1–2",
         },
       ],
       summary:
-        "Оплату треба організувати разом із поданням платного письма та мати підтвердження, яке дозволяє суду перевірити uiszczenie.",
+        "Art. 219 określa moment, podstawowe sposoby i sposób zaokrąglenia opłaty sądowej.",
       rules: [
         {
-          locator: "Art. 219",
+          locator: "§ 1",
           explanation:
-            "Перевірте платіж до або одночасно з wniesienie pisma; не покладайтеся на те, що підтвердження можна буде додати без наслідків.",
+            "Opłatę trzeba uiścić przy wniesieniu pisma podlegającego opłacie, a nie dopiero po merytorycznym rozpoznaniu.",
+        },
+        {
+          locator: "§ 2",
+          explanation:
+            "Sprawdź kasę albo rachunek właściwego sądu i zaokrąglij końcówkę w górę do pełnych złotych.",
         },
       ],
       legalEffect:
-        "Наслідки відсутності або неправильності платежу залежать від наступного wezwanie та правил Art. 220, тому факт відправлення skarga не дорівнює належній оплаті.",
+        "Prawidłowe wniesienie pisma nie zastępuje prawidłowej opłaty; brak lub niedopłata mogą uruchomić art. 220, z uwzględnieniem zwolnienia i innych wyjątków.",
       foreignersCase:
-        "Перед поданням skarga іноземця на рішення про pobyt перевірте реквізити wpis і додайте доказ uiszczenie, зберігши дату та підтвердження платежу.",
+        "Przy skardze na decyzję pobytową ustal właściwy sąd, rachunek i kwotę wpisu, zachowaj potwierdzenie oraz sprawdź, czy nie działa zwolnienie.",
     },
     {
       provisionId: "ppsa-art-220",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 220 забороняє суду вчиняти дію за неоплаченим належним чином письмом і передбачає wezwanie сплатити належну суму в семиденний строк під rygor, визначений статтею; окремі випадки відхилення письма можуть наставати без wezwanie.",
-          sourceLocator: "Art. 220 § 1–3",
+          text: "Sąd nie podejmuje czynności na skutek nieopłaconego pisma; co do zasady przewodniczący wzywa do uiszczenia opłaty w siedem dni pod rygorem pozostawienia pisma bez rozpoznania, a przy piśmie osoby mieszkającej lub mającej siedzibę za granicą bez krajowego przedstawiciela termin nie może być krótszy niż dwa miesiące. Nieuiszczenie wpisu po wezwaniu powoduje odrzucenie skargi, skargi kasacyjnej, zażalenia lub skargi o wznowienie; § 3a dotyczy elektronicznej opłaty z art. 235a, a § 4 zwalnia z wpisu określone zażalenia.",
+          sourceLocator: "Art. 220 § 1–4",
         },
       ],
       summary:
-        "Належна оплата є умовою руху платного письма: зазвичай суд дає коротке wezwanie, але стаття містить і спеціальні наслідки.",
+        "Art. 220 rozróżnia pozostawienie pisma bez rozpoznania od odrzucenia środków z § 3–3a, określa wezwanie i szczególny termin dla osoby bez przedstawiciela w kraju.",
       rules: [
         {
-          locator: "Art. 220 § 1–2",
+          locator: "§ 1–2",
           explanation:
-            "При виявленій недоплаті або відсутності оплати відстежуйте семиденний строк у wezwanie та його rygor.",
+            "Zapisz doręczenie wezwania i siedem dni, a przy osobie z zagranicy bez krajowego przedstawiciela sprawdź termin niekrótszy niż dwa miesiące.",
         },
         {
-          locator: "Art. 220 § 3",
+          locator: "§ 3–4",
           explanation:
-            "Для передбачених статтею видів письма наслідок може настати без окремого wezwanie; вид документа треба встановити точно.",
+            "Po bezskutecznym wezwaniu wskazane środki podlegają odrzuceniu; osobno sprawdź elektroniczną opłatę z art. 235a i brak wpisu od zażaleń wymienionych w § 4.",
         },
       ],
       legalEffect:
-        "Пропущений строк оплати може заблокувати розгляд або спричинити odrzucenie письма; подання клопотання про zwolnienie потребує окремої перевірки.",
+        "Skutek zależy od rodzaju pisma, opłaty i wezwania; samo wysłanie pisma nie zapewnia jego rozpoznania, ale nie wolno też pomijać szczególnego terminu z § 2.",
       foreignersCase:
-        "Якщо іноземець отримав wezwanie про wpis у справі pobyt, зафіксуйте дату doręczenie і сім днів, бо мовний бар'єр не скасовує зазначений у wezwanie rygor.",
+        "Cudzoziemiec mieszkający za granicą bez przedstawiciela w Polsce powinien sprawdzić, czy wezwanie daje co najmniej dwa miesiące. Przy skardze lub kasacji odrzucony wpis po wezwaniu może zakończyć środek procesowy.",
     },
     {
       provisionId: "ppsa-art-221",
-      reviewStatus: "draft",
+      reviewStatus: "blocked",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 221 передбачає, що письмо, внесене adwokat, radca prawny, doradca podatkowy або rzecznik patentowy і не оплачене належним чином, відхиляється без wezwanie про сплату, якщо для нього встановлено wpis stały.",
+          text: "Art. 221 ma w lokalnym tekście jednolitym status uchylony i zawiera wyłącznie oznaczenie „(uchylony)”. Nie ustanawia aktualnej reguły procesowej.",
           sourceLocator: "Art. 221",
         },
       ],
       summary:
-        "Для професійно підписаного письма зі stały wpis не можна розраховувати на звичайне wezwanie про доплату.",
+        "Art. 221 jest uchylony; w aktualnym lokalnym korpusie brak operatywnej treści do objaśnienia jako obowiązującej normy.",
       rules: [
         {
           locator: "Art. 221",
           explanation:
-            "Перевірте одночасно особу професійного pełnomocnik і те, що opłata є stały; лише тоді працює спеціальне правило.",
+            "Nie stosuj tego artykułu jako podstawy wezwania, terminu ani odrzucenia pisma; dla opłaty trzeba czytać obowiązujące art. 219–220 i przepisy szczególne.",
         },
       ],
       legalEffect:
-        "Неналежна оплата в названій ситуації може вести до odrzucenie без попередження, тому помилку в платежі не слід виправляти із запізненням.",
+        "Status przepisu w korpusie to repealed; jego dawne brzmienie nie może być przedstawiane jako aktualny skutek proceduralny.",
       foreignersCase:
-        "Якщо skargę іноземця про pobyt подає radca prawny або adwokat, платіж має бути перевірений до подання: для stały wpis Art. 221 не обіцяє wezwanie.",
+        "W sprawie pobytowej pomiń art. 221 jako podstawę prawną. Jeśli dokument powołuje ten uchylony przepis, porównaj podstawę z aktualnym tekstem PPSA i pouczeniem sądu.",
     },
     {
       provisionId: "ppsa-art-222",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 222 встановлює спеціальне правило щодо судового платежу за письмо, яке не підлягає розгляду без належного uiszczenie, і пов'язує подальшу дію суду з вимогами про opłata та їх виконанням.",
+          text: "Nie żąda się opłat od pisma, jeżeli już z jego treści wynika, że podlega ono odrzuceniu.",
           sourceLocator: "Art. 222",
         },
       ],
       summary:
-        "Остання норма цього блоку завершує правила про судові платежі: перед процесуальною дією треба перевірити належне uiszczenie та спеціальний наслідок для відповідного письма.",
+        "Art. 222 wyłącza żądanie opłaty od pisma, którego odrzucenie wynika już z samej jego treści.",
       rules: [
         {
           locator: "Art. 222",
           explanation:
-            "Зіставляйте предмет письма, вид opłata і передбачений законом процесуальний наслідок, не переносячи правило Art. 220 автоматично на кожен випадок.",
+            "Przed wezwaniem do opłaty trzeba ocenić, czy z pisma od razu wynika przeszkoda prowadząca do odrzucenia; przepis dotyczy takiej oczywistej sytuacji.",
         },
       ],
       legalEffect:
-        "Стаття не доводить сама по собі, що конкретна skarga буде прийнята або відхилена: потрібна перевірка виду письма, платежу та можливого zwolnienie.",
+        "Art. 222 dotyczy pobierania opłaty, nie tworzy samodzielnej podstawy odrzucenia i nie rozstrzyga sprawy merytorycznie.",
       foreignersCase:
-        "У справі іноземця про pobyt перед відправленням письма до sąd перевірте, чи Art. 222 разом із правилами про wpis встановлює спеціальну вимогу, щоб справа не зупинилася на платежі.",
+        "W sprawie pobytowej nie zakładaj automatycznie, że brak wezwania do wpisu oznacza brak opłaty. Sprawdź, czy sąd uznał odrzucenie za wynikające już z treści pisma.",
     },
   ],
 })
