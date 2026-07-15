@@ -1,4 +1,8 @@
-import type { LegalDocumentId } from "../contracts"
+import type {
+  LegalDocumentId,
+  LegalDocumentReference,
+  LegalProvisionReference,
+} from "../contracts"
 
 export type AuthoredLearningDocumentId = Exclude<LegalDocumentId, "kpa">
 
@@ -12,6 +16,11 @@ export type LegalLearningSection = {
   warning?: string
 }
 
+export type LegalLearningInlineReference = {
+  label: string
+  target: LegalDocumentReference | LegalProvisionReference
+}
+
 export type LegalLearningModule = {
   id: string
   order: number
@@ -23,6 +32,7 @@ export type LegalLearningModule = {
   placeInWork: string
   sections: readonly LegalLearningSection[]
   exercise: string
+  references?: readonly LegalLearningInlineReference[]
 }
 
 export type LegalLearningCurriculum<

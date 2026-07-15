@@ -1,0 +1,256 @@
+import type {
+  LegalDocumentId,
+  LegalExplanation,
+  LegalProvision,
+} from "../contracts"
+import { parseLegalProvisionReference } from "../query"
+import { getDocumentReadingGuide } from "./index"
+import type { LegalLearningModule } from "./types"
+import type {
+  LegalLearningModuleView,
+  LegalLearningTerm,
+} from "./view-types"
+
+type ReviewedProvision = {
+  provision: LegalProvision
+  explanation: LegalExplanation
+}
+
+function unique(items: readonly (string | undefined)[]): string[] {
+  return [...new Set(items.filter((item): item is string => Boolean(item)))]
+}
+
+function sentences(text: string): string[] {
+  return text
+    .split(/(?<=[.!?])\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+}
+
+function explanationTitle(
+  provision: LegalProvision,
+  explanation: LegalExplanation
+): string {
+  const withoutLocator = explanation.summary
+    .replace(
+      new RegExp(
+        `^(?:art\\.|§|załącznik(?: nr)?)\\s*${provision.locator.replace(/\D/g, "")}\\s*`,
+        "i"
+      ),
+      ""
+    )
+    .trim()
+  const title = withoutLocator.split(/[.;:]/)[0]?.trim()
+  if (!title) return `Пояснення ${provision.locator}`
+  return title.charAt(0).toLocaleUpperCase("uk") + title.slice(1)
+}
+
+function buildTerms(
+  module: LegalLearningModule,
+  paragraphs: readonly string[]
+): LegalLearningTerm[] {
+  return unique(module.polish.split(/[;,]/).map((term) => term.trim()))
+    .slice(0, 6)
+    .map((term) => {
+      const token = term.split(/\s+/)[0]?.toLocaleLowerCase("pl")
+      const matchingSentence = paragraphs
+        .flatMap(sentences)
+        .find((sentence) =>
+          token ? sentence.toLocaleLowerCase("pl").includes(token) : false
+        )
+      return {
+        term,
+        meaning:
+          matchingSentence ??
+          `Поняття ${term} треба читати у визначеній групі норм і перевіряти за фактами конкретної справи.`,
+      }
+    })
+}
+
+function normalizedLocator(locator: string): string {
+  return locator
+    .toLocaleLowerCase("pl")
+    .replace(/załącznik\s+nr\s+/, "załącznik ")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+export function findModuleProvisions(
+  module: LegalLearningModule,
+  provisions: readonly LegalProvision[]
+): LegalProvision[] {
+  const text = [
+    module.provisionScope,
+    module.outcome,
+    module.caseQuestion,
+    module.placeInWork,
+    module.exercise,
+    ...module.sections.flatMap((section) => [
+      section.title,
+      ...section.paragraphs,
+      ...(section.questions ?? []),
+      ...(section.steps ?? []),
+      ...(section.warning ? [section.warning] : []),
+    ]),
+  ].join(" ")
+
+  const locators = new Set<string>()
+  for (const match of text.matchAll(/\bart\.\s*(\d+[a-z]?)/gi)) {
+    locators.add(`art. ${match[1].toLocaleLowerCase("pl")}`)
+  }
+  for (const match of text.matchAll(/§\s*(\d+[a-z]?)/gi)) {
+    locators.add(`§ ${match[1].toLocaleLowerCase("pl")}`)
+  }
+  for (const match of text.matchAll(/załącznik(?:\s+nr)?\s*(\d+)/gi)) {
+    locators.add(`załącznik ${match[1]}`)
+  }
+
+  return provisions
+    .filter((provision) => locators.has(normalizedLocator(provision.locator)))
+    .slice(0, 10)
+}
+
+function formatAnalysis(steps: readonly string[]): string {
+  if (!steps.length) {
+    return "Визначаємо факт, знаходимо поняття і норму, розкладаємо її на умови, додаємо докази, дію, наслідок та доступний засіб захисту."
+  }
+  return steps
+    .map((step, index) => `${index + 1}) ${step.replace(/[.]$/, "")}`)
+    .join("; ")
+    .concat(".")
+}
+
+export function buildLegalLearningModuleView({
+  documentId,
+  module,
+  legalState,
+  reviewedProvisions,
+}: {
+  documentId: Exclude<LegalDocumentId, "kpa">
+  module: LegalLearningModule
+  legalState: string
+  reviewedProvisions: readonly ReviewedProvision[]
+}): LegalLearningModuleView {
+  const readingGuide = getDocumentReadingGuide(documentId)
+  if (!readingGuide) {
+    throw new Error(`Missing document reading guide for ${documentId}`)
+  }
+
+  const isReadingModule = module.id === readingGuide.module.id
+  const paragraphs = module.sections.flatMap((section) => section.paragraphs)
+  const warnings = unique(module.sections.map((section) => section.warning))
+  const steps = unique(module.sections.flatMap((section) => section.steps ?? []))
+  const evidence = unique(
+    module.sections.flatMap((section) => section.evidence ?? [])
+  )
+  const questions = unique(
+    module.sections.flatMap((section) => section.questions ?? [])
+  )
+
+  const provisionGuideItems = reviewedProvisions.map(
+    ({ provision, explanation }) => ({
+      id: `provision-${provision.id}`,
+      reference: provision.locator,
+      title: explanationTitle(provision, explanation),
+      summary: explanation.summary,
+      rules: explanation.rules,
+      legalEffect: explanation.legalEffect,
+      foreignersCase: explanation.foreignersCase,
+      target: parseLegalProvisionReference({
+        kind: "legal-provision",
+        documentId,
+        provisionId: provision.id,
+      }),
+    })
+  )
+
+  const terms = isReadingModule
+    ? readingGuide.terms
+    : buildTerms(module, paragraphs)
+  const firstSection = module.sections[0]
+  const secondSection = module.sections[1]
+  const mainRule = firstSection?.paragraphs[0] ?? module.outcome
+  const readingMethod =
+    firstSection?.paragraphs[1] ??
+    (steps.length ? formatAnalysis(steps.slice(0, 4)) : module.placeInWork)
+  const boundary =
+    warnings[0] ??
+    "Ця група норм не дає відповіді без перевірки повних фактів, дати, пов’язаних приписів та застосовної редакції."
+
+  return {
+    order: module.order,
+    title: module.title,
+    polish: module.polish,
+    provisionScope: module.provisionScope,
+    legalState,
+    inlineReferences: module.references ?? [],
+    outcome: module.outcome,
+    stage: isReadingModule
+      ? "Орієнтація в документі"
+      : firstSection?.title ?? "Робота з правовим механізмом",
+    positionIntro: firstSection?.paragraphs[0] ?? module.placeInWork,
+    question: module.caseQuestion,
+    neededWhen: module.placeInWork,
+    boundary,
+    courseTitle: isReadingModule
+      ? `Карта курсу: ${readingGuide.module.title}`
+      : undefined,
+    courseDescription: isReadingModule
+      ? readingGuide.courseDescription
+      : undefined,
+    coursePhases: isReadingModule ? readingGuide.phases : undefined,
+    mechanismParagraphs: paragraphs,
+    layers: [
+      { label: "Основне правило", text: mainRule },
+      { label: "Як читати і застосовувати", text: readingMethod },
+      { label: "Межа або важливий виняток", text: boundary },
+    ],
+    terms,
+    articleGroups: reviewedProvisions.length
+      ? reviewedProvisions.map(({ provision, explanation }) => ({
+          reference: provision.locator,
+          role: explanation.summary,
+          target: parseLegalProvisionReference({
+            kind: "legal-provision",
+            documentId,
+            provisionId: provision.id,
+          }),
+        }))
+      : [
+          {
+            reference: module.provisionScope,
+            role: module.outcome,
+          },
+        ],
+    provisionGuide: {
+      countLabel: reviewedProvisions.length
+        ? `${reviewedProvisions.length} перевірених норм у цьому модулі`
+        : "Перевірене пояснення норм готується",
+      title:
+        documentId === "rozporzadzenie-wniosek-pobyt-czasowy"
+          ? "Параграф за параграфом"
+          : "Стаття за статтею",
+      description: reviewedProvisions.length
+        ? "Розкрийте норму, щоб побачити її реальну структуру, правовий наслідок і місце в роботі зі справою. Пояснення звірене з локальним офіційним текстом."
+        : "Модуль пояснює механізм вище, але не підміняє відсутній незалежний review окремих норм неперевіреною чернеткою.",
+      items: provisionGuideItems,
+    },
+    caseExample: isReadingModule
+      ? readingGuide.caseExample
+      : {
+          title: `Робоча ситуація: ${module.title}`,
+          facts: module.caseQuestion,
+          analysis: formatAnalysis(steps.length ? steps : questions),
+          lesson: `${module.outcome} Практична перевірка: ${module.exercise}`,
+        },
+    pitfalls: warnings.length
+      ? warnings
+      : [boundary],
+    method: steps.length
+      ? steps
+      : [
+          ...questions.map((question) => `Дайте відповідь: ${question}`),
+          ...evidence.map((item) => `Перевірте документ: ${item}`),
+        ],
+  }
+}

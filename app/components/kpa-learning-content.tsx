@@ -1,10 +1,9 @@
-import { ArrowLeft, ArrowRight } from "lucide-react"
-
-import { LegalText } from "~/components/legal-reference-text"
-import { KpaModuleArticleGuide } from "~/components/kpa-module-article-guide"
-import { Badge } from "~/components/ui/badge"
-import { Button } from "~/components/ui/button"
+import {
+  LegalLearningModuleContent,
+  legalLearningContentToc,
+} from "~/components/legal-learning-module-content"
 import type { KpaArticleExplanation } from "~/data/kpa-article-explanations"
+import { kpaArticleIndex } from "~/data/kpa-article-index"
 import {
   kpaGuideModuleArticles,
   type KpaGuideModuleId,
@@ -14,24 +13,37 @@ import {
   kpaGuideLessons,
   kpaGuideModules,
 } from "~/data/kpa-guide-data"
+import { parseLegalProvisionReference } from "~/data/legal-library/query"
+import type { LegalLearningModuleView } from "~/data/legal-library/learning/view-types"
 
-export const kpaLearningSectionIds = {
-  overview: "kpa-overview",
-  position: "kpa-position",
-  mechanism: "kpa-mechanism",
-  articles: "kpa-module-articles",
-  example: "kpa-example",
-  nuances: "kpa-nuances",
-} as const
+export const kpaLearningContentToc = legalLearningContentToc
 
-export const kpaLearningContentToc = [
-  { href: `#${kpaLearningSectionIds.overview}`, label: "Про тему" },
-  { href: `#${kpaLearningSectionIds.position}`, label: "Місце в процедурі" },
-  { href: `#${kpaLearningSectionIds.mechanism}`, label: "Як це працює" },
-  { href: `#${kpaLearningSectionIds.articles}`, label: "Стаття за статтею" },
-  { href: `#${kpaLearningSectionIds.example}`, label: "Повний приклад" },
-  { href: `#${kpaLearningSectionIds.nuances}`, label: "Нюанси й помилки" },
-] as const
+const superscriptDigits: Record<string, string> = {
+  "⁰": "0",
+  "¹": "1",
+  "²": "2",
+  "³": "3",
+  "⁴": "4",
+  "⁵": "5",
+  "⁶": "6",
+  "⁷": "7",
+  "⁸": "8",
+  "⁹": "9",
+}
+
+function kpaProvisionReference(article: string) {
+  const normalized = article.toLocaleLowerCase("pl-PL")
+  const base = normalized.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+$/u, "")
+  const suffix = normalized.slice(base.length)
+  const key = suffix
+    ? `${base}-${[...suffix].map((digit) => superscriptDigits[digit]).join("-")}`
+    : base
+  return parseLegalProvisionReference({
+    kind: "legal-provision",
+    documentId: "kpa",
+    provisionId: `kpa-art-${key}`,
+  })
+}
 
 const kpaCoursePhases = [
   {
@@ -98,257 +110,83 @@ export function KpaLearningContent({
   const previousModule = kpaGuideModules[moduleIndex - 1]
   const nextModule = kpaGuideModules[moduleIndex + 1]
 
+  const moduleView: LegalLearningModuleView = {
+    order: guideModule.order,
+    title: guideModule.title,
+    polish: guideModule.polish,
+    provisionScope: guideModule.articles,
+    legalState: kpaGuideLegalState,
+    inlineReferences: [],
+    outcome: guideModule.outcome,
+    stage: moduleContext.stage,
+    positionIntro: layers.beginner.practice,
+    question: guideModule.outcome,
+    neededWhen: layers.practical.practice,
+    boundary: layers.beginner.pitfall,
+    courseTitle:
+      guideModule.id === "system" ? "Карта всього курсу KPA" : undefined,
+    courseDescription:
+      guideModule.id === "system"
+        ? "Курс іде тим самим шляхом, яким рухається адміністративна справа: від визначення правил до доказів, рішення та контролю."
+        : undefined,
+    coursePhases: guideModule.id === "system" ? kpaCoursePhases : undefined,
+    mechanismParagraphs: lesson.paragraphs,
+    layers: [
+      { label: "Основне правило", text: layers.beginner.law },
+      {
+        label: "Як воно працює на практиці",
+        text: layers.practical.law,
+      },
+      {
+        label: "Межа або важливий виняток",
+        text: layers.advanced.law,
+      },
+    ],
+    terms: lesson.terms,
+    articleGroups: lesson.articles,
+    provisionGuide: {
+      countLabel: `${articleExplanations.length} ${articleExplanations.length === 1 ? "стаття" : "статей"} у цьому модулі`,
+      title: "Стаття за статтею",
+      description:
+        "Відкрийте статтю, щоб побачити її реальні структурні частини, процесуальний наслідок і значення для адміністративної справи іноземця.",
+      items: articleExplanations.map((explanation) => {
+        const entry = kpaArticleIndex.find(
+          (article) => article.article === explanation.article
+        )
+        return {
+          id: `article-${explanation.article}`,
+          reference: `art. ${explanation.article} KPA`,
+          title: entry?.shortTitle ?? explanation.summary,
+          summary: explanation.summary,
+          rules: explanation.rules,
+          legalEffect: explanation.legalEffect,
+          foreignersCase: explanation.foreignersCase,
+          target: kpaProvisionReference(explanation.article),
+        }
+      }),
+    },
+    caseExample: lesson.caseExample,
+    pitfalls: [
+      layers.beginner.pitfall,
+      layers.practical.pitfall,
+      layers.advanced.pitfall,
+    ],
+    method: guideModule.method,
+  }
+
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-      <header id={kpaLearningSectionIds.overview}>
-        <div
-          data-not-typeset
-          className="mb-3 flex flex-wrap items-center gap-2"
-        >
-          <Badge variant="secondary">Модуль {guideModule.order}</Badge>
-          <Badge variant="outline">{guideModule.articles}</Badge>
-          <span className="text-xs text-muted-foreground">
-            Стан права: {kpaGuideLegalState}
-          </span>
-        </div>
-        <h1>{guideModule.title}</h1>
-        <p className="text-muted-foreground" lang="pl">
-          <LegalText text={guideModule.polish} />
-        </p>
-        <p className="text-lg leading-8">
-          <strong>Після цього модуля:</strong>{" "}
-          <LegalText text={guideModule.outcome} />
-        </p>
-      </header>
-
-      <section
-        id={kpaLearningSectionIds.position}
-        aria-labelledby="kpa-position-heading"
-      >
-        <p className="text-sm font-medium text-muted-foreground">
-          {moduleContext.stage}
-        </p>
-        <h2 id="kpa-position-heading">Де ця тема знаходиться в процедурі</h2>
-        <p>
-          <LegalText text={layers.beginner.practice} />
-        </p>
-
-        <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
-          <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Питання модуля</p>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LegalText text={guideModule.outcome} />
-            </p>
-          </div>
-          <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Коли це потрібно</p>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LegalText text={layers.practical.practice} />
-            </p>
-          </div>
-          <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Чого тема не вирішує</p>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LegalText text={layers.beginner.pitfall} />
-            </p>
-          </div>
-        </div>
-
-        {guideModule.id === "system" ? (
-          <div data-not-typeset className="not-typeset mt-10">
-            <h3 className="text-xl font-semibold tracking-tight">
-              Карта всього курсу KPA
-            </h3>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-              Курс іде тим самим шляхом, яким рухається адміністративна справа:
-              від визначення правил до доказів, рішення та контролю.
-            </p>
-            <ol className="mt-5 divide-y border-y">
-              {kpaCoursePhases.map((phase) => (
-                <li
-                  key={phase.number}
-                  className="grid gap-2 py-5 sm:grid-cols-[3rem_13rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5"
-                >
-                  <span className="font-mono text-xs text-muted-foreground">
-                    {phase.number}
-                  </span>
-                  <strong className="text-sm leading-6">{phase.title}</strong>
-                  <span className="text-sm leading-6 text-muted-foreground">
-                    <LegalText text={phase.description} />
-                  </span>
-                  <Badge variant="outline">{phase.modules}</Badge>
-                </li>
-              ))}
-            </ol>
-          </div>
-        ) : null}
-      </section>
-
-      <section
-        id={kpaLearningSectionIds.mechanism}
-        aria-labelledby="kpa-mechanism-heading"
-      >
-        <h2 id="kpa-mechanism-heading">Як працює цей правовий механізм</h2>
-        {lesson.paragraphs.map((paragraph) => (
-          <p key={paragraph}>
-            <LegalText text={paragraph} />
-          </p>
-        ))}
-
-        <div data-not-typeset className="not-typeset mt-7 divide-y border-y">
-          <div className="py-5">
-            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              Основне правило
-            </p>
-            <p className="mt-2 max-w-4xl text-base leading-7">
-              <LegalText text={layers.beginner.law} />
-            </p>
-          </div>
-          <div className="py-5">
-            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              Як воно працює на практиці
-            </p>
-            <p className="mt-2 max-w-4xl text-base leading-7">
-              <LegalText text={layers.practical.law} />
-            </p>
-          </div>
-          <div className="py-5">
-            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              Межа або важливий виняток
-            </p>
-            <p className="mt-2 max-w-4xl text-base leading-7">
-              <LegalText text={layers.advanced.law} />
-            </p>
-          </div>
-        </div>
-
-        <h3>Ключові поняття</h3>
-        <dl>
-          {lesson.terms.map((item) => (
-            <div key={item.term}>
-              <dt lang="pl">{item.term}</dt>
-              <dd>
-                <LegalText text={item.meaning} />
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      <section
-        id={kpaLearningSectionIds.articles}
-        aria-labelledby="kpa-module-articles-heading"
-      >
-        <h2 id="kpa-module-articles-heading">Як статті ділять цю тему</h2>
-        <p>
-          Спочатку подивіться на роль груп статей, а нижче відкривайте кожну
-          норму окремо. Так видно і загальну конструкцію інституту, і точний
-          зміст параграфів та пунктів.
-        </p>
-        <dl>
-          {lesson.articles.map((article) => (
-            <div key={article.reference}>
-              <dt lang="pl">
-                <LegalText text={article.reference} />
-              </dt>
-              <dd>
-                <LegalText text={article.role} />
-              </dd>
-            </div>
-          ))}
-        </dl>
-
-        <div className="mt-10">
-          <KpaModuleArticleGuide explanations={articleExplanations} />
-        </div>
-      </section>
-
-      <section
-        id={kpaLearningSectionIds.example}
-        aria-labelledby="kpa-example-heading"
-      >
-        <h2 id="kpa-example-heading">Повний приклад у справі іноземця</h2>
-        <h3>{lesson.caseExample.title}</h3>
-        <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
-          <div className="grid gap-2 py-5 sm:grid-cols-[3rem_8rem_minmax(0,1fr)] sm:gap-5">
-            <span className="font-mono text-xs text-muted-foreground">01</span>
-            <strong className="text-sm">Факти</strong>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LegalText text={lesson.caseExample.facts} />
-            </p>
-          </div>
-          <div className="grid gap-2 py-5 sm:grid-cols-[3rem_8rem_minmax(0,1fr)] sm:gap-5">
-            <span className="font-mono text-xs text-muted-foreground">02</span>
-            <strong className="text-sm">Аналіз</strong>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LegalText text={lesson.caseExample.analysis} />
-            </p>
-          </div>
-          <div className="grid gap-2 py-5 sm:grid-cols-[3rem_8rem_minmax(0,1fr)] sm:gap-5">
-            <span className="font-mono text-xs text-muted-foreground">03</span>
-            <strong className="text-sm">Висновок</strong>
-            <p className="text-sm leading-6 text-foreground">
-              <LegalText text={lesson.caseExample.lesson} />
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id={kpaLearningSectionIds.nuances}
-        aria-labelledby="kpa-nuances-heading"
-      >
-        <h2 id="kpa-nuances-heading">Нюанси й типові помилки</h2>
-        <ul>
-          <li>
-            <LegalText text={layers.beginner.pitfall} />
-          </li>
-          <li>
-            <LegalText text={layers.practical.pitfall} />
-          </li>
-          <li>
-            <LegalText text={layers.advanced.pitfall} />
-          </li>
-        </ul>
-
-        <h3>Як застосувати знання до своєї справи</h3>
-        <ol>
-          {guideModule.method.map((step) => (
-            <li key={step}>
-              <LegalText text={step} />
-            </li>
-          ))}
-        </ol>
-        <p>
-          <strong>Поглиблений рівень.</strong>{" "}
-          <LegalText text={layers.advanced.focus} />
-        </p>
-      </section>
-
-      <nav
-        data-not-typeset
-        className="not-typeset flex items-center justify-between gap-4 border-t pt-6"
-        aria-label="Навігація між модулями"
-      >
-        <Button
-          type="button"
-          variant="ghost"
-          disabled={!previousModule}
-          onClick={() => previousModule && onSelectModule(previousModule.id)}
-        >
-          <ArrowLeft data-icon="inline-start" aria-hidden="true" />
-          {previousModule ? `Модуль ${previousModule.order}` : "Початок"}
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          disabled={!nextModule}
-          onClick={() => nextModule && onSelectModule(nextModule.id)}
-        >
-          {nextModule ? `Модуль ${nextModule.order}` : "Кінець"}
-          <ArrowRight data-icon="inline-end" aria-hidden="true" />
-        </Button>
-      </nav>
-    </article>
+    <LegalLearningModuleContent
+      module={moduleView}
+      navigation={{
+        previousLabel: previousModule
+          ? `Модуль ${previousModule.order}`
+          : "Початок",
+        nextLabel: nextModule ? `Модуль ${nextModule.order}` : "Кінець",
+        onPrevious: previousModule
+          ? () => onSelectModule(previousModule.id)
+          : undefined,
+        onNext: nextModule ? () => onSelectModule(nextModule.id) : undefined,
+      }}
+    />
   )
 }

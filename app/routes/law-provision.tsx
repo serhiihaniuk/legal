@@ -31,11 +31,18 @@ import { officialSourceIdByLegalDocument } from "~/data/legal-library/official-s
 
 const toc = [
   { href: "#legal-provision-overview", label: "Огляд норми" },
-  { href: "#legal-provision-explanation", label: "Пояснення" },
+  { href: "#legal-provision-explanation", label: "Як читати норму" },
+  { href: "#legal-provision-claims", label: "Шари пояснення" },
   { href: "#legal-provision-source", label: "Текст норми" },
   { href: "#legal-provision-place", label: "Місце в акті" },
-  { href: "#legal-provision-edition", label: "Редакція" },
 ] as const
+
+const claimKindLabels = {
+  "statute-text": "Прямо з тексту припису",
+  "official-guidance": "Офіційне роз’яснення",
+  "case-law": "Orzecznictwo",
+  "practical-inference": "Практичний висновок",
+} as const
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const document = getDocument(params.documentId)
@@ -197,39 +204,90 @@ export default function LawProvisionRoute() {
 
       <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
         <section id="legal-provision-explanation">
-          <h2>Що встановлює ця норма</h2>
+          <h2>Як читати цю норму</h2>
           {reviewedExplanation ? (
             <>
-              <p className="text-lg leading-8">{reviewedExplanation.summary}</p>
+              <p className="text-lg leading-8">
+                {reviewedExplanation.summary}
+              </p>
               {reviewedExplanation.rules.length > 0 ? (
-                <div
-                  data-not-typeset
-                  className="not-typeset mt-6 divide-y border-y"
-                >
-                  {reviewedExplanation.rules.map((rule) => (
-                    <div
-                      key={`${rule.locator}-${rule.explanation}`}
-                      className="grid gap-2 py-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-5"
-                    >
-                      <strong className="text-sm">{rule.locator}</strong>
-                      <p className="text-sm leading-6">{rule.explanation}</p>
-                    </div>
-                  ))}
-                </div>
+                <>
+                  <h3>Структура норми</h3>
+                  <p>
+                    Читайте кожен paragraf, ustęp або punkt як окрему частину
+                    механізму. Виняток чи наслідок може бути не в першому
+                    реченні.
+                  </p>
+                  <div
+                    data-not-typeset
+                    className="not-typeset mt-6 divide-y border-y"
+                  >
+                    {reviewedExplanation.rules.map((rule, index) => (
+                      <div
+                        key={`${rule.locator}-${rule.explanation}`}
+                        className="grid gap-2 py-4 sm:grid-cols-[3rem_7rem_minmax(0,1fr)] sm:gap-5"
+                      >
+                        <span className="font-mono text-xs text-muted-foreground">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <strong className="text-sm">{rule.locator}</strong>
+                        <p className="text-sm leading-6 text-muted-foreground">
+                          {rule.explanation}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </>
               ) : null}
-              <h3>Що це змінює у справі</h3>
+              <h3>Правовий наслідок</h3>
               <p>{reviewedExplanation.legalEffect}</p>
+              <h3>Місце у справі іноземця</h3>
               <p>{reviewedExplanation.foreignersCase}</p>
             </>
           ) : (
             <blockquote>
               Для цієї норми ще немає пояснення, перевіреного для редакції{" "}
               {edition.editionId}. Нижче доступний витягнутий польський текст і
-              точна сторінка офіційного PDF. Не підміняйте ними перевірку
-              чинності та перехідних правил.
+              точна сторінка офіційного PDF. Неперевірена чернетка не
+              показується як навчальний матеріал.
             </blockquote>
           )}
         </section>
+
+        {reviewedExplanation ? (
+          <section id="legal-provision-claims">
+            <h2>Відрізняйте текст норми від висновку</h2>
+            <p>
+              Під час роботи позначайте, що прямо випливає з przepisu, а що є
+              офіційним поясненням, orzecznictwem або практичним висновком.
+            </p>
+            <div
+              data-not-typeset
+              className="not-typeset mt-6 divide-y border-y"
+            >
+              {reviewedExplanation.claims.map((claim, index) => (
+                <div
+                  key={`${claim.kind}-${claim.text}-${index}`}
+                  className="grid gap-2 py-4 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-5"
+                >
+                  <div>
+                    <strong className="block text-sm">
+                      {claimKindLabels[claim.kind]}
+                    </strong>
+                    {claim.sourceLocator ? (
+                      <span className="mt-1 block font-mono text-xs text-muted-foreground">
+                        {claim.sourceLocator}
+                      </span>
+                    ) : null}
+                  </div>
+                  <p className="text-sm leading-6 text-muted-foreground">
+                    {claim.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section id="legal-provision-source">
           <h2>Текст норми польською</h2>
