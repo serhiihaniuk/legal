@@ -12,6 +12,11 @@ const editorialLoaders: Partial<
   "ustawa-o-cudzoziemcach": async () =>
     (await import("./ustawa-o-cudzoziemcach")).foreignersActExplanations,
   ppsa: async () => (await import("./ppsa")).ppsaExplanations,
+  "powierzanie-pracy": async () =>
+    (await import("./powierzanie-pracy")).powierzaniePracyExplanations,
+  "rozporzadzenie-wniosek-pobyt-czasowy": async () =>
+    (await import("./rozporzadzenie-wniosek-pobyt-czasowy"))
+      .temporaryResidenceApplicationExplanations,
 }
 
 export async function getEditorialExplanation<D extends LegalDocumentId>(
