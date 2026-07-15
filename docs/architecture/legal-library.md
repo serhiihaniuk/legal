@@ -550,6 +550,16 @@ The deletion test explains the Module's Depth: deleting it would spread template
 
 Legal instruments and evidence documents are separate concepts. The Law library owns `LegalDocumentReference`; the Document library owns `EvidenceDocumentReference`. Both may appear in `LegalTextValue`, but each resolves through its own deep Module and canonical registry. See [`document-library.md`](./document-library.md) for identity, routes, typed authoring, compatibility, and migration rules.
 
+### 9.1 Typed-reference preview contract
+
+Every authored `LegalReference` rendered by `LegalLink` or `LegalReferenceArrow` may expose one shadcn `HoverCard`. `app/data/reference-previews.ts` owns the preview contract, while `legal-references.ts` remains a fail-closed navigation resolver and never imports the preview layer.
+
+A preview has a stable identity, bounded title and summary, `status` (`reviewed`, `draft`, or `source-only`), and provenance metadata. Reviewed provision copy comes only from a reviewed `LegalExplanation`. A non-reviewed editorial summary may appear only as visibly labelled `draft`, with its actual review status and only when `sourceEditionId` exactly matches the requested edition. Without matching editorial content, the card uses the exact locator and a bounded generated source-text excerpt. Evidence documents, map nodes, case routes, and official sources reuse their canonical descriptions. Arbitrary HTTPS references remain `source-only`; if the exact URL has unambiguous authored source metadata, the card reuses that label and note. The resolver never infers a provision or creates interpretation.
+
+Resolution is lazy and cached by stable reference identity. Unknown references, malformed URLs, and non-HTTPS values fail closed. Historical editions never borrow editorial prose from another edition. The Base UI trigger remains the real internal `Link` or external anchor, so navigation, `_blank`, keyboard focus, touch behavior, and reduced motion remain unchanged; card content is non-interactive.
+
+`npm.cmd run test:previews` enumerates every registered document and edition provision, evidence document, map node, case route, and official source. It validates reviewed/draft/source-only fallback, known external-source metadata, edition matching, unknown and malformed reference handling, HTTPS, summary bounds, source metadata, and cache identity.
+
 ## 10. Routes and learner experience
 
 ### 10.1 Canonical routes

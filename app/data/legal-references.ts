@@ -81,6 +81,15 @@ function legacyKpaArticleHref(article: string) {
     : "/law/kpa"
 }
 
+function isValidHttpsUrl(value: string): boolean {
+  try {
+    const parsed = new URL(value)
+    return parsed.protocol === "https:" && Boolean(parsed.hostname)
+  } catch {
+    return false
+  }
+}
+
 export function legalReferenceTarget(
   reference: LegalReference
 ): LegalReferenceTarget | undefined {
@@ -117,7 +126,7 @@ export function legalReferenceTarget(
         ? { reference, href: `/cases/${reference.routeId}` }
         : undefined
     case "external":
-      return /^https:\/\//u.test(reference.url)
+      return isValidHttpsUrl(reference.url)
         ? { reference, href: reference.url, external: true }
         : undefined
   }

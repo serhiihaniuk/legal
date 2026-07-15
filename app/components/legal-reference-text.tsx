@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react"
 import { Link } from "react-router"
 
 import { LegalLink } from "~/components/legal-link"
+import { LegalReferencePreview } from "~/components/legal-reference-preview"
 import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import {
   legalReferenceTarget,
@@ -33,18 +34,22 @@ export function LegalReferenceArrow({
     "data-reference-kind": reference.kind,
   } as const
 
-  if (target.external) {
-    return (
-      <a href={target.href} target="_blank" rel="noreferrer" {...props}>
-        {arrow}
-      </a>
-    )
-  }
-
-  return (
+  const trigger = target.external ? (
+    <a href={target.href} target="_blank" rel="noreferrer" {...props}>
+      {arrow}
+    </a>
+  ) : (
     <Link to={target.href} {...props}>
       {arrow}
     </Link>
+  )
+
+  return (
+    <LegalReferencePreview
+      reference={reference}
+      trigger={trigger}
+      previewLabel={label}
+    />
   )
 }
 

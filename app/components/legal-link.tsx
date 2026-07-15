@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 import { Link } from "react-router"
 
+import { LegalReferencePreview } from "~/components/legal-reference-preview"
 import {
   legalReferenceTarget,
   type LegalReference,
@@ -17,11 +18,7 @@ type LegalLinkProps = {
  * Explicit legal reference for authored content. Resolution is type-safe for
  * maintained law/source registries and still fails closed for runtime input.
  */
-export function LegalLink({
-  reference,
-  children,
-  className,
-}: LegalLinkProps) {
+export function LegalLink({ reference, children, className }: LegalLinkProps) {
   const target = legalReferenceTarget(reference)
 
   if (!target) return <span className={className}>{children}</span>
@@ -31,22 +28,31 @@ export function LegalLink({
     className
   )
 
-  if (target.external) {
-    return (
-      <a
-        href={target.href}
-        target="_blank"
-        rel="noreferrer"
-        className={linkClassName}
-      >
-        {children}
-      </a>
-    )
-  }
-
-  return (
-    <Link to={target.href} className={linkClassName}>
+  const trigger = target.external ? (
+    <a
+      href={target.href}
+      target="_blank"
+      rel="noreferrer"
+      className={linkClassName}
+      data-reference-kind={reference.kind}
+    >
+      {children}
+    </a>
+  ) : (
+    <Link
+      to={target.href}
+      className={linkClassName}
+      data-reference-kind={reference.kind}
+    >
       {children}
     </Link>
+  )
+
+  return (
+    <LegalReferencePreview
+      reference={reference}
+      trigger={trigger}
+      previewLabel={typeof children === "string" ? children : undefined}
+    />
   )
 }

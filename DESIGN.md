@@ -121,6 +121,14 @@
 - Global navigation: pełne etykiety w headerze na desktopie; na telefonie trasy otwierają się в `Sheet`. Lokalні індекси також переходять у компактні селектори або `Sheet`.
 - Touch/hover differences: duże cele dotykowe; hover tylko jako dodatek
 
+## Typed-reference previews
+
+Authored typed references rendered by `LegalLink` and `LegalReferenceArrow` use the shared shadcn `HoverCard` as a compact orientation aid. The trigger remains the real internal `Link` or external HTTPS anchor: pointer hover and keyboard focus may open the card, while click, `_blank`, and touch navigation are never intercepted. Do not add previews to ordinary navigation links, source-reader controls, or quoted statutory text that was not authored as a typed reference.
+
+Preview copy is deterministic and provenance-first. Reviewed provision summaries come only from a reviewed `LegalExplanation`. An existing non-reviewed editorial summary may appear only with the visible `Редакційний матеріал` status and its real source-edition metadata; when editorial content is absent, the card says `Лише джерело` and shows the exact locator plus a short generated source-text excerpt. Document metadata, evidence title/description/purpose, map title/summary, case title/subtitle, registered official-source label/note, exact-URL authored source metadata, and HTTPS hostname are the only other sources. Edition, legal-state, verification, and official source metadata are shown when canonical data provides them. A stale or historical edition never borrows editorial prose from another edition; only an exact source-edition match may appear as draft or reviewed. No runtime AI, article-number inference, or invented interpretation is allowed.
+
+Editorial preview modules are lazy-loaded when a card opens and cached by stable reference identity. The card has a visible status label, clearly marks source-only fallback, and respects the existing shadcn reduced-motion CSS. The deterministic pipeline is `npm.cmd run test:previews` (coverage fixture), followed by `npm.cmd run typecheck`, `npm.cmd run build`, and the repository corpus/editorial checks.
+
 ## Interaction states
 
 - Loading: nie dotyczy; treść edukacyjna i zbudowany korpus źródeł są statycznymi, typowanymi danymi lokalnymi
