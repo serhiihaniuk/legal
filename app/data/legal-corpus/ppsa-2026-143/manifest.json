@@ -1,0 +1,66 @@
+{
+  "id": "ppsa-2026-143",
+  "schemaVersion": 2,
+  "documentId": "ppsa",
+  "editionId": "ppsa-2026-143",
+  "shortName": "PPSA",
+  "title": "Prawo o postępowaniu przed sądami administracyjnymi",
+  "citation": "Dz.U. 2026 poz. 143",
+  "publisher": "DU",
+  "year": 2026,
+  "position": 143,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/143",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/143/text/T/D20260143L.pdf"
+  },
+  "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl",
+  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/143",
+  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/143/text/T/D20260143L.pdf",
+  "checkedAt": "2026-07-14",
+  "legalStateDate": "2026-07-14",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 344,
+    "expectedTextCoverage": 0.98,
+    "expectedPageCount": 51,
+    "observedProvisionCount": 344,
+    "observedPageCount": 51,
+    "observedTextCoverage": 1,
+    "textLayerPageCount": 51
+  },
+  "extractionProfile": "polish-statute-art-v1",
+  "localPdfUrl": "/legal-sources/ppsa-2026-143/source.pdf",
+  "pageCount": 51,
+  "textLayerPageCount": 51,
+  "textCoverage": 1,
+  "detectedArticleCount": 344,
+  "detectedProvisionCount": 344,
+  "provisionCount": 344,
+  "promotedProvisionCount": 344,
+  "pdfSha256": "6df6ba04cc5a1121c1e5c06f672d8c41bd52556e3fe80d746cd305b465e0a51d",
+  "sourcePdfSha256": "6df6ba04cc5a1121c1e5c06f672d8c41bd52556e3fe80d746cd305b465e0a51d",
+  "builtAt": "2026-07-15T12:10:43Z",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2026-01-15",
+    "consolidatedTextIdentifier": "DU/2026/143",
+    "checkedAt": "2026-07-14",
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl",
+    "unresolved": []
+  },
+  "diagnostics": {
+    "fatalCount": 0,
+    "warningCount": 0
+  },
+  "eli": {
+    "identifier": "DU/2026/143",
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2026-01-15",
+    "textHTML": false,
+    "textPDF": true
+  }
+}

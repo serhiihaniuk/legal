@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "documentId": "ppsa",
+  "editionId": "ppsa-2026-143",
+  "shortName": "PPSA",
+  "title": "Prawo o postępowaniu przed sądami administracyjnymi",
+  "citation": "Dz.U. 2026 poz. 143",
+  "publisher": "DU",
+  "year": 2026,
+  "position": 143,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/143",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/143/text/T/D20260143L.pdf"
+  },
+  "checkedAt": "2026-07-14",
+  "legalStateDate": "2026-07-14",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 344,
+    "expectedTextCoverage": 0.98,
+    "expectedPageCount": 51
+  }
+}
