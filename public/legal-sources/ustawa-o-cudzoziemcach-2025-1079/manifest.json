@@ -1,0 +1,66 @@
+{
+  "id": "ustawa-o-cudzoziemcach-2025-1079",
+  "schemaVersion": 2,
+  "documentId": "ustawa-o-cudzoziemcach",
+  "editionId": "ustawa-o-cudzoziemcach-2025-1079",
+  "shortName": "Ustawa o cudzoziemcach",
+  "title": "Ustawa o cudzoziemcach",
+  "citation": "Dz.U. 2025 poz. 1079",
+  "publisher": "DU",
+  "year": 2025,
+  "position": 1079,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf"
+  },
+  "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+  "checkedAt": "2026-07-14",
+  "legalStateDate": "2026-07-14",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 637,
+    "expectedTextCoverage": 1,
+    "expectedPageCount": 224,
+    "observedProvisionCount": 637,
+    "observedPageCount": 224,
+    "observedTextCoverage": 1,
+    "textLayerPageCount": 224
+  },
+  "extractionProfile": "polish-statute-art-v1",
+  "localPdfUrl": "/legal-sources/ustawa-o-cudzoziemcach-2025-1079/source.pdf",
+  "pageCount": 224,
+  "textLayerPageCount": 224,
+  "textCoverage": 1,
+  "detectedArticleCount": 637,
+  "detectedProvisionCount": 637,
+  "provisionCount": 637,
+  "promotedProvisionCount": 637,
+  "pdfSha256": "db139262e0d412662775a6ee575692c188e9bc055d2c921c860285c2956a69ff",
+  "sourcePdfSha256": "db139262e0d412662775a6ee575692c188e9bc055d2c921c860285c2956a69ff",
+  "builtAt": "2026-07-15T12:15:22Z",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2025-07-23",
+    "consolidatedTextIdentifier": "DU/2025/1079",
+    "checkedAt": "2026-07-14",
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+    "unresolved": []
+  },
+  "diagnostics": {
+    "fatalCount": 0,
+    "warningCount": 0
+  },
+  "eli": {
+    "identifier": "DU/2025/1079",
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2025-07-23",
+    "textHTML": false,
+    "textPDF": true
+  }
+}

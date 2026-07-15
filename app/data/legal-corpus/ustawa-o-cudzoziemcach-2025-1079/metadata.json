@@ -1,0 +1,77 @@
+{
+  "address": "WDU20250001079",
+  "announcementDate": "2025-07-25",
+  "changeDate": "2026-04-07T10:43:55",
+  "displayAddress": "Dz.U. 2025 poz. 1079",
+  "pos": 1079,
+  "promulgation": "2025-08-07",
+  "publisher": "DU",
+  "status": "obowiązujący",
+  "textHTML": false,
+  "textPDF": true,
+  "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 25 lipca 2025 r. w sprawie ogłoszenia jednolitego tekstu ustawy o cudzoziemcach",
+  "type": "Obwieszczenie",
+  "volume": 0,
+  "year": 2025,
+  "authorizedBody": [],
+  "directives": [],
+  "inForce": "IN_FORCE",
+  "keywords": [
+    "cudzoziemcy"
+  ],
+  "keywordsNames": [],
+  "legalStatusDate": "2025-07-23",
+  "obligated": [],
+  "previousTitle": [],
+  "prints": [],
+  "references": {
+    "Nowelizacje po tekście jednolitym": [
+      {
+        "id": "DU/2026/203",
+        "date": "2026-01-23"
+      },
+      {
+        "id": "DU/2025/1794",
+        "date": "2025-11-21"
+      }
+    ],
+    "Podstawa prawna": [
+      {
+        "id": "DU/2000/718"
+      }
+    ],
+    "Podstawa prawna z art.": [
+      {
+        "id": "DU/2000/718",
+        "art": "art. 16 ust. 1 zdanie pierwsze"
+      }
+    ],
+    "Tekst jednolity dla aktu": [
+      {
+        "id": "DU/2013/1650"
+      }
+    ]
+  },
+  "releasedBy": [
+    "MARSZAŁEK SEJMU"
+  ],
+  "texts": [
+    {
+      "fileName": "D20251079.pdf",
+      "type": "O"
+    },
+    {
+      "fileName": "D20251079.pdf",
+      "type": "I"
+    },
+    {
+      "fileName": "D20251079L.pdf",
+      "type": "T"
+    },
+    {
+      "fileName": "D20251079Lj.pdf",
+      "type": "U"
+    }
+  ],
+  "ELI": "DU/2025/1079"
+}
