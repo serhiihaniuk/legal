@@ -8,7 +8,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
   entries: [
     {
       provisionId: "ppsa-art-1",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -32,7 +32,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-2",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -56,7 +56,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-4",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -85,7 +85,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-5",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -119,7 +119,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-6",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -143,7 +143,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-7",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -167,7 +167,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-8",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -201,7 +201,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-9",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -225,7 +225,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-10",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -249,7 +249,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-11",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -273,7 +273,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-12",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -297,7 +297,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-12a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -331,7 +331,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-12b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -365,7 +365,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-13",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -399,7 +399,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-14",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -423,11 +423,11 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-14a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 14a встановлює: «Jeżeli wojewódzki sąd administracyjny nie może z powodu przeszkody rozpoznać sprawy».",
+          text: "Art. 14a встановлює: «Jeżeli wojewódzki sąd administracyjny nie może z powodu przeszkody rozpoznać sprawy lub podjąć innej czynności, Naczelny Sąd Administracyjny wyznaczy ... inny wojewódzki sąd administracyjny»."
           sourceLocator: "Art. 14a",
         },
       ],
@@ -447,7 +447,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-15",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -481,7 +481,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-16",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -515,7 +515,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-17",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -544,7 +544,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-18",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -578,16 +578,16 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-19",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 19 передбачає wyłączenie судді, «jeżeli istnieje okoliczność tego rodzaju, że mogłaby wywołać uzasadnioną wątpliwość co do jego bezstronności w danej sprawie».",
+          text: "Art. 19 встановлює: «Niezależnie od przyczyn wymienionych w art. 18, sąd wyłącza sędziego na jego żądanie lub na wniosek strony, jeżeli istnieje okoliczność tego rodzaju, że mogłaby wywołać uzasadnioną wątpliwość co do jego bezstronności w danej sprawie»."
           sourceLocator: "Art. 19",
         },
       ],
       summary:
-        "Окрім прямо перелічених ситуацій, sąd може виключити суддю на його вимогу або на wniosek strony, якщо обставина може викликати обґрунтований сумнів у безсторонності в цій справі.",
+        "Окрім підстав Art. 18, sąd wyłącza суддю на його вимогу або на wniosek strony, якщо існує обставина, здатна викликати обґрунтований сумнів у його bezstronność у цій справі."
       rules: [
         {
           locator: "Art. 19",
@@ -596,13 +596,13 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Норма дає механізм оцінки безсторонності поза автоматичними випадками, але результат залежить від конкретної обставини та її обґрунтування.",
+        "За наявності обставини, що може викликати передбачений Art. 19 сумнів у bezstronność, суд має wyłączyć суддю; потрібно показати саме таку конкретну обставину, а не лише висловити незгоду з рішенням."
       foreignersCase:
         "Якщо іноземець просить wyłączenie, опишіть перевірювану обставину, яка може породити сумнів у bezstronność, і відокремте її від критики змісту рішення.",
     },
     {
       provisionId: "ppsa-art-20",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -636,7 +636,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-21",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -660,7 +660,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-22",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -694,7 +694,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-23",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -718,7 +718,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-24",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -747,7 +747,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-25",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -777,11 +777,11 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
       legalEffect:
         "Стаття встановлює здатність бути стороною, але не доводить законність вимоги та не замінює перевірку фактичної właściwość.",
       foreignersCase:
-        "Іноземець як osoba fizyczna може бути стороною за умовами цієї норми; окремо перевірте, хто підписує процесуальне pismo і чи має ця особа zdolność procesowa.",
+        "Іноземець як osoba fizyczna має zdolność sądową за Art. 25 § 1; окремо перевірте, хто підписує процесуальне pismo і чи має ця особа zdolność procesowa."
     },
     {
       provisionId: "ppsa-art-26",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -810,7 +810,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-27",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -834,7 +834,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-28",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -868,7 +868,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-29",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -892,11 +892,11 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-30",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 30 § 1 передбачає: «sąd na wniosek strony przeciwnej ustanowi kuratora, jeżeli strona ta podejmuje przeciwko drugiej stronie czynność niecierpiącą zwłoki».",
+          text: "Art. 30 § 1 передбачає: «Dla strony niemającej zdolności procesowej, która nie ma przedstawiciela ustawowego, jak również dla strony niemającej organu powołanego do jej reprezentowania, sąd na wniosek strony przeciwnej ustanowi kuratora, jeżeli strona ta podejmuje przeciwko drugiej stronie czynność niecierpiącą zwłoki»."
           sourceLocator: "Art. 30 § 1",
         },
       ],
@@ -921,7 +921,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-31",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -955,7 +955,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-32",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -979,11 +979,11 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-33",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 33 § 1 передбачає, що особа, «jeżeli wynik postępowania sądowego dotyczy jej interesu prawnego, jest uczestnikiem tego postępowania na prawach strony».",
+          text: "Art. 33 § 1 передбачає: «Osoba, która brała udział w postępowaniu administracyjnym, a nie wniosła skargi, jeżeli wynik postępowania sądowego dotyczy jej interesu prawnego, jest uczestnikiem tego postępowania na prawach strony»."
           sourceLocator: "Art. 33 § 1",
         },
       ],
@@ -1013,7 +1013,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-34",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1037,7 +1037,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-35",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1071,7 +1071,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-36",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1105,7 +1105,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-37",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1139,7 +1139,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-37a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1163,7 +1163,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-38",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1187,7 +1187,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-39",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1221,7 +1221,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-40",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1245,7 +1245,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-41",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1269,7 +1269,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-42",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1298,7 +1298,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-43",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1322,7 +1322,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-44",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1351,7 +1351,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-45",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1375,7 +1375,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-46",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1409,7 +1409,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-47",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed"
       claims: [
         {
           kind: "statute-text",
@@ -1437,7 +1437,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Норма регулює копії та спосіб їх дорęчення, але не доводить сама по собі змістовну обґрунтованість pismo або вимоги.",
+        "Норма регулює копії та спосіб їх doręczenia, але сама по собі не доводить змістовної обґрунтованості pismo або вимоги."
       foreignersCase:
         "Для паперового pismo у справі іноземця підготуйте odpisy документа й додатків для сторін; для електронного пакета перевірте, чи суд та адресати користуються електронними doręczeniami.",
     },
