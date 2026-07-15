@@ -56,7 +56,7 @@ export const studyModules: readonly StudyModule[] = [
         "Знайдіть офіційну сторінку акта в ELI.",
         "Запишіть status aktu, Dz.U. і дату останньої перевірки.",
         "Перегляньте akty zmieniające та дати wejścia w życie.",
-        "Перевірте, чи для дати вашої модельної справи діють przepisy przejściowe.",
+        "Перевірте, чи для дати навчальної справи діють przepisy przejściowe.",
       ],
       deliverable:
         "Односторінкова картка джерела з редакцією, датою факту, переліком перевірених змін і коротким висновком, яку норму застосовуємо.",
@@ -110,7 +110,7 @@ export const studyModules: readonly StudyModule[] = [
         "Додайте наслідок, строк і пов’язані норми, якщо вони прямо випливають із тексту.",
       ],
       deliverable:
-        "Таблиця «елемент норми → точний фрагмент → просте пояснення → факт у модельній справі → доказ або питання».",
+        "Таблиця «елемент норми → точний фрагмент → просте пояснення → факт у справі → доказ або питання».",
       rubric: [
         "Умови не змішані з доказами.",
         "Винятки та відсилання не пропущені.",
@@ -153,7 +153,7 @@ export const studyModules: readonly StudyModule[] = [
     ],
     assignment: {
       material:
-        "Модельна справа про pobyt із заявою, одним wezwaniem і decyzją.",
+        "Навчальна справа про pobyt із заявою, одним wezwaniem і decyzją.",
       steps: [
         "Складіть хронологію від подання до doręczenia decyzji.",
         "Позначте organ, stronę, pełnomocnika та lex specialis.",
@@ -255,7 +255,7 @@ export const studyModules: readonly StudyModule[] = [
     ],
     assignment: {
       material:
-        "Модельна робота на umowie o pracę з даними про pobyt, роботодавця, посаду, винагороду та ZUS.",
+        "Навчальна справа про роботу на umowie o pracę з даними про pobyt, роботодавця, посаду, винагороду та ZUS.",
       steps: [
         "Заповніть окрему перевірку legalnego pobytu.",
         "Назвіть інструмент або звільнення для legalnej pracy.",
@@ -367,7 +367,7 @@ export const studyModules: readonly StudyModule[] = [
     ],
     assignment: {
       material:
-        "Модельний комплект: wezwanie, доказ doręczenia, odpowiedź, decyzja та коротка хронологія справи.",
+        "Навчальний комплект: wezwanie, доказ doręczenia, odpowiedź, decyzja та коротка хронологія справи.",
       steps: [
         "Розкладіть wezwanie на żądanie, podstawa, факт, доказ, додаток і строк.",
         "Розберіть decyzję на rozstrzygnięcie, факти, докази, право та pouczenie.",
@@ -418,7 +418,7 @@ export const studyModules: readonly StudyModule[] = [
     ],
     assignment: {
       material:
-        "Прикладова справа громадянки України, яка працює на umowie o pracę.",
+        "Гайд по справі громадянина України, який працює на umowie o pracę.",
       steps: [
         "Зафіксуйте профіль, припущення, дати й актуальну редакцію права.",
         "Обґрунтуйте вибір маршруту та відкиньте щонайменше одну альтернативу.",
@@ -440,7 +440,7 @@ export const studyModules: readonly StudyModule[] = [
       ],
     },
     materialNavigation: {
-      label: "Відкрити прикладову справу",
+      label: "Відкрити гайд по справі",
       href: "/cases/cukr",
     },
     reviewPrompt:

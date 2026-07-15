@@ -19,7 +19,7 @@ const routes = [
   { label: "Карта права", href: "/map" },
   { label: "Документи", href: "/documents" },
   {
-    label: "Прикладова справа",
+    label: "Справи",
     href: "/cases/cukr",
     activePrefix: "/cases/",
   },

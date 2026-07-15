@@ -40,9 +40,15 @@ export type CaseGuideStage = {
   actor: string
   actions: string[]
   outcome: string
-  documents: string[]
-  risks: string[]
+  documents: CaseDocument[]
+  risks: CaseGuideStageRisk[]
   materials: CaseGuideMaterial[]
+}
+
+export type CaseGuideStageRisk = {
+  title: string
+  explanation: string
+  check: string
 }
 
 export type CaseGuideCondition = {

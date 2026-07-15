@@ -1,4 +1,11 @@
-import { ArrowRight, Clock3, ExternalLink, FileText, Scale } from "lucide-react"
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Clock3,
+  ExternalLink,
+  FileText,
+  Scale,
+} from "lucide-react"
 import { Link } from "react-router"
 
 import {
@@ -9,6 +16,16 @@ import {
 } from "~/components/ui/accordion"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
+import { Checkbox } from "~/components/ui/checkbox"
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "~/components/ui/field"
 import { Separator } from "~/components/ui/separator"
 import {
   Table,
@@ -24,6 +41,7 @@ import type {
   CaseGuideStage,
 } from "~/data/case-guide-types"
 import type { CaseDeadline, CaseDocument } from "~/data/legal-types"
+import { cn } from "~/lib/utils"
 
 export const caseStudySectionIds = {
   overview: "case-overview",
@@ -38,7 +56,7 @@ export const caseStudySectionIds = {
 
 export const caseStudyToc = [
   { href: `#${caseStudySectionIds.overview}`, label: "Огляд маршруту" },
-  { href: `#${caseStudySectionIds.facts}`, label: "Модельні факти" },
+  { href: `#${caseStudySectionIds.facts}`, label: "Факти для перевірки" },
   { href: `#${caseStudySectionIds.choice}`, label: "Чому ця підстава" },
   { href: `#${caseStudySectionIds.stages}`, label: "Етапи справи" },
   { href: `#${caseStudySectionIds.conditions}`, label: "Матриця умов" },
@@ -92,6 +110,19 @@ function DocumentStatus({ document }: { document: CaseDocument }) {
       {document.status}
     </Badge>
   )
+}
+
+function documentChecklistHint(document: CaseDocument) {
+  if (document.level === "conditional") {
+    return "Спочатку зафіксуйте, яка обставина робить документ потрібним. Якщо вона є — перевірте актуальність, форму та зв’язок із конкретною умовою."
+  }
+  if (document.level === "control") {
+    return "Збережіть фінальну версію, дату створення або подання та місце в актах. Це контрольний слід, а не заміна основного доказу."
+  }
+  if (document.level === "external") {
+    return "Перевірте цей обов’язок окремо від pobytowego пакета: відповідальну особу, строк, канал виконання та підтвердження."
+  }
+  return "Перевірте повноту, чинність на потрібну дату, усі сторінки, підписи та узгодженість даних з рештою пакета."
 }
 
 function DocumentRegister({ documents }: { documents: CaseDocument[] }) {
@@ -218,35 +249,26 @@ function RelatedMaterials({ stage }: { stage: CaseGuideStage }) {
   if (stage.materials.length === 0) return null
 
   return (
-    <div className="mt-6 border-y" data-not-typeset>
-      <p className="py-3 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-        Пов’язані матеріали
-      </p>
-      <div className="divide-y">
+    <nav
+      aria-label={`Пов’язані матеріали до етапу «${stage.title}»`}
+      className="mt-4 border-t pt-3"
+      data-not-typeset
+    >
+      <p className="text-sm font-semibold">Пов’язані матеріали</p>
+      <ul className="mt-2 flex flex-col gap-1.5">
         {stage.materials.map((material) => (
-          <div
-            key={`${stage.id}-${material.href}`}
-            className="grid gap-3 py-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
-          >
-            <div className="min-w-0">
-              <h4 className="text-sm font-semibold">{material.label}</h4>
-              <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                {material.description}
-              </p>
-            </div>
-            <Button
-              nativeButton={false}
-              variant="outline"
-              size="sm"
-              render={<Link to={material.href} />}
+          <li key={`${stage.id}-${material.href}`}>
+            <Link
+              to={material.href}
+              className="inline-flex items-center gap-1 text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
             >
-              Відкрити
-              <ArrowRight data-icon="inline-end" aria-hidden="true" />
-            </Button>
-          </div>
+              {material.label}
+              <ArrowUpRight aria-hidden="true" className="size-3.5 shrink-0" />
+            </Link>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </nav>
   )
 }
 
@@ -254,55 +276,135 @@ function StageDetails({ stage }: { stage: CaseGuideStage }) {
   if (stage.documents.length === 0 && stage.risks.length === 0) return null
 
   return (
-    <Accordion data-not-typeset className="mt-5 border-y">
-      <AccordionItem value={`details-${stage.id}`}>
-        <AccordionTrigger className="hover:no-underline">
-          Документи й ризики цього етапу
-        </AccordionTrigger>
-        <AccordionContent>
-          <div className="grid gap-6 text-sm leading-6 md:grid-cols-2">
-            <div>
-              <h4 className="mb-2 flex items-center gap-2 font-semibold">
-                <FileText aria-hidden="true" className="size-4" />
-                Що тримати в актах
-              </h4>
-              <ul className="grid gap-2 text-muted-foreground">
-                {stage.documents.map((document) => (
-                  <li key={document}>• {document}</li>
+    <div data-not-typeset className="mt-3 flex flex-col gap-2">
+      {stage.documents.length > 0 ? (
+        <Accordion>
+          <AccordionItem value={`documents-${stage.id}`}>
+            <AccordionTrigger className="items-center bg-secondary px-3 py-2 text-secondary-foreground hover:bg-secondary/80 hover:no-underline">
+              <span className="flex min-w-0 items-center gap-2">
+                <FileText aria-hidden="true" className="size-4 shrink-0" />
+                Документи
+                <Badge variant="outline">{stage.documents.length}</Badge>
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="px-3 pt-3 pb-2">
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Це робочий список саме для цього етапу. Відмічайте позицію не
+                тоді, коли файл просто отримано, а після перевірки його змісту,
+                дати, форми та факту, який він має підтвердити.
+              </p>
+              <FieldSet className="mt-4 gap-0">
+                <FieldLegend className="sr-only">
+                  Документи етапу «{stage.title}»
+                </FieldLegend>
+                <FieldGroup className="gap-0 divide-y border-y">
+                  {stage.documents.map((document, documentIndex) => {
+                    const checkboxId = `${stage.id}-document-${documentIndex}`
+
+                    return (
+                      <Field
+                        key={`${document.item}-${document.owner}`}
+                        orientation="horizontal"
+                        className="items-start py-4"
+                      >
+                        <Checkbox id={checkboxId} className="mt-1" />
+                        <FieldContent>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <FieldLabel
+                              htmlFor={checkboxId}
+                              className="text-base"
+                            >
+                              {document.item}
+                            </FieldLabel>
+                            <DocumentStatus document={document} />
+                          </div>
+                          <FieldDescription>
+                            <strong className="font-medium text-foreground">
+                              Навіщо на цьому етапі:
+                            </strong>{" "}
+                            {document.proves}
+                          </FieldDescription>
+                          <dl className="mt-2 grid gap-2 text-sm leading-6 lg:grid-cols-2">
+                            <div>
+                              <dt className="font-medium">Хто і коли</dt>
+                              <dd className="text-muted-foreground">
+                                {document.owner}
+                              </dd>
+                            </div>
+                            <div>
+                              <dt className="font-medium">Правова роль</dt>
+                              <dd className="text-muted-foreground">
+                                {document.law}
+                              </dd>
+                            </div>
+                          </dl>
+                          <p className="mt-2 text-sm leading-6">
+                            <strong>Перед відміткою:</strong>{" "}
+                            {documentChecklistHint(document)}
+                          </p>
+                        </FieldContent>
+                      </Field>
+                    )
+                  })}
+                </FieldGroup>
+              </FieldSet>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      ) : null}
+
+      {stage.risks.length > 0 ? (
+        <Accordion>
+          <AccordionItem value={`risks-${stage.id}`}>
+            <AccordionTrigger className="items-center bg-secondary px-3 py-2 text-secondary-foreground hover:bg-secondary/80 hover:no-underline">
+              <span className="flex min-w-0 items-center gap-2">
+                <Scale aria-hidden="true" className="size-4 shrink-0" />
+                Ризики
+                <Badge variant="outline">{stage.risks.length}</Badge>
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="px-3 pt-3 pb-2">
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Ризик — це не загальне попередження, а конкретне місце контролю.
+                Перед переходом до наступного етапу встановіть факт, перевірте
+                доказ і запишіть, як усувається невизначеність.
+              </p>
+              <ol className="mt-4 divide-y border-y">
+                {stage.risks.map((risk, riskIndex) => (
+                  <li key={risk.title} className="py-4">
+                    <h4 className="text-sm font-semibold">
+                      {riskIndex + 1}. {risk.title}
+                    </h4>
+                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                      {risk.explanation}
+                    </p>
+                    <p className="mt-2 text-sm leading-6">
+                      <strong>Що перевірити:</strong> {risk.check}
+                    </p>
+                  </li>
                 ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="mb-2 flex items-center gap-2 font-semibold">
-                <Scale aria-hidden="true" className="size-4" />
-                Де найчастіше ламається справа
-              </h4>
-              <ul className="grid gap-2 text-muted-foreground">
-                {stage.risks.map((risk) => (
-                  <li key={risk}>• {risk}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+              </ol>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      ) : null}
+    </div>
   )
 }
 
 function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
   return (
-    <div className="mt-8">
+    <div className="mt-6">
       {stages.map((stage, index) => (
         <section
           key={stage.id}
           id={`case-stage-${stage.id}`}
           aria-labelledby={`case-stage-${stage.id}-heading`}
-          className="relative scroll-mt-28 border-t py-10 first:border-t-0 first:pt-0"
+          className="relative scroll-mt-28 border-t py-7 first:border-t-0 first:pt-0"
         >
           <div
             aria-hidden="true"
-            className="absolute top-10 -left-12 hidden size-8 items-center justify-center rounded-full border bg-background text-sm font-semibold lg:flex"
+            className="absolute top-7 -left-12 hidden size-8 items-center justify-center rounded-full border bg-background text-sm font-semibold lg:flex"
           >
             {index + 1}
           </div>
@@ -319,15 +421,15 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
 
           <div
             data-not-typeset
-            className="mt-6 grid border-y text-sm md:grid-cols-[0.85fr_1.15fr]"
+            className="mt-4 grid border-y text-sm md:grid-cols-[0.85fr_1.15fr]"
           >
-            <div className="py-4 md:pr-5">
+            <div className="py-3 md:pr-4">
               <p className="text-xs font-medium text-muted-foreground">
                 Хто веде етап
               </p>
               <p className="mt-1 font-medium">{stage.actor}</p>
             </div>
-            <div className="border-t py-4 md:border-t-0 md:border-l md:pl-5">
+            <div className="border-t py-3 md:border-t-0 md:border-l md:pl-4">
               <p className="text-xs font-medium text-muted-foreground">
                 Результат етапу
               </p>
@@ -335,7 +437,7 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
             </div>
           </div>
 
-          <h4 className="mt-6 text-base font-semibold">
+          <h4 className="mt-4 text-base font-semibold">
             Що відбувається по черзі
           </h4>
           <ol
@@ -345,7 +447,7 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
             {stage.actions.map((action, actionIndex) => (
               <li
                 key={action}
-                className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-2 py-3"
+                className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-2 py-2"
               >
                 <span className="text-muted-foreground">{actionIndex + 1}</span>
                 <span>{action}</span>
@@ -358,6 +460,37 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
         </section>
       ))}
     </div>
+  )
+}
+
+type DefinitionGridItem = { label: string; value: string }
+
+function DefinitionRows({ items }: { items: DefinitionGridItem[] }) {
+  return (
+    <dl>
+      {Array.from({ length: Math.ceil(items.length / 2) }, (_, rowIndex) => {
+        const rowItems = items.slice(rowIndex * 2, rowIndex * 2 + 2)
+
+        return (
+          <div
+            key={rowIndex}
+            className={cn(
+              "grid sm:grid-cols-2 sm:divide-x",
+              rowIndex > 0 && "border-t"
+            )}
+          >
+            {rowItems.map((item) => (
+              <div key={item.label} className="px-4 py-3">
+                <dt className="text-xs font-medium text-muted-foreground">
+                  {item.label}
+                </dt>
+                <dd className="mt-1 leading-6 font-medium">{item.value}</dd>
+              </div>
+            ))}
+          </div>
+        )
+      })}
+    </dl>
   )
 }
 
@@ -382,7 +515,7 @@ function ConditionsMatrix({
           <TableHeader>
             <TableRow>
               <TableHead className="w-[22%]">Умова</TableHead>
-              <TableHead className="w-[22%]">Факт у моделі</TableHead>
+              <TableHead className="w-[22%]">Факт у справі</TableHead>
               <TableHead className="w-[22%]">Доказ</TableHead>
               <TableHead className="w-[14%]">Стан</TableHead>
               <TableHead>Ризик / норма</TableHead>
@@ -495,9 +628,9 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
             <strong>Результат маршруту.</strong> {route.result}
           </p>
           <p>
-            Це модельна навчальна справа. Перед роботою з реальною особою
-            потрібно заново перевірити факти, актуальну редакцію норм і
-            документи.
+            Це навчальний гайд по типовому правовому маршруту. У кожній реальній
+            справі потрібно окремо встановити факти, перевірити актуальну
+            редакцію норм і зібрати належні докази.
           </p>
         </blockquote>
 
@@ -519,20 +652,12 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
           </div>
         </div>
 
-        <dl
+        <div
           data-not-typeset
-          className="mt-5 grid border-y text-sm sm:grid-cols-2"
+          className="mt-5 overflow-hidden rounded-md border text-sm"
         >
-          {route.metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="border-t py-3 first:border-t-0 sm:px-3"
-            >
-              <dt className="text-xs text-muted-foreground">{metric.label}</dt>
-              <dd className="mt-1 font-medium">{metric.value}</dd>
-            </div>
-          ))}
-        </dl>
+          <DefinitionRows items={route.metrics} />
+        </div>
       </header>
 
       <Separator data-not-typeset />
@@ -541,27 +666,27 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
         id={caseStudySectionIds.facts}
         aria-labelledby="case-facts-heading"
       >
-        <h2 id="case-facts-heading">Модельні факти цієї справи</h2>
+        <h2 id="case-facts-heading">Факти, які треба встановити у справі</h2>
         <p>{route.profile.description}</p>
-        <dl
+        <div
           data-not-typeset
-          className="mt-5 grid border-y text-sm sm:grid-cols-2"
+          className="mt-5 overflow-hidden rounded-md border text-sm"
         >
-          <div className="py-3 sm:px-3">
-            <dt className="text-xs text-muted-foreground">Модельна особа</dt>
-            <dd className="mt-1 font-medium">{route.profile.name}</dd>
-          </div>
-          {route.profile.facts.map((fact) => (
-            <div key={fact.label} className="border-t py-3 sm:px-3">
-              <dt className="text-xs text-muted-foreground">{fact.label}</dt>
-              <dd className="mt-1 font-medium">{fact.value}</dd>
+          <dl>
+            <div className="bg-muted/40 px-4 py-3">
+              <dt className="text-xs font-medium text-muted-foreground">
+                Профіль маршруту
+              </dt>
+              <dd className="mt-1 leading-6 font-medium">
+                {route.profile.name}
+              </dd>
             </div>
-          ))}
-        </dl>
+            <DefinitionRows items={route.profile.facts} />
+          </dl>
+        </div>
         <aside className="mt-6 border-l-2 border-primary pl-4">
           <p>
-            <strong>Що в моделі ще треба довести.</strong>{" "}
-            {route.profile.assumption}
+            <strong>Що ще треба підтвердити.</strong> {route.profile.assumption}
           </p>
         </aside>
       </section>
@@ -595,9 +720,9 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
       >
         <h2 id="case-stages-heading">Справа від першої перевірки до карти</h2>
         <p>
-          Нижче — не checklist, а послідовний розбір механізму. На кожному етапі
-          видно, що орган або сторона робить, який результат потрібен і де
-          відкрити пов’язаний матеріал у нашому атласі.
+          Нижче — послідовний розбір механізму й робочий checklist. На кожному
+          етапі видно, що орган або сторона робить, який результат потрібен, які
+          документи треба зібрати й де перевірити ризики до переходу далі.
         </p>
         <CaseStages stages={route.stages} />
       </section>
@@ -608,8 +733,8 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
       >
         <h2 id="case-conditions-heading">Матриця умов маршруту</h2>
         <p>
-          Тут правова умова вже з’єднана з конкретним модельним фактом, доказом
-          і ризиком. Саме така матриця показує, чого справді бракує до рішення.
+          Тут правова умова з’єднана з фактом, який треба встановити, доказом і
+          ризиком. Саме така матриця показує, чого справді бракує до рішення.
         </p>
         <ConditionsMatrix conditions={route.conditions} />
       </section>
