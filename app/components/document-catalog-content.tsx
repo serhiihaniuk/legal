@@ -15,6 +15,7 @@ import {
   type DocumentCatalogEntry,
   type DocumentCategory,
 } from "~/data/document-index"
+import { legalTextPlainText } from "~/data/legal-library/legal-text"
 
 export const documentCatalogToc: TocItem[] = [
   { href: "#documents-overview", label: "Що є в каталозі" },
@@ -283,7 +284,8 @@ export function DocumentDetailContent({
         </p>
         {document.guide?.documentType ? (
           <p>
-            <strong>Тип документа:</strong> {document.guide.documentType}
+            <strong>Тип документа:</strong>{" "}
+            <LegalText text={document.guide.documentType} />
           </p>
         ) : null}
         {document.guide ? (
@@ -299,7 +301,7 @@ export function DocumentDetailContent({
           <h2>Як отримати або підготувати</h2>
           <ol>
             {document.guide.howToObtain.map((item) => (
-              <li key={item}>
+              <li key={legalTextPlainText(item)}>
                 <LegalText text={item} />
               </li>
             ))}
@@ -309,7 +311,7 @@ export function DocumentDetailContent({
               <h3>Форма, актуальність і строк</h3>
               <ul>
                 {document.guide.formAndValidity.map((item) => (
-                  <li key={item}>
+                  <li key={legalTextPlainText(item)}>
                     <LegalText text={item} />
                   </li>
                 ))}
@@ -326,7 +328,7 @@ export function DocumentDetailContent({
             <h3>Що підтверджує або для чого потрібний</h3>
             <ul>
               {document.guide.purpose.map((item) => (
-                <li key={item}>
+                <li key={legalTextPlainText(item)}>
                   <LegalText text={item} />
                 </li>
               ))}
@@ -334,7 +336,7 @@ export function DocumentDetailContent({
             <h3>Чого сам по собі не доводить</h3>
             <ul>
               {document.guide.doesNotProve.map((item) => (
-                <li key={item}>
+                <li key={legalTextPlainText(item)}>
                   <LegalText text={item} />
                 </li>
               ))}
@@ -361,7 +363,7 @@ export function DocumentDetailContent({
         <h2>Як перевіряти цей документ</h2>
         <ol>
           {(document.guide?.keyChecks ?? []).map((item) => (
-            <li key={item}>
+            <li key={legalTextPlainText(item)}>
               <LegalText text={item} />
             </li>
           ))}
@@ -403,7 +405,7 @@ export function DocumentDetailContent({
         {document.guide ? (
           <ul>
             {document.guide.legalBasis.map((item) => (
-              <li key={item}>
+              <li key={legalTextPlainText(item)}>
                 <LegalText text={item} />
               </li>
             ))}

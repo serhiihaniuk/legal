@@ -1,7 +1,9 @@
+import type { LegalTextValue } from "~/data/legal-library/legal-text"
+
 export type OfficialSource = {
   label: string
   url: string
-  note: string
+  note: LegalTextValue
 }
 
 export type LegalNode = {
