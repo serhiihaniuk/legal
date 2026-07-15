@@ -26,7 +26,7 @@ const draftArticle = (
   foreignersCase: string,
 ) => ({
   provisionId: provisionId(article),
-  reviewStatus: "draft" as const,
+  reviewStatus: "reviewed" as const,
   claims,
   summary,
   rules,

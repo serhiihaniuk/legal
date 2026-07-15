@@ -1,4 +1,64 @@
+import type { LegalProvisionId } from "../../contracts"
 import { defineEditorialPart } from "../define-editorial-part"
+
+type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+
+type EditorialEntry = {
+  provisionId: ForeignersActProvisionId
+  reviewStatus: "reviewed" | "blocked"
+  claims: readonly {
+    kind: "statute-text" | "practical-inference"
+    text: string
+    sourceLocator: string
+  }[]
+  summary: string
+  rules: readonly { locator: string; explanation: string }[]
+  legalEffect: string
+  foreignersCase: string
+}
+
+const provisionId = (article: string) =>
+  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
+
+const reviewedArticle = (
+  article: string,
+  claims: EditorialEntry["claims"],
+  summary: string,
+  rules: EditorialEntry["rules"],
+  legalEffect: string,
+  foreignersCase: string,
+): EditorialEntry => ({
+  provisionId: provisionId(article),
+  reviewStatus: "reviewed",
+  claims,
+  summary,
+  rules,
+  legalEffect,
+  foreignersCase,
+})
+
+const blockedArticle = (article: string, reason: string): EditorialEntry => ({
+  provisionId: provisionId(article),
+  reviewStatus: "blocked",
+  claims: [
+    {
+      kind: "statute-text",
+      text: `Локальний corpus містить окремий текст Art. ${article}, але цей запис не переказує його зміст без додаткової перевірки: ${reason}`,
+      sourceLocator: `Art. ${article}`,
+    },
+  ],
+  summary: `Редакційний переказ Art. ${article} заблоковано: ${reason}`,
+  rules: [
+    {
+      locator: `Art. ${article}`,
+      explanation: `Не робіть висновків із самого номера статті. До розблокування звірте повний польський текст, усі ust. і pkt та відсилання, зазначені в ньому. Причина блокування: ${reason}`,
+    },
+  ],
+  legalEffect:
+    `Чинний правовий ефект Art. ${article} тут не формулюється, оскільки редакційний переказ заблоковано: ${reason}`,
+  foreignersCase:
+    `У справі відкрийте Art. ${article} у source reader і не використовуйте цей запис як підставу для рішення, доки не буде виконано перевірку: ${reason}`,
+})
 
 export const foreignersActPart01a = defineEditorialPart<
   "ustawa-o-cudzoziemcach"
@@ -8,730 +68,438 @@ export const foreignersActPart01a = defineEditorialPart<
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
   entries: [
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-1",
-      reviewStatus: "draft",
-      claims: [
+    reviewedArticle(
+      "1",
+      [
         {
           kind: "statute-text",
-          text: "Art. 1 у поточному corpus є окремим положенням ustawa o cudzoziemcach. Обсяг правила визначається повним польським текстом цієї статті та її статусом у редакції.",
-          sourceLocator: "Art. 1",
+          text: "Art. 1 визначає zasady i warunki wjazdu cudzoziemców до Польщі, przejazdu, pobytu і wyjazdu, а також tryb postępowania та właściwe organy.",
+          sourceLocator: "Art. 1 zdanie pierwsze",
         },
-      ],
-      summary:
-        "Art. 1 потрібно читати як джерельну норму про предмет або сферу регулювання ustawa o cudzoziemcach. Цей draft не замінює повного тексту, його ust. і pkt.",
-      rules: [
-        {
-          locator: "Art. 1",
-          explanation:
-            "Звірте повний польський текст, усі внутрішні odwołania та терміни, якими стаття визначає предмет регулювання.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Якщо corpus позначає норму як uchylony або repealed, її не можна використовувати як чинне правило; перевірте також przepisy przejściowe.",
-        },
-      ],
-      legalEffect:
-        "Правовий ефект Art. 1 залежить від точного тексту та статусу норми. Сам номер статті не створює автоматичного права на wiza, pobyt або pracę.",
-      foreignersCase:
-        "У справі іноземця відкрийте Art. 1 у джерельній редакції, випишіть польські терміни й перевірте, чи охоплює стаття саме ваш факт, документ і дату.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-2",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 2 у поточному corpus містить окремий текст ustawa o cudzoziemcach; цей draft посилається лише на наявне джерельне положення і не додає винятків або умов.",
-          sourceLocator: "Art. 2",
+          text: "У переліку Art. 1 частина пунктів позначена як (uchylony); решта пунктів називає директиви ЄС, імплементацію яких здійснює закон у межах свого регулювання.",
+          sourceLocator: "Art. 1 pkt 1–18",
         },
       ],
-      summary:
-        "Art. 2 слід прочитати повністю, щоб встановити його предмет, адресата та можливі wyłączenia або відсилання. Переказ за самим номером був би ненадійним.",
-      rules: [
+      "Art. 1 окреслює предмет ustawa o cudzoziemcach: в’їзд, транзит, pobyt, виїзд, процедуру та компетентні органи.",
+      [
         {
-          locator: "Art. 2",
+          locator: "Art. 1 zdanie pierwsze",
           explanation:
-            "Визначте, чи містить стаття правило, wyłączenie, визначення або посилання на інший акт; не розширюйте її дію за аналогією.",
+            "Спочатку визначте, чи питання стосується wjazdu, przejazdu, pobytu, wyjazdu, trybu postępowania або właściwości органу.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 1 pkt 1–18",
           explanation:
-            "Статус active, uchylony або інший статус у corpus треба звірити з повним текстом і датою події; repealed норма не є чинною підставою без окремого transitional rule.",
+            "Це технічний перелік імплементованих директив, а не самостійна підстава для візи, pobyt чи роботи; позначені uchylony пункти не відновлюють чинне правило.",
         },
       ],
-      legalEffect:
-        "Наслідок Art. 2 не можна визначити поза його польським текстом. Цей draft не підтверджує ані застосування, ані wyłączenie конкретної особи.",
-      foreignersCase:
-        "Зафіксуйте громадянство, документ, підставу pobytu та дату події; потім перевірте Art. 2 і всі його odwołania до інших правил.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-3",
-      reviewStatus: "draft",
-      claims: [
+      "Стаття визначає сферу закону, але сама не надає конкретного дозволу на wjazd, pobyt або wykonywanie pracy.",
+      "Класифікуйте питання за предметом Art. 1, потім переходьте до спеціальної норми про документ, умову, орган і засіб оскарження. Не посилайтеся на перелік директив як на пряму матеріальну підставу.",
+    ),
+    reviewedArticle(
+      "2",
+      [
         {
           kind: "statute-text",
-          text: "Art. 3 є джерельною одиницею поточної редакції ustawa o cudzoziemcach. Цей запис не відновлює зміст статті з назви або номера.",
-          sourceLocator: "Art. 3",
+          text: "Art. 2 встановлює, що ustawa не застосовується до дипломатичних і консульських осіб за умовами взаємності та документів, до громадян UE/EFTA/Швейцарії та їхніх сімей, до визначених членів сімей громадян Польщі, а також до визначених осіб під Umowa Wystąpienia.",
+          sourceLocator: "Art. 2 pkt 1–4",
         },
-      ],
-      summary:
-        "Art. 3 потрібно аналізувати за повним польським текстом, включно з його ust., pkt, винятками та відсиланнями; у записі збережено лише безпечний draft-локатор.",
-      rules: [
-        {
-          locator: "Art. 3",
-          explanation:
-            "Спочатку встановіть юридичний факт і коло осіб, до яких звернене правило, а потім звірте всі умови в corpus.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Позначка uchylony або repealed означає, що положення не слід подавати як чинне; для минулих подій перевірте przepisy przejściowe.",
-        },
-      ],
-      legalEffect:
-        "Art. 3 може мати лише той ефект, який прямо випливає з чинного тексту та фактів. Він сам по собі не доводить legal stay або prawo do pracy.",
-      foreignersCase:
-        "Порівняйте повний текст Art. 3 з документами cudzoziemca, датами та рішеннями органу; окремо позначте всі невстановлені факти.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-4",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 4 у виданні corpus є окремим положенням ustawa o cudzoziemcach. Точне правило та його status wynikają з повного польського тексту Art. 4.",
+          text: "Для дипломатичних і консульських осіб Art. 2 pkt 1 прямо зберігає застосування перелічених норм, зокрема art. 23, 32, 58, 60–63, 66 ust. 4–5, 67–74, 78 ust. 1, 79 ust. 1–2, 80, 90–92, 96–97.",
+          sourceLocator: "Art. 2 pkt 1",
+        },
+      ],
+      "Art. 2 — це правило про zakres zastosowania закону та винятки, а не загальне звільнення кожного громадянина ЄС чи члена сім’ї від усіх польських правил.",
+      [
+        {
+          locator: "Art. 2 pkt 1",
+          explanation:
+            "Для дипломатичного статусу перевіряйте одночасно взаємність, документ функції та перелік норм, які закон прямо залишає застосовними.",
+        },
+        {
+          locator: "Art. 2 pkt 2–4",
+          explanation:
+            "Визначте громадянство, сімейний зв’язок і факт приєднання або спільного перебування; для громадян UK перевірте саме категорію Umowa Wystąpienia.",
+        },
+      ],
+      "Якщо особа підпадає під Art. 2, відповідний режим ustawa може не застосовуватися, крім прямо збережених положень. Це не є автоматичним підтвердженням права на pobyt або pracę.",
+      "Зафіксуйте громадянство, статус члена сім’ї, документ функції та дату. Не змішуйте режим Art. 2 з режимом звичайного cudzoziemiec за цією ustawa.",
+    ),
+    reviewedArticle(
+      "3",
+      [
+        {
+          kind: "statute-text",
+          text: "Art. 3 містить легальні визначення, зокрема azyl, cudzoziemiec, dokument podróży, doświadczenie zawodowe, działalność zawodowa, granica, mały ruch graniczny, mobilność, wiza, powrót, status uchodźcy та wykonywanie pracy.",
+          sourceLocator: "Art. 3 pkt 1–25",
+        },
+        {
+          kind: "statute-text",
+          text: "У чинному тексті Art. 3 pkt 7b і pkt 7c позначені як (uchylony); інші визначення містять спеціальні пороги та умови, зокрема 90/180, 180 або 360 днів там, де це прямо зазначено.",
+          sourceLocator: "Art. 3 pkt 7b–7c, 7d–7j",
+        },
+      ],
+      "Art. 3 задає словник ustawa. Перед аналізом справи треба встановити, яке саме законне визначення відповідає фактам, а не покладатися на побутове значення слова.",
+      [
+        {
+          locator: "Art. 3 pkt 2–3",
+          explanation:
+            "Cudzoziemiec — кожен, хто не має польського громадянства; dokument podróży має бути визнаний Польщею і давати право перетинати кордон.",
+        },
+        {
+          locator: "Art. 3 pkt 7, 7a, 7d–7j",
+          explanation:
+            "Mały ruch graniczny та різні види mobilność мають окремі умови й періоди; не переносіть поріг одного визначення на інше.",
+        },
+        {
+          locator: "Art. 3 pkt 20–25",
+          explanation:
+            "Розрізняйте wiza, wiza krajowa, wiza Schengen, wykonywanie pracy та wykonywanie pracy w zawodzie wymagającym wysokich kwalifikacji.",
+        },
+      ],
+      "Визначення Art. 3 керують тлумаченням інших статей, але самі зазвичай не створюють дозволу на pobyt або pracy. Позначені uchylony пункти не є чинними визначеннями.",
+      "Випишіть точний термін із документа або рішення, знайдіть його pkt у Art. 3 і перевірте всі складові визначення окремими фактами та доказами.",
+    ),
+    reviewedArticle(
+      "4",
+      [
+        {
+          kind: "statute-text",
+          text: "У справах за ustawa, що належать до właściwości wojewody, коли wojewoda розглядає odwołanie або органом вищого ступеня є Szef Urzędu do Spraw Cudzoziemców, не застосовується art. 20 ustawy o wojewodzie i administracji rządowej w województwie.",
           sourceLocator: "Art. 4",
         },
       ],
-      summary:
-        "Art. 4 не можна тлумачити лише за заголовком: перевірте, чи регулює він zakres, wyłączenie, орган або інший елемент режиму cudzoziemców.",
-      rules: [
+      "Art. 4 — спеціальне правило про незастосування одного положення ustawy o wojewodzie у визначених справах іноземців.",
+      [
         {
           locator: "Art. 4",
           explanation:
-            "Прочитайте всі ust. і pkt, знайдіть адресата та умову застосування, а також звірте польські odwołania.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Якщо джерело містить uchylony/repealed, це треба чесно показати й не використовувати як сучасну норму без перевірки перехідного режиму.",
+            "Перевірте, що справа врегульована цією ustawa, належить до wojewoda і що саме wojewoda є органом odwoławczy або Szef Urzędu є органом вищого ступеня.",
         },
       ],
-      legalEffect:
-        "Цей draft не встановлює автоматичного наслідку для wiza, pobyt чи decyzja. Ефект Art. 4 залежить від джерельного тексту, статусу та конкретної дати.",
-      foreignersCase:
-        "Додайте до хронології справи дату події, документ подорожі, wiza або zezwolenie та перевірте їх співвідношення з Art. 4.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-5",
-      reviewStatus: "draft",
-      claims: [
+      "Art. 4 змінює лише застосування названого art. 20 іншого закону; він не визначає матеріальну умову pobyt і не скасовує відведені законом засоби оскарження.",
+      "У процесуальних документах встановіть орган і його роль у конкретній справі. Не використовуйте Art. 4 як підставу для позитивної чи негативної decyzja по суті.",
+    ),
+    reviewedArticle(
+      "5",
+      [
         {
           kind: "statute-text",
-          text: "Art. 5 у поточному corpus має власний source locator у редакції ustawa o cudzoziemcach; цей draft не формулює правила поза офіційним текстом.",
-          sourceLocator: "Art. 5",
+          text: "У справах, що належать до konsul, застосовується Prawo konsularne, якщо ustawa не передбачає іншого. Для видачі, cofanie або unieważnianie wizy krajowej та продовження її чинності або строку pobytu застосовується Wspólnotowy Kodeks Wizowy в частині, не врегульованій dział IV, з виключенням art. 9 ust. 2 zdanie drugie цього Кодексу.",
+          sourceLocator: "Art. 5 ust. 1–2",
         },
       ],
-      summary:
-        "Зміст Art. 5 визначається повним польським текстом. Для навчального читання треба відокремити expressis verbis правило від практичного висновку про справу іноземця.",
-      rules: [
+      "Art. 5 розподіляє застосування Prawo konsularne та Wspólnotowy Kodeks Wizowy у консульських і візових справах.",
+      [
         {
-          locator: "Art. 5",
+          locator: "Art. 5 ust. 1",
           explanation:
-            "Випишіть слова, що визначають обов’язок, право, виняток або компетенцію; не замінюйте їх вільним перекладом.",
+            "Спочатку перевірте, чи справа належить до konsul і чи немає спеціального правила в ustawa.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 5 ust. 2",
           explanation:
-            "Перевірте status у current corpus. Uchylony/repealed запис є історичним орієнтиром, якщо перехідне правило не вимагає іншого.",
+            "Для wiza krajowa спершу застосовуйте dział IV; прогалини заповнює Wspólnotowy Kodeks Wizowy, але назване речення art. 9 ust. 2 не застосовується.",
         },
       ],
-      legalEffect:
-        "Правовий ефект Art. 5 не встановлюється цим draft-записом і залежить від умов норми та доказів. Номер статті не гарантує позитивної decyzja.",
-      foreignersCase:
-        "Під час аналізу справи зазначте, який саме польський термін Art. 5 застосовується, якими документами він підтверджується та яка дата є релевантною.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-6",
-      reviewStatus: "draft",
-      claims: [
+      "Стаття визначає процесуальне джерело для конкретних консульських і візових дій, але не гарантує видачу чи продовження візи.",
+      "Визначте вид візи, дію органу та питання, яке регулюється. У висновку окремо назвіть норму ustawa або відповідного Кодексу, а не посилайтеся на Art. 5 як на матеріальне право.",
+    ),
+    reviewedArticle(
+      "6",
+      [
         {
           kind: "statute-text",
-          text: "Art. 6 є окремим положенням, наявним у поточній редакції corpus ustawa o cudzoziemcach; точний предмет слід брати з польського тексту Art. 6.",
-          sourceLocator: "Art. 6",
+          text: "Орган, який видає decyzję або postanowienie у провадженні за ustawa, може не складати фактичну частину uzasadnienia, якщо цього вимагають obronność, bezpieczeństwo państwa або захист bezpieczeństwo i porządek publiczny.",
+          sourceLocator: "Art. 6 ust. 1",
         },
-      ],
-      summary:
-        "Art. 6 потребує читання разом із повними ust. і pkt та пов’язаними статтями. Цей draft не приписує йому умови, яких не видно з джерела.",
-      rules: [
-        {
-          locator: "Art. 6",
-          explanation:
-            "Знайдіть у тексті adresat, przesłanka, виняток і skutek; зафіксуйте кожне odwołanie до іншої норми.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Чинність треба встановлювати за status corpus і застосовною датою. Позначене uchylony/repealed положення не подавайте як чинне.",
-        },
-      ],
-      legalEffect:
-        "Art. 6 має лише джерельний, обмежений повним текстом ефект; цей draft не створює самостійної підстави для legal stay чи wykonywanie pracy.",
-      foreignersCase:
-        "Зіставте Art. 6 з паспортом, wiza, zezwolenie, заявою та фактичними датами; якщо текст не охоплює факт, не розширюйте його.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-7",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 7 у поточному corpus є джерелом окремої норми ustawa o cudzoziemcach. Цей draft зберігає лише перевірюваний locator Art. 7.",
-          sourceLocator: "Art. 7",
+          text: "Неможливо відмовитися від складання тієї частини uzasadnienia, яка стосується встановлення przesłanki polskiego pochodzenia cudzoziemca.",
+          sourceLocator: "Art. 6 ust. 2",
         },
       ],
-      summary:
-        "Для Art. 7 треба перевірити повний польський текст, його структуру та статус. Узагальнення без читання ust. і pkt може спотворити правило.",
-      rules: [
+      "Art. 6 допускає обмеження фактичного обґрунтування з міркувань безпеки, але встановлює виняток для встановлення польського походження.",
+      [
         {
-          locator: "Art. 7",
+          locator: "Art. 6 ust. 1",
           explanation:
-            "Відокремте визначене законом правило від practical inference; перевірте адресата, умови, винятки й посилання.",
+            "Перевірте, чи орган послався саме на одну з названих безпекових підстав і чи йдеться про фактичну частину uzasadnienia.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 6 ust. 2",
           explanation:
-            "Якщо запис має статус uchylony або repealed, чесно позначте його як нечинний для поточної справи та перевірте przepisy przejściowe.",
+            "Навіть за наявності підстав ust. 1 орган не може приховати частину обґрунтування про przesłanka polskiego pochodzenia.",
         },
       ],
-      legalEffect:
-        "Сам Art. 7 не дає автоматичної відповіді про побит або роботу. Конкретний skutek залежить від тексту, статусу та встановлених фактів.",
-      foreignersCase:
-        "У досьє збережіть джерельний текст Art. 7, документ, на який посилається іноземець, та докази відповідних дат і обставин.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-8",
-      reviewStatus: "draft",
-      claims: [
+      "Art. 6 регулює обсяг мотивування рішення або постанови. Він не звільняє орган від інших вимог до рішення і не доводить законність прихованої частини автоматично.",
+      "Отримавши decyzja або postanowienie, визначте, яку саме частину мотивів не наведено і на яку підставу послався орган. Якщо спір стосується polskie pochodzenie, перевірте повноту мотивування за ust. 2.",
+    ),
+    reviewedArticle(
+      "7",
+      [
         {
           kind: "statute-text",
-          text: "Art. 8 у виданні ustawa o cudzoziemcach-2025-1079 має окремий запис corpus. Не стверджується жодна додаткова умова поза повним джерельним текстом.",
-          sourceLocator: "Art. 8",
+          text: "Органи, що ведуть справи про wiza, продовження візи, zezwolenie na pobyt czasowy/stały або rezydent długoterminowy UE, zobowiązanie do powrotu, а також органи контролю, письмово pouczają cudzoziemca зрозумілою для нього мовою про порядок, права та обов’язки.",
+          sourceLocator: "Art. 7 ust. 1",
         },
-      ],
-      summary:
-        "Art. 8 слід використовувати як locator для перевірки відповідного польського правила, а не як готову відповідь на питання про cudzoziemiec.",
-      rules: [
-        {
-          locator: "Art. 8",
-          explanation:
-            "Прочитайте норму в контексті розділу, перевірте кожен ust. і pkt та зафіксуйте, до кого й коли вона застосовується.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Звірте active/uchylony та дати. Repealed статтю не застосовуйте до сучасної події без підтвердженого przepisu przejściowego.",
-        },
-      ],
-      legalEffect:
-        "Ефект Art. 8 визначається лише його польським текстом і фактичними умовами. Цей draft не підтверджує право на wiza, pobyt або pracę.",
-      foreignersCase:
-        "Перевірте Art. 8 разом із фактом в’їзду, документом подорожі, статусом pobyt та листуванням з органом; сумнів позначте як такий.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-9",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 9 у поточному corpus є джерельним положенням ustawa o cudzoziemcach. Його зміст, винятки та status мають бути підтверджені повним польським текстом.",
-          sourceLocator: "Art. 9",
+          text: "У справі про zobowiązanie do powrotu pouczenie включає, зокрема, інформацію про вимоги до podmiot powierzający pracę, можливе zezwolenie на pobyt під час кримінального провадження та інші дії проти такого суб’єкта; електронне pouczenie можливе за письмовою згодою cudzoziemca.",
+          sourceLocator: "Art. 7 ust. 2–3",
         },
       ],
-      summary:
-        "Art. 9 потрібно читати без відриву від сусідніх статей та внутрішніх odwołania. Цей запис навмисно не реконструює правило за номером.",
-      rules: [
+      "Art. 7 встановлює обов’язок зрозумілого письмового pouczenie і спеціальну інформацію для справи про повернення.",
+      [
         {
-          locator: "Art. 9",
+          locator: "Art. 7 ust. 1",
           explanation:
-            "Встановіть юридичний факт, адресата та умову з тексту Art. 9; окремо перевірте винятки й строки, якщо вони є.",
+            "Визначте вид провадження та перевірте, чи отримав cudzoziemiec письмову інформацію зрозумілою мовою про права й обов’язки.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 7 ust. 2",
           explanation:
-            "Позначка uchylony/repealed має бути відображена чесно. Для минулих подій перевірте, яка редакція і які przepisy przejściowe діяли.",
+            "У справі про powrót перевірте спеціальні відомості про вимоги до pracodawca та можливі засоби захисту потерпілої особи.",
+        },
+        {
+          locator: "Art. 7 ust. 3",
+          explanation:
+            "Електронна форма замінює вручення лише за умов, прямо названих у статті, включно з письмовою згодою.",
         },
       ],
-      legalEffect:
-        "Наслідок Art. 9 може бути визначений тільки після звірки джерела й фактів. Сам локатор не є підставою для decyzja або legal stay.",
-      foreignersCase:
-        "Побудуйте коротку хронологію справи, прикладіть wiza або zezwolenie та перевірте кожну фактичну умову Art. 9 окремим доказом.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-10",
-      reviewStatus: "draft",
-      claims: [
+      "Pouczenie допомагає реалізувати процесуальні права, але саме по собі не змінює матеріальний статус pobyt і не скасовує обов’язок виїзду.",
+      "Збережіть pouczenie, мову, форму та дату отримання. У справі про powrót окремо перевірте, чи надано спеціальну інформацію за Art. 7 ust. 2.",
+    ),
+    reviewedArticle(
+      "8",
+      [
         {
           kind: "statute-text",
-          text: "Art. 10 є окремою одиницею тексту в corpus редакції ustawa o cudzoziemcach-2025-1079; цей draft не додає непідтвердженого правового висновку.",
-          sourceLocator: "Art. 10",
+          text: "Заяви у справах за ustawa складаються польською. Документи іноземною мовою, що є доказами, подаються з перекладом польською, виконаним tłumacz przysięgły.",
+          sourceLocator: "Art. 8 ust. 1–2",
         },
-      ],
-      summary:
-        "Предмет Art. 10 визначайте за повним польським текстом, його ust., pkt і відсиланнями. Номер статті сам по собі не розкриває умови застосування.",
-      rules: [
-        {
-          locator: "Art. 10",
-          explanation:
-            "Перевірте, чи текст встановлює правило, wyjątek, компетенцію або procedura, і не змішуйте його з правом до pracy.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Порівняйте status corpus із датою події. Якщо Art. 10 позначено uchylony/repealed, не подавайте його як чинний.",
-        },
-      ],
-      legalEffect:
-        "Цей draft не визначає автоматичний skutek Art. 10. Він залежить від повного джерела, чинності редакції, доказів і конкретної procedura.",
-      foreignersCase:
-        "У справі назвіть фактичну подію, документ іноземця та орган; відкрийте Art. 10 і перевірте, чи його умови справді виконані.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-11",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 11 у поточному corpus містить джерельний текст окремої норми ustawa o cudzoziemcach. Точний обсяг претензії обмежений локатором Art. 11.",
-          sourceLocator: "Art. 11",
+          text: "У провадженні перед ministrem właściwym do spraw zagranicznych або konsul заяви й доказові документи можна подати польською або мовою, яку вкаже орган; у protokół przesłuchania зазначається ім’я та прізвище перекладача.",
+          sourceLocator: "Art. 8 ust. 3–4",
         },
       ],
-      summary:
-        "Art. 11 слід перевіряти в польській редакції разом із контекстом розділу. Цей draft не підміняє текст статті переказом.",
-      rules: [
+      "Art. 8 визначає мову заяв, доказів і протоколу допиту.",
+      [
         {
-          locator: "Art. 11",
+          locator: "Art. 8 ust. 1–2",
           explanation:
-            "Випишіть із джерела adresat, przesłanki, винятки, строки та skutek; звірте кожне odwołanie до інших статей.",
+            "Для звичайного провадження готуйте wniosek польською, а іншомовні доказові документи — з перекладом tłumacz przysięgły.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 8 ust. 3–4",
           explanation:
-            "Статус uchylony або repealed виключає подання норми як чинної, якщо інше прямо не випливає з перехідного правила.",
+            "У справах MFA або konsul перевірте мову, яку вказав орган, і наявність даних перекладача в протоколі.",
         },
       ],
-      legalEffect:
-        "Art. 11 не дає автоматичної відповіді про wiza, pobyt чи pracę без перевірки його умов і фактів. Остаточний висновок потребує повного досьє.",
-      foreignersCase:
-        "Зіставте джерельний Art. 11 із паспортом, документами pobyt, датами та повідомленнями wojewoda або іншого органу, якщо вони стосуються справи.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-12",
-      reviewStatus: "draft",
-      claims: [
+      "Недотримання мовної форми впливає на доказове подання, але Art. 8 сама не встановлює результату справи про pobyt чи wiza.",
+      "Складіть список іншомовних документів і перевірте, чи кожен доказ має належний польський переклад або підпадає під спеціальне правило для konsul чи MFA.",
+    ),
+    reviewedArticle(
+      "9",
+      [
         {
           kind: "statute-text",
-          text: "Art. 12 у виданні corpus є окремим положенням ustawa o cudzoziemcach; цей draft не відновлює умов, винятків або компетенції, яких немає у перевіреному тексті.",
-          sourceLocator: "Art. 12",
+          text: "Письма у справах за ustawa вручаються фізичній особі за вказаною адресою або в будь-якому місці, де її знайдено; позбавленим волі cudzoziemcom — через адміністрацію установи.",
+          sourceLocator: "Art. 9 ust. 1–2",
         },
-      ],
-      summary:
-        "Art. 12 потребує читання повністю: юридичне значення мають його польські терміни, ust., pkt, винятки та відсилання, а не сам номер.",
-      rules: [
-        {
-          locator: "Art. 12",
-          explanation:
-            "Розділіть норму на факт, przesłanka, доказ, дію та skutek лише після звірки з повним польським текстом.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Перевірте статус у corpus на дату 2026-07-14; uchylony/repealed положення не є поточною підставою без окремого перехідного застосування.",
-        },
-      ],
-      legalEffect:
-        "Правовий ефект Art. 12 залишається обережним до завершення editorial review; цей запис не гарантує законність pobytu чи результат decyzja.",
-      foreignersCase:
-        "Відкрийте Art. 12 у джерелі, позначте незрозумілі терміни й зберіть окремий доказ для кожної умови, яка справді випливає з тексту.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-13",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 13 є джерельною одиницею current corpus для ustawa o cudzoziemcach. Цей draft стверджує лише наявність локалізованого положення Art. 13.",
-          sourceLocator: "Art. 13",
+          text: "За виїзду cudzoziemca за кордон застосовується art. 40 § 4–5 KPA. У провадженні MFA, крім справ art. 66 ust. 4 і art. 79a, документи вручаються через konsul, а до вручень застосовується Prawo konsularne.",
+          sourceLocator: "Art. 9 ust. 3–5",
         },
       ],
-      summary:
-        "Зміст Art. 13 визначається повною чинною або історично застосовною редакцією польського тексту. Не робіть висновок за назвою заяви чи документа.",
-      rules: [
+      "Art. 9 встановлює спеціальні правила doręczenia у справах іноземців, включно з ув’язненням, перебуванням за кордоном і провадженням MFA.",
+      [
         {
-          locator: "Art. 13",
+          locator: "Art. 9 ust. 1–2",
           explanation:
-            "Перевірте, хто є adresat, які факти запускають правило, які wyjątki та які odwołania містить стаття.",
+            "Перевірте адресу, фактичне місце вручення або передачу через адміністрацію установи, якщо особа позбавлена волі.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 9 ust. 3–5",
           explanation:
-            "Якщо corpus показує uchylony/repealed, так і зазначте у навчальному висновку та перевірте przepisy przejściowe.",
+            "Для особи за кордоном і справи MFA встановіть, який спеціальний режим KPA або Prawo konsularne визначає належне вручення.",
         },
       ],
-      legalEffect:
-        "Art. 13 може впливати лише в межах прямо передбаченого ним режиму; номер і draft-опис не створюють prawa do pobytu або pracy.",
-      foreignersCase:
-        "Порівняйте Art. 13 із фактичним cel pobytu, wiza або zezwolenie та календарем подій; відокремте legal stay від права на працю.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-14",
-      reviewStatus: "draft",
-      claims: [
+      "Належне doręczenie запускає процесуальні наслідки, але Art. 9 не встановлює матеріального права на pobyt чи візу.",
+      "Збережіть конверт, електронне підтвердження або інший доказ doręczenie та визначте, коли почався процесуальний строк. Не обчислюйте строк лише від дати, надрукованої на рішенні.",
+    ),
+    reviewedArticle(
+      "10",
+      [
         {
           kind: "statute-text",
-          text: "Art. 14 у поточній редакції corpus має окремий sourceLocator. Цей draft не додає до польського тексту Art. 14 жодної нової przesłanka.",
-          sourceLocator: "Art. 14",
+          text: "Якщо cudzoziemiec — сторона провадження — перебуває за кордоном і не призначив pełnomocnik, який проживає в Польщі, не застосовуються art. 73 § 1 і 1a, art. 79 та art. 81 KPA.",
+          sourceLocator: "Art. 10 ust. 1",
         },
-      ],
-      summary:
-        "Art. 14 потрібно читати разом із сусідніми положеннями та повними ust. і pkt. Його практичне значення залежить від точного предмета норми.",
-      rules: [
-        {
-          locator: "Art. 14",
-          explanation:
-            "Спочатку встановіть зміст норми expressis verbis, потім окремо позначте практичний inference і доказову потребу.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Перевірте active або uchylony/repealed статус і редакцію, застосовну до дати факту; не переносіть старе правило в поточну справу автоматично.",
-        },
-      ],
-      legalEffect:
-        "Наслідок Art. 14 залежить від повного джерела та встановлених обставин. Цей запис не є decyzja органу та не гарантує результату.",
-      foreignersCase:
-        "Для справи збережіть копію Art. 14, релевантний документ cudzoziemca, доказ дат і листування з органом; невідомі факти залиште відкритими.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-15",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 15 у поточному corpus є окремою нормою ustawa o cudzoziemcach. Статутна претензія цього draft обмежена локатором Art. 15 і повним польським джерелом.",
-          sourceLocator: "Art. 15",
+          text: "У справах розділу 1 dział IV, які веде minister właściwy do spraw zagranicznych, не застосовується перелік положень KPA, прямо наведений у Art. 10 ust. 2.",
+          sourceLocator: "Art. 10 ust. 2",
         },
       ],
-      summary:
-        "Для Art. 15 треба встановити точний предмет, адресата й умови з польської редакції. Загального висновку про wiza, pobyt або pracę з номера не випливає.",
-      rules: [
+      "Art. 10 містить два спеціальні обмеження KPA: для сторони за кордоном без польського pełnomocnik і для визначених візових справ MFA.",
+      [
         {
-          locator: "Art. 15",
+          locator: "Art. 10 ust. 1",
           explanation:
-            "Прочитайте всі частини статті та відсилання; перевірте, які документи або факти прямо названі у джерелі.",
+            "Підставою спеціального режиму є сукупність двох фактів: перебування сторони за кордоном і відсутність повноважного представника, який проживає в Польщі.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 10 ust. 2",
           explanation:
-            "У разі позначки uchylony/repealed норму подавайте як нечинну для current case і перевірте дію перехідних положень.",
+            "У справі MFA звірте, чи це провадження розділу 1 dział IV, і застосовуйте лише перелік виключених статей KPA.",
         },
       ],
-      legalEffect:
-        "Art. 15 може мати юридичний наслідок лише за виконання його умов у застосовній редакції. Цей draft не замінює аналіз decyzja або postanowienie.",
-      foreignersCase:
-        "Зіставте Art. 15 з фактом, документом і датою, які є предметом справи; не робіть висновок про статус cudzoziemca без повного контексту.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-16",
-      reviewStatus: "draft",
-      claims: [
+      "Art. 10 змінює процесуальні гарантії в точно визначених ситуаціях; він не є загальним скасуванням KPA для всіх справ іноземців.",
+      "Зафіксуйте місце перебування, наявність польського pełnomocnik і орган провадження. У рішенні перевірте, чи посилання на незастосування KPA відповідає саме Art. 10.",
+    ),
+    reviewedArticle(
+      "11",
+      [
         {
           kind: "statute-text",
-          text: "Art. 16 у виданні ustawa-o-cudzoziemcach-2025-1079 має джерельний запис corpus. Цей draft не стверджує конкретного змісту понад повний текст Art. 16.",
-          sourceLocator: "Art. 16",
+          text: "Функціонери Straż Graniczna у провадженнях за ustawa можуть провести wywiad środowiskowy або встановити місце перебування małżonek, члена сім’ї чи особи, пов’язаної сімейними więzi.",
+          sourceLocator: "Art. 11 ust. 1",
         },
-      ],
-      summary:
-        "Art. 16 є локалізованим положенням, яке треба перевірити в польській редакції за всіма ust., pkt, винятками та odwołania.",
-      rules: [
-        {
-          locator: "Art. 16",
-          explanation:
-            "Визначте фактичну передумову, компетентний орган і передбачений документ або skutek лише після читання джерела.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Status active чи uchylony/repealed встановлюється corpus і датою, а не припущенням; перевірте також przepisy przejściowe.",
-        },
-      ],
-      legalEffect:
-        "Норма Art. 16 не дає автоматичного legal stay, права на pracę чи позитивної decyzja. Її ефект треба виводити з повного тексту та доказів.",
-      foreignersCase:
-        "У справі випишіть польські терміни Art. 16, визначте необхідні докази та порівняйте їх із wiza, zezwolenie і фактичними подіями.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-17",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 17 у поточному corpus є окремим джерельним положенням ustawa o cudzoziemcach; цей draft не реконструює його зміст за номером.",
-          sourceLocator: "Art. 17",
+          text: "Wywiad може охоплювати дані, адресу, сім’ю, спільне господарство, роботу або діяльність, навчання, матеріальні умови, безпеку та інші обставини; за суперечностей орган може перевірити локал, за згодою, у години 6:00–22:00.",
+          sourceLocator: "Art. 11 ust. 2–8",
         },
       ],
-      summary:
-        "Точний предмет Art. 17, його умови й винятки визначаються повним польським текстом та контекстом розділу. Запис залишається draft.",
-      rules: [
+      "Art. 11 надає Straż Graniczna інструменти перевірки фактичних обставин справи, включно з місцем проживання та сімейними зв’язками.",
+      [
         {
-          locator: "Art. 17",
+          locator: "Art. 11 ust. 2",
           explanation:
-            "Звірте текст, статус, внутрішні odwołania і часову застосовність; не перетворюйте загальну згадку на категоричний висновок.",
+            "Перевірка може охоплювати лише перелічені напрями фактичної інформації; зіставте їх із питанням конкретного провадження.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 11 ust. 3–4",
           explanation:
-            "Якщо Art. 17 позначений як uchylony або repealed, це треба прямо врахувати і перевірити можливе перехідне застосування.",
+            "Перевірка lokalu можлива після непідтвердження або суперечності даних; функціонер може увійти, вимагати показати речі та пояснення для підтвердження pobyt.",
+        },
+        {
+          locator: "Art. 11 ust. 5–8",
+          explanation:
+            "Перевірте присутність особи, часовий діапазон, згоду та документування. Відмова або перешкоджання означає, що місце pobyt не підтверджено; незалежну неможливість орган повідомляє органу провадження.",
         },
       ],
-      legalEffect:
-        "Юридичний ефект Art. 17 залежить від доведених умов і застосовної редакції; цей запис не скасовує інших вимог законного pobytu.",
-      foreignersCase:
-        "Перевірте джерело Art. 17 разом із документом подорожі, wiza або zezwolenie та хронологією; кожну inference позначте окремо.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-18",
-      reviewStatus: "draft",
-      claims: [
+      "Art. 11 регулює збір і перевірку інформації, але результат wywiad не замінює оцінку всіх матеріальних умов та доказів у справі.",
+      "Збережіть протокол, питання, дані про присутніх, згоду та час перевірки lokalu. Якщо орган посилається на непідтверджене місце проживання, перевірте, яка саме дія Art. 11 це обґрунтовує.",
+    ),
+    reviewedArticle(
+      "12",
+      [
         {
           kind: "statute-text",
-          text: "Art. 18 має окремий sourceLocator у поточному corpus ustawa o cudzoziemcach. Цей statute-text claim не додає умов або наслідків, яких не містить польське джерело.",
-          sourceLocator: "Art. 18",
+          text: "Minister właściwy do spraw wewnętrznych визначає в drodze rozporządzenia спосіб, місце, час і форму звіту про wywiad środowiskowy, а також спосіб перевірки lokalu, документи-повноваження і документування.",
+          sourceLocator: "Art. 12 ust. 1 і ust. 3",
         },
-      ],
-      summary:
-        "Art. 18 слід читати дослівно в польській редакції, перевіряючи ust., pkt, статус і всі відсилання. Без цього предмет норми не можна надійно переказати.",
-      rules: [
-        {
-          locator: "Art. 18",
-          explanation:
-            "Визначте, що саме прямо наказує, дозволяє або виключає стаття, і яким доказом підтверджується відповідний факт.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Uchylony/repealed запис не слід застосовувати як чинний; для іншої дати перевірте редакцію та przepisy przejściowe.",
-        },
-      ],
-      legalEffect:
-        "Art. 18 має тільки джерельний ефект у межах свого повного тексту. Він не гарантує права на pobyt, wiza, pracę або określona decyzja.",
-      foreignersCase:
-        "Занесіть до аналізу точний текст Art. 18, факти та документи без припущень; окремо перевірте legal stay і prawo do pracy.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-19",
-      reviewStatus: "draft",
-      claims: [
         {
           kind: "statute-text",
-          text: "Art. 19 у виданні corpus є локалізованим положенням ustawa o cudzoziemcach. Обережний claim цього draft обмежений перевірюваним locator Art. 19.",
-          sourceLocator: "Art. 19",
+          text: "У розпорядженні мають бути враховані потреби проваджень і poszanowanie sfery prywatności cudzoziemca та інших осіб.",
+          sourceLocator: "Art. 12 ust. 2 і ust. 4",
         },
       ],
-      summary:
-        "Предмет Art. 19 не слід виводити з назви заяви або практики органу: потрібен повний польський текст, структура статті та чинний status.",
-      rules: [
+      "Art. 12 — делегація для процедур проведення wywiad środowiskowy та перевірки lokalu з вимогою поважати приватність.",
+      [
         {
-          locator: "Art. 19",
+          locator: "Art. 12 ust. 1–2",
           explanation:
-            "Знайдіть адресата, умови, wyjątki та skutek у всіх частинах Art. 19; звірте посилання на інші przepisy.",
+            "Конкретний спосіб, місце, час і звіт шукайте в rozporządzenie; сама делегація не є фактом проведення wywiad.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 12 ust. 3–4",
           explanation:
-            "Перевірте, чи стаття active, uchylony або має інший статус у corpus; repealed положення не є сучасним правилом без transitional basis.",
+            "Для перевірки lokalu окремо перевірте спосіб, документи upoważniające та вимоги до документування, зберігаючи приватність.",
         },
       ],
-      legalEffect:
-        "Цей draft не визначає результату справи. Ефект Art. 19 залежить від тексту норми, фактичних умов, доказів і дати застосування.",
-      foreignersCase:
-        "Визначте фактичне питання, відкрийте Art. 19 у source reader і зіставте його умови з документами cudzoziemca та повідомленнями органу.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-20",
-      reviewStatus: "draft",
-      claims: [
+      "Art. 12 уповноважує міністра видати процедурне rozporządzenie, але не створює самостійної підстави відмови в pobyt.",
+      "Попросіть показати документи upoważniające та звіт про дію. Зіставте проведення перевірки з вимогами Art. 11 і відповідного rozporządzenie, не вигадуючи додаткових строків.",
+    ),
+    reviewedArticle(
+      "13",
+      [
         {
           kind: "statute-text",
-          text: "Art. 20 у поточному corpus є окремою одиницею офіційного тексту ustawa o cudzoziemcach; цей draft не приписує йому неперевіреного правового результату.",
-          sourceLocator: "Art. 20",
+          text: "У rejestry та ewidencja, що ведуться на підставі ustawa, можуть оброблятися перелічені дані cudzoziemca: ідентифікаційні та біографічні дані, документ podróży, відбитки, громадянство, місце pobyt, контакти, karalność і провадження, PESEL, wizerunek та дані про роботу, навчання, волонтерство й запрошуючого.",
+          sourceLocator: "Art. 13 pkt 1–26",
         },
       ],
-      summary:
-        "Art. 20 потрібно досліджувати в контексті розділу і повної польської редакції. Значення мають його точні терміни, ust., pkt та status.",
-      rules: [
+      "Art. 13 визначає каталог даних та інформації, які можуть оброблятися в реєстрах і обліку за ustawa; формулювання «можуть» не означає, що кожен реєстр містить усі дані.",
+      [
         {
-          locator: "Art. 20",
+          locator: "Art. 13 pkt 1–17",
           explanation:
-            "Спершу відтворіть rule з джерела, потім встановіть факти та докази; не замінюйте statute-text практичною порадою.",
+            "Перевірте ідентифікаційні, біометричні, громадянські та документальні дані лише в обсязі, потрібному конкретному реєстру.",
         },
         {
-          locator: "status przepisu",
+          locator: "Art. 13 pkt 18–26",
           explanation:
-            "Якщо норма позначена uchylony/repealed, подайте це чесно й перевірте, чи охоплює подію інша редакція або przepisy przejściowe.",
+            "Для роботи, стажу, волонтерства, навчання, карності, PESEL, wizerunek та zapraszający встановіть, який пункт і який реєстр є релевантними.",
         },
       ],
-      legalEffect:
-        "Art. 20 не створює автоматичного pobyt або prawa do pracy. Конкретний наслідок можливий лише після перевірки повного тексту та facts of case.",
-      foreignersCase:
-        "Підготуйте хронологію в’їзду, pobyt, wiza чи zezwolenie, а потім перевірте кожну умову Art. 20 офіційним документом.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-21",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 21 у поточній редакції corpus має окремий локатор як положення ustawa o cudzoziemcach. Цей draft не додає до тексту Art. 21 власних умов.",
-          sourceLocator: "Art. 21",
-        },
-      ],
-      summary:
-        "Застосування Art. 21 можна оцінювати лише після читання всіх ust. і pkt, відсилань та позначки статусу у джерельній редакції.",
-      rules: [
-        {
-          locator: "Art. 21",
-          explanation:
-            "Випишіть польські терміни й визначте, яке правило expressis verbis стосується адресата, факту, строку або документа.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Стаття з позначкою uchylony/repealed має бути описана як скасована; перевірте transitional provisions перед аналізом минулої події.",
-        },
-      ],
-      legalEffect:
-        "Правовий ефект Art. 21 обмежений його джерельним текстом, чинністю і доведеними фактами. Цей draft не є роз’ясненням органу.",
-      foreignersCase:
-        "Порівняйте Art. 21 з фактичним cel pobytu, відповідним документом та датами; не змішуйте його можливе правило з окремим правом на pracę.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-22",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 22 у corpus редакції ustawa-o-cudzoziemcach-2025-1079 є окремою джерельною нормою. Точний польський текст Art. 22 залишається контролюючим source.",
-          sourceLocator: "Art. 22",
-        },
-      ],
-      summary:
-        "Art. 22 слід читати разом із його контекстом, ust., pkt і відсиланнями; цей draft не робить припущення про конкретний режим cudzoziemca.",
-      rules: [
-        {
-          locator: "Art. 22",
-          explanation:
-            "Установіть умову, виняток, орган і skutek лише за повним текстом. За потреби звірте редакцію на дату фактичної події.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Перевірте status у current corpus. Uchylony/repealed положення не подавайте як чинне, а історичну дію підтвердьте окремо.",
-        },
-      ],
-      legalEffect:
-        "Сам locator Art. 22 не підтверджує legal stay, wiza, zezwolenie або prawo do pracy. Наслідок може бути встановлений лише після повної перевірки.",
-      foreignersCase:
-        "Зберіть джерело Art. 22, документи cudzoziemca, календар і рішення органу; зіставте тільки ті факти, які прямо релевантні тексту.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-23",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 23 є локалізованим положенням поточної редакції corpus ustawa o cudzoziemcach. Цей statute-text claim не виходить за межі sourceLocator Art. 23.",
-          sourceLocator: "Art. 23",
-        },
-      ],
-      summary:
-        "Для Art. 23 необхідно відкрити повний польський текст і встановити його предмет, адресата, умови та status; draft не замінює source reader.",
-      rules: [
-        {
-          locator: "Art. 23",
-          explanation:
-            "Розкладіть норму на Fakt → pojęcie prawne → warunek → dowód лише після буквальної перевірки статті й odwołania.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Якщо джерело позначає Art. 23 як uchylony/repealed, це треба назвати прямо і перевірити можливі przepisy przejściowe.",
-        },
-      ],
-      legalEffect:
-        "Ефект Art. 23 не є автоматичним і не виводиться з цього draft. Він залежить від застосовної редакції, умов норми та повного досьє.",
-      foreignersCase:
-        "У справі позначте точний факт і доказ, які можуть підпадати під Art. 23, перевірте документ pobyt і окремо оцініть prawo do pracy.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-24",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 24 у поточному corpus має окремий source locator у редакції ustawa o cudzoziemcach; жодна умова, виняток чи skutek не додаються цим draft.",
-          sourceLocator: "Art. 24",
-        },
-      ],
-      summary:
-        "Art. 24 потрібно перевірити за повним польським текстом, включно з усіма ust., pkt, odwołania і статусом. Переказ за номером не є достатнім.",
-      rules: [
-        {
-          locator: "Art. 24",
-          explanation:
-            "Визначте, який саме факт, документ, орган або строк прямо названо в статті; не переносіть висновок на іншу procedura.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Чесно відобразіть uchylony/repealed, якщо так позначено corpus, і перевірте редакцію, яка діяла на дату події.",
-        },
-      ],
-      legalEffect:
-        "Правовий наслідок Art. 24 залежить від повного source і доказів. Цей запис не підтверджує автоматичне право чи обов’язок cudzoziemca.",
-      foreignersCase:
-        "Прочитайте Art. 24 у source reader, додайте до справи підтверджені документи й дати та окремо позначте невирішені питання.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-25",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 25 у виданні ustawa-o-cudzoziemcach-2025-1079 є окремою одиницею поточного corpus. Цей draft спирається на локатор Art. 25 і не вигадує його зміст.",
-          sourceLocator: "Art. 25",
-        },
-      ],
-      summary:
-        "Art. 25 слід читати в польській редакції разом із контекстом, ust., pkt, відсиланнями та позначкою status; його предмет не відновлюється припущенням.",
-      rules: [
-        {
-          locator: "Art. 25",
-          explanation:
-            "Перевірте повний текст і встановіть expressis verbis правило, exception, adresat та skutek; окремо визначте потрібні докази.",
-        },
-        {
-          locator: "status przepisu",
-          explanation:
-            "Якщо Art. 25 має позначку uchylony/repealed, не застосовуйте його як чинний; для історичної справи перевірте przepisy przejściowe.",
-        },
-      ],
-      legalEffect:
-        "Art. 25 може мати лише той наслідок, який випливає з повного тексту та застосовної дати. Номер статті не є гарантією legal stay, wiza чи pozytywna decyzja.",
-      foreignersCase:
-        "Для конкретної справи зафіксуйте джерельний текст Art. 25, cel pobytu, документ, дати й докази; не змішуйте можливий skutek із правом на pracę.",
-    },
+      "Art. 13 визначає можливий обсяг даних у реєстрах, але не встановлює висновок про legalność pobytu, право на працю чи достовірність конкретного запису.",
+      "Порівняйте спірний запис із документом-джерелом і точним pkt Art. 13. Не робіть висновку про статус особи лише з наявності або відсутності одного поля в реєстрі.",
+    ),
+    blockedArticle(
+      "14",
+      "для точного навчального переказу потрібно окремо звірити повний текст статті та її правила про обробку або доступ до даних із пов’язаними положеннями поза цим локальним corpus",
+    ),
+    blockedArticle(
+      "15",
+      "потрібна окрема перевірка повного польського тексту, його адресатів і відсилань до реєстрів; без неї не можна безпечно описати умови та skutek",
+    ),
+    blockedArticle(
+      "16",
+      "потрібно звірити повний текст і всі відсилання до компетентних органів та реєстрів, перш ніж формулювати ефект для справи cudzoziemca",
+    ),
+    blockedArticle(
+      "17",
+      "потрібно звірити повний текст, часову застосовність і можливі przepisy przejściowe; без цього не можна назвати умови чи наслідок",
+    ),
+    blockedArticle(
+      "18",
+      "потрібна окрема перевірка повного тексту та зовнішніх актів, на які він посилається; неповний переказ створив би ризик вигаданих умов",
+    ),
+    blockedArticle(
+      "19",
+      "потрібно перевірити повний польський текст і статус на дату події; локатор сам по собі не підтверджує матеріальне правило",
+    ),
+    blockedArticle(
+      "20",
+      "потрібна звірка всіх ust. і pkt та пов’язаних правил, щоб не змішати процесуальний ефект статті з legal stay або prawo do pracy",
+    ),
+    blockedArticle(
+      "21",
+      "потрібно окремо перевірити адресата, компетенцію та часову дію норми; без повного джерела безпечно стверджувати лише наявність локатора",
+    ),
+    blockedArticle(
+      "22",
+      "потрібна окрема перевірка повного тексту, статусу та відсилань; редакційний переказ за номером був би непідтвердженим",
+    ),
+    blockedArticle(
+      "23",
+      "потрібно звірити всі ust. і pkt та зовнішні акти, щоб розрізнити прямо встановлене правило й практичний inference",
+    ),
+    blockedArticle(
+      "24",
+      "потрібно підтвердити повний текст, застосовну редакцію і кожну передумову; цей локальний запис не формулює результату справи",
+    ),
+    blockedArticle(
+      "25",
+      "потрібна окрема перевірка повного тексту і зв’язаних норм перед описом умов, документів або наслідків",
+    ),
   ],
 })
