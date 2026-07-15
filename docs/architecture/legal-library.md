@@ -224,7 +224,7 @@ const invalidDocumentEditionPair: LegalReference = {
 
 The two invalid declarations are intentionally non-compiling examples. If they are placed in a typechecked fixture, they must be annotated with `@ts-expect-error`; removing the annotations must make `tsc` fail. A plain union such as `documentId: LegalDocumentId; provisionId: AllProvisionIds` would incorrectly accept both pairs.
 
-The maintained official-source registry is hand-authored or generated from canonical source metadata and validated together with the law registry. `OfficialSourceLink` receives an `OfficialSourceReference`; the resolver supplies its URL and label. Truly ad hoc external URLs use a separately named escape hatch, are HTTPS-validated at runtime, and do not pretend to be registry-safe. Existing map-node, case-route, and document-catalog references keep their own generated literal unions and compose into the application-wide `LegalReference`.
+The maintained official-source registry is hand-authored or generated from canonical source metadata and validated together with the law registry. `OfficialSourceLink` receives an `OfficialSourceReference`; the resolver supplies its URL and label. Truly ad hoc external URLs use a separately named escape hatch, are HTTPS-validated at runtime, and do not pretend to be registry-safe. Existing map-node and case-route references compose into the application-wide `LegalReference`. Evidence documents use the distinct stable `EvidenceDocumentId` and `evidence-document` reference defined in [`document-library.md`](./document-library.md); title hashes and ambient prose matching are not public identity or navigation contracts.
 
 Legacy string article values remain only in a compatibility type and Adapter. New code uses `LegalReference`:
 
@@ -545,6 +545,10 @@ workLaw.text`Перевірте ${workLaw.articleRange("30", "39")}.`
 The tagged template stores text and typed targets as structured parts. The renderer does not parse article numbers and does not infer a target from the active route. A cross-document citation therefore requires the author for that other document. A range renders two links—its head and tail—without generating ten noisy links. Curriculum definition validates plain segments and fails closed on a bare numbered `Art.`, `§`, or `załącznik`; this prevents a new unlinked citation from silently reaching the learning UI.
 
 The deletion test explains the Module's Depth: deleting it would spread template parsing, range presentation, generated-ID typing, cross-act safety, and bare-citation validation back across every curriculum and renderer. Keeping those rules behind one Interface gives both Leverage and Locality.
+
+### 9.2 Evidence-document references
+
+Legal instruments and evidence documents are separate concepts. The Law library owns `LegalDocumentReference`; the Document library owns `EvidenceDocumentReference`. Both may appear in `LegalTextValue`, but each resolves through its own deep Module and canonical registry. See [`document-library.md`](./document-library.md) for identity, routes, typed authoring, compatibility, and migration rules.
 
 ## 10. Routes and learner experience
 
