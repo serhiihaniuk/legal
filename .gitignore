@@ -1,0 +1,19 @@
+.DS_Store
+.env*
+node_modules
+dist
+
+# Local agent and browser artifacts
+.omx
+.playwright-mcp
+.reference
+
+# Local visual verification captures
+kpa-content-*.png
+
+# React Router
+.react-router
+build
+
+# typescript
+*.tsbuildinfo
