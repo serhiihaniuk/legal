@@ -10,7 +10,7 @@ export const foreignersActPart10 = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-331",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -34,7 +34,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-332",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -63,7 +63,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-333",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -97,7 +97,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-334",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -131,11 +131,11 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-334a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 334a зобов’язує Komendant Główny Straży Granicznej не пізніше 5 днів видати postanowienie про pomoc w dobrowolnym powrocie або залишити wniosek без розгляду; на postanowienie zażalenie не належить.",
+          text: "Art. 334a зобов’язує Komendant Główny Straży Granicznej niezwłocznie, але не пізніше 5 днів від подання wniosek, видати postanowienie про udzielenie pomoc w dobrowolnym powrocie; на нього zażalenie не належить, а про postanowienie або залишення wniosku без rozpoznania треба повідомити Szefa Urzędu.",
           sourceLocator: "Art. 334a ust. 1–3",
         },
       ],
@@ -160,7 +160,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-335",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -194,7 +194,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-335a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -228,7 +228,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-336",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -262,7 +262,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-337",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -281,12 +281,12 @@ export const foreignersActPart10 = defineEditorialPart<
         {
           locator: "ust. 3–4",
           explanation:
-            "Podmiot powierzający pracę cudzoziemcowi або повірену функцію несе витрати у зв’язку з Art. 302 ust. 1 pkt 4; якщо таких суб’єктів кілька, вони відповідають solidarnie.",
+            "Podmiot powierzający pracę cudzoziemcowi або pełnienie określonej funkcji несе витрати у зв’язку з Art. 302 ust. 1 pkt 4; якщо таких суб’єктів кілька, вони відповідають solidarnie.",
         },
         {
           locator: "ust. 5–6",
           explanation:
-            "За названих умов витрати також можуть нести jednostka naukowa або organizator stażu, якщо рішення видано й виконано протягом 6 місяців після завершення відповідної угоди.",
+            "Jednostka naukowa або organizator stażu несе витрати, якщо decyzja була видана й виконана протягом 6 місяців після завершення відповідної угоди, а підставою було перебування без чинної візи (якщо потрібна) або іншого чинного документа, що дає право на wjazd і pobyt.",
         },
       ],
       legalEffect:
@@ -296,7 +296,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-338",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -310,12 +310,12 @@ export const foreignersActPart10 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1–4a",
           explanation:
-            "Закон називає витрати провадження, перебування в місці для затриманих, strzeżony ośrodek або areszt, медичне обстеження та медичну/психологічну опіку.",
+            "Закон називає витрати провадження, перебування в місці для затриманих, strzeżony ośrodek або areszt, медичне обстеження та медичну/психологічну опіку (pkt 1–4a). До складу також входять визначені види doprowadzenie, czynności з Art. 325 і доправлення до кордону або порту (pkt 5a–6).",
         },
         {
           locator: "ust. 1 pkt 5–6",
           explanation:
-            "Також охоплюються допомога іншої держави ЄС під час повітряного транзиту, визначені доставлення та доправлення до кордону чи порту.",
+            "Також охоплюються pomoc іншої держави ЄС під час tranzyt drogą powietrzną (pkt 5), doprowadzenie до названих місць або органів і czynności з Art. 325 (pkt 5a–5b), а також doprowadzenie до кордону чи порту (pkt 6).",
         },
         {
           locator: "ust. 2",
@@ -330,7 +330,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-339",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -359,7 +359,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-340",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -383,7 +383,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-341",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -412,7 +412,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-342",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -446,7 +446,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-343",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -470,7 +470,7 @@ export const foreignersActPart10 = defineEditorialPart<
         {
           locator: "ust. 6–7",
           explanation:
-            "Залишається не менше 600 zł на кожного члена сім’ї в ośrodek або areszt; за продовження перебування суму можна збільшити на 100 zł за кожен додатковий місяць, якщо це виправдано потребами.",
+            "Залишається не менше 600 zł на кожного члена сім’ї, розміщеного в ośrodek або areszt; за продовження перебування цю суму можна збільшити на 100 zł за кожен додатковий місяць, якщо це виправдано поточними потребами.",
         },
       ],
       legalEffect:
@@ -480,7 +480,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-344",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -509,7 +509,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-345",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -538,7 +538,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-346",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -562,7 +562,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -591,7 +591,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -615,7 +615,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -639,7 +639,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347c",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -653,7 +653,7 @@ export const foreignersActPart10 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1–4",
           explanation:
-            "Оновлення робиться після odwołanie від рішення, що не підлягає негайному виконанню, після рішення другої інстанції та після продовження terminu dobrowolnego wyjazdu.",
+            "Оновлення робиться після wniesienia odwołanie від рішення, що не підлягає негайному виконанню (pkt 1), рішення другої інстанції про залишення рішення в силі (pkt 2), а також після продовження terminu dobrowolnego wyjazdu першою або другою інстанцією (pkt 3–4).",
         },
         {
           locator: "ust. 1 pkt 5–7",
@@ -663,7 +663,7 @@ export const foreignersActPart10 = defineEditorialPart<
         {
           locator: "ust. 2–3",
           explanation:
-            "Правило про wstrzymanie діє також після втрати ним чинності; правило про Art. 330 застосовується, коли рішення залишено в силі, але воно не виконується.",
+            "Правило про wstrzymanie діє також після скасування судового postanowienie або втрати wstrzymanie чинності; правило про Art. 330 застосовується, коли decyzja залишена в силі, але не підлягає виконанню на підставі Art. 330 ust. 1.",
         },
       ],
       legalEffect:
@@ -673,7 +673,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347d",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -702,7 +702,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347e",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -731,7 +731,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347f",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -755,7 +755,7 @@ export const foreignersActPart10 = defineEditorialPart<
         {
           locator: "ust. 3",
           explanation:
-            "Дані видаляються у визначених випадках, зокрема коли інша держава видає або зберігає документ, не відкликає його, або особа набула громадянство держави ЄС, EFTA/ЄЕП чи Швейцарії.",
+            "Дані видаляються у визначених випадках: коли інша держава видає, має намір видати або продовжити документ чи візу, коли після консультацій повідомлено, що документ або віза не будуть відкликані, або коли особа набула громадянство держави ЄС, EFTA–ЄЕП чи Швейцарії.",
         },
       ],
       legalEffect:
@@ -765,7 +765,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347g",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -794,7 +794,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-348",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -828,7 +828,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-349",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -862,7 +862,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-350",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -896,7 +896,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-351",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -930,7 +930,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-352",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -954,7 +954,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-353",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -963,7 +963,7 @@ export const foreignersActPart10 = defineEditorialPart<
         },
       ],
       summary:
-        "Tolerowany pobyt може бути відкликаний, якщо зникає його підстава, іноземець залишає Польщу, виникає загроза або не виконує покладені обов’язки.",
+        "Tolerowany pobyt може бути відкликаний, якщо зникає його підстава, іноземець залишає Польщу, виникає загроза або він ухиляється від покладених обов’язків.",
       rules: [
         {
           locator: "pkt 1–2",
@@ -988,7 +988,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-354",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1017,7 +1017,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-355",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1046,7 +1046,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-356",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1080,7 +1080,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-357",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1114,7 +1114,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-358",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1138,7 +1138,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-359",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1172,7 +1172,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-359a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1201,7 +1201,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-359b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1235,7 +1235,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-359c",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1264,7 +1264,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-360",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1288,7 +1288,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-361",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1317,7 +1317,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-362",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1341,7 +1341,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-363",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1365,7 +1365,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-364",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1394,7 +1394,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-365",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1423,7 +1423,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-366",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1452,7 +1452,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-367",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1481,7 +1481,7 @@ export const foreignersActPart10 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-368",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
