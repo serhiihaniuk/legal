@@ -1,7 +1,7 @@
 import test from "node:test"
 import assert from "node:assert/strict"
 
-import { buildStructure, projectArticles } from "../lib/artifacts.mjs"
+import { buildManifest, buildStructure, projectArticles } from "../lib/artifacts.mjs"
 import { ConfigValidationError, validateConfig } from "../lib/config.mjs"
 import {
   createProvisionId,
@@ -86,6 +86,65 @@ test("validates the schema-v2 config and rejects guessed or non-HTTPS sources", 
     () => validateConfig({ ...baseConfig, documentId: undefined }),
     ConfigValidationError
   )
+})
+
+const completeEvidence = {
+  status: "obowiązujący",
+  inForce: "IN_FORCE",
+  legalStateDate: "2026-07-15",
+  consolidatedTextIdentifier: "DU/2025/1691",
+  checkedAt: "2026-07-15",
+  sourceUrls: ["https://eli.gov.pl/eli/DU/2025/1691/ogl"],
+  amendmentsCheckedThrough: "2026-07-15",
+  entryIntoForce: [{ locator: "ELI official page", result: "entered into force" }],
+  transitionalRules: [{ locator: "final provisions", result: "express result recorded" }],
+  unresolved: [],
+}
+
+test("strictly validates complete manual evidence and rejects missing or HTTP sources", () => {
+  assert.deepEqual(validateConfig({ ...baseConfig, legalStatusEvidence: completeEvidence }).legalStatusEvidence, completeEvidence)
+  assert.throws(
+    () => validateConfig({ ...baseConfig, legalStatusEvidence: { ...completeEvidence, transitionalRules: [] } }),
+    ConfigValidationError
+  )
+  assert.throws(
+    () => validateConfig({ ...baseConfig, legalStatusEvidence: { ...completeEvidence, sourceUrls: ["http://eli.gov.pl/source"] } }),
+    ConfigValidationError
+  )
+})
+
+test("merges complete manual evidence without retaining a false metadata warning", () => {
+  const manifest = buildManifest({
+    config: { ...baseConfig, legalStatusEvidence: completeEvidence },
+    metadata: {
+      ELI: "DU/2025/1691",
+      status: "obowiązujący",
+      inForce: "IN_FORCE",
+      legalStatusDate: undefined,
+      textPDF: true,
+    },
+    pdfSha256: "a".repeat(64),
+    observed: { provisionCount: 0, pageCount: 0, textCoverage: 0, textLayerPageCount: 0, articleCount: 0, promotedProvisionCount: 0, promotedPageCount: 0 },
+    diagnostics: { fatal: [], warnings: [] },
+    builtAt: "2026-07-15T00:00:00Z",
+  })
+  assert.equal(manifest.legalStatusEvidence.legalStateDate, "2026-07-15")
+  assert.deepEqual(manifest.legalStatusEvidence.unresolved, [])
+  assert.deepEqual(manifest.legalStatusEvidence.entryIntoForce, completeEvidence.entryIntoForce)
+})
+
+test("rejects manual legal-status evidence that contradicts ELI status", () => {
+  const diagnostics = validateOfficialIdentity(
+    { ...baseConfig, legalStatusEvidence: completeEvidence },
+    {
+      ELI: "DU/2025/1691",
+      displayAddress: baseConfig.citation,
+      status: "uchylony",
+      inForce: "NOT_IN_FORCE",
+    },
+    new Uint8Array(new TextEncoder().encode("%PDF-test"))
+  )
+  assert.ok(diagnostics.some(({ code, severity }) => code === "source.legal-status-evidence-contradiction" && severity === "fatal"))
 })
 
 test("allows ingestion when ELI omits legalStatusDate but records a warning", () => {

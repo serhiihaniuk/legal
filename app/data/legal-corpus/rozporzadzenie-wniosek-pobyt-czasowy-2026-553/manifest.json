@@ -18,8 +18,8 @@
   "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/553/ogl",
   "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
   "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
-  "checkedAt": "2026-07-14",
-  "legalStateDate": "2026-07-14",
+  "checkedAt": "2026-07-15",
+  "legalStateDate": "2026-07-15",
   "extraction": {
     "profile": "polish-regulation-paragraph-v1",
     "expectedProvisionCount": 20,
@@ -41,21 +41,41 @@
   "promotedProvisionCount": 20,
   "pdfSha256": "56ad73becd064acea037fdd001767e688f991a6c088578b2da29a65c52ddc57e",
   "sourcePdfSha256": "56ad73becd064acea037fdd001767e688f991a6c088578b2da29a65c52ddc57e",
-  "builtAt": "2026-07-15T12:47:14Z",
+  "builtAt": "2026-07-15T14:19:54Z",
   "legalStatusEvidence": {
     "status": "obowiązujący",
     "inForce": "IN_FORCE",
-    "legalStatusDate": null,
+    "legalStateDate": "2026-07-15",
     "consolidatedTextIdentifier": "DU/2026/553",
-    "checkedAt": "2026-07-14",
-    "sourceUrl": "https://eli.gov.pl/eli/DU/2026/553/ogl",
-    "unresolved": [
-      "metadata.legalStatusDate"
-    ]
+    "checkedAt": "2026-07-15",
+    "sourceUrls": [
+      "https://eli.gov.pl/eli/DU/2026/553/ogl",
+      "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf"
+    ],
+    "amendmentsCheckedThrough": "2026-07-15",
+    "amendmentReview": {
+      "locator": "ELI official page",
+      "result": "No later amendment is listed on the official ELI page as checked through 2026-07-15."
+    },
+    "entryIntoForce": [
+      {
+        "locator": "ELI official page",
+        "result": "The act is marked obowiązujący, was announced on 2026-04-22, and entered into force on 2026-04-27."
+      }
+    ],
+    "transitionalRules": [
+      {
+        "locator": "Final provisions of the act",
+        "result": "The act expressly states its entry into force on 2026-04-27; no additional transitional rule is inferred."
+      }
+    ],
+    "unresolved": [],
+    "legalStatusDate": null,
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2026/553/ogl"
   },
   "diagnostics": {
     "fatalCount": 0,
-    "warningCount": 1
+    "warningCount": 0
   },
   "eli": {
     "identifier": "DU/2026/553",

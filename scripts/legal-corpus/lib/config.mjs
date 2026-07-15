@@ -92,6 +92,128 @@ function validateId(value, field, diagnostics) {
   }
 }
 
+function validateEvidenceEntries(value, field, diagnostics) {
+  if (!Array.isArray(value) || value.length === 0) {
+    diagnostics.push({
+      severity: "fatal",
+      code: "config.invalid-legal-status-evidence",
+      path: field,
+      message: `${field} must contain at least one explicit result`,
+    })
+    return
+  }
+
+  value.forEach((entry, index) => {
+    const entryField = `${field}[${index}]`
+    if (!isPlainObject(entry)) {
+      diagnostics.push({
+        severity: "fatal",
+        code: "config.invalid-legal-status-evidence",
+        path: entryField,
+        message: `${entryField} must be an object`,
+      })
+      return
+    }
+    requireString(entry.locator, `${entryField}.locator`, diagnostics)
+    requireString(entry.result, `${entryField}.result`, diagnostics)
+    for (const urlField of ["sourceUrl", "url"]) {
+      if (entry[urlField] !== undefined) {
+        validateHttpsUrl(entry[urlField], `${entryField}.${urlField}`, diagnostics)
+      }
+    }
+    if (entry.sourceUrls !== undefined) {
+      if (!Array.isArray(entry.sourceUrls) || entry.sourceUrls.length === 0) {
+        diagnostics.push({
+          severity: "fatal",
+          code: "config.invalid-legal-status-evidence",
+          path: `${entryField}.sourceUrls`,
+          message: `${entryField}.sourceUrls must contain HTTPS URLs`,
+        })
+      } else {
+        entry.sourceUrls.forEach((url, urlIndex) =>
+          validateHttpsUrl(url, `${entryField}.sourceUrls[${urlIndex}]`, diagnostics)
+        )
+      }
+    }
+  })
+}
+
+/**
+ * Validate the optional manual legal-state evidence attached to a schema-v2
+ * config or generated manifest. This is deliberately stricter than the ELI
+ * response: it is only a supplement for omitted metadata, never a replacement
+ * for contradictory official status facts.
+ */
+export function validateLegalStatusEvidence(evidence, field = "legalStatusEvidence") {
+  const diagnostics = []
+  if (!isPlainObject(evidence)) {
+    diagnostics.push({
+      severity: "fatal",
+      code: "config.invalid-legal-status-evidence",
+      path: field,
+      message: `${field} must be an object`,
+    })
+    return diagnostics
+  }
+
+  for (const name of ["status", "inForce", "legalStateDate", "checkedAt", "amendmentsCheckedThrough"]) {
+    const currentField = `${field}.${name}`
+    if (name.endsWith("Date") || name === "checkedAt" || name === "amendmentsCheckedThrough") {
+      validateDate(evidence[name], currentField, diagnostics)
+    } else {
+      requireString(evidence[name], currentField, diagnostics)
+    }
+  }
+
+  if (evidence.legalStatusDate !== undefined) {
+    validateDate(evidence.legalStatusDate, `${field}.legalStatusDate`, diagnostics)
+  }
+  if (evidence.consolidatedTextIdentifier !== undefined) {
+    requireString(evidence.consolidatedTextIdentifier, `${field}.consolidatedTextIdentifier`, diagnostics)
+  }
+
+  const sourceUrls = evidence.sourceUrls
+  if (sourceUrls !== undefined) {
+    if (!Array.isArray(sourceUrls) || sourceUrls.length === 0) {
+      diagnostics.push({
+        severity: "fatal",
+        code: "config.invalid-legal-status-evidence",
+        path: `${field}.sourceUrls`,
+        message: `${field}.sourceUrls must contain at least one HTTPS URL`,
+      })
+    } else {
+      sourceUrls.forEach((url, index) =>
+        validateHttpsUrl(url, `${field}.sourceUrls[${index}]`, diagnostics)
+      )
+    }
+  } else if (evidence.sourceUrl !== undefined) {
+    validateHttpsUrl(evidence.sourceUrl, `${field}.sourceUrl`, diagnostics)
+  } else {
+    diagnostics.push({
+      severity: "fatal",
+      code: "config.missing-legal-status-evidence-source",
+      path: field,
+      message: `${field} requires official HTTPS source URL(s)`,
+    })
+  }
+
+  validateEvidenceEntries(evidence.entryIntoForce, `${field}.entryIntoForce`, diagnostics)
+  validateEvidenceEntries(evidence.transitionalRules, `${field}.transitionalRules`, diagnostics)
+  if (!Array.isArray(evidence.unresolved) || evidence.unresolved.length > 0) {
+    diagnostics.push({
+      severity: "fatal",
+      code: "config.unresolved-legal-status-evidence",
+      path: `${field}.unresolved`,
+      message: `${field}.unresolved must be an empty array`,
+    })
+  }
+  return diagnostics
+}
+
+export function isCompleteLegalStatusEvidence(evidence) {
+  return validateLegalStatusEvidence(evidence).length === 0
+}
+
 /**
  * Validate and return a schema-v2 edition configuration.
  *
@@ -128,6 +250,9 @@ export function validateConfig(config) {
   }
   validateDate(config.checkedAt, "checkedAt", diagnostics)
   validateDate(config.legalStateDate, "legalStateDate", diagnostics)
+  if (config.legalStatusEvidence !== undefined) {
+    diagnostics.push(...validateLegalStatusEvidence(config.legalStatusEvidence))
+  }
 
   if (!isPlainObject(config.source)) {
     diagnostics.push({

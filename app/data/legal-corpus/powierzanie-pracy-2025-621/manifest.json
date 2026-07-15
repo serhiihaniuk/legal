@@ -18,8 +18,8 @@
   "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
   "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
   "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
-  "checkedAt": "2026-07-14",
-  "legalStateDate": "2026-07-14",
+  "checkedAt": "2026-07-15",
+  "legalStateDate": "2026-07-15",
   "extraction": {
     "profile": "polish-statute-art-v1",
     "expectedProvisionCount": 114,
@@ -41,21 +41,56 @@
   "promotedProvisionCount": 114,
   "pdfSha256": "e1efecc8382f88f4b2ef9287be551e10d4f2aa837241f871d289e636dd01c797",
   "sourcePdfSha256": "e1efecc8382f88f4b2ef9287be551e10d4f2aa837241f871d289e636dd01c797",
-  "builtAt": "2026-07-15T12:42:26Z",
+  "builtAt": "2026-07-15T14:19:44Z",
   "legalStatusEvidence": {
     "status": "obowiązujący",
     "inForce": "IN_FORCE",
-    "legalStatusDate": null,
+    "legalStateDate": "2026-07-15",
     "consolidatedTextIdentifier": "DU/2025/621",
-    "checkedAt": "2026-07-14",
-    "sourceUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
-    "unresolved": [
-      "metadata.legalStatusDate"
-    ]
+    "checkedAt": "2026-07-15",
+    "sourceUrls": [
+      "https://eli.gov.pl/eli/DU/2025/621/ogl",
+      "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
+      "https://eli.gov.pl/eli/DU/2026/473/ogl"
+    ],
+    "amendmentsCheckedThrough": "2026-07-15",
+    "amendments": [
+      {
+        "identifier": "DU/2025/1794",
+        "result": "incorporated in the current unified text"
+      },
+      {
+        "identifier": "DU/2026/203",
+        "result": "incorporated in the current unified text"
+      },
+      {
+        "identifier": "DU/2026/473",
+        "result": "Art. 33 ust. 2 and Art. 69 affected from 2026-07-08"
+      },
+      {
+        "identifier": "DU/2026/734",
+        "result": "incorporated in the current unified text"
+      }
+    ],
+    "entryIntoForce": [
+      {
+        "locator": "ELI official page",
+        "result": "The act is marked obowiązujący and entered into force on 2025-06-01."
+      }
+    ],
+    "transitionalRules": [
+      {
+        "locator": "ELI official page and current unified text",
+        "result": "The supplied official evidence records the entry-into-force date; no additional transitional conclusion is inferred."
+      }
+    ],
+    "unresolved": [],
+    "legalStatusDate": null,
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl"
   },
   "diagnostics": {
     "fatalCount": 0,
-    "warningCount": 1
+    "warningCount": 0
   },
   "eli": {
     "identifier": "DU/2025/621",

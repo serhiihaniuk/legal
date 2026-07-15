@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process"
+import { URL } from "node:url"
 import { lstat, mkdir, readFile, realpath, writeFile } from "node:fs/promises"
 import path from "node:path"
 
@@ -162,6 +163,12 @@ export async function runNode(projectRoot, script, args = []) {
 
 export function makeLegalStatusEvidence(manifest) {
   const sourceEvidence = manifest.legalStatusEvidence ?? {}
+  if (validateLegalStatusEvidence(sourceEvidence).length === 0) {
+    // A reviewed/generated packet is authoritative input for the next work
+    // order. Do not erase its structured findings while preparing it.
+    return structuredClone(sourceEvidence)
+  }
+
   const unresolved = new Set(sourceEvidence.unresolved ?? [])
   unresolved.add("amendmentsCheckedThrough")
   unresolved.add("entryIntoForce")
@@ -171,9 +178,13 @@ export function makeLegalStatusEvidence(manifest) {
     inForce: sourceEvidence.inForce ?? manifest.eli?.inForce ?? null,
     legalStatusDate:
       sourceEvidence.legalStatusDate ?? manifest.eli?.legalStatusDate ?? null,
+    legalStateDate: sourceEvidence.legalStateDate ?? manifest.legalStateDate ?? null,
     consolidatedTextIdentifier:
       sourceEvidence.consolidatedTextIdentifier ?? manifest.eli?.identifier ?? null,
     checkedAt: sourceEvidence.checkedAt ?? manifest.checkedAt,
+    sourceUrls:
+      sourceEvidence.sourceUrls ??
+      (sourceEvidence.sourceUrl ? [sourceEvidence.sourceUrl] : [manifest.officialPageUrl]),
     sourceUrl: sourceEvidence.sourceUrl ?? manifest.officialPageUrl,
     amendmentsCheckedThrough: null,
     entryIntoForce: [],
@@ -359,21 +370,42 @@ export function validateChangedFileSet(changedPaths, allowedPaths) {
 
 export function validateLegalStatusEvidence(evidence) {
   const errors = []
-  for (const field of [
-    "status",
-    "inForce",
-    "consolidatedTextIdentifier",
-    "checkedAt",
-    "sourceUrl",
-    "amendmentsCheckedThrough",
-  ]) {
+  for (const field of ["status", "inForce", "checkedAt", "amendmentsCheckedThrough"]) {
     if (typeof evidence?.[field] !== "string" || !evidence[field].trim()) {
       errors.push(`legalStatusEvidence.${field} is required`)
     }
   }
-  if (!/^https:\/\//u.test(evidence?.sourceUrl ?? "")) {
-    errors.push("legalStatusEvidence.sourceUrl must be HTTPS")
+  if (
+    evidence?.legalStateDate !== undefined &&
+    (typeof evidence.legalStateDate !== "string" || !evidence.legalStateDate.trim())
+  ) {
+    errors.push("legalStatusEvidence.legalStateDate is required when present")
   }
+  if (
+    evidence?.legalStatusDate !== undefined &&
+    evidence.legalStatusDate !== null &&
+    (typeof evidence.legalStatusDate !== "string" || !evidence.legalStatusDate.trim())
+  ) {
+    errors.push("legalStatusEvidence.legalStatusDate must be a non-empty string when present")
+  }
+  if (typeof evidence?.consolidatedTextIdentifier !== "string" || !evidence.consolidatedTextIdentifier.trim()) {
+    errors.push("legalStatusEvidence.consolidatedTextIdentifier is required")
+  }
+
+  const sourceUrls = evidence?.sourceUrls ?? (evidence?.sourceUrl ? [evidence.sourceUrl] : [])
+  if (!Array.isArray(sourceUrls) || sourceUrls.length === 0) {
+    errors.push("legalStatusEvidence.sourceUrls requires an explicit official URL")
+  } else {
+    sourceUrls.forEach((value) => {
+      try {
+        const parsed = new URL(value)
+        if (parsed.protocol !== "https:" || !parsed.hostname) throw new Error("not HTTPS")
+      } catch {
+        errors.push("legalStatusEvidence source URLs must be absolute HTTPS URLs")
+      }
+    })
+  }
+
   for (const field of ["entryIntoForce", "transitionalRules"]) {
     const entries = evidence?.[field]
     if (!Array.isArray(entries) || entries.length === 0) {

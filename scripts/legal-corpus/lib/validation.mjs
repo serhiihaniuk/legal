@@ -1,5 +1,6 @@
 import { URL } from "node:url"
 
+import { isCompleteLegalStatusEvidence } from "./config.mjs"
 import { createProvisionId, sha256 } from "./extraction.mjs"
 
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
@@ -152,11 +153,28 @@ export function validateOfficialIdentity(config, metadata, pdfBytes) {
           )
         )
       }
+      const manualValue = config.legalStatusEvidence?.[field]
+      if (
+        typeof manualValue === "string" &&
+        typeof metadata[field] === "string" &&
+        manualValue !== metadata[field]
+      ) {
+        diagnostics.push(
+          diagnostic(
+            "fatal",
+            "source.legal-status-evidence-contradiction",
+            `Manual legal-status evidence contradicts official metadata ${field}`,
+            `legalStatusEvidence.${field}`,
+            { manual: manualValue, official: metadata[field] }
+          )
+        )
+      }
     }
 
     if (
-      typeof metadata.legalStatusDate !== "string" ||
-      metadata.legalStatusDate.trim() === ""
+      (typeof metadata.legalStatusDate !== "string" ||
+        metadata.legalStatusDate.trim() === "") &&
+      !isCompleteLegalStatusEvidence(config.legalStatusEvidence)
     ) {
       diagnostics.push(
         diagnostic(

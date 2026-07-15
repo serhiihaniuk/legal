@@ -6,6 +6,7 @@ import path from "node:path"
 
 import {
   diffProvisionLists,
+  makeLegalStatusEvidence,
   normalizeRepositoryPath,
   validateApprovedWriteScope,
   validateChangedFileSet,
@@ -103,5 +104,28 @@ test("requires complete structured legal-status evidence", () => {
   assert.ok(
     validateLegalStatusEvidence({ ...complete, unresolved: ["transition"] })
       .length > 0
+  )
+})
+
+test("preserves complete manifest legal-status evidence for the next work order", () => {
+  const complete = {
+    status: "obowiązujący",
+    inForce: "IN_FORCE",
+    legalStateDate: "2026-07-15",
+    consolidatedTextIdentifier: "DU/2026/553",
+    checkedAt: "2026-07-15",
+    sourceUrls: ["https://eli.gov.pl/eli/DU/2026/553/ogl"],
+    amendmentsCheckedThrough: "2026-07-15",
+    entryIntoForce: [{ locator: "ELI official page", result: "entered into force" }],
+    transitionalRules: [{ locator: "final provisions", result: "express result recorded" }],
+    unresolved: [],
+    amendmentReview: { result: "none listed" },
+  }
+  assert.deepEqual(
+    makeLegalStatusEvidence({ legalStatusEvidence: complete }),
+    complete
+  )
+  assert.ok(
+    validateLegalStatusEvidence({ ...complete, sourceUrls: ["http://eli.gov.pl"] }).length > 0
   )
 })

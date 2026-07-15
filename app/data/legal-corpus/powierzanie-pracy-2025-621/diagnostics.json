@@ -17,21 +17,7 @@
     "promotedProvisionCount": 114,
     "promotedPageCount": 52
   },
-  "entries": [
-    {
-      "severity": "warning",
-      "code": "source.missing-legal-status-date",
-      "message": "Official metadata does not expose legalStatusDate; ingestion may continue but promotion requires separate legal-state evidence",
-      "path": "metadata.legalStatusDate"
-    }
-  ],
+  "entries": [],
   "fatal": [],
-  "warnings": [
-    {
-      "severity": "warning",
-      "code": "source.missing-legal-status-date",
-      "message": "Official metadata does not expose legalStatusDate; ingestion may continue but promotion requires separate legal-state evidence",
-      "path": "metadata.legalStatusDate"
-    }
-  ]
+  "warnings": []
 }

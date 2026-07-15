@@ -1,3 +1,5 @@
+import { isCompleteLegalStatusEvidence } from "./config.mjs"
+
 export function buildStructure(provisions, { schemaVersion, documentId, editionId, profile } = {}) {
   const ordered = [...provisions].sort((left, right) => {
     const orderDifference = left.order - right.order
@@ -93,6 +95,8 @@ export function buildManifest({
   builtAt,
 }) {
   const source = { ...config.source }
+  const manualEvidence = config.legalStatusEvidence ?? {}
+  const completeManualEvidence = isCompleteLegalStatusEvidence(manualEvidence)
   const eli = {
     identifier: metadata.ELI,
     status: metadata.status,
@@ -100,6 +104,32 @@ export function buildManifest({
     legalStatusDate: metadata.legalStatusDate ?? null,
     textHTML: Boolean(metadata.textHTML),
     textPDF: Boolean(metadata.textPDF),
+  }
+  const unresolved = new Set(manualEvidence.unresolved ?? [])
+  if (!completeManualEvidence && !metadata.legalStatusDate) {
+    unresolved.add("metadata.legalStatusDate")
+  }
+  const legalStatusEvidence = {
+    ...manualEvidence,
+    // ELI status facts always win; validation separately rejects contradictions.
+    status: metadata.status ?? manualEvidence.status ?? null,
+    inForce: metadata.inForce ?? manualEvidence.inForce ?? null,
+    legalStatusDate: metadata.legalStatusDate ?? manualEvidence.legalStatusDate ?? null,
+    legalStateDate: manualEvidence.legalStateDate ?? config.legalStateDate ?? null,
+    consolidatedTextIdentifier:
+      manualEvidence.consolidatedTextIdentifier ?? metadata.ELI ?? null,
+    checkedAt: manualEvidence.checkedAt ?? config.checkedAt,
+    sourceUrls:
+      manualEvidence.sourceUrls ??
+      (manualEvidence.sourceUrl ? [manualEvidence.sourceUrl] : [source.officialPageUrl]),
+    sourceUrl:
+      manualEvidence.sourceUrl ??
+      manualEvidence.sourceUrls?.[0] ??
+      source.officialPageUrl,
+    amendmentsCheckedThrough: manualEvidence.amendmentsCheckedThrough ?? null,
+    entryIntoForce: manualEvidence.entryIntoForce ?? [],
+    transitionalRules: manualEvidence.transitionalRules ?? [],
+    unresolved: completeManualEvidence ? [] : [...unresolved].sort(),
   }
   const extraction = {
     ...config.extraction,
@@ -140,17 +170,7 @@ export function buildManifest({
     pdfSha256,
     sourcePdfSha256: pdfSha256,
     builtAt,
-    legalStatusEvidence: {
-      status: metadata.status,
-      inForce: metadata.inForce,
-      legalStatusDate: metadata.legalStatusDate ?? null,
-      consolidatedTextIdentifier: metadata.ELI,
-      checkedAt: config.checkedAt,
-      sourceUrl: source.officialPageUrl,
-      unresolved: metadata.legalStatusDate
-        ? []
-        : ["metadata.legalStatusDate"],
-    },
+    legalStatusEvidence,
     diagnostics: {
       fatalCount: diagnostics.fatal.length,
       warningCount: diagnostics.warnings.length,
