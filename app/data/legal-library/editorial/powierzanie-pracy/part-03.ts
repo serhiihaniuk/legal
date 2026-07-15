@@ -8,61 +8,91 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
   entries: [
     {
       provisionId: "powierzanie-pracy-art-101",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
           text: "Art. 101 pkt 1 замінює в art. 2 ust. 8 ustawy o pomocy obywatelom Ukrainy посилання на art. 87 ust. 1 pkt 6 старої ustawy o promocji zatrudnienia посиланням на art. 3 ust. 1 pkt 12 нової ustawy.",
-          sourceLocator: "Art. 101 pkt 1",
+          sourceLocator: "Art. 101 pkt 1; art. 2 ust. 8 ustawy o pomocy obywatelom Ukrainy",
         },
         {
           kind: "statute-text",
-          text: "За art. 101 pkt 2 lit. a–b podmiot powierzający pracę cudzoziemcowi повідомляє powiatowy urząd pracy протягом 7 днів від початку роботи громадянина України та повторює повідомлення протягом 7 днів після визначених змін: виду umowy, stanowiska або виду роботи, зменшення часу чи годин роботи, або зниження ставки.",
-          sourceLocator: "Art. 101 pkt 2 lit. a–b, art. 22 ust. 1 pkt 2 і ust. 2 ustawy o pomocy obywatelom Ukrainy",
+          text: "За art. 101 pkt 2 lit. a podmiot powierzający pracę cudzoziemcowi повідомляє właściwy powiatowy urząd pracy — за siedziba або місцем zamieszkania podmiotu — протягом 7 днів від початку роботи громадянина України.",
+          sourceLocator: "Art. 101 pkt 2 lit. a; art. 22 ust. 1 pkt 2 ustawy o pomocy obywatelom Ukrainy",
         },
         {
           kind: "statute-text",
-          text: "Art. 101 pkt 2 lit. b передбачає, що обов’язок повідомлення не стосується випадків з art. 3 ust. 1–3 і 5 ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom.",
-          sourceLocator: "Art. 101 pkt 2 lit. b, art. 22 ust. 3 ustawy o pomocy obywatelom Ukrainy",
+          text: "За art. 101 pkt 2 lit. b повторне powiadomienie подається протягом 7 днів після зміни виду umowy, stanowiska або виду роботи, зменшення wymiar czasu pracy чи кількості годин на тиждень або місяць, або зниження місячної чи погодинної ставки wynagrodzenia, зазначеної в powiadomieniu.",
+          sourceLocator: "Art. 101 pkt 2 lit. b; art. 22 ust. 2 pkt 1–4 ustawy o pomocy obywatelom Ukrainy",
+        },
+        {
+          kind: "statute-text",
+          text: "Art. 101 pkt 2 lit. b передбачає, що обов’язок powiadomienia з art. 22 ust. 1 pkt 2 не стосується випадків з art. 3 ust. 1–3 і 5 нової ustawy.",
+          sourceLocator: "Art. 101 pkt 2 lit. b; art. 22 ust. 3 ustawy o pomocy obywatelom Ukrainy",
+        },
+        {
+          kind: "statute-text",
+          text: "Art. 101 pkt 2 lit. c охоплює громадянина України, який почав працювати за art. 87 старої ustawy або art. 3 ust. 1–3 нової ustawy до видачі zezwolenia na pobyt czasowy i pracę та продовжує роботу для того самого podmiotu; тоді powiadomienie подається протягом 7 днів від передання інформації за ust. 6.",
+          sourceLocator: "Art. 101 pkt 2 lit. c; art. 22 ust. 5–6 ustawy o pomocy obywatelom Ukrainy",
+        },
+        {
+          kind: "statute-text",
+          text: "Art. 101 pkt 2 lit. d замінює в art. 22 ust. 6 назву podmiotu на podmiot powierzający pracę cudzoziemcowi; pkt 2 lit. e визначає систему для powiadomienia та перелік передаваних даних, а lit. g дозволяє minister właściwy do spraw pracy визначити співвідношення працівників-громадян України до всіх осіб, яким podmiot доручає роботу.",
+          sourceLocator: "Art. 101 pkt 2 lit. d–e, g; art. 22 ust. 6, 8–9 і 17 ustawy o pomocy obywatelom Ukrainy",
+        },
+        {
+          kind: "statute-text",
+          text: "За art. 101 pkt 2 lit. f, якщо podmiot не виконав умови powiadomienia з art. 22 ust. 1 pkt 2–5 і ust. 2, art. 84 ust. 2 нової ustawy не застосовується.",
+          sourceLocator: "Art. 101 pkt 2 lit. f; art. 22 ust. 14 ustawy o pomocy obywatelom Ukrainy",
         },
         {
           kind: "practical-inference",
-          text: "Повідомлення є окремою вимогою режиму для громадян України: воно не замінює перевірку legalnego pobytu та не є саме по собі дозволом на перебування.",
-          sourceLocator: "Art. 101 pkt 2 lit. a–b, pkt 2 lit. f",
+          text: "Powiadomienie є елементом спеціального режиму доступу до роботи громадянина України, але не є документом legalnego pobytu і не замінює окрему перевірку підстави перебування.",
+          sourceLocator: "Art. 101 pkt 2 lit. a–g; art. 22 ustawy o pomocy obywatelom Ukrainy",
         },
       ],
       summary:
-        "Стаття пристосовує спеціальні правила праці громадян України до нової ustawy. Вона визначає строк і зміст powiadomienia, окремі винятки та наслідок недотримання умов повідомлення.",
+        "Стаття пристосовує спеціальні правила роботи громадян України до нової ustawy: визначає właściwy urząd і строки powiadomienia, зміни та винятки, спеціальний випадок перед zezwoleniem na pobyt czasowy i pracę, систему і дані повідомлення, наслідок порушення та можливу квоту.",
       rules: [
         {
-          locator: "pkt 2 lit. a–b, art. 22 ust. 1 pkt 2 і ust. 2",
+          locator: "pkt 2 lit. a; art. 22 ust. 1 pkt 2",
           explanation:
-            "Podmiot powierzający pracę подає powiadomienie до właściwego powiatowego urzędu pracy протягом 7 днів від початку роботи. Окреме повідомлення потрібне протягом 7 днів після кожної названої несприятливої зміни умов.",
+            "Podmiot powierzający pracę подає powiadomienie до powiatowy urząd pracy właściwy за siedziba або місцем zamieszkania podmiotu протягом 7 днів від дня podjęcia роботи громадянином України.",
         },
         {
-          locator: "pkt 2 lit. b, art. 22 ust. 3",
+          locator: "pkt 2 lit. b; art. 22 ust. 2 pkt 1–4",
+          explanation:
+            "Повторне powiadomienie потрібне протягом 7 днів від зміни виду umowy, stanowiska або виду роботи, зменшення часу чи годин роботи або зниження місячної чи погодинної ставки, зазначеної в powiadomieniu.",
+        },
+        {
+          locator: "pkt 2 lit. b; art. 22 ust. 3",
           explanation:
             "Виняток охоплює випадки, названі в art. 3 ust. 1–3 і 5 нової ustawy. Спершу треба кваліфікувати конкретну підставу, а не припускати, що виняток стосується кожного працевлаштування громадянина України.",
         },
         {
-          locator: "pkt 2 lit. c, art. 22 ust. 5–6",
+          locator: "pkt 2 lit. c–d; art. 22 ust. 5–6",
           explanation:
-            "Якщо роботу почали до видачі zezwolenia na pobyt czasowy i pracę і продовжують для того самого podmiotu на умовах ust. 1, повiadomienie подається протягом 7 днів від передання інформації за ust. 6.",
+            "Якщо громадянин України почав працювати за старою або новою названою підставою до видачі zezwolenia na pobyt czasowy i pracę і продовжує роботу для того самого podmiotu, powiadomienie подається протягом 7 днів від передання інформації за ust. 6; lit. d лише узгоджує назву podmiotu в ust. 6.",
         },
         {
-          locator: "pkt 2 lit. e–f, art. 22 ust. 8–9 і ust. 14",
+          locator: "pkt 2 lit. e; art. 22 ust. 8–9",
           explanation:
-            "Повідомлення подається через визначену систему teleinformatyczny і містить дані podmiotu, громадянина, umowy, роботи, місця, винагороди та часу. Недотримання умов з ust. 1 pkt 2–5 і ust. 2 означає, що art. 84 ust. 2 нової ustawy не застосовується.",
+            "Powiadomienie подається через систему teleinformatyczny, визначену ust. 8, і містить дані podmiotu та громадянина, umowy, stanowiska або виду роботи, місця, ставки, часу чи годин, а також кількості осіб за вказаними в ust. 9 датами.",
+        },
+        {
+          locator: "pkt 2 lit. f–g; art. 22 ust. 14 і 17",
+          explanation:
+            "Невиконання умов з ust. 1 pkt 2–5 і ust. 2 означає, що art. 84 ust. 2 нової ustawy не застосовується. Окремо minister właściwy do spraw pracy може визначити співвідношення громадян України з усіма особами, яким podmiot доручає роботу.",
         },
       ],
       legalEffect:
         "Стаття змінює техніку й наслідки powiadomienia у спеціальному режимі праці громадян України. Вона не встановлює автоматичного права на pobyt і не замінює окремі правила доступу до роботи; висновок залежить від фактичної підстави та дотримання всіх умов.",
       foreignersCase:
-        "У справі перевірте дату початку роботи, podmiot, вид umowy, stanowisko, місце, ставку й час, а також кожну зміну та дату powiadomienia. Окремо перевірте документ і строк legalnego pobytu: виконання powiadomienia не доводить саме по собі право перебування.",
+        "У справі перевірте дату початку роботи, siedziba або місце zamieszkania podmiotu, właściwy powiatowy urząd pracy, вид umowy, stanowisko, місце, ставку й час, а також кожну зміну та дату powiadomienia. Окремо перевірте документ і строк legalnego pobytu: powiadomienie стосується доступу до роботи і не є документом перебування."
     },
     {
       provisionId: "powierzanie-pracy-art-102",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -96,7 +126,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-103",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -105,9 +135,9 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
         },
         {
           kind: "statute-text",
-          text: "Art. 103 ust. 2–3 поширює нові правила відповідно на zaświadczenia про wpis wniosku щодо pracy sezonowej та на oświadczenia o powierzeniu wykonywania pracy cudzoziemcowi, внесені до ewidencji за старою ustawy.",
-          sourceLocator: "Art. 103 ust. 2–3",
-        },
+          text: "Art. 103 ust. 2 встановлює для zaświadczenia про wpis wniosku щодо pracy sezonowej спеціальне застосування art. 50 ust. 1 нової ustawy, а ust. 3 підпорядковує oświadczenia, внесені до ewidencji за старою ustawy, приписам нової ustawy.",
+          sourceLocator: "Art. 103 ust. 2–3; art. 50 ust. 1",
+        }
         {
           kind: "practical-inference",
           text: "Перехід застосовується до названого документа або запису; з нього не випливає автоматичне продовження документа чи легалізація перебування.",
@@ -125,7 +155,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 2",
           explanation:
-            "Zaświadczenie про wpis wniosku щодо pracy sezonowej, видане за art. 88p ust. 1 pkt 2 старої ustawy, оцінюється за art. 50 нової ustawy.",
+            "До zaświadczenie про wpis wniosku щодо pracy sezonowej, виданого за art. 88p ust. 1 pkt 2 старої ustawy, застосовується art. 50 ust. 1 нової ustawy — саме в межах, прямо названих у art. 103 ust. 2."
         },
         {
           locator: "ust. 3",
@@ -134,13 +164,13 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
         },
       ],
       legalEffect:
-        "Стаття переводить названі чинні документи та записи під новий нормативний режим, але не відповідає сама по собі на питання про строк документа, legalny pobyt чи фактичне право на конкретну роботу.",
+        "Стаття переводить видані zezwolenia na pracę та внесені oświadczenia під нову ustawy, а для старого zaświadczenia встановлює спеціальне застосування art. 50 ust. 1. Вона сама не продовжує документ, не легалізує pobyt і не підтверджує фактичне право на конкретну роботу.",
       foreignersCase:
-        "Встановіть вид документа, дату його wydania або wpis до ewidencji та зазначені в ньому умови. Під час перевірки застосовуйте нову ustawy лише в межах art. 103, а статус перебування і можливість роботи перевіряйте окремо.",
+        "Встановіть вид документа, дату його wydania або wpis до ewidencji та зазначені в ньому умови. Для zaświadczenie застосовуйте саме art. 50 ust. 1, а для zezwolenie й oświadczenie — нову ustawy в межах art. 103; статус перебування і можливість конкретної роботи перевіряйте окремо."
     },
     {
       provisionId: "powierzanie-pracy-art-104",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -184,7 +214,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-105",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -218,7 +248,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-106",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -252,7 +282,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-107",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -286,7 +316,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-108",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -330,13 +360,13 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-109",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 109 ust. 1 дозволяє виконувати названі в ньому czynności, зокрема за art. 8, 18, 19, 33, 61, 67, 70 і rozdziałem 7, відповідно до dotychczasowe przepisy до dostosowania систем teleinformatycznych до нової ustawy.",
-          sourceLocator: "Art. 109 ust. 1",
-        },
+          text: "Art. 109 ust. 1 передбачає, що czynności з art. 8 ust. 2 і 4, art. 18 ust. 2, art. 19, art. 33 ust. 1, art. 61 ust. 1, art. 67 ust. 3, art. 70 ust. 1 та rozdziału 7 виконуються за dotychczasowe przepisy до адаптації систем teleinformatycznych до нової ustawy.",
+          sourceLocator: "Art. 109 ust. 1: art. 8 ust. 2 і 4, art. 18 ust. 2, art. 19, art. 33 ust. 1, art. 61 ust. 1, art. 67 ust. 3, art. 70 ust. 1, rozdział 7",
+        }
         {
           kind: "statute-text",
           text: "Art. 109 ust. 2–4 встановлює для перелічених органів строк dostosowania систем до 2 років від набрання чинності, не поширює цей строк на систему Krajowego Rejestru Karnego та вимагає повідомлення про впровадження щонайменше за 30 днів.",
@@ -352,9 +382,9 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
         "Стаття дає тимчасове правило для дій, які залежать від адаптації державних систем teleinformatycznych, і визначає організаційні строки та повідомлення.",
       rules: [
         {
-          locator: "ust. 1",
+          locator: "ust. 1: art. 8 ust. 2 і 4, art. 18 ust. 2, art. 19, art. 33 ust. 1, art. 61 ust. 1, art. 67 ust. 3, art. 70 ust. 1, rozdział 7",
           explanation:
-            "До технічної адаптації конкретні czynności виконуються за dotychczasowe przepisy. Перелік у статті є визначеним, тому його не слід розширювати за аналогією.",
+            "До технічної адаптації саме перелічені czynności виконуються за dotychczasowe przepisy. Перелік є визначеним і не повинен розширюватися за аналогією."
         },
         {
           locator: "ust. 2–3",
@@ -374,7 +404,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-110",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -408,7 +438,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-111",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -442,7 +472,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-112",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -466,7 +496,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "Art. 112",
           explanation:
-            "Udział або akcja мають бути objęte чи nabyte до набрання чинності. Доказом часу можуть бути лише документи, що підтверджують конкретну операцію; сам статус учасника без дати недостатній для висновку.",
+            "Udział або akcja мають бути objęte чи nabyte до набрання чинності. Для практичної перевірки дати потрібні корпоративні документи або дані реєстру, що підтверджують конкретну операцію; сам статус учасника без дати недостатній для висновку."
         },
       ],
       legalEffect:
@@ -476,7 +506,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-113",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -520,7 +550,7 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-114",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed"
       claims: [
         {
           kind: "statute-text",
