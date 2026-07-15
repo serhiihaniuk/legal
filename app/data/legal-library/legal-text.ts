@@ -72,9 +72,12 @@ function assertNoBareLegalCitations(value: unknown, path: string): void {
     )
     return
   }
-  Object.entries(value).forEach(([key, item]) =>
+  Object.entries(value).forEach(([key, item]) => {
+    if (key === "locator" || key === "sourceLocator" || key === "article") {
+      return
+    }
     assertNoBareLegalCitations(item, `${path}.${key}`)
-  )
+  })
 }
 
 export function defineLegalTextContent<const T>(

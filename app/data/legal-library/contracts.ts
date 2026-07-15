@@ -1,4 +1,5 @@
 import { legalReferenceRegistry } from "~/data/legal-corpus/reference-registry.generated"
+import type { LegalTextValue } from "~/data/legal-library/legal-text"
 
 export type LegalDocumentId = keyof typeof legalReferenceRegistry & string
 export type LegalEditionId<D extends LegalDocumentId> =
@@ -62,19 +63,10 @@ export type LegalCorpusManifest = {
 }
 
 export type LegalProvisionKind =
-  | "article"
-  | "paragraph"
-  | "section"
-  | "point"
-  | "annex"
-  | "other"
+  "article" | "paragraph" | "section" | "point" | "annex" | "other"
 
 export type LegalProvisionStatus =
-  | "active"
-  | "repealed"
-  | "reserved"
-  | "removed"
-  | "unknown"
+  "active" | "repealed" | "reserved" | "removed" | "unknown"
 
 export type CorpusProvision = {
   id: string
@@ -114,25 +106,19 @@ export type LegalEdition<D extends LegalDocumentId = LegalDocumentId> = {
   provisionIds: readonly LegalProvisionId<D>[]
 }
 
-export type LegalProvision<D extends LegalDocumentId = LegalDocumentId> = CorpusProvision & {
-  id: LegalProvisionId<D>
-  documentId: D
-  editionId: LegalEditionId<D>
-  canonicalPdfLocator: string
-}
+export type LegalProvision<D extends LegalDocumentId = LegalDocumentId> =
+  CorpusProvision & {
+    id: LegalProvisionId<D>
+    documentId: D
+    editionId: LegalEditionId<D>
+    canonicalPdfLocator: string
+  }
 
 export type ExplanationReviewStatus =
-  | "draft"
-  | "reviewed"
-  | "stale"
-  | "blocked"
-  | "superseded"
+  "draft" | "reviewed" | "stale" | "blocked" | "superseded"
 
 export type LegalClaimKind =
-  | "statute-text"
-  | "official-guidance"
-  | "case-law"
-  | "practical-inference"
+  "statute-text" | "official-guidance" | "case-law" | "practical-inference"
 
 export type LegalExplanation<D extends LegalDocumentId = LegalDocumentId> = {
   id: string
@@ -145,13 +131,13 @@ export type LegalExplanation<D extends LegalDocumentId = LegalDocumentId> = {
   language: "uk"
   claims: readonly {
     kind: LegalClaimKind
-    text: string
+    text: LegalTextValue
     sourceLocator?: string
   }[]
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
+  summary: LegalTextValue
+  rules: readonly { locator: string; explanation: LegalTextValue }[]
+  legalEffect: LegalTextValue
+  foreignersCase: LegalTextValue
 }
 
 export type ExplanationResolutionStatus =

@@ -61,7 +61,7 @@ export async function getKpaArticleExplanations(articles: readonly string[]) {
       return explanations
     })
   )
-  const explanationsByArticle = new Map(
+  const explanationsByArticle = new Map<string, KpaArticleExplanation>(
     loadedParts
       .flat()
       .filter((entry) => requested.has(entry.article))

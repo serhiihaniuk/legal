@@ -27,7 +27,7 @@ export type LegalLearningArticleGroup = {
 export type LegalLearningProvisionGuideItem = {
   id: string
   reference: string
-  title: string
+  title: LegalLearningText
   summary: LegalLearningText
   rules: readonly { locator: string; explanation: LegalLearningText }[]
   legalEffect: LegalLearningText
@@ -61,7 +61,7 @@ export type LegalLearningModuleView = {
     items: readonly LegalLearningProvisionGuideItem[]
   }
   caseExample: {
-    title: string
+    title: LegalLearningText
     facts: LegalLearningText
     analysis: LegalLearningText
     lesson: LegalLearningText

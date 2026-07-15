@@ -6,7 +6,9 @@ import {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
 } from "~/components/law-document-navigation"
+import { LegalLink } from "~/components/legal-link"
 import { LegalProvisionSelector } from "~/components/legal-provision-selector"
+import { LegalText } from "~/components/legal-reference-text"
 import { OfficialSourceLink } from "~/components/official-source"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
@@ -26,7 +28,9 @@ import {
   getPreviousProvision,
   getProvision,
   listProvisions,
+  parseLegalProvisionReference,
 } from "~/data/legal-library"
+import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import { officialSourceIdByLegalDocument } from "~/data/legal-library/official-sources"
 
 const toc = [
@@ -78,6 +82,25 @@ export default function LawProvisionRoute() {
   const provisions = listProvisions(document.id)
   const reviewedExplanation =
     explanation.status === "reviewed" ? explanation.explanation : undefined
+  const provisionReference = parseLegalProvisionReference({
+    kind: "legal-provision",
+    documentId: document.id,
+    provisionId: provision.id,
+  })
+  const previousReference = previous
+    ? parseLegalProvisionReference({
+        kind: "legal-provision",
+        documentId: document.id,
+        provisionId: previous.id,
+      })
+    : undefined
+  const nextReference = next
+    ? parseLegalProvisionReference({
+        kind: "legal-provision",
+        documentId: document.id,
+        provisionId: next.id,
+      })
+    : undefined
   const sourceLimitations =
     edition.manifest.legalStatusEvidence?.unresolved ?? []
 
@@ -147,7 +170,15 @@ export default function LawProvisionRoute() {
 
       <header id="legal-provision-overview" className="grid gap-3 pt-2">
         <div className="flex flex-wrap gap-2">
-          <Badge>{provision.locator}</Badge>
+          <Badge>
+            {provisionReference ? (
+              <LegalLink reference={provisionReference}>
+                {provision.locator}
+              </LegalLink>
+            ) : (
+              provision.locator
+            )}
+          </Badge>
           <Badge variant="outline">PDF s. {provision.startPdfPage}</Badge>
           {provision.status === "repealed" ? (
             <Badge variant="destructive">uchylony</Badge>
@@ -162,7 +193,14 @@ export default function LawProvisionRoute() {
           ) : null}
         </div>
         <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          {provision.locator} · {document.shortName}
+          {provisionReference ? (
+            <LegalLink reference={provisionReference}>
+              {provision.locator}
+            </LegalLink>
+          ) : (
+            provision.locator
+          )}{" "}
+          · {document.shortName}
         </h1>
         <p className="text-sm leading-6 text-muted-foreground">
           {document.title} · {edition.manifest.citation}
@@ -208,7 +246,7 @@ export default function LawProvisionRoute() {
           {reviewedExplanation ? (
             <>
               <p className="text-lg leading-8">
-                {reviewedExplanation.summary}
+                <LegalText text={reviewedExplanation.summary} />
               </p>
               {reviewedExplanation.rules.length > 0 ? (
                 <>
@@ -224,15 +262,23 @@ export default function LawProvisionRoute() {
                   >
                     {reviewedExplanation.rules.map((rule, index) => (
                       <div
-                        key={`${rule.locator}-${rule.explanation}`}
+                        key={`${rule.locator}-${legalTextPlainText(rule.explanation)}`}
                         className="grid gap-2 py-4 sm:grid-cols-[3rem_7rem_minmax(0,1fr)] sm:gap-5"
                       >
                         <span className="font-mono text-xs text-muted-foreground">
                           {String(index + 1).padStart(2, "0")}
                         </span>
-                        <strong className="text-sm">{rule.locator}</strong>
+                        <strong className="text-sm">
+                          {provisionReference ? (
+                            <LegalLink reference={provisionReference}>
+                              {rule.locator}
+                            </LegalLink>
+                          ) : (
+                            rule.locator
+                          )}
+                        </strong>
                         <p className="text-sm leading-6 text-muted-foreground">
-                          {rule.explanation}
+                          <LegalText text={rule.explanation} />
                         </p>
                       </div>
                     ))}
@@ -240,9 +286,13 @@ export default function LawProvisionRoute() {
                 </>
               ) : null}
               <h3>Правовий наслідок</h3>
-              <p>{reviewedExplanation.legalEffect}</p>
+              <p>
+                <LegalText text={reviewedExplanation.legalEffect} />
+              </p>
               <h3>Місце у справі іноземця</h3>
-              <p>{reviewedExplanation.foreignersCase}</p>
+              <p>
+                <LegalText text={reviewedExplanation.foreignersCase} />
+              </p>
             </>
           ) : (
             <blockquote>
@@ -267,7 +317,7 @@ export default function LawProvisionRoute() {
             >
               {reviewedExplanation.claims.map((claim, index) => (
                 <div
-                  key={`${claim.kind}-${claim.text}-${index}`}
+                  key={`${claim.kind}-${legalTextPlainText(claim.text)}-${index}`}
                   className="grid gap-2 py-4 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-5"
                 >
                   <div>
@@ -281,7 +331,7 @@ export default function LawProvisionRoute() {
                     ) : null}
                   </div>
                   <p className="text-sm leading-6 text-muted-foreground">
-                    {claim.text}
+                    <LegalText text={claim.text} />
                   </p>
                 </div>
               ))}
@@ -314,7 +364,15 @@ export default function LawProvisionRoute() {
             </div>
             <div>
               <dt>Locator</dt>
-              <dd lang="pl">{provision.locator}</dd>
+              <dd lang="pl">
+                {provisionReference ? (
+                  <LegalLink reference={provisionReference}>
+                    {provision.locator}
+                  </LegalLink>
+                ) : (
+                  provision.locator
+                )}
+              </dd>
             </div>
             <div>
               <dt>Тип</dt>
@@ -330,11 +388,27 @@ export default function LawProvisionRoute() {
             </div>
             <div>
               <dt>Попередня норма</dt>
-              <dd>{previous?.locator ?? "—"}</dd>
+              <dd>
+                {previous && previousReference ? (
+                  <LegalLink reference={previousReference}>
+                    {previous.locator}
+                  </LegalLink>
+                ) : (
+                  "—"
+                )}
+              </dd>
             </div>
             <div>
               <dt>Наступна норма</dt>
-              <dd>{next?.locator ?? "—"}</dd>
+              <dd>
+                {next && nextReference ? (
+                  <LegalLink reference={nextReference}>
+                    {next.locator}
+                  </LegalLink>
+                ) : (
+                  "—"
+                )}
+              </dd>
             </div>
           </dl>
         </section>

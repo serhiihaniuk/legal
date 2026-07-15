@@ -2,6 +2,7 @@ import { getKpaArticleExplanation } from "~/data/kpa-article-explanations"
 import { legalLibraryRegistry } from "~/data/legal-corpus/registry.generated"
 
 import { getEditorialExplanation } from "./editorial"
+import { legalTextPlainText } from "./legal-text"
 import type {
   CanonicalPdfLocator,
   CorpusProvision,
@@ -22,8 +23,21 @@ import type {
 const REVIEWED_KPA_EDITION = "kpa-2025-1691" as const
 const REVIEWED_LEGAL_STATE_DATE = "2026-07-14" as const
 const SHA256_PATTERN = /^[a-f0-9]{64}$/iu
-const PROVISION_KINDS = new Set(["article", "paragraph", "section", "point", "annex", "other"])
-const PROVISION_STATUSES = new Set(["active", "repealed", "reserved", "removed", "unknown"])
+const PROVISION_KINDS = new Set([
+  "article",
+  "paragraph",
+  "section",
+  "point",
+  "annex",
+  "other",
+])
+const PROVISION_STATUSES = new Set([
+  "active",
+  "repealed",
+  "reserved",
+  "removed",
+  "unknown",
+])
 
 type UnknownRecord = Record<string, unknown>
 
@@ -54,7 +68,9 @@ function getRawEditions(documentId: LegalDocumentId): readonly UnknownRecord[] {
 }
 
 function getRawEdition(documentId: LegalDocumentId, editionId: string) {
-  return getRawEditions(documentId).find((edition) => edition.editionId === editionId)
+  return getRawEditions(documentId).find(
+    (edition) => edition.editionId === editionId
+  )
 }
 
 function getRawProvisions(edition: UnknownRecord): readonly unknown[] {
@@ -87,8 +103,13 @@ function parseManifest(value: unknown): LegalCorpusManifest | undefined {
     !isString(value.source.officialPageUrl) ||
     !isString(value.source.metadataUrl) ||
     !isString(value.source.pdfUrl)
-  ) return undefined
-  if (value.id !== value.editionId || !SHA256_PATTERN.test(value.pdfSha256) || value.pdfSha256 !== value.sourcePdfSha256) {
+  )
+    return undefined
+  if (
+    value.id !== value.editionId ||
+    !SHA256_PATTERN.test(value.pdfSha256) ||
+    value.pdfSha256 !== value.sourcePdfSha256
+  ) {
     return undefined
   }
   // The generated registry is the trusted source of the JSON shape; this assertion
@@ -96,7 +117,11 @@ function parseManifest(value: unknown): LegalCorpusManifest | undefined {
   return value as LegalCorpusManifest
 }
 
-function parseProvision(value: unknown, documentId: string, editionId: string): CorpusProvision | undefined {
+function parseProvision(
+  value: unknown,
+  documentId: string,
+  editionId: string
+): CorpusProvision | undefined {
   if (!isRecord(value)) return undefined
   if (
     !isString(value.id) ||
@@ -114,7 +139,8 @@ function parseProvision(value: unknown, documentId: string, editionId: string): 
     !isString(value.sourcePdfSha256) ||
     !isString(value.sourceTextHash) ||
     !isString(value.text)
-  ) return undefined
+  )
+    return undefined
   if (
     value.documentId !== documentId ||
     value.editionId !== editionId ||
@@ -123,7 +149,8 @@ function parseProvision(value: unknown, documentId: string, editionId: string): 
     !SHA256_PATTERN.test(value.sourcePdfSha256) ||
     value.startPdfPage < 1 ||
     value.endPdfPage < value.startPdfPage
-  ) return undefined
+  )
+    return undefined
   return value as CorpusProvision
 }
 
@@ -131,15 +158,27 @@ function getCurrentEditionId(documentId: LegalDocumentId): string {
   return legalLibraryRegistry[documentId].currentEditionId
 }
 
-function makeEdition(documentId: LegalDocumentId, raw: UnknownRecord): LegalEdition<LegalDocumentId> | undefined {
+function makeEdition(
+  documentId: LegalDocumentId,
+  raw: UnknownRecord
+): LegalEdition<LegalDocumentId> | undefined {
   const editionId = raw.editionId
   if (!isString(editionId)) return undefined
   const manifest = parseManifest(raw.manifest)
-  if (!manifest || manifest.documentId !== documentId || manifest.editionId !== editionId) return undefined
+  if (
+    !manifest ||
+    manifest.documentId !== documentId ||
+    manifest.editionId !== editionId
+  )
+    return undefined
   const provisions = getRawProvisions(raw)
     .map((provision) => parseProvision(provision, documentId, editionId))
-    .filter((provision): provision is CorpusProvision => provision !== undefined)
-  const provisionIds = provisions.map((provision) => provision.id) as readonly LegalProvisionId<LegalDocumentId>[]
+    .filter(
+      (provision): provision is CorpusProvision => provision !== undefined
+    )
+  const provisionIds = provisions.map(
+    (provision) => provision.id
+  ) as readonly LegalProvisionId<LegalDocumentId>[]
   return {
     documentId,
     editionId: editionId as LegalEditionId<LegalDocumentId>,
@@ -158,7 +197,8 @@ function makeProvision(
   manifest: LegalCorpusManifest
 ): LegalProvision<LegalDocumentId> | undefined {
   const provision = parseProvision(raw, documentId, editionId)
-  if (!provision || provision.sourcePdfSha256 !== manifest.sourcePdfSha256) return undefined
+  if (!provision || provision.sourcePdfSha256 !== manifest.sourcePdfSha256)
+    return undefined
   const canonicalPdfLocator = buildCanonicalPdfLocator(manifest, provision)
   if (!canonicalPdfLocator) return undefined
   return {
@@ -167,13 +207,26 @@ function makeProvision(
   } as LegalProvision<LegalDocumentId>
 }
 
-function findProvisionInEdition(documentId: LegalDocumentId, editionId: string, provisionId: string) {
+function findProvisionInEdition(
+  documentId: LegalDocumentId,
+  editionId: string,
+  provisionId: string
+) {
   const rawEdition = getRawEdition(documentId, editionId)
   if (!rawEdition) return undefined
   const manifest = parseManifest(rawEdition.manifest)
-  if (!manifest || manifest.documentId !== documentId || manifest.editionId !== editionId) return undefined
-  const raw = getRawProvisions(rawEdition).find((provision) => isRecord(provision) && provision.id === provisionId)
-  return raw === undefined ? undefined : makeProvision(documentId, editionId, raw, manifest)
+  if (
+    !manifest ||
+    manifest.documentId !== documentId ||
+    manifest.editionId !== editionId
+  )
+    return undefined
+  const raw = getRawProvisions(rawEdition).find(
+    (provision) => isRecord(provision) && provision.id === provisionId
+  )
+  return raw === undefined
+    ? undefined
+    : makeProvision(documentId, editionId, raw, manifest)
 }
 
 function findProvisionOwner(provisionId: string): LegalDocumentId | undefined {
@@ -183,8 +236,13 @@ function findProvisionOwner(provisionId: string): LegalDocumentId | undefined {
   return undefined
 }
 
-function provisionExistsInDocument(documentId: LegalDocumentId, provisionId: string): boolean {
-  return listEditions(documentId).some((edition) => edition.provisionIds.includes(provisionId as never))
+function provisionExistsInDocument(
+  documentId: LegalDocumentId,
+  provisionId: string
+): boolean {
+  return listEditions(documentId).some((edition) =>
+    edition.provisionIds.includes(provisionId as never)
+  )
 }
 
 function requestedReference(
@@ -211,7 +269,9 @@ export function isLegalEditionId<D extends LegalDocumentId>(
   documentId: D,
   value: unknown
 ): value is LegalEditionId<D>
-export function isLegalEditionId(value: unknown): value is LegalEditionId<LegalDocumentId>
+export function isLegalEditionId(
+  value: unknown
+): value is LegalEditionId<LegalDocumentId>
 export function isLegalEditionId(
   documentIdOrValue: unknown,
   maybeValue?: unknown
@@ -219,66 +279,113 @@ export function isLegalEditionId(
   if (maybeValue === undefined) {
     const value = documentIdOrValue
     if (!isString(value)) return false
-    return listDocuments().some((document) => document.editionIds.includes(value as never))
+    return listDocuments().some((document) =>
+      document.editionIds.includes(value as never)
+    )
   }
   const document = getRawDocument(documentIdOrValue)
-  return Boolean(document && isString(maybeValue) && document.editionIds.includes(maybeValue as never))
+  return Boolean(
+    document &&
+    isString(maybeValue) &&
+    document.editionIds.includes(maybeValue as never)
+  )
 }
 
 export function isLegalProvisionId<D extends LegalDocumentId>(
   documentId: D,
   value: unknown
 ): value is LegalProvisionId<D>
-export function isLegalProvisionId(value: unknown): value is LegalProvisionId<LegalDocumentId>
+export function isLegalProvisionId(
+  value: unknown
+): value is LegalProvisionId<LegalDocumentId>
 export function isLegalProvisionId(
   documentIdOrValue: unknown,
   maybeValue?: unknown
 ): boolean {
   if (maybeValue === undefined) {
     const value = documentIdOrValue
-    return isString(value) && listDocuments().some((document) => document.provisionIds.includes(value as never))
+    return (
+      isString(value) &&
+      listDocuments().some((document) =>
+        document.provisionIds.includes(value as never)
+      )
+    )
   }
   const document = getRawDocument(documentIdOrValue)
-  return Boolean(document && isString(maybeValue) && document.provisionIds.includes(maybeValue as never))
+  return Boolean(
+    document &&
+    isString(maybeValue) &&
+    document.provisionIds.includes(maybeValue as never)
+  )
 }
 
-export function isLegalDocumentReference(value: unknown): value is LegalDocumentReference {
-  return isRecord(value) && value.kind === "legal-document" && isLegalDocumentId(value.documentId)
+export function isLegalDocumentReference(
+  value: unknown
+): value is LegalDocumentReference {
+  return (
+    isRecord(value) &&
+    value.kind === "legal-document" &&
+    isLegalDocumentId(value.documentId)
+  )
 }
 
-export function isLegalProvisionReference(value: unknown): value is LegalProvisionReference {
-  if (!isRecord(value) || value.kind !== "legal-provision" || !isLegalDocumentId(value.documentId)) return false
+export function isLegalProvisionReference(
+  value: unknown
+): value is LegalProvisionReference {
+  if (
+    !isRecord(value) ||
+    value.kind !== "legal-provision" ||
+    !isLegalDocumentId(value.documentId)
+  )
+    return false
   if (!isLegalProvisionId(value.documentId, value.provisionId)) return false
-  return value.editionId === undefined || isLegalEditionId(value.documentId, value.editionId)
+  return (
+    value.editionId === undefined ||
+    isLegalEditionId(value.documentId, value.editionId)
+  )
 }
 
-export function parseLegalDocumentReference(value: unknown): LegalDocumentReference | undefined {
+export function parseLegalDocumentReference(
+  value: unknown
+): LegalDocumentReference | undefined {
   return isLegalDocumentReference(value) ? value : undefined
 }
 
-export function parseLegalProvisionReference(value: unknown): LegalProvisionReference | undefined {
+export function parseLegalProvisionReference(
+  value: unknown
+): LegalProvisionReference | undefined {
   return isLegalProvisionReference(value) ? value : undefined
 }
 
-export function parseLegalReference(value: unknown): LegalDocumentReference | LegalProvisionReference | undefined {
-  if (isLegalDocumentReference(value) || isLegalProvisionReference(value)) return value
+export function parseLegalReference(
+  value: unknown
+): LegalDocumentReference | LegalProvisionReference | undefined {
+  if (isLegalDocumentReference(value) || isLegalProvisionReference(value))
+    return value
   return undefined
 }
 
 export function listDocuments(): LegalDocument[] {
-  return (Object.keys(legalLibraryRegistry) as LegalDocumentId[]).sort((a, b) => a.localeCompare(b)).map((documentId) => {
-    const raw = legalLibraryRegistry[documentId]
-    return {
-      id: documentId,
-      documentId,
-      shortName: raw.shortName,
-      title: raw.title,
-      citation: raw.citation,
-      editionIds: [...raw.editionIds] as readonly LegalEditionId<LegalDocumentId>[],
-      currentEditionId: raw.currentEditionId as LegalEditionId<LegalDocumentId>,
-      provisionIds: [...raw.provisionIds] as readonly LegalProvisionId<LegalDocumentId>[],
-    }
-  })
+  return (Object.keys(legalLibraryRegistry) as LegalDocumentId[])
+    .sort((a, b) => a.localeCompare(b))
+    .map((documentId) => {
+      const raw = legalLibraryRegistry[documentId]
+      return {
+        id: documentId,
+        documentId,
+        shortName: raw.shortName,
+        title: raw.title,
+        citation: raw.citation,
+        editionIds: [
+          ...raw.editionIds,
+        ] as readonly LegalEditionId<LegalDocumentId>[],
+        currentEditionId:
+          raw.currentEditionId as LegalEditionId<LegalDocumentId>,
+        provisionIds: [
+          ...raw.provisionIds,
+        ] as readonly LegalProvisionId<LegalDocumentId>[],
+      }
+    })
 }
 
 export function getDocument(documentId: unknown): LegalDocument | undefined {
@@ -290,26 +397,41 @@ export function listEditions(documentId: unknown): LegalEdition[] {
   if (!isLegalDocumentId(documentId)) return []
   return getRawEditions(documentId)
     .map((edition) => makeEdition(documentId, edition))
-    .filter((edition): edition is LegalEdition<LegalDocumentId> => edition !== undefined)
+    .filter(
+      (edition): edition is LegalEdition<LegalDocumentId> =>
+        edition !== undefined
+    )
 }
 
-export function getEdition(documentId: unknown, editionId: unknown): LegalEdition | undefined {
+export function getEdition(
+  documentId: unknown,
+  editionId: unknown
+): LegalEdition | undefined {
   if (!isLegalDocumentId(documentId) || !isString(editionId)) return undefined
   const raw = getRawEdition(documentId, editionId)
   return raw ? makeEdition(documentId, raw) : undefined
 }
 
-export function listProvisions(documentId: unknown, editionId?: unknown): LegalProvision[] {
+export function listProvisions(
+  documentId: unknown,
+  editionId?: unknown
+): LegalProvision[] {
   if (!isLegalDocumentId(documentId)) return []
-  const selectedEditionId = editionId === undefined ? getCurrentEditionId(documentId) : editionId
+  const selectedEditionId =
+    editionId === undefined ? getCurrentEditionId(documentId) : editionId
   if (!isString(selectedEditionId)) return []
   const rawEdition = getRawEdition(documentId, selectedEditionId)
   if (!rawEdition) return []
   const manifest = parseManifest(rawEdition.manifest)
   if (!manifest) return []
   return getRawProvisions(rawEdition)
-    .map((provision) => makeProvision(documentId, selectedEditionId, provision, manifest))
-    .filter((provision): provision is LegalProvision<LegalDocumentId> => provision !== undefined)
+    .map((provision) =>
+      makeProvision(documentId, selectedEditionId, provision, manifest)
+    )
+    .filter(
+      (provision): provision is LegalProvision<LegalDocumentId> =>
+        provision !== undefined
+    )
 }
 
 export function getProvision(
@@ -318,7 +440,8 @@ export function getProvision(
   editionId?: unknown
 ): LegalProvision | undefined {
   if (!isLegalDocumentId(documentId) || !isString(provisionId)) return undefined
-  const selectedEditionId = editionId === undefined ? getCurrentEditionId(documentId) : editionId
+  const selectedEditionId =
+    editionId === undefined ? getCurrentEditionId(documentId) : editionId
   if (!isString(selectedEditionId)) return undefined
   return findProvisionInEdition(documentId, selectedEditionId, provisionId)
 }
@@ -330,7 +453,9 @@ export function getPreviousProvision(
 ): LegalProvision | null | undefined {
   const provisions = listProvisions(documentId, editionId)
   if (!isString(provisionId)) return undefined
-  const index = provisions.findIndex((provision) => provision.id === provisionId)
+  const index = provisions.findIndex(
+    (provision) => provision.id === provisionId
+  )
   if (index < 0) return undefined
   return index === 0 ? null : provisions[index - 1]
 }
@@ -342,7 +467,9 @@ export function getNextProvision(
 ): LegalProvision | null | undefined {
   const provisions = listProvisions(documentId, editionId)
   if (!isString(provisionId)) return undefined
-  const index = provisions.findIndex((provision) => provision.id === provisionId)
+  const index = provisions.findIndex(
+    (provision) => provision.id === provisionId
+  )
   if (index < 0) return undefined
   return index === provisions.length - 1 ? null : provisions[index + 1]
 }
@@ -350,7 +477,10 @@ export function getNextProvision(
 export const getPrevious = getPreviousProvision
 export const getNext = getNextProvision
 
-function validPdfInput(manifest: LegalCorpusManifest, provision: CorpusProvision): boolean {
+function validPdfInput(
+  manifest: LegalCorpusManifest,
+  provision: CorpusProvision
+): boolean {
   return (
     isString(manifest.localPdfUrl) &&
     manifest.pageCount >= 1 &&
@@ -386,7 +516,8 @@ export function buildCanonicalPdfLocator(
   let provisionId: string | undefined
 
   if (third !== undefined) {
-    if (!isLegalDocumentId(first) || !isString(second) || !isString(third)) return undefined
+    if (!isLegalDocumentId(first) || !isString(second) || !isString(third))
+      return undefined
     const rawEdition = getRawEdition(first, second)
     if (!rawEdition) return undefined
     manifest = parseManifest(rawEdition.manifest)
@@ -397,13 +528,25 @@ export function buildCanonicalPdfLocator(
   } else {
     if (!isRecord(first) || !isRecord(second)) return undefined
     manifest = parseManifest(first)
-    provision = parseProvision(second, manifest?.documentId ?? "", manifest?.editionId ?? "")
+    provision = parseProvision(
+      second,
+      manifest?.documentId ?? "",
+      manifest?.editionId ?? ""
+    )
     documentId = manifest?.documentId
     editionId = manifest?.editionId
     provisionId = provision?.id
   }
 
-  if (!manifest || !provision || !documentId || !editionId || !provisionId || !validPdfInput(manifest, provision)) return undefined
+  if (
+    !manifest ||
+    !provision ||
+    !documentId ||
+    !editionId ||
+    !provisionId ||
+    !validPdfInput(manifest, provision)
+  )
+    return undefined
   return {
     href: `${manifest.localPdfUrl}#page=${provision.startPdfPage}&zoom=page-width`,
     page: provision.startPdfPage,
@@ -423,13 +566,20 @@ export function buildCanonicalPdfHref(
   return buildCanonicalPdfLocator(documentId, editionId, provisionId)?.href
 }
 
-function resolutionFailure(status: LegalReferenceResolution["status"], reference: unknown): LegalReferenceResolution {
+function resolutionFailure(
+  status: LegalReferenceResolution["status"],
+  reference: unknown
+): LegalReferenceResolution {
   return { status, state: status, reference } as LegalReferenceResolution
 }
 
-export function resolveLegalDocumentReference(reference: unknown): LegalReferenceResolution {
-  if (!isRecord(reference) || reference.kind !== "legal-document") return resolutionFailure("unknown-document", reference)
-  if (!isLegalDocumentId(reference.documentId)) return resolutionFailure("unknown-document", reference)
+export function resolveLegalDocumentReference(
+  reference: unknown
+): LegalReferenceResolution {
+  if (!isRecord(reference) || reference.kind !== "legal-document")
+    return resolutionFailure("unknown-document", reference)
+  if (!isLegalDocumentId(reference.documentId))
+    return resolutionFailure("unknown-document", reference)
   const document = getDocument(reference.documentId)
   if (!document) return resolutionFailure("unknown-document", reference)
   const edition = getEdition(document.id, document.currentEditionId)
@@ -443,24 +593,44 @@ export function resolveLegalDocumentReference(reference: unknown): LegalReferenc
   }
 }
 
-export function resolveLegalProvisionReference(reference: unknown): LegalReferenceResolution {
-  if (!isRecord(reference) || reference.kind !== "legal-provision") return resolutionFailure("unknown-provision", reference)
-  if (!isLegalDocumentId(reference.documentId)) return resolutionFailure("unknown-document", reference)
+export function resolveLegalProvisionReference(
+  reference: unknown
+): LegalReferenceResolution {
+  if (!isRecord(reference) || reference.kind !== "legal-provision")
+    return resolutionFailure("unknown-provision", reference)
+  if (!isLegalDocumentId(reference.documentId))
+    return resolutionFailure("unknown-document", reference)
   const documentId = reference.documentId
-  if (!isString(reference.provisionId)) return resolutionFailure("unknown-provision", reference)
+  if (!isString(reference.provisionId))
+    return resolutionFailure("unknown-provision", reference)
   if (!isLegalProvisionId(documentId, reference.provisionId)) {
     const owner = findProvisionOwner(reference.provisionId)
-    return resolutionFailure(owner && owner !== documentId ? "mismatched-provision" : "unknown-provision", reference)
+    return resolutionFailure(
+      owner && owner !== documentId
+        ? "mismatched-provision"
+        : "unknown-provision",
+      reference
+    )
   }
-  const requestedEditionId = reference.editionId ?? getCurrentEditionId(documentId)
-  if (!isString(requestedEditionId) || !isLegalEditionId(documentId, requestedEditionId)) {
+  const requestedEditionId =
+    reference.editionId ?? getCurrentEditionId(documentId)
+  if (
+    !isString(requestedEditionId) ||
+    !isLegalEditionId(documentId, requestedEditionId)
+  ) {
     return resolutionFailure("unknown-edition", reference)
   }
   const edition = getEdition(documentId, requestedEditionId)
-  const provision = getProvision(documentId, reference.provisionId, requestedEditionId)
+  const provision = getProvision(
+    documentId,
+    reference.provisionId,
+    requestedEditionId
+  )
   if (!edition || !provision) {
     return resolutionFailure(
-      provisionExistsInDocument(documentId, reference.provisionId) ? "mismatched-provision" : "unknown-provision",
+      provisionExistsInDocument(documentId, reference.provisionId)
+        ? "mismatched-provision"
+        : "unknown-provision",
       reference
     )
   }
@@ -468,9 +638,12 @@ export function resolveLegalProvisionReference(reference: unknown): LegalReferen
     kind: "legal-provision",
     documentId,
     provisionId: reference.provisionId,
-    ...(reference.editionId === undefined ? {} : { editionId: requestedEditionId }),
+    ...(reference.editionId === undefined
+      ? {}
+      : { editionId: requestedEditionId }),
   })
-  if (!resolvedReference) return resolutionFailure("mismatched-provision", reference)
+  if (!resolvedReference)
+    return resolutionFailure("mismatched-provision", reference)
 
   return {
     status: "resolved",
@@ -483,9 +656,13 @@ export function resolveLegalProvisionReference(reference: unknown): LegalReferen
   }
 }
 
-export function resolveLegalReference(reference: unknown): LegalReferenceResolution {
-  if (isRecord(reference) && reference.kind === "legal-document") return resolveLegalDocumentReference(reference)
-  if (isRecord(reference) && reference.kind === "legal-provision") return resolveLegalProvisionReference(reference)
+export function resolveLegalReference(
+  reference: unknown
+): LegalReferenceResolution {
+  if (isRecord(reference) && reference.kind === "legal-document")
+    return resolveLegalDocumentReference(reference)
+  if (isRecord(reference) && reference.kind === "legal-provision")
+    return resolveLegalProvisionReference(reference)
   return resolutionFailure("unknown-document", reference)
 }
 
@@ -504,8 +681,13 @@ function explanationFailure(
   }
 }
 
-function articleForProvision(provision: LegalProvision<LegalDocumentId>): string {
-  const fromLocator = provision.locator.replace(/^Art\.\s*/u, "").replace(/\.$/u, "").trim()
+function articleForProvision(
+  provision: LegalProvision<LegalDocumentId>
+): string {
+  const fromLocator = provision.locator
+    .replace(/^Art\.\s*/u, "")
+    .replace(/\.$/u, "")
+    .trim()
   return fromLocator || provision.id.replace(/^kpa-art-/u, "")
 }
 
@@ -524,8 +706,16 @@ function makeKpaExplanation(
     reviewStatus: "reviewed",
     language: "uk",
     claims: [
-      { kind: "statute-text", text: source.summary, sourceLocator: provision.canonicalPdfLocator },
-      { kind: "practical-inference", text: source.foreignersCase, sourceLocator: provision.canonicalPdfLocator },
+      {
+        kind: "statute-text",
+        text: source.summary,
+        sourceLocator: provision.canonicalPdfLocator,
+      },
+      {
+        kind: "practical-inference",
+        text: source.foreignersCase,
+        sourceLocator: provision.canonicalPdfLocator,
+      },
     ],
     summary: source.summary,
     rules: source.rules,
@@ -539,21 +729,44 @@ export async function getExplanation(
   provisionId?: unknown,
   editionId?: unknown
 ): Promise<LegalExplanationResolution> {
-  const reference = requestedReference(referenceOrDocumentId, provisionId, editionId)
-  if (!isRecord(reference) || reference.kind !== "legal-provision") return explanationFailure("unknown-provision")
-  if (!isLegalDocumentId(reference.documentId)) return explanationFailure("unknown-document")
+  const reference = requestedReference(
+    referenceOrDocumentId,
+    provisionId,
+    editionId
+  )
+  if (!isRecord(reference) || reference.kind !== "legal-provision")
+    return explanationFailure("unknown-provision")
+  if (!isLegalDocumentId(reference.documentId))
+    return explanationFailure("unknown-document")
   const documentId = reference.documentId
-  if (!isString(reference.provisionId)) return explanationFailure("unknown-provision")
+  if (!isString(reference.provisionId))
+    return explanationFailure("unknown-provision")
   if (!isLegalProvisionId(documentId, reference.provisionId)) {
     const owner = findProvisionOwner(reference.provisionId)
-    return explanationFailure(owner && owner !== documentId ? "mismatched-provision" : "unknown-provision")
+    return explanationFailure(
+      owner && owner !== documentId
+        ? "mismatched-provision"
+        : "unknown-provision"
+    )
   }
-  const requestedEditionId = reference.editionId ?? getCurrentEditionId(documentId)
-  if (!isString(requestedEditionId) || !isLegalEditionId(documentId, requestedEditionId)) {
-    return explanationFailure("unknown-edition", isString(requestedEditionId) ? requestedEditionId : undefined)
+  const requestedEditionId =
+    reference.editionId ?? getCurrentEditionId(documentId)
+  if (
+    !isString(requestedEditionId) ||
+    !isLegalEditionId(documentId, requestedEditionId)
+  ) {
+    return explanationFailure(
+      "unknown-edition",
+      isString(requestedEditionId) ? requestedEditionId : undefined
+    )
   }
-  const provision = getProvision(documentId, reference.provisionId, requestedEditionId)
-  if (!provision) return explanationFailure("mismatched-provision", requestedEditionId)
+  const provision = getProvision(
+    documentId,
+    reference.provisionId,
+    requestedEditionId
+  )
+  if (!provision)
+    return explanationFailure("mismatched-provision", requestedEditionId)
 
   if (documentId !== "kpa") {
     const editorial = await getEditorialExplanation(
@@ -582,11 +795,21 @@ export async function getExplanation(
       provision,
     }
   }
-  if (requestedEditionId !== REVIEWED_KPA_EDITION) return explanationFailure("stale-explanation", requestedEditionId, provision)
+  if (requestedEditionId !== REVIEWED_KPA_EDITION)
+    return explanationFailure(
+      "stale-explanation",
+      requestedEditionId,
+      provision
+    )
 
   const source = await getKpaArticleExplanation(articleForProvision(provision))
   const explanation = makeKpaExplanation(provision, source)
-  if (!explanation) return explanationFailure("missing-explanation", requestedEditionId, provision)
+  if (!explanation)
+    return explanationFailure(
+      "missing-explanation",
+      requestedEditionId,
+      provision
+    )
   return {
     status: "reviewed",
     state: "reviewed",

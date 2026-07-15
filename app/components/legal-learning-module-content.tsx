@@ -127,7 +127,7 @@ function ProvisionGuide({
                 </span>
                 <span className="grid gap-1">
                   <span className="text-sm leading-6 font-medium text-foreground sm:text-base">
-                    {item.title}
+                    <LearningText text={item.title} />
                   </span>
                   <span className="text-sm leading-6 font-normal text-muted-foreground">
                     <ProvisionText
@@ -174,7 +174,13 @@ function ProvisionGuide({
                           </span>
                           <div className="flex min-w-0 flex-col gap-1">
                             <p className="text-sm font-semibold">
-                              {rule.locator}
+                              {item.target ? (
+                                <LegalLink reference={item.target}>
+                                  {rule.locator}
+                                </LegalLink>
+                              ) : (
+                                rule.locator
+                              )}
                             </p>
                             <p className="text-base leading-7 text-muted-foreground">
                               <ProvisionText
@@ -400,7 +406,9 @@ export function LegalLearningModuleContent({
 
       <section id={legalLearningSectionIds.example}>
         <h2>Повний приклад у справі іноземця</h2>
-        <h3>{module.caseExample.title}</h3>
+        <h3>
+          <LearningText text={module.caseExample.title} />
+        </h3>
         <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
           {[
             { number: "01", label: "Факти", text: module.caseExample.facts },

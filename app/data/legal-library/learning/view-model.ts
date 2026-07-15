@@ -57,7 +57,7 @@ function explanationTitle(
   provision: LegalProvision,
   explanation: LegalExplanation
 ): string {
-  const withoutLocator = explanation.summary
+  const withoutLocator = legalLearningPlainText(explanation.summary)
     .replace(
       new RegExp(
         `^(?:art\\.|§|załącznik(?: nr)?)\\s*${provision.locator.replace(/\D/g, "")}\\s*`,

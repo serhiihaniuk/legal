@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion"
+import { LegalLink } from "~/components/legal-link"
 import { LegalText } from "~/components/legal-reference-text"
 import type { KpaArticleExplanation } from "~/data/kpa-article-explanations/types"
 import { kpaArticleIndex } from "~/data/kpa-article-index"
@@ -79,11 +80,20 @@ export function KpaModuleArticleGuide({
               <AccordionTrigger className="py-5 hover:no-underline">
                 <span className="grid min-w-0 flex-1 gap-2 pr-5 text-left sm:grid-cols-[7rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5">
                   <span className="font-mono text-sm font-medium text-foreground">
-                    art. {explanation.article} KPA
+                    <LegalLink
+                      reference={{
+                        kind: "legacy-kpa-article",
+                        article: explanation.article,
+                      }}
+                    >
+                      art. {explanation.article} KPA
+                    </LegalLink>
                   </span>
                   <span className="grid gap-1">
                     <span className="text-sm leading-6 font-medium text-foreground sm:text-base">
-                      {entry?.shortTitle ?? explanation.summary}
+                      {entry?.shortTitle ?? (
+                        <LegalText text={explanation.summary} />
+                      )}
                     </span>
                     <span className="text-sm leading-6 font-normal text-muted-foreground">
                       <LegalText text={explanation.summary} />
@@ -135,7 +145,14 @@ export function KpaModuleArticleGuide({
                             </span>
                             <div className="flex min-w-0 flex-col gap-1">
                               <p className="text-sm font-semibold">
-                                {rule.locator}
+                                <LegalLink
+                                  reference={{
+                                    kind: "legacy-kpa-article",
+                                    article: explanation.article,
+                                  }}
+                                >
+                                  {rule.locator}
+                                </LegalLink>
                               </p>
                               <p className="text-base leading-7 text-muted-foreground">
                                 <LegalText text={rule.explanation} />

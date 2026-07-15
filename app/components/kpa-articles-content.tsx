@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, FileText } from "lucide-react"
 
 import type { TocItem } from "~/components/docs-layout"
+import { LegalLink } from "~/components/legal-link"
 import { LegalText } from "~/components/legal-reference-text"
 import { OfficialSourceLink } from "~/components/official-source"
 import { Badge } from "~/components/ui/badge"
@@ -248,7 +249,14 @@ export function KpaArticlesContent({
                   className="grid gap-2 py-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-5"
                 >
                   <p className="text-sm font-semibold text-foreground">
-                    {rule.locator}
+                    <LegalLink
+                      reference={{
+                        kind: "legacy-kpa-article",
+                        article: entry.article,
+                      }}
+                    >
+                      {rule.locator}
+                    </LegalLink>
                   </p>
                   <p className="text-sm leading-6 text-foreground">
                     <LegalText text={rule.explanation} />
