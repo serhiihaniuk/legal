@@ -24,7 +24,10 @@ export type LegalTextPart =
   | { text: string }
   | {
       text: string
-      target: LegalDocumentReference | LegalProvisionReference
+      target:
+        | LegalDocumentReference
+        | LegalProvisionReference
+        | { kind: "external"; url: string }
     }
 
 export type AuthoredLegalText = {
@@ -42,7 +45,7 @@ function assertNoBareLegalCitations(value: unknown, path: string): void {
   if (typeof value === "string") {
     if (bareLegalCitationPattern.test(value)) {
       throw new Error(
-        `Bare legal citation at ${path}. Use createLegalTextAuthor() and an explicit typed citation token.`
+        `Bare legal citation at ${path}: ${JSON.stringify(value)}. Use createLegalTextAuthor() and an explicit typed citation token.`
       )
     }
     return
@@ -109,7 +112,7 @@ function citation(parts: readonly LegalTextPart[]): LegalCitation {
 
 function singleCitation(
   label: string,
-  target: LegalDocumentReference | LegalProvisionReference
+  target: Extract<LegalTextPart, { target: unknown }>["target"]
 ): LegalCitation {
   return citation([{ text: label, target }])
 }
@@ -144,6 +147,20 @@ function authoredText(
     kind: "authored-legal-text",
     plainText: parts.map((part) => part.text).join(""),
     parts,
+  }
+}
+
+export function externalLegalText(
+  label: string,
+  url: string
+): AuthoredLegalText {
+  if (!/^https:\/\//u.test(url)) {
+    throw new Error(`External legal citation must use HTTPS: ${url}`)
+  }
+  return {
+    kind: "authored-legal-text",
+    plainText: label,
+    parts: [{ text: label, target: { kind: "external", url } }],
   }
 }
 
@@ -311,6 +328,13 @@ export function createLegalTextAuthor<const D extends LegalDocumentId>(
     )
   }
 
+  function external(label: string, url: string) {
+    if (!/^https:\/\//u.test(url)) {
+      throw new Error(`External legal citation must use HTTPS: ${url}`)
+    }
+    return singleCitation(label, { kind: "external", url })
+  }
+
   function document(label: string) {
     return singleCitation(label, {
       kind: "legal-document",
@@ -325,6 +349,7 @@ export function createLegalTextAuthor<const D extends LegalDocumentId>(
     ) {
       return authoredText(strings, citations)
     },
+    external,
     document,
     article,
     articleRange,

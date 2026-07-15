@@ -31,10 +31,17 @@ import {
 } from "~/components/ui/table"
 import type {
   CaseGuideCondition,
+  CaseGuideDeadline,
+  CaseGuideDocument,
   CaseGuideRoute,
+  CaseGuideSource,
   CaseGuideStage,
 } from "~/data/case-guide-types"
-import type { CaseDeadline, CaseDocument } from "~/data/legal-types"
+import {
+  legalTextPlainText,
+  type LegalTextValue,
+} from "~/data/legal-library/legal-text"
+import type { OfficialSource } from "~/data/legal-types"
 import { LegalText } from "~/components/legal-reference-text"
 import { cn } from "~/lib/utils"
 
@@ -99,7 +106,7 @@ function conditionStatusLabel(status: CaseGuideCondition["status"]) {
   return "перевірити"
 }
 
-function DocumentStatus({ document }: { document: CaseDocument }) {
+function DocumentStatus({ document }: { document: CaseGuideDocument }) {
   return (
     <Badge variant={documentStatusVariant(document.level)}>
       {document.status}
@@ -107,7 +114,7 @@ function DocumentStatus({ document }: { document: CaseDocument }) {
   )
 }
 
-function documentChecklistHint(document: CaseDocument) {
+function documentChecklistHint(document: CaseGuideDocument) {
   if (document.level === "conditional") {
     return "Спочатку зафіксуйте, яка обставина робить документ потрібним. Якщо вона є — перевірте актуальність, форму та зв’язок із конкретною умовою."
   }
@@ -120,7 +127,7 @@ function documentChecklistHint(document: CaseDocument) {
   return "Перевірте повноту, чинність на потрібну дату, усі сторінки, підписи та узгодженість даних з рештою пакета."
 }
 
-function DocumentRegister({ documents }: { documents: CaseDocument[] }) {
+function DocumentRegister({ documents }: { documents: CaseGuideDocument[] }) {
   if (documents.length === 0) {
     return (
       <p className="mt-5 border-y py-4 text-sm text-muted-foreground">
@@ -203,7 +210,7 @@ function DocumentRegister({ documents }: { documents: CaseDocument[] }) {
   )
 }
 
-function DeadlineRegister({ deadlines }: { deadlines: CaseDeadline[] }) {
+function DeadlineRegister({ deadlines }: { deadlines: CaseGuideDeadline[] }) {
   if (deadlines.length === 0) {
     return (
       <p className="mt-5 border-y py-4 text-sm text-muted-foreground">
@@ -225,7 +232,9 @@ function DeadlineRegister({ deadlines }: { deadlines: CaseDeadline[] }) {
               aria-hidden="true"
               className="size-5 text-muted-foreground"
             />
-            <h3 className="mt-2 text-base font-semibold">{deadline.period}</h3>
+            <h3 className="mt-2 text-base font-semibold">
+              <LegalText text={deadline.period} />
+            </h3>
           </div>
           <div className="grid gap-3 text-sm leading-6">
             <p>
@@ -425,7 +434,7 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
           </h3>
 
           {stage.explanation.map((paragraph) => (
-            <p key={paragraph}>
+            <p key={legalTextPlainText(paragraph)}>
               <LegalText text={paragraph} />
             </p>
           ))}
@@ -461,7 +470,7 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
           >
             {stage.actions.map((action, actionIndex) => (
               <li
-                key={action}
+                key={legalTextPlainText(action)}
                 className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-2 py-2"
               >
                 <span className="text-muted-foreground">{actionIndex + 1}</span>
@@ -480,7 +489,7 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
   )
 }
 
-type DefinitionGridItem = { label: string; value: string }
+type DefinitionGridItem = { label: string; value: LegalTextValue }
 
 function DefinitionRows({ items }: { items: DefinitionGridItem[] }) {
   return (
@@ -647,7 +656,7 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
         <h1>{route.title}</h1>
         <p className="text-muted-foreground">{route.subtitle}</p>
         {route.overview.map((paragraph) => (
-          <p key={paragraph}>
+          <p key={legalTextPlainText(paragraph)}>
             <LegalText text={paragraph} />
           </p>
         ))}
@@ -672,13 +681,17 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
             <p className="text-xs font-medium text-muted-foreground">
               Кому підходить
             </p>
-            <p className="mt-1 font-medium">{route.forWhom}</p>
+            <p className="mt-1 font-medium">
+              <LegalText text={route.forWhom} />
+            </p>
           </div>
           <div className="border-t py-4 md:border-t-0 md:border-l md:pl-5">
             <p className="text-xs font-medium text-muted-foreground">
               Коли не обирати автоматично
             </p>
-            <p className="mt-1 font-medium">{route.notFor}</p>
+            <p className="mt-1 font-medium">
+              <LegalText text={route.notFor} />
+            </p>
           </div>
         </div>
 
@@ -718,7 +731,8 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
         </div>
         <aside className="mt-6 border-l-2 border-primary pl-4">
           <p>
-            <strong>Що ще треба підтвердити.</strong> {route.profile.assumption}
+            <strong>Що ще треба підтвердити.</strong>{" "}
+            <LegalText text={route.profile.assumption} />
           </p>
         </aside>
       </section>
@@ -809,17 +823,19 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
                 <div>
                   <dt className="inline font-medium">Тригер:</dt>{" "}
                   <dd className="inline text-muted-foreground">
-                    {branch.trigger}
+                    <LegalText text={branch.trigger} />
                   </dd>
                 </div>
                 <div>
                   <dt className="inline font-medium">Наслідок:</dt>{" "}
-                  <dd className="inline">{branch.consequence}</dd>
+                  <dd className="inline">
+                    <LegalText text={branch.consequence} />
+                  </dd>
                 </div>
                 <div>
                   <dt className="inline font-medium">Реакція:</dt>{" "}
                   <dd className="inline text-muted-foreground">
-                    {branch.response}
+                    <LegalText text={branch.response} />
                   </dd>
                 </div>
               </dl>
@@ -853,7 +869,9 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
         <ul data-not-typeset className="not-typeset list-none p-0">
           {route.sources.map((source) => (
             <li key={source.url} className="border-t py-5 first:border-t-0">
-              <OfficialSourceEntry source={source} />
+              <OfficialSourceEntry
+                source={source as CaseGuideSource as OfficialSource}
+              />
             </li>
           ))}
         </ul>

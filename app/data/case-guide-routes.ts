@@ -1,18 +1,35 @@
 import type {
   CaseGuideCondition,
+  CaseGuideDeadline,
+  CaseGuideDocument,
   CaseGuideMaterial,
   CaseGuideRoute,
   CaseGuideRouteId,
+  CaseGuideSource,
   CaseGuideStage,
   CaseGuideStageRisk,
 } from "~/data/case-guide-types"
+import {
+  concatLegalText,
+  createLegalTextAuthor,
+  defineLegalTextContent,
+  legalTextPlainText,
+  legalTextSlice,
+  type LegalTextValue,
+} from "~/data/legal-library/legal-text"
 import { legalData } from "~/data/legal-data"
 import { nodeById } from "~/data/legal-index"
-import type {
-  CaseDeadline,
-  CaseDocument,
-  OfficialSource,
-} from "~/data/legal-types"
+import type { OfficialSource } from "~/data/legal-types"
+
+const kpaLaw = createLegalTextAuthor("kpa")
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+const workLaw = createLegalTextAuthor("powierzanie-pracy")
+const residenceFormLaw = createLegalTextAuthor(
+  "rozporzadzenie-wniosek-pobyt-czasowy"
+)
+const UKRAINE_SPECIAL_ACT_URL =
+  "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
+const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 
 type RouteSpec = Omit<
   CaseGuideRoute,
@@ -22,9 +39,9 @@ type RouteSpec = Omit<
   secondaryNode?: string
   stageFocus: readonly [string, string, string, string, string, string]
   documentItems: Array<{
-    item: string
-    proves: string
-    law: string
+    item: LegalTextValue
+    proves: LegalTextValue
+    law: LegalTextValue
     level?: "required" | "conditional" | "control"
   }>
   postDecisionMaterial?: CaseGuideMaterial
@@ -33,7 +50,7 @@ type RouteSpec = Omit<
 const kpaMaterials = {
   initiation: {
     label: "KPA: початок справи і podanie",
-    description: "Пояснює wszczęcie, формальні вимоги та art. 61–66 KPA.",
+    description: kpaLaw.text`Пояснює wszczęcie, формальні вимоги та ${kpaLaw.articleRange("61", "66", { start: "art. 61", end: "66 KPA" })}.`,
     href: "/guide/kpa?module=initiation",
   },
   evidence: {
@@ -59,41 +76,274 @@ const kpaMaterials = {
   },
 } satisfies Record<string, CaseGuideMaterial>
 
-function mapMaterial(nodeId: string, label: string, description: string) {
+function mapMaterial(
+  nodeId: string,
+  label: string,
+  description: LegalTextValue
+) {
   return { label, description, href: `/map/${nodeId}` }
 }
 
-function neutralizeLegacyCaseText(value: string) {
-  return value
-    .replaceAll("Оленою", "заявником")
-    .replaceAll("Олені", "заявнику")
-    .replaceAll("Олени", "заявника")
-    .replaceAll("Олена", "Заявник")
+function replaceLegalText(
+  value: LegalTextValue,
+  search: string,
+  replacement: LegalTextValue
+) {
+  const plainText = legalTextPlainText(value)
+  if (!plainText.includes(search)) return value
+
+  const parts: LegalTextValue[] = []
+  let cursor = 0
+  let index = plainText.indexOf(search)
+  while (index !== -1) {
+    if (index > cursor) parts.push(legalTextSlice(value, cursor, index))
+    parts.push(replacement)
+    cursor = index + search.length
+    index = plainText.indexOf(search, cursor)
+  }
+  if (cursor < plainText.length) {
+    parts.push(legalTextSlice(value, cursor, plainText.length))
+  }
+  return concatLegalText(...parts)
+}
+
+function neutralizeLegacyCaseText(value: LegalTextValue) {
+  return [
+    ["Оленою", "заявником"],
+    ["Олені", "заявнику"],
+    ["Олени", "заявника"],
+    ["Олена", "Заявник"],
+  ].reduce(
+    (result, [search, replacement]) =>
+      replaceLegalText(result, search, replacement),
+    value
+  )
+}
+
+const specialActCitation = (label: string) =>
+  foreignersLaw.external(label, UKRAINE_SPECIAL_ACT_URL)
+
+const embeddedCaseCitations: readonly [string, LegalTextValue][] = [
+  [
+    "art. 114–126",
+    foreignersLaw.text`${foreignersLaw.articleRange("114", "126", { start: "art. 114" })}`,
+  ],
+  [
+    "art. 117–118",
+    foreignersLaw.text`${foreignersLaw.articleRange("117", "118", { start: "art. 117" })}`,
+  ],
+  [
+    "art. 127–138",
+    foreignersLaw.text`${foreignersLaw.articleRange("127", "138", { start: "art. 127" })}`,
+  ],
+  [
+    "art. 142–143",
+    foreignersLaw.text`${foreignersLaw.articleRange("142", "143", { start: "art. 142" })}`,
+  ],
+  [
+    "art. 144–157f",
+    foreignersLaw.text`${foreignersLaw.articleRange("144", "157f", { start: "art. 144" })}`,
+  ],
+  [
+    "art. 158–169",
+    foreignersLaw.text`${foreignersLaw.articleRange("158", "169", { start: "art. 158" })}`,
+  ],
+  [
+    "art. 170–194",
+    foreignersLaw.text`${foreignersLaw.articleRange("170", "194", { start: "art. 170" })}`,
+  ],
+  [
+    "art. 195–206",
+    foreignersLaw.text`${foreignersLaw.articleRange("195", "206", { start: "art. 195" })}`,
+  ],
+  [
+    "art. 211–222a",
+    foreignersLaw.text`${foreignersLaw.article("211", "art. 211")}–${foreignersLaw.external("222a", FOREIGNERS_2026_CHANGE_URL)}`,
+  ],
+  [
+    "art. 211–212",
+    foreignersLaw.text`${foreignersLaw.articleRange("211", "212", { start: "art. 211" })}`,
+  ],
+  [
+    "Art. 5a",
+    foreignersLaw.text`${foreignersLaw.external("Art. 5a", UKRAINE_SPECIAL_ACT_URL)}`,
+  ],
+  ["Art. 64 § 2 KPA", kpaLaw.text`${kpaLaw.article("64", "Art. 64 § 2 KPA")}`],
+  ["Art. 64 KPA", kpaLaw.text`${kpaLaw.article("64", "Art. 64 KPA")}`],
+  [
+    "Załącznik nr 1",
+    residenceFormLaw.text`${residenceFormLaw.annex("1", "Załącznik nr 1")}`,
+  ],
+  [
+    "Art. 106d",
+    foreignersLaw.text`${foreignersLaw.external("Art. 106d", FOREIGNERS_2026_CHANGE_URL)}`,
+  ],
+  [
+    "Art. 106e",
+    foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_2026_CHANGE_URL)}`,
+  ],
+  [
+    "art. 106e",
+    foreignersLaw.text`${foreignersLaw.external("art. 106e", FOREIGNERS_2026_CHANGE_URL)}`,
+  ],
+  [
+    "Art. 106f",
+    foreignersLaw.text`${foreignersLaw.external("Art. 106f", FOREIGNERS_2026_CHANGE_URL)}`,
+  ],
+  [
+    "art. 106f",
+    foreignersLaw.text`${foreignersLaw.external("art. 106f", FOREIGNERS_2026_CHANGE_URL)}`,
+  ],
+  [
+    "106i",
+    foreignersLaw.text`${foreignersLaw.external("106i", FOREIGNERS_2026_CHANGE_URL)}`,
+  ],
+  [
+    "art. 42c–42u",
+    foreignersLaw.text`${specialActCitation("art. 42c")}–${specialActCitation("42u")}`,
+  ],
+  [
+    "Art. 42c–42u",
+    foreignersLaw.text`${specialActCitation("Art. 42c")}–${specialActCitation("42u")}`,
+  ],
+  ["art. 42g", foreignersLaw.text`${specialActCitation("art. 42g")}`],
+  ["Art. 42g", foreignersLaw.text`${specialActCitation("Art. 42g")}`],
+  ["art. 114", foreignersLaw.text`${foreignersLaw.article("114", "art. 114")}`],
+  ["Art. 114", foreignersLaw.text`${foreignersLaw.article("114", "Art. 114")}`],
+  ["Art. 121", foreignersLaw.text`${foreignersLaw.article("121", "Art. 121")}`],
+  ["art. 127", foreignersLaw.text`${foreignersLaw.article("127", "art. 127")}`],
+  ["Art. 127", foreignersLaw.text`${foreignersLaw.article("127", "Art. 127")}`],
+  ["art. 142", foreignersLaw.text`${foreignersLaw.article("142", "art. 142")}`],
+  ["art. 144", foreignersLaw.text`${foreignersLaw.article("144", "art. 144")}`],
+  ["art. 195", foreignersLaw.text`${foreignersLaw.article("195", "art. 195")}`],
+  ["art. 196", foreignersLaw.text`${foreignersLaw.article("196", "art. 196")}`],
+  ["art. 211", foreignersLaw.text`${foreignersLaw.article("211", "art. 211")}`],
+  ["art. 212", foreignersLaw.text`${foreignersLaw.article("212", "art. 212")}`],
+  ["art. 61", foreignersLaw.text`${foreignersLaw.article("61", "art. 61")}`],
+]
+
+function authorLegacyCaseText(value: string): LegalTextValue {
+  switch (value) {
+    case "Załącznik nr 1":
+      return residenceFormLaw.text`${residenceFormLaw.annex("1", "Załącznik nr 1")}`
+    case "Art. 42c–42u specustawy":
+      return foreignersLaw.text`${specialActCitation("Art. 42c")}–${specialActCitation("42u")} specustawy`
+    case "art. 42c–42u specustawy":
+      return foreignersLaw.text`${specialActCitation("art. 42c")}–${specialActCitation("42u")} specustawy`
+    case "Art. 42g; вимоги UdSC":
+      return foreignersLaw.text`${specialActCitation("Art. 42g")}; вимоги UdSC`
+    case "art. 42g":
+      return foreignersLaw.text`${specialActCitation("art. 42g")}`
+    case "Art. 42c, 42g і 42r":
+      return foreignersLaw.text`${specialActCitation("Art. 42c")}, ${specialActCitation("42g")} і ${specialActCitation("42r")}`
+    case "Art. 42c":
+      return foreignersLaw.text`${specialActCitation("Art. 42c")}`
+    case "Art. 42g; процедура MOS":
+      return foreignersLaw.text`${specialActCitation("Art. 42g")}; процедура MOS`
+    case "Art. 42e і 42s":
+      return foreignersLaw.text`${specialActCitation("Art. 42e")} і ${specialActCitation("42s")}`
+    case "Art. 42s":
+      return foreignersLaw.text`${specialActCitation("Art. 42s")}`
+    case "Art. 42r":
+      return foreignersLaw.text`${specialActCitation("Art. 42r")}`
+    case "Art. 42l":
+      return foreignersLaw.text`${specialActCitation("Art. 42l")}`
+    case "Правила tymczasowej ochrony + art. 42c":
+      return foreignersLaw.text`Правила tymczasowej ochrony + ${specialActCitation("art. 42c")}`
+    case "Art. 127–129 KPA":
+      return kpaLaw.text`${kpaLaw.articleRange("127", "129", { start: "Art. 127", end: "129 KPA" })}`
+    case "Art. 42r ust. 2":
+      return foreignersLaw.text`${specialActCitation("Art. 42r ust. 2")}`
+    case "Art. 42u":
+      return foreignersLaw.text`${specialActCitation("Art. 42u")}`
+    case "Art. 42t":
+      return foreignersLaw.text`${specialActCitation("Art. 42t")}`
+    case "Art. 105–107, 106c–106l":
+      return foreignersLaw.text`${foreignersLaw.articleRange("105", "107")}, ${foreignersLaw.external("106c", FOREIGNERS_2026_CHANGE_URL)}–${foreignersLaw.external("106l", FOREIGNERS_2026_CHANGE_URL)}`
+    case "art. 106d / 114":
+      return foreignersLaw.text`${foreignersLaw.external("art. 106d", FOREIGNERS_2026_CHANGE_URL)} / ${foreignersLaw.article("114", "114")}`
+    case "Art. 106e; процедура MOS":
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_2026_CHANGE_URL)}; процедура MOS`
+    case "Art. 106d; art. 114 і 118":
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106d", FOREIGNERS_2026_CHANGE_URL)}; ${foreignersLaw.article("114", "art. 114")} і ${foreignersLaw.article("118", "118")}`
+    case "Art. 114":
+      return foreignersLaw.text`${foreignersLaw.article("114")}`
+    case "Art. 114 ust. 1 pkt 1; ust. 4a":
+      return foreignersLaw.text`${foreignersLaw.article("114", "Art. 114 ust. 1 pkt 1; ust. 4a")}`
+    case "Art. 32–33 KPA + правила MOS":
+      return kpaLaw.text`${kpaLaw.articleRange("32", "33", { start: "Art. 32", end: "33 KPA" })} + правила MOS`
+    case "Art. 114 + правила доказів":
+      return foreignersLaw.text`${foreignersLaw.article("114", "Art. 114")} + правила доказів`
+    case "Art. 106e і 106i":
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_2026_CHANGE_URL)} і ${foreignersLaw.external("106i", FOREIGNERS_2026_CHANGE_URL)}`
+    case "Art. 106f":
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106f", FOREIGNERS_2026_CHANGE_URL)}`
+    case "Art. 112a":
+      return foreignersLaw.text`${foreignersLaw.article("112a")}`
+    case "Art. 112a ust. 4":
+      return foreignersLaw.text`${foreignersLaw.article("112a", "Art. 112a ust. 4")}`
+    case "Art. 121 і 123":
+      return foreignersLaw.text`${foreignersLaw.article("121", "Art. 121")} і ${foreignersLaw.article("123", "123")}`
+    case "Art. 5a ustawy o zatrudnianiu cudzoziemców":
+      return workLaw.text`${workLaw.external("Art. 5a ustawy o zatrudnianiu cudzoziemców", UKRAINE_SPECIAL_ACT_URL)}`
+    case "Art. 64 §2 KPA":
+      return kpaLaw.text`${kpaLaw.article("64", "Art. 64 § 2 KPA")}`
+    default:
+      return embeddedCaseCitations.reduce<LegalTextValue>(
+        (result, [search, replacement]) =>
+          replaceLegalText(result, search, replacement),
+        value
+      )
+  }
+}
+
+function authorCaseContent<T>(value: T): T {
+  if (typeof value === "string") {
+    return neutralizeLegacyCaseText(authorLegacyCaseText(value)) as T
+  }
+  if (!value || typeof value !== "object") return value
+  if ("kind" in value && value.kind === "authored-legal-text") return value
+  if (Array.isArray(value)) return value.map(authorCaseContent) as T
+  return Object.fromEntries(
+    Object.entries(value).map(([key, item]) => [key, authorCaseContent(item)])
+  ) as T
+}
+
+function sourceWithLegalNote(source: OfficialSource): CaseGuideSource {
+  if (source.note === "Art. 42c–42u: умови, процедура та наслідки CUKR") {
+    return {
+      ...source,
+      note: foreignersLaw.text`${specialActCitation("Art. 42c")}–${specialActCitation("42u")}: умови, процедура та наслідки CUKR`,
+    }
+  }
+  return source
 }
 
 function sourcesFor(nodeIds: string[]) {
   const sources = nodeIds.flatMap(
     (nodeId) => nodeById.get(nodeId)?.sources ?? []
   )
-  const unique = new Map<string, OfficialSource>()
-  for (const source of sources) unique.set(source.url, source)
+  const unique = new Map<string, CaseGuideSource>()
+  for (const source of sources) {
+    unique.set(source.url, sourceWithLegalNote(source))
+  }
   return [...unique.values()]
 }
 
 function stageRisk(
   title: string,
-  explanation: string,
-  check: string
+  explanation: LegalTextValue,
+  check: LegalTextValue
 ): CaseGuideStageRisk {
   return { title, explanation, check }
 }
 
 function workDocument(
-  item: string,
-  owner: string,
-  proves: string,
-  law: string
-): CaseDocument {
+  item: LegalTextValue,
+  owner: LegalTextValue,
+  proves: LegalTextValue,
+  law: LegalTextValue
+): CaseGuideDocument {
   return {
     item,
     status: "робочий документ",
@@ -104,27 +354,28 @@ function workDocument(
   }
 }
 
-function uniqueDocuments(documents: CaseDocument[]) {
+function uniqueDocuments(documents: CaseGuideDocument[]) {
   return [
-    ...new Map(documents.map((document) => [document.item, document])).values(),
+    ...new Map(
+      documents.map((document) => [legalTextPlainText(document.item), document])
+    ).values(),
   ]
 }
 
-function documentsMatching(documents: CaseDocument[], terms: string[]) {
+function documentsMatching(documents: CaseGuideDocument[], terms: string[]) {
   const normalizedTerms = terms.map((term) => term.toLocaleLowerCase("pl"))
 
   return documents.filter((document) => {
-    const value =
-      `${document.item} ${document.owner} ${document.proves}`.toLocaleLowerCase(
-        "pl"
-      )
+    const value = `${legalTextPlainText(document.item)} ${legalTextPlainText(
+      document.owner
+    )} ${legalTextPlainText(document.proves)}`.toLocaleLowerCase("pl")
     return normalizedTerms.some((term) => value.includes(term))
   })
 }
 
 function makeStages(
   spec: RouteSpec,
-  documentRegister: CaseDocument[]
+  documentRegister: CaseGuideDocument[]
 ): CaseGuideStage[] {
   const routeMaterial = mapMaterial(
     spec.primaryNode,
@@ -175,7 +426,7 @@ function makeStages(
     ),
     ...documentsMatching(
       documentRegister,
-      spec.documentItems.map((document) => document.item)
+      spec.documentItems.map((document) => legalTextPlainText(document.item))
     ),
   ])
   const filingDocuments = uniqueDocuments([
@@ -534,21 +785,21 @@ function makeStages(
   ]
 }
 
-function makeDocuments(spec: RouteSpec): CaseDocument[] {
+function makeDocuments(spec: RouteSpec): CaseGuideDocument[] {
   const existing = legalData.caseStudy.routes.find(
     (route) => route.id === spec.id
   )
   if (existing) {
     return existing.documentRegister.map((document) => ({
       ...document,
-      item: neutralizeLegacyCaseText(document.item),
-      owner: neutralizeLegacyCaseText(document.owner),
-      proves: neutralizeLegacyCaseText(document.proves),
-      law: neutralizeLegacyCaseText(document.law),
+      item: neutralizeLegacyCaseText(authorLegacyCaseText(document.item)),
+      owner: neutralizeLegacyCaseText(authorLegacyCaseText(document.owner)),
+      proves: neutralizeLegacyCaseText(authorLegacyCaseText(document.proves)),
+      law: neutralizeLegacyCaseText(authorLegacyCaseText(document.law)),
     }))
   }
 
-  const common: CaseDocument[] = [
+  const common: CaseGuideDocument[] = [
     {
       item: "Wniosek MOS + UPO",
       status: "обов’язково",
@@ -569,7 +820,7 @@ function makeDocuments(spec: RouteSpec): CaseDocument[] {
 
   return [
     ...common,
-    ...spec.documentItems.map<CaseDocument>((document) => ({
+    ...spec.documentItems.map<CaseGuideDocument>((document) => ({
       item: document.item,
       status:
         document.level === "conditional"
@@ -585,18 +836,20 @@ function makeDocuments(spec: RouteSpec): CaseDocument[] {
   ]
 }
 
-function makeDeadlines(spec: RouteSpec): CaseDeadline[] {
+function makeDeadlines(spec: RouteSpec): CaseGuideDeadline[] {
   const existing = legalData.caseStudy.routes.find(
     (route) => route.id === spec.id
   )
   if (existing) {
     return existing.deadlines.map((deadline) => ({
       ...deadline,
-      period: neutralizeLegacyCaseText(deadline.period),
-      trigger: neutralizeLegacyCaseText(deadline.trigger),
-      action: neutralizeLegacyCaseText(deadline.action),
-      consequence: neutralizeLegacyCaseText(deadline.consequence),
-      law: neutralizeLegacyCaseText(deadline.law),
+      period: neutralizeLegacyCaseText(authorLegacyCaseText(deadline.period)),
+      trigger: neutralizeLegacyCaseText(authorLegacyCaseText(deadline.trigger)),
+      action: neutralizeLegacyCaseText(authorLegacyCaseText(deadline.action)),
+      consequence: neutralizeLegacyCaseText(
+        authorLegacyCaseText(deadline.consequence)
+      ),
+      law: neutralizeLegacyCaseText(authorLegacyCaseText(deadline.law)),
     }))
   }
 
@@ -1716,22 +1969,25 @@ const routeSpecs: RouteSpec[] = [
   },
 ]
 
-export const caseGuideRoutes = routeSpecs.map<CaseGuideRoute>((spec) => {
-  const documents = makeDocuments(spec)
+export const caseGuideRoutes = defineLegalTextContent(
+  routeSpecs.map<CaseGuideRoute>((spec) => {
+    const documents = makeDocuments(spec)
 
-  return {
-    ...spec,
-    stages: makeStages(spec, documents),
-    documents,
-    deadlines: makeDeadlines(spec),
-    negativeBranches: makeNegativeBranches(spec),
-    sources: sourcesFor([
-      spec.primaryNode,
-      spec.secondaryNode ?? "temporary-common",
-      "mos-procedure",
-    ]),
-  }
-})
+    return authorCaseContent({
+      ...spec,
+      stages: makeStages(spec, documents),
+      documents,
+      deadlines: makeDeadlines(spec),
+      negativeBranches: makeNegativeBranches(spec),
+      sources: sourcesFor([
+        spec.primaryNode,
+        spec.secondaryNode ?? "temporary-common",
+        "mos-procedure",
+      ]),
+    })
+  }),
+  "case-guides"
+)
 
 export const defaultCaseGuideRouteId: CaseGuideRouteId = "cukr"
 
