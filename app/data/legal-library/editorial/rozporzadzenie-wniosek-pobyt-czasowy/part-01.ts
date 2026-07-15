@@ -28,7 +28,7 @@ export const temporaryResidenceApplicationPart01 =
         rules: [
           {
             locator: "pkt 1–5",
-            explanation: regulationLaw.text`Визначено wzory основного wniosku, його załączników, спеціальних wniosków за ${foreignersLaw.external("art. 106k", "https://eli.gov.pl/eli/DU/2026/203/ogl")} і ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy та formularza zgody за ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ust. 3.`,
+            explanation: regulationLaw.text`Визначено wzory основного wniosku, його załączników, спеціальних wniosków за ${foreignersLaw.external("art. 106k", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} і ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ustawy та formularza zgody за ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ust. 3.`,
           },
           {
             locator: "pkt 6–9",
@@ -51,7 +51,7 @@ export const temporaryResidenceApplicationPart01 =
         claims: [
           {
             kind: "statute-text",
-            text: regulationLaw.text`${regulationLaw.paragraph("2", "§ 2")} прив’язує конкретні wzory до załączników nr 1–11: nr 1 — wniosek за ${foreignersLaw.article("106", "art. 106")} ust. 1, nr 2–6 — додатки за ${foreignersLaw.article("106", "art. 106")} ust. 2 та ust. 4–7, nr 7 — wniosek за ${foreignersLaw.external("art. 106k", "https://eli.gov.pl/eli/DU/2026/203/ogl")}, nr 8 — wniosek за ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2026/203/ogl")}, nr 9 — zgoda, nr 10 — інформація про odciski, nr 11 — wzór podpisu.`,
+            text: regulationLaw.text`${regulationLaw.paragraph("2", "§ 2")} прив’язує конкретні wzory до załączników nr 1–11: nr 1 — wniosek за ${foreignersLaw.article("106", "art. 106")} ust. 1, nr 2–6 — додатки за ${foreignersLaw.article("106", "art. 106")} ust. 2 та ust. 4–7, nr 7 — wniosek за ${foreignersLaw.external("art. 106k", "https://eli.gov.pl/eli/DU/2025/1794/ogl")}, nr 8 — wniosek за ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2025/1794/ogl")}, nr 9 — zgoda, nr 10 — інформація про odciski, nr 11 — wzór podpisu.`,
             sourceLocator: "§ 2 ust. 1–11",
           },
         ],
@@ -64,7 +64,7 @@ export const temporaryResidenceApplicationPart01 =
           },
           {
             locator: "ust. 7–9",
-            explanation: regulationLaw.text`${regulationLaw.annex("7", "Załącznik nr 7")} стосується ${foreignersLaw.external("art. 106k", "https://eli.gov.pl/eli/DU/2026/203/ogl")}, nr 8 — ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ust. 1, а nr 9 — formularza zgody за ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ust. 3.`,
+            explanation: regulationLaw.text`${regulationLaw.annex("7", "Załącznik nr 7")} стосується ${foreignersLaw.external("art. 106k", "https://eli.gov.pl/eli/DU/2025/1794/ogl")}, nr 8 — ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ust. 1, а nr 9 — formularza zgody за ${foreignersLaw.external("art. 106l", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ust. 3.`,
           },
           {
             locator: "ust. 10–11",
@@ -72,7 +72,7 @@ export const temporaryResidenceApplicationPart01 =
           },
         ],
         legalEffect: regulationLaw.text`${regulationLaw.paragraph("2", "§ 2")} полегшує ідентифікацію потрібного офіційного wzoru, але не замінює перевірку підстави перебування, cel pobytu чи інших вимог ustawy.`,
-        foreignersCase: regulationLaw.text`Порівняйте фактичний cel pobytu і посилання на ${foreignersLaw.article("106", "art. 106")}, ${foreignersLaw.external("106k", "https://eli.gov.pl/eli/DU/2026/203/ogl")} або ${foreignersLaw.external("106l", "https://eli.gov.pl/eli/DU/2026/203/ogl")} з номером потрібного załącznik. Не робіть висновок про виконання матеріальних умов лише з правильно вибраного формуляра.`,
+        foreignersCase: regulationLaw.text`Порівняйте фактичний cel pobytu і посилання на ${foreignersLaw.article("106", "art. 106")}, ${foreignersLaw.external("106k", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} або ${foreignersLaw.external("106l", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} з номером потрібного załącznik. Не робіть висновок про виконання матеріальних умов лише з правильно вибраного формуляра.`,
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-3",
@@ -112,7 +112,7 @@ export const temporaryResidenceApplicationPart01 =
         claims: [
           {
             kind: "statute-text",
-            text: regulationLaw.text`${regulationLaw.paragraph("4", "§ 4")} для wniosku, що подається способом з ${foreignersLaw.external("art. 106c", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ust. 1 ustawy, вимагає файл фотографії у форматі JPG, який відповідає ${regulationLaw.paragraph("3", "§ 3")}, має щонайменше 684 × 883 piksele, розмір не більше 2,5 MB і зберігає пропорції 35 × 45 mm.`,
+            text: regulationLaw.text`${regulationLaw.paragraph("4", "§ 4")} для wniosku, що подається способом з ${foreignersLaw.external("art. 106c", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ust. 1 ustawy, вимагає файл фотографії у форматі JPG, який відповідає ${regulationLaw.paragraph("3", "§ 3")}, має щонайменше 684 × 883 piksele, розмір не більше 2,5 MB і зберігає пропорції 35 × 45 mm.`,
             sourceLocator: "§ 4",
           },
         ],
@@ -165,7 +165,7 @@ export const temporaryResidenceApplicationPart01 =
         claims: [
           {
             kind: "statute-text",
-            text: regulationLaw.text`${regulationLaw.paragraph("6", "§ 6")} для wniosku, поданого способом з ${foreignersLaw.external("art. 106c", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ust. 1 ustawy, обмежує один електронний файл 10 MB, суму всіх файлів — 50 MB, а цифрові копії паперових документів належної якості вимагає подавати у форматі PDF.`,
+            text: regulationLaw.text`${regulationLaw.paragraph("6", "§ 6")} для wniosku, поданого способом з ${foreignersLaw.external("art. 106c", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ust. 1 ustawy, обмежує один електронний файл 10 MB, суму всіх файлів — 50 MB, а цифрові копії паперових документів належної якості вимагає подавати у форматі PDF.`,
             sourceLocator: "§ 6",
           },
         ],

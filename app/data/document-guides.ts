@@ -11,7 +11,7 @@ const regulationLaw = createLegalTextAuthor(
 )
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 const kpaLaw = createLegalTextAuthor("kpa")
-const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
+const FOREIGNERS_MOS_AMENDMENT_URL = "https://eli.gov.pl/eli/DU/2025/1794/ogl"
 
 const OFFICIAL = {
   aliens: {
@@ -145,7 +145,7 @@ export const documentGuides: readonly DocumentGuide[] =
         "Не доводить реальність діяльності роботодавця або відсутність outsourcingu pracowniczego.",
       ],
       legalBasis: [
-        foreignersLaw.text`${foreignersLaw.article("106", "Art. 106 ust. 2 ustawy o cudzoziemcach")}, ${foreignersLaw.external("art. 106d ustawy o cudzoziemcach", FOREIGNERS_2026_CHANGE_URL)}, ${foreignersLaw.article("114", "art. 114 ustawy o cudzoziemcach")} і ${foreignersLaw.article("118", "art. 118 ustawy o cudzoziemcach")}.`,
+        foreignersLaw.text`${foreignersLaw.article("106", "Art. 106 ust. 2 ustawy o cudzoziemcach")}, ${foreignersLaw.external("art. 106d ustawy o cudzoziemcach", FOREIGNERS_MOS_AMENDMENT_URL)}, ${foreignersLaw.article("114", "art. 114 ustawy o cudzoziemcach")} і ${foreignersLaw.article("118", "art. 118 ustawy o cudzoziemcach")}.`,
         regulationLaw.text`${regulationLaw.paragraph("2", "§ 2 ust. 2")} і ${regulationLaw.annex("2")} do rozporządzenia Dz.U. 2026 poz. 553.`,
       ],
       keyChecks: [
@@ -219,7 +219,7 @@ export const documentGuides: readonly DocumentGuide[] =
         "Сам факт надсилання не означає, що умови дозволу виконані.",
       ],
       legalBasis: [
-        foreignersLaw.text`${foreignersLaw.articleRange("105", "107", { start: "Art. 105", end: "107" })} і ${foreignersLaw.external("art. 106c", FOREIGNERS_2026_CHANGE_URL)}–${foreignersLaw.external("106l", FOREIGNERS_2026_CHANGE_URL)} ustawy o cudzoziemcach.`,
+        foreignersLaw.text`${foreignersLaw.articleRange("105", "107", { start: "Art. 105", end: "107" })} і ${foreignersLaw.external("art. 106c", FOREIGNERS_MOS_AMENDMENT_URL)}–${foreignersLaw.external("106l", FOREIGNERS_MOS_AMENDMENT_URL)} ustawy o cudzoziemcach.`,
         "Форма та технічні вимоги — Dz.U. 2026 poz. 553.",
       ],
       keyChecks: [
@@ -250,7 +250,7 @@ export const documentGuides: readonly DocumentGuide[] =
         "Сам по собі не підтверджує поточну підставу перебування або право працювати.",
       ],
       legalBasis: [
-        foreignersLaw.text`${foreignersLaw.external("Art. 106e ustawy o cudzoziemcach", FOREIGNERS_2026_CHANGE_URL)}.`,
+        foreignersLaw.text`${foreignersLaw.external("Art. 106e ustawy o cudzoziemcach", FOREIGNERS_MOS_AMENDMENT_URL)}.`,
         regulationLaw.text`${regulationLaw.paragraph("6", "§ 6")} rozporządzenia Dz.U. 2026 poz. 553.`,
       ],
       keyChecks: [
@@ -332,7 +332,7 @@ export const documentGuides: readonly DocumentGuide[] =
       legalBasis: [
         kpaLaw.text`${kpaLaw.articleRange("50", "56", { start: "Art. 50", end: "56" })} KPA.`,
         kpaLaw.text`${kpaLaw.article("64", "Art. 64 § 2 KPA")} — усунення формальних недоліків.`,
-        foreignersLaw.text`У справах pobytowych також спеціальні ${foreignersLaw.external("art. 106e ustawy o cudzoziemcach", FOREIGNERS_2026_CHANGE_URL)}, ${foreignersLaw.external("art. 106f ustawy o cudzoziemcach", FOREIGNERS_2026_CHANGE_URL)} і ${foreignersLaw.external("art. 106i ustawy o cudzoziemcach", FOREIGNERS_2026_CHANGE_URL)}.`,
+        foreignersLaw.text`У справах pobytowych також спеціальні ${foreignersLaw.external("art. 106e ustawy o cudzoziemcach", FOREIGNERS_MOS_AMENDMENT_URL)}, ${foreignersLaw.external("art. 106f ustawy o cudzoziemcach", FOREIGNERS_MOS_AMENDMENT_URL)} і ${foreignersLaw.external("art. 106i ustawy o cudzoziemcach", FOREIGNERS_MOS_AMENDMENT_URL)}.`,
       ],
       keyChecks: [
         "Organ, адресат, номер справи, кожне żądanie, правова підстава, строк, спосіб виконання, наслідок і підпис.",

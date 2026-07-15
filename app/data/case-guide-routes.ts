@@ -30,6 +30,7 @@ const residenceFormLaw = createLegalTextAuthor(
 const UKRAINE_SPECIAL_ACT_URL =
   "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
 const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
+const FOREIGNERS_MOS_AMENDMENT_URL = "https://eli.gov.pl/eli/DU/2025/1794/ogl"
 
 type RouteSpec = Omit<
   CaseGuideRoute,
@@ -176,27 +177,27 @@ const embeddedCaseCitations: readonly [string, LegalTextValue][] = [
   ],
   [
     "Art. 106d",
-    foreignersLaw.text`${foreignersLaw.external("Art. 106d", FOREIGNERS_2026_CHANGE_URL)}`,
+    foreignersLaw.text`${foreignersLaw.external("Art. 106d", FOREIGNERS_MOS_AMENDMENT_URL)}`,
   ],
   [
     "Art. 106e",
-    foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_2026_CHANGE_URL)}`,
+    foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_MOS_AMENDMENT_URL)}`,
   ],
   [
     "art. 106e",
-    foreignersLaw.text`${foreignersLaw.external("art. 106e", FOREIGNERS_2026_CHANGE_URL)}`,
+    foreignersLaw.text`${foreignersLaw.external("art. 106e", FOREIGNERS_MOS_AMENDMENT_URL)}`,
   ],
   [
     "Art. 106f",
-    foreignersLaw.text`${foreignersLaw.external("Art. 106f", FOREIGNERS_2026_CHANGE_URL)}`,
+    foreignersLaw.text`${foreignersLaw.external("Art. 106f", FOREIGNERS_MOS_AMENDMENT_URL)}`,
   ],
   [
     "art. 106f",
-    foreignersLaw.text`${foreignersLaw.external("art. 106f", FOREIGNERS_2026_CHANGE_URL)}`,
+    foreignersLaw.text`${foreignersLaw.external("art. 106f", FOREIGNERS_MOS_AMENDMENT_URL)}`,
   ],
   [
     "106i",
-    foreignersLaw.text`${foreignersLaw.external("106i", FOREIGNERS_2026_CHANGE_URL)}`,
+    foreignersLaw.text`${foreignersLaw.external("106i", FOREIGNERS_MOS_AMENDMENT_URL)}`,
   ],
   [
     "art. 42c–42u",
@@ -259,13 +260,13 @@ function authorLegacyCaseText(value: string): LegalTextValue {
     case "Art. 42t":
       return foreignersLaw.text`${specialActCitation("Art. 42t")}`
     case "Art. 105–107, 106c–106l":
-      return foreignersLaw.text`${foreignersLaw.articleRange("105", "107")}, ${foreignersLaw.external("106c", FOREIGNERS_2026_CHANGE_URL)}–${foreignersLaw.external("106l", FOREIGNERS_2026_CHANGE_URL)}`
+      return foreignersLaw.text`${foreignersLaw.articleRange("105", "107")}, ${foreignersLaw.external("106c", FOREIGNERS_MOS_AMENDMENT_URL)}–${foreignersLaw.external("106l", FOREIGNERS_MOS_AMENDMENT_URL)}`
     case "art. 106d / 114":
-      return foreignersLaw.text`${foreignersLaw.external("art. 106d", FOREIGNERS_2026_CHANGE_URL)} / ${foreignersLaw.article("114", "114")}`
+      return foreignersLaw.text`${foreignersLaw.external("art. 106d", FOREIGNERS_MOS_AMENDMENT_URL)} / ${foreignersLaw.article("114", "114")}`
     case "Art. 106e; процедура MOS":
-      return foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_2026_CHANGE_URL)}; процедура MOS`
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_MOS_AMENDMENT_URL)}; процедура MOS`
     case "Art. 106d; art. 114 і 118":
-      return foreignersLaw.text`${foreignersLaw.external("Art. 106d", FOREIGNERS_2026_CHANGE_URL)}; ${foreignersLaw.article("114", "art. 114")} і ${foreignersLaw.article("118", "118")}`
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106d", FOREIGNERS_MOS_AMENDMENT_URL)}; ${foreignersLaw.article("114", "art. 114")} і ${foreignersLaw.article("118", "118")}`
     case "Art. 114":
       return foreignersLaw.text`${foreignersLaw.article("114")}`
     case "Art. 114 ust. 1 pkt 1; ust. 4a":
@@ -275,9 +276,9 @@ function authorLegacyCaseText(value: string): LegalTextValue {
     case "Art. 114 + правила доказів":
       return foreignersLaw.text`${foreignersLaw.article("114", "Art. 114")} + правила доказів`
     case "Art. 106e і 106i":
-      return foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_2026_CHANGE_URL)} і ${foreignersLaw.external("106i", FOREIGNERS_2026_CHANGE_URL)}`
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106e", FOREIGNERS_MOS_AMENDMENT_URL)} і ${foreignersLaw.external("106i", FOREIGNERS_MOS_AMENDMENT_URL)}`
     case "Art. 106f":
-      return foreignersLaw.text`${foreignersLaw.external("Art. 106f", FOREIGNERS_2026_CHANGE_URL)}`
+      return foreignersLaw.text`${foreignersLaw.external("Art. 106f", FOREIGNERS_MOS_AMENDMENT_URL)}`
     case "Art. 112a":
       return foreignersLaw.text`${foreignersLaw.article("112a")}`
     case "Art. 112a ust. 4":
