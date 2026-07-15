@@ -9,12 +9,12 @@ export type OfficialSource = {
 export type LegalNode = {
   id: string
   title: string
-  polish: string
-  summary: string
-  why?: string
-  checkpoints?: string[]
-  steps?: string[]
-  documents?: string[]
+  polish: LegalTextValue
+  summary: LegalTextValue
+  why?: LegalTextValue
+  checkpoints?: LegalTextValue[]
+  steps?: LegalTextValue[]
+  documents?: LegalTextValue[]
   sources?: OfficialSource[]
   related?: string[]
   children?: LegalNode[]

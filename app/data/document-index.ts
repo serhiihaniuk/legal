@@ -1,11 +1,15 @@
 import { legalData } from "~/data/legal-data"
 import { documentGuides, type DocumentGuide } from "~/data/document-guides"
 import { allNodes, type IndexedNode } from "~/data/legal-index"
+import {
+  legalTextPlainText,
+  type LegalTextValue,
+} from "~/data/legal-library/legal-text"
 import type { CaseDocument, OfficialSource } from "~/data/legal-types"
 
 export type DocumentContext = {
   node: IndexedNode
-  regulation: string
+  regulation: LegalTextValue
 }
 
 export type DocumentCaseContext = CaseDocument & {
@@ -191,7 +195,7 @@ function ensureEntry(rawTitle: string) {
 
 for (const node of allNodes) {
   for (const title of node.documents ?? []) {
-    const entry = ensureEntry(title)
+    const entry = ensureEntry(legalTextPlainText(title))
     entry.contexts.push({ node, regulation: node.polish })
     entry.sources.push(...(node.sources ?? []))
   }
@@ -199,7 +203,7 @@ for (const node of allNodes) {
 
 for (const route of legalData.caseStudy.routes) {
   for (const document of route.documentRegister) {
-    const entry = ensureEntry(document.item)
+    const entry = ensureEntry(legalTextPlainText(document.item))
     entry.caseContexts.push({
       ...document,
       routeId: route.id,

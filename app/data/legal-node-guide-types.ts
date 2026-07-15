@@ -1,12 +1,14 @@
+import type { LegalTextValue } from "~/data/legal-library/legal-text"
+
 export type LegalNodeGuide = {
-  introduction: string[]
-  regulated: string[]
-  appliesWhen: string[]
-  conditions: string[]
-  exceptions: string[]
-  consequences: string[]
-  procedure: string[]
-  foreignersContext: string[]
+  introduction: LegalTextValue[]
+  regulated: LegalTextValue[]
+  appliesWhen: LegalTextValue[]
+  conditions: LegalTextValue[]
+  exceptions: LegalTextValue[]
+  consequences: LegalTextValue[]
+  procedure: LegalTextValue[]
+  foreignersContext: LegalTextValue[]
 }
 
 export type LegalNodeGuideMap = Record<string, LegalNodeGuide>

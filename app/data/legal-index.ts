@@ -1,3 +1,4 @@
+import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import { legalData } from "~/data/legal-data"
 import type { LegalNode } from "~/data/legal-types"
 
@@ -13,7 +14,7 @@ function flattenNode(
   groupId: string,
   groupTitle: string,
   depth = 0,
-  parentId?: string,
+  parentId?: string
 ): IndexedNode[] {
   const indexed: IndexedNode = {
     ...node,
@@ -26,15 +27,13 @@ function flattenNode(
   return [
     indexed,
     ...(node.children ?? []).flatMap((child) =>
-      flattenNode(child, groupId, groupTitle, depth + 1, node.id),
+      flattenNode(child, groupId, groupTitle, depth + 1, node.id)
     ),
   ]
 }
 
 export const allNodes = legalData.groups.flatMap((group) =>
-  group.nodes.flatMap((node) =>
-    flattenNode(node, group.id, group.title),
-  ),
+  group.nodes.flatMap((node) => flattenNode(node, group.id, group.title))
 )
 
 export const nodeById = new Map(allNodes.map((node) => [node.id, node]))
@@ -53,7 +52,8 @@ export function searchNodes(query: string, groupId: string | null) {
       node.why,
       ...(node.documents ?? []),
     ]
-      .filter(Boolean)
+      .filter((value): value is NonNullable<typeof value> => Boolean(value))
+      .map(legalTextPlainText)
       .join(" ")
       .toLocaleLowerCase("uk")
 

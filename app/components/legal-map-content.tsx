@@ -2,6 +2,11 @@ import { ArrowRight, CheckCircle2, FileCheck2, Map, Scale } from "lucide-react"
 
 import type { TocItem } from "~/components/docs-layout"
 import { LegalText } from "~/components/legal-reference-text"
+import {
+  concatLegalText,
+  legalTextPlainText,
+  type LegalTextValue,
+} from "~/data/legal-library/legal-text"
 import { OfficialSourceEntry } from "~/components/official-source"
 import {
   Accordion,
@@ -446,7 +451,13 @@ function LinkedNodeRows({
   )
 }
 
-function StatementBlock({ title, items }: { title: string; items: string[] }) {
+function StatementBlock({
+  title,
+  items,
+}: {
+  title: string
+  items: LegalTextValue[]
+}) {
   if (!items.length) return null
 
   return (
@@ -459,7 +470,7 @@ function StatementBlock({ title, items }: { title: string; items: string[] }) {
       ) : (
         <ul className="m-0">
           {items.map((item) => (
-            <li key={item}>
+            <li key={legalTextPlainText(item)}>
               <LegalText text={item} />
             </li>
           ))}
@@ -469,8 +480,18 @@ function StatementBlock({ title, items }: { title: string; items: string[] }) {
   )
 }
 
-function uniqueStatements(...groups: Array<string[] | undefined>) {
-  return [...new Set(groups.flatMap((group) => group ?? []).filter(Boolean))]
+function uniqueStatements(...groups: Array<LegalTextValue[] | undefined>) {
+  const unique = new globalThis.Map<string, LegalTextValue>()
+  for (const item of groups.flatMap((group) => group ?? []).filter(Boolean)) {
+    unique.set(legalTextPlainText(item), item)
+  }
+  return [...unique.values()]
+}
+
+function joinStatements(items: LegalTextValue[]) {
+  return concatLegalText(
+    ...items.flatMap((item, index) => (index ? [" ", item] : [item]))
+  )
 }
 
 function ModelExplanation({
@@ -491,7 +512,7 @@ function ModelExplanation({
     <div>
       {subject.length ? (
         <p>
-          <LegalText text={subject.join(" ")} />
+          <LegalText text={joinStatements(subject)} />
         </p>
       ) : null}
       {activation.length ? (
@@ -567,7 +588,7 @@ export function LegalNodeContent({
           <LegalText text={node.polish} />
         </p>
         {introduction.map((paragraph) => (
-          <p key={paragraph}>
+          <p key={legalTextPlainText(paragraph)}>
             <LegalText text={paragraph} />
           </p>
         ))}
@@ -643,7 +664,7 @@ export function LegalNodeContent({
             <div data-not-typeset className="not-typeset mt-6 border-y">
               {node.documents.map((item) => (
                 <div
-                  key={item}
+                  key={legalTextPlainText(item)}
                   className="flex gap-3 border-b py-4 last:border-b-0"
                 >
                   <FileCheck2 className="mt-0.5 shrink-0 text-muted-foreground" />
@@ -659,7 +680,10 @@ export function LegalNodeContent({
               <h3>Що перевірити у матеріалах справи</h3>
               <ul data-not-typeset className="not-typeset mt-4 grid gap-3">
                 {node.checkpoints.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-6">
+                  <li
+                    key={legalTextPlainText(item)}
+                    className="flex gap-3 text-sm leading-6"
+                  >
                     <CheckCircle2 className="mt-1 shrink-0 text-muted-foreground" />
                     <span>
                       <LegalText text={item} />
