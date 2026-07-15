@@ -67,12 +67,16 @@ const kpaProvisionIdByArticle = new Map(
   })
 )
 
-export function articleHref(article: string) {
+function legacyKpaArticleHref(article: string) {
   const provisionId = kpaProvisionIdByArticle.get(
     article.toLocaleLowerCase("pl-PL")
   )
   return provisionId
-    ? `/law/kpa/provisions/${encodeURIComponent(provisionId)}`
+    ? (resolveRegisteredLegalHref({
+        kind: "legal-provision",
+        documentId: "kpa",
+        provisionId,
+      }) ?? "/law/kpa")
     : "/law/kpa"
 }
 
@@ -95,7 +99,7 @@ export function legalReferenceTarget(
       return kpaArticleIndex.some(
         (entry) => entry.article === reference.article
       )
-        ? { reference, href: articleHref(reference.article) }
+        ? { reference, href: legacyKpaArticleHref(reference.article) }
         : undefined
     case "document":
       return documentById.has(reference.documentId)

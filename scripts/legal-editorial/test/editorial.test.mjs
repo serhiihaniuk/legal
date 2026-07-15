@@ -62,6 +62,29 @@ test("parses a part without executing authored TypeScript", () => {
   ])
 })
 
+test("parses entries containing authored legal-text templates", () => {
+  const source = part({
+    entries: [
+      entry("alpha-art-1").replace(
+        'summary: "summary"',
+        'summary: alphaLaw.text`See ${alphaLaw.article("1", "Art. 1")}.`',
+      ),
+      entry("alpha-art-2"),
+    ],
+  })
+  const parsed = parseEditorialPartSource(source, "part-00.ts")
+  assert.deepEqual(
+    parsed.entries.map(({ provisionId, reviewStatus }) => ({
+      provisionId,
+      reviewStatus,
+    })),
+    [
+      { provisionId: "alpha-art-1", reviewStatus: "reviewed" },
+      { provisionId: "alpha-art-2", reviewStatus: "reviewed" },
+    ],
+  )
+})
+
 test("incomplete mode accepts the scaffold but reports missing and draft coverage", () => {
   const result = validateEditorial({
     allowIncomplete: true,

@@ -1,4 +1,7 @@
+import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+
+const ppsaLaw = createLegalTextAuthor("ppsa")
 
 export const ppsaPart00 = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
@@ -12,7 +15,7 @@ export const ppsaPart00 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 3 § 1 встановлює контроль sądów administracyjnych над діяльністю administracji publicznej, а § 2 перелічує основні категорії skarg.",
+          text: ppsaLaw.text`${ppsaLaw.article("3", "Art. 3 § 1")} встановлює контроль sądów administracyjnych над діяльністю administracji publicznej, а ${ppsaLaw.article("3", "§ 2")} перелічує основні категорії skarg.`,
           sourceLocator: "Art. 3 § 1–2",
         },
         {

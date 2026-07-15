@@ -1,3 +1,4 @@
+import { defineLegalTextContent } from "../legal-text"
 import type {
   ExplanationReviewStatus,
   LegalDocumentId,
@@ -6,20 +7,19 @@ import type {
   LegalProvisionId,
 } from "../contracts"
 
-export type EditorialEntry<D extends LegalDocumentId> =
-  Omit<
-    LegalExplanation<D>,
-    | "id"
-    | "documentId"
-    | "provisionId"
-    | "sourceEditionId"
-    | "legalStateDate"
-    | "verifiedAt"
-    | "language"
-  > & {
-    provisionId: LegalProvisionId<D>
-    reviewStatus: ExplanationReviewStatus
-  }
+export type EditorialEntry<D extends LegalDocumentId> = Omit<
+  LegalExplanation<D>,
+  | "id"
+  | "documentId"
+  | "provisionId"
+  | "sourceEditionId"
+  | "legalStateDate"
+  | "verifiedAt"
+  | "language"
+> & {
+  provisionId: LegalProvisionId<D>
+  reviewStatus: ExplanationReviewStatus
+}
 
 export type EditorialPartInput<D extends LegalDocumentId> = {
   documentId: D
@@ -35,14 +35,18 @@ export type EditorialPart<D extends LegalDocumentId> = Readonly<
 >
 
 export function defineEditorialPart<D extends LegalDocumentId>(
-  input: EditorialPartInput<D>,
+  input: EditorialPartInput<D>
 ): EditorialPart<D> {
   const table: Record<string, LegalExplanation<D>> = {}
+  defineLegalTextContent(
+    input.entries.filter((entry) => entry.reviewStatus === "reviewed"),
+    `editorial.${input.documentId}`
+  )
 
   for (const entry of input.entries) {
     if (Object.prototype.hasOwnProperty.call(table, entry.provisionId)) {
       throw new Error(
-        `Duplicate editorial provision ID in ${input.documentId}: ${entry.provisionId}`,
+        `Duplicate editorial provision ID in ${input.documentId}: ${entry.provisionId}`
       )
     }
 

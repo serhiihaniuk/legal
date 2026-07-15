@@ -1,4 +1,8 @@
+import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+
+const kpaLaw = createLegalTextAuthor("kpa")
+const ppsaLaw = createLegalTextAuthor("ppsa")
 
 export const ppsaPart04 = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
@@ -12,7 +16,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Суд umarza zawieszone postępowanie, якщо wniosek o podjęcie postępowania zawieszonego на zgodny wniosek сторін або з причини art. 125 § 1 pkt 3 не подано протягом трьох років від postanowienia; у разі braku następcy prawnego сторони, яка втратила zdolność sądową, umorzenie настає також у будь-якому разі після трьох років від postanowienia про zawieszenie з цієї причини, а після смерті сторони — після п’яти років. Umorzenie перед NSA спричиняє uprawomocnienie orzeczenia WSA.",
+          text: ppsaLaw.text`Суд umarza zawieszone postępowanie, якщо wniosek o podjęcie postępowania zawieszonego на zgodny wniosek сторін або з причини ${ppsaLaw.article("125", "art. 125 § 1")} pkt 3 не подано протягом трьох років від postanowienia; у разі braku następcy prawnego сторони, яка втратила zdolność sądową, umorzenie настає також у будь-якому разі після трьох років від postanowienia про zawieszenie з цієї причини, а після смерті сторони — після п’яти років. Umorzenie перед NSA спричиняє uprawomocnienie orzeczenia WSA.`,
           sourceLocator: "Art. 130 § 1 pkt 1–3, § 2",
         },
       ],
@@ -21,8 +25,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1 pkt 1–3",
-          explanation:
-            "Не узагальнюйте трирічний строк: pkt 1 стосується zawieszenie на zgodny wniosek сторін або з причини art. 125 § 1 pkt 3; pkt 2 — braku następcy prawnego та граничних трьох років, а pkt 3 — смерті сторони і п’яти років. Строки рахуються від дня wydania postanowienia o zawieszeniu.",
+          explanation: ppsaLaw.text`Не узагальнюйте трирічний строк: pkt 1 стосується zawieszenie на zgodny wniosek сторін або з причини ${ppsaLaw.article("125", "art. 125 § 1")} pkt 3; pkt 2 — braku następcy prawnego та граничних трьох років, а pkt 3 — смерті сторони і п’яти років. Строки рахуються від дня wydania postanowienia o zawieszeniu.`,
         },
         {
           locator: "§ 2",
@@ -30,8 +33,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
             "Якщо umorzenie відбувається перед NSA, рішення WSA стає prawomocne за правилом цієї статті.",
         },
       ],
-      legalEffect:
-        "За наявності описаних у § 1 умов суд припиняє саме zawieszone postępowanie; стаття не вирішує матеріальну законність адміністративної справи.",
+      legalEffect: ppsaLaw.text`За наявності описаних у ${ppsaLaw.article("130", "§ 1")} умов суд припиняє саме zawieszone postępowanie; стаття не вирішує матеріальну законність адміністративної справи.`,
       foreignersCase:
         "У справі про pobyt, яка опинилася в суді й була zawieszona, зафіксуйте підставу та дату postanowienie і перевірте, чи подано wniosek про podjęcie вчасно. Не сприймайте ці строки як загальний строк для wniesienia skargi.",
     },
@@ -74,8 +76,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 132",
         },
       ],
-      summary:
-        "Стаття називає wyrok формою, якою суд вирішує справу.",
+      summary: "Стаття називає wyrok формою, якою суд вирішує справу.",
       rules: [
         {
           locator: "Art. 132",
@@ -94,7 +95,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Після zamknięcie rozprawy суд видає wyrok на підставі akt sprawy, крім випадку невиконання органом обов’язку з art. 54 § 2; у postępowaniu uproszczonym або коли це передбачає закон wyrok може бути на posiedzeniu niejawnym, а закриту rozprawę слід відкрити знову, якщо істотні обставини стали відомими лише після її закриття.",
+          text: ppsaLaw.text`Після zamknięcie rozprawy суд видає wyrok на підставі akt sprawy, крім випадку невиконання органом обов’язку з ${ppsaLaw.article("54", "art. 54 § 2")}; у postępowaniu uproszczonym або коли це передбачає закон wyrok може бути на posiedzeniu niejawnym, а закриту rozprawę слід відкрити знову, якщо істотні обставини стали відомими лише після її закриття.`,
           sourceLocator: "Art. 133 § 1–3",
         },
       ],
@@ -103,8 +104,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Основою є akta sprawy після закриття слухання; окремо враховано ситуацію, коли орган не виконав обов’язок із art. 54 § 2.",
+          explanation: ppsaLaw.text`Основою є akta sprawy після закриття слухання; окремо враховано ситуацію, коли орган не виконав обов’язок із ${ppsaLaw.article("54", "art. 54 § 2")}.`,
         },
         {
           locator: "§ 2–3",
@@ -114,8 +114,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Стаття регулює спосіб підготовки wyrok, а не доводить, що суд зобов’язаний прийняти конкретну версію фактів.",
-      foreignersCase:
-        "У спорі про pobyt перевірте, чи є потрібний документ в aktach sprawy до закриття rozprawa. Нові обставини не дають автоматичного результату, але можуть мати значення за § 3.",
+      foreignersCase: ppsaLaw.text`У спорі про pobyt перевірте, чи є потрібний документ в aktach sprawy до закриття rozprawa. Нові обставини не дають автоматичного результату, але можуть мати значення за ${ppsaLaw.article("133", "§ 3")}.`,
     },
     {
       provisionId: "ppsa-art-134",
@@ -123,7 +122,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd розглядає справу в її межах, але не пов’язаний zarzutami, wnioskami skargi або названою підставою правовою, з застереженням art. 57a; суд не може постановити на шкоду skarżący, крім виявлення порушення, що веде до stwierdzenie nieważności.",
+          text: ppsaLaw.text`Sąd розглядає справу в її межах, але не пов’язаний zarzutami, wnioskami skargi або названою підставою правовою, з застереженням ${ppsaLaw.article("57a", "art. 57a")}; суд не може постановити на шкоду skarżący, крім виявлення порушення, що веде до stwierdzenie nieważności.`,
           sourceLocator: "Art. 134 § 1–2",
         },
       ],
@@ -132,8 +131,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Предмет справи і зміст skarga важливіші за помилково названу підставу, але треба врахувати спеціальне застереження art. 57a.",
+          explanation: ppsaLaw.text`Предмет справи і зміст skarga важливіші за помилково названу підставу, але треба врахувати спеціальне застереження ${ppsaLaw.article("57a", "art. 57a")}.`,
         },
         {
           locator: "§ 2",
@@ -143,8 +141,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Стаття розширює юридичну оцінку суду в межах справи, але не перетворює skarga на необмежений перегляд будь-яких питань.",
-      foreignersCase:
-        "У скарзі на decyzja щодо pobyt чітко окресліть предмет оскарження, але не покладайтеся лише на назву zarzut. Пам’ятайте про окреме правило art. 57a та виняток щодо nieważność.",
+      foreignersCase: ppsaLaw.text`У скарзі на decyzja щодо pobyt чітко окресліть предмет оскарження, але не покладайтеся лише на назву zarzut. Пам’ятайте про окреме правило ${ppsaLaw.article("57a", "art. 57a")} та виняток щодо nieważność.`,
     },
     {
       provisionId: "ppsa-art-135",
@@ -200,7 +197,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Wyrok ухвалюється після таємної narada sędziów; рішення приймається більшістю, суддя може під час підписання sentencji подати zdanie odrębne та має письмово його обґрунтувати, а sentencja підписується всім складом суду. Narada і голосування є таємними, а повідомлення про zdanie odrębne та ім’я судді відбуваються за правилами § 3.",
+          text: ppsaLaw.text`Wyrok ухвалюється після таємної narada sędziów; рішення приймається більшістю, суддя може під час підписання sentencji подати zdanie odrębne та має письмово його обґрунтувати, а sentencja підписується всім складом суду. Narada і голосування є таємними, а повідомлення про zdanie odrębne та ім’я судді відбуваються за правилами ${ppsaLaw.article("137", "§ 3")}.`,
           sourceLocator: "Art. 137 § 1–5",
         },
       ],
@@ -316,7 +313,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Uzasadnienie wyroku складається з urzędu протягом чотирнадцяти днів у випадках § 1; коли skarga oddalono, його готують за wniosek, поданий протягом семи днів від оголошення або doręczenie odpisu sentencji, і протягом чотирнадцяти днів від wniosek. У складній справі строк можна продовжити максимум на тридцять днів; uzasadnienie має містити стан справи, zarzuty, позиції сторін, правову підставу, її пояснення та, при повторному розгляді органом, вказівки щодо подальшого провадження.",
+          text: ppsaLaw.text`Uzasadnienie wyroku складається з urzędu протягом чотирнадцяти днів у випадках ${ppsaLaw.article("141", "§ 1")}; коли skarga oddalono, його готують за wniosek, поданий протягом семи днів від оголошення або doręczenie odpisu sentencji, і протягом чотирнадцяти днів від wniosek. У складній справі строк можна продовжити максимум на тридцять днів; uzasadnienie має містити стан справи, zarzuty, позиції сторін, правову підставу, її пояснення та, при повторному розгляді органом, вказівки щодо подальшого провадження.`,
           sourceLocator: "Art. 141 § 1–4",
         },
       ],
@@ -421,10 +418,8 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
             "Для звичайного wyrok орієнтиром є ogłoszenie, для wyrok без відкритого засідання — підписання sentencja.",
         },
       ],
-      legalEffect:
-        "Це правило про пов’язаність суду; його не слід автоматично ототожнювати з prawomocność, яку окремо регулює art. 168.",
-      foreignersCase:
-        "У справі щодо pobyt розрізняйте момент пов’язаності суду за art. 144 і момент prawomocność. Для практичної дії рішення перевірте також його зміст і засоби оскарження.",
+      legalEffect: ppsaLaw.text`Це правило про пов’язаність суду; його не слід автоматично ототожнювати з prawomocność, яку окремо регулює ${ppsaLaw.article("168", "art. 168")}.`,
+      foreignersCase: ppsaLaw.text`У справі щодо pobyt розрізняйте момент пов’язаності суду за ${ppsaLaw.article("144", "art. 144")} і момент prawomocność. Для практичної дії рішення перевірте також його зміст і засоби оскарження.`,
     },
     {
       provisionId: "ppsa-art-145",
@@ -451,8 +446,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2–3",
-          explanation:
-            "Для іншої процедури враховуйте її спеціальні правила; якщо є підстава для umorzenie адміністративної справи, суд робить це одночасно у випадку § 3.",
+          explanation: ppsaLaw.text`Для іншої процедури враховуйте її спеціальні правила; якщо є підстава для umorzenie адміністративної справи, суд робить це одночасно у випадку ${ppsaLaw.article("145", "§ 3")}.`,
         },
       ],
       legalEffect:
@@ -466,7 +460,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "У випадках art. 145 § 1 pkt 1 lit. a або pkt 2, якщо це виправдано обставинами, суд зобов’язує орган у визначений строк видати decyzja або postanowienie, вказуючи спосіб załatwienia справи чи її rozstrzygnięcie, крім випадку, коли результат залишено на uznanie органу. За невидачі в строк сторона може подати skarga про встановлення права або обов’язку; суд оцінює rażące naruszenie prawa та може накласти grzywna або присудити суму.",
+          text: ppsaLaw.text`У випадках ${ppsaLaw.article("145", "art. 145 § 1")} pkt 1 lit. a або pkt 2, якщо це виправдано обставинами, суд зобов’язує орган у визначений строк видати decyzja або postanowienie, вказуючи спосіб załatwienia справи чи її rozstrzygnięcie, крім випадку, коли результат залишено на uznanie органу. За невидачі в строк сторона може подати skarga про встановлення права або обов’язку; суд оцінює rażące naruszenie prawa та може накласти grzywna або присудити суму.`,
           sourceLocator: "Art. 145a § 1–3",
         },
       ],
@@ -491,8 +485,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Норма посилює виконання судового рішення у визначених випадках, але застереження про uznanie органу та умова обставин не дають універсальної гарантії конкретної decyzja.",
-      foreignersCase:
-        "Якщо після суду у справі про pobyt орган зобов’язаний видати decyzja або postanowienie, зафіксуйте встановлений строк і семиденний обов’язок повідомлення. Невидача може відкрити шлях із § 3, але це не означає автоматичної видачі дозволу.",
+      foreignersCase: ppsaLaw.text`Якщо після суду у справі про pobyt орган зобов’язаний видати decyzja або postanowienie, зафіксуйте встановлений строк і семиденний обов’язок повідомлення. Невидача може відкрити шлях із ${ppsaLaw.article("145a", "§ 3")}, але це не означає автоматичної видачі дозволу.`,
     },
     {
       provisionId: "ppsa-art-146",
@@ -500,7 +493,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Задовольняючи skarga на akt або czynność з art. 3 § 2 pkt 4–4b, суд uchyla відповідний akt, interpretację, opinię чи відмову або stwierdza bezskuteczność czynność; до цього відповідно застосовується art. 145 § 1 pkt 1, а у справах pkt 4 суд може визнати uprawnienie чи obowiązek, що випливає з prawa.",
+          text: ppsaLaw.text`Задовольняючи skarga на akt або czynność з ${ppsaLaw.article("3", "art. 3 § 2")} pkt 4–4b, суд uchyla відповідний akt, interpretację, opinię чи відмову або stwierdza bezskuteczność czynność; до цього відповідно застосовується ${ppsaLaw.article("145", "art. 145 § 1")} pkt 1, а у справах pkt 4 суд може визнати uprawnienie чи obowiązek, що випливає з prawa.`,
           sourceLocator: "Art. 146 § 1–2",
         },
       ],
@@ -509,8 +502,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Спочатку перевірте, що предмет справді належить до art. 3 § 2 pkt 4–4b; далі розрізняйте uchylenie і bezskuteczność.",
+          explanation: ppsaLaw.text`Спочатку перевірте, що предмет справді належить до ${ppsaLaw.article("3", "art. 3 § 2")} pkt 4–4b; далі розрізняйте uchylenie і bezskuteczność.`,
         },
         {
           locator: "§ 2",
@@ -520,8 +512,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Наслідок залежить від виду оскарженого акту чи czynność; стаття не поширює цей режим на кожну decyzja адміністрації.",
-      foreignersCase:
-        "У справі іноземця спершу класифікуйте оскаржений документ: звичайна decyzja про pobyt не стає справою art. 146 лише через спосіб її називання.",
+      foreignersCase: ppsaLaw.text`У справі іноземця спершу класифікуйте оскаржений документ: звичайна decyzja про pobyt не стає справою ${ppsaLaw.article("146", "art. 146")} лише через спосіб її називання.`,
     },
     {
       provisionId: "ppsa-art-147",
@@ -529,12 +520,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Задовольняючи skarga на uchwała або akt з art. 3 § 2 pkt 5–6, суд stwierdza nieważność повністю чи частково або stwierdza wydanie з naruszeniem prawa, якщо спеціальний припис виключає nieważność; індивідуальні рішення, видані на їх підставі, оскаржуються в адміністративному або спеціальному порядку.",
+          text: ppsaLaw.text`Задовольняючи skarga на uchwała або akt з ${ppsaLaw.article("3", "art. 3 § 2")} pkt 5–6, суд stwierdza nieważność повністю чи частково або stwierdza wydanie з naruszeniem prawa, якщо спеціальний припис виключає nieważność; індивідуальні рішення, видані на їх підставі, оскаржуються в адміністративному або спеціальному порядку.`,
           sourceLocator: "Art. 147 § 1–2",
         },
       ],
-      summary:
-        "Норма стосується uchwała та актів, названих у art. 3 § 2 pkt 5–6, і відділяє їх від індивідуальних рішень, що на них ґрунтуються.",
+      summary: ppsaLaw.text`Норма стосується uchwała та актів, названих у ${ppsaLaw.article("3", "art. 3 § 2")} pkt 5–6, і відділяє їх від індивідуальних рішень, що на них ґрунтуються.`,
       rules: [
         {
           locator: "§ 1",
@@ -573,8 +563,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Це спеціальне правило для визначеної категорії skarga; воно не є загальним способом скасування decyzja у справі іноземця.",
-      foreignersCase:
-        "Для типової справи про pobyt art. 148 прямо не визначає шлях оскарження. Не застосовуйте його без встановлення спеціального предмета та сторони, названих у статті.",
+      foreignersCase: ppsaLaw.text`Для типової справи про pobyt ${ppsaLaw.article("148", "art. 148")} прямо не визначає шлях оскарження. Не застосовуйте його без встановлення спеціального предмета та сторони, названих у статті.`,
     },
     {
       provisionId: "ppsa-art-149",
@@ -582,7 +571,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Задовольняючи skarga на bezczynność або przewlekłe prowadzenie postępowania у справах art. 3 § 2 pkt 1–4, а також на przewlekłość у справі pkt 4a, суд може зобов’язати орган видати akt, interpretację чи здійснити czynność, зобов’язати визнати право або обов’язок і встановлює факт бездіяльності чи протяглості; він також оцінює rażące naruszenie prawa, а за умов § 1b може вирішити існування права чи обов’язку, накласти grzywna або присудити суму.",
+          text: ppsaLaw.text`Задовольняючи skarga на bezczynność або przewlekłe prowadzenie postępowania у справах ${ppsaLaw.article("3", "art. 3 § 2")} pkt 1–4, а також на przewlekłość у справі pkt 4a, суд може зобов’язати орган видати akt, interpretację чи здійснити czynność, зобов’язати визнати право або обов’язок і встановлює факт бездіяльності чи протяглості; він також оцінює rażące naruszenie prawa, а за умов ${ppsaLaw.article("149", "§ 1b")} може вирішити існування права чи обов’язку, накласти grzywna або присудити суму.`,
           sourceLocator: "Art. 149 § 1–2",
         },
       ],
@@ -601,14 +590,12 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2",
-          explanation:
-            "Grzywna або сума на користь skarżący можливі додатково і мають межу, прив’язану до art. 154 § 6.",
+          explanation: ppsaLaw.text`Grzywna або сума на користь skarżący можливі додатково і мають межу, прив’язану до ${ppsaLaw.article("154", "art. 154 § 6")}.`,
         },
       ],
       legalEffect:
         "Судовий захист від бездіяльності спрямований на процесуальну реакцію та, за умов статті, на право чи обов’язок; він не гарантує наперед позитивного адміністративного рішення.",
-      foreignersCase:
-        "У справі про затягування розгляду wniosku про pobyt спершу класифікуйте бездіяльність або przewlekłość за межами art. 3 § 2. Навіть зобов’язання органу розглянути справу не дорівнює обов’язку видати дозвіл.",
+      foreignersCase: ppsaLaw.text`У справі про затягування розгляду wniosku про pobyt спершу класифікуйте бездіяльність або przewlekłość за межами ${ppsaLaw.article("3", "art. 3 § 2")}. Навіть зобов’язання органу розглянути справу не дорівнює обов’язку видати дозвіл.`,
     },
     {
       provisionId: "ppsa-art-150",
@@ -616,7 +603,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "У справах про akty і czynności, не названі в art. 145–148, суд, задовольняючи skarga, uchyla їх або stwierdza bezskuteczność.",
+          text: ppsaLaw.text`У справах про akty і czynności, не названі в ${ppsaLaw.article("145", "art. 145")}–${ppsaLaw.article("148", "148")}, суд, задовольняючи skarga, uchyla їх або stwierdza bezskuteczność.`,
           sourceLocator: "Art. 150",
         },
       ],
@@ -625,14 +612,12 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "Art. 150",
-          explanation:
-            "Перед застосуванням перевірте, що предмет не належить до art. 145–148; після цього розрізняйте uchylenie та bezskuteczność.",
+          explanation: ppsaLaw.text`Перед застосуванням перевірте, що предмет не належить до ${ppsaLaw.article("145", "art. 145")}–${ppsaLaw.article("148", "148")}; після цього розрізняйте uchylenie та bezskuteczność.`,
         },
       ],
       legalEffect:
         "Стаття дає два можливі наслідки для залишкової категорії, але сама не вирішує, який із них відповідає конкретному akt або czynność.",
-      foreignersCase:
-        "У справі іноземця не називайте art. 150 запасним шляхом лише тому, що документ органу незрозумілий. Спершу встановіть точний тип akt або czynność та його правову категорію.",
+      foreignersCase: ppsaLaw.text`У справі іноземця не називайте ${ppsaLaw.article("150", "art. 150")} запасним шляхом лише тому, що документ органу незрозумілий. Спершу встановіть точний тип akt або czynność та його правову категорію.`,
     },
     {
       provisionId: "ppsa-art-151",
@@ -664,22 +649,19 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Задовольняючи sprzeciw від decyzja, суд uchyla decyzja повністю, якщо встановлює порушення art. 138 § 2 KPA, і може з urzędu або за wniosek накласти органу grzywna; якщо sprzeciw не задоволено, суд його oddala. На wyrok за § 1 środka odwoławczego немає, але на postanowienie про grzywna належить zażalenie; правила застосовуються відповідно і до sprzeciw від postanowienie.",
+          text: ppsaLaw.text`Задовольняючи sprzeciw від decyzja, суд uchyla decyzja повністю, якщо встановлює порушення ${kpaLaw.article("138", "art. 138 § 2")} KPA, і може з urzędu або за wniosek накласти органу grzywna; якщо sprzeciw не задоволено, суд його oddala. На wyrok за ${ppsaLaw.article("151a", "§ 1")} środka odwoławczego немає, але на postanowienie про grzywna належить zażalenie; правила застосовуються відповідно і до sprzeciw від postanowienie.`,
           sourceLocator: "Art. 151a § 1–4",
         },
       ],
-      summary:
-        "Стаття встановлює окремий режим sprzeciw від decyzja або postanowienie у випадках, пов’язаних з art. 138 § 2 KPA, включно з відсутністю звичайного środka odwoławczego від визначеного wyrok.",
+      summary: ppsaLaw.text`Стаття встановлює окремий режим sprzeciw від decyzja або postanowienie у випадках, пов’язаних з ${kpaLaw.article("138", "art. 138 § 2")} KPA, включно з відсутністю звичайного środka odwoławczego від визначеного wyrok.`,
       rules: [
         {
           locator: "§ 1–2",
-          explanation:
-            "Для sprzeciw спочатку перевірте названу підставу art. 138 § 2 KPA; наслідком є uchylenie decyzja або oddalenie sprzeciw залежно від оцінки суду.",
+          explanation: ppsaLaw.text`Для sprzeciw спочатку перевірте названу підставу ${kpaLaw.article("138", "art. 138 § 2")} KPA; наслідком є uchylenie decyzja або oddalenie sprzeciw залежно від оцінки суду.`,
         },
         {
           locator: "§ 3",
-          explanation:
-            "Wyrok за § 1 не має środka odwoławczego, але postanowienie у частині grzywna може бути оскаржене zażalenie.",
+          explanation: ppsaLaw.text`Wyrok за ${ppsaLaw.article("151a", "§ 1")} не має środka odwoławczego, але postanowienie у частині grzywna може бути оскаржене zażalenie.`,
         },
         {
           locator: "§ 4",
@@ -689,8 +671,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Це спеціальний контроль sprzeciw, а не загальна заміна odwołanie; наслідок і можливість оскарження залежать від виду розглянутого рішення.",
-      foreignersCase:
-        "У справі іноземця спочатку встановіть, чи decyzja або postanowienie справді належить до режиму sprzeciw за art. 138 § 2 KPA. Не називайте цей шлях звичайною апеляцією на будь-яку decyzja про pobyt.",
+      foreignersCase: ppsaLaw.text`У справі іноземця спочатку встановіть, чи decyzja або postanowienie справді належить до режиму sprzeciw за ${kpaLaw.article("138", "art. 138 § 2")} KPA. Не називайте цей шлях звичайною апеляцією на будь-яку decyzja про pobyt.`,
     },
     {
       provisionId: "ppsa-art-152",
@@ -712,8 +693,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2",
-          explanation:
-            "Для akt prawa miejscowego правило § 1 не застосовується.",
+          explanation: ppsaLaw.text`Для akt prawa miejscowego правило ${ppsaLaw.article("152", "§ 1")} не застосовується.`,
         },
       ],
       legalEffect:
@@ -760,8 +740,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1–3",
-          explanation:
-            "Перед новою skarga потрібне письмове wezwanie органу; подальше виконання після її подання саме по собі не припиняє справу за § 3.",
+          explanation: ppsaLaw.text`Перед новою skarga потрібне письмове wezwanie органу; подальше виконання після її подання саме по собі не припиняє справу за ${ppsaLaw.article("154", "§ 3")}.`,
         },
         {
           locator: "§ 4–5",
@@ -770,8 +749,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 6–7",
-          explanation:
-            "Grzywna та сума на користь skarżący мають межі, прямо прив’язані до середньої зарплати або art. 154 § 6.",
+          explanation: ppsaLaw.text`Grzywna та сума на користь skarżący мають межі, прямо прив’язані до середньої зарплати або ${ppsaLaw.article("154", "art. 154 § 6")}.`,
         },
       ],
       legalEffect:
@@ -799,14 +777,12 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2–3",
-          explanation:
-            "Орган має повідомити суд про позицію за тридцять днів; за невиконання можливе grzywna у межах art. 154 § 6.",
+          explanation: ppsaLaw.text`Орган має повідомити суд про позицію за тридцять днів; за невиконання можливе grzywna у межах ${ppsaLaw.article("154", "art. 154 § 6")}.`,
         },
       ],
       legalEffect:
         "Це повідомлення та контроль відповіді органу, а не самостійне рішення про право іноземця чи скасування його decyzja.",
-      foreignersCase:
-        "У справі про pobyt art. 155 може стосуватися системної процесуальної проблеми, поміченої судом, але не замінює skarga та не наказує органу видати дозвіл.",
+      foreignersCase: ppsaLaw.text`У справі про pobyt ${ppsaLaw.article("155", "art. 155")} може стосуватися системної процесуальної проблеми, поміченої судом, але не замінює skarga та не наказує органу видати дозвіл.`,
     },
     {
       provisionId: "ppsa-art-156",
@@ -814,12 +790,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd може з urzędu виправити у wyrok неточності, помилки письма або рахунку чи інші очевидні omyłki; це може бути постановлено на posiedzenie niejawnym із позначкою на оригіналі та копіях. У corpus для § 2a наведено дві редакції: чинну на дату стану з електронною wzmianka, підписаною kwalifikowany podpis elektroniczny, і редакцію, що набуде чинності 1 жовтня 2029 року.",
+          text: ppsaLaw.text`Sąd може з urzędu виправити у wyrok неточності, помилки письма або рахунку чи інші очевидні omyłki; це може бути постановлено на posiedzenie niejawnym із позначкою на оригіналі та копіях. У corpus для ${ppsaLaw.article("156", "§ 2a")} наведено дві редакції: чинну на дату стану з електронною wzmianka, підписаною kwalifikowany podpis elektroniczny, і редакцію, що набуде чинності 1 жовтня 2029 року.`,
           sourceLocator: "Art. 156 § 1–3, przypisy 53–55",
         },
       ],
-      summary:
-        "Стаття регулює виправлення очевидних технічних помилок у wyrok і фіксацію такого sprostowanie, включно з описаною в corpus перехідною редакцією § 2a.",
+      summary: ppsaLaw.text`Стаття регулює виправлення очевидних технічних помилок у wyrok і фіксацію такого sprostowanie, включно з описаною в corpus перехідною редакцією ${ppsaLaw.article("156", "§ 2a")}.`,
       rules: [
         {
           locator: "§ 1–2",
@@ -828,8 +803,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2a, przypisy 54–55",
-          explanation:
-            "Не змішуйте дві версії електронного оформлення: перша редакція § 2a діє до набрання чинності зміною, а друга набуде чинності 1.10.2029; на legalStateDate 2026-07-14 застосовується перша.",
+          explanation: ppsaLaw.text`Не змішуйте дві версії електронного оформлення: перша редакція ${ppsaLaw.article("156", "§ 2a")} діє до набрання чинності зміною, а друга набуде чинності 1.10.2029; на legalStateDate 2026-07-14 застосовується перша.`,
         },
         {
           locator: "§ 3",
@@ -868,8 +842,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Uzupełnienie виправляє неповноту вирішення в межах, названих статтею, але не є загальним способом повторно оскаржити зміст wyrok.",
-      foreignersCase:
-        "Після wyrok у справі про pobyt звірте всі вимоги skarga із sentencja. Якщо суд не вирішив частину, окремо перевірте чотирнадцятиденний wniosek; art. 159 визначає його вплив на строк оскарження.",
+      foreignersCase: ppsaLaw.text`Після wyrok у справі про pobyt звірте всі вимоги skarga із sentencja. Якщо суд не вирішив частину, окремо перевірте чотирнадцятиденний wniosek; ${ppsaLaw.article("159", "art. 159")} визначає його вплив на строк оскарження.`,
     },
     {
       provisionId: "ppsa-art-158",
@@ -1056,8 +1029,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Правило стосується моменту, з якого postanowienie пов’язує суд; це не тотожне автоматичній prawomocność.",
-      foreignersCase:
-        "У процесуальному питанні у справі про pobyt розрізняйте пов’язаність postanowienie за art. 164 і його можливу оскаржуваність.",
+      foreignersCase: ppsaLaw.text`У процесуальному питанні у справі про pobyt розрізняйте пов’язаність postanowienie за ${ppsaLaw.article("164", "art. 164")} і його можливу оскаржуваність.`,
     },
     {
       provisionId: "ppsa-art-165",
@@ -1080,8 +1052,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Можливість uchylenie або зміни прив’язана до зміни обставин і не поширюється текстом на postanowienie, яке завершує справу.",
-      foreignersCase:
-        "Якщо у справі про pobyt змінилися обставини після проміжного postanowienie, перевірте його процесуальний характер і докази саме цієї зміни; prawomocność сама по собі не виключає правило art. 165.",
+      foreignersCase: ppsaLaw.text`Якщо у справі про pobyt змінилися обставини після проміжного postanowienie, перевірте його процесуальний характер і докази саме цієї зміни; prawomocność сама по собі не виключає правило ${ppsaLaw.article("165", "art. 165")}.`,
     },
     {
       provisionId: "ppsa-art-166",
@@ -1137,7 +1108,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "До zarządzenia та postanowienia referendarza sądowego відповідно застосовуються правила про zarządzenia przewodniczącego та postanowienia суду. На zarządzenia і postanowienia referendarza, названі в art. 30 § 1, art. 49 § 2 та art. 234 § 2, можна подати sprzeciw до того самого суду; після sprzeciw вони втрачають чинність, строк sprzeciw — сім днів від doręczenie, а прострочений sprzeciw суд odrzuca.",
+          text: ppsaLaw.text`До zarządzenia та postanowienia referendarza sądowego відповідно застосовуються правила про zarządzenia przewodniczącego та postanowienia суду. На zarządzenia і postanowienia referendarza, названі в ${ppsaLaw.article("30", "art. 30 § 1")}, ${ppsaLaw.article("49", "art. 49 § 2")} та ${ppsaLaw.article("234", "art. 234 § 2")}, можна подати sprzeciw до того самого суду; після sprzeciw вони втрачають чинність, строк sprzeciw — сім днів від doręczenie, а прострочений sprzeciw суд odrzuca.`,
           sourceLocator: "Art. 167a § 1–6",
         },
       ],
@@ -1146,8 +1117,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1–2",
-          explanation:
-            "Встановіть, що документ видав referendarz sądowy, і перевірте, чи він належить до справ, названих у art. 30 § 1, art. 49 § 2 або art. 234 § 2.",
+          explanation: ppsaLaw.text`Встановіть, що документ видав referendarz sądowy, і перевірте, чи він належить до справ, названих у ${ppsaLaw.article("30", "art. 30 § 1")}, ${ppsaLaw.article("49", "art. 49 § 2")} або ${ppsaLaw.article("234", "art. 234 § 2")}.`,
         },
         {
           locator: "§ 3–5",
@@ -1189,8 +1159,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
             "Якщо оскаржено частину orzeczenie, визначте, яка частина залишилася і чи може NSA з urzędu розглянути її також.",
         },
       ],
-      legalEffect:
-        "Prawomocność може настати для частини orzeczenie окремо; її не слід змішувати з моментом пов’язаності суду за art. 144 або 164.",
+      legalEffect: ppsaLaw.text`Prawomocność може настати для частини orzeczenie окремо; її не слід змішувати з моментом пов’язаності суду за ${ppsaLaw.article("144", "art. 144")} або ${ppsaLaw.article("164", "164")}.`,
       foreignersCase:
         "Після wyrok у справі про pobyt перевірте, що саме оскаржено і чи не залишилася інша частина prawomocna. Не визначайте остаточність лише за датою оголошення.",
     },
@@ -1200,7 +1169,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Prawomocność orzeczenia за wniosek strony та у випадку, названому в art. 286 § 1, встановлює WSA на posiedzenie niejawnym; postanowienie doręczaється лише стороні, яка подала wniosek, а postanowienie про prawomocność orzeczenia WSA може видати referendarz sądowy.",
+          text: ppsaLaw.text`Prawomocność orzeczenia за wniosek strony та у випадку, названому в ${ppsaLaw.article("286", "art. 286 § 1")}, встановлює WSA на posiedzenie niejawnym; postanowienie doręczaється лише стороні, яка подала wniosek, а postanowienie про prawomocność orzeczenia WSA може видати referendarz sądowy.`,
           sourceLocator: "Art. 169 § 1–2",
         },
       ],
@@ -1209,8 +1178,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Перевірте, чи подано wniosek сторони або чи наявний випадок, названий через art. 286 § 1; не додавайте до цієї статті інших умов, яких вона прямо не містить.",
+          explanation: ppsaLaw.text`Перевірте, чи подано wniosek сторони або чи наявний випадок, названий через ${ppsaLaw.article("286", "art. 286 § 1")}; не додавайте до цієї статті інших умов, яких вона прямо не містить.`,
         },
         {
           locator: "§ 2",
@@ -1244,8 +1212,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Пов’язаність виникає для prawomocne orzeczenie; стаття сама не розшифровує межі кожного конкретного предмета рішення.",
-      foreignersCase:
-        "У справі іноземця посилайтеся на art. 170 лише разом із конкретним prawomocne orzeczenie та його предметом. Це не означає, що будь-який орган має виконати вимогу, якої в sentencja немає.",
+      foreignersCase: ppsaLaw.text`У справі іноземця посилайтеся на ${ppsaLaw.article("170", "art. 170")} лише разом із конкретним prawomocne orzeczenie та його предметом. Це не означає, що будь-який орган має виконати вимогу, якої в sentencja немає.`,
     },
     {
       provisionId: "ppsa-art-171",
@@ -1297,8 +1264,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Це спеціальний механізм контролю юрисдикції, а не звичайна апеляція сторони на несприятливий wyrok.",
-      foreignersCase:
-        "У справі про pobyt не розглядайте art. 172 як звичайний шлях для незгоди з оцінкою органу чи суду. Перевірка можлива лише в межах умов і wniosek, прямо названих статтею.",
+      foreignersCase: ppsaLaw.text`У справі про pobyt не розглядайте ${ppsaLaw.article("172", "art. 172")} як звичайний шлях для незгоди з оцінкою органу чи суду. Перевірка можлива лише в межах умов і wniosek, прямо названих статтею.`,
     },
     {
       provisionId: "ppsa-art-173",
@@ -1315,8 +1281,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Перевірте, що документ видав WSA, завершує postępowanie або є wyrok, і зіставте справу з винятками art. 58 § 1 pkt 2–4, art. 161 § 1 та art. 220 § 3.",
+          explanation: ppsaLaw.text`Перевірте, що документ видав WSA, завершує postępowanie або є wyrok, і зіставте справу з винятками ${ppsaLaw.article("58", "art. 58 § 1")} pkt 2–4, ${ppsaLaw.article("161", "art. 161 § 1")} та ${ppsaLaw.article("220", "art. 220 § 3")}.`,
         },
         {
           locator: "§ 2",
@@ -1364,7 +1329,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Skarga kasacyjna за загальним правилом має бути складена adwokat або radca prawny; § 2–3 встановлюють винятки для окремих професій і суб’єктів, зокрема sędzia, prokurator, notariusz, radca Prokuratorii Generalnej, profesor або doktor habilitowany nauk prawnych, а також визначені справи для doradca podatkowy чи rzecznik patentowy. Corpus окремо зазначає перехід між двома редакціями § 3 pkt 1 та дату майбутньої зміни 1.10.2029.",
+          text: ppsaLaw.text`Skarga kasacyjna за загальним правилом має бути складена adwokat або radca prawny; ${ppsaLaw.article("175", "§ 2–3")} встановлюють винятки для окремих професій і суб’єктів, зокрема sędzia, prokurator, notariusz, radca Prokuratorii Generalnej, profesor або doktor habilitowany nauk prawnych, а також визначені справи для doradca podatkowy чи rzecznik patentowy. Corpus окремо зазначає перехід між двома редакціями ${ppsaLaw.article("175", "§ 3")} pkt 1 та дату майбутньої зміни 1.10.2029.`,
           sourceLocator: "Art. 175 § 1–3, przypisy 56–57",
         },
       ],
@@ -1389,8 +1354,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Недодержання вимоги про професійне складання може мати процесуальне значення, але конкретний наслідок і виняток треба перевіряти за всіма приписами та статусом учасника.",
-      foreignersCase:
-        "Для типової skarga kasacyjna у справі про pobyt не припускайте, що її може скласти будь-хто: перевірте правило про adwokat або radca prawny і чи справді застосовний виняток. Не переносіть майбутню редакцію § 3 на дату 2026 року.",
+      foreignersCase: ppsaLaw.text`Для типової skarga kasacyjna у справі про pobyt не припускайте, що її може скласти будь-хто: перевірте правило про adwokat або radca prawny і чи справді застосовний виняток. Не переносіть майбутню редакцію ${ppsaLaw.article("175", "§ 3")} на дату 2026 року.`,
     },
     {
       provisionId: "ppsa-art-176",
@@ -1423,8 +1387,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Стаття визначає змістовий каркас skarga kasacyjna; вона не замінює професійну оцінку підстав, строку та інших вимог допустимості.",
-      foreignersCase:
-        "У касації після справи про pobyt складіть окрему перевірку: яке orzeczenie, весь чи частковий обсяг, яка з art. 174 підстава, який wniosek і чи потрібна rozprawa. Не підміняйте ці елементи загальною незгодою з рішенням.",
+      foreignersCase: ppsaLaw.text`У касації після справи про pobyt складіть окрему перевірку: яке orzeczenie, весь чи частковий обсяг, яка з ${ppsaLaw.article("174", "art. 174")} підстава, який wniosek і чи потрібна rozprawa. Не підміняйте ці елементи загальною незгодою з рішенням.`,
     },
   ],
 })

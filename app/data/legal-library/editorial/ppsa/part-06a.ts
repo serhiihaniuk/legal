@@ -1,4 +1,7 @@
+import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+
+const ppsaLaw = createLegalTextAuthor("ppsa")
 
 export const ppsaPart06a = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
@@ -12,7 +15,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 222 stanowi, że nie żąda się opłat od pisma, jeżeli już z jego treści wynika, że podlega ono odrzuceniu.",
+          text: ppsaLaw.text`${ppsaLaw.article("222", "Art. 222")} stanowi, że nie żąda się opłat od pisma, jeżeli już z jego treści wynika, że podlega ono odrzuceniu.`,
           sourceLocator: "Art. 222",
         },
       ],
@@ -36,7 +39,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 223 § 1–2 stosuje odpowiednio przepisy art. 220 i art. 222, gdy obowiązek uiszczenia lub uzupełnienia opłaty powstanie wskutek ustalenia wyższej wartości przedmiotu zaskarżenia, cofnięcia przyznanego prawa pomocy albo uchylenia kurateli przed wyznaczeniem terminu rozprawy; nieuiszczoną opłatę sąd nakazuje w orzeczeniu kończącym postępowanie w danej instancji ściągnąć od strony zobowiązanej do jej uiszczenia albo od innej strony, jeżeli z tego orzeczenia wynika obowiązek poniesienia przez nią kosztów postępowania.",
+          text: ppsaLaw.text`${ppsaLaw.article("223", "Art. 223 § 1–2")} stosuje odpowiednio przepisy ${ppsaLaw.article("220", "art. 220")} i ${ppsaLaw.article("222", "art. 222")}, gdy obowiązek uiszczenia lub uzupełnienia opłaty powstanie wskutek ustalenia wyższej wartości przedmiotu zaskarżenia, cofnięcia przyznanego prawa pomocy albo uchylenia kurateli przed wyznaczeniem terminu rozprawy; nieuiszczoną opłatę sąd nakazuje w orzeczeniu kończącym postępowanie w danej instancji ściągnąć od strony zobowiązanej do jej uiszczenia albo od innej strony, jeżeli z tego orzeczenia wynika obowiązek poniesienia przez nią kosztów postępowania.`,
           sourceLocator: "Art. 223 § 1–2",
         },
       ],
@@ -54,8 +57,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Якщо належну opłatę не сплачено, спосіб її стягнення має бути зазначений у кінцевому orzeczenie відповідної instancji.",
         },
       ],
-      legalEffect:
-        "Стаття визначає спеціальне застосування Art. 220 і Art. 222 та подальше стягнення належної opłata; вона не скасовує перевірку, хто саме зобов’язаний її сплатити.",
+      legalEffect: ppsaLaw.text`Стаття визначає спеціальне застосування ${ppsaLaw.article("220", "Art. 220")} і ${ppsaLaw.article("222", "Art. 222")} та подальше стягнення належної opłata; вона не скасовує перевірку, хто саме зобов’язаний її сплатити.`,
       foreignersCase:
         "Якщо в справі іноземця змінилася wartość przedmiotu zaskarżenia або cofnięto право допомоги, перевірте нову вимогу про opłatę і строк її виконання за документами суду.",
     },
@@ -65,7 +67,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 224 przewiduje, że jeżeli sąd nie orzekł o obowiązku ponoszenia kosztów sądowych albo nie objął orzeczeniem całej należnej kwoty, postanowienie w tym przedmiocie wydaje na posiedzeniu niejawnym wojewódzki sąd administracyjny.",
+          text: ppsaLaw.text`${ppsaLaw.article("224", "Art. 224")} przewiduje, że jeżeli sąd nie orzekł o obowiązku ponoszenia kosztów sądowych albo nie objął orzeczeniem całej należnej kwoty, postanowienie w tym przedmiocie wydaje na posiedzeniu niejawnym wojewódzki sąd administracyjny.`,
           sourceLocator: "Art. 224",
         },
       ],
@@ -89,7 +91,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 225 nakazuje z urzędu zwrócić stronie, na jej koszt, opłatę prawomocnie uchyloną w całości lub w części, różnicę między kosztami pobranymi a kosztami należnymi oraz pozostałość zaliczki wpłaconej na pokrycie wydatków.",
+          text: ppsaLaw.text`${ppsaLaw.article("225", "Art. 225")} nakazuje z urzędu zwrócić stronie, na jej koszt, opłatę prawomocnie uchyloną w całości lub w części, różnicę między kosztami pobranymi a kosztami należnymi oraz pozostałość zaliczki wpłaconej na pokrycie wydatków.`,
           sourceLocator: "Art. 225",
         },
       ],
@@ -113,7 +115,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 226 § 1–2 встановлює трирічний строк przedawnienie: для права вимагати koszty sądowe — від дня, коли їх належало сплатити, а для права сторони вимагати повернення opłata або zaliczka — від виникнення цього права.",
+          text: ppsaLaw.text`${ppsaLaw.article("226", "Art. 226 § 1–2")} встановлює трирічний строк przedawnienie: для права вимагати koszty sądowe — від дня, коли їх належало сплатити, а для права сторони вимагати повернення opłata або zaliczka — від виникнення цього права.`,
           sourceLocator: "Art. 226 § 1–2",
         },
       ],
@@ -131,8 +133,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Для вимоги сторони про повернення opłata або zaliczka шукайте день виникнення саме права на повернення.",
         },
       ],
-      legalEffect:
-        "Art. 226 називає трирічний строк przedawnienie, але для обчислення потрібні документи, що встановлюють належний платіж або виникнення права на zwrot.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("226", "Art. 226")} називає трирічний строк przedawnienie, але для обчислення потрібні документи, що встановлюють належний платіж або виникнення права на zwrot.`,
       foreignersCase:
         "Якщо іноземець просить повернути судовий платіж, зафіксуйте дату виникнення права на zwrot, а не лише дату переказу, і перевірте перебіг трирічного строку.",
     },
@@ -142,7 +143,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 227 § 1 допускає zażalenie на zarządzenie przewodniczącego та postanowienie wojewódzkiego sądu administracyjnego щодо kosztów sądowych, якщо сторона не подає środka odwoławczego щодо суті справи; § 2 звільняє такі zażalenia від opłat sądowych.",
+          text: ppsaLaw.text`${ppsaLaw.article("227", "Art. 227 § 1")} допускає zażalenie на zarządzenie przewodniczącego та postanowienie wojewódzkiego sądu administracyjnego щодо kosztów sądowych, якщо сторона не подає środka odwoławczego щодо суті справи; ${ppsaLaw.article("227", "§ 2")} звільняє такі zażalenia від opłat sądowych.`,
           sourceLocator: "Art. 227 § 1–2",
         },
       ],
@@ -156,8 +157,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2",
-          explanation:
-            "Для зажаленія, охопленого § 1, opłata sądowa не стягується.",
+          explanation: ppsaLaw.text`Для зажаленія, охопленого ${ppsaLaw.article("227", "§ 1")}, opłata sądowa не стягується.`,
         },
       ],
       legalEffect:
@@ -171,7 +171,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 228 визначає, що grzywny, присуджені у провадженні перед sądem administracyjnym, є доходами budżet państwa поряд із kosztami sądowymi та підлягають egzekucji sądowej без nadawania orzeczeniu klauzuli wykonalności.",
+          text: ppsaLaw.text`${ppsaLaw.article("228", "Art. 228")} визначає, що grzywny, присуджені у провадженні перед sądem administracyjnym, є доходами budżet państwa поряд із kosztami sądowymi та підлягають egzekucji sądowej без nadawania orzeczeniu klauzuli wykonalności.`,
           sourceLocator: "Art. 228",
         },
       ],
@@ -195,7 +195,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 229 § 1 дозволяє umorzyć, odroczyć або rozłożyć na raty należności з nieuiszczonych kosztów sądowych та grzywien, крім grzywien, названих у Art. 55 § 1, Art. 149 § 2 та Art. 154 § 1, якщо їх стягнення спричинило б niewspółmierne trudności або надто тяжкі наслідки для боржника; § 2 передає Раді Міністрів встановлення детальних правил.",
+          text: ppsaLaw.text`${ppsaLaw.article("229", "Art. 229 § 1")} дозволяє umorzyć, odroczyć або rozłożyć na raty należności з nieuiszczonych kosztów sądowych та grzywien, крім grzywien, названих у ${ppsaLaw.article("55", "Art. 55 § 1")}, ${ppsaLaw.article("149", "Art. 149 § 2")} та ${ppsaLaw.article("154", "Art. 154 § 1")}, якщо їх стягнення спричинило б niewspółmierne trudności або надто тяжкі наслідки для боржника; ${ppsaLaw.article("229", "§ 2")} передає Раді Міністрів встановлення детальних правил.`,
           sourceLocator: "Art. 229 § 1–2",
         },
       ],
@@ -213,8 +213,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Детальні органи, порядок, строки та підтвердження визначаються розporządzenie Rady Ministrów, тому перевірте чинні підзаконні правила.",
         },
       ],
-      legalEffect:
-        "Art. 229 створює можливість полегшення сплати за названих умов, а не автоматичне право на списання чи raty; результат залежить від встановлення обставин і компетентного органу.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("229", "Art. 229")} створює можливість полегшення сплати за названих умов, а не автоматичне право на списання чи raty; результат залежить від встановлення обставин і компетентного органу.`,
       foreignersCase:
         "У справі іноземця з боргом за koszty або grzywna підготуйте докази фінансових наслідків і перевірте винятки та чинне rozporządzenie, не прирівнюючи прохання до гарантованого umorzenie.",
     },
@@ -224,7 +223,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 230 § 1 передбачає pobranie wpis stosunkowy або stały від pism, що ініціюють провадження перед sądem administracyjnym у відповідній instancji; § 2 називає такими pismami skargę, sprzeciw od decyzji, sprzeciw od postanowienia, skargę kasacyjną, zażalenie та skargę o wznowienie postępowania.",
+          text: ppsaLaw.text`${ppsaLaw.article("230", "Art. 230 § 1")} передбачає pobranie wpis stosunkowy або stały від pism, що ініціюють провадження перед sądem administracyjnym у відповідній instancji; ${ppsaLaw.article("230", "§ 2")} називає такими pismami skargę, sprzeciw od decyzji, sprzeciw od postanowienia, skargę kasacyjną, zażalenie та skargę o wznowienie postępowania.`,
           sourceLocator: "Art. 230 § 1–2",
         },
       ],
@@ -253,7 +252,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 231 встановлює, що wpis stosunkowy сплачується у справах, де предметом оскарження є należności pieniężne, а в інших справах стягується wpis stały.",
+          text: ppsaLaw.text`${ppsaLaw.article("231", "Art. 231")} встановлює, що wpis stosunkowy сплачується у справах, де предметом оскарження є należności pieniężne, а в інших справах стягується wpis stały.`,
           sourceLocator: "Art. 231",
         },
       ],
@@ -277,7 +276,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 232 § 1 nakazuje sądowi z urzędu zwrócić cały uiszczony wpis od pisma odrzuconego lub cofniętego do dnia rozpoczęcia rozprawy oraz od zażalenia na postanowienie, jeżeli zażalenie uwzględniono; § 2 допускає postanowienie про zwrot wpisу на posiedzeniu niejawnym.",
+          text: ppsaLaw.text`${ppsaLaw.article("232", "Art. 232 § 1")} nakazuje sądowi z urzędu zwrócić cały uiszczony wpis od pisma odrzuconego lub cofniętego do dnia rozpoczęcia rozprawy oraz od zażalenia na postanowienie, jeżeli zażalenie uwzględniono; ${ppsaLaw.article("232", "§ 2")} допускає postanowienie про zwrot wpisу на posiedzeniu niejawnym.`,
           sourceLocator: "Art. 232 § 1–2",
         },
       ],
@@ -300,8 +299,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Окреме postanowienie про повернення wpis може бути видане на posiedzeniu niejawnym.",
         },
       ],
-      legalEffect:
-        "Повернення за Art. 232 залежить від точної процесуальної події та її дати; сама сплата wpis не означає, що повернення належить у кожній справі.",
+      legalEffect: ppsaLaw.text`Повернення за ${ppsaLaw.article("232", "Art. 232")} залежить від точної процесуальної події та її дати; сама сплата wpis не означає, що повернення належить у кожній справі.`,
       foreignersCase:
         "Якщо іноземець відкликав skargę або його zażalenie задоволено, зафіксуйте дату початку rozprawa та зміст orzeczenie перед очікуванням zwrot wpisу.",
     },
@@ -311,7 +309,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 233 уповноважує Rada Ministrów визначити розporządzenie висоту й детальні правила pobierania wpis; wpis не може бути нижчим за сто złotych, stosunkowy не може перевищувати 4% wartości przedmiotu zaskarżenia і 100 000 zł, а stały — 10 000 zł.",
+          text: ppsaLaw.text`${ppsaLaw.article("233", "Art. 233")} уповноважує Rada Ministrów визначити розporządzenie висоту й детальні правила pobierania wpis; wpis не може бути нижчим за сто złotych, stosunkowy не може перевищувати 4% wartości przedmiotu zaskarżenia і 100 000 zł, а stały — 10 000 zł.`,
           sourceLocator: "Art. 233",
         },
       ],
@@ -320,8 +318,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "Art. 233",
-          explanation:
-            "Зверніться до чинного розporządzenie Rady Ministrów для конкретної ставки, але зіставте її з мінімумом і граничними значеннями Art. 233.",
+          explanation: ppsaLaw.text`Зверніться до чинного розporządzenie Rady Ministrów для конкретної ставки, але зіставте її з мінімумом і граничними значеннями ${ppsaLaw.article("233", "Art. 233")}.`,
         },
         {
           locator: "Art. 233",
@@ -329,10 +326,8 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Для wpis stosunkowy перевіряйте і 4% wartości przedmiotu zaskarżenia, і граничні 100 000 zł; для wpis stały — межу 10 000 zł.",
         },
       ],
-      legalEffect:
-        "Art. 233 встановлює рамку для підзаконного регулювання, а не остаточну суму для конкретного письма.",
-      foreignersCase:
-        "У справі про pobyt перевірте актуальну ставку за чинним rozporządzenie і не підміняйте її лише загальними межами, наведеними в Art. 233.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("233", "Art. 233")} встановлює рамку для підзаконного регулювання, а не остаточну суму для конкретного письма.`,
+      foreignersCase: ppsaLaw.text`У справі про pobyt перевірте актуальну ставку за чинним rozporządzenie і не підміняйте її лише загальними межами, наведеними в ${ppsaLaw.article("233", "Art. 233")}.`,
     },
     {
       provisionId: "ppsa-art-234",
@@ -340,7 +335,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 234 § 1–4 передбачає opłatę kancelaryjną за stwierdzenie prawomocności та видачу документів на підставі akt; за odpis orzeczenia z uzasadnieniem, витребуваний протягом семи днів від ogłoszenia, opłatę сплачують під час wniosku, а за її відсутності przewodniczący після wezwania наказує стягнення без застосування art. 220; відпис, який вручається з urzędu, не оплачується, а дії з § 2 може виконувати referendarz sądowy.",
+          text: ppsaLaw.text`${ppsaLaw.article("234", "Art. 234 § 1–4")} передбачає opłatę kancelaryjną за stwierdzenie prawomocności та видачу документів на підставі akt; за odpis orzeczenia z uzasadnieniem, витребуваний протягом семи днів від ogłoszenia, opłatę сплачують під час wniosku, а за її відсутності przewodniczący після wezwania наказує стягнення без застосування ${ppsaLaw.article("220", "art. 220")}; відпис, який вручається з urzędu, не оплачується, а дії з ${ppsaLaw.article("234", "§ 2")} може виконувати referendarz sądowy.`,
           sourceLocator: "Art. 234 § 1–4",
         },
       ],
@@ -359,8 +354,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 4",
-          explanation:
-            "Дії, описані в § 2, може виконувати referendarz sądowy.",
+          explanation: ppsaLaw.text`Дії, описані в ${ppsaLaw.article("234", "§ 2")}, може виконувати referendarz sądowy.`,
         },
       ],
       legalEffect:
@@ -374,7 +368,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 235 передбачає opłatę kancelaryjną також за odpisy, wyciągi, kopie, wydruki, zaświadczenia та інші документи, видані на підставі zbiorów, які зберігаються і ведуться в суді поза aktami sprawy.",
+          text: ppsaLaw.text`${ppsaLaw.article("235", "Art. 235")} передбачає opłatę kancelaryjną також за odpisy, wyciągi, kopie, wydruki, zaświadczenia та інші документи, видані на підставі zbiorów, які зберігаються і ведуться в суді поза aktami sprawy.`,
           sourceLocator: "Art. 235",
         },
       ],
@@ -398,7 +392,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 235a передбачає opłatę kancelaryjną за wydruki pism і заłączników, поданих як документ електронний, якщо їх готують для doręczenia сторонам, які не користуються засобами електронної комунікації для отримання письмових документів.",
+          text: ppsaLaw.text`${ppsaLaw.article("235a", "Art. 235a")} передбачає opłatę kancelaryjną за wydruki pism і заłączników, поданих як документ електронний, якщо їх готують для doręczenia сторонам, які не користуються засобами електронної комунікації для отримання письмових документів.`,
           sourceLocator: "Art. 235a",
         },
       ],
@@ -422,7 +416,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 236 уповноважує Rada Ministrów визначити розporządzenie розмір opłat kancelaryjnych; воно має врахувати оплату за кожну сторінку, межу 200 zł для відпису orzeczenia z uzasadnieniem на прохання, фактичну вартість wydruki документів електронних та підвищення за документ іноземною мовою або з таблицею.",
+          text: ppsaLaw.text`${ppsaLaw.article("236", "Art. 236")} уповноважує Rada Ministrów визначити розporządzenie розмір opłat kancelaryjnych; воно має врахувати оплату за кожну сторінку, межу 200 zł для відпису orzeczenia z uzasadnieniem на прохання, фактичну вартість wydruki документів електронних та підвищення за документ іноземною мовою або з таблицею.`,
           sourceLocator: "Art. 236",
         },
       ],
@@ -440,8 +434,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Окремо врахуйте межу 200 zł для odpis orzeczenia z uzasadnieniem на прохання і правило фактичної вартості для електронних wydruki.",
         },
       ],
-      legalEffect:
-        "Art. 236 задає межі та критерії для підзаконного тарифу, але не замінює перевірки чинної ставки на дату запиту.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("236", "Art. 236")} задає межі та критерії для підзаконного тарифу, але не замінює перевірки чинної ставки на дату запиту.`,
       foreignersCase:
         "Якщо документ для справи про pobyt іноземною мовою або містить таблицю, перевірте можливе підвищення opłata за чинним розporządzenie.",
     },
@@ -451,7 +444,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 237 § 1–3 зобов’язує сторону, яка просить про czynność, пов’язану з wydatki, внести zaliczkę; якщо просять кілька сторін або суд діє з urzędu, суд визначає частки, розмір zaliczka і строк її сплати та може вимагати доплату, коли витрати більші.",
+          text: ppsaLaw.text`${ppsaLaw.article("237", "Art. 237 § 1–3")} зобов’язує сторону, яка просить про czynność, пов’язану з wydatki, внести zaliczkę; якщо просять кілька сторін або суд діє з urzędu, суд визначає частки, розмір zaliczka і строк її сплати та може вимагати доплату, коли витрати більші.`,
           sourceLocator: "Art. 237 § 1–3",
         },
       ],
@@ -480,7 +473,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 238 § 1–4 регулює випадок невнесення zaliczka: бюджет суду тимчасово покриває потрібні wydatki, сума стає należnością budżetu państwa, а сторона має повернути її; для особи за кордоном строк wezwanie не може бути коротшим за два місяці, а безрезультатний сплив веде до postanowienie про стягнення без wstrzymania postępowania.",
+          text: ppsaLaw.text`${ppsaLaw.article("238", "Art. 238 § 1–4")} регулює випадок невнесення zaliczka: бюджет суду тимчасово покриває потрібні wydatki, сума стає należnością budżetu państwa, а сторона має повернути її; для особи за кордоном строк wezwanie не може бути коротшим за два місяці, а безрезультатний сплив веде до postanowienie про стягнення без wstrzymania postępowania.`,
           sourceLocator: "Art. 238 § 1–4",
         },
       ],
@@ -499,12 +492,10 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 4",
-          explanation:
-            "Правила § 1–3 не застосовуються, якщо невиконання czynność з Art. 237 § 1 є підставою для zawieszenie postępowania.",
+          explanation: ppsaLaw.text`Правила ${ppsaLaw.article("238", "§ 1–3")} не застосовуються, якщо невиконання czynność з ${ppsaLaw.article("237", "Art. 237 § 1")} є підставою для zawieszenie postępowania.`,
         },
       ],
-      legalEffect:
-        "Art. 238 описує механізм повернення бюджетної суми, але не усуває необхідності перевірити належність первісного обов’язку сплатити zaliczka та виняток із § 4.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("238", "Art. 238")} описує механізм повернення бюджетної суми, але не усуває необхідності перевірити належність первісного обов’язку сплатити zaliczka та виняток із ${ppsaLaw.article("238", "§ 4")}.`,
       foreignersCase:
         "Якщо іноземець проживає за кордоном і не сплатив zaliczka, перевірте doręczenie wezwanie, мінімум двох місяців і те, чи справа не підпадає під виняток для zawieszenie.",
     },
@@ -514,7 +505,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 239 § 1 звільняє від обов’язку сплати kosztów sądowych визначені категорії сторін, зокрема скаржника у справах про pomoc społeczną, трудові та соціальні питання, udzielanie cudzoziemcom ochrony, а також прокурора, RPO, RPD, Rzecznika Małych i Średnich Przedsiębiorców, kuratora та особу з przyznane prawo pomocy; § 2 містить окреме звільнення для визначених організацій у власних справах.",
+          text: ppsaLaw.text`${ppsaLaw.article("239", "Art. 239 § 1")} звільняє від обов’язку сплати kosztów sądowych визначені категорії сторін, зокрема скаржника у справах про pomoc społeczną, трудові та соціальні питання, udzielanie cudzoziemcom ochrony, а також прокурора, RPO, RPD, Rzecznika Małych i Średnich Przedsiębiorców, kuratora та особу з przyznane prawo pomocy; ${ppsaLaw.article("239", "§ 2")} містить окреме звільнення для визначених організацій у власних справах.`,
           sourceLocator: "Art. 239 § 1–2",
         },
       ],
@@ -537,8 +528,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Для організації перевірте, чи справа є її власною та чи не стосується prowadzonej działalności gospodarczej або умов zleconego zadania publicznego.",
         },
       ],
-      legalEffect:
-        "Звільнення виникає лише за умов відповідного пункту Art. 239 і, для права допомоги, у межах prawomocne postanowienie; стаття не оцінює прийнятність skarga по суті.",
+      legalEffect: ppsaLaw.text`Звільнення виникає лише за умов відповідного пункту ${ppsaLaw.article("239", "Art. 239")} і, для права допомоги, у межах prawomocne postanowienie; стаття не оцінює прийнятність skarga по суті.`,
       foreignersCase:
         "У справі іноземця встановіть, чи йдеться саме про udzielanie ochrony, чи про pobyt або інший предмет, і окремо перевірте підставу звільнення та її обсяг.",
     },
@@ -548,7 +538,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 240 дозволяє Rada Ministrów у drodze rozporządzenia звільнити організації społeczne від обов’язку сплачувати wpis у їхніх власних справах і скасувати таке звільнення; воно має стосуватися справ, пов’язаних із діяльністю науковою, освітньою, культурною, доброчинною та допомогою і опікою społeczną.",
+          text: ppsaLaw.text`${ppsaLaw.article("240", "Art. 240")} дозволяє Rada Ministrów у drodze rozporządzenia звільнити організації społeczne від обов’язку сплачувати wpis у їхніх власних справах і скасувати таке звільнення; воно має стосуватися справ, пов’язаних із діяльністю науковою, освітньою, культурною, доброчинною та допомогою і опікою społeczną.`,
           sourceLocator: "Art. 240",
         },
       ],
@@ -563,8 +553,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Стаття лише надає підставу для розporządzenie; без перевірки чинного підзаконного акта не можна стверджувати, що конкретна організація звільнена.",
-      foreignersCase:
-        "Якщо організація допомагає іноземцю в судовій справі, не переносіть можливе звільнення Art. 240 на саму особу: перевірте статус організації, предмет справи та чинний акт.",
+      foreignersCase: ppsaLaw.text`Якщо організація допомагає іноземцю в судовій справі, не переносіть можливе звільнення ${ppsaLaw.article("240", "Art. 240")} на саму особу: перевірте статус організації, предмет справи та чинний акт.`,
     },
     {
       provisionId: "ppsa-art-241",
@@ -572,7 +561,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 241 визначає, що звільнення від обов’язку сплати kosztów sądowych, передбачене законом або postanowienie sądu administracyjnego без визначення його обсягу, означає повне звільнення і від opłat sądowych, і від ponoszenia wydatków.",
+          text: ppsaLaw.text`${ppsaLaw.article("241", "Art. 241")} визначає, що звільнення від обов’язку сплати kosztów sądowych, передбачене законом або postanowienie sądu administracyjnego без визначення його обсягу, означає повне звільнення і від opłat sądowych, і від ponoszenia wydatków.`,
           sourceLocator: "Art. 241",
         },
       ],
@@ -596,7 +585,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 242 передбачає, що wydatki за сторону, звільнену від kosztów sądowych, авансуються з частини бюджету sądu administracyjnego в межах цього звільнення.",
+          text: ppsaLaw.text`${ppsaLaw.article("242", "Art. 242")} передбачає, що wydatki за сторону, звільнену від kosztów sądowych, авансуються з частини бюджету sądu administracyjnego в межах цього звільнення.`,
           sourceLocator: "Art. 242",
         },
       ],
@@ -620,12 +609,11 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 243 § 1 дозволяє надати prawo pomocy на wniosek сторони, поданий до wszczęcie або під час postępowanie, і звільняє цей wniosek від opłat sądowych; § 2 позначений як uchylony.",
+          text: ppsaLaw.text`${ppsaLaw.article("243", "Art. 243 § 1")} дозволяє надати prawo pomocy на wniosek сторони, поданий до wszczęcie або під час postępowanie, і звільняє цей wniosek від opłat sądowych; ${ppsaLaw.article("243", "§ 2")} позначений як uchylony.`,
           sourceLocator: "Art. 243 § 1–2",
         },
       ],
-      summary:
-        "Заяву про prawo pomocy можна подати до початку або під час провадження, і сама заява не має opłata; § 2 є uchylony.",
+      summary: ppsaLaw.text`Заяву про prawo pomocy можна подати до початку або під час провадження, і сама заява не має opłata; ${ppsaLaw.article("243", "§ 2")} є uchylony.`,
       rules: [
         {
           locator: "§ 1",
@@ -638,8 +626,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
             "Позначення «uchylony» означає, що цей параграф не містить чинного правила для застосування.",
         },
       ],
-      legalEffect:
-        "Art. 243 визначає час подання та безоплатність wniosek, але саме подання не означає автоматичного przyznanie prawa pomocy.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("243", "Art. 243")} визначає час подання та безоплатність wniosek, але саме подання не означає автоматичного przyznanie prawa pomocy.`,
       foreignersCase:
         "Якщо іноземець не може оплатити судову справу про pobyt, зафіксуйте дату wniosek і не плутайте його безоплатність із позитивним рішенням про prawo pomocy.",
     },
@@ -649,7 +636,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 244 § 1 визначає, що prawo pomocy охоплює zwolnienie od kosztów sądowych та ustanowienie adwokat, radca prawny, doradca podatkowy або rzecznik patentowy; § 2 прирівнює ustanowienie до udzielenie pełnomocnictwa, а § 3 регулює можливе призначення вказаного стороною професійного представника.",
+          text: ppsaLaw.text`${ppsaLaw.article("244", "Art. 244 § 1")} визначає, що prawo pomocy охоплює zwolnienie od kosztów sądowych та ustanowienie adwokat, radca prawny, doradca podatkowy або rzecznik patentowy; ${ppsaLaw.article("244", "§ 2")} прирівнює ustanowienie до udzielenie pełnomocnictwa, а ${ppsaLaw.article("244", "§ 3")} регулює можливе призначення вказаного стороною професійного представника.`,
           sourceLocator: "Art. 244 § 1–3",
         },
       ],
@@ -683,7 +670,7 @@ export const ppsaPart06a = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 245 § 1–4 передбачає, що prawo pomocy може бути całkowite або częściowe; całkowite охоплює zwolnienie od kosztów sądowych та ustanowienie професійного представника, а częściowe — окремі або спільні opłaty, wydatki чи представника, причому zwolnienie від opłat або wydatków може бути часткою або визначеною сумою.",
+          text: ppsaLaw.text`${ppsaLaw.article("245", "Art. 245 § 1–4")} передбачає, що prawo pomocy може бути całkowite або częściowe; całkowite охоплює zwolnienie od kosztów sądowych та ustanowienie професійного представника, а częściowe — окремі або спільні opłaty, wydatki чи представника, причому zwolnienie від opłat або wydatków може бути часткою або визначеною сумою.`,
           sourceLocator: "Art. 245 § 1–4",
         },
       ],

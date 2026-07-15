@@ -1,4 +1,7 @@
+import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+
+const ppsaLaw = createLegalTextAuthor("ppsa")
 
 export const ppsaPart06b = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
@@ -12,7 +15,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 275 визначає właściwy sąd для wznowienia postępowania: за підставою nieważność — суд, який видав оскаржене orzeczenie, а якщо оскаржено orzeczenia обох інстанцій — Naczelny Sąd Administracyjny; за іншою підставою — суд, який останнім розглядав справу.",
+          text: ppsaLaw.text`${ppsaLaw.article("275", "Art. 275")} визначає właściwy sąd для wznowienia postępowania: за підставою nieważność — суд, який видав оскаржене orzeczenie, а якщо оскаржено orzeczenia обох інстанцій — Naczelny Sąd Administracyjny; за іншою підставою — суд, який останнім розглядав справу.`,
           sourceLocator: "Art. 275",
         },
       ],
@@ -41,7 +44,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 276 наказує відповідно застосовувати до skargi o wznowienie postępowania правила про postępowanie przed sądem pierwszej instancji, якщо przepisy цього działu не встановлюють іншого; коли właściwy є Naczelny Sąd Administracyjny, відповідно застосовується Art. 175.",
+          text: ppsaLaw.text`${ppsaLaw.article("276", "Art. 276")} наказує відповідно застосовувати до skargi o wznowienie postępowania правила про postępowanie przed sądem pierwszej instancji, якщо przepisy цього działu не встановлюють іншого; коли właściwy є Naczelny Sąd Administracyjny, відповідно застосовується ${ppsaLaw.article("175", "Art. 175")}.`,
           sourceLocator: "Art. 276",
         },
       ],
@@ -55,8 +58,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
         },
         {
           locator: "Art. 276 zdanie drugie",
-          explanation:
-            "Якщо справу розглядає NSA, окремо перевірте відповідне застосування Art. 175 щодо skarga kasacyjna.",
+          explanation: ppsaLaw.text`Якщо справу розглядає NSA, окремо перевірте відповідне застосування ${ppsaLaw.article("175", "Art. 175")} щодо skarga kasacyjna.`,
         },
       ],
       legalEffect:
@@ -70,7 +72,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 277 встановлює тримісячний строк для wniesienia skargi o wznowienie postępowania: він рахується від дня, коли strona дізналася про podstawę wznowienia, а за pozbawienie możności działania або brak należytej reprezentacji — від дня, коли про orzeczenie дізналася strona, її organ або przedstawiciel ustawowy.",
+          text: ppsaLaw.text`${ppsaLaw.article("277", "Art. 277")} встановлює тримісячний строк для wniesienia skargi o wznowienie postępowania: він рахується від дня, коли strona дізналася про podstawę wznowienia, а за pozbawienie możności działania або brak należytej reprezentacji — від дня, коли про orzeczenie дізналася strona, її organ або przedstawiciel ustawowy.`,
           sourceLocator: "Art. 277",
         },
       ],
@@ -99,7 +101,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 278 забороняє вимагати wznowienia після спливу п'яти років від uprawomocnienie się orzeczenia, крім випадку, коли strona була pozbawiona możności działania або не була należycie reprezentowana.",
+          text: ppsaLaw.text`${ppsaLaw.article("278", "Art. 278")} забороняє вимагати wznowienia після спливу п'яти років від uprawomocnienie się orzeczenia, крім випадку, коли strona була pozbawiona możności działania або не була należycie reprezentowana.`,
           sourceLocator: "Art. 278",
         },
       ],
@@ -128,7 +130,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 279 вимагає, щоб skarga o wznowienie postępowania містила oznaczenie оскарженого orzeczenia, podstawę wznowienia та її uzasadnienie, обставини, що підтверджують zachowanie terminu, і żądanie uchylenia або zmiany оскарженого orzeczenia.",
+          text: ppsaLaw.text`${ppsaLaw.article("279", "Art. 279")} вимагає, щоб skarga o wznowienie postępowania містила oznaczenie оскарженого orzeczenia, podstawę wznowienia та її uzasadnienie, обставини, що підтверджують zachowanie terminu, і żądanie uchylenia або zmiany оскарженого orzeczenia.`,
           sourceLocator: "Art. 279",
         },
       ],
@@ -157,7 +159,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 280 § 1 зобов'язує sąd на posiedzeniu niejawnym перевірити, чи skarga o wznowienie внесена в termin і чи спирається на ustawowa podstawa wznowienia: за відсутності однієї вимоги суд odrzuci skargę, а інакше wyznaczy rozprawę. § 2 дозволяє вимагати uprawdopodobnienia обставин щодо строку або допустимості wznowienie.",
+          text: ppsaLaw.text`${ppsaLaw.article("280", "Art. 280 § 1")} зобов'язує sąd на posiedzeniu niejawnym перевірити, чи skarga o wznowienie внесена в termin і чи спирається на ustawowa podstawa wznowienia: за відсутності однієї вимоги суд odrzuci skargę, а інакше wyznaczy rozprawę. ${ppsaLaw.article("280", "§ 2")} дозволяє вимагати uprawdopodobnienia обставин щодо строку або допустимості wznowienie.`,
           sourceLocator: "Art. 280 § 1–2",
         },
       ],
@@ -186,7 +188,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 281 передбачає, що на rozprawa sąd насамперед вирішує про dopuszczalność wznowienia; якщо немає ustawowa podstawa wznowienia або строк wniesienia skargi не збережено, суд odrzuca skargę. Після оцінки стану справи суд може поєднати перевірку допустимості з розглядом справи.",
+          text: ppsaLaw.text`${ppsaLaw.article("281", "Art. 281")} передбачає, що на rozprawa sąd насамперед вирішує про dopuszczalność wznowienia; якщо немає ustawowa podstawa wznowienia або строк wniesienia skargi не збережено, суд odrzuca skargę. Після оцінки стану справи суд може поєднати перевірку допустимості з розглядом справи.`,
           sourceLocator: "Art. 281",
         },
       ],
@@ -215,7 +217,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 282 § 1 обмежує повторний розгляд справи межами podstawy wznowienia. За § 2 після повторного розгляду sąd oddala skargę o wznowienie або uwzględnia її та змінює оскаржене orzeczenie із відповідним застосуванням правил про провадження в суді першої інстанції; додатково може uchylić оскаржене orzeczenie, а за потреби odrzucić skargę або umorzyć postępowanie. § 3 для випадку Art. 273 § 3 визначає спеціальний наслідок щодо кількох prawomocnych orzeczeń у тій самій справі.",
+          text: ppsaLaw.text`${ppsaLaw.article("282", "Art. 282 § 1")} обмежує повторний розгляд справи межами podstawy wznowienia. За ${ppsaLaw.article("282", "§ 2")} після повторного розгляду sąd oddala skargę o wznowienie або uwzględnia її та змінює оскаржене orzeczenie із відповідним застосуванням правил про провадження в суді першої інстанції; додатково може uchylić оскаржене orzeczenie, а за потреби odrzucić skargę або umorzyć postępowanie. ${ppsaLaw.article("282", "§ 3")} для випадку ${ppsaLaw.article("273", "Art. 273 § 3")} визначає спеціальний наслідок щодо кількох prawomocnych orzeczeń у тій самій справі.`,
           sourceLocator: "Art. 282 § 1–3",
         },
       ],
@@ -229,8 +231,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
         },
         {
           locator: "Art. 282 § 2–3",
-          explanation:
-            "Залежно від результату суд може oddalić або uwzględnić skargę, uchylić orzeczenie з odrzucenie чи umorzenie, а у випадку Art. 273 § 3 — застосувати спеціальний спосіб щодо пов'язаних orzeczenia.",
+          explanation: ppsaLaw.text`Залежно від результату суд може oddalić або uwzględnić skargę, uchylić orzeczenie з odrzucenie чи umorzenie, а у випадку ${ppsaLaw.article("273", "Art. 273 § 3")} — застосувати спеціальний спосіб щодо пов'язаних orzeczenia.`,
         },
       ],
       legalEffect:
@@ -244,7 +245,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 283 виключає від orzekania у postępowaniu ze skargi o wznowienie postępowania sędziego, якого стосується skarga щодо його udział або zachowanie у попередньому postępowaniu.",
+          text: ppsaLaw.text`${ppsaLaw.article("283", "Art. 283")} виключає від orzekania у postępowaniu ze skargi o wznowienie postępowania sędziego, якого стосується skarga щодо його udział або zachowanie у попередньому postępowaniu.`,
           sourceLocator: "Art. 283",
         },
       ],
@@ -259,8 +260,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Стаття встановлює спеціальне wyłączenie sędziego для цього виду провадження; вона сама не доводить інші підстави відводу.",
-      foreignersCase:
-        "Якщо іноземець посилається у skarga o wznowienie на участь судді у попередньому wyroku про pobyt, точно зіставте цей довід із Art. 283, а не з самим несприятливим результатом.",
+      foreignersCase: ppsaLaw.text`Якщо іноземець посилається у skarga o wznowienie на участь судді у попередньому wyroku про pobyt, точно зіставте цей довід із ${ppsaLaw.article("283", "Art. 283")}, а не з самим несприятливим результатом.`,
     },
     {
       provisionId: "ppsa-art-284",
@@ -268,7 +268,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 284 встановлює, що wniesienie skargi o wznowienie postępowania не зупиняє виконання оскарженого orzeczenie; якщо заявник uprawdopodobni загрозу niepowetowana szkoda, sąd може wstrzymać виконання. Postanowienie може бути видане на posiedzeniu niejawnym, і на нього przysługuje zażalenie.",
+          text: ppsaLaw.text`${ppsaLaw.article("284", "Art. 284")} встановлює, що wniesienie skargi o wznowienie postępowania не зупиняє виконання оскарженого orzeczenie; якщо заявник uprawdopodobni загрозу niepowetowana szkoda, sąd може wstrzymać виконання. Postanowienie може бути видане на posiedzeniu niejawnym, і на нього przysługuje zażalenie.`,
           sourceLocator: "Art. 284",
         },
       ],
@@ -297,7 +297,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285 § 1 забороняє подальше wznowienie postępowania, завершеного prawomocne orzeczenie, виданим унаслідок skargi o wznowienie postępowania. § 2 робить виняток для підстав wznowienia, визначених у Art. 272 § 1, § 2a і § 3.",
+          text: ppsaLaw.text`${ppsaLaw.article("285", "Art. 285 § 1")} забороняє подальше wznowienie postępowania, завершеного prawomocne orzeczenie, виданим унаслідок skargi o wznowienie postępowania. ${ppsaLaw.article("285", "§ 2")} робить виняток для підстав wznowienia, визначених у ${ppsaLaw.article("272", "Art. 272 § 1")}, ${ppsaLaw.article("285", "§ 2a")} і ${ppsaLaw.article("285", "§ 3")}.`,
           sourceLocator: "Art. 285 § 1–2",
         },
       ],
@@ -311,14 +311,11 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
         },
         {
           locator: "Art. 285 § 2",
-          explanation:
-            "Виняток обмежений Art. 272 § 1, § 2a і § 3; інші доводи не можна автоматично підвести під нього.",
+          explanation: ppsaLaw.text`Виняток обмежений ${ppsaLaw.article("272", "Art. 272 § 1")}, ${ppsaLaw.article("285", "§ 2a")} і ${ppsaLaw.article("285", "§ 3")}; інші доводи не можна автоматично підвести під нього.`,
         },
       ],
-      legalEffect:
-        "Норма обмежує ланцюг повторних переглядів, але не скасовує спеціально збережені винятки з § 2.",
-      foreignersCase:
-        "У справі іноземця не подавайте другу skargę o wznowienie лише через незгоду з першим результатом; перевірте, чи справді наявна одна з підстав Art. 272, названих у § 2.",
+      legalEffect: ppsaLaw.text`Норма обмежує ланцюг повторних переглядів, але не скасовує спеціально збережені винятки з ${ppsaLaw.article("285", "§ 2")}.`,
+      foreignersCase: ppsaLaw.text`У справі іноземця не подавайте другу skargę o wznowienie лише через незгоду з першим результатом; перевірте, чи справді наявна одна з підстав ${ppsaLaw.article("272", "Art. 272")}, названих у ${ppsaLaw.article("285", "§ 2")}.`,
     },
     {
       provisionId: "ppsa-art-286",
@@ -326,7 +323,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 286 § 1 передбачає після uprawomocnienie рішення суду першої інстанції, яким закінчено postępowanie, zwrot akt адміністративної справи organowi administracji publicznej разом із odpis orzeczenia зі stwierdzeniem prawomocności; zarządzenie про zwrot може видати referendarz sądowy. § 1a не застосовує це правило, якщо akta ведуться електронно, але organ отримує odpis зі stwierdzeniem prawomocności. За § 2 строк для załatwienia sprawy органом рахується від doręczenie akt або, в електронному випадку, odpis.",
+          text: ppsaLaw.text`${ppsaLaw.article("286", "Art. 286 § 1")} передбачає після uprawomocnienie рішення суду першої інстанції, яким закінчено postępowanie, zwrot akt адміністративної справи organowi administracji publicznej разом із odpis orzeczenia зі stwierdzeniem prawomocności; zarządzenie про zwrot може видати referendarz sądowy. ${ppsaLaw.article("286", "§ 1a")} не застосовує це правило, якщо akta ведуться електронно, але organ отримує odpis зі stwierdzeniem prawomocności. За ${ppsaLaw.article("286", "§ 2")} строк для załatwienia sprawy органом рахується від doręczenie akt або, в електронному випадку, odpis.`,
           sourceLocator: "Art. 286 § 1–2",
         },
       ],
@@ -344,8 +341,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
             "Для строку органу важлива дата doręczenie akt або odpis, а не лише дата, коли суд проголосив orzeczenie.",
         },
       ],
-      legalEffect:
-        "Повернення akt і вручення odpis запускають визначений правом або судом строк для органу, але Art. 286 сам не встановлює тривалість кожного такого строку.",
+      legalEffect: ppsaLaw.text`Повернення akt і вручення odpis запускають визначений правом або судом строк для органу, але ${ppsaLaw.article("286", "Art. 286")} сам не встановлює тривалість кожного такого строку.`,
       foreignersCase:
         "Після wyrok WSA у справі іноземця про pobyt перевірте, коли organ отримав akta або odpis prawomocnego orzeczenia: від цього може залежати початок його подальшої дії.",
     },
@@ -355,12 +351,11 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 287 є uchylony (скасований) і не містить чинного нормативного правила.",
+          text: ppsaLaw.text`${ppsaLaw.article("287", "Art. 287")} є uchylony (скасований) і не містить чинного нормативного правила.`,
           sourceLocator: "Art. 287",
         },
       ],
-      summary:
-        "У чинній редакції PPSA Art. 287 позначений як uchylony; його не можна читати як діючу норму.",
+      summary: ppsaLaw.text`У чинній редакції PPSA ${ppsaLaw.article("287", "Art. 287")} позначений як uchylony; його не можна читати як діючу норму.`,
       rules: [
         {
           locator: "Art. 287",
@@ -368,10 +363,8 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
             "Позначка „(uchylony)” означає, що в цьому місці немає чинного правила, яке слід застосовувати до нової справи.",
         },
       ],
-      legalEffect:
-        "Art. 287 не створює чинного процесуального наслідку; за історичним питанням потрібно перевіряти редакцію закону та перехідні правила на відповідну дату.",
-      foreignersCase:
-        "Якщо старі матеріали справи іноземця посилаються на Art. 287, не використовуйте це посилання як чинну підставу без перевірки редакції PPSA та моменту виникнення ситуації.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("287", "Art. 287")} не створює чинного процесуального наслідку; за історичним питанням потрібно перевіряти редакцію закону та перехідні правила на відповідну дату.`,
+      foreignersCase: ppsaLaw.text`Якщо старі матеріали справи іноземця посилаються на ${ppsaLaw.article("287", "Art. 287")}, не використовуйте це посилання як чинну підставу без перевірки редакції PPSA та моменту виникнення ситуації.`,
     },
     {
       provisionId: "ppsa-art-288",
@@ -379,7 +372,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 288 передбачає odtworzenie akt, які загублено або знищено повністю чи частково. У правомірно завершеній справі відтворюється kończące postępowanie orzeczenie та та частина akt, яка необхідна для встановлення його змісту й wznowienia postępowania.",
+          text: ppsaLaw.text`${ppsaLaw.article("288", "Art. 288")} передбачає odtworzenie akt, які загублено або знищено повністю чи частково. У правомірно завершеній справі відтворюється kończące postępowanie orzeczenie та та частина akt, яка необхідна для встановлення його змісту й wznowienia postępowania.`,
           sourceLocator: "Art. 288",
         },
       ],
@@ -408,7 +401,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 289 § 1 дозволяє sąd розпочати postępowanie w sprawie odtworzenia akt з urzędu або на wniosek strony. За § 2 суд розпочинає його лише на wniosek strony, якщо zaginięcie або zniszczenie akt сталося внаслідок siła wyższa.",
+          text: ppsaLaw.text`${ppsaLaw.article("289", "Art. 289 § 1")} дозволяє sąd розпочати postępowanie w sprawie odtworzenia akt з urzędu або на wniosek strony. За ${ppsaLaw.article("289", "§ 2")} суд розпочинає його лише на wniosek strony, якщо zaginięcie або zniszczenie akt сталося внаслідок siła wyższa.`,
           sourceLocator: "Art. 289 § 1–2",
         },
       ],
@@ -437,7 +430,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 290 визначає właściwy sąd для odtworzenia akt: у sprawa będąca w toku — суд, у якому справа востаннє розглядалася; якщо компетентним був би NSA, він передає справу суду першої інстанції, крім відтворення лише akt NSA; у prawomocnie zakończonej sprawie провадження веде sąd першої інстанції.",
+          text: ppsaLaw.text`${ppsaLaw.article("290", "Art. 290")} визначає właściwy sąd для odtworzenia akt: у sprawa będąca w toku — суд, у якому справа востаннє розглядалася; якщо компетентним був би NSA, він передає справу суду першої інстанції, крім відтворення лише akt NSA; у prawomocnie zakończonej sprawie провадження веде sąd першої інстанції.`,
           sourceLocator: "Art. 290 § 1–3",
         },
       ],
@@ -466,7 +459,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 291 вимагає, щоб wniosek o odtworzenie akt точно визначав справу, містив усі urzędowo poświadczone odpisy, які є у заявника, і вказував відомі йому місця, де перебувають документи або їхні odpisy.",
+          text: ppsaLaw.text`${ppsaLaw.article("291", "Art. 291")} вимагає, щоб wniosek o odtworzenie akt точно визначав справу, містив усі urzędowo poświadczone odpisy, які є у заявника, і вказував відомі йому місця, де перебувають документи або їхні odpisy.`,
           sourceLocator: "Art. 291",
         },
       ],
@@ -490,7 +483,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 292 § 1 зобов'язує przewodniczący викликати осіб, organy administracji publicznej або instytucje, названі у wniosek або офіційно відомі суду, щоб вони у визначений строк подали urzędowo poświadczone odpisy документів або заявили, що їх не мають. За § 2 особа, яка вже мала документ, але тепер його не має, повинна пояснити, де він знаходиться.",
+          text: ppsaLaw.text`${ppsaLaw.article("292", "Art. 292 § 1")} зобов'язує przewodniczący викликати осіб, organy administracji publicznej або instytucje, названі у wniosek або офіційно відомі суду, щоб вони у визначений строк подали urzędowo poświadczone odpisy документів або заявили, що їх не мають. За ${ppsaLaw.article("292", "§ 2")} особа, яка вже мала документ, але тепер його не має, повинна пояснити, де він знаходиться.`,
           sourceLocator: "Art. 292 § 1–2",
         },
       ],
@@ -519,17 +512,15 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 293 § 1 дозволяє sąd накласти grzywna у розмірі, визначеному Art. 154 § 6, на кожного, хто не виконає wezwanie за Art. 292. За § 2, якщо викликана є osoba prawna або інша jednostka organizacyjna, відповідальність стосується jej kierownik або pracownik, обов'язком якого було виконати wezwanie.",
+          text: ppsaLaw.text`${ppsaLaw.article("293", "Art. 293 § 1")} дозволяє sąd накласти grzywna у розмірі, визначеному ${ppsaLaw.article("154", "Art. 154 § 6")}, на кожного, хто не виконає wezwanie за ${ppsaLaw.article("292", "Art. 292")}. За ${ppsaLaw.article("293", "§ 2")}, якщо викликана є osoba prawna або інша jednostka organizacyjna, відповідальність стосується jej kierownik або pracownik, обов'язком якого було виконати wezwanie.`,
           sourceLocator: "Art. 293 § 1–2",
         },
       ],
-      summary:
-        "Невиконання wezwanie про подання або пояснення щодо документів може мати наслідок у вигляді grzywna за правилами Art. 154 § 6.",
+      summary: ppsaLaw.text`Невиконання wezwanie про подання або пояснення щодо документів може мати наслідок у вигляді grzywna за правилами ${ppsaLaw.article("154", "Art. 154 § 6")}.`,
       rules: [
         {
           locator: "Art. 293 § 1",
-          explanation:
-            "Підстава — невиконання саме wezwanie, зробленого за Art. 292; розмір grzywna відсилається до Art. 154 § 6.",
+          explanation: ppsaLaw.text`Підстава — невиконання саме wezwanie, зробленого за ${ppsaLaw.article("292", "Art. 292")}; розмір grzywna відсилається до ${ppsaLaw.article("154", "Art. 154 § 6")}.`,
         },
         {
           locator: "Art. 293 § 2",
@@ -548,7 +539,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 294 передбачає, що після подання urzędowo poświadczone odpisy przewodniczący розпоряджається долучити їх до akt, а odpis zarządzenie doręczaється сторонам.",
+          text: ppsaLaw.text`${ppsaLaw.article("294", "Art. 294")} передбачає, що після подання urzędowo poświadczone odpisy przewodniczący розпоряджається долучити їх до akt, а odpis zarządzenie doręczaється сторонам.`,
           sourceLocator: "Art. 294",
         },
       ],
@@ -577,7 +568,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 295 передбачає: якщо odtworzenie akt неможливо провести за правилами попередніх статей, przewodniczący викликає сторони подати точні oświadczenia про зміст загублених або знищених pism і докази тверджень, зокрема prywatne odpisy та інші pisma й notatki, корисні для відновлення akt.",
+          text: ppsaLaw.text`${ppsaLaw.article("295", "Art. 295")} передбачає: якщо odtworzenie akt неможливо провести за правилами попередніх статей, przewodniczący викликає сторони подати точні oświadczenia про зміст загублених або знищених pism і докази тверджень, зокрема prywatne odpisy та інші pisma й notatki, корисні для відновлення akt.`,
           sourceLocator: "Art. 295",
         },
       ],
@@ -606,7 +597,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 296 § 1 зобов'язує sąd незалежно від oświadczenia та wnioski проводити з urzędu dochodzenia щодо всіх обставин, важливих для встановлення змісту втрачених akt, враховувати записи repertoria та інших службових книг, а також дозволяє допитувати свідків і сторони. За § 2 до таких доказів відповідно застосовуються przepisy Kodeksu postępowania cywilnego.",
+          text: ppsaLaw.text`${ppsaLaw.article("296", "Art. 296 § 1")} зобов'язує sąd незалежно від oświadczenia та wnioski проводити з urzędu dochodzenia щодо всіх обставин, важливих для встановлення змісту втрачених akt, враховувати записи repertoria та інших службових книг, а також дозволяє допитувати свідків і сторони. За ${ppsaLaw.article("296", "§ 2")} до таких доказів відповідно застосовуються przepisy Kodeksu postępowania cywilnego.`,
           sourceLocator: "Art. 296 § 1–2",
         },
       ],
@@ -620,8 +611,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
         },
         {
           locator: "Art. 296 § 2",
-          explanation:
-            "Правила Kodeks postępowania cywilnego застосовуються відповідно саме до проведення доказів, названих у § 1.",
+          explanation: ppsaLaw.text`Правила Kodeks postępowania cywilnego застосовуються відповідно саме до проведення доказів, названих у ${ppsaLaw.article("296", "§ 1")}.`,
         },
       ],
       legalEffect:
@@ -635,7 +625,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 297 наказує після postępowanie за Art. 295 і Art. 296 постановити postanowienie про спосіб і обсяг відтворення загублених akt або про неможливість їх відтворення; на це postanowienie przysługuje zażalenie.",
+          text: ppsaLaw.text`${ppsaLaw.article("297", "Art. 297")} наказує після postępowanie за ${ppsaLaw.article("295", "Art. 295")} і ${ppsaLaw.article("296", "Art. 296")} постановити postanowienie про спосіб і обсяг відтворення загублених akt або про неможливість їх відтворення; на це postanowienie przysługuje zażalenie.`,
           sourceLocator: "Art. 297",
         },
       ],
@@ -664,7 +654,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 298 передбачає, що на wniosek strony, поданий протягом тридцяти днів від prawomocność postanowienie про неможливість odtworzenie akt або їх недостатність для dalsze postępowanie, sąd постановляє про повторне wszczęcie postępowania, у якому сторона може повторно wniesienie skarga або środka odwoławczego. В інших випадках sąd продовжує postępowanie настільки, наскільки це можливо з урахуванням збережених і відтворених akt; на postanowienie про podjęcie dalszego postępowania przysługuje zażalenie.",
+          text: ppsaLaw.text`${ppsaLaw.article("298", "Art. 298")} передбачає, що на wniosek strony, поданий протягом тридцяти днів від prawomocność postanowienie про неможливість odtworzenie akt або їх недостатність для dalsze postępowanie, sąd постановляє про повторне wszczęcie postępowania, у якому сторона може повторно wniesienie skarga або środka odwoławczego. В інших випадках sąd продовжує postępowanie настільки, наскільки це можливо з урахуванням збережених і відтворених akt; на postanowienie про podjęcie dalszego postępowania przysługuje zażalenie.`,
           sourceLocator: "Art. 298",
         },
       ],
@@ -684,8 +674,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Норма може повернути стороні можливість повторно подати skarga або продовжити наявне postępowanie, але вибір залежить від фактичного обсягу відтворених akt.",
-      foreignersCase:
-        "Якщо втрата akt перешкоджає спору іноземця про pobyt, зафіксуйте дату prawomocność postanowienie та не пропустіть тридцять днів для повторного wniesienie, коли саме це дозволено Art. 298.",
+      foreignersCase: ppsaLaw.text`Якщо втрата akt перешкоджає спору іноземця про pobyt, зафіксуйте дату prawomocność postanowienie та не пропустіть тридцять днів для повторного wniesienie, коли саме це дозволено ${ppsaLaw.article("298", "Art. 298")}.`,
     },
     {
       provisionId: "ppsa-art-299",
@@ -693,7 +682,7 @@ export const ppsaPart06b = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 299 § 1 регулює doręczenia стороні з місцем zamieszkania, zwykły pobyt або siedziba в іншій державі-члені UE, Швейцарії чи державі-члені EFTA–EOG, яка не встановила повноважного pełnomocnik до ведення справи в Польщі: суд надсилає pisma przesyłką poleconą з potwierdzeniem odbioru або рівноцінним відправленням. За § 2 сторона поза Польщею, UE, Швейцарією та EFTA–EOG без такого pełnomocnik мусить разом зі skarga встановити pełnomocnik do doręczeń у Польщі; § 3 дає два місяці на усунення цього braku під rygor odrzucenie skargi. § 4–5 регулюють повідомлення учасника та залишення pism в akt зі skutkiem doręczenia, а § 6 містить винятки для umowa międzynarodowa та електронного doręczenie.",
+          text: ppsaLaw.text`${ppsaLaw.article("299", "Art. 299 § 1")} регулює doręczenia стороні з місцем zamieszkania, zwykły pobyt або siedziba в іншій державі-члені UE, Швейцарії чи державі-члені EFTA–EOG, яка не встановила повноважного pełnomocnik до ведення справи в Польщі: суд надсилає pisma przesyłką poleconą з potwierdzeniem odbioru або рівноцінним відправленням. За ${ppsaLaw.article("299", "§ 2")} сторона поза Польщею, UE, Швейцарією та EFTA–EOG без такого pełnomocnik мусить разом зі skarga встановити pełnomocnik do doręczeń у Польщі; ${ppsaLaw.article("299", "§ 3")} дає два місяці на усунення цього braku під rygor odrzucenie skargi. ${ppsaLaw.article("299", "§ 4–5")} регулюють повідомлення учасника та залишення pism в akt зі skutkiem doręczenia, а ${ppsaLaw.article("299", "§ 6")} містить винятки для umowa międzynarodowa та електронного doręczenie.`,
           sourceLocator: "Art. 299 § 1–6",
         },
       ],

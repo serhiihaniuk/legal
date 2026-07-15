@@ -88,7 +88,7 @@ function findEntryObjects(source) {
       continue
     }
 
-    if (character === '"' || character === "'") {
+    if (character === '"' || character === "'" || character === "`") {
       quote = character
       continue
     }

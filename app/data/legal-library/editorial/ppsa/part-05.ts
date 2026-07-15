@@ -1,4 +1,7 @@
+import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+
+const ppsaLaw = createLegalTextAuthor("ppsa")
 
 export const ppsaPart05 = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
@@ -16,8 +19,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 177 § 1–6",
         },
       ],
-      summary:
-        "Art. 177 wyznacza sąd właściwy do wniesienia skargi kasacyjnej i podstawowy trzydziestodniowy termin, z wyjątkami dotyczącymi określonych podmiotów i prawa pomocy.",
+      summary: ppsaLaw.text`${ppsaLaw.article("177", "Art. 177")} wyznacza sąd właściwy do wniesienia skargi kasacyjnej i podstawowy trzydziestodniowy termin, z wyjątkami dotyczącymi określonych podmiotów i prawa pomocy.`,
       rules: [
         {
           locator: "§ 1",
@@ -41,17 +43,15 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Jeżeli skarga kasacyjna nie spełnia wymagań art. 176 innych niż przytoczenie podstaw kasacyjnych i ich uzasadnienie, przewodniczący wzywa stronę do usunięcia braków w terminie siedmiu dni pod rygorem odrzucenia skargi.",
+          text: ppsaLaw.text`Jeżeli skarga kasacyjna nie spełnia wymagań ${ppsaLaw.article("176", "art. 176")} innych niż przytoczenie podstaw kasacyjnych i ich uzasadnienie, przewodniczący wzywa stronę do usunięcia braków w terminie siedmiu dni pod rygorem odrzucenia skargi.`,
           sourceLocator: "Art. 177a",
         },
       ],
-      summary:
-        "Art. 177a pozwala uzupełnić wskazane wymagania formalne skargi kasacyjnej, ale wyłącza z tego wezwania same podstawy kasacyjne i ich uzasadnienie.",
+      summary: ppsaLaw.text`${ppsaLaw.article("177a", "Art. 177a")} pozwala uzupełnić wskazane wymagania formalne skargi kasacyjnej, ale wyłącza z tego wezwania same podstawy kasacyjne i ich uzasadnienie.`,
       rules: [
         {
           locator: "Art. 177a",
-          explanation:
-            "Wezwanie dotyczy wymagań art. 176 innych niż podstawy kasacyjne i ich uzasadnienie; termin na reakcję wynosi siedem dni i ma określony rygor.",
+          explanation: ppsaLaw.text`Wezwanie dotyczy wymagań ${ppsaLaw.article("176", "art. 176")} innych niż podstawy kasacyjne i ich uzasadnienie; termin na reakcję wynosi siedem dni i ma określony rygor.`,
         },
       ],
       legalEffect:
@@ -69,8 +69,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 178",
         },
       ],
-      summary:
-        "Art. 178 reguluje odrzucenie skargi kasacyjnej przez WSA z powodu spóźnienia, niedopuszczalności albo nieusunięcia braków.",
+      summary: ppsaLaw.text`${ppsaLaw.article("178", "Art. 178")} reguluje odrzucenie skargi kasacyjnej przez WSA z powodu spóźnienia, niedopuszczalności albo nieusunięcia braków.`,
       rules: [
         {
           locator: "Art. 178",
@@ -117,8 +116,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 179",
         },
       ],
-      summary:
-        "Art. 179 daje stronie niekasującej czternaście dni na odpowiedź i określa moment przekazania materiałów do NSA.",
+      summary: ppsaLaw.text`${ppsaLaw.article("179", "Art. 179")} daje stronie niekasującej czternaście dni na odpowiedź i określa moment przekazania materiałów do NSA.`,
       rules: [
         {
           locator: "Art. 179",
@@ -141,8 +139,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 179a",
         },
       ],
-      summary:
-        "Art. 179a pozwala WSA na samokontrolę przed przekazaniem kasacji NSA w razie nieważności albo oczywiście usprawiedliwionych podstaw kasacyjnych.",
+      summary: ppsaLaw.text`${ppsaLaw.article("179a", "Art. 179a")} pozwala WSA na samokontrolę przed przekazaniem kasacji NSA w razie nieważności albo oczywiście usprawiedliwionych podstaw kasacyjnych.`,
       rules: [
         {
           locator: "Art. 179a",
@@ -189,8 +186,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 181 § 1–2",
         },
       ],
-      summary:
-        "Art. 181 określa zasadniczy skład NSA i formę orzeczenia zależną od rodzaju zaskarżonego orzeczenia.",
+      summary: ppsaLaw.text`${ppsaLaw.article("181", "Art. 181")} określa zasadniczy skład NSA i formę orzeczenia zależną od rodzaju zaskarżonego orzeczenia.`,
       rules: [
         {
           locator: "§ 1",
@@ -214,12 +210,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "NSA może rozpoznać na posiedzeniu niejawnym kasację od kończącego postępowanie postanowienia WSA. Rozpoznaje ją tak także po zrzeczeniu się rozprawy przez wnoszącego, gdy pozostałe strony w czternastu dniach od doręczenia kasacji nie zażądały rozprawy, oraz w kasacji od wyroku WSA oddalającego sprzeciw od decyzji lub postanowienia. Na posiedzeniu niejawnym orzeka jeden sędzia, a w przypadku z § 2 — trzech.",
+          text: ppsaLaw.text`NSA może rozpoznać na posiedzeniu niejawnym kasację od kończącego postępowanie postanowienia WSA. Rozpoznaje ją tak także po zrzeczeniu się rozprawy przez wnoszącego, gdy pozostałe strony w czternastu dniach od doręczenia kasacji nie zażądały rozprawy, oraz w kasacji od wyroku WSA oddalającego sprzeciw od decyzji lub postanowienia. Na posiedzeniu niejawnym orzeka jeden sędzia, a w przypadku z ${ppsaLaw.article("182", "§ 2")} — trzech.`,
           sourceLocator: "Art. 182 § 1–3",
         },
       ],
-      summary:
-        "Art. 182 wskazuje trzy sytuacje rozpoznania kasacji bez rozprawy i wiąże z nimi skład NSA.",
+      summary: ppsaLaw.text`${ppsaLaw.article("182", "Art. 182")} wskazuje trzy sytuacje rozpoznania kasacji bez rozprawy i wiąże z nimi skład NSA.`,
       rules: [
         {
           locator: "§ 1–2a",
@@ -228,14 +223,12 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 3",
-          explanation:
-            "Na posiedzeniu niejawnym skład jednego sędziego jest regułą, lecz przy § 2 ustawa wymaga trzech sędziów.",
+          explanation: ppsaLaw.text`Na posiedzeniu niejawnym skład jednego sędziego jest regułą, lecz przy ${ppsaLaw.article("182", "§ 2")} ustawa wymaga trzech sędziów.`,
         },
       ],
       legalEffect:
         "Posiedzenie niejawne jest ustawowym trybem rozpoznania w określonych sytuacjach i samo w sobie nie oznacza braku kontroli sądowej.",
-      foreignersCase:
-        "W sprawie pobytowej ustal, czy kasacja dotyczy kończącego postępowanie postanowienia, sprawy sprzeciwu, czy zrzeczenia się rozprawy. Nie zakładaj rozprawy, gdy działa § 2 albo § 2a.",
+      foreignersCase: ppsaLaw.text`W sprawie pobytowej ustal, czy kasacja dotyczy kończącego postępowanie postanowienia, sprawy sprzeciwu, czy zrzeczenia się rozprawy. Nie zakładaj rozprawy, gdy działa ${ppsaLaw.article("182", "§ 2")} albo ${ppsaLaw.article("182", "§ 2a")}.`,
     },
     {
       provisionId: "ppsa-art-182a",
@@ -256,8 +249,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Termin dotyczy rozpoznania przez NSA i biegnie od wpływu kasacji do tego sądu, nie od jej sporządzenia ani wysłania.",
         },
       ],
-      legalEffect:
-        "Art. 182a określa termin działania sądu w tej kategorii spraw; nie przedłuża ani nie zastępuje terminu wniesienia kasacji z art. 177.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("182a", "Art. 182a")} określa termin działania sądu w tej kategorii spraw; nie przedłuża ani nie zastępuje terminu wniesienia kasacji z ${ppsaLaw.article("177", "art. 177")}.`,
       foreignersCase:
         "Jeżeli sprawa pobytowa dotyczy sprzeciwu od decyzji lub postanowienia, odnotuj osobno datę wniesienia kasacji i datę jej wpływu do NSA.",
     },
@@ -267,12 +259,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "NSA rozpoznaje sprawę w granicach skargi kasacyjnej, lecz z urzędu bierze pod rozwagę nieważność postępowania; strony mogą przytaczać nowe uzasadnienie podstaw kasacyjnych. § 2 wymienia sześć przypadków nieważności, w tym niedopuszczalność drogi sądowej, brak zdolności lub umocowania, wcześniejsze postępowanie albo prawomocne osądzenie, wadliwy skład, pozbawienie obrony praw oraz orzekanie przez WSA w sprawie właściwej dla NSA.",
+          text: ppsaLaw.text`NSA rozpoznaje sprawę w granicach skargi kasacyjnej, lecz z urzędu bierze pod rozwagę nieważność postępowania; strony mogą przytaczać nowe uzasadnienie podstaw kasacyjnych. ${ppsaLaw.article("183", "§ 2")} wymienia sześć przypadków nieważności, w tym niedopuszczalność drogi sądowej, brak zdolności lub umocowania, wcześniejsze postępowanie albo prawomocne osądzenie, wadliwy skład, pozbawienie obrony praw oraz orzekanie przez WSA w sprawie właściwej dla NSA.`,
           sourceLocator: "Art. 183 § 1–2",
         },
       ],
-      summary:
-        "Zakres kasacji wyznacza skarga, ale nieważność postępowania NSA bada z urzędu w zamkniętym katalogu art. 183 § 2.",
+      summary: ppsaLaw.text`Zakres kasacji wyznacza skarga, ale nieważność postępowania NSA bada z urzędu w zamkniętym katalogu ${ppsaLaw.article("183", "art. 183 § 2")}.`,
       rules: [
         {
           locator: "§ 1",
@@ -377,8 +368,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 187 § 1–3",
         },
       ],
-      summary:
-        "Art. 187 ustanawia mechanizm przekazania poważnie wątpliwego zagadnienia prawnego składowi siedmiu sędziów NSA.",
+      summary: ppsaLaw.text`${ppsaLaw.article("187", "Art. 187")} ustanawia mechanizm przekazania poważnie wątpliwego zagadnienia prawnego składowi siedmiu sędziów NSA.`,
       rules: [
         {
           locator: "§ 1–2",
@@ -391,8 +381,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Skład siedmiu sędziów może przejąć całą sprawę do rozpoznania, co nie oznacza z góry określonego wyniku.",
         },
       ],
-      legalEffect:
-        "Uchwała porządkuje rozstrzygnięcie zagadnienia w danej sprawie, ale art. 187 nie przesądza o prawie do pobytu ani o wyniku kasacji.",
+      legalEffect: ppsaLaw.text`Uchwała porządkuje rozstrzygnięcie zagadnienia w danej sprawie, ale ${ppsaLaw.article("187", "art. 187")} nie przesądza o prawie do pobytu ani o wyniku kasacji.`,
       foreignersCase:
         "W powtarzalnym sporze pobytowym sprawdź, czy NSA przekazał konkretne zagadnienie składowi siedmiu sędziów i jaki zakres ma uchwała w tej sprawie.",
     },
@@ -487,8 +476,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Potrzebne są zarówno wniosek strony, jak i wykazanie wpływu postanowienia na wynik; przepis nie tworzy odrębnego zażalenia.",
         },
       ],
-      legalEffect:
-        "Art. 191 rozszerza przedmiot kontroli w konkretnej kasacji, ale nie czyni każdego postanowienia samodzielnie zaskarżalnym.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("191", "Art. 191")} rozszerza przedmiot kontroli w konkretnej kasacji, ale nie czyni każdego postanowienia samodzielnie zaskarżalnym.`,
       foreignersCase:
         "Jeśli postanowienie w sprawie pobytowej nie miało własnego zażalenia, wskaż w kasacji jego konkretny wpływ na wyrok, zamiast poprzestać na samej krytyce czynności.",
     },
@@ -498,12 +486,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Z wyjątkiem przypadków określonych w art. 123–125 postępowanie przed NSA ulega zawieszeniu jedynie na zgodny wniosek stron.",
+          text: ppsaLaw.text`Z wyjątkiem przypadków określonych w ${ppsaLaw.article("123", "art. 123")}–${ppsaLaw.article("125", "125")} postępowanie przed NSA ulega zawieszeniu jedynie na zgodny wniosek stron.`,
           sourceLocator: "Art. 192",
         },
       ],
-      summary:
-        "Na etapie NSA dobrowolne zawieszenie postępowania wymaga zgodnego wniosku wszystkich stron, z wyjątkiem art. 123–125.",
+      summary: ppsaLaw.text`Na etapie NSA dobrowolne zawieszenie postępowania wymaga zgodnego wniosku wszystkich stron, z wyjątkiem ${ppsaLaw.article("123", "art. 123")}–${ppsaLaw.article("125", "125")}.`,
       rules: [
         {
           locator: "Art. 192",
@@ -511,8 +498,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Jednostronny wniosek nie spełnia tej ogólnej przesłanki; najpierw sprawdź, czy zachodzi jeden z ustawowych wyjątków.",
         },
       ],
-      legalEffect:
-        "Przepis ogranicza zawieszenie na zgodny wniosek w NSA, ale nie zastępuje analizy szczególnych podstaw zawieszenia z art. 123–125.",
+      legalEffect: ppsaLaw.text`Przepis ogranicza zawieszenie na zgodny wniosek w NSA, ale nie zastępuje analizy szczególnych podstaw zawieszenia z ${ppsaLaw.article("123", "art. 123")}–${ppsaLaw.article("125", "125")}.`,
       foreignersCase:
         "Jeżeli chcesz odroczyć kasację do czasu innej sprawy pobytowej, ustal, czy wszystkie strony złożą zgodny wniosek albo czy działa wyjątek ustawowy.",
     },
@@ -526,8 +512,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 193",
         },
       ],
-      summary:
-        "Art. 193 jest regułą odpowiedniego stosowania przepisów WSA i nakłada na NSA szczególny obowiązek uzasadnienia orzeczeń.",
+      summary: ppsaLaw.text`${ppsaLaw.article("193", "Art. 193")} jest regułą odpowiedniego stosowania przepisów WSA i nakłada na NSA szczególny obowiązek uzasadnienia orzeczeń.`,
       rules: [
         {
           locator: "Art. 193",
@@ -551,12 +536,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Zażalenie do NSA przysługuje na postanowienia WSA w przypadkach przewidzianych w ustawie oraz na wskazane w art. 194 przedmioty, m.in. przekazanie sprawy, odrzucenie skargi w art. 58 § 1 pkt 2–4 i art. 220 § 3, umorzenie, wstrzymanie wykonania, odmowę uzasadnienia, sprostowanie lub wykładnię, uzupełnienie wyroku, wyłączenie sędziego, odrzucenie skargi kasacyjnej lub zażalenia, zwrot kosztów i ukaranie grzywną. § 1 pkt 3 jest uchylony.",
+          text: ppsaLaw.text`Zażalenie do NSA przysługuje na postanowienia WSA w przypadkach przewidzianych w ustawie oraz na wskazane w ${ppsaLaw.article("194", "art. 194")} przedmioty, m.in. przekazanie sprawy, odrzucenie skargi w ${ppsaLaw.article("58", "art. 58 § 1")} pkt 2–4 i ${ppsaLaw.article("220", "art. 220 § 3")}, umorzenie, wstrzymanie wykonania, odmowę uzasadnienia, sprostowanie lub wykładnię, uzupełnienie wyroku, wyłączenie sędziego, odrzucenie skargi kasacyjnej lub zażalenia, zwrot kosztów i ukaranie grzywną. ${ppsaLaw.article("194", "§ 1")} pkt 3 jest uchylony.`,
           sourceLocator: "Art. 194 § 1 pkt 1, 1a–10, § 2–4",
         },
       ],
-      summary:
-        "Art. 194 zawiera zamknięty katalog wskazanych postanowień WSA, na które przysługuje zażalenie do NSA, oraz określa termin i wymagania pisma.",
+      summary: ppsaLaw.text`${ppsaLaw.article("194", "Art. 194")} zawiera zamknięty katalog wskazanych postanowień WSA, na które przysługuje zażalenie do NSA, oraz określa termin i wymagania pisma.`,
       rules: [
         {
           locator: "§ 1 pkt 1, 1a–2, 3 (uchylony), 4–10",
@@ -571,8 +555,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Samo nazwanie dokumentu postanowieniem nie tworzy prawa do zażalenia; trzeba znaleźć ustawową kategorię, zachować termin i spełnić wymagania formy.",
-      foreignersCase:
-        "W sprawie pobytowej odczytaj przedmiot postanowienia i pouczenie, a następnie porównaj je z czynnym katalogiem art. 194. Przy odrzuceniu kasacji uwzględnij wymóg profesjonalnego sporządzenia.",
+      foreignersCase: ppsaLaw.text`W sprawie pobytowej odczytaj przedmiot postanowienia i pouczenie, a następnie porównaj je z czynnym katalogiem ${ppsaLaw.article("194", "art. 194")}. Przy odrzuceniu kasacji uwzględnij wymóg profesjonalnego sporządzenia.`,
     },
     {
       provisionId: "ppsa-art-195",
@@ -584,8 +567,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 195 § 1–3",
         },
       ],
-      summary:
-        "Art. 195 reguluje doręczenie i przekazanie zażalenia, samokontrolę WSA oraz umorzenie bezprzedmiotowego postępowania zażaleniowego przed przekazaniem akt.",
+      summary: ppsaLaw.text`${ppsaLaw.article("195", "Art. 195")} reguluje doręczenie i przekazanie zażalenia, samokontrolę WSA oraz umorzenie bezprzedmiotowego postępowania zażaleniowego przed przekazaniem akt.`,
       rules: [
         {
           locator: "§ 1",
@@ -598,8 +580,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Sprawdź, czy przed przedstawieniem akt zachodzi nieważność, oczywiste uzasadnienie albo bezprzedmiotowość postępowania zażaleniowego.",
         },
       ],
-      legalEffect:
-        "Zażalenie może zostać rozstrzygnięte jeszcze przez WSA, lecz tylko przy przesłankach z § 2–3; sama odpowiedź strony nie przesądza dalszego wyniku.",
+      legalEffect: ppsaLaw.text`Zażalenie może zostać rozstrzygnięte jeszcze przez WSA, lecz tylko przy przesłankach z ${ppsaLaw.article("195", "§ 2–3")}; sama odpowiedź strony nie przesądza dalszego wyniku.`,
       foreignersCase:
         "W sprawie pobytowej pilnuj doręczenia zażalenia wszystkim stronom i siedmiodniowego terminu odpowiedzi. Sprawdź także, czy WSA nie skorzystał z samokontroli przed przekazaniem akt.",
     },
@@ -633,12 +614,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "NSA rozpoznaje zażalenie na posiedzeniu niejawnym. Do postępowania wywołanego zażaleniem odpowiednio stosuje się przepisy o skardze kasacyjnej, z wyłączeniem art. 185 § 2.",
+          text: ppsaLaw.text`NSA rozpoznaje zażalenie na posiedzeniu niejawnym. Do postępowania wywołanego zażaleniem odpowiednio stosuje się przepisy o skardze kasacyjnej, z wyłączeniem ${ppsaLaw.article("185", "art. 185 § 2")}.`,
           sourceLocator: "Art. 197 § 1–2",
         },
       ],
-      summary:
-        "Art. 197 ustanawia niejawny tryb rozpoznania zażalenia i odpowiednie odesłanie do reguł skargi kasacyjnej z jednym wyłączeniem.",
+      summary: ppsaLaw.text`${ppsaLaw.article("197", "Art. 197")} ustanawia niejawny tryb rozpoznania zażalenia i odpowiednie odesłanie do reguł skargi kasacyjnej z jednym wyłączeniem.`,
       rules: [
         {
           locator: "§ 1",
@@ -647,8 +627,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2",
-          explanation:
-            "Przepisy kasacyjne stosuje się odpowiednio, a art. 185 § 2 o innym składzie przy ponownym rozpoznaniu jest wyłączony.",
+          explanation: ppsaLaw.text`Przepisy kasacyjne stosuje się odpowiednio, a ${ppsaLaw.article("185", "art. 185 § 2")} o innym składzie przy ponownym rozpoznaniu jest wyłączony.`,
         },
       ],
       legalEffect:
@@ -666,8 +645,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 198",
         },
       ],
-      summary:
-        "Art. 198 nie tworzy ogólnego zażalenia na każde zarządzenie przewodniczącego; odsyła do tego działu tylko wtedy, gdy ustawa przewiduje taki środek.",
+      summary: ppsaLaw.text`${ppsaLaw.article("198", "Art. 198")} nie tworzy ogólnego zażalenia na każde zarządzenie przewodniczącego; odsyła do tego działu tylko wtedy, gdy ustawa przewiduje taki środek.`,
       rules: [
         {
           locator: "Art. 198",
@@ -690,8 +668,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 199",
         },
       ],
-      summary:
-        "Art. 199 ustanawia zasadę ponoszenia własnych kosztów udziału, z zastrzeżeniem szczególnych reguł o ich zwrocie lub rozdziale.",
+      summary: ppsaLaw.text`${ppsaLaw.article("199", "Art. 199")} ustanawia zasadę ponoszenia własnych kosztów udziału, z zastrzeżeniem szczególnych reguł o ich zwrocie lub rozdziale.`,
       rules: [
         {
           locator: "Art. 199",
@@ -734,22 +711,19 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Zwrot kosztów przysługuje skarżącemu od organu także przy umorzeniu postępowania z przyczyny określonej w art. 54 § 3. Przy umorzeniu w przypadku art. 118 § 2 art. 206 stosuje się odpowiednio.",
+          text: ppsaLaw.text`Zwrot kosztów przysługuje skarżącemu od organu także przy umorzeniu postępowania z przyczyny określonej w ${ppsaLaw.article("54", "art. 54 § 3")}. Przy umorzeniu w przypadku ${ppsaLaw.article("118", "art. 118 § 2")} ${ppsaLaw.article("206", "art. 206")} stosuje się odpowiednio.`,
           sourceLocator: "Art. 201 § 1–2",
         },
       ],
-      summary:
-        "Nie każde umorzenie ma taki sam skutek kosztowy: art. 201 wskazuje dwa szczególne odesłania i ich różne konsekwencje.",
+      summary: ppsaLaw.text`Nie każde umorzenie ma taki sam skutek kosztowy: ${ppsaLaw.article("201", "art. 201")} wskazuje dwa szczególne odesłania i ich różne konsekwencje.`,
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Najpierw ustal, czy umorzenie nastąpiło z przyczyny art. 54 § 3, bo wtedy przepis przyznaje skarżącemu zwrot od organu.",
+          explanation: ppsaLaw.text`Najpierw ustal, czy umorzenie nastąpiło z przyczyny ${ppsaLaw.article("54", "art. 54 § 3")}, bo wtedy przepis przyznaje skarżącemu zwrot od organu.`,
         },
         {
           locator: "§ 2",
-          explanation:
-            "Przy art. 118 § 2 wynik kosztowy ocenia się przez odpowiednie zastosowanie art. 206, a nie przez automatyczny zwrot.",
+          explanation: ppsaLaw.text`Przy ${ppsaLaw.article("118", "art. 118 § 2")} wynik kosztowy ocenia się przez odpowiednie zastosowanie ${ppsaLaw.article("206", "art. 206")}, a nie przez automatyczny zwrot.`,
         },
       ],
       legalEffect:
@@ -767,8 +741,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 202 § 1–2",
         },
       ],
-      summary:
-        "Art. 202 rozróżnia podział zwrotu według udziału od solidarnego zwrotu przy wspólnych uprawnieniach lub obowiązkach skarżących.",
+      summary: ppsaLaw.text`${ppsaLaw.article("202", "Art. 202")} rozróżnia podział zwrotu według udziału od solidarnego zwrotu przy wspólnych uprawnieniach lub obowiązkach skarżących.`,
       rules: [
         {
           locator: "§ 1",
@@ -796,8 +769,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 203 pkt 1–2",
         },
       ],
-      summary:
-        "Art. 203 wiąże zwrot niezbędnych kosztów kasacji z tym, jaki wyrok pierwszej instancji został uchylony i kto powinien ponieść koszt.",
+      summary: ppsaLaw.text`${ppsaLaw.article("203", "Art. 203")} wiąże zwrot niezbędnych kosztów kasacji z tym, jaki wyrok pierwszej instancji został uchylony i kto powinien ponieść koszt.`,
       rules: [
         {
           locator: "Art. 203 pkt 1–2",
@@ -807,8 +779,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Samo wniesienie kasacji nie daje prawa do zwrotu; znaczenie ma wynik NSA, rodzaj uchylonego wyroku i wykazanie niezbędnych kosztów.",
-      foreignersCase:
-        "Po korzystnym wyroku NSA w sprawie pobytowej sprawdź, czy uchylony wyrok WSA oddalał czy uwzględniał skargę, bo od tego zależy wskazany w art. 203 płatnik.",
+      foreignersCase: ppsaLaw.text`Po korzystnym wyroku NSA w sprawie pobytowej sprawdź, czy uchylony wyrok WSA oddalał czy uwzględniał skargę, bo od tego zależy wskazany w ${ppsaLaw.article("203", "art. 203")} płatnik.`,
     },
     {
       provisionId: "ppsa-art-204",
@@ -840,12 +811,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Do niezbędnych kosztów strony działającej osobiście lub przez pełnomocnika innego niż adwokat lub radca prawny zalicza się koszty sądowe, przejazdy do sądu oraz równowartość utraconego zarobku lub dochodu. Przy adwokacie lub radcy prawnym dochodzą ich wynagrodzenie w ustawowych granicach, wydatki jednego pełnomocnika, koszty sądowe i nakazane osobiste stawiennictwo; § 3–4 określają dalsze zasady i odpowiednie zastosowanie dla doradcy podatkowego, rzecznika patentowego i Prokuratorii Generalnej.",
+          text: ppsaLaw.text`Do niezbędnych kosztów strony działającej osobiście lub przez pełnomocnika innego niż adwokat lub radca prawny zalicza się koszty sądowe, przejazdy do sądu oraz równowartość utraconego zarobku lub dochodu. Przy adwokacie lub radcy prawnym dochodzą ich wynagrodzenie w ustawowych granicach, wydatki jednego pełnomocnika, koszty sądowe i nakazane osobiste stawiennictwo; ${ppsaLaw.article("205", "§ 3–4")} określają dalsze zasady i odpowiednie zastosowanie dla doradcy podatkowego, rzecznika patentowego i Prokuratorii Generalnej.`,
           sourceLocator: "Art. 205 § 1–4",
         },
       ],
-      summary:
-        "Art. 205 wylicza kategorie niezbędnych kosztów i odrębnie traktuje osobisty udział, adwokata lub radcę prawnego oraz pozostałych profesjonalnych pełnomocników.",
+      summary: ppsaLaw.text`${ppsaLaw.article("205", "Art. 205")} wylicza kategorie niezbędnych kosztów i odrębnie traktuje osobisty udział, adwokata lub radcę prawnego oraz pozostałych profesjonalnych pełnomocników.`,
       rules: [
         {
           locator: "§ 1–2",
@@ -854,14 +824,12 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 3–4",
-          explanation:
-            "Przejazdy i utracony zarobek rozlicza się według wskazanych przepisów o kosztach cywilnych, a § 2–3 stosuje się odpowiednio do trzech wymienionych podmiotów.",
+          explanation: ppsaLaw.text`Przejazdy i utracony zarobek rozlicza się według wskazanych przepisów o kosztach cywilnych, a ${ppsaLaw.article("205", "§ 2–3")} stosuje się odpowiednio do trzech wymienionych podmiotów.`,
         },
       ],
       legalEffect:
         "Zwrot obejmuje tylko kategorie niezbędnych kosztów i granice ustawy; nie każda faktura, konsultacja lub tłumaczenie staje się automatycznie kosztem podlegającym zwrotowi.",
-      foreignersCase:
-        "W sprawie pobytowej zbieraj osobno opłaty sądowe, przejazdy, utracony dochód i wynagrodzenie pełnomocnika. Oceń możliwość zwrotu według kategorii art. 205, nie według samej sumy wydatków.",
+      foreignersCase: ppsaLaw.text`W sprawie pobytowej zbieraj osobno opłaty sądowe, przejazdy, utracony dochód i wynagrodzenie pełnomocnika. Oceń możliwość zwrotu według kategorii ${ppsaLaw.article("205", "art. 205")}, nie według samej sumy wydatków.`,
     },
     {
       provisionId: "ppsa-art-206",
@@ -873,8 +841,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 206",
         },
       ],
-      summary:
-        "Art. 206 daje sądowi możliwość ograniczenia albo pominięcia zwrotu kosztów w uzasadnionej sytuacji, zwłaszcza przy niewspółmiernym częściowym uwzględnieniu skargi.",
+      summary: ppsaLaw.text`${ppsaLaw.article("206", "Art. 206")} daje sądowi możliwość ograniczenia albo pominięcia zwrotu kosztów w uzasadnionej sytuacji, zwłaszcza przy niewspółmiernym częściowym uwzględnieniu skargi.`,
       rules: [
         {
           locator: "Art. 206",
@@ -893,17 +860,15 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Przepisy art. 202, 205 i 206 stosuje się odpowiednio w przypadkach z art. 203 i 204. W przypadkach szczególnie uzasadnionych sąd może odstąpić od zasądzenia zwrotu kosztów postępowania kasacyjnego w całości lub części.",
+          text: ppsaLaw.text`Przepisy ${ppsaLaw.article("202", "art. 202")}, ${ppsaLaw.article("205", "205")} i ${ppsaLaw.article("206", "206")} stosuje się odpowiednio w przypadkach z ${ppsaLaw.article("203", "art. 203")} i ${ppsaLaw.article("204", "204")}. W przypadkach szczególnie uzasadnionych sąd może odstąpić od zasądzenia zwrotu kosztów postępowania kasacyjnego w całości lub części.`,
           sourceLocator: "Art. 207 § 1–2",
         },
       ],
-      summary:
-        "Art. 207 uzupełnia reguły kosztów kasacyjnych o odesłanie do zasad rozdziału i szczególną możliwość odstąpienia od zwrotu.",
+      summary: ppsaLaw.text`${ppsaLaw.article("207", "Art. 207")} uzupełnia reguły kosztów kasacyjnych o odesłanie do zasad rozdziału i szczególną możliwość odstąpienia od zwrotu.`,
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Przy kosztach z art. 203–204 odpowiednio uwzględnia się reguły o kilku uprawnionych, niezbędnych kosztach i odstąpieniu z art. 202, 205–206.",
+          explanation: ppsaLaw.text`Przy kosztach z ${ppsaLaw.article("203", "art. 203")}–${ppsaLaw.article("204", "204")} odpowiednio uwzględnia się reguły o kilku uprawnionych, niezbędnych kosztach i odstąpieniu z ${ppsaLaw.article("202", "art. 202")}, ${ppsaLaw.article("205", "205")}–${ppsaLaw.article("206", "206")}.`,
         },
         {
           locator: "§ 2",
@@ -911,10 +876,8 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Odstąpienie od zwrotu kasacyjnego wymaga przypadku szczególnie uzasadnionego i może być całkowite albo częściowe.",
         },
       ],
-      legalEffect:
-        "Art. 207 nie ustanawia automatycznej proporcji kosztów; modyfikuje ich rozliczenie w konkretnym wyniku kasacji i pozostawia sądowi ocenę szczególnej sytuacji.",
-      foreignersCase:
-        "Przy kasacji w sprawie pobytowej sprawdź najpierw art. 203 lub 204, a potem odpowiednie odesłania art. 207. Nie przedstawiaj częściowego wyniku jako gwarancji określonego zwrotu.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("207", "Art. 207")} nie ustanawia automatycznej proporcji kosztów; modyfikuje ich rozliczenie w konkretnym wyniku kasacji i pozostawia sądowi ocenę szczególnej sytuacji.`,
+      foreignersCase: ppsaLaw.text`Przy kasacji w sprawie pobytowej sprawdź najpierw ${ppsaLaw.article("203", "art. 203")} lub ${ppsaLaw.article("204", "204")}, a potem odpowiednie odesłania ${ppsaLaw.article("207", "art. 207")}. Nie przedstawiaj częściowego wyniku jako gwarancji określonego zwrotu.`,
     },
     {
       provisionId: "ppsa-art-208",
@@ -922,7 +885,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Niezależnie od wyników spraw wskazanych w art. 200, 203, 204 i 207 sąd może nałożyć na stronę obowiązek zwrotu w całości lub części kosztów wywołanych jej niesumiennym lub oczywiście niewłaściwym postępowaniem.",
+          text: ppsaLaw.text`Niezależnie od wyników spraw wskazanych w ${ppsaLaw.article("200", "art. 200")}, ${ppsaLaw.article("203", "203")}, ${ppsaLaw.article("204", "204")} i ${ppsaLaw.article("207", "207")} sąd może nałożyć na stronę obowiązek zwrotu w całości lub części kosztów wywołanych jej niesumiennym lub oczywiście niewłaściwym postępowaniem.`,
           sourceLocator: "Art. 208",
         },
       ],
@@ -935,8 +898,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Trzeba wskazać konkretne zachowanie strony i koszty przez nie wywołane; sam przegrany lub wygrany wynik nie wystarcza.",
         },
       ],
-      legalEffect:
-        "Art. 208 może zmienić rozliczenie kosztów w całości lub części, ale wymaga oceny zachowania jako niesumiennego albo oczywiście niewłaściwego.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("208", "Art. 208")} może zmienić rozliczenie kosztów w całości lub części, ale wymaga oceny zachowania jako niesumiennego albo oczywiście niewłaściwego.`,
       foreignersCase:
         "W sprawie pobytowej dokumentuj terminowe i rzetelne działania. Nie zakładaj, że wynik skargi sam rozstrzyga o kosztach wywołanych konkretnym zachowaniem strony.",
     },
@@ -946,23 +908,20 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Wniosek strony o zwrot kosztów sąd rozstrzyga w każdym orzeczeniu uwzględniającym skargę oraz w orzeczeniu, o którym mowa w art. 201, 203 i 204.",
+          text: ppsaLaw.text`Wniosek strony o zwrot kosztów sąd rozstrzyga w każdym orzeczeniu uwzględniającym skargę oraz w orzeczeniu, o którym mowa w ${ppsaLaw.article("201", "art. 201")}, ${ppsaLaw.article("203", "203")} i ${ppsaLaw.article("204", "204")}.`,
           sourceLocator: "Art. 209",
         },
       ],
-      summary:
-        "Art. 209 wskazuje orzeczenia, w których sąd rozstrzyga zgłoszony wniosek o zwrot kosztów.",
+      summary: ppsaLaw.text`${ppsaLaw.article("209", "Art. 209")} wskazuje orzeczenia, w których sąd rozstrzyga zgłoszony wniosek o zwrot kosztów.`,
       rules: [
         {
           locator: "Art. 209",
-          explanation:
-            "Sprawdź sentencję orzeczenia uwzględniającego skargę oraz orzeczenia objęte art. 201, 203 lub 204; sam wniosek nie zastępuje wykazania należnych kosztów.",
+          explanation: ppsaLaw.text`Sprawdź sentencję orzeczenia uwzględniającego skargę oraz orzeczenia objęte ${ppsaLaw.article("201", "art. 201")}, ${ppsaLaw.article("203", "203")} lub ${ppsaLaw.article("204", "204")}; sam wniosek nie zastępuje wykazania należnych kosztów.`,
         },
       ],
       legalEffect:
         "Przepis określa moment rozstrzygnięcia wniosku i nie tworzy samodzielnie prawa do zwrotu bez spełnienia warunków właściwej podstawy.",
-      foreignersCase:
-        "Po wyroku w sprawie pobytowej sprawdź rozstrzygnięcie o kosztach w sentencji, zwłaszcza gdy sprawa zakończyła się na podstawie art. 201, 203 albo 204.",
+      foreignersCase: ppsaLaw.text`Po wyroku w sprawie pobytowej sprawdź rozstrzygnięcie o kosztach w sentencji, zwłaszcza gdy sprawa zakończyła się na podstawie ${ppsaLaw.article("201", "art. 201")}, ${ppsaLaw.article("203", "203")} albo 204.`,
     },
     {
       provisionId: "ppsa-art-210",
@@ -974,8 +933,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 210 § 1–2",
         },
       ],
-      summary:
-        "Art. 210 określa termin zgłoszenia wniosku o zwrot kosztów i wyjątek, w którym na posiedzeniu niejawnym sąd rozstrzyga koszty z urzędu.",
+      summary: ppsaLaw.text`${ppsaLaw.article("210", "Art. 210")} określa termin zgłoszenia wniosku o zwrot kosztów i wyjątek, w którym na posiedzeniu niejawnym sąd rozstrzyga koszty z urzędu.`,
       rules: [
         {
           locator: "§ 1",
@@ -984,14 +942,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2",
-          explanation:
-            "Przy posiedzeniu niejawnym i braku wskazanego pełnomocnika wniosek nie jest wymagany na zasadzie § 1, bo sąd orzeka z urzędu.",
+          explanation: ppsaLaw.text`Przy posiedzeniu niejawnym i braku wskazanego pełnomocnika wniosek nie jest wymagany na zasadzie ${ppsaLaw.article("210", "§ 1")}, bo sąd orzeka z urzędu.`,
         },
       ],
-      legalEffect:
-        "Późny wniosek może oznaczać utratę uprawnienia, lecz przed zastosowaniem § 1 trzeba sprawdzić tryb orzekania i reprezentację strony.",
-      foreignersCase:
-        "W sprawie pobytowej pełnomocnik powinien zgłosić wniosek przed zamknięciem rozprawy. Jeżeli nie ma profesjonalnego pełnomocnika i sprawa jest na posiedzeniu niejawnym, sprawdź zastosowanie § 2.",
+      legalEffect: ppsaLaw.text`Późny wniosek może oznaczać utratę uprawnienia, lecz przed zastosowaniem ${ppsaLaw.article("210", "§ 1")} trzeba sprawdzić tryb orzekania i reprezentację strony.`,
+      foreignersCase: ppsaLaw.text`W sprawie pobytowej pełnomocnik powinien zgłosić wniosek przed zamknięciem rozprawy. Jeżeli nie ma profesjonalnego pełnomocnika i sprawa jest na posiedzeniu niejawnym, sprawdź zastosowanie ${ppsaLaw.article("210", "§ 2")}.`,
     },
     {
       provisionId: "ppsa-art-211",
@@ -1003,8 +958,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 211",
         },
       ],
-      summary:
-        "Art. 211 dzieli koszty sądowe na opłaty sądowe i zwrot wydatków.",
+      summary: ppsaLaw.text`${ppsaLaw.article("211", "Art. 211")} dzieli koszty sądowe na opłaty sądowe i zwrot wydatków.`,
       rules: [
         {
           locator: "Art. 211",
@@ -1027,8 +981,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 212 § 1–2",
         },
       ],
-      summary:
-        "Art. 212 rozróżnia wpis i opłatę kancelaryjną oraz określa ich publicznoprawny charakter jako dochodów budżetu państwa.",
+      summary: ppsaLaw.text`${ppsaLaw.article("212", "Art. 212")} rozróżnia wpis i opłatę kancelaryjną oraz określa ich publicznoprawny charakter jako dochodów budżetu państwa.`,
       rules: [
         {
           locator: "§ 1",
@@ -1041,8 +994,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Przepis wskazuje odbiorcę dochodu, ale nie ustala stawki konkretnego pisma.",
         },
       ],
-      legalEffect:
-        "Art. 212 nie przesądza wysokości opłaty ani prawa do zwolnienia; służy klasyfikacji należności.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("212", "Art. 212")} nie przesądza wysokości opłaty ani prawa do zwolnienia; służy klasyfikacji należności.`,
       foreignersCase:
         "Przy składaniu skargi na decyzję pobytową nazwij żądany i uiszczony rodzaj opłaty zgodnie z ustawą, nie utożsamiając każdego płatnego pisma z wpisem.",
     },
@@ -1056,8 +1008,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 213 pkt 1–2",
         },
       ],
-      summary:
-        "Art. 213 podaje przykładowe wydatki sądowe, w tym należności sądowego tłumacza lub kuratora i koszty czynności poza sądem.",
+      summary: ppsaLaw.text`${ppsaLaw.article("213", "Art. 213")} podaje przykładowe wydatki sądowe, w tym należności sądowego tłumacza lub kuratora i koszty czynności poza sądem.`,
       rules: [
         {
           locator: "Art. 213 pkt 1–2",
@@ -1080,8 +1031,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 214 § 1–2",
         },
       ],
-      summary:
-        "Art. 214 wskazuje podstawowego płatnika i rozdziela jedną albo odrębne opłaty przy piśmie wniesionym przez kilka osób.",
+      summary: ppsaLaw.text`${ppsaLaw.article("214", "Art. 214")} wskazuje podstawowego płatnika i rozdziela jedną albo odrębne opłaty przy piśmie wniesionym przez kilka osób.`,
       rules: [
         {
           locator: "§ 1",
@@ -1109,8 +1059,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 215 § 1–2",
         },
       ],
-      summary:
-        "Art. 215 wymaga podania wartości przedmiotu zaskarżenia tylko wtedy, gdy od niej zależy wysokość opłaty, i nakazuje zaokrąglenie w górę.",
+      summary: ppsaLaw.text`${ppsaLaw.article("215", "Art. 215")} wymaga podania wartości przedmiotu zaskarżenia tylko wtedy, gdy od niej zależy wysokość opłaty, i nakazuje zaokrąglenie w górę.`,
       rules: [
         {
           locator: "§ 1",
@@ -1123,8 +1072,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Podaną wartość zaokrągla się w górę do pełnych złotych, a nie do najbliższej kwoty według zwykłego zaokrąglenia.",
         },
       ],
-      legalEffect:
-        "Art. 215 nie ustala sam stawki; błędne pominięcie lub oznaczenie wartości może wymagać reakcji według przepisów o brakach i opłacie.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("215", "Art. 215")} nie ustala sam stawki; błędne pominięcie lub oznaczenie wartości może wymagać reakcji według przepisów o brakach i opłacie.`,
       foreignersCase:
         "Przed wniesieniem pisma w sprawie pobytowej ustal, czy opłata zależy od wartości przedmiotu zaskarżenia. Nie wyliczaj jej z osobistej wagi decyzji bez podstawy ustawowej.",
     },
@@ -1149,8 +1097,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       ],
       legalEffect:
         "Przepis dotyczy wyłącznie sposobu oznaczenia wartości i nie przesądza wysokości wpisu bez zastosowania właściwej taryfy.",
-      foreignersCase:
-        "W sporze pobytowym nie przypisuj decyzji niemajątkowej wartości pieniężnej tylko dlatego, że ma skutki finansowe; art. 216 działa przy należności pieniężnej jako przedmiocie zaskarżenia.",
+      foreignersCase: ppsaLaw.text`W sporze pobytowym nie przypisuj decyzji niemajątkowej wartości pieniężnej tylko dlatego, że ma skutki finansowe; ${ppsaLaw.article("216", "art. 216")} działa przy należności pieniężnej jako przedmiocie zaskarżenia.`,
     },
     {
       provisionId: "ppsa-art-217",
@@ -1171,8 +1118,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Oddziel należność główną od odsetek i kosztów ubocznych; tylko ta pierwsza wchodzi do wartości według tego przepisu.",
         },
       ],
-      legalEffect:
-        "Art. 217 ogranicza składniki wartości, ale nie podaje stawki wpisu ani nie rozstrzyga dopuszczalności samej skargi.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("217", "Art. 217")} ogranicza składniki wartości, ale nie podaje stawki wpisu ani nie rozstrzyga dopuszczalności samej skargi.`,
       foreignersCase:
         "Jeśli sprawa cudzoziemca dotyczy należności pieniężnej, przy oznaczaniu wartości nie dodawaj odsetek ani kosztów związanych z należnością główną.",
     },
@@ -1186,8 +1132,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 218",
         },
       ],
-      summary:
-        "Art. 218 pozwala przewodniczącemu zweryfikować oznaczoną w piśmie wartość przedmiotu zaskarżenia.",
+      summary: ppsaLaw.text`${ppsaLaw.article("218", "Art. 218")} pozwala przewodniczącemu zweryfikować oznaczoną w piśmie wartość przedmiotu zaskarżenia.`,
       rules: [
         {
           locator: "Art. 218",
@@ -1210,8 +1155,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 219 § 1–2",
         },
       ],
-      summary:
-        "Art. 219 określa moment, podstawowe sposoby i sposób zaokrąglenia opłaty sądowej.",
+      summary: ppsaLaw.text`${ppsaLaw.article("219", "Art. 219")} określa moment, podstawowe sposoby i sposób zaokrąglenia opłaty sądowej.`,
       rules: [
         {
           locator: "§ 1",
@@ -1224,8 +1168,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Sprawdź kasę albo rachunek właściwego sądu i zaokrąglij końcówkę w górę do pełnych złotych.",
         },
       ],
-      legalEffect:
-        "Prawidłowe wniesienie pisma nie zastępuje prawidłowej opłaty; brak lub niedopłata mogą uruchomić art. 220, z uwzględnieniem zwolnienia i innych wyjątków.",
+      legalEffect: ppsaLaw.text`Prawidłowe wniesienie pisma nie zastępuje prawidłowej opłaty; brak lub niedopłata mogą uruchomić ${ppsaLaw.article("220", "art. 220")}, z uwzględnieniem zwolnienia i innych wyjątków.`,
       foreignersCase:
         "Przy skardze na decyzję pobytową ustal właściwy sąd, rachunek i kwotę wpisu, zachowaj potwierdzenie oraz sprawdź, czy nie działa zwolnienie.",
     },
@@ -1235,12 +1178,11 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd nie podejmuje czynności na skutek nieopłaconego pisma; co do zasady przewodniczący wzywa do uiszczenia opłaty w siedem dni pod rygorem pozostawienia pisma bez rozpoznania, a przy piśmie osoby mieszkającej lub mającej siedzibę za granicą bez krajowego przedstawiciela termin nie może być krótszy niż dwa miesiące. Nieuiszczenie wpisu po wezwaniu powoduje odrzucenie skargi, skargi kasacyjnej, zażalenia lub skargi o wznowienie; § 3a dotyczy elektronicznej opłaty z art. 235a, a § 4 zwalnia z wpisu określone zażalenia.",
+          text: ppsaLaw.text`Sąd nie podejmuje czynności na skutek nieopłaconego pisma; co do zasady przewodniczący wzywa do uiszczenia opłaty w siedem dni pod rygorem pozostawienia pisma bez rozpoznania, a przy piśmie osoby mieszkającej lub mającej siedzibę za granicą bez krajowego przedstawiciela termin nie może być krótszy niż dwa miesiące. Nieuiszczenie wpisu po wezwaniu powoduje odrzucenie skargi, skargi kasacyjnej, zażalenia lub skargi o wznowienie; ${ppsaLaw.article("220", "§ 3a")} dotyczy elektronicznej opłaty z ${ppsaLaw.article("235a", "art. 235a")}, a ${ppsaLaw.article("220", "§ 4")} zwalnia z wpisu określone zażalenia.`,
           sourceLocator: "Art. 220 § 1–4",
         },
       ],
-      summary:
-        "Art. 220 rozróżnia pozostawienie pisma bez rozpoznania od odrzucenia środków z § 3–3a, określa wezwanie i szczególny termin dla osoby bez przedstawiciela w kraju.",
+      summary: ppsaLaw.text`${ppsaLaw.article("220", "Art. 220")} rozróżnia pozostawienie pisma bez rozpoznania od odrzucenia środków z ${ppsaLaw.article("220", "§ 3–3a")}, określa wezwanie i szczególny termin dla osoby bez przedstawiciela w kraju.`,
       rules: [
         {
           locator: "§ 1–2",
@@ -1249,12 +1191,10 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 3–4",
-          explanation:
-            "Po bezskutecznym wezwaniu wskazane środki podlegają odrzuceniu; osobno sprawdź elektroniczną opłatę z art. 235a i brak wpisu od zażaleń wymienionych w § 4.",
+          explanation: ppsaLaw.text`Po bezskutecznym wezwaniu wskazane środki podlegają odrzuceniu; osobno sprawdź elektroniczną opłatę z ${ppsaLaw.article("235a", "art. 235a")} i brak wpisu od zażaleń wymienionych w ${ppsaLaw.article("220", "§ 4")}.`,
         },
       ],
-      legalEffect:
-        "Skutek zależy od rodzaju pisma, opłaty i wezwania; samo wysłanie pisma nie zapewnia jego rozpoznania, ale nie wolno też pomijać szczególnego terminu z § 2.",
+      legalEffect: ppsaLaw.text`Skutek zależy od rodzaju pisma, opłaty i wezwania; samo wysłanie pisma nie zapewnia jego rozpoznania, ale nie wolno też pomijać szczególnego terminu z ${ppsaLaw.article("220", "§ 2")}.`,
       foreignersCase:
         "Cudzoziemiec mieszkający za granicą bez przedstawiciela w Polsce powinien sprawdzić, czy wezwanie daje co najmniej dwa miesiące. Przy skardze lub kasacji odrzucony wpis po wezwaniu może zakończyć środek procesowy.",
     },
@@ -1264,23 +1204,20 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 221 ma w lokalnym tekście jednolitym status uchylony i zawiera wyłącznie oznaczenie „(uchylony)”. Nie ustanawia aktualnej reguły procesowej.",
+          text: ppsaLaw.text`${ppsaLaw.article("221", "Art. 221")} ma w lokalnym tekście jednolitym status uchylony i zawiera wyłącznie oznaczenie „(uchylony)”. Nie ustanawia aktualnej reguły procesowej.`,
           sourceLocator: "Art. 221",
         },
       ],
-      summary:
-        "Art. 221 jest uchylony; w aktualnym lokalnym korpusie brak operatywnej treści do objaśnienia jako obowiązującej normy.",
+      summary: ppsaLaw.text`${ppsaLaw.article("221", "Art. 221")} jest uchylony; w aktualnym lokalnym korpusie brak operatywnej treści do objaśnienia jako obowiązującej normy.`,
       rules: [
         {
           locator: "Art. 221",
-          explanation:
-            "Nie stosuj tego artykułu jako podstawy wezwania, terminu ani odrzucenia pisma; dla opłaty trzeba czytać obowiązujące art. 219–220 i przepisy szczególne.",
+          explanation: ppsaLaw.text`Nie stosuj tego artykułu jako podstawy wezwania, terminu ani odrzucenia pisma; dla opłaty trzeba czytać obowiązujące ${ppsaLaw.article("219", "art. 219")}–${ppsaLaw.article("220", "220")} i przepisy szczególne.`,
         },
       ],
       legalEffect:
         "Status przepisu w korpusie to repealed; jego dawne brzmienie nie może być przedstawiane jako aktualny skutek proceduralny.",
-      foreignersCase:
-        "W sprawie pobytowej pomiń art. 221 jako podstawę prawną. Jeśli dokument powołuje ten uchylony przepis, porównaj podstawę z aktualnym tekstem PPSA i pouczeniem sądu.",
+      foreignersCase: ppsaLaw.text`W sprawie pobytowej pomiń ${ppsaLaw.article("221", "art. 221")} jako podstawę prawną. Jeśli dokument powołuje ten uchylony przepis, porównaj podstawę z aktualnym tekstem PPSA i pouczeniem sądu.`,
     },
     {
       provisionId: "ppsa-art-222",
@@ -1292,8 +1229,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 222",
         },
       ],
-      summary:
-        "Art. 222 wyłącza żądanie opłaty od pisma, którego odrzucenie wynika już z samej jego treści.",
+      summary: ppsaLaw.text`${ppsaLaw.article("222", "Art. 222")} wyłącza żądanie opłaty od pisma, którego odrzucenie wynika już z samej jego treści.`,
       rules: [
         {
           locator: "Art. 222",
@@ -1301,8 +1237,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
             "Przed wezwaniem do opłaty trzeba ocenić, czy z pisma od razu wynika przeszkoda prowadząca do odrzucenia; przepis dotyczy takiej oczywistej sytuacji.",
         },
       ],
-      legalEffect:
-        "Art. 222 dotyczy pobierania opłaty, nie tworzy samodzielnej podstawy odrzucenia i nie rozstrzyga sprawy merytorycznie.",
+      legalEffect: ppsaLaw.text`${ppsaLaw.article("222", "Art. 222")} dotyczy pobierania opłaty, nie tworzy samodzielnej podstawy odrzucenia i nie rozstrzyga sprawy merytorycznie.`,
       foreignersCase:
         "W sprawie pobytowej nie zakładaj automatycznie, że brak wezwania do wpisu oznacza brak opłaty. Sprawdź, czy sąd uznał odrzucenie za wynikające już z treści pisma.",
     },
