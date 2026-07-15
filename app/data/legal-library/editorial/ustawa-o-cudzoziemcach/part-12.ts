@@ -10,11 +10,11 @@ export const foreignersActPart12 = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-409",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Точний текст Art. 409 ust. 1: «Minister właściwy do spraw wewnętrznych, w drodze rozporządzenia, tworzy i likwiduje strzeżone ośrodki».",
+          text: "Art. 409 ust. 1 прямо передбачає, що minister właściwy do spraw wewnętrznych у drodze rozporządzenia створює й ліквідовує strzeżone ośrodki та визначає їх підпорядкування Straży Granicznej; може також визначити час, необхідний для організації ośrodek.",
           sourceLocator: "Art. 409 ust. 1",
         },
         {
@@ -44,11 +44,11 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-410",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Точний текст Art. 410 ust. 1: «Przyjęcie cudzoziemca do strzeżonego ośrodka lub aresztu dla cudzoziemców następuje na podstawie postanowienia sądu».",
+          text: "Art. 410 ust. 1 встановлює, що прийняття cudzoziemca до strzeżony ośrodek або areszt dla cudzoziemców відбувається на підставі postanowienie sądu про umieszczenie або застосування areszt.",
           sourceLocator: "Art. 410 ust. 1",
         },
         {
@@ -83,11 +83,11 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-411",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Точний текст Art. 411: «Cudzoziemca przyjmowanego do strzeżonego ośrodka lub aresztu dla cudzoziemców poucza się w zrozumiałym dla niego języku o przysługujących mu prawach i o obowiązkach».",
+          text: "Art. 411 вимагає під час прийняття pouczenie cudzoziemca зрозумілою для нього мовою про права й обов’язки, ознайомлення з правилами перебування та підтвердження факту pouczenie власноручним підписом.",
           sourceLocator: "Art. 411",
         },
         {
@@ -117,11 +117,11 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-412",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Точний текст Art. 412 ust. 1: «Cudzoziemiec przy przyjęciu do strzeżonego ośrodka lub aresztu dla cudzoziemców i podczas pobytu w ośrodku lub areszcie podlega kontroli osobistej».",
+          text: "Art. 412 ust. 1 встановлює kontrola osobista під час прийняття та перебування у strzeżony ośrodek або areszt, за правилами art. 11aa ustawy o Straży Granicznej.",
           sourceLocator: "Art. 412 ust. 1",
         },
         {
@@ -146,7 +146,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 3",
           explanation:
-            "Знайдені предмети, якими не можна володіти, затримуються; встановленому власнику їх передають до depozyt або надсилають за встановленими умовами.",
+            "Знайдені предмети, якими cudzoziemiec не може володіти, затримуються; якщо власника встановлено, їх передають до depozyt або надсилають за його рахунок вказаній особі, instytucja чи organizacja, а в обґрунтованому випадку — за рахунок ośrodek або areszt.",
         },
       ],
       legalEffect:
@@ -156,7 +156,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-413",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -185,7 +185,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 3",
           explanation:
-            "Витрати на обстеження покриваються з державного бюджету із коштів у розпорядженні Komendant Główny Straży Granicznej.",
+            "Витрати на badania з ust. 1 покриваються з державного бюджету — з частини, якою розпоряджається minister właściwy do spraw wewnętrznych, із коштів у розпорядженні Komendant Główny Straży Granicznej.",
         },
       ],
       legalEffect:
@@ -195,7 +195,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-414",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -234,7 +234,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-415",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -273,7 +273,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-416",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -312,7 +312,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-417",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -346,7 +346,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-418",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -365,7 +365,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "Art. 418",
           explanation:
-            "Спостереження і rejestrowanie obrazu допускаються з метою забезпечення безпеки cudzoziemcy.",
+            "Спостереження і rejestrowanie obrazu допускаються технічними засобами для забезпечення безпеки cudzoziemców.",
         },
         {
           locator: "Art. 418",
@@ -380,7 +380,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-419",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -413,13 +413,13 @@ export const foreignersActPart12 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Стаття формулює обов’язки перебування, порушення яких може мати наслідки в режимі strzeżony ośrodek; конкретний наслідок не визначається цією статтею сам по собі.",
+        "Стаття формулює обов’язки перебування для обох режимів. У strzeżony ośrodek їх порушення може бути підставою odpowiedzialność dyscyplinarna за Art. 421, але сама Art. 419 не визначає конкретну karę.",
       foreignersCase:
         "Попросіть regulamin і записуйте, яке саме polecenie або правило, коли і ким було доведене; про хворобу чи подію повідомляйте без зволікання та зберігайте підтвердження.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-420",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -453,7 +453,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-421",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -472,7 +472,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 1–2",
           explanation:
-            "Підставою є порушення Art. 419, Art. 420 або правил, виданих на підставі Art. 427 ust. 1; kara може тривати до 7 днів.",
+            "Підставою є порушення Art. 419, Art. 420 або правил, виданих на підставі Art. 427 ust. 1; kara полягає у позбавленні окремих прав на строк до 7 днів.",
         },
         {
           locator: "ust. 3",
@@ -492,7 +492,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-422",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -526,7 +526,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-423",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -555,7 +555,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-424",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -588,13 +588,13 @@ export const foreignersActPart12 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Норма допускає необхідний zabieg без згоди лише в описаних законом обставинах і розрізняє судове рішення та безпосередню медичну emergency-ситуацію.",
+        "Норма допускає необхідний zabieg без згоди лише за сукупності описаних умов; за відсутності безпосередньої загрози потрібне postanowienie sądu, а при безпосередній загрозі життю рішення приймає lekarz.",
       foreignersCase:
         "Зберігайте медичні висновки, інформацію про wniosek до sąd і postanowienie або рішення lekarz; не робіть висновок про законність втручання без перевірки всіх умов.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-425",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -633,7 +633,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-426",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -662,7 +662,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 4–7",
           explanation:
-            "Зауваження можуть бути передані органу Straży Granicznej; орган повідомляє про дії у 14-денний або інший визначений строк, а sędzia може звернутися щодо повторних серйозних недоліків.",
+            "Якщо потрібне рішення поза компетенцією sędziego, він передає spostrzeżenia органу Straży Granicznej. Орган повідомляє про дії у 14-денний або інший визначений sędzia строк; за незадовільної відповіді чи повторних rażące uchybienia sędzia звертається до Komendant Główny Straży Granicznej, а далі за умовами норми — до minister.",
         },
       ],
       legalEffect:
@@ -672,7 +672,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-427",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -706,7 +706,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-428",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -745,7 +745,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-429",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -784,7 +784,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-430",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -823,7 +823,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-430a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -862,7 +862,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-431",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -896,7 +896,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-432",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -935,7 +935,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-433",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -964,7 +964,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-434",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -993,7 +993,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-435",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1012,7 +1012,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1–2",
           explanation:
-            "Підставою можуть бути decyzja o zobowiązaniu do powrotu із zakaz wjazdu, postanowienie Art. 303b ust. 1 або prawomocne skazanie за умисний злочин чи злочин skarbowy у Польщі; підпункти b і c позначені як «uchylona».",
+            "Підставою може бути decyzja o zobowiązaniu do powrotu із zakaz wjazdu, postanowienie з Art. 303b ust. 1 або prawomocne skazanie у Польщі за przestępstwo umyślne чи przestępstwo skarbowe на karę grzywny або pozbawienia wolności; lit. b і c позначені як «uchylona»."
         },
         {
           locator: "ust. 1 pkt 3–8",
@@ -1032,7 +1032,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-436",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1071,7 +1071,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-437",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1080,7 +1080,7 @@ export const foreignersActPart12 = defineEditorialPart<
         },
         {
           kind: "practical-inference",
-          text: "Zawieszenie не є автоматичним видаленням даних: після припинення підстави строк wpis продовжує значення, а період zawieszenie перериває його.",
+          text: "Zawieszenie не є видаленням даних: wpis залишається, його дія призупинена до припинення підстави, а період zawieszenie перериває строк його дії.",
           sourceLocator: "Art. 437 ust. 2–3",
         },
       ],
@@ -1090,7 +1090,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1–5",
           explanation:
-            "Підставами є визначені види zgoda, ochrona czasowa, postanowienie про wstrzymanie виконання, перебування на zaświadczenie Art. 170 або обставини Art. 330 ust. 1 pkt 1, 2 чи 4.",
+            "Підставами є zgoda na pobyt tolerowany за Art. 351 pkt 2, udzielenie ochrony czasowej, postanowienie про wstrzymanie виконання рішення-підстави, перебування на zaświadczenie з Art. 170 або обставини Art. 330 ust. 1 pkt 1, 2 чи 4.",
         },
         {
           locator: "ust. 1a",
@@ -1110,7 +1110,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-438",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1149,7 +1149,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-439",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1183,7 +1183,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-440",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1222,7 +1222,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-440a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1251,7 +1251,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 7–10",
           explanation:
-            "Decyzja є ostateczna, не доручається cudzoziemiec, у провадженні не застосовується KPA; ті самі правила діють для продовження wpis на наступний період.",
+            "Decyzja є ostateczna, її не doręcza się cudzoziemcowi, а в цьому провадженні не застосовується KPA; ті самі правила діють для продовження wpis на наступний період.",
         },
       ],
       legalEffect:
@@ -1261,7 +1261,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-441",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1295,7 +1295,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-442",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1314,7 +1314,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "ust. 1–3",
           explanation:
-            "Суд передає вирок за умисний злочин або злочин skarbowy, його зміну та рішення про умовно-дострокове звільнення.",
+            "Суд передає prawomocny wyrok за przestępstwo umyślne або przestępstwo skarbowe, його зміну, а також wyrok із warunkowe zawieszenie wykonania та рішення про warunkowe przedterminowe zwolnienie.",
         },
         {
           locator: "ust. 4",
@@ -1334,7 +1334,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-443",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1373,7 +1373,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-443a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1407,7 +1407,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-444",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1446,7 +1446,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-445",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1460,7 +1460,7 @@ export const foreignersActPart12 = defineEditorialPart<
         },
       ],
       summary:
-        "Art. 445 скасована: у консолідованому тексті зазначено лише «(uchylony)».",
+        "Art. 445 втратила чинність: у чинному тексті corpus зазначено лише «(uchylony)»."
       rules: [
         {
           locator: "Art. 445",
@@ -1475,7 +1475,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-446",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1514,7 +1514,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-447",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1548,7 +1548,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-448",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1577,7 +1577,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-448a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1601,7 +1601,7 @@ export const foreignersActPart12 = defineEditorialPart<
         {
           locator: "Art. 448a",
           explanation:
-            "Результати консультацій за art. 29 і 30 цього регламенту приймаються та передаються через Komendant Główny Policji.",
+            "Szef Urzędu через Komendant Główny Policji приймає результат консультацій за art. 29, а про результат консультацій за art. 30 повідомляє компетентний орган państwa wykonującego.",
         },
       ],
       legalEffect:
@@ -1611,7 +1611,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-448b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1650,7 +1650,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-449",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1689,7 +1689,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-449a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1723,7 +1723,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-449b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1757,7 +1757,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-450",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1796,7 +1796,7 @@ export const foreignersActPart12 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-451",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
