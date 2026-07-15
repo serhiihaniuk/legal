@@ -10,7 +10,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-461",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -34,7 +34,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
         {
           locator: "ust. 1a–1c",
           explanation:
-            "У рішенні про поміщення визначається okres pobytu. Його можна продовжити на визначений час, якщо з причин, незалежних від przewoźnik, неможливо виконати обов’язок з Art. 460 ust. 1; перебування не може перевищити 7 днів.",
+            "У рішенні про поміщення визначається okres pobytu. Цей період продовжується рішенням на визначений час, якщо з причин, незалежних від przewoźnik, неможливо виконати обов’язок з Art. 460 ust. 1; перебування не може перевищити 7 днів.",
         },
         {
           locator: "ust. 2–3",
@@ -49,7 +49,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-461a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -88,7 +88,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-461b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -127,7 +127,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-461c",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -166,7 +166,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-461d",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -205,7 +205,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-461e",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -234,7 +234,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-462",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -283,7 +283,7 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-463",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -322,16 +322,16 @@ export const foreignersActPart13a2 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-464",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 464 передбачає grzywna, kara ograniczenia wolności або pozbawienie wolności до 2 років за zabierać w celu przywłaszczenia чи przywłaszczać sobie document podróży, kartę pobytu, polski dokument tożsamości cudzoziemca, документ «zgoda na pobyt tolerowany» або інший документ cudzoziemca, а також за використання такого документа.",
+          text: "Art. 464 передбачає grzywna, kara ograniczenia wolności або pozbawienie wolności до 2 років за zabierać w celu przywłaszczenia чи przywłaszczać sobie document podróży, kartę pobytu, polski dokument podróży dla cudzoziemca, tymczasowy polski dokument podróży dla cudzoziemca, polski dokument tożsamości cudzoziemca або документ «zgoda na pobyt tolerowany», а також за використання такого документа.",
           sourceLocator: "Art. 464",
         },
       ],
       summary:
-        "Стаття встановлює кримінальну відповідальність за заволодіння з метою привласнення, привласнення або використання визначених документів cudzoziemca, зокрема document podróży, karta pobytu та polski dokument tożsamości cudzoziemca.",
+        "Стаття встановлює кримінальну відповідальність за заволодіння з метою привласнення, привласнення або використання визначених документів cudzoziemca: document podróży, karta pobytu, polski dokument podróży dla cudzoziemca, tymczasowy polski dokument podróży dla cudzoziemca, polski dokument tożsamości cudzoziemca та документ «zgoda na pobyt tolerowany».",
       rules: [
         {
           locator: "Art. 464",

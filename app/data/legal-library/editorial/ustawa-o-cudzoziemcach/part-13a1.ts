@@ -10,7 +10,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-452",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -29,7 +29,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
         {
           locator: "ust. 3",
           explanation:
-            "Szef Urzędu надає дані, крім реєстрів, прямо виключених у тексті; wojewoda, minister właściwy do spraw wewnętrznych, органи Straży Granicznej та Policji надають дані в межах реєстрів, які вони ведуть.",
+            "Szef Urzędu надає дані, крім реєстрів з Art. 449 ust. 2 pkt 7a, 13 і 14; wojewoda, minister właściwy do spraw wewnętrznych, Komendant Główny Straży Granicznej, komendant oddziału або placówki Straży Granicznej, Komendant Główny Policji та komendant wojewódzki або powiatowy (miejski) Policji — у межах реєстрів, які вони ведуть.",
         },
         {
           locator: "ust. 4",
@@ -44,7 +44,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-453",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -78,7 +78,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-454",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -112,7 +112,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-455",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -146,7 +146,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-456",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -175,7 +175,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-457",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -204,7 +204,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-458",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -238,7 +238,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-459",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -267,7 +267,7 @@ export const foreignersActPart13a1 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-460",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",

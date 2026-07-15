@@ -9,66 +9,8 @@ export const foreignersActPart13b = defineEditorialPart<
   verifiedAt: "2026-07-15",
   entries: [
     {
-      provisionId: "ustawa-o-cudzoziemcach-art-463",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 463 ust. 1 передбачає doprowadzenie cudzoziemca, якому odmówiono wjazdu, до granicy або до portu lotniczego чи morskiego, якщо його поведінка обґрунтовує припущення про загрозу безпеці міжнародного сполучення.",
-          sourceLocator: "Art. 463 ust. 1",
-        },
-      ],
-      summary:
-        "Стаття визначає, коли właściwy komendant placówki Straży Granicznej забезпечує doprowadzenie особи, якій odmówiono wjazdu, та хто несе витрати.",
-      rules: [
-        {
-          locator: "ust. 1",
-          explanation:
-            "Doprowadzenie забезпечує właściwy komendant placówki Straży Granicznej — з urzędu або на wniosek upoważnionego przedstawiciela przewoźnika, якщо поведінка особи створює описану в законі підставу для припущення.",
-        },
-        {
-          locator: "ust. 2–3",
-          explanation:
-            "Straż Graniczna покриває витрати при дії з urzędu, а przewoźnik — при дії на його wniosek; витрати охоплюють безпосередній перевіз та належні osobom doprowadzającym витрати службової поїздки.",
-        },
-      ],
-      legalEffect:
-        "Стаття регулює організацію супроводу після odmowa wjazdu та розподіл витрат. Вона сама не визначає підставу odmowa wjazdu і не замінює перевірку рішення чи фактичних обставин.",
-      foreignersCase:
-        "У справі перевірте dokument про odmowa wjazdu, хто ініціював doprowadzenie, опис поведінки та розрахунок витрат; не робіть висновок про загрозу лише з факту супроводу.",
-    },
-    {
-      provisionId: "ustawa-o-cudzoziemcach-art-464",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 464 встановлює відповідальність за заволодіння з метою привласнення або привласнення document podróży, karty pobytu та перелічених польських документів, а також за використання такого документа: grzywna, kara ograniczenia wolności або pozbawienie wolności до 2 років.",
-          sourceLocator: "Art. 464",
-        },
-      ],
-      summary:
-        "Норма криміналізує певні дії з документами cudzoziemca: document podróży, karta pobytu, польськими документами для cudzoziemca та документом «zgoda na pobyt tolerowany».",
-      rules: [
-        {
-          locator: "Art. 464",
-          explanation:
-            "Описані дії охоплюють zabierać w celu przywłaszczenia, przywłaszczać sobie або використовувати один із прямо названих документів.",
-        },
-        {
-          locator: "Art. 464",
-          explanation:
-            "Санкція, зазначена в тексті статті, є альтернативною: grzywna, kara ograniczenia wolności або pozbawienie wolności до 2 років.",
-        },
-      ],
-      legalEffect:
-        "Це кримінально-правова норма про відповідальність за конкретні дії з документами. Кваліфікація діяння та санкція залежать від встановлених фактів і компетентного кримінального провадження.",
-      foreignersCase:
-        "Якщо справа стосується документа, зафіксуйте його точний вид, спосіб отримання чи використання та процесуальний статус особи; не ототожнюйте втрату документа з діянням Art. 464.",
-    },
-    {
       provisionId: "ustawa-o-cudzoziemcach-art-465",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -102,7 +44,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-465a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -131,16 +73,16 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-507",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 507 встановлює, що з dniem wejścia w życie ustawy раніше видані zezwolenia na zamieszkanie na czas oznaczony стають zezwoleniami na pobyt czasowy, а zezwolenia na osiedlenie — zezwoleniami na pobyt stały, зі збереженням строку чинності.",
+          text: "Art. 507 встановлює, що з dniem wejścia w życie ustawy раніше видані zezwolenia na zamieszkanie na czas oznaczony стають zezwoleniami na pobyt czasowy, а zezwolenia na osiedlenie — zezwoleniami na pobyt stały, із прямим збереженням чинності на виданий строк для zezwolenia na zamieszkanie na czas oznaczony.",
           sourceLocator: "Art. 507 pkt 1–2",
         },
       ],
       summary:
-        "Перехідна норма перетворює два види дозволів, виданих за попереднім законом, на відповідні види дозволів за новою системою без зміни періоду, на який їх видано.",
+        "Перехідна норма перетворює два види дозволів, виданих за попереднім законом, на відповідні види дозволів за новою системою; для zezwolenie na zamieszkanie na czas oznaczony прямо зберігається чинність на виданий строк.",
       rules: [
         {
           locator: "Art. 507 pkt 1",
@@ -160,7 +102,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-508",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -189,7 +131,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-509",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -218,11 +160,11 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-510",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 510 передбачає, що zaproszenia, внесені до ewidencja zaproszeń за старими правилами, zezwolenia на przekraczanie granicy в малому ruchu granicznym, а також wizy і документи, видані за старими правилами, зберігають чинність на строк, на який їх видано.",
+          text: "Art. 510 передбачає, що zaproszenia, внесені до ewidencja zaproszeń за dotychczasowe przepisy, zezwolenia на przekraczanie granicy в малому ruchu granicznym, а також wizy і документи, видані cudzoziemcom на підставі rozdziału 6 ustawy, про яку йдеться в Art. 521, зберігають чинність на строк, на який їх видано.",
           sourceLocator: "Art. 510",
         },
       ],
@@ -247,7 +189,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-511",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -276,7 +218,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-512",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -305,7 +247,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-513",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -339,7 +281,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-514",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -373,7 +315,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-515",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -402,7 +344,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-516",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -431,7 +373,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-517",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -460,7 +402,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-518",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -489,7 +431,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-519",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -518,7 +460,7 @@ export const foreignersActPart13b = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-520",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -549,6 +491,64 @@ export const foreignersActPart13b = defineEditorialPart<
         "Art. 520 — тимчасове правило про підзаконні акти, а не самостійна підстава для pobyt, wiza чи decyzja. Для історичної дати потрібно встановити, який акт і яка нова делегація були застосовні.",
       foreignersCase:
         "У старій справі назвіть конкретний akt wykonawczy та delegacja, перевірте дату wejścia w życie ustawy й момент набрання чинності новим актом; не застосовуйте загальне посилання без цієї хронології.",
+    },
+    {
+      provisionId: "ustawa-o-cudzoziemcach-art-521",
+      reviewStatus: "reviewed",
+      claims: [
+        {
+          kind: "statute-text",
+          text: "Art. 521 скасовує ustawa z dnia 13 czerwca 2003 r. o cudzoziemcach, наведену в статті разом із зазначеними публікаціями в Dziennik Ustaw.",
+          sourceLocator: "Art. 521",
+        },
+      ],
+      summary:
+        "Перехідна норма скасовує попередню ustawa o cudzoziemcach і завершує блок правил про заміну старого закону новим.",
+      rules: [
+        {
+          locator: "Art. 521",
+          explanation:
+            "З дня набрання чинності новою ustawa втрачає чинність акт від 13 червня 2003 р., названий у статті.",
+        },
+        {
+          locator: "Art. 521",
+          explanation:
+            "Стаття визначає лише скасований акт; наслідки для старих дозволів, рішень, проваджень і підзаконних актів треба встановлювати за перехідними нормами, зокрема Art. 507–520.",
+        },
+      ],
+      legalEffect:
+        "Art. 521 є історичною нормою про втрату чинності попереднього закону. Сам по собі він не анулює автоматично старі рішення чи документи, для яких діють окремі перехідні правила.",
+      foreignersCase:
+        "У старій справі зафіксуйте дату події та перевірте, чи стосується її скасований закон; для чинності документа або дії провадження окремо застосуйте відповідну норму Art. 507–520.",
+    },
+    {
+      provisionId: "ustawa-o-cudzoziemcach-art-522",
+      reviewStatus: "reviewed",
+      claims: [
+        {
+          kind: "statute-text",
+          text: "Art. 522 встановлює, що ustawa набирає чинності 1 травня 2014 р.; винятки — Art. 470 pkt 3 lit. a в частині Art. 3a pkt 3, Art. 470 pkt 3 lit. b та Art. 470 pkt 4, 5 і 11–16, які набирають чинності в день оголошення.",
+          sourceLocator: "Art. 522",
+        },
+      ],
+      summary:
+        "Прикінцева норма визначає загальну дату набрання чинності ustawa та окремі винятки, що діяли з дня її оголошення.",
+      rules: [
+        {
+          locator: "Art. 522",
+          explanation:
+            "Загальне правило — набрання чинності 1 травня 2014 р.",
+        },
+        {
+          locator: "Art. 522",
+          explanation:
+            "Конкретно перелічені частини Art. 470 набирають чинності в день оголошення ustawa; у джерелі зазначено, що її оголошено 30 грудня 2013 р.",
+        },
+      ],
+      legalEffect:
+        "Art. 522 визначає історичні часові межі застосування ustawa та її окремих положень. Для старої справи дата конкретної дії має бути зіставлена із загальним правилом або винятком, а не лише з номером статті.",
+      foreignersCase:
+        "Встановіть дату подання, рішення або іншої юридично значущої дії та перевірте, чи стосується її виняток Art. 522; для перехідних наслідків додатково застосуйте Art. 507–521.",
     },
   ],
 })
