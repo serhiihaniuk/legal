@@ -8,11 +8,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
   entries: [
     {
       provisionId: "ppsa-art-130",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Суд umarza zawieszone postępowanie, якщо у визначених випадках протягом трьох років не подано wniosku про його поновлення, немає następcy prawnego сторони після втрати нею zdolności sądowej або після смерті сторони спливло п’ять років; перед NSA це спричиняє uprawomocnienie рішення WSA.",
+          text: "Суд umarza zawieszone postępowanie, якщо wniosek o podjęcie postępowania zawieszonego на zgodny wniosek сторін або з причини art. 125 § 1 pkt 3 не подано протягом трьох років від postanowienia; у разі braku następcy prawnego сторони, яка втратила zdolność sądową, umorzenie настає також у будь-якому разі після трьох років від postanowienia про zawieszenie з цієї причини, а після смерті сторони — після п’яти років. Umorzenie перед NSA спричиняє uprawomocnienie orzeczenia WSA.",
           sourceLocator: "Art. 130 § 1 pkt 1–3, § 2",
         },
       ],
@@ -22,7 +22,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1 pkt 1–3",
           explanation:
-            "Перевіряйте причину zawieszenie і дату postanowienie: для різних підстав закон називає три або п’ять років.",
+            "Не узагальнюйте трирічний строк: pkt 1 стосується zawieszenie на zgodny wniosek сторін або з причини art. 125 § 1 pkt 3; pkt 2 — braku następcy prawnego та граничних трьох років, а pkt 3 — смерті сторони і п’яти років. Строки рахуються від дня wydania postanowienia o zawieszeniu.",
         },
         {
           locator: "§ 2",
@@ -37,7 +37,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-131",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -66,7 +66,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-132",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -90,7 +90,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-133",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -119,7 +119,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-134",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -148,7 +148,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-135",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -172,7 +172,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-136",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -196,11 +196,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-137",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Wyrok ухвалюється після таємної narada sędziów; рішення приймається більшістю, суддя може подати zdanie odrębne, а sentencja підписується всім складом суду. Narada і голосування є таємними.",
+          text: "Wyrok ухвалюється після таємної narada sędziów; рішення приймається більшістю, суддя може під час підписання sentencji подати zdanie odrębne та має письмово його обґрунтувати, а sentencja підписується всім складом суду. Narada і голосування є таємними, а повідомлення про zdanie odrębne та ім’я судді відбуваються за правилами § 3.",
           sourceLocator: "Art. 137 § 1–5",
         },
       ],
@@ -210,7 +210,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1–3",
           explanation:
-            "До narada входять обговорення, голосування та формулювання основних причин; окрема думка може стосуватися також самого uzasadnienie.",
+            "До narada входять обговорення, голосування та spisanie sentencji і zasadniczych powodów; суддя, який не погодився з більшістю, подає zdanie odrębne під час підписання sentencji та письмово його обґрунтовує, і воно може стосуватися також uzasadnienie. Про подання zdanie odrębne повідомляють, а ім’я судді — лише за його згодою.",
         },
         {
           locator: "§ 4–5",
@@ -225,7 +225,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-138",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -249,11 +249,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-139",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Ogłoszenie wyroku зазвичай відбувається на засіданні, де закрито rozprawa; у складній справі оголошення можна відкласти до чотирнадцяти днів і лише один раз продовжити не більш як на сім. Воно є публічним, відсутність сторін не перешкоджає, а wyrok з posiedzenie niejawnym публічно доступний у sekretariat протягом чотирнадцяти днів.",
+          text: "Ogłoszenie wyroku зазвичай відбувається на засіданні, де закрито rozprawa; у складній справі оголошення можна відкласти до чотирнадцяти днів і лише один раз продовжити не більш як на сім. Воно є публічним, відсутність сторін не перешкоджає, а для wyrok з posiedzenie niejawnym odpis sentencji вручають сторонам, якщо uzasadnienie не складається з urzędu; такий wyrok публічно доступний у sekretariat протягом чотирнадцяти днів.",
           sourceLocator: "Art. 139 § 1–5",
         },
       ],
@@ -273,7 +273,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 4–5",
           explanation:
-            "Для wyrok на posiedzenie niejawnym перевірте doręczenie odpisu sentencji та публічний доступ у sekretariat.",
+            "Для wyrok на posiedzenie niejawnym перевірте, чи uzasadnienie складається з urzędu: якщо ні, odpis sentencji doręczaється сторонам; сам wyrok має бути публічно доступний у sekretariat протягом чотирнадцяти днів.",
         },
       ],
       legalEffect:
@@ -283,7 +283,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-140",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -312,7 +312,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-141",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -346,7 +346,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-142",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -375,7 +375,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-143",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -404,7 +404,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-144",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -428,7 +428,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-145",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -462,7 +462,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-145a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -496,11 +496,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-146",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Задовольняючи skarga на akt або czynność з art. 3 § 2 pkt 4–4b, суд uchyla відповідний акт, interpretację, opinię чи відмову або stwierdza bezskuteczność czynność; у справах pkt 4 суд може визнати uprawnienie чи obowiązek, що випливає з prawa.",
+          text: "Задовольняючи skarga на akt або czynność з art. 3 § 2 pkt 4–4b, суд uchyla відповідний akt, interpretację, opinię чи відмову або stwierdza bezskuteczność czynność; до цього відповідно застосовується art. 145 § 1 pkt 1, а у справах pkt 4 суд може визнати uprawnienie чи obowiązek, що випливає з prawa.",
           sourceLocator: "Art. 146 § 1–2",
         },
       ],
@@ -525,7 +525,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-147",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -554,7 +554,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-148",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -578,7 +578,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-149",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -612,7 +612,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-150",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -636,7 +636,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-151",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -660,7 +660,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-151a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -694,7 +694,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-152",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -723,7 +723,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-153",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -747,12 +747,12 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-154",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
           text: "У разі невиконання wyrok, що задовольнив skarga на bezczynność або przewlekłość, після попереднього письмового wezwanie органу сторона може подати skarga з вимогою grzywna; суд може вирішити право або обов’язок, встановлює rażące naruszenie, а наступне виконання після подання цієї skarga не є підставою для її umorzenie чи oddalenie.",
-          sourceLocator: "Art. 154 § 1–3",
+          sourceLocator: "Art. 154 § 1–7",
         },
       ],
       summary:
@@ -781,7 +781,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-155",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -810,12 +810,12 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-156",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd може з urzędu виправити у wyrok неточності, помилки письма або рахунку чи інші очевидні omyłki; це може бути постановлено на posiedzenie niejawnym із позначкою на оригіналі та копіях. У тексті corpus § 2a також містить чинну на дату стану норму про електронний документ із kwalifikowany podpis elektroniczny та примітку про майбутню зміну з 1 жовтня 2029 року.",
-          sourceLocator: "Art. 156 § 1–3, przypisy 54–55",
+          text: "Sąd може з urzędu виправити у wyrok неточності, помилки письма або рахунку чи інші очевидні omyłki; це може бути постановлено на posiedzenie niejawnym із позначкою на оригіналі та копіях. У corpus для § 2a наведено дві редакції: чинну на дату стану з електронною wzmianka, підписаною kwalifikowany podpis elektroniczny, і редакцію, що набуде чинності 1 жовтня 2029 року.",
+          sourceLocator: "Art. 156 § 1–3, przypisy 53–55",
         },
       ],
       summary:
@@ -829,7 +829,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 2a, przypisy 54–55",
           explanation:
-            "Не змішуйте дві версії електронного оформлення з приміток corpus: дата застосування майбутньої редакції прямо віднесена до 1.10.2029.",
+            "Не змішуйте дві версії електронного оформлення: перша редакція § 2a діє до набрання чинності зміною, а друга набуде чинності 1.10.2029; на legalStateDate 2026-07-14 застосовується перша.",
         },
         {
           locator: "§ 3",
@@ -844,7 +844,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-157",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -873,7 +873,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-158",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -897,7 +897,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-159",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -921,7 +921,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-160",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -945,7 +945,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-161",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -979,7 +979,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-162",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1003,7 +1003,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-163",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1037,7 +1037,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-164",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1061,7 +1061,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-165",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1085,7 +1085,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-166",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1109,7 +1109,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-167",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1133,7 +1133,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-167a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1167,11 +1167,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-168",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Orzeczenie стає prawomocne, якщо щодо нього немає środka odwoławczego; окремо оскаржувані postanowienie, які розглядає NSA разом із основною справою, не стають prawomocne, а при оскарженні лише частини інша частина стає prawomocna після спливу строку з названим у статті застереженням.",
+          text: "Orzeczenie стає prawomocne, якщо щодо нього немає środka odwoławczego; postanowienie, які не можна окремо оскаржити, але які підлягають розгляду NSA разом з основною справою, не стають prawomocne до такого розгляду, а при оскарженні лише частини інша частина стає prawomocna після спливу строку з названим у статті застереженням.",
           sourceLocator: "Art. 168 § 1–3",
         },
       ],
@@ -1196,11 +1196,11 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-169",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Prawomocność orzeczenie за wniosek strony, а у випадку art. 286 § 1 — з urzędu, встановлює WSA на posiedzenie niejawnym; postanowienie doręczaється лише стороні, яка подала wniosek, а postanowienie про prawomocność wyrok WSA може видати referendarz sądowy.",
+          text: "Prawomocność orzeczenia за wniosek strony та у випадку, названому в art. 286 § 1, встановлює WSA на posiedzenie niejawnym; postanowienie doręczaється лише стороні, яка подала wniosek, а postanowienie про prawomocność orzeczenia WSA може видати referendarz sądowy.",
           sourceLocator: "Art. 169 § 1–2",
         },
       ],
@@ -1210,7 +1210,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1",
           explanation:
-            "Визначте, чи потрібен wniosek сторони або діє випадок з urzędu, названий через art. 286 § 1.",
+            "Перевірте, чи подано wniosek сторони або чи наявний випадок, названий через art. 286 § 1; не додавайте до цієї статті інших умов, яких вона прямо не містить.",
         },
         {
           locator: "§ 2",
@@ -1225,7 +1225,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-170",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1249,7 +1249,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-171",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1273,7 +1273,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-172",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1302,7 +1302,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-173",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1331,7 +1331,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-174",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1360,7 +1360,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-175",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1394,7 +1394,7 @@ export const ppsaPart04 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-176",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
