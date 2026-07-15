@@ -10,6 +10,17 @@ import {
 } from "react-router"
 
 import { DocsLayout, type TocItem } from "~/components/docs-layout"
+import {
+  LawDocumentMobileNavigation,
+  LawDocumentNavigation,
+} from "~/components/law-document-navigation"
+import {
+  DocsSidebar,
+  DocsSidebarBackLink,
+  DocsSidebarItem,
+  DocsSidebarList,
+  DocsSidebarSection,
+} from "~/components/docs-sidebar-navigation"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import {
@@ -29,7 +40,7 @@ import {
   getKpaArticleExplanations,
 } from "~/data/kpa-article-explanations"
 import { kpaArticleIndex, kpaArticleSections } from "~/data/kpa-article-index"
-import { listProvisions } from "~/data/legal-library"
+import { getDocument, listProvisions } from "~/data/legal-library"
 import {
   kpaGuideModuleArticles,
   type KpaGuideModuleId,
@@ -180,18 +191,14 @@ function NavigationRow({
   onClick: () => void
 }) {
   return (
-    <li>
-      <Button
-        type="button"
-        variant={active ? "secondary" : "ghost"}
-        size="sm"
-        onClick={onClick}
-        aria-pressed={active}
-        className="h-auto min-h-8 w-full justify-start px-2 py-1 text-left text-[0.8rem] leading-5 whitespace-normal"
-      >
-        <span className="min-w-0 break-words">{children}</span>
-      </Button>
-    </li>
+    <DocsSidebarItem
+      active={active}
+      onClick={onClick}
+      ariaPressed={active}
+      className="min-h-8 px-2 py-1 text-[0.8rem] leading-5"
+    >
+      {children}
+    </DocsSidebarItem>
   )
 }
 
@@ -215,18 +222,8 @@ function KpaNavigation({
   )
 
   return (
-    <nav aria-label="Навігація KPA" className="pb-10">
-      <Button
-        variant="ghost"
-        size="sm"
-        nativeButton={false}
-        render={<Link to="/law" />}
-        aria-label="До бібліотеки права"
-        className="mb-6 h-auto min-h-9 w-full justify-start px-2 py-2 text-left whitespace-normal"
-      >
-        <ArrowLeft data-icon="inline-start" aria-hidden="true" />
-        До бібліотеки права
-      </Button>
+    <DocsSidebar ariaLabel="Навігація KPA">
+      <DocsSidebarBackLink to="/law">До бібліотеки права</DocsSidebarBackLink>
 
       <section>
         <p className="px-2 text-xs font-medium text-muted-foreground">
@@ -356,7 +353,7 @@ function KpaNavigation({
           </ul>
         </section>
       ) : null}
-    </nav>
+    </DocsSidebar>
   )
 }
 
@@ -431,6 +428,7 @@ export default function KpaGuide() {
   const navigate = useNavigate()
   const params = useParams()
   const canonicalLawMode = Boolean(params.moduleId || params.practiceId)
+  const kpaDocument = getDocument("kpa")
   const routeMode: KpaMode | undefined = params.practiceId
     ? "practice"
     : params.moduleId
@@ -468,9 +466,7 @@ export default function KpaGuide() {
       } else {
         const provisionId = kpaProvisionIdByArticle.get(selectedArticle)
         navigate(
-          provisionId
-            ? `/law/kpa/provisions/${provisionId}`
-            : "/law/kpa"
+          provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa"
         )
       }
       scrollToTop()
@@ -510,9 +506,7 @@ export default function KpaGuide() {
   function changeArticle(article: string) {
     if (canonicalLawMode) {
       const provisionId = kpaProvisionIdByArticle.get(article)
-      navigate(
-        provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa"
-      )
+      navigate(provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa")
       scrollToTop()
       return
     }
@@ -528,23 +522,41 @@ export default function KpaGuide() {
   return (
     <DocsLayout
       navigation={
-        <KpaNavigation
+        canonicalLawMode && kpaDocument ? (
+          <LawDocumentNavigation
+            document={kpaDocument}
+            activeSection={mode === "practice" ? "practice" : "learning"}
+            activeModuleId={selectedModule}
+            activePracticeId={params.practiceId}
+          />
+        ) : (
+          <KpaNavigation
+            mode={mode}
+            onModeChange={changeMode}
+            selectedModule={selectedModule}
+            onModuleChange={changeModule}
+            selectedArticle={selectedArticle}
+            onArticleChange={changeArticle}
+          />
+        )
+      }
+      toc={toc}
+    >
+      {canonicalLawMode && kpaDocument ? (
+        <LawDocumentMobileNavigation
+          document={kpaDocument}
+          activeSection={mode === "practice" ? "practice" : "learning"}
+          activeModuleId={selectedModule}
+          activePracticeId={params.practiceId}
+        />
+      ) : (
+        <MobileKpaNavigation
           mode={mode}
           onModeChange={changeMode}
           selectedModule={selectedModule}
           onModuleChange={changeModule}
-          selectedArticle={selectedArticle}
-          onArticleChange={changeArticle}
         />
-      }
-      toc={toc}
-    >
-      <MobileKpaNavigation
-        mode={mode}
-        onModeChange={changeMode}
-        selectedModule={selectedModule}
-        onModuleChange={changeModule}
-      />
+      )}
 
       {mode === "learning" ? (
         <KpaLearningContent

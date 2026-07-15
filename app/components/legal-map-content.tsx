@@ -9,6 +9,13 @@ import {
 } from "~/data/legal-library/legal-text"
 import { OfficialSourceEntry } from "~/components/official-source"
 import {
+  DocsSidebar,
+  DocsSidebarBackLink,
+  DocsSidebarItem,
+  DocsSidebarList,
+  DocsSidebarSection,
+} from "~/components/docs-sidebar-navigation"
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -81,61 +88,6 @@ function nodePath(node: IndexedNode) {
   return path
 }
 
-function MapNavigationRow({
-  stage,
-  active,
-  onClick,
-}: {
-  stage: LegalMapJourneyStage
-  active?: boolean
-  onClick: () => void
-}) {
-  return (
-    <li>
-      <Button
-        type="button"
-        variant={active ? "secondary" : "ghost"}
-        onClick={onClick}
-        className="h-auto w-full justify-start px-2 py-2 text-left whitespace-normal"
-      >
-        <span className="w-6 shrink-0 text-xs text-muted-foreground">
-          {String(stage.order).padStart(2, "0")}
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-sm leading-5">{stage.title}</span>
-          <span className="mt-0.5 block text-xs leading-4 text-muted-foreground">
-            {stage.nodeIds.length} тем
-          </span>
-        </span>
-      </Button>
-    </li>
-  )
-}
-
-function TopicNavigationRow({
-  node,
-  active,
-  onClick,
-}: {
-  node: IndexedNode
-  active?: boolean
-  onClick: () => void
-}) {
-  return (
-    <li>
-      <Button
-        type="button"
-        variant={active ? "secondary" : "ghost"}
-        size="sm"
-        onClick={onClick}
-        className="h-auto w-full justify-start px-2 py-1.5 text-left whitespace-normal"
-      >
-        <span className="min-w-0 text-xs leading-5">{node.title}</span>
-      </Button>
-    </li>
-  )
-}
-
 export function LegalMapNavigation({
   selectedStageId,
   selectedNodeId,
@@ -147,49 +99,62 @@ export function LegalMapNavigation({
   onStageSelect: (stageId: LegalMapJourneyStage["id"]) => void
   onNodeSelect: (nodeId: string) => void
 }) {
-  const selectedStage = legalMapJourney.find(
-    (stage) => stage.id === selectedStageId
-  )
-
   return (
-    <nav aria-label="Шлях адміністративної справи" className="pb-10">
-      <section>
-        <p className="px-2 text-xs font-medium text-muted-foreground">
-          Шлях справи
-        </p>
-        <p className="mt-1 px-2 text-xs leading-5 text-muted-foreground">
+    <DocsSidebar ariaLabel="Шлях адміністративної справи">
+      <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
+      <div className="px-2">
+        <p className="text-xs font-medium text-muted-foreground">Шлях справи</p>
+        <p className="mt-1 text-xs leading-5 text-muted-foreground">
           Від першої орієнтації до захисту після рішення.
         </p>
-        <ol className="mt-2 grid gap-0.5">
-          {legalMapJourney.map((stage) => (
-            <MapNavigationRow
-              key={stage.id}
-              stage={stage}
-              active={stage.id === selectedStageId}
-              onClick={() => onStageSelect(stage.id)}
-            />
-          ))}
-        </ol>
-      </section>
-
-      {selectedStage ? (
-        <section className="mt-8">
-          <p className="px-2 text-xs font-medium text-muted-foreground">
-            Теми етапу {selectedStage.order}
-          </p>
-          <ul className="mt-2 grid gap-0.5">
-            {journeyNodes(selectedStage).map((node) => (
-              <TopicNavigationRow
-                key={node.id}
-                node={node}
-                active={node.id === selectedNodeId}
-                onClick={() => onNodeSelect(node.id)}
-              />
-            ))}
-          </ul>
-        </section>
-      ) : null}
-    </nav>
+      </div>
+      <DocsSidebarSection title="Етапи справи" className="mt-4">
+        <DocsSidebarList ordered>
+          {legalMapJourney.map((stage) => {
+            const nestedTopics =
+              stage.id === selectedStageId ? (
+                <ul className="ml-4 border-l pl-2">
+                  {journeyNodes(stage).map((node) => (
+                    <DocsSidebarItem
+                      key={node.id}
+                      active={node.id === selectedNodeId}
+                      onClick={() => onNodeSelect(node.id)}
+                      className="min-h-8 px-2 py-1 text-xs leading-5"
+                      ariaPressed={node.id === selectedNodeId}
+                    >
+                      {node.title}
+                    </DocsSidebarItem>
+                  ))}
+                </ul>
+              ) : null
+            return (
+              <DocsSidebarItem
+                key={stage.id}
+                active={stage.id === selectedStageId}
+                onClick={() => onStageSelect(stage.id)}
+                ariaPressed={stage.id === selectedStageId}
+                className="min-h-11 items-start px-2 py-2"
+                nested={nestedTopics}
+              >
+                <span className="flex min-w-0 gap-2">
+                  <span className="w-6 shrink-0 text-xs text-muted-foreground">
+                    {String(stage.order).padStart(2, "0")}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm leading-5">
+                      {stage.title}
+                    </span>
+                    <span className="mt-0.5 block text-xs leading-4 text-muted-foreground">
+                      {stage.nodeIds.length} тем
+                    </span>
+                  </span>
+                </span>
+              </DocsSidebarItem>
+            )
+          })}
+        </DocsSidebarList>
+      </DocsSidebarSection>
+    </DocsSidebar>
   )
 }
 
@@ -211,6 +176,7 @@ export function MobileLegalMapNavigation({
 
   return (
     <div className="grid min-w-0 gap-3 lg:hidden">
+      <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
       <label className="grid min-w-0 gap-1.5">
         <span className="text-xs font-medium text-muted-foreground">
           Етап справи
