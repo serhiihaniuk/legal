@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react"
 import { Link } from "react-router"
-import type { ReactNode } from "react"
 
+import { LegalLink } from "~/components/legal-link"
+import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import {
-  legalReferenceMatches,
   legalReferenceTarget,
   type LegalReference,
 } from "~/data/legal-references"
@@ -52,31 +52,22 @@ export function LegalText({
   text,
   className,
 }: {
-  text: string
+  text: LegalTextValue
   className?: string
 }) {
-  const matches = legalReferenceMatches(text)
-  if (matches.length === 0) return <span className={className}>{text}</span>
+  if (typeof text === "string") return <span className={className}>{text}</span>
 
-  let cursor = 0
-  const content: ReactNode[] = []
-
-  for (const match of matches) {
-    if (match.start > cursor) {
-      content.push(text.slice(cursor, match.start))
-    }
-    content.push(match.label)
-    content.push(
-      <LegalReferenceArrow
-        key={`${match.start}-${match.end}-${match.href}`}
-        reference={match.reference}
-        label={`Відкрити: ${match.label}`}
-      />
-    )
-    cursor = match.end
-  }
-
-  if (cursor < text.length) content.push(text.slice(cursor))
-
-  return <span className={className}>{content}</span>
+  return (
+    <span className={className}>
+      {text.parts.map((part, index) =>
+        "target" in part ? (
+          <LegalLink key={`${index}-${part.text}`} reference={part.target}>
+            {part.text}
+          </LegalLink>
+        ) : (
+          <span key={`${index}-${part.text}`}>{part.text}</span>
+        )
+      )}
+    </span>
+  )
 }

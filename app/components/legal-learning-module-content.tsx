@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import type { ReactNode } from "react"
 
 import { LegalLink } from "~/components/legal-link"
+import { LegalText as LearningText } from "~/components/legal-reference-text"
 import {
   Accordion,
   AccordionContent,
@@ -36,24 +37,6 @@ export const legalLearningContentToc = [
   { href: `#${legalLearningSectionIds.example}`, label: "Повний приклад" },
   { href: `#${legalLearningSectionIds.nuances}`, label: "Нюанси й помилки" },
 ] as const
-
-function LearningText({ text }: { text: LegalLearningText }) {
-  if (typeof text === "string") return <>{text}</>
-
-  return (
-    <>
-      {text.parts.map((part, index) =>
-        "target" in part ? (
-          <LegalLink key={`${index}-${part.text}`} reference={part.target}>
-            {part.text}
-          </LegalLink>
-        ) : (
-          <span key={`${index}-${part.text}`}>{part.text}</span>
-        )
-      )}
-    </>
-  )
-}
 
 function ProvisionText({
   text,
