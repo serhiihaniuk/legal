@@ -4,9 +4,9 @@ import { Link, useNavigate } from "react-router"
 
 import { kpaArticleIndex, kpaArticleSections } from "~/data/kpa-article-index"
 import {
-  genericLearningModules,
   genericPracticeModules,
   getDocumentHomePath,
+  getLegalLearningModules,
   getDocumentLearningPath,
   getDocumentPracticePath,
   getDocumentProvisionPath,
@@ -387,6 +387,10 @@ export function LawDocumentNavigation({
 }) {
   const navigate = useNavigate()
   const provisions = useMemo(() => listProvisions(document.id), [document.id])
+  const learningModules = useMemo(
+    () => getLegalLearningModules(document.id),
+    [document.id]
+  )
   const firstProvision = provisions[0]
   const kpaNavigationGroups = useMemo(
     () => (document.id === "kpa" ? buildKpaNavigationGroups(provisions) : []),
@@ -478,7 +482,7 @@ export function LawDocumentNavigation({
                 Модулі {document.shortName}
               </p>
               <ul className="mt-2 grid gap-0.5">
-                {genericLearningModules.map((module) => (
+                {learningModules.map((module) => (
                   <li key={module.id}>
                     <Button
                       variant={
@@ -497,7 +501,7 @@ export function LawDocumentNavigation({
                       className="h-auto min-h-9 w-full justify-start px-2 py-1.5 text-left whitespace-normal"
                     >
                       <span className="grid gap-0.5">
-                        <span className="text-sm">{module.label}</span>
+                        <span className="text-sm">{module.title}</span>
                         <span className="text-xs text-muted-foreground">
                           Модуль {module.order}
                         </span>
@@ -581,7 +585,7 @@ export function LawDocumentNavigation({
               Модуль документа
             </span>
             <select
-              value={activeModuleId ?? genericLearningModules[0].id}
+              value={activeModuleId ?? learningModules[0]?.id ?? ""}
               onChange={(event) =>
                 navigate(
                   getDocumentLearningPath(document.id, event.target.value)
@@ -590,9 +594,9 @@ export function LawDocumentNavigation({
               className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
               aria-label="Модуль документа"
             >
-              {genericLearningModules.map((module) => (
+              {learningModules.map((module) => (
                 <option key={module.id} value={module.id}>
-                  {module.order}. {module.label}
+                  {module.order}. {module.title}
                 </option>
               ))}
             </select>

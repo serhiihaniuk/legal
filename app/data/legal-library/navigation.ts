@@ -1,14 +1,5 @@
 import type { LegalDocumentId } from "./contracts"
-
-export const genericLearningModules = [
-  { id: "overview", label: "Про акт", order: 1 },
-  { id: "reading", label: "Як читати норму", order: 2 },
-  { id: "structure", label: "Структура акта", order: 3 },
-  { id: "source", label: "Редакція і джерело", order: 4 },
-] as const
-
-export type GenericLearningModuleId =
-  (typeof genericLearningModules)[number]["id"]
+import { getLegalLearningModules } from "./learning"
 
 export const genericPracticeModules = [
   { id: "case-workflow", label: "Робочий алгоритм" },
@@ -18,7 +9,8 @@ export type GenericPracticeId = (typeof genericPracticeModules)[number]["id"]
 
 export function getDocumentHomePath(documentId: LegalDocumentId): string {
   if (documentId === "kpa") return "/law/kpa/learn/system"
-  return `/law/${encodeURIComponent(documentId)}/learn/overview`
+  const firstModuleId = getLegalLearningModules(documentId)[0]?.id ?? "overview"
+  return `/law/${encodeURIComponent(documentId)}/learn/${encodeURIComponent(firstModuleId)}`
 }
 
 export function getDocumentLearningPath(
