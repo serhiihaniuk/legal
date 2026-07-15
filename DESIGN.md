@@ -28,7 +28,7 @@
 ## Information architecture
 
 - Primary navigation: kompaktowy header z globalnymi trasami; na stronach edukacyjnych lokalny indeks po lewej, dokument pośrodku i krótki spis treści po prawej
-- Core routes/screens: `/`; `/law`; `/law/:documentId`; `/law/:documentId/provisions/:provisionId`; `/guide/kpa` (compatibility); `/map`; `/map/:nodeId`; `/documents`; `/cases/:routeId`; `/study`
+- Core routes/screens: `/`; `/law`; `/law/:documentId` (workspace redirect); `/law/:documentId/learn/:moduleId`; `/law/:documentId/provisions/:provisionId`; `/law/:documentId/practice/:practiceId`; `/guide/kpa` (compatibility); `/map`; `/map/:nodeId`; `/documents`; `/cases/:routeId`; `/study`
 - Content hierarchy: fakty osoby -> etap sprawy -> pytanie prawne -> instytucja/norma -> dokument/dowód -> działanie -> wynik lub środek ochrony
 - Navigation model: bez wyszukiwarki. Użytkownik porusza się przez globalne menu, lokalny indeks, selektory mobilne oraz kontrolki poprzedni/następny.
 
@@ -98,7 +98,7 @@
 ## Components
 
 - Existing components to reuse: shadcn `base-vega` primitives in `app/components/ui`
-- New/changed components: app shell, global header/navigation menu, mobile selectors, multi-document law catalog, generic provision reader with exact PDF locator, KPA compatibility guide, article selector, map index, node detail, shared official-source entry/link, case profile, route tabs, legal summary, document register, deadline register, exclusions, timeline accordion, explicit typed legal link and compatibility inline-reference renderer
+- New/changed components: app shell, global header/navigation menu, mobile selectors, multi-document law catalog, per-document learning/provisions/practice workspace, generic provision reader with exact PDF locator, KPA compatibility guide, article selector, map index, node detail, shared official-source entry/link, case profile, route tabs, legal summary, document register, deadline register, exclusions, timeline accordion, explicit typed legal link and compatibility inline-reference renderer
 - Variants and states: selected, matched, dimmed, overview/full-depth, expanded/collapsed, foundational, procedural, practical, active case route, positive/negative procedural branch
 - Token/component ownership: semantyczne CSS variables i Tailwind v4 theme tokens w `app/app.css`
 

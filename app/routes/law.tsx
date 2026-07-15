@@ -4,7 +4,11 @@ import { Link } from "react-router"
 import { DocsLayout } from "~/components/docs-layout"
 import { LawLibraryNavigation } from "~/components/law-library-navigation"
 import { Badge } from "~/components/ui/badge"
-import { listDocuments, listProvisions } from "~/data/legal-library"
+import {
+  getDocumentHomePath,
+  listDocuments,
+  listProvisions,
+} from "~/data/legal-library"
 
 const toc = [
   { href: "#law-library-overview", label: "Про бібліотеку" },
@@ -39,12 +43,15 @@ export default function LawLibraryRoute() {
               return (
                 <Link
                   key={document.id}
-                  to={`/law/${document.id}`}
+                  to={getDocumentHomePath(document.id)}
                   className="group grid gap-2 py-5 text-foreground no-underline sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
                 >
                   <span className="grid gap-1">
                     <span className="flex items-center gap-2 font-semibold">
-                      <BookOpenText className="size-4 text-muted-foreground" aria-hidden="true" />
+                      <BookOpenText
+                        className="size-4 text-muted-foreground"
+                        aria-hidden="true"
+                      />
                       {document.title}
                     </span>
                     <span className="text-sm text-muted-foreground">

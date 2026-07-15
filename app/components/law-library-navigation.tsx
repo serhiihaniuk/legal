@@ -1,16 +1,9 @@
 import { Link } from "react-router"
 
 import { Button } from "~/components/ui/button"
-import {
-  listDocuments,
-  type LegalDocumentId,
-} from "~/data/legal-library"
+import { getDocumentHomePath, listDocuments } from "~/data/legal-library"
 
-export function LawLibraryNavigation({
-  selectedDocumentId,
-}: {
-  selectedDocumentId?: LegalDocumentId
-}) {
+export function LawLibraryNavigation() {
   const documents = listDocuments()
 
   return (
@@ -22,14 +15,16 @@ export function LawLibraryNavigation({
         {documents.map((document) => (
           <li key={document.id}>
             <Button
-              variant={selectedDocumentId === document.id ? "secondary" : "ghost"}
+              variant="ghost"
               size="sm"
               nativeButton={false}
-              render={<Link to={`/law/${document.id}`} />}
+              render={<Link to={getDocumentHomePath(document.id)} />}
               className="h-auto min-h-10 w-full justify-start px-2 py-2 text-left whitespace-normal"
             >
               <span className="grid min-w-0 gap-0.5">
-                <span className="text-sm font-medium">{document.shortName}</span>
+                <span className="text-sm font-medium">
+                  {document.shortName}
+                </span>
                 <span className="text-xs text-muted-foreground">
                   {document.citation}
                 </span>

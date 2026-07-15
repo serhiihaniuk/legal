@@ -1,12 +1,11 @@
 import { ArrowLeft, ArrowRight, FileText } from "lucide-react"
-import {
-  Link,
-  useLoaderData,
-  type LoaderFunctionArgs,
-} from "react-router"
+import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router"
 
 import { DocsLayout } from "~/components/docs-layout"
-import { LawLibraryNavigation } from "~/components/law-library-navigation"
+import {
+  LawDocumentMobileNavigation,
+  LawDocumentNavigation,
+} from "~/components/law-document-navigation"
 import { LegalProvisionSelector } from "~/components/legal-provision-selector"
 import { OfficialSourceLink } from "~/components/official-source"
 import { Badge } from "~/components/ui/badge"
@@ -77,10 +76,24 @@ export default function LawProvisionRoute() {
 
   return (
     <DocsLayout
-      navigation={<LawLibraryNavigation selectedDocumentId={document.id} />}
+      navigation={
+        <LawDocumentNavigation
+          document={document}
+          activeSection="provisions"
+          currentProvisionId={provision.id}
+        />
+      }
       toc={toc}
     >
-      <div data-not-typeset className="not-typeset grid min-w-0 gap-3 border-y py-4">
+      <LawDocumentMobileNavigation
+        document={document}
+        activeSection="provisions"
+        currentProvisionId={provision.id}
+      />
+      <div
+        data-not-typeset
+        className="not-typeset grid min-w-0 gap-3 border-y py-4"
+      >
         <LegalProvisionSelector
           documentId={document.id}
           documentLabel={document.shortName}
@@ -111,9 +124,7 @@ export default function LawProvisionRoute() {
               variant="ghost"
               size="sm"
               nativeButton={false}
-              render={
-                <Link to={`/law/${document.id}/provisions/${next.id}`} />
-              }
+              render={<Link to={`/law/${document.id}/provisions/${next.id}`} />}
             >
               {next.locator}
               <ArrowRight data-icon="inline-end" aria-hidden="true" />
@@ -149,7 +160,10 @@ export default function LawProvisionRoute() {
         <p className="text-sm leading-6 text-muted-foreground">
           {document.title} · {edition.manifest.citation}
         </p>
-        <div data-not-typeset className="not-typeset flex flex-wrap items-center gap-3">
+        <div
+          data-not-typeset
+          className="not-typeset flex flex-wrap items-center gap-3"
+        >
           <Dialog>
             <DialogTrigger render={<Button variant="outline" />}>
               <FileText data-icon="inline-start" aria-hidden="true" />
@@ -158,10 +172,12 @@ export default function LawProvisionRoute() {
             <DialogContent className="h-[calc(100dvh-1rem)] w-[calc(100vw-1rem)] !max-w-none grid-rows-[auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-lg p-0 sm:h-[calc(100dvh-2rem)] sm:w-[calc(100vw-2rem)]">
               <DialogHeader className="min-w-0 border-b px-4 py-3 pr-14">
                 <DialogTitle className="truncate pr-2">
-                  {document.shortName} · {provision.locator} · PDF s. {provision.startPdfPage}
+                  {document.shortName} · {provision.locator} · PDF s.{" "}
+                  {provision.startPdfPage}
                 </DialogTitle>
                 <DialogDescription className="sr-only">
-                  Локальна копія офіційного PDF на сторінці {provision.startPdfPage}.
+                  Локальна копія офіційного PDF на сторінці{" "}
+                  {provision.startPdfPage}.
                 </DialogDescription>
               </DialogHeader>
               <iframe
@@ -184,11 +200,12 @@ export default function LawProvisionRoute() {
           <h2>Що встановлює ця норма</h2>
           {reviewedExplanation ? (
             <>
-              <p className="text-lg leading-8">
-                {reviewedExplanation.summary}
-              </p>
+              <p className="text-lg leading-8">{reviewedExplanation.summary}</p>
               {reviewedExplanation.rules.length > 0 ? (
-                <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
+                <div
+                  data-not-typeset
+                  className="not-typeset mt-6 divide-y border-y"
+                >
                   {reviewedExplanation.rules.map((rule) => (
                     <div
                       key={`${rule.locator}-${rule.explanation}`}
@@ -206,10 +223,10 @@ export default function LawProvisionRoute() {
             </>
           ) : (
             <blockquote>
-              Для цієї норми ще немає пояснення, перевіреного для редакції
-              {" "}{edition.editionId}. Нижче доступний витягнутий польський текст і
-              точна сторінка офіційного PDF. Не підміняйте ними перевірку чинності
-              та перехідних правил.
+              Для цієї норми ще немає пояснення, перевіреного для редакції{" "}
+              {edition.editionId}. Нижче доступний витягнутий польський текст і
+              точна сторінка офіційного PDF. Не підміняйте ними перевірку
+              чинності та перехідних правил.
             </blockquote>
           )}
         </section>
@@ -220,7 +237,10 @@ export default function LawProvisionRoute() {
             Робочий витяг із PDF. Для дослівного цитування відкрийте сторінку
             джерела вище.
           </p>
-          <div data-not-typeset className="not-typeset mt-6 border-l-2 border-foreground/20 pl-5">
+          <div
+            data-not-typeset
+            className="not-typeset mt-6 border-l-2 border-foreground/20 pl-5"
+          >
             <p lang="pl" className="text-sm leading-7 whitespace-pre-line">
               {provision.text}
             </p>
@@ -230,21 +250,43 @@ export default function LawProvisionRoute() {
         <section id="legal-provision-place">
           <h2>Місце в акті</h2>
           <dl>
-            <div><dt>Акт</dt><dd>{document.title}</dd></div>
-            <div><dt>Locator</dt><dd lang="pl">{provision.locator}</dd></div>
-            <div><dt>Тип</dt><dd>{provision.kind}</dd></div>
-            <div><dt>Сторінки PDF</dt><dd>{provision.startPdfPage === provision.endPdfPage ? provision.startPdfPage : `${provision.startPdfPage}–${provision.endPdfPage}`}</dd></div>
-            <div><dt>Попередня норма</dt><dd>{previous?.locator ?? "—"}</dd></div>
-            <div><dt>Наступна норма</dt><dd>{next?.locator ?? "—"}</dd></div>
+            <div>
+              <dt>Акт</dt>
+              <dd>{document.title}</dd>
+            </div>
+            <div>
+              <dt>Locator</dt>
+              <dd lang="pl">{provision.locator}</dd>
+            </div>
+            <div>
+              <dt>Тип</dt>
+              <dd>{provision.kind}</dd>
+            </div>
+            <div>
+              <dt>Сторінки PDF</dt>
+              <dd>
+                {provision.startPdfPage === provision.endPdfPage
+                  ? provision.startPdfPage
+                  : `${provision.startPdfPage}–${provision.endPdfPage}`}
+              </dd>
+            </div>
+            <div>
+              <dt>Попередня норма</dt>
+              <dd>{previous?.locator ?? "—"}</dd>
+            </div>
+            <div>
+              <dt>Наступна норма</dt>
+              <dd>{next?.locator ?? "—"}</dd>
+            </div>
           </dl>
         </section>
 
         <section id="legal-provision-edition">
           <h2>Редакція і межі матеріалу</h2>
           <p>
-            Джерело корпусу: {edition.manifest.citation}. Перевірено
-            {" "}{edition.manifest.checkedAt}. Ідентифікатор редакції:
-            {" "}<code>{edition.editionId}</code>.
+            Джерело корпусу: {edition.manifest.citation}. Перевірено{" "}
+            {edition.manifest.checkedAt}. Ідентифікатор редакції:{" "}
+            <code>{edition.editionId}</code>.
           </p>
           <blockquote>
             Навіть незмінений текст статті може мати інший ефект через пізнішу
