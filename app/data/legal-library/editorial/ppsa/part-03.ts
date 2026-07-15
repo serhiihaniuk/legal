@@ -1,4 +1,39 @@
-import { defineEditorialPart } from "../define-editorial-part"
+import { defineEditorialPart, type EditorialEntry } from "../define-editorial-part"
+
+type Rule = { locator: string; explanation: string }
+
+type ProvisionId = EditorialEntry<"ppsa">["provisionId"]
+
+/**
+ * This part was checked against the promoted local PPSA corpus
+ * `ppsa-2026-143` (Dz.U. 2026 poz. 143), whose articles 85–129 are active.
+ * The claim is a compact Ukrainian rendering of the statutory rule; Polish
+ * procedural terms are retained so that the learner can match the source.
+ */
+function reviewed(
+  provisionId: ProvisionId,
+  claim: string,
+  summary: string,
+  rules: readonly Rule[],
+  legalEffect: string,
+  foreignersCase: string,
+): EditorialEntry<"ppsa"> {
+  return {
+    provisionId,
+    reviewStatus: "reviewed",
+    claims: [
+      {
+        kind: "statute-text",
+        text: claim,
+        sourceLocator: `Art. ${provisionId.slice("ppsa-art-".length)}`,
+      },
+    ],
+    summary,
+    rules,
+    legalEffect,
+    foreignersCase,
+  }
+}
 
 export const ppsaPart03 = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
@@ -6,1005 +41,561 @@ export const ppsaPart03 = defineEditorialPart<"ppsa">({
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
   entries: [
-    {
-      provisionId: "ppsa-art-85",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 85. Czynność w postępowaniu sądowym podjęta przez stronę po upływie terminu jest bezskuteczna.",
-          sourceLocator: "Art. 85",
-        },
-      ],
-      summary: "Art. 85: Норми про строк процесуальної czynność та przywrócenie terminu.",
-      rules: [
-        {
-          locator: "Art. 85",
-          explanation: "Зіставте наслідок і вимоги зі строком та процедурою, прямо сформульованими в цитаті. Дослівний текст статті: «Art. 85. Czynność w postępowaniu sądowym podjęta przez stronę po upływie terminu jest bezskuteczna.»",
-        },
-      ],
-      legalEffect: "Норма діє лише в межах названих у ній процесуальних обставин і не замінює інших правил p.p.s.a. про строки.",
-      foreignersCase: "У skarga іноземця щодо pobyt зафіксуйте кожну дату, czynność і doręczenie; не робіть висновок про пропуск або його виправлення без повного тексту норми та доказів.",
-    },
-    {
-      provisionId: "ppsa-art-86",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 86. § 1. Jeżeli strona nie dokonała w terminie czynności w postępowaniu sądowym bez swojej winy, sąd na jej\nwniosek postanowi przywrócenie terminu. Postanowienie o przywróceniu terminu albo odmowie jego przywrócenia może\nbyć wydane na posiedzeniu niejawnym.\n§ 2. Przywrócenie terminu nie jest dopuszczalne, jeżeli uchybienie terminu nie powoduje dla strony ujemnych skutków\nw zakresie postępowania sądowego.\n§ 3. Na postanowienie o przywróceniu terminu albo o odmowie jego przywrócenia przysługuje zażalenie.",
-          sourceLocator: "Art. 86",
-        },
-      ],
-      summary: "Art. 86: Норми про строк процесуальної czynność та przywrócenie terminu.",
-      rules: [
-        {
-          locator: "Art. 86",
-          explanation: "Зіставте наслідок і вимоги зі строком та процедурою, прямо сформульованими в цитаті. Дослівний текст статті: «Art. 86. § 1. Jeżeli strona nie dokonała w terminie czynności w postępowaniu sądowym bez swojej winy, sąd na jej wniosek postanowi przywrócenie terminu. Postanowienie o przywróceniu terminu albo odmowie jego przywrócenia może być wydane na posiedzeniu niejawnym. § 2. Przywrócenie terminu nie jest dopuszczalne, jeżeli uchybienie terminu nie powoduje dla strony ujemnych skutków w zakresie postępowania sądowego. § 3. Na postanowienie o przywróceniu terminu albo o odmowie jego przywrócenia przysługuje zażalenie.»",
-        },
-      ],
-      legalEffect: "Норма діє лише в межах названих у ній процесуальних обставин і не замінює інших правил p.p.s.a. про строки.",
-      foreignersCase: "У skarga іноземця щодо pobyt зафіксуйте кожну дату, czynność і doręczenie; не робіть висновок про пропуск або його виправлення без повного тексту норми та доказів.",
-    },
-    {
-      provisionId: "ppsa-art-87",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 87. § 1. Pismo z wnioskiem o przywrócenie terminu wnosi się do sądu, w którym czynność miała być dokonana,\nw ciągu siedmiu dni od czasu ustania przyczyny uchybienia terminu.\n§ 2. W piśmie tym należy uprawdopodobnić okoliczności wskazujące na brak winy w uchybieniu terminu.\n§ 3. Wniosek o przywrócenie terminu do wniesienia skargi wnosi się za pośrednictwem organu, którego działanie,\nbezczynność lub przewlekłe prowadzenie postępowania są przedmiotem skargi.\n§ 4. Równocześnie z wnioskiem strona powinna dokonać czynności, której nie dokonała w terminie.\n§ 5. Po upływie roku od uchybionego terminu, jego przywrócenie jest dopuszczalne tylko w przypadkach wyjątkowych.",
-          sourceLocator: "Art. 87",
-        },
-      ],
-      summary: "Art. 87: Норми про строк процесуальної czynność та przywrócenie terminu.",
-      rules: [
-        {
-          locator: "Art. 87",
-          explanation: "Зіставте наслідок і вимоги зі строком та процедурою, прямо сформульованими в цитаті. Дослівний текст статті: «Art. 87. § 1. Pismo z wnioskiem o przywrócenie terminu wnosi się do sądu, w którym czynność miała być dokonana, w ciągu siedmiu dni od czasu ustania przyczyny uchybienia terminu. § 2. W piśmie tym należy uprawdopodobnić okoliczności wskazujące na brak winy w uchybieniu terminu. § 3. Wniosek o przywrócenie terminu do wniesienia skargi wnosi się za pośrednictwem organu, którego działanie, bezczynność lub przewlekłe prowadzenie postępowania są przedmiotem skargi. § 4. Równocześnie z wnioskiem strona powinna dokonać czynności, której nie dokonała w terminie. § 5. Po upływie roku od uchybionego terminu, jego przywrócenie jest dopuszczalne tylko w przypadkach wyjątkowych.»",
-        },
-      ],
-      legalEffect: "Норма діє лише в межах названих у ній процесуальних обставин і не замінює інших правил p.p.s.a. про строки.",
-      foreignersCase: "У skarga іноземця щодо pobyt зафіксуйте кожну дату, czynność і doręczenie; не робіть висновок про пропуск або його виправлення без повного тексту норми та доказів.",
-    },
-    {
-      provisionId: "ppsa-art-88",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 88. Spóźniony lub z mocy ustawy niedopuszczalny wniosek o przywrócenie terminu sąd odrzuci na posiedzeniu\nniejawnym. Na postanowienie przysługuje zażalenie.",
-          sourceLocator: "Art. 88",
-        },
-      ],
-      summary: "Art. 88: Норми про строк процесуальної czynność та przywrócenie terminu.",
-      rules: [
-        {
-          locator: "Art. 88",
-          explanation: "Зіставте наслідок і вимоги зі строком та процедурою, прямо сформульованими в цитаті. Дослівний текст статті: «Art. 88. Spóźniony lub z mocy ustawy niedopuszczalny wniosek o przywrócenie terminu sąd odrzuci na posiedzeniu niejawnym. Na postanowienie przysługuje zażalenie.»",
-        },
-      ],
-      legalEffect: "Норма діє лише в межах названих у ній процесуальних обставин і не замінює інших правил p.p.s.a. про строки.",
-      foreignersCase: "У skarga іноземця щодо pobyt зафіксуйте кожну дату, czynność і doręczenie; не робіть висновок про пропуск або його виправлення без повного тексту норми та доказів.",
-    },
-    {
-      provisionId: "ppsa-art-89",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 89. Zgłoszenie wniosku o przywrócenie terminu nie wstrzymuje postępowania w sprawie ani wykonania orzeczenia.\nSąd może jednak, stosownie do okoliczności, wstrzymać postępowanie lub wykonanie orzeczenia. Postanowienie może być\nwydane na posiedzeniu niejawnym. W razie uwzględnienia wniosku sąd może natychmiast przystąpić do roz poznania\nsprawy.\nRozdział 7\nPosiedzenia sądowe",
-          sourceLocator: "Art. 89",
-        },
-      ],
-      summary: "Art. 89: Норми про строк процесуальної czynność та przywrócenie terminu.",
-      rules: [
-        {
-          locator: "Art. 89",
-          explanation: "Зіставте наслідок і вимоги зі строком та процедурою, прямо сформульованими в цитаті. Дослівний текст статті: «Art. 89. Zgłoszenie wniosku o przywrócenie terminu nie wstrzymuje postępowania w sprawie ani wykonania orzeczenia. Sąd może jednak, stosownie do okoliczności, wstrzymać postępowanie lub wykonanie orzeczenia. Postanowienie może być wydane na posiedzeniu niejawnym. W razie uwzględnienia wniosku sąd może natychmiast przystąpić do roz poznania sprawy. Rozdział 7 Posiedzenia sądowe»",
-        },
-      ],
-      legalEffect: "Норма діє лише в межах названих у ній процесуальних обставин і не замінює інших правил p.p.s.a. про строки.",
-      foreignersCase: "У skarga іноземця щодо pobyt зафіксуйте кожну дату, czynność і doręczenie; не робіть висновок про пропуск або його виправлення без повного тексту норми та доказів.",
-    },
-    {
-      provisionId: "ppsa-art-90",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 90. § 1. Jeżeli przepis szczególny nie stanowi inaczej, posiedzenia sądowe są jawne, a sąd orzekający rozpoznaje\nsprawy na rozprawie.\n§ 2. Sąd może skierować sprawę na posiedzenie jawne i wyznaczyć rozprawę także wówczas, gdy sprawa podlega\nrozpoznaniu na posiedzeniu niejawnym.",
-          sourceLocator: "Art. 90",
-        },
-      ],
-      summary: "Art. 90: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 90",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 90. § 1. Jeżeli przepis szczególny nie stanowi inaczej, posiedzenia sądowe są jawne, a sąd orzekający rozpoznaje sprawy na rozprawie. § 2. Sąd może skierować sprawę na posiedzenie jawne i wyznaczyć rozprawę także wówczas, gdy sprawa podlega rozpoznaniu na posiedzeniu niejawnym.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-91",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 91. § 1. Posiedzenia sądowe wyznacza przewodniczący z urzędu, ilekroć wymaga tego stan sprawy.\n§ 2. O posiedzeniach jawnych zawiadamia się strony na piśmie lub przez ogłoszenie podczas posiedzenia. Stronie nie-\nobecnej na posiedzeniu jawnym należy zawsze doręczyć zawiadomienie na następne posiedzenie. Zawiadomienie powinno\nbyć doręczone co najmniej na siedem dni przed posiedzeniem. W przypadkach pilnych termin ten może być skrócony do\ntrzech dni.\n§ 3. Sąd może w celu dokładniejszego wyjaśnienia sprawy zarządzić stawienie się stron lub jednej z nich osobiście\nalbo przez pełnomocnika.",
-          sourceLocator: "Art. 91",
-        },
-      ],
-      summary: "Art. 91: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 91",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 91. § 1. Posiedzenia sądowe wyznacza przewodniczący z urzędu, ilekroć wymaga tego stan sprawy. § 2. O posiedzeniach jawnych zawiadamia się strony na piśmie lub przez ogłoszenie podczas posiedzenia. Stronie nie- obecnej na posiedzeniu jawnym należy zawsze doręczyć zawiadomienie na następne posiedzenie. Zawiadomienie powinno być doręczone co najmniej na siedem dni przed posiedzeniem. W przypadkach pilnych termin ten może być skrócony do trzech dni. § 3. Sąd może w celu dokładniejszego wyjaśnienia sprawy zarządzić stawienie się stron lub jednej z nich osobiście albo przez pełnomocnika.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-92",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 92. § 1. Postępowanie przed sądem toczy się z udziałem prokuratora, Rzecznika Praw Obywatelskich lub Rzecznika\nPraw Dziecka, jeżeli wnieśli skargę albo gdy zgłosili swój udział w postępowaniu przed sądem.\n§ 2. Nieobecność prokuratora, Rzecznika Praw Obywatelskich lub Rzecznika Praw Dziecka na rozprawie nie wstrzy-\nmuje rozpoznania sprawy przez sąd.",
-          sourceLocator: "Art. 92",
-        },
-      ],
-      summary: "Art. 92: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 92",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 92. § 1. Postępowanie przed sądem toczy się z udziałem prokuratora, Rzecznika Praw Obywatelskich lub Rzecznika Praw Dziecka, jeżeli wnieśli skargę albo gdy zgłosili swój udział w postępowaniu przed sądem. § 2. Nieobecność prokuratora, Rzecznika Praw Obywatelskich lub Rzecznika Praw Dziecka na rozprawie nie wstrzy- muje rozpoznania sprawy przez sąd.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-93",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 93. W zawiadomieniu o posiedzeniu oznacza się:\n1) imię, nazwisko albo nazwę i siedzibę zawiadamianego oraz adres zawiadamianego;\n2) sąd oraz miejsce i czas posiedzenia;\n3) skarżącego oraz przedmiot sprawy;\n4) cel posiedzenia;\n5) skutki niestawiennictwa.\nDziennik Ustaw – 24 – Poz. 143\n2026-02-10",
-          sourceLocator: "Art. 93",
-        },
-      ],
-      summary: "Art. 93: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 93",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 93. W zawiadomieniu o posiedzeniu oznacza się: 1) imię, nazwisko albo nazwę i siedzibę zawiadamianego oraz adres zawiadamianego; 2) sąd oraz miejsce i czas posiedzenia; 3) skarżącego oraz przedmiot sprawy; 4) cel posiedzenia; 5) skutki niestawiennictwa. Dziennik Ustaw – 24 – Poz. 143 2026-02-10»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-94",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 94. § 1. Posiedzenia sądowe odbywają się w budynku sądowym, a poza tym budynkiem tylko wówczas, z zacho-\nwaniem wymagań dotyczących bezpieczeństwa, gdy czynności sądowe muszą być wykonane w innym miejscu albo gdy\nodbycie posiedzenia poza budynkiem sądowym ułatwia przeprowadzenie sprawy lub przyczynia się znacznie do zaoszczę-\ndzenia kosztów.\n§ 2. Przewodniczący może zarządzić przeprowadzenie posiedzenia jawnego przy użyciu urządzeń technicznych umoż-\nli wiających jego przeprowadzenie na odległość. W takim przypadku uczestnicy mogą brać udział w posiedzeniu są dowym,\ngdy przebywają w budynku innego sądu albo w zakładzie karnym lub areszcie śledczym, gdy są pozbawieni wolności, i tam\ndokonywać czynności procesowych, a przebieg czynności procesowych transmituje się z sali sądowej sądu prowadzącego\npostępowanie do miejsca pobytu uczestników postępowania oraz z miejsca pobytu uczestników postępowania do sali sądo-\nwej sądu prowadzącego postępowanie. W miejscu przebywania osoby po zbawionej wolności w czynnościach procesowych\nbierze udział przedstawiciel administracji zakładu karnego lub aresztu śledczego oraz może wziąć udział pełnomocnik, jeżeli\nzostał ustanowiony, i tłumacz, jeżeli osoba pozbawiona wolności nie włada dostatecznie językiem polskim.",
-          sourceLocator: "Art. 94",
-        },
-      ],
-      summary: "Art. 94: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 94",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 94. § 1. Posiedzenia sądowe odbywają się w budynku sądowym, a poza tym budynkiem tylko wówczas, z zacho- waniem wymagań dotyczących bezpieczeństwa, gdy czynności sądowe muszą być wykonane w innym miejscu albo gdy odbycie posiedzenia poza budynkiem sądowym ułatwia przeprowadzenie sprawy lub przyczynia się znacznie do zaoszczę- dzenia kosztów. § 2. Przewodniczący może zarządzić przeprowadzenie posiedzenia jawnego przy użyciu urządzeń technicznych umoż- li wiających jego przeprowadzenie na odległość. W takim przypadku uczestnicy mogą brać udział w posiedzeniu są dowym, gdy przebywają w budynku innego sądu albo w zakładzie karnym lub areszcie śledczym, gdy są pozbawieni wolności, i tam dokonywać czynności procesowych, a przebieg czynności procesowych transmituje się z sali sądowej sądu prowadzącego postępowanie do miejsca pobytu uczestników postępowania oraz z miejsca pobytu uczestników postępowania do sali sądo- wej sądu prowadzącego postępowanie. W miejscu przebywania osoby po zbawionej wolności w czynnościach procesowych bierze udział przedstawiciel administracji zakładu karnego lub aresztu śledczego oraz może wziąć udział pełnomocnik, jeżeli został ustanowiony, i tłumacz, jeżeli osoba pozbawiona wolności nie włada dostatecznie językiem polskim.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-95",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 95. § 1. Na posiedzenia jawne wstęp na salę sądową mają – poza stronami i osobami wezwanymi – tylko osoby\npełnoletnie. Przewodniczący może zezwolić na obecność na posiedzeniu małoletnim.\n§ 2. Na posiedzenia niejawne mają wstęp tylko osoby wezwane.",
-          sourceLocator: "Art. 95",
-        },
-      ],
-      summary: "Art. 95: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 95",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 95. § 1. Na posiedzenia jawne wstęp na salę sądową mają – poza stronami i osobami wezwanymi – tylko osoby pełnoletnie. Przewodniczący może zezwolić na obecność na posiedzeniu małoletnim. § 2. Na posiedzenia niejawne mają wstęp tylko osoby wezwane.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-96",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 96. § 1. Sąd z urzędu zarządza odbycie całego posiedzenia lub części przy drzwiach zamkniętych, jeżeli pub liczne\nrozpoznanie sprawy zagraża moralności, bezpieczeństwu państwa lub porządkowi publicznemu, a także gdy mogą być ujaw-\nnione okoliczności stanowiące informacje niejawne.\n§ 2. Sąd na wniosek strony zarządza odbycie posiedzenia przy drzwiach zamkniętych, jeżeli wymaga tego ochrona\nżycia prywatnego strony lub inny ważny interes prywatny. Postępowanie dotyczące tego wniosku odbywa się przy drzwiach\nzamkniętych. Postanowienie w tym przedmiocie sąd ogłasza publicznie.",
-          sourceLocator: "Art. 96",
-        },
-      ],
-      summary: "Art. 96: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 96",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 96. § 1. Sąd z urzędu zarządza odbycie całego posiedzenia lub części przy drzwiach zamkniętych, jeżeli pub liczne rozpoznanie sprawy zagraża moralności, bezpieczeństwu państwa lub porządkowi publicznemu, a także gdy mogą być ujaw- nione okoliczności stanowiące informacje niejawne. § 2. Sąd na wniosek strony zarządza odbycie posiedzenia przy drzwiach zamkniętych, jeżeli wymaga tego ochrona życia prywatnego strony lub inny ważny interes prywatny. Postępowanie dotyczące tego wniosku odbywa się przy drzwiach zamkniętych. Postanowienie w tym przedmiocie sąd ogłasza publicznie.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-97",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 97. § 1. Podczas posiedzenia odbywającego się przy drzwiach zamkniętych mogą być obecni na sali: strony, ich\nprzedstawiciele ustawowi i pełnomocnicy, prokurator oraz osoby zaufania po dwie z każdej strony.\n§ 2. Ogłoszenie orzeczenia kończącego postępowanie w sprawie odbywa się publicznie.",
-          sourceLocator: "Art. 97",
-        },
-      ],
-      summary: "Art. 97: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 97",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 97. § 1. Podczas posiedzenia odbywającego się przy drzwiach zamkniętych mogą być obecni na sali: strony, ich przedstawiciele ustawowi i pełnomocnicy, prokurator oraz osoby zaufania po dwie z każdej strony. § 2. Ogłoszenie orzeczenia kończącego postępowanie w sprawie odbywa się publicznie.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-98",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 98. § 1. Przewodniczący otwiera, prowadzi i zamyka posiedzenia, udziela głosu, zadaje pytania, upoważnia do\nzadawania pytań i ogłasza orzeczenia.\n§ 2. Przewodniczący może odebrać głos, gdy przemawiający go nadużywa, jak również uchylić pytanie, jeżeli uzna je\nza niewłaściwe lub zbyteczne.",
-          sourceLocator: "Art. 98",
-        },
-      ],
-      summary: "Art. 98: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 98",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 98. § 1. Przewodniczący otwiera, prowadzi i zamyka posiedzenia, udziela głosu, zadaje pytania, upoważnia do zadawania pytań i ogłasza orzeczenia. § 2. Przewodniczący może odebrać głos, gdy przemawiający go nadużywa, jak również uchylić pytanie, jeżeli uzna je za niewłaściwe lub zbyteczne.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-99",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 99. Sąd nawet na zgodny wniosek stron może odroczyć posiedzenie tylko z ważnej przyczyny.",
-          sourceLocator: "Art. 99",
-        },
-      ],
-      summary: "Art. 99: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 99",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 99. Sąd nawet na zgodny wniosek stron może odroczyć posiedzenie tylko z ważnej przyczyny.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-100",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 100. § 1. Z przebiegu posiedzenia jawnego protokolant pod kierunkiem przewodniczącego spisuje protokół.\n§ 2. Z posiedzenia niejawnego sporządza się notatkę urzędową, jeżeli nie wydano orzeczenia. Notatka urzędowa może\nbyć utrwalona w systemie teleinformatycznym sądu i opatrzona kwalifikowanym podpisem elektronicznym.",
-          sourceLocator: "Art. 100",
-        },
-      ],
-      summary: "Art. 100: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 100",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 100. § 1. Z przebiegu posiedzenia jawnego protokolant pod kierunkiem przewodniczącego spisuje protokół. § 2. Z posiedzenia niejawnego sporządza się notatkę urzędową, jeżeli nie wydano orzeczenia. Notatka urzędowa może być utrwalona w systemie teleinformatycznym sądu i opatrzona kwalifikowanym podpisem elektronicznym.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-101",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 101. § 1. Protokół powinien zawierać:\n1) oznaczenie sądu, miejsca i daty posiedzenia, imiona i nazwiska sędziów, protokolanta, prokuratora, stron, jak również\nobecnych na posiedzeniu przedstawicieli ustawowych i pełnomocników oraz oznaczenie sprawy i wzmiankę co do\njawności;\n2) przebieg posiedzenia, w szczególności wnioski i twierdzenia stron, wymienienie zarządzeń i orzeczeń wydanych na\nposiedzeniu oraz stwierdzenie, czy zostały ogłoszone; jeżeli sporządzenie odrębnej sentencji orzeczenia nie jest wy-\nmagane, wystarcza zamieszczenie w protokole treści samego rozstrzygnięcia; zamiast podania wniosków i twierdzeń\nmożna w protokole powołać się na pisma przygotowawcze;\n3) czynności stron mające znaczenie dla rozstrzygnięcia sprawy.\n§ 2. Protokół podpisują przewodniczący i protokolant.\n§ 3. Protokół może być utrwalony w systemie teleinformatycznym sądu i opatrzony kwalifikowanym podpisem elek-\ntronicznym.",
-          sourceLocator: "Art. 101",
-        },
-      ],
-      summary: "Art. 101: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 101",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 101. § 1. Protokół powinien zawierać: 1) oznaczenie sądu, miejsca i daty posiedzenia, imiona i nazwiska sędziów, protokolanta, prokuratora, stron, jak również obecnych na posiedzeniu przedstawicieli ustawowych i pełnomocników oraz oznaczenie sprawy i wzmiankę co do jawności; 2) przebieg posiedzenia, w szczególności wnioski i twierdzenia stron, wymienienie zarządzeń i orzeczeń wydanych na posiedzeniu oraz stwierdzenie, czy zostały ogłoszone; jeżeli sporządzenie odrębnej sentencji orzeczenia nie jest wy- magane, wystarcza zamieszczenie w protokole treści samego rozstrzygnięcia; zamiast podania wniosków i twierdzeń można w protokole powołać się na pisma przygotowawcze; 3) czynności stron mające znaczenie dla rozstrzygnięcia sprawy. § 2. Protokół podpisują przewodniczący i protokolant. § 3. Protokół może być utrwalony w systemie teleinformatycznym sądu i opatrzony kwalifikowanym podpisem elek- tronicznym.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-102",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 102. Przebieg czynności protokołowanych może być ponadto utrwalony za pomocą aparatury dźwiękowej,\no czym należy przed uruchomieniem aparatury uprzedzić wszystkie osoby uczestniczące w czynności.",
-          sourceLocator: "Art. 102",
-        },
-      ],
-      summary: "Art. 102: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 102",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 102. Przebieg czynności protokołowanych może być ponadto utrwalony za pomocą aparatury dźwiękowej, o czym należy przed uruchomieniem aparatury uprzedzić wszystkie osoby uczestniczące w czynności.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-103",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 103. Strony mogą żądać sprostowania lub uzupełnienia protokołu na następnym posiedzeniu, niepóźniej jednak\nniż w terminie trzydziestu dni od dnia posiedzenia, z którego sporządzono protokół. Od zarządzenia przewodniczącego\nstrony mogą odwołać się do sądu w terminie siedmiu dni od doręczenia im zarządzenia.\nDziennik Ustaw – 25 – Poz. 143\n2026-02-10",
-          sourceLocator: "Art. 103",
-        },
-      ],
-      summary: "Art. 103: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 103",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 103. Strony mogą żądać sprostowania lub uzupełnienia protokołu na następnym posiedzeniu, niepóźniej jednak niż w terminie trzydziestu dni od dnia posiedzenia, z którego sporządzono protokół. Od zarządzenia przewodniczącego strony mogą odwołać się do sądu w terminie siedmiu dni od doręczenia im zarządzenia. Dziennik Ustaw – 25 – Poz. 143 2026-02-10»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-104",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 104. W toku posiedzenia wnioski, oświadczenia, uzupełnienia i sprostowania wniosków i oświadczeń można\nzamieścić w załączniku do protokołu. Gdy stronę zastępuje adwokat, radca prawny, doradca podatkowy lub rzecznik paten -\ntowy, przewodniczący może zażądać złożenia takiego załącznika w wyznaczonym terminie.",
-          sourceLocator: "Art. 104",
-        },
-      ],
-      summary: "Art. 104: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 104",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 104. W toku posiedzenia wnioski, oświadczenia, uzupełnienia i sprostowania wniosków i oświadczeń można zamieścić w załączniku do protokołu. Gdy stronę zastępuje adwokat, radca prawny, doradca podatkowy lub rzecznik paten - towy, przewodniczący może zażądać złożenia takiego załącznika w wyznaczonym terminie.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-105",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 105. Strony mogą w toku posiedzenia, a jeżeli nie były obecne, na najbliższym posiedzeniu, zwrócić uwagę sądu\nna uchybienia przepisom postępowania, wnosząc o wpisanie zastrzeżenia do protokołu. Stronie, która zastrzeżenia nie zgło-\nsiła, nie przysługuje prawo powoływania się na takie uchybienia w dalszym toku postępowania, chyba że chodzi o przepisy\npostępowania, których naruszenie sąd powinien wziąć pod rozwagę z urzędu, albo gdy strona uprawdopodobni, iż nie zgło-\nsiła zastrzeżeń bez swojej winy.",
-          sourceLocator: "Art. 105",
-        },
-      ],
-      summary: "Art. 105: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 105",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 105. Strony mogą w toku posiedzenia, a jeżeli nie były obecne, na najbliższym posiedzeniu, zwrócić uwagę sądu na uchybienia przepisom postępowania, wnosząc o wpisanie zastrzeżenia do protokołu. Stronie, która zastrzeżenia nie zgło- siła, nie przysługuje prawo powoływania się na takie uchybienia w dalszym toku postępowania, chyba że chodzi o przepisy postępowania, których naruszenie sąd powinien wziąć pod rozwagę z urzędu, albo gdy strona uprawdopodobni, iż nie zgło- siła zastrzeżeń bez swojej winy.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-106",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 106. § 1. Po wywołaniu sprawy rozprawa rozpoczyna się od sprawozdania sędziego, który zwięźle przedstawia\nna podstawie akt stan sprawy ze szczególnym uwzględnieniem zarzutów skargi.\n§ 2. Po złożeniu sprawozdania, strony – najpierw skarżący, a potem organ – zgłaszają ustnie swoje żądania i wnioski\noraz składają wyjaśnienia. Strony mogą ponadto wskazywać podstawy prawne i faktyczne swych żądań i wniosków. Prze-\nwodniczący udziela głosu pozostałym stronom według ustalonej przez siebie kolejności.\n§ 3. Sąd może z urzędu lub na wniosek stron przeprowadzić dowody uzupełniające z dokumentów, jeżeli jest to nie-\nzbędne do wyjaśnienia istotnych wątpliwości i nie spowoduje nadmiernego przedłużenia postępowania w sprawie.\n§ 3a. 50 ) Sąd może z urzędu zwrócić się do organizacji społecznej lub organu administracji publicznej o przedstawienie\nsądowi istotnego dla sprawy poglądu, jeżeli uzna to za przydatne do wyjaśnienia istotnych wątpliwości i nie spowoduje to\nnadmiernego przedłużenia postępowania w sprawie.\n§ 4. Fakty powszechnie znane sąd bierze pod uwagę nawet bez powołania się na nie przez strony.\n§ 5. Do postępowania dowodowego, o którym mowa w § 3, stosuje się odpowiednio przepisy Kodeksu postępowania\ncywilnego.",
-          sourceLocator: "Art. 106",
-        },
-      ],
-      summary: "Art. 106: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 106",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 106. § 1. Po wywołaniu sprawy rozprawa rozpoczyna się od sprawozdania sędziego, który zwięźle przedstawia na podstawie akt stan sprawy ze szczególnym uwzględnieniem zarzutów skargi. § 2. Po złożeniu sprawozdania, strony – najpierw skarżący, a potem organ – zgłaszają ustnie swoje żądania i wnioski oraz składają wyjaśnienia. Strony mogą ponadto wskazywać podstawy prawne i faktyczne swych żądań i wniosków. Prze- wodniczący udziela głosu pozostałym stronom według ustalonej przez siebie kolejności. § 3. Sąd może z urzędu lub na wniosek stron przeprowadzić dowody uzupełniające z dokumentów, jeżeli jest to nie- zbędne do wyjaśnienia istotnych wątpliwości i nie spowoduje nadmiernego przedłużenia postępowania w sprawie. § 3a. 50 ) Sąd może z urzędu zwrócić się do organizacji społecznej lub organu administracji publicznej o przedstawienie sądowi istotnego dla sprawy poglądu, jeżeli uzna to za przydatne do wyjaśnienia istotnych wątpliwości i nie spowoduje to nadmiernego przedłużenia postępowania w sprawie. § 4. Fakty powszechnie znane sąd bierze pod uwagę nawet bez powołania się na nie przez strony. § 5. Do postępowania dowodowego, o którym mowa w § 3, stosuje się odpowiednio przepisy Kodeksu postępowania cywilnego.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-107",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 107. Nieobecność stron lub ich pełnomocników na rozprawie nie wstrzymuje rozpoznania sprawy.",
-          sourceLocator: "Art. 107",
-        },
-      ],
-      summary: "Art. 107: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 107",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 107. Nieobecność stron lub ich pełnomocników na rozprawie nie wstrzymuje rozpoznania sprawy.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-108",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 108. W razie nieobecności strony lub jej pełnomocnika na rozprawie, przewodniczący lub wyznaczony przez\nniego sędzia sprawozdawca przedstawia ich wnioski, twierdzenia i dowody znajdujące się w aktach sprawy.",
-          sourceLocator: "Art. 108",
-        },
-      ],
-      summary: "Art. 108: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 108",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 108. W razie nieobecności strony lub jej pełnomocnika na rozprawie, przewodniczący lub wyznaczony przez niego sędzia sprawozdawca przedstawia ich wnioski, twierdzenia i dowody znajdujące się w aktach sprawy.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-109",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 109. Rozprawa ulega odroczeniu, jeżeli sąd stwierdzi nieprawidłowość zawiadomienia którejkolwiek ze stron\nalbo jeżeli nieobecność strony lub jej pełnomocnika jest wywołana nadzwyczajnym wydarzeniem lub inną znaną sądowi\nprzeszkodą, której nie można przezwyciężyć, chyba że strona lub jej pełnomocnik wnieśli o rozpoznanie sprawy w ich nie-\nobecności.",
-          sourceLocator: "Art. 109",
-        },
-      ],
-      summary: "Art. 109: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 109",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 109. Rozprawa ulega odroczeniu, jeżeli sąd stwierdzi nieprawidłowość zawiadomienia którejkolwiek ze stron albo jeżeli nieobecność strony lub jej pełnomocnika jest wywołana nadzwyczajnym wydarzeniem lub inną znaną sądowi przeszkodą, której nie można przezwyciężyć, chyba że strona lub jej pełnomocnik wnieśli o rozpoznanie sprawy w ich nie- obecności.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-110",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 110. Rozprawa ulega odroczeniu, jeżeli sąd postanowi zawiadomić o toczącym się postępowaniu sądowym osoby,\nktóre dotychczas nie brały udziału w sprawie w charakterze stron.",
-          sourceLocator: "Art. 110",
-        },
-      ],
-      summary: "Art. 110: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 110",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 110. Rozprawa ulega odroczeniu, jeżeli sąd postanowi zawiadomić o toczącym się postępowaniu sądowym osoby, które dotychczas nie brały udziału w sprawie w charakterze stron.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-111",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 111. § 1. 51 ) Sąd zarządza połączenie kilku oddzielnych spraw toczących się przed nim w celu ich łącznego rozpo-\nznania lub także rozstrzygnięcia, jeżeli mogły być objęte jedną skargą i nie spowoduje to nadmiernego przedłużenia postę-\npowania w sprawie.\n§ 2. Sąd może zarządzić połączenie kilku oddzielnych spraw toczących się przed nim w celu ich łącznego rozpoznania\nlub także rozstrzygnięcia, jeżeli pozostają one ze sobą w związku.",
-          sourceLocator: "Art. 111",
-        },
-      ],
-      summary: "Art. 111: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 111",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 111. § 1. 51 ) Sąd zarządza połączenie kilku oddzielnych spraw toczących się przed nim w celu ich łącznego rozpo- znania lub także rozstrzygnięcia, jeżeli mogły być objęte jedną skargą i nie spowoduje to nadmiernego przedłużenia postę- powania w sprawie. § 2. Sąd może zarządzić połączenie kilku oddzielnych spraw toczących się przed nim w celu ich łącznego rozpoznania lub także rozstrzygnięcia, jeżeli pozostają one ze sobą w związku.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-112",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 112. W razie uchylania się organu od zastosowania się do postanowienia sądu lub zarządzenia przewodniczą cego\npodjętych w toku postępowania i w związku z rozpoznaniem sprawy, sąd może orzec o wymierzeniu organowi grzywny\nw wysokości określonej w art. 15 4 § 6. Postanowienie może być wydane na posiedzeniu niejawnym. Przepis art. 5 5 § 3\nstosuje się odpowiednio.",
-          sourceLocator: "Art. 112",
-        },
-      ],
-      summary: "Art. 112: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 112",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 112. W razie uchylania się organu od zastosowania się do postanowienia sądu lub zarządzenia przewodniczą cego podjętych w toku postępowania i w związku z rozpoznaniem sprawy, sąd może orzec o wymierzeniu organowi grzywny w wysokości określonej w art. 15 4 § 6. Postanowienie może być wydane na posiedzeniu niejawnym. Przepis art. 5 5 § 3 stosuje się odpowiednio.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-113",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 113. § 1. Przewodniczący zamyka rozprawę, gdy sąd uzna sprawę za dostatecznie wyjaśnioną.\n§ 2. Można zamknąć rozprawę również w przypadku, gdy ma być przeprowadzony jeszcze uzupełniający dowód\nz dokumentów znanych stronom, a przeprowadzenie rozprawy co do tego dowodu sąd uzna za zbyteczne.",
-          sourceLocator: "Art. 113",
-        },
-      ],
-      summary: "Art. 113: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 113",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 113. § 1. Przewodniczący zamyka rozprawę, gdy sąd uzna sprawę za dostatecznie wyjaśnioną. § 2. Można zamknąć rozprawę również w przypadku, gdy ma być przeprowadzony jeszcze uzupełniający dowód z dokumentów znanych stronom, a przeprowadzenie rozprawy co do tego dowodu sąd uzna za zbyteczne.»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-114",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 114. Od orzeczeń przewodniczącego wydanych w toku rozprawy strony mogą odwołać się, do czasu zamknięcia\nrozprawy, do sądu orzekającego.\n50) Dodany przez art. 1 pkt 4 ustawy, o której mowa w odnośniku 10 .\n51) W brzmieniu ustalonym przez art. 1 pkt 5 ustawy, o której mowa w odnośniku 10 .\nDziennik Ustaw – 26 – Poz. 143\n2026-02-10\nRozdział 8\nPostępowanie mediacyjne i uproszczone",
-          sourceLocator: "Art. 114",
-        },
-      ],
-      summary: "Art. 114: Норми про posiedzenia, rozprawa, протокол і процесуальне керування слуханням.",
-      rules: [
-        {
-          locator: "Art. 114",
-          explanation: "Перевірте форму posiedzenie, повідомлення, участь та фіксацію дій саме за умовами й винятками, названими в цитаті. Дослівний текст статті: «Art. 114. Od orzeczeń przewodniczącego wydanych w toku rozprawy strony mogą odwołać się, do czasu zamknięcia rozprawy, do sądu orzekającego. 50) Dodany przez art. 1 pkt 4 ustawy, o której mowa w odnośniku 10 . 51) W brzmieniu ustalonym przez art. 1 pkt 5 ustawy, o której mowa w odnośniku 10 . Dziennik Ustaw – 26 – Poz. 143 2026-02-10 Rozdział 8 Postępowanie mediacyjne i uproszczone»",
-        },
-      ],
-      legalEffect: "Норма визначає процесуальну форму або дію під час слухання, але сама не вирішує законність рішення organ по суті.",
-      foreignersCase: "У справі іноземця про pobyt перевірте zawiadomienie, akta, протокол і момент кожної процесуальної дії; не ототожнюйте неявку чи форму слухання з результатом skarga.",
-    },
-    {
-      provisionId: "ppsa-art-115",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 115. § 1. Na wniosek skarżącego lub organu, złożony przed wyznaczeniem rozprawy, może być przeprowadzone\npostępowanie mediacyjne, którego celem jest wyjaśnienie i rozważenie okoliczności faktycznych i prawnych sprawy oraz\nprzyjęcie przez strony ustaleń co do sposobu jej załatwienia w granicach obowiązującego prawa.\n§ 2. Postępowanie mediacyjne może być prowadzone mimo braku wniosku stron o przeprowadzenie takiego postępo-\nwania.",
-          sourceLocator: "Art. 115",
-        },
-      ],
-      summary: "Art. 115: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 115",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 115. § 1. Na wniosek skarżącego lub organu, złożony przed wyznaczeniem rozprawy, może być przeprowadzone postępowanie mediacyjne, którego celem jest wyjaśnienie i rozważenie okoliczności faktycznych i prawnych sprawy oraz przyjęcie przez strony ustaleń co do sposobu jej załatwienia w granicach obowiązującego prawa. § 2. Postępowanie mediacyjne może być prowadzone mimo braku wniosku stron o przeprowadzenie takiego postępo- wania.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-116",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 116. § 1. Postępowanie mediacyjne prowadzi mediator wybrany przez strony.\n§ 2. W przypadku postępowania mediacyjnego, o którym mowa w art. 115 § 2, jeżeli strony nie dokonały zgodnego\nwyboru mediatora, sąd, kierując sprawę do mediacji, wyznacza mediatora posiadającego odpowiednią wiedzę i umiejętności\nw zakresie prowadzenia mediacji w sprawach danego rodzaju. Po skierowaniu sprawy do mediacji przewodniczący wydziału\nniezwłocznie przekazuje mediatorowi dane kontaktowe stron oraz ich pełnomocników, w szczególności numery telefonów\ni adresy poczty elektronic znej, jeżeli je posiada.\n§ 3. Mediatorem może być osoba fizyczna, która posiada pełną zdolność do czynności prawnych i korzysta z pełni\npraw publicznych, w szczególności mediator wpisany na listę stałych mediatorów lub do wykazu instytucji i osób upraw-\nnionych do prowadzenia postępowania mediacyjnego, prowadzonych przez prezesa sądu okręgowego.",
-          sourceLocator: "Art. 116",
-        },
-      ],
-      summary: "Art. 116: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 116",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 116. § 1. Postępowanie mediacyjne prowadzi mediator wybrany przez strony. § 2. W przypadku postępowania mediacyjnego, o którym mowa w art. 115 § 2, jeżeli strony nie dokonały zgodnego wyboru mediatora, sąd, kierując sprawę do mediacji, wyznacza mediatora posiadającego odpowiednią wiedzę i umiejętności w zakresie prowadzenia mediacji w sprawach danego rodzaju. Po skierowaniu sprawy do mediacji przewodniczący wydziału niezwłocznie przekazuje mediatorowi dane kontaktowe stron oraz ich pełnomocników, w szczególności numery telefonów i adresy poczty elektronic znej, jeżeli je posiada. § 3. Mediatorem może być osoba fizyczna, która posiada pełną zdolność do czynności prawnych i korzysta z pełni praw publicznych, w szczególności mediator wpisany na listę stałych mediatorów lub do wykazu instytucji i osób upraw- nionych do prowadzenia postępowania mediacyjnego, prowadzonych przez prezesa sądu okręgowego.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-116a",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 116a. Mediator powinien zachować bezstronność przy prowadzeniu mediacji i niezwłocznie ujawnić okoliczności ,\nktóre mogłyby wzbudzić wątpliwość co do jego bezstronności, w tym odpowiednio okoliczności, o których mowa w art. 18.",
-          sourceLocator: "Art. 116a",
-        },
-      ],
-      summary: "Art. 116a: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 116a",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 116a. Mediator powinien zachować bezstronność przy prowadzeniu mediacji i niezwłocznie ujawnić okoliczności , które mogłyby wzbudzić wątpliwość co do jego bezstronności, w tym odpowiednio okoliczności, o których mowa w art. 18.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-116b",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 116b. Mediator ma prawo do przeglądania akt sprawy i otrzymywania odpisów, kopii lub wyciągów z tych akt,\nchyba że strona w terminie tygodnia od dnia ogłoszenia lub doręczenia postanowienia kierującego strony do mediacji nie\nwyrazi zgody na przeglądanie przez me diatora akt sprawy.",
-          sourceLocator: "Art. 116b",
-        },
-      ],
-      summary: "Art. 116b: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 116b",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 116b. Mediator ma prawo do przeglądania akt sprawy i otrzymywania odpisów, kopii lub wyciągów z tych akt, chyba że strona w terminie tygodnia od dnia ogłoszenia lub doręczenia postanowienia kierującego strony do mediacji nie wyrazi zgody na przeglądanie przez me diatora akt sprawy.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-116c",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 116c. § 1. Postępowanie mediacyjne nie jest jawne.\n§ 2. Mediator, strony i inne osoby biorące udział w postępowaniu mediacyjnym są obowiązani zachować w tajemnicy\nfakty, o których dowiedzieli się w związku z prowadzeniem mediacji, chyba że strony postanowią inaczej.\n§ 3. Propozycje ugodowe, ujawnione fakty lub oświadczenia złożone w toku postępowania mediacyjnego nie mogą\nbyć wykorzystywane po jego zakończeniu, z wyjątkiem ustaleń zawartych w protokole z przebiegu postępowania media -\ncyjnego.",
-          sourceLocator: "Art. 116c",
-        },
-      ],
-      summary: "Art. 116c: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 116c",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 116c. § 1. Postępowanie mediacyjne nie jest jawne. § 2. Mediator, strony i inne osoby biorące udział w postępowaniu mediacyjnym są obowiązani zachować w tajemnicy fakty, o których dowiedzieli się w związku z prowadzeniem mediacji, chyba że strony postanowią inaczej. § 3. Propozycje ugodowe, ujawnione fakty lub oświadczenia złożone w toku postępowania mediacyjnego nie mogą być wykorzystywane po jego zakończeniu, z wyjątkiem ustaleń zawartych w protokole z przebiegu postępowania media - cyjnego.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-116d",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 116d. § 1. Mediator ma prawo do wynagrodzenia i zwrotu wydatków związanych z przeprowadzeniem mediacji,\nchyba że wyraził zgodę na prowadzenie mediacji bez wynagrodzenia. Koszty wynagrodzenia i zwrotu wydatków związa-\nnych z przeprowadzeniem mediacji pokrywają stro ny.\n§ 2. Minister właściwy do spraw administracji publicznej określi, w drodze rozporządzenia, wysokość wynagrodzenia\nmediatora za prowadzenie postępowania mediacyjnego oraz wydatki mediatora podlegające zwrotowi, biorąc pod uwagę\nrodzaj sprawy oraz sprawny przebie g postępowania mediacyjnego, a także niezbędne wydatki związane z prowadzeniem\nmediacji.",
-          sourceLocator: "Art. 116d",
-        },
-      ],
-      summary: "Art. 116d: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 116d",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 116d. § 1. Mediator ma prawo do wynagrodzenia i zwrotu wydatków związanych z przeprowadzeniem mediacji, chyba że wyraził zgodę na prowadzenie mediacji bez wynagrodzenia. Koszty wynagrodzenia i zwrotu wydatków związa- nych z przeprowadzeniem mediacji pokrywają stro ny. § 2. Minister właściwy do spraw administracji publicznej określi, w drodze rozporządzenia, wysokość wynagrodzenia mediatora za prowadzenie postępowania mediacyjnego oraz wydatki mediatora podlegające zwrotowi, biorąc pod uwagę rodzaj sprawy oraz sprawny przebie g postępowania mediacyjnego, a także niezbędne wydatki związane z prowadzeniem mediacji.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-116e",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 116e. § 1. Mediator sporządza protokół z przebiegu postępowania mediacyjnego.\n§ 2. Protokół z przebiegu postępowania mediacyjnego zawiera:\n1) czas i miejsce przeprowadzenia mediacji;\n2) imię i nazwisko (nazwę) skarżącego, oznaczenie organu, a także ich adresy;\n3) imię i nazwisko oraz adres mediatora;\n4) dokonane przez strony ustalenia co do sposobu załatwienia sprawy;\n5) podpis mediatora oraz skarżącego i organu.\n§ 3. Mediator niezwłocznie doręcza odpis protokołu z przebiegu postępowania mediacyjnego stronom oraz sądowi,\nprzed którym toczy się postępowanie.",
-          sourceLocator: "Art. 116e",
-        },
-      ],
-      summary: "Art. 116e: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 116e",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 116e. § 1. Mediator sporządza protokół z przebiegu postępowania mediacyjnego. § 2. Protokół z przebiegu postępowania mediacyjnego zawiera: 1) czas i miejsce przeprowadzenia mediacji; 2) imię i nazwisko (nazwę) skarżącego, oznaczenie organu, a także ich adresy; 3) imię i nazwisko oraz adres mediatora; 4) dokonane przez strony ustalenia co do sposobu załatwienia sprawy; 5) podpis mediatora oraz skarżącego i organu. § 3. Mediator niezwłocznie doręcza odpis protokołu z przebiegu postępowania mediacyjnego stronom oraz sądowi, przed którym toczy się postępowanie.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-117",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 117. § 1. Na podstawie ustaleń dokonanych w postępowaniu mediacyjnym, organ uchyla lub zmienia zaskarżony akt\nalbo wykonuje lub podejmuje inną czynność stosownie do okoliczności sprawy w zakresie swojej właściwości i kompetencji.\n§ 2. Jeżeli strony nie dokonają ustaleń co do sposobu załatwienia sprawy, podlega ona rozpoznaniu przez sąd.\nDziennik Ustaw – 27 – Poz. 143\n2026-02-10",
-          sourceLocator: "Art. 117",
-        },
-      ],
-      summary: "Art. 117: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 117",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 117. § 1. Na podstawie ustaleń dokonanych w postępowaniu mediacyjnym, organ uchyla lub zmienia zaskarżony akt albo wykonuje lub podejmuje inną czynność stosownie do okoliczności sprawy w zakresie swojej właściwości i kompetencji. § 2. Jeżeli strony nie dokonają ustaleń co do sposobu załatwienia sprawy, podlega ona rozpoznaniu przez sąd. Dziennik Ustaw – 27 – Poz. 143 2026-02-10»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-118",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 118. § 1. Na akt wydany na podstawie ustaleń, o których mowa w art. 11 7 § 1, można wnieść skargę do woje-\nwódzkiego sądu administracyjnego w terminie trzydziestu dni od dnia doręczenia aktu albo wykonania lub podjęcia czynności.\nSkargę sąd rozpoznaje łącznie ze skargą wniesioną w sprawie na akt lub czynność, w której przeprowadzono postępowanie\nmediacyjne.\n§ 2. Jeżeli skarga na akt lub czynność wydane lub podjęte na podstawie ustaleń, o których mowa w art. 11 7 § 1, nie\nzostanie wniesiona albo skarga ta zostanie oddalona, sąd umarza postępowanie w sprawie, w której przeprowadzono postę-\npowanie mediacyjne.",
-          sourceLocator: "Art. 118",
-        },
-      ],
-      summary: "Art. 118: Норми про postępowanie mediacyjne та дії сторін, mediator і organ.",
-      rules: [
-        {
-          locator: "Art. 118",
-          explanation: "Застосовуйте лише мету, учасників, доступ до akt, tajemnica, koszty та наслідки mediacja, які прямо названі в цитаті. Дослівний текст статті: «Art. 118. § 1. Na akt wydany na podstawie ustaleń, o których mowa w art. 11 7 § 1, można wnieść skargę do woje- wódzkiego sądu administracyjnego w terminie trzydziestu dni od dnia doręczenia aktu albo wykonania lub podjęcia czynności. Skargę sąd rozpoznaje łącznie ze skargą wniesioną w sprawie na akt lub czynność, w której przeprowadzono postępowanie mediacyjne. § 2. Jeżeli skarga na akt lub czynność wydane lub podjęte na podstawie ustaleń, o których mowa w art. 11 7 § 1, nie zostanie wniesiona albo skarga ta zostanie oddalona, sąd umarza postępowanie w sprawie, w której przeprowadzono postę- powanie mediacyjne.»",
-        },
-      ],
-      legalEffect: "Mediacja може вплинути на подальший акт або czynność, але не гарантує угоди, зміну рішення чи позитивний результат.",
-      foreignersCase: "У спорі іноземця про pobyt окремо перевірте, чи mediacja допустима, які ustalenia зафіксовані та який akt або czynność organ їх виконує; не вважайте переговори рішенням про pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-119",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 119. Sprawa może być rozpoznana w trybie uproszczonym, jeżeli:\n1) decyzja lub postanowienie są dotknięte wadą nieważności, o której mowa w art. 15 6 § 1 Kodeksu postępowania admini -\nstracyjnego lub w innych przepisach albo wydane zostały z naruszeniem prawa dającym podstawę do wznowienia\npostępowania;\n2) strona zgłosi wniosek o skierowanie sprawy do rozpoznania w trybie uproszczonym, a żadna z pozostałych stron w ter-\nminie czternastu dni od zawiadomienia o złożeniu wniosku nie zażąda przeprowadzenia rozprawy;\n3) przedmiotem skargi jest postanowienie wydane w postępowaniu administracyjnym, na które służy zażalenie albo koń -\nczące postępowanie, a także postanowienie rozstrzygające sprawę co do istoty oraz postanowienia wydane w postępo-\nwaniu egzekucyjnym i zabezpieczającym, na które służy zażalenie;\n4) przedmiotem skargi jest bezczynność lub przewlekłe prowadzenie postępowania;\n5) decyzja została wydana w postępowaniu uproszczonym, o którym mowa w dziale II w rozdziale 14 ustawy z dnia\n14 czerwca 1960 r. – Kodeks postępowania administracyjnego.",
-          sourceLocator: "Art. 119",
-        },
-      ],
-      summary: "Art. 119: Норми про tryb uproszczony та можливість розгляду на posiedzenie або rozprawa.",
-      rules: [
-        {
-          locator: "Art. 119",
-          explanation: "Спочатку встановіть конкретну підставу tryb uproszczony, а потім застосовуйте правила складу й форми розгляду з цитати. Дослівний текст статті: «Art. 119. Sprawa może być rozpoznana w trybie uproszczonym, jeżeli: 1) decyzja lub postanowienie są dotknięte wadą nieważności, o której mowa w art. 15 6 § 1 Kodeksu postępowania admini - stracyjnego lub w innych przepisach albo wydane zostały z naruszeniem prawa dającym podstawę do wznowienia postępowania; 2) strona zgłosi wniosek o skierowanie sprawy do rozpoznania w trybie uproszczonym, a żadna z pozostałych stron w ter- minie czternastu dni od zawiadomienia o złożeniu wniosku nie zażąda przeprowadzenia rozprawy; 3) przedmiotem skargi jest postanowienie wydane w postępowaniu administracyjnym, na które służy zażalenie albo koń - czące postępowanie, a także postanowienie rozstrzygające sprawę co do istoty oraz postanowienia wydane w postępo- waniu egzekucyjnym i zabezpieczającym, na które służy zażalenie; 4) przedmiotem skargi jest bezczynność lub przewlekłe prowadzenie postępowania; 5) decyzja została wydana w postępowaniu uproszczonym, o którym mowa w dziale II w rozdziale 14 ustawy z dnia 14 czerwca 1960 r. – Kodeks postępowania administracyjnego.»",
-        },
-      ],
-      legalEffect: "Tryb uproszczony змінює спосіб розгляду, але не гарантує задоволення skarga та не скасовує судовий контроль законності.",
-      foreignersCase: "У skarga іноземця на рішення про pobyt перевірте посилання суду на конкретну підставу tryb uproszczony і стежте, чи справу залишено на posiedzenie niejawne або передано на rozprawa.",
-    },
-    {
-      provisionId: "ppsa-art-120",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 120. W trybie uproszczonym sąd rozpoznaje sprawy na posiedzeniu niejawnym w składzie trzech sędziów.",
-          sourceLocator: "Art. 120",
-        },
-      ],
-      summary: "Art. 120: Норми про tryb uproszczony та можливість розгляду на posiedzenie або rozprawa.",
-      rules: [
-        {
-          locator: "Art. 120",
-          explanation: "Спочатку встановіть конкретну підставу tryb uproszczony, а потім застосовуйте правила складу й форми розгляду з цитати. Дослівний текст статті: «Art. 120. W trybie uproszczonym sąd rozpoznaje sprawy na posiedzeniu niejawnym w składzie trzech sędziów.»",
-        },
-      ],
-      legalEffect: "Tryb uproszczony змінює спосіб розгляду, але не гарантує задоволення skarga та не скасовує судовий контроль законності.",
-      foreignersCase: "У skarga іноземця на рішення про pobyt перевірте посилання суду на конкретну підставу tryb uproszczony і стежте, чи справу залишено на posiedzenie niejawne або передано на rozprawa.",
-    },
-    {
-      provisionId: "ppsa-art-121",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 121. Sprawa może być również rozpoznana w trybie uproszczonym w przypadku, o którym mowa w art. 5 5 § 2.",
-          sourceLocator: "Art. 121",
-        },
-      ],
-      summary: "Art. 121: Норми про tryb uproszczony та можливість розгляду на posiedzenie або rozprawa.",
-      rules: [
-        {
-          locator: "Art. 121",
-          explanation: "Спочатку встановіть конкретну підставу tryb uproszczony, а потім застосовуйте правила складу й форми розгляду з цитати. Дослівний текст статті: «Art. 121. Sprawa może być również rozpoznana w trybie uproszczonym w przypadku, o którym mowa w art. 5 5 § 2.»",
-        },
-      ],
-      legalEffect: "Tryb uproszczony змінює спосіб розгляду, але не гарантує задоволення skarga та не скасовує судовий контроль законності.",
-      foreignersCase: "У skarga іноземця на рішення про pobyt перевірте посилання суду на конкретну підставу tryb uproszczony і стежте, чи справу залишено на posiedzenie niejawne або передано на rozprawa.",
-    },
-    {
-      provisionId: "ppsa-art-122",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 122. Sąd rozpoznający sprawę w trybie uproszczonym może przekazać sprawę do rozpoznania na rozprawie.\nRozdział 9\nZawieszenie i podjęcie postępowania",
-          sourceLocator: "Art. 122",
-        },
-      ],
-      summary: "Art. 122: Норми про tryb uproszczony та можливість розгляду на posiedzenie або rozprawa.",
-      rules: [
-        {
-          locator: "Art. 122",
-          explanation: "Спочатку встановіть конкретну підставу tryb uproszczony, а потім застосовуйте правила складу й форми розгляду з цитати. Дослівний текст статті: «Art. 122. Sąd rozpoznający sprawę w trybie uproszczonym może przekazać sprawę do rozpoznania na rozprawie. Rozdział 9 Zawieszenie i podjęcie postępowania»",
-        },
-      ],
-      legalEffect: "Tryb uproszczony змінює спосіб розгляду, але не гарантує задоволення skarga та не скасовує судовий контроль законності.",
-      foreignersCase: "У skarga іноземця на рішення про pobyt перевірте посилання суду на конкретну підставу tryb uproszczony і стежте, чи справу залишено на posiedzenie niejawne або передано на rozprawa.",
-    },
-    {
-      provisionId: "ppsa-art-123",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 123. Postępowanie ulega zawieszeniu z mocy prawa w razie zaprzestania czynności przez sąd wskutek siły wyższej.",
-          sourceLocator: "Art. 123",
-        },
-      ],
-      summary: "Art. 123: Норми про zawieszenie та podjęcie postępowania.",
-      rules: [
-        {
-          locator: "Art. 123",
-          explanation: "Визначте підставу zawieszenie, її обов’язковий або fakultatywny характер і правило podjęcie, не переносячи наслідки одного виду на інший. Дослівний текст статті: «Art. 123. Postępowanie ulega zawieszeniu z mocy prawa w razie zaprzestania czynności przez sąd wskutek siły wyższej.»",
-        },
-      ],
-      legalEffect: "Zawieszenie змінює рух процесу, але не вирішує skarga по суті; строки та podjęcie залежать від точної підстави, зазначеної в законі.",
-      foreignersCase: "У справі іноземця про pobyt зафіксуйте підставу й дату postanowienie про zawieszenie, вплив на конкретні строки та умови podjęcie; сама пауза не створює права на pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-124",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 124. § 1. Sąd zawiesza postępowanie z urzędu:\n1) w razie śmierci strony lub jej przedstawiciela ustawowego, utraty przez nich zdolności procesowej, utraty przez stronę\nzdolności sądowej lub utraty przez przedstawiciela ustawowego charakteru takiego przedstawiciela, z zastrzeżeniem § 3;\n2) jeżeli w składzie organów jednostki organizacyjnej będącej stroną zachodzą braki uniemożliwiające jej działanie;\n3) jeżeli strona lub jej przedstawiciel ustawowy znajduje się w miejscowości pozbawionej wskutek nadzwyczajnych\nwydarzeń komunikacji z siedzibą sądu;\n4) jeżeli w stosunku do strony zostało wszczęte postępowanie upadłościowe, a sprawa dotyczy przedmiotu wchodzącego\nw skład masy upadłości;\n5) w razie przedstawienia przez sąd w tym postępowaniu pytania prawnego Trybunałowi Konstytucyjnemu albo Trybu-\nnałowi Sprawiedliwości Unii Europejskiej;\n6) w przypadku, o którym mowa w art. 56;\n7) jeżeli zarządca sukcesyjny przestał pełnić tę funkcję albo zarząd sukcesyjny wygasł, w przypadku gdy postępowanie\ntoczyło się z udziałem zarządcy sukcesyjnego.\n§ 2. W przypadkach wymienionych w § 1 pkt 1, 4 i 7 zawieszenie ma skutek od dnia zdarzeń, które je spowodowały.\nZdarzenia te nie wstrzymują jednak wydania orzeczenia, jeżeli nastąpiły po zamknięciu rozprawy.\n§ 3. Nie zawiesza się postępowania w razie śmierci strony, jeżeli przedmiot postępowania odnosi się wyłącznie do\npraw i obowiązków ściśle związanych z osobą zmarłego.\n§ 4. S ąd zawiesza, na wniosek Bankowego Funduszu Gwarancyjnego, postępowanie, którego stroną jest podmiot\nw restrukturyzacji, o którym mowa w art. 2 pkt 44 ustawy z dnia 10 czerwca 2016 r. o Bankowym Funduszu Gwarancyjnym,\nsystemie gwarantowania depozytów oraz przymusowej restrukturyzacji (Dz. U. z 2025 r. poz. 643, 1069 i 1844), w przy-\npadku gdy jest to niezbędne do prawidłowego prowadzenia przymusowej restrukturyzacji, w tym zastosowania instru-\nmentów przymusowej restrukturyzacji.\nDziennik Ustaw – 28 – Poz. 143\n2026-02-10",
-          sourceLocator: "Art. 124",
-        },
-      ],
-      summary: "Art. 124: Норми про zawieszenie та podjęcie postępowania.",
-      rules: [
-        {
-          locator: "Art. 124",
-          explanation: "Визначте підставу zawieszenie, її обов’язковий або fakultatywny характер і правило podjęcie, не переносячи наслідки одного виду на інший. Дослівний текст статті: «Art. 124. § 1. Sąd zawiesza postępowanie z urzędu: 1) w razie śmierci strony lub jej przedstawiciela ustawowego, utraty przez nich zdolności procesowej, utraty przez stronę zdolności sądowej lub utraty przez przedstawiciela ustawowego charakteru takiego przedstawiciela, z zastrzeżeniem § 3; 2) jeżeli w składzie organów jednostki organizacyjnej będącej stroną zachodzą braki uniemożliwiające jej działanie; 3) jeżeli strona lub jej przedstawiciel ustawowy znajduje się w miejscowości pozbawionej wskutek nadzwyczajnych wydarzeń komunikacji z siedzibą sądu; 4) jeżeli w stosunku do strony zostało wszczęte postępowanie upadłościowe, a sprawa dotyczy przedmiotu wchodzącego w skład masy upadłości; 5) w razie przedstawienia przez sąd w tym postępowaniu pytania prawnego Trybunałowi Konstytucyjnemu albo Trybu- nałowi Sprawiedliwości Unii Europejskiej; 6) w przypadku, o którym mowa w art. 56; 7) jeżeli zarządca sukcesyjny przestał pełnić tę funkcję albo zarząd sukcesyjny wygasł, w przypadku gdy postępowanie toczyło się z udziałem zarządcy sukcesyjnego. § 2. W przypadkach wymienionych w § 1 pkt 1, 4 i 7 zawieszenie ma skutek od dnia zdarzeń, które je spowodowały. Zdarzenia te nie wstrzymują jednak wydania orzeczenia, jeżeli nastąpiły po zamknięciu rozprawy. § 3. Nie zawiesza się postępowania w razie śmierci strony, jeżeli przedmiot postępowania odnosi się wyłącznie do praw i obowiązków ściśle związanych z osobą zmarłego. § 4. S ąd zawiesza, na wniosek Bankowego Funduszu Gwarancyjnego, postępowanie, którego stroną jest podmiot w restrukturyzacji, o którym mowa w art. 2 pkt 44 ustawy z dnia 10 czerwca 2016 r. o Bankowym Funduszu Gwarancyjnym, systemie gwarantowania depozytów oraz przymusowej restrukturyzacji (Dz. U. z 2025 r. poz. 643, 1069 i 1844), w przy- padku gdy jest to niezbędne do prawidłowego prowadzenia przymusowej restrukturyzacji, w tym zastosowania instru- mentów przymusowej restrukturyzacji. Dziennik Ustaw – 28 – Poz. 143 2026-02-10»",
-        },
-      ],
-      legalEffect: "Zawieszenie змінює рух процесу, але не вирішує skarga по суті; строки та podjęcie залежать від точної підстави, зазначеної в законі.",
-      foreignersCase: "У справі іноземця про pobyt зафіксуйте підставу й дату postanowienie про zawieszenie, вплив на конкретні строки та умови podjęcie; сама пауза не створює права на pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-125",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 125. § 1. Sąd może zawiesić postępowanie z urzędu:\n1) j eżeli rozstrzygnięcie sprawy zależy od wyniku innego toczącego się postępowania administracyjnego, sądowoadmini -\nstracyjnego , sądowego, przed Trybunałem Konstytucyjnym lub Trybunałem Sprawiedliwości Unii Europejskiej;\n1a) jeżeli rozstrzygnięcie sprawy zależy od wyniku toczącej się procedury rozstrzygania sporów dotyczących podwójnego\nopodatkowania w rozumieniu art. 2 pkt 6 ustawy z dnia 16 października 2019 r. o rozstrzyganiu sporów dotyczących\npodwójnego opodatkowania oraz zawieraniu uprzednich porozumień cenowych (Dz. U. z 2023 r. poz. 948);\n2) jeżeli ujawni się czyn, którego ustalenie w drodze karnej lub dyscyplinarnej mogłoby wywrzeć wpływ na rozstrzyg -\nnięcie sprawy sądowoadministracyjnej;\n3) jeżeli na skutek braku lub wskazania złego adresu skarżącego lub niewykonania przez skarżącego innych zarządzeń\nnie można nadać sprawie dalszego biegu;\n4) w razie śmierci pełnomocnika, chyba że strona działa przed sądem osobiście.\n§ 2. Jeżeli postępowanie karne lub administracyjne nie jest jeszcze rozpoczęte, a jego rozpoczęcie zależy od wniosku\nstrony, sąd wyznaczy termin do wszczęcia postępowania, w innych przypadkach może zwrócić się do właściwego organu.",
-          sourceLocator: "Art. 125",
-        },
-      ],
-      summary: "Art. 125: Норми про zawieszenie та podjęcie postępowania.",
-      rules: [
-        {
-          locator: "Art. 125",
-          explanation: "Визначте підставу zawieszenie, її обов’язковий або fakultatywny характер і правило podjęcie, не переносячи наслідки одного виду на інший. Дослівний текст статті: «Art. 125. § 1. Sąd może zawiesić postępowanie z urzędu: 1) j eżeli rozstrzygnięcie sprawy zależy od wyniku innego toczącego się postępowania administracyjnego, sądowoadmini - stracyjnego , sądowego, przed Trybunałem Konstytucyjnym lub Trybunałem Sprawiedliwości Unii Europejskiej; 1a) jeżeli rozstrzygnięcie sprawy zależy od wyniku toczącej się procedury rozstrzygania sporów dotyczących podwójnego opodatkowania w rozumieniu art. 2 pkt 6 ustawy z dnia 16 października 2019 r. o rozstrzyganiu sporów dotyczących podwójnego opodatkowania oraz zawieraniu uprzednich porozumień cenowych (Dz. U. z 2023 r. poz. 948); 2) jeżeli ujawni się czyn, którego ustalenie w drodze karnej lub dyscyplinarnej mogłoby wywrzeć wpływ na rozstrzyg - nięcie sprawy sądowoadministracyjnej; 3) jeżeli na skutek braku lub wskazania złego adresu skarżącego lub niewykonania przez skarżącego innych zarządzeń nie można nadać sprawie dalszego biegu; 4) w razie śmierci pełnomocnika, chyba że strona działa przed sądem osobiście. § 2. Jeżeli postępowanie karne lub administracyjne nie jest jeszcze rozpoczęte, a jego rozpoczęcie zależy od wniosku strony, sąd wyznaczy termin do wszczęcia postępowania, w innych przypadkach może zwrócić się do właściwego organu.»",
-        },
-      ],
-      legalEffect: "Zawieszenie змінює рух процесу, але не вирішує skarga по суті; строки та podjęcie залежать від точної підстави, зазначеної в законі.",
-      foreignersCase: "У справі іноземця про pobyt зафіксуйте підставу й дату postanowienie про zawieszenie, вплив на конкретні строки та умови podjęcie; сама пауза не створює права на pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-126",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 126. Sąd może również zawiesić postępowanie na zgodny wniosek stron.",
-          sourceLocator: "Art. 126",
-        },
-      ],
-      summary: "Art. 126: Норми про zawieszenie та podjęcie postępowania.",
-      rules: [
-        {
-          locator: "Art. 126",
-          explanation: "Визначте підставу zawieszenie, її обов’язковий або fakultatywny характер і правило podjęcie, не переносячи наслідки одного виду на інший. Дослівний текст статті: «Art. 126. Sąd może również zawiesić postępowanie na zgodny wniosek stron.»",
-        },
-      ],
-      legalEffect: "Zawieszenie змінює рух процесу, але не вирішує skarga по суті; строки та podjęcie залежать від точної підстави, зазначеної в законі.",
-      foreignersCase: "У справі іноземця про pobyt зафіксуйте підставу й дату postanowienie про zawieszenie, вплив на конкретні строки та умови podjęcie; сама пауза не створює права на pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-127",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 127. § 1. W przypadku zawieszenia postępowania na zgodny wniosek stron lub niemożności nadania sprawie dalszego\nbiegu, zawieszenie wstrzymuje tylko bieg terminów sądowych, które biegną dalej dopiero od dnia podjęcia postępowania.\n§ 2. We wszystkich innych przypadkach zawieszenia żadne terminy nie biegną i zaczynają biec dopiero od początku\nod dnia podjęcia postępowania. Terminy sądowe należy w miarę potrzeby wyznaczyć na nowo.\n§ 3. Podczas zawieszenia sąd nie podejmuje żadnych czynności z wyjątkiem tych, które mają na celu podjęcie postę-\npowania albo wstrzymanie wykonania aktu lub czynności. Czynności podejmowane przez strony, a niedotyczące tych przed-\nmiotów, wywołują skutki dopiero od dnia podjęcia postępowania.",
-          sourceLocator: "Art. 127",
-        },
-      ],
-      summary: "Art. 127: Норми про zawieszenie та podjęcie postępowania.",
-      rules: [
-        {
-          locator: "Art. 127",
-          explanation: "Визначте підставу zawieszenie, її обов’язковий або fakultatywny характер і правило podjęcie, не переносячи наслідки одного виду на інший. Дослівний текст статті: «Art. 127. § 1. W przypadku zawieszenia postępowania na zgodny wniosek stron lub niemożności nadania sprawie dalszego biegu, zawieszenie wstrzymuje tylko bieg terminów sądowych, które biegną dalej dopiero od dnia podjęcia postępowania. § 2. We wszystkich innych przypadkach zawieszenia żadne terminy nie biegną i zaczynają biec dopiero od początku od dnia podjęcia postępowania. Terminy sądowe należy w miarę potrzeby wyznaczyć na nowo. § 3. Podczas zawieszenia sąd nie podejmuje żadnych czynności z wyjątkiem tych, które mają na celu podjęcie postę- powania albo wstrzymanie wykonania aktu lub czynności. Czynności podejmowane przez strony, a niedotyczące tych przed- miotów, wywołują skutki dopiero od dnia podjęcia postępowania.»",
-        },
-      ],
-      legalEffect: "Zawieszenie змінює рух процесу, але не вирішує skarga по суті; строки та podjęcie залежать від точної підстави, зазначеної в законі.",
-      foreignersCase: "У справі іноземця про pobyt зафіксуйте підставу й дату postanowienie про zawieszenie, вплив на конкретні строки та умови podjęcie; сама пауза не створює права на pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-128",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 128. § 1. Sąd postanowi podjąć postępowanie z urzędu, gdy ustanie przyczyna zawieszenia, w szczególności:\n1) w razie śmierci strony – od dnia zgłoszenia się lub wskazania następców prawnych zmarłego albo zarządcy sukce syj-\nnego w sprawach wynikających z prowadzenia jego przedsiębiorstwa, albo ustanowienia we właściwej drodze kuratora\nspadku;\n2) w razie utraty zdolności sądowej – od dnia ustalenia ogólnego następcy prawnego;\n3) w razie braku przedstawiciela ustawowego – od dnia jego ustanowienia;\n4) gdy rozstrzygnięcie sprawy zależy od wyniku innego postępowania – od dnia uprawomocnienia się orzeczenia koń-\nczącego to postępowanie; sąd może jednak i przedtem, stosownie do okoliczności, podjąć dalsze postępowanie ;\n5) jeżeli zarządca sukcesyjny, z którego udziałem toczyło się postępowanie, przestał pełnić tę funkcję – od dnia zgłoszenia\nsię lub wskazania kolejnego zarządcy sukcesyjnego;\n6) w razie wygaśnięcia zarządu sukcesyjnego – od dnia zgłoszenia się lub wskazania następców prawnych zmarłego.\n§ 2. Jeżeli w ciągu roku od dnia wydania postanowienia o zawieszeniu postępowania nie zgłoszą się lub nie zostaną\nwskazani następcy prawni zmarłego, a postępowanie nie zostanie podjęte z udziałem zarządcy sukcesyjnego, sąd może\nz urzędu zwrócić się do sądu spa dku o ustanowienie kuratora spadku, chyba że kurator taki już wcześniej został ustanowiony.\nCzynność tę może wykonać referendarz sądowy.",
-          sourceLocator: "Art. 128",
-        },
-      ],
-      summary: "Art. 128: Норми про zawieszenie та podjęcie postępowania.",
-      rules: [
-        {
-          locator: "Art. 128",
-          explanation: "Визначте підставу zawieszenie, її обов’язковий або fakultatywny характер і правило podjęcie, не переносячи наслідки одного виду на інший. Дослівний текст статті: «Art. 128. § 1. Sąd postanowi podjąć postępowanie z urzędu, gdy ustanie przyczyna zawieszenia, w szczególności: 1) w razie śmierci strony – od dnia zgłoszenia się lub wskazania następców prawnych zmarłego albo zarządcy sukce syj- nego w sprawach wynikających z prowadzenia jego przedsiębiorstwa, albo ustanowienia we właściwej drodze kuratora spadku; 2) w razie utraty zdolności sądowej – od dnia ustalenia ogólnego następcy prawnego; 3) w razie braku przedstawiciela ustawowego – od dnia jego ustanowienia; 4) gdy rozstrzygnięcie sprawy zależy od wyniku innego postępowania – od dnia uprawomocnienia się orzeczenia koń- czącego to postępowanie; sąd może jednak i przedtem, stosownie do okoliczności, podjąć dalsze postępowanie ; 5) jeżeli zarządca sukcesyjny, z którego udziałem toczyło się postępowanie, przestał pełnić tę funkcję – od dnia zgłoszenia się lub wskazania kolejnego zarządcy sukcesyjnego; 6) w razie wygaśnięcia zarządu sukcesyjnego – od dnia zgłoszenia się lub wskazania następców prawnych zmarłego. § 2. Jeżeli w ciągu roku od dnia wydania postanowienia o zawieszeniu postępowania nie zgłoszą się lub nie zostaną wskazani następcy prawni zmarłego, a postępowanie nie zostanie podjęte z udziałem zarządcy sukcesyjnego, sąd może z urzędu zwrócić się do sądu spa dku o ustanowienie kuratora spadku, chyba że kurator taki już wcześniej został ustanowiony. Czynność tę może wykonać referendarz sądowy.»",
-        },
-      ],
-      legalEffect: "Zawieszenie змінює рух процесу, але не вирішує skarga по суті; строки та podjęcie залежать від точної підстави, зазначеної в законі.",
-      foreignersCase: "У справі іноземця про pobyt зафіксуйте підставу й дату postanowienie про zawieszenie, вплив на конкретні строки та умови podjęcie; сама пауза не створює права на pobyt.",
-    },
-    {
-      provisionId: "ppsa-art-129",
-      reviewStatus: "draft",
-      claims: [
-        {
-          kind: "statute-text",
-          text: "Art. 129. § 1. W razie zawieszenia postępowania na zgodny wniosek stron sąd postanowi podjąć postępowanie na\nwniosek którejkolwiek z nich, niewcześniej niż po upływie trzech miesięcy od zawieszenia postępowania.\n§ 2. W razie zawieszenia na wniosek Bankowego Funduszu Gwarancyjnego postępowania, o którym mowa w art. 124\n§ 4, sąd postanowi podjąć postępowanie na wniosek tego Funduszu.",
-          sourceLocator: "Art. 129",
-        },
-      ],
-      summary: "Art. 129: Норми про zawieszenie та podjęcie postępowania.",
-      rules: [
-        {
-          locator: "Art. 129",
-          explanation: "Визначте підставу zawieszenie, її обов’язковий або fakultatywny характер і правило podjęcie, не переносячи наслідки одного виду на інший. Дослівний текст статті: «Art. 129. § 1. W razie zawieszenia postępowania na zgodny wniosek stron sąd postanowi podjąć postępowanie na wniosek którejkolwiek z nich, niewcześniej niż po upływie trzech miesięcy od zawieszenia postępowania. § 2. W razie zawieszenia na wniosek Bankowego Funduszu Gwarancyjnego postępowania, o którym mowa w art. 124 § 4, sąd postanowi podjąć postępowanie na wniosek tego Funduszu.»",
-        },
-      ],
-      legalEffect: "Zawieszenie змінює рух процесу, але не вирішує skarga по суті; строки та podjęcie залежать від точної підстави, зазначеної в законі.",
-      foreignersCase: "У справі іноземця про pobyt зафіксуйте підставу й дату postanowienie про zawieszenie, вплив на конкретні строки та умови podjęcie; сама пауза не створює права на pobyt.",
-    }
+    reviewed(
+      "ppsa-art-85",
+      "Czynność w postępowaniu sądowym, яку strona вчинила після спливу строку, є bezskuteczna.",
+      "Стаття встановлює прямий наслідок пропуску строку для процесуальної czynność сторони: вона не породжує передбаченого законом процесуального ефекту.",
+      [
+        { locator: "Art. 85", explanation: "Спочатку визначте, яку саме czynność мала виконати strona, який строк для неї діяв і коли він закінчився." },
+        { locator: "Art. 85", explanation: "Не змішуйте bezskuteczność із питанням вини: можливість przywrócenie terminu регулюють окремі статті 86–89." },
+      ],
+      "За Art. 85 запізніла czynność є bezskuteczna; стаття сама не встановлює ані строку, ані автоматичного przywrócenie terminu.",
+      "У skarga щодо pobyt зафіксуйте дату doręczenie, початок і кінець строку та дату подання. Якщо дія запізнилася, окремо перевірте умови wniosku o przywrócenie terminu.",
+    ),
+    reviewed(
+      "ppsa-art-86",
+      "Якщо strona без своєї вини не виконала czynność у строк, sąd на її wniosek postanowi przywrócenie terminu; це недопустимо без ujemnych skutków для сторони, а на postanowienie можна подати zażalenie.",
+      "Art. 86 визначає базові умови przywrócenie terminu: brak winy, wniosek, негативний процесуальний наслідок і контроль через zażalenie.",
+      [
+        { locator: "§ 1", explanation: "Потрібно показати, що строк пропущено без вини сторони; рішення приймається postanowienie, у тому числі на posiedzeniu niejawnym." },
+        { locator: "§ 2", explanation: "Якщо пропуск не спричинив для сторони ujemnych skutków w zakresie postępowania sądowego, przywrócenie terminu не допускається." },
+        { locator: "§ 3", explanation: "На postanowienie про przywrócenie terminu або про відмову в ньому przysługuje zażalenie." },
+      ],
+      "Art. 86 відкриває можливість відновити строк лише за названих умов; він не скасовує обов’язок довести факт і відсутність вини.",
+      "У справі про pobyt поясніть, чому особа не могла вчасно подати skarga або іншу czynność, додайте доступні підтвердження та перевірте окремі вимоги Art. 87.",
+    ),
+    reviewed(
+      "ppsa-art-87",
+      "Wniosek o przywrócenie terminu подається до належного sąd протягом семи днів після припинення причини пропуску; треба uprawdopodobnić brak winy, одночасно виконати пропущену czynność, а wniosek щодо skarga подати за pośrednictwem органу.",
+      "Стаття визначає місце, семиденний строк і зміст wniosek o przywrócenie terminu, а також обов’язкову одночасність із пропущеною дією.",
+      [
+        { locator: "§ 1", explanation: "Сім днів рахуються від ustania przyczyny uchybienia terminu; wniosek подається до sąd, у якому мала бути виконана czynność." },
+        { locator: "§ 2", explanation: "У wniosek треба лише uprawdopodobnić обставини, що вказують на brak winy; це не тотожне повному доказуванню в іншому процесі." },
+        { locator: "§ 3–4", explanation: "Для відновлення строку skarga wniosek іде за pośrednictwem органу, а пропущену czynność треба виконати одночасно." },
+        { locator: "§ 5", explanation: "Після року від пропущеного строку відновлення допускається лише у випадках wyjątkowych." },
+      ],
+      "Недотримання місця, семиденного строку або одночасного виконання czynność може перешкодити розгляду wniosek; конкретний наслідок треба читати разом із Art. 88.",
+      "Якщо строк skarga у справі cudzoziemca пропущено, складіть wniosek через właściwy organ протягом семи днів після припинення перешкоди, одночасно подайте skarga і поясніть brak winy документами.",
+    ),
+    reviewed(
+      "ppsa-art-88",
+      "Spóźniony або z mocy ustawy niedopuszczalny wniosek o przywrócenie terminu sąd odrzuci на posiedzeniu niejawnym; на postanowienie przysługuje zażalenie.",
+      "Art. 88 встановлює відхилення wniosek o przywrócenie terminu, якщо він поданий із запізненням або закон прямо не допускає його.",
+      [
+        { locator: "Art. 88", explanation: "Перевірте спочатку своєчасність wniosek і чи не виключає закон саму можливість відновлення строку." },
+        { locator: "Art. 88", explanation: "Рішення приймається на posiedzenie niejawnym, але на відповідне postanowienie прямо передбачено zażalenie." },
+      ],
+      "Стаття стосується процесуальної допустимості wniosek, а не оцінки обставин справи про pobyt по суті.",
+      "Збережіть доказ дати подання wniosek і перевірте pouczenie про zażalenie; не вважайте сам факт подання запізнілого wniosek захистом від наслідків Art. 85.",
+    ),
+    reviewed(
+      "ppsa-art-89",
+      "Подання wniosek o przywrócenie terminu не зупиняє postępowanie або виконання orzeczenia; sąd може їх зупинити, а після задоволення wniosek може негайно розглянути sprawę.",
+      "Art. 89 розмежовує сам факт wniosek і окреме рішення sąd про wstrzymanie postępowania або wykonania orzeczenia.",
+      [
+        { locator: "Art. 89", explanation: "За загальним правилом wniosek не має suspensywny effect: postępowanie та wykonanie orzeczenia тривають." },
+        { locator: "Art. 89", explanation: "Sąd може, зважаючи на обставини, wstrzymać postępowanie або виконання; це не відбувається автоматично." },
+        { locator: "Art. 89", explanation: "Після uwzględnienie wniosku sąd може негайно перейти до rozpoznania sprawy." },
+      ],
+      "Art. 89 регулює тимчасовий процесуальний ефект wniosek і не гарантує ані зупинення, ані сприятливого рішення у справі.",
+      "У спорі про pobyt окремо просіть про wstrzymanie, якщо для цього є підстави, і не ототожнюйте wniosek o przywrócenie terminu з автоматичним продовженням легального перебування.",
+    ),
+    reviewed(
+      "ppsa-art-90",
+      "Якщо спеціальний припис не встановлює іншого, posiedzenia sądowe є jawne, а sąd розглядає sprawy на rozprawie; навіть справу для posiedzenie niejawne можна направити на posiedzenie jawne з rozprawa.",
+      "Стаття задає загальне правило відкритості та rozprawa і дозволяє суду обрати відкриту форму там, де спеціальний припис допускає закриту.",
+      [
+        { locator: "§ 1", explanation: "Завжди перевіряйте, чи немає спеціального правила: лише за його відсутності діють jawność і rozprawa як загальне правило." },
+        { locator: "§ 2", explanation: "Sąd може призначити posiedzenie jawne та rozprawa навіть для справи, яка за загальним правилом розглядається на posiedzeniu niejawnym." },
+      ],
+      "Art. 90 визначає форму розгляду, але не встановлює результату skarga й не означає, що відкрите слухання потрібне в кожній справі.",
+      "У справі cudzoziemca перевірте в zawiadomienie, чи призначено rozprawa або posiedzenie niejawne. Форма розгляду сама не доводить законність чи незаконність decyzja.",
+    ),
+    reviewed(
+      "ppsa-art-91",
+      "Posiedzenia wyznacza przewodniczący, коли цього вимагає стан справи; про posiedzenie jawne повідомляють письмово або оголошенням, зазвичай не пізніше семи днів, а в pilny випадок строк може становити три дні.",
+      "Art. 91 регулює призначення posiedzenia, zawiadomienie про відкрите слухання та можливість зобов’язати strony або pełnomocnik з’явитися особисто.",
+      [
+        { locator: "§ 1", explanation: "Przewodniczący призначає posiedzenie z urzędu, коли цього вимагає стан справи." },
+        { locator: "§ 2", explanation: "Про posiedzenie jawne повідомляють письмово або оголошенням; наступне повідомлення відсутній стороні треба doręczyć завжди. Звичайний мінімум — сім днів, у pilnych випадках — три." },
+        { locator: "§ 3", explanation: "Для точнішого з’ясування справи sąd може zarządzić особисту явку strony або явку через pełnomocnik." },
+      ],
+      "Стаття встановлює правила організації слухання і повідомлення, але питання належності конкретного doręczenie потребує перевірки доказів та інших правил.",
+      "Зіставте zawiadomienie про rozprawa з датою засідання й адресою, яку вказав cudzoziemiec. Окремо перевірте, чи був належно повідомлений pełnomocnik.",
+    ),
+    reviewed(
+      "ppsa-art-92",
+      "Prokurator, Rzecznik Praw Obywatelskich або Rzecznik Praw Dziecka бере участь у postępowanie, якщо подав skargę або заявив udział; їхня відсутність на rozprawa не зупиняє розгляд.",
+      "Стаття визначає участь трьох названих публічних суб’єктів та наслідок їхньої неявки.",
+      [
+        { locator: "§ 1", explanation: "Участь виникає, коли відповідний суб’єкт подав skargę або zgłosił udział у postępowaniu перед sąd." },
+        { locator: "§ 2", explanation: "Відсутність prokurator, RPO або RPD на rozprawa не блокує розгляд справи судом." },
+      ],
+      "Art. 92 не створює автоматичного обов’язку залучати цих суб’єктів у кожній справі cudzoziemca.",
+      "Не робіть висновок про порушення прав лише через відсутність RPO чи іншого суб’єкта: перевірте, чи він справді подав skargę або zgłosił udział.",
+    ),
+    reviewed(
+      "ppsa-art-93",
+      "Zawiadomienie o posiedzeniu має містити дані й адресу адресата, sąd, місце та час, skarżącego і предмет справи, cel posiedzenia та skutki niestawiennictwa.",
+      "Art. 93 дає перелік відомостей, за якими можна перевірити зміст zawiadomienie про posiedzenie.",
+      [
+        { locator: "pkt 1–2", explanation: "Звірте ім’я або назву, адресу, sąd, місце і час posiedzenia з фактичними даними справи." },
+        { locator: "pkt 3–5", explanation: "У повідомленні мають бути skarżący, предмет і cel posiedzenia, а також наслідки niestawiennictwa." },
+      ],
+      "Стаття визначає обов’язкові елементи повідомлення, але сама не вирішує, чи в конкретній ситуації doręczenie було належним.",
+      "Зберігайте конверт або електронне підтвердження разом із zawiadomienie про справу щодо pobyt і перевіряйте всі п’ять категорій даних.",
+    ),
+    reviewed(
+      "ppsa-art-94",
+      "Posiedzenia відбуваються в будівлі sąd, а поза нею — лише за умовами безпеки та коли це необхідно, полегшує справу або істотно заощаджує витрати; przewodniczący може організувати posiedzenie jawne із засобами дистанційної передачі у випадках, названих статтею.",
+      "Art. 94 визначає звичайне місце засідання, обмежені підстави засідання поза будівлею та спеціальний порядок участі з іншого sąd або місця позбавлення волі.",
+      [
+        { locator: "§ 1", explanation: "Засідання поза будівлею допустиме не довільно: потрібні вимоги безпеки і одна з названих законом причин." },
+        { locator: "§ 2", explanation: "Дистанційне posiedzenie jawne передбачає технічну передачу між sala sądowa та місцем учасника; у тексті окремо названі інший sąd, zakład karny і areszt śledczy." },
+        { locator: "§ 2", explanation: "У місці позбавлення волі бере участь представник адміністрації; за умовами статті можуть бути pełnomocnik і tłumacz для особи, яка недостатньо володіє польською." },
+      ],
+      "Art. 94 не дає загального права кожному учаснику вимагати відеозасідання: спосіб і місце визначає przewodniczący в межах статті.",
+      "Якщо особа у справі про pobyt не володіє польською, зафіксуйте потребу в tłumacz, а при дистанційному слуханні перевірте, з якого місця та за яким технічним порядком участь дозволена.",
+    ),
+    reviewed(
+      "ppsa-art-95",
+      "На posiedzenie jawne, крім stron і wezwanych осіб, до sali sądowej допускаються лише повнолітні; przewodniczący може дозволити присутність małoletni. На posiedzenie niejawne входять лише wezwane особи.",
+      "Стаття встановлює правила доступу до sali залежно від того, чи є posiedzenie jawne або niejawne.",
+      [
+        { locator: "§ 1", explanation: "Для відкритого засідання розрізняйте strony та wezwane osoby від публіки: для інших загальне правило — повноліття." },
+        { locator: "§ 1–2", explanation: "Присутність małoletni залежить від дозволу przewodniczący, а на posiedzenie niejawne допускаються лише wezwane особи." },
+      ],
+      "Норма стосується доступу до залу, а не права сторони на позитивний результат або автоматичної недійсності засідання.",
+      "Перевірте позначену форму засідання у sprawa cudzoziemca та не приводьте супроводжуючих осіб на posiedzenie niejawne без wezwanie.",
+    ),
+    reviewed(
+      "ppsa-art-96",
+      "Sąd z urzędu zarządza drzwiach zamkniętych, якщо публічний розгляд загрожує moralności, bezpieczeństwu państwa або porządkowi publicznemu чи може розкрити informacje niejawne; на wniosek strony це можливо для ochrony życia prywatnego або іншого важливого інтересу приватного.",
+      "Art. 96 розрізняє обов’язкове закриття слухання з публічних причин і закриття на wniosek strony для приватного інтересу.",
+      [
+        { locator: "§ 1", explanation: "За названих загроз суд закриває все posiedzenie або його частину z urzędu; до підстави належить і можливе розкриття informacji niejawne." },
+        { locator: "§ 2", explanation: "Wniosek strony про ochronę życia prywatnego або іншого ważny interes prywatny розглядають при зачинених дверях, а postanowienie оголошують публічно." },
+      ],
+      "Art. 96 регулює jawność слухання, не скасовуючи інших процесуальних гарантій і не передбачаючи автоматичної закритості через сам статус cudzoziemiec.",
+      "Якщо на rozprawa можуть бути розкриті приватні дані про сім’ю чи pobyt, оцініть wniosek про drzwiach zamkniętych за конкретними підставами статті, а не лише за бажанням уникнути публічності.",
+    ),
+    reviewed(
+      "ppsa-art-97",
+      "На posiedzenie при drzwiach zamkniętych можуть бути strony, їхні przedstawiciele ustawowi й pełnomocnicy, prokurator та до двох osób zaufania з кожної сторони; оголошення orzeczenia, що завершує справу, відбувається публічно.",
+      "Стаття визначає коло присутніх при закритому слуханні та зберігає публічність оголошення остаточного orzeczenie.",
+      [
+        { locator: "§ 1", explanation: "Перелік присутніх є спеціальним: osoba zaufania допускається максимум по дві з кожної strony." },
+        { locator: "§ 2", explanation: "Навіть після закритого розгляду orzeczenie kończące postępowanie оголошується publicznie." },
+      ],
+      "Закрите слухання обмежує присутність у залі, але не перетворює orzeczenie на непублічне оголошення.",
+      "У справі cudzoziemca узгодьте з pełnomocnik, хто має бути допущений як osoba zaufania, і перевірте порядок publicznego ogłoszenia orzeczenia.",
+    ),
+    reviewed(
+      "ppsa-art-98",
+      "Przewodniczący відкриває, веде й закриває posiedzenia, надає слово, ставить питання, дозволяє ставити питання та оголошує orzeczenia; може забрати слово при зловживанні й відхилити niewłaściwe або zbyteczne питання.",
+      "Art. 98 описує процесуальне керування posiedzenie головуючим і межі усних виступів та питань.",
+      [
+        { locator: "§ 1", explanation: "Організаційні дії під час posiedzenia належать przewodniczący, включно з наданням слова та оголошенням orzeczenia." },
+        { locator: "§ 2", explanation: "Відбирання слова можливе при його nadużywa, а uchylenie pytania — якщо воно niewłaściwe або zbyteczne." },
+      ],
+      "Норма дає головуючому інструменти для порядку слухання, але не дозволяє наперед оцінити результат skarga.",
+      "Підготуйте короткі, предметні пояснення щодо decyzja про pobyt і заявляйте процесуально важливі питання в межах наданого слова.",
+    ),
+    reviewed(
+      "ppsa-art-99",
+      "Sąd може odroczyć posiedzenie, навіть за zgodny wniosek stron, лише з ważna przyczyna.",
+      "Стаття обмежує odroczenie вимогою важливої причини й не робить спільний wniosek сторін достатньою підставою сам по собі.",
+      [
+        { locator: "Art. 99", explanation: "Перевірте, яку конкретну ważna przyczyna наведено; згода всіх сторін не усуває цієї вимоги." },
+      ],
+      "Art. 99 стосується календаря posiedzenie і не змінює матеріальних прав сторони у справі про pobyt.",
+      "Якщо потрібне odroczenie rozprawa, поясніть важливу причину й підтвердьте її; сама зайнятість або спільна згода не дають автоматичного права на перенесення.",
+    ),
+    reviewed(
+      "ppsa-art-100",
+      "З posiedzenie jawnе протокол spisuje protokolant під керівництвом przewodniczący; з posiedzenie niejawne складають notatka urzędowa, якщо не видано orzeczenie, і її можна зберегти в системі sąd з kwalifikowanym podpisem elektronicznym.",
+      "Art. 100 розрізняє протокол відкритого засідання та urzędowa notatka для закритого засідання без виданого orzeczenie.",
+      [
+        { locator: "§ 1", explanation: "Протокол стосується przebieg posiedzenia jawnego і складається protokolant під керівництвом головуючого." },
+        { locator: "§ 2", explanation: "Для posiedzenie niejawne notatka urzędowa потрібна лише коли не видано orzeczenie; закон допускає електронний запис і кваліфікований підпис." },
+      ],
+      "Стаття визначає форму фіксації, але не означає, що кожен матеріал із akt автоматично доводить обставини справи.",
+      "Після засідання про pobyt перевірте, чи є потрібна інформація у protokół або notatka urzędowa та чи відповідає вона фактичному перебігу posiedzenia.",
+    ),
+    reviewed(
+      "ppsa-art-101",
+      "Protokół має містити складові суду й учасників, дані справи та jawność, przebieg posiedzenia з wnioski, twierdzenia, zarządzenia й orzeczenia, а також істотні czynności stron; його підписують przewodniczący і protokolant.",
+      "Art. 101 встановлює мінімальний зміст і підписання протоколу та дозволяє його електронне оформлення з kwalifikowanym podpisem.",
+      [
+        { locator: "§ 1 pkt 1", explanation: "Звірте в протоколі sąd, місце й дату, склад суду, protokolant, prokurator, strony, представників, справу та відмітку про jawność." },
+        { locator: "§ 1 pkt 2–3", explanation: "Протокол відображає przebieg, wnioski і twierdzenia, видані на засіданні рішення та істотні czynności stron; можна послатися на pisma przygotowawcze." },
+        { locator: "§ 2–3", explanation: "Протокол підписують przewodniczący і protokolant; допускається запис у системі teleinformatycznym із кваліфікованим підписом." },
+      ],
+      "Art. 101 визначає засіб фіксації процесу, а не встановлює наперед, які факти суд визнає доведеними.",
+      "Зіставте протокол засідання у справі cudzoziemca з поданими поясненнями та заявленими wnioski; істотне упущення можна оцінювати за процедурою Art. 103 і 105.",
+    ),
+    reviewed(
+      "ppsa-art-102",
+      "Перебіг czynności, які протоколюються, можна додатково записати апаратурою dźwiękową, але до її запуску треба попередити всіх учасників czynność.",
+      "Стаття дозволяє додаткову звукову фіксацію протоколюваної дії за умови попередження всіх присутніх учасників.",
+      [
+        { locator: "Art. 102", explanation: "Запис є додатковим до протоколювання, а повідомлення має відбутися перед uruchomienie aparatury." },
+        { locator: "Art. 102", explanation: "Перевірте, чи попередження отримали всі osoby uczestniczące w czynności, а не лише сторона, яка веде запис." },
+      ],
+      "Art. 102 регулює спосіб фіксації й не робить будь-який приватний аудіозапис заміною судового протоколу.",
+      "Якщо на слуханні про pobyt ведеться запис, зафіксуйте факт попередження та зіставляйте аудіо лише з офіційним protokół і межами дозволеної czynność.",
+    ),
+    reviewed(
+      "ppsa-art-103",
+      "Strony можуть вимагати sprostowanie або uzupełnienie protokołu на наступному posiedzenie, але не пізніше тридцяти днів від засідання; на zarządzenie przewodniczący можна odwołać się до sąd протягом семи днів від doręczenie.",
+      "Art. 103 дає окремий порядок виправлення чи доповнення протоколу з двома часовими орієнтирами.",
+      [
+        { locator: "Art. 103 zdanie pierwsze", explanation: "Заявіть про sprostowanie або uzupełnienie на наступному posiedzenie і в будь-якому разі не пізніше 30 днів від засідання, з якого складено протокол." },
+        { locator: "Art. 103 zdanie drugie", explanation: "Якщо przewodniczący видав zarządzenie, сторона може odwołać się до sąd протягом семи днів від його doręczenie." },
+      ],
+      "Стаття стосується виправлення запису про перебіг засідання, а не повторного розгляду всієї skarga.",
+      "Після posiedzenie у справі про pobyt порівняйте protokół із власними нотатками та вчасно подайте вимогу про виправлення конкретного пропуску або помилки.",
+    ),
+    reviewed(
+      "ppsa-art-104",
+      "Wnioski, oświadczenia, їхні uzupełnienia і sprostowania можна внести до załącznik до protokołu; коли сторону представляє adwokat, radca prawny, doradca podatkowy або rzecznik patentowy, przewodniczący може вимагати такий załącznik у визначений строк.",
+      "Стаття дозволяє оформити усні процесуальні заяви й виправлення в додатку до протоколу та дає головуючому право вимагати додаток від професійного pełnomocnik.",
+      [
+        { locator: "Art. 104 zdanie pierwsze", explanation: "У załącznik можна включити wnioski, oświadczenia та їхні uzupełnienia і sprostowania, зроблені під час posiedzenia." },
+        { locator: "Art. 104 zdanie drugie", explanation: "Для названих професійних pełnomocnicy przewodniczący може встановити строк подання такого załącznik." },
+      ],
+      "Załącznik доповнює протокол, але його зміст має стосуватися заяв і wnioski, зроблених у toku posiedzenia.",
+      "У справі cudzoziemca попросіть повністю зафіксувати істотний wniosek або oświadczenie; якщо його подає професійний pełnomocnik, дотримайтеся строку для załącznik.",
+    ),
+    reviewed(
+      "ppsa-art-105",
+      "Strona має під час posiedzenia або на найближчому засіданні, якщо була відсутня, заявити uchybienie przepisom postępowania і вимагати wpisanie zastrzeżenia до protokołu; без цього надалі посилання зазвичай виключене, крім передбачених статтею винятків.",
+      "Art. 105 встановлює обов’язок своєчасно заявити zastrzeżenie до протоколу, якщо сторона хоче посилатися на процесуальне порушення надалі.",
+      [
+        { locator: "Art. 105 zdanie pierwsze", explanation: "Застереження треба заявити в toku posiedzenia, а для відсутньої сторони — на найближчому posiedzenie, і просити wpisanie до protokołu." },
+        { locator: "Art. 105 zdanie drugie", explanation: "Пропуск zastrzeżenia позбавляє права посилатися на uchybienie далі, якщо це не правило, яке суд бере до уваги z urzędu, або якщо сторона uprawdopodobni brak winy." },
+      ],
+      "Art. 105 не означає, що кожна помилка в протоколі втрачена назавжди: спочатку визначте виняток і доведіть своєчасність або відсутність вини.",
+      "На rozprawa про pobyt одразу просіть внести до protokołu заперечення щодо істотного порушення процедури; якщо не були присутні, дійте на найближчому засіданні.",
+    ),
+    reviewed(
+      "ppsa-art-106",
+      "Rozprawa починається зі sprawozdanie sędziego; потім усно виступають спочатку skarżący, а потім organ. Sąd може провести uzupełniające dowody z dokumentów, звернутися по істотний pogląd до організації або органу та враховує факти powszechnie znane.",
+      "Art. 106 описує послідовність rozprawa та вузькі умови, за яких адміністративний суд проводить додаткові документальні докази.",
+      [
+        { locator: "§ 1–2", explanation: "Sędzia представляє стан справи за aktach із наголосом на zarzuty skargi; далі свої żądania, wnioski і wyjaśnienia подають skarżący, потім organ." },
+        { locator: "§ 3", explanation: "Dowody uzupełniające з dokumentów можливі z urzędu або на wniosek, якщо це необхідно для істотних сумнівів і не спричинить надмірного продовження." },
+        { locator: "§ 3a–5", explanation: "Sąd може запросити istotny pogląd у organizacja społeczna або organ administracji publicznej; факти powszechnie znane враховуються без заяви сторони, а до доказування § 3 застосовуються відповідно правила Kodeks postępowania cywilnego." },
+      ],
+      "Art. 106 не перетворює судове провадження на повне повторення адміністративного доказування: додаткові dowody мають відповідати умовам § 3.",
+      "У skarga на decyzja про pobyt підготуйте zarzuty, факти й документи до rozprawa. Не розраховуйте, що sąd автоматично збере всі докази замість сторони.",
+    ),
+    reviewed(
+      "ppsa-art-107",
+      "Відсутність strony або її pełnomocnik на rozprawa не зупиняє розгляд справи.",
+      "Стаття дозволяє sąd продовжити rozpoznanie справи попри неявку сторони або представника.",
+      [
+        { locator: "Art. 107", explanation: "Застосування цієї норми не скасовує необхідності перевірити належність zawiadomienie та інші правила про odroczenie." },
+      ],
+      "Art. 107 регулює наслідок неявки, але не доводить ані належного повідомлення, ані того, що сторона втратила всі засоби захисту.",
+      "Якщо cudzoziemiec не був на rozprawa, негайно перевірте zawiadomienie, причину відсутності та зміст протоколу; не вважайте неявку визнанням позиції organ.",
+    ),
+    reviewed(
+      "ppsa-art-108",
+      "Якщо strona або її pełnomocnik відсутні на rozprawa, przewodniczący або sędzia sprawozdawca представляє їхні wnioski, twierdzenia і dowody, що містяться в aktach sprawy.",
+      "Art. 108 гарантує, що матеріали відсутньої сторони з akt можуть бути представлені під час слухання.",
+      [
+        { locator: "Art. 108", explanation: "Перевірте, чи потрібний wniosek, twierdzenie або dowód справді міститься в aktach; стаття не додає нових матеріалів від імені відсутньої сторони." },
+      ],
+      "Представлення матеріалів з akt не замінює особистої участі й не означає, що кожен доказ буде прийнятий або вирішальним.",
+      "Якщо представник cudzoziemiec не прибув, заздалегідь перевірте, чи всі письмові wnioski і документи є в aktach, щоб їх могли представити за Art. 108.",
+    ),
+    reviewed(
+      "ppsa-art-109",
+      "Rozprawa відкладається при неправильному zawiadomienie або коли неявка сторони чи pełnomocnik спричинена надзвичайною подією чи іншою відомою суду неподоланною перешкодою, крім випадку, коли вони просять розглянути справу за відсутності.",
+      "Art. 109 встановлює спеціальні підстави odroczenie rozprawa, пов’язані з повідомленням або неподоланною перешкодою.",
+      [
+        { locator: "Art. 109", explanation: "Перевірте, яку саме nieprawidłowość zawiadomienia або яку konkretną przeszkodę встановив sąd і чи вона спричинила неявку." },
+        { locator: "Art. 109", explanation: "Виняток діє, якщо strona або pełnomocnik самі wnieśli про розгляд у своїй відсутності." },
+      ],
+      "Саме посилання на хворобу чи іншу складність не дає автоматичного odroczenie: стаття вимагає відомої суду неподоланної перешкоди або неправильного повідомлення.",
+      "У справі про pobyt збережіть докази причини неявки й одразу повідомте sąd. Перевірте також, чи в матеріалах немає wniosek про розгляд без участі.",
+    ),
+    reviewed(
+      "ppsa-art-110",
+      "Rozprawa відкладається, якщо sąd вирішує повідомити про провадження осіб, які досі не брали участі у справі як strony.",
+      "Стаття пов’язує odroczenie з рішенням суду повідомити потенційних сторін, які раніше не були учасниками.",
+      [
+        { locator: "Art. 110", explanation: "З’ясуйте, кого саме sąd вважає особою, яку треба zawiadomić як можливу stronę, і зафіксуйте нову дату rozprawa." },
+      ],
+      "Art. 110 стосується складу учасників і повідомлення; воно не вирішує, чи має нова особа право на задоволення skarga.",
+      "Якщо рішення про pobyt може зачіпати іншу особу, перевірте, чи суд має підстави повідомити її як stronę до продовження rozprawa.",
+    ),
+    reviewed(
+      "ppsa-art-111",
+      "Sąd zarządza спільний розгляд кількох окремих справ, якщо вони могли бути охоплені однією skarga і це не спричинить надмірного продовження; може також об’єднати пов’язані справи.",
+      "Art. 111 розрізняє обов’язкове поєднання справ за умовами § 1 і факультативне поєднання справ, пов’язаних між собою.",
+      [
+        { locator: "§ 1", explanation: "Для zarządza połączenie потрібні обидві умови: справи могли бути однією skarga і спільний розгляд не надмірно продовжить postępowanie." },
+        { locator: "§ 2", explanation: "За наявності зв’язку між справами sąd може поєднати їх для łącznego rozpoznania або rozstrzygnięcia, але це його процесуальне рішення." },
+      ],
+      "Поєднання змінює організацію розгляду, але не створює нових матеріальних підстав для рішення у справі про pobyt.",
+      "У кількох пов’язаних skarga щодо членів сім’ї порівняйте предмет і ризик затримки; не припускайте, що однакова тема автоматично відповідає Art. 111.",
+    ),
+    reviewed(
+      "ppsa-art-112",
+      "Якщо organ ухиляється від виконання postanowienie sąd або zarządzenie przewodniczący, прийнятого під час і у зв’язку з розглядом справи, sąd може накласти на organ grzywna у розмірі за Art. 154 § 6; postanowienie може бути на posiedzenie niejawnym.",
+      "Art. 112 дає суду санкційний інструмент проти ухилення органу від процесуального розпорядження, прийнятого в цій справі.",
+      [
+        { locator: "Art. 112", explanation: "Потрібно встановити, що невиконане postanowienie або zarządzenie прийняте в toku postępowania і пов’язане з розглядом конкретної sprawy." },
+        { locator: "Art. 112", explanation: "Sąd може, але не зобов’язаний, застосувати grzywna; розмір відсилає до Art. 154 § 6, а спосіб — до posiedzenie niejawnego." },
+      ],
+      "Grzywna за Art. 112 забезпечує виконання процесуального розпорядження і сама не замінює рішення щодо законності decyzja organ.",
+      "Якщо organ не виконує розпорядження sąd у sprawa cudzoziemca, зафіксуйте зміст, дату doręczenie та факт ухилення; окремо оцініть wniosek про grzywna.",
+    ),
+    reviewed(
+      "ppsa-art-113",
+      "Przewodniczący закриває rozprawa, коли sąd вважає справу достатньо з’ясованою; її можна закрити й тоді, коли залишився додатковий dowód з документів, відомих сторонам, а окреме слухання щодо нього є зайвим.",
+      "Art. 113 визначає, коли rozprawa може бути zamknięta, включно з вузьким винятком для відомого сторонам документального доказу.",
+      [
+        { locator: "§ 1", explanation: "Критерієм є оцінка sąd, що sprawa достатньо з’ясована; рішення про закриття приймає przewodniczący." },
+        { locator: "§ 2", explanation: "Закриття можливе, якщо ще буде uzupełniający dowód з документів, відомих сторонам, і слухання саме щодо нього суд вважає zbyteczne." },
+      ],
+      "Закриття rozprawa не означає автоматичного прийняття позиції сторони й не забороняє застосування спеціальних правил про повторне відкриття, якщо вони є.",
+      "До zamknięcie rozprawa у спорі про pobyt перевірте, чи всі важливі wnioski й документи є в aktach; не покладайтеся на можливість додати їх пізніше.",
+    ),
+    reviewed(
+      "ppsa-art-114",
+      "На orzeczenia przewodniczący, видані під час rozprawa, strony можуть до її закриття odwołać się до sąd orzekający.",
+      "Art. 114 дає сторонам внутрішній засіб звернутися до складу суду щодо orzeczenie головуючого під час слухання до моменту zamknięcie rozprawa.",
+      [
+        { locator: "Art. 114", explanation: "Відстежуйте момент: право odwołać się існує до zamknięcie rozprawa, тому заперечення треба заявляти без зволікання." },
+      ],
+      "Це звернення до sąd orzekający щодо процесуального рішення головуючого, а не загальна skarga на адміністративну decyzja.",
+      "Якщо під час rozprawa про pobyt przewodniczący прийняв рішення, що перешкоджає вашій procesowa czynność, попросіть занести реакцію до протоколу до закриття слухання.",
+    ),
+    reviewed(
+      "ppsa-art-115",
+      "Postępowanie mediacyjne може бути проведене на wniosek skarżący або organ, поданий до wyznaczenie rozprawa, і може проводитися також без wniosek; мета — з’ясувати фактичні та правові обставини й узгодити спосіб вирішення в межах prawa.",
+      "Art. 115 визначає момент, ініціаторів і мету mediacja, не обіцяючи сторонам конкретного результату.",
+      [
+        { locator: "§ 1", explanation: "Wniosek про mediacja подають skarżący або organ до призначення rozprawa; предметом є факти, право та можливі ustalenia в межах obowiązującego prawa." },
+        { locator: "§ 2", explanation: "Mediacja може початися і без wniosek сторін — ця можливість не означає, що угода буде досягнута." },
+      ],
+      "Mediacja є способом роботи над вирішенням спору, а не обов’язком органу змінити рішення чи гарантією дозволу на pobyt.",
+      "У спорі про pobyt перевірте, чи сторони справді можуть узгодити спосіб załatwienia в межах компетencji organ; не називайте саму mediacja позитивним рішенням.",
+    ),
+    reviewed(
+      "ppsa-art-116",
+      "Mediacja проводиться mediator, якого обирають strony; якщо в mediacja за Art. 115 § 2 сторони не домовилися про вибір, mediator призначає sąd. Mediator має повну zdolność do czynności prawnych і користується повними prawami publicznymi.",
+      "Art. 116 регулює вибір і призначення mediator та базові вимоги до його особи, а також передачу контактних даних.",
+      [
+        { locator: "§ 1–2", explanation: "Звичайно mediator обирають strony; у випадку Art. 115 § 2 за відсутності спільного вибору його визначає sąd, спрямовуючи справу до mediacja." },
+        { locator: "§ 2", explanation: "Przewodniczący wydziału без зволікання передає mediator контактні дані stron і pełnomocnicy, зокрема телефони та e-mail, якщо вони є." },
+        { locator: "§ 3", explanation: "Mediator — фізична особа з повною дієздатністю та повними публічними правами; особливо названо внесених до відповідних списків або wykaz." },
+      ],
+      "Стаття визначає порядок добору mediator, але сама не встановлює змісту майбутніх ustalenia чи обов’язку сторін погодитися.",
+      "Перед mediacja у справі cudzoziemca перевірте, хто mediator і чи має він потрібні якості; контактні дані та повноваження не замінюють згоди щодо суті спору.",
+    ),
+    reviewed(
+      "ppsa-art-116a",
+      "Mediator має зберігати bezstronność і без зволікання розкрити обставини, які можуть викликати сумнів у його безсторонності, зокрема відповідні обставини з Art. 18.",
+      "Art. 116a встановлює вимогу безсторонності mediator та обов’язок повідомити про потенційний конфлікт.",
+      [
+        { locator: "Art. 116a", explanation: "Оцінюйте не лише фактичну упередженість, а й обставини, здатні wzbudzić wątpliwość щодо bezstronność." },
+        { locator: "Art. 116a", explanation: "Відсилання до Art. 18 застосовується відповідно; mediator має ujawnić обставини niezwłocznie." },
+      ],
+      "Норма захищає довіру до mediacja, але не робить будь-яку незгоду зі mediator доказом його упередженості.",
+      "У справі про pobyt повідомте про конкретний зв’язок mediator зі стороною або organ і вимагайте оцінити bezstronność за Art. 116a, а не лише за результатом переговорів.",
+    ),
+    reviewed(
+      "ppsa-art-116b",
+      "Mediator має право переглядати akta справи й отримувати odpisy, kopie або wyciągi, якщо strona не заперечить протягом тижня від ogłoszenie або doręczenie postanowienie про направлення до mediacja.",
+      "Art. 116b регулює доступ mediator до матеріалів та короткий строк для заперечення сторони.",
+      [
+        { locator: "Art. 116b", explanation: "Звірте початок tygodniowy терміну з ogłoszenie або doręczenie postanowienie, яким сторони направлено до mediacja." },
+        { locator: "Art. 116b", explanation: "Заперечення стосується перегляду akt mediator; воно не є автоматичною відмовою від усієї mediacja." },
+      ],
+      "Доступ mediator до akt обмежений механізмом незгоди, передбаченим статтею; не приписуйте цій нормі загальне право mediator витребувати нові докази.",
+      "Якщо в aktach є чутливі дані про pobyt, перевірте дату postanowienie та за потреби вчасно подайте заперечення щодо перегляду akt mediator.",
+    ),
+    reviewed(
+      "ppsa-art-116c",
+      "Postępowanie mediacyjne не є jawne; mediator, strony та інші учасники зобов’язані зберігати в таємниці факти, про які дізналися, якщо strony не домовляться інакше. Пропозиції, факти й oświadczenia mediacja після її завершення не можна використовувати, крім ustalenia з протоколу.",
+      "Art. 116c поєднує непублічність mediacja, обов’язок tajemnica та обмеження подальшого використання матеріалів переговорів.",
+      [
+        { locator: "§ 1–2", explanation: "Mediacja nie jest jawne, а обов’язок таємниці охоплює mediator, strony й інші особи; strony можуть домовитися інакше." },
+        { locator: "§ 3", explanation: "Після завершення не використовуються propozycje ugodowe, ujawnione fakty чи oświadczenia; виняток — ustalenia, внесені до protokołu mediacja." },
+      ],
+      "Захист конфіденційності стимулює переговори, але не перешкоджає використанню належно оформлених ustalenia з протоколу в межах закону.",
+      "Не покладайтеся на неформальні висловлювання під час mediacja у подальшій skarga про pobyt; визначте, що саме внесено до protokół як ustalenia.",
+    ),
+    reviewed(
+      "ppsa-art-116d",
+      "Mediator має право на wynagrodzenie і zwrot wydatków, якщо не погодився працювати без оплати; ці koszty pokrywają strony. Міністр визначає їхній розмір і відшкодовувані витрати в rozporządzenie.",
+      "Art. 116d регулює оплату mediator і делегує міністру визначення ставок та витрат.",
+      [
+        { locator: "§ 1", explanation: "Оплата не виникає, якщо mediator погодився вести mediacja без wynagrodzenie; в іншому разі wynagrodzenie і wydatki покривають strony." },
+        { locator: "§ 2", explanation: "Розмір і види відшкодовуваних витрат визначаються rozporządzenie з урахуванням виду справи та ефективного проведення mediacja." },
+      ],
+      "Стаття не встановлює індивідуальну частку кожної сторони і не означає, що будь-яка витрата mediator автоматично підлягає оплаті.",
+      "До згоди на mediacja у спорі про pobyt з’ясуйте порядок koszty та чи mediator працює без оплати; не вважайте безкоштовність автоматичною.",
+    ),
+    reviewed(
+      "ppsa-art-116e",
+      "Mediator складає protokół mediacja із часом і місцем, даними skarżący та organ, даними mediator, ustalenia щодо способу вирішення та підписами; копії без зволікання надсилаються сторонам і sąd.",
+      "Art. 116e визначає обов’язковий зміст protokół z przebiegu postępowania mediacyjnego та його адресатів.",
+      [
+        { locator: "§ 1–2", explanation: "Протокол складає mediator; перевірте п’ять елементів, включно з адресами та підписами mediator, skarżący і organ." },
+        { locator: "§ 3", explanation: "Mediator niezwłocznie doręcza odpis protokołu сторонам і sąd, перед яким триває postępowanie." },
+      ],
+      "Протокол фіксує ustalenia mediacja, але не підміняє акт organ, який має бути виданий або виконаний у межах компетencji.",
+      "Зіставте odpis protokołu у справі про pobyt з тим, що фактично погоджено, і перевірте, чи копію отримав sąd та кожна strona.",
+    ),
+    reviewed(
+      "ppsa-art-117",
+      "На підставі ustalenia mediacja organ у межах своєї właściwość і kompetencja uchyla або zmienia zaskarżony akt чи виконує/вчиняє іншу czynność; без ustalenia справа підлягає розгляду sąd.",
+      "Art. 117 пояснює, що саме може зробити organ після результативної mediacja і що відбувається, якщо домовленості немає.",
+      [
+        { locator: "§ 1", explanation: "Порівняйте ustalenia з повноваженнями organ: він діє лише в межах właściwość і kompetencja та відповідно до обставин справи." },
+        { locator: "§ 2", explanation: "Якщо strony не домовилися про спосіб załatwienia, mediacja не завершує судовий контроль — справу розглядає sąd." },
+      ],
+      "Art. 117 не гарантує uchylenie або zmiana рішення: наслідок залежить від ustalenia, повноважень organ і фактичного виконання.",
+      "У спорі щодо pobyt перевірте, який акт або czynność organ зобов’язався виконати за protokół, і не вважайте домовленість заміною нового законного rozstrzygnięcia.",
+    ),
+    reviewed(
+      "ppsa-art-118",
+      "На akt або czynność, видані на підставі ustalenia з Art. 117 § 1, можна подати skargę до WSA протягом тридцяти днів від doręczenie акта або виконання/вчинення дії; без такої skarga або після її oddalenie sąd umarza первісне postępowanie mediacja.",
+      "Art. 118 встановлює окремий тридцятиденний контроль за результатом mediacja та наслідок для первісної справи.",
+      [
+        { locator: "§ 1", explanation: "Строк 30 днів залежить від виду результату: doręczenie aktu або день wykonania чи podjęcia czynności; skargę розглядають разом із первісною skarga." },
+        { locator: "§ 2", explanation: "Якщо нову skarga не подано або її oddalono, sąd umarza postępowanie у справі, де проводилася mediacja." },
+      ],
+      "Art. 118 не робить akt після mediacja остаточно правильним: він передбачає окрему skarga і пов’язаний наслідок umorzenie.",
+      "Після домовленості про pobyt не пропустіть новий 30-денний строк на skarga до WSA, якщо organ видав оскаржуваний akt або виконав czynność.",
+    ),
+    reviewed(
+      "ppsa-art-119",
+      "Sprawa може розглядатися в tryb uproszczony, зокрема при wada nieważności або підставі wznowienie, за wniosek сторони без вимоги rozprawa іншої сторони протягом 14 днів, щодо визначених postanowienia, bezczynność або przewlekłość, а також для рішення з KPA postępowanie uproszczone.",
+      "Art. 119 перелічує п’ять самостійних підстав, за яких справа може перейти до tryb uproszczony.",
+      [
+        { locator: "pkt 1", explanation: "Встановіть конкретну wada nieważności за Art. 156 § 1 KPA або інше порушення, що дає підставу для wznowienie postępowania." },
+        { locator: "pkt 2", explanation: "Wniosek сторони спрацьовує лише якщо жодна інша strona протягом 14 днів від zawiadomienie не зажадає rozprawa." },
+        { locator: "pkt 3–4", explanation: "До переліку належать визначені postanowienia, на які służy zażalenie або які завершують postępowanie, а також bezczynność і przewlekłe prowadzenie postępowania." },
+        { locator: "pkt 5", explanation: "Окрема підстава — decyzja, видана в KPA postępowanie uproszczone за Dział II, Rozdział 14 KPA." },
+      ],
+      "Tryb uproszczony змінює процесуальний спосіб розгляду, але не послаблює вимоги до предмета skarga й не гарантує її задоволення.",
+      "Для skarga на рішення про pobyt знайдіть у матеріалах конкретний пункт Art. 119 і перевірте, чи інша strona не вимагала rozprawa у 14-денний строк.",
+    ),
+    reviewed(
+      "ppsa-art-120",
+      "У tryb uproszczony sąd розглядає справу на posiedzenie niejawnym у складі трьох sędziowie.",
+      "Art. 120 встановлює базову форму і склад суду для tryb uproszczony.",
+      [
+        { locator: "Art. 120", explanation: "Перевірте, що справа справді направлена до tryb uproszczony; саме тоді діють posiedzenie niejawne і склад трьох sędziowie." },
+      ],
+      "Це правило про форму та склад розгляду, а не про висновок щодо законності decyzja про pobyt.",
+      "У повідомленні про судову справу cudzoziemca відрізняйте tryb uproszczony від звичайної rozprawa і читайте, чи немає рішення за Art. 122.",
+    ),
+    reviewed(
+      "ppsa-art-121",
+      "Sprawa може бути також розглянута в tryb uproszczony у випадку, про який йдеться в Art. 55 § 2.",
+      "Art. 121 додає окрему підставу tryb uproszczony через відсилання до Art. 55 § 2.",
+      [
+        { locator: "Art. 121", explanation: "Не замінюйте відсилання загальним припущенням: спочатку прочитайте умову Art. 55 § 2 у фактах конкретної справи." },
+      ],
+      "Стаття лише відкриває ще одну процесуальну можливість і не встановлює самостійно змісту Art. 55 § 2 або результату skarga.",
+      "Якщо суд посилається на Art. 121 у спорі про pobyt, перевірте повний текст Art. 55 § 2 і підставу, яку зазначено в aktach.",
+    ),
+    reviewed(
+      "ppsa-art-122",
+      "Sąd, який розглядає справу в tryb uproszczony, може передати її для розгляду на rozprawa.",
+      "Art. 122 дозволяє суду відмовитися від спрощеної форми posiedzenie, якщо для конкретної справи потрібна rozprawa.",
+      [
+        { locator: "Art. 122", explanation: "Передача на rozprawa є можливістю sąd, а не автоматичним правом сторони; перевірте відповідне postanowienie або zarządzenie в aktach." },
+      ],
+      "Передача до rozprawa змінює форму розгляду, але не визначає, чи буде skarga задоволена.",
+      "У справі про pobyt стежте за зміною форми розгляду: після передачі за Art. 122 перевірте нове zawiadomienie і підготуйте усні пояснення.",
+    ),
+    reviewed(
+      "ppsa-art-123",
+      "Postępowanie ulega zawieszeniu z mocy prawa, якщо sąd припинив czynności через siła wyższa.",
+      "Art. 123 передбачає автоматичне zawieszenie, коли надзвичайна сила фактично зупиняє діяльність sąd.",
+      [
+        { locator: "Art. 123", explanation: "Встановіть одночасно siła wyższa і zaprzestanie czynności przez sąd; звичайна затримка або відсутність руху справи самі по собі не тотожні цій підставі." },
+      ],
+      "Zawieszenie з Art. 123 зупиняє рух судового провадження за законом, але не вирішує skarga і не створює права на pobyt.",
+      "У справі cudzoziemca зафіксуйте офіційну підставу zawieszenie та її вплив на строк; не називайте кожну затримку sąd siła wyższa без підтвердження.",
+    ),
+    reviewed(
+      "ppsa-art-124",
+      "Sąd зобов’язаний zawiesić postępowanie з urzędu у випадках, названих у § 1, зокрема смерті або втрати zdolność сторони, недоліків органів юридичної особи, неподоланної відсутності зв’язку, upadłość, правового питання до TK або TSUE та припинення zarząd sukcesyjny; § 4 додає випадок на wniosek BFG.",
+      "Art. 124 перелічує обов’язкові підстави zawieszenie з urzędu та спеціальне zawieszenie на wniosek Bankowy Fundusz Gwarancyjny.",
+      [
+        { locator: "§ 1 pkt 1–4", explanation: "Перевірте смерть або втрату процесуальної/судової здатності, неможливість дії органів jednostka organizacyjna, втрату зв’язку з sąd через надзвичайні події та upadłość щодо предмета masy upadłości." },
+        { locator: "§ 1 pkt 5–7", explanation: "Підставами також є передання pytanie prawne TK або TSUE, випадок Art. 56 та припинення функції або zarząd sukcesyjny." },
+        { locator: "§ 2–3", explanation: "Для § 1 pkt 1, 4 і 7 zawieszenie діє від події; подія після zamknięcie rozprawy не зупиняє видання orzeczenie. Після смерті провадження не зупиняють, якщо предмет стосується лише прав, тісно пов’язаних з померлим." },
+        { locator: "§ 4", explanation: "На wniosek BFG sąd zawiesza справу сторони в restrukturyzacja, коли це необхідно для prawidłowe prowadzenie przymusowej restrukturyzacji." },
+      ],
+      "Art. 124 зупиняє рух справи лише за конкретною статутною підставою; зупинення не є вирішенням законності адміністративної decyzja.",
+      "У справі cudzoziemca перевірте, чи подія справді відповідає конкретному пункту § 1, дату її настання та умови podjęcie; не переносіть правила про смерть сторони на звичайну зміну адреси.",
+    ),
+    reviewed(
+      "ppsa-art-125",
+      "Sąd може zawiesić postępowanie з urzędu, якщо результат залежить від іншого провадження або процедури, виявленого кримінального/дисциплінарного czyn, неможливо надати справі хід через адресу чи невиконане zarządzenie скаржника, або помер pełnomocnik; § 2 регулює початок такого іншого провадження.",
+      "Art. 125 містить факультативні підстави zawieszenie з urzędu та спосіб дій, коли залежне postępowanie ще не розпочато.",
+      [
+        { locator: "§ 1 pkt 1–1a", explanation: "Залежність може стосуватися іншого administracyjne, sądowoadministracyjne, sądowe провадження, TK, TSUE або процедури спору про podwójne opodatkowanie." },
+        { locator: "§ 1 pkt 2–4", explanation: "Окремо перевірте можливий вплив кримінального чи дисциплінарного czyn, відсутність/помилковість адреси або невиконання zarządzenia, а також смерть pełnomocnik, якщо strona не діє особисто." },
+        { locator: "§ 2", explanation: "Якщо початок кримінального чи адміністративного провадження залежить від wniosek strony, sąd встановлює строк для його wszczęcie; інакше може звернутися до właściwy organ." },
+      ],
+      "Zawieszenie за Art. 125 є можливістю sąd і вимагає зв’язку залежного питання з вирішенням справи, а не просто наявності паралельної процедури.",
+      "У skarga про pobyt поясніть, чому інше провадження реально впливає на результат; невиконання wezwanie або неправильна адреса може зупинити рух справи окремо від суті спору.",
+    ),
+    reviewed(
+      "ppsa-art-126",
+      "Sąd може також zawiesić postępowanie на zgodny wniosek stron.",
+      "Art. 126 допускає zawieszenie за спільною заявою всіх stron, без твердження, що суд зобов’язаний її прийняти.",
+      [
+        { locator: "Art. 126", explanation: "Перевірте, чи wniosek справді zgodny всіх stron; остаточне рішення про zawieszenie приймає sąd." },
+      ],
+      "Зупинення за спільною заявою призупиняє рух справи, але не вирішує skarga і не змінює матеріальне право на pobyt.",
+      "Перш ніж просити про zawieszenie судової справи щодо pobyt, узгодьте позицію всіх stron і врахуйте мінімальний строк до podjęcie за Art. 129.",
+    ),
+    reviewed(
+      "ppsa-art-127",
+      "При zawieszenie за zgodny wniosek або неможливості надати справі подальший хід зупиняються лише terminy sądowe; в інших випадках жодні строки не біжать і після podjęcie починаються спочатку. Під час zawieszenie sąd майже не чинить дій, а дії stron щодо інших предметів діють після podjęcie.",
+      "Art. 127 розрізняє наслідки для строків залежно від підстави zawieszenie та обмежує дії суду й сторін у період паузи.",
+      [
+        { locator: "§ 1", explanation: "Для zgodny wniosek або niemożność nadania sprawie dalszego biegu зупиняється лише перебіг terminy sądowe; вони продовжуються від дня podjęcie." },
+        { locator: "§ 2", explanation: "В інших випадках жодні terminy не біжать і після podjęcie рахуються від початку; terminy sądowe за потреби встановлюють заново." },
+        { locator: "§ 3", explanation: "Під час zawieszenie sąd діє лише для podjęcie або wstrzymanie wykonania aktu/czynności; інші дії stron дають ефект лише від podjęcie." },
+      ],
+      "Наслідок для конкретного строку залежить від підстави zawieszenie; не можна автоматично застосовувати правило § 1 до кожної паузи.",
+      "У справі про pobyt зафіксуйте вид zawieszenie, дату podjęcie та кожен процесуальний строк окремо; не подавайте pismo, виходячи з припущення, що всі строки просто продовжилися.",
+    ),
+    reviewed(
+      "ppsa-art-128",
+      "Sąd з urzędu postanowi podjąć postępowanie, коли припиниться причина zawieszenie, зокрема після встановлення następcа правного, представника, завершення іншого провадження або визначення наступного zarządca sukcesyjny; після року без спадкоємців суд може звернутися про kurator spadku.",
+      "Art. 128 визначає podjęcie після припинення причини zawieszenie та спеціальні моменти для різних підстав.",
+      [
+        { locator: "§ 1 pkt 1–3", explanation: "Після смерті сторони потрібні zgłoszenie або wskazanie наступників/zarządca або ustanowienie kurator; після втрати zdolność чи представника — відповідний następca або представник." },
+        { locator: "§ 1 pkt 4–6", explanation: "При залежності від іншого провадження podjęcie зазвичай пов’язане з prawomocność його завершення, але sąd може діяти раніше; окремо названі zarządca sukcesyjny." },
+        { locator: "§ 2", explanation: "Якщо протягом року після postanowienie про zawieszenie не з’явився спадкоємець і немає podjęcie з zarządca, sąd може звернутися до sąd spadku про kurator; це може зробити referendarz sądowy." },
+      ],
+      "Podjęcie відновлює рух конкретної судової справи, але не усуває матеріальних спорів щодо рішення organ.",
+      "У справі cudzoziemca після усунення причини zawieszenie подайте підтвердження наступника або іншої події й перевірте, від якої дати знову рахуються terminy.",
+    ),
+    reviewed(
+      "ppsa-art-129",
+      "При zawieszenie на zgodny wniosek stron sąd podjmie postępowanie на wniosek будь-якої з них не раніше ніж через три місяці; при zawieszenie за wniosek BFG — на wniosek цього Fundusz.",
+      "Art. 129 визначає, хто і коли може ініціювати podjęcie для двох спеціальних видів zawieszenie.",
+      [
+        { locator: "§ 1", explanation: "Для zawieszenie на zgodny wniosek достатній wniosek однієї сторони, але podjęcie можливе не раніше трьох місяців від zawieszenie." },
+        { locator: "§ 2", explanation: "У випадку Art. 124 § 4 подати wniosek про podjęcie може Bankowy Fundusz Gwarancyjny." },
+      ],
+      "Стаття регулює відновлення руху після двох видів zawieszenie; вона не встановлює загального строку розгляду skarga.",
+      "Якщо справа про pobyt була зупинена за спільною заявою, відмітьте тримісячну дату і подайте wniosek про podjęcie від імені належної сторони, коли це дозволено.",
+    ),
   ],
 })
