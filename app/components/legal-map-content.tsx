@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2, FileCheck2, Map, Scale } from "lucide-react"
 import type { TocItem } from "~/components/docs-layout"
 import { LegalText } from "~/components/legal-reference-text"
 import {
-  concatLegalText,
+  joinLegalText,
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
@@ -454,13 +454,7 @@ function uniqueStatements(...groups: Array<LegalTextValue[] | undefined>) {
   return [...unique.values()]
 }
 
-function joinStatements(items: LegalTextValue[]) {
-  return concatLegalText(
-    ...items.flatMap((item, index) => (index ? [" ", item] : [item]))
-  )
-}
-
-function ModelExplanation({
+export function ModelExplanation({
   node,
   guide,
 }: {
@@ -478,17 +472,17 @@ function ModelExplanation({
     <div>
       {subject.length ? (
         <p>
-          <LegalText text={joinStatements(subject)} />
+          <LegalText text={joinLegalText(subject, " ")} />
         </p>
       ) : null}
       {activation.length ? (
         <p>
-          <LegalText text={activation.join(" ")} />
+          <LegalText text={joinLegalText(activation, " ")} />
         </p>
       ) : null}
       {boundaryAndEffect.length ? (
         <p>
-          <LegalText text={boundaryAndEffect.join(" ")} />
+          <LegalText text={joinLegalText(boundaryAndEffect, " ")} />
         </p>
       ) : null}
     </div>

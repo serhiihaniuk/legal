@@ -1,6 +1,12 @@
+import { createElement } from "react"
+import { renderToStaticMarkup } from "react-dom/server"
+import { MemoryRouter } from "react-router"
+
+import { ModelExplanation } from "~/components/legal-map-content"
 import { listEvidenceDocuments } from "~/data/document-library"
 import { caseGuideRoutes } from "~/data/case-guide-routes"
 import { allNodes } from "~/data/legal-index"
+import { legalNodeGuides } from "~/data/legal-node-guides"
 import {
   getEdition,
   listDocuments,
@@ -140,6 +146,20 @@ export async function validateReferencePreviewFixture() {
     await assertStablePreview(
       { kind: "map-node", nodeId: node.id },
       `map:${node.id}`
+    )
+    const modelMarkup = renderToStaticMarkup(
+      createElement(
+        MemoryRouter,
+        { initialEntries: [`/map/${node.id}`] },
+        createElement(ModelExplanation, {
+          node,
+          guide: legalNodeGuides[node.id],
+        })
+      )
+    )
+    assert(
+      !modelMarkup.includes("[object Object]"),
+      `Structured legal text was coerced in map model: ${node.id}`
     )
   }
 
