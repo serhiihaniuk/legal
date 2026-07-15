@@ -1,5 +1,7 @@
+import { ArrowLeft } from "lucide-react"
 import { useMemo, type ReactNode } from "react"
 import {
+  Link,
   useLoaderData,
   useNavigate,
   useParams,
@@ -214,6 +216,18 @@ function KpaNavigation({
 
   return (
     <nav aria-label="Навігація KPA" className="pb-10">
+      <Button
+        variant="ghost"
+        size="sm"
+        nativeButton={false}
+        render={<Link to="/law" />}
+        aria-label="До бібліотеки права"
+        className="mb-6 h-auto min-h-9 w-full justify-start px-2 py-2 text-left whitespace-normal"
+      >
+        <ArrowLeft data-icon="inline-start" aria-hidden="true" />
+        До бібліотеки права
+      </Button>
+
       <section>
         <p className="px-2 text-xs font-medium text-muted-foreground">
           Розділи
@@ -359,6 +373,18 @@ function MobileKpaNavigation({
 }) {
   return (
     <div className="grid min-w-0 gap-3 lg:hidden">
+      <Button
+        variant="ghost"
+        size="sm"
+        nativeButton={false}
+        render={<Link to="/law" />}
+        aria-label="До бібліотеки права"
+        className="h-auto min-h-9 w-full justify-start px-2 py-2 text-left whitespace-normal"
+      >
+        <ArrowLeft data-icon="inline-start" aria-hidden="true" />
+        До бібліотеки права
+      </Button>
+
       <label className="grid min-w-0 gap-1.5">
         <span className="text-xs font-medium text-muted-foreground">
           Розділ гайда
