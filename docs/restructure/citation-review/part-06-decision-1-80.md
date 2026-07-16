@@ -57,3 +57,27 @@ authoritative mirror (e.g. an official EU institution PDF, a national
 transposition register, or a specific EUR-Lex case-law page reproducing
 the article) if one is preferred over a national immigration authority's
 hosted copy.
+
+## Two more latent bare mentions found in part-06.ts (loop-until-clean pass)
+
+After the Decision 1/80 fix, `npm run test:previews` surfaced two further
+one-token self-citations in `part-06.ts` that the file's original migration
+had missed — both same-default-act (`ustawa-o-cudzoziemcach`), unambiguous,
+already using the exact `.article()` pattern elsewhere in the same field:
+
+- Entry `ustawa-o-cudzoziemcach-art-191`, `rules[1].explanation` (locator
+  "ust. 1 pkt 2–3"): the trailing sentence "Пункти 6 і 7 art. 100 не
+  застосовують для pkt 3, 4, 6–9 art. 186." had bare `art. 100` and
+  `art. 186` mentions, now wrapped as
+  `foreignersLaw.article("100", "art. 100")` /
+  `foreignersLaw.article("186", "art. 186")` — matching the two other
+  `.article()` calls to the same provisions earlier in that same sentence.
+- Entry `ustawa-o-cudzoziemcach-art-192`, `rules[0].explanation` (locator
+  "ust. 1"): the entire field was still a bare plain string, "Permit за
+  art. 186 ust. 1 pkt 3 або 4 не відкликається лише тому, що...". Converted
+  to a `foreignersLaw.text` template wrapping `art. 186` as
+  `foreignersLaw.article("186", "art. 186")`.
+
+Both are registry-known self-references to this file's own act — no
+attribution ambiguity, no new URL needed. Committed separately as "fix:
+repair latent bare citations found in foreigners act part 06".

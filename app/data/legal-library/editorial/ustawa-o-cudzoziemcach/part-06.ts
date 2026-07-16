@@ -1490,7 +1490,7 @@ export const foreignersActPart06 =
           },
           {
             locator: "ust. 1 pkt 2–3",
-            explanation: foreignersLaw.text`Пункт 8 ${foreignersLaw.article("100", "art. 100")} не застосовують у наступній заяві за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 або 4. Пункти 6 і 7 art. 100 не застосовують для pkt 3, 4, 6–9 art. 186.`,
+            explanation: foreignersLaw.text`Пункт 8 ${foreignersLaw.article("100", "art. 100")} не застосовують у наступній заяві за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 або 4. Пункти 6 і 7 ${foreignersLaw.article("100", "art. 100")} не застосовують для pkt 3, 4, 6–9 ${foreignersLaw.article("186", "art. 186")}.`,
           },
           {
             locator: "ust. 1 pkt 4",
@@ -1520,8 +1520,7 @@ export const foreignersActPart06 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Permit за art. 186 ust. 1 pkt 3 або 4 не відкликається лише тому, що cudzoziemiec, зобов'язаний проходити лікування за спеціальним законом про інфекційні хвороби, не дав згоди на це лікування.",
+            explanation: foreignersLaw.text`Permit за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 або 4 не відкликається лише тому, що cudzoziemiec, зобов'язаний проходити лікування за спеціальним законом про інфекційні хвороби, не дав згоди на це лікування.`,
           },
           {
             locator: "ust. 2",
