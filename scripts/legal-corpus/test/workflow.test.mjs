@@ -10,6 +10,7 @@ import {
   diffProvisionLists,
   makeLegalStatusEvidence,
   normalizeRepositoryPath,
+  prepareWorkOrder,
   promoteEdition,
   readJson,
   validateApprovedWriteScope,
@@ -158,6 +159,39 @@ test("classifies edition changes by stable provision id and source hash", () => 
     changed: ["act-art-2"],
     removed: ["act-art-3"],
     unchanged: ["act-art-1"],
+  })
+})
+
+test("prepare's identity check rejects an --old-edition manifest whose documentId differs from the new config, before any build runs", async () => {
+  await withTempCorpus(async (root) => {
+    const oldEditionId = "beta-2025-1"
+    await writeJson(path.join(root, "app/data/legal-corpus", oldEditionId, "manifest.json"), {
+      documentId: "beta",
+      editionId: oldEditionId,
+    })
+    const configPath = path.join(root, "legal-corpus/documents/alpha-2026-1.json")
+    await writeJson(configPath, { documentId: "alpha", editionId: "alpha-2026-1" })
+
+    await assert.rejects(
+      () =>
+        prepareWorkOrder({
+          projectRoot: root,
+          mode: "update",
+          configPath: path.relative(root, configPath),
+          oldEditionId,
+          approvedWriteScope: ["app/data/legal-library/editorial/alpha/art-1.ts"],
+        }),
+      (error) => {
+        assert.match(error.message, /beta/)
+        assert.match(error.message, /alpha/)
+        return true
+      }
+    )
+    // The mismatch is caught before the (expensive, networked) build step, so
+    // no edition directory was ever created for the misconfigured update.
+    await assert.rejects(() =>
+      readJson(path.join(root, "app/data/legal-corpus/alpha-2026-1/manifest.json"))
+    )
   })
 })
 

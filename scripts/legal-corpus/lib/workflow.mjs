@@ -235,10 +235,27 @@ export async function prepareWorkOrder({
   if (mode === "update" && !oldEditionId) {
     throw new Error("update mode requires --old-edition")
   }
-  const scope = await validateApprovedWriteScope(approvedWriteScope, projectRoot)
-  const baseCommit = await runCapture(projectRoot, "git", ["rev-parse", "HEAD"])
   const absoluteConfig = path.resolve(projectRoot, configPath)
   const config = await readJson(absoluteConfig)
+
+  if (mode === "update") {
+    // Standalone `corpus:diff` already rejects mismatched documentId (workflow.mjs
+    // commandDiff); prepare must fail the same way, and before the expensive build
+    // below (and before the scope/git checks that follow), or `--old-edition`
+    // pointed at the wrong document silently produces a mass add/remove diff
+    // instead of stopping on the identity mismatch.
+    const oldManifest = await readJson(
+      path.join(projectRoot, "app/data/legal-corpus", oldEditionId, "manifest.json")
+    )
+    if (oldManifest.documentId !== config.documentId) {
+      throw new Error(
+        `--old-edition ${oldEditionId} belongs to document ${oldManifest.documentId}, but ${configPath} configures document ${config.documentId}. Update preparation cannot diff editions from different documents.`
+      )
+    }
+  }
+
+  const scope = await validateApprovedWriteScope(approvedWriteScope, projectRoot)
+  const baseCommit = await runCapture(projectRoot, "git", ["rev-parse", "HEAD"])
 
   await runNode(projectRoot, "scripts/legal-corpus/build-document.mjs", [
     configPath,
