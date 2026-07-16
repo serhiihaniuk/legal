@@ -7,6 +7,7 @@ import { resolveRepoRoot } from "./lib/repo-root.mjs"
 import {
   diffProvisionLists,
   prepareWorkOrder,
+  previewPromotion,
   promoteEdition,
   readJson,
   runCapture,
@@ -123,6 +124,7 @@ async function validateWithScope(projectRoot, workOrderPath, options = {}) {
 }
 
 async function commandPrepare(projectRoot, options) {
+  const dryRun = Boolean(options["dry-run"])
   const result = await prepareWorkOrder({
     projectRoot,
     mode: required(options, "mode"),
@@ -137,7 +139,12 @@ async function commandPrepare(projectRoot, options) {
         ? path.resolve(projectRoot, options.output)
         : undefined,
     forceRebuild: Boolean(options["force-rebuild"]),
+    dryRun,
   })
+  if (dryRun) {
+    process.stdout.write(`${JSON.stringify(result, null, 2)}\n`)
+    return
+  }
   process.stdout.write(
     `${JSON.stringify({
       workOrder: path.relative(projectRoot, result.workOrderPath),
@@ -199,9 +206,28 @@ async function commandPromote(projectRoot, options) {
   const workOrderPath = required(options, "work-order")
   const approvedBy = required(options, "approved-by")
   const approval = required(options, "approve")
+  const dryRun = Boolean(options["dry-run"])
   const result = await validateWithScope(projectRoot, workOrderPath, {
     verifyArtifacts: true,
   })
+
+  if (dryRun) {
+    const pointerPath = path.join(
+      projectRoot,
+      "app/data/legal-library/current-editions.json"
+    )
+    const currentPointers = await readJson(pointerPath).catch(() => ({}))
+    const preview = previewPromotion({
+      workOrder: result.workOrder,
+      approval,
+      validation: { passed: result.passed, errors: result.errors },
+      currentPointers,
+    })
+    process.stdout.write(`${JSON.stringify(preview, null, 2)}\n`)
+    if (!preview.wouldPromote) process.exitCode = 1
+    return
+  }
+
   if (!result.passed) {
     throw new Error(`Promotion blocked: ${result.errors.join("; ")}`)
   }

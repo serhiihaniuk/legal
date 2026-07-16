@@ -11,6 +11,7 @@ import {
   makeLegalStatusEvidence,
   normalizeRepositoryPath,
   prepareWorkOrder,
+  previewPromotion,
   promoteEdition,
   readJson,
   validateApprovedWriteScope,
@@ -193,6 +194,86 @@ test("prepare's identity check rejects an --old-edition manifest whose documentI
       readJson(path.join(root, "app/data/legal-corpus/alpha-2026-1/manifest.json"))
     )
   })
+})
+
+test("prepare --dry-run reports planned build/write paths and touches nothing", async () => {
+  await withTempCorpus(async (root) => {
+    const oldEditionId = "alpha-2025-0"
+    await writeJson(path.join(root, "app/data/legal-corpus", oldEditionId, "manifest.json"), {
+      documentId: "alpha",
+      editionId: oldEditionId,
+    })
+    const configPath = path.join(root, "legal-corpus/documents/alpha-2026-1.json")
+    await writeJson(configPath, { documentId: "alpha", editionId: "alpha-2026-1" })
+
+    const preview = await prepareWorkOrder({
+      projectRoot: root,
+      mode: "update",
+      configPath: path.relative(root, configPath),
+      oldEditionId,
+      approvedWriteScope: ["app/data/legal-library/editorial/alpha/art-1.ts"],
+      dryRun: true,
+    })
+
+    assert.equal(preview.dryRun, true)
+    assert.equal(preview.mode, "update")
+    assert.equal(preview.oldEditionId, oldEditionId)
+    assert.equal(preview.newEditionId, "alpha-2026-1")
+    assert.ok(
+      preview.wouldBuild.artifactPaths.includes(
+        "app/data/legal-corpus/alpha-2026-1/provisions.json"
+      )
+    )
+    assert.ok(preview.wouldWrite.workOrderPath.endsWith("alpha-alpha-2026-1.json"))
+
+    // A dry run never builds or writes: no edition directory, no work order.
+    await assert.rejects(() =>
+      readJson(path.join(root, "app/data/legal-corpus/alpha-2026-1/manifest.json"))
+    )
+    await assert.rejects(() => readJson(path.join(root, preview.wouldWrite.workOrderPath)))
+  })
+})
+
+test("previews a promotion's pointer transition and target files without writing anything", () => {
+  const preview = previewPromotion({
+    workOrder: { documentId: "alpha", newEditionId: "alpha-2026-1" },
+    approval: "alpha@alpha-2026-1",
+    validation: { passed: true, errors: [] },
+    currentPointers: { alpha: "alpha-2025-0" },
+  })
+  assert.equal(preview.dryRun, true)
+  assert.equal(preview.wouldPromote, true)
+  assert.deepEqual(preview.pointerTransition, {
+    documentId: "alpha",
+    from: "alpha-2025-0",
+    to: "alpha-2026-1",
+  })
+  assert.equal(preview.wouldWrite.pointerPath, "app/data/legal-library/current-editions.json")
+  assert.equal(
+    preview.wouldWrite.promotionRecordPath,
+    "legal-corpus/promotions/alpha-alpha-2026-1.json"
+  )
+})
+
+test("flags a promotion preview as blocked when the approval token or validation does not pass", () => {
+  const blockedByApproval = previewPromotion({
+    workOrder: { documentId: "alpha", newEditionId: "alpha-2026-1" },
+    approval: "alpha@wrong-edition",
+    validation: { passed: true, errors: [] },
+    currentPointers: {},
+  })
+  assert.equal(blockedByApproval.wouldPromote, false)
+  assert.equal(blockedByApproval.approvalMatches, false)
+  assert.equal(blockedByApproval.pointerTransition.from, null)
+
+  const blockedByValidation = previewPromotion({
+    workOrder: { documentId: "alpha", newEditionId: "alpha-2026-1" },
+    approval: "alpha@alpha-2026-1",
+    validation: { passed: false, errors: ["corpus fact re-verification failed"] },
+    currentPointers: {},
+  })
+  assert.equal(blockedByValidation.wouldPromote, false)
+  assert.equal(blockedByValidation.approvalMatches, true)
 })
 
 test("rejects broad, traversal, absolute, glob, and generated write scopes", () => {

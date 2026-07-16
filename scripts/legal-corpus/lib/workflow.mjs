@@ -229,6 +229,7 @@ export async function prepareWorkOrder({
   approvedWriteScope,
   outputBase,
   forceRebuild = false,
+  dryRun = false,
 }) {
   if (mode !== "add" && mode !== "update") {
     throw new Error("prepare mode must be add or update")
@@ -255,6 +256,48 @@ export async function prepareWorkOrder({
     }
   }
 
+  const editionDirectory = path.join(
+    projectRoot,
+    "app/data/legal-corpus",
+    config.editionId
+  )
+  const base =
+    outputBase ??
+    path.join(
+      projectRoot,
+      "legal-corpus/work-orders",
+      `${config.documentId}-${config.editionId}`
+    )
+  const workOrderPath = `${base}.json`
+  const promptPath = `${base}.md`
+  const editionDiffPath = path.join(editionDirectory, "edition-diff.json")
+
+  if (dryRun) {
+    // A real prepare's diff summary requires the new edition's actually
+    // extracted provisions, which only exist after a build -- and building
+    // writes committed artifacts, which a dry run must not do. So the dry
+    // run reports exactly what would be built and written (paths, mode,
+    // identities) without invoking build-document.mjs or writing anything.
+    return {
+      dryRun: true,
+      mode,
+      documentId: config.documentId,
+      oldEditionId: mode === "update" ? oldEditionId : null,
+      newEditionId: config.editionId,
+      wouldBuild: {
+        configPath: path.relative(projectRoot, absoluteConfig).replaceAll("\\", "/"),
+        forceRebuild,
+        artifactPaths: generatedEditionPaths(config.editionId),
+      },
+      wouldWrite: {
+        workOrderPath: path.relative(projectRoot, workOrderPath).replaceAll("\\", "/"),
+        promptPath: path.relative(projectRoot, promptPath).replaceAll("\\", "/"),
+        editionDiffPath: path.relative(projectRoot, editionDiffPath).replaceAll("\\", "/"),
+      },
+      note: "Dry run: nothing was built or written. A provision-level diff summary requires an actual build; rerun without --dry-run.",
+    }
+  }
+
   const scope = await validateApprovedWriteScope(approvedWriteScope, projectRoot)
   const baseCommit = await runCapture(projectRoot, "git", ["rev-parse", "HEAD"])
 
@@ -262,12 +305,6 @@ export async function prepareWorkOrder({
     configPath,
     ...(forceRebuild ? ["--force-rebuild"] : []),
   ])
-
-  const editionDirectory = path.join(
-    projectRoot,
-    "app/data/legal-corpus",
-    config.editionId
-  )
   const [manifest, diagnostics, provisions] = await Promise.all([
     readJson(path.join(editionDirectory, "manifest.json")),
     readJson(path.join(editionDirectory, "diagnostics.json")),
@@ -304,18 +341,8 @@ export async function prepareWorkOrder({
       provisions: diffProvisionLists(oldProvisions, provisions),
     }
   }
-  const editionDiffPath = path.join(editionDirectory, "edition-diff.json")
   await writeJson(editionDiffPath, editionDiff)
 
-  const base =
-    outputBase ??
-    path.join(
-      projectRoot,
-      "legal-corpus/work-orders",
-      `${config.documentId}-${config.editionId}`
-    )
-  const workOrderPath = `${base}.json`
-  const promptPath = `${base}.md`
   const legalStatusEvidence = makeLegalStatusEvidence(manifest)
   const workOrder = {
     schemaVersion: 1,
@@ -618,6 +645,46 @@ export async function writeJsonAtomically(filePath, value) {
   await mkdir(path.dirname(filePath), { recursive: true })
   await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8")
   await rename(temporary, filePath)
+}
+
+/**
+ * Compute promotion's --dry-run preview: whether promotion would proceed,
+ * and exactly which durable files a real promotion would touch (pointer,
+ * registries, promotion record), without performing any of those writes.
+ * Pure given already-gathered validation/pointer state, so the CLI's I/O
+ * (reading the work order, running scope/artifact/editorial validation,
+ * reading the pointer file) stays in workflow.mjs while this shape is
+ * testable without any of it.
+ * @param {{
+ *   workOrder: Record<string, any>,
+ *   approval: string,
+ *   validation: { passed: boolean, errors: string[] },
+ *   currentPointers: Record<string, string>,
+ * }} options
+ */
+export function previewPromotion({ workOrder, approval, validation, currentPointers }) {
+  const expectedApproval = `${workOrder.documentId}@${workOrder.newEditionId}`
+  const approvalMatches = approval === expectedApproval
+  return {
+    dryRun: true,
+    wouldPromote: validation.passed && approvalMatches,
+    documentId: workOrder.documentId,
+    newEditionId: workOrder.newEditionId,
+    expectedApproval,
+    approvalMatches,
+    validation,
+    pointerTransition: {
+      documentId: workOrder.documentId,
+      from: currentPointers[workOrder.documentId] ?? null,
+      to: workOrder.newEditionId,
+    },
+    wouldWrite: {
+      pointerPath: "app/data/legal-library/current-editions.json",
+      registryPath: "app/data/legal-corpus/registry.generated.ts",
+      referenceRegistryPath: "app/data/legal-corpus/reference-registry.generated.ts",
+      promotionRecordPath: `legal-corpus/promotions/${workOrder.documentId}-${workOrder.newEditionId}.json`,
+    },
+  }
 }
 
 /**
