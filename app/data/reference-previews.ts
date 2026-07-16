@@ -29,7 +29,7 @@ import {
 } from "~/data/legal-library/official-sources"
 import type { LegalReference } from "~/data/legal-references"
 import { legalReferenceTarget } from "~/data/legal-references"
-import { kpaArticleIndex } from "~/data/kpa-article-index"
+import { kpaArticleIndex } from "~/data/legal-library/learning/kpa"
 import type { LegalNode } from "~/data/legal-types"
 
 export const REFERENCE_PREVIEW_MAX_SUMMARY_LENGTH = 280

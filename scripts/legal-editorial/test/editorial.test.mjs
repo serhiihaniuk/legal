@@ -94,12 +94,13 @@ test("incomplete mode accepts the scaffold but reports missing and draft coverag
   assert.ok(result.warnings.some(({ code }) => code === "missing-provision"))
 })
 
-test("temporarily skips authored KPA parts with an explicit warning", () => {
+test("validates authored KPA parts as ordinary editorial coverage", () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "legal-editorial-kpa-"))
   const editorialRoot = path.join(root, "editorial")
   const corpusRoot = path.join(root, "corpus")
   const currentEditionsPath = path.join(root, "current-editions.json")
   fs.mkdirSync(path.join(editorialRoot, "kpa"), { recursive: true })
+  fs.mkdirSync(path.join(corpusRoot, "kpa-2025-1691"), { recursive: true })
   fs.writeFileSync(
     path.join(editorialRoot, "kpa", "part-00.ts"),
     part({
@@ -107,6 +108,16 @@ test("temporarily skips authored KPA parts with an explicit warning", () => {
       editionId: "kpa-2025-1691",
       entries: [entry("kpa-art-1")],
     }),
+  )
+  fs.writeFileSync(
+    path.join(corpusRoot, "kpa-2025-1691", "provisions.json"),
+    JSON.stringify([
+      {
+        id: "kpa-art-1",
+        documentId: "kpa",
+        editionId: "kpa-2025-1691",
+      },
+    ]),
   )
   fs.writeFileSync(currentEditionsPath, JSON.stringify({ kpa: "kpa-2025-1691" }))
 
@@ -118,9 +129,11 @@ test("temporarily skips authored KPA parts with an explicit warning", () => {
   })
 
   assert.equal(result.ok, true)
-  assert.equal(result.summary.authoredCount, 0)
-  assert.ok(
+  assert.equal(result.summary.authoredCount, 1)
+  assert.equal(result.summary.coveredCount, 1)
+  assert.equal(
     result.warnings.some(({ code }) => code === "kpa-editorial-not-validated"),
+    false,
   )
 })
 

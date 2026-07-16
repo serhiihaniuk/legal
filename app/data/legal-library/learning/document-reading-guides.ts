@@ -537,4 +537,4 @@ export const documentReadingGuides = defineLegalLearningContent({
         "Правильна робота з rozporządzeniem — це читання зв’язку § → załącznik → pole → факт → materialna norma → dowód, а не механічне заповнення PDF.",
     },
   },
-}) satisfies Record<AuthoredLearningDocumentId, DocumentReadingGuide>
+}) satisfies Partial<Record<AuthoredLearningDocumentId, DocumentReadingGuide>>

@@ -3,16 +3,16 @@ import {
   legalLearningContentToc,
 } from "~/components/legal-learning-module-content"
 import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
-import { kpaArticleIndex } from "~/data/kpa-article-index"
+import { kpaArticleIndex } from "~/data/legal-library/learning/kpa"
 import {
   kpaGuideModuleArticles,
   type KpaGuideModuleId,
-} from "~/data/kpa-guide-module-articles"
+} from "~/data/legal-library/learning/kpa"
 import {
   kpaGuideLegalState,
   kpaGuideLessons,
   kpaGuideModules,
-} from "~/data/kpa-guide-data"
+} from "~/data/legal-library/learning/kpa"
 import { parseLegalProvisionReference } from "~/data/legal-library/query"
 import type { LegalLearningModuleView } from "~/data/legal-library/learning/view-types"
 

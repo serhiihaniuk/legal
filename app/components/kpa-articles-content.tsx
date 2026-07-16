@@ -23,11 +23,13 @@ import {
   DialogTrigger,
 } from "~/components/ui/dialog"
 import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
-import { getLegalSourceManifest } from "~/data/legal-corpus"
-import { kpaArticleIndex, type KpaArticleEntry } from "~/data/kpa-article-index"
-import { listProvisions } from "~/data/legal-library"
+import { getEdition, listProvisions } from "~/data/legal-library"
+import {
+  kpaArticleIndex,
+  type KpaArticleEntry,
+} from "~/data/legal-library/learning/kpa"
 
-const kpaSource = getLegalSourceManifest("kpa-2025-1691")!
+const kpaSource = getEdition("kpa", "kpa-2025-1691")!.manifest
 const kpaCorpusProvisionByArticle = new Map(
   listProvisions("kpa").map((provision) => [
     provision.locator.replace(/^Art\.\s*/u, ""),

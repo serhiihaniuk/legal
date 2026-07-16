@@ -43,10 +43,10 @@ The current KPA implementation is valuable evidence, not the target public contr
 | --- | --- |
 | `scripts/legal-corpus/build-document.mjs` fetches ELI metadata and a PDF, normalizes pages, and detects `Art.` with one regular expression. | Keep deterministic extraction, but generalize its output from articles to provisions and record diagnostics. Do not add parser Adapter layers before a second format exists. |
 | `legal-corpus/documents/kpa-2025-1691.json` uses `id` as the edition directory identifier. | Add explicit stable `documentId`, `editionId`, `schemaVersion`, source provider, and extraction expectations. Accept the old shape only through a migration reader. |
-| `app/data/legal-corpus.ts` is a KPA-only manifest registry. | Generate one literal registry for all documents and editions. Keep manifest parsing inside the library Implementation. |
-| `app/data/kpa-article-index.ts` contains hand-built KPA navigation and a PDF locator. | Project generic provision facts into this shape during migration, then move KPA navigation to generic provision/structure queries. |
-| `app/data/kpa-article-explanations/` contains reviewed lazy-loaded explanations. | Preserve its editorial quality, but key the target layer by `(documentId, provisionId)` and record `sourceEditionId`, `verifiedAt`, and review status. |
-| `app/data/kpa-article-text.ts` duplicates generated source text. | Replace it with generic corpus queries after the compatibility projection is proven. |
+| `app/data/legal-corpus/` contains generated manifests and provision facts for all registered documents and editions. | Generate one literal registry for all documents and editions. Keep manifest parsing inside the library Implementation. |
+| `app/data/legal-library/learning/kpa.ts` owns the KPA learning projection; corpus facts provide article identity, order, status, and PDF locators while authored metadata supplies learner labels. | Keep the compatibility shape inside the canonical KPA learning module and move shared navigation to generic provision/structure queries. |
+| `app/data/legal-library/editorial/kpa/` contains reviewed lazy-loaded explanations keyed by stable provision IDs. | Preserve its editorial quality, and record `sourceEditionId`, `verifiedAt`, and review status. |
+| The legal-library query projects generated provision text and PDF locators for every document. | Keep source text behind generic corpus queries; the official PDF remains the trust source. |
 | `app/components/kpa-articles-content.tsx` provides the exact-PDF-page dialog, ELI link, source text, explanation, and previous/next controls. | Preserve these UX strengths in a generic provision reader. Its current hardcoded KPA labels and source ID move behind the query Module. |
 | `app/routes/kpa.tsx` owns `view`, `article`, and `module` query semantics. | Keep a route compatibility Adapter for all known deep links while `/law` becomes canonical. |
 | `app/data/legal-references.ts` assumes an article is KPA unless context says otherwise. | Replace the string article reference with a document-dependent `LegalReference` and a runtime resolver. |
@@ -745,7 +745,7 @@ Example diff shape:
 - Add explicit `documentId`/`editionId` config support and a versioned reader.
 - Refactor the builder's extraction result into generic `provisions.json`, `structure.json`, diagnostics, and hashes.
 - Generate `articles.json` as a KPA compatibility projection from provisions.
-- Keep the current `kpa-article-index.ts`, source reader, and `/guide/kpa` unchanged or fed by the projection.
+- Keep the canonical KPA learning projection, source reader, and `/guide/kpa` unchanged or fed by promoted corpus facts.
 - Exit when a clean rebuild reproduces KPA navigation and exact PDF pages with no editorial file changes.
 
 ### Phase 2 — generated registry and `legal-library` query Module
@@ -765,8 +765,8 @@ Example diff shape:
 
 ### Phase 4 — editorial migration
 
-- Move or wrap `app/data/kpa-article-explanations/` into the generic editorial key shape.
-- Remove duplicate `app/data/kpa-article-text.ts` reads after generated provision text is proven equivalent.
+- Keep `app/data/legal-library/editorial/kpa/` in the generic editorial key shape.
+- Keep generated provision text behind legal-library queries after the compatibility projection is proven equivalent.
 - Change `LegalReference` and its resolver to use typed document/provision pairs.
 - Exit when no generic caller assumes that an article means KPA and every explanation reports source edition/date/status.
 

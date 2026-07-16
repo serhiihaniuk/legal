@@ -174,17 +174,13 @@ export function buildLegalLearningModuleView({
   legalState,
   reviewedProvisions,
 }: {
-  documentId: Exclude<LegalDocumentId, "kpa">
+  documentId: LegalDocumentId
   module: LegalLearningModule
   legalState: string
   reviewedProvisions: readonly ReviewedProvision[]
 }): LegalLearningModuleView {
   const readingGuide = getDocumentReadingGuide(documentId)
-  if (!readingGuide) {
-    throw new Error(`Missing document reading guide for ${documentId}`)
-  }
-
-  const isReadingModule = module.id === readingGuide.module.id
+  const isReadingModule = readingGuide?.module.id === module.id
   const paragraphs = module.sections.flatMap((section) => section.paragraphs)
   const warnings = uniqueTexts(
     module.sections.map((section) => section.warning)
@@ -244,12 +240,12 @@ export function buildLegalLearningModuleView({
     neededWhen: module.placeInWork,
     boundary,
     courseTitle: isReadingModule
-      ? `Карта курсу: ${readingGuide.module.title}`
+      ? `Карта курсу: ${readingGuide?.module.title ?? module.title}`
       : undefined,
     courseDescription: isReadingModule
-      ? readingGuide.courseDescription
+      ? readingGuide?.courseDescription
       : undefined,
-    coursePhases: isReadingModule ? readingGuide.phases : undefined,
+    coursePhases: isReadingModule ? readingGuide?.phases : undefined,
     mechanismParagraphs: paragraphs,
     layers: [
       { label: "Основне правило", text: mainRule },

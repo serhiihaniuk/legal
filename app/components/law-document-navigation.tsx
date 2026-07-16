@@ -23,7 +23,7 @@ import {
   getProvisionOutline,
   type ProvisionOutlineGroup,
 } from "~/data/legal-library/provision-outline"
-import { kpaGuideModules } from "~/data/kpa-guide-data"
+import { kpaGuideModules } from "~/data/legal-library/learning/kpa"
 
 export type LawDocumentSection = "learning" | "provisions" | "practice"
 

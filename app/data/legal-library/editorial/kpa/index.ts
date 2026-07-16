@@ -1,6 +1,6 @@
-import { kpaArticleIndex } from "~/data/kpa-article-index"
+import type { LegalExplanation } from "../../contracts"
 
-import type { LegalExplanation, LegalProvisionId } from "../../contracts"
+import { kpaEditorialProvisionIndex } from "./provision-index"
 
 const PART_SIZE = 102
 const PART_COUNT = 3
@@ -14,36 +14,13 @@ const partLoaders = [
   async () => (await import("./part-3")).kpaArticleExplanationsPart3,
 ] as const
 
-const superscriptDigits: Record<string, string> = {
-  "⁰": "0",
-  "¹": "1",
-  "²": "2",
-  "³": "3",
-  "⁴": "4",
-  "⁵": "5",
-  "⁶": "6",
-  "⁷": "7",
-  "⁸": "8",
-  "⁹": "9",
-}
-
-function provisionIdForArticle(article: string): LegalProvisionId<"kpa"> {
-  const base = article.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+$/u, "")
-  const suffix = article.slice(base.length)
-  const key = suffix
-    ? `${base}-${[...suffix].map((digit) => superscriptDigits[digit]).join("-")}`
-    : base
-  return `kpa-art-${key}` as LegalProvisionId<"kpa">
-}
-
 function validatePart(partIndex: number, explanations: ExplanationPart) {
-  const expectedArticles = kpaArticleIndex
+  const expectedProvisionIds = kpaEditorialProvisionIndex
     .slice(partIndex * PART_SIZE, (partIndex + 1) * PART_SIZE)
-    .map((entry) => entry.article)
+    .map((entry) => entry.provisionId)
   const actualProvisionIds = Object.values(explanations).map(
     (entry) => entry.provisionId
   )
-  const expectedProvisionIds = expectedArticles.map(provisionIdForArticle)
 
   if (
     JSON.stringify(actualProvisionIds) !== JSON.stringify(expectedProvisionIds)
@@ -61,7 +38,7 @@ async function loadPart(partIndex: number) {
 }
 
 async function loadAllParts() {
-  if (kpaArticleIndex.length !== PART_SIZE * PART_COUNT) {
+  if (kpaEditorialProvisionIndex.length !== PART_SIZE * PART_COUNT) {
     throw new Error(
       `Invalid KPA explanation coverage: expected ${PART_SIZE * PART_COUNT} indexed articles.`
     )
@@ -106,21 +83,22 @@ function toCompatibilityView(
 }
 
 export async function getKpaArticleExplanation(article: string) {
-  const articleIndex = kpaArticleIndex.findIndex(
+  const articleIndex = kpaEditorialProvisionIndex.findIndex(
     (entry) => entry.article === article
   )
   if (articleIndex < 0) return undefined
 
   const partIndex = Math.floor(articleIndex / PART_SIZE)
   const explanations = await loadPart(partIndex)
-  const explanation = explanations[provisionIdForArticle(article)]
+  const explanation =
+    explanations[kpaEditorialProvisionIndex[articleIndex].provisionId]
   return explanation ? toCompatibilityView(article, explanation) : undefined
 }
 
 export async function getKpaArticleExplanations(articles: readonly string[]) {
   const partIndexes = new Set<number>()
   for (const article of new Set(articles)) {
-    const articleIndex = kpaArticleIndex.findIndex(
+    const articleIndex = kpaEditorialProvisionIndex.findIndex(
       (entry) => entry.article === article
     )
     if (articleIndex >= 0) partIndexes.add(Math.floor(articleIndex / PART_SIZE))
@@ -135,12 +113,12 @@ export async function getKpaArticleExplanations(articles: readonly string[]) {
   )
 
   return articles.flatMap((article) => {
-    const articleIndex = kpaArticleIndex.findIndex(
+    const articleIndex = kpaEditorialProvisionIndex.findIndex(
       (entry) => entry.article === article
     )
     if (articleIndex < 0) return []
     const explanation = loadedParts.get(Math.floor(articleIndex / PART_SIZE))?.[
-      provisionIdForArticle(article)
+      kpaEditorialProvisionIndex[articleIndex].provisionId
     ]
     return explanation ? [toCompatibilityView(article, explanation)] : []
   })
