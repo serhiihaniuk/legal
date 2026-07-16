@@ -118,13 +118,13 @@ export function resolveFetchTimeoutMs(env = process.env) {
  * A missing content-type header is not treated as an error: some official
  * endpoints omit it even for a correct response.
  * @param {string} url
- * @param {{ timeoutMs?: number, expectedContentType?: RegExp }} [options]
+ * @param {{ timeoutMs?: number, expectedContentType?: RegExp, fetchImpl?: typeof fetch }} [options]
  * @returns {Promise<Uint8Array>}
  */
-export async function fetchBytes(url, { timeoutMs = DEFAULT_FETCH_TIMEOUT_MS, expectedContentType } = {}) {
+export async function fetchBytes(url, { timeoutMs = DEFAULT_FETCH_TIMEOUT_MS, expectedContentType, fetchImpl = fetch } = {}) {
   let response
   try {
-    response = await fetch(url, {
+    response = await fetchImpl(url, {
       headers: { "user-agent": "legalizacja-atlas-local-corpus/1.0" },
       signal: AbortSignal.timeout(timeoutMs),
     })
@@ -328,16 +328,22 @@ export function resolveBuiltAt({ existingManifests, pdfSha256, now }) {
   return typeof unchanged?.builtAt === "string" ? unchanged.builtAt : now
 }
 
-async function main() {
-  const { configPath: configArgument, forceRebuild } = parseArguments(process.argv.slice(2))
-  if (!configArgument) {
-    throw new Error(
-      "Usage: node scripts/legal-corpus/build-document.mjs <document-config.json> [--force-rebuild]"
-    )
-  }
-
-  const projectRoot = resolveRepoRoot(import.meta.url)
-  const configPath = path.resolve(projectRoot, configArgument)
+/**
+ * Build and publish one corpus edition. `fetchImpl` is a test seam only;
+ * callers that omit it use the normal global fetch and official URLs.
+ * @param {{ projectRoot?: string, configPath: string, forceRebuild?: boolean, fetchImpl?: typeof fetch, getDocumentImpl?: typeof getDocument, emit?: boolean }} options
+ * @returns {Promise<Record<string, unknown>>}
+ */
+export async function buildDocument({
+  projectRoot = resolveRepoRoot(import.meta.url),
+  configPath,
+  forceRebuild = false,
+  fetchImpl = fetch,
+  getDocumentImpl = getDocument,
+  emit = true,
+}) {
+  const absoluteConfigPath = path.resolve(projectRoot, configPath)
+  configPath = absoluteConfigPath
   const rawConfig = await readJson(configPath)
   const config = validateConfig(rawConfig)
   const dataDirectory = path.join(
@@ -367,10 +373,12 @@ async function main() {
     fetchBytes(config.source.metadataUrl, {
       timeoutMs: fetchTimeoutMs,
       expectedContentType: /application\/json/iu,
+      fetchImpl,
     }),
     fetchBytes(config.source.pdfUrl, {
       timeoutMs: fetchTimeoutMs,
       expectedContentType: /application\/pdf/iu,
+      fetchImpl,
     }),
   ])
   let metadata
@@ -384,7 +392,7 @@ async function main() {
   }
 
   const pdfSha256 = sha256Bytes(pdfBytes)
-  const pages = await extractPages(pdfBytes.slice(), getDocument)
+  const pages = await extractPages(pdfBytes.slice(), getDocumentImpl)
   const provisions = extractProvisions(pages, {
     documentId: config.documentId,
     editionId: config.editionId,
@@ -455,17 +463,27 @@ async function main() {
     await rm(stageRoot, { recursive: true, force: true })
   }
 
-  process.stdout.write(
-    `${JSON.stringify({
-      document: config.documentId,
-      edition: config.editionId,
-      pages: observed.pageCount,
-      pagesWithText: observed.textLayerPageCount,
-      provisions: observed.provisionCount,
-      articles: observed.articleCount,
-      pdfSha256,
-    })}\n`
-  )
+  const result = {
+    document: config.documentId,
+    edition: config.editionId,
+    pages: observed.pageCount,
+    pagesWithText: observed.textLayerPageCount,
+    provisions: observed.provisionCount,
+    articles: observed.articleCount,
+    pdfSha256,
+  }
+  if (emit) process.stdout.write(`${JSON.stringify(result)}\n`)
+  return result
+}
+
+async function main() {
+  const { configPath, forceRebuild } = parseArguments(process.argv.slice(2))
+  if (!configPath) {
+    throw new Error(
+      "Usage: node scripts/legal-corpus/build-document.mjs <document-config.json> [--force-rebuild]"
+    )
+  }
+  await buildDocument({ configPath, forceRebuild })
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
