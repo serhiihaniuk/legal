@@ -18,8 +18,6 @@ import {
   DocsSidebar,
   DocsSidebarBackLink,
   DocsSidebarItem,
-  DocsSidebarList,
-  DocsSidebarSection,
 } from "~/components/docs-sidebar-navigation"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"

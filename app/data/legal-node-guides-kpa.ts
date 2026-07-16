@@ -5,16 +5,16 @@ import {
 import type { LegalNodeGuideMap } from "~/data/legal-node-guide-types"
 
 const kpaLaw = createLegalTextAuthor("kpa")
-const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
-const workLaw = createLegalTextAuthor("powierzanie-pracy")
+const _foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+const _workLaw = createLegalTextAuthor("powierzanie-pracy")
 const ppsaLaw = createLegalTextAuthor("ppsa")
-const residenceLaw = createLegalTextAuthor(
+const _residenceLaw = createLegalTextAuthor(
   "rozporzadzenie-wniosek-pobyt-czasowy"
 )
-const WORK_REGULATION_URL = "https://eli.gov.pl/eli/DU/2025/1629/ogl"
-const UKRAINE_SPECIAL_ACT_URL =
+const _WORK_REGULATION_URL = "https://eli.gov.pl/eli/DU/2025/1629/ogl"
+const _UKRAINE_SPECIAL_ACT_URL =
   "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
-const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
+const _FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 
 export const legalNodeGuidesKpa = defineLegalTextContent(
   {

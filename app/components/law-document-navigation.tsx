@@ -18,7 +18,7 @@ import {
   getLegalLearningModules,
   listProvisions,
 } from "~/data/legal-library"
-import type { LegalDocument, LegalProvision } from "~/data/legal-library"
+import type { LegalDocument } from "~/data/legal-library"
 import {
   getProvisionOutline,
   type ProvisionOutlineGroup,

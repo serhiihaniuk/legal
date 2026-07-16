@@ -23,7 +23,6 @@ import {
   getEvidenceDocumentPath,
   listEvidenceDocumentCategories,
   type EvidenceDocumentCategory,
-  type EvidenceDocumentId,
 } from "~/data/document-library"
 import {
   documentCatalog,
@@ -75,7 +74,7 @@ export function DocumentCatalogNavigation({
   selectedCategory,
   selectedDocumentId,
   onCategorySelect,
-  onDocumentSelect,
+  onDocumentSelect: _onDocumentSelect,
 }: {
   selectedCategory: EvidenceDocumentCategory | "all"
   selectedDocumentId?: string
@@ -266,7 +265,7 @@ export function DocumentCatalogOverview({
 
 export function DocumentDetailContent({
   document,
-  onDocumentSelect,
+  onDocumentSelect: _onDocumentSelect,
 }: {
   document: DocumentCatalogEntry
   onDocumentSelect: (documentId: string) => void

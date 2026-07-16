@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "jsx-a11y", "typescript"],
+  "categories": {
+    "correctness": "error"
+  },
+  // Node tooling remains outside this app-focused baseline; Phase 1 owns scripts cleanup.
+  "ignorePatterns": [
+    "scripts/**"
+  ],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "error",
+    // Generic labels receive their association from the consuming control.
+    "jsx-a11y/label-has-associated-control": "off",
+    // Input grouping uses ARIA roles intentionally; changing tags would alter semantics.
+    "jsx-a11y/prefer-tag-over-role": "off",
+    // The addon click handler intentionally focuses its sibling input.
+    "jsx-a11y/click-events-have-key-events": "off",
+    // The addon is a deliberate non-interactive focus delegation surface.
+    "jsx-a11y/no-noninteractive-element-interactions": "off"
+  }
+}

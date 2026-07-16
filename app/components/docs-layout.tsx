@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react"
 
-import { cn } from "~/lib/utils"
 import { ScrollArea } from "~/components/ui/scroll-area"
 
 export type TocItem = {

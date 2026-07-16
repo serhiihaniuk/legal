@@ -17,6 +17,7 @@
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
+    "lint": "oxlint",
     "format": "prettier --write \"**/*.{ts,tsx}\""
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "oxlint": "^1.74.0",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",

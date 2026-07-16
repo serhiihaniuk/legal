@@ -5,10 +5,10 @@ import {
 import type { KpaArticleExplanation } from "./types"
 
 const kpaLaw = createLegalTextAuthor("kpa")
-const ppsaLaw = createLegalTextAuthor("ppsa")
-const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+const _ppsaLaw = createLegalTextAuthor("ppsa")
+const _foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const RODO_URL = "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
-const ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2024/1045/ogl"
+const _ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2024/1045/ogl"
 
 export const kpaArticleExplanationsPart3 = defineLegalTextContent(
   [

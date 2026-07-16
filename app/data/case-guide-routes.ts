@@ -1,5 +1,4 @@
 import type {
-  CaseGuideCondition,
   CaseGuideDeadline,
   CaseGuideDocument,
   CaseGuideMaterial,

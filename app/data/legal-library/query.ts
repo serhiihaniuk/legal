@@ -2,7 +2,6 @@ import { getKpaArticleExplanation } from "~/data/kpa-article-explanations"
 import { legalLibraryRegistry } from "~/data/legal-corpus/registry.generated"
 
 import { getEditorialExplanation } from "./editorial"
-import { legalTextPlainText } from "./legal-text"
 import type {
   CanonicalPdfLocator,
   CorpusProvision,

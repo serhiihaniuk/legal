@@ -1,4 +1,4 @@
-import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
+import { createLegalTextAuthor } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
 
 const ppsaLaw = createLegalTextAuthor("ppsa")
