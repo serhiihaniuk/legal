@@ -24,6 +24,7 @@ import {
   ConfigValidationError,
 } from "./lib/config.mjs"
 import { extractPages, extractProvisions } from "./lib/extraction.mjs"
+import { resolveRepoRoot } from "./lib/repo-root.mjs"
 import {
   assertNoFatalDiagnostics,
   diagnostic,
@@ -280,7 +281,7 @@ async function main() {
     )
   }
 
-  const projectRoot = process.cwd()
+  const projectRoot = resolveRepoRoot(import.meta.url)
   const configPath = path.resolve(projectRoot, configArgument)
   const rawConfig = await readJson(configPath)
   const config = validateConfig(rawConfig)

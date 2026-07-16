@@ -5,6 +5,8 @@ import path from "node:path"
 import process from "node:process"
 import { fileURLToPath } from "node:url"
 
+import { resolveRepoRoot } from "./lib/repo-root.mjs"
+
 const ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/u
 const DEFAULT_DATA_DIRECTORY = "app/data/legal-corpus"
 const DEFAULT_POINTER_PATH = "app/data/legal-library/current-editions.json"
@@ -259,7 +261,7 @@ export function renderReferenceRegistry(groups) {
  * }} [options]
  */
 export async function generateRegistry({
-  projectRoot = process.cwd(),
+  projectRoot = resolveRepoRoot(import.meta.url),
   dataDirectory = path.join(projectRoot, DEFAULT_DATA_DIRECTORY),
   pointerPath = path.join(projectRoot, DEFAULT_POINTER_PATH),
   outputPath = path.join(projectRoot, DEFAULT_OUTPUT_PATH),

@@ -3,6 +3,7 @@
 import path from "node:path"
 import process from "node:process"
 
+import { resolveRepoRoot } from "./lib/repo-root.mjs"
 import {
   diffProvisionLists,
   prepareWorkOrder,
@@ -219,7 +220,7 @@ async function commandPromote(projectRoot, options) {
 }
 
 async function main() {
-  const projectRoot = process.cwd()
+  const projectRoot = resolveRepoRoot(import.meta.url)
   const { command, options } = parseArguments(process.argv.slice(2))
   switch (command) {
     case "prepare":
