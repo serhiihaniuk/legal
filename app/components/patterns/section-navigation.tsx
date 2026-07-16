@@ -1,10 +1,7 @@
 import { cva } from "class-variance-authority"
 import type { ReactNode } from "react"
 
-import {
-  DocsSidebarItem,
-  DocsSidebarList,
-} from "~/components/docs-sidebar-navigation"
+import { DocsSidebarItem, DocsSidebarList } from "~/components/layout"
 import { cn } from "~/lib/utils"
 
 export type SectionNavigationOption<Value extends string = string> = {

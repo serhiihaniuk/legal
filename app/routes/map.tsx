@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react"
 import { useNavigate, useParams } from "react-router"
 
-import { DocsLayout } from "~/components/docs-layout"
+import { DocsLayout } from "~/components/layout"
 import {
   LegalMapNavigation,
   LegalMapOverview,
@@ -11,7 +11,7 @@ import {
   MobileLegalMapNavigation,
   resolveLegalMapNode,
   stageForNode,
-} from "~/components/legal-map-content"
+} from "~/features/legal-map"
 import type { LegalMapJourneyStage } from "~/data/legal-map-journey"
 
 function scrollToTop() {

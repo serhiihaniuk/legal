@@ -1,19 +1,19 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Link } from "react-router"
 
-import type { TocItem } from "~/components/docs-layout"
-import {
-  LegalReferenceArrow,
-  LegalText,
-} from "~/components/legal-reference-text"
-import { OfficialSourceEntry } from "~/components/official-source"
 import {
   DocsSidebar,
   DocsSidebarBackLink,
   DocsSidebarItem,
   DocsSidebarList,
   DocsSidebarSection,
-} from "~/components/docs-sidebar-navigation"
+  type TocItem,
+} from "~/components/layout"
+import {
+  LegalReferenceArrow,
+  LegalText,
+  OfficialSourceEntry,
+} from "~/components/references"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import {
@@ -471,7 +471,7 @@ export function DocumentDetailContent({
           <ul>
             {document.guide.legalBasis.map((item) => (
               <li key={legalTextPlainText(item)}>
-                <LegalText text={item} />
+                <LegalText text={item} context="reference-section" />
               </li>
             ))}
           </ul>

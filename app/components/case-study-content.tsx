@@ -1,7 +1,7 @@
 import { ArrowRight, ArrowUpRight, Clock3, FileText, Scale } from "lucide-react"
 import { Link } from "react-router"
 
-import { OfficialSourceEntry } from "~/components/official-source"
+import { LegalText, OfficialSourceEntry } from "~/components/references"
 import {
   Accordion,
   AccordionContent,
@@ -42,7 +42,6 @@ import {
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/legal-types"
-import { LegalText } from "~/components/legal-reference-text"
 import { DocumentArticle } from "~/components/patterns/document-content"
 import { DefinitionRowGrid } from "~/components/patterns/definition-rows"
 

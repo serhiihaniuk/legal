@@ -7,15 +7,15 @@ import {
 } from "react-router"
 
 import {
+  buildLegalLearningModuleView,
+  findModuleProvisions,
   LegalLearningModuleContent,
   legalLearningContentToc,
-} from "~/features/law-library/ui/legal-learning-module-content"
-import {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
-} from "~/components/law-document-navigation"
-import { DocsLayout } from "~/components/docs-layout"
-import { OfficialSourceLink } from "~/components/official-source"
+} from "~/features/law-library"
+import { DocsLayout } from "~/components/layout"
+import { OfficialSourceLink } from "~/components/references"
 import { Button } from "~/components/ui/button"
 import {
   getDocument,
@@ -27,10 +27,6 @@ import {
   getLegalLearningModule,
   listProvisions,
 } from "~/data/legal-library"
-import {
-  buildLegalLearningModuleView,
-  findModuleProvisions,
-} from "~/features/law-library/model/legal-learning-view"
 import { officialSourceIdByLegalDocument } from "~/data/legal-library/official-sources"
 
 const legacyTechnicalModuleIds = new Set([

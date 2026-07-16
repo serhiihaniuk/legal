@@ -3,9 +3,9 @@ import { Link, useNavigate, useParams } from "react-router"
 import {
   CaseStudyContent,
   caseStudyTableOfContents,
-} from "~/components/case-study-content"
-import { DocsLayout } from "~/components/docs-layout"
-import { LegalText } from "~/components/legal-reference-text"
+} from "~/features/case-guides"
+import { DocsLayout } from "~/components/layout"
+import { LegalText } from "~/components/references"
 import { Button } from "~/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
 import { caseGuideCases, getCaseGuideCase } from "~/data/case-guide-navigation"

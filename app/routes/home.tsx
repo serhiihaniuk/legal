@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { Link, useLoaderData } from "react-router"
 
-import { LegalText } from "~/components/legal-reference-text"
+import { LegalText } from "~/components/references"
 import { buttonVariants } from "~/components/ui/button"
 import { caseGuideRouteById } from "~/data/case-guide-routes"
 import { listEvidenceDocuments } from "~/data/document-library"

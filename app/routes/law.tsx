@@ -1,8 +1,8 @@
 import { ArrowUpRight, BookOpenText } from "lucide-react"
 import { Link } from "react-router"
 
-import { DocsLayout } from "~/components/docs-layout"
-import { LawLibraryNavigation } from "~/components/law-library-navigation"
+import { DocsLayout } from "~/components/layout"
+import { LawLibraryNavigation } from "~/features/law-library"
 import { Badge } from "~/components/ui/badge"
 import {
   getDocumentHomePath,

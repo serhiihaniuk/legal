@@ -1,15 +1,17 @@
 import { ArrowLeft, ArrowRight, FileText } from "lucide-react"
 import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router"
 
-import { DocsLayout } from "~/components/docs-layout"
+import { DocsLayout } from "~/components/layout"
 import {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
-} from "~/components/law-document-navigation"
-import { LegalLink } from "~/components/legal-link"
-import { LegalProvisionSelector } from "~/components/legal-provision-selector"
-import { LegalText } from "~/components/legal-reference-text"
-import { OfficialSourceLink } from "~/components/official-source"
+  LegalProvisionSelector,
+} from "~/features/law-library"
+import {
+  LegalLink,
+  LegalText,
+  OfficialSourceLink,
+} from "~/components/references"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import {
@@ -174,7 +176,10 @@ export default function LawProvisionRoute() {
         <div className="flex flex-wrap gap-2">
           <Badge>
             {provisionReference ? (
-              <LegalLink reference={provisionReference}>
+              <LegalLink
+                context="provision-page"
+                reference={provisionReference}
+              >
                 {provision.locator}
               </LegalLink>
             ) : (
@@ -196,7 +201,7 @@ export default function LawProvisionRoute() {
         </div>
         <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           {provisionReference ? (
-            <LegalLink reference={provisionReference}>
+            <LegalLink context="provision-page" reference={provisionReference}>
               {provision.locator}
             </LegalLink>
           ) : (
@@ -248,7 +253,10 @@ export default function LawProvisionRoute() {
           {reviewedExplanation ? (
             <>
               <p className="text-lg leading-8">
-                <LegalText text={reviewedExplanation.summary} />
+                <LegalText
+                  context="provision-page"
+                  text={reviewedExplanation.summary}
+                />
               </p>
               {reviewedExplanation.rules.length > 0 ? (
                 <>
@@ -272,7 +280,10 @@ export default function LawProvisionRoute() {
                         </span>
                         <strong className="text-sm">
                           {provisionReference ? (
-                            <LegalLink reference={provisionReference}>
+                            <LegalLink
+                              context="provision-page"
+                              reference={provisionReference}
+                            >
                               {rule.locator}
                             </LegalLink>
                           ) : (
@@ -280,7 +291,10 @@ export default function LawProvisionRoute() {
                           )}
                         </strong>
                         <p className="text-sm leading-6 text-muted-foreground">
-                          <LegalText text={rule.explanation} />
+                          <LegalText
+                            context="provision-page"
+                            text={rule.explanation}
+                          />
                         </p>
                       </div>
                     ))}
@@ -289,11 +303,17 @@ export default function LawProvisionRoute() {
               ) : null}
               <h3>Правовий наслідок</h3>
               <p>
-                <LegalText text={reviewedExplanation.legalEffect} />
+                <LegalText
+                  context="provision-page"
+                  text={reviewedExplanation.legalEffect}
+                />
               </p>
               <h3>Місце у справі іноземця</h3>
               <p>
-                <LegalText text={reviewedExplanation.foreignersCase} />
+                <LegalText
+                  context="provision-page"
+                  text={reviewedExplanation.foreignersCase}
+                />
               </p>
             </>
           ) : (
@@ -333,7 +353,7 @@ export default function LawProvisionRoute() {
                     ) : null}
                   </div>
                   <p className="text-sm leading-6 text-muted-foreground">
-                    <LegalText text={claim.text} />
+                    <LegalText context="provision-page" text={claim.text} />
                   </p>
                 </div>
               ))}
@@ -366,7 +386,10 @@ export default function LawProvisionRoute() {
                 id: "locator",
                 term: "Locator",
                 description: provisionReference ? (
-                  <LegalLink reference={provisionReference}>
+                  <LegalLink
+                    context="provision-page"
+                    reference={provisionReference}
+                  >
                     {provision.locator}
                   </LegalLink>
                 ) : (
@@ -388,7 +411,10 @@ export default function LawProvisionRoute() {
                 term: "Попередня норма",
                 description:
                   previous && previousReference ? (
-                    <LegalLink reference={previousReference}>
+                    <LegalLink
+                      context="provision-page"
+                      reference={previousReference}
+                    >
                       {previous.locator}
                     </LegalLink>
                   ) : (
@@ -400,7 +426,10 @@ export default function LawProvisionRoute() {
                 term: "Наступна норма",
                 description:
                   next && nextReference ? (
-                    <LegalLink reference={nextReference}>
+                    <LegalLink
+                      context="provision-page"
+                      reference={nextReference}
+                    >
                       {next.locator}
                     </LegalLink>
                   ) : (
