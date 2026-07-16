@@ -14,6 +14,7 @@
     "test:corpus": "node --test scripts/legal-corpus/test/*.test.mjs",
     "test:editorial": "node scripts/legal-editorial/validate.mjs",
     "test:previews": "node scripts/reference-previews/validate.mjs",
+    "test": "vitest run",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
@@ -40,14 +41,17 @@
   "devDependencies": {
     "@react-router/dev": "7.15.1",
     "@tailwindcss/vite": "^4",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "happy-dom": "^20.10.6",
     "oxlint": "^1.74.0",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
     "typescript": "^6",
-    "vite": "^8"
+    "vite": "^8",
+    "vitest": "^4.1.10"
   }
 }
