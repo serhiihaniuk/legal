@@ -1,4 +1,12 @@
+import { createLegalTextAuthor } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+const kpaLaw = createLegalTextAuthor("kpa")
+const workLaw = createLegalTextAuthor("powierzanie-pracy")
+
+const RYNEK_PRACY_SLUZBY_ZATRUDNIENIA_URL =
+  "https://eli.gov.pl/eli/DU/2025/620/ogl"
 
 export const foreignersActPart04 =
   defineEditorialPart<"ustawa-o-cudzoziemcach">({
@@ -13,7 +21,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 120b уповноважує ministra właściwego do spraw wewnętrznych визначити, w drodze rozporządzenia, wzór formularza wniosku про зміну zezwolenia na pobyt czasowy i pracę, про яке йдеться в art. 120a ust. 1.",
+            text: foreignersLaw.text`${foreignersLaw.article("120b", "Art. 120b")} уповноважує ministra właściwego do spraw wewnętrznych визначити, w drodze rozporządzenia, wzór formularza wniosku про зміну zezwolenia na pobyt czasowy i pracę, про яке йдеться в ${foreignersLaw.article("120a", "art. 120a")} ust. 1.`,
             sourceLocator: "Art. 120b",
           },
         ],
@@ -37,7 +45,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 121 ust. 1–3 регулюють письмове повідомлення cudzoziemca wojewodzie про втрату роботи та спосіб виконання цього обов’язку через wniosek за art. 120 ust. 1 pkt 1; ust. 4 встановлює окреме повідомлення podmiot powierzający pracę.",
+            text: foreignersLaw.text`${foreignersLaw.article("121", "Art. 121")} ust. 1–3 регулюють письмове повідомлення cudzoziemca wojewodzie про втрату роботи та спосіб виконання цього обов’язку через wniosek за ${foreignersLaw.article("120", "art. 120")} ust. 1 pkt 1; ust. 4 встановлює окреме повідомлення podmiot powierzający pracę.`,
             sourceLocator: "Art. 121 ust. 1–4",
           },
         ],
@@ -51,8 +59,7 @@ export const foreignersActPart04 =
           },
           {
             locator: "ust. 3",
-            explanation:
-              "Обов’язок вважається виконаним, якщо протягом 15 dni roboczych подано wniosek про зміну zezwolenia за art. 120 ust. 1 pkt 1.",
+            explanation: foreignersLaw.text`Обов’язок вважається виконаним, якщо протягом 15 dni roboczych подано wniosek про зміну zezwolenia за ${foreignersLaw.article("120", "art. 120")} ust. 1 pkt 1.`,
           },
           {
             locator: "ust. 4",
@@ -62,8 +69,7 @@ export const foreignersActPart04 =
         ],
         legalEffect:
           "Стаття створює окремі обов’язки повідомлення для cudzoziemca та podmiotu powierzającego pracę; з тексту цієї статті не випливає автоматичний спосіб доведення своєчасності.",
-        foreignersCase:
-          "Зафіксуйте дату втрати роботи, адресата й спосіб подання повідомлення. Якщо обов’язок виконано через wniosek за art. 120 ust. 1 pkt 1, збережіть доказ його подання в межах 15 dni roboczych.",
+        foreignersCase: foreignersLaw.text`Зафіксуйте дату втрати роботи, адресата й спосіб подання повідомлення. Якщо обов’язок виконано через wniosek за ${foreignersLaw.article("120", "art. 120")} ust. 1 pkt 1, збережіть доказ його подання в межах 15 dni roboczych.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-122",
@@ -71,12 +77,11 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 122 передбачає cofnięcie zezwolenia na pobyt czasowy i pracę, якщо змінилася посада або зменшилася винагорода без зміни zezwolenia, а також коли podmiot powierzający pracę не веде передбаченої діяльності.",
+            text: foreignersLaw.text`${foreignersLaw.article("122", "Art. 122")} передбачає cofnięcie zezwolenia na pobyt czasowy i pracę, якщо змінилася посада або зменшилася винагорода без зміни zezwolenia, а також коли podmiot powierzający pracę не веде передбаченої діяльності.`,
             sourceLocator: "Art. 122 pkt 1–2",
           },
         ],
-        summary:
-          "Wojewoda cofnie zezwolenie у названих статтею ситуаціях, крім випадків, зазначених в art. 101.",
+        summary: foreignersLaw.text`Wojewoda cofnie zezwolenie у названих статтею ситуаціях, крім випадків, зазначених в ${foreignersLaw.article("101", "art. 101")}.`,
         rules: [
           {
             locator: "pkt 1",
@@ -100,17 +105,15 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 123 обмежує застосування art. 101 pkt 1 і 2 після втрати роботи, якщо виконано обов’язок повідомлення, а для окремої підстави zezwolenia встановлює ліміти безробіття 3 місяці та двічі.",
+            text: foreignersLaw.text`${foreignersLaw.article("123", "Art. 123")} обмежує застосування ${foreignersLaw.article("101", "art. 101")} pkt 1 і 2 після втрати роботи, якщо виконано обов’язок повідомлення, а для окремої підстави zezwolenia встановлює ліміти безробіття 3 місяці та двічі.`,
             sourceLocator: "Art. 123 ust. 1–3",
           },
         ],
-        summary:
-          "Стаття передбачає тимчасове правило після втрати роботи та окреме правило для zezwolenia, наданого з підстави art. 114 ust. 1a.",
+        summary: foreignersLaw.text`Стаття передбачає тимчасове правило після втрати роботи та окреме правило для zezwolenia, наданого з підстави ${foreignersLaw.article("114", "art. 114")} ust. 1a.`,
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Протягом 30 днів від втрати роботи art. 101 pkt 1 і 2 не застосовуються, якщо cudzoziemiec доведе належне повідомлення або незалежну від нього недоставку повідомлення wojewodzie.",
+            explanation: foreignersLaw.text`Протягом 30 днів від втрати роботи ${foreignersLaw.article("101", "art. 101")} pkt 1 і 2 не застосовуються, якщо cudzoziemiec доведе належне повідомлення або незалежну від нього недоставку повідомлення wojewodzie.`,
           },
           {
             locator: "ust. 2",
@@ -119,8 +122,7 @@ export const foreignersActPart04 =
           },
           {
             locator: "ust. 3",
-            explanation:
-              "Для zezwolenia з art. 114 ust. 1a період без роботи не може перевищувати 3 місяців, може настати не більше двох разів, а обов’язок повідомлення має бути виконаний або недоставка бути незалежною від cudzoziemca.",
+            explanation: foreignersLaw.text`Для zezwolenia з ${foreignersLaw.article("114", "art. 114")} ust. 1a період без роботи не може перевищувати 3 місяців, може настати не більше двох разів, а обов’язок повідомлення має бути виконаний або недоставка бути незалежною від cudzoziemca.`,
           },
         ],
         legalEffect:
@@ -134,7 +136,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 124 зобов’язує wojewodę повідомити starostę właściwego ze względu na miejsce pobytu cudzoziemca про cofnięcie zezwolenia na pobyt czasowy i pracę після того, як рішення стане ostateczne.",
+            text: foreignersLaw.text`${foreignersLaw.article("124", "Art. 124")} зобов’язує wojewodę повідомити starostę właściwego ze względu na miejsce pobytu cudzoziemca про cofnięcie zezwolenia na pobyt czasowy i pracę після того, як рішення стане ostateczne.`,
             sourceLocator: "Art. 124",
           },
         ],
@@ -158,12 +160,11 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 125 у тексті редакції позначено як uchylony.",
+            text: foreignersLaw.text`${foreignersLaw.article("125", "Art. 125")} у тексті редакції позначено як uchylony.`,
             sourceLocator: "Art. 125",
           },
         ],
-        summary:
-          "Art. 125 скасована (uchylony) і в поточному тексті не містить чинного правила.",
+        summary: foreignersLaw.text`${foreignersLaw.article("125", "Art. 125")} скасована (uchylony) і в поточному тексті не містить чинного правила.`,
         rules: [
           {
             locator: "Art. 125",
@@ -172,8 +173,7 @@ export const foreignersActPart04 =
         ],
         legalEffect:
           "На підставі поточної редакції цієї статті не можна вивести самостійну чинну підставу чи обов’язок.",
-        foreignersCase:
-          "Не посилайтеся на Art. 125 як на чинне правило; шукайте актуальну норму, яка регулює потрібне питання.",
+        foreignersCase: foreignersLaw.text`Не посилайтеся на ${foreignersLaw.article("125", "Art. 125")} як на чинне правило; шукайте актуальну норму, яка регулює потрібне питання.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-126",
@@ -181,7 +181,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 126 регулює zezwolenie na pobyt czasowy i pracę для cudzoziemca, який виконує функцію в zarząd osoby prawnej podlegającej wpisowi do rejestru przedsiębiorców і не має її udziałów або akcji, а також відповідно для prokurent.",
+            text: foreignersLaw.text`${foreignersLaw.article("126", "Art. 126")} регулює zezwolenie na pobyt czasowy i pracę для cudzoziemca, який виконує функцію в zarząd osoby prawnej podlegającej wpisowi do rejestru przedsiębiorców і не має її udziałów або akcji, а також відповідно для prokurent.`,
             sourceLocator: "Art. 126 ust. 1–3",
           },
         ],
@@ -190,13 +190,11 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Cudzoziemiec має виконувати умову art. 114 ust. 1 pkt 1, а osoba prawna, якою він керує або керуватиме, — вимоги art. 142 ust. 1 pkt 3.",
+            explanation: foreignersLaw.text`Cudzoziemiec має виконувати умову ${foreignersLaw.article("114", "art. 114")} ust. 1 pkt 1, а osoba prawna, якою він керує або керуватиме, — вимоги ${foreignersLaw.article("142", "art. 142")} ust. 1 pkt 3.`,
           },
           {
             locator: "ust. 2",
-            explanation:
-              "До цього zezwolenia відповідно застосовуються art. 115, art. 117, art. 118 ust. 1 pkt 1 і 2 та ust. 3 і 4.",
+            explanation: foreignersLaw.text`До цього zezwolenia відповідно застосовуються ${foreignersLaw.article("115", "art. 115")}, ${foreignersLaw.article("117", "art. 117")}, ${foreignersLaw.article("118", "art. 118")} ust. 1 pkt 1 і 2 та ust. 3 і 4.`,
           },
           {
             locator: "ust. 3",
@@ -215,7 +213,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 127 вимагає для zezwolenia na pobyt czasowy у zawodzie wymagającym wysokich kwalifikacji сукупного виконання умов art. 127 pkt 1 lit. a–d (lit. e є uchylona), pkt 2 і pkt 3: щодо договору, кваліфікацій, страхування, виду професії та wynagrodzenie.",
+            text: foreignersLaw.text`${foreignersLaw.article("127", "Art. 127")} вимагає для zezwolenia na pobyt czasowy у zawodzie wymagającym wysokich kwalifikacji сукупного виконання умов ${foreignersLaw.article("127", "art. 127")} pkt 1 lit. a–d (lit. e є uchylona), pkt 2 і pkt 3: щодо договору, кваліфікацій, страхування, виду професії та wynagrodzenie.`,
             sourceLocator: "Art. 127 pkt 1 lit. a–e, pkt 2–3",
           },
         ],
@@ -229,8 +227,7 @@ export const foreignersActPart04 =
           },
           {
             locator: "pkt 2",
-            explanation:
-              "Робота не повинна бути у zawodzie з переліку, про який говорить art. 31 ust. 3 ustawy про умови допуску доручення роботи cudzoziemcom.",
+            explanation: foreignersLaw.text`Робота не повинна бути у zawodzie з переліку, про який говорить ${workLaw.article("31", "art. 31")} ust. 3 ustawy про умови допуску доручення роботи cudzoziemcom.`,
           },
           {
             locator: "pkt 3",
@@ -249,7 +246,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 127a дозволяє minister właściwy do spraw wewnętrznych у porozumieniu з міністрами, відповідальними за pracę та gospodarkę, визначити w drodze rozporządzenia річний ліміт вперше наданих zezwoleń за art. 127 і зобов’язує оголосити досягнення ліміту.",
+            text: foreignersLaw.text`${foreignersLaw.article("127a", "Art. 127a")} дозволяє minister właściwy do spraw wewnętrznych у porozumieniu з міністрами, відповідальними за pracę та gospodarkę, визначити w drodze rozporządzenia річний ліміт вперше наданих zezwoleń за ${foreignersLaw.article("127", "art. 127")} і зобов’язує оголосити досягнення ліміту.`,
             sourceLocator: "Art. 127a ust. 1–3",
           },
         ],
@@ -269,8 +266,7 @@ export const foreignersActPart04 =
         ],
         legalEffect:
           "Норма сама не встановлює конкретного числа ліміту; вона визначає можливий механізм його встановлення та оголошення.",
-        foreignersCase:
-          "Якщо справа стосується першого zezwolenia за art. 127, перевірте актуальне розпорядження та офіційне оголошення про ліміт, а не припускайте його розмір.",
+        foreignersCase: foreignersLaw.text`Якщо справа стосується першого zezwolenia за ${foreignersLaw.article("127", "art. 127")}, перевірте актуальне розпорядження та офіційне оголошення про ліміт, а не припускайте його розмір.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-128",
@@ -278,7 +274,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 128 визначає строк zezwolenia за art. 127: він надається на три місяці довше за період виконання роботи, але не довше трьох років.",
+            text: foreignersLaw.text`${foreignersLaw.article("128", "Art. 128")} визначає строк zezwolenia за ${foreignersLaw.article("127", "art. 127")}: він надається на три місяці довше за період виконання роботи, але не довше трьох років.`,
             sourceLocator: "Art. 128",
           },
         ],
@@ -302,26 +298,22 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 129 визначає три випадки, коли вимогу art. 127 pkt 2 щодо професії не застосовують: попередня робота у того самого podmiotu на тій самій посаді, дворічне законне працевлаштування за art. 127 або звільнення від zezwolenia na pracę.",
+            text: foreignersLaw.text`${foreignersLaw.article("129", "Art. 129")} визначає три випадки, коли вимогу ${foreignersLaw.article("127", "art. 127")} pkt 2 щодо професії не застосовують: попередня робота у того самого podmiotu на тій самій посаді, дворічне законне працевлаштування за ${foreignersLaw.article("127", "art. 127")} або звільнення від zezwolenia na pracę.`,
             sourceLocator: "Art. 129 pkt 1–3",
           },
         ],
-        summary:
-          "Стаття містить винятки із застосування art. 127 pkt 2, кожен із власною фактичною передумовою.",
+        summary: foreignersLaw.text`Стаття містить винятки із застосування ${foreignersLaw.article("127", "art. 127")} pkt 2, кожен із власною фактичною передумовою.`,
         rules: [
           {
             locator: "pkt 1",
-            explanation:
-              "Виняток можливий, якщо безпосередньо перед поданням wniosku cudzoziemiec мав у того самого podmiotu на тому самому stanowisko zezwolenie na pracę, zezwolenie na pobyt czasowy i pracę або zezwolenie за art. 127.",
+            explanation: foreignersLaw.text`Виняток можливий, якщо безпосередньо перед поданням wniosku cudzoziemiec мав у того самого podmiotu на тому самому stanowisko zezwolenie na pracę, zezwolenie na pobyt czasowy i pracę або zezwolenie за ${foreignersLaw.article("127", "art. 127")}.`,
           },
           {
             locator: "pkt 2–3",
-            explanation:
-              "Також названо законну роботу в Польщі 2 роки на підставі art. 127 або виконання умов звільнення від обов’язку мати zezwolenie na pracę.",
+            explanation: foreignersLaw.text`Також названо законну роботу в Польщі 2 роки на підставі ${foreignersLaw.article("127", "art. 127")} або виконання умов звільнення від обов’язку мати zezwolenie na pracę.`,
           },
         ],
-        legalEffect:
-          "Ці винятки стосуються лише вимоги, названої в art. 127 pkt 2, і не скасовують інші умови art. 127.",
+        legalEffect: foreignersLaw.text`Ці винятки стосуються лише вимоги, названої в ${foreignersLaw.article("127", "art. 127")} pkt 2, і не скасовують інші умови ${foreignersLaw.article("127", "art. 127")}.`,
         foreignersCase:
           "Підтвердьте саме тотожність podmiotu та stanowisko, тривалість законної роботи або конкретну підставу звільнення; не узагальнюйте виняток на всю заяву.",
       },
@@ -331,7 +323,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 130 прямо встановлює, що отримання zezwolenia за art. 127 не звільняє від вимог інших положень щодо wykonywania zawodów regulowanych або działalności.",
+            text: foreignersLaw.text`${foreignersLaw.article("130", "Art. 130")} прямо встановлює, що отримання zezwolenia за ${foreignersLaw.article("127", "art. 127")} не звільняє від вимог інших положень щодо wykonywania zawodów regulowanych або działalności.`,
             sourceLocator: "Art. 130",
           },
         ],
@@ -355,18 +347,16 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 131, poza випадками art. 99 ust. 1 pkt 1–3 і 5–10 та ust. 1a, передбачає odmowa wszczęcia postępowania про zezwolenie за art. 127, якщо на день wniosku cudzoziemiec має названий статус, візу або модель роботи.",
+            text: foreignersLaw.text`${foreignersLaw.article("131", "Art. 131")}, poza випадками ${foreignersLaw.article("99", "art. 99")} ust. 1 pkt 1–3 і 5–10 та ust. 1a, передбачає odmowa wszczęcia postępowania про zezwolenie за ${foreignersLaw.article("127", "art. 127")}, якщо на день wniosku cudzoziemiec має названий статус, візу або модель роботи.`,
             sourceLocator:
               "Art. 131 (wprowadzenie do wyliczenia), pkt 1, 1a–4, 6–8 (pkt 5 uchylony)",
           },
         ],
-        summary:
-          "Стаття визначає бар’єри саме для wszczęcie postępowania про zezwolenie за art. 127, з установленими в ній винятками art. 99.",
+        summary: foreignersLaw.text`Стаття визначає бар’єри саме для wszczęcie postępowania про zezwolenie за ${foreignersLaw.article("127", "art. 127")}, з установленими в ній винятками ${foreignersLaw.article("99", "art. 99")}.`,
         rules: [
           {
             locator: "wprowadzenie do wyliczenia, pkt 1, 1a–4",
-            explanation:
-              "З урахуванням винятків art. 99, до переліку належать ubieganie się або наявність zezwolenia за art. 151 (pkt 1) чи art. 151b (pkt 1a), тимчасове відрядження з іншої держави ЄС (pkt 2), перебування на підставі міжнародних зобов’язань (pkt 3) та zezwolenie за art. 186 ust. 1 pkt 3 lit. a (pkt 4).",
+            explanation: foreignersLaw.text`З урахуванням винятків ${foreignersLaw.article("99", "art. 99")}, до переліку належать ubieganie się або наявність zezwolenia за ${foreignersLaw.article("151", "art. 151")} (pkt 1) чи ${foreignersLaw.article("151b", "art. 151b")} (pkt 1a), тимчасове відрядження з іншої держави ЄС (pkt 2), перебування на підставі міжнародних зобов’язань (pkt 3) та zezwolenie за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 lit. a (pkt 4).`,
           },
           {
             locator: "pkt 5",
@@ -375,14 +365,12 @@ export const foreignersActPart04 =
           },
           {
             locator: "pkt 6–8",
-            explanation:
-              "Окремо названо перебування на візі для цілей art. 60 ust. 1 pkt 1 або 2, туристичну чи гостьову візу іншої держави Schengen, а також pobyt tolerowany, гуманітарний, azyl або ochrona czasowa.",
+            explanation: foreignersLaw.text`Окремо названо перебування на візі для цілей ${foreignersLaw.article("60", "art. 60")} ust. 1 pkt 1 або 2, туристичну чи гостьову візу іншої держави Schengen, а також pobyt tolerowany, гуманітарний, azyl або ochrona czasowa.`,
           },
         ],
         legalEffect:
           "За умовами статті орган не розпочинає це провадження, але застосування залежить від точного статусу на день подання та винятків, на які посилається текст.",
-        foreignersCase:
-          "На дату заяви зафіксуйте підставу перебування, візу та інші подані заяви/zezwolenia; не плутайте odmowa wszczęcia з оцінкою всіх матеріальних умов art. 127.",
+        foreignersCase: foreignersLaw.text`На дату заяви зафіксуйте підставу перебування, візу та інші подані заяви/zezwolenia; не плутайте odmowa wszczęcia з оцінкою всіх матеріальних умов ${foreignersLaw.article("127", "art. 127")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-132",
@@ -390,7 +378,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 132, poza випадками art. 100 ust. 1 pkt 1–5, 8 і 9, передбачає odmowa udzielenia zezwolenia за art. 127, зокрема при досягненні ліміту або за наявності названих обставин щодо podmiot powierzający pracę; pkt 1 позначений як uchylony.",
+            text: foreignersLaw.text`${foreignersLaw.article("132", "Art. 132")}, poza випадками ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 1–5, 8 і 9, передбачає odmowa udzielenia zezwolenia за ${foreignersLaw.article("127", "art. 127")}, зокрема при досягненні ліміту або за наявності названих обставин щодо podmiot powierzający pracę; pkt 1 позначений як uchylony.`,
             sourceLocator:
               "Art. 132 (wprowadzenie do wyliczenia), pkt 1–3 (pkt 1 uchylony)",
           },
@@ -400,13 +388,11 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "wprowadzenie do wyliczenia, pkt 1",
-            explanation:
-              "Відмова застосовується поза випадками art. 100 ust. 1 pkt 1–5, 8 і 9; pkt 1 позначено як «(uchylony)» і він не містить чинної підстави.",
+            explanation: foreignersLaw.text`Відмова застосовується поза випадками ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 1–5, 8 і 9; pkt 1 позначено як «(uchylony)» і він не містить чинної підстави.`,
           },
           {
             locator: "pkt 2",
-            explanation:
-              "У наданні відмовляють, якщо в календарному році досягнуто ліміту zezwoleń за art. 127, визначеного на підставі art. 127a ust. 1.",
+            explanation: foreignersLaw.text`У наданні відмовляють, якщо в календарному році досягнуто ліміту zezwoleń за ${foreignersLaw.article("127", "art. 127")}, визначеного на підставі ${foreignersLaw.article("127a", "art. 127a")} ust. 1.`,
           },
           {
             locator: "pkt 3 lit. a–e",
@@ -425,7 +411,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 133, poza випадками art. 101 pkt 1 або 2, встановлює cofnięcie zezwolenia за art. 127, коли cudzoziemiec не виконує висококваліфіковану роботу, виникає обставина art. 100 ust. 1 pkt 2, 4, 5 або 8, art. 132 ust. 1 pkt 3 lit. c або d, чи не виконано повідомлення за art. 134.",
+            text: foreignersLaw.text`${foreignersLaw.article("133", "Art. 133")}, poza випадками ${foreignersLaw.article("101", "art. 101")} pkt 1 або 2, встановлює cofnięcie zezwolenia за ${foreignersLaw.article("127", "art. 127")}, коли cudzoziemiec не виконує висококваліфіковану роботу, виникає обставина ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 2, 4, 5 або 8, ${foreignersLaw.article("132", "art. 132")} ust. 1 pkt 3 lit. c або d, чи не виконано повідомлення за ${foreignersLaw.article("134", "art. 134")}.`,
             sourceLocator: "Art. 133 ust. 1 pkt 1–4, ust. 1a, ust. 2",
           },
         ],
@@ -434,24 +420,20 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1 pkt 1–4",
-            explanation:
-              "Підставами є невиконання роботи у zawodzie wymagającym wysokich kwalifikacji (pkt 1), обставини art. 100 ust. 1 pkt 2, 4, 5 або 8 (pkt 2), несплата składek чи податкові обставини podmiot за art. 132 ust. 1 pkt 3 lit. c або d (pkt 3), а також невиконання zawiadomienie за art. 134 (pkt 4).",
+            explanation: foreignersLaw.text`Підставами є невиконання роботи у zawodzie wymagającym wysokich kwalifikacji (pkt 1), обставини ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 2, 4, 5 або 8 (pkt 2), несплата składek чи податкові обставини podmiot за ${foreignersLaw.article("132", "art. 132")} ust. 1 pkt 3 lit. c або d (pkt 3), а також невиконання zawiadomienie за ${foreignersLaw.article("134", "art. 134")} (pkt 4).`,
           },
           {
             locator: "ust. 1a pkt 1–2",
-            explanation:
-              "Для підстави з ust. 1 pkt 4 виняток можливий, якщо cudzoziemiec доведе виконання zawiadomienia за art. 134 (pkt 1) або його недоставку wojewodzie з причин, незалежних від cudzoziemca (pkt 2).",
+            explanation: foreignersLaw.text`Для підстави з ust. 1 pkt 4 виняток можливий, якщо cudzoziemiec доведе виконання zawiadomienia за ${foreignersLaw.article("134", "art. 134")} (pkt 1) або його недоставку wojewodzie з причин, незалежних від cudzoziemca (pkt 2).`,
           },
           {
             locator: "ust. 2",
-            explanation:
-              "Art. 101 pkt 1 або 2 не застосовуються щодо безробіття до 3 місяців при перебуванні за art. 127 менше 2 років або до 6 місяців при перебуванні не менше 2 років.",
+            explanation: foreignersLaw.text`${foreignersLaw.article("101", "Art. 101")} pkt 1 або 2 не застосовуються щодо безробіття до 3 місяців при перебуванні за ${foreignersLaw.article("127", "art. 127")} менше 2 років або до 6 місяців при перебуванні не менше 2 років.`,
           },
         ],
         legalEffect:
           "Стаття встановлює умови cofnięcie та межі для названих періодів без роботи, але не перетворює будь-який період без роботи на автоматично дозволений поза цими умовами.",
-        foreignersCase:
-          "Зберігайте докази виду роботи, повідомлення за art. 134 і точні дати безробіття; окремо встановіть, чи перебування за art. 127 тривало менше чи не менше двох років.",
+        foreignersCase: foreignersLaw.text`Зберігайте докази виду роботи, повідомлення за ${foreignersLaw.article("134", "art. 134")} і точні дати безробіття; окремо встановіть, чи перебування за ${foreignersLaw.article("127", "art. 127")} тривало менше чи не менше двох років.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-133a",
@@ -459,7 +441,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 133a відкладає найранішу дату рішення про cofnięcie за art. 133 ust. 1 pkt 3 на 3 або 6 місяців, а для мобільності в іншій державі ЄС пов’язує рішення з інформацією цієї держави.",
+            text: foreignersLaw.text`${foreignersLaw.article("133a", "Art. 133a")} відкладає найранішу дату рішення про cofnięcie за ${foreignersLaw.article("133", "art. 133")} ust. 1 pkt 3 на 3 або 6 місяців, а для мобільності в іншій державі ЄС пов’язує рішення з інформацією цієї держави.`,
             sourceLocator: "Art. 133a ust. 1–3",
           },
         ],
@@ -468,24 +450,20 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Рішення за art. 133 ust. 1 pkt 3 видається не раніше ніж через 3 місяці від wszczęcia, якщо перебування за art. 127 коротше 2 років, або через 6 місяців, якщо не коротше 2 років.",
+            explanation: foreignersLaw.text`Рішення за ${foreignersLaw.article("133", "art. 133")} ust. 1 pkt 3 видається не раніше ніж через 3 місяці від wszczęcia, якщо перебування за ${foreignersLaw.article("127", "art. 127")} коротше 2 років, або через 6 місяців, якщо не коротше 2 років.`,
           },
           {
             locator: "ust. 2",
-            explanation:
-              "При mobilność długoterminowa в іншій державі ЄС рішення у випадках art. 133 ust. 1 pkt 1, 3 і 4 не видається раніше отримання від цієї держави інформації про видачу або відмову у видачі документа.",
+            explanation: foreignersLaw.text`При mobilność długoterminowa в іншій державі ЄС рішення у випадках ${foreignersLaw.article("133", "art. 133")} ust. 1 pkt 1, 3 і 4 не видається раніше отримання від цієї держави інформації про видачу або відмову у видачі документа.`,
           },
           {
             locator: "ust. 3",
-            explanation:
-              "У визначені періоди не біжать строки розгляду справи wojewoda за art. 35 § 3 KPA.",
+            explanation: foreignersLaw.text`У визначені періоди не біжать строки розгляду справи wojewoda за ${kpaLaw.article("35", "art. 35 § 3")} KPA.`,
           },
         ],
         legalEffect:
           "Стаття регулює найраніший момент рішення та перебіг строку розгляду лише у вказаних ситуаціях; вона не скасовує саму процедуру cofnięcie.",
-        foreignersCase:
-          "Визначте дату wszczęcia, тривалість перебування за art. 127 і наявність мобільності в іншій державі, перш ніж оцінювати строк рішення.",
+        foreignersCase: foreignersLaw.text`Визначте дату wszczęcia, тривалість перебування за ${foreignersLaw.article("127", "art. 127")} і наявність мобільності в іншій державі, перш ніж оцінювати строк рішення.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-134",
@@ -493,7 +471,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 134 ust. 1–3 зобов’язують cudzoziemca з zezwoleniem за art. 127 письмово повідомляти wojewodę протягом 15 dni roboczych про втрату роботи, зміну podmiotu та припинення виконання умов; ust. 1a і 3 визначають адресата при рішенні Szef Urzędu в другій інстанції.",
+            text: foreignersLaw.text`${foreignersLaw.article("134", "Art. 134")} ust. 1–3 зобов’язують cudzoziemca з zezwoleniem за ${foreignersLaw.article("127", "art. 127")} письмово повідомляти wojewodę протягом 15 dni roboczych про втрату роботи, зміну podmiotu та припинення виконання умов; ust. 1a і 3 визначають адресата при рішенні Szef Urzędu в другій інстанції.`,
             sourceLocator: "Art. 134 ust. 1, ust. 1a, ust. 2 pkt 1–2, ust. 3",
           },
         ],
@@ -527,7 +505,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 134a вимагає від cudzoziemca з zezwoleniem за art. 127 протягом 15 dni roboczych письмово повідомити wojewodę про початок mobilność długoterminowa та назвати державу ЄС.",
+            text: foreignersLaw.text`${foreignersLaw.article("134a", "Art. 134a")} вимагає від cudzoziemca з zezwoleniem за ${foreignersLaw.article("127", "art. 127")} протягом 15 dni roboczych письмово повідомити wojewodę про початок mobilność długoterminowa та назвати державу ЄС.`,
             sourceLocator: "Art. 134a ust. 1–2",
           },
         ],
@@ -556,12 +534,11 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 135 у тексті редакції позначено як uchylony.",
+            text: foreignersLaw.text`${foreignersLaw.article("135", "Art. 135")} у тексті редакції позначено як uchylony.`,
             sourceLocator: "Art. 135",
           },
         ],
-        summary:
-          "Art. 135 скасована (uchylony) і не містить чинного правила для пояснення за цією редакцією.",
+        summary: foreignersLaw.text`${foreignersLaw.article("135", "Art. 135")} скасована (uchylony) і не містить чинного правила для пояснення за цією редакцією.`,
         rules: [
           {
             locator: "Art. 135",
@@ -571,8 +548,7 @@ export const foreignersActPart04 =
         ],
         legalEffect:
           "Поточний текст статті не дає самостійної чинної підстави, строку чи обов’язку.",
-        foreignersCase:
-          "Не використовуйте Art. 135 як чинну правову підставу; перевірте інші положення, що прямо регулюють питання.",
+        foreignersCase: foreignersLaw.text`Не використовуйте ${foreignersLaw.article("135", "Art. 135")} як чинну правову підставу; перевірте інші положення, що прямо регулюють питання.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-136",
@@ -580,12 +556,11 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 136 у тексті редакції позначено як uchylony.",
+            text: foreignersLaw.text`${foreignersLaw.article("136", "Art. 136")} у тексті редакції позначено як uchylony.`,
             sourceLocator: "Art. 136",
           },
         ],
-        summary:
-          "Art. 136 скасована (uchylony) і в поточному тексті не встановлює чинної норми.",
+        summary: foreignersLaw.text`${foreignersLaw.article("136", "Art. 136")} скасована (uchylony) і в поточному тексті не встановлює чинної норми.`,
         rules: [
           {
             locator: "Art. 136",
@@ -595,8 +570,7 @@ export const foreignersActPart04 =
         ],
         legalEffect:
           "Із цієї статті не можна вивести чинне правило для справи за редакцією corpus.",
-        foreignersCase:
-          "Не посилайтеся на Art. 136 як на чинну норму; знайдіть актуальний припис, що відповідає фактам.",
+        foreignersCase: foreignersLaw.text`Не посилайтеся на ${foreignersLaw.article("136", "Art. 136")} як на чинну норму; знайдіть актуальний припис, що відповідає фактам.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-137",
@@ -604,7 +578,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 137 вимагає, щоб decyzja про zezwolenie за art. 127 зазначала строк чинності та мінімальну винагороду для висококваліфікованої роботи.",
+            text: foreignersLaw.text`${foreignersLaw.article("137", "Art. 137")} вимагає, щоб decyzja про zezwolenie за ${foreignersLaw.article("127", "art. 127")} зазначала строк чинності та мінімальну винагороду для висококваліфікованої роботи.`,
             sourceLocator: "Art. 137",
           },
         ],
@@ -612,14 +586,11 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "Art. 137",
-            explanation:
-              "У decyzja зазначають okres ważności та вказують, що робота може виконуватися за wynagrodzenie не нижче рівня, визначеного art. 127 pkt 3.",
+            explanation: foreignersLaw.text`У decyzja зазначають okres ważności та вказують, що робота може виконуватися за wynagrodzenie не нижче рівня, визначеного ${foreignersLaw.article("127", "art. 127")} pkt 3.`,
           },
         ],
-        legalEffect:
-          "Реквізити в decyzja пов’язують дозвіл із строком і мінімальною винагородою, але стаття не визначає нового розміру поза відсиланням до art. 127 pkt 3.",
-        foreignersCase:
-          "Порівняйте текст decyzja з договором: строк і мінімальна brutto-винагорода мають бути прочитані разом із art. 127 pkt 3.",
+        legalEffect: foreignersLaw.text`Реквізити в decyzja пов’язують дозвіл із строком і мінімальною винагородою, але стаття не визначає нового розміру поза відсиланням до ${foreignersLaw.article("127", "art. 127")} pkt 3.`,
+        foreignersCase: foreignersLaw.text`Порівняйте текст decyzja з договором: строк і мінімальна brutto-винагорода мають бути прочитані разом із ${foreignersLaw.article("127", "art. 127")} pkt 3.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-137a",
@@ -627,7 +598,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 137a визначає умови zezwolenia na pobyt czasowy для mobilność długoterminowa posiadacza Niebieskiej Karty UE: мету висококваліфікованої роботи, договір від 6 місяців, документ з adnotacją «Niebieska Karta UE» іншої держави ЄС, безпосереднє попереднє перебування на його підставі, ubezpieczenie та wynagrodzenie не нижче 150% середньої зарплати.",
+            text: foreignersLaw.text`${foreignersLaw.article("137a", "Art. 137a")} визначає умови zezwolenia na pobyt czasowy для mobilność długoterminowa posiadacza Niebieskiej Karty UE: мету висококваліфікованої роботи, договір від 6 місяців, документ з adnotacją «Niebieska Karta UE» іншої держави ЄС, безпосереднє попереднє перебування на його підставі, ubezpieczenie та wynagrodzenie не нижче 150% середньої зарплати.`,
             sourceLocator: "Art. 137a ust. 1 pkt 1 lit. a–d, pkt 2",
           },
         ],
@@ -656,7 +627,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 137b встановлює, що zezwolenie за art. 137a не звільняє від окремих вимог до zawodów regulowanych або działalności.",
+            text: foreignersLaw.text`${foreignersLaw.article("137b", "Art. 137b")} встановлює, що zezwolenie за ${foreignersLaw.article("137a", "art. 137a")} не звільняє від окремих вимог до zawodów regulowanych або działalności.`,
             sourceLocator: "Art. 137b",
           },
         ],
@@ -671,8 +642,7 @@ export const foreignersActPart04 =
         ],
         legalEffect:
           "Стаття не надає загального звільнення від професійних чи діяльнісних вимог.",
-        foreignersCase:
-          "Окремо перевірте право виконувати регульовану професію або діяльність; не вважайте zezwolenie за art. 137a достатнім доказом такого допуску.",
+        foreignersCase: foreignersLaw.text`Окремо перевірте право виконувати регульовану професію або діяльність; не вважайте zezwolenie за ${foreignersLaw.article("137a", "art. 137a")} достатнім доказом такого допуску.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-137c",
@@ -680,7 +650,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 137c передбачає відмову у наданні zezwolenia за art. 137a у випадках art. 100 ust. 1 pkt 1–5, 8 і 9.",
+            text: foreignersLaw.text`${foreignersLaw.article("137c", "Art. 137c")} передбачає відмову у наданні zezwolenia за ${foreignersLaw.article("137a", "art. 137a")} у випадках ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 1–5, 8 і 9.`,
             sourceLocator: "Art. 137c",
           },
         ],
@@ -689,14 +659,11 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "Art. 137c",
-            explanation:
-              "Для оцінки заяви потрібно перевірити обставини, перелічені у вказаних пунктах art. 100 ust. 1.",
+            explanation: foreignersLaw.text`Для оцінки заяви потрібно перевірити обставини, перелічені у вказаних пунктах ${foreignersLaw.article("100", "art. 100")} ust. 1.`,
           },
         ],
-        legalEffect:
-          "Норма не переписує зміст art. 100; вона робить його названі пункти підставами відмови для art. 137a.",
-        foreignersCase:
-          "Якщо орган посилається на Art. 137c, зіставте конкретну фактичну обставину з точним пунктом art. 100, а не лише з номером статті.",
+        legalEffect: foreignersLaw.text`Норма не переписує зміст ${foreignersLaw.article("100", "art. 100")}; вона робить його названі пункти підставами відмови для ${foreignersLaw.article("137a", "art. 137a")}.`,
+        foreignersCase: foreignersLaw.text`Якщо орган посилається на ${foreignersLaw.article("137c", "Art. 137c")}, зіставте конкретну фактичну обставину з точним пунктом ${foreignersLaw.article("100", "art. 100")}, а не лише з номером статті.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-137d",
@@ -704,7 +671,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 137d встановлює 30-денний строк для рішення щодо zezwolenia за art. 137a та 60-денний строк для odwoławcze postępowanie.",
+            text: foreignersLaw.text`${foreignersLaw.article("137d", "Art. 137d")} встановлює 30-денний строк для рішення щодо zezwolenia за ${foreignersLaw.article("137a", "art. 137a")} та 60-денний строк для odwoławcze postępowanie.`,
             sourceLocator: "Art. 137d ust. 1–2",
           },
         ],
@@ -713,19 +680,15 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Decyzja у справі про надання zezwolenia видається протягом 30 днів; обчислення строку пов’язане з art. 112a ust. 2.",
+            explanation: foreignersLaw.text`Decyzja у справі про надання zezwolenia видається протягом 30 днів; обчислення строку пов’язане з ${foreignersLaw.article("112a", "art. 112a")} ust. 2.`,
           },
           {
             locator: "ust. 2",
-            explanation:
-              "Odwoławcze postępowanie закінчується протягом 60 днів; застосовується art. 112a ust. 5.",
+            explanation: foreignersLaw.text`Odwoławcze postępowanie закінчується протягом 60 днів; застосовується ${foreignersLaw.article("112a", "art. 112a")} ust. 5.`,
           },
         ],
-        legalEffect:
-          "Це строки, сформульовані разом із відсиланнями до art. 112a; з однієї Art. 137d не випливає, що кожна календарна справа рахується без винятків.",
-        foreignersCase:
-          "Ведіть окремий рахунок строку першої та апеляційної інстанції й прочитайте, як art. 112a визначає його перебіг у вашій справі.",
+        legalEffect: foreignersLaw.text`Це строки, сформульовані разом із відсиланнями до ${foreignersLaw.article("112a", "art. 112a")}; з однієї ${foreignersLaw.article("137d", "Art. 137d")} не випливає, що кожна календарна справа рахується без винятків.`,
+        foreignersCase: foreignersLaw.text`Ведіть окремий рахунок строку першої та апеляційної інстанції й прочитайте, як ${foreignersLaw.article("112a", "art. 112a")} визначає його перебіг у вашій справі.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-137e",
@@ -733,7 +696,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 137e наказує відповідно застосовувати до zezwolenia за art. 137a положення art. 131, art. 133–134a та art. 137.",
+            text: foreignersLaw.text`${foreignersLaw.article("137e", "Art. 137e")} наказує відповідно застосовувати до zezwolenia за ${foreignersLaw.article("137a", "art. 137a")} положення ${foreignersLaw.article("131", "art. 131")}, ${foreignersLaw.article("133", "art. 133")}–134a та ${foreignersLaw.article("137", "art. 137")}.`,
             sourceLocator: "Art. 137e",
           },
         ],
@@ -742,14 +705,11 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "Art. 137e",
-            explanation:
-              "Для конкретного питання треба звертатися до названої статті та застосовувати її відповідно до виду zezwolenia за art. 137a.",
+            explanation: foreignersLaw.text`Для конкретного питання треба звертатися до названої статті та застосовувати її відповідно до виду zezwolenia за ${foreignersLaw.article("137a", "art. 137a")}.`,
           },
         ],
-        legalEffect:
-          "Норма є відсилочною: вона не замінює текст art. 131, 133–134a і 137 та не поширює інші правила, не названі тут.",
-        foreignersCase:
-          "Коли виникає питання про повідомлення, cofnięcie або реквізити decyzja, прочитайте відповідний пункт названої статті разом із Art. 137e.",
+        legalEffect: foreignersLaw.text`Норма є відсилочною: вона не замінює текст ${foreignersLaw.article("131", "art. 131")}, 133–134a і 137 та не поширює інші правила, не названі тут.`,
+        foreignersCase: foreignersLaw.text`Коли виникає питання про повідомлення, cofnięcie або реквізити decyzja, прочитайте відповідний пункт названої статті разом із ${foreignersLaw.article("137e", "Art. 137e")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-138",
@@ -757,7 +717,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 138 регулює передавання wojewoda копій рішень щодо zezwoleń за art. 127 або 137a та інформацію Szef Urzędu до держави ЄС, яка видала документ «Niebieska Karta UE».",
+            text: foreignersLaw.text`${foreignersLaw.article("138", "Art. 138")} регулює передавання wojewoda копій рішень щодо zezwoleń за ${foreignersLaw.article("127", "art. 127")} або 137a та інформацію Szef Urzędu до держави ЄС, яка видала документ «Niebieska Karta UE».`,
             sourceLocator: "Art. 138 ust. 1–2",
           },
         ],
@@ -766,13 +726,11 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Wojewoda передає Szef Urzędu копію decyzja про надання, відмову або cofnięcie art. 127/137a, а також про надання pobyt rezydenta długoterminowego UE власнику такого zezwolenia.",
+            explanation: foreignersLaw.text`Wojewoda передає Szef Urzędu копію decyzja про надання, відмову або cofnięcie ${foreignersLaw.article("127", "art. 127")}/137a, а також про надання pobyt rezydenta długoterminowego UE власнику такого zezwolenia.`,
           },
           {
             locator: "ust. 2",
-            explanation:
-              "Szef Urzędu без зволікання інформує державу ЄС, яка видала документ з adnotacją «Niebieska Karta UE», про надання або відмову у art. 137a.",
+            explanation: foreignersLaw.text`Szef Urzędu без зволікання інформує державу ЄС, яка видала документ з adnotacją «Niebieska Karta UE», про надання або відмову у ${foreignersLaw.article("137a", "art. 137a")}.`,
           },
         ],
         legalEffect:
@@ -786,7 +744,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 138a зобов’язує minister właściwy do spraw wewnętrznych шляхом obwieszczenia в Monitor Polski оголосити wykaz zawodów, для яких виконання роботи дає підставу визнати професійні кваліфікації, здобуті через trzyletnie doświadczenie zawodowe, відповідно до załącznika I dyrektywy (UE) 2021/1883.",
+            text: foreignersLaw.text`${foreignersLaw.article("138a", "Art. 138a")} зобов’язує minister właściwy do spraw wewnętrznych шляхом obwieszczenia в Monitor Polski оголосити wykaz zawodów, для яких виконання роботи дає підставу визнати професійні кваліфікації, здобуті через trzyletnie doświadczenie zawodowe, відповідно до załącznika I dyrektywy (UE) 2021/1883.`,
             sourceLocator: "Art. 138a",
           },
         ],
@@ -795,8 +753,7 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "Art. 138a",
-            explanation:
-              "Wykaz оголошується в Monitor Polski у drodze obwieszczenia з урахуванням класифікації zawodów за art. 29 ust. 3 pkt 1 ustawy o rynku pracy i służbach zatrudnienia; він має відповідати змісту załącznika I до dyrektywy (UE) 2021/1883.",
+            explanation: foreignersLaw.text`Wykaz оголошується в Monitor Polski у drodze obwieszczenia з урахуванням класифікації zawodów за ${foreignersLaw.external("art. 29", RYNEK_PRACY_SLUZBY_ZATRUDNIENIA_URL)} ust. 3 pkt 1 ustawy o rynku pracy i służbach zatrudnienia; він має відповідати змісту załącznika I до dyrektywy (UE) 2021/1883.`,
           },
         ],
         legalEffect:
@@ -810,7 +767,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 138b зобов’язує Szef Urzędu протягом 1 місяця від запиту іншої держави ЄС повідомити, чи cudzoziemiec надалі має status uchodźcy або ochronę uzupełniającą у Польщі.",
+            text: foreignersLaw.text`${foreignersLaw.article("138b", "Art. 138b")} зобов’язує Szef Urzędu протягом 1 місяця від запиту іншої держави ЄС повідомити, чи cudzoziemiec надалі має status uchodźcy або ochronę uzupełniającą у Польщі.`,
             sourceLocator: "Art. 138b",
           },
         ],
@@ -834,12 +791,11 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139 у тексті редакції позначено як uchylony.",
+            text: foreignersLaw.text`${foreignersLaw.article("139", "Art. 139")} у тексті редакції позначено як uchylony.`,
             sourceLocator: "Art. 139",
           },
         ],
-        summary:
-          "Art. 139 скасована (uchylony); після неї текст переходить до Rozdział 3a.",
+        summary: foreignersLaw.text`${foreignersLaw.article("139", "Art. 139")} скасована (uchylony); після неї текст переходить до Rozdział 3a.`,
         rules: [
           {
             locator: "Art. 139",
@@ -847,10 +803,8 @@ export const foreignersActPart04 =
               "Стаття містить позначення «(uchylony)» і не встановлює чинного правила.",
           },
         ],
-        legalEffect:
-          "Не можна вивести з поточного Art. 139 самостійну підставу для pobyt чи праці.",
-        foreignersCase:
-          "Не використовуйте Art. 139 як чинну норму; для przeniesienia wewnątrz przedsiębiorstwa читайте актуальні статті Rozdział 3a.",
+        legalEffect: foreignersLaw.text`Не можна вивести з поточного ${foreignersLaw.article("139", "Art. 139")} самостійну підставу для pobyt чи праці.`,
+        foreignersCase: foreignersLaw.text`Не використовуйте ${foreignersLaw.article("139", "Art. 139")} як чинну норму; для przeniesienia wewnątrz przedsiębiorstwa читайте актуальні статті Rozdział 3a.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-139a",
@@ -858,7 +812,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139a встановлює сукупні умови zezwolenia na pobyt czasowy для роботи в jednostka przyjmująca у рамках przeniesienia wewnątrz przedsiębiorstwa: для kadra kierownicza, specjalista або stażysta, з правилами щодо договору в ust. 1 pkt 2, стажу та доказу в ust. 4.",
+            text: foreignersLaw.text`${foreignersLaw.article("139a", "Art. 139a")} встановлює сукупні умови zezwolenia na pobyt czasowy для роботи в jednostka przyjmująca у рамках przeniesienia wewnątrz przedsiębiorstwa: для kadra kierownicza, specjalista або stażysta, з правилами щодо договору в ust. 1 pkt 2, стажу та доказу в ust. 4.`,
             sourceLocator:
               "Art. 139a ust. 1 pkt 1 lit. a–f, pkt 2 lit. a–d, ust. 2–4",
           },
@@ -883,8 +837,7 @@ export const foreignersActPart04 =
           },
           {
             locator: "ust. 4",
-            explanation:
-              "До документа, який підтверджує умову попередньої безперервної роботи з ust. 1 pkt 1 lit. c, не застосовується art. 8 ust. 2.",
+            explanation: foreignersLaw.text`До документа, який підтверджує умову попередньої безперервної роботи з ust. 1 pkt 1 lit. c, не застосовується ${foreignersLaw.article("8", "art. 8")} ust. 2.`,
           },
         ],
         legalEffect:
@@ -898,7 +851,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139b дозволяє minister właściwy do spraw wewnętrznych у porozumieniu з міністрами, відповідальними за pracę та gospodarkę, визначити w drodze rozporządzenia річний ліміт вперше наданих zezwoleń за art. 139a і вимагає врахувати potrzeby rynku pracy, безпеку та porządek publiczny.",
+            text: foreignersLaw.text`${foreignersLaw.article("139b", "Art. 139b")} дозволяє minister właściwy do spraw wewnętrznych у porozumieniu з міністрами, відповідальними за pracę та gospodarkę, визначити w drodze rozporządzenia річний ліміт вперше наданих zezwoleń за ${foreignersLaw.article("139a", "art. 139a")} і вимагає врахувати potrzeby rynku pracy, безпеку та porządek publiczny.`,
             sourceLocator: "Art. 139b ust. 1–3",
           },
         ],
@@ -906,8 +859,7 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "W drodze rozporządzenia ліміт може охоплювати окремі województwa, zawody або rodzaje działalności jednostek przyjmujących; конкретна кількість у Art. 139b не встановлена.",
+            explanation: foreignersLaw.text`W drodze rozporządzenia ліміт може охоплювати окремі województwa, zawody або rodzaje działalności jednostek przyjmujących; конкретна кількість у ${foreignersLaw.article("139b", "Art. 139b")} не встановлена.`,
           },
           {
             locator: "ust. 2–3",
@@ -926,7 +878,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139c обмежує zezwolenie для стажера в рамках przeniesienia do 1 року та наказує враховувати заплановані періоди mobilność в інших державах ЄС.",
+            text: foreignersLaw.text`${foreignersLaw.article("139c", "Art. 139c")} обмежує zezwolenie для стажера в рамках przeniesienia do 1 року та наказує враховувати заплановані періоди mobilność в інших державах ЄС.`,
             sourceLocator: "Art. 139c ust. 1–2",
           },
         ],
@@ -955,7 +907,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139d встановлює, що zezwolenie за art. 139a не звільняє від окремих вимог до zawodów regulowanych або działalności.",
+            text: foreignersLaw.text`${foreignersLaw.article("139d", "Art. 139d")} встановлює, що zezwolenie за ${foreignersLaw.article("139a", "art. 139a")} не звільняє від окремих вимог до zawodów regulowanych або działalności.`,
             sourceLocator: "Art. 139d",
           },
         ],
@@ -968,8 +920,7 @@ export const foreignersActPart04 =
               "Для виконання zawód regulowany або діяльності потрібно додатково виконати вимоги odrębnych przepisów.",
           },
         ],
-        legalEffect:
-          "Стаття розмежовує право на pobyt за art. 139a та інші вимоги до фактичного виконання роботи.",
+        legalEffect: foreignersLaw.text`Стаття розмежовує право на pobyt за ${foreignersLaw.article("139a", "art. 139a")} та інші вимоги до фактичного виконання роботи.`,
         foreignersCase:
           "Перевірте спеціальні вимоги до професії чи діяльності окремо від рішення про ICT-pobyt.",
       },
@@ -979,7 +930,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139e визначає випадки odmowa wszczęcia postępowania про zezwolenie за art. 139a: коли перший або найдовший pobyt у ЄС має бути в іншій державі-члені, або коли на день wniosku наявні перелічені zezwolenia, статус pobyt чи модель роботи.",
+            text: foreignersLaw.text`${foreignersLaw.article("139e", "Art. 139e")} визначає випадки odmowa wszczęcia postępowania про zezwolenie за ${foreignersLaw.article("139a", "art. 139a")}: коли перший або найдовший pobyt у ЄС має бути в іншій державі-члені, або коли на день wniosku наявні перелічені zezwolenia, статус pobyt чи модель роботи.`,
             sourceLocator: "Art. 139e pkt 1–2 lit. a–g (у т. ч. lit. ba)",
           },
         ],
@@ -993,12 +944,10 @@ export const foreignersActPart04 =
           },
           {
             locator: "pkt 2 lit. a–g",
-            explanation:
-              "Також названо заяву або наявність zezwolenia за art. 144 (lit. a), art. 151 (lit. b) чи art. 151b (lit. ba), відрядження (lit. c), działalność gospodarczą (lit. d), роботу через agencję/udostępnianie або посередництво (lit. e), pobyt у Польщі поза винятком kolejnego zezwolenia на підставі art. 139a (lit. f) чи pobyt в іншій державі ЄС (lit. g).",
+            explanation: foreignersLaw.text`Також названо заяву або наявність zezwolenia за ${foreignersLaw.article("144", "art. 144")} (lit. a), ${foreignersLaw.article("151", "art. 151")} (lit. b) чи ${foreignersLaw.article("151b", "art. 151b")} (lit. ba), відрядження (lit. c), działalność gospodarczą (lit. d), роботу через agencję/udostępnianie або посередництво (lit. e), pobyt у Польщі поза винятком kolejnego zezwolenia на підставі ${foreignersLaw.article("139a", "art. 139a")} (lit. f) чи pobyt в іншій державі ЄС (lit. g).`,
           },
         ],
-        legalEffect:
-          "Ці обставини стосуються wszczęcia провадження, а не є автоматичним висновком про відсутність усіх матеріальних умов art. 139a.",
+        legalEffect: foreignersLaw.text`Ці обставини стосуються wszczęcia провадження, а не є автоматичним висновком про відсутність усіх матеріальних умов ${foreignersLaw.article("139a", "art. 139a")}.`,
         foreignersCase:
           "На день подання визначте перший/найдовший pobyt, державу фактичного перебування, інші zezwolenia та реальну модель праці; саме ці факти запускають або виключають правило.",
       },
@@ -1008,7 +957,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139f перелічує підстави odmowa udzielenia zezwolenia за art. 139a та додаткові підстави для kolejnego zezwolenia, зокрема проблеми pracodawca macierzysty або jednostka przyjmująca, неправдиві дані, ліміт і завершення строку przeniesienia.",
+            text: foreignersLaw.text`${foreignersLaw.article("139f", "Art. 139f")} перелічує підстави odmowa udzielenia zezwolenia за ${foreignersLaw.article("139a", "art. 139a")} та додаткові підстави для kolejnego zezwolenia, зокрема проблеми pracodawca macierzysty або jednostka przyjmująca, неправдиві дані, ліміт і завершення строку przeniesienia.`,
             sourceLocator: "Art. 139f ust. 1–2",
           },
         ],
@@ -1037,12 +986,11 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139g, poza випадками art. 101 pkt 1 або 2, передбачає cofnięcie zezwolenia за art. 139a, якщо його використовують не за метою, виникла обставина art. 100 ust. 1 pkt 2, 4 або 8, чи наявна обставина art. 139f ust. 1 pkt 1, 3 або 4.",
+            text: foreignersLaw.text`${foreignersLaw.article("139g", "Art. 139g")}, poza випадками ${foreignersLaw.article("101", "art. 101")} pkt 1 або 2, передбачає cofnięcie zezwolenia за ${foreignersLaw.article("139a", "art. 139a")}, якщо його використовують не за метою, виникла обставина ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 2, 4 або 8, чи наявна обставина ${foreignersLaw.article("139f", "art. 139f")} ust. 1 pkt 1, 3 або 4.`,
             sourceLocator: "Art. 139g pkt 1–3",
           },
         ],
-        summary:
-          "Стаття визначає підстави відкликання ICT-zezwolenia поза випадками art. 101 pkt 1 або 2.",
+        summary: foreignersLaw.text`Стаття визначає підстави відкликання ICT-zezwolenia поза випадками ${foreignersLaw.article("101", "art. 101")} pkt 1 або 2.`,
         rules: [
           {
             locator: "pkt 1",
@@ -1051,14 +999,12 @@ export const foreignersActPart04 =
           },
           {
             locator: "pkt 2–3",
-            explanation:
-              "Також відсиланням охоплено саме art. 100 ust. 1 pkt 2, 4 або 8 та окремі обставини art. 139f ust. 1 pkt 1, 3 або 4.",
+            explanation: foreignersLaw.text`Також відсиланням охоплено саме ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 2, 4 або 8 та окремі обставини ${foreignersLaw.article("139f", "art. 139f")} ust. 1 pkt 1, 3 або 4.`,
           },
         ],
         legalEffect:
           "Стаття визначає підстави cofnięcie через власні умови та відсилання; вона не робить кожне порушення автоматично доведеним.",
-        foreignersCase:
-          "Порівняйте фактичну роботу й мету з decyzja та перевірте, на який саме пункт art. 139g і пов’язаної статті посилається орган.",
+        foreignersCase: foreignersLaw.text`Порівняйте фактичну роботу й мету з decyzja та перевірте, на який саме пункт ${foreignersLaw.article("139g", "art. 139g")} і пов’язаної статті посилається орган.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-139h",
@@ -1066,7 +1012,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139h визначає, що decyzja про art. 139a має містити строк чинності, jednostka przyjmująca, stanowisko, найнижчу wynagrodzenie та wymiar czasu pracy.",
+            text: foreignersLaw.text`${foreignersLaw.article("139h", "Art. 139h")} визначає, що decyzja про ${foreignersLaw.article("139a", "art. 139a")} має містити строк чинності, jednostka przyjmująca, stanowisko, найнижчу wynagrodzenie та wymiar czasu pracy.`,
             sourceLocator: "Art. 139h pkt 1–4",
           },
         ],
@@ -1074,8 +1020,7 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "pkt 1–4",
-            explanation:
-              "У decyzja зазначаються приймаюча одиниця, посада, найнижча винагорода за договором/документом art. 139a ust. 1 pkt 2 і розмір робочого часу.",
+            explanation: foreignersLaw.text`У decyzja зазначаються приймаюча одиниця, посада, найнижча винагорода за договором/документом ${foreignersLaw.article("139a", "art. 139a")} ust. 1 pkt 2 і розмір робочого часу.`,
           },
         ],
         legalEffect:
@@ -1089,7 +1034,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139i встановлює, що zezwolenie за art. 139a надає або у наданні відмовляє wojewoda за місцем siedziba jednostka przyjmująca у формі decyzja; ust. 2 і 3 позначені як uchylony.",
+            text: foreignersLaw.text`${foreignersLaw.article("139i", "Art. 139i")} встановлює, що zezwolenie за ${foreignersLaw.article("139a", "art. 139a")} надає або у наданні відмовляє wojewoda за місцем siedziba jednostka przyjmująca у формі decyzja; ust. 2 і 3 позначені як uchylony.`,
             sourceLocator: "Art. 139i ust. 1–3",
           },
         ],
@@ -1118,7 +1063,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139j регулює передавання інформації про ICT-мобільність між Szef Urzędu, wojewoda та органами інших держав ЄС, включно з даними за art. 22 ust. 1 pkt 8a lit. c і f та інформацією про cofnięcie zezwolenia.",
+            text: foreignersLaw.text`${foreignersLaw.article("139j", "Art. 139j")} регулює передавання інформації про ICT-мобільність між Szef Urzędu, wojewoda та органами інших держав ЄС, включно з даними за ${foreignersLaw.article("22", "art. 22")} ust. 1 pkt 8a lit. c і f та інформацією про cofnięcie zezwolenia.`,
             sourceLocator: "Art. 139j ust. 1–3",
           },
         ],
@@ -1127,13 +1072,11 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Szef Urzędu передає wojewodzie, який надав zezwolenie, інформацію про cudzoziemca за art. 22 ust. 1 pkt 8a lit. c tiret pierwsze, zawiadomienie за lit. f tiret pierwsze та інформацію про sprzeciw до мобільності, отримані від інших держав ЄС.",
+            explanation: foreignersLaw.text`Szef Urzędu передає wojewodzie, який надав zezwolenie, інформацію про cudzoziemca за ${foreignersLaw.article("22", "art. 22")} ust. 1 pkt 8a lit. c tiret pierwsze, zawiadomienie за lit. f tiret pierwsze та інформацію про sprzeciw до мобільності, отримані від інших держав ЄС.`,
           },
           {
             locator: "ust. 2–3",
-            explanation:
-              "Якщо cudzoziemcowi в іншій державі ЄС cofnięto zezwolenie за art. 139a, wojewoda передає Szef Urzędu копію decyzja (ust. 2); Szef Urzędu без зволікання інформує держави ЄС, де особа користується мобільністю (ust. 3).",
+            explanation: foreignersLaw.text`Якщо cudzoziemcowi в іншій державі ЄС cofnięto zezwolenie за ${foreignersLaw.article("139a", "art. 139a")}, wojewoda передає Szef Urzędu копію decyzja (ust. 2); Szef Urzędu без зволікання інформує держави ЄС, де особа користується мобільністю (ust. 3).`,
           },
         ],
         legalEffect:
@@ -1147,7 +1090,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139k визначає, що в провадженні про надання art. 139a стороною є лише jednostka przyjmująca, а у справі про cofnięcie сторонами є вона та cudzoziemiec.",
+            text: foreignersLaw.text`${foreignersLaw.article("139k", "Art. 139k")} визначає, що в провадженні про надання ${foreignersLaw.article("139a", "art. 139a")} стороною є лише jednostka przyjmująca, а у справі про cofnięcie сторонами є вона та cudzoziemiec.`,
             sourceLocator: "Art. 139k ust. 1–3",
           },
         ],
@@ -1181,7 +1124,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139l зобов’язує jednostka przyjmująca подати заяву на kolejnego zezwolenia за art. 139a не пізніше останнього дня легального pobyt cudzoziemca та відсилає до art. 108.",
+            text: foreignersLaw.text`${foreignersLaw.article("139l", "Art. 139l")} зобов’язує jednostka przyjmująca подати заяву на kolejnego zezwolenia за ${foreignersLaw.article("139a", "art. 139a")} не пізніше останнього дня легального pobyt cudzoziemca та відсилає до ${foreignersLaw.article("108", "art. 108")}.`,
             sourceLocator: "Art. 139l ust. 1–2",
           },
         ],
@@ -1195,11 +1138,10 @@ export const foreignersActPart04 =
           },
           {
             locator: "ust. 2",
-            explanation: "У цій ситуації art. 108 застосовується відповідно.",
+            explanation: foreignersLaw.text`У цій ситуації ${foreignersLaw.article("108", "art. 108")} застосовується відповідно.`,
           },
         ],
-        legalEffect:
-          "Норма визначає строк дії для podania kolejnego zezwolenia, але зміст наслідків відсилання потрібно читати разом із art. 108.",
+        legalEffect: foreignersLaw.text`Норма визначає строк дії для podania kolejnego zezwolenia, але зміст наслідків відсилання потрібно читати разом із ${foreignersLaw.article("108", "art. 108")}.`,
         foreignersCase:
           "Визначте останній день legalny pobyt і подбайте, щоб jednostka подала kolejny wniosek не пізніше цієї дати.",
       },
@@ -1209,7 +1151,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139m вимагає від jednostka przyjmująca письмово повідомляти wojewodę протягом 15 dni roboczych про кожну зміну обставин, що впливає на умови наданого zezwolenia.",
+            text: foreignersLaw.text`${foreignersLaw.article("139m", "Art. 139m")} вимагає від jednostka przyjmująca письмово повідомляти wojewodę протягом 15 dni roboczych про кожну зміну обставин, що впливає на умови наданого zezwolenia.`,
             sourceLocator: "Art. 139m ust. 1–2",
           },
         ],
@@ -1238,7 +1180,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139ma регулює повідомлення jednostka przyjmująca з Польщі органу іншої держави ЄС і Szef Urzędu про намір cudzoziemca користуватися короткостроковою або довгостроковою mobilność в іншій державі.",
+            text: foreignersLaw.text`${foreignersLaw.article("139ma", "Art. 139ma")} регулює повідомлення jednostka przyjmująca з Польщі органу іншої держави ЄС і Szef Urzędu про намір cudzoziemca користуватися короткостроковою або довгостроковою mobilność в іншій державі.`,
             sourceLocator: "Art. 139ma",
           },
         ],
@@ -1262,7 +1204,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139n допускає krótkoterminowa mobilność ICT у Польщі за трьох сукупних умов ust. 1 pkt 1–3: мета роботи, документ з adnotacją «ICT» іншої держави ЄС і zawiadomienie від jednostka, після якого Szef Urzędu не видав sprzeciw протягом 20 днів.",
+            text: foreignersLaw.text`${foreignersLaw.article("139n", "Art. 139n")} допускає krótkoterminowa mobilność ICT у Польщі за трьох сукупних умов ust. 1 pkt 1–3: мета роботи, документ з adnotacją «ICT» іншої держави ЄС і zawiadomienie від jednostka, після якого Szef Urzędu не видав sprzeciw протягом 20 днів.`,
             sourceLocator: "Art. 139n ust. 1 pkt 1–3, ust. 2–13",
           },
         ],
@@ -1296,7 +1238,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139o визначає умови zezwolenia na pobyt для mobilność długoterminowa працівника kadry kierowniczej, specjalista або stażysta з документом «ICT» іншої держави ЄС; ust. 1 pkt 1 lit. a, aa–d і pkt 2 та ust. 2 встановлюють сукупні умови.",
+            text: foreignersLaw.text`${foreignersLaw.article("139o", "Art. 139o")} визначає умови zezwolenia na pobyt для mobilność długoterminowa працівника kadry kierowniczej, specjalista або stażysta з документом «ICT» іншої держави ЄС; ust. 1 pkt 1 lit. a, aa–d і pkt 2 та ust. 2 встановлюють сукупні умови.`,
             sourceLocator: "Art. 139o ust. 1 pkt 1 lit. a, aa–d, pkt 2, ust. 2",
           },
         ],
@@ -1330,7 +1272,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139p обмежує строк zezwolenia за art. 139o строком дії ICT-документа іншої держави, а для стажера встановлює максимум 1 рік і ту саму верхню межу документа.",
+            text: foreignersLaw.text`${foreignersLaw.article("139p", "Art. 139p")} обмежує строк zezwolenia за ${foreignersLaw.article("139o", "art. 139o")} строком дії ICT-документа іншої держави, а для стажера встановлює максимум 1 рік і ту саму верхню межу документа.`,
             sourceLocator: "Art. 139p ust. 1–2",
           },
         ],
@@ -1359,7 +1301,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139q встановлює, що zezwolenie за art. 139o не звільняє від окремих вимог до zawodów regulowanych або działalności.",
+            text: foreignersLaw.text`${foreignersLaw.article("139q", "Art. 139q")} встановлює, що zezwolenie за ${foreignersLaw.article("139o", "art. 139o")} не звільняє від окремих вимог до zawodów regulowanych або działalności.`,
             sourceLocator: "Art. 139q",
           },
         ],
@@ -1374,8 +1316,7 @@ export const foreignersActPart04 =
         ],
         legalEffect:
           "Стаття відділяє дозвіл на pobyt від дозволу виконувати регульовану професію або діяльність.",
-        foreignersCase:
-          "Перевірте спеціальний допуск до роботи окремо від zezwolenie за art. 139o.",
+        foreignersCase: foreignersLaw.text`Перевірте спеціальний допуск до роботи окремо від zezwolenie за ${foreignersLaw.article("139o", "art. 139o")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-139r",
@@ -1383,7 +1324,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139r передбачає odmowa wszczęcia postępowania про zezwolenie за art. 139o за наявності певних zezwoleń або моделей роботи, а також якщо wniosek подано в день отримання Szef Urzędu zawiadomienie за art. 139n ust. 1 pkt 3 чи протягом наступних 14 днів.",
+            text: foreignersLaw.text`${foreignersLaw.article("139r", "Art. 139r")} передбачає odmowa wszczęcia postępowania про zezwolenie за ${foreignersLaw.article("139o", "art. 139o")} за наявності певних zezwoleń або моделей роботи, а також якщо wniosek подано в день отримання Szef Urzędu zawiadomienie за ${foreignersLaw.article("139n", "art. 139n")} ust. 1 pkt 3 чи протягом наступних 14 днів.`,
             sourceLocator: "Art. 139r ust. 1–2",
           },
         ],
@@ -1392,19 +1333,15 @@ export const foreignersActPart04 =
         rules: [
           {
             locator: "ust. 1 pkt 1–5",
-            explanation:
-              "Провадження не починають при zezwolenie за art. 144 (ust. 1 pkt 1), art. 151 (pkt 2) або art. 151b (pkt 2a), відрядженні (pkt 3), działalność gospodarcza (pkt 4), роботі через agencja pracy tymczasowej/udostępnianie або przeniesieniu за посередництва відповідного podmiot (pkt 5).",
+            explanation: foreignersLaw.text`Провадження не починають при zezwolenie за ${foreignersLaw.article("144", "art. 144")} (ust. 1 pkt 1), ${foreignersLaw.article("151", "art. 151")} (pkt 2) або ${foreignersLaw.article("151b", "art. 151b")} (pkt 2a), відрядженні (pkt 3), działalność gospodarcza (pkt 4), роботі через agencja pracy tymczasowej/udostępnianie або przeniesieniu за посередництва відповідного podmiot (pkt 5).`,
           },
           {
             locator: "ust. 2",
-            explanation:
-              "Також odmawia się wszczęcia, якщо wniosek подано в день отримання Szef Urzędu zawiadomienia за art. 139n ust. 1 pkt 3 або протягом наступних 14 днів (ust. 2).",
+            explanation: foreignersLaw.text`Також odmawia się wszczęcia, якщо wniosek подано в день отримання Szef Urzędu zawiadomienia за ${foreignersLaw.article("139n", "art. 139n")} ust. 1 pkt 3 або протягом наступних 14 днів (ust. 2).`,
           },
         ],
-        legalEffect:
-          "Норма регулює початок провадження і не є самостійним висновком про те, що всі матеріальні умови art. 139o не виконані.",
-        foreignersCase:
-          "Порівняйте дату wniosku з датою zawiadomienie за art. 139n та перевірте статус і модель праці на дату подання.",
+        legalEffect: foreignersLaw.text`Норма регулює початок провадження і не є самостійним висновком про те, що всі матеріальні умови ${foreignersLaw.article("139o", "art. 139o")} не виконані.`,
+        foreignersCase: foreignersLaw.text`Порівняйте дату wniosku з датою zawiadomienie за ${foreignersLaw.article("139n", "art. 139n")} та перевірте статус і модель праці на дату подання.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-139s",
@@ -1412,7 +1349,7 @@ export const foreignersActPart04 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 139s, poza випадками art. 100 ust. 1 pkt 1–4 і 8, перелічує підстави odmowa udzielenia zezwolenia за art. 139o та додаткові підстави для kolejnego zezwolenia, зокрема сплив строку ICT, неправдиві дані, проблеми podmiot, завершення строку przeniesienia і nielegalny pobyt.",
+            text: foreignersLaw.text`${foreignersLaw.article("139s", "Art. 139s")}, poza випадками ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 1–4 і 8, перелічує підстави odmowa udzielenia zezwolenia за ${foreignersLaw.article("139o", "art. 139o")} та додаткові підстави для kolejnego zezwolenia, зокрема сплив строку ICT, неправдиві дані, проблеми podmiot, завершення строку przeniesienia і nielegalny pobyt.`,
             sourceLocator: "Art. 139s ust. 1 pkt 1–5, ust. 2",
           },
         ],
