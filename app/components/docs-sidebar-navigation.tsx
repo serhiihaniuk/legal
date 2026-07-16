@@ -74,7 +74,7 @@ export function DocsSidebarSection({
           {title}
         </p>
         {meta ? (
-          <span className="shrink-0 text-[0.65rem] leading-4 text-muted-foreground tabular-nums">
+          <span className="shrink-0 text-micro leading-4 text-muted-foreground tabular-nums">
             {meta}
           </span>
         ) : null}

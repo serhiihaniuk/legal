@@ -16,27 +16,45 @@ import {
   type LegalLearningText,
 } from "~/data/legal-library/learning/legal-text"
 import type { LegalLearningModuleView } from "~/features/law-library/model/legal-learning-view"
+import {
+  defineDocumentHeadings,
+  DocumentArticle,
+  DocumentHeader,
+  tableOfContentsFromHeadings,
+} from "~/components/patterns/document-content"
 
-export const legalLearningSectionIds = {
-  overview: "legal-learning-overview",
-  position: "legal-learning-position",
-  mechanism: "legal-learning-mechanism",
-  provisions: "legal-learning-provisions",
-  example: "legal-learning-example",
-  nuances: "legal-learning-nuances",
-} as const
-
-export const legalLearningContentToc = [
-  { href: `#${legalLearningSectionIds.overview}`, label: "Про тему" },
-  { href: `#${legalLearningSectionIds.position}`, label: "Місце в процедурі" },
-  { href: `#${legalLearningSectionIds.mechanism}`, label: "Як це працює" },
-  {
-    href: `#${legalLearningSectionIds.provisions}`,
-    label: "Норми крок за кроком",
+const legalLearningHeadings = defineDocumentHeadings({
+  overview: { id: "legal-learning-overview", title: "Про тему" },
+  position: {
+    id: "legal-learning-position",
+    title: "Де ця тема знаходиться в правовій роботі",
+    tocLabel: "Місце в процедурі",
   },
-  { href: `#${legalLearningSectionIds.example}`, label: "Повний приклад" },
-  { href: `#${legalLearningSectionIds.nuances}`, label: "Нюанси й помилки" },
-] as const
+  mechanism: {
+    id: "legal-learning-mechanism",
+    title: "Як працює цей правовий механізм",
+    tocLabel: "Як це працює",
+  },
+  provisions: {
+    id: "legal-learning-provisions",
+    title: "Як норми ділять цю тему",
+    tocLabel: "Норми крок за кроком",
+  },
+  example: {
+    id: "legal-learning-example",
+    title: "Повний приклад у справі іноземця",
+    tocLabel: "Повний приклад",
+  },
+  nuances: {
+    id: "legal-learning-nuances",
+    title: "Нюанси й типові помилки",
+    tocLabel: "Нюанси й помилки",
+  },
+})
+
+export const legalLearningContentToc = tableOfContentsFromHeadings(
+  legalLearningHeadings
+)
 
 function ProvisionText({
   text,
@@ -247,20 +265,22 @@ export function LegalLearningModuleContent({
   navigation: ModuleNavigation
 }) {
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-      <header id={legalLearningSectionIds.overview}>
-        <div
-          data-not-typeset
-          className="mb-3 flex flex-wrap items-center gap-2"
-        >
-          <Badge variant="secondary">Модуль {module.order}</Badge>
-          <Badge variant="outline">
-            <LearningText text={module.provisionScope} />
-          </Badge>
-          <span className="text-xs text-muted-foreground">
-            Стан права: {module.legalState}
-          </span>
-        </div>
+    <DocumentArticle>
+      <DocumentHeader
+        id={legalLearningHeadings.overview.id}
+        badgeAlign="center"
+        badges={
+          <>
+            <Badge variant="secondary">Модуль {module.order}</Badge>
+            <Badge variant="outline">
+              <LearningText text={module.provisionScope} />
+            </Badge>
+            <span className="text-xs text-muted-foreground">
+              Стан права: {module.legalState}
+            </span>
+          </>
+        }
+      >
         <h1>{module.title}</h1>
         <p className="text-muted-foreground" lang="pl">
           <LearningText text={module.polish} />
@@ -269,13 +289,13 @@ export function LegalLearningModuleContent({
           <strong>Після цього модуля:</strong>{" "}
           <LearningText text={module.outcome} />
         </p>
-      </header>
+      </DocumentHeader>
 
-      <section id={legalLearningSectionIds.position}>
+      <section id={legalLearningHeadings.position.id}>
         <p className="text-sm font-medium text-muted-foreground">
           {module.stage}
         </p>
-        <h2>Де ця тема знаходиться в правовій роботі</h2>
+        <h2>{legalLearningHeadings.position.title}</h2>
         <p>
           <LearningText text={module.positionIntro} />
         </p>
@@ -332,8 +352,8 @@ export function LegalLearningModuleContent({
         ) : null}
       </section>
 
-      <section id={legalLearningSectionIds.mechanism}>
-        <h2>Як працює цей правовий механізм</h2>
+      <section id={legalLearningHeadings.mechanism.id}>
+        <h2>{legalLearningHeadings.mechanism.title}</h2>
         {module.mechanismParagraphs.map((paragraph) => (
           <p key={legalLearningPlainText(paragraph)}>
             <LearningText text={paragraph} />
@@ -370,8 +390,8 @@ export function LegalLearningModuleContent({
         ) : null}
       </section>
 
-      <section id={legalLearningSectionIds.provisions}>
-        <h2>Як норми ділять цю тему</h2>
+      <section id={legalLearningHeadings.provisions.id}>
+        <h2>{legalLearningHeadings.provisions.title}</h2>
         <p>
           Спочатку подивіться на роль частин механізму, а нижче розкрийте кожну
           з них. Так видно не лише номер, а питання, умови, докази і наслідок.
@@ -404,8 +424,8 @@ export function LegalLearningModuleContent({
         <ProvisionGuide guide={module.provisionGuide} />
       </section>
 
-      <section id={legalLearningSectionIds.example}>
-        <h2>Повний приклад у справі іноземця</h2>
+      <section id={legalLearningHeadings.example.id}>
+        <h2>{legalLearningHeadings.example.title}</h2>
         <h3>
           <LearningText text={module.caseExample.title} />
         </h3>
@@ -441,8 +461,8 @@ export function LegalLearningModuleContent({
         </div>
       </section>
 
-      <section id={legalLearningSectionIds.nuances}>
-        <h2>Нюанси й типові помилки</h2>
+      <section id={legalLearningHeadings.nuances.id}>
+        <h2>{legalLearningHeadings.nuances.title}</h2>
         <ul>
           {module.pitfalls.map((pitfall) => (
             <li key={legalLearningPlainText(pitfall)}>
@@ -488,6 +508,6 @@ export function LegalLearningModuleContent({
           </Button>
         )}
       </nav>
-    </article>
+    </DocumentArticle>
   )
 }

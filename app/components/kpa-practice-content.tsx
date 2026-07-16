@@ -3,6 +3,7 @@ import {
   foreignersCaseAlgorithm,
 } from "~/data/legal-library/learning/kpa"
 import { LegalText } from "~/components/legal-reference-text"
+import { DocumentArticle } from "~/components/patterns/document-content"
 
 export const kpaPracticeToc = [
   { href: "#practice-overview", label: "Мета практикуму" },
@@ -25,7 +26,7 @@ export function KpaPracticeContent() {
         </p>
       </header>
 
-      <article className="typeset typeset-docs w-full flex-1 pb-16 sm:pb-0">
+      <DocumentArticle width="grow">
         <section id="case-algorithm">
           <h2>Алгоритм реальної справи</h2>
           <p>
@@ -98,7 +99,7 @@ export function KpaPracticeContent() {
             </li>
           </ul>
         </section>
-      </article>
+      </DocumentArticle>
     </>
   )
 }

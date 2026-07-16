@@ -1,12 +1,22 @@
 import { useSearchParams } from "react-router"
 
 import { DocsLayout } from "~/components/docs-layout"
+import { DocsSidebar } from "~/components/docs-sidebar-navigation"
+import {
+  MobileSectionSelect,
+  SectionNavigationList,
+  type SectionNavigationOption,
+} from "~/components/patterns/section-navigation"
 import { StudyPlanContent, studyPlanToc } from "~/components/study-plan-content"
 import { studyModules } from "~/data/study-plan-data"
+import { useUrlSelection } from "~/hooks/use-url-selection"
 
-function scrollToTop() {
-  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))
-}
+const studyNavigationOptions: readonly SectionNavigationOption[] =
+  studyModules.map((module, index) => ({
+    value: module.id,
+    label: module.title,
+    selectLabel: `${index + 1}. ${module.title}`,
+  }))
 
 function StudyNavigation({
   selectedId,
@@ -16,26 +26,21 @@ function StudyNavigation({
   onSelect: (id: string) => void
 }) {
   return (
-    <nav aria-label="Навігація плану навчання" className="pb-10">
-      <p className="px-2 text-xs font-medium text-muted-foreground">
-        Вісім модулів
-      </p>
-      <ol className="mt-2 grid gap-0.5">
-        {studyModules.map((module, index) => (
-          <li key={module.id}>
-            <button
-              type="button"
-              onClick={() => onSelect(module.id)}
-              data-active={selectedId === module.id}
-              className="grid min-h-10 w-full grid-cols-[1.5rem_minmax(0,1fr)] items-start gap-2 rounded-md border border-transparent px-2 py-2 text-left text-[0.8rem] font-medium hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none data-[active=true]:border-accent data-[active=true]:bg-accent"
-            >
-              <span className="text-muted-foreground">{index + 1}</span>
-              <span>{module.title}</span>
-            </button>
-          </li>
-        ))}
-      </ol>
-    </nav>
+    <DocsSidebar ariaLabel="Навігація плану навчання" label="Вісім модулів">
+      <SectionNavigationList
+        options={studyNavigationOptions}
+        value={selectedId}
+        onValueChange={onSelect}
+        ordered
+        variant="numbered"
+        renderOption={(option, index) => (
+          <>
+            <span className="text-muted-foreground">{index + 1}</span>
+            <span>{option.label}</span>
+          </>
+        )}
+      />
+    </DocsSidebar>
   )
 }
 
@@ -47,53 +52,45 @@ function MobileStudyNavigation({
   onSelect: (id: string) => void
 }) {
   return (
-    <label className="grid min-w-0 gap-1.5 lg:hidden">
-      <span className="text-xs font-medium text-muted-foreground">
-        Модуль курсу
-      </span>
-      <select
+    <div className="lg:hidden">
+      <MobileSectionSelect
+        label="Модуль курсу"
         value={selectedId}
-        onChange={(event) => onSelect(event.target.value)}
-        className="h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
-      >
-        {studyModules.map((module, index) => (
-          <option key={module.id} value={module.id}>
-            {index + 1}. {module.title}
-          </option>
-        ))}
-      </select>
-    </label>
+        options={studyNavigationOptions}
+        onValueChange={onSelect}
+        size="comfortable"
+      />
+    </div>
   )
 }
 
 export default function StudyPage() {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const requestedId = searchParams.get("module")
   const selectedModule =
     studyModules.find((module) => module.id === requestedId) ?? studyModules[0]
-
-  function selectModule(id: string) {
-    setSearchParams({ module: id })
-    scrollToTop()
-  }
+  const selection = useUrlSelection({
+    value: selectedModule.id,
+    to: (id: string) => ({ pathname: "/study", search: `?module=${id}` }),
+  })
 
   return (
     <DocsLayout
       navigation={
         <StudyNavigation
-          selectedId={selectedModule.id}
-          onSelect={selectModule}
+          selectedId={selection.value}
+          onSelect={selection.select}
         />
       }
       toc={studyPlanToc}
     >
       <MobileStudyNavigation
-        selectedId={selectedModule.id}
-        onSelect={selectModule}
+        selectedId={selection.value}
+        onSelect={selection.select}
       />
       <StudyPlanContent
-        selectedId={selectedModule.id}
-        onSelectModule={selectModule}
+        selectedId={selection.value}
+        onSelectModule={selection.select}
       />
     </DocsLayout>
   )

@@ -30,6 +30,14 @@ import {
   type DocumentCatalogEntry,
 } from "~/data/document-index"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
+import {
+  DocumentArticle,
+  DocumentHeader,
+} from "~/components/patterns/document-content"
+import {
+  MobileSectionSelect,
+  type SectionNavigationOption,
+} from "~/components/patterns/section-navigation"
 
 export const documentCatalogToc: TocItem[] = [
   { href: "#documents-overview", label: "Що є в каталозі" },
@@ -55,6 +63,13 @@ export function documentDetailToc(document: DocumentCatalogEntry): TocItem[] {
 const categories = listEvidenceDocumentCategories().map(
   (id) => [id, documentCategoryLabels[id]] as [EvidenceDocumentCategory, string]
 )
+
+const categoryNavigationOptions: readonly SectionNavigationOption<
+  EvidenceDocumentCategory | "all"
+>[] = [
+  { value: "all", label: "Усі документи" },
+  ...categories.map(([value, label]) => ({ value, label })),
+]
 
 function pluralizeUkrainian(
   count: number,
@@ -149,51 +164,32 @@ export function MobileDocumentNavigation({
   onOverviewSelect: () => void
 }) {
   const documents = documentsForCategory(selectedCategory)
+  const documentNavigationOptions: readonly SectionNavigationOption[] = [
+    { value: "", label: "Огляд каталогу" },
+    ...documents.map((document) => ({
+      value: document.id,
+      label: document.title,
+    })),
+  ]
 
   return (
     <div className="grid min-w-0 gap-3 lg:hidden">
       <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
-      <label className="grid gap-1.5">
-        <span className="text-xs font-medium text-muted-foreground">
-          Категорія
-        </span>
-        <select
-          value={selectedCategory}
-          onChange={(event) =>
-            onCategorySelect(
-              event.target.value as EvidenceDocumentCategory | "all"
-            )
-          }
-          className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-        >
-          <option value="all">Усі документи</option>
-          {categories.map(([id, label]) => (
-            <option key={id} value={id}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label className="grid gap-1.5">
-        <span className="text-xs font-medium text-muted-foreground">
-          Документ
-        </span>
-        <select
-          value={selectedDocumentId ?? ""}
-          onChange={(event) => {
-            if (event.target.value) onDocumentSelect(event.target.value)
-            else onOverviewSelect()
-          }}
-          className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-        >
-          <option value="">Огляд каталогу</option>
-          {documents.map((document) => (
-            <option key={document.id} value={document.id}>
-              {document.title}
-            </option>
-          ))}
-        </select>
-      </label>
+      <MobileSectionSelect
+        label="Категорія"
+        value={selectedCategory}
+        options={categoryNavigationOptions}
+        onValueChange={onCategorySelect}
+      />
+      <MobileSectionSelect
+        label="Документ"
+        value={selectedDocumentId ?? ""}
+        options={documentNavigationOptions}
+        onValueChange={(documentId) => {
+          if (documentId) onDocumentSelect(documentId)
+          else onOverviewSelect()
+        }}
+      />
     </div>
   )
 }
@@ -208,25 +204,29 @@ export function DocumentCatalogOverview({
   const documents = documentsForCategory(category)
 
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-      <header id="documents-overview">
-        <div data-not-typeset className="not-typeset mb-3 flex flex-wrap gap-2">
-          <Badge variant="secondary">Документи</Badge>
-          <Badge variant="outline">
-            {pluralizeUkrainian(documentCatalog.length, [
-              "сторінка",
-              "сторінки",
-              "сторінок",
-            ])}
-          </Badge>
-        </div>
+    <DocumentArticle>
+      <DocumentHeader
+        id="documents-overview"
+        badges={
+          <>
+            <Badge variant="secondary">Документи</Badge>
+            <Badge variant="outline">
+              {pluralizeUkrainian(documentCatalog.length, [
+                "сторінка",
+                "сторінки",
+                "сторінок",
+              ])}
+            </Badge>
+          </>
+        }
+      >
         <h1>Каталог документів і доказів</h1>
         <p className="lead">
           Тут зібрані редакційно підготовлені сторінки документів: хто готує
           документ, що він доводить, чого не доводить, як його перевіряти та з
           якою нормою зіставляти.
         </p>
-      </header>
+      </DocumentHeader>
 
       <section id="documents-list">
         <h2>Документи в цій категорії</h2>
@@ -259,7 +259,7 @@ export function DocumentCatalogOverview({
           ))}
         </ol>
       </section>
-    </article>
+    </DocumentArticle>
   )
 }
 
@@ -277,14 +277,18 @@ export function DocumentDetailContent({
   const { previous, next } = getEvidenceDocumentNavigation(document.id)
 
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-      <header id="document-overview">
-        <div data-not-typeset className="not-typeset mb-3 flex flex-wrap gap-2">
-          <Badge variant="secondary">Документ</Badge>
-          <Badge variant="outline">
-            {documentCategoryLabels[document.category]}
-          </Badge>
-        </div>
+    <DocumentArticle>
+      <DocumentHeader
+        id="document-overview"
+        badges={
+          <>
+            <Badge variant="secondary">Документ</Badge>
+            <Badge variant="outline">
+              {documentCategoryLabels[document.category]}
+            </Badge>
+          </>
+        }
+      >
         <h1>{document.title}</h1>
         <p className="lead">
           <LegalText
@@ -306,7 +310,7 @@ export function DocumentDetailContent({
             <LegalText text={document.guide.preparedBy} />
           </p>
         ) : null}
-      </header>
+      </DocumentHeader>
 
       {document.guide?.howToObtain?.length ? (
         <section id="document-obtain">
@@ -534,6 +538,6 @@ export function DocumentDetailContent({
           </Button>
         )}
       </nav>
-    </article>
+    </DocumentArticle>
   )
 }

@@ -32,6 +32,8 @@ import {
 } from "~/data/legal-library"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import { officialSourceIdByLegalDocument } from "~/data/legal-library/official-sources"
+import { DocumentArticle } from "~/components/patterns/document-content"
+import { DefinitionRows } from "~/components/patterns/definition-rows"
 
 const toc = [
   { href: "#legal-provision-overview", label: "Огляд норми" },
@@ -240,7 +242,7 @@ export default function LawProvisionRoute() {
         </div>
       </header>
 
-      <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
+      <DocumentArticle>
         <section id="legal-provision-explanation">
           <h2>Як читати цю норму</h2>
           {reviewedExplanation ? (
@@ -357,60 +359,56 @@ export default function LawProvisionRoute() {
 
         <section id="legal-provision-place">
           <h2>Місце в акті</h2>
-          <dl>
-            <div>
-              <dt>Акт</dt>
-              <dd>{document.title}</dd>
-            </div>
-            <div>
-              <dt>Locator</dt>
-              <dd lang="pl">
-                {provisionReference ? (
+          <DefinitionRows
+            items={[
+              { id: "document", term: "Акт", description: document.title },
+              {
+                id: "locator",
+                term: "Locator",
+                description: provisionReference ? (
                   <LegalLink reference={provisionReference}>
                     {provision.locator}
                   </LegalLink>
                 ) : (
                   provision.locator
-                )}
-              </dd>
-            </div>
-            <div>
-              <dt>Тип</dt>
-              <dd>{provision.kind}</dd>
-            </div>
-            <div>
-              <dt>Сторінки PDF</dt>
-              <dd>
-                {provision.startPdfPage === provision.endPdfPage
-                  ? provision.startPdfPage
-                  : `${provision.startPdfPage}–${provision.endPdfPage}`}
-              </dd>
-            </div>
-            <div>
-              <dt>Попередня норма</dt>
-              <dd>
-                {previous && previousReference ? (
-                  <LegalLink reference={previousReference}>
-                    {previous.locator}
-                  </LegalLink>
-                ) : (
-                  "—"
-                )}
-              </dd>
-            </div>
-            <div>
-              <dt>Наступна норма</dt>
-              <dd>
-                {next && nextReference ? (
-                  <LegalLink reference={nextReference}>
-                    {next.locator}
-                  </LegalLink>
-                ) : (
-                  "—"
-                )}
-              </dd>
-            </div>
-          </dl>
+                ),
+                descriptionProps: { lang: "pl" },
+              },
+              { id: "kind", term: "Тип", description: provision.kind },
+              {
+                id: "pages",
+                term: "Сторінки PDF",
+                description:
+                  provision.startPdfPage === provision.endPdfPage
+                    ? provision.startPdfPage
+                    : `${provision.startPdfPage}–${provision.endPdfPage}`,
+              },
+              {
+                id: "previous",
+                term: "Попередня норма",
+                description:
+                  previous && previousReference ? (
+                    <LegalLink reference={previousReference}>
+                      {previous.locator}
+                    </LegalLink>
+                  ) : (
+                    "—"
+                  ),
+              },
+              {
+                id: "next",
+                term: "Наступна норма",
+                description:
+                  next && nextReference ? (
+                    <LegalLink reference={nextReference}>
+                      {next.locator}
+                    </LegalLink>
+                  ) : (
+                    "—"
+                  ),
+              },
+            ]}
+          />
         </section>
 
         <section id="legal-provision-edition">
@@ -429,7 +427,7 @@ export default function LawProvisionRoute() {
               : ""}
           </blockquote>
         </section>
-      </article>
+      </DocumentArticle>
     </DocsLayout>
   )
 }
