@@ -58,13 +58,57 @@ async function writeJson(filePath, value) {
   await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8")
 }
 
-async function fetchBytes(url) {
-  const response = await fetch(url, {
-    headers: { "user-agent": "legalizacja-atlas-local-corpus/1.0" },
-  })
+const DEFAULT_FETCH_TIMEOUT_MS = 60_000
+
+/**
+ * Read the fetch timeout from the environment so a slow or hung official
+ * endpoint can be tuned per invocation without editing source; an invalid or
+ * absent value falls back to DEFAULT_FETCH_TIMEOUT_MS.
+ * @returns {number}
+ */
+export function resolveFetchTimeoutMs(env = process.env) {
+  const parsed = Number(env.LEGAL_CORPUS_FETCH_TIMEOUT_MS)
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : DEFAULT_FETCH_TIMEOUT_MS
+}
+
+/**
+ * Fetch a URL's bytes with an abort timeout and an optional content-type
+ * sanity check, so a hung official endpoint fails after a bounded wait
+ * instead of stalling preparation indefinitely, and a response whose
+ * content-type clearly does not match what was requested (an HTML error
+ * page in place of JSON or a PDF, for example) fails with a clear message
+ * instead of only surfacing later as a JSON-parse or PDF-magic-byte failure.
+ * A missing content-type header is not treated as an error: some official
+ * endpoints omit it even for a correct response.
+ * @param {string} url
+ * @param {{ timeoutMs?: number, expectedContentType?: RegExp }} [options]
+ * @returns {Promise<Uint8Array>}
+ */
+export async function fetchBytes(url, { timeoutMs = DEFAULT_FETCH_TIMEOUT_MS, expectedContentType } = {}) {
+  let response
+  try {
+    response = await fetch(url, {
+      headers: { "user-agent": "legalizacja-atlas-local-corpus/1.0" },
+      signal: AbortSignal.timeout(timeoutMs),
+    })
+  } catch (error) {
+    if (error?.name === "TimeoutError" || error?.name === "AbortError") {
+      throw new Error(`ELI request to ${url} timed out after ${timeoutMs}ms`)
+    }
+    throw error
+  }
 
   if (!response.ok) {
     throw new Error(`ELI request failed: ${response.status} ${url}`)
+  }
+
+  if (expectedContentType) {
+    const contentType = response.headers.get("content-type") ?? ""
+    if (contentType && !expectedContentType.test(contentType)) {
+      throw new Error(
+        `ELI request to ${url} returned content-type "${contentType}", expected to match ${expectedContentType}`
+      )
+    }
   }
 
   return new Uint8Array(await response.arrayBuffer())
@@ -263,9 +307,16 @@ async function main() {
     forceRebuild,
   })
 
+  const fetchTimeoutMs = resolveFetchTimeoutMs()
   const [metadataBytes, pdfBytes] = await Promise.all([
-    fetchBytes(config.source.metadataUrl),
-    fetchBytes(config.source.pdfUrl),
+    fetchBytes(config.source.metadataUrl, {
+      timeoutMs: fetchTimeoutMs,
+      expectedContentType: /application\/json/iu,
+    }),
+    fetchBytes(config.source.pdfUrl, {
+      timeoutMs: fetchTimeoutMs,
+      expectedContentType: /application\/pdf/iu,
+    }),
   ])
   let metadata
   try {

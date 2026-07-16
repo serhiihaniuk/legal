@@ -3,9 +3,25 @@ import assert from "node:assert/strict"
 
 import {
   assertRebuildAllowed,
+  fetchBytes,
   parseArguments,
   resolveBuiltAt,
+  resolveFetchTimeoutMs,
 } from "../build-document.mjs"
+
+/**
+ * @param {(url: string, options: { signal: AbortSignal }) => Promise<unknown>} implementation
+ * @param {() => Promise<void>} callback
+ */
+async function withFetch(implementation, callback) {
+  const original = globalThis.fetch
+  globalThis.fetch = /** @type {typeof fetch} */ (implementation)
+  try {
+    await callback()
+  } finally {
+    globalThis.fetch = original
+  }
+}
 
 test("parseArguments accepts a config path with an optional --force-rebuild flag in either order", () => {
   assert.deepEqual(parseArguments(["legal-corpus/documents/alpha.json"]), {
@@ -77,5 +93,69 @@ test("resolveBuiltAt uses the fresh timestamp for a first build or a genuinely c
       now: "2026-07-16T00:00:00Z",
     }),
     "2026-07-16T00:00:00Z"
+  )
+})
+
+test("resolveFetchTimeoutMs falls back to the default for a missing or invalid override", () => {
+  assert.equal(resolveFetchTimeoutMs({}), 60_000)
+  assert.equal(resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "not-a-number" }), 60_000)
+  assert.equal(resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "-5" }), 60_000)
+  assert.equal(resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "15000" }), 15_000)
+})
+
+test("fetchBytes aborts a hung request with a clear timeout error instead of stalling indefinitely", async () => {
+  await withFetch(
+    (url, options) =>
+      new Promise((_resolve, reject) => {
+        options.signal.addEventListener("abort", () => {
+          const error = new Error("The operation was aborted")
+          error.name = "TimeoutError"
+          reject(error)
+        })
+      }),
+    async () => {
+      await assert.rejects(
+        () => fetchBytes("https://example.test/slow", { timeoutMs: 5 }),
+        /timed out after 5ms/
+      )
+    }
+  )
+})
+
+test("fetchBytes rejects a response whose content-type clearly does not match what was expected", async () => {
+  await withFetch(
+    async () => ({
+      ok: true,
+      status: 200,
+      headers: new Headers({ "content-type": "text/html; charset=utf-8" }),
+      arrayBuffer: async () => new ArrayBuffer(0),
+    }),
+    async () => {
+      await assert.rejects(
+        () =>
+          fetchBytes("https://example.test/metadata", {
+            expectedContentType: /application\/json/iu,
+          }),
+        /unexpected|content-type/i
+      )
+    }
+  )
+})
+
+test("fetchBytes tolerates a missing content-type header instead of failing a correct response", async () => {
+  const expectedBytes = new TextEncoder().encode("%PDF-1.4 fixture")
+  await withFetch(
+    async () => ({
+      ok: true,
+      status: 200,
+      headers: new Headers(),
+      arrayBuffer: async () => expectedBytes.buffer,
+    }),
+    async () => {
+      const bytes = await fetchBytes("https://example.test/source.pdf", {
+        expectedContentType: /application\/pdf/iu,
+      })
+      assert.deepEqual(bytes, expectedBytes)
+    }
   )
 })
