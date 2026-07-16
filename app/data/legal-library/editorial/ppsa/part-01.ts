@@ -504,8 +504,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
         {
           locator: "Art. 16 § 3",
-          explanation:
-            "Zarządzenia поза rozprawą видає przewodniczący.",
+          explanation: "Zarządzenia поза rozprawą видає przewodniczący.",
         },
       ],
       legalEffect:
@@ -702,8 +701,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
           sourceLocator: "Art. 23",
         },
       ],
-      summary:
-        "Art. 23 позначена як uchylony — скасована.",
+      summary: "Art. 23 позначена як uchylony — скасована.",
       rules: [
         {
           locator: "Art. 23",

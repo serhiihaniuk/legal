@@ -157,7 +157,9 @@ export default function LawDocumentLearningRoute() {
               variant="ghost"
               nativeButton={false}
               render={
-                <Link to={getDocumentLearningPath(document.id, nextModule.id)} />
+                <Link
+                  to={getDocumentLearningPath(document.id, nextModule.id)}
+                />
               }
             >
               Модуль {nextModule.order}

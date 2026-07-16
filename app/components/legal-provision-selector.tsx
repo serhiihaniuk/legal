@@ -9,10 +9,7 @@ import {
   ComboboxItem,
   ComboboxList,
 } from "~/components/ui/combobox"
-import type {
-  LegalDocumentId,
-  LegalProvision,
-} from "~/data/legal-library"
+import type { LegalDocumentId, LegalProvision } from "~/data/legal-library"
 
 export function LegalProvisionSelector({
   documentId,
@@ -63,7 +60,7 @@ export function LegalProvisionSelector({
         </div>
         <ComboboxContent
           anchor={anchorRef}
-          className="!w-(--anchor-width) !min-w-(--anchor-width) !max-w-(--anchor-width)"
+          className="!w-(--anchor-width) !max-w-(--anchor-width) !min-w-(--anchor-width)"
         >
           <ComboboxEmpty>Норму не знайдено</ComboboxEmpty>
           <ComboboxList>

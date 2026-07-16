@@ -50,8 +50,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
       rules: [
         {
           locator: "§ 1",
-          explanation:
-            "Типовий склад для розгляду skarga — три sędziowie NSA.",
+          explanation: "Типовий склад для розгляду skarga — три sędziowie NSA.",
         },
         {
           locator: "§ 2",

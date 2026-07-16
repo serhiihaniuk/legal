@@ -197,8 +197,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Формула «można udzielić» означає можливість після перевірки конкретного складу; статус родича та спільне проживання без інших умов не створюють автоматичного permit.",
-        foreignersCase:
-          foreignersLaw.text`Для ${foreignersLaw.article("160", "art. 160")} визначте точний pkt, статус і місце проживання osoby referencyjnej, залежність або реальне життя rodzinne, дати документів та умови Umowa Wystąpienia; не змішуйте pkt 4–6.`,
+        foreignersCase: foreignersLaw.text`Для ${foreignersLaw.article("160", "art. 160")} визначте точний pkt, статус і місце проживання osoby referencyjnej, залежність або реальне життя rodzinne, дати документів та умови Umowa Wystąpienia; не змішуйте pkt 4–6.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-161",
@@ -332,8 +331,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Позитивне рішення не може надати строк, довший за межу, визначену для конкретної підстави та пов'язаного документа.",
-        foreignersCase:
-          foreignersLaw.text`Перед поданням випишіть дату закінчення документа osoby referencyjnej або naukowiec, статус підстави і можливий максимум; не просіть строк, який перевищує ${foreignersLaw.article("162", "art. 162")}.`,
+        foreignersCase: foreignersLaw.text`Перед поданням випишіть дату закінчення документа osoby referencyjnej або naukowiec, статус підстави і можливий максимум; не просіть строк, який перевищує ${foreignersLaw.article("162", "art. 162")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-163",
@@ -360,8 +358,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Стаття визначає спосіб виконання фінансової умови, але не скасовує саму вимогу доходу, документування та інших умов permit.",
-        foreignersCase:
-          foreignersLaw.text`Покажіть правову підставу обов'язку утримання, проживання sponsor у Польщі та стабільне джерело коштів; розрахунок зробіть за відповідним правилом ${foreignersLaw.article("140", "art. 140")} ust. 2.`,
+        foreignersCase: foreignersLaw.text`Покажіть правову підставу обов'язку утримання, проживання sponsor у Польщі та стабільне джерело коштів; розрахунок зробіть за відповідним правилом ${foreignersLaw.article("140", "art. 140")} ust. 2.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-164",
@@ -505,8 +502,7 @@ export const foreignersActPart06 =
             explanation: foreignersLaw.text`Postępowanie odwoławcze у справі про połączenie się z rodziną завершується протягом 60 днів, із застосуванням ${foreignersLaw.article("112a", "art. 112a")} ust. 5.`,
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Строк визначає процесуальний обов'язок органу, але не перетворює його сплив на автоматичне udzielenie permit; повний розрахунок залежить від правил ${foreignersLaw.article("112a", "art. 112a")}.`,
+        legalEffect: foreignersLaw.text`Строк визначає процесуальний обов'язок органу, але не перетворює його сплив на автоматичне udzielenie permit; повний розрахунок залежить від правил ${foreignersLaw.article("112a", "art. 112a")}.`,
         foreignersCase:
           "Збережіть підтвердження повного подання, wezwanie про braki та всі рішення; рахуйте строк за спеціальним правилом, а не лише календарною різницею між датами.",
       },
@@ -598,8 +594,7 @@ export const foreignersActPart06 =
           },
         ],
         legalEffect: foreignersLaw.text`Норма визначає процесуального заявника для окремих підстав ${foreignersLaw.article("160", "art. 160")}, але не замінює перевірку залежності, життя rodzinne, дат Umowa Wystąpienia чи інших матеріальних умов.`,
-        foreignersCase:
-          foreignersLaw.text`Додайте письмову згоду, підтвердження статусу й проживання особи в Польщі та документи, що показують точний pkt ${foreignersLaw.article("160", "art. 160")}; не подавайте загальну заяву «як родич».`,
+        foreignersCase: foreignersLaw.text`Додайте письмову згоду, підтвердження статусу й проживання особи в Польщі та документи, що показують точний pkt ${foreignersLaw.article("160", "art. 160")}; не подавайте загальну заяву «як родич».`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-169",
@@ -713,7 +708,8 @@ export const foreignersActPart06 =
           },
           {
             locator: "ust. 3",
-            explanation: "Szef Urzędu неzwłocznie передає органам держав UE, де cudzoziemiec користується мобільністю, інформацію про cofnięcie цього дозволу.",
+            explanation:
+              "Szef Urzędu неzwłocznie передає органам держав UE, де cudzoziemiec користується мобільністю, інформацію про cofnięcie цього дозволу.",
           },
         ],
         legalEffect:
@@ -741,7 +737,8 @@ export const foreignersActPart06 =
           },
           {
             locator: "ust. 2",
-            explanation: "Szef Urzędu передає wojewoda, який надав permit, дані про cudzoziemiec, визначені в реєстраційній нормі; стаття не встановлює нового матеріального критерію.",
+            explanation:
+              "Szef Urzędu передає wojewoda, який надав permit, дані про cudzoziemiec, визначені в реєстраційній нормі; стаття не встановлює нового матеріального критерію.",
           },
         ],
         legalEffect:
@@ -792,7 +789,8 @@ export const foreignersActPart06 =
           },
           {
             locator: "ust. 2",
-            explanation: "Legalny pobyt припиняється з моменту, коли minister właściwy do spraw wewnętrznych зафіксує в реєстрі, що cudzoziemiec активно, добровільно й з власної ініціативи відновив контакт із підозрюваними у handlu ludźmi або перетнув чи намагався перетнути кордон всупереч закону.",
+            explanation:
+              "Legalny pobyt припиняється з моменту, коли minister właściwy do spraw wewnętrznych зафіксує в реєстрі, що cudzoziemiec активно, добровільно й з власної ініціативи відновив контакт із підозрюваними у handlu ludźmi або перетнув чи намагався перетнути кордон всупереч закону.",
           },
           {
             locator: "ust. 3",
@@ -957,8 +955,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Норма гарантує мінімальну тривалість наданого permit, але не продовжує автоматично його після закінчення і не скасовує можливого cofnięcie.",
-        foreignersCase:
-          foreignersLaw.text`Перевірте строк у decyzja: якщо permit видано менше ніж на 6 місяців, порівняйте його з ${foreignersLaw.article("177", "Art. 177")} і вчасно використайте доступний засіб оскарження.`,
+        foreignersCase: foreignersLaw.text`Перевірте строк у decyzja: якщо permit видано менше ніж на 6 місяців, порівняйте його з ${foreignersLaw.article("177", "Art. 177")} і вчасно використайте доступний засіб оскарження.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-178",
@@ -978,10 +975,8 @@ export const foreignersActPart06 =
             explanation: foreignersLaw.text`У конкретному провадженні не застосовуються лише названі пункти ${foreignersLaw.article("99", "art. 99")} ust. 1 і ${foreignersLaw.article("100", "art. 100")} ust. 1; не можна розширювати виняток на інші пункти за аналогією.`,
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Стаття полегшує доступ до розгляду в межах визначеного переліку, але не скасовує матеріальні умови ${foreignersLaw.article("176", "art. 176")} або інші правила, які прямо не виключені.`,
-        foreignersCase:
-          foreignersLaw.text`Якщо орган посилається на ${foreignersLaw.article("99", "art. 99")} або ${foreignersLaw.article("100", "art. 100")}, складіть таблицю «пункт — чи виключений ${foreignersLaw.article("178", "Art. 178")} — факт — доказ» і не приймайте загальне посилання без конкретизації.`,
+        legalEffect: foreignersLaw.text`Стаття полегшує доступ до розгляду в межах визначеного переліку, але не скасовує матеріальні умови ${foreignersLaw.article("176", "art. 176")} або інші правила, які прямо не виключені.`,
+        foreignersCase: foreignersLaw.text`Якщо орган посилається на ${foreignersLaw.article("99", "art. 99")} або ${foreignersLaw.article("100", "art. 100")}, складіть таблицю «пункт — чи виключений ${foreignersLaw.article("178", "Art. 178")} — факт — доказ» і не приймайте загальне посилання без конкретизації.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-179",
@@ -1031,8 +1026,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Cofnięcie є обов'язковим за встановлення точної законної обставини; сама зміна життєвої ситуації без зв'язку з переліченим пунктом недостатня.",
-        foreignersCase:
-          foreignersLaw.text`Після повідомлення про cofnięcie перевірте, чи справді завершилося провадження, припинилася співпраця або виник точний пункт ${foreignersLaw.article("100", "art. 100")}; подайте процесуальні документи й пояснення до строку оскарження.`,
+        foreignersCase: foreignersLaw.text`Після повідомлення про cofnięcie перевірте, чи справді завершилося провадження, припинилася співпраця або виник точний пункт ${foreignersLaw.article("100", "art. 100")}; подайте процесуальні документи й пояснення до строку оскарження.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-181",
@@ -1093,8 +1087,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Відсутність застосування названих перешкод полегшує доступ до розгляду, але не доводить одну з матеріальних підстав короткострокового pobyt і не гарантує рішення.",
-        foreignersCase:
-          foreignersLaw.text`Якщо орган посилається на ${foreignersLaw.article("99", "art. 99")}, перевірте, чи його пункт належить до переліку ${foreignersLaw.article("182", "Art. 182")}; паралельно доведіть конкретну обставину за ${foreignersLaw.article("181", "art. 181")}.`,
+        foreignersCase: foreignersLaw.text`Якщо орган посилається на ${foreignersLaw.article("99", "art. 99")}, перевірте, чи його пункт належить до переліку ${foreignersLaw.article("182", "Art. 182")}; паралельно доведіть конкретну обставину за ${foreignersLaw.article("181", "art. 181")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-183",
@@ -1131,8 +1124,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Строкове непередання інформації не блокує вимогу назавжди, бо закон вважає її виконаною; це не є позитивним висновком про безпеку та не замінює матеріальну оцінку.",
-        foreignersCase:
-          foreignersLaw.text`Збережіть дату запиту, повідомлення про продовження та відповідь кожного органу; для дитини перевірте вік і чи справді ${foreignersLaw.article("183", "Art. 183")} не застосовується.`,
+        foreignersCase: foreignersLaw.text`Збережіть дату запиту, повідомлення про продовження та відповідь кожного органу; для дитини перевірте вік і чи справді ${foreignersLaw.article("183", "Art. 183")} не застосовується.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-184",
@@ -1153,8 +1145,7 @@ export const foreignersActPart06 =
           },
         ],
         legalEffect: foreignersLaw.text`Виконання умов ${foreignersLaw.article("181", "art. 181")} не долає застосовну обов'язкову відмову з ${foreignersLaw.article("100", "art. 100")} у межах пунктів, названих у Art. 184.`,
-        foreignersCase:
-          foreignersLaw.text`У проєкті рішення або апеляції попросіть орган назвати точний пункт ${foreignersLaw.article("100", "art. 100")}, доказ і причинний зв'язок із вашою справою; окремо доводьте матеріальну підставу ${foreignersLaw.article("181", "art. 181")}.`,
+        foreignersCase: foreignersLaw.text`У проєкті рішення або апеляції попросіть орган назвати точний пункт ${foreignersLaw.article("100", "art. 100")}, доказ і причинний зв'язок із вашою справою; окремо доводьте матеріальну підставу ${foreignersLaw.article("181", "art. 181")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-185",
@@ -1176,8 +1167,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Після cofnięcie припиняється дія permit; сам сплив початкової мети або загальне припущення мають бути підтверджені фактом, передбаченим статтею.",
-        foreignersCase:
-          foreignersLaw.text`Якщо мета вже виконана, повідомте орган і перевірте наслідки для legalny pobyt; якщо отримано рішення про cofnięcie, оскаржуйте конкретну дату або обставину ${foreignersLaw.article("100", "art. 100")}, якщо вони помилкові.`,
+        foreignersCase: foreignersLaw.text`Якщо мета вже виконана, повідомте орган і перевірте наслідки для legalny pobyt; якщо отримано рішення про cofnięcie, оскаржуйте конкретну дату або обставину ${foreignersLaw.article("100", "art. 100")}, якщо вони помилкові.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-185a",
@@ -1244,10 +1234,8 @@ export const foreignersActPart06 =
             explanation: foreignersLaw.text`Є дві самостійні групи причин: невиконання вимог ${foreignersLaw.article("185a", "art. 185a")} ust. 1 або факт із ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 2–9; орган має вказати, яка саме причина встановлена.`,
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Відмова є обов'язковою за доведення однієї з названих причин; сезонний work permit сам по собі не усуває перевірку ${foreignersLaw.article("100", "art. 100")}.`,
-        foreignersCase:
-          foreignersLaw.text`У відповіді на wezwanie розкладіть докази за п'ятьма умовами ${foreignersLaw.article("185a", "art. 185a")} і перевірте кожен пункт ${foreignersLaw.article("100", "art. 100")}, наведений у проєкті рішення; не підміняйте відсутній документ загальним поясненням.`,
+        legalEffect: foreignersLaw.text`Відмова є обов'язковою за доведення однієї з названих причин; сезонний work permit сам по собі не усуває перевірку ${foreignersLaw.article("100", "art. 100")}.`,
+        foreignersCase: foreignersLaw.text`У відповіді на wezwanie розкладіть докази за п'ятьма умовами ${foreignersLaw.article("185a", "art. 185a")} і перевірте кожен пункт ${foreignersLaw.article("100", "art. 100")}, наведений у проєкті рішення; не підміняйте відсутній документ загальним поясненням.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-185c",
@@ -1269,8 +1257,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Після обов'язкового cofnięcie сезонний permit більше не є підставою перебування; це не визначає автоматично окреме право на працю.",
-        foreignersCase:
-          foreignersLaw.text`Порівняйте фактичну роботу, чинність seasonal work permit, страховку, житло та рішення з точним пунктом ${foreignersLaw.article("100", "art. 100")}; якщо умова припинилася в іншу дату, доведіть правильну хронологію.`,
+        foreignersCase: foreignersLaw.text`Порівняйте фактичну роботу, чинність seasonal work permit, страховку, житло та рішення з точним пунктом ${foreignersLaw.article("100", "art. 100")}; якщо умова припинилася в іншу дату, доведіть правильну хронологію.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-186",
@@ -1320,8 +1307,7 @@ export const foreignersActPart06 =
               "Пункт 8 має історичний cut-off: заява повинна бути подана не пізніше 31.12.2021. Для pkt 9 minister może визначити перелік громадянств у rozporządzenie з огляду на польську міграційну політику; не вигадуйте цей перелік із самої статті.",
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Надання за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 1–7 і 9 залежить від точного складу, а pkt 8 нині має обмеження датою; загальна життєва складність не є універсальним pkt.`,
+        legalEffect: foreignersLaw.text`Надання за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 1–7 і 9 залежить від точного складу, а pkt 8 нині має обмеження датою; загальна життєва складність не є універсальним pkt.`,
         foreignersCase:
           "Спочатку оберіть конкретний pkt, потім складіть доказову таблицю статусу, дат, мети, права на роботу чи навчання та документів; для pkt 8 перевірте дату подання, а для pkt 9 — чинне rozporządzenie про громадянства.",
       },
@@ -1360,8 +1346,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Формула «można udzielić» означає можливість після доведення конкретної підстави; тривалий побyt, особиста потреба або uchylony pkt 2 самі по собі permit не дають.",
-        foreignersCase:
-          foreignersLaw.text`Назвіть точний pkt ${foreignersLaw.article("187", "art. 187")}, опишіть юридично релевантну подію та доказ; для pkt 6–7 додайте документи про сім'ю або дитину, для pkt 5 — рішення чи розрахунок невиплаченої зарплати.`,
+        foreignersCase: foreignersLaw.text`Назвіть точний pkt ${foreignersLaw.article("187", "art. 187")}, опишіть юридично релевантну подію та доказ; для pkt 6–7 додайте документи про сім'ю або дитину, для pkt 5 — рішення чи розрахунок невиплаченої зарплати.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-188",
@@ -1378,8 +1363,7 @@ export const foreignersActPart06 =
             sourceLocator: "Art. 188 ust. 4–6",
           },
         ],
-        summary:
-          foreignersLaw.text`Одна назва permit ze względu na inne okoliczności приховує різні набори умов; спочатку визначте pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")}, потім перевіряйте ust. 1–6.`,
+        summary: foreignersLaw.text`Одна назва permit ze względu na inne okoliczności приховує різні набори умов; спочатку визначте pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")}, потім перевіряйте ust. 1–6.`,
         rules: [
           {
             locator: "ust. 1–2b",
@@ -1395,14 +1379,11 @@ export const foreignersActPart06 =
           },
           {
             locator: "ust. 6",
-            explanation:
-              foreignersLaw.text`Щомісячні кошти за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 6–7 або ${foreignersLaw.article("187", "art. 187")} pkt 1 lit. a після застосовного розрахунку мають перевищувати дохід, що дає право на грошові świadczenia з pomocy społecznej, щодо cudzoziemiec і кожного утриманця.`,
+            explanation: foreignersLaw.text`Щомісячні кошти за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 6–7 або ${foreignersLaw.article("187", "art. 187")} pkt 1 lit. a після застосовного розрахунку мають перевищувати дохід, що дає право на грошові świadczenia з pomocy społecznej, щодо cudzoziemiec і кожного утриманця.`,
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Підтвердження базової обставини ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")} недостатньо, якщо для її pkt не доведені додаткові умови ${foreignersLaw.article("188", "Art. 188")}; вимоги не можна переносити між пунктами.`,
-        foreignersCase:
-          foreignersLaw.text`Зробіть матрицю «конкретний pkt — умова ${foreignersLaw.article("188", "Art. 188")} — доказ — дата»: страховка, житло, дохід або кошти, diploma чи довідка jednostka naukowa; розрахунок доходу перевірте за ${foreignersLaw.article("140", "art. 140")} ust. 2.`,
+        legalEffect: foreignersLaw.text`Підтвердження базової обставини ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")} недостатньо, якщо для її pkt не доведені додаткові умови ${foreignersLaw.article("188", "Art. 188")}; вимоги не можна переносити між пунктами.`,
+        foreignersCase: foreignersLaw.text`Зробіть матрицю «конкретний pkt — умова ${foreignersLaw.article("188", "Art. 188")} — доказ — дата»: страховка, житло, дохід або кошти, diploma чи довідка jednostka naukowa; розрахунок доходу перевірте за ${foreignersLaw.article("140", "art. 140")} ust. 2.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-189",
@@ -1426,8 +1407,7 @@ export const foreignersActPart06 =
             explanation: foreignersLaw.text`У справі члена сім'ї за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 4 застосовуються правила ${foreignersLaw.article("169", "art. 169")}; це включає спеціальну оцінку реальності сімейного зв'язку, коли вона релевантна.`,
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Результат залежить від змісту підключеного режиму; ${foreignersLaw.article("189", "Art. 189")} не скасовує інших умов permit і не створює автоматичного права.`,
+        legalEffect: foreignersLaw.text`Результат залежить від змісту підключеного режиму; ${foreignersLaw.article("189", "Art. 189")} не скасовує інших умов permit і не створює автоматичного права.`,
         foreignersCase: foreignersLaw.text`У правовому висновку окремо відкрийте зовнішній Decision nr 1/80 або ${foreignersLaw.article("169", "art. 169")}, а потім прив'яжіть його вимогу до факту й документа; не обмежуйтеся номером ${foreignersLaw.article("189", "art. 189")}.`,
       },
       {
@@ -1440,8 +1420,7 @@ export const foreignersActPart06 =
             sourceLocator: "Art. 190 pkt 1–5",
           },
         ],
-        summary:
-          foreignersLaw.text`Строк permit залежить від конкретного pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")} і в кількох випадках надається лише одноразово.`,
+        summary: foreignersLaw.text`Строк permit залежить від конкретного pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")} і в кількох випадках надається лише одноразово.`,
         rules: [
           {
             locator: "pkt 1",
@@ -1487,8 +1466,7 @@ export const foreignersActPart06 =
             explanation: foreignersLaw.text`Перевірте, чи на день подання є дозвіл за ${foreignersLaw.article("139a", "art. 139a")} ust. 1 для staż, або заява на дозвіл з ${foreignersLaw.article("127", "art. 127")} чи вже чинний такий дозвіл.`,
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Odmowa wszczęcia не відповідає висновку, що заявник не виконав матеріальні умови ${foreignersLaw.article("186", "art. 186")}; орган має застосувати саме процесуальний наслідок і дату, передбачені статтею.`,
+        legalEffect: foreignersLaw.text`Odmowa wszczęcia не відповідає висновку, що заявник не виконав матеріальні умови ${foreignersLaw.article("186", "art. 186")}; орган має застосувати саме процесуальний наслідок і дату, передбачені статтею.`,
         foreignersCase: foreignersLaw.text`На дату заяви зберіть реєстр усіх дозволів і заяв, перевірте виняток ${foreignersLaw.article("99", "art. 99")} та вимагайте виправлення, якщо орган переплутав odmowa wszczęcia з merytoryczna odmowa.`,
       },
       {
@@ -1501,8 +1479,7 @@ export const foreignersActPart06 =
             sourceLocator: "Art. 191 ust. 1–2",
           },
         ],
-        summary:
-          foreignersLaw.text`Захисні винятки ${foreignersLaw.article("191", "Art. 191")} залежать від конкретної підстави, виду наступної заяви, віку та строку подання; вони не є загальним імунітетом від odmowa.`,
+        summary: foreignersLaw.text`Захисні винятки ${foreignersLaw.article("191", "Art. 191")} залежать від конкретної підстави, виду наступної заяви, віку та строку подання; вони не є загальним імунітетом від odmowa.`,
         rules: [
           {
             locator: "ust. 1 pkt 1",
@@ -1522,10 +1499,8 @@ export const foreignersActPart06 =
               "Особа, яка досягла повноліття під час pobyt у Польщі, має подати заяву протягом 1 року від цієї дати. Якщо szczególnie ważny interes і єдиною підставою відмови був нелегальний pobyt, відмовити не можна; інші причини залишаються можливими.",
           },
         ],
-        legalEffect:
-          foreignersLaw.text`Стаття точково обмежує відмову, а не скасовує всі умови ${foreignersLaw.article("186", "art. 186")}/${foreignersLaw.article("187", "art. 187")} чи всі пункти ${foreignersLaw.article("100", "art. 100")}; застосовність треба довести фактами конкретного pkt.`,
-        foreignersCase:
-          foreignersLaw.text`Випишіть точний pkt підстави, тип заяви (перша чи наступна), дату повноліття та всі пункти ${foreignersLaw.article("100", "art. 100")} у рішенні; перевірте, чи саме виняток ${foreignersLaw.article("191", "Art. 191")} блокує відмову.`,
+        legalEffect: foreignersLaw.text`Стаття точково обмежує відмову, а не скасовує всі умови ${foreignersLaw.article("186", "art. 186")}/${foreignersLaw.article("187", "art. 187")} чи всі пункти ${foreignersLaw.article("100", "art. 100")}; застосовність треба довести фактами конкретного pkt.`,
+        foreignersCase: foreignersLaw.text`Випишіть точний pkt підстави, тип заяви (перша чи наступна), дату повноліття та всі пункти ${foreignersLaw.article("100", "art. 100")} у рішенні; перевірте, чи саме виняток ${foreignersLaw.article("191", "Art. 191")} блокує відмову.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-192",
@@ -1542,7 +1517,8 @@ export const foreignersActPart06 =
         rules: [
           {
             locator: "ust. 1",
-            explanation: "Permit за art. 186 ust. 1 pkt 3 або 4 не відкликається лише тому, що cudzoziemiec, зобов'язаний проходити лікування за спеціальним законом про інфекційні хвороби, не дав згоди на це лікування.",
+            explanation:
+              "Permit за art. 186 ust. 1 pkt 3 або 4 не відкликається лише тому, що cudzoziemiec, зобов'язаний проходити лікування за спеціальним законом про інфекційні хвороби, не дав згоди на це лікування.",
           },
           {
             locator: "ust. 2",
@@ -1559,8 +1535,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Cofnięcie можливе або є обов'язковим лише в межах переліку, що відповідає початковій підставі permit; виняток ust. 1 стосується конкретної медичної ситуації, а не всіх permit.",
-        foreignersCase:
-          foreignersLaw.text`Знайдіть у decyzja початковий pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")}, зіставте його з ust. 1–4 та перевірте кожен наведений пункт ${foreignersLaw.article("100", "art. 100")}/${foreignersLaw.article("101", "art. 101")}; окремо документуйте медичну обставину, якщо на неї посилаєтесь.`,
+        foreignersCase: foreignersLaw.text`Знайдіть у decyzja початковий pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")}, зіставте його з ust. 1–4 та перевірте кожен наведений пункт ${foreignersLaw.article("100", "art. 100")}/${foreignersLaw.article("101", "art. 101")}; окремо документуйте медичну обставину, якщо на неї посилаєтесь.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-193",
@@ -1586,8 +1561,7 @@ export const foreignersActPart06 =
         ],
         legalEffect:
           "Повідомлення має реєстраційно-координаційний характер і не змінює змісту decyzja wojewoda та не є окремою підставою legalny pobyt.",
-        foreignersCase:
-          foreignersLaw.text`Порівняйте категорію за ${foreignersLaw.article("186", "art. 186")}, вид рішення та факт повідомлення; для pkt 4 не вимагайте повідомлення про udzielenie, якщо закон вимагає його лише для cofnięcie або kolejna odmowa.`,
+        foreignersCase: foreignersLaw.text`Порівняйте категорію за ${foreignersLaw.article("186", "art. 186")}, вид рішення та факт повідомлення; для pkt 4 не вимагайте повідомлення про udzielenie, якщо закон вимагає його лише для cofnięcie або kolejna odmowa.`,
       },
     ],
   })
