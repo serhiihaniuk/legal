@@ -10,41 +10,41 @@ export const foreignersActPart08 = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-239",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 239 передає міністру właściwemu do spraw wewnętrznych, за погодженням з міністром фінансів, визначення в rozporządzeniu розміру та порядку сплати opłat за видачу й обмін визначених документів, а також документів для ulg і підвищених opłat у разі винної втрати або знищення.",
-          sourceLocator: "Art. 239 ust. 1",
+          text: "Art. 239 передає міністру właściwemu do spraw wewnętrznych, за погодженням з міністром właściwym do spraw finansów publicznych, визначення в drodze rozporządzenia розміру opłat у Польщі за wydanie і wymianę karty pobytu, polskiego dokumentu podróży dla cudzoziemca, polskiego dokumentu tożsamości cudzoziemca та документа «zgoda na pobyt tolerowany», за wydanie tymczasowego polskiego dokumentu podróży dla cudzoziemca, порядку сплати цих opłat і документів для ulg за Art. 237 ust. 1.",
+          sourceLocator: "Art. 239 ust. 1 pkt 1–3",
         },
         {
           kind: "statute-text",
-          text: "Під час підготовки rozporządzenia мають враховуватися, зокрема, одиничні витрати виготовлення та кількість подій, що спричинили повторну видачу документа.",
-          sourceLocator: "Art. 239 ust. 2",
+          text: "Для розміру opłat minister має врахувати одиничні витрати виготовлення, видачі або обміну названих документів, зокрема pobranie і przetwarzanie даних, а підвищення opłat за zawinioną utratę або zniszczenie — диференціювати залежно від кількості таких подій.",
+          sourceLocator: "Art. 239 ust. 1 pkt 4, ust. 2 pkt 1–2",
         },
       ],
       summary:
-        "Стаття визначає законодавчу основу для розміру, сплати та окремих підвищених opłat за документи іноземця.",
+        "Стаття делегує визначення розміру і порядку сплати opłat за названі документи, документів для ulg та підвищених opłat за їхню винну втрату або знищення.",
       rules: [
         {
           locator: "ust. 1 pkt 1–4",
           explanation:
-            "Конкретні суми й технічний порядок сплати шукайте у відповідному rozporządzeniu, виданому на підставі цієї статті.",
+            "Перевіряйте чинне rozporządzenie: воно встановлює суми за wydanie або wymianę названих документів, порядок сплати, документи для ulg і суму за zawinioną utratę чи zniszczenie; tymczasowy dokument названий у pkt 1 лише щодо wydania."
         },
         {
-          locator: "ust. 2",
+          locator: "ust. 2 pkt 1–2",
           explanation:
-            "Для винної втрати або знищення розмір opłaty може бути диференційований залежно від кількості таких випадків.",
+            "У rozporządzeniu враховують unit costs, зокрема збирання і оброблення даних, та диференціюють opłaty за wymianę після винної втрати або знищення залежно від кількості подій."
         },
       ],
       legalEffect:
-        "Стаття сама не називає сум opłat; вона надає підставу для підзаконного регулювання. Застосовну суму потрібно перевіряти за чинним rozporządzeniem і фактичним видом документа.",
+        "Art. 239 не встановлює конкретних сум: він є делегуючою підставою для rozporządzenie. Застосовну суму і документи для ulgi треба звірити з чинним актом та фактичним видом операції; для tymczasowy документа стаття передбачає opłata за wydanie, не за wymianę.",
       foreignersCase:
-        "Перед оплатою заявник має встановити, який документ видається або обмінюється, чи просить ulgę, і чи не йдеться про винну втрату або знищення. Квитанцію та підставу для ulgi варто зберегти.",
+        "Перед оплатою визначте вид документа й операцію (wydanie чи wymiana), перевірте чинне rozporządzenie, підставу для ulgi та чи є zawiniona utrata або zniszczenie. Збережіть квитанцію і документи, що підтверджують ulgę.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-240",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -68,16 +68,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-241",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Kartę pobytu wymienia się у разі зміни даних, істотної зміни зображення обличчя, втрати або пошкодження картки, а також у названих випадках переходу відповідальності за ochronę międzynarodową.",
+          text: "Kartę pobytu wymienia się у разі зміни даних у чинній картці, зміни wizerunku twarzy настільки, що ідентифікація власника ускладнена або неможлива, utraty чи uszkodzenia, а також у випадках переходу відповідальності за ochronę międzynarodową: для картки, виданої у зв’язку з zezwoleniem na pobyt rezydenta długoterminowego UE, та для картки за zezwolenie з Art. 127 або Art. 137a з відповідними adnotacje.",
           sourceLocator: "Art. 241 pkt 1–7",
         },
       ],
       summary:
-        "Стаття перелічує обставини, за яких чинну kartę pobytu треба обміняти, а не просто продовжити її використання.",
+        "Стаття називає звичайні підстави wymiany karty pobytu та спеціальні випадки зміни відповідальності за ochronę międzynarodową.",
       rules: [
         {
           locator: "pkt 1–4",
@@ -87,17 +87,17 @@ export const foreignersActPart08 = defineEditorialPart<
         {
           locator: "pkt 5–7",
           explanation:
-            "Окремі підстави стосуються переходу відповідальності за ochronę międzynarodową та пов’язаних adnotacji.",
+            "Pkt 5 стосується переходу відповідальності до RP за ochronę międzynarodową власника картки DLR UE з adnotacją за Art. 244 ust. 1 pkt 18; pkt 6 — переходу відповідальності до іншої держави-члена ЄС; pkt 7 — переходу відповідальності до RP для картки за Art. 127 або Art. 137a з adnotacją за Art. 244 ust. 1 pkt 10 lit. a.",
         },
       ],
       legalEffect:
-        "Наявність обставини зі статті запускає питання про wymianę karty pobytu; конкретний орган і процедура визначені, зокрема, Art. 245 та наступними нормами.",
+        "Наявність однієї з обставин Art. 241 створює підставу для wymiany документа, але не змінює сама по собі рішення про zezwolenie; орган і процедуру визначають, зокрема, Art. 245 та наступні норми.",
       foreignersCase:
-        "Після зміни паспорта, адреси чи зовнішності порівняйте нові дані з карткою та перевірте обов’язок подати wniosek o wymianę. При втраті зафіксуйте zgłoszenie до właściwego organu.",
+        "Порівняйте актуальні дані та wizerunek twarzy з kartą pobytu. Якщо відповідальність за ochronę międzynarodową перейшла між державами або змінилася підстава Blue Card, перевірте pkt 5–7 і подайте wniosek o wymianę до właściwego organu; при utrata одразу зробіть zgłoszenie.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-242",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -131,7 +131,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-243",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -165,31 +165,31 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-244",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "У karcie pobytu розміщують ідентифікаційні дані, адресу meldunku за наявності, громадянство, дані дозволу, фото, відбитки пальців, орган і дати видачі та чинності, а в окремих випадках — спеціальні adnotacje, зокрема «student», «naukowiec» або «dostęp do rynku pracy».",
+          text: "У karcie pobytu розміщують дані особи, народження, meldunku, громадянства, статі, зросту, кольору очей і PESEL (якщо його надано), інформацію про вид zezwolenia, odciski, орган, дати та фотографію. Залежно від підстави додають adnotacje «naukowiec», «naukowiec – mobilność», «student», «stażysta», «wolontariusz», «Niebieska Karta UE», «dostęp do rynku pracy», «ICT», «mobile ICT», «Były posiadacz Niebieskiej Karty UE», «praca sezonowa», а також спеціальні adnotacje про ochronę międzynarodową і Art. 50 TUE / Art. 18 ust. 4 Umowy Wystąpienia.",
           sourceLocator: "Art. 244 ust. 1 pkt 1–19",
         },
         {
           kind: "statute-text",
-          text: "Картка може містити підпис і закодований запис визначених даних; відбитки не вміщують, якщо їх фізично неможливо зняти, а адресу не вміщують без meldunku про pobyt czasowy понад 2 місяці.",
+          text: "Картка може містити підпис іноземця і закодований запис даних з ust. 1 pkt 1, 2, 4, 5 або 16; відбитки не вміщують, якщо їх фізично неможливо зняти, а дані про адресу не вміщують, якщо іноземець не замельдувався в місці pobyt czasowy понад 2 місяці.",
           sourceLocator: "Art. 244 ust. 2–4",
         },
       ],
       summary:
-        "Стаття описує, які дані та adnotacje можуть бути на karcie pobytu і які винятки діють для відбитків та адреси.",
+        "Стаття визначає обов’язкові дані й adnotacje karty pobytu та окремі правила про підпис, закодовані дані, відбитки й адресу meldunku.",
       rules: [
         {
           locator: "ust. 1 pkt 8–12a",
           explanation:
-            "Вид дозволу й окремі adnotacje показують пов’язані з ним спеціальні статуси; напис «dostęp do rynku pracy» не слід тлумачити ширше за його правову підставу.",
+            "Вид zezwolenia визначає adnotacje: для Blue Card і мобільності, naukowiec, student, stażysta, wolontariusz, ICT, mobile ICT, колишнього Blue Card та praca sezonowa діють саме умови, названі у відповідних пунктах; «dostęp do rynku pracy» ставлять лише за наявності права на роботу або звільнення від work permit.",
         },
         {
           locator: "ust. 1 pkt 13–19",
           explanation:
-            "Фото, відбитки, орган і строки дають змогу перевірити автентичність і чинність документа.",
+            "Odciski, organ wydający, дати, fotografia та adnotacje про ochronę międzynarodową або Art. 50 TUE / Art. 18 ust. 4 Umowy Wystąpienia допомагають звірити зміст картки з підставою видачі.",
         },
         {
           locator: "ust. 2–4",
@@ -198,47 +198,47 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Зміст картки стандартизований і може бути доказом певних даних та adnotacji, але сам напис на картці не замінює перевірки рішення й спеціальних умов.",
+        "Зміст karty pobytu стандартизований і відображає визначені законом дані та adnotacje. Сам напис, зокрема «dostęp do rynku pracy», не замінює перевірки рішення і фактичних умов відповідного права.",
       foreignersCase:
-        "Після отримання картки перевірте ім’я, дату народження, вид дозволу, adnotacje, дату чинності та фото. Помилку в даних не виправляйте самостійно — з’ясуйте порядок wymiany.",
+        "Після отримання картки звірте imię i nazwisko, дані народження, PESEL за наявності, meldunek, вид zezwolenia, adnotacje, odciski, фотографію та дати. Помилку не виправляйте самостійно — повідомте орган і з’ясуйте порядок wymiany.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-245",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Kartę pobytu видає або відмовляє у видачі wojewoda, який надав відповідний дозвіл, а для zgody humanitarnej — відповідний komendant oddziału або placówki Straży Granicznej; wymianę проводить орган, визначений за місцем перебування.",
+          text: "Kartę pobytu видає або відмовляє у видачі wojewoda, який надав zezwolenie na pobyt czasowy, stały або rezydenta długoterminowego UE, а для zgody na pobyt ze względów humanitarnych — komendant oddziału або placówki Straży Granicznej, який надав згоду. Wymianę або відмову у wymianie здійснює wojewoda чи відповідний komendant SG за місцем pobytu; ці правила діють і для kolejnej karty pobytu.",
           sourceLocator: "Art. 245 ust. 1–5",
         },
         {
           kind: "statute-text",
-          text: "Відмова у видачі або wymianie відбувається у формі decyzji; для рішень SG, названих у ust. 7, органом вищого ступеня є Komendant Główny Straży Granicznej, а odwołanie подають протягом 7 днів.",
+          text: "Відмова у видачі або wymianie karty pobytu відбувається у формі decyzji. У гуманітарних справах, де рішення прийняв komendant oddziału або placówki SG, органом вищого ступеня є Komendant Główny Straży Granicznej, а odwołanie подають протягом 7 днів від doręczenia; спеціальні правила ust. 8–9 визначають орган для картки після рішення Szefa Urzędu або Komendanta Głównego.",
           sourceLocator: "Art. 245 ust. 6–9",
         },
       ],
       summary:
-        "Стаття розподіляє компетенцію щодо видачі та обміну karty pobytu і визначає форму відмови та спеціальний строк оскарження для гуманітарної підстави.",
+        "Стаття розподіляє компетенцію щодо wydania і wymiany karty pobytu, визначає форму odmowa та спеціальний 7-денний строк odwołania у названих гуманітарних справах.",
       rules: [
         {
           locator: "ust. 1–5, 8–9",
           explanation:
-            "Визначте, хто надав дозвіл або згоду, а для wymiany — місце перебування та орган першої інстанції.",
+            "Для першої картки визначте орган, який надав zezwolenie або згоду; для wymiany та kolejna karta — місце pobytu. Якщо рішення прийняв Szef Urzędu або Komendant Główny, застосуйте спеціальне правило про орган першої інстанції.",
         },
         {
           locator: "ust. 6–7a",
           explanation:
-            "Відмова є decyzją. У передбачених статтею справах гуманітарної karty pobytu строк odwołania становить 7 днів від doręczenia.",
+            "Відмова є decyzją. Для справ видачі або wymiany гуманітарної karty pobytu, у яких першою інстанцією був komendant SG, odwołanie становить 7 днів від doręczenia decyzji.",
         },
       ],
       legalEffect:
-        "Належний орган залежить від підстави картки та процесуальної історії. Пропуск спеціального 7-денного строку може вплинути на можливість odwołania, тому дату doręczenia треба зафіксувати.",
+        "Належний орган визначають підстава документа, місце pobytu та те, хто вирішував справу в першій інстанції. У гуманітарній справі пропуск спеціального 7-денного строку odwołania може позбавити доступу до цього засобу, тому дату doręczenia треба зафіксувати.",
       foreignersCase:
-        "На decyzji про відмову перевірте орган, підставу компетенції та дату doręczenia. Для гуманітарної картки не застосовуйте автоматично загальні строки KPA — спершу врахуйте 7 днів із цієї статті.",
+        "На decyzji про odmowa перевірте підставу компетенції, орган першої інстанції та дату doręczenia. Для гуманітарної karty pobytu зіставте справу з Art. 245 ust. 7 і не пропустіть спеціальні 7 днів на odwołanie.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-246",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -272,7 +272,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-247",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -296,7 +296,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-248",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -330,7 +330,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-248a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -354,46 +354,46 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-249",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Cudzoziemiec повертає kartę pobytu органу, який її видав, зокрема після набуття польського громадянства, stwierdzenia nieważności документа, cofnięcia дозволу або zgody, а також у випадках wygaśnięcia рішення, перелічених у статті.",
-          sourceLocator: "Art. 249 ust. 1",
+          text: "Cudzoziemiec повертає kartę pobytu органу, який її видав, коли набув obywatelstwo polskie; видано decyzję про stwierdzenie nieważności картки; cofnięto zezwolenie na pobyt czasowy, stały або rezydenta długoterminowego UE чи zgodę humanitarną; або рішення про надання відповідного права wygasło z mocy prawa за Art. 102 чи 307 ust. 1, Art. 200 pkt 1 або Art. 354 ust. 1 pkt 1, 3 чи 4.",
+          sourceLocator: "Art. 249 ust. 1 pkt 1–8",
         },
         {
           kind: "statute-text",
-          text: "Картку повертають негайно, але не пізніше 14 днів від doręczenia підтвердження громадянства або від остаточності чи wygaśnięcia відповідного рішення; орган на заяву безоплатно видає zaświadczenie o zwrocie, чинне 30 днів.",
+          text: "Kartę pobytu повертають niezwłocznie, але не пізніше 14 днів від doręczenia документа про набуття громадянства або від дня, коли рішення з ust. 1 pkt 2–8 стало ostateczna чи wygasło. Особа, уповноважена на поховання, невідкладно повертає картку померлого, а орган на wniosek видає безоплатне zaświadczenie o zwrocie, чинне 30 днів.",
           sourceLocator: "Art. 249 ust. 2–4",
         },
       ],
       summary:
-        "Стаття визначає, коли kartę pobytu потрібно повернути, 14-денний граничний строк і можливість отримати довідку про повернення.",
+        "Стаття визначає вичерпні підстави zwrotu karty pobytu, 14-денний строк, обов’язок щодо картки померлого та 30-денне zaświadczenie o zwrocie.",
       rules: [
         {
-          locator: "ust. 1",
+          locator: "ust. 1 pkt 1–8",
           explanation:
-            "Підставою для zwrotu є не лише фізична втрата права, а й, наприклад, остаточне рішення про cofnięcie або stwierdzenie nieważności документа.",
+            "Перевірте конкретний pkt: громадянство, nieważność картки, cofnięcie відповідного zezwolenia або zgody чи wygaśnięcie рішення з прямо названими відсиланнями до Art. 102, 307, 200 або 354.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Рахуйте строк 14 днів від події, прямо названої у відповідному пункті, а не від довільної дати.",
+            "Рахуйте 14 днів від doręczenia документа про громадянство або від остаточності чи wygaśnięcia рішення з ust. 1 pkt 2–8; zwrot має бути niezwłoczny.",
         },
         {
           locator: "ust. 3–4",
           explanation:
-            "Після смерті картку повертає уповноважена на поховання особа; за zwrot можна попросити безоплатне 30-денне zaświadczenie.",
+            "Особа, уповноважена на поховання за окремим законом, невідкладно повертає картку померлого; орган видає на wniosek безоплатне zaświadczenie, чинне 30 днів."
         },
       ],
       legalEffect:
-        "Обов’язок zwrotu виникає з названої юридичної події, а невиконання може мати наслідки для чинності документа за Art. 250–251.",
+        "Обов’язок zwrotu виникає лише з події, названої в Art. 249 ust. 1; неповернення після остаточності або wygaśnięcia рішення може спричинити unieważnienie за Art. 250 pkt 5 та дії органу за Art. 251.",
       foreignersCase:
-        "Зафіксуйте дату doręczenia рішення або документа про громадянство, поверніть картку właściwemu organowi й попросіть zaświadczenie, якщо потрібен доказ виконання обов’язку.",
+        "Зафіксуйте doręczenie документа про громадянство або дату, коли рішення стало ostateczna чи wygasło, поверніть kartę pobytu органу-видавцю не пізніше 14 днів і попросіть безоплатне zaświadczenie, якщо потрібен доказ.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-250",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -422,98 +422,98 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-251",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Kartę pobytu unieważnia орган, який її видав, у перелічених випадках, зокрема після громадянства, смерті, остаточних рішень про cofnięcie або nieważność та переходу до іншої підстави; орган, який обмінює картку, робить це при повідомленні про втрату, пошкодження або отриманні нової.",
-          sourceLocator: "Art. 251 pkt 1–2",
+          text: "Kartę pobytu unieważnia орган, який її видав, при набутті громадянства або смерті, остаточності рішень про cofnięcie zezwolenia чи zgody, zobowiązanie do powrotu або stwierdzenie nieważności картки, а також при переході до іншої підстави, названої в lit. e–h, чи у випадках знайденої або поверненої картки. Орган, який wymienił картку, unieważnia її після zgłoszenia utraty чи uszkodzenia або odbioru нової картки за Art. 241 pkt 1–2.",
+          sourceLocator: "Art. 251 pkt 1 lit. a–h, pkt 2",
         },
       ],
       summary:
-        "Стаття розподіляє компетенцію щодо unieważnienia karty pobytu між органом-видавцем та органом, який її обмінює.",
+        "Стаття розподіляє між органом-видавцем і органом wymiany повноваження unieważnić kartę pobytu у визначених юридичних та документних ситуаціях.",
       rules: [
         {
           locator: "pkt 1 lit. a–h",
           explanation:
-            "Орган-видавець реагує на юридичні зміни статусу, смерть, знайдений чужий документ та інші названі обставини.",
+            "Орган-видавець діє при громадянстві або смерті, остаточності рішень про cofnięcie, powrót чи nieważność, передачі знайденої картки, поверненні відновленої картки та wygaśnięciu попереднього права у зв’язку з новим статусом.",
         },
         {
-          locator: "pkt 2",
+          locator: "pkt 2 lit. a–b",
           explanation:
-            "У випадку utraty, uszkodzenia або odbioru нової картки unieważnia орган, який проводить wymianę.",
+            "Орган, який wymienił kartę, unieważnia її після zgłoszenia utraty або uszkodzenia до właściwego organu чи після odbioru нової картки у випадках Art. 241 pkt 1 і 2.",
         },
       ],
       legalEffect:
-        "Стаття визначає, який орган має технічно оформити unieważnienie; самі підстави та моменти недійсності деталізовані також у Art. 250.",
+        "Стаття визначає компетентний орган для unieważnienie; конкретні моменти, з яких картка є недійсною, деталізовані в Art. 250, а юридичні події — у Art. 249 та Art. 251.",
       foreignersCase:
-        "У зверненні про втрату або пошкодження уточніть, який орган прийняв zgłoszenie та який орган видасть нову картку. Для спору про статус перевіряйте окреме рішення, а не лише запис про unieważnienie.",
+        "У zgłoszenie про utratę або uszkodzenie перевірте, який орган його прийняв і хто wymieni kartę. Якщо unieważnienie пов’язане зі зміною статусу, аналізуйте остаточне рішення та його дату, а не лише технічний запис.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-252",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument podróży dla cudzoziemca видають, коли іноземець втратив, пошкодив або втратив чинність свого документа подорожі, не може отримати новий, і має одну з прямо названих підстав: pobyt stały, pobyt rezydenta długoterminowego UE, окреме pobyt czasowy, ochronę uzupełniającą або zgodę humanitarną.",
-          sourceLocator: "Art. 252 pkt 1–4",
+          text: "Polski dokument podróży dla cudzoziemca видають, якщо іноземець втратив свій dokument podróży, він знищений або втратив чинність, і неможливо отримати новий, а іноземцю надано: zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego UE, zezwolenie na pobyt czasowy з Art. 186 ust. 1 pkt 9, ochronę uzupełniającą або zgodę na pobyt ze względów humanitarnych.",
+          sourceLocator: "Art. 252 pkt 1–2a i 3–4",
         },
       ],
       summary:
-        "Стаття передбачає польський документ подорожі як винятковий документ для визначених статусів, коли власний документ подорожі недоступний.",
+        "Стаття передбачає wydanie polskiego dokumentu podróży dla cudzoziemca лише за одночасної відсутності доступного власного документа та наявності одного з прямо названих статусів.",
       rules: [
         {
-          locator: "zdanie główne",
+          locator: "zdanie główne та pkt 1–2a, 3–4",
           explanation:
-            "Потрібно довести одночасно проблему з власним dokumentem podróży, неможливість отримати новий і наявність відповідної підстави перебування або захисту.",
+            "Доведіть одночасно втрату, знищення або закінчення чинності власного dokumentu podróży, неможливість отримати новий і наявність саме статусу з Art. 252; pobyt czasowy охоплює лише Art. 186 ust. 1 pkt 9."
         },
       ],
       legalEffect:
-        "Видача такого документа не випливає лише з відсутності паспорта; стаття вимагає сукупності умов і визначеного статусу.",
+        "За виконання всіх умов Art. 252 стаття передбачає wydanie документа, але сама відсутність паспорта або інший вид pobyt не достатні; тимчасовий дозвіл має відповідати Art. 186 ust. 1 pkt 9.",
       foreignersCase:
-        "До заяви підготуйте доказ особи й статусу, інформацію про втрату або недійсність власного документа та підтвердження неможливості отримати новий у державі громадянства.",
+        "До wniosku додайте доказ статусу, інформацію про utrata, zniszczenie або wygaśnięcie власного dokumentu podróży та підтвердження, що новий документ неможливо отримати; для pobyt czasowy окремо перевірте Art. 186 ust. 1 pkt 9.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-252a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument podróży може бути виданий також громадянину держави, визначеної в rozporządzeniu, якщо власний документ втрачено, пошкоджено, втратив чинність або його ніколи не було, є одна з названих підстав перебування, а wniosek подано у визначений розпорядженням період.",
-          sourceLocator: "Art. 252a ust. 1",
+          text: "Polski dokument podróży може бути виданий також cudzoziemcowi, який має громадянство, визначене в rozporządzeniu, якщо він втратив, знищив або втратив чинність власний dokument podróży чи раніше його не мав, йому надано zezwolenie na pobyt stały, rezydenta długoterminowego UE, czasowy, ochronę uzupełniającą або zgodę humanitarną, а wniosek подано у період, визначений rozporządzeniem.",
+          sourceLocator: "Art. 252a ust. 1 pkt 1–3",
         },
         {
           kind: "statute-text",
-          text: "Міністр може визначити rozporządzeniem перелік громадянств і період подання заяв; при цьому враховуються міграційна політика, фактична та правова ситуація іноземців і sprawność postępowania.",
-          sourceLocator: "Art. 252a ust. 2–3",
+          text: "Minister właściwy do spraw wewnętrznych може визначити в drodze rozporządzenia громадянства, що дають право на цей режим, і період подання wniosków; під час цього враховуються потреби міграційної політики, правова та фактична ситуація осіб, які не можуть звернутися до влади своєї держави, значення для інтересу RP та sprawność postępowania.",
+          sourceLocator: "Art. 252a ust. 2–3 pkt 1–4",
         },
       ],
       summary:
-        "Стаття створює додатковий, залежний від rozporządzenia режим видачі польського документа подорожі для визначених громадянств і строків.",
+        "Стаття створює додатковий режим wydania polskiego dokumentu podróży для громадянств і періодів, які minister визначить у rozporządzenie.",
       rules: [
         {
           locator: "ust. 1 pkt 1–3",
           explanation:
-            "Перевіряйте всі умови разом: громадянство, відсутність доступного власного документа, підставу перебування та своєчасність заяви.",
+            "Перевіряйте всі умови разом: громадянство з rozporządzenia, втрату, знищення, wygaśnięcie або відсутність власного документа, один із п’яти статусів і подання wniosku у спеціальний період."
         },
         {
-          locator: "ust. 2",
+          locator: "ust. 2–3",
           explanation:
-            "Без актуального rozporządzenia не можна визначити, які громадянства й періоди охоплені цим спеціальним порядком.",
+            "Без актуального rozporządzenia не можна визначити охоплені громадянства та період. Критерії його підготовки включають міграційну політику, неможливість звернення до влади держави, інтерес RP і sprawność postępowania."
         },
       ],
       legalEffect:
-        "Стаття не дає універсального права кожному власнику відповідного статусу: доступ залежить від чинного підзаконного переліку та строку подання.",
+        "Art. 252a не дає універсального права кожному власнику статусу: потрібні громадянство з чинного rozporządzenie, сукупність умов ust. 1 і подання wniosku у визначений період; формула «może być wydany» не гарантує результату.",
       foreignersCase:
-        "Перед заявою перевірте чинний текст rozporządzenia: громадянство та останній день спеціального періоду. Не покладайтеся лише на загальну можливість із Art. 252.",
+        "Перед wnioskiem перевірте чинний текст rozporządzenia, своє громадянство та останній день періоду, а також докази відсутності власного документа і статусу. Не підміняйте спеціальний режим Art. 252a загальним Art. 252.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-253",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument podróży dla cudzoziemca протягом чинності дає право багаторазово перетинати кордон і є чинним один рік від дня видачі.",
+          text: "Polski dokument podróży dla cudzoziemca у період своєї чинності дає cudzoziemcowi право багаторазово перетинати кордон; документ чинний один рік від дня видачі.",
           sourceLocator: "Art. 253 ust. 1–2",
         },
       ],
@@ -532,22 +532,22 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Документ полегшує перетин кордону, але не перетворює сам по собі підставу перебування на інший статус і не скасовує правил повернення.",
+        "Документ у межах річного строку дає право на багаторазове перетинання кордону за Art. 253; він не змінює сам по собі підставу pobytu або інші умови в’їзду.",
       foreignersCase:
         "Перед поїздкою перевірте дату видачі й закінчення року, а також чинність karty pobytu або іншої підстави. Для кожної поїздки майте чинний документ і перевіряйте вимоги країни в’їзду.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-254",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Видача польського документа подорожі для іноземця не звільняє його від обов’язку вживати заходів для отримання власного документа подорожі, крім випадку, коли польський документ видано на підставі Art. 252a.",
+          text: "Видача polskiego dokumentu podróży dla cudzoziemca не звільняє cudzoziemca від обов’язку вживати заходів для отримання власного dokumentu podróży, крім випадку, коли польський документ видано на підставі Art. 252a.",
           sourceLocator: "Art. 254",
         },
       ],
       summary:
-        "Стаття розмежовує тимчасову допомогу польським документом подорожі та обов’язок іноземця домагатися власного документа.",
+        "Стаття зберігає обов’язок отримувати власний dokument podróży після видачі польського документа, але встановлює виняток для Art. 252a.",
       rules: [
         {
           locator: "zdanie 1",
@@ -561,22 +561,22 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Наявність польського документа не доводить, що спроби отримати власний документ більше не потрібні; режим Art. 252a має окреме правило.",
+        "За загальним правилом польський документ не замінює обов’язок домагатися власного dokumentu podróży; виняток діє лише для документа, виданого на підставі Art. 252a.",
       foreignersCase:
         "Зберігайте листування з консульством або інші докази дій для отримання власного документа, якщо ваш польський документ видано не за Art. 252a.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-255",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument podróży для іноземця містить ім’я та прізвище, дату, місце і країну народження, громадянство, стать, орган-видавець, дати видачі та чинності й фотографію; він також містить підпис власника.",
-          sourceLocator: "Art. 255 ust. 1–2",
+          text: "У polskim dokumencie podróży dla cudzoziemca розміщують imię i nazwisko, дату, місце і країну народження, громадянство, стать, назву органу-видавця, дати wydania та upływu ważności і фотографію; документ містить також підпис posiadacza.",
+          sourceLocator: "Art. 255 ust. 1 pkt 1–8, ust. 2",
         },
         {
           kind: "statute-text",
-          text: "Документ може містити закодований запис визначених даних, зокрема ідентифікаційних даних і дати завершення чинності.",
+          text: "Документ може містити закодований запис даних з ust. 1 pkt 1–4 або 7; це технічний запис, а не додаткова підстава для pobytu.",
           sourceLocator: "Art. 255 ust. 2",
         },
       ],
@@ -601,11 +601,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-256",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument podróży для іноземця підлягає wymianie у разі зміни даних, істотної зміни вигляду обличчя, втрати або пошкодження документа.",
+          text: "Polski dokument podróży dla cudzoziemca підлягає wymianie у разі зміни даних, зміни wizerunku twarzy настільки, що ідентифікація власника ускладнена або неможлива, utraty чи uszkodzenia документа.",
           sourceLocator: "Art. 256 pkt 1–4",
         },
       ],
@@ -619,13 +619,13 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Wymiana оновлює документ у визначених ситуаціях; вона не є процедурою продовження або зміни підстави pobytu.",
+        "Art. 256 визначає підстави wymiany конкретного документа; wymiana не є продовженням його строку за окремою процедурою і не змінює підстави pobytu.",
       foreignersCase:
         "Порівняйте документ із актуальними даними та станом фото. Після втрати або пошкодження негайно повідомте орган і уточніть порядок отримання нового документа.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-257",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -648,66 +648,66 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Норма розподіляє компетенцію і форму негативного акта, але не встановлює, що кожна заява має бути задоволена.",
+        "Art. 257 визначає właściwość wojewody та вимагає decyzji для odmowa, але не встановлює матеріального права на позитивний результат поза умовами інших статей.",
       foreignersCase:
         "Перед поданням перевірте właściwość wojewody за місцем перебування. При odmowie збережіть decyzję та дату doręczenia для перевірки доступного środka zaskarżenia.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-258",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument podróży повертають, зокрема, після набуття польського громадянства, stwierdzenia nieważności, cofnięcia визначених дозволів або zgody, pozbawienia ochrony uzupełniającej чи отримання власного документа подорожі.",
-          sourceLocator: "Art. 258 ust. 1",
+          text: "Polski dokument podróży для cudzoziemca повертають органу-видавцю після набуття obywatelstwo polskie, stwierdzenia nieważności документа, cofnięcia zezwolenia na pobyt stały, rezydenta długoterminowego UE або zgody humanitarnej, pozbawienia ochrony uzupełniającej, спеціального cofnięcia zezwolenia na pobyt czasowy з Art. 186 ust. 1 pkt 9, якщо документ видано за Art. 252 pkt 2a, cofnięcia тимчасового дозволу у випадку Art. 252a ust. 1 pkt 2 lit. c, або отримання власного dokumentu podróży.",
+          sourceLocator: "Art. 258 ust. 1 pkt 1–5"
         },
         {
           kind: "statute-text",
-          text: "Документ повертають негайно, але не пізніше 14 днів від отримання підтвердження громадянства або власного документа чи від остаточності відповідного рішення; інші правила zwrotu відсилають до Art. 249 ust. 3–4.",
-          sourceLocator: "Art. 258 ust. 2–3",
+          text: "Документ повертають niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство, doręczenia власного dokumentu podróży або дня, коли рішення з ust. 1 pkt 2–4b стало ostateczna; для інших питань zwrot застосовуються Art. 249 ust. 3–4.",
+          sourceLocator: "Art. 258 ust. 2–3"
         },
       ],
       summary:
-        "Стаття визначає підстави та 14-денний строк повернення польського документа подорожі для іноземця.",
+        "Стаття визначає спеціальні підстави zwrotu polskiego dokumentu podróży dla cudzoziemca, 14-денні події для відліку та відсилання до Art. 249 ust. 3–4.",
       rules: [
         {
           locator: "ust. 1 pkt 1–5",
           explanation:
-            "Перевірте, яка саме подія зупинила потребу в польському документі: статус, рішення або отримання власного документа.",
+            "Зіставте подію з точним пунктом: громадянство, nieważność, cofnięcie конкретного zezwolenia або zgody, pozbawienie ochrony uzupełniającej чи отримання власного документа; для pkt 4a–4b важливі Art. 252 pkt 2a та Art. 252a ust. 1 pkt 2 lit. c."
         },
         {
           locator: "ust. 2–3",
           explanation:
-            "Строк рахується від події, прямо названої в пункті; для поховання та довідки застосовуються правила Art. 249 ust. 3–4.",
+            "Рахуйте 14 днів від події, прямо названої в ust. 2: doręczenia документа про громадянство, власного документа або ostateczność рішення; поховання і zaświadczenie регулює Art. 249 ust. 3–4."
         },
       ],
       legalEffect:
-        "Обов’язок повернення пов’язаний зі зміною статусу чи появою власного документа, а не лише із закінченням фізичного строку польського документа.",
+        "Обов’язок zwrotu виникає з конкретної події Art. 258, а не просто зі спливу строку дії документа; невиконання може впливати на його unieważnienie за Art. 259.",
       foreignersCase:
         "Після отримання паспорта або остаточного рішення зафіксуйте дату й поверніть документ органу-видавцю. За потреби попросіть заświadczenie за правилами Art. 249 ust. 4.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-259",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument podróży unieważniaється при втраті або пошкодженні від дня zgłoszenia, при обміні — від отримання нового, а також у разі громадянства, смерті, остаточних рішень або неповернення після отримання власного документа у визначені статтею моменти.",
-          sourceLocator: "Art. 259 ust. 1",
+          text: "Polski dokument podróży unieważnia się: при utrata або uszkodzenie — від zgłoszenia; при wymiana через wizerunek або дані — від odbioru нового документа; після громадянства — зі спливом строку zwrotu; після рішень про cofnięcie, pozbawienie ochrony або nieważność — зі спливом строку zwrotu; при смерті — від інформації органу; при поверненні знайденого документа — від zwrotu; а при неповерненні після отримання власного документа — niezwłocznie після отримання інформації про це.",
+          sourceLocator: "Art. 259 ust. 1 pkt 1–6"
         },
         {
           kind: "statute-text",
-          text: "Unieważnienie здійснює орган-видавець у названих випадках або орган, який обмінює документ, коли заявлено втрату чи пошкодження або отримано новий документ.",
-          sourceLocator: "Art. 259 ust. 2",
+          text: "Unieważnienie здійснює organ, який видав документ, у випадках громадянства, смерті, ostateczność відповідних рішень, передачі знайденого або повернення відновленого документа чи отримання власного dokumentu podróży; organ, який wymienił документ, діє при zgłoszenie utraty або uszkodzenia та odbiór нового документа.",
+          sourceLocator: "Art. 259 ust. 2 pkt 1–2"
         },
       ],
       summary:
-        "Стаття встановлює підстави, моменти й компетентні органи для unieważnienia польського документа подорожі.",
+        "Стаття розрізняє підстави й точні моменти unieważnienia polskiego dokumentu podróży та розподіляє дію між органом-видавцем і органом wymiany.",
       rules: [
         {
           locator: "ust. 1 pkt 1–6",
           explanation:
-            "Одна й та сама подія може мати різний момент unieważnienia: від zgłoszenia, odbioru нового документа, спливу строку zwrotu або остаточності рішення.",
+            "Не змішуйте подію і момент: закон окремо називає zgłoszenie, odbiór нового, сплив строку zwrotu, отримання інформації про смерть, zwrot знайденого документа та момент після інформації про власний документ."
         },
         {
           locator: "ust. 2",
@@ -716,22 +716,22 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Unieważnienie припиняє чинність документа як документа подорожі; питання права на pobyt або захист оцінюються за відповідними рішеннями.",
+        "Unieważnienie припиняє чинність polskiego dokumentu podróży як документа; це не є самостійним рішенням про право на pobyt або ochronę.",
       foreignersCase:
         "Після втрати негайно подайте zgłoszenie й використовуйте лише новий документ, якщо його видано. Якщо старий знайдено, не вважайте його автоматично чинним.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-260",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument tożsamości cudzoziemca може бути виданий неповнолітньому, народженому в Польщі без батьківської опіки, іноземцю з zaświadczeniem з Art. 170 або особі без громадянства, якщо цього вимагає інтерес Польщі; у всіх випадках іноземець не має документа подорожі й не може отримати інший документ особи.",
+          text: "Polski dokument tożsamości cudzoziemca може бути виданий: małoletniemu, народженому в Польщі та перебуваючому без батьківської опіки, якщо цьому не суперечить interes RP і цього вимагає dobro dziecka; cudzoziemcowi, який перебуває за zaświadczeniem з Art. 170; або cudzoziemcowi без жодного obywatelstwa, якщо цього вимагає interes RP. Для кожної категорії додатково потрібно не мати dokumentu podróży та не мати можливості отримати інший документ, що підтверджує tożsamość.",
           sourceLocator: "Art. 260 ust. 1–2",
         },
       ],
       summary:
-        "Стаття обмежує видачу польського документа особи для іноземця спеціальними ситуаціями відсутності громадянства, опіки або документа подорожі.",
+        "Стаття обмежує wydanie polskiego dokumentu tożsamości cudzoziemca трьома спеціальними категоріями та додатковою неможливістю отримати документ подорожі або інший доказ особи.",
       rules: [
         {
           locator: "ust. 1 pkt 1–3",
@@ -745,22 +745,22 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Цей документ є спеціальним засобом підтвердження особи, а не загальним замінником паспорта для будь-якого іноземця.",
+        "Документ є винятковим засобом підтвердження tożsamość для категорій Art. 260; він не є загальним замінником паспорта і не підтверджує сам по собі легальний pobyt.",
       foreignersCase:
         "У заяві поясніть спеціальну категорію, відсутність доступного документа подорожі та докази неможливості отримати інший документ особи.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-261",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument tożsamości cudzoziemca у період чинності підтверджує особу в Польщі, але не громадянство, не дає права перетинати кордон і не звільняє від обов’язку отримати візу або відповідне zezwolenie na pobyt.",
+          text: "Polski dokument tożsamości cudzoziemca у період чинності підтверджує tożsamość під час перебування в Польщі, але не підтверджує obywatelstwo, не дає права перетинати кордон і не звільняє від обов’язку отримати wizę, zezwolenie na pobyt czasowy, stały або rezydenta długoterminowego UE.",
           sourceLocator: "Art. 261 ust. 1–3",
         },
       ],
       summary:
-        "Стаття чітко відділяє підтвердження особи польським документом особи від громадянства, права на кордон і легалізації pobytu.",
+        "Стаття чітко відділяє підтвердження tożsamość польським документом особи від громадянства, перетину кордону та обов’язку мати потрібну підставу pobytu.",
       rules: [
         {
           locator: "ust. 1",
@@ -774,17 +774,17 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Наявність польського документа особи не робить pobyt автоматично легальним і не замінює документ подорожі.",
+        "Наявність документа не підтверджує obywatelstwo, не створює права на перетин кордону і не замінює wizę або прямо назване zezwolenie na pobyt.",
       foreignersCase:
         "Під час перевірки пред’являйте цей документ лише як доказ особи, а статус pobytu підтверджуйте окремою візою, картою або рішенням, якщо це потрібно.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-262",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument tożsamości cudzoziemca чинний один рік від дня видачі.",
+          text: "Polski dokument tożsamości cudzoziemca є чинним протягом одного року від дня його видачі.",
           sourceLocator: "Art. 262",
         },
       ],
@@ -804,16 +804,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-263",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument tożsamości cudzoziemca містить персональні дані, фото, орган і дати видачі та чинності, а також попередження, що він не підтверджує громадянство, не дає права перетинати кордон і не підтверджує legalny pobyt.",
+          text: "Polski dokument tożsamości cudzoziemca містить імена та прізвище іноземця і його батьків, дані народження, адресу meldunku, стать, зріст, колір очей, орган-видавець, дати видачі та чинності, фотографію й попередження, що документ не підтверджує obywatelstwo, не дає права перетинати кордон і не є документом, що підтверджує legalny pobyt.",
           sourceLocator: "Art. 263 ust. 1 pkt 1–10",
         },
         {
           kind: "statute-text",
-          text: "Документ містить підпис власника й може містити закодовані дані; адресу не вміщують без meldunku про pobyt czasowy понад 2 місяці.",
+          text: "Документ містить підпис posiadacza і може містити закодований запис даних з ust. 1 pkt 1, 2, 4 або 8; дані про адресу не вміщують, якщо cudzoziemiec не zameldował się у місці pobyt czasowy понад 2 місяці.",
           sourceLocator: "Art. 263 ust. 2–3",
         },
       ],
@@ -838,7 +838,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-264",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -867,16 +867,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-265",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "До wymiany польського документа особи застосовуються правила Art. 256; документ повертають після набуття польського громадянства або stwierdzenia jego nieważności.",
+          text: "До wymiany polskiego dokumentu tożsamości cudzoziemca застосовується Art. 256; cudzoziemiec повертає документ після набуття obywatelstwo polskie або якщо видано decyzję про stwierdzenie nieważności документа.",
           sourceLocator: "Art. 265 ust. 1–2",
         },
         {
           kind: "statute-text",
-          text: "Повернення здійснюють негайно, але не пізніше 14 днів від отримання підтвердження громадянства або остаточності decyzji; інші правила zwrotu відсилають до Art. 249 ust. 3–4.",
+          text: "Документ повертають organowi, який його видав, niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство або від дня, коли decyzja про nieważność стала ostateczna; інші правила zwrotu відсилають до Art. 249 ust. 3–4.",
           sourceLocator: "Art. 265 ust. 3–4",
         },
       ],
@@ -901,16 +901,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-266",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Polski dokument tożsamości cudzoziemca unieważniaється при втраті або пошкодженні від дня zgłoszenia, при обміні — від отримання нового, а також після громадянства, смерті або повернення знайденого документа у визначених випадках.",
+          text: "Polski dokument tożsamości cudzoziemca unieważnia się: при utrata або uszkodzenie — від zgłoszenia; при wymiana через wizerunek або дані — від odbioru нового документа; після громадянства — зі спливом строку zwrotu; після смерті — від отримання органом інформації; при поверненні знайденого документа — від його zwrotu.",
           sourceLocator: "Art. 266 ust. 1",
         },
         {
           kind: "statute-text",
-          text: "Unieważnienie здійснює орган-видавець у випадках статусу, смерті, повернення знайденого документа або остаточної nieważności; орган, який обміняв документ, — при zgłoszeniu втрати чи пошкодження або odbioru нового.",
+          text: "Unieważnienie здійснює organ, який видав документ, при громадянстві або смерті, передачі знайденого чи поверненні відновленого документа або коли decyzja про stwierdzenie nieważności стала ostateczna; organ wymiany діє при zgłoszenie utraty або uszkodzenia та odbiór нового документа.",
           sourceLocator: "Art. 266 ust. 2",
         },
       ],
@@ -935,16 +935,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-267",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Tymczasowy polski dokument podróży видають іноземцю, який хоче повернутися до Польщі та за кордоном втратив, пошкодив або втратив чинність свого документа, коли неможливо отримати новий і він має pobyt stały, pobyt rezydenta długoterminowego UE, ochronę uzupełniającą, zgodę humanitarną або status uchodźcy.",
-          sourceLocator: "Art. 267 pkt 1–2",
+          text: "Tymczasowy polski dokument podróży видають cudzoziemcowi, який має намір повернутися до Польщі, за кордоном втратив, знищив або втратив чинність власного dokumentu podróży і не може отримати новий, якщо йому надано zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego UE, ochronę uzupełniającą або zgodę humanitarną, або якщо йому надано status uchodźcy.",
+          sourceLocator: "Art. 267 pkt 1 lit. a–d, pkt 2",
         },
       ],
       summary:
-        "Стаття визначає тимчасовий польський документ подорожі для повернення до Польщі, коли власний документ недоступний за кордоном.",
+        "Стаття визначає tymczasowy polski dokument podróży для одноразового повернення до Польщі з-за кордону, коли власний документ недоступний.",
       rules: [
         {
           locator: "zdanie główne",
@@ -953,17 +953,17 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       legalEffect:
-        "Це тимчасовий документ із конкретною метою повернення, а не загальна заміна паспорта на необмежені поїздки.",
+        "Art. 267 передбачає документ для конкретного повернення до Польщі з-за кордону; він не є загальною заміною паспорта або дозволом на необмежені поїздки.",
       foreignersCase:
         "У заяві за кордоном покажіть свій статус у Польщі, обставини втрати або недійсності документа та неможливість отримати новий. Поясніть, що мета — повернення до Польщі.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-268",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Tymczasowy polski dokument podróży може бути виданий особі без документа подорожі, яка не може отримати новий, якщо вона підлягає relokacji або przesiedleniu чи має намір залишити Польщу або зобов’язана її залишити.",
+          text: "Tymczasowy polski dokument podróży може бути виданий cudzoziemcowi, який не має dokumentu podróży і не може отримати новий, якщо підлягає relokacji або przesiedleniu чи має намір залишити територію RP або зобов’язаний її залишити.",
           sourceLocator: "Art. 268 pkt 1–2",
         },
       ],
@@ -983,11 +983,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-269",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "У період чинності tymczasowy polski dokument podróży дає право на одноразовий в’їзд до Польщі особам з Art. 267 та Art. 268 pkt 1, а особам з Art. 268 pkt 2 — на виїзд із Польщі.",
+          text: "У період чинності tymczasowy polski dokument podróży дає cudzoziemcowi з Art. 267 або Art. 268 pkt 1 право на одноразовий wjazd на територію RP, а cudzoziemcowi з Art. 268 pkt 2 — право на wyjazd з території RP.",
           sourceLocator: "Art. 269 pkt 1–2",
         },
       ],
@@ -1012,11 +1012,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-270",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Tymczasowy polski dokument podróży чинний протягом строку, зазначеного в ньому, але не довше 7 днів.",
+          text: "Tymczasowy polski dokument podróży є чинним протягом строку, зазначеного в документі, але цей строк не може перевищувати 7 днів.",
           sourceLocator: "Art. 270",
         },
       ],
@@ -1036,21 +1036,21 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-271",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "У tymczasowym polskim dokumencie podróży зазначаються дані іноземця, орган і особа, що видала документ, дати, фото іноземця та фото дітей або інших неповнолітніх під його опікою, які його супроводжують.",
+          text: "У tymczasowym polskim dokumencie podróży зазначаються дані іноземця, зокрема imię i nazwisko, дані народження, obywatelstwo, стать, зріст і колір очей; дані супроводжуваних дітей або інших małoletnich під його опікою (імена, дати, місця й країна народження, стать); назва органу, дані й підпис службової особи, дати та фотографії іноземця і супроводжуваних неповнолітніх.",
           sourceLocator: "Art. 271 ust. 1 pkt 1–12",
         },
         {
           kind: "statute-text",
-          text: "Документ містить підпис власника і може містити закодований запис визначених даних, зокрема дати закінчення чинності.",
+          text: "Документ містить підпис posiadacza і може містити закодований запис даних з ust. 1 pkt 1–4 або 10.",
           sourceLocator: "Art. 271 ust. 2",
         },
       ],
       summary:
-        "Стаття визначає дані тимчасового документа подорожі, зокрема відомості про дітей або інших неповнолітніх, що супроводжують іноземця.",
+        "Стаття визначає реквізити tymczasowego polskiego dokumentu podróży, включно з даними та фотографіями супроводжуваних неповнолітніх.",
       rules: [
         {
           locator: "ust. 1 pkt 1–12",
@@ -1070,16 +1070,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-272",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "У Польщі tymczasowy polski dokument podróży видає або відмовляє wojewoda за місцем перебування, а коли іноземець зобов’язаний залишити територію — komendant placówki Straży Granicznej; за кордоном документ видає або відмовляє konsul.",
+          text: "У RP tymczasowy polski dokument podróży видає або відмовляє у видачі wojewoda за місцем pobytu, а якщо cudzoziemiec зобов’язаний залишити територію RP — komendant placówki Straży Granicznej; за межами RP це робить konsul.",
           sourceLocator: "Art. 272 ust. 1",
         },
         {
           kind: "statute-text",
-          text: "Відмова є decyzją; від рішення konsula подають wniosek o ponowne rozpatrzenie, який треба подати протягом 7 днів від doręczenia, а щодо komendanta placówki органом вищого ступеня є Komendant Główny Straży Granicznej.",
+          text: "Відмова у видачі є decyzją; від decyzja konsula можна подати до того самого органу wniosek o ponowne rozpatrzenie протягом 7 днів від doręczenia, а органом вищого ступеня щодо komendanta placówki є Komendant Główny Straży Granicznej.",
           sourceLocator: "Art. 272 ust. 2–5",
         },
       ],
@@ -1104,11 +1104,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-273",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Dokument «zgoda na pobyt tolerowany» видають іноземцю, якому надано zgody na pobyt tolerowany на території Польщі.",
+          text: "Dokument «zgoda na pobyt tolerowany» видають cudzoziemcowi, якому надано zgodę na pobyt tolerowany на території RP.",
           sourceLocator: "Art. 273",
         },
       ],
@@ -1128,11 +1128,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-274",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Dokument «zgoda na pobyt tolerowany» протягом чинності підтверджує особу в Польщі, але не підтверджує громадянство і не дає права перетинати кордон.",
+          text: "Dokument «zgoda na pobyt tolerowany» у період своєї чинності підтверджує tożsamość cudzoziemca під час перебування на території RP, але не підтверджує obywatelstwo і не дає права перетинати кордон.",
           sourceLocator: "Art. 274 ust. 1–2",
         },
       ],
@@ -1157,7 +1157,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-275",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1181,16 +1181,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-276",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "У документі «zgoda na pobyt tolerowany» зазначаються ідентифікаційні дані, meldunek за наявності, громадянство, орган і строки, фото, відбитки пальців і попередження, що документ не підтверджує громадянство та не дає права перетинати кордон.",
+          text: "У документі «zgoda na pobyt tolerowany» зазначаються імена та прізвище і батьки, дані народження, адреса meldunku, obywatelstwo, стать, зріст, колір очей, PESEL за наявності, орган, дати, фотографія, obraz linii papilarnych та pouczenie, що документ не підтверджує obywatelstwo і не дає права перетинати кордон.",
           sourceLocator: "Art. 276 ust. 1 pkt 1–14",
         },
         {
           kind: "statute-text",
-          text: "Документ містить підпис і може містити закодований запис визначених даних; адресу не вміщують, якщо немає meldunku про pobyt czasowy понад 2 місяці.",
+          text: "Документ містить підпис posiadacza і може містити закодований запис даних з ust. 1 pkt 1, 3, 5, 6 або 11; адреса не вміщується, якщо cudzoziemiec не zameldował się у місці pobyt czasowy понад 2 місяці.",
           sourceLocator: "Art. 276 ust. 2–3",
         },
       ],
@@ -1220,16 +1220,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-277",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Dokument «zgoda na pobyt tolerowany» видає або відмовляє у видачі орган SG, який надав згоду; wymianę здійснює SG за місцем перебування іноземця. Відмова у видачі чи обміні є decyzją.",
+          text: "Dokument «zgoda na pobyt tolerowany» видає або відмовляє у видачі komendant oddziału Straży Granicznej або komendant placówki Straży Granicznej, який надав zgodę; wymianę або відмову у wymianie здійснює відповідний komendant SG за місцем pobytu. Відмова є decyzją.",
           sourceLocator: "Art. 277 ust. 1–2",
         },
         {
           kind: "statute-text",
-          text: "Органом вищого ступеня є Komendant Główny Straży Granicznej, а odwołanie подають протягом 7 днів від doręczenia; за рішенням Komendanta Głównego документ видає або обмінює орган першої інстанції.",
+          text: "Органом вищого ступеня щодо komendanta oddziału або placówki SG є Komendant Główny Straży Granicznej, а odwołanie від decyzja подають протягом 7 днів від doręczenia. Якщо zgodę або рішення про документ прийняв Komendant Główny, документ видає або wymienia komendant першої інстанції.",
           sourceLocator: "Art. 277 ust. 3–4",
         },
       ],
@@ -1254,7 +1254,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-278",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1288,11 +1288,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-279",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "До odbioru документа «zgoda na pobyt tolerowany» застосовуються правила Art. 248.",
+          text: "До odbioru документа «zgoda na pobyt tolerowany» застосовуються положення Art. 248.",
           sourceLocator: "Art. 279",
         },
       ],
@@ -1312,21 +1312,21 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-280",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "До wymiany документа «zgoda na pobyt tolerowany» застосовується Art. 256; документ повертають після громадянства, stwierdzenia nieważności, cofnięcia zgody або wygaśnięcia рішення у визначених Art. 354 випадках.",
-          sourceLocator: "Art. 280 ust. 1–2",
+          text: "До wymiany документа «zgoda na pobyt tolerowany» застосовується Art. 256; cudzoziemiec повертає документ після набуття obywatelstwo polskie, stwierdzenia nieważności документа, cofnięcia zgody або wygaśnięcia рішення про згоду за Art. 354 ust. 1 pkt 1, 3 чи 4 або ust. 2.",
+          sourceLocator: "Art. 280 ust. 1–2 pkt 1–4",
         },
         {
           kind: "statute-text",
-          text: "Документ повертають негайно, але не пізніше 14 днів від отримання підтвердження громадянства або остаточності чи wygaśnięcia рішення; інші правила zwrotu відсилають до Art. 249 ust. 3–4.",
+          text: "Документ повертають organowi-видавцю niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство або від дня, коли рішення з ust. 2 pkt 2–4 стало ostateczna чи wygasło; інші правила zwrotu відсилають до Art. 249 ust. 3–4.",
           sourceLocator: "Art. 280 ust. 3–4",
         },
       ],
       summary:
-        "Стаття регулює обмін і повернення документа tolerowany, включно з 14-денним строком.",
+        "Стаття регулює wymianę і zwrot документа «zgoda na pobyt tolerowany», включно з повним переліком подій та 14-денним строком.",
       rules: [
         {
           locator: "ust. 1",
@@ -1336,7 +1336,7 @@ export const foreignersActPart08 = defineEditorialPart<
         {
           locator: "ust. 2–3",
           explanation:
-            "Визначте подію, що створила обов’язок zwrotu, і рахуйте від неї строк не пізніше 14 днів.",
+            "Визначте pkt 2–4 і рахуйте 14 днів від doręczenia документа про громадянство або від ostateczność чи wygaśnięcie відповідного рішення.",
         },
       ],
       legalEffect:
@@ -1346,16 +1346,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-281",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Документ «zgoda na pobyt tolerowany» unieważniaється при втраті або пошкодженні від zgłoszenia, при обміні — від odbioru нового, а також після громадянства, смерті, остаточності відповідного рішення, неповернення або zwrotu знайденого документа у визначених статтею випадках.",
+          text: "Dokument «zgoda na pobyt tolerowany» unieważnia się: при utrata або uszkodzenie — від zgłoszenia; при wymiana через wizerunek або дані — від odbioru нового; після громадянства — зі спливом строку zwrotu; після смерті — від інформації органу; при неповерненні за Art. 280 ust. 2 pkt 2–4 — від ostateczność або wygaśnięcia рішення; при передачі знайденого документа без попереднього zgłoszenie utraty — від передачі; при zwrot odzyskanego документа — від zwrotu.",
           sourceLocator: "Art. 281 ust. 1 pkt 1–7",
         },
         {
           kind: "statute-text",
-          text: "Unieważnienie здійснює орган-видавець у випадках статусу, рішення або wygaśnięcia згоди, а орган, який обміняв документ, — при zgłoszeniu втрати чи пошкодження або odbioru нового.",
+          text: "Unieważnienie здійснює organ, який видав документ, при громадянстві або смерті, передачі знайденого чи поверненні відновленого документа, ostateczność рішення про cofnięcie zgody або nieważność документа та wygaśnięcie zgody за Art. 354; organ wymiany діє при zgłoszenie utraty або uszkodzenia та odbiór нового документа.",
           sourceLocator: "Art. 281 ust. 2",
         },
       ],
@@ -1380,7 +1380,7 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-282",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1404,16 +1404,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-283",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Якщо під час прикордонного контролю або контролю legalności pobytu встановлено, що іноземець користується документом, який мав повернути за Art. 233 ust. 2, Art. 249 ust. 1, Art. 258 ust. 1, Art. 265 ust. 2 або Art. 280 ust. 2, орган затримує документ, безоплатно видає підтвердження, надсилає документ органу-видавцю та документує ці дії.",
+          text: "Якщо під час kontroli granicznej або kontroli legalności pobytu встановлено, що cudzoziemiec користується документом, який мав повернути за Art. 233 ust. 2, Art. 249 ust. 1, Art. 258 ust. 1, Art. 265 ust. 2 або Art. 280 ust. 2, organ zatrzymuje документ, безоплатно видає zaświadczenie про zatrzymanie, надсилає документ organowi-видавцю та dokumentuje ці дії.",
           sourceLocator: "Art. 283 pkt 1–4",
         },
       ],
       summary:
-        "Стаття встановлює порядок дій органу, коли під час контролю виявлено документ, який іноземець уже мав повернути.",
+        "Стаття встановлює обов’язкові дії органу під час контролю, якщо cudzoziemiec користується документом, який мав повернути за прямо названими статтями.",
       rules: [
         {
           locator: "pkt 1–2",
@@ -1433,16 +1433,16 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-284",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Якщо іноземець не повернув документ, який був зобов’язаний повернути, або повідомив про його втрату, компетентний орган вносить інформацію про документ до Systemu Informacyjnego Schengen для його zajęcia.",
+          text: "Якщо cudzoziemiec, попри обов’язок zwrotu одного з документів Art. 226 pkt 1–3 або 5, його не повернув або повідомив про utratę, organ, якому документ належало повернути або якому повідомили про utratę, вносить інформацію про документ до Systemu Informacyjnego Schengen для його zajęcia.",
           sourceLocator: "Art. 284 ust. 1",
         },
         {
           kind: "statute-text",
-          text: "Орган видаляє інформацію з SIS, коли документ повернуто.",
+          text: "Орган, який вніс інформацію за ust. 1, видаляє її з SIS, коли документ повернуто.",
           sourceLocator: "Art. 284 ust. 2",
         },
       ],
@@ -1467,11 +1467,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-285",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Міністр właściwy do spraw wewnętrznych визначає rozporządzeniem wzory karty pobytu, польських і тимчасових документів подорожі, документа tolerowany, форм заяв про втрату або пошкодження та відповідних zaświadczeń.",
+          text: "Minister właściwy do spraw wewnętrznych визначає w drodze rozporządzenia wzory karty pobytu, polskiego dokumentu podróży, polskiego dokumentu tożsamości, tymczasowego polskiego dokumentu podróży, документа «zgoda na pobyt tolerowany», форм zgłoszenia utraty або uszkodzenia та zaświadczeń o utracie, zwrocie і zatrzymaniu, а також wzory wniosków про видачу або wymianę названих документів.",
           sourceLocator: "Art. 285 ust. 1 pkt 1–2",
         },
         {
@@ -1506,11 +1506,11 @@ export const foreignersActPart08 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-286",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Учні з państw trzecich, які проживають у Польщі та беруть участь у шкільній поїздці до іншої держави ЄС за правилами рішення Rady 94/795/WSiSW, можуть бути включені директором школи до listy podróżujących для поїздок у ЄС.",
+          text: "Cudzoziemcy, які є учнями з państw trzecich і беруть участь у шкільній поїздці до іншої держави-члена UE за правилами decyzja Rady 94/795/WSiSW, можуть бути включені директором школи до listy podróżujących для поїздок у UE.",
           sourceLocator: "Art. 286 ust. 1",
         },
         {
@@ -1520,7 +1520,7 @@ export const foreignersActPart08 = defineEditorialPart<
         },
       ],
       summary:
-        "Стаття створює спеціальний механізм списку подорожуючих для шкільних поїздок учнів із третіх держав та підтвердження їхнього повторного в’їзду.",
+        "Стаття створює спеціальний механізм listy podróżujących для учнів із państw trzecich і підтвердження їхніх даних та права на ponowny wjazd до RP.",
       rules: [
         {
           locator: "ust. 1",

@@ -10,11 +10,11 @@ export const foreignersActPart04 = defineEditorialPart<
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-120b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 120b уповноважує ministra właściwego do spraw wewnętrznych визначити розпорядженням wzór formularza заяви про зміну zezwolenia на pobyt czasowy i pracę.",
+          text: "Art. 120b уповноважує ministra właściwego do spraw wewnętrznych визначити, w drodze rozporządzenia, wzór formularza wniosku про зміну zezwolenia na pobyt czasowy i pracę, про яке йдеться в art. 120a ust. 1.",
           sourceLocator: "Art. 120b",
         },
       ],
@@ -34,11 +34,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-121",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 121 встановлює письмове повідомлення wojewody про втрату роботи, зміну podmiotu powierzającego pracę та припинення виконання умов zezwolenia у визначених строках.",
+          text: "Art. 121 ust. 1–3 регулюють письмове повідомлення cudzoziemca wojewodzie про втрату роботи та спосіб виконання цього обов’язку через wniosek за art. 120 ust. 1 pkt 1; ust. 4 встановлює окреме повідомлення podmiot powierzający pracę.",
           sourceLocator: "Art. 121 ust. 1–4",
         },
       ],
@@ -58,17 +58,17 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 4",
           explanation:
-            "Podmiot powierzający pracę, зазначений у zezwoleniu, також письмово повідомляє про втрату роботи протягом 15 dni від цієї події.",
+            "Podmiot powierzający pracę, зазначений у zezwoleniu, письмово повідомляє wojewodę, який надав zezwolenie (або wojewodę першої інстанції при рішенні Szef Urzędu), про втрату роботи у нього протягом 15 dni від цієї події.",
         },
       ],
       legalEffect:
         "Стаття створює окремі обов’язки повідомлення для cudzoziemca та podmiotu powierzającego pracę; з тексту цієї статті не випливає автоматичний спосіб доведення своєчасності.",
       foreignersCase:
-        "Зафіксуйте дату втрати роботи, адресата й спосіб подання повідомлення. Якщо змінюється роботодавець або інший podmiot, перевірте також можливість wniosku про зміну zezwolenia.",
+        "Зафіксуйте дату втрати роботи, адресата й спосіб подання повідомлення. Якщо обов’язок виконано через wniosek за art. 120 ust. 1 pkt 1, збережіть доказ його подання в межах 15 dni roboczych.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-122",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -97,7 +97,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-123",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -131,11 +131,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-124",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 124 зобов’язує wojewodę повідомити właściwego starostę про cofnięcie zezwolenia na pobyt czasowy i pracę після того, як рішення стане ostateczne.",
+          text: "Art. 124 зобов’язує wojewodę повідомити starostę właściwego ze względu na miejsce pobytu cudzoziemca про cofnięcie zezwolenia na pobyt czasowy i pracę після того, як рішення стане ostateczne.",
           sourceLocator: "Art. 124",
         },
       ],
@@ -145,7 +145,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "Art. 124",
           explanation:
-            "Повідомлення starosta пов’язане саме з остаточністю decyzja про cofnięcie.",
+            "Wojewoda повідомляє starostę właściwego ze względu na miejsce pobytu cudzoziemca саме після того, як decyzja про cofnięcie стане ostateczna.",
         },
       ],
       legalEffect:
@@ -155,7 +155,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-125",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -168,8 +168,7 @@ export const foreignersActPart04 = defineEditorialPart<
       rules: [
         {
           locator: "Art. 125",
-          explanation:
-            "Текст містить лише позначення «(uchylony)».",
+          explanation: "Текст містить лише позначення «(uchylony)».",
         },
       ],
       legalEffect:
@@ -179,11 +178,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-126",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 126 регулює zezwolenie na pobyt czasowy i pracę для cudzoziemca, який виконує функцію в zarząd osoby prawnej без власних udziałów або akcji, а також відповідно для prokurent.",
+          text: "Art. 126 регулює zezwolenie na pobyt czasowy i pracę для cudzoziemca, який виконує функцію в zarząd osoby prawnej podlegającej wpisowi do rejestru przedsiębiorców і не має її udziałów або akcji, а також відповідно для prokurent.",
           sourceLocator: "Art. 126 ust. 1–3",
         },
       ],
@@ -209,16 +208,16 @@ export const foreignersActPart04 = defineEditorialPart<
       legalEffect:
         "Стаття визначає спеціальний опис роботи, але відсилає до інших положень; сама вона не замінює перевірку цих умов.",
       foreignersCase:
-        "Встановіть, чи йдеться про zarząd або prokurent, чи cudzoziemiec має udziałów або akcji, та зберіть окремі підтвердження умов, на які відсилає стаття.",
+        "Встановіть, чи йдеться про zarząd або prokurent, чи osoba prawna підлягає wpis do rejestru przedsiębiorców і чи cudzoziemiec не має її udziałów або akcji; зберіть також підтвердження умов, на які відсилає стаття.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-127",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 127 вимагає для zezwolenia na pobyt czasowy у zawodzie wymagającym wysokich kwalifikacji сукупного виконання умов щодо договору, кваліфікацій, страхування, виду професії та wynagrodzenie.",
-          sourceLocator: "Art. 127 pkt 1–3",
+          text: "Art. 127 вимагає для zezwolenia na pobyt czasowy у zawodzie wymagającym wysokich kwalifikacji сукупного виконання умов art. 127 pkt 1 lit. a–d (lit. e є uchylona), pkt 2 і pkt 3: щодо договору, кваліфікацій, страхування, виду професії та wynagrodzenie.",
+          sourceLocator: "Art. 127 pkt 1 lit. a–e, pkt 2–3",
         },
       ],
       summary:
@@ -227,7 +226,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "pkt 1 lit. a–d",
           explanation:
-            "Потрібен договір щонайменше на 6 місяців, належні formalne або wyższe kwalifikacje залежно від професії та ubezpieczenie zdrowotne або підтвердження покриття лікування.",
+            "Потрібен договір щонайменше на 6 місяців, formalne kwalifikacje та інші умови для zawód regulowany або wyższe kwalifikacje zawodowe для нерегульованої професії, а також ubezpieczenie zdrowotne чи підтвердження покриття лікування. Lit. e позначена як uchylona і не містить чинної умови.",
         },
         {
           locator: "pkt 2",
@@ -247,11 +246,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-127a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 127a дозволяє minister właściwy do spraw wewnętrznych визначити розпорядженням річний ліміт вперше наданих zezwoleń за art. 127 та вимагає оголошення досягнення ліміту.",
+          text: "Art. 127a дозволяє minister właściwy do spraw wewnętrznych у porozumieniu з міністрами, відповідальними за pracę та gospodarkę, визначити w drodze rozporządzenia річний ліміт вперше наданих zezwoleń за art. 127 і зобов’язує оголосити досягнення ліміту.",
           sourceLocator: "Art. 127a ust. 1–3",
         },
       ],
@@ -261,7 +260,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 1",
           explanation:
-            "Ліміт може охоплювати окремі województwa, zawody, види umów або види діяльності podmiotu за визначеною класифікацією.",
+            "Ліміт може охоплювати окремі województwa, zawody, rodzaje umów, на підставі яких cudzoziemiec може виконувати роботу, або rodzaje działalności podmiotu powierzającego pracę за класифікацією, визначеною в окремих przepisach.",
         },
         {
           locator: "ust. 2–3",
@@ -276,7 +275,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-128",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -300,7 +299,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-129",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -314,7 +313,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "pkt 1",
           explanation:
-            "Виняток можливий, якщо безпосередньо перед заявою cudzoziemiec мав відповідне zezwolenie або zezwolenie na pracę у того самого podmiotu і на тій самій посаді.",
+            "Виняток можливий, якщо безпосередньо перед поданням wniosku cudzoziemiec мав у того самого podmiotu на тому самому stanowisko zezwolenie na pracę, zezwolenie na pobyt czasowy i pracę або zezwolenie за art. 127.",
         },
         {
           locator: "pkt 2–3",
@@ -329,7 +328,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-130",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -353,21 +352,27 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-131",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 131 передбачає odmowa wszczęcia postępowania за art. 127 у перелічених ситуаціях, зокрема при іншому zezwoleniu, відрядженні, окремих цілях візи або перебуванні на визначених підставах.",
-          sourceLocator: "Art. 131 pkt 1–8",
+          text: "Art. 131, poza випадками art. 99 ust. 1 pkt 1–3 і 5–10 та ust. 1a, передбачає odmowa wszczęcia postępowania про zezwolenie за art. 127, якщо на день wniosku cudzoziemiec має названий статус, візу або модель роботи.",
+          sourceLocator:
+            "Art. 131 (wprowadzenie do wyliczenia), pkt 1, 1a–4, 6–8 (pkt 5 uchylony)",
         },
       ],
       summary:
         "Стаття визначає бар’єри саме для wszczęcie postępowania про zezwolenie за art. 127, з установленими в ній винятками art. 99.",
       rules: [
         {
-          locator: "pkt 1–4",
+          locator: "wprowadzenie do wyliczenia, pkt 1, 1a–4",
           explanation:
-            "До переліку належать, серед іншого, заявка або наявність zezwolenia за art. 151 чи 151b, тимчасове відрядження з іншої держави ЄС, міжнародні зобов’язання та art. 186 ust. 1 pkt 3 lit. a.",
+            "З урахуванням винятків art. 99, до переліку належать ubieganie się або наявність zezwolenia за art. 151 (pkt 1) чи art. 151b (pkt 1a), тимчасове відрядження з іншої держави ЄС (pkt 2), перебування на підставі міжнародних зобов’язань (pkt 3) та zezwolenie за art. 186 ust. 1 pkt 3 lit. a (pkt 4).",
+        },
+        {
+          locator: "pkt 5",
+          explanation:
+            "Pkt 5 має позначку «(uchylony)» і не містить чинної підстави odmowa wszczęcia.",
         },
         {
           locator: "pkt 6–8",
@@ -382,17 +387,23 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-132",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 132 передбачає odmowa udzielenia zezwolenia за art. 127, зокрема при досягненні річного ліміту або коли podmiot powierzający pracę має перелічені проблеми з діяльністю, внесками, податками чи минулими порушеннями.",
-          sourceLocator: "Art. 132 pkt 2–3",
+          text: "Art. 132, poza випадками art. 100 ust. 1 pkt 1–5, 8 і 9, передбачає odmowa udzielenia zezwolenia за art. 127, зокрема при досягненні ліміту або за наявності названих обставин щодо podmiot powierzający pracę; pkt 1 позначений як uchylony.",
+          sourceLocator:
+            "Art. 132 (wprowadzenie do wyliczenia), pkt 1–3 (pkt 1 uchylony)",
         },
       ],
       summary:
         "Стаття переносить частину перевірки на podmiot powierzający pracę та встановлює наслідки досягнення ліміту.",
       rules: [
+        {
+          locator: "wprowadzenie do wyliczenia, pkt 1",
+          explanation:
+            "Відмова застосовується поза випадками art. 100 ust. 1 pkt 1–5, 8 і 9; pkt 1 позначено як «(uchylony)» і він не містить чинної підстави.",
+        },
         {
           locator: "pkt 2",
           explanation:
@@ -401,7 +412,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "pkt 3 lit. a–e",
           explanation:
-            "Перевіряються, зокрема, створення podmiot головно для полегшення в’їзду, визначені покарання чи засудження особи, яка ним керує, несплата składek, податкові борги без названого законом врегулювання та відсутність діяльності або upadłość.",
+            "Перевіряються, зокрема, створення podmiot головно для полегшення в’їзду, його zarządzanie або kontrola особою з названими prawomocnymi покараннями чи засудженнями, несплата składek, податкові борги без передбаченого законом zwolnienie/odroczenie/raty або wstrzymanie виконання, а також відсутність działalności чи upadłość.",
         },
       ],
       legalEffect:
@@ -411,12 +422,12 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-133",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 133 встановлює cofnięcie zezwolenia за art. 127, коли cudzoziemiec не виконує висококваліфіковану роботу, виникають названі підстави art. 100 або art. 132 pkt 3 lit. c–d, чи не виконано повідомлення за art. 134.",
-          sourceLocator: "Art. 133 ust. 1–2",
+          text: "Art. 133, poza випадками art. 101 pkt 1 або 2, встановлює cofnięcie zezwolenia за art. 127, коли cudzoziemiec не виконує висококваліфіковану роботу, виникає обставина art. 100 ust. 1 pkt 2, 4, 5 або 8, art. 132 ust. 1 pkt 3 lit. c або d, чи не виконано повідомлення за art. 134.",
+          sourceLocator: "Art. 133 ust. 1 pkt 1–4, ust. 1a, ust. 2",
         },
       ],
       summary:
@@ -425,12 +436,12 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1–4",
           explanation:
-            "Підставами є невиконання роботи у zawodzie wymagającym wysokich kwalifikacji, окремі обставини art. 100, несплата składek або податкові обставини podmiot та невиконання повідомлення art. 134.",
+            "Підставами є невиконання роботи у zawodzie wymagającym wysokich kwalifikacji (pkt 1), обставини art. 100 ust. 1 pkt 2, 4, 5 або 8 (pkt 2), несплата składek чи податкові обставини podmiot за art. 132 ust. 1 pkt 3 lit. c або d (pkt 3), а також невиконання zawiadomienie за art. 134 (pkt 4).",
         },
         {
-          locator: "ust. 1a",
+          locator: "ust. 1a pkt 1–2",
           explanation:
-            "Для підстави з pkt 4 виняток можливий, якщо cudzoziemiec доведе повідомлення або незалежну від нього недоставку повідомлення wojewodzie.",
+            "Для підстави з ust. 1 pkt 4 виняток можливий, якщо cudzoziemiec доведе виконання zawiadomienia за art. 134 (pkt 1) або його недоставку wojewodzie з причин, незалежних від cudzoziemca (pkt 2).",
         },
         {
           locator: "ust. 2",
@@ -445,7 +456,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-133a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -464,7 +475,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 2",
           explanation:
-            "При mobilność długoterminowa в іншій державі ЄС рішення у названих випадках не видається раніше отримання від неї інформації про видачу або відмову у видачі документа.",
+            "При mobilność długoterminowa в іншій державі ЄС рішення у випадках art. 133 ust. 1 pkt 1, 3 і 4 не видається раніше отримання від цієї держави інформації про видачу або відмову у видачі документа.",
         },
         {
           locator: "ust. 3",
@@ -479,12 +490,12 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-134",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 134 зобов’язує cudzoziemca з zezwoleniem за art. 127 письмово повідомляти wojewodę протягом 15 dni roboczych про втрату роботи, зміну podmiotu та припинення виконання умов.",
-          sourceLocator: "Art. 134 ust. 1–3",
+          text: "Art. 134 ust. 1–3 зобов’язують cudzoziemca з zezwoleniem за art. 127 письмово повідомляти wojewodę протягом 15 dni roboczych про втрату роботи, зміну podmiotu та припинення виконання умов; ust. 1a і 3 визначають адресата при рішенні Szef Urzędu в другій інстанції.",
+          sourceLocator: "Art. 134 ust. 1, ust. 1a, ust. 2 pkt 1–2, ust. 3",
         },
       ],
       summary:
@@ -496,9 +507,9 @@ export const foreignersActPart04 = defineEditorialPart<
             "Про втрату роботи повідомляють wojewodę, який надав zezwolenie, протягом 15 dni roboczych.",
         },
         {
-          locator: "ust. 2",
+          locator: "ust. 2 pkt 1–2",
           explanation:
-            "У той самий строк повідомляють про зміну podmiotu powierzającego pracę та про припинення виконання вимог для zezwolenia.",
+            "У той самий строк повідомляють про зміну podmiotu powierzającego pracę (pkt 1) та про припинення виконання вимог для zezwolenia (pkt 2).",
         },
         {
           locator: "ust. 1a i ust. 3",
@@ -513,7 +524,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-134a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -542,7 +553,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-135",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -566,7 +577,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-136",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -590,7 +601,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-137",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -598,8 +609,7 @@ export const foreignersActPart04 = defineEditorialPart<
           sourceLocator: "Art. 137",
         },
       ],
-      summary:
-        "Стаття визначає обов’язкові елементи decyzja про Blue Card.",
+      summary: "Стаття визначає обов’язкові елементи decyzja про Blue Card.",
       rules: [
         {
           locator: "Art. 137",
@@ -614,12 +624,12 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-137a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 137a визначає умови zezwolenia na pobyt czasowy для mobilność długoterminowa posiadacza Niebieskiej Karty UE, включно з договором від 6 місяців, документом ICT/Blue Card, страховкою та wynagrodzenie 150% середньої зарплати.",
-          sourceLocator: "Art. 137a ust. 1 pkt 1–2",
+          text: "Art. 137a визначає умови zezwolenia na pobyt czasowy для mobilność długoterminowa posiadacza Niebieskiej Karty UE: мету висококваліфікованої роботи, договір від 6 місяців, документ з adnotacją «Niebieska Karta UE» іншої держави ЄС, безпосереднє попереднє перебування на його підставі, ubezpieczenie та wynagrodzenie не нижче 150% середньої зарплати.",
+          sourceLocator: "Art. 137a ust. 1 pkt 1 lit. a–d, pkt 2",
         },
       ],
       summary:
@@ -628,7 +638,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1 lit. a–d",
           explanation:
-            "Потрібні договір щонайменше на 6 місяців, формальні кваліфікації для zawód regulowany, документ pobytowy з adnotacją «Niebieska Karta UE» іншої держави ЄС, попереднє перебування там 12 місяців або 6 місяців мобільності та ubezpieczenie zdrowotne.",
+            "Потрібні договір щонайменше на 6 місяців (lit. a), formalne kwalifikacje та інші умови для zawód regulowany (lit. b), документ pobytowy іншої держави ЄС з adnotacją «Niebieska Karta UE» і безпосереднє перебування перед в’їздом на його підставі щонайменше 12 місяців або 6 місяців mobilność długoterminowa (lit. c), а також ubezpieczenie zdrowotne або підтвердження покриття лікування (lit. d).",
         },
         {
           locator: "ust. 1 pkt 2",
@@ -643,7 +653,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-137b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -667,7 +677,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-137c",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -691,7 +701,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-137d",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -720,7 +730,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-137e",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -744,7 +754,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-138",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -773,11 +783,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-138a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 138a передбачає оголошення minister właściwy do spraw wewnętrznych переліку zawodów, де трирічний досвід може визнаватися як wyższe kwalifikacje zawodowe за умовами директиви.",
+          text: "Art. 138a зобов’язує minister właściwy do spraw wewnętrznych шляхом obwieszczenia в Monitor Polski оголосити wykaz zawodów, для яких виконання роботи дає підставу визнати професійні кваліфікації, здобуті через trzyletnie doświadczenie zawodowe, відповідно до załącznika I dyrektywy (UE) 2021/1883.",
           sourceLocator: "Art. 138a",
         },
       ],
@@ -787,7 +797,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "Art. 138a",
           explanation:
-            "Перелік оголошується в Monitor Polski з урахуванням класифікації zawodów і має відповідати змісту załącznika I до dyrektywy (UE) 2021/1883.",
+            "Wykaz оголошується в Monitor Polski у drodze obwieszczenia з урахуванням класифікації zawodów за art. 29 ust. 3 pkt 1 ustawy o rynku pracy i służbach zatrudnienia; він має відповідати змісту załącznika I до dyrektywy (UE) 2021/1883.",
         },
       ],
       legalEffect:
@@ -797,7 +807,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-138b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -821,7 +831,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -841,35 +851,41 @@ export const foreignersActPart04 = defineEditorialPart<
       legalEffect:
         "Не можна вивести з поточного Art. 139 самостійну підставу для pobyt чи праці.",
       foreignersCase:
-        "Не використовуйте Art. 139 як чинну норму; для пренесення всередині підприємства читайте актуальні статті Rozdział 3a.",
+        "Не використовуйте Art. 139 як чинну норму; для przeniesienia wewnątrz przedsiębiorstwa читайте актуальні статті Rozdział 3a.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139a встановлює сукупні умови zezwolenia na pobyt czasowy для роботи в jednostka przyjmująca у рамках przeniesienia wewnątrz przedsiębiorstwa.",
-          sourceLocator: "Art. 139a ust. 1–4",
+          text: "Art. 139a встановлює сукупні умови zezwolenia na pobyt czasowy для роботи в jednostka przyjmująca у рамках przeniesienia wewnątrz przedsiębiorstwa: для kadra kierownicza, specjalista або stażysta, з правилами щодо договору в ust. 1 pkt 2, стажу та доказу в ust. 4.",
+          sourceLocator:
+            "Art. 139a ust. 1 pkt 1 lit. a–f, pkt 2 lit. a–d, ust. 2–4",
         },
       ],
       summary:
         "ICT-zezwolenie охоплює працівника kadry kierowniczej, спеціаліста або стажера та вимагає кваліфікацій, попередньої роботи, страхування, житла й документованих умов przeniesienia.",
       rules: [
         {
-          locator: "ust. 1 pkt 1",
+          locator: "ust. 1 pkt 1 lit. a–f",
           explanation:
-            "Потрібні відповідні kwalifikacje або диплом, вимоги для zawód regulowany, безперервна робота у підприємстві/групі 12 місяців для kadra/specjalista або 6 місяців для стажера, ubezpieczenie, житло та можливість повернення до grupy поза ЄС.",
+            "Для kadra kierownicza або specjalista потрібні adekwatne kwalifikacje та досвід, для stażysta — диплом wyższe; для zawód regulowany — formalne kwalifikacje та інші умови (lit. a–b), безперервне zatrudnienie у підприємстві/групі 12 місяців або 6 місяців (lit. c), ubezpieczenie (lit. d), житло (lit. e) та можливість повернення до pracodawca macierzysty або групи поза ЄС (lit. f).",
         },
         {
-          locator: "ust. 1 pkt 2 i ust. 2",
+          locator: "ust. 1 pkt 2 lit. a–d, ust. 2 pkt 1–3",
           explanation:
-            "Письмовий договір або документ pracodawca macierzysty має містити строк, місце jednostka przyjmująca, stanowisko, wynagrodzenie та інші умови; для стажера додатково потрібні програма, тривалість і нагляд.",
+            "Письмовий договір або документ pracodawca macierzysty має містити строк przeniesienia (lit. a), siedziba jednostka przyjmująca (lit. b), stanowisko (lit. c), wynagrodzenie та інші умови роботи (lit. d); для стажера додатково потрібні програма, тривалість і нагляд (ust. 2 pkt 1–3).",
         },
         {
-          locator: "ust. 3",
+          locator: "ust. 3 pkt 1–3",
           explanation:
-            "Wynagrodzenie має перевищувати поріг допомоги для cudzoziemca та утриманих членів сім’ї, бути не нижчим за порівнянну польську роботу й не нижчим за 70% середньої brutto-винагороди у województwo.",
+            "Wynagrodzenie має перевищувати поріг допомоги для cudzoziemca та утриманих членів сім’ї (pkt 1), бути не нижчим за wynagrodzenie порівнянної польської роботи (pkt 2) і не нижчим за 70% середньої місячної brutto-винагороди у województwo (pkt 3).",
+        },
+        {
+          locator: "ust. 4",
+          explanation:
+            "До документа, який підтверджує умову попередньої безперервної роботи з ust. 1 pkt 1 lit. c, не застосовується art. 8 ust. 2.",
         },
       ],
       legalEffect:
@@ -879,21 +895,20 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139b дозволяє встановити річний ліміт вперше наданих zezwoleń за art. 139a та вимагає врахувати потреби ринку праці, безпеку і porządek publiczny.",
+          text: "Art. 139b дозволяє minister właściwy do spraw wewnętrznych у porozumieniu з міністрами, відповідальними за pracę та gospodarkę, визначити w drodze rozporządzenia річний ліміт вперше наданих zezwoleń за art. 139a і вимагає врахувати potrzeby rynku pracy, безпеку та porządek publiczny.",
           sourceLocator: "Art. 139b ust. 1–3",
         },
       ],
-      summary:
-        "Стаття регулює можливий річний ліміт для ICT-zezwolenia.",
+      summary: "Стаття регулює можливий річний ліміт для ICT-zezwolenia.",
       rules: [
         {
           locator: "ust. 1",
           explanation:
-            "Ліміт може бути встановлений для окремих województwa, zawodów або видів діяльності jednostek przyjmujących.",
+            "W drodze rozporządzenia ліміт може охоплювати окремі województwa, zawody або rodzaje działalności jednostek przyjmujących; конкретна кількість у Art. 139b не встановлена.",
         },
         {
           locator: "ust. 2–3",
@@ -908,7 +923,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139c",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -937,7 +952,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139d",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -961,12 +976,12 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139e",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139e визначає випадки odmowa wszczęcia postępowania про art. 139a, зокрема коли перший або найдовший pobyt має бути в іншій державі ЄС або наявні названі статуси й види роботи.",
-          sourceLocator: "Art. 139e pkt 1–2",
+          text: "Art. 139e визначає випадки odmowa wszczęcia postępowania про zezwolenie за art. 139a: коли перший або найдовший pobyt у ЄС має бути в іншій державі-члені, або коли на день wniosku наявні перелічені zezwolenia, статус pobyt чи модель роботи.",
+          sourceLocator: "Art. 139e pkt 1–2 lit. a–g (у т. ч. lit. ba)",
         },
       ],
       summary:
@@ -980,21 +995,21 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "pkt 2 lit. a–g",
           explanation:
-            "Також названо, серед іншого, заяву/наявність art. 144, 151 або 151b, відрядження, działalność gospodarczą, роботу через агенцію чи udostępnianie pracowników, перебування в Польщі (крім kolejnego zezwolenia) або в іншій державі ЄС.",
+            "Також названо заяву або наявність zezwolenia за art. 144 (lit. a), art. 151 (lit. b) чи art. 151b (lit. ba), відрядження (lit. c), działalność gospodarczą (lit. d), роботу через agencję/udostępnianie або посередництво (lit. e), pobyt у Польщі поза винятком kolejnego zezwolenia на підставі art. 139a (lit. f) чи pobyt в іншій державі ЄС (lit. g).",
         },
       ],
       legalEffect:
-        "Ці обставини стосуються wszczęcie постадження, а не є автоматичним висновком про відсутність усіх матеріальних умов art. 139a.",
+        "Ці обставини стосуються wszczęcia провадження, а не є автоматичним висновком про відсутність усіх матеріальних умов art. 139a.",
       foreignersCase:
         "На день подання визначте перший/найдовший pobyt, державу фактичного перебування, інші zezwolenia та реальну модель праці; саме ці факти запускають або виключають правило.",
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139f",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139f перелічує підстави відмови у zezwoleniu за art. 139a та додаткові підстави відмови у kolejnego zezwolenia, зокрема проблеми jednostka przyjmująca, неправдиві дані, ліміт і перевищення строку przeniesienia.",
+          text: "Art. 139f перелічує підстави odmowa udzielenia zezwolenia за art. 139a та додаткові підстави для kolejnego zezwolenia, зокрема проблеми pracodawca macierzysty або jednostka przyjmująca, неправдиві дані, ліміт і завершення строку przeniesienia.",
           sourceLocator: "Art. 139f ust. 1–2",
         },
       ],
@@ -1019,11 +1034,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139g",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139g передбачає cofnięcie zezwolenia за art. 139a, якщо його використовують не за метою, виникла названa підстава art. 100 або обставина art. 139f ust. 1 pkt 1, 3 чи 4.",
+          text: "Art. 139g, poza випадками art. 101 pkt 1 або 2, передбачає cofnięcie zezwolenia за art. 139a, якщо його використовують не за метою, виникла обставина art. 100 ust. 1 pkt 2, 4 або 8, чи наявна обставина art. 139f ust. 1 pkt 1, 3 або 4.",
           sourceLocator: "Art. 139g pkt 1–3",
         },
       ],
@@ -1038,7 +1053,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "pkt 2–3",
           explanation:
-            "Також відсиланням охоплено art. 100 ust. 1 pkt 2, 4 або 8 та окремі обставини art. 139f ust. 1 pkt 1, 3 або 4.",
+            "Також відсиланням охоплено саме art. 100 ust. 1 pkt 2, 4 або 8 та окремі обставини art. 139f ust. 1 pkt 1, 3 або 4.",
         },
       ],
       legalEffect:
@@ -1048,7 +1063,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139h",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1056,8 +1071,7 @@ export const foreignersActPart04 = defineEditorialPart<
           sourceLocator: "Art. 139h pkt 1–4",
         },
       ],
-      summary:
-        "Стаття задає ключові реквізити рішення про ICT-pobyt.",
+      summary: "Стаття задає ключові реквізити рішення про ICT-pobyt.",
       rules: [
         {
           locator: "pkt 1–4",
@@ -1072,7 +1086,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139i",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1101,11 +1115,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139j",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139j регулює передавання інформації про ICT-мобільність між Szef Urzędu, wojewoda та органами інших держав ЄС, включно з інформацією про cofnięcie zezwolenia.",
+          text: "Art. 139j регулює передавання інформації про ICT-мобільність між Szef Urzędu, wojewoda та органами інших держав ЄС, включно з даними за art. 22 ust. 1 pkt 8a lit. c і f та інформацією про cofnięcie zezwolenia.",
           sourceLocator: "Art. 139j ust. 1–3",
         },
       ],
@@ -1115,12 +1129,12 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 1",
           explanation:
-            "Szef Urzędu передає wojewoda відомості про cudzoziemca та sprzeciw до мобільності, отримані від інших держав ЄС.",
+            "Szef Urzędu передає wojewodzie, який надав zezwolenie, інформацію про cudzoziemca за art. 22 ust. 1 pkt 8a lit. c tiret pierwsze, zawiadomienie за lit. f tiret pierwsze та інформацію про sprzeciw до мобільності, отримані від інших держав ЄС.",
         },
         {
           locator: "ust. 2–3",
           explanation:
-            "Wojewoda передає Szef Urzędu копію рішення про cofnięcie, а Szef Urzędu без зволікання інформує держави ЄС, де cudzoziemiec користується мобільністю.",
+            "Якщо cudzoziemcowi в іншій державі ЄС cofnięto zezwolenie за art. 139a, wojewoda передає Szef Urzędu копію decyzja (ust. 2); Szef Urzędu без зволікання інформує держави ЄС, де особа користується мобільністю (ust. 3).",
         },
       ],
       legalEffect:
@@ -1130,7 +1144,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139k",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1164,7 +1178,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139l",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1182,8 +1196,7 @@ export const foreignersActPart04 = defineEditorialPart<
         },
         {
           locator: "ust. 2",
-          explanation:
-            "У цій ситуації art. 108 застосовується відповідно.",
+          explanation: "У цій ситуації art. 108 застосовується відповідно.",
         },
       ],
       legalEffect:
@@ -1193,7 +1206,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139m",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1222,7 +1235,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139ma",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1236,7 +1249,7 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "Art. 139ma",
           explanation:
-            "Jednostka повідомляє właściwy organ іншої państwo członkowskie, де планується мобільність, та Szef Urzędu, якщо таку вимогу передбачають приписи тієї держави.",
+            "Jednostka повідомляє właściwy organ innego państwa członkowskiego, де планується мобільність, та Szef Urzędu, якщо przepisy цієї держави вимагають такого zawiadomienia.",
         },
       ],
       legalEffect:
@@ -1246,12 +1259,12 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139n",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139n допускає krótkoterminowa mobilność ICT у Польщі за трьох сукупних умов: мета роботи, документ «ICT» іншої держави ЄС і zawiadomienie без sprzeciw Szef Urzędu протягом 20 днів.",
-          sourceLocator: "Art. 139n ust. 1–13",
+          text: "Art. 139n допускає krótkoterminowa mobilność ICT у Польщі за трьох сукупних умов ust. 1 pkt 1–3: мета роботи, документ з adnotacją «ICT» іншої держави ЄС і zawiadomienie від jednostka, після якого Szef Urzędu не видав sprzeciw протягом 20 днів.",
+          sourceLocator: "Art. 139n ust. 1 pkt 1–3, ust. 2–13",
         },
       ],
       summary:
@@ -1265,12 +1278,12 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 6",
           explanation:
-            "Szef Urzędu видає sprzeciw за названих обставин, зокрема невиконання умов jednostka, недостатня кваліфікація/оплата, непокритий строк документа, безпекові підстави, неправдиві дані або записи в системах.",
+            "Szef Urzędu видає decyzję o sprzeciw за ust. 6 pkt 1–8: зокрема через невиконання умов jednostka (pkt 1), недостатні kwalifikacje (pkt 2), занизьку порівнянну оплату (pkt 3), непокритий строк документа (pkt 4), оборонні/безпекові підстави (pkt 5), неправдиві дані або документи (pkt 6), запис у wykazie (pkt 7) чи SIS (pkt 8).",
         },
         {
           locator: "ust. 7–13",
           explanation:
-            "Органи передають інформацію протягом 15 днів; за її ненадходження вважається, що вимогу виконано. Decyzja про sprzeciw є ostateczna, а без неї Szef Urzędu видаляє дані з EES у строк 5 dni roboczych.",
+            "За ust. 7–10 Szef Urzędu запитує інформацію в названих органів, які мають 15 днів; за її ненадходження вважається, що вимогу виконано, а обмін може бути електронним. Decyzja про sprzeciw є ostateczna (ust. 11), про неї повідомляють державу, яка видала документ (ust. 12), а без sprzeciw Szef Urzędu видаляє дані з EES протягом 5 dni roboczych (ust. 13).",
         },
       ],
       legalEffect:
@@ -1280,21 +1293,21 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139o",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139o визначає умови zezwolenia на pobyt для mobilność długoterminowa працівника kadry kierowniczej, спеціаліста або стажера з документом «ICT» іншої держави ЄС.",
-          sourceLocator: "Art. 139o ust. 1–2",
+          text: "Art. 139o визначає умови zezwolenia na pobyt для mobilność długoterminowa працівника kadry kierowniczej, specjalista або stażysta з документом «ICT» іншої держави ЄС; ust. 1 pkt 1 lit. a, aa–d і pkt 2 та ust. 2 встановлюють сукупні умови.",
+          sourceLocator: "Art. 139o ust. 1 pkt 1 lit. a, aa–d, pkt 2, ust. 2",
         },
       ],
       summary:
         "Дозвіл довгострокової ICT-мобільності вимагає відповідної ролі, документа іншої держави, страхування, житла, можливості повернення та визначених умов договору.",
       rules: [
         {
-          locator: "ust. 1 pkt 1",
+          locator: "ust. 1 pkt 1 lit. a, aa–d",
           explanation:
-            "Потрібні formalne kwalifikacje для zawód regulowany, документ з adnotacją «ICT» іншої держави ЄС, ubezpieczenie, житло в Польщі та можливість повернення до pracodawca macierzysty або grupy поза ЄС.",
+            "Потрібні formalne kwalifikacje та інші умови для zawód regulowany (lit. a), документ іншої держави ЄС з adnotacją «ICT» (lit. aa), ubezpieczenie (lit. b), місце проживання в Польщі (lit. c) та можливість повернення до pracodawca macierzysty або grupy поза ЄС (lit. d).",
         },
         {
           locator: "ust. 1 pkt 2",
@@ -1314,7 +1327,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139p",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1343,7 +1356,7 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139q",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1367,11 +1380,11 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139r",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139r передбачає odmowa wszczęcia postępowania про art. 139o за наявності певних zezwoleń або моделей роботи та якщо заява подана в день чи протягом 14 днів після zawiadomienie за art. 139n.",
+          text: "Art. 139r передбачає odmowa wszczęcia postępowania про zezwolenie за art. 139o за наявності певних zezwoleń або моделей роботи, а також якщо wniosek подано в день отримання Szef Urzędu zawiadomienie за art. 139n ust. 1 pkt 3 чи протягом наступних 14 днів.",
           sourceLocator: "Art. 139r ust. 1–2",
         },
       ],
@@ -1381,12 +1394,12 @@ export const foreignersActPart04 = defineEditorialPart<
         {
           locator: "ust. 1 pkt 1–5",
           explanation:
-            "Провадження не починають при art. 144, 151 або 151b, відрядженні, działalność gospodarcza, роботі через agencja pracy tymczasowej/udostępnianie або przeniesieniu за посередництва відповідного podmiot.",
+            "Провадження не починають при zezwolenie за art. 144 (ust. 1 pkt 1), art. 151 (pkt 2) або art. 151b (pkt 2a), відрядженні (pkt 3), działalność gospodarcza (pkt 4), роботі через agencja pracy tymczasowej/udostępnianie або przeniesieniu за посередництва відповідного podmiot (pkt 5).",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Також відмовляють у wszczęcie, якщо wniosek подано в день отримання Szef Urzędu zawiadomienie за art. 139n ust. 1 pkt 3 або протягом наступних 14 днів.",
+            "Також odmawia się wszczęcia, якщо wniosek подано в день отримання Szef Urzędu zawiadomienia за art. 139n ust. 1 pkt 3 або протягом наступних 14 днів (ust. 2).",
         },
       ],
       legalEffect:
@@ -1396,12 +1409,12 @@ export const foreignersActPart04 = defineEditorialPart<
     },
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139s",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 139s перелічує підстави відмови у zezwoleniu за art. 139o та додаткові підстави для kolejnego zezwolenia, зокрема завершення строку ICT, неправдиві дані, проблеми podmiot і nielegalny pobyt.",
-          sourceLocator: "Art. 139s ust. 1–2",
+          text: "Art. 139s, poza випадками art. 100 ust. 1 pkt 1–4 і 8, перелічує підстави odmowa udzielenia zezwolenia за art. 139o та додаткові підстави для kolejnego zezwolenia, зокрема сплив строку ICT, неправдиві дані, проблеми podmiot, завершення строку przeniesienia і nielegalny pobyt.",
+          sourceLocator: "Art. 139s ust. 1 pkt 1–5, ust. 2",
         },
       ],
       summary:
