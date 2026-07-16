@@ -160,7 +160,8 @@ export function parseEditorialPartSource(source, filePath = "<source>") {
   return { filePath, documentId, editionId, entries }
 }
 
-function loadCorpus(currentEditionsPath, corpusRoot, issues) {
+/** @param {string} currentEditionsPath @param {string} corpusRoot @param {any[]} issues @param {any[]} warnings */
+function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
   const currentEditions = readJson(currentEditionsPath)
   const expectedById = new Map()
   const documents = new Set()
@@ -168,7 +169,17 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues) {
   for (const [documentId, configuredEdition] of Object.entries(
     currentEditions,
   )) {
-    if (documentId === "kpa") continue
+    if (documentId === "kpa") {
+      warnings.push(
+        issue(
+          "kpa-editorial-not-validated",
+          "KPA editorial coverage is not validated pending the Phase 2 migration",
+          { documentId },
+          "warning",
+        ),
+      )
+      continue
+    }
     const editionId =
       typeof configuredEdition === "string"
         ? configuredEdition
@@ -262,6 +273,7 @@ export function validateEditorial(options = {}) {
     currentEditionsPath,
     corpusRoot,
     corpusIssues,
+    warnings,
   )
 
   for (const corpusIssue of corpusIssues) errors.push(corpusIssue)

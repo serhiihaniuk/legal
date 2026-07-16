@@ -3,11 +3,16 @@ import { lstat, mkdir, readFile, realpath, rename, writeFile } from "node:fs/pro
 import path from "node:path"
 
 import { buildObservedFacts } from "./artifacts.mjs"
+import { buildDocument } from "../build-document.mjs"
 import { validateConfig, validateDate, validateHttpsUrl } from "./config.mjs"
 import { CorpusValidationError } from "./errors.mjs"
 import { sha256 } from "./extraction.mjs"
 import { validateCorpusFacts } from "./validation.mjs"
 import { generateRegistry } from "../generate-registry.mjs"
+import {
+  findReviewDependants,
+  scanTypedReferences,
+} from "./reference-scanner.mjs"
 
 /** @typedef {import("./types.mjs").Diagnostic} Diagnostic */
 
@@ -293,6 +298,32 @@ function fillTemplate(template, values) {
 }
 
 /**
+ * Render the scanner's dependant locations into the human work packet.
+ * @param {Array<{ provisionId: string, references: Array<{ file: string, line: number }> }>} dependants
+ * @returns {string}
+ */
+export function renderReviewDependants(dependants) {
+  if (!dependants.length) return "none"
+  return dependants.map(({ provisionId, references }) => {
+    const locations = references.length
+      ? references.map(({ file, line }) => "  - `" + file + ":" + line + "`").join("\n")
+      : "  - no typed references found"
+    return "- `" + provisionId + "`\n" + locations
+  }).join("\n")
+}
+
+/**
+ * Discover typed-reference locations for a diff. Keeping this seam in the
+ * lifecycle module makes prepare and standalone diff use exactly one graph.
+ * @param {{ projectRoot: string, provisionIds: string[] }} options
+ * @returns {Promise<Array<{ provisionId: string, references: Array<{ file: string, line: number }> }>>}
+ */
+export async function discoverReviewDependants({ projectRoot, provisionIds }) {
+  const scan = await scanTypedReferences({ projectRoot })
+  return findReviewDependants(scan.references, provisionIds)
+}
+
+/**
  * @param {{
  *   projectRoot: string,
  *   mode: "add" | "update",
@@ -302,6 +333,8 @@ function fillTemplate(template, values) {
  *   outputBase?: string,
  *   forceRebuild?: boolean,
  *   dryRun?: boolean,
+ *   fetchImpl?: typeof fetch,
+ *   getDocumentImpl?: typeof import("pdfjs-dist/legacy/build/pdf.mjs").getDocument,
  * }} options
  * @returns {Promise<any>}
  */
@@ -314,6 +347,8 @@ export async function prepareWorkOrder({
   outputBase,
   forceRebuild = false,
   dryRun = false,
+  fetchImpl = fetch,
+  getDocumentImpl,
 }) {
   if (mode !== "add" && mode !== "update") {
     throw new Error("prepare mode must be add or update")
@@ -385,10 +420,14 @@ export async function prepareWorkOrder({
   const scope = await validateApprovedWriteScope(approvedWriteScope, projectRoot)
   const baseCommit = await runCapture(projectRoot, "git", ["rev-parse", "HEAD"])
 
-  await runNode(projectRoot, "scripts/legal-corpus/build-document.mjs", [
+  await buildDocument({
+    projectRoot,
     configPath,
-    ...(forceRebuild ? ["--force-rebuild"] : []),
-  ])
+    forceRebuild,
+    fetchImpl,
+    getDocumentImpl,
+    emit: false,
+  })
   const [manifest, diagnostics, provisions] = await Promise.all([
     readJson(path.join(editionDirectory, "manifest.json")),
     readJson(path.join(editionDirectory, "diagnostics.json")),
@@ -420,10 +459,15 @@ export async function prepareWorkOrder({
         "provisions.json"
       )
     )
+    const provisionsDiff = diffProvisionLists(oldProvisions, provisions)
     editionDiff = {
       ...editionDiff,
       oldEditionId,
-      provisions: diffProvisionLists(oldProvisions, provisions),
+      provisions: provisionsDiff,
+      reviewDependants: await discoverReviewDependants({
+        projectRoot,
+        provisionIds: [...provisionsDiff.changed, ...provisionsDiff.removed],
+      }),
     }
   }
   await writeJson(editionDiffPath, editionDiff)
@@ -467,7 +511,7 @@ export async function prepareWorkOrder({
     ),
     "utf8"
   )
-  const prompt = fillTemplate(template, {
+  const prompt = `${fillTemplate(template, {
     MODE: mode,
     WORK_ORDER_PATH: path.relative(projectRoot, workOrderPath).replaceAll("\\", "/"),
     DOCUMENT_ID: workOrder.documentId,
@@ -486,9 +530,17 @@ export async function prepareWorkOrder({
     STRUCTURE_PATH: workOrder.artifacts.structure,
     DIAGNOSTICS_PATH: workOrder.artifacts.diagnostics,
     CHANGED_PROVISIONS_PATH_OR_NONE: workOrder.artifacts.editionDiff,
+    REVIEW_DEPENDANTS: renderReviewDependants(editionDiff.reviewDependants),
     APPROVED_WRITE_SCOPE: scope.join("\n"),
     PROVISION_ID: "<generated provision ID>",
-  })
+  })}
+
+## Generated typed-reference dependants
+
+Review these authored file/line references for every changed or removed provision before completing the work order. The scanner is static and only reports supported literal call patterns.
+
+${renderReviewDependants(editionDiff.reviewDependants)}
+`
   await mkdir(path.dirname(promptPath), { recursive: true })
   await writeFile(promptPath, prompt, "utf8")
   return { workOrder, workOrderPath, promptPath, editionDiffPath }
@@ -807,10 +859,17 @@ export function previewPromotion({ workOrder, approval, validation, currentPoint
  *   workOrder: Record<string, any>,
  *   workOrderPath: string,
  *   approvedBy: string,
+ *   verifyArtifacts?: boolean,
  * }} options
  * @returns {Promise<Record<string, unknown>>}
  */
-export async function promoteEdition({ projectRoot, workOrder, workOrderPath, approvedBy }) {
+export async function promoteEdition({ projectRoot, workOrder, workOrderPath, approvedBy, verifyArtifacts = false }) {
+  if (verifyArtifacts) {
+    const errors = await verifyPromotionArtifacts({ projectRoot, workOrder })
+    if (errors.length > 0) {
+      throw new Error(`Promotion blocked by corpus re-verification: ${errors.join("; ")}`)
+    }
+  }
   const pointerPath = path.join(
     projectRoot,
     "app/data/legal-library/current-editions.json"

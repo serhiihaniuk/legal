@@ -8,7 +8,9 @@ import { buildObservedFacts, buildStructure } from "../lib/artifacts.mjs"
 import { createProvisionId, sha256 } from "../lib/extraction.mjs"
 import {
   diffProvisionLists,
+  discoverReviewDependants,
   makeLegalStatusEvidence,
+  renderReviewDependants,
   normalizeRepositoryPath,
   prepareWorkOrder,
   previewPromotion,
@@ -160,6 +162,28 @@ test("classifies edition changes by stable provision id and source hash", () => 
     changed: ["act-art-2"],
     removed: ["act-art-3"],
     unchanged: ["act-art-1"],
+  })
+})
+
+test("prepare and standalone diff dependant discovery share typed file/line references", async () => {
+  await withTempCorpus(async (root) => {
+    const sourcePath = path.join(root, "app/data/legal-data.ts")
+    await mkdir(path.dirname(sourcePath), { recursive: true })
+    await writeFile(sourcePath, [
+      'const alphaLaw = createLegalTextAuthor("alpha")',
+      'alphaLaw.text`${alphaLaw.article("1")}`',
+    ].join("\n"))
+    const dependants = await discoverReviewDependants({
+      projectRoot: root,
+      provisionIds: ["alpha-art-1", "alpha-art-removed"],
+    })
+    assert.deepEqual(dependants, [
+      { provisionId: "alpha-art-1", references: [{ file: "app/data/legal-data.ts", line: 2 }] },
+      { provisionId: "alpha-art-removed", references: [] },
+    ])
+    assert.match(renderReviewDependants(dependants), /alpha-art-1/u)
+    assert.match(renderReviewDependants(dependants), /app\/data\/legal-data\.ts:2/u)
+    assert.match(renderReviewDependants(dependants), /alpha-art-removed/u)
   })
 })
 
