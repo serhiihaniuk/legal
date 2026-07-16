@@ -1,10 +1,9 @@
 import { spawn } from "node:child_process"
-import { URL } from "node:url"
 import { lstat, mkdir, readFile, realpath, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 import { buildObservedFacts } from "./artifacts.mjs"
-import { validateConfig } from "./config.mjs"
+import { validateConfig, validateDate, validateHttpsUrl } from "./config.mjs"
 import { sha256 } from "./extraction.mjs"
 import { validateCorpusFacts } from "./validation.mjs"
 
@@ -373,25 +372,36 @@ export function validateChangedFileSet(changedPaths, allowedPaths) {
     .sort((left, right) => left.localeCompare(right))
 }
 
+/**
+ * Validate work-order legal-status evidence to the same bar as config.mjs's
+ * schema-v2 evidence: `checkedAt`, `amendmentsCheckedThrough`, and the
+ * optional legal dates go through the shared real-calendar-date check
+ * (`"yesterday"` and `"2026-99-99"` both fail), and source URLs go through
+ * the shared HTTPS check. Self-attested work-order strings are otherwise as
+ * easy to tamper with as the fields config.mjs already hardens.
+ * @param {Record<string, unknown> | null | undefined} evidence
+ * @returns {string[]}
+ */
 export function validateLegalStatusEvidence(evidence) {
+  /** @type {Array<Record<string, unknown>>} */
+  const diagnostics = []
   const errors = []
-  for (const field of ["status", "inForce", "checkedAt", "amendmentsCheckedThrough"]) {
+  for (const field of ["status", "inForce"]) {
     if (typeof evidence?.[field] !== "string" || !evidence[field].trim()) {
       errors.push(`legalStatusEvidence.${field} is required`)
     }
   }
-  if (
-    evidence?.legalStateDate !== undefined &&
-    (typeof evidence.legalStateDate !== "string" || !evidence.legalStateDate.trim())
-  ) {
-    errors.push("legalStatusEvidence.legalStateDate is required when present")
+  validateDate(evidence?.checkedAt, "legalStatusEvidence.checkedAt", diagnostics)
+  validateDate(
+    evidence?.amendmentsCheckedThrough,
+    "legalStatusEvidence.amendmentsCheckedThrough",
+    diagnostics
+  )
+  if (evidence?.legalStateDate !== undefined) {
+    validateDate(evidence.legalStateDate, "legalStatusEvidence.legalStateDate", diagnostics)
   }
-  if (
-    evidence?.legalStatusDate !== undefined &&
-    evidence.legalStatusDate !== null &&
-    (typeof evidence.legalStatusDate !== "string" || !evidence.legalStatusDate.trim())
-  ) {
-    errors.push("legalStatusEvidence.legalStatusDate must be a non-empty string when present")
+  if (evidence?.legalStatusDate !== undefined && evidence.legalStatusDate !== null) {
+    validateDate(evidence.legalStatusDate, "legalStatusEvidence.legalStatusDate", diagnostics)
   }
   if (typeof evidence?.consolidatedTextIdentifier !== "string" || !evidence.consolidatedTextIdentifier.trim()) {
     errors.push("legalStatusEvidence.consolidatedTextIdentifier is required")
@@ -401,15 +411,11 @@ export function validateLegalStatusEvidence(evidence) {
   if (!Array.isArray(sourceUrls) || sourceUrls.length === 0) {
     errors.push("legalStatusEvidence.sourceUrls requires an explicit official URL")
   } else {
-    sourceUrls.forEach((value) => {
-      try {
-        const parsed = new URL(value)
-        if (parsed.protocol !== "https:" || !parsed.hostname) throw new Error("not HTTPS")
-      } catch {
-        errors.push("legalStatusEvidence source URLs must be absolute HTTPS URLs")
-      }
-    })
+    sourceUrls.forEach((value, index) =>
+      validateHttpsUrl(value, `legalStatusEvidence.sourceUrls[${index}]`, diagnostics)
+    )
   }
+  errors.push(...diagnostics.map((entry) => String(entry.message)))
 
   for (const field of ["entryIntoForce", "transitionalRules"]) {
     const entries = evidence?.[field]

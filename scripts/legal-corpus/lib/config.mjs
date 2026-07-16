@@ -27,6 +27,12 @@ function isPlainObject(value) {
   return value !== null && typeof value === "object" && !Array.isArray(value)
 }
 
+/**
+ * @param {unknown} value
+ * @param {string} field
+ * @param {Array<Record<string, unknown>>} diagnostics
+ * @returns {value is string}
+ */
 function requireString(value, field, diagnostics) {
   if (typeof value !== "string" || value.trim() === "") {
     diagnostics.push({
@@ -40,7 +46,17 @@ function requireString(value, field, diagnostics) {
   return true
 }
 
-function validateDate(value, field, diagnostics) {
+/**
+ * Real-calendar-date check shared by config and work-order evidence
+ * validation: `field` must be `YYYY-MM-DD` and round-trip through `Date`
+ * unchanged, so syntactically shaped but impossible dates (`2026-99-99`) or
+ * relative strings (`"yesterday"`) are rejected rather than accepted as
+ * evidence.
+ * @param {unknown} value
+ * @param {string} field
+ * @param {Array<Record<string, unknown>>} diagnostics
+ */
+export function validateDate(value, field, diagnostics) {
   if (!requireString(value, field, diagnostics)) return
   if (!DATE_PATTERN.test(value)) {
     diagnostics.push({
@@ -63,7 +79,12 @@ function validateDate(value, field, diagnostics) {
   }
 }
 
-function validateHttpsUrl(value, field, diagnostics) {
+/**
+ * @param {unknown} value
+ * @param {string} field
+ * @param {Array<Record<string, unknown>>} diagnostics
+ */
+export function validateHttpsUrl(value, field, diagnostics) {
   if (!requireString(value, field, diagnostics)) return
 
   try {
