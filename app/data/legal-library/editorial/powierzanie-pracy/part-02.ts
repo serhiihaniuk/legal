@@ -1441,7 +1441,8 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         {
           kind: "statute-text",
           text: "Art. 98 додає до Prawo przedsiębiorców винятки з окремих правил контролю, коли контроль проводить Straż Graniczna за art. 1 ust. 2 pkt 13a або Państwowa Inspekcja Pracy за art. 10 ust. 1 pkt 4 відповідних актів.",
-          sourceLocator: "Art. 98 pkt 1–2; art. 48 ust. 11 pkt 15–16 та art. 54 ust. 1 pkt 15–16 Prawo przedsiębiorców",
+          sourceLocator:
+            "Art. 98 pkt 1–2; art. 48 ust. 11 pkt 15–16 та art. 54 ust. 1 pkt 15–16 Prawo przedsiębiorców",
         },
       ],
       summary:
@@ -1470,7 +1471,8 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         {
           kind: "statute-text",
           text: "Art. 99 додає до ustawa про участь іноземних підприємців art. 4 ust. 3a: право вести діяльність у spółka z o.o., PSA або S.A. не охоплює повторюваних świadczeń niepieniężnych і праці або послуг в обмін на акції PSA.",
-          sourceLocator: "Art. 99; art. 4 ust. 3a pkt 1–2 ustawy o przedsiębiorcach zagranicznych",
+          sourceLocator:
+            "Art. 99; art. 4 ust. 3a pkt 1–2 ustawy o przedsiębiorcach zagranicznych",
         },
       ],
       summary:

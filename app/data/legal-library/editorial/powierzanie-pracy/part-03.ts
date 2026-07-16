@@ -18,12 +18,14 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
         {
           kind: "statute-text",
           text: "За art. 101 pkt 2 lit. a–b podmiot powierzający pracę cudzoziemcowi повідомляє powiatowy urząd pracy протягом 7 днів від початку роботи громадянина України та повторює повідомлення протягом 7 днів після визначених змін: виду umowy, stanowiska або виду роботи, зменшення часу чи годин роботи, або зниження ставки.",
-          sourceLocator: "Art. 101 pkt 2 lit. a–b, art. 22 ust. 1 pkt 2 і ust. 2 ustawy o pomocy obywatelom Ukrainy",
+          sourceLocator:
+            "Art. 101 pkt 2 lit. a–b, art. 22 ust. 1 pkt 2 і ust. 2 ustawy o pomocy obywatelom Ukrainy",
         },
         {
           kind: "statute-text",
           text: "Art. 101 pkt 2 lit. b передбачає, що обов’язок повідомлення не стосується випадків з art. 3 ust. 1–3 і 5 ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom.",
-          sourceLocator: "Art. 101 pkt 2 lit. b, art. 22 ust. 3 ustawy o pomocy obywatelom Ukrainy",
+          sourceLocator:
+            "Art. 101 pkt 2 lit. b, art. 22 ust. 3 ustawy o pomocy obywatelom Ukrainy",
         },
         {
           kind: "practical-inference",
@@ -530,7 +532,8 @@ export const powierzaniePracyPart03 = defineEditorialPart<"powierzanie-pracy">({
         {
           kind: "official-guidance",
           text: "Для цієї ustawy офіційні дані ELI вказують дату wejścia w życie 2025-06-01; акт опублікований як Dz.U. 2025 poz. 621.",
-          sourceLocator: "ELI: https://eli.gov.pl/eli/DU/2025/621/ogl; metadata: entryIntoForce",
+          sourceLocator:
+            "ELI: https://eli.gov.pl/eli/DU/2025/621/ogl; metadata: entryIntoForce",
         },
         {
           kind: "practical-inference",

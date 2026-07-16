@@ -1,7 +1,7 @@
-import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
+import { createLegalTextAuthor } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
 
-const kpaLaw = createLegalTextAuthor("kpa")
+const _kpaLaw = createLegalTextAuthor("kpa")
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 

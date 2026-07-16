@@ -6,7 +6,7 @@ import {
 
 const kpaLaw = createLegalTextAuthor("kpa")
 const ppsaLaw = createLegalTextAuthor("ppsa")
-const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+const _foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
 export type KpaGuideLevel = "beginner" | "practical" | "advanced"
 

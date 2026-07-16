@@ -1,5 +1,6 @@
 export const KPA_ELI_URL = "https://eli.gov.pl/eli/DU/2025/1691/ogl"
-export const KPA_PDF_URL = "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf"
+export const KPA_PDF_URL =
+  "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf"
 
 export type KpaArticleStatus = "active" | "repealed"
 
@@ -32,81 +33,593 @@ export type KpaArticleSection = {
 }
 
 export const kpaArticleSections: KpaArticleSection[] = [
-  { id: "i-1", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 1 — Zakres obowiązywania", start: "1", end: "5", learnerFocus: "Коли застосовується KPA, які справи охоплює кодекс і де шукати винятки та визначення.", practicalUse: "Спочатку відділіть матеріальні умови дозволу з ustawy szczególnej від процесуальних правил KPA.", keywords: ["zakres", "wyłączenia", "definicje", "RODO"] },
-  { id: "i-2", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 2 — Zasady ogólne", start: "6", end: "16", learnerFocus: "Загальні стандарти законності, довіри, інформування, участі сторони, швидкості та інстанційності.", practicalUse: "Поєднуйте засаду з конкретною дією органу і показуйте, як порушення вплинуло на факти або результат.", keywords: ["zasady", "zaufanie", "informowanie", "czynny udział"] },
-  { id: "i-3", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 3 — Organy wyższego stopnia i organy naczelne", start: "17", end: "18", learnerFocus: "Який орган контролює рішення і хто є органом вищого рівня.", practicalUse: "Перед odwołaniem перевірте lex specialis: саме він може змінити загальну систему органів.", keywords: ["organ wyższego stopnia", "organ naczelny"] },
-  { id: "i-4", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 4 — Właściwość organów", start: "19", end: "23", learnerFocus: "Компетенція rzeczowa і miejscowa та вирішення спорів між органами.", practicalUse: "Зафіксуйте норму компетенції, факт територіального зв’язку і доказ цього факту.", keywords: ["właściwość", "spór", "organ"] },
-  { id: "i-5", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 5 — Wyłączenie pracownika oraz organu", start: "24", end: "27a", learnerFocus: "Коли працівник, член колегіального органу або сам орган не повинен вести справу.", practicalUse: "Шукайте конкретний конфлікт інтересів і документуйте, хто після wyłączenia має продовжити справу.", keywords: ["wyłączenie", "bezstronność", "konflikt interesów"] },
-  { id: "i-6", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 6 — Strona", start: "28", end: "34", learnerFocus: "Хто є стороною, хто може її представляти та як оформити повноваження.", practicalUse: "Відрізняйте фактичну зацікавленість від interesu prawnego і перевіряйте zakres pełnomocnictwa.", keywords: ["strona", "pełnomocnik", "przedstawiciel"] },
-  { id: "i-7", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 7 — Załatwianie spraw", start: "35", end: "38", learnerFocus: "Строки розгляду, повідомлення про затримку та ponaglenie.", practicalUse: "Ведіть календар від wszczęcia, віднімайте законні періоди неврахування і перевіряйте pouczenie про ponaglenie.", keywords: ["termin", "bezczynność", "przewlekłość", "ponaglenie"] },
-  { id: "i-8", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 8 — Doręczenia", start: "39", end: "49b", learnerFocus: "Кому, куди, коли і з яким наслідком вручається кореспонденція.", practicalUse: "Дата skutecznego doręczenia запускає строки — збережіть підтвердження і перевірте адресу, представника та fikcję doręczenia.", keywords: ["doręczenie", "adres", "awizo", "obwieszczenie"] },
-  { id: "i-9", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 9 — Wezwania", start: "50", end: "56", learnerFocus: "Мета, обов’язкові елементи та спосіб виконання wezwania.", practicalUse: "Розкладіть wezwanie на: адресат, дія, підстава, строк, форма, наслідок і можливість уточнення.", keywords: ["wezwanie", "stawiennictwo", "wyjaśnienia"] },
-  { id: "i-10", division: "Dział I — Przepisy ogólne", chapter: "Rozdział 10 — Terminy", start: "57", end: "60", learnerFocus: "Як рахувати процесуальні строки і коли їх можна поновити.", practicalUse: "Запишіть подію-початок, одиницю часу, останній день, спосіб подання і доказ своєчасності.", keywords: ["termin", "przywrócenie terminu", "obliczanie"] },
-  { id: "ii-1", division: "Dział II — Postępowanie", chapter: "Rozdział 1 — Wszczęcie postępowania", start: "61", end: "66", learnerFocus: "Початок справи, podanie, braki formalne та подання до неправильного органу.", practicalUse: "Не змішуйте brak formalny з недоведенням матеріальної умови; для кожного дефекту перевірте окремий наслідок.", keywords: ["wszczęcie", "podanie", "braki formalne", "przekazanie"] },
-  { id: "ii-2", division: "Dział II — Postępowanie", chapter: "Rozdział 2 — Metryki, protokoły i adnotacje", start: "66a", end: "72", learnerFocus: "Як орган фіксує перебіг справи та окремі процесуальні дії.", practicalUse: "Порівнюйте протокол або adnotację з реальною дією: хто, коли, що сказав і які зауваження внесено.", keywords: ["metryka", "protokół", "adnotacja"] },
-  { id: "ii-3", division: "Dział II — Postępowanie", chapter: "Rozdział 3 — Udostępnianie akt", start: "73", end: "74a", learnerFocus: "Право доступу до матеріалів і межі відмови в доступі.", practicalUse: "Перед позицією або odwołaniem перевірте повний склад akt, зробіть копії та оскаржте формальну відмову.", keywords: ["akta", "wgląd", "odpis", "tajemnica"] },
-  { id: "ii-4", division: "Dział II — Postępowanie", chapter: "Rozdział 4 — Dowody", start: "75", end: "88a", learnerFocus: "Допустимість, збирання, участь сторони й оцінка доказів.", practicalUse: "Для кожної przesłanki створіть рядок: факт → доказ → джерело → суперечності → висновок органу.", keywords: ["dowód", "dokument", "świadek", "biegły", "ocena"] },
-  { id: "ii-5", division: "Dział II — Postępowanie", chapter: "Rozdział 5 — Rozprawa", start: "89", end: "96", learnerFocus: "Коли потрібна rozprawa, як її підготувати і що можуть робити учасники.", practicalUse: "До rozprawy сформулюйте спірні факти, питання до свідків і перелік доказів, які треба зіставити.", keywords: ["rozprawa", "świadek", "wezwanie"] },
-  { id: "ii-5a", division: "Dział II — Postępowanie", chapter: "Rozdział 5a — Mediacja", start: "96a", end: "96n", learnerFocus: "Добровільна, конфіденційна медіація та її процесуальні наслідки.", practicalUse: "Спочатку перевірте, чи характер справи допускає домовленість і чи результат залишиться в межах закону.", keywords: ["mediacja", "mediator", "poufność"] },
-  { id: "ii-6", division: "Dział II — Postępowanie", chapter: "Rozdział 6 — Zawieszenie postępowania", start: "97", end: "103", learnerFocus: "Обов’язкове і факультативне zawieszenie, дії під час паузи та вплив на строки.", practicalUse: "Назвіть точну підставу zawieszenia і перевірте, яка подія дозволяє podjęcie postępowania.", keywords: ["zawieszenie", "podjęcie", "termin"] },
-  { id: "ii-7", division: "Dział II — Postępowanie", chapter: "Rozdział 7 — Decyzje", start: "104", end: "113", learnerFocus: "Форма завершення справи, елементи decyzji, виконання, доповнення і виправлення.", practicalUse: "Читайте decyzję у п’яти шарах: орган, rozstrzygnięcie, fakty, prawo, pouczenie.", keywords: ["decyzja", "uzasadnienie", "pouczenie", "rygor"] },
-  { id: "ii-8", division: "Dział II — Postępowanie", chapter: "Rozdział 8 — Ugoda", start: "114", end: "122", learnerFocus: "Угода сторін, її форма, затвердження та юридичний ефект.", practicalUse: "Перевірте допустимість ugody, точний зміст обов’язків і момент, з якого вона стає wykonalna.", keywords: ["ugoda", "zatwierdzenie", "wykonalność"] },
-  { id: "ii-8a", division: "Dział II — Postępowanie", chapter: "Rozdział 8a — Milczące załatwienie sprawy", start: "122a", end: "122h", learnerFocus: "Коли спеціальний закон дозволяє позитивний результат через мовчання органу.", practicalUse: "Не припускайте milczenia автоматично: знайдіть пряму норму спеціального закону, строк і доказ його спливу.", keywords: ["milczące załatwienie", "zaświadczenie"] },
-  { id: "ii-9", division: "Dział II — Postępowanie", chapter: "Rozdział 9 — Postanowienia", start: "123", end: "126", learnerFocus: "Проміжні процесуальні rozstrzygnięcia та їх форма.", practicalUse: "Перевірте, чи на конкретне postanowienie прямо передбачене zażalenie або лише контроль разом з decyzją.", keywords: ["postanowienie", "zażalenie", "uzasadnienie"] },
-  { id: "ii-10", division: "Dział II — Postępowanie", chapter: "Rozdział 10 — Odwołania", start: "127", end: "140", learnerFocus: "Подання, передача, межі розгляду і види рішень органу odwoławczego.", practicalUse: "Збережіть строк і правильний шлях подання, а zarzuty зв’яжіть із доказами та очікуваним способом вирішення.", keywords: ["odwołanie", "organ odwoławczy", "zakaz pogarszania"] },
-  { id: "ii-11", division: "Dział II — Postępowanie", chapter: "Rozdział 11 — Zażalenia", start: "141", end: "144", learnerFocus: "Оскарження postanowień лише у випадках, прямо передбачених законом.", practicalUse: "Спершу знайдіть норму, яка відкриває zażalenie; інакше zarzut збережіть до odwołania від decyzji.", keywords: ["zażalenie", "postanowienie"] },
-  { id: "ii-12", division: "Dział II — Postępowanie", chapter: "Rozdział 12 — Wznowienie postępowania", start: "145", end: "153", learnerFocus: "Виняткове повторне відкриття остаточно завершеної справи через визначені дефекти.", practicalUse: "Підставу wznowienia, момент коли про неї дізналися, строк і вплив на результат аналізуйте окремо.", keywords: ["wznowienie", "decyzja ostateczna", "termin"] },
-  { id: "ii-13", division: "Dział II — Postępowanie", chapter: "Rozdział 13 — Uchylenie, zmiana oraz stwierdzenie nieważności decyzji", start: "154", end: "163a", learnerFocus: "Надзвичайні способи зміни, скасування, nieważności або wygaśnięcia decyzji.", practicalUse: "Не взаємозамінюйте режими: кожен має іншу підставу, орган, межі та наслідок.", keywords: ["nieważność", "uchylenie", "zmiana", "wygaśnięcie"] },
-  { id: "ii-14", division: "Dział II — Postępowanie", chapter: "Rozdział 14 — Postępowanie uproszczone", start: "163b", end: "163g", learnerFocus: "Скорочена процедура, якщо її прямо дозволяє спеціальний закон.", practicalUse: "Перевірте правову підставу trybu uproszczonego, formularz, межі доказів та спрощене uzasadnienie.", keywords: ["postępowanie uproszczone", "formularz"] },
-  { id: "iii", division: "Dział III — Ubezpieczenia społeczne", chapter: "Przepisy szczególne; art. 164–179 (uchylone)", start: "180", end: "181", learnerFocus: "Офіційний PDF показує art. 164–179 одним груповим записом «uchylone», без окремих заголовків. Art. 180–181 залишають зв’язок KPA зі спеціальними правилами соціального страхування.", practicalUse: "Для справ ZUS починайте зі спеціальної процедури, а не переносіть механічно правила справ про pobyt.", keywords: ["ubezpieczenia społeczne", "uchylony", "164–179"] },
-  { id: "iv", division: "Dział IV — Udział prokuratora", chapter: "Udział prokuratora", start: "182", end: "189", learnerFocus: "Повноваження prokuratora для охорони законності в адміністративній справі.", practicalUse: "Відрізняйте sprzeciw prokuratora від засобу оскарження, який належить самій стороні.", keywords: ["prokurator", "sprzeciw"] },
-  { id: "iva", division: "Dział IVA — Administracyjne kary pieniężne", chapter: "Administracyjne kary pieniężne", start: "189a", end: "189l", learnerFocus: "Загальні правила адміністративних грошових санкцій: вибір закону, розмір, відступ, строки та ulgi.", practicalUse: "Перевірте lex specialis, дату порушення, siłę wyższą, przesłanki odstąpienia і передбачені строки давності.", keywords: ["kara pieniężna", "przedawnienie", "ulga"] },
-  { id: "v", division: "Dział V — uchylony", chapter: "Dział uchylony", start: "190", end: "195", learnerFocus: "У чинному тексті весь Dział V позначений як скасований.", practicalUse: "Не будуйте чинну дію на історичній статті; перевірте актуальний інститут у спеціальному законі та перехідні норми.", keywords: ["uchylony"] },
-  { id: "vi", division: "Dział VI — uchylony", chapter: "Dział uchylony", start: "196", end: "216", learnerFocus: "У чинному тексті весь Dział VI позначений як скасований.", practicalUse: "Старе посилання в документі перевіряйте за редакцією, що діяла на дату відповідної czynności.", keywords: ["uchylony"] },
-  { id: "vii", division: "Dział VII — Wydawanie zaświadczeń", chapter: "Wydawanie zaświadczeń", start: "217", end: "220", learnerFocus: "Коли орган підтверджує факт або правовий стан zaświadczeniem і як оскаржити відмову.", practicalUse: "Назвіть факт, правову підставу або interes prawny; не вимагайте заświadczenia там, де орган уже має дані.", keywords: ["zaświadczenie", "odmowa", "oświadczenie"] },
-  { id: "viii-1", division: "Dział VIII — Skargi i wnioski", chapter: "Rozdział 1 — Postanowienia ogólne", start: "221", end: "226a", learnerFocus: "Конституційне право skarg і wniosków та загальні правила їх прийняття.", practicalUse: "Зміст, а не назва письма визначає режим; не підміняйте skargą odwołania у конкретній справі.", keywords: ["skarga", "wniosek"] },
-  { id: "viii-2", division: "Dział VIII — Skargi i wnioski", chapter: "Rozdział 2 — Skargi", start: "227", end: "240", learnerFocus: "Предмет, орган, строк і спосіб розгляду skargi.", practicalUse: "Спочатку визначте, чи письмо стосується загальної роботи органу, поточної справи або остаточної decyzji.", keywords: ["skarga", "właściwość", "zawiadomienie"] },
-  { id: "viii-3", division: "Dział VIII — Skargi i wnioski", chapter: "Rozdział 3 — Wnioski", start: "241", end: "247", learnerFocus: "Wniosek як пропозиція покращити організацію чи правозастосування.", practicalUse: "Не очікуйте, що wniosek створить індивідуальне право; для конкретної справи використовуйте належний процесуальний засіб.", keywords: ["wniosek", "organizacja"] },
-  { id: "viii-4", division: "Dział VIII — Skargi i wnioski", chapter: "Rozdział 4 — Udział prasy i organizacji społecznych", start: "248", end: "252", learnerFocus: "Передання skarg і wniosków пресою або громадською організацією.", practicalUse: "Перевірте, хто є автором, кому надсилати відповідь і які статті цього розділу скасовані.", keywords: ["prasa", "organizacja społeczna"] },
-  { id: "viii-5", division: "Dział VIII — Skargi i wnioski", chapter: "Rozdział 5 — Przyjmowanie skarg i wniosków", start: "253", end: "256", learnerFocus: "Організація прийому, реєстрації та передання skarg і wniosków.", practicalUse: "Фіксуйте дату і спосіб прийняття; скаргу на працівника має отримати його przełożony.", keywords: ["przyjmowanie", "ewidencja"] },
-  { id: "viii-6", division: "Dział VIII — Skargi i wnioski", chapter: "Rozdział 6 — Nadzór i kontrola", start: "257", end: "260", learnerFocus: "Хто контролює систему прийняття та розгляду skarg і wniosków.", practicalUse: "Цей контроль стосується організації механізму, а не замінює оскарження рішення у вашій справі.", keywords: ["nadzór", "kontrola"] },
-  { id: "viiia", division: "Dział VIIIA — Europejska współpraca administracyjna", chapter: "Europejska współpraca administracyjna", start: "260a", end: "260g", learnerFocus: "Взаємна адміністративна допомога між органами держав ЄС.", practicalUse: "Перевірте правову підставу обміну, необхідність інформації, конфіденційність та спеціальні правила ЄС.", keywords: ["UE", "współpraca", "pomoc"] },
-  { id: "ix", division: "Dział IX — Opłaty i koszty postępowania", chapter: "Opłaty i koszty", start: "261", end: "267", learnerFocus: "Аванс, розподіл, визначення і стягнення витрат провадження.", practicalUse: "Відділяйте opłatę за дію від kosztów, спричинених учасником, і перевіряйте можливість zwolnienia.", keywords: ["opłata", "koszty", "zwolnienie"] },
-  { id: "x", division: "Dział X — Przepisy końcowe", chapter: "Przepisy końcowe", start: "268", end: "269", learnerFocus: "Уповноваження всередині органу і значення терміна prawomocna decyzja.", practicalUse: "Перевірте письмове upoważnienie особи, яка підписала акт, та не плутайте ostateczność із prawomocnością.", keywords: ["upoważnienie", "prawomocność"] },
+  {
+    id: "i-1",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 1 — Zakres obowiązywania",
+    start: "1",
+    end: "5",
+    learnerFocus:
+      "Коли застосовується KPA, які справи охоплює кодекс і де шукати винятки та визначення.",
+    practicalUse:
+      "Спочатку відділіть матеріальні умови дозволу з ustawy szczególnej від процесуальних правил KPA.",
+    keywords: ["zakres", "wyłączenia", "definicje", "RODO"],
+  },
+  {
+    id: "i-2",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 2 — Zasady ogólne",
+    start: "6",
+    end: "16",
+    learnerFocus:
+      "Загальні стандарти законності, довіри, інформування, участі сторони, швидкості та інстанційності.",
+    practicalUse:
+      "Поєднуйте засаду з конкретною дією органу і показуйте, як порушення вплинуло на факти або результат.",
+    keywords: ["zasady", "zaufanie", "informowanie", "czynny udział"],
+  },
+  {
+    id: "i-3",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 3 — Organy wyższego stopnia i organy naczelne",
+    start: "17",
+    end: "18",
+    learnerFocus: "Який орган контролює рішення і хто є органом вищого рівня.",
+    practicalUse:
+      "Перед odwołaniem перевірте lex specialis: саме він може змінити загальну систему органів.",
+    keywords: ["organ wyższego stopnia", "organ naczelny"],
+  },
+  {
+    id: "i-4",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 4 — Właściwość organów",
+    start: "19",
+    end: "23",
+    learnerFocus:
+      "Компетенція rzeczowa і miejscowa та вирішення спорів між органами.",
+    practicalUse:
+      "Зафіксуйте норму компетенції, факт територіального зв’язку і доказ цього факту.",
+    keywords: ["właściwość", "spór", "organ"],
+  },
+  {
+    id: "i-5",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 5 — Wyłączenie pracownika oraz organu",
+    start: "24",
+    end: "27a",
+    learnerFocus:
+      "Коли працівник, член колегіального органу або сам орган не повинен вести справу.",
+    practicalUse:
+      "Шукайте конкретний конфлікт інтересів і документуйте, хто після wyłączenia має продовжити справу.",
+    keywords: ["wyłączenie", "bezstronność", "konflikt interesów"],
+  },
+  {
+    id: "i-6",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 6 — Strona",
+    start: "28",
+    end: "34",
+    learnerFocus:
+      "Хто є стороною, хто може її представляти та як оформити повноваження.",
+    practicalUse:
+      "Відрізняйте фактичну зацікавленість від interesu prawnego і перевіряйте zakres pełnomocnictwa.",
+    keywords: ["strona", "pełnomocnik", "przedstawiciel"],
+  },
+  {
+    id: "i-7",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 7 — Załatwianie spraw",
+    start: "35",
+    end: "38",
+    learnerFocus: "Строки розгляду, повідомлення про затримку та ponaglenie.",
+    practicalUse:
+      "Ведіть календар від wszczęcia, віднімайте законні періоди неврахування і перевіряйте pouczenie про ponaglenie.",
+    keywords: ["termin", "bezczynność", "przewlekłość", "ponaglenie"],
+  },
+  {
+    id: "i-8",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 8 — Doręczenia",
+    start: "39",
+    end: "49b",
+    learnerFocus:
+      "Кому, куди, коли і з яким наслідком вручається кореспонденція.",
+    practicalUse:
+      "Дата skutecznego doręczenia запускає строки — збережіть підтвердження і перевірте адресу, представника та fikcję doręczenia.",
+    keywords: ["doręczenie", "adres", "awizo", "obwieszczenie"],
+  },
+  {
+    id: "i-9",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 9 — Wezwania",
+    start: "50",
+    end: "56",
+    learnerFocus: "Мета, обов’язкові елементи та спосіб виконання wezwania.",
+    practicalUse:
+      "Розкладіть wezwanie на: адресат, дія, підстава, строк, форма, наслідок і можливість уточнення.",
+    keywords: ["wezwanie", "stawiennictwo", "wyjaśnienia"],
+  },
+  {
+    id: "i-10",
+    division: "Dział I — Przepisy ogólne",
+    chapter: "Rozdział 10 — Terminy",
+    start: "57",
+    end: "60",
+    learnerFocus: "Як рахувати процесуальні строки і коли їх можна поновити.",
+    practicalUse:
+      "Запишіть подію-початок, одиницю часу, останній день, спосіб подання і доказ своєчасності.",
+    keywords: ["termin", "przywrócenie terminu", "obliczanie"],
+  },
+  {
+    id: "ii-1",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 1 — Wszczęcie postępowania",
+    start: "61",
+    end: "66",
+    learnerFocus:
+      "Початок справи, podanie, braki formalne та подання до неправильного органу.",
+    practicalUse:
+      "Не змішуйте brak formalny з недоведенням матеріальної умови; для кожного дефекту перевірте окремий наслідок.",
+    keywords: ["wszczęcie", "podanie", "braki formalne", "przekazanie"],
+  },
+  {
+    id: "ii-2",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 2 — Metryki, protokoły i adnotacje",
+    start: "66a",
+    end: "72",
+    learnerFocus: "Як орган фіксує перебіг справи та окремі процесуальні дії.",
+    practicalUse:
+      "Порівнюйте протокол або adnotację з реальною дією: хто, коли, що сказав і які зауваження внесено.",
+    keywords: ["metryka", "protokół", "adnotacja"],
+  },
+  {
+    id: "ii-3",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 3 — Udostępnianie akt",
+    start: "73",
+    end: "74a",
+    learnerFocus: "Право доступу до матеріалів і межі відмови в доступі.",
+    practicalUse:
+      "Перед позицією або odwołaniem перевірте повний склад akt, зробіть копії та оскаржте формальну відмову.",
+    keywords: ["akta", "wgląd", "odpis", "tajemnica"],
+  },
+  {
+    id: "ii-4",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 4 — Dowody",
+    start: "75",
+    end: "88a",
+    learnerFocus: "Допустимість, збирання, участь сторони й оцінка доказів.",
+    practicalUse:
+      "Для кожної przesłanki створіть рядок: факт → доказ → джерело → суперечності → висновок органу.",
+    keywords: ["dowód", "dokument", "świadek", "biegły", "ocena"],
+  },
+  {
+    id: "ii-5",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 5 — Rozprawa",
+    start: "89",
+    end: "96",
+    learnerFocus:
+      "Коли потрібна rozprawa, як її підготувати і що можуть робити учасники.",
+    practicalUse:
+      "До rozprawy сформулюйте спірні факти, питання до свідків і перелік доказів, які треба зіставити.",
+    keywords: ["rozprawa", "świadek", "wezwanie"],
+  },
+  {
+    id: "ii-5a",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 5a — Mediacja",
+    start: "96a",
+    end: "96n",
+    learnerFocus:
+      "Добровільна, конфіденційна медіація та її процесуальні наслідки.",
+    practicalUse:
+      "Спочатку перевірте, чи характер справи допускає домовленість і чи результат залишиться в межах закону.",
+    keywords: ["mediacja", "mediator", "poufność"],
+  },
+  {
+    id: "ii-6",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 6 — Zawieszenie postępowania",
+    start: "97",
+    end: "103",
+    learnerFocus:
+      "Обов’язкове і факультативне zawieszenie, дії під час паузи та вплив на строки.",
+    practicalUse:
+      "Назвіть точну підставу zawieszenia і перевірте, яка подія дозволяє podjęcie postępowania.",
+    keywords: ["zawieszenie", "podjęcie", "termin"],
+  },
+  {
+    id: "ii-7",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 7 — Decyzje",
+    start: "104",
+    end: "113",
+    learnerFocus:
+      "Форма завершення справи, елементи decyzji, виконання, доповнення і виправлення.",
+    practicalUse:
+      "Читайте decyzję у п’яти шарах: орган, rozstrzygnięcie, fakty, prawo, pouczenie.",
+    keywords: ["decyzja", "uzasadnienie", "pouczenie", "rygor"],
+  },
+  {
+    id: "ii-8",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 8 — Ugoda",
+    start: "114",
+    end: "122",
+    learnerFocus: "Угода сторін, її форма, затвердження та юридичний ефект.",
+    practicalUse:
+      "Перевірте допустимість ugody, точний зміст обов’язків і момент, з якого вона стає wykonalna.",
+    keywords: ["ugoda", "zatwierdzenie", "wykonalność"],
+  },
+  {
+    id: "ii-8a",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 8a — Milczące załatwienie sprawy",
+    start: "122a",
+    end: "122h",
+    learnerFocus:
+      "Коли спеціальний закон дозволяє позитивний результат через мовчання органу.",
+    practicalUse:
+      "Не припускайте milczenia автоматично: знайдіть пряму норму спеціального закону, строк і доказ його спливу.",
+    keywords: ["milczące załatwienie", "zaświadczenie"],
+  },
+  {
+    id: "ii-9",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 9 — Postanowienia",
+    start: "123",
+    end: "126",
+    learnerFocus: "Проміжні процесуальні rozstrzygnięcia та їх форма.",
+    practicalUse:
+      "Перевірте, чи на конкретне postanowienie прямо передбачене zażalenie або лише контроль разом з decyzją.",
+    keywords: ["postanowienie", "zażalenie", "uzasadnienie"],
+  },
+  {
+    id: "ii-10",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 10 — Odwołania",
+    start: "127",
+    end: "140",
+    learnerFocus:
+      "Подання, передача, межі розгляду і види рішень органу odwoławczego.",
+    practicalUse:
+      "Збережіть строк і правильний шлях подання, а zarzuty зв’яжіть із доказами та очікуваним способом вирішення.",
+    keywords: ["odwołanie", "organ odwoławczy", "zakaz pogarszania"],
+  },
+  {
+    id: "ii-11",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 11 — Zażalenia",
+    start: "141",
+    end: "144",
+    learnerFocus:
+      "Оскарження postanowień лише у випадках, прямо передбачених законом.",
+    practicalUse:
+      "Спершу знайдіть норму, яка відкриває zażalenie; інакше zarzut збережіть до odwołania від decyzji.",
+    keywords: ["zażalenie", "postanowienie"],
+  },
+  {
+    id: "ii-12",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 12 — Wznowienie postępowania",
+    start: "145",
+    end: "153",
+    learnerFocus:
+      "Виняткове повторне відкриття остаточно завершеної справи через визначені дефекти.",
+    practicalUse:
+      "Підставу wznowienia, момент коли про неї дізналися, строк і вплив на результат аналізуйте окремо.",
+    keywords: ["wznowienie", "decyzja ostateczna", "termin"],
+  },
+  {
+    id: "ii-13",
+    division: "Dział II — Postępowanie",
+    chapter:
+      "Rozdział 13 — Uchylenie, zmiana oraz stwierdzenie nieważności decyzji",
+    start: "154",
+    end: "163a",
+    learnerFocus:
+      "Надзвичайні способи зміни, скасування, nieważności або wygaśnięcia decyzji.",
+    practicalUse:
+      "Не взаємозамінюйте режими: кожен має іншу підставу, орган, межі та наслідок.",
+    keywords: ["nieważność", "uchylenie", "zmiana", "wygaśnięcie"],
+  },
+  {
+    id: "ii-14",
+    division: "Dział II — Postępowanie",
+    chapter: "Rozdział 14 — Postępowanie uproszczone",
+    start: "163b",
+    end: "163g",
+    learnerFocus:
+      "Скорочена процедура, якщо її прямо дозволяє спеціальний закон.",
+    practicalUse:
+      "Перевірте правову підставу trybu uproszczonego, formularz, межі доказів та спрощене uzasadnienie.",
+    keywords: ["postępowanie uproszczone", "formularz"],
+  },
+  {
+    id: "iii",
+    division: "Dział III — Ubezpieczenia społeczne",
+    chapter: "Przepisy szczególne; art. 164–179 (uchylone)",
+    start: "180",
+    end: "181",
+    learnerFocus:
+      "Офіційний PDF показує art. 164–179 одним груповим записом «uchylone», без окремих заголовків. Art. 180–181 залишають зв’язок KPA зі спеціальними правилами соціального страхування.",
+    practicalUse:
+      "Для справ ZUS починайте зі спеціальної процедури, а не переносіть механічно правила справ про pobyt.",
+    keywords: ["ubezpieczenia społeczne", "uchylony", "164–179"],
+  },
+  {
+    id: "iv",
+    division: "Dział IV — Udział prokuratora",
+    chapter: "Udział prokuratora",
+    start: "182",
+    end: "189",
+    learnerFocus:
+      "Повноваження prokuratora для охорони законності в адміністративній справі.",
+    practicalUse:
+      "Відрізняйте sprzeciw prokuratora від засобу оскарження, який належить самій стороні.",
+    keywords: ["prokurator", "sprzeciw"],
+  },
+  {
+    id: "iva",
+    division: "Dział IVA — Administracyjne kary pieniężne",
+    chapter: "Administracyjne kary pieniężne",
+    start: "189a",
+    end: "189l",
+    learnerFocus:
+      "Загальні правила адміністративних грошових санкцій: вибір закону, розмір, відступ, строки та ulgi.",
+    practicalUse:
+      "Перевірте lex specialis, дату порушення, siłę wyższą, przesłanki odstąpienia і передбачені строки давності.",
+    keywords: ["kara pieniężna", "przedawnienie", "ulga"],
+  },
+  {
+    id: "v",
+    division: "Dział V — uchylony",
+    chapter: "Dział uchylony",
+    start: "190",
+    end: "195",
+    learnerFocus: "У чинному тексті весь Dział V позначений як скасований.",
+    practicalUse:
+      "Не будуйте чинну дію на історичній статті; перевірте актуальний інститут у спеціальному законі та перехідні норми.",
+    keywords: ["uchylony"],
+  },
+  {
+    id: "vi",
+    division: "Dział VI — uchylony",
+    chapter: "Dział uchylony",
+    start: "196",
+    end: "216",
+    learnerFocus: "У чинному тексті весь Dział VI позначений як скасований.",
+    practicalUse:
+      "Старе посилання в документі перевіряйте за редакцією, що діяла на дату відповідної czynności.",
+    keywords: ["uchylony"],
+  },
+  {
+    id: "vii",
+    division: "Dział VII — Wydawanie zaświadczeń",
+    chapter: "Wydawanie zaświadczeń",
+    start: "217",
+    end: "220",
+    learnerFocus:
+      "Коли орган підтверджує факт або правовий стан zaświadczeniem і як оскаржити відмову.",
+    practicalUse:
+      "Назвіть факт, правову підставу або interes prawny; не вимагайте заświadczenia там, де орган уже має дані.",
+    keywords: ["zaświadczenie", "odmowa", "oświadczenie"],
+  },
+  {
+    id: "viii-1",
+    division: "Dział VIII — Skargi i wnioski",
+    chapter: "Rozdział 1 — Postanowienia ogólne",
+    start: "221",
+    end: "226a",
+    learnerFocus:
+      "Конституційне право skarg і wniosków та загальні правила їх прийняття.",
+    practicalUse:
+      "Зміст, а не назва письма визначає режим; не підміняйте skargą odwołania у конкретній справі.",
+    keywords: ["skarga", "wniosek"],
+  },
+  {
+    id: "viii-2",
+    division: "Dział VIII — Skargi i wnioski",
+    chapter: "Rozdział 2 — Skargi",
+    start: "227",
+    end: "240",
+    learnerFocus: "Предмет, орган, строк і спосіб розгляду skargi.",
+    practicalUse:
+      "Спочатку визначте, чи письмо стосується загальної роботи органу, поточної справи або остаточної decyzji.",
+    keywords: ["skarga", "właściwość", "zawiadomienie"],
+  },
+  {
+    id: "viii-3",
+    division: "Dział VIII — Skargi i wnioski",
+    chapter: "Rozdział 3 — Wnioski",
+    start: "241",
+    end: "247",
+    learnerFocus:
+      "Wniosek як пропозиція покращити організацію чи правозастосування.",
+    practicalUse:
+      "Не очікуйте, що wniosek створить індивідуальне право; для конкретної справи використовуйте належний процесуальний засіб.",
+    keywords: ["wniosek", "organizacja"],
+  },
+  {
+    id: "viii-4",
+    division: "Dział VIII — Skargi i wnioski",
+    chapter: "Rozdział 4 — Udział prasy i organizacji społecznych",
+    start: "248",
+    end: "252",
+    learnerFocus:
+      "Передання skarg і wniosków пресою або громадською організацією.",
+    practicalUse:
+      "Перевірте, хто є автором, кому надсилати відповідь і які статті цього розділу скасовані.",
+    keywords: ["prasa", "organizacja społeczna"],
+  },
+  {
+    id: "viii-5",
+    division: "Dział VIII — Skargi i wnioski",
+    chapter: "Rozdział 5 — Przyjmowanie skarg i wniosków",
+    start: "253",
+    end: "256",
+    learnerFocus:
+      "Організація прийому, реєстрації та передання skarg і wniosków.",
+    practicalUse:
+      "Фіксуйте дату і спосіб прийняття; скаргу на працівника має отримати його przełożony.",
+    keywords: ["przyjmowanie", "ewidencja"],
+  },
+  {
+    id: "viii-6",
+    division: "Dział VIII — Skargi i wnioski",
+    chapter: "Rozdział 6 — Nadzór i kontrola",
+    start: "257",
+    end: "260",
+    learnerFocus:
+      "Хто контролює систему прийняття та розгляду skarg і wniosków.",
+    practicalUse:
+      "Цей контроль стосується організації механізму, а не замінює оскарження рішення у вашій справі.",
+    keywords: ["nadzór", "kontrola"],
+  },
+  {
+    id: "viiia",
+    division: "Dział VIIIA — Europejska współpraca administracyjna",
+    chapter: "Europejska współpraca administracyjna",
+    start: "260a",
+    end: "260g",
+    learnerFocus: "Взаємна адміністративна допомога між органами держав ЄС.",
+    practicalUse:
+      "Перевірте правову підставу обміну, необхідність інформації, конфіденційність та спеціальні правила ЄС.",
+    keywords: ["UE", "współpraca", "pomoc"],
+  },
+  {
+    id: "ix",
+    division: "Dział IX — Opłaty i koszty postępowania",
+    chapter: "Opłaty i koszty",
+    start: "261",
+    end: "267",
+    learnerFocus: "Аванс, розподіл, визначення і стягнення витрат провадження.",
+    practicalUse:
+      "Відділяйте opłatę за дію від kosztów, спричинених учасником, і перевіряйте можливість zwolnienia.",
+    keywords: ["opłata", "koszty", "zwolnienie"],
+  },
+  {
+    id: "x",
+    division: "Dział X — Przepisy końcowe",
+    chapter: "Przepisy końcowe",
+    start: "268",
+    end: "269",
+    learnerFocus:
+      "Уповноваження всередині органу і значення терміна prawomocna decyzja.",
+    practicalUse:
+      "Перевірте письмове upoważnienie особи, яка підписала акт, та не плутайте ostateczność із prawomocnością.",
+    keywords: ["upoważnienie", "prawomocność"],
+  },
 ]
 
 const LETTERED_AFTER: Record<number, string[]> = {
-  2: ["2a"], 7: ["7a", "7b"], 14: ["14a"], 27: ["27a"], 39: ["39¹", "39²", "39³", "39⁴"],
-  45: ["45a"], 49: ["49a", "49b"], 61: ["61a"], 66: ["66a"], 74: ["74a"], 76: ["76a"],
-  79: ["79a"], 81: ["81a"], 88: ["88a"], 93: ["93a"],
-  96: ["96a", "96b", "96c", "96d", "96e", "96f", "96g", "96h", "96i", "96j", "96k", "96l", "96m", "96n"],
-  106: ["106a"], 121: ["121a"], 122: ["122a", "122b", "122c", "122d", "122e", "122f", "122g", "122h"],
-  127: ["127a"], 139: ["139a"], 145: ["145a", "145aa", "145b"], 155: ["155a"],
+  2: ["2a"],
+  7: ["7a", "7b"],
+  14: ["14a"],
+  27: ["27a"],
+  39: ["39¹", "39²", "39³", "39⁴"],
+  45: ["45a"],
+  49: ["49a", "49b"],
+  61: ["61a"],
+  66: ["66a"],
+  74: ["74a"],
+  76: ["76a"],
+  79: ["79a"],
+  81: ["81a"],
+  88: ["88a"],
+  93: ["93a"],
+  96: [
+    "96a",
+    "96b",
+    "96c",
+    "96d",
+    "96e",
+    "96f",
+    "96g",
+    "96h",
+    "96i",
+    "96j",
+    "96k",
+    "96l",
+    "96m",
+    "96n",
+  ],
+  106: ["106a"],
+  121: ["121a"],
+  122: ["122a", "122b", "122c", "122d", "122e", "122f", "122g", "122h"],
+  127: ["127a"],
+  139: ["139a"],
+  145: ["145a", "145aa", "145b"],
+  155: ["155a"],
   163: ["163a", "163b", "163c", "163d", "163e", "163f", "163g"],
-  189: ["189a", "189b", "189c", "189d", "189e", "189f", "189g", "189h", "189i", "189j", "189k", "189l"],
-  217: ["217a"], 226: ["226a"], 260: ["260a", "260b", "260c", "260d", "260e", "260f", "260g"],
-  263: ["263a"], 268: ["268a"],
+  189: [
+    "189a",
+    "189b",
+    "189c",
+    "189d",
+    "189e",
+    "189f",
+    "189g",
+    "189h",
+    "189i",
+    "189j",
+    "189k",
+    "189l",
+  ],
+  217: ["217a"],
+  226: ["226a"],
+  260: ["260a", "260b", "260c", "260d", "260e", "260f", "260g"],
+  263: ["263a"],
+  268: ["268a"],
 }
 
 const PAGE_BY_ARTICLES: Record<number, string> = {
-  2: "1,2,2a,3", 3: "4,5,6,7,7a", 4: "7b,8,9,10,11,12,13,14", 5: "14a,15,16,17,18,19,20,21",
-  6: "22,23,24", 7: "25,26,27,27a,28,29,30", 8: "31,32,33,34,35", 9: "36,37,38",
-  10: "39,39¹,39²,39³,39⁴,40", 11: "41,42,43,44,45,45a", 12: "46,47,48,49,49a,49b",
-  13: "50,51,52,53,54,55,56", 14: "57,58,59,60,61", 15: "61a,62,63,64,65,66",
-  16: "66a,67,68,69,70,71,72", 17: "73,74,74a,75,76,76a", 18: "77,78,79,79a,80,81,81a,82",
-  19: "83,84,85,86,87,88,88a,89,90", 20: "91,92,93,93a,94,95,96,96a", 21: "96b,96c,96d,96e",
-  22: "96f,96g,96h,96i,96j,96k,96l,96m,96n", 23: "97,98,99,100", 24: "101,102,103,104,105,106,106a,107",
-  25: "108,109,110,111", 26: "112,113,114,115,116,117,118,119,120,121,121a,122",
-  27: "122a,122b,122c,122d,122e,122f", 28: "122g,122h,123,124,125,126,127",
-  29: "127a,128,129,130,131,132,133,134,135,136", 30: "137,138,139,139a,140",
-  31: "141,142,143,144,145,145a,145aa,145b", 32: "146,147,148,149,150,151,152,153,154",
+  2: "1,2,2a,3",
+  3: "4,5,6,7,7a",
+  4: "7b,8,9,10,11,12,13,14",
+  5: "14a,15,16,17,18,19,20,21",
+  6: "22,23,24",
+  7: "25,26,27,27a,28,29,30",
+  8: "31,32,33,34,35",
+  9: "36,37,38",
+  10: "39,39¹,39²,39³,39⁴,40",
+  11: "41,42,43,44,45,45a",
+  12: "46,47,48,49,49a,49b",
+  13: "50,51,52,53,54,55,56",
+  14: "57,58,59,60,61",
+  15: "61a,62,63,64,65,66",
+  16: "66a,67,68,69,70,71,72",
+  17: "73,74,74a,75,76,76a",
+  18: "77,78,79,79a,80,81,81a,82",
+  19: "83,84,85,86,87,88,88a,89,90",
+  20: "91,92,93,93a,94,95,96,96a",
+  21: "96b,96c,96d,96e",
+  22: "96f,96g,96h,96i,96j,96k,96l,96m,96n",
+  23: "97,98,99,100",
+  24: "101,102,103,104,105,106,106a,107",
+  25: "108,109,110,111",
+  26: "112,113,114,115,116,117,118,119,120,121,121a,122",
+  27: "122a,122b,122c,122d,122e,122f",
+  28: "122g,122h,123,124,125,126,127",
+  29: "127a,128,129,130,131,132,133,134,135,136",
+  30: "137,138,139,139a,140",
+  31: "141,142,143,144,145,145a,145aa,145b",
+  32: "146,147,148,149,150,151,152,153,154",
   33: "155,155a,156,157,158,159,160,161,162",
   34: "163,163a,163b,163c,163d,163e,163f,163g,180,181",
-  35: "182,183,184,185,186,187,188,189,189a,189b", 36: "189c,189d,189e,189f,189g,189h",
-  37: "189i,189j,189k", 39: "189l,217,217a",
-  40: "218,219,220,221", 41: "222,223,224,225,226,226a,227,228,229", 42: "230,231,232,233,234,235,236,237,238",
-  43: "239,240,241,242,243,244,245,246,247,248,249,250,251,252,253", 44: "254,255,256,257,258,259,260,260a",
-  45: "260b,260c,260d,260e,260f,260g,261,262", 46: "263,263a,264,265,266,267,268,268a,269",
+  35: "182,183,184,185,186,187,188,189,189a,189b",
+  36: "189c,189d,189e,189f,189g,189h",
+  37: "189i,189j,189k",
+  39: "189l,217,217a",
+  40: "218,219,220,221",
+  41: "222,223,224,225,226,226a,227,228,229",
+  42: "230,231,232,233,234,235,236,237,238",
+  43: "239,240,241,242,243,244,245,246,247,248,249,250,251,252,253",
+  44: "254,255,256,257,258,259,260,260a",
+  45: "260b,260c,260d,260e,260f,260g,261,262",
+  46: "263,263a,264,265,266,267,268,268a,269",
 }
 
 const PARAGRAPH_COUNTS = `2a:3,3:5,5:2,7a:2,8:2,10:3,12:2,13:2,14:6,16:3,21:2,22:3,24:4,25:2,26:3,27:4,30:6,31:7,33:6,34:2,35:6,36:2,37:9,39:4,39³:4,40:5,41:2,42:3,44:4,45a:5,46:10,47:2,48:2,49:2,49b:2,50:3,51:2,54:3,55:2,56:2,57:6,58:3,59:2,61:6,61a:2,63:7,64:2,65:3,66:4,66a:5,67:2,68:2,69:2,72:2,73:5,74:2,75:2,76:3,76a:6,77:4,78:2,79:2,79a:2,81a:2,83:4,84:2,85:2,88:3,89:2,90:3,91:3,94:2,95:2,96a:6,96b:5,96d:2,96e:3,96f:3,96g:2,96j:3,96l:3,96m:3,96n:2,97:7,98:2,100:3,101:3,104:2,105:2,106:6,106a:4,107:5,108:2,109:4,110:2,111:4,113:3,116:2,117:3,118:3,119:3,120:2,122a:2,122c:3,122d:2,122f:5,122h:2,123:2,124:2,125:3,127:5,127a:2,129:3,130:4,132:3,136:4,138:6,139a:2,141:2,145:3,145a:2,145aa:2,145b:2,146:2,148:2,149:4,150:3,151:3,152:2,154:3,156:2,157:3,158:3,159:2,161:5,162:3,163b:3,163c:4,163e:2,180:2,183:2,184:4,185:2,189a:3,189f:3,189g:3,189h:5,189i:2,189j:5,189k:12,189l:4,217:4,218:2,220:5,221:3,223:2,225:2,231:2,232:3,235:2,236:3,237:4,238:2,239:2,242:2,244:2,246:2,248:2,253:5,258:2,259:3,260a:4,260b:4,260c:2,261:4,262:2,263:2,264:3`
@@ -422,32 +935,46 @@ const TITLE_SEED = `
 
 const pageByArticle = new Map<string, number>()
 for (const [page, articles] of Object.entries(PAGE_BY_ARTICLES)) {
-  for (const article of articles.split(",")) pageByArticle.set(article, Number(page))
+  for (const article of articles.split(","))
+    pageByArticle.set(article, Number(page))
 }
 
 const paragraphCountByArticle = new Map(
   PARAGRAPH_COUNTS.split(",").map((item) => {
     const [article, count] = item.split(":")
     return [article, Number(count)] as const
-  }),
+  })
 )
 
 const titleByArticle = new Map(
-  TITLE_SEED.trim().split("\n").map((line) => {
-    const [article, title] = line.split("|")
-    return [article, title] as const
-  }),
+  TITLE_SEED.trim()
+    .split("\n")
+    .map((line) => {
+      const [article, title] = line.split("|")
+      return [article, title] as const
+    })
 )
 
 const articleSequence: string[] = []
 for (let article = 1; article <= 269; article += 1) {
-  if ((article >= 164 && article <= 179) || (article >= 190 && article <= 216)) continue
+  if ((article >= 164 && article <= 179) || (article >= 190 && article <= 216))
+    continue
   articleSequence.push(String(article), ...(LETTERED_AFTER[article] ?? []))
 }
 
-const articleOrder = new Map(articleSequence.map((article, index) => [article, index]))
+const articleOrder = new Map(
+  articleSequence.map((article, index) => [article, index])
+)
 const repealedArticles = new Set([
-  "27a", "39²", "153", "160", "250", "252", "255", "260", "268",
+  "27a",
+  "39²",
+  "153",
+  "160",
+  "250",
+  "252",
+  "255",
+  "260",
+  "268",
 ])
 
 function sectionFor(article: string) {
@@ -467,52 +994,62 @@ function articleNeighbors(article: string) {
   }
 }
 
-export const kpaArticleIndex: KpaArticleEntry[] = articleSequence.map((article) => {
-  const section = sectionFor(article)
-  if (!section) throw new Error(`Missing KPA section for art. ${article}`)
-  const status: KpaArticleStatus = repealedArticles.has(article) ? "repealed" : "active"
-  const shortTitle = status === "repealed"
-    ? titleByArticle.get(article) ?? `Скасована стаття в ${section.chapter}`
-    : titleByArticle.get(article) ?? `Деталь правила: ${section.chapter.replace(/^Rozdział [^—]+— /, "")}`
-  const paragraphCount = paragraphCountByArticle.get(article)
-  const neighbors = articleNeighbors(article)
+export const kpaArticleIndex: KpaArticleEntry[] = articleSequence.map(
+  (article) => {
+    const section = sectionFor(article)
+    if (!section) throw new Error(`Missing KPA section for art. ${article}`)
+    const status: KpaArticleStatus = repealedArticles.has(article)
+      ? "repealed"
+      : "active"
+    const shortTitle =
+      status === "repealed"
+        ? (titleByArticle.get(article) ??
+          `Скасована стаття в ${section.chapter}`)
+        : (titleByArticle.get(article) ??
+          `Деталь правила: ${section.chapter.replace(/^Rozdział [^—]+— /, "")}`)
+    const paragraphCount = paragraphCountByArticle.get(article)
+    const neighbors = articleNeighbors(article)
 
-  return {
-    article,
-    shortTitle,
-    division: section.division,
-    chapter: section.chapter,
-    keywords: [...section.keywords, shortTitle, `art. ${article}`, status],
-    status,
-    pdfPage: pageByArticle.get(article) ?? 1,
-    searchToken: `Art. ${article}.`,
-    paragraphCount: paragraphCount ?? null,
-    ...neighbors,
-    sectionFocus: section.learnerFocus,
-    sectionPractice: section.practicalUse,
-    editorialStatus: "official-locator",
+    return {
+      article,
+      shortTitle,
+      division: section.division,
+      chapter: section.chapter,
+      keywords: [...section.keywords, shortTitle, `art. ${article}`, status],
+      status,
+      pdfPage: pageByArticle.get(article) ?? 1,
+      searchToken: `Art. ${article}.`,
+      paragraphCount: paragraphCount ?? null,
+      ...neighbors,
+      sectionFocus: section.learnerFocus,
+      sectionPractice: section.practicalUse,
+      editorialStatus: "official-locator",
+    }
   }
-})
+)
 
 export const KPA_ARTICLE_INDEX_EXPECTED_COUNT = 306
 
 const uniqueArticles = new Set(kpaArticleIndex.map((entry) => entry.article))
-const invalidPageEntries = kpaArticleIndex.filter((entry) => entry.pdfPage < 2 || entry.pdfPage > 46)
+const invalidPageEntries = kpaArticleIndex.filter(
+  (entry) => entry.pdfPage < 2 || entry.pdfPage > 46
+)
 
 if (
-  kpaArticleIndex.length !== KPA_ARTICLE_INDEX_EXPECTED_COUNT
-  || uniqueArticles.size !== KPA_ARTICLE_INDEX_EXPECTED_COUNT
-  || invalidPageEntries.length > 0
+  kpaArticleIndex.length !== KPA_ARTICLE_INDEX_EXPECTED_COUNT ||
+  uniqueArticles.size !== KPA_ARTICLE_INDEX_EXPECTED_COUNT ||
+  invalidPageEntries.length > 0
 ) {
   throw new Error(
-    `Invalid KPA article index: expected ${KPA_ARTICLE_INDEX_EXPECTED_COUNT} unique PDF headings with pages 2–46`,
+    `Invalid KPA article index: expected ${KPA_ARTICLE_INDEX_EXPECTED_COUNT} unique PDF headings with pages 2–46`
   )
 }
 
 export const kpaArticleIndexStats = {
   total: kpaArticleIndex.length,
   active: kpaArticleIndex.filter((entry) => entry.status === "active").length,
-  repealed: kpaArticleIndex.filter((entry) => entry.status === "repealed").length,
+  repealed: kpaArticleIndex.filter((entry) => entry.status === "repealed")
+    .length,
   verifiedLegalState: "14.07.2026",
   sourceEdition: "Dz.U. 2025 poz. 1691",
 }

@@ -220,7 +220,7 @@ export function buildLegalLearningModuleView({
     ? readingGuide.terms
     : buildTerms(module, paragraphs)
   const firstSection = module.sections[0]
-  const secondSection = module.sections[1]
+  const _secondSection = module.sections[1]
   const mainRule = firstSection?.paragraphs[0] ?? module.outcome
   const readingMethod =
     firstSection?.paragraphs[1] ??
