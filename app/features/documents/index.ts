@@ -1,9 +1,10 @@
-// Transitional public API. The implementation is decomposed inside this feature in Phase 3 step 3.
 export {
-  DocumentCatalogNavigation,
-  DocumentCatalogOverview,
-  DocumentDetailContent,
   documentCatalogToc,
   documentDetailToc,
+} from "./model/document-catalog-model"
+export {
+  DocumentCatalogNavigation,
   MobileDocumentNavigation,
-} from "~/components/document-catalog-content"
+} from "./ui/document-catalog-navigation"
+export { DocumentCatalogOverview } from "./ui/document-catalog-overview"
+export { DocumentDetailContent } from "./ui/document-detail-content"
