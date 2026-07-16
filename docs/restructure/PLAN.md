@@ -123,6 +123,12 @@ gate green and a conventional commit. Orchestrator reviews at each phase boundar
    following the sibling-part author pattern; each run must end with `test:previews`
    passing for that file's citations and cross-act mentions flagged for the Phase 1
    step-7 audit packet. `verify:content` (below) goes green only when this completes.
+   Part-04 landed 2026-07-16 (196 tokens; review list at
+   docs/restructure/citation-review/part-04.md). The part-04 gate also revealed that
+   ALREADY-migrated files can hide single latent bare mentions (part-06, "art. 99" at
+   entry [34].rules[0]) — the fail-fast validator masks them, so each migration run
+   also repairs any latent mention the validator surfaces next, until previews reports
+   zero bare-citation failures repo-wide.
 
 ### Phase 3 — UI architecture (`restructure/phase-3-ui`)
 
