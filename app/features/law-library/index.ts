@@ -1,4 +1,15 @@
 export {
+  loadKpaRouteData,
+  resolveKpaRouteState,
+  toKpaSelectionUrl,
+  type KpaMode,
+  type KpaRouteLoaderData,
+  type KpaRouteParams,
+  type KpaRouteState,
+  type KpaSelection,
+} from "./model/kpa-route"
+export { KpaGuideRoute } from "./ui/kpa-guide-route"
+export {
   buildLegalLearningModuleView,
   findModuleProvisions,
   toLegalExplanationView,
