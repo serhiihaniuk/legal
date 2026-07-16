@@ -126,6 +126,58 @@ function articleStatus(text) {
 }
 
 /**
+ * A duplicate article/paragraph/annex locator means extraction cannot tell
+ * which occurrence is the real provision. Keeping the first or last
+ * occurrence silently, as this extractor once did, can retain the wrong page
+ * span while the provision count still happens to match the config's
+ * expectation, so expected-count validation never gets a chance to catch it.
+ * Throwing here, before that count comparison ever runs, makes the ambiguity
+ * itself fatal and carries both page positions so a human can resolve it in
+ * the source PDF or extraction profile.
+ * @template T
+ * @param {T[]} items
+ * @param {(item: T) => { locator: string, kind: string, startPdfPage: number, endPdfPage: number }} describe
+ */
+function assertNoDuplicateLocators(items, describe) {
+  const byLocator = new Map()
+  for (const item of items) {
+    const described = describe(item)
+    const key = `${described.kind}:${described.locator}`
+    const occurrences = byLocator.get(key) ?? []
+    occurrences.push(described)
+    byLocator.set(key, occurrences)
+  }
+
+  const duplicates = [...byLocator.values()].filter((occurrences) => occurrences.length > 1)
+  if (duplicates.length === 0) return
+
+  const fatal = duplicates.map((occurrences) => {
+    const { kind, locator } = occurrences[0]
+    return {
+      severity: "fatal",
+      code: "extraction.duplicate-locator",
+      message: `Duplicate ${kind} locator ${locator} found on pages ${occurrences
+        .map((occurrence) => `${occurrence.startPdfPage}-${occurrence.endPdfPage}`)
+        .join(" and ")}`,
+      path: "extraction",
+      details: {
+        kind,
+        locator,
+        occurrences: occurrences.map(({ startPdfPage, endPdfPage }) => ({ startPdfPage, endPdfPage })),
+      },
+    }
+  })
+  const error = new Error(
+    `Extraction found ${fatal.length} duplicate locator(s): ${duplicates
+      .map((occurrences) => `${occurrences[0].kind} ${occurrences[0].locator}`)
+      .join(", ")}`
+  )
+  error.name = "CorpusValidationError"
+  error.diagnostics = { fatal }
+  throw error
+}
+
+/**
  * Extract article-shaped compatibility facts from normalized PDF pages.
  * Article-level records are the only promoted unit in profile v1; nested
  * paragraph/point records are intentionally left for a later profile revision.
@@ -168,25 +220,21 @@ export function extractArticles(pages) {
 
   if (current) articles.push(current)
 
-  // Keep the last complete occurrence, matching the historical KPA projection
-  // behavior while allowing validation to reject any resulting duplicate ID.
-  const seenArticles = new Set()
-  return [...articles]
-    .reverse()
-    .filter((article) => {
-      if (seenArticles.has(article.article)) return false
-      seenArticles.add(article.article)
-      return true
-    })
-    .reverse()
-    .map(({ textParts, ...article }) => {
-      const text = normalizeText(textParts.join("\n"))
-      return {
-        ...article,
-        status: articleStatus(text),
-        text,
-      }
-    })
+  assertNoDuplicateLocators(articles, (article) => ({
+    kind: "article",
+    locator: `Art. ${article.article}`,
+    startPdfPage: article.pdfPage,
+    endPdfPage: article.endPdfPage,
+  }))
+
+  return articles.map(({ textParts, ...article }) => {
+    const text = normalizeText(textParts.join("\n"))
+    return {
+      ...article,
+      status: articleStatus(text),
+      text,
+    }
+  })
 }
 
 function extractParagraphLedUnits(pages) {
@@ -238,13 +286,14 @@ function extractParagraphLedUnits(pages) {
   }
   if (current) units.push(current)
 
-  const seen = new Set()
-  return units.filter((unit) => {
-    const key = `${unit.kind}:${unit.locator}`
-    if (seen.has(key)) return false
-    seen.add(key)
-    return true
-  }).map(({ textParts, index: _index, ...unit }) => {
+  assertNoDuplicateLocators(units, (unit) => ({
+    kind: unit.kind,
+    locator: unit.locator,
+    startPdfPage: unit.startPdfPage,
+    endPdfPage: unit.endPdfPage,
+  }))
+
+  return units.map(({ textParts, index: _index, ...unit }) => {
     const text = normalizeText(textParts.join("\n"))
     return {
       ...unit,
