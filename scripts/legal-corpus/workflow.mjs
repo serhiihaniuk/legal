@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
 import path from "node:path"
 import process from "node:process"
 
 import {
   diffProvisionLists,
   prepareWorkOrder,
+  promoteEdition,
   readJson,
   runCapture,
   runEditorialValidator,
-  runNode,
   validateChangedFileSet,
   validateWorkOrder,
   verifyPromotionArtifacts,
@@ -194,13 +193,6 @@ async function commandValidate(projectRoot, options) {
   if (!result.passed) process.exitCode = 1
 }
 
-async function writeAtomically(filePath, value) {
-  const temporary = `${filePath}.tmp-${process.pid}`
-  await mkdir(path.dirname(filePath), { recursive: true })
-  await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8")
-  await rename(temporary, filePath)
-}
-
 async function commandPromote(projectRoot, options) {
   const workOrderPath = required(options, "work-order")
   const approvedBy = required(options, "approved-by")
@@ -216,39 +208,12 @@ async function commandPromote(projectRoot, options) {
     throw new Error(`--approve must exactly equal ${expectedApproval}`)
   }
 
-  const pointerPath = path.join(
+  const record = await promoteEdition({
     projectRoot,
-    "app/data/legal-library/current-editions.json"
-  )
-  const originalPointers = await readJson(pointerPath)
-  const promotedPointers = {
-    ...originalPointers,
-    [result.workOrder.documentId]: result.workOrder.newEditionId,
-  }
-  await writeAtomically(pointerPath, promotedPointers)
-  try {
-    await runNode(projectRoot, "scripts/legal-corpus/generate-registry.mjs")
-  } catch (error) {
-    await writeAtomically(pointerPath, originalPointers)
-    await runNode(projectRoot, "scripts/legal-corpus/generate-registry.mjs")
-    throw error
-  }
-
-  const record = {
-    schemaVersion: 1,
-    documentId: result.workOrder.documentId,
-    editionId: result.workOrder.newEditionId,
+    workOrder: result.workOrder,
+    workOrderPath,
     approvedBy,
-    approvedAt: new Date().toISOString(),
-    workOrder: workOrderPath.replaceAll("\\", "/"),
-    baseCommit: result.workOrder.baseCommit,
-  }
-  const recordPath = path.join(
-    projectRoot,
-    "legal-corpus/promotions",
-    `${record.documentId}-${record.editionId}.json`
-  )
-  await writeJson(recordPath, record)
+  })
   process.stdout.write(`${JSON.stringify(record)}\n`)
 }
 

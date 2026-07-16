@@ -1,11 +1,12 @@
 import { spawn } from "node:child_process"
-import { lstat, mkdir, readFile, realpath, writeFile } from "node:fs/promises"
+import { lstat, mkdir, readFile, realpath, rename, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 import { buildObservedFacts } from "./artifacts.mjs"
 import { validateConfig, validateDate, validateHttpsUrl } from "./config.mjs"
 import { sha256 } from "./extraction.mjs"
 import { validateCorpusFacts } from "./validation.mjs"
+import { generateRegistry } from "../generate-registry.mjs"
 
 const FORBIDDEN_SCOPE_PREFIXES = [
   "app/data/legal-corpus/",
@@ -586,4 +587,78 @@ export async function runEditorialValidator(projectRoot) {
   } catch (error) {
     return [`Editorial validation failed: ${errorMessage(error)}`]
   }
+}
+
+/**
+ * @param {string} filePath
+ * @param {unknown} value
+ * @returns {Promise<void>}
+ */
+export async function writeJsonAtomically(filePath, value) {
+  const temporary = `${filePath}.tmp-${process.pid}`
+  await mkdir(path.dirname(filePath), { recursive: true })
+  await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8")
+  await rename(temporary, filePath)
+}
+
+/**
+ * Promote a validated, approved work order: write the current-editions
+ * pointer, regenerate the application registries, and record the approval.
+ *
+ * Ordering and crash recovery: registries are (re)generated first, from the
+ * *pending* pointer state held only in memory, and written atomically before
+ * the pointer file itself is touched. If the process is killed before the
+ * pointer write below, `current-editions.json` still names exactly the
+ * edition it named before promotion started, so nothing durable on disk
+ * claims a promotion that never finished; re-running `corpus:promote` simply
+ * redoes the idempotent registry write and completes the pointer swap. The
+ * previous pointer-first ordering could instead leave `current-editions.json`
+ * naming an edition whose registries were never regenerated to match it. If
+ * the pointer write itself fails (as opposed to the process dying), the
+ * registries are rolled back to the original pointer state so a thrown error
+ * never leaves live registries describing an edition that was never actually
+ * promoted.
+ * @param {{
+ *   projectRoot: string,
+ *   workOrder: Record<string, any>,
+ *   workOrderPath: string,
+ *   approvedBy: string,
+ * }} options
+ * @returns {Promise<Record<string, unknown>>}
+ */
+export async function promoteEdition({ projectRoot, workOrder, workOrderPath, approvedBy }) {
+  const pointerPath = path.join(
+    projectRoot,
+    "app/data/legal-library/current-editions.json"
+  )
+  const originalPointers = await readJson(pointerPath)
+  const promotedPointers = {
+    ...originalPointers,
+    [workOrder.documentId]: workOrder.newEditionId,
+  }
+
+  await generateRegistry({ projectRoot, currentEditions: promotedPointers })
+  try {
+    await writeJsonAtomically(pointerPath, promotedPointers)
+  } catch (error) {
+    await generateRegistry({ projectRoot, currentEditions: originalPointers })
+    throw error
+  }
+
+  const record = {
+    schemaVersion: 1,
+    documentId: workOrder.documentId,
+    editionId: workOrder.newEditionId,
+    approvedBy,
+    approvedAt: new Date().toISOString(),
+    workOrder: workOrderPath.replaceAll("\\", "/"),
+    baseCommit: workOrder.baseCommit,
+  }
+  const recordPath = path.join(
+    projectRoot,
+    "legal-corpus/promotions",
+    `${record.documentId}-${record.editionId}.json`
+  )
+  await writeJson(recordPath, record)
+  return record
 }
