@@ -18,9 +18,16 @@ import {
   writeJson,
 } from "./lib/workflow.mjs"
 
+/** @typedef {{ _: string[], [key: string]: string | boolean | string[] }} CliOptions */
+
+/**
+ * @param {string[]} argv
+ * @returns {{ command: string, options: CliOptions }}
+ */
 function parseArguments(argv) {
   const [command, ...rest] = argv
-  const options = { _: [] }
+  /** @type {CliOptions} */
+  const options = { _: /** @type {string[]} */ ([]) }
   for (let index = 0; index < rest.length; index += 1) {
     const value = rest[index]
     if (!value.startsWith("--")) {
@@ -38,6 +45,11 @@ function parseArguments(argv) {
   return { command, options }
 }
 
+/**
+ * @param {CliOptions} options
+ * @param {string} name
+ * @returns {string}
+ */
 function required(options, name) {
   const value = options[name]
   if (typeof value !== "string" || !value.trim()) {
@@ -46,6 +58,10 @@ function required(options, name) {
   return value
 }
 
+/**
+ * @param {unknown} value
+ * @returns {string[]}
+ */
 function scopeValues(value) {
   if (typeof value !== "string") {
     throw new Error("Missing required --scope path[,path]")
@@ -53,6 +69,11 @@ function scopeValues(value) {
   return value.split(",").map((item) => item.trim()).filter(Boolean)
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {string} baseCommit
+ * @returns {Promise<string[]>}
+ */
 async function changedPaths(projectRoot, baseCommit) {
   const [trackedOutput, untrackedOutput] = await Promise.all([
     runCapture(projectRoot, "git", [
@@ -77,6 +98,11 @@ async function changedPaths(projectRoot, baseCommit) {
   ].sort((left, right) => left.localeCompare(right))
 }
 
+/**
+ * @param {any} workOrder
+ * @param {string} workOrderPath
+ * @returns {string[]}
+ */
 function allowedValidationPaths(workOrder, workOrderPath) {
   const promptPath = workOrderPath.replace(/\.json$/u, ".md")
   return [
@@ -123,11 +149,16 @@ async function validateWithScope(projectRoot, workOrderPath, options = {}) {
   return result
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {CliOptions} options
+ * @returns {Promise<void>}
+ */
 async function commandPrepare(projectRoot, options) {
   const dryRun = Boolean(options["dry-run"])
   const result = await prepareWorkOrder({
     projectRoot,
-    mode: required(options, "mode"),
+    mode: /** @type {"add" | "update"} */ (required(options, "mode")),
     configPath: required(options, "config"),
     oldEditionId:
       typeof options["old-edition"] === "string"
@@ -155,6 +186,11 @@ async function commandPrepare(projectRoot, options) {
   )
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {CliOptions} options
+ * @returns {Promise<void>}
+ */
 async function commandDiff(projectRoot, options) {
   const oldEditionId = required(options, "old")
   const newEditionId = required(options, "new")
@@ -186,6 +222,11 @@ async function commandDiff(projectRoot, options) {
   process.stdout.write(`${JSON.stringify(result, null, 2)}\n`)
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {CliOptions} options
+ * @returns {Promise<void>}
+ */
 async function commandValidate(projectRoot, options) {
   const workOrderPath = required(options, "work-order")
   const result = await validateWithScope(projectRoot, workOrderPath)
@@ -202,6 +243,11 @@ async function commandValidate(projectRoot, options) {
   if (!result.passed) process.exitCode = 1
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {CliOptions} options
+ * @returns {Promise<void>}
+ */
 async function commandPromote(projectRoot, options) {
   const workOrderPath = required(options, "work-order")
   const approvedBy = required(options, "approved-by")
@@ -267,6 +313,6 @@ async function main() {
 try {
   await main()
 } catch (error) {
-  process.stderr.write(`${error?.stack ?? error}\n`)
+  process.stderr.write(`${error instanceof Error ? error.stack : error}\n`)
   process.exitCode = 1
 }

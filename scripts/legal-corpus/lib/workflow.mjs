@@ -4,9 +4,22 @@ import path from "node:path"
 
 import { buildObservedFacts } from "./artifacts.mjs"
 import { validateConfig, validateDate, validateHttpsUrl } from "./config.mjs"
+import { CorpusValidationError } from "./errors.mjs"
 import { sha256 } from "./extraction.mjs"
 import { validateCorpusFacts } from "./validation.mjs"
 import { generateRegistry } from "../generate-registry.mjs"
+
+/** @typedef {import("./types.mjs").Diagnostic} Diagnostic */
+
+/**
+ * @param {unknown} error
+ * @returns {string | undefined}
+ */
+function errorCode(error) {
+  return error && typeof error === "object" && "code" in error
+    ? /** @type {{ code?: string }} */ (error).code
+    : undefined
+}
 
 const FORBIDDEN_SCOPE_PREFIXES = [
   "app/data/legal-corpus/",
@@ -22,15 +35,28 @@ const FORBIDDEN_SCOPE_FILES = new Set([
 ])
 const GLOB_PATTERN = /[*?{}[\]]/u
 
+/**
+ * @param {string} filePath
+ * @returns {Promise<any>}
+ */
 export async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"))
 }
 
+/**
+ * @param {string} filePath
+ * @param {unknown} value
+ * @returns {Promise<void>}
+ */
 export async function writeJson(filePath, value) {
   await mkdir(path.dirname(filePath), { recursive: true })
   await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8")
 }
 
+/**
+ * @param {unknown} value
+ * @returns {string}
+ */
 export function normalizeRepositoryPath(value) {
   if (typeof value !== "string" || value.trim() === "") {
     throw new Error("Approved paths must be non-empty strings")
@@ -60,6 +86,11 @@ export function normalizeRepositoryPath(value) {
   return normalized
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {string} repositoryPath
+ * @returns {Promise<void>}
+ */
 async function assertNoSymlink(projectRoot, repositoryPath) {
   const root = await realpath(projectRoot)
   const segments = repositoryPath.split("/")
@@ -76,12 +107,17 @@ async function assertNoSymlink(projectRoot, repositoryPath) {
         throw new Error(`Approved path must name a file: ${repositoryPath}`)
       }
     } catch (error) {
-      if (error?.code === "ENOENT") break
+      if (errorCode(error) === "ENOENT") break
       throw error
     }
   }
 }
 
+/**
+ * @param {unknown[]} paths
+ * @param {string} projectRoot
+ * @returns {Promise<string[]>}
+ */
 export async function validateApprovedWriteScope(paths, projectRoot) {
   if (!Array.isArray(paths) || paths.length === 0) {
     throw new Error("approvedWriteScope must contain exact editorial file paths")
@@ -93,12 +129,21 @@ export async function validateApprovedWriteScope(paths, projectRoot) {
   return normalized
 }
 
+/**
+ * @param {any[]} oldProvisions
+ * @param {any[]} newProvisions
+ * @returns {{ added: string[], changed: string[], removed: string[], unchanged: string[] }}
+ */
 export function diffProvisionLists(oldProvisions, newProvisions) {
   const oldById = new Map(oldProvisions.map((item) => [item.id, item]))
   const newById = new Map(newProvisions.map((item) => [item.id, item]))
+  /** @type {string[]} */
   const added = []
+  /** @type {string[]} */
   const changed = []
+  /** @type {string[]} */
   const removed = []
+  /** @type {string[]} */
   const unchanged = []
 
   for (const [id, current] of newById) {
@@ -125,6 +170,7 @@ export function diffProvisionLists(oldProvisions, newProvisions) {
     if (!newById.has(id)) removed.push(id)
   }
 
+  /** @param {string[]} items */
   const sort = (items) => items.sort((left, right) => left.localeCompare(right))
   return {
     added: sort(added),
@@ -134,6 +180,12 @@ export function diffProvisionLists(oldProvisions, newProvisions) {
   }
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {string} command
+ * @param {string[]} [args]
+ * @returns {Promise<string>}
+ */
 export async function runCapture(projectRoot, command, args = []) {
   return await new Promise((resolve, reject) => {
     const child = spawn(command, args, {
@@ -142,8 +194,8 @@ export async function runCapture(projectRoot, command, args = []) {
     })
     let stdout = ""
     let stderr = ""
-    child.stdout.on("data", (chunk) => { stdout += chunk })
-    child.stderr.on("data", (chunk) => { stderr += chunk })
+    child.stdout?.on("data", (chunk) => { stdout += chunk })
+    child.stderr?.on("data", (chunk) => { stderr += chunk })
     child.once("error", reject)
     child.once("exit", (code) => {
       if (code === 0) resolve(stdout.trim())
@@ -152,6 +204,12 @@ export async function runCapture(projectRoot, command, args = []) {
   })
 }
 
+/**
+ * @param {string} projectRoot
+ * @param {string} script
+ * @param {string[]} [args]
+ * @returns {Promise<void>}
+ */
 export async function runNode(projectRoot, script, args = []) {
   await new Promise((resolve, reject) => {
     const child = spawn(process.execPath, [script, ...args], {
@@ -160,12 +218,16 @@ export async function runNode(projectRoot, script, args = []) {
     })
     child.once("error", reject)
     child.once("exit", (code) => {
-      if (code === 0) resolve()
+      if (code === 0) resolve(undefined)
       else reject(new Error(`${script} exited with code ${code}`))
     })
   })
 }
 
+/**
+ * @param {any} manifest
+ * @returns {any}
+ */
 export function makeLegalStatusEvidence(manifest) {
   const sourceEvidence = manifest.legalStatusEvidence ?? {}
   if (validateLegalStatusEvidence(sourceEvidence).length === 0) {
@@ -198,6 +260,10 @@ export function makeLegalStatusEvidence(manifest) {
   }
 }
 
+/**
+ * @param {string} editionId
+ * @returns {string[]}
+ */
 export function generatedEditionPaths(editionId) {
   return [
     `app/data/legal-corpus/${editionId}/articles.json`,
@@ -213,6 +279,11 @@ export function generatedEditionPaths(editionId) {
   ]
 }
 
+/**
+ * @param {string} template
+ * @param {Record<string, unknown>} values
+ * @returns {string}
+ */
 function fillTemplate(template, values) {
   let output = template
   for (const [key, value] of Object.entries(values)) {
@@ -221,6 +292,19 @@ function fillTemplate(template, values) {
   return output
 }
 
+/**
+ * @param {{
+ *   projectRoot: string,
+ *   mode: "add" | "update",
+ *   configPath: string,
+ *   oldEditionId?: string,
+ *   approvedWriteScope: unknown[],
+ *   outputBase?: string,
+ *   forceRebuild?: boolean,
+ *   dryRun?: boolean,
+ * }} options
+ * @returns {Promise<any>}
+ */
 export async function prepareWorkOrder({
   projectRoot,
   mode,
@@ -247,7 +331,7 @@ export async function prepareWorkOrder({
     // pointed at the wrong document silently produces a mass add/remove diff
     // instead of stopping on the identity mismatch.
     const oldManifest = await readJson(
-      path.join(projectRoot, "app/data/legal-corpus", oldEditionId, "manifest.json")
+      path.join(projectRoot, "app/data/legal-corpus", /** @type {string} */ (oldEditionId), "manifest.json")
     )
     if (oldManifest.documentId !== config.documentId) {
       throw new Error(
@@ -314,12 +398,13 @@ export async function prepareWorkOrder({
     throw new Error("Cannot prepare a work order with fatal corpus diagnostics")
   }
 
+  /** @type {any} */
   let editionDiff = {
     documentId: config.documentId,
     oldEditionId: null,
     newEditionId: config.editionId,
     provisions: {
-      added: provisions.map(({ id }) => id).sort(),
+      added: provisions.map((/** @type {any} */ { id }) => id).sort(),
       changed: [],
       removed: [],
       unchanged: [],
@@ -331,7 +416,7 @@ export async function prepareWorkOrder({
       path.join(
         projectRoot,
         "app/data/legal-corpus",
-        oldEditionId,
+        /** @type {string} */ (oldEditionId),
         "provisions.json"
       )
     )
@@ -409,7 +494,13 @@ export async function prepareWorkOrder({
   return { workOrder, workOrderPath, promptPath, editionDiffPath }
 }
 
+/**
+ * @param {unknown[]} changedPaths
+ * @param {unknown[]} allowedPaths
+ * @returns {string[]}
+ */
 export function validateChangedFileSet(changedPaths, allowedPaths) {
+  /** @param {unknown} item */
   const canonical = (item) =>
     path.posix.normalize(String(item).replaceAll("\\", "/"))
   const allowed = new Set(allowedPaths.map(canonical))
@@ -430,8 +521,9 @@ export function validateChangedFileSet(changedPaths, allowedPaths) {
  * @returns {string[]}
  */
 export function validateLegalStatusEvidence(evidence) {
-  /** @type {Array<Record<string, unknown>>} */
+  /** @type {Diagnostic[]} */
   const diagnostics = []
+  /** @type {string[]} */
   const errors = []
   for (const field of ["status", "inForce"]) {
     if (typeof evidence?.[field] !== "string" || !evidence[field].trim()) {
@@ -492,9 +584,15 @@ export function validateLegalStatusEvidence(evidence) {
   return errors
 }
 
+/**
+ * @param {{ projectRoot: string, workOrderPath: string }} options
+ * @returns {Promise<{ passed: boolean, checkedAt: string, errors: string[], approvedWriteScope: string[], workOrder: any, changedPaths?: string[] }>}
+ */
 export async function validateWorkOrder({ projectRoot, workOrderPath }) {
   const workOrder = await readJson(path.resolve(projectRoot, workOrderPath))
+  /** @type {string[]} */
   const errors = []
+  /** @type {string[]} */
   let scope = []
   try {
     scope = await validateApprovedWriteScope(
@@ -502,7 +600,7 @@ export async function validateWorkOrder({ projectRoot, workOrderPath }) {
       projectRoot
     )
   } catch (error) {
-    errors.push(error.message)
+    errors.push(error instanceof Error ? error.message : String(error))
   }
 
   const [manifest, diagnostics] = await Promise.all([

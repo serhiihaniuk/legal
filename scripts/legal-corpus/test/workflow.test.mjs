@@ -182,7 +182,7 @@ test("prepare's identity check rejects an --old-edition manifest whose documentI
           oldEditionId,
           approvedWriteScope: ["app/data/legal-library/editorial/alpha/art-1.ts"],
         }),
-      (error) => {
+      (/** @type {any} */ error) => {
         assert.match(error.message, /beta/)
         assert.match(error.message, /alpha/)
         return true

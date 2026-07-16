@@ -41,6 +41,18 @@ const baseConfig = {
   },
 }
 
+/**
+ * @param {{
+ *   id?: string,
+ *   locator?: string,
+ *   order?: number,
+ *   parentId?: string | null,
+ *   childIds?: string[],
+ *   startPdfPage?: number,
+ *   endPdfPage?: number,
+ *   text?: string,
+ * }} [options]
+ */
 function provision({
   id = "kpa-art-1",
   locator = "Art. 1",
@@ -229,14 +241,14 @@ test("treats a duplicate article locator as a fatal diagnostic carrying both pag
   ]
   assert.throws(
     () => extractArticles(pages),
-    (error) => {
+    (/** @type {any} */ error) => {
       assert.equal(error.name, "CorpusValidationError")
       assert.equal(error.diagnostics.fatal.length, 1)
       const [entry] = error.diagnostics.fatal
       assert.equal(entry.code, "extraction.duplicate-locator")
       assert.equal(entry.details.locator, "Art. 10")
       assert.deepEqual(
-        entry.details.occurrences.map((occurrence) => occurrence.startPdfPage),
+        entry.details.occurrences.map((/** @type {any} */ occurrence) => occurrence.startPdfPage),
         [1, 2]
       )
       return true
@@ -259,7 +271,7 @@ test("treats a duplicate paragraph locator as a fatal diagnostic instead of sile
           profile: "polish-regulation-paragraph-v1",
         }
       ),
-    (error) => {
+    (/** @type {any} */ error) => {
       assert.equal(error.name, "CorpusValidationError")
       const [entry] = error.diagnostics.fatal
       assert.equal(entry.code, "extraction.duplicate-locator")

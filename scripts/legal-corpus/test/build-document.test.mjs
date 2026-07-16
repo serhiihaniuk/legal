@@ -54,7 +54,7 @@ test("assertRebuildAllowed permits a first build but rejects rebuilding existing
         existingManifests: [{ pdfSha256: "a".repeat(64) }],
         forceRebuild: false,
       }),
-    (error) => {
+    (/** @type {any} */ error) => {
       assert.equal(error.name, "CorpusValidationError")
       assert.match(error.message, /--force-rebuild/)
       assert.equal(error.diagnostics.fatal[0].code, "identity.edition-already-built")

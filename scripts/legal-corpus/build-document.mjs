@@ -23,6 +23,7 @@ import {
   validateConfig,
   ConfigValidationError,
 } from "./lib/config.mjs"
+import { CorpusValidationError } from "./lib/errors.mjs"
 import { extractPages, extractProvisions } from "./lib/extraction.mjs"
 import { resolveRepoRoot } from "./lib/repo-root.mjs"
 import {
@@ -32,19 +33,49 @@ import {
   validateCorpusFacts,
 } from "./lib/validation.mjs"
 
+/**
+ * @param {unknown} error
+ * @returns {string}
+ */
+function errorMessage(error) {
+  return error instanceof Error ? error.message : String(error)
+}
+
+/**
+ * @param {unknown} error
+ * @returns {string | undefined}
+ */
+function errorCode(error) {
+  return error && typeof error === "object" && "code" in error
+    ? /** @type {{ code?: string }} */ (error).code
+    : undefined
+}
+
+/**
+ * @param {string} filePath
+ * @returns {Promise<any>}
+ */
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"))
 }
 
+/**
+ * @param {string} filePath
+ * @returns {Promise<any>}
+ */
 async function readOptionalJson(filePath) {
   try {
     return await readJson(filePath)
   } catch (error) {
-    if (error?.code === "ENOENT") return undefined
+    if (errorCode(error) === "ENOENT") return undefined
     throw error
   }
 }
 
+/**
+ * @param {string} filePath
+ * @returns {Promise<boolean>}
+ */
 async function pathExists(filePath) {
   try {
     await access(filePath)
@@ -54,6 +85,11 @@ async function pathExists(filePath) {
   }
 }
 
+/**
+ * @param {string} filePath
+ * @param {unknown} value
+ * @returns {Promise<void>}
+ */
 async function writeJson(filePath, value) {
   await mkdir(path.dirname(filePath), { recursive: true })
   await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8")
@@ -93,7 +129,7 @@ export async function fetchBytes(url, { timeoutMs = DEFAULT_FETCH_TIMEOUT_MS, ex
       signal: AbortSignal.timeout(timeoutMs),
     })
   } catch (error) {
-    if (error?.name === "TimeoutError" || error?.name === "AbortError") {
+    if (error instanceof Error && (error.name === "TimeoutError" || error.name === "AbortError")) {
       throw new Error(`ELI request to ${url} timed out after ${timeoutMs}ms`)
     }
     throw error
@@ -115,12 +151,22 @@ export async function fetchBytes(url, { timeoutMs = DEFAULT_FETCH_TIMEOUT_MS, ex
   return new Uint8Array(await response.arrayBuffer())
 }
 
+/**
+ * @param {Uint8Array} bytes
+ * @returns {string}
+ */
 function sha256Bytes(bytes) {
   return createHash("sha256").update(bytes).digest("hex")
 }
 
+/**
+ * @param {{ dataDirectory: string, publicDirectory: string }} options
+ * @returns {Promise<{ manifests: any[], errors: import("./lib/types.mjs").Diagnostic[] }>}
+ */
 async function readExistingEditionState({ dataDirectory, publicDirectory }) {
+  /** @type {Array<{ path: string, value: any }>} */
   const manifests = []
+  /** @type {import("./lib/types.mjs").Diagnostic[]} */
   const errors = []
   const manifestPaths = [
     path.join(dataDirectory, "manifest.json"),
@@ -170,10 +216,17 @@ async function readExistingEditionState({ dataDirectory, publicDirectory }) {
   return { manifests: manifests.map(({ value }) => value), errors }
 }
 
+/**
+ * @returns {string}
+ */
 function nowWithoutMilliseconds() {
   return new Date().toISOString().replace(/\.\d{3}Z$/, "Z")
 }
 
+/**
+ * @param {{ dataDirectory: string, publicDirectory: string, stagedDataDirectory: string, stagedPublicDirectory: string }} options
+ * @returns {Promise<void>}
+ */
 async function publishEdition({
   dataDirectory,
   publicDirectory,
@@ -185,7 +238,9 @@ async function publishEdition({
     { target: dataDirectory, staged: stagedDataDirectory },
     { target: publicDirectory, staged: stagedPublicDirectory },
   ]
+  /** @type {Array<{ target: string, backup: string }>} */
   const backups = []
+  /** @type {string[]} */
   const installed = []
 
   await mkdir(path.dirname(dataDirectory), { recursive: true })
@@ -218,8 +273,12 @@ async function publishEdition({
   }
 }
 
+/**
+ * @param {unknown} error
+ * @returns {any}
+ */
 function asValidationError(error) {
-  if (error instanceof ConfigValidationError) return error
+  if (error instanceof ConfigValidationError || error instanceof CorpusValidationError) return error
   return error
 }
 
@@ -248,14 +307,10 @@ export function parseArguments(argv) {
  */
 export function assertRebuildAllowed({ editionId, existingManifests, forceRebuild }) {
   if (existingManifests.length === 0 || forceRebuild) return
-  const error = new Error(
-    `Edition ${editionId} already has committed artifacts; rerun with --force-rebuild to intentionally rebuild it`
-  )
-  error.name = "CorpusValidationError"
-  error.diagnostics = {
-    fatal: [diagnostic("fatal", "identity.edition-already-built", error.message, "editionId")],
-  }
-  throw error
+  const message = `Edition ${editionId} already has committed artifacts; rerun with --force-rebuild to intentionally rebuild it`
+  throw new CorpusValidationError(message, {
+    fatal: [diagnostic("fatal", "identity.edition-already-built", message, "editionId")],
+  })
 }
 
 /**
@@ -297,10 +352,9 @@ async function main() {
   )
   const existing = await readExistingEditionState({ dataDirectory, publicDirectory })
   if (existing.errors.length > 0) {
-    const error = new Error("Existing edition identity validation failed")
-    error.name = "CorpusValidationError"
-    error.diagnostics = { fatal: existing.errors }
-    throw error
+    throw new CorpusValidationError("Existing edition identity validation failed", {
+      fatal: existing.errors,
+    })
   }
   assertRebuildAllowed({
     editionId: config.editionId,
@@ -323,12 +377,10 @@ async function main() {
   try {
     metadata = JSON.parse(new TextDecoder().decode(metadataBytes))
   } catch (error) {
-    const wrapped = new Error(`Official metadata is not valid JSON: ${error.message}`)
-    wrapped.name = "CorpusValidationError"
-    wrapped.diagnostics = {
-      fatal: [diagnostic("fatal", "source.metadata-invalid-json", wrapped.message, "metadata")],
-    }
-    throw wrapped
+    const message = `Official metadata is not valid JSON: ${errorMessage(error)}`
+    throw new CorpusValidationError(message, {
+      fatal: [diagnostic("fatal", "source.metadata-invalid-json", message, "metadata")],
+    })
   }
 
   const pdfSha256 = sha256Bytes(pdfBytes)
@@ -424,7 +476,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     if (normalizedError?.diagnostics?.fatal) {
       process.stderr.write(`${JSON.stringify(normalizedError.diagnostics, null, 2)}\n`)
     }
-    process.stderr.write(`${error.stack ?? error}\n`)
+    process.stderr.write(`${error instanceof Error ? error.stack : error}\n`)
     process.exitCode = 1
   }
 }
