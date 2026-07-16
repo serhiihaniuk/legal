@@ -173,7 +173,7 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
       warnings.push(
         issue(
           "kpa-editorial-not-validated",
-          "KPA editorial coverage is not validated pending the Phase 2 migration",
+          "KPA editorial coverage is not validated pending Phase 2 step 2 validator integration",
           { documentId },
           "warning",
         ),
@@ -304,7 +304,8 @@ export function validateEditorial(options = {}) {
         ),
       )
     }
-    if (parsed.documentId && !documents.has(parsed.documentId)) {
+    const isKpaPart = parsed.documentId === "kpa"
+    if (parsed.documentId && !documents.has(parsed.documentId) && !isKpaPart) {
       errors.push(
         issue(
           "unknown-document",
@@ -313,6 +314,11 @@ export function validateEditorial(options = {}) {
         ),
       )
     }
+
+    // KPA remains outside editorial coverage until Phase 2 step 2. Keep its
+    // authored parts out of the non-KPA checks while preserving the warning
+    // emitted by loadCorpus above.
+    if (isKpaPart) continue
 
     for (const entry of parsed.entries) {
       const authored = {

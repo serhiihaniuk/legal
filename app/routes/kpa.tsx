@@ -36,7 +36,7 @@ import {
 import {
   getKpaArticleExplanation,
   getKpaArticleExplanations,
-} from "~/data/kpa-article-explanations"
+} from "~/data/legal-library/editorial/kpa/compat"
 import { kpaArticleIndex, kpaArticleSections } from "~/data/kpa-article-index"
 import { getDocument, listProvisions } from "~/data/legal-library"
 import {

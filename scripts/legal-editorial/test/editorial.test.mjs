@@ -94,6 +94,36 @@ test("incomplete mode accepts the scaffold but reports missing and draft coverag
   assert.ok(result.warnings.some(({ code }) => code === "missing-provision"))
 })
 
+test("temporarily skips authored KPA parts with an explicit warning", () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "legal-editorial-kpa-"))
+  const editorialRoot = path.join(root, "editorial")
+  const corpusRoot = path.join(root, "corpus")
+  const currentEditionsPath = path.join(root, "current-editions.json")
+  fs.mkdirSync(path.join(editorialRoot, "kpa"), { recursive: true })
+  fs.writeFileSync(
+    path.join(editorialRoot, "kpa", "part-00.ts"),
+    part({
+      documentId: "kpa",
+      editionId: "kpa-2025-1691",
+      entries: [entry("kpa-art-1")],
+    }),
+  )
+  fs.writeFileSync(currentEditionsPath, JSON.stringify({ kpa: "kpa-2025-1691" }))
+
+  const result = validateEditorial({
+    editorialRoot,
+    corpusRoot,
+    currentEditionsPath,
+    allowIncomplete: true,
+  })
+
+  assert.equal(result.ok, true)
+  assert.equal(result.summary.authoredCount, 0)
+  assert.ok(
+    result.warnings.some(({ code }) => code === "kpa-editorial-not-validated"),
+  )
+})
+
 test("detects duplicate and unknown provision IDs", () => {
   const fixture = writeFixture({
     partSource: part({

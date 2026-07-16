@@ -1,8 +1,5 @@
-import {
-  createLegalTextAuthor,
-  defineLegalTextContent,
-} from "~/data/legal-library/legal-text"
-import type { KpaArticleExplanation } from "./types"
+import { createLegalTextAuthor } from "../../legal-text"
+import { defineKpaEditorialPart } from "./define-kpa-part"
 
 const kpaLaw = createLegalTextAuthor("kpa")
 const _ppsaLaw = createLegalTextAuthor("ppsa")
@@ -10,10 +7,16 @@ const _foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const _RODO_URL = "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 const _ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2024/1045/ogl"
 
-export const kpaArticleExplanationsPart2 = defineLegalTextContent(
-  [
+export const kpaArticleExplanationsPart2 = defineKpaEditorialPart({
+  documentId: "kpa",
+  editionId: "kpa-2025-1691",
+  legalStateDate: "2026-07-14",
+  verifiedAt: "2026-07-14",
+  entries: [
     {
       article: "85",
+      provisionId: "kpa-art-85",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє органу провести oględziny, коли для встановлення факту треба безпосередньо оглянути предмет.",
       rules: [
@@ -34,6 +37,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "86",
+      provisionId: "kpa-art-86",
+      reviewStatus: "reviewed",
       summary:
         "Орган може допитати сторону, якщо після використання інших доказів або через їх відсутність залишилися невстановлені істотні факти.",
       rules: [
@@ -55,6 +60,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "87",
+      provisionId: "kpa-art-87",
+      reviewStatus: "reviewed",
       summary:
         "Колегіальний орган може доручити одному зі своїх членів або працівників провести все доказове провадження чи його частину.",
       rules: [
@@ -71,6 +78,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "88",
+      provisionId: "kpa-art-88",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює грошову санкцію за безпідставну неявку або невиконання визначених доказових обов’язків після правильного wezwania.",
       rules: [
@@ -97,6 +106,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "88a",
+      provisionId: "kpa-art-88a",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Для військовослужбовця на активній службі штраф за порушення обов’язків з ${kpaLaw.article("88", "art. 88 § 1")} замінено зверненням до командира про дисциплінарну відповідальність.`,
       rules: [
         {
@@ -112,6 +123,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "89",
+      provisionId: "kpa-art-89",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає ситуації, у яких орган проводить rozprawę для прискорення, спрощення, виконання прямої вимоги закону або спільного з’ясування справи.",
       rules: [
@@ -133,6 +146,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "90",
+      provisionId: "kpa-art-90",
+      reviewStatus: "reviewed",
       summary:
         "Норма покладає на орган обов’язок підготувати rozprawę та визначає, кого і для яких дій треба викликати або повідомити.",
       rules: [
@@ -159,6 +174,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "91",
+      provisionId: "kpa-art-91",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює зміст і спосіб повідомлення про rozprawę та окремий публічний спосіб повідомлення потенційно невідомих сторін.",
       rules: [
@@ -185,6 +202,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "92",
+      provisionId: "kpa-art-92",
+      reviewStatus: "reviewed",
       summary:
         "Дата rozprawy має бути визначена так, щоб вручення wezwania і публічне оголошення відбулися щонайменше за сім днів до неї.",
       rules: [
@@ -201,6 +220,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "93",
+      provisionId: "kpa-art-93",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає особу, яка керує rozprawą: призначеного працівника органу або голову чи призначеного члена колегіального органу.",
       rules: [
@@ -217,6 +238,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "93a",
+      provisionId: "kpa-art-93a",
+      reviewStatus: "reviewed",
       summary:
         "Особа, позбавлена волі, може дистанційно брати участь у rozprawie та виконувати там процесуальні дії.",
       rules: [
@@ -233,6 +256,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "94",
+      provisionId: "kpa-art-94",
+      reviewStatus: "reviewed",
       summary:
         "Належно викликана сторона не блокує rozprawę своєю відсутністю, але серйозні дефекти виклику або важлива перешкода вимагають відкладення.",
       rules: [
@@ -254,6 +279,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "95",
+      provisionId: "kpa-art-95",
+      reviewStatus: "reviewed",
       summary:
         "Стаття закріплює активні права сторони під час rozprawy та межі відхилення запитань керівником.",
       rules: [
@@ -275,6 +302,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96",
+      provisionId: "kpa-art-96",
+      reviewStatus: "reviewed",
       summary:
         "Після попередження керівник може видалити учасника за неналежну поведінку і накласти на нього штраф.",
       rules: [
@@ -291,6 +320,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96a",
+      provisionId: "kpa-art-96a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, коли адміністративна справа придатна для mediacji, її добровільність, мету та можливий склад учасників.",
       rules: [
@@ -317,6 +348,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96b",
+      provisionId: "kpa-art-96b",
+      reviewStatus: "reviewed",
       summary:
         "Норма регулює повідомлення про можливість mediacji, отримання згоди та вибір mediatora, а також причини відмови органу від такої пропозиції.",
       rules: [
@@ -343,6 +376,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96c",
+      provisionId: "kpa-art-96c",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Якщо згоду на mediację не надано у строк з ${kpaLaw.article("96b", "art. 96b § 3")}, mediacja не проводиться.`,
       rules: [
         {
@@ -357,6 +392,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96d",
+      provisionId: "kpa-art-96d",
+      reviewStatus: "reviewed",
       summary:
         "Після згоди учасників орган направляє справу до mediacji postanowieniem і визначає mediatora.",
       rules: [
@@ -377,6 +414,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96e",
+      provisionId: "kpa-art-96e",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає період відкладення розгляду на час mediacji та порядок її завершення без результату.",
       rules: [
@@ -398,6 +437,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96f",
+      provisionId: "kpa-art-96f",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює особисті вимоги до mediatora та суворіший критерій, коли орган є учасником mediacji.",
       rules: [
@@ -423,6 +464,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96g",
+      provisionId: "kpa-art-96g",
+      reviewStatus: "reviewed",
       summary:
         "Mediator зобов’язаний бути безстороннім, розкрити сумнівні обставини та відмовитися від mediacji, якщо безсторонність викликає сумнів.",
       rules: [
@@ -443,6 +486,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96h",
+      provisionId: "kpa-art-96h",
+      reviewStatus: "reviewed",
       summary:
         "Орган негайно передає mediatorowi наявні контактні дані учасників і їхніх pełnomocników.",
       rules: [
@@ -459,6 +504,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96i",
+      provisionId: "kpa-art-96i",
+      reviewStatus: "reviewed",
       summary:
         "Mediator має доступ до akt sprawy і може робити нотатки, копії та відписи, якщо учасник своєчасно не заперечив.",
       rules: [
@@ -475,6 +522,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96j",
+      provisionId: "kpa-art-96j",
+      reviewStatus: "reviewed",
       summary:
         "Mediacja є неявною, а її учасники зобов’язані зберігати конфіденційність; переговорний матеріал загалом не використовується після її завершення.",
       rules: [
@@ -496,6 +545,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96k",
+      provisionId: "kpa-art-96k",
+      reviewStatus: "reviewed",
       summary:
         "Mediator веде mediację до мирного вирішення спору та підтримує учасників у формуванні пропозицій ugodowych.",
       rules: [
@@ -511,6 +562,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96l",
+      provisionId: "kpa-art-96l",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює право mediatora на винагороду й витрати та визначає, хто їх покриває.",
       rules: [
@@ -537,6 +590,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96m",
+      provisionId: "kpa-art-96m",
+      reviewStatus: "reviewed",
       summary:
         "Mediator складає protokół, який фіксує перебіг і досягнуті домовленості, передає його органу та учасникам.",
       rules: [
@@ -558,6 +613,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "96n",
+      provisionId: "kpa-art-96n",
+      reviewStatus: "reviewed",
       summary:
         "Якщо mediacja завершилася законними домовленостями, орган вирішує справу відповідно до них і обмежує включення додаткових матеріалів до akt.",
       rules: [
@@ -579,6 +636,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "97",
+      provisionId: "kpa-art-97",
+      reviewStatus: "reviewed",
       summary:
         "Стаття перелічує обов’язкові підстави zawieszenia, правила поновлення провадження та особливий механізм umorzenia після тривалої перешкоди.",
       rules: [
@@ -605,6 +664,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "98",
+      provisionId: "kpa-art-98",
+      reviewStatus: "reviewed",
       summary:
         "Орган може зупинити провадження на прохання сторони, яка його ініціювала, якщо інші сторони не заперечують і це не загрожує суспільному інтересу.",
       rules: [
@@ -626,6 +687,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "99",
+      provisionId: "kpa-art-99",
+      reviewStatus: "reviewed",
       summary:
         "Після zawieszenia через визначені персональні перешкоди орган має вживати необхідних заходів для їх усунення у справах з urzędu, а інколи й у справах на вимогу.",
       rules: [
@@ -642,6 +705,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "100",
+      provisionId: "kpa-art-100",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає дії органу після zawieszenia через zagadnienie wstępne та винятки, коли орган вирішує це питання сам.",
       rules: [
@@ -668,6 +733,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "101",
+      provisionId: "kpa-art-101",
+      reviewStatus: "reviewed",
       summary:
         "Про zawieszenie і podjęcie орган повідомляє сторони postanowieniem, а визначені рішення можна оскаржити zażaleniem.",
       rules: [
@@ -693,6 +760,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "102",
+      provisionId: "kpa-art-102",
+      reviewStatus: "reviewed",
       summary:
         "Під час zawieszenia орган може виконувати лише дії, необхідні для запобігання небезпеці життю, здоров’ю або серйозній шкоді суспільному інтересу.",
       rules: [
@@ -707,6 +776,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "103",
+      provisionId: "kpa-art-103",
+      reviewStatus: "reviewed",
       summary: "Zawieszenie зупиняє перебіг строків, установлених KPA.",
       rules: [
         {
@@ -721,6 +792,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "104",
+      provisionId: "kpa-art-104",
+      reviewStatus: "reviewed",
       summary:
         "Орган завершує адміністративну справу decyzją, якщо KPA не передбачає іншої форми.",
       rules: [
@@ -741,6 +814,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "105",
+      provisionId: "kpa-art-105",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює umorzenie, коли провадження втратило предмет, а також факультативне припинення на прохання ініціатора.",
       rules: [
@@ -762,6 +837,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "106",
+      provisionId: "kpa-art-106",
+      reviewStatus: "reviewed",
       summary:
         "Коли закон вимагає позиції іншого органу, decyzja може бути видана лише після отримання цієї позиції за процедурою współdziałania.",
       rules: [
@@ -788,6 +865,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "106a",
+      provisionId: "kpa-art-106a",
+      reviewStatus: "reviewed",
       summary:
         "Основний орган може скликати спільне засідання з органом співдії для прискорення його позиції.",
       rules: [
@@ -814,6 +893,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "107",
+      provisionId: "kpa-art-107",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює обов’язкову будову decyzji та зміст її фактичного і правового обґрунтування.",
       rules: [
@@ -840,6 +921,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "108",
+      provisionId: "kpa-art-108",
+      reviewStatus: "reviewed",
       summary:
         "Decyzji, яку ще можна оскаржити, можна надати rygor natychmiastowej wykonalności лише через прямо названий особливо важливий інтерес.",
       rules: [
@@ -861,6 +944,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "109",
+      provisionId: "kpa-art-109",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Decyzja вручається сторонам письмово, а у випадках з ${kpaLaw.article("14", "art. 14 § 2")} може бути оголошена усно.`,
       rules: [
         {
@@ -881,6 +966,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "110",
+      provisionId: "kpa-art-110",
+      reviewStatus: "reviewed",
       summary:
         "Орган стає пов’язаний власною decyzją з моменту її doręczenia або ogłoszenia, а при milczącym załatwieniu — з визначеного законом наступного дня.",
       rules: [
@@ -902,6 +989,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "111",
+      provisionId: "kpa-art-111",
+      reviewStatus: "reviewed",
       summary:
         "Сторона може вимагати доповнення decyzji щодо rozstrzygnięcia або засобів оскарження чи виправлення pouczenia.",
       rules: [
@@ -927,6 +1016,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "112",
+      provisionId: "kpa-art-112",
+      reviewStatus: "reviewed",
       summary:
         "Помилкове pouczenie про оскарження, відмову від нього, позов або skargę не може зашкодити стороні, яка діяла відповідно до цього pouczenia.",
       rules: [
@@ -943,6 +1034,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "113",
+      provisionId: "kpa-art-113",
+      reviewStatus: "reviewed",
       summary:
         "Орган може виправити очевидні письмові чи рахункові помилки та окремо роз’яснити сумнівний зміст власної decyzji.",
       rules: [
@@ -969,6 +1062,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "114",
+      provisionId: "kpa-art-114",
+      reviewStatus: "reviewed",
       summary:
         "Сторони можуть укласти ugodę в адміністративній справі, якщо це допускає характер справи і не забороняють спеціальні приписи.",
       rules: [
@@ -985,6 +1080,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "115",
+      provisionId: "kpa-art-115",
+      reviewStatus: "reviewed",
       summary:
         "Ugoda може бути укладена перед органом першої або апеляційної інстанції до видання decyzji.",
       rules: [
@@ -1001,6 +1098,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "116",
+      provisionId: "kpa-art-116",
+      reviewStatus: "reviewed",
       summary:
         "За наявності умов для ugody орган відкладає decyzję і дає сторонам строк на її укладення.",
       rules: [
@@ -1021,6 +1120,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "117",
+      provisionId: "kpa-art-117",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає письмову форму, обов’язкові реквізити та порядок підписання ugody.",
       rules: [
@@ -1042,6 +1143,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "118",
+      provisionId: "kpa-art-118",
+      reviewStatus: "reviewed",
       summary:
         "Ugoda потребує затвердження органом, який перевіряє її законність, потрібну співдію та захищені інтереси.",
       rules: [
@@ -1062,6 +1165,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "119",
+      provisionId: "kpa-art-119",
+      reviewStatus: "reviewed",
       summary:
         "Затвердження або відмова щодо ugody оформлюється оскаржуваним postanowieniem із врученням самої ugody.",
       rules: [
@@ -1088,6 +1193,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "120",
+      provisionId: "kpa-art-120",
+      reviewStatus: "reviewed",
       summary:
         "Ugoda стає wykonalna в день, коли postanowienie про її затвердження стало остаточним.",
       rules: [
@@ -1107,6 +1214,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "121",
+      provisionId: "kpa-art-121",
+      reviewStatus: "reviewed",
       summary:
         "Затверджена ugoda має такі самі правові наслідки, як decyzja, видана в адміністративному провадженні.",
       rules: [
@@ -1123,6 +1232,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "121a",
+      provisionId: "kpa-art-121a",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`До ugody, укладеної перед mediatorem, відповідно застосовуються ${kpaLaw.articleRange("117", "121", { start: "art. 117", end: "121" })}.`,
       rules: [
         {
@@ -1137,6 +1248,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122",
+      provisionId: "kpa-art-122",
+      reviewStatus: "reviewed",
       summary:
         "У питаннях, не врегульованих розділом про ugodę, відповідно діють правила про decyzje.",
       rules: [
@@ -1153,6 +1266,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122a",
+      provisionId: "kpa-art-122a",
+      reviewStatus: "reviewed",
       summary:
         "Milczące załatwienie можливе лише за прямою нормою спеціального закону і означає повне задоволення żądania за відсутності своєчасного акта або sprzeciwu.",
       rules: [
@@ -1174,6 +1289,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122b",
+      provisionId: "kpa-art-122b",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, яку дату вважати днем видання акта або внесення sprzeciwu для перевірки, чи настав мовчазний результат.",
       rules: [
@@ -1190,6 +1307,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122c",
+      provisionId: "kpa-art-122c",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює момент milczącego załatwienia та правила початку строку після усунення braków або повернення справи першій інстанції.",
       rules: [
@@ -1216,6 +1335,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122d",
+      provisionId: "kpa-art-122d",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`У справах, що вирішуються мовчазно, не діють ${kpaLaw.article("10", "art. 10")} і 79a, а zawieszenie зупиняє строк на milczące załatwienie.`,
       rules: [
         {
@@ -1235,6 +1356,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122e",
+      provisionId: "kpa-art-122e",
+      reviewStatus: "reviewed",
       summary:
         "Орган вносить до akt adnotację про milczące załatwienie із зазначенням змісту результату та правової підстави.",
       rules: [
@@ -1251,6 +1374,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122f",
+      provisionId: "kpa-art-122f",
+      reviewStatus: "reviewed",
       summary:
         "На заяву сторони орган видає postanowieniem zaświadczenie про milczące załatwienie або відмовляє в ньому.",
       rules: [
@@ -1277,6 +1402,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122g",
+      provisionId: "kpa-art-122g",
+      reviewStatus: "reviewed",
       summary:
         "До мовчазно завершених справ відповідно застосовуються режими wznowienia та надзвичайного контролю decyzji.",
       rules: [
@@ -1292,6 +1419,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "122h",
+      provisionId: "kpa-art-122h",
+      reviewStatus: "reviewed",
       summary:
         "У мовчазних справах орган публікує інформацію RODO і повторно надає її при першій дії до сторони.",
       rules: [
@@ -1313,6 +1442,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "123",
+      provisionId: "kpa-art-123",
+      reviewStatus: "reviewed",
       summary:
         "Postanowienia вирішують окремі процесуальні питання під час провадження і загалом не вирішують суті справи.",
       rules: [
@@ -1332,6 +1463,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "124",
+      provisionId: "kpa-art-124",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює обов’язкові елементи postanowienia та випадки, коли воно потребує фактичного і правового uzasadnienia.",
       rules: [
@@ -1353,6 +1486,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "125",
+      provisionId: "kpa-art-125",
+      reviewStatus: "reviewed",
       summary:
         "Оскаржувані postanowienia вручаються письмово, а акти зі skargą або sprzeciwem — також із pouczeniem та uzasadnieniem.",
       rules: [
@@ -1378,6 +1513,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "126",
+      provisionId: "kpa-art-126",
+      reviewStatus: "reviewed",
       summary:
         "До postanowień відповідно застосовується визначений перелік правил про decyzje, а до окремих оскаржуваних актів — також надзвичайні режими.",
       rules: [
@@ -1394,6 +1531,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "127",
+      provisionId: "kpa-art-127",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює одноінстанційне адміністративне оскарження decyzji першої інстанції та визначає компетентний орган і замінник odwołania для окремих органів.",
       rules: [
@@ -1420,6 +1559,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "127a",
+      provisionId: "kpa-art-127a",
+      reviewStatus: "reviewed",
       summary:
         "Сторона може до спливу строку відмовитися від права на odwołanie перед органом, який видав decyzję.",
       rules: [
@@ -1441,6 +1582,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "128",
+      provisionId: "kpa-art-128",
+      reviewStatus: "reviewed",
       summary:
         "Odwołanie за загальним правилом не потребує детального uzasadnienia; достатньо виразити незадоволення decyzją.",
       rules: [
@@ -1457,6 +1600,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "129",
+      provisionId: "kpa-art-129",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає шлях і строк подання odwołania: до органу odwoławczego через орган, який видав decyzję.",
       rules: [
@@ -1482,6 +1627,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "130",
+      provisionId: "kpa-art-130",
+      reviewStatus: "reviewed",
       summary:
         "До спливу строку odwołania decyzja загалом не виконується, а своєчасне odwołanie далі зупиняє її виконання.",
       rules: [
@@ -1508,6 +1655,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "131",
+      provisionId: "kpa-art-131",
+      reviewStatus: "reviewed",
       summary:
         "Орган першої інстанції зобов’язаний повідомити всі сторони про внесення odwołania.",
       rules: [
@@ -1523,6 +1672,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "132",
+      provisionId: "kpa-art-132",
+      reviewStatus: "reviewed",
       summary:
         "Орган першої інстанції може в autokontroli повністю врахувати odwołanie і видати нову decyzję без передання справи вище.",
       rules: [
@@ -1548,6 +1699,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "133",
+      provisionId: "kpa-art-133",
+      reviewStatus: "reviewed",
       summary:
         "Якщо autokontrola не завершилася новою decyzją, орган першої інстанції передає odwołanie й акти органу odwoławczemu протягом семи днів.",
       rules: [
@@ -1564,6 +1717,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "134",
+      provisionId: "kpa-art-134",
+      reviewStatus: "reviewed",
       summary:
         "Орган odwoławczy postanowieniem встановлює недопустимість odwołania або пропуск строку.",
       rules: [
@@ -1580,6 +1735,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "135",
+      provisionId: "kpa-art-135",
+      reviewStatus: "reviewed",
       summary:
         "Орган odwoławczy може у виправданому випадку зупинити негайне виконання decyzji.",
       rules: [
@@ -1596,6 +1753,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "136",
+      provisionId: "kpa-art-136",
+      reviewStatus: "reviewed",
       summary:
         "Апеляційний орган може доповнити докази сам або через першу інстанцію, а за згодою сторін у визначених випадках проводить ширше з’ясування для рішення по суті.",
       rules: [
@@ -1621,6 +1780,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "137",
+      provisionId: "kpa-art-137",
+      reviewStatus: "reviewed",
       summary:
         "Сторона може відкликати odwołanie до decyzji апеляційного органу, але орган не прийме відкликання, яке зберегло б незаконну або суспільно шкідливу decyzję.",
       rules: [
@@ -1637,6 +1798,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "138",
+      provisionId: "kpa-art-138",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає повний каталог основних рішень organu odwoławczego: utrzymanie, зміна по суті, umorzenie або kasacyjne повернення.",
       rules: [
@@ -1663,6 +1826,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "139",
+      provisionId: "kpa-art-139",
+      reviewStatus: "reviewed",
       summary:
         "Орган odwoławczy не може погіршити становище сторони, яка оскаржила decyzję, крім грубого порушення права або суспільного інтересу.",
       rules: [
@@ -1679,6 +1844,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "139a",
+      provisionId: "kpa-art-139a",
+      reviewStatus: "reviewed",
       summary:
         "Після kasacyjnej decyzji перша інстанція зобов’язана врахувати фактичні вказівки й правове тлумачення апеляційного органу, якщо право не змінилося.",
       rules: [
@@ -1699,6 +1866,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "140",
+      provisionId: "kpa-art-140",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`У питаннях, не врегульованих ${kpaLaw.articleRange("136", "139", { start: "art. 136", end: "139" })}, апеляційний орган відповідно застосовує правила першої інстанції.`,
       rules: [
         {
@@ -1713,6 +1882,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "141",
+      provisionId: "kpa-art-141",
+      reviewStatus: "reviewed",
       summary:
         "Zażalenie на postanowienie доступне лише тоді, коли KPA прямо це передбачає, і подається у семиденний строк.",
       rules: [
@@ -1733,6 +1904,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "142",
+      provisionId: "kpa-art-142",
+      reviewStatus: "reviewed",
       summary:
         "Postanowienie без zażalenia можна оскаржити лише разом з odwołaniem від decyzji.",
       rules: [
@@ -1749,6 +1922,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "143",
+      provisionId: "kpa-art-143",
+      reviewStatus: "reviewed",
       summary:
         "Внесення zażalenia саме по собі не зупиняє виконання postanowienia, але орган-видавець може його зупинити.",
       rules: [
@@ -1765,6 +1940,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "144",
+      provisionId: "kpa-art-144",
+      reviewStatus: "reviewed",
       summary:
         "Неврегульовані питання zażalenia вирішуються відповідним застосуванням правил про odwołania.",
       rules: [
@@ -1781,6 +1958,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "145",
+      provisionId: "kpa-art-145",
+      reviewStatus: "reviewed",
       summary:
         "Стаття перелічує вичерпні основні дефекти, за яких поновлюється провадження, завершене остаточною decyzją.",
       rules: [
@@ -1807,6 +1986,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "145a",
+      provisionId: "kpa-art-145a",
+      reviewStatus: "reviewed",
       summary:
         "Сторона може вимагати wznowienia, якщо Trybunał Konstytucyjny визнав неконституційним акт, на якому ґрунтувалася decyzja.",
       rules: [
@@ -1828,6 +2009,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "145aa",
+      provisionId: "kpa-art-145aa",
+      reviewStatus: "reviewed",
       summary:
         "Wznowienie можливе через рішення TSUE, яке впливає на зміст виданої decyzji.",
       rules: [
@@ -1849,6 +2032,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "145b",
+      provisionId: "kpa-art-145b",
+      reviewStatus: "reviewed",
       summary:
         "Судове рішення про порушення рівного ставлення відкриває wznowienie, якщо дискримінація вплинула на остаточну decyzję.",
       rules: [
@@ -1870,6 +2055,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "146",
+      provisionId: "kpa-art-146",
+      reviewStatus: "reviewed",
       summary:
         "Стаття обмежує можливість uchylenia після wznowienia давністю та забороняє скасування, якщо нове рішення було б по суті таким самим.",
       rules: [
@@ -1891,6 +2078,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "147",
+      provisionId: "kpa-art-147",
+      reviewStatus: "reviewed",
       summary:
         "Wznowienie може початися з urzędu або на вимогу сторони, але окремі особисті підстави діють лише за її заявою.",
       rules: [
@@ -1907,6 +2096,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "148",
+      provisionId: "kpa-art-148",
+      reviewStatus: "reviewed",
       summary:
         "Podanie o wznowienie подається органу першої інстанції протягом місяця від дізнання про підставу.",
       rules: [
@@ -1928,6 +2119,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "149",
+      provisionId: "kpa-art-149",
+      reviewStatus: "reviewed",
       summary:
         "Wznowienie та відмова в ньому оформлюються postanowieniem; позитивний акт відкриває перевірку підстав і суті справи.",
       rules: [
@@ -1949,6 +2142,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "150",
+      provisionId: "kpa-art-150",
+      reviewStatus: "reviewed",
       summary:
         "Загалом wznowienie веде орган останньої інстанції, але якщо підстава пов’язана з його діяльністю, справу передають за спеціальним правилом.",
       rules: [
@@ -1974,6 +2169,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "151",
+      provisionId: "kpa-art-151",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Після wznowienia орган або відмовляє в uchyleniu, або скасовує стару decyzję і вирішує суть заново; за бар’єром ${kpaLaw.article("146", "art. 146")} лише констатує порушення.`,
       rules: [
         {
@@ -1996,6 +2193,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "152",
+      provisionId: "kpa-art-152",
+      reviewStatus: "reviewed",
       summary:
         "Орган зупиняє виконання decyzji, якщо обставини вказують на ймовірність її uchylenia внаслідок wznowienia.",
       rules: [
@@ -2017,6 +2216,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "153",
+      provisionId: "kpa-art-153",
+      reviewStatus: "reviewed",
       summary: "Стаття скасована і не встановлює чинного правила wznowienia.",
       rules: [],
       legalEffect: kpaLaw.text`Жодного самостійного процесуального наслідку з ${kpaLaw.article("153", "art. 153")} у чинному тексті немає.`,
@@ -2024,6 +2225,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "154",
+      provisionId: "kpa-art-154",
+      reviewStatus: "reviewed",
       summary:
         "Остаточну decyzję, яка не створила набутого права для жодної сторони, можна будь-коли змінити або скасувати за суспільним чи słusznym інтересом сторони.",
       rules: [
@@ -2048,6 +2251,8 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
     },
     {
       article: "155",
+      provisionId: "kpa-art-155",
+      reviewStatus: "reviewed",
       summary:
         "Остаточну decyzję, за якою сторона набула право, можна змінити або скасувати лише за її згодою та за додаткових законних умов.",
       rules: [
@@ -2062,5 +2267,4 @@ export const kpaArticleExplanationsPart2 = defineLegalTextContent(
         "Для зміни чинної позитивної decyzji щодо іноземця недостатньо практичної зручності: потрібні згода, допустимість за спеціальним законом і передбачений інтерес.",
     },
   ],
-  "kpa-article-explanations"
-) satisfies KpaArticleExplanation[]
+})

@@ -1,8 +1,5 @@
-import {
-  createLegalTextAuthor,
-  defineLegalTextContent,
-} from "~/data/legal-library/legal-text"
-import type { KpaArticleExplanation } from "./types"
+import { createLegalTextAuthor } from "../../legal-text"
+import { defineKpaEditorialPart } from "./define-kpa-part"
 
 const kpaLaw = createLegalTextAuthor("kpa")
 const _ppsaLaw = createLegalTextAuthor("ppsa")
@@ -10,10 +7,16 @@ const _foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const RODO_URL = "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 const ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2024/1045/ogl"
 
-export const kpaArticleExplanationsPart1 = defineLegalTextContent(
-  [
+export const kpaArticleExplanationsPart1 = defineKpaEditorialPart({
+  documentId: "kpa",
+  editionId: "kpa-2025-1691",
+  legalStateDate: "2026-07-14",
+  verifiedAt: "2026-07-14",
+  entries: [
     {
       article: "1",
+      provisionId: "kpa-art-1",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає основні види проваджень, які регулює KPA: індивідуальні адміністративні справи, спори про компетенцію, видачу zaświadczeń, адміністративні грошові кари та європейську адміністративну співпрацю.",
       rules: [
@@ -35,6 +38,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "2",
+      provisionId: "kpa-art-2",
+      reviewStatus: "reviewed",
       summary:
         "Стаття поширює KPA на провадження щодо skarg i wniosków, яке врегульоване в Dział VIII кодексу.",
       rules: [
@@ -51,6 +56,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "2a",
+      provisionId: "kpa-art-2a",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття регулює виконання інформаційного обов’язку за ${kpaLaw.external("art. 13 RODO", RODO_URL)} RODO у провадженнях KPA та відділяє цей обов’язок від руху і результату справи.`,
       rules: [
         {
@@ -70,6 +77,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "3",
+      provisionId: "kpa-art-3",
+      reviewStatus: "reviewed",
       summary:
         "Стаття перелічує провадження та внутрішні службові відносини, до яких KPA не застосовується або застосовується лише частково.",
       rules: [
@@ -95,6 +104,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "4",
+      provisionId: "kpa-art-4",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зберігає спеціальні права, що випливають із дипломатичного чи консульського імунітету, міжнародних договорів і звичаїв.",
       rules: [
@@ -111,6 +122,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "5",
+      provisionId: "kpa-art-5",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює, що загальне відсилання до приписів адміністративного провадження означає KPA, і дає кодексні визначення основних органів та організацій.",
       rules: [
@@ -132,6 +145,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "6",
+      provisionId: "kpa-art-6",
+      reviewStatus: "reviewed",
       summary:
         "Стаття закріплює принцип законності: адміністративні органи діють на підставі норм права.",
       rules: [
@@ -148,6 +163,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "7",
+      provisionId: "kpa-art-7",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує орган охороняти законність, точно з’ясувати фактичний стан і вирішити справу з урахуванням суспільного та слушного інтересу громадян.",
       rules: [
@@ -164,6 +181,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "7a",
+      provisionId: "kpa-art-7a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття наказує за визначених умов тлумачити неусувні сумніви щодо змісту правової норми на користь сторони, коли провадження веде до обов’язку, обмеження або позбавлення права.",
       rules: [
@@ -185,6 +204,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "7b",
+      provisionId: "kpa-art-7b",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує адміністративні органи співпрацювати настільки, наскільки це потрібно для з’ясування фактичного і правового стану справи.",
       rules: [
@@ -201,6 +222,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "8",
+      provisionId: "kpa-art-8",
+      reviewStatus: "reviewed",
       summary:
         "Стаття вимагає вести провадження так, щоб воно викликало довіру, із дотриманням пропорційності, безсторонності, рівності та послідовності практики.",
       rules: [
@@ -221,6 +244,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "9",
+      provisionId: "kpa-art-9",
+      reviewStatus: "reviewed",
       summary:
         "Стаття покладає на орган обов’язок повно інформувати сторону про фактичні й правові обставини, що впливають на її права та обов’язки, і запобігати шкоді через незнання права.",
       rules: [
@@ -242,6 +267,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "10",
+      provisionId: "kpa-art-10",
+      reviewStatus: "reviewed",
       summary:
         "Стаття гарантує стороні активну участь у кожній стадії провадження та можливість висловитися щодо доказів, матеріалів і заявлених вимог до винесення decyzji.",
       rules: [
@@ -267,6 +294,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "11",
+      provisionId: "kpa-art-11",
+      reviewStatus: "reviewed",
       summary:
         "Стаття вимагає пояснювати стороні обґрунтованість передумов, якими орган керується при вирішенні справи.",
       rules: [
@@ -283,6 +312,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "12",
+      provisionId: "kpa-art-12",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює принцип уважного і швидкого ведення справи найпростішими придатними засобами та вимагає негайного вирішення справ, що не потребують додаткового з’ясування.",
       rules: [
@@ -304,6 +335,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "13",
+      provisionId: "kpa-art-13",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує органи сприяти мирному врегулюванню спірних питань і встановленню прав та обов’язків, якщо характер справи це допускає.",
       rules: [
@@ -325,6 +358,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "14",
+      provisionId: "kpa-art-14",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає допустимі форми ведення і вирішення справ: письмову паперову чи електронну, автоматично згенеровані письма, online-послуги та за певних умов усне або інше дистанційне вирішення.",
       rules: [
@@ -346,6 +381,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "14a",
+      provisionId: "kpa-art-14a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує органи забезпечити сторонам можливість оцінювати роботу urzędu та його працівників.",
       rules: [
@@ -362,6 +399,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "15",
+      provisionId: "kpa-art-15",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює двоінстанційність адміністративного провадження, якщо спеціальний припис не передбачає інше.",
       rules: [
@@ -378,6 +417,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "16",
+      provisionId: "kpa-art-16",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає остаточність і prawomocność decyzji та вказує, що остаточні рішення можна змінювати або усувати лише у передбачених законом режимах.",
       rules: [
@@ -404,6 +445,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "17",
+      provisionId: "kpa-art-17",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, які органи вважаються organami wyższego stopnia щодо різних категорій адміністративних органів.",
       rules: [
@@ -419,6 +462,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "18",
+      provisionId: "kpa-art-18",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає organy naczelne для органів урядової адміністрації, самоврядування, інших державних органів і громадських організацій.",
       rules: [
@@ -435,6 +480,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "19",
+      provisionId: "kpa-art-19",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує орган з власної ініціативи контролювати свою предметну і територіальну компетенцію.",
       rules: [
@@ -451,6 +498,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "20",
+      provisionId: "kpa-art-20",
+      reviewStatus: "reviewed",
       summary:
         "Стаття наказує визначати предметну компетенцію органу за приписами, які встановлюють сферу його діяльності.",
       rules: [
@@ -467,6 +516,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "21",
+      provisionId: "kpa-art-21",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює загальні критерії територіальної компетенції для справ про нерухомість, zakład pracy та інших справ, а також резервне правило.",
       rules: [
@@ -492,6 +543,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "22",
+      provisionId: "kpa-art-22",
+      reviewStatus: "reviewed",
       summary:
         "Стаття розподіляє повноваження щодо вирішення спорів про właściwość і спорів kompetencyjnych та визначає, хто може звернутися до адміністративного суду.",
       rules: [
@@ -517,6 +570,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "23",
+      provisionId: "kpa-art-23",
+      reviewStatus: "reviewed",
       summary:
         "Стаття обмежує дії органу до моменту вирішення спору про właściwość лише невідкладними діями в суспільному або слушному інтересі громадян.",
       rules: [
@@ -533,6 +588,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "24",
+      provisionId: "kpa-art-24",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає випадки обов’язкового wyłączenia працівника органу та додатковий механізм усунення сумнівів у його безсторонності.",
       rules: [
@@ -559,6 +616,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "25",
+      provisionId: "kpa-art-25",
+      reviewStatus: "reviewed",
       summary:
         "Стаття передбачає wyłączenie самого органу у справах про майнові інтереси його керівника, його близьких або керівника органу безпосередньо вищого рівня та його близьких.",
       rules: [
@@ -576,6 +635,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "26",
+      provisionId: "kpa-art-26",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, хто веде справу після wyłączenia працівника, органу або такої кількості працівників, що organ не може діяти.",
       rules: [
@@ -601,6 +662,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "27",
+      provisionId: "kpa-art-27",
+      reviewStatus: "reviewed",
       summary:
         "Стаття переносить правила wyłączenia на членів колегіальних органів і визначає рішення на випадок втрати quorum або неможливості дії SKO.",
       rules: [
@@ -620,6 +683,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "27a",
+      provisionId: "kpa-art-27a",
+      reviewStatus: "reviewed",
       summary:
         "Статтю скасовано. У чинному тексті KPA вона не встановлює жодного процесуального правила.",
       rules: [],
@@ -628,6 +693,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "28",
+      provisionId: "kpa-art-28",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає stronę через її interes prawny або obowiązek, якого стосується провадження, чи через вимогу дії органу, засновану на такому інтересі або обов’язку.",
       rules: [
@@ -644,6 +711,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "29",
+      provisionId: "kpa-art-29",
+      reviewStatus: "reviewed",
       summary:
         "Стаття перелічує категорії суб’єктів, які можуть бути сторонами адміністративного провадження.",
       rules: [
@@ -659,6 +728,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "30",
+      provisionId: "kpa-art-30",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює процесуальну здатність сторін, їх представництво та правонаступництво у справах про відчужувані або спадкові права.",
       rules: [
@@ -685,6 +756,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "31",
+      provisionId: "kpa-art-31",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, коли громадська організація може вимагати початку справи, бути допущена до чужої справи або подати свій погляд.",
       rules: [
@@ -710,6 +783,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "32",
+      provisionId: "kpa-art-32",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє стороні діяти через pełnomocnika, якщо характер конкретної дії не вимагає особистої участі.",
       rules: [
@@ -726,6 +801,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "33",
+      provisionId: "kpa-art-33",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, хто може бути pełnomocnikiem, форму повноваження та спосіб долучення документа до akt sprawy.",
       rules: [
@@ -752,6 +829,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "34",
+      provisionId: "kpa-art-34",
+      reviewStatus: "reviewed",
       summary:
         "Стаття забезпечує представника для відсутньої або недієздатної особи та тимчасового представника для невідкладних дій.",
       rules: [
@@ -773,6 +852,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "35",
+      provisionId: "kpa-art-35",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює загальний обов’язок вирішувати справи без зайвої затримки, кодексні строки для різних видів справ і періоди, які не враховуються до цих строків.",
       rules: [
@@ -798,6 +879,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "36",
+      provisionId: "kpa-art-36",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує organ повідомити сторону про кожне невирішення справи у строк, пояснити причину, назвати новий строк і pouczyć про ponaglenie.",
       rules: [
@@ -818,6 +901,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "37",
+      provisionId: "kpa-art-37",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає bezczynność і przewlekłość, порядок подання ponaglenia, строки його передання та розгляду і рішення органу за результатом.",
       rules: [
@@ -849,6 +934,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "38",
+      provisionId: "kpa-art-38",
+      reviewStatus: "reviewed",
       summary:
         "Стаття передбачає особисту службову або іншу передбачену законом відповідальність працівника за необґрунтоване прострочення чи przewlekłość.",
       rules: [
@@ -865,6 +952,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "39",
+      provisionId: "kpa-art-39",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює послідовність способів doręczenia: електронний канал як основний, далі publiczna usługa hybrydowa або уповноважені особи, а за неможливості — реєстрована пошта чи інше вручення.",
       rules: [
@@ -889,6 +978,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "39¹",
+      provisionId: "kpa-art-39-1",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття визначає, на який електронний адрес доставляється письмо при doręczeniu за ${kpaLaw.article("39", "art. 39 § 1")}.`,
       rules: [
         {
@@ -909,6 +1000,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "39²",
+      provisionId: "kpa-art-39-2",
+      reviewStatus: "reviewed",
       summary:
         "Статтю скасовано. У чинному KPA вона не містить правила про doręczenia.",
       rules: [],
@@ -917,6 +1010,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "39³",
+      provisionId: "kpa-art-39-3",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє вручати паперовий wydruk електронно виданого і належно підписаного або опечатаного письма та визначає зміст і доказове значення такого wydruku.",
       rules: [
@@ -942,6 +1037,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "39⁴",
+      provisionId: "kpa-art-39-4",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття відсилає визначення дня електронного doręczenia за ${kpaLaw.article("39", "art. 39 § 1")} до ${kpaLaw.external("art. 42", ELECTRONIC_DELIVERY_ACT_URL)} ustawy o doręczeniach elektronicznych.`,
       rules: [
         {
@@ -956,6 +1053,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "40",
+      provisionId: "kpa-art-40",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає належного адресата doręczenia: сторону, її представника або pełnomocnika, усіх співзаявників чи вказану ними особу, а також обов’язок окремих закордонних сторін призначити pełnomocnika do doręczeń.",
       rules: [
@@ -981,6 +1080,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "41",
+      provisionId: "kpa-art-41",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує сторону, її przedstawiciela і pełnomocnika повідомляти organ про кожну зміну адреси під час провадження.",
       rules: [
@@ -1002,6 +1103,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "42",
+      provisionId: "kpa-art-42",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає місця традиційного doręczenia фізичній особі та резервне вручення там, де адресата фактично застануть.",
       rules: [
@@ -1022,6 +1125,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "43",
+      provisionId: "kpa-art-43",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє zastępcze doręczenie дорослому domownikowi, сусідові або dozorcy за відсутності адресата, якщо вони зобов’язалися передати письмо.",
       rules: [
@@ -1042,6 +1147,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "44",
+      provisionId: "kpa-art-44",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття встановлює awizo і fikcję doręczenia після чотирнадцятиденного зберігання письма, якщо вручення за ${kpaLaw.article("42", "art. 42")} і 43 неможливе.`,
       rules: [
         {
@@ -1067,6 +1174,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "45",
+      provisionId: "kpa-art-45",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює doręczenie організаційним одиницям і громадським організаціям у їхній siedzibie уповноваженій особі та відповідне застосування awizo.",
       rules: [
@@ -1087,6 +1196,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "45a",
+      provisionId: "kpa-art-45a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює спеціальний порядок doręczenia організації, коли її адреса не існує, викреслена або не відповідає реєстру і нову siedzibę неможливо встановити.",
       rules: [
@@ -1113,6 +1224,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "46",
+      provisionId: "kpa-art-46",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає спосіб підтвердження doręczenia та оформлення ситуації, коли odbiorca не підписує підтвердження або не може цього зробити.",
       rules: [
@@ -1134,6 +1247,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "47",
+      provisionId: "kpa-art-47",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює, що відмова адресата прийняти письмо фіксується і прирівнюється до doręczenia в день відмови.",
       rules: [
@@ -1155,6 +1270,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "48",
+      provisionId: "kpa-art-48",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює doręczenie особам невідомого місця перебування та особам із дипломатичними або консульськими привілеями.",
       rules: [
@@ -1174,6 +1291,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "49",
+      provisionId: "kpa-art-49",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє publiczne zawiadomienie через obwieszczenie, звично прийняте оголошення або BIP лише тоді, коли це передбачає спеціальний припис, і встановлює момент skuteczności.",
       rules: [
@@ -1195,6 +1314,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "49a",
+      provisionId: "kpa-art-49a",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття дозволяє organowi використовувати publiczne zawiadomienie у провадженні з більш ніж двадцятьма сторонами, навіть поза прямими випадками ${kpaLaw.article("49", "art. 49")}, за умовою попередження сторін.`,
       rules: [
         {
@@ -1213,6 +1334,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "49b",
+      provisionId: "kpa-art-49b",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дає стороні право швидко отримати odpis оскаржуваної decyzji або postanowienia, про яке її повідомлено публічно.",
       rules: [
@@ -1234,6 +1357,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "50",
+      provisionId: "kpa-art-50",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє organowi викликати осіб для участі в діях, пояснень або свідчень, якщо це необхідно для справи чи службової дії, і вимагає мінімізувати обтяжливість wezwania.",
       rules: [
@@ -1260,6 +1385,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "51",
+      provisionId: "kpa-art-51",
+      reviewStatus: "reviewed",
       summary:
         "Стаття обмежує обов’язок особистої явки територією gminy або міста проживання чи перебування викликаної особи та сусідньою gminą або містом.",
       rules: [
@@ -1279,6 +1406,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "52",
+      provisionId: "kpa-art-52",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє organowi prowadzącemu доручити належному місцевому organowi виклик особи для пояснень, свідчень або іншої дії.",
       rules: [
@@ -1300,6 +1429,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "53",
+      provisionId: "kpa-art-53",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття встановлює виняток із територіальних полегшень ${kpaLaw.article("51", "art. 51")} і 52, коли характер справи або дії потребує проведення czynności саме перед organem prowadzącym.`,
       rules: [
         {
@@ -1314,6 +1445,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "54",
+      provisionId: "kpa-art-54",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює обов’язковий зміст wezwania та вимогу підпису працівника, який його видає.",
       rules: [
@@ -1339,6 +1472,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "55",
+      provisionId: "kpa-art-55",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє термінове wezwanie телефоном або іншим засобом зв’язку, але пов’язує його правові наслідки з безсумнівним отриманням належного змісту вчасно.",
       rules: [
@@ -1358,6 +1493,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "56",
+      provisionId: "kpa-art-56",
+      reviewStatus: "reviewed",
       summary:
         "Стаття надає викликаній особі право на відшкодування визначених витрат і встановлює момент, до якого треба заявити вимогу.",
       rules: [
@@ -1379,6 +1516,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "57",
+      provisionId: "kpa-art-57",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює спосіб обчислення строків у днях, тижнях, місяцях і роках, перенос останнього дня та дії, що зберігають строк.",
       rules: [
@@ -1404,6 +1543,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "58",
+      provisionId: "kpa-art-58",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює передумови przywrócenia terminu: brak winy, семиденний строк від припинення перешкоди та одночасне виконання пропущеної дії.",
       rules: [
@@ -1430,6 +1571,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "59",
+      provisionId: "kpa-art-59",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає organ, який вирішує питання przywrócenia terminu, та засіб оскарження відмови.",
       rules: [
@@ -1450,6 +1593,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "60",
+      provisionId: "kpa-art-60",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє на вимогу сторони призупинити виконання decyzji або postanowienia до розгляду прохання про відновлення строку на odwołanie чи zażalenie.",
       rules: [
@@ -1466,6 +1611,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "61",
+      provisionId: "kpa-art-61",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, як і коли адміністративне провадження починається на вимогу сторони або з ініціативи organu. Вона також встановлює дату wszczęcia та обов’язок повідомити всіх сторін.",
       rules: [
@@ -1497,6 +1644,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "61a",
+      provisionId: "kpa-art-61a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє відмовити у wszczęciu postępowania, якщо заявник не є стороною або інша обґрунтована причина унеможливлює відкриття справи.",
       rules: [
@@ -1518,6 +1667,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "62",
+      provisionId: "kpa-art-62",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє вести одне спільне провадження щодо кількох сторін, коли їхні справи спираються на однаковий фактичний і правовий стан та належать одному organowi.",
       rules: [
@@ -1533,6 +1684,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "63",
+      provisionId: "kpa-art-63",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює допустимі способи подання podań, їх мінімальний зміст і правила підпису. Звичайний e-mail не є належним каналом, якщо спеціальний закон прямо не передбачає інакше.",
       rules: [
@@ -1564,6 +1717,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "64",
+      provisionId: "kpa-art-64",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає наслідки braków podania: відсутність адреси може одразу залишити його без розгляду, а інші формальні недоліки спершу треба запропонувати усунути.",
       rules: [
@@ -1585,6 +1740,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "65",
+      provisionId: "kpa-art-65",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує niewłaściwy organ негайно передати podanie właściwemu organowi та захищає строк, якщо заявник помилився з адресатом.",
       rules: [
@@ -1610,6 +1767,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "66",
+      provisionId: "kpa-art-66",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює podanie, у якому поєднано кілька справ, що належать різним organom, і визначає порядок окремого подання решти вимог.",
       rules: [
@@ -1640,6 +1799,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "66a",
+      provisionId: "kpa-art-66a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття вимагає вести metrykę sprawy, яка показує, хто брав участь у підготовці та прийнятті рішень і які дії виконував.",
       rules: [
@@ -1666,6 +1827,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "67",
+      provisionId: "kpa-art-67",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує складати protokół з кожної істотної для вирішення справи дії, якщо її не зафіксовано іншим письмовим способом.",
       rules: [
@@ -1687,6 +1850,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "68",
+      provisionId: "kpa-art-68",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює обов’язковий зміст protokołu та порядок його підписання учасниками дії.",
       rules: [
@@ -1708,6 +1873,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "69",
+      provisionId: "kpa-art-69",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює спеціальні правила протоколювання zeznań, зокрема негайне підписання та переклад показань іншою мовою.",
       rules: [
@@ -1729,6 +1896,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "70",
+      provisionId: "kpa-art-70",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє долучити до protokołu письмові zeznania та інші документи, підписані особами, які беруть участь у дії.",
       rules: [
@@ -1745,6 +1914,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "71",
+      provisionId: "kpa-art-71",
+      reviewStatus: "reviewed",
       summary:
         "Стаття забороняє робити в protokole нечитабельні виправлення: закреслений текст має залишатися видимим, а зміни — бути підтверджені.",
       rules: [
@@ -1761,6 +1932,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "72",
+      provisionId: "kpa-art-72",
+      reviewStatus: "reviewed",
       summary:
         "Стаття вимагає фіксувати в aktach істотні дії organu, з яких не складається protokół, у формі підписаної adnotacji.",
       rules: [
@@ -1777,6 +1950,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "73",
+      provisionId: "kpa-art-73",
+      reviewStatus: "reviewed",
       summary:
         "Стаття гарантує стороні доступ до akt sprawy, право робити нотатки й копії та, за важливого інтересу, отримувати uwierzytelnione odpisy або копії.",
       rules: [
@@ -1807,6 +1982,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "74",
+      provisionId: "kpa-art-74",
+      reviewStatus: "reviewed",
       summary:
         "Стаття обмежує доступ до матеріалів із klauzulą tajności та до матеріалів, виключених через важливий державний інтерес, і встановлює форму відмови.",
       rules: [
@@ -1827,6 +2004,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "74a",
+      provisionId: "kpa-art-74a",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття уточнює, що процесуальне право доступу до akt за ${kpaLaw.article("73", "art. 73")} не обмежує окремого права суб’єкта даних за ${kpaLaw.external("art. 15 RODO", RODO_URL)} RODO.`,
       rules: [
         {
@@ -1841,6 +2020,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "75",
+      provisionId: "kpa-art-75",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює відкритий каталог доказів: допустиме все, що допомагає з’ясувати справу і не суперечить закону. Вона також дозволяє прийняти oświadczenie strony замість urzędowego zaświadczenia у визначеній ситуації.",
       rules: [
@@ -1861,6 +2042,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "76",
+      provisionId: "kpa-art-76",
+      reviewStatus: "reviewed",
       summary:
         "Стаття надає dokumentom urzędowym доказову силу щодо того, що в них офіційно засвідчено, але дозволяє проводити dowód przeciwko їх змісту.",
       rules: [
@@ -1882,6 +2065,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "76a",
+      provisionId: "kpa-art-76a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює використання копій і odpisów документів замість оригіналів, їх засвідчення та випадки, коли organ може вимагати оригінал.",
       rules: [
@@ -1912,6 +2097,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "77",
+      provisionId: "kpa-art-77",
+      reviewStatus: "reviewed",
       summary:
         "Стаття покладає на organ обов’язок повністю зібрати та всебічно оцінити доказовий матеріал і дозволяє змінювати wcześniejsze postanowienia dowodowe.",
       rules: [
@@ -1938,6 +2125,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "78",
+      provisionId: "kpa-art-78",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює, коли organ повинен врахувати wniosek dowodowy strony і коли може його не прийняти.",
       rules: [
@@ -1959,6 +2148,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "79",
+      provisionId: "kpa-art-79",
+      reviewStatus: "reviewed",
       summary:
         "Стаття гарантує стороні завчасне повідомлення про доказові дії та право активно брати в них участь.",
       rules: [
@@ -1980,6 +2171,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "79a",
+      provisionId: "kpa-art-79a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов’язує organ перед завершенням провадження на вимогу сторони вказати, які залежні від неї умови не виконані або не доведені та можуть спричинити рішення всупереч її żądaniu.",
       rules: [
@@ -2000,6 +2193,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "80",
+      provisionId: "kpa-art-80",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює принцип swobodnej oceny dowodów: organ вирішує, чи доведено факт, на підставі всього зібраного матеріалу.",
       rules: [
@@ -2016,6 +2211,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "81",
+      provisionId: "kpa-art-81",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття забороняє визнати обставину доведеною, якщо сторона не мала можливості висловитися щодо доказів, крім виняткових випадків ${kpaLaw.article("10", "art. 10 § 2")}.`,
       rules: [
         {
@@ -2030,6 +2227,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "81a",
+      provisionId: "kpa-art-81a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття наказує вирішувати неусувні фактичні сумніви на користь сторони у справах про накладення обов’язку або обмеження чи позбавлення права, але встановлює чотири групи винятків.",
       rules: [
@@ -2056,6 +2255,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "82",
+      provisionId: "kpa-art-82",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає осіб, які взагалі не можуть бути świadkami через нездатність сприймати факти, охоронювану таємницю або таємницю spowiedzi.",
       rules: [
@@ -2081,6 +2282,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "83",
+      provisionId: "kpa-art-83",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює загальний обов’язок свідчити, право близьких осіб відмовитися від zeznań та право не відповідати на окреме питання через визначені ризики або таємницю.",
       rules: [
@@ -2112,6 +2315,8 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
     },
     {
       article: "84",
+      provisionId: "kpa-art-84",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє organowi залучити одного або кількох biegłych, коли для оцінки обставин потрібні спеціальні знання, і поширює на них правила відводу та допиту.",
       rules: [
@@ -2131,5 +2336,4 @@ export const kpaArticleExplanationsPart1 = defineLegalTextContent(
         "Це загальна доказова норма; у справі cudzoziemca biegły потрібен лише там, де факту не можна належно оцінити без wiadomości specjalnych.",
     },
   ],
-  "kpa-article-explanations"
-) satisfies KpaArticleExplanation[]
+})
