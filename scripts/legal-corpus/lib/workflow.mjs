@@ -228,6 +228,7 @@ export async function prepareWorkOrder({
   oldEditionId,
   approvedWriteScope,
   outputBase,
+  forceRebuild = false,
 }) {
   if (mode !== "add" && mode !== "update") {
     throw new Error("prepare mode must be add or update")
@@ -259,6 +260,7 @@ export async function prepareWorkOrder({
 
   await runNode(projectRoot, "scripts/legal-corpus/build-document.mjs", [
     configPath,
+    ...(forceRebuild ? ["--force-rebuild"] : []),
   ])
 
   const editionDirectory = path.join(

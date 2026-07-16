@@ -135,6 +135,7 @@ async function commandPrepare(projectRoot, options) {
       typeof options.output === "string"
         ? path.resolve(projectRoot, options.output)
         : undefined,
+    forceRebuild: Boolean(options["force-rebuild"]),
   })
   process.stdout.write(
     `${JSON.stringify({

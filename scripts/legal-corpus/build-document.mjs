@@ -14,6 +14,7 @@ import {
 import os from "node:os"
 import path from "node:path"
 import process from "node:process"
+import { fileURLToPath } from "node:url"
 
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs"
 
@@ -177,11 +178,61 @@ function asValidationError(error) {
   return error
 }
 
+/**
+ * @param {string[]} argv
+ * @returns {{ configPath: string | undefined, forceRebuild: boolean }}
+ */
+export function parseArguments(argv) {
+  let configPath
+  let forceRebuild = false
+  for (const value of argv) {
+    if (value === "--force-rebuild") forceRebuild = true
+    else if (configPath === undefined) configPath = value
+    else throw new Error(`Unexpected argument: ${value}`)
+  }
+  return { configPath, forceRebuild }
+}
+
+/**
+ * An edition's committed artifacts are immutable once built: rebuilding the
+ * same editionId must be an explicit decision, not a side effect of rerunning
+ * a build command. Without --force-rebuild, a pinned edition rebuilt months
+ * later would otherwise silently replace its directories and rewrite its
+ * audit metadata.
+ * @param {{ editionId: string, existingManifests: Array<Record<string, unknown>>, forceRebuild: boolean }} options
+ */
+export function assertRebuildAllowed({ editionId, existingManifests, forceRebuild }) {
+  if (existingManifests.length === 0 || forceRebuild) return
+  const error = new Error(
+    `Edition ${editionId} already has committed artifacts; rerun with --force-rebuild to intentionally rebuild it`
+  )
+  error.name = "CorpusValidationError"
+  error.diagnostics = {
+    fatal: [diagnostic("fatal", "identity.edition-already-built", error.message, "editionId")],
+  }
+  throw error
+}
+
+/**
+ * Preserve the original manifest `builtAt` when a forced rebuild's fetched
+ * PDF checksum is unchanged, so an identical source produces an identical
+ * committed manifest instead of only differing by build time. A genuinely
+ * different PDF checksum under the same editionId already fails earlier, in
+ * validateExistingEditionIdentity, so reaching this function with a matching
+ * checksum means the rebuild is truly a no-op at the content level.
+ * @param {{ existingManifests: Array<Record<string, unknown>>, pdfSha256: string, now: string }} options
+ * @returns {string}
+ */
+export function resolveBuiltAt({ existingManifests, pdfSha256, now }) {
+  const unchanged = existingManifests.find((manifest) => manifest.pdfSha256 === pdfSha256)
+  return typeof unchanged?.builtAt === "string" ? unchanged.builtAt : now
+}
+
 async function main() {
-  const configArgument = process.argv[2]
+  const { configPath: configArgument, forceRebuild } = parseArguments(process.argv.slice(2))
   if (!configArgument) {
     throw new Error(
-      "Usage: node scripts/legal-corpus/build-document.mjs <document-config.json>"
+      "Usage: node scripts/legal-corpus/build-document.mjs <document-config.json> [--force-rebuild]"
     )
   }
 
@@ -206,6 +257,11 @@ async function main() {
     error.diagnostics = { fatal: existing.errors }
     throw error
   }
+  assertRebuildAllowed({
+    editionId: config.editionId,
+    existingManifests: existing.manifests,
+    forceRebuild,
+  })
 
   const [metadataBytes, pdfBytes] = await Promise.all([
     fetchBytes(config.source.metadataUrl),
@@ -258,7 +314,11 @@ async function main() {
     pdfSha256,
     observed,
     diagnostics: validation,
-    builtAt: nowWithoutMilliseconds(),
+    builtAt: resolveBuiltAt({
+      existingManifests: existing.manifests,
+      pdfSha256,
+      now: nowWithoutMilliseconds(),
+    }),
   })
   const articles = projectArticles(provisions)
   const stageRoot = await mkdtemp(path.join(os.tmpdir(), `legal-corpus-${config.editionId}-`))
@@ -304,13 +364,15 @@ async function main() {
   )
 }
 
-try {
-  await main()
-} catch (error) {
-  const normalizedError = asValidationError(error)
-  if (normalizedError?.diagnostics?.fatal) {
-    process.stderr.write(`${JSON.stringify(normalizedError.diagnostics, null, 2)}\n`)
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try {
+    await main()
+  } catch (error) {
+    const normalizedError = asValidationError(error)
+    if (normalizedError?.diagnostics?.fatal) {
+      process.stderr.write(`${JSON.stringify(normalizedError.diagnostics, null, 2)}\n`)
+    }
+    process.stderr.write(`${error.stack ?? error}\n`)
+    process.exitCode = 1
   }
-  process.stderr.write(`${error.stack ?? error}\n`)
-  process.exitCode = 1
 }
