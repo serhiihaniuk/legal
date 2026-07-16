@@ -9,9 +9,11 @@ import {
   prepareWorkOrder,
   readJson,
   runCapture,
+  runEditorialValidator,
   runNode,
   validateChangedFileSet,
   validateWorkOrder,
+  verifyPromotionArtifacts,
   writeJson,
 } from "./lib/workflow.mjs"
 
@@ -85,7 +87,12 @@ function allowedValidationPaths(workOrder, workOrderPath) {
   ]
 }
 
-async function validateWithScope(projectRoot, workOrderPath) {
+/**
+ * @param {string} projectRoot
+ * @param {string} workOrderPath
+ * @param {{ verifyArtifacts?: boolean }} [options]
+ */
+async function validateWithScope(projectRoot, workOrderPath, options = {}) {
   const result = await validateWorkOrder({ projectRoot, workOrderPath })
   const baseCommit = result.workOrder.baseCommit
   if (!baseCommit) {
@@ -100,6 +107,16 @@ async function validateWithScope(projectRoot, workOrderPath) {
       result.errors.push(`Changed files outside approved scope: ${extras.join(", ")}`)
     }
     result.changedPaths = changed
+  }
+  if (options.verifyArtifacts) {
+    // Promotion trusts neither the work order's stored diagnostics nor its
+    // self-attested review state: it re-verifies corpus facts against the
+    // edition artifacts actually on disk and mechanically runs the editorial
+    // validator, rather than only checking the work order's own claims.
+    result.errors.push(
+      ...(await verifyPromotionArtifacts({ projectRoot, workOrder: result.workOrder }))
+    )
+    result.errors.push(...(await runEditorialValidator(projectRoot)))
   }
   result.passed = result.errors.length === 0
   return result
@@ -188,7 +205,9 @@ async function commandPromote(projectRoot, options) {
   const workOrderPath = required(options, "work-order")
   const approvedBy = required(options, "approved-by")
   const approval = required(options, "approve")
-  const result = await validateWithScope(projectRoot, workOrderPath)
+  const result = await validateWithScope(projectRoot, workOrderPath, {
+    verifyArtifacts: true,
+  })
   if (!result.passed) {
     throw new Error(`Promotion blocked: ${result.errors.join("; ")}`)
   }

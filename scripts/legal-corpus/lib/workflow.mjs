@@ -3,6 +3,11 @@ import { URL } from "node:url"
 import { lstat, mkdir, readFile, realpath, writeFile } from "node:fs/promises"
 import path from "node:path"
 
+import { buildObservedFacts } from "./artifacts.mjs"
+import { validateConfig } from "./config.mjs"
+import { sha256 } from "./extraction.mjs"
+import { validateCorpusFacts } from "./validation.mjs"
+
 const FORBIDDEN_SCOPE_PREFIXES = [
   "app/data/legal-corpus/",
   "public/legal-sources/",
@@ -477,5 +482,102 @@ export async function validateWorkOrder({ projectRoot, workOrderPath }) {
     errors,
     approvedWriteScope: scope,
     workOrder,
+  }
+}
+
+/**
+ * @param {unknown} error
+ * @returns {string}
+ */
+function errorMessage(error) {
+  return error instanceof Error ? error.message : String(error)
+}
+
+/**
+ * Re-run corpus fact validation against the edition's own artifacts on disk,
+ * instead of trusting the work order's record of a validation that ran
+ * earlier against a since-possibly-edited edition directory. A hand-edited
+ * `provisions.json` or `structure.json` (or a config file changed after
+ * `prepare`) fails here even though the work order's stored diagnostics are
+ * still clean.
+ * @param {{ projectRoot: string, workOrder: Record<string, any> }} options
+ * @returns {Promise<string[]>}
+ */
+export async function verifyPromotionArtifacts({ projectRoot, workOrder }) {
+  const errors = []
+  let config
+  try {
+    config = validateConfig(await readJson(path.join(projectRoot, workOrder.configPath)))
+  } catch (error) {
+    errors.push(`Edition config re-validation failed: ${errorMessage(error)}`)
+    return errors
+  }
+
+  const editionDirectory = path.join(
+    projectRoot,
+    "app/data/legal-corpus",
+    workOrder.newEditionId
+  )
+  const publicDirectory = path.join(
+    projectRoot,
+    "public/legal-sources",
+    workOrder.newEditionId
+  )
+  let metadata
+  let pages
+  let provisions
+  let structure
+  let pdfBytes
+  try {
+    ;[metadata, pages, provisions, structure, pdfBytes] = await Promise.all([
+      readJson(path.join(editionDirectory, "metadata.json")),
+      readJson(path.join(editionDirectory, "pages.json")),
+      readJson(path.join(editionDirectory, "provisions.json")),
+      readJson(path.join(editionDirectory, "structure.json")),
+      readFile(path.join(publicDirectory, "source.pdf")),
+    ])
+  } catch (error) {
+    errors.push(`Cannot read edition artifacts on disk for re-verification: ${errorMessage(error)}`)
+    return errors
+  }
+
+  const pdfSha256 = sha256(pdfBytes)
+  const observed = buildObservedFacts(pages, provisions)
+  const result = validateCorpusFacts({
+    config,
+    metadata,
+    pdfBytes,
+    pdfSha256,
+    pages,
+    provisions,
+    structure,
+    observed,
+  })
+  for (const entry of result.fatal) {
+    const location = entry.path ? ` (${entry.path})` : ""
+    errors.push(`Corpus fact re-verification failed at promotion: [${entry.code}] ${entry.message}${location}`)
+  }
+  return errors
+}
+
+/**
+ * Run the editorial validator (`scripts/legal-editorial/validate.mjs`) in
+ * `--incomplete` mode as a child process, mechanically connecting promotion
+ * to editorial validation instead of trusting a self-attested work-order
+ * review state. `--incomplete` still treats missing/non-reviewed coverage as
+ * warnings; only structural errors (unknown provisions, bad IDs, duplicate
+ * entries, invalid status vocabulary, and similar) fail promotion here.
+ * @param {string} projectRoot
+ * @returns {Promise<string[]>}
+ */
+export async function runEditorialValidator(projectRoot) {
+  try {
+    await runCapture(projectRoot, process.execPath, [
+      "scripts/legal-editorial/validate.mjs",
+      "--incomplete",
+    ])
+    return []
+  } catch (error) {
+    return [`Editorial validation failed: ${errorMessage(error)}`]
   }
 }
