@@ -1,7 +1,7 @@
-// Transitional public API. The implementation is decomposed inside this feature in Phase 3 step 3.
 export {
-  CaseStudyContent,
+  caseStudySectionIds,
   caseStudyStageNavigation,
   caseStudyTableOfContents,
   caseStudyToc,
-} from "~/components/case-study-content"
+} from "./model/case-study-navigation"
+export { CaseStudyContent } from "./ui/case-study-content"
