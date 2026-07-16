@@ -41,13 +41,13 @@ function PreviewBody({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           {preview.label ? (
-            <p className="text-[0.68rem] font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+            <p className="text-navigation-meta font-semibold tracking-[0.12em] text-muted-foreground uppercase">
               {preview.label}
             </p>
           ) : null}
           <p className="leading-5 font-semibold">{title}</p>
         </div>
-        <Badge variant="outline" className="shrink-0 text-[0.65rem]">
+        <Badge variant="outline" className="shrink-0 text-micro">
           {statusLabels[preview.status]}
         </Badge>
       </div>
@@ -74,7 +74,7 @@ function PreviewBody({
       preview.sourceEditionId ||
       preview.legalStateDate ||
       preview.verifiedAt ? (
-        <dl className="grid gap-1 pt-1 text-[0.68rem] leading-4 text-muted-foreground">
+        <dl className="grid gap-1 pt-1 text-navigation-meta leading-4 text-muted-foreground">
           <Separator />
           {preview.editionId ? (
             <div className="flex justify-between gap-3">
@@ -105,7 +105,7 @@ function PreviewBody({
       {preview.sourceUrl ? (
         <div className="flex flex-col gap-2 pt-1">
           <Separator />
-          <p className="truncate pt-1 text-[0.68rem] font-medium text-muted-foreground">
+          <p className="truncate pt-1 text-navigation-meta font-medium text-muted-foreground">
             Джерело: {preview.sourceLabel ?? preview.sourceUrl}
           </p>
         </div>

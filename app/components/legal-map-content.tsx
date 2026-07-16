@@ -34,6 +34,14 @@ import type { LegalNodeGuide } from "~/data/legal-node-guide-types"
 import { legalNodeGuides } from "~/data/legal-node-guides"
 import { nodeById, type IndexedNode } from "~/data/legal-index"
 import type { LegalNode } from "~/data/legal-types"
+import {
+  DocumentArticle,
+  DocumentHeader,
+} from "~/components/patterns/document-content"
+import {
+  MobileSectionSelect,
+  type SectionNavigationOption,
+} from "~/components/patterns/section-navigation"
 
 export const legalMapOverviewToc: TocItem[] = [
   { href: "#map-overview", label: "Як влаштована карта" },
@@ -173,47 +181,37 @@ export function MobileLegalMapNavigation({
 }) {
   const stage = legalMapJourney.find((item) => item.id === selectedStageId)
   const nodes = stage ? journeyNodes(stage) : []
+  const stageNavigationOptions: readonly SectionNavigationOption<
+    LegalMapJourneyStage["id"]
+  >[] = legalMapJourney.map((item) => ({
+    value: item.id,
+    label: item.title,
+    selectLabel: `${item.order}. ${item.title} · ${item.nodeIds.length} тем`,
+  }))
+  const nodeNavigationOptions: readonly SectionNavigationOption[] = [
+    { value: "", label: "Огляд маршруту" },
+    ...nodes.map((node) => ({ value: node.id, label: node.title })),
+  ]
 
   return (
     <div className="grid min-w-0 gap-3 lg:hidden">
       <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
-      <label className="grid min-w-0 gap-1.5">
-        <span className="text-xs font-medium text-muted-foreground">
-          Етап справи
-        </span>
-        <select
-          value={selectedStageId}
-          onChange={(event) =>
-            onStageSelect(event.target.value as LegalMapJourneyStage["id"])
-          }
-          className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-        >
-          {legalMapJourney.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.order}. {item.title} · {item.nodeIds.length} тем
-            </option>
-          ))}
-        </select>
-      </label>
+      <MobileSectionSelect
+        label="Етап справи"
+        value={selectedStageId}
+        options={stageNavigationOptions}
+        onValueChange={onStageSelect}
+      />
 
-      <label className="grid min-w-0 gap-1.5">
-        <span className="text-xs font-medium text-muted-foreground">Тема</span>
-        <select
-          value={selectedNodeId ?? ""}
-          onChange={(event) => {
-            if (event.target.value) onNodeSelect(event.target.value)
-            else onOverviewSelect()
-          }}
-          className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-        >
-          <option value="">Огляд маршруту</option>
-          {nodes.map((node) => (
-            <option key={node.id} value={node.id}>
-              {node.title}
-            </option>
-          ))}
-        </select>
-      </label>
+      <MobileSectionSelect
+        label="Тема"
+        value={selectedNodeId ?? ""}
+        options={nodeNavigationOptions}
+        onValueChange={(nodeId) => {
+          if (nodeId) onNodeSelect(nodeId)
+          else onOverviewSelect()
+        }}
+      />
     </div>
   )
 }
@@ -256,16 +254,18 @@ export function LegalMapOverview({
   onNodeSelect: (nodeId: string) => void
 }) {
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-      <header id="map-overview">
-        <div
-          data-not-typeset
-          className="not-typeset mb-3 flex flex-wrap items-center gap-2"
-        >
-          <Badge variant="secondary">Карта права</Badge>
-          <Badge variant="outline">9 етапів</Badge>
-          <Badge variant="outline">62 правові теми</Badge>
-        </div>
+    <DocumentArticle>
+      <DocumentHeader
+        id="map-overview"
+        badgeAlign="center"
+        badges={
+          <>
+            <Badge variant="secondary">Карта права</Badge>
+            <Badge variant="outline">9 етапів</Badge>
+            <Badge variant="outline">62 правові теми</Badge>
+          </>
+        }
+      >
         <h1>Шлях адміністративної справи іноземця</h1>
         <p className="lead">
           Це не каталог законів. Карта показує, яке питання вирішується на
@@ -278,7 +278,7 @@ export function LegalMapOverview({
           рішення та захист. KPA, документи й норми про працю з’являються там,
           де вони реально працюють у справі.
         </p>
-      </header>
+      </DocumentHeader>
 
       <section aria-labelledby="map-legend-title">
         <h2 id="map-legend-title">Як читати карту</h2>
@@ -379,7 +379,7 @@ export function LegalMapOverview({
           })}
         </Accordion>
       </section>
-    </article>
+    </DocumentArticle>
   )
 }
 
@@ -514,20 +514,22 @@ export function LegalNodeContent({
   )
 
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-      <header id="node-overview">
-        <div
-          data-not-typeset
-          className="not-typeset mb-3 flex flex-wrap items-center gap-2"
-        >
-          <Badge variant="secondary">
-            Етап {stage.order} з {legalMapJourney.length}
-          </Badge>
-          <Badge variant="outline">{stage.title}</Badge>
-          <Badge variant="outline">
-            {group?.shortTitle ?? node.groupTitle}
-          </Badge>
-        </div>
+    <DocumentArticle>
+      <DocumentHeader
+        id="node-overview"
+        badgeAlign="center"
+        badges={
+          <>
+            <Badge variant="secondary">
+              Етап {stage.order} з {legalMapJourney.length}
+            </Badge>
+            <Badge variant="outline">{stage.title}</Badge>
+            <Badge variant="outline">
+              {group?.shortTitle ?? node.groupTitle}
+            </Badge>
+          </>
+        }
+      >
         <p
           data-not-typeset
           className="not-typeset mb-3 flex flex-wrap gap-x-2 gap-y-1 text-xs text-muted-foreground"
@@ -576,7 +578,7 @@ export function LegalNodeContent({
             Показати етап на карті
           </Button>
         </div>
-      </header>
+      </DocumentHeader>
 
       <section id="node-model">
         <h2>Правова модель</h2>
@@ -698,7 +700,7 @@ export function LegalNodeContent({
           </p>
         )}
       </section>
-    </article>
+    </DocumentArticle>
   )
 }
 

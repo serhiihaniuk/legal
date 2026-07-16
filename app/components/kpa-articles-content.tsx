@@ -28,6 +28,8 @@ import {
   kpaArticleIndex,
   type KpaArticleEntry,
 } from "~/data/legal-library/learning/kpa"
+import { DocumentArticle } from "~/components/patterns/document-content"
+import { DefinitionRows } from "~/components/patterns/definition-rows"
 
 const kpaSource = getEdition("kpa", "kpa-2025-1691")!.manifest
 const kpaCorpusProvisionByArticle = new Map(
@@ -222,7 +224,7 @@ export function KpaArticlesContent({
         </div>
       </header>
 
-      <article className="typeset typeset-docs w-full flex-1 pb-16 sm:pb-0">
+      <DocumentArticle width="grow">
         {entry.status === "repealed" ? (
           <blockquote>
             <strong>Uchylony:</strong> у прийнятій у проєкті редакції цей номер
@@ -325,47 +327,44 @@ export function KpaArticlesContent({
 
         <section id="article-navigation">
           <h2>Місце статті в кодексі</h2>
-          <dl>
-            <div>
-              <dt>Акт</dt>
-              <dd>
-                Kodeks postępowania administracyjnego · Dz.U. 2025 poz. 1691
-              </dd>
-            </div>
-            <div>
-              <dt>Стаття</dt>
-              <dd lang="pl">Art. {entry.article}</dd>
-            </div>
-            <div>
-              <dt>Місце в кодексі</dt>
-              <dd>
-                {entry.division} · {entry.chapter}
-              </dd>
-            </div>
-            <div>
-              <dt>Сторінка PDF</dt>
-              <dd>{entry.pdfPage}</dd>
-            </div>
-            <div>
-              <dt>Структура</dt>
-              <dd>
-                {entry.paragraphCount
+          <DefinitionRows
+            items={[
+              {
+                id: "document",
+                term: "Акт",
+                description:
+                  "Kodeks postępowania administracyjnego · Dz.U. 2025 poz. 1691",
+              },
+              {
+                id: "article",
+                term: "Стаття",
+                description: `Art. ${entry.article}`,
+                descriptionProps: { lang: "pl" },
+              },
+              {
+                id: "place",
+                term: "Місце в кодексі",
+                description: `${entry.division} · ${entry.chapter}`,
+              },
+              {
+                id: "page",
+                term: "Сторінка PDF",
+                description: entry.pdfPage,
+              },
+              {
+                id: "structure",
+                term: "Структура",
+                description: entry.paragraphCount
                   ? `${entry.paragraphCount} позначених параграфів (§) у статті.`
-                  : "У навігаційному індексі не зафіксовано поділу цієї статті на кілька §."}
-              </dd>
-            </div>
-            <div>
-              <dt>Сусідні норми</dt>
-              <dd>
-                {entry.previousArticle
-                  ? `Перед нею — art. ${entry.previousArticle}. `
-                  : ""}
-                {entry.nextArticle
-                  ? `Після неї — art. ${entry.nextArticle}.`
-                  : ""}
-              </dd>
-            </div>
-          </dl>
+                  : "У навігаційному індексі не зафіксовано поділу цієї статті на кілька §.",
+              },
+              {
+                id: "neighbours",
+                term: "Сусідні норми",
+                description: `${entry.previousArticle ? `Перед нею — art. ${entry.previousArticle}. ` : ""}${entry.nextArticle ? `Після неї — art. ${entry.nextArticle}.` : ""}`,
+              },
+            ]}
+          />
         </section>
 
         <section id="article-edition">
@@ -381,7 +380,7 @@ export function KpaArticlesContent({
             зміни, дату wejścia w życie та przepisy przejściowe.
           </blockquote>
         </section>
-      </article>
+      </DocumentArticle>
     </>
   )
 }

@@ -9,34 +9,54 @@ import {
   listDocuments,
   listProvisions,
 } from "~/data/legal-library"
+import {
+  defineDocumentHeadings,
+  DocumentArticle,
+  DocumentHeader,
+  tableOfContentsFromHeadings,
+} from "~/components/patterns/document-content"
 
-const toc = [
-  { href: "#law-library-overview", label: "Про бібліотеку" },
-  { href: "#law-library-documents", label: "Правові акти" },
-  { href: "#law-library-safety", label: "Як перевіряти джерело" },
-] as const
+const headings = defineDocumentHeadings({
+  overview: {
+    id: "law-library-overview",
+    title: "Бібліотека права",
+    tocLabel: "Про бібліотеку",
+  },
+  documents: { id: "law-library-documents", title: "Правові акти" },
+  safety: {
+    id: "law-library-safety",
+    title: "Як читати цей матеріал",
+    tocLabel: "Як перевіряти джерело",
+  },
+})
+
+const toc = tableOfContentsFromHeadings(headings)
 
 export default function LawLibraryRoute() {
   const documents = listDocuments()
 
   return (
     <DocsLayout navigation={<LawLibraryNavigation />} toc={toc}>
-      <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-        <header id="law-library-overview">
-          <div data-not-typeset className="mb-3 flex flex-wrap gap-2">
-            <Badge variant="secondary">Офіційні тексти</Badge>
-            <Badge variant="outline">Локальні PDF</Badge>
-          </div>
-          <h1>Бібліотека права</h1>
+      <DocumentArticle>
+        <DocumentHeader
+          id={headings.overview.id}
+          badges={
+            <>
+              <Badge variant="secondary">Офіційні тексти</Badge>
+              <Badge variant="outline">Локальні PDF</Badge>
+            </>
+          }
+        >
+          <h1>{headings.overview.title}</h1>
           <p className="text-lg leading-8">
             Тут зібрані акти, які використовує атлас. Кожна норма веде до
             точного місця в локальній копії офіційного PDF. Пояснення є
             навчальним шаром; для цитування і перевірки завжди відкривайте ELI.
           </p>
-        </header>
+        </DocumentHeader>
 
-        <section id="law-library-documents">
-          <h2>Правові акти</h2>
+        <section id={headings.documents.id}>
+          <h2>{headings.documents.title}</h2>
           <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
             {documents.map((document) => {
               const provisions = listProvisions(document.id)
@@ -68,8 +88,8 @@ export default function LawLibraryRoute() {
           </div>
         </section>
 
-        <section id="law-library-safety">
-          <h2>Як читати цей матеріал</h2>
+        <section id={headings.safety.id}>
+          <h2>{headings.safety.title}</h2>
           <p>
             Звіряйте статус акту, пізніші зміни, дату wejścia w życie та
             przepisy przejściowe з датою факту у справі. Однаковий номер статті
@@ -82,7 +102,7 @@ export default function LawLibraryRoute() {
             перевірки чинності.
           </blockquote>
         </section>
-      </article>
+      </DocumentArticle>
     </DocsLayout>
   )
 }

@@ -105,6 +105,7 @@
 - New/changed components: app shell, global header/navigation menu, mobile selectors, multi-document law catalog, per-document learning/provisions/practice workspace, generic provision reader with exact PDF locator, KPA compatibility guide, article selector, map index, node detail, shared official-source entry/link, case profile, route tabs, legal summary, document register, deadline register, exclusions, timeline accordion, explicit typed legal link and compatibility inline-reference renderer
 - Variants and states: selected, matched, dimmed, overview/full-depth, expanded/collapsed, foundational, procedural, practical, active case route, positive/negative procedural branch
 - Token/component ownership: semantyczne CSS variables i Tailwind v4 theme tokens w `app/app.css`
+- Shared documentation patterns: `app/components/patterns/` owns the typeset document shell, badge header, definition/reference rows, heading-to-TOC projection, and the paired desktop/mobile section selector. A URL-backed selection route derives one selection state from its URL and passes one `useUrlSelection` model to its desktop and mobile selectors; those controls must not maintain parallel state.
 
 ## Accessibility
 

@@ -7,22 +7,33 @@ import { Button } from "~/components/ui/button"
 import { Separator } from "~/components/ui/separator"
 import { legalData } from "~/data/legal-data"
 import { studyModules } from "~/data/study-plan-data"
+import {
+  defineDocumentHeadings,
+  DocumentArticle,
+  tableOfContentsFromHeadings,
+} from "~/components/patterns/document-content"
 
-export const studyPlanSectionIds = {
-  overview: "study-overview",
-  material: "study-material",
-  practice: "study-practice",
-  assessment: "study-assessment",
-  review: "study-review",
-} as const
+const studyPlanHeadings = defineDocumentHeadings({
+  overview: { id: "study-overview", title: "Про модуль" },
+  material: {
+    id: "study-material",
+    title: "Що треба зрозуміти",
+    tocLabel: "Навчальний матеріал",
+  },
+  practice: { id: "study-practice", title: "Практичне завдання" },
+  assessment: {
+    id: "study-assessment",
+    title: "Як перевірити результат",
+    tocLabel: "Критерії результату",
+  },
+  review: {
+    id: "study-review",
+    title: "Повторення через 7 днів",
+    tocLabel: "Повторення",
+  },
+})
 
-export const studyPlanToc = [
-  { href: `#${studyPlanSectionIds.overview}`, label: "Про модуль" },
-  { href: `#${studyPlanSectionIds.material}`, label: "Навчальний матеріал" },
-  { href: `#${studyPlanSectionIds.practice}`, label: "Практичне завдання" },
-  { href: `#${studyPlanSectionIds.assessment}`, label: "Критерії результату" },
-  { href: `#${studyPlanSectionIds.review}`, label: "Повторення" },
-] as const
+export const studyPlanToc = tableOfContentsFromHeadings(studyPlanHeadings)
 
 function formatLegalState(value: string) {
   const [year, month, day] = value.split("-")
@@ -46,8 +57,8 @@ export function StudyPlanContent({
   const nextModule = studyModules[selectedIndex + 1]
 
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-      <header id={studyPlanSectionIds.overview}>
+    <DocumentArticle>
+      <header id={studyPlanHeadings.overview.id}>
         <div
           data-not-typeset
           className="mb-4 flex flex-wrap items-center gap-2"
@@ -71,10 +82,10 @@ export function StudyPlanContent({
       <Separator data-not-typeset className="my-8" />
 
       <section
-        id={studyPlanSectionIds.material}
+        id={studyPlanHeadings.material.id}
         aria-labelledby="study-material-heading"
       >
-        <h2 id="study-material-heading">Що треба зрозуміти</h2>
+        <h2 id="study-material-heading">{studyPlanHeadings.material.title}</h2>
         {module.introduction.map((paragraph) => (
           <p key={paragraph}>
             <LegalText text={paragraph} />
@@ -108,10 +119,10 @@ export function StudyPlanContent({
       <Separator data-not-typeset className="my-8" />
 
       <section
-        id={studyPlanSectionIds.practice}
+        id={studyPlanHeadings.practice.id}
         aria-labelledby="study-practice-heading"
       >
-        <h2 id="study-practice-heading">Практичне завдання</h2>
+        <h2 id="study-practice-heading">{studyPlanHeadings.practice.title}</h2>
         <p>
           <strong>Матеріал для роботи.</strong>{" "}
           <LegalText text={module.assignment.material} />
@@ -139,10 +150,12 @@ export function StudyPlanContent({
       <Separator data-not-typeset className="my-8" />
 
       <section
-        id={studyPlanSectionIds.assessment}
+        id={studyPlanHeadings.assessment.id}
         aria-labelledby="study-assessment-heading"
       >
-        <h2 id="study-assessment-heading">Як перевірити результат</h2>
+        <h2 id="study-assessment-heading">
+          {studyPlanHeadings.assessment.title}
+        </h2>
         <p>
           Модуль можна завершити, якщо результат відповідає всім критеріям, а
           типові помилки можна пояснити власними словами.
@@ -168,10 +181,10 @@ export function StudyPlanContent({
       <Separator data-not-typeset className="my-8" />
 
       <section
-        id={studyPlanSectionIds.review}
+        id={studyPlanHeadings.review.id}
         aria-labelledby="study-review-heading"
       >
-        <h2 id="study-review-heading">Повторення через 7 днів</h2>
+        <h2 id="study-review-heading">{studyPlanHeadings.review.title}</h2>
         <p>
           <LegalText text={module.reviewPrompt} />
         </p>
@@ -208,6 +221,6 @@ export function StudyPlanContent({
           )}
         </nav>
       </section>
-    </article>
+    </DocumentArticle>
   )
 }

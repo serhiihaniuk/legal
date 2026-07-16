@@ -43,7 +43,8 @@ import {
 } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/legal-types"
 import { LegalText } from "~/components/legal-reference-text"
-import { cn } from "~/lib/utils"
+import { DocumentArticle } from "~/components/patterns/document-content"
+import { DefinitionRowGrid } from "~/components/patterns/definition-rows"
 
 export const caseStudySectionIds = {
   overview: "case-overview",
@@ -496,35 +497,12 @@ function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
 
 type DefinitionGridItem = { label: string; value: LegalTextValue }
 
-function DefinitionRows({ items }: { items: DefinitionGridItem[] }) {
-  return (
-    <dl>
-      {Array.from({ length: Math.ceil(items.length / 2) }, (_, rowIndex) => {
-        const rowItems = items.slice(rowIndex * 2, rowIndex * 2 + 2)
-
-        return (
-          <div
-            key={rowIndex}
-            className={cn(
-              "grid sm:grid-cols-2 sm:divide-x",
-              rowIndex > 0 && "border-t"
-            )}
-          >
-            {rowItems.map((item) => (
-              <div key={item.label} className="px-4 py-3">
-                <dt className="text-xs font-medium text-muted-foreground">
-                  {item.label}
-                </dt>
-                <dd className="mt-1 leading-6 font-medium">
-                  <LegalText text={item.value} />
-                </dd>
-              </div>
-            ))}
-          </div>
-        )
-      })}
-    </dl>
-  )
+function definitionRows(items: readonly DefinitionGridItem[]) {
+  return items.map((item) => ({
+    id: item.label,
+    term: item.label,
+    description: <LegalText text={item.value} />,
+  }))
 }
 
 function ConditionsMatrix({
@@ -644,7 +622,7 @@ function ConditionsMatrix({
 
 export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
   return (
-    <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
+    <DocumentArticle>
       <header id={caseStudySectionIds.overview}>
         <div
           data-not-typeset
@@ -708,7 +686,7 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
           data-not-typeset
           className="mt-5 overflow-hidden rounded-md border text-sm"
         >
-          <DefinitionRows items={route.metrics} />
+          <DefinitionRowGrid items={definitionRows(route.metrics)} />
         </div>
       </header>
 
@@ -735,7 +713,7 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
                 <LegalText text={route.profile.name} />
               </dd>
             </div>
-            <DefinitionRows items={route.profile.facts} />
+            <DefinitionRowGrid items={definitionRows(route.profile.facts)} />
           </dl>
         </div>
         <aside className="mt-6 border-l-2 border-primary pl-4">
@@ -885,6 +863,6 @@ export function CaseStudyContent({ route, updatedAt }: CaseStudyContentProps) {
           ))}
         </ul>
       </section>
-    </article>
+    </DocumentArticle>
   )
 }

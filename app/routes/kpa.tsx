@@ -3,7 +3,6 @@ import { useMemo, type ReactNode } from "react"
 import {
   Link,
   useLoaderData,
-  useNavigate,
   useParams,
   useSearchParams,
   type LoaderFunctionArgs,
@@ -19,6 +18,11 @@ import {
   DocsSidebarBackLink,
   DocsSidebarItem,
 } from "~/components/docs-sidebar-navigation"
+import {
+  MobileSectionSelect,
+  SectionNavigationList,
+  type SectionNavigationOption,
+} from "~/components/patterns/section-navigation"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import {
@@ -42,6 +46,7 @@ import {
   kpaArticleSections,
 } from "~/data/legal-library/learning/kpa"
 import { getDocument, listProvisions } from "~/data/legal-library"
+import { useUrlSelection } from "~/hooks/use-url-selection"
 import {
   kpaGuideModuleArticles,
   type KpaGuideModuleId,
@@ -55,6 +60,16 @@ const modes: Array<{ id: KpaMode; label: string }> = [
   { id: "articles", label: "Статті" },
   { id: "practice", label: "Практикум" },
 ]
+
+const modeNavigationOptions: readonly SectionNavigationOption<KpaMode>[] =
+  modes.map((mode) => ({ value: mode.id, label: mode.label }))
+
+const moduleNavigationOptions: readonly SectionNavigationOption[] =
+  kpaGuideModules.map((module) => ({
+    value: module.id,
+    label: module.title,
+    selectLabel: `${module.order}. ${module.title}`,
+  }))
 
 const practiceNavigation = [
   { id: "case-algorithm", label: "Алгоритм справи" },
@@ -170,10 +185,6 @@ function sectionCountLabel(count: number) {
   return `${count} розділів`
 }
 
-function scrollToTop() {
-  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))
-}
-
 function scrollToSection(id: string) {
   requestAnimationFrame(() => {
     document
@@ -230,17 +241,12 @@ function KpaNavigation({
         <p className="px-2 text-xs font-medium text-muted-foreground">
           Розділи
         </p>
-        <ul className="mt-2 grid gap-0.5">
-          {modes.map((item) => (
-            <NavigationRow
-              key={item.id}
-              active={mode === item.id}
-              onClick={() => onModeChange(item.id)}
-            >
-              {item.label}
-            </NavigationRow>
-          ))}
-        </ul>
+        <SectionNavigationList
+          options={modeNavigationOptions}
+          value={mode}
+          onValueChange={onModeChange}
+          itemClassName="min-h-8 px-2 py-1 text-navigation leading-5"
+        />
       </section>
 
       {mode === "learning" ? (
@@ -248,17 +254,12 @@ function KpaNavigation({
           <p className="px-2 text-xs font-medium text-muted-foreground">
             Модулі KPA
           </p>
-          <ul className="mt-2 grid gap-0.5">
-            {kpaGuideModules.map((module) => (
-              <NavigationRow
-                key={module.id}
-                active={selectedModule === module.id}
-                onClick={() => onModuleChange(module.id)}
-              >
-                {module.title}
-              </NavigationRow>
-            ))}
-          </ul>
+          <SectionNavigationList
+            options={moduleNavigationOptions}
+            value={selectedModule}
+            onValueChange={onModuleChange}
+            itemClassName="min-h-8 px-2 py-1 text-navigation leading-5"
+          />
         </section>
       ) : null}
 
@@ -281,7 +282,7 @@ function KpaNavigation({
                   <h3 className="min-w-0 text-[0.7rem] leading-4 font-semibold tracking-wide text-muted-foreground uppercase">
                     {group.division}
                   </h3>
-                  <span className="shrink-0 text-[0.65rem] leading-4 text-muted-foreground tabular-nums">
+                  <span className="shrink-0 text-micro leading-4 text-muted-foreground tabular-nums">
                     {articleCountLabel(group.articleCount)}
                   </span>
                 </div>
@@ -315,12 +316,12 @@ function KpaNavigation({
                               {section.chapter}
                             </span>
                             <span className="flex flex-wrap items-center gap-1.5">
-                              <span className="text-[0.68rem] leading-4 font-normal text-muted-foreground tabular-nums">
+                              <span className="text-navigation-meta leading-4 font-normal text-muted-foreground tabular-nums">
                                 art. {section.start}–{section.end}
                               </span>
                               <Badge
                                 variant="outline"
-                                className="h-5 px-1.5 text-[0.65rem] font-normal text-muted-foreground"
+                                className="h-5 px-1.5 text-micro font-normal text-muted-foreground"
                               >
                                 {articleCountLabel(section.articleCount)}
                               </Badge>
@@ -383,50 +384,34 @@ function MobileKpaNavigation({
         До бібліотеки права
       </Button>
 
-      <label className="grid min-w-0 gap-1.5">
-        <span className="text-xs font-medium text-muted-foreground">
-          Розділ гайда
-        </span>
-        <select
-          value={mode}
-          onChange={(event) => onModeChange(event.target.value as KpaMode)}
-          className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-        >
-          {modes.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.label}
-            </option>
-          ))}
-        </select>
-      </label>
+      <MobileSectionSelect
+        label="Розділ гайда"
+        value={mode}
+        options={modeNavigationOptions}
+        onValueChange={onModeChange}
+      />
 
       {mode === "learning" ? (
-        <label className="grid min-w-0 gap-1.5">
-          <span className="text-xs font-medium text-muted-foreground">
-            Модуль KPA
-          </span>
-          <select
-            value={selectedModule}
-            onChange={(event) => onModuleChange(event.target.value)}
-            className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-          >
-            {kpaGuideModules.map((module) => (
-              <option key={module.id} value={module.id}>
-                {module.order}. {module.title}
-              </option>
-            ))}
-          </select>
-        </label>
+        <MobileSectionSelect
+          label="Модуль KPA"
+          value={selectedModule}
+          options={moduleNavigationOptions}
+          onValueChange={onModuleChange}
+        />
       ) : null}
     </div>
   )
 }
 
+type KpaSelection =
+  | { kind: "mode"; value: KpaMode }
+  | { kind: "module"; value: string }
+  | { kind: "article"; value: string }
+
 export default function KpaGuide() {
   const { explanation, moduleArticleExplanations } =
     useLoaderData<typeof loader>()
-  const [searchParams, setSearchParams] = useSearchParams()
-  const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const params = useParams()
   const canonicalLawMode = Boolean(params.moduleId || params.practiceId)
   const kpaDocument = getDocument("kpa")
@@ -458,66 +443,63 @@ export default function KpaGuide() {
     return kpaLearningContentToc
   }, [mode])
 
-  function changeMode(nextMode: KpaMode) {
-    if (canonicalLawMode) {
-      if (nextMode === "learning") {
-        navigate(`/law/kpa/learn/${selectedModule}`)
-      } else if (nextMode === "practice") {
-        navigate("/law/kpa/practice/case-workflow")
-      } else {
+  const urlSelection = useUrlSelection<KpaSelection>({
+    value: { kind: "mode", value: mode },
+    to: (selection) => {
+      if (canonicalLawMode) {
+        if (selection.kind === "module") {
+          return `/law/kpa/learn/${selection.value}`
+        }
+        if (selection.kind === "article") {
+          const provisionId = kpaProvisionIdByArticle.get(selection.value)
+          return provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa"
+        }
+        if (selection.value === "learning") {
+          return `/law/kpa/learn/${selectedModule}`
+        }
+        if (selection.value === "practice") {
+          return "/law/kpa/practice/case-workflow"
+        }
         const provisionId = kpaProvisionIdByArticle.get(selectedArticle)
-        navigate(
-          provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa"
-        )
+        return provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa"
       }
-      scrollToTop()
-      return
-    }
 
-    const next = new URLSearchParams(searchParams)
-    if (nextMode === "learning") {
-      next.delete("view")
-      next.set("module", selectedModule)
-      next.delete("article")
-    } else {
-      next.set("view", nextMode)
-      next.delete("module")
-      if (nextMode === "articles") next.set("article", selectedArticle)
-      else next.delete("article")
-    }
-    setSearchParams(next)
-    scrollToTop()
+      const next = new URLSearchParams(searchParams)
+      if (selection.kind === "module") {
+        next.delete("view")
+        next.set("module", selection.value)
+        next.delete("article")
+      } else if (selection.kind === "article") {
+        next.set("view", "articles")
+        next.set("article", selection.value)
+        next.delete("module")
+      } else if (selection.value === "learning") {
+        next.delete("view")
+        next.set("module", selectedModule)
+        next.delete("article")
+      } else {
+        next.set("view", selection.value)
+        next.delete("module")
+        if (selection.value === "articles") {
+          next.set("article", selectedArticle)
+        } else {
+          next.delete("article")
+        }
+      }
+      return `?${next.toString()}`
+    },
+  })
+
+  function changeMode(nextMode: KpaMode) {
+    urlSelection.select({ kind: "mode", value: nextMode })
   }
 
   function changeModule(id: string) {
-    if (canonicalLawMode) {
-      navigate(`/law/kpa/learn/${id}`)
-      scrollToTop()
-      return
-    }
-
-    const next = new URLSearchParams(searchParams)
-    next.delete("view")
-    next.set("module", id)
-    next.delete("article")
-    setSearchParams(next)
-    scrollToTop()
+    urlSelection.select({ kind: "module", value: id })
   }
 
   function changeArticle(article: string) {
-    if (canonicalLawMode) {
-      const provisionId = kpaProvisionIdByArticle.get(article)
-      navigate(provisionId ? `/law/kpa/provisions/${provisionId}` : "/law/kpa")
-      scrollToTop()
-      return
-    }
-
-    const next = new URLSearchParams(searchParams)
-    next.set("view", "articles")
-    next.set("article", article)
-    next.delete("module")
-    setSearchParams(next)
-    scrollToTop()
+    urlSelection.select({ kind: "article", value: article })
   }
 
   return (

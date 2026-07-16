@@ -12,12 +12,24 @@ import {
   getEdition,
   type GenericPracticeId,
 } from "~/data/legal-library"
+import {
+  defineDocumentHeadings,
+  DocumentArticle,
+  DocumentHeader,
+  tableOfContentsFromHeadings,
+} from "~/components/patterns/document-content"
 
-const toc = [
-  { href: "#law-practice-overview", label: "Мета практикуму" },
-  { href: "#law-practice-checklist", label: "Робочий ланцюг" },
-  { href: "#law-practice-safety", label: "Перевірка і межі" },
-] as const
+const headings = defineDocumentHeadings({
+  overview: {
+    id: "law-practice-overview",
+    title: "Практикум",
+    tocLabel: "Мета практикуму",
+  },
+  checklist: { id: "law-practice-checklist", title: "Робочий ланцюг" },
+  safety: { id: "law-practice-safety", title: "Перевірка і межі" },
+})
+
+const toc = tableOfContentsFromHeadings(headings)
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const document = getDocument(params.documentId)
@@ -100,13 +112,17 @@ export default function LawDocumentPracticeRoute() {
         activeSection="practice"
         activePracticeId={practiceId as GenericPracticeId}
       />
-      <article className="typeset typeset-docs w-full pb-16 sm:pb-0">
-        <header id="law-practice-overview">
-          <div data-not-typeset className="mb-3 flex flex-wrap gap-2">
-            <Badge variant="secondary">{document.shortName}</Badge>
-            <Badge variant="outline">Практикум</Badge>
-            <Badge variant="outline">{edition.manifest.citation}</Badge>
-          </div>
+      <DocumentArticle>
+        <DocumentHeader
+          id={headings.overview.id}
+          badges={
+            <>
+              <Badge variant="secondary">{document.shortName}</Badge>
+              <Badge variant="outline">Практикум</Badge>
+              <Badge variant="outline">{edition.manifest.citation}</Badge>
+            </>
+          }
+        >
           <h1>
             {practiceLabel}: {document.title}
           </h1>
@@ -115,10 +131,10 @@ export default function LawDocumentPracticeRoute() {
             умови, докази, строки та засіб захисту. Це нейтральний шаблон
             аналізу, а не автоматичний правовий висновок.
           </p>
-        </header>
+        </DocumentHeader>
 
-        <section id="law-practice-checklist">
-          <h2>Робочий ланцюг</h2>
+        <section id={headings.checklist.id}>
+          <h2>{headings.checklist.title}</h2>
           <p>
             Заповнюйте кожен рядок окремо. Якщо відповідь залежить від повного
             тексту акту, дати або практики органу, позначте це як питання для
@@ -148,8 +164,8 @@ export default function LawDocumentPracticeRoute() {
           </div>
         </section>
 
-        <section id="law-practice-safety">
-          <h2>Перевірка і межі</h2>
+        <section id={headings.safety.id}>
+          <h2>{headings.safety.title}</h2>
           <p>
             Порівняйте заповнений ланцюг із поточною редакцією та офіційним PDF.
             Перевірте, чи не змінилися status, wejście w życie та przepisy
@@ -162,7 +178,7 @@ export default function LawDocumentPracticeRoute() {
             справи. Такі питання залежать від повних фактів і перевірки джерел.
           </blockquote>
         </section>
-      </article>
+      </DocumentArticle>
     </DocsLayout>
   )
 }

@@ -8,6 +8,10 @@ import {
   DocsSidebarList,
   DocsSidebarSection,
 } from "~/components/docs-sidebar-navigation"
+import {
+  MobileSectionSelect,
+  type SectionNavigationOption,
+} from "~/components/patterns/section-navigation"
 import { Badge } from "~/components/ui/badge"
 import {
   genericPracticeModules,
@@ -82,12 +86,12 @@ function ProvisionNavigation({
                       {group.title}
                     </span>
                     <span className="flex flex-wrap items-center gap-1.5">
-                      <span className="text-[0.68rem] leading-4 font-normal text-muted-foreground tabular-nums">
+                      <span className="text-navigation-meta leading-4 font-normal text-muted-foreground tabular-nums">
                         {range}
                       </span>
                       <Badge
                         variant="outline"
-                        className="h-5 px-1.5 text-[0.65rem] font-normal text-muted-foreground"
+                        className="h-5 px-1.5 text-micro font-normal text-muted-foreground"
                       >
                         {articleCountLabel(group.provisions.length)}
                       </Badge>
@@ -159,6 +163,27 @@ export function LawDocumentNavigation({
     const link = sectionLinks.find((item) => item.id === section)
     if (link) navigate(link.href)
   }
+
+  const sectionOptions: readonly SectionNavigationOption<LawDocumentSection>[] =
+    sectionLinks.map((item) => ({ value: item.id, label: item.label }))
+  const outlineOptions: readonly SectionNavigationOption[] = outline.map(
+    (group) => ({
+      value: group.firstProvisionId,
+      label: group.title,
+      selectLabel: `${group.title} · ${group.start}–${group.end}`,
+    })
+  )
+  const learningOptions: readonly SectionNavigationOption[] =
+    learningModules.map((module) => ({
+      value: module.id,
+      label: module.title,
+      selectLabel: `${module.order}. ${module.title}`,
+    }))
+  const practiceOptions: readonly SectionNavigationOption[] =
+    genericPracticeModules.map((practice) => ({
+      value: practice.id,
+      label: practice.label,
+    }))
 
   const navigation = (
     <DocsSidebar
@@ -232,95 +257,48 @@ export function LawDocumentNavigation({
   return (
     <div className="grid min-w-0 gap-3 pb-2 lg:hidden">
       <DocsSidebarBackLink to="/law">До бібліотеки права</DocsSidebarBackLink>
-      <label className="grid min-w-0 gap-1.5">
-        <span className="text-xs font-medium text-muted-foreground">
-          Розділ документа
-        </span>
-        <select
-          value={activeSection}
-          onChange={(event) =>
-            goToSection(event.target.value as LawDocumentSection)
-          }
-          className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-          aria-label="Розділ документа"
-        >
-          {sectionLinks.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.label}
-            </option>
-          ))}
-        </select>
-      </label>
+      <MobileSectionSelect
+        label="Розділ документа"
+        value={activeSection}
+        options={sectionOptions}
+        onValueChange={goToSection}
+      />
 
       {activeSection === "provisions" ? (
-        <label className="grid min-w-0 gap-1.5">
-          <span className="text-xs font-medium text-muted-foreground">
-            Структура акта
-          </span>
-          <select
-            value={
-              activeOutlineGroup?.firstProvisionId ?? firstProvision?.id ?? ""
+        <MobileSectionSelect
+          label="Структура акта"
+          value={
+            activeOutlineGroup?.firstProvisionId ?? firstProvision?.id ?? ""
+          }
+          options={outlineOptions}
+          onValueChange={(provisionId) => {
+            if (provisionId) {
+              navigate(getDocumentProvisionPath(document.id, provisionId))
             }
-            onChange={(event) => {
-              if (event.target.value)
-                navigate(
-                  getDocumentProvisionPath(document.id, event.target.value)
-                )
-            }}
-            className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-            aria-label="Структура акта"
-          >
-            {outline.map((group) => (
-              <option key={group.id} value={group.firstProvisionId}>
-                {group.title} · {group.start}–{group.end}
-              </option>
-            ))}
-          </select>
-        </label>
+          }}
+        />
       ) : null}
 
       {activeSection === "learning" ? (
-        <label className="grid min-w-0 gap-1.5">
-          <span className="text-xs font-medium text-muted-foreground">
-            Модуль документа
-          </span>
-          <select
-            value={activeModuleId ?? learningModules[0]?.id ?? ""}
-            onChange={(event) =>
-              navigate(getDocumentLearningPath(document.id, event.target.value))
-            }
-            className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-            aria-label="Модуль документа"
-          >
-            {learningModules.map((module) => (
-              <option key={module.id} value={module.id}>
-                {module.order}. {module.title}
-              </option>
-            ))}
-          </select>
-        </label>
+        <MobileSectionSelect
+          label="Модуль документа"
+          value={activeModuleId ?? learningModules[0]?.id ?? ""}
+          options={learningOptions}
+          onValueChange={(moduleId) =>
+            navigate(getDocumentLearningPath(document.id, moduleId))
+          }
+        />
       ) : null}
 
       {activeSection === "practice" ? (
-        <label className="grid min-w-0 gap-1.5">
-          <span className="text-xs font-medium text-muted-foreground">
-            Практикум документа
-          </span>
-          <select
-            value={activePracticeId ?? genericPracticeModules[0].id}
-            onChange={(event) =>
-              navigate(getDocumentPracticePath(document.id, event.target.value))
-            }
-            className="h-9 w-full min-w-0 rounded-md border bg-background px-3 text-sm"
-            aria-label="Практикум документа"
-          >
-            {genericPracticeModules.map((practice) => (
-              <option key={practice.id} value={practice.id}>
-                {practice.label}
-              </option>
-            ))}
-          </select>
-        </label>
+        <MobileSectionSelect
+          label="Практикум документа"
+          value={activePracticeId ?? genericPracticeModules[0].id}
+          options={practiceOptions}
+          onValueChange={(practiceId) =>
+            navigate(getDocumentPracticePath(document.id, practiceId))
+          }
+        />
       ) : null}
     </div>
   )

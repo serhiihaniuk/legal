@@ -213,7 +213,7 @@ export default function Home() {
                   {section.number}
                 </span>
                 {"start" in section ? (
-                  <span className="border px-1.5 py-0.5 text-[0.65rem] tracking-[0.14em] text-muted-foreground uppercase">
+                  <span className="border px-1.5 py-0.5 text-micro tracking-[0.14em] text-muted-foreground uppercase">
                     Старт тут
                   </span>
                 ) : null}
