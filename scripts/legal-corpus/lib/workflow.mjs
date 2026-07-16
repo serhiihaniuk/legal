@@ -1,7 +1,12 @@
 import { spawn } from "node:child_process"
-import { URL } from "node:url"
-import { lstat, mkdir, readFile, realpath, writeFile } from "node:fs/promises"
+import { lstat, mkdir, readFile, realpath, rename, writeFile } from "node:fs/promises"
 import path from "node:path"
+
+import { buildObservedFacts } from "./artifacts.mjs"
+import { validateConfig, validateDate, validateHttpsUrl } from "./config.mjs"
+import { sha256 } from "./extraction.mjs"
+import { validateCorpusFacts } from "./validation.mjs"
+import { generateRegistry } from "../generate-registry.mjs"
 
 const FORBIDDEN_SCOPE_PREFIXES = [
   "app/data/legal-corpus/",
@@ -368,25 +373,36 @@ export function validateChangedFileSet(changedPaths, allowedPaths) {
     .sort((left, right) => left.localeCompare(right))
 }
 
+/**
+ * Validate work-order legal-status evidence to the same bar as config.mjs's
+ * schema-v2 evidence: `checkedAt`, `amendmentsCheckedThrough`, and the
+ * optional legal dates go through the shared real-calendar-date check
+ * (`"yesterday"` and `"2026-99-99"` both fail), and source URLs go through
+ * the shared HTTPS check. Self-attested work-order strings are otherwise as
+ * easy to tamper with as the fields config.mjs already hardens.
+ * @param {Record<string, unknown> | null | undefined} evidence
+ * @returns {string[]}
+ */
 export function validateLegalStatusEvidence(evidence) {
+  /** @type {Array<Record<string, unknown>>} */
+  const diagnostics = []
   const errors = []
-  for (const field of ["status", "inForce", "checkedAt", "amendmentsCheckedThrough"]) {
+  for (const field of ["status", "inForce"]) {
     if (typeof evidence?.[field] !== "string" || !evidence[field].trim()) {
       errors.push(`legalStatusEvidence.${field} is required`)
     }
   }
-  if (
-    evidence?.legalStateDate !== undefined &&
-    (typeof evidence.legalStateDate !== "string" || !evidence.legalStateDate.trim())
-  ) {
-    errors.push("legalStatusEvidence.legalStateDate is required when present")
+  validateDate(evidence?.checkedAt, "legalStatusEvidence.checkedAt", diagnostics)
+  validateDate(
+    evidence?.amendmentsCheckedThrough,
+    "legalStatusEvidence.amendmentsCheckedThrough",
+    diagnostics
+  )
+  if (evidence?.legalStateDate !== undefined) {
+    validateDate(evidence.legalStateDate, "legalStatusEvidence.legalStateDate", diagnostics)
   }
-  if (
-    evidence?.legalStatusDate !== undefined &&
-    evidence.legalStatusDate !== null &&
-    (typeof evidence.legalStatusDate !== "string" || !evidence.legalStatusDate.trim())
-  ) {
-    errors.push("legalStatusEvidence.legalStatusDate must be a non-empty string when present")
+  if (evidence?.legalStatusDate !== undefined && evidence.legalStatusDate !== null) {
+    validateDate(evidence.legalStatusDate, "legalStatusEvidence.legalStatusDate", diagnostics)
   }
   if (typeof evidence?.consolidatedTextIdentifier !== "string" || !evidence.consolidatedTextIdentifier.trim()) {
     errors.push("legalStatusEvidence.consolidatedTextIdentifier is required")
@@ -396,15 +412,11 @@ export function validateLegalStatusEvidence(evidence) {
   if (!Array.isArray(sourceUrls) || sourceUrls.length === 0) {
     errors.push("legalStatusEvidence.sourceUrls requires an explicit official URL")
   } else {
-    sourceUrls.forEach((value) => {
-      try {
-        const parsed = new URL(value)
-        if (parsed.protocol !== "https:" || !parsed.hostname) throw new Error("not HTTPS")
-      } catch {
-        errors.push("legalStatusEvidence source URLs must be absolute HTTPS URLs")
-      }
-    })
+    sourceUrls.forEach((value, index) =>
+      validateHttpsUrl(value, `legalStatusEvidence.sourceUrls[${index}]`, diagnostics)
+    )
   }
+  errors.push(...diagnostics.map((entry) => String(entry.message)))
 
   for (const field of ["entryIntoForce", "transitionalRules"]) {
     const entries = evidence?.[field]
@@ -478,4 +490,175 @@ export async function validateWorkOrder({ projectRoot, workOrderPath }) {
     approvedWriteScope: scope,
     workOrder,
   }
+}
+
+/**
+ * @param {unknown} error
+ * @returns {string}
+ */
+function errorMessage(error) {
+  return error instanceof Error ? error.message : String(error)
+}
+
+/**
+ * Re-run corpus fact validation against the edition's own artifacts on disk,
+ * instead of trusting the work order's record of a validation that ran
+ * earlier against a since-possibly-edited edition directory. A hand-edited
+ * `provisions.json` or `structure.json` (or a config file changed after
+ * `prepare`) fails here even though the work order's stored diagnostics are
+ * still clean.
+ * @param {{ projectRoot: string, workOrder: Record<string, any> }} options
+ * @returns {Promise<string[]>}
+ */
+export async function verifyPromotionArtifacts({ projectRoot, workOrder }) {
+  const errors = []
+  let config
+  try {
+    config = validateConfig(await readJson(path.join(projectRoot, workOrder.configPath)))
+  } catch (error) {
+    errors.push(`Edition config re-validation failed: ${errorMessage(error)}`)
+    return errors
+  }
+
+  const editionDirectory = path.join(
+    projectRoot,
+    "app/data/legal-corpus",
+    workOrder.newEditionId
+  )
+  const publicDirectory = path.join(
+    projectRoot,
+    "public/legal-sources",
+    workOrder.newEditionId
+  )
+  let metadata
+  let pages
+  let provisions
+  let structure
+  let pdfBytes
+  try {
+    ;[metadata, pages, provisions, structure, pdfBytes] = await Promise.all([
+      readJson(path.join(editionDirectory, "metadata.json")),
+      readJson(path.join(editionDirectory, "pages.json")),
+      readJson(path.join(editionDirectory, "provisions.json")),
+      readJson(path.join(editionDirectory, "structure.json")),
+      readFile(path.join(publicDirectory, "source.pdf")),
+    ])
+  } catch (error) {
+    errors.push(`Cannot read edition artifacts on disk for re-verification: ${errorMessage(error)}`)
+    return errors
+  }
+
+  const pdfSha256 = sha256(pdfBytes)
+  const observed = buildObservedFacts(pages, provisions)
+  const result = validateCorpusFacts({
+    config,
+    metadata,
+    pdfBytes,
+    pdfSha256,
+    pages,
+    provisions,
+    structure,
+    observed,
+  })
+  for (const entry of result.fatal) {
+    const location = entry.path ? ` (${entry.path})` : ""
+    errors.push(`Corpus fact re-verification failed at promotion: [${entry.code}] ${entry.message}${location}`)
+  }
+  return errors
+}
+
+/**
+ * Run the editorial validator (`scripts/legal-editorial/validate.mjs`) in
+ * `--incomplete` mode as a child process, mechanically connecting promotion
+ * to editorial validation instead of trusting a self-attested work-order
+ * review state. `--incomplete` still treats missing/non-reviewed coverage as
+ * warnings; only structural errors (unknown provisions, bad IDs, duplicate
+ * entries, invalid status vocabulary, and similar) fail promotion here.
+ * @param {string} projectRoot
+ * @returns {Promise<string[]>}
+ */
+export async function runEditorialValidator(projectRoot) {
+  try {
+    await runCapture(projectRoot, process.execPath, [
+      "scripts/legal-editorial/validate.mjs",
+      "--incomplete",
+    ])
+    return []
+  } catch (error) {
+    return [`Editorial validation failed: ${errorMessage(error)}`]
+  }
+}
+
+/**
+ * @param {string} filePath
+ * @param {unknown} value
+ * @returns {Promise<void>}
+ */
+export async function writeJsonAtomically(filePath, value) {
+  const temporary = `${filePath}.tmp-${process.pid}`
+  await mkdir(path.dirname(filePath), { recursive: true })
+  await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8")
+  await rename(temporary, filePath)
+}
+
+/**
+ * Promote a validated, approved work order: write the current-editions
+ * pointer, regenerate the application registries, and record the approval.
+ *
+ * Ordering and crash recovery: registries are (re)generated first, from the
+ * *pending* pointer state held only in memory, and written atomically before
+ * the pointer file itself is touched. If the process is killed before the
+ * pointer write below, `current-editions.json` still names exactly the
+ * edition it named before promotion started, so nothing durable on disk
+ * claims a promotion that never finished; re-running `corpus:promote` simply
+ * redoes the idempotent registry write and completes the pointer swap. The
+ * previous pointer-first ordering could instead leave `current-editions.json`
+ * naming an edition whose registries were never regenerated to match it. If
+ * the pointer write itself fails (as opposed to the process dying), the
+ * registries are rolled back to the original pointer state so a thrown error
+ * never leaves live registries describing an edition that was never actually
+ * promoted.
+ * @param {{
+ *   projectRoot: string,
+ *   workOrder: Record<string, any>,
+ *   workOrderPath: string,
+ *   approvedBy: string,
+ * }} options
+ * @returns {Promise<Record<string, unknown>>}
+ */
+export async function promoteEdition({ projectRoot, workOrder, workOrderPath, approvedBy }) {
+  const pointerPath = path.join(
+    projectRoot,
+    "app/data/legal-library/current-editions.json"
+  )
+  const originalPointers = await readJson(pointerPath)
+  const promotedPointers = {
+    ...originalPointers,
+    [workOrder.documentId]: workOrder.newEditionId,
+  }
+
+  await generateRegistry({ projectRoot, currentEditions: promotedPointers })
+  try {
+    await writeJsonAtomically(pointerPath, promotedPointers)
+  } catch (error) {
+    await generateRegistry({ projectRoot, currentEditions: originalPointers })
+    throw error
+  }
+
+  const record = {
+    schemaVersion: 1,
+    documentId: workOrder.documentId,
+    editionId: workOrder.newEditionId,
+    approvedBy,
+    approvedAt: new Date().toISOString(),
+    workOrder: workOrderPath.replaceAll("\\", "/"),
+    baseCommit: workOrder.baseCommit,
+  }
+  const recordPath = path.join(
+    projectRoot,
+    "legal-corpus/promotions",
+    `${record.documentId}-${record.editionId}.json`
+  )
+  await writeJson(recordPath, record)
+  return record
 }

@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
 import path from "node:path"
 import process from "node:process"
 
 import {
   diffProvisionLists,
   prepareWorkOrder,
+  promoteEdition,
   readJson,
   runCapture,
-  runNode,
+  runEditorialValidator,
   validateChangedFileSet,
   validateWorkOrder,
+  verifyPromotionArtifacts,
   writeJson,
 } from "./lib/workflow.mjs"
 
@@ -85,7 +86,12 @@ function allowedValidationPaths(workOrder, workOrderPath) {
   ]
 }
 
-async function validateWithScope(projectRoot, workOrderPath) {
+/**
+ * @param {string} projectRoot
+ * @param {string} workOrderPath
+ * @param {{ verifyArtifacts?: boolean }} [options]
+ */
+async function validateWithScope(projectRoot, workOrderPath, options = {}) {
   const result = await validateWorkOrder({ projectRoot, workOrderPath })
   const baseCommit = result.workOrder.baseCommit
   if (!baseCommit) {
@@ -100,6 +106,16 @@ async function validateWithScope(projectRoot, workOrderPath) {
       result.errors.push(`Changed files outside approved scope: ${extras.join(", ")}`)
     }
     result.changedPaths = changed
+  }
+  if (options.verifyArtifacts) {
+    // Promotion trusts neither the work order's stored diagnostics nor its
+    // self-attested review state: it re-verifies corpus facts against the
+    // edition artifacts actually on disk and mechanically runs the editorial
+    // validator, rather than only checking the work order's own claims.
+    result.errors.push(
+      ...(await verifyPromotionArtifacts({ projectRoot, workOrder: result.workOrder }))
+    )
+    result.errors.push(...(await runEditorialValidator(projectRoot)))
   }
   result.passed = result.errors.length === 0
   return result
@@ -177,18 +193,13 @@ async function commandValidate(projectRoot, options) {
   if (!result.passed) process.exitCode = 1
 }
 
-async function writeAtomically(filePath, value) {
-  const temporary = `${filePath}.tmp-${process.pid}`
-  await mkdir(path.dirname(filePath), { recursive: true })
-  await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8")
-  await rename(temporary, filePath)
-}
-
 async function commandPromote(projectRoot, options) {
   const workOrderPath = required(options, "work-order")
   const approvedBy = required(options, "approved-by")
   const approval = required(options, "approve")
-  const result = await validateWithScope(projectRoot, workOrderPath)
+  const result = await validateWithScope(projectRoot, workOrderPath, {
+    verifyArtifacts: true,
+  })
   if (!result.passed) {
     throw new Error(`Promotion blocked: ${result.errors.join("; ")}`)
   }
@@ -197,39 +208,12 @@ async function commandPromote(projectRoot, options) {
     throw new Error(`--approve must exactly equal ${expectedApproval}`)
   }
 
-  const pointerPath = path.join(
+  const record = await promoteEdition({
     projectRoot,
-    "app/data/legal-library/current-editions.json"
-  )
-  const originalPointers = await readJson(pointerPath)
-  const promotedPointers = {
-    ...originalPointers,
-    [result.workOrder.documentId]: result.workOrder.newEditionId,
-  }
-  await writeAtomically(pointerPath, promotedPointers)
-  try {
-    await runNode(projectRoot, "scripts/legal-corpus/generate-registry.mjs")
-  } catch (error) {
-    await writeAtomically(pointerPath, originalPointers)
-    await runNode(projectRoot, "scripts/legal-corpus/generate-registry.mjs")
-    throw error
-  }
-
-  const record = {
-    schemaVersion: 1,
-    documentId: result.workOrder.documentId,
-    editionId: result.workOrder.newEditionId,
+    workOrder: result.workOrder,
+    workOrderPath,
     approvedBy,
-    approvedAt: new Date().toISOString(),
-    workOrder: workOrderPath.replaceAll("\\", "/"),
-    baseCommit: result.workOrder.baseCommit,
-  }
-  const recordPath = path.join(
-    projectRoot,
-    "legal-corpus/promotions",
-    `${record.documentId}-${record.editionId}.json`
-  )
-  await writeJson(recordPath, record)
+  })
   process.stdout.write(`${JSON.stringify(record)}\n`)
 }
 
