@@ -4,7 +4,7 @@ import {
   type EvidenceDocumentCategory,
   type EvidenceDocumentId,
 } from "./contracts"
-import { documentGuides } from "~/data/document-guides"
+import { documentGuides } from "./guides"
 
 export const documentCategoryLabels: Record<EvidenceDocumentCategory, string> =
   {

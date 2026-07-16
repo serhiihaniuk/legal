@@ -1,8 +1,4 @@
-import type { KpaArticleExplanation, KpaArticleRuleExplanation } from "./index"
-
-export type { KpaArticleExplanation, KpaArticleRuleExplanation }
-
-/** Lazy compatibility boundary for the legacy KPA route data shape. */
+/** Lazy compatibility boundary for the legacy KPA route. */
 export async function getKpaArticleExplanation(article: string) {
   return (await import("./index")).getKpaArticleExplanation(article)
 }

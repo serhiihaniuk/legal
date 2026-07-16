@@ -55,33 +55,6 @@ export async function loadKpaExplanations(): Promise<
   return Object.assign({}, ...parts)
 }
 
-export type KpaArticleRuleExplanation = {
-  locator: string
-  explanation: KpaExplanation["rules"][number]["explanation"]
-}
-
-/** Legacy article-shaped view retained only for the existing KPA screens. */
-export type KpaArticleExplanation = {
-  article: string
-  summary: KpaExplanation["summary"]
-  rules: KpaArticleRuleExplanation[]
-  legalEffect: KpaExplanation["legalEffect"]
-  foreignersCase: KpaExplanation["foreignersCase"]
-}
-
-function toCompatibilityView(
-  article: string,
-  explanation: KpaExplanation
-): KpaArticleExplanation {
-  return {
-    article,
-    summary: explanation.summary,
-    rules: explanation.rules.map((rule) => ({ ...rule })),
-    legalEffect: explanation.legalEffect,
-    foreignersCase: explanation.foreignersCase,
-  }
-}
-
 export async function getKpaArticleExplanation(article: string) {
   const articleIndex = kpaEditorialProvisionIndex.findIndex(
     (entry) => entry.article === article
@@ -90,9 +63,7 @@ export async function getKpaArticleExplanation(article: string) {
 
   const partIndex = Math.floor(articleIndex / PART_SIZE)
   const explanations = await loadPart(partIndex)
-  const explanation =
-    explanations[kpaEditorialProvisionIndex[articleIndex].provisionId]
-  return explanation ? toCompatibilityView(article, explanation) : undefined
+  return explanations[kpaEditorialProvisionIndex[articleIndex].provisionId]
 }
 
 export async function getKpaArticleExplanations(articles: readonly string[]) {
@@ -120,6 +91,6 @@ export async function getKpaArticleExplanations(articles: readonly string[]) {
     const explanation = loadedParts.get(Math.floor(articleIndex / PART_SIZE))?.[
       kpaEditorialProvisionIndex[articleIndex].provisionId
     ]
-    return explanation ? [toCompatibilityView(article, explanation)] : []
+    return explanation ? [explanation] : []
   })
 }

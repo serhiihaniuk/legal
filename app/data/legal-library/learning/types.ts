@@ -4,6 +4,13 @@ import type { LegalLearningText } from "./legal-text"
 
 export type AuthoredLearningDocumentId = LegalDocumentId
 
+export type LegalLearningCoursePhase = {
+  number: string
+  title: string
+  description: LegalLearningText
+  modules: string
+}
+
 export type LegalLearningSection = {
   id: string
   title: string

@@ -548,6 +548,8 @@ Required behavior:
 
 Document-specific learning modules and practice content live in the document's editorial package. The generic shell may offer `learn` and `practice` slots, but it must render only the slots that a document declares. KPA's article-by-article guide is not a mandatory template for a regulation, an EU instrument, or a document checklist.
 
+Presentation contracts do not live beside authored data contracts. The law-library feature owns `LegalLearningModuleView` and the adapter that combines canonical learning modules, `LegalProvision`, and reviewed `LegalExplanation` records for rendering. A provision guide item wraps one unchanged `LegalExplanation` with only rendering context (`id`, display reference, title, and typed target); it does not copy `summary`, `rules`, `legalEffect`, or `foreignersCase` into a parallel explanation shape. The KPA compatibility loader also returns canonical `LegalExplanation<"kpa">` records.
+
 ### 9.1 Authored legal citations in learning prose
 
 `app/data/legal-library/learning/legal-text.ts` is the authoring Module for inline legal citations. Its Interface is deliberately small: choose a document once with `createLegalLearningTextAuthor(documentId)`, then compose ordinary prose with `text`, `article`, `articleRange`, `paragraph`, `paragraphRange`, `annex`, `annexRange`, or `document`. Provision arguments are generated-registry literal unions, so an article that does not belong to the selected document cannot compile.

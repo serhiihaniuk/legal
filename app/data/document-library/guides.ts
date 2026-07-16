@@ -3,7 +3,7 @@ import {
   defineLegalTextContent,
 } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/legal-types"
-import type { DocumentGuide } from "~/data/document-library/contracts"
+import type { DocumentGuide } from "./contracts"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const regulationLaw = createLegalTextAuthor(

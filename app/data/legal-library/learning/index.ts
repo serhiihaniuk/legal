@@ -73,6 +73,7 @@ export type { LegalLearningText } from "./legal-text"
 
 export type {
   AuthoredLearningDocumentId,
+  LegalLearningCoursePhase,
   LegalLearningCurriculum,
   LegalLearningModule,
   LegalLearningSection,

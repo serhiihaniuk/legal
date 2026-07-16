@@ -22,8 +22,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog"
-import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
 import { getEdition, listProvisions } from "~/data/legal-library"
+import type { LegalExplanation } from "~/data/legal-library/contracts"
 import {
   kpaArticleIndex,
   type KpaArticleEntry,
@@ -55,7 +55,7 @@ export const kpaArticlesToc: TocItem[] = [
 
 export type KpaArticlesContentProps = {
   selectedArticle: string
-  explanation: KpaArticleExplanation
+  explanation: LegalExplanation<"kpa">
   onSelectArticle: (article: string) => void
 }
 

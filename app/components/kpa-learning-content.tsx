@@ -1,8 +1,9 @@
 import {
   LegalLearningModuleContent,
   legalLearningContentToc,
-} from "~/components/legal-learning-module-content"
-import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
+} from "~/features/law-library/ui/legal-learning-module-content"
+import { listProvisions } from "~/data/legal-library"
+import type { LegalExplanation } from "~/data/legal-library/contracts"
 import { kpaArticleIndex } from "~/data/legal-library/learning/kpa"
 import {
   kpaGuideModuleArticles,
@@ -14,36 +15,16 @@ import {
   kpaGuideModules,
 } from "~/data/legal-library/learning/kpa"
 import { parseLegalProvisionReference } from "~/data/legal-library/query"
-import type { LegalLearningModuleView } from "~/data/legal-library/learning/view-types"
+import {
+  toLegalExplanationView,
+  type LegalLearningModuleView,
+} from "~/features/law-library/model/legal-learning-view"
 
 export const kpaLearningContentToc = legalLearningContentToc
 
-const superscriptDigits: Record<string, string> = {
-  "⁰": "0",
-  "¹": "1",
-  "²": "2",
-  "³": "3",
-  "⁴": "4",
-  "⁵": "5",
-  "⁶": "6",
-  "⁷": "7",
-  "⁸": "8",
-  "⁹": "9",
-}
-
-function kpaProvisionReference(article: string) {
-  const normalized = article.toLocaleLowerCase("pl-PL")
-  const base = normalized.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+$/u, "")
-  const suffix = normalized.slice(base.length)
-  const key = suffix
-    ? `${base}-${[...suffix].map((digit) => superscriptDigits[digit]).join("-")}`
-    : base
-  return parseLegalProvisionReference({
-    kind: "legal-provision",
-    documentId: "kpa",
-    provisionId: `kpa-art-${key}`,
-  })
-}
+const kpaProvisionById = new Map(
+  listProvisions("kpa").map((provision) => [provision.id, provision])
+)
 
 const kpaCoursePhases = [
   {
@@ -78,7 +59,7 @@ const kpaCoursePhases = [
 
 export type KpaLearningContentProps = {
   selectedId: string
-  articleExplanations: KpaArticleExplanation[]
+  articleExplanations: LegalExplanation<"kpa">[]
   onSelectModule: (id: string) => void
 }
 
@@ -149,19 +130,24 @@ export function KpaLearningContent({
       description:
         "Відкрийте статтю, щоб побачити її реальні структурні частини, процесуальний наслідок і значення для адміністративної справи іноземця.",
       items: articleExplanations.map((explanation) => {
+        const provision = kpaProvisionById.get(explanation.provisionId)
+        const article = provision?.locator.replace(/^Art\.\s*/u, "")
         const entry = kpaArticleIndex.find(
-          (article) => article.article === explanation.article
+          (candidate) => candidate.article === article
         )
-        return {
-          id: `article-${explanation.article}`,
-          reference: `art. ${explanation.article} KPA`,
+        return toLegalExplanationView({
+          explanation,
+          id: `article-${article ?? explanation.provisionId}`,
+          reference: article
+            ? `art. ${article} KPA`
+            : (provision?.locator ?? explanation.provisionId),
           title: entry?.shortTitle ?? explanation.summary,
-          summary: explanation.summary,
-          rules: explanation.rules,
-          legalEffect: explanation.legalEffect,
-          foreignersCase: explanation.foreignersCase,
-          target: kpaProvisionReference(explanation.article),
-        }
+          target: parseLegalProvisionReference({
+            kind: "legal-provision",
+            documentId: "kpa",
+            provisionId: explanation.provisionId,
+          }),
+        })
       }),
     },
     caseExample: lesson.caseExample,

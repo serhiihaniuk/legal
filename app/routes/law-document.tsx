@@ -9,7 +9,7 @@ import {
 import {
   LegalLearningModuleContent,
   legalLearningContentToc,
-} from "~/components/legal-learning-module-content"
+} from "~/features/law-library/ui/legal-learning-module-content"
 import {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
@@ -30,7 +30,7 @@ import {
 import {
   buildLegalLearningModuleView,
   findModuleProvisions,
-} from "~/data/legal-library/learning/view-model"
+} from "~/features/law-library/model/legal-learning-view"
 import { officialSourceIdByLegalDocument } from "~/data/legal-library/official-sources"
 
 const legacyTechnicalModuleIds = new Set([

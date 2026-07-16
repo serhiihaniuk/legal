@@ -2,9 +2,9 @@ import type {
   LegalDocumentId,
   LegalExplanation,
   LegalProvision,
-} from "../contracts"
-import { parseLegalProvisionReference } from "../query"
-import { getDocumentReadingGuide } from "./index"
+  LegalProvisionReference,
+} from "~/data/legal-library/contracts"
+import { getDocumentReadingGuide } from "~/data/legal-library/learning"
 import {
   concatLegalLearningText,
   joinLegalLearningText,
@@ -12,9 +12,87 @@ import {
   legalLearningProvisionReferences,
   legalLearningTextSlice,
   type LegalLearningText,
-} from "./legal-text"
-import type { LegalLearningModule } from "./types"
-import type { LegalLearningModuleView, LegalLearningTerm } from "./view-types"
+} from "~/data/legal-library/learning/legal-text"
+import type {
+  LegalLearningCoursePhase,
+  LegalLearningModule,
+} from "~/data/legal-library/learning/types"
+import { parseLegalProvisionReference } from "~/data/legal-library/query"
+
+export type LegalLearningLayer = {
+  label: string
+  text: LegalLearningText
+}
+
+export type LegalLearningTerm = {
+  term: string
+  meaning: LegalLearningText
+}
+
+export type LegalLearningArticleGroup = {
+  reference: LegalLearningText
+  role: LegalLearningText
+  target?: LegalProvisionReference
+}
+
+export type LegalExplanationView = {
+  id: string
+  reference: string
+  title: LegalLearningText
+  target?: LegalProvisionReference
+  explanation: LegalExplanation
+}
+
+export function toLegalExplanationView({
+  explanation,
+  reference,
+  title = explanation.summary,
+  target,
+  id = `provision-${explanation.provisionId}`,
+}: {
+  explanation: LegalExplanation
+  reference: string
+  title?: LegalLearningText
+  target?: LegalProvisionReference
+  id?: string
+}): LegalExplanationView {
+  return { id, reference, title, target, explanation }
+}
+
+export type LegalLearningModuleView = {
+  order: number
+  title: string
+  polish: LegalLearningText
+  provisionScope: LegalLearningText
+  legalState: string
+  outcome: LegalLearningText
+  stage: string
+  positionIntro: LegalLearningText
+  question: LegalLearningText
+  neededWhen: LegalLearningText
+  boundary: LegalLearningText
+  courseTitle?: string
+  courseDescription?: string
+  coursePhases?: readonly LegalLearningCoursePhase[]
+  mechanismParagraphs: readonly LegalLearningText[]
+  layers: readonly LegalLearningLayer[]
+  terms: readonly LegalLearningTerm[]
+  articleGroups: readonly LegalLearningArticleGroup[]
+  provisionGuide: {
+    countLabel: string
+    title: string
+    description: string
+    items: readonly LegalExplanationView[]
+  }
+  caseExample: {
+    title: LegalLearningText
+    facts: LegalLearningText
+    analysis: LegalLearningText
+    lesson: LegalLearningText
+  }
+  pitfalls: readonly LegalLearningText[]
+  method: readonly LegalLearningText[]
+}
 
 type ReviewedProvision = {
   provision: LegalProvision
@@ -196,20 +274,17 @@ export function buildLegalLearningModuleView({
   )
 
   const provisionGuideItems = reviewedProvisions.map(
-    ({ provision, explanation }) => ({
-      id: `provision-${provision.id}`,
-      reference: provision.locator,
-      title: explanationTitle(provision, explanation),
-      summary: explanation.summary,
-      rules: explanation.rules,
-      legalEffect: explanation.legalEffect,
-      foreignersCase: explanation.foreignersCase,
-      target: parseLegalProvisionReference({
-        kind: "legal-provision",
-        documentId,
-        provisionId: provision.id,
-      }),
-    })
+    ({ provision, explanation }) =>
+      toLegalExplanationView({
+        explanation,
+        reference: provision.locator,
+        title: explanationTitle(provision, explanation),
+        target: parseLegalProvisionReference({
+          kind: "legal-provision",
+          documentId,
+          provisionId: provision.id,
+        }),
+      })
   )
 
   const terms = isReadingModule
