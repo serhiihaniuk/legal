@@ -6,6 +6,7 @@ import process from "node:process"
 import { resolveRepoRoot } from "./lib/repo-root.mjs"
 import {
   diffProvisionLists,
+  discoverReviewDependants,
   prepareWorkOrder,
   previewPromotion,
   promoteEdition,
@@ -17,6 +18,7 @@ import {
   verifyPromotionArtifacts,
   writeJson,
 } from "./lib/workflow.mjs"
+import { auditCitations } from "./lib/reference-scanner.mjs"
 
 /** @typedef {{ _: string[], [key: string]: string | boolean | string[] }} CliOptions */
 
@@ -191,6 +193,28 @@ async function commandPrepare(projectRoot, options) {
  * @param {CliOptions} options
  * @returns {Promise<void>}
  */
+async function commandAuditCitations(projectRoot, options) {
+  const result = await auditCitations({ projectRoot })
+  const output = typeof options.output === "string"
+    ? path.resolve(projectRoot, options.output)
+    : path.join(projectRoot, "docs/restructure/citation-review/ambiguous-citations.md")
+  if (!options["dry-run"]) {
+    const { mkdir, writeFile } = await import("node:fs/promises")
+    await mkdir(path.dirname(output), { recursive: true })
+    await writeFile(output, result.packet, "utf8")
+  }
+  process.stdout.write(`${JSON.stringify({
+    ...result.stats,
+    output: path.relative(projectRoot, output).replaceAll("\\", "/"),
+    dryRun: Boolean(options["dry-run"]),
+  }, null, 2)}\n`)
+}
+
+/**
+ * @param {string} projectRoot
+ * @param {CliOptions} options
+ * @returns {Promise<void>}
+ */
 async function commandDiff(projectRoot, options) {
   const oldEditionId = required(options, "old")
   const newEditionId = required(options, "new")
@@ -209,12 +233,16 @@ async function commandDiff(projectRoot, options) {
   if (oldManifest.documentId !== newManifest.documentId) {
     throw new Error("Edition diff requires two editions of the same document")
   }
+  const provisions = diffProvisionLists(oldProvisions, newProvisions)
   const result = {
     documentId: newManifest.documentId,
     oldEditionId,
     newEditionId,
-    provisions: diffProvisionLists(oldProvisions, newProvisions),
-    reviewDependants: [],
+    provisions,
+    reviewDependants: await discoverReviewDependants({
+      projectRoot,
+      provisionIds: [...provisions.changed, ...provisions.removed],
+    }),
   }
   if (typeof options.output === "string") {
     await writeJson(path.resolve(projectRoot, options.output), result)
@@ -287,6 +315,7 @@ async function commandPromote(projectRoot, options) {
     workOrder: result.workOrder,
     workOrderPath,
     approvedBy,
+    verifyArtifacts: true,
   })
   process.stdout.write(`${JSON.stringify(record)}\n`)
 }
@@ -299,13 +328,15 @@ async function main() {
       return commandPrepare(projectRoot, options)
     case "diff":
       return commandDiff(projectRoot, options)
+    case "audit-citations":
+      return commandAuditCitations(projectRoot, options)
     case "validate":
       return commandValidate(projectRoot, options)
     case "promote":
       return commandPromote(projectRoot, options)
     default:
       throw new Error(
-        "Usage: workflow.mjs prepare|diff|validate|promote [options]"
+        "Usage: workflow.mjs prepare|diff|validate|promote|audit-citations [options]"
       )
   }
 }
