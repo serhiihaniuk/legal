@@ -15,7 +15,7 @@ import {
   legalLearningPlainText,
   type LegalLearningText,
 } from "~/data/legal-library/learning/legal-text"
-import type { LegalLearningModuleView } from "~/data/legal-library/learning/view-types"
+import type { LegalLearningModuleView } from "~/features/law-library/model/legal-learning-view"
 
 export const legalLearningSectionIds = {
   overview: "legal-learning-overview",
@@ -131,14 +131,14 @@ function ProvisionGuide({
                   </span>
                   <span className="text-sm leading-6 font-normal text-muted-foreground">
                     <ProvisionText
-                      text={item.summary}
+                      text={item.explanation.summary}
                       reference={item.reference}
                       target={item.target}
                     />
                   </span>
                 </span>
                 <span className="text-xs leading-6 font-normal whitespace-nowrap text-muted-foreground">
-                  {formatRuleCount(item.rules.length)}
+                  {formatRuleCount(item.explanation.rules.length)}
                 </span>
               </span>
             </AccordionTrigger>
@@ -151,20 +151,20 @@ function ProvisionGuide({
                   </h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
                     <ProvisionText
-                      text={item.summary}
+                      text={item.explanation.summary}
                       reference={item.reference}
                       target={item.target}
                     />
                   </p>
                 </section>
 
-                {item.rules.length ? (
+                {item.explanation.rules.length ? (
                   <section>
                     <h4 className="text-sm font-semibold">
                       Структура механізму
                     </h4>
                     <ol className="mt-3 flex flex-col border-y">
-                      {item.rules.map((rule, index) => (
+                      {item.explanation.rules.map((rule, index) => (
                         <li
                           key={`${item.id}-${rule.locator}-${index}`}
                           className="flex gap-4 py-4 not-last:border-b"
@@ -200,7 +200,7 @@ function ProvisionGuide({
                   <h4 className="text-sm font-semibold">Правовий наслідок</h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
                     <ProvisionText
-                      text={item.legalEffect}
+                      text={item.explanation.legalEffect}
                       reference={item.reference}
                       target={item.target}
                     />
@@ -213,7 +213,7 @@ function ProvisionGuide({
                   </h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
                     <ProvisionText
-                      text={item.foreignersCase}
+                      text={item.explanation.foreignersCase}
                       reference={item.reference}
                       target={item.target}
                     />

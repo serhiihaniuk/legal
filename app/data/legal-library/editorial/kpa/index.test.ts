@@ -19,21 +19,25 @@ describe("canonical KPA editorial", () => {
     }
   })
 
-  it("keeps the article-shaped compatibility view for KPA screens", async () => {
+  it("returns canonical explanations in requested article order", async () => {
     const explanation = await getKpaArticleExplanation("1")
 
     expect(explanation).toMatchObject({
-      article: "1",
+      documentId: "kpa",
+      provisionId: "kpa-art-1",
       summary: expect.anything(),
       legalEffect: expect.anything(),
       foreignersCase: expect.anything(),
     })
     expect(explanation?.rules).toEqual(expect.any(Array))
-    expect(explanation).not.toHaveProperty("claims")
-    expect(explanation).not.toHaveProperty("provisionId")
+    expect(explanation?.claims).toEqual(expect.any(Array))
 
     const ordered = await getKpaArticleExplanations(["10", "1", "10"])
-    expect(ordered.map((entry) => entry.article)).toEqual(["10", "1", "10"])
+    expect(ordered.map((entry) => entry.provisionId)).toEqual([
+      "kpa-art-10",
+      "kpa-art-1",
+      "kpa-art-10",
+    ])
   })
 
   it("resolves KPA through the generic explanation query", async () => {

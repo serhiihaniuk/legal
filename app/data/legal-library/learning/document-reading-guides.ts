@@ -3,8 +3,11 @@ import {
   type LegalLearningText,
 } from "./legal-text"
 import { defineLegalLearningContent } from "./types"
-import type { AuthoredLearningDocumentId, LegalLearningModule } from "./types"
-import type { LegalLearningCoursePhase } from "./view-types"
+import type {
+  AuthoredLearningDocumentId,
+  LegalLearningCoursePhase,
+  LegalLearningModule,
+} from "./types"
 
 const ppsaLaw = createLegalLearningTextAuthor("ppsa")
 const kpaLaw = createLegalLearningTextAuthor("kpa")

@@ -83,14 +83,12 @@ It composes into the application-wide `LegalReference` and into structured `Lega
 ```text
 app/data/document-library/
   contracts.ts          # stable IDs and public contracts
+  guides.ts             # editorial content; explicit id/title/category/aliases
   registry.ts           # canonical records assembled from editorial guides
   query.ts              # list/get/category/related/context queries
   navigation.ts         # canonical paths and previous/next
   legal-text.ts         # typed Evidence Document authoring helper
   index.ts              # public Interface
-
-app/data/document-guides.ts
-  # editorial content; explicit id/title/category/aliases
 
 app/data/document-index.ts
   # compatibility Adapter for map/case mention ingestion only
