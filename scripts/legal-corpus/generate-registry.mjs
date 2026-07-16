@@ -5,6 +5,13 @@ import path from "node:path"
 import process from "node:process"
 import { fileURLToPath } from "node:url"
 
+import { resolveRepoRoot } from "./lib/repo-root.mjs"
+
+/**
+ * @typedef {{ directory: string, manifest: any, provisions: any[] }} ScannedEdition
+ * @typedef {{ documentId: string, editions: ScannedEdition[], currentEditionId: string }} EditionGroup
+ */
+
 const ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/u
 const DEFAULT_DATA_DIRECTORY = "app/data/legal-corpus"
 const DEFAULT_POINTER_PATH = "app/data/legal-library/current-editions.json"
@@ -12,26 +19,65 @@ const DEFAULT_OUTPUT_PATH = "app/data/legal-corpus/registry.generated.ts"
 const DEFAULT_REFERENCE_OUTPUT_PATH =
   "app/data/legal-corpus/reference-registry.generated.ts"
 
+/**
+ * @param {string} filePath
+ * @returns {Promise<any>}
+ */
 async function readJson(filePath) {
   return JSON.parse(await readFile(filePath, "utf8"))
 }
 
+/**
+ * @param {string} message
+ * @returns {never}
+ */
 function fail(message) {
   throw new Error(`Registry generation failed: ${message}`)
 }
 
+/**
+ * @param {unknown} value
+ * @param {string} label
+ */
 function assertId(value, label) {
   if (typeof value !== "string" || !ID_PATTERN.test(value)) {
     fail(`${label} must be a URL-safe lowercase ID`)
   }
 }
 
+/**
+ * @param {unknown} value
+ * @param {string} label
+ */
 function assertNonEmptyString(value, label) {
   if (typeof value !== "string" || value.length === 0) fail(`${label} is required`)
 }
 
+/**
+ * @param {unknown} left
+ * @param {unknown} right
+ * @returns {number}
+ */
 function sortById(left, right) {
   return String(left).localeCompare(String(right))
+}
+
+/**
+ * @param {unknown} error
+ * @returns {string | undefined}
+ */
+function errorCode(error) {
+  return error && typeof error === "object" && "code" in error
+    ? /** @type {{ code?: string }} */ (error).code
+    : undefined
+}
+
+/**
+ * @param {unknown} error
+ * @returns {string}
+ */
+function errorMessage(error) {
+  return error instanceof Error ? error.message : String(error)
 }
 
 /**
@@ -52,37 +98,46 @@ export async function writeGeneratedFile(filePath, content) {
 /**
  * Scan only complete manifest/provisions pairs. The array order in provisions.json
  * is intentionally retained: it is the source order used by the reader.
+ * @param {string} dataDirectory
+ * @returns {Promise<ScannedEdition[]>}
  */
 export async function scanCorpusEditions(dataDirectory) {
+  /** @type {import("node:fs").Dirent[]} */
   let entries
   try {
     entries = (await readdir(dataDirectory, { withFileTypes: true }))
       .filter((entry) => entry.isDirectory())
       .sort((left, right) => left.name.localeCompare(right.name))
   } catch (error) {
-    fail(`cannot read data directory ${dataDirectory}: ${error?.message ?? error}`)
+    fail(`cannot read data directory ${dataDirectory}: ${errorMessage(error)}`)
   }
 
+  /** @type {ScannedEdition[]} */
   const editions = []
+  /** @type {Set<string>} */
   const editionIds = new Set()
+  /** @type {Map<string, Map<string, string>>} */
   const provisionIdsByDocument = new Map()
+  /** @type {Map<string, string>} */
   const provisionOwners = new Map()
 
   for (const entry of entries) {
     const directory = path.join(dataDirectory, entry.name)
     const manifestPath = path.join(directory, "manifest.json")
     const provisionsPath = path.join(directory, "provisions.json")
+    /** @type {any} */
     let manifest
+    /** @type {any[]} */
     let provisions
     try {
       manifest = await readJson(manifestPath)
     } catch (error) {
-      if (error?.code === "ENOENT") {
+      if (errorCode(error) === "ENOENT") {
         try {
           await readFile(provisionsPath)
           fail(`${directory}: provisions.json exists without manifest.json`)
         } catch (provisionsError) {
-          if (provisionsError?.code === "ENOENT") continue
+          if (errorCode(provisionsError) === "ENOENT") continue
           throw provisionsError
         }
       }
@@ -91,7 +146,7 @@ export async function scanCorpusEditions(dataDirectory) {
     try {
       provisions = await readJson(provisionsPath)
     } catch (error) {
-      if (error?.code === "ENOENT") fail(`${directory}: manifest.json exists without provisions.json`)
+      if (errorCode(error) === "ENOENT") fail(`${directory}: manifest.json exists without provisions.json`)
       throw error
     }
 
@@ -148,11 +203,17 @@ export async function scanCorpusEditions(dataDirectory) {
   return editions
 }
 
+/**
+ * @param {ScannedEdition[]} editions
+ * @param {Record<string, string>} currentEditions
+ * @returns {EditionGroup[]}
+ */
 export function groupEditions(editions, currentEditions) {
   if (!currentEditions || typeof currentEditions !== "object" || Array.isArray(currentEditions)) {
     fail("current-editions pointer must be an object mapping document IDs to edition IDs")
   }
 
+  /** @type {Map<string, ScannedEdition[]>} */
   const byDocument = new Map()
   for (const edition of editions) {
     const documentId = edition.manifest.documentId
@@ -164,7 +225,7 @@ export function groupEditions(editions, currentEditions) {
   const pointerIds = Object.keys(currentEditions)
   for (const documentId of byDocument.keys()) {
     if (!Object.prototype.hasOwnProperty.call(currentEditions, documentId)) {
-      const ids = byDocument.get(documentId).map(({ manifest }) => manifest.editionId)
+      const ids = /** @type {ScannedEdition[]} */ (byDocument.get(documentId)).map(({ manifest }) => manifest.editionId)
       const detail = ids.length > 1 ? `; ambiguous editions: ${ids.join(", ")}` : ""
       fail(`missing explicit current-edition pointer for ${documentId}${detail}`)
     }
@@ -174,7 +235,7 @@ export function groupEditions(editions, currentEditions) {
     assertId(documentId, `current-editions key ${documentId}`)
     const editionId = currentEditions[documentId]
     assertId(editionId, `current-editions.${documentId}`)
-    const matches = byDocument.get(documentId).filter(({ manifest }) => manifest.editionId === editionId)
+    const matches = /** @type {ScannedEdition[]} */ (byDocument.get(documentId)).filter(({ manifest }) => manifest.editionId === editionId)
     if (matches.length !== 1) fail(`current-editions.${documentId} must name exactly one scanned edition; received ${editionId}`)
   }
 
@@ -187,17 +248,34 @@ export function groupEditions(editions, currentEditions) {
     }))
 }
 
+/**
+ * @param {string} value
+ * @returns {string}
+ */
 function identifier(value) {
   return value.replace(/[^a-zA-Z0-9_$]/gu, "_")
 }
 
+/**
+ * @param {unknown} value
+ * @returns {string}
+ */
 function quote(value) {
   return JSON.stringify(value)
 }
 
+/**
+ * @param {EditionGroup[]} groups
+ * @param {string} dataDirectory
+ * @param {string} outputPath
+ * @returns {string}
+ */
 export function renderRegistry(groups, dataDirectory, outputPath) {
+  /** @type {string[]} */
   const imports = []
+  /** @type {Map<string, { manifestName: string, provisionsName: string }>} */
   const importNames = new Map()
+  /** @type {Set<string>} */
   const usedNames = new Set()
   for (const group of groups) {
     for (const edition of group.editions) {
@@ -216,7 +294,9 @@ export function renderRegistry(groups, dataDirectory, outputPath) {
 
   const entries = groups.map((group) => {
     const editionEntries = group.editions.map((edition) => {
-      const { manifestName, provisionsName } = importNames.get(edition.manifest.editionId)
+      const { manifestName, provisionsName } = /** @type {{ manifestName: string, provisionsName: string }} */ (
+        importNames.get(edition.manifest.editionId)
+      )
       const provisionIds = edition.provisions.map(({ id }) => quote(id)).join(", ")
       return `      ${quote(edition.manifest.editionId)}: {\n        editionId: ${quote(edition.manifest.editionId)},\n        manifest: ${manifestName},\n        provisions: ${provisionsName},\n        provisionIds: [${provisionIds}],\n      }`
     }).join(",\n")
@@ -229,6 +309,10 @@ export function renderRegistry(groups, dataDirectory, outputPath) {
   return `// Generated by scripts/legal-corpus/generate-registry.mjs. Do not edit by hand.\n// Every edition and provision is discovered from its manifest.json/provisions.json pair.\n${imports.join("\n")}\n\nexport const legalLibraryRegistry = {\n${entries}\n} as const\n`
 }
 
+/**
+ * @param {EditionGroup[]} groups
+ * @returns {string}
+ */
 export function renderReferenceRegistry(groups) {
   const entries = groups.map((group) => {
     const editionIds = group.editions
@@ -259,7 +343,7 @@ export function renderReferenceRegistry(groups) {
  * }} [options]
  */
 export async function generateRegistry({
-  projectRoot = process.cwd(),
+  projectRoot = resolveRepoRoot(import.meta.url),
   dataDirectory = path.join(projectRoot, DEFAULT_DATA_DIRECTORY),
   pointerPath = path.join(projectRoot, DEFAULT_POINTER_PATH),
   outputPath = path.join(projectRoot, DEFAULT_OUTPUT_PATH),
@@ -292,7 +376,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     const result = await generateRegistry()
     process.stdout.write(`Generated ${result.outputPath} for ${result.groups.length} document(s).\n`)
   } catch (error) {
-    process.stderr.write(`${error?.stack ?? error}\n`)
+    process.stderr.write(`${error instanceof Error ? error.stack : error}\n`)
     process.exitCode = 1
   }
 }

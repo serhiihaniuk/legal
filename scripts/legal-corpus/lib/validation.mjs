@@ -1,7 +1,14 @@
 import { URL } from "node:url"
 
 import { isCompleteLegalStatusEvidence } from "./config.mjs"
+import { CorpusValidationError } from "./errors.mjs"
 import { createProvisionId, sha256 } from "./extraction.mjs"
+
+/**
+ * @typedef {import("./types.mjs").Diagnostic} Diagnostic
+ * @typedef {import("./types.mjs").Page} Page
+ * @typedef {import("./types.mjs").Provision} Provision
+ */
 
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 const STATUS_VALUES = new Set([
@@ -19,13 +26,30 @@ const KIND_VALUES = new Set([
   "annex",
 ])
 
+/**
+ * @param {Diagnostic["severity"]} severity
+ * @param {string} code
+ * @param {string} message
+ * @param {string} [path]
+ * @param {unknown} [details]
+ * @returns {Diagnostic}
+ */
 export function diagnostic(severity, code, message, path = undefined, details = undefined) {
-  const entry = { severity, code, message }
-  if (path !== undefined) entry.path = path
-  if (details !== undefined) entry.details = details
-  return entry
+  return {
+    severity,
+    code,
+    message,
+    ...(path !== undefined ? { path } : {}),
+    ...(details !== undefined ? { details } : {}),
+  }
 }
 
+/**
+ * @param {any} manifest
+ * @param {any} config
+ * @param {string} [pdfSha256]
+ * @returns {Diagnostic[]}
+ */
 export function validateExistingEditionIdentity(manifest, config, pdfSha256 = undefined) {
   if (!manifest) return []
   const diagnostics = []
@@ -85,6 +109,10 @@ export function validateExistingEditionIdentity(manifest, config, pdfSha256 = un
   return diagnostics
 }
 
+/**
+ * @param {string} metadataUrl
+ * @returns {string | undefined}
+ */
 function expectedEliIdentifier(metadataUrl) {
   try {
     const pathname = new URL(metadataUrl).pathname
@@ -95,7 +123,14 @@ function expectedEliIdentifier(metadataUrl) {
   }
 }
 
+/**
+ * @param {any} config
+ * @param {any} metadata
+ * @param {unknown} pdfBytes
+ * @returns {Diagnostic[]}
+ */
 export function validateOfficialIdentity(config, metadata, pdfBytes) {
+  /** @type {Diagnostic[]} */
   const diagnostics = []
   const expectedIdentifier = expectedEliIdentifier(config.source.metadataUrl)
 
@@ -200,7 +235,13 @@ export function validateOfficialIdentity(config, metadata, pdfBytes) {
   return diagnostics
 }
 
+/**
+ * @param {any} config
+ * @param {any} observed
+ * @returns {Diagnostic[]}
+ */
 export function validateExtractionExpectations(config, observed) {
+  /** @type {Diagnostic[]} */
   const diagnostics = []
   const expected = config.extraction
 
@@ -241,10 +282,18 @@ export function validateExtractionExpectations(config, observed) {
   return diagnostics
 }
 
+/**
+ * @param {unknown} value
+ * @returns {boolean}
+ */
 function isOneBasedPage(value) {
-  return Number.isInteger(value) && value >= 1
+  return Number.isInteger(value) && /** @type {number} */ (value) >= 1
 }
 
+/**
+ * @param {{ provisions: any, documentId: string, editionId: string, pageCount: number, pdfSha256: string }} options
+ * @returns {Diagnostic[]}
+ */
 export function validateProvisionFacts({
   provisions,
   documentId,
@@ -252,6 +301,7 @@ export function validateProvisionFacts({
   pageCount,
   pdfSha256,
 }) {
+  /** @type {Diagnostic[]} */
   const diagnostics = []
   if (!/^[0-9a-f]{64}$/u.test(String(pdfSha256))) {
     diagnostics.push(
@@ -359,7 +409,12 @@ export function validateProvisionFacts({
         }
       } catch (error) {
         diagnostics.push(
-          diagnostic("fatal", "provisions.invalid-locator", error.message, `${path}.locator`)
+          diagnostic(
+            "fatal",
+            "provisions.invalid-locator",
+            error instanceof Error ? error.message : String(error),
+            `${path}.locator`
+          )
         )
       }
     }
@@ -460,7 +515,7 @@ export function validateProvisionFacts({
         diagnostic("fatal", "hierarchy.invalid-parent", "parentId must be null or a provision ID", `${path}.parentId`)
       )
     }
-    if (!Array.isArray(provision.childIds) || provision.childIds.some((id) => typeof id !== "string")) {
+    if (!Array.isArray(provision.childIds) || provision.childIds.some((/** @type {unknown} */ id) => typeof id !== "string")) {
       diagnostics.push(
         diagnostic("fatal", "hierarchy.invalid-children", "childIds must be an array of provision IDs", `${path}.childIds`)
       )
@@ -530,8 +585,11 @@ export function validateProvisionFacts({
     }
   }
 
+  /** @type {Set<string>} */
   const visiting = new Set()
+  /** @type {Set<string>} */
   const visited = new Set()
+  /** @param {string} id */
   const visit = (id) => {
     if (visiting.has(id)) {
       diagnostics.push(
@@ -553,7 +611,12 @@ export function validateProvisionFacts({
   return diagnostics
 }
 
+/**
+ * @param {{ structure: any, provisions: any }} options
+ * @returns {Diagnostic[]}
+ */
 export function validateStructure({ structure, provisions }) {
+  /** @type {Diagnostic[]} */
   const diagnostics = []
   if (!structure || typeof structure !== "object" || Array.isArray(structure)) {
     return [diagnostic("fatal", "structure.invalid", "structure.json must contain an object", "structure")]
@@ -601,7 +664,7 @@ export function validateStructure({ structure, provisions }) {
       diagnostic("fatal", "structure.nodes-mismatch", "structure.nodes must contain one node per provision", "structure.nodes")
     )
   } else {
-    structure.nodes.forEach((node, index) => {
+    structure.nodes.forEach((/** @type {any} */ node, /** @type {number} */ index) => {
       const expected = provisions[index]
       if (
         node?.id !== expected.id ||
@@ -629,6 +692,20 @@ export function validateStructure({ structure, provisions }) {
   return diagnostics
 }
 
+/**
+ * @param {{
+ *   config: any,
+ *   metadata: any,
+ *   pdfBytes: unknown,
+ *   pdfSha256: string,
+ *   pages: Page[],
+ *   provisions: any,
+ *   structure: any,
+ *   observed: any,
+ *   existingManifests?: any[],
+ * }} options
+ * @returns {{ entries: Diagnostic[], fatal: Diagnostic[], warnings: Diagnostic[] }}
+ */
 export function validateCorpusFacts({
   config,
   metadata,
@@ -663,6 +740,10 @@ export function validateCorpusFacts({
   }
 }
 
+/**
+ * @param {{ config: any, observed: any, result: { entries: Diagnostic[], fatal: Diagnostic[], warnings: Diagnostic[] } }} options
+ * @returns {any}
+ */
 export function makeDiagnostics({ config, observed, result }) {
   return {
     schemaVersion: config.schemaVersion,
@@ -681,12 +762,14 @@ export function makeDiagnostics({ config, observed, result }) {
   }
 }
 
+/**
+ * @param {{ entries: Diagnostic[], fatal: Diagnostic[], warnings: Diagnostic[] }} result
+ * @returns {{ entries: Diagnostic[], fatal: Diagnostic[], warnings: Diagnostic[] }}
+ */
 export function assertNoFatalDiagnostics(result) {
   if (result.fatal.length === 0) return result
-  const error = new Error(
-    `Corpus validation failed with ${result.fatal.length} fatal diagnostic(s)`
+  throw new CorpusValidationError(
+    `Corpus validation failed with ${result.fatal.length} fatal diagnostic(s)`,
+    result
   )
-  error.name = "CorpusValidationError"
-  error.diagnostics = result
-  throw error
 }

@@ -1,5 +1,12 @@
 import { createHash } from "node:crypto"
 
+import { CorpusValidationError } from "./errors.mjs"
+
+/**
+ * @typedef {import("./types.mjs").Page} Page
+ * @typedef {import("./types.mjs").Provision} Provision
+ */
+
 export const SUPERSCRIPT_DIGITS = {
   "⁰": "0",
   "¹": "1",
@@ -27,6 +34,10 @@ const PARAGRAPH_PATTERN = /^§\s*(\d+)([a-z]{0,2})?\s*\./gimu
 const ANNEX_PATTERN = /^Załącznik nr\s+(\d+[a-z]?)/imu
 const URL_SAFE_DOCUMENT_ID = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/
 
+/**
+ * @param {unknown} value
+ * @returns {string}
+ */
 export function normalizeText(value) {
   return String(value)
     .replaceAll("\u00ad", "")
@@ -37,17 +48,29 @@ export function normalizeText(value) {
     .trim()
 }
 
+/**
+ * @param {string | Uint8Array} value
+ * @returns {string}
+ */
 export function sha256(value) {
   return createHash("sha256").update(value).digest("hex")
 }
 
+/**
+ * @param {string} value
+ * @returns {string}
+ */
 function superscriptValue(value) {
   return value
     .split("")
-    .map((digit) => SUPERSCRIPT_DIGITS[digit])
+    .map((digit) => SUPERSCRIPT_DIGITS[/** @type {keyof typeof SUPERSCRIPT_DIGITS} */ (digit)])
     .join("")
 }
 
+/**
+ * @param {RegExpMatchArray} match
+ * @returns {string}
+ */
 function articleLabelFromMatch(match) {
   const number = match[1]
   const letters = match[2]?.toLowerCase() ?? ""
@@ -58,6 +81,10 @@ function articleLabelFromMatch(match) {
   return `${number}${letters}${superscript}`
 }
 
+/**
+ * @param {unknown} value
+ * @returns {RegExpMatchArray}
+ */
 function parseArticleLocator(value) {
   const match = String(value).trim().match(ARTICLE_LOCATOR_PATTERN)
   if (!match) {
@@ -69,12 +96,18 @@ function parseArticleLocator(value) {
 /**
  * Return the canonical learner-facing locator while retaining article letters
  * and representing source-layer numeric suffixes as superscript digits.
+ * @param {unknown} value
+ * @returns {string}
  */
 export function normalizeArticleLocator(value) {
   const match = parseArticleLocator(value)
   return `Art. ${articleLabelFromMatch(match)}`
 }
 
+/**
+ * @param {unknown} value
+ * @returns {string}
+ */
 export function articleValueFromLocator(value) {
   return normalizeArticleLocator(value).slice("Art. ".length)
 }
@@ -83,6 +116,8 @@ export function articleValueFromLocator(value) {
  * Convert an article locator into a stable URL-safe key. A superscript suffix
  * is separated from the base number (`39¹` -> `39-1`) so it cannot be confused
  * with the ordinary article `391`.
+ * @param {unknown} value
+ * @returns {string}
  */
 export function normalizeArticleKey(value) {
   const article = articleValueFromLocator(value)
@@ -94,6 +129,12 @@ export function normalizeArticleKey(value) {
   return `${match[1]}${match[2]}${suffix}`
 }
 
+/**
+ * @param {string} documentId
+ * @param {unknown} locator
+ * @param {string} [kind]
+ * @returns {string}
+ */
 export function createProvisionId(documentId, locator, kind = "article") {
   if (!URL_SAFE_DOCUMENT_ID.test(documentId)) {
     throw new TypeError(`Unsupported document ID: ${documentId}`)
@@ -121,17 +162,80 @@ export function createProvisionId(documentId, locator, kind = "article") {
   return `${documentId}-${kind}-${normalizedLocator}`
 }
 
+/**
+ * @param {string} text
+ * @returns {"active" | "repealed"}
+ */
 function articleStatus(text) {
   return REPEALED_ARTICLE_PATTERN.test(text) ? "repealed" : "active"
 }
 
 /**
+ * A duplicate article/paragraph/annex locator means extraction cannot tell
+ * which occurrence is the real provision. Keeping the first or last
+ * occurrence silently, as this extractor once did, can retain the wrong page
+ * span while the provision count still happens to match the config's
+ * expectation, so expected-count validation never gets a chance to catch it.
+ * Throwing here, before that count comparison ever runs, makes the ambiguity
+ * itself fatal and carries both page positions so a human can resolve it in
+ * the source PDF or extraction profile.
+ * @template T
+ * @param {T[]} items
+ * @param {(item: T) => { locator: string, kind: string, startPdfPage: number, endPdfPage: number }} describe
+ */
+function assertNoDuplicateLocators(items, describe) {
+  /** @type {Map<string, Array<{ locator: string, kind: string, startPdfPage: number, endPdfPage: number }>>} */
+  const byLocator = new Map()
+  for (const item of items) {
+    const described = describe(item)
+    const key = `${described.kind}:${described.locator}`
+    const occurrences = byLocator.get(key) ?? []
+    occurrences.push(described)
+    byLocator.set(key, occurrences)
+  }
+
+  const duplicates = [...byLocator.values()].filter((occurrences) => occurrences.length > 1)
+  if (duplicates.length === 0) return
+
+  /** @type {import("./types.mjs").Diagnostic[]} */
+  const fatal = duplicates.map((occurrences) => {
+    const { kind, locator } = occurrences[0]
+    return {
+      severity: /** @type {const} */ ("fatal"),
+      code: "extraction.duplicate-locator",
+      message: `Duplicate ${kind} locator ${locator} found on pages ${occurrences
+        .map((occurrence) => `${occurrence.startPdfPage}-${occurrence.endPdfPage}`)
+        .join(" and ")}`,
+      path: "extraction",
+      details: {
+        kind,
+        locator,
+        occurrences: occurrences.map(({ startPdfPage, endPdfPage }) => ({ startPdfPage, endPdfPage })),
+      },
+    }
+  })
+  throw new CorpusValidationError(
+    `Extraction found ${fatal.length} duplicate locator(s): ${duplicates
+      .map((occurrences) => `${occurrences[0].kind} ${occurrences[0].locator}`)
+      .join(", ")}`,
+    { fatal }
+  )
+}
+
+/**
+ * @typedef {{ article: string, pdfPage: number, endPdfPage: number, textParts: string[] }} ArticleAccumulator
+ */
+
+/**
  * Extract article-shaped compatibility facts from normalized PDF pages.
  * Article-level records are the only promoted unit in profile v1; nested
  * paragraph/point records are intentionally left for a later profile revision.
+ * @param {Page[]} pages
  */
 export function extractArticles(pages) {
+  /** @type {ArticleAccumulator[]} */
   const articles = []
+  /** @type {ArticleAccumulator | null} */
   let current = null
 
   for (const page of pages) {
@@ -151,7 +255,10 @@ export function extractArticles(pages) {
       current.endPdfPage = page.pdfPage
     }
 
-    matches.forEach((match, index) => {
+    // A plain loop (rather than matches.forEach) keeps `current`'s reassignment
+    // in the same function scope as the narrowing checks above and below, so
+    // TypeScript's control-flow analysis can track it across iterations.
+    for (const [index, match] of matches.entries()) {
       if (current) articles.push(current)
 
       const next = matches[index + 1]
@@ -163,34 +270,39 @@ export function extractArticles(pages) {
         endPdfPage: page.pdfPage,
         textParts: [page.text.slice(match.index, end).trim()],
       }
-    })
+    }
   }
 
   if (current) articles.push(current)
 
-  // Keep the last complete occurrence, matching the historical KPA projection
-  // behavior while allowing validation to reject any resulting duplicate ID.
-  const seenArticles = new Set()
-  return [...articles]
-    .reverse()
-    .filter((article) => {
-      if (seenArticles.has(article.article)) return false
-      seenArticles.add(article.article)
-      return true
-    })
-    .reverse()
-    .map(({ textParts, ...article }) => {
-      const text = normalizeText(textParts.join("\n"))
-      return {
-        ...article,
-        status: articleStatus(text),
-        text,
-      }
-    })
+  assertNoDuplicateLocators(articles, (article) => ({
+    kind: "article",
+    locator: `Art. ${article.article}`,
+    startPdfPage: article.pdfPage,
+    endPdfPage: article.endPdfPage,
+  }))
+
+  return articles.map(({ textParts, ...article }) => {
+    const text = normalizeText(textParts.join("\n"))
+    return {
+      ...article,
+      status: articleStatus(text),
+      text,
+    }
+  })
 }
 
+/**
+ * @typedef {{ index: number, kind: string, locator: string, startPdfPage: number, endPdfPage: number, textParts: string[] }} ParagraphUnitAccumulator
+ */
+
+/**
+ * @param {Page[]} pages
+ */
 function extractParagraphLedUnits(pages) {
+  /** @type {ParagraphUnitAccumulator[]} */
   const units = []
+  /** @type {ParagraphUnitAccumulator | null} */
   let current = null
 
   for (const page of pages) {
@@ -223,7 +335,10 @@ function extractParagraphLedUnits(pages) {
       current.endPdfPage = page.pdfPage
     }
 
-    markers.forEach((marker, index) => {
+    // A plain loop (rather than markers.forEach) keeps `current`'s reassignment
+    // in the same function scope as the narrowing checks above and below, so
+    // TypeScript's control-flow analysis can track it across iterations.
+    for (const [index, marker] of markers.entries()) {
       if (current) units.push(current)
       const next = markers[index + 1]
       current = {
@@ -234,17 +349,18 @@ function extractParagraphLedUnits(pages) {
           page.text.slice(marker.index, next?.index ?? page.text.length).trim(),
         ],
       }
-    })
+    }
   }
   if (current) units.push(current)
 
-  const seen = new Set()
-  return units.filter((unit) => {
-    const key = `${unit.kind}:${unit.locator}`
-    if (seen.has(key)) return false
-    seen.add(key)
-    return true
-  }).map(({ textParts, index: _index, ...unit }) => {
+  assertNoDuplicateLocators(units, (unit) => ({
+    kind: unit.kind,
+    locator: unit.locator,
+    startPdfPage: unit.startPdfPage,
+    endPdfPage: unit.endPdfPage,
+  }))
+
+  return units.map(({ textParts, index: _index, ...unit }) => {
     const text = normalizeText(textParts.join("\n"))
     return {
       ...unit,
@@ -256,6 +372,11 @@ function extractParagraphLedUnits(pages) {
   })
 }
 
+/**
+ * @param {Page[]} pages
+ * @param {{ documentId: string, editionId: string, sourcePdfSha256: string, profile?: string }} [options]
+ * @returns {Provision[]}
+ */
 export function extractProvisions(
   pages,
   {
@@ -263,7 +384,7 @@ export function extractProvisions(
     editionId,
     sourcePdfSha256,
     profile = "polish-statute-art-v1",
-  } = {}
+  } = /** @type {any} */ ({})
 ) {
   if (!documentId || !editionId || !sourcePdfSha256) {
     throw new TypeError(
@@ -303,6 +424,12 @@ export function extractProvisions(
   })
 }
 
+/**
+ * @param {Uint8Array} pdfBytes
+ * @param {(options: { data: Uint8Array, disableWorker: boolean, useSystemFonts: boolean }) => { promise: Promise<any>, destroy: () => Promise<void> }} getDocument
+ *   Injected rather than imported directly, so tests can pass a stub without loading real PDF.js.
+ * @returns {Promise<Page[]>}
+ */
 export async function extractPages(pdfBytes, getDocument) {
   const loadingTask = getDocument({
     data: pdfBytes,
@@ -310,6 +437,7 @@ export async function extractPages(pdfBytes, getDocument) {
     useSystemFonts: true,
   })
   const pdf = await loadingTask.promise
+  /** @type {Page[]} */
   const pages = []
 
   try {
@@ -317,7 +445,7 @@ export async function extractPages(pdfBytes, getDocument) {
       const page = await pdf.getPage(pdfPage)
       const content = await page.getTextContent()
       const rawText = content.items
-        .map((item) => {
+        .map((/** @type {any} */ item) => {
           if (!("str" in item)) return ""
           return `${item.str}${item.hasEOL ? "\n" : " "}`
         })

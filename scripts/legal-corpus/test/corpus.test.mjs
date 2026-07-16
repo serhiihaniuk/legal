@@ -5,6 +5,7 @@ import { buildManifest, buildStructure, projectArticles } from "../lib/artifacts
 import { ConfigValidationError, validateConfig } from "../lib/config.mjs"
 import {
   createProvisionId,
+  extractArticles,
   extractProvisions,
   normalizeArticleKey,
   normalizeArticleLocator,
@@ -40,6 +41,18 @@ const baseConfig = {
   },
 }
 
+/**
+ * @param {{
+ *   id?: string,
+ *   locator?: string,
+ *   order?: number,
+ *   parentId?: string | null,
+ *   childIds?: string[],
+ *   startPdfPage?: number,
+ *   endPdfPage?: number,
+ *   text?: string,
+ * }} [options]
+ */
 function provision({
   id = "kpa-art-1",
   locator = "Art. 1",
@@ -218,6 +231,54 @@ test("extracts paragraph-led regulations and annexes with stable IDs", () => {
       { id: "regulation-par-2", kind: "paragraph", locator: "§ 2", startPdfPage: 1, endPdfPage: 1 },
       { id: "regulation-annex-1", kind: "annex", locator: "Załącznik nr 1", startPdfPage: 2, endPdfPage: 3 },
     ]
+  )
+})
+
+test("treats a duplicate article locator as a fatal diagnostic carrying both page positions instead of silently keeping one occurrence", () => {
+  const pages = [
+    { pdfPage: 1, text: "Art. 10. Pierwsza wersja przepisu.", hasTextLayer: true },
+    { pdfPage: 2, text: "Art. 10. Druga, sprzeczna wersja przepisu.", hasTextLayer: true },
+  ]
+  assert.throws(
+    () => extractArticles(pages),
+    (/** @type {any} */ error) => {
+      assert.equal(error.name, "CorpusValidationError")
+      assert.equal(error.diagnostics.fatal.length, 1)
+      const [entry] = error.diagnostics.fatal
+      assert.equal(entry.code, "extraction.duplicate-locator")
+      assert.equal(entry.details.locator, "Art. 10")
+      assert.deepEqual(
+        entry.details.occurrences.map((/** @type {any} */ occurrence) => occurrence.startPdfPage),
+        [1, 2]
+      )
+      return true
+    }
+  )
+})
+
+test("treats a duplicate paragraph locator as a fatal diagnostic instead of silently keeping the first occurrence", () => {
+  assert.throws(
+    () =>
+      extractProvisions(
+        [
+          { pdfPage: 1, text: "§ 1. Pierwsza wersja.", hasTextLayer: true },
+          { pdfPage: 2, text: "§ 1. Druga wersja.", hasTextLayer: true },
+        ],
+        {
+          documentId: "regulation",
+          editionId: "regulation-2026-1",
+          sourcePdfSha256: "a".repeat(64),
+          profile: "polish-regulation-paragraph-v1",
+        }
+      ),
+    (/** @type {any} */ error) => {
+      assert.equal(error.name, "CorpusValidationError")
+      const [entry] = error.diagnostics.fatal
+      assert.equal(entry.code, "extraction.duplicate-locator")
+      assert.equal(entry.details.kind, "paragraph")
+      assert.equal(entry.details.locator, "§ 1")
+      return true
+    }
   )
 })
 

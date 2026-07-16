@@ -1,5 +1,13 @@
 import { isCompleteLegalStatusEvidence } from "./config.mjs"
 
+/** @typedef {import("./types.mjs").Provision} Provision */
+/** @typedef {import("./types.mjs").Page} Page */
+
+/**
+ * @param {Provision[]} provisions
+ * @param {{ schemaVersion?: number, documentId?: string, editionId?: string, profile?: string }} [options]
+ * @returns {any}
+ */
 export function buildStructure(provisions, { schemaVersion, documentId, editionId, profile } = {}) {
   const ordered = [...provisions].sort((left, right) => {
     const orderDifference = left.order - right.order
@@ -49,6 +57,10 @@ export function buildStructure(provisions, { schemaVersion, documentId, editionI
   }
 }
 
+/**
+ * @param {Provision[]} provisions
+ * @returns {Array<{ article: string, pdfPage: number, endPdfPage: number, status: string, text: string }>}
+ */
 export function projectArticles(provisions) {
   return provisions
     .filter((provision) => provision.kind === "article")
@@ -61,12 +73,18 @@ export function projectArticles(provisions) {
     }))
 }
 
+/**
+ * @param {Page[]} pages
+ * @param {Provision[]} provisions
+ * @returns {any}
+ */
 export function buildObservedFacts(pages, provisions) {
   const pageCount = pages.length
   const textLayerPageCount = pages.filter((page) => page.hasTextLayer).length
   const textCoverage = pageCount === 0 ? 0 : textLayerPageCount / pageCount
   const coveredPdfPages = new Set(
     provisions.flatMap((provision) => {
+      /** @type {number[]} */
       const pagesInRange = []
       for (let page = provision.startPdfPage; page <= provision.endPdfPage; page += 1) {
         pagesInRange.push(page)
@@ -86,6 +104,10 @@ export function buildObservedFacts(pages, provisions) {
   }
 }
 
+/**
+ * @param {{ config: any, metadata: any, pdfSha256: string, observed: any, diagnostics: { fatal: unknown[], warnings: unknown[] }, builtAt: string }} options
+ * @returns {any}
+ */
 export function buildManifest({
   config,
   metadata,

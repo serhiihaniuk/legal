@@ -1,5 +1,7 @@
 import { URL } from "node:url"
 
+/** @typedef {import("./types.mjs").Diagnostic} Diagnostic */
+
 export const SCHEMA_VERSION = 2
 export const EXTRACTION_PROFILE = "polish-statute-art-v1"
 export const EXTRACTION_PROFILES = new Set([
@@ -16,6 +18,10 @@ const REQUIRED_SOURCE_URLS = [
 ]
 
 export class ConfigValidationError extends Error {
+  /**
+   * @param {string} message
+   * @param {Diagnostic[]} [diagnostics]
+   */
   constructor(message, diagnostics = []) {
     super(message)
     this.name = "ConfigValidationError"
@@ -23,6 +29,10 @@ export class ConfigValidationError extends Error {
   }
 }
 
+/**
+ * @param {unknown} value
+ * @returns {value is Record<string, any>}
+ */
 function isPlainObject(value) {
   return value !== null && typeof value === "object" && !Array.isArray(value)
 }
@@ -30,7 +40,7 @@ function isPlainObject(value) {
 /**
  * @param {unknown} value
  * @param {string} field
- * @param {Array<Record<string, unknown>>} diagnostics
+ * @param {Diagnostic[]} diagnostics
  * @returns {value is string}
  */
 function requireString(value, field, diagnostics) {
@@ -54,7 +64,7 @@ function requireString(value, field, diagnostics) {
  * evidence.
  * @param {unknown} value
  * @param {string} field
- * @param {Array<Record<string, unknown>>} diagnostics
+ * @param {Diagnostic[]} diagnostics
  */
 export function validateDate(value, field, diagnostics) {
   if (!requireString(value, field, diagnostics)) return
@@ -82,7 +92,7 @@ export function validateDate(value, field, diagnostics) {
 /**
  * @param {unknown} value
  * @param {string} field
- * @param {Array<Record<string, unknown>>} diagnostics
+ * @param {Diagnostic[]} diagnostics
  */
 export function validateHttpsUrl(value, field, diagnostics) {
   if (!requireString(value, field, diagnostics)) return
@@ -101,6 +111,11 @@ export function validateHttpsUrl(value, field, diagnostics) {
   }
 }
 
+/**
+ * @param {unknown} value
+ * @param {string} field
+ * @param {Diagnostic[]} diagnostics
+ */
 function validateId(value, field, diagnostics) {
   if (!requireString(value, field, diagnostics)) return
   if (!ID_PATTERN.test(value)) {
@@ -113,6 +128,11 @@ function validateId(value, field, diagnostics) {
   }
 }
 
+/**
+ * @param {unknown} value
+ * @param {string} field
+ * @param {Diagnostic[]} diagnostics
+ */
 function validateEvidenceEntries(value, field, diagnostics) {
   if (!Array.isArray(value) || value.length === 0) {
     diagnostics.push({
@@ -164,8 +184,12 @@ function validateEvidenceEntries(value, field, diagnostics) {
  * config or generated manifest. This is deliberately stricter than the ELI
  * response: it is only a supplement for omitted metadata, never a replacement
  * for contradictory official status facts.
+ * @param {any} evidence
+ * @param {string} [field]
+ * @returns {Diagnostic[]}
  */
 export function validateLegalStatusEvidence(evidence, field = "legalStatusEvidence") {
+  /** @type {Diagnostic[]} */
   const diagnostics = []
   if (!isPlainObject(evidence)) {
     diagnostics.push({
@@ -231,6 +255,10 @@ export function validateLegalStatusEvidence(evidence, field = "legalStatusEviden
   return diagnostics
 }
 
+/**
+ * @param {any} evidence
+ * @returns {boolean}
+ */
 export function isCompleteLegalStatusEvidence(evidence) {
   return validateLegalStatusEvidence(evidence).length === 0
 }
@@ -240,8 +268,11 @@ export function isCompleteLegalStatusEvidence(evidence) {
  *
  * Schema-v1 is intentionally not guessed here. A caller migrating a v1 file
  * must provide an explicit documentId and construct a v2 config first.
+ * @param {any} config
+ * @returns {any}
  */
 export function validateConfig(config) {
+  /** @type {Diagnostic[]} */
   const diagnostics = []
 
   if (!isPlainObject(config)) {
@@ -336,6 +367,11 @@ export function validateConfig(config) {
   return config
 }
 
+/**
+ * @param {any} config
+ * @param {string} name
+ * @returns {string}
+ */
 export function getSourceUrl(config, name) {
   validateConfig(config)
   return config.source[name]
