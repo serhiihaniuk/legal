@@ -268,6 +268,24 @@ flowchart LR
 | Canonical law shell | Catalog, document overview, provision reader, source dialog, previous/next, and document-specific module/practice navigation. | Assuming all documents share KPA's learning sections. |
 | Legacy KPA route Adapter | Mapping old `/guide/kpa` query parameters and article labels to stable IDs and canonical routes. | Becoming a second KPA data store. |
 
+#### Internal query implementation split
+
+The compatibility module `app/data/legal-library/query.ts` remains the public query
+facade and preserves all existing direct imports and overloads. Its implementation is
+split into three one-way layers:
+
+- `corpus-parsing.ts` owns unknown-value guards plus manifest and provision parsing;
+- `domain-construction.ts` owns generated-registry access, explicit current-edition
+  selection, raw lookups, `LegalDocument`/`LegalEdition`/`LegalProvision` construction,
+  and canonical PDF locators;
+- `query.ts` owns ID/reference parsing and guards, list/get/navigation queries,
+  resolution statuses, aliases, and lazy editorial explanation resolution. It
+  re-exports the corpus parsers and PDF locator APIs for compatibility.
+
+The dependency direction is corpus parsing → domain construction → public query;
+editorial loading is used only by the public query layer. The barrel's exported symbol
+set is unchanged.
+
 ### 6.2 `legal-library` Interface
 
 The deep query/resolution Module has one small Interface. Callers import this Interface, never `articles.json`, `pages.json`, an edition manifest, or a per-document explanation file.
