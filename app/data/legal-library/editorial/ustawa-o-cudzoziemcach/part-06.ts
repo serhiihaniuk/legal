@@ -1144,7 +1144,7 @@ export const foreignersActPart06 =
             explanation: foreignersLaw.text`Орган має перевірити конкретний факт із ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 1, 3, 4 або 5; не можна додати інші пункти до цього спеціального переліку без окремої законної підстави.`,
           },
         ],
-        legalEffect: foreignersLaw.text`Виконання умов ${foreignersLaw.article("181", "art. 181")} не долає застосовну обов'язкову відмову з ${foreignersLaw.article("100", "art. 100")} у межах пунктів, названих у Art. 184.`,
+        legalEffect: foreignersLaw.text`Виконання умов ${foreignersLaw.article("181", "art. 181")} не долає застосовну обов'язкову відмову з ${foreignersLaw.article("100", "art. 100")} у межах пунктів, названих у ${foreignersLaw.article("184", "Art. 184")}.`,
         foreignersCase: foreignersLaw.text`У проєкті рішення або апеляції попросіть орган назвати точний пункт ${foreignersLaw.article("100", "art. 100")}, доказ і причинний зв'язок із вашою справою; окремо доводьте матеріальну підставу ${foreignersLaw.article("181", "art. 181")}.`,
       },
       {
