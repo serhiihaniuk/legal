@@ -12,7 +12,8 @@
     "corpus:generate": "node scripts/legal-corpus/generate-registry.mjs",
     "corpus:promote": "node scripts/legal-corpus/workflow.mjs promote",
     "test:corpus": "node --test scripts/legal-corpus/test/*.test.mjs",
-    "test:editorial": "node scripts/legal-editorial/validate.mjs",
+    "test:editorial": "node scripts/legal-editorial/validate.mjs --incomplete",
+    "test:editorial:strict": "node scripts/legal-editorial/validate.mjs",
     "test:previews": "node scripts/reference-previews/validate.mjs",
     "test": "vitest run",
     "dev": "react-router dev",
@@ -22,7 +23,8 @@
     "lint": "oxlint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx}\"",
-    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:editorial && npm run test:previews && npm run build"
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:editorial && npm run build",
+    "verify:content": "npm run test:editorial:strict && npm run test:previews"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
