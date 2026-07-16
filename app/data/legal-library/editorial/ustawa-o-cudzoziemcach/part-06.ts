@@ -3,6 +3,9 @@ import { defineEditorialPart } from "../define-editorial-part"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
+const DECISION_1_80_URL =
+  "https://www.irishimmigration.ie/wp-content/uploads/2021/06/ankara-agreement.pdf"
+
 export const foreignersActPart06 =
   defineEditorialPart<"ustawa-o-cudzoziemcach">({
     documentId: "ustawa-o-cudzoziemcach",
@@ -1391,7 +1394,7 @@ export const foreignersActPart06 =
         claims: [
           {
             kind: "statute-text",
-            text: foreignersLaw.text`${foreignersLaw.article("189", "Art. 189")} встановлює два cross-reference у провадженнях про pobyt ze względu na inne okoliczności: для особи з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 застосовується art. 13 Decision nr 1/80, а для члена сім'ї з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 4 — спеціальна перевірка за ${foreignersLaw.article("169", "art. 169")}.`,
+            text: foreignersLaw.text`${foreignersLaw.article("189", "Art. 189")} встановлює два cross-reference у провадженнях про pobyt ze względu na inne okoliczności: для особи з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 застосовується ${foreignersLaw.external("art. 13", DECISION_1_80_URL)} Decision nr 1/80, а для члена сім'ї з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 4 — спеціальна перевірка за ${foreignersLaw.article("169", "art. 169")}.`,
             sourceLocator: "Art. 189 ust. 1–2",
           },
         ],
@@ -1400,7 +1403,7 @@ export const foreignersActPart06 =
         rules: [
           {
             locator: "ust. 1",
-            explanation: foreignersLaw.text`Для заявника за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 треба застосувати art. 13 Decision nr 1/80 у провадженні; точний зміст цього зовнішнього правила не можна замінити загальним посиланням на право праці.`,
+            explanation: foreignersLaw.text`Для заявника за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 треба застосувати ${foreignersLaw.external("art. 13", DECISION_1_80_URL)} Decision nr 1/80 у провадженні; точний зміст цього зовнішнього правила не можна замінити загальним посиланням на право праці.`,
           },
           {
             locator: "ust. 2",
