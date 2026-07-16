@@ -3,8 +3,8 @@ import { useLoaderData, type LoaderFunctionArgs } from "react-router"
 import {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
-} from "~/components/law-document-navigation"
-import { DocsLayout } from "~/components/docs-layout"
+} from "~/features/law-library"
+import { DocsLayout } from "~/components/layout"
 import { Badge } from "~/components/ui/badge"
 import {
   genericPracticeModules,

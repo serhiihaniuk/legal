@@ -13,8 +13,8 @@ import {
   documentCatalogToc,
   documentDetailToc,
   MobileDocumentNavigation,
-} from "~/components/document-catalog-content"
-import { DocsLayout } from "~/components/docs-layout"
+} from "~/features/documents"
+import { DocsLayout } from "~/components/layout"
 import {
   getEvidenceDocument,
   getEvidenceDocumentPath,

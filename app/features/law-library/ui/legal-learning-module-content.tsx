@@ -1,8 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import type { ReactNode } from "react"
 
-import { LegalLink } from "~/components/legal-link"
-import { LegalText as LearningText } from "~/components/legal-reference-text"
+import { LegalLink, LegalText as LearningText } from "~/components/references"
 import {
   Accordion,
   AccordionContent,
@@ -403,7 +402,10 @@ export function LegalLearningModuleContent({
             >
               <dt lang="pl">
                 {group.target ? (
-                  <LegalLink reference={group.target}>
+                  <LegalLink
+                    reference={group.target}
+                    context="reference-section"
+                  >
                     <LearningText text={group.reference} />
                   </LegalLink>
                 ) : (

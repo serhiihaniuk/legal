@@ -137,7 +137,7 @@ const documents = createEvidenceDocumentTextAuthor()
 documents.text`Додайте ${documents.document("passport", "паспорт")} і ${documents.document("upo", "UPO")}.`
 ```
 
-The argument is an `EvidenceDocumentId` literal. The resulting `LegalTextValue` carries an explicit `EvidenceDocumentReference`. `LegalText` delegates to the shared application reference resolver, which returns `/documents/:documentId` only for a registered document.
+The argument is an `EvidenceDocumentId` literal. The resulting `LegalTextValue` carries an explicit `EvidenceDocumentReference`. `LegalText` from the shared `app/components/references/` Interface delegates to the application reference resolver, which returns `/documents/:documentId` only for a registered document. Educational prose uses its quiet typed-link context; document reference sections opt into the full treatment.
 
 Plain prose is never scanned for document names. Existing aliases may be used by a migration codemod or compatibility Adapter, never by the renderer.
 

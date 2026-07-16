@@ -8,16 +8,13 @@ import {
   type LoaderFunctionArgs,
 } from "react-router"
 
-import { DocsLayout, type TocItem } from "~/components/docs-layout"
 import {
-  LawDocumentMobileNavigation,
-  LawDocumentNavigation,
-} from "~/components/law-document-navigation"
-import {
+  DocsLayout,
   DocsSidebar,
   DocsSidebarBackLink,
   DocsSidebarItem,
-} from "~/components/docs-sidebar-navigation"
+  type TocItem,
+} from "~/components/layout"
 import {
   MobileSectionSelect,
   SectionNavigationList,
@@ -28,15 +25,13 @@ import { Button } from "~/components/ui/button"
 import {
   KpaArticlesContent,
   kpaArticlesToc,
-} from "~/components/kpa-articles-content"
-import {
   KpaLearningContent,
   kpaLearningContentToc,
-} from "~/components/kpa-learning-content"
-import {
   KpaPracticeContent,
   kpaPracticeToc,
-} from "~/components/kpa-practice-content"
+  LawDocumentMobileNavigation,
+  LawDocumentNavigation,
+} from "~/features/law-library"
 import {
   getKpaArticleExplanation,
   getKpaArticleExplanations,

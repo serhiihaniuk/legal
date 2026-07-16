@@ -1,13 +1,12 @@
 import { useSearchParams } from "react-router"
 
-import { DocsLayout } from "~/components/docs-layout"
-import { DocsSidebar } from "~/components/docs-sidebar-navigation"
+import { DocsLayout, DocsSidebar } from "~/components/layout"
 import {
   MobileSectionSelect,
   SectionNavigationList,
   type SectionNavigationOption,
 } from "~/components/patterns/section-navigation"
-import { StudyPlanContent, studyPlanToc } from "~/components/study-plan-content"
+import { StudyPlanContent, studyPlanToc } from "~/features/study"
 import { studyModules } from "~/data/study-plan-data"
 import { useUrlSelection } from "~/hooks/use-url-selection"
 

@@ -1,20 +1,19 @@
 import { ArrowRight, CheckCircle2, FileCheck2, Map, Scale } from "lucide-react"
 
-import type { TocItem } from "~/components/docs-layout"
-import { LegalText } from "~/components/legal-reference-text"
-import {
-  joinLegalText,
-  legalTextPlainText,
-  type LegalTextValue,
-} from "~/data/legal-library/legal-text"
-import { OfficialSourceEntry } from "~/components/official-source"
 import {
   DocsSidebar,
   DocsSidebarBackLink,
   DocsSidebarItem,
   DocsSidebarList,
   DocsSidebarSection,
-} from "~/components/docs-sidebar-navigation"
+  type TocItem,
+} from "~/components/layout"
+import { LegalText, OfficialSourceEntry } from "~/components/references"
+import {
+  joinLegalText,
+  legalTextPlainText,
+  type LegalTextValue,
+} from "~/data/legal-library/legal-text"
 import {
   Accordion,
   AccordionContent,
@@ -683,7 +682,8 @@ export function LegalNodeContent({
       <section id="node-regulation">
         <h2>Правова основа й офіційні джерела</h2>
         <p>
-          <strong>Локатор у праві:</strong> <LegalText text={node.polish} />
+          <strong>Локатор у праві:</strong>{" "}
+          <LegalText text={node.polish} context="reference-section" />
         </p>
         {node.sources?.length ? (
           <ul data-not-typeset className="not-typeset mt-5 grid gap-4">
