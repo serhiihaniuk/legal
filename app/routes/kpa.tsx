@@ -37,13 +37,16 @@ import {
   getKpaArticleExplanation,
   getKpaArticleExplanations,
 } from "~/data/legal-library/editorial/kpa/compat"
-import { kpaArticleIndex, kpaArticleSections } from "~/data/kpa-article-index"
+import {
+  kpaArticleIndex,
+  kpaArticleSections,
+} from "~/data/legal-library/learning/kpa"
 import { getDocument, listProvisions } from "~/data/legal-library"
 import {
   kpaGuideModuleArticles,
   type KpaGuideModuleId,
-} from "~/data/kpa-guide-module-articles"
-import { kpaGuideModules } from "~/data/kpa-guide-data"
+} from "~/data/legal-library/learning/kpa"
+import { kpaGuideModules } from "~/data/legal-library/learning/kpa"
 
 type KpaMode = "learning" | "articles" | "practice"
 

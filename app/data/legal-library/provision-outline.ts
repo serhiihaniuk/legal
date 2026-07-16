@@ -1,4 +1,4 @@
-import { kpaArticleSections } from "~/data/kpa-article-index"
+import { kpaArticleSections } from "~/data/legal-library/learning/kpa"
 
 import type { LegalDocumentId, LegalProvision } from "./contracts"
 

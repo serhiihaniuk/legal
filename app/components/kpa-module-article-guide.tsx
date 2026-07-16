@@ -7,7 +7,7 @@ import {
 import { LegalLink } from "~/components/legal-link"
 import { LegalText } from "~/components/legal-reference-text"
 import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
-import { kpaArticleIndex } from "~/data/kpa-article-index"
+import { kpaArticleIndex } from "~/data/legal-library/learning/kpa"
 
 type KpaModuleArticleGuideProps = {
   explanations: KpaArticleExplanation[]

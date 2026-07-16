@@ -2,7 +2,7 @@ import type { LegalDocumentId } from "../contracts"
 import { defineLegalTextContent } from "../legal-text"
 import type { LegalLearningText } from "./legal-text"
 
-export type AuthoredLearningDocumentId = Exclude<LegalDocumentId, "kpa">
+export type AuthoredLearningDocumentId = LegalDocumentId
 
 export type LegalLearningSection = {
   id: string

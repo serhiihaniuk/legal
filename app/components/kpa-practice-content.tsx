@@ -1,7 +1,7 @@
 import {
   annotatedWezwanie,
   foreignersCaseAlgorithm,
-} from "~/data/kpa-guide-data"
+} from "~/data/legal-library/learning/kpa"
 import { LegalText } from "~/components/legal-reference-text"
 
 export const kpaPracticeToc = [

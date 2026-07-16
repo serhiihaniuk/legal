@@ -169,17 +169,6 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
   for (const [documentId, configuredEdition] of Object.entries(
     currentEditions,
   )) {
-    if (documentId === "kpa") {
-      warnings.push(
-        issue(
-          "kpa-editorial-not-validated",
-          "KPA editorial coverage is not validated pending Phase 2 step 2 validator integration",
-          { documentId },
-          "warning",
-        ),
-      )
-      continue
-    }
     const editionId =
       typeof configuredEdition === "string"
         ? configuredEdition
@@ -304,21 +293,15 @@ export function validateEditorial(options = {}) {
         ),
       )
     }
-    const isKpaPart = parsed.documentId === "kpa"
-    if (parsed.documentId && !documents.has(parsed.documentId) && !isKpaPart) {
+    if (parsed.documentId && !documents.has(parsed.documentId)) {
       errors.push(
         issue(
           "unknown-document",
-          `${filePath} declares non-KPA document ${parsed.documentId}, which is not current`,
+          `${filePath} declares document ${parsed.documentId}, which is not current`,
           { filePath, documentId: parsed.documentId },
         ),
       )
     }
-
-    // KPA remains outside editorial coverage until Phase 2 step 2. Keep its
-    // authored parts out of the non-KPA checks while preserving the warning
-    // emitted by loadCorpus above.
-    if (isKpaPart) continue
 
     for (const entry of parsed.entries) {
       const authored = {
@@ -372,7 +355,7 @@ export function validateEditorial(options = {}) {
         errors.push(
           issue(
             "unknown-provision",
-            `${entry.provisionId} in ${filePath} is not a current non-KPA provision`,
+            `${entry.provisionId} in ${filePath} is not a current provision`,
             { filePath, provisionId: entry.provisionId },
           ),
         )
@@ -468,7 +451,7 @@ export function validateEditorial(options = {}) {
 
 export function formatValidationResult(result) {
   const lines = [
-    `Editorial coverage: ${result.summary.coveredCount}/${result.summary.expectedCount} current non-KPA provisions`,
+    `Editorial coverage: ${result.summary.coveredCount}/${result.summary.expectedCount} current provisions`,
     `Authored entries: ${result.summary.authoredCount}; missing: ${result.summary.missingCount}; duplicate IDs: ${result.summary.duplicateCount}`,
     result.ok ? "Editorial validation passed." : "Editorial validation failed.",
   ]

@@ -4,7 +4,7 @@ import {
   resolveEvidenceDocumentReference,
   type EvidenceDocumentReference,
 } from "~/data/document-library"
-import { kpaArticleIndex } from "~/data/kpa-article-index"
+import { kpaArticleIndex } from "~/data/legal-library/learning/kpa"
 import type {
   LegalDocumentReference,
   LegalProvisionReference,

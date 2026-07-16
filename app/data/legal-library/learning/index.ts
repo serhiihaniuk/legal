@@ -1,6 +1,7 @@
 import type { LegalDocumentId } from "../contracts"
 
 import { documentReadingGuides } from "./document-reading-guides"
+import { kpaLearningCurriculum } from "./kpa"
 import { ppsaLearningCurriculum } from "./ppsa"
 import { workActLearningCurriculum } from "./powierzanie-pracy"
 import { temporaryResidenceApplicationLearningCurriculum } from "./rozporzadzenie-wniosek-pobyt-czasowy"
@@ -12,6 +13,7 @@ import type {
 import { foreignersActLearningCurriculum } from "./ustawa-o-cudzoziemcach"
 
 export const legalLearningCurricula = {
+  kpa: kpaLearningCurriculum,
   ppsa: ppsaLearningCurriculum,
   "ustawa-o-cudzoziemcach": foreignersActLearningCurriculum,
   "powierzanie-pracy": workActLearningCurriculum,
@@ -23,14 +25,12 @@ export const legalLearningCurricula = {
 >
 
 export function getDocumentReadingGuide(documentId: LegalDocumentId) {
-  if (documentId === "kpa") return undefined
-  return documentReadingGuides[documentId]
+  return documentReadingGuides[documentId as keyof typeof documentReadingGuides]
 }
 
 export function getLegalLearningCurriculum(
   documentId: LegalDocumentId
 ): LegalLearningCurriculum | undefined {
-  if (documentId === "kpa") return undefined
   const curriculum = legalLearningCurricula[documentId]
   return {
     ...curriculum,
@@ -41,14 +41,13 @@ export function getLegalLearningCurriculum(
 export function getLegalLearningModules(
   documentId: LegalDocumentId
 ): readonly LegalLearningModule[] {
-  if (documentId === "kpa") return []
   const curriculum = legalLearningCurricula[documentId]
-  const readingGuide = documentReadingGuides[documentId]
+  const readingGuide = getDocumentReadingGuide(documentId)
   return [
-    readingGuide.module,
+    ...(readingGuide ? [readingGuide.module] : []),
     ...curriculum.modules.map((module) => ({
       ...module,
-      order: module.order + 1,
+      order: module.order + (readingGuide ? 1 : 0),
     })),
   ]
 }
