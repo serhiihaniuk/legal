@@ -1,11 +1,12 @@
-// Transitional public API. The implementation is decomposed inside this feature in Phase 3 step 3.
 export {
-  LegalMapNavigation,
-  LegalMapOverview,
-  LegalNodeContent,
   legalMapNodeToc,
   legalMapOverviewToc,
-  MobileLegalMapNavigation,
   resolveLegalMapNode,
   stageForNode,
-} from "~/components/legal-map-content"
+} from "./model/legal-map-model"
+export {
+  LegalMapNavigation,
+  MobileLegalMapNavigation,
+} from "./ui/legal-map-navigation"
+export { LegalMapOverview } from "./ui/legal-map-overview"
+export { LegalNodeContent, ModelExplanation } from "./ui/legal-node-content"
