@@ -41,20 +41,25 @@ corpus pipeline whose trust model has gaps.
   deterministic previews, edition pinning) is correct and is not up for redesign. What
   remains open about links is presentation and lifecycle, below.
 
-## Open decisions (owner, due before Phase 3 UI work)
+## Decisions resolved at gates
 
-- **Internal-link rendering policy.** The docs contradict each other:
-  UX-CONTENT-REVIEW.md (decision, line ~6) and AGENTS.md (~172) say internal materials
-  are not linked from educational prose (prose links reserved for external official
-  sources); DESIGN.md defines typed internal references embedded in sentences. Typed
-  references are DATA — whether each renders as an interactive link is a per-context
-  presentation choice, so both rules can coexist once made explicit.
-  Orchestrator recommendation: quiet-in-prose (styled text + hover preview, no
-  navigation-blue), full links in reference/source sections and provision pages.
-  Whatever is decided: Phase 3 step 2 implements it in the consolidated reference API,
-  and all three docs are updated to state the same policy.
+- **Internal-link rendering policy — DECIDED (owner, 2026-07-16): quiet but
+  perceivable.** In educational prose, typed internal references render quietly — no
+  navigation-blue — but with enough affordance that a reader understands it is a link
+  (subtle underline or equivalent token-driven treatment, hover state, hover preview).
+  Reference/source sections and provision pages keep full link treatment. Rationale:
+  typed references are DATA; per-context rendering lets UX-CONTENT-REVIEW's
+  "calm prose" rule and DESIGN.md's inline typed references coexist. Phase 3 step 2
+  implements this as explicit per-context variants in the consolidated reference API,
+  chooses the exact visual treatment against the existing theme tokens, and updates
+  UX-CONTENT-REVIEW.md, AGENTS.md, and DESIGN.md to state this one policy.
+
+## Open decisions (owner)
+
 - **Citation attribution review.** Owner samples the ambiguous-citation packet produced
   by Phase 1 step 7 (below) and confirms or fixes misattributed codemod-era citations.
+- **Sourced-URL verification.** Four externally sourced citation URLs need one-click
+  browser verification (see docs/restructure/citation-review/).
 
 ## Phases
 
