@@ -125,10 +125,27 @@ gate green and a conventional commit. Orchestrator reviews at each phase boundar
    step-7 audit packet. `verify:content` (below) goes green only when this completes.
    Part-04 landed 2026-07-16 (196 tokens; review list at
    docs/restructure/citation-review/part-04.md). The part-04 gate also revealed that
-   ALREADY-migrated files can hide single latent bare mentions (part-06, "art. 99" at
-   entry [34].rules[0]) — the fail-fast validator masks them, so each migration run
-   also repairs any latent mention the validator surfaces next, until previews reports
-   zero bare-citation failures repo-wide.
+   ALREADY-migrated files can hide single latent bare mentions (part-06 turned out to
+   hold three) — the fail-fast validator masks them, so each migration run also repairs
+   any latent mention the validator surfaces next, until previews reports zero
+   bare-citation failures repo-wide.
+   **Part-03 reclassified (2026-07-16 gate):** it is NOT wrappable prose — all 46
+   entries are `reviewStatus: "draft"` boilerplate from a `draftArticle()` factory,
+   never given the "review: finalize" pass its siblings got. Wrap-only migration does
+   not apply; it needs an editorial finalization pass first (content-completion debt,
+   owner-scheduled). Draft entries are exempt from the bare-citation check by design,
+   so part-03 does not block previews; the validator picks it up automatically once
+   its entries become reviewed.
+   **WRAPPING COMPLETE (2026-07-16):** `test:previews` is green repo-wide (1,421
+   provisions). Parts 04 and 08 migrated; part-06's five latents repaired. Parts 09
+   and 11 turned out to be draft-status like part-03 (real prose, but never given the
+   "review: finalize" pass — validator-exempt by design), so they join part-03 in the
+   content-completion debt: finalize the editorial review first, then the wrapping
+   recipe applies. Four externally sourced URLs await owner verification in
+   docs/restructure/citation-review/ (labor-market act; Decision 1/80 — weakest
+   sourcing, an Irish-government PDF since the decision was never OJ-published; TEU
+   art. 50 and the Withdrawal Agreement — canonical CELEX links that could not be
+   machine-verified due to EUR-Lex bot-gating).
 
 ### Phase 3 — UI architecture (`restructure/phase-3-ui`)
 
