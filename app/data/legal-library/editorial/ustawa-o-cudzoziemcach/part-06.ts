@@ -1082,7 +1082,7 @@ export const foreignersActPart06 =
         rules: [
           {
             locator: "весь припис",
-            explanation: foreignersLaw.text`Виняток стосується лише ${foreignersLaw.article("99", "art. 99")} ust. 1 pkt 2, 3 і 6–8 у процедурі за ${foreignersLaw.article("181", "art. 181")} ust. 1; інші пункти art. 99 не виключені цією статтею.`,
+            explanation: foreignersLaw.text`Виняток стосується лише ${foreignersLaw.article("99", "art. 99")} ust. 1 pkt 2, 3 і 6–8 у процедурі за ${foreignersLaw.article("181", "art. 181")} ust. 1; інші пункти ${foreignersLaw.article("99", "art. 99")} не виключені цією статтею.`,
           },
         ],
         legalEffect:
