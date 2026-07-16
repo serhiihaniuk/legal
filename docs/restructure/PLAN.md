@@ -116,6 +116,13 @@ gate green and a conventional commit. Orchestrator reviews at each phase boundar
 4. Ownership fixes: `document-guides.ts` moves into `document-library/`; the three
    explanation shapes collapse to `LegalExplanation` + one view adapter; view-types move
    out of `app/data` to the feature that renders them (prepared in Phase 3 structure).
+5. **Citation migration (content; may run in parallel with Phase 1)**: five ustawa
+   editorial files were authored without typed references (parts 03, 04, 08, 09, 11 —
+   zero `createLegalTextAuthor` usage; discovered at the Phase 0 gate when
+   `test:previews` failed on the first bare citation). Migrate them one file per run,
+   following the sibling-part author pattern; each run must end with `test:previews`
+   passing for that file's citations and cross-act mentions flagged for the Phase 1
+   step-7 audit packet. `verify:content` (below) goes green only when this completes.
 
 ### Phase 3 — UI architecture (`restructure/phase-3-ui`)
 
@@ -145,6 +152,17 @@ map/case/document content — is content work with its own editorial review cycl
 its own plan after Phase 2 makes the canonical families the only families.
 
 ## Gates
+
+Two gate chains, split deliberately (decided at the Phase 0 gate, 2026-07-16):
+
+- **`verify` (code gate, always green)**: typecheck + lint + format:check + test +
+  test:corpus + test:editorial in `--incomplete` mode (structural editorial checks:
+  IDs, duplicates, status vocabulary) + build. Red `verify` blocks any commit.
+- **`verify:content` (content gate, red until content completion)**: strict editorial
+  coverage + reference previews. Red today for known, tracked reasons: editorial
+  coverage 736/1115 and the five unmigrated citation files (Phase 2 step 5). Goes
+  green at the content-completion milestone, after which it merges into `verify`.
+  A permanently red gate teaches people to ignore gates — hence the split.
 
 Per step: `npm run verify` green + conventional commit. Per phase: orchestrator diff
 review + browser pass on affected routes + phase branch merged. Baseline tag
