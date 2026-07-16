@@ -3,6 +3,9 @@ import { defineEditorialPart } from "../define-editorial-part"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
+const DECISION_1_80_URL =
+  "https://www.irishimmigration.ie/wp-content/uploads/2021/06/ankara-agreement.pdf"
+
 export const foreignersActPart06 =
   defineEditorialPart<"ustawa-o-cudzoziemcach">({
     documentId: "ustawa-o-cudzoziemcach",
@@ -1391,7 +1394,7 @@ export const foreignersActPart06 =
         claims: [
           {
             kind: "statute-text",
-            text: foreignersLaw.text`${foreignersLaw.article("189", "Art. 189")} встановлює два cross-reference у провадженнях про pobyt ze względu na inne okoliczności: для особи з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 застосовується art. 13 Decision nr 1/80, а для члена сім'ї з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 4 — спеціальна перевірка за ${foreignersLaw.article("169", "art. 169")}.`,
+            text: foreignersLaw.text`${foreignersLaw.article("189", "Art. 189")} встановлює два cross-reference у провадженнях про pobyt ze względu na inne okoliczności: для особи з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 застосовується ${foreignersLaw.external("art. 13", DECISION_1_80_URL)} Decision nr 1/80, а для члена сім'ї з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 4 — спеціальна перевірка за ${foreignersLaw.article("169", "art. 169")}.`,
             sourceLocator: "Art. 189 ust. 1–2",
           },
         ],
@@ -1400,7 +1403,7 @@ export const foreignersActPart06 =
         rules: [
           {
             locator: "ust. 1",
-            explanation: foreignersLaw.text`Для заявника за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 треба застосувати art. 13 Decision nr 1/80 у провадженні; точний зміст цього зовнішнього правила не можна замінити загальним посиланням на право праці.`,
+            explanation: foreignersLaw.text`Для заявника за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 5 треба застосувати ${foreignersLaw.external("art. 13", DECISION_1_80_URL)} Decision nr 1/80 у провадженні; точний зміст цього зовнішнього правила не можна замінити загальним посиланням на право праці.`,
           },
           {
             locator: "ust. 2",
@@ -1487,7 +1490,7 @@ export const foreignersActPart06 =
           },
           {
             locator: "ust. 1 pkt 2–3",
-            explanation: foreignersLaw.text`Пункт 8 ${foreignersLaw.article("100", "art. 100")} не застосовують у наступній заяві за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 або 4. Пункти 6 і 7 art. 100 не застосовують для pkt 3, 4, 6–9 art. 186.`,
+            explanation: foreignersLaw.text`Пункт 8 ${foreignersLaw.article("100", "art. 100")} не застосовують у наступній заяві за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 або 4. Пункти 6 і 7 ${foreignersLaw.article("100", "art. 100")} не застосовують для pkt 3, 4, 6–9 ${foreignersLaw.article("186", "art. 186")}.`,
           },
           {
             locator: "ust. 1 pkt 4",
@@ -1517,8 +1520,7 @@ export const foreignersActPart06 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Permit за art. 186 ust. 1 pkt 3 або 4 не відкликається лише тому, що cudzoziemiec, зобов'язаний проходити лікування за спеціальним законом про інфекційні хвороби, не дав згоди на це лікування.",
+            explanation: foreignersLaw.text`Permit за ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 або 4 не відкликається лише тому, що cudzoziemiec, зобов'язаний проходити лікування за спеціальним законом про інфекційні хвороби, не дав згоди на це лікування.`,
           },
           {
             locator: "ust. 2",

@@ -1,4 +1,9 @@
+import { createLegalTextAuthor } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
+const EES_2017_2226_URL = "https://eur-lex.europa.eu/eli/reg/2017/2226/oj"
 
 export const foreignersActPart08 =
   defineEditorialPart<"ustawa-o-cudzoziemcach">({
@@ -13,7 +18,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 239 передає міністру właściwemu do spraw wewnętrznych, за погодженням з міністром właściwym do spraw finansów publicznych, визначення в drodze rozporządzenia розміру opłat у Польщі за wydanie і wymianę karty pobytu, polskiego dokumentu podróży dla cudzoziemca, polskiego dokumentu tożsamości cudzoziemca та документа «zgoda na pobyt tolerowany», за wydanie tymczasowego polskiego dokumentu podróży dla cudzoziemca, порядку сплати цих opłat і документів для ulg за Art. 237 ust. 1.",
+            text: foreignersLaw.text`${foreignersLaw.article("239", "Art. 239")} передає міністру właściwemu do spraw wewnętrznych, за погодженням з міністром właściwym do spraw finansów publicznych, визначення в drodze rozporządzenia розміру opłat у Польщі за wydanie і wymianę karty pobytu, polskiego dokumentu podróży dla cudzoziemca, polskiego dokumentu tożsamości cudzoziemca та документа «zgoda na pobyt tolerowany», за wydanie tymczasowego polskiego dokumentu podróży dla cudzoziemca, порядку сплати цих opłat і документів для ulg за ${foreignersLaw.article("237", "Art. 237")} ust. 1.`,
             sourceLocator: "Art. 239 ust. 1 pkt 1–3",
           },
           {
@@ -36,8 +41,7 @@ export const foreignersActPart08 =
               "У rozporządzeniu враховують unit costs, зокрема збирання і оброблення даних, та диференціюють opłaty за wymianę після винної втрати або знищення залежно від кількості подій.",
           },
         ],
-        legalEffect:
-          "Art. 239 не встановлює конкретних сум: він є делегуючою підставою для rozporządzenie. Застосовну суму і документи для ulgi треба звірити з чинним актом та фактичним видом операції; для tymczasowy документа стаття передбачає opłata за wydanie, не за wymianę.",
+        legalEffect: foreignersLaw.text`${foreignersLaw.article("239", "Art. 239")} не встановлює конкретних сум: він є делегуючою підставою для rozporządzenie. Застосовну суму і документи для ulgi треба звірити з чинним актом та фактичним видом операції; для tymczasowy документа стаття передбачає opłata за wydanie, не за wymianę.`,
         foreignersCase:
           "Перед оплатою визначте вид документа й операцію (wydanie чи wymiana), перевірте чинне rozporządzenie, підставу для ulgi та чи є zawiniona utrata або zniszczenie. Збережіть квитанцію і документи, що підтверджують ulgę.",
       },
@@ -71,7 +75,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Kartę pobytu wymienia się у разі зміни даних у чинній картці, зміни wizerunku twarzy настільки, що ідентифікація власника ускладнена або неможлива, utraty чи uszkodzenia, а також у випадках переходу відповідальності за ochronę międzynarodową: для картки, виданої у зв’язку з zezwoleniem na pobyt rezydenta długoterminowego UE, та для картки за zezwolenie з Art. 127 або Art. 137a з відповідними adnotacje.",
+            text: foreignersLaw.text`Kartę pobytu wymienia się у разі зміни даних у чинній картці, зміни wizerunku twarzy настільки, що ідентифікація власника ускладнена або неможлива, utraty чи uszkodzenia, а також у випадках переходу відповідальності за ochronę międzynarodową: для картки, виданої у зв’язку з zezwoleniem na pobyt rezydenta długoterminowego UE, та для картки за zezwolenie з ${foreignersLaw.article("127", "Art. 127")} або ${foreignersLaw.article("137a", "Art. 137a")} з відповідними adnotacje.`,
             sourceLocator: "Art. 241 pkt 1–7",
           },
         ],
@@ -85,12 +89,10 @@ export const foreignersActPart08 =
           },
           {
             locator: "pkt 5–7",
-            explanation:
-              "Pkt 5 стосується переходу відповідальності до RP за ochronę międzynarodową власника картки DLR UE з adnotacją за Art. 244 ust. 1 pkt 18; pkt 6 — переходу відповідальності до іншої держави-члена ЄС; pkt 7 — переходу відповідальності до RP для картки за Art. 127 або Art. 137a з adnotacją за Art. 244 ust. 1 pkt 10 lit. a.",
+            explanation: foreignersLaw.text`Pkt 5 стосується переходу відповідальності до RP за ochronę międzynarodową власника картки DLR UE з adnotacją за ${foreignersLaw.article("244", "Art. 244")} ust. 1 pkt 18; pkt 6 — переходу відповідальності до іншої держави-члена ЄС; pkt 7 — переходу відповідальності до RP для картки за ${foreignersLaw.article("127", "Art. 127")} або ${foreignersLaw.article("137a", "Art. 137a")} з adnotacją за ${foreignersLaw.article("244", "Art. 244")} ust. 1 pkt 10 lit. a.`,
           },
         ],
-        legalEffect:
-          "Наявність однієї з обставин Art. 241 створює підставу для wymiany документа, але не змінює сама по собі рішення про zezwolenie; орган і процедуру визначають, зокрема, Art. 245 та наступні норми.",
+        legalEffect: foreignersLaw.text`Наявність однієї з обставин ${foreignersLaw.article("241", "Art. 241")} створює підставу для wymiany документа, але не змінює сама по собі рішення про zezwolenie; орган і процедуру визначають, зокрема, ${foreignersLaw.article("245", "Art. 245")} та наступні норми.`,
         foreignersCase:
           "Порівняйте актуальні дані та wizerunek twarzy з kartą pobytu. Якщо відповідальність за ochronę międzynarodową перейшла між державами або змінилася підстава Blue Card, перевірте pkt 5–7 і подайте wniosek o wymianę до właściwego organu; при utrata одразу зробіть zgłoszenie.",
       },
@@ -232,8 +234,7 @@ export const foreignersActPart08 =
         ],
         legalEffect:
           "Належний орган визначають підстава документа, місце pobytu та те, хто вирішував справу в першій інстанції. У гуманітарній справі пропуск спеціального 7-денного строку odwołania може позбавити доступу до цього засобу, тому дату doręczenia треба зафіксувати.",
-        foreignersCase:
-          "На decyzji про odmowa перевірте підставу компетенції, орган першої інстанції та дату doręczenia. Для гуманітарної karty pobytu зіставте справу з Art. 245 ust. 7 і не пропустіть спеціальні 7 днів на odwołanie.",
+        foreignersCase: foreignersLaw.text`На decyzji про odmowa перевірте підставу компетенції, орган першої інстанції та дату doręczenia. Для гуманітарної karty pobytu зіставте справу з ${foreignersLaw.article("245", "Art. 245")} ust. 7 і не пропустіть спеціальні 7 днів на odwołanie.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-246",
@@ -241,7 +242,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Właściwy organ pobiera odciski linii papilarnych у разі заяви на першу картку в ситуації Art. 229 ust. 4, на наступну картку або на wymianę картки.",
+            text: foreignersLaw.text`Właściwy organ pobiera odciski linii papilarnych у разі заяви на першу картку в ситуації ${foreignersLaw.article("229", "Art. 229")} ust. 4, на наступну картку або на wymianę картки.`,
             sourceLocator: "Art. 246 ust. 1",
           },
           {
@@ -275,7 +276,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Cudzoziemcowi відмовляють у wszczęciu postępowania щодо видачі або обміну karty pobytu, якщо під час заяви або в строк Art. 246 ust. 2 він не подав odcisków linii papilarnych.",
+            text: foreignersLaw.text`Cudzoziemcowi відмовляють у wszczęciu postępowania щодо видачі або обміну karty pobytu, якщо під час заяви або в строк ${foreignersLaw.article("246", "Art. 246")} ust. 2 він не подав odcisków linii papilarnych.`,
             sourceLocator: "Art. 247",
           },
         ],
@@ -284,8 +285,7 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "zdanie 1",
-            explanation:
-              "Перевірте, чи був обов’язок подати відбитки та чи настав або сплив строк, призначений за Art. 246 ust. 2.",
+            explanation: foreignersLaw.text`Перевірте, чи був обов’язок подати відбитки та чи настав або сплив строк, призначений за ${foreignersLaw.article("246", "Art. 246")} ust. 2.`,
           },
         ],
         legalEffect:
@@ -333,7 +333,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Орган, який видав або обміняв наступну kartę pobytu, протягом 5 робочих днів після видачі чи обміну видаляє дані іноземця, зареєстровані в EES, відповідно до Art. 35 ust. 6 rozporządzenia nr 2017/2226.",
+            text: foreignersLaw.text`Орган, який видав або обміняв наступну kartę pobytu, протягом 5 робочих днів після видачі чи обміну видаляє дані іноземця, зареєстровані в EES, відповідно до ${foreignersLaw.external("Art. 35", EES_2017_2226_URL)} ust. 6 rozporządzenia nr 2017/2226.`,
             sourceLocator: "Art. 248a",
           },
         ],
@@ -357,7 +357,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Cudzoziemiec повертає kartę pobytu органу, який її видав, коли набув obywatelstwo polskie; видано decyzję про stwierdzenie nieważności картки; cofnięto zezwolenie na pobyt czasowy, stały або rezydenta długoterminowego UE чи zgodę humanitarną; або рішення про надання відповідного права wygasło z mocy prawa за Art. 102 чи 307 ust. 1, Art. 200 pkt 1 або Art. 354 ust. 1 pkt 1, 3 чи 4.",
+            text: foreignersLaw.text`Cudzoziemiec повертає kartę pobytu органу, який її видав, коли набув obywatelstwo polskie; видано decyzję про stwierdzenie nieważności картки; cofnięto zezwolenie na pobyt czasowy, stały або rezydenta długoterminowego UE чи zgodę humanitarną; або рішення про надання відповідного права wygasło z mocy prawa за ${foreignersLaw.article("102", "Art. 102")} чи 307 ust. 1, ${foreignersLaw.article("200", "Art. 200")} pkt 1 або ${foreignersLaw.article("354", "Art. 354")} ust. 1 pkt 1, 3 чи 4.`,
             sourceLocator: "Art. 249 ust. 1 pkt 1–8",
           },
           {
@@ -371,8 +371,7 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "ust. 1 pkt 1–8",
-            explanation:
-              "Перевірте конкретний pkt: громадянство, nieważność картки, cofnięcie відповідного zezwolenia або zgody чи wygaśnięcie рішення з прямо названими відсиланнями до Art. 102, 307, 200 або 354.",
+            explanation: foreignersLaw.text`Перевірте конкретний pkt: громадянство, nieważność картки, cofnięcie відповідного zezwolenia або zgody чи wygaśnięcie рішення з прямо названими відсиланнями до ${foreignersLaw.article("102", "Art. 102")}, 307, 200 або 354.`,
           },
           {
             locator: "ust. 2",
@@ -385,8 +384,7 @@ export const foreignersActPart08 =
               "Особа, уповноважена на поховання за окремим законом, невідкладно повертає картку померлого; орган видає на wniosek безоплатне zaświadczenie, чинне 30 днів.",
           },
         ],
-        legalEffect:
-          "Обов’язок zwrotu виникає лише з події, названої в Art. 249 ust. 1; неповернення після остаточності або wygaśnięcia рішення може спричинити unieważnienie за Art. 250 pkt 5 та дії органу за Art. 251.",
+        legalEffect: foreignersLaw.text`Обов’язок zwrotu виникає лише з події, названої в ${foreignersLaw.article("249", "Art. 249")} ust. 1; неповернення після остаточності або wygaśnięcia рішення може спричинити unieważnienie за ${foreignersLaw.article("250", "Art. 250")} pkt 5 та дії органу за ${foreignersLaw.article("251", "Art. 251")}.`,
         foreignersCase:
           "Зафіксуйте doręczenie документа про громадянство або дату, коли рішення стало ostateczna чи wygasło, поверніть kartę pobytu органу-видавцю не пізніше 14 днів і попросіть безоплатне zaświadczenie, якщо потрібен доказ.",
       },
@@ -425,7 +423,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Kartę pobytu unieważnia орган, який її видав, при набутті громадянства або смерті, остаточності рішень про cofnięcie zezwolenia чи zgody, zobowiązanie do powrotu або stwierdzenie nieważności картки, а також при переході до іншої підстави, названої в lit. e–h, чи у випадках знайденої або поверненої картки. Орган, який wymienił картку, unieważnia її після zgłoszenia utraty чи uszkodzenia або odbioru нової картки за Art. 241 pkt 1–2.",
+            text: foreignersLaw.text`Kartę pobytu unieważnia орган, який її видав, при набутті громадянства або смерті, остаточності рішень про cofnięcie zezwolenia чи zgody, zobowiązanie do powrotu або stwierdzenie nieważności картки, а також при переході до іншої підстави, названої в lit. e–h, чи у випадках знайденої або поверненої картки. Орган, який wymienił картку, unieważnia її після zgłoszenia utraty чи uszkodzenia або odbioru нової картки за ${foreignersLaw.article("241", "Art. 241")} pkt 1–2.`,
             sourceLocator: "Art. 251 pkt 1 lit. a–h, pkt 2",
           },
         ],
@@ -439,12 +437,10 @@ export const foreignersActPart08 =
           },
           {
             locator: "pkt 2 lit. a–b",
-            explanation:
-              "Орган, який wymienił kartę, unieważnia її після zgłoszenia utraty або uszkodzenia до właściwego organu чи після odbioru нової картки у випадках Art. 241 pkt 1 і 2.",
+            explanation: foreignersLaw.text`Орган, який wymienił kartę, unieważnia її після zgłoszenia utraty або uszkodzenia до właściwego organu чи після odbioru нової картки у випадках ${foreignersLaw.article("241", "Art. 241")} pkt 1 і 2.`,
           },
         ],
-        legalEffect:
-          "Стаття визначає компетентний орган для unieważnienie; конкретні моменти, з яких картка є недійсною, деталізовані в Art. 250, а юридичні події — у Art. 249 та Art. 251.",
+        legalEffect: foreignersLaw.text`Стаття визначає компетентний орган для unieważnienie; конкретні моменти, з яких картка є недійсною, деталізовані в ${foreignersLaw.article("250", "Art. 250")}, а юридичні події — у ${foreignersLaw.article("249", "Art. 249")} та ${foreignersLaw.article("251", "Art. 251")}.`,
         foreignersCase:
           "У zgłoszenie про utratę або uszkodzenie перевірте, який орган його прийняв і хто wymieni kartę. Якщо unieważnienie пов’язане зі зміною статусу, аналізуйте остаточне рішення та його дату, а не лише технічний запис.",
       },
@@ -454,7 +450,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Polski dokument podróży dla cudzoziemca видають, якщо іноземець втратив свій dokument podróży, він знищений або втратив чинність, і неможливо отримати новий, а іноземцю надано: zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego UE, zezwolenie na pobyt czasowy з Art. 186 ust. 1 pkt 9, ochronę uzupełniającą або zgodę na pobyt ze względów humanitarnych.",
+            text: foreignersLaw.text`Polski dokument podróży dla cudzoziemca видають, якщо іноземець втратив свій dokument podróży, він знищений або втратив чинність, і неможливо отримати новий, а іноземцю надано: zezwolenie na pobyt stały, zezwolenie na pobyt rezydenta długoterminowego UE, zezwolenie na pobyt czasowy з ${foreignersLaw.article("186", "Art. 186")} ust. 1 pkt 9, ochronę uzupełniającą або zgodę na pobyt ze względów humanitarnych.`,
             sourceLocator: "Art. 252 pkt 1–2a i 3–4",
           },
         ],
@@ -463,14 +459,11 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "zdanie główne та pkt 1–2a, 3–4",
-            explanation:
-              "Доведіть одночасно втрату, знищення або закінчення чинності власного dokumentu podróży, неможливість отримати новий і наявність саме статусу з Art. 252; pobyt czasowy охоплює лише Art. 186 ust. 1 pkt 9.",
+            explanation: foreignersLaw.text`Доведіть одночасно втрату, знищення або закінчення чинності власного dokumentu podróży, неможливість отримати новий і наявність саме статусу з ${foreignersLaw.article("252", "Art. 252")}; pobyt czasowy охоплює лише ${foreignersLaw.article("186", "Art. 186")} ust. 1 pkt 9.`,
           },
         ],
-        legalEffect:
-          "За виконання всіх умов Art. 252 стаття передбачає wydanie документа, але сама відсутність паспорта або інший вид pobyt не достатні; тимчасовий дозвіл має відповідати Art. 186 ust. 1 pkt 9.",
-        foreignersCase:
-          "До wniosku додайте доказ статусу, інформацію про utrata, zniszczenie або wygaśnięcie власного dokumentu podróży та підтвердження, що новий документ неможливо отримати; для pobyt czasowy окремо перевірте Art. 186 ust. 1 pkt 9.",
+        legalEffect: foreignersLaw.text`За виконання всіх умов ${foreignersLaw.article("252", "Art. 252")} стаття передбачає wydanie документа, але сама відсутність паспорта або інший вид pobyt не достатні; тимчасовий дозвіл має відповідати ${foreignersLaw.article("186", "Art. 186")} ust. 1 pkt 9.`,
+        foreignersCase: foreignersLaw.text`До wniosku додайте доказ статусу, інформацію про utrata, zniszczenie або wygaśnięcie власного dokumentu podróży та підтвердження, що новий документ неможливо отримати; для pobyt czasowy окремо перевірте ${foreignersLaw.article("186", "Art. 186")} ust. 1 pkt 9.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-252a",
@@ -501,10 +494,8 @@ export const foreignersActPart08 =
               "Без актуального rozporządzenia не можна визначити охоплені громадянства та період. Критерії його підготовки включають міграційну політику, неможливість звернення до влади держави, інтерес RP і sprawność postępowania.",
           },
         ],
-        legalEffect:
-          "Art. 252a не дає універсального права кожному власнику статусу: потрібні громадянство з чинного rozporządzenie, сукупність умов ust. 1 і подання wniosku у визначений період; формула «może być wydany» не гарантує результату.",
-        foreignersCase:
-          "Перед wnioskiem перевірте чинний текст rozporządzenia, своє громадянство та останній день періоду, а також докази відсутності власного документа і статусу. Не підміняйте спеціальний режим Art. 252a загальним Art. 252.",
+        legalEffect: foreignersLaw.text`${foreignersLaw.article("252a", "Art. 252a")} не дає універсального права кожному власнику статусу: потрібні громадянство з чинного rozporządzenie, сукупність умов ust. 1 і подання wniosku у визначений період; формула «może być wydany» не гарантує результату.`,
+        foreignersCase: foreignersLaw.text`Перед wnioskiem перевірте чинний текст rozporządzenia, своє громадянство та останній день періоду, а також докази відсутності власного документа і статусу. Не підміняйте спеціальний режим ${foreignersLaw.article("252a", "Art. 252a")} загальним ${foreignersLaw.article("252", "Art. 252")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-253",
@@ -530,8 +521,7 @@ export const foreignersActPart08 =
               "Базовий строк чинності становить один рік від дати видачі.",
           },
         ],
-        legalEffect:
-          "Документ у межах річного строку дає право на багаторазове перетинання кордону за Art. 253; він не змінює сам по собі підставу pobytu або інші умови в’їзду.",
+        legalEffect: foreignersLaw.text`Документ у межах річного строку дає право на багаторазове перетинання кордону за ${foreignersLaw.article("253", "Art. 253")}; він не змінює сам по собі підставу pobytu або інші умови в’їзду.`,
         foreignersCase:
           "Перед поїздкою перевірте дату видачі й закінчення року, а також чинність karty pobytu або іншої підстави. Для кожної поїздки майте чинний документ і перевіряйте вимоги країни в’їзду.",
       },
@@ -541,28 +531,23 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Видача polskiego dokumentu podróży dla cudzoziemca не звільняє cudzoziemca від обов’язку вживати заходів для отримання власного dokumentu podróży, крім випадку, коли польський документ видано на підставі Art. 252a.",
+            text: foreignersLaw.text`Видача polskiego dokumentu podróży dla cudzoziemca не звільняє cudzoziemca від обов’язку вживати заходів для отримання власного dokumentu podróży, крім випадку, коли польський документ видано на підставі ${foreignersLaw.article("252a", "Art. 252a")}.`,
             sourceLocator: "Art. 254",
           },
         ],
-        summary:
-          "Стаття зберігає обов’язок отримувати власний dokument podróży після видачі польського документа, але встановлює виняток для Art. 252a.",
+        summary: foreignersLaw.text`Стаття зберігає обов’язок отримувати власний dokument podróży після видачі польського документа, але встановлює виняток для ${foreignersLaw.article("252a", "Art. 252a")}.`,
         rules: [
           {
             locator: "zdanie 1",
-            explanation:
-              "Після видачі документа за Art. 252 потрібно продовжувати дії для отримання документа своєї держави.",
+            explanation: foreignersLaw.text`Після видачі документа за ${foreignersLaw.article("252", "Art. 252")} потрібно продовжувати дії для отримання документа своєї держави.`,
           },
           {
             locator: "wyjątek",
-            explanation:
-              "Виняток прямо стосується документа, виданого на підставі Art. 252a.",
+            explanation: foreignersLaw.text`Виняток прямо стосується документа, виданого на підставі ${foreignersLaw.article("252a", "Art. 252a")}.`,
           },
         ],
-        legalEffect:
-          "За загальним правилом польський документ не замінює обов’язок домагатися власного dokumentu podróży; виняток діє лише для документа, виданого на підставі Art. 252a.",
-        foreignersCase:
-          "Зберігайте листування з консульством або інші докази дій для отримання власного документа, якщо ваш польський документ видано не за Art. 252a.",
+        legalEffect: foreignersLaw.text`За загальним правилом польський документ не замінює обов’язок домагатися власного dokumentu podróży; виняток діє лише для документа, виданого на підставі ${foreignersLaw.article("252a", "Art. 252a")}.`,
+        foreignersCase: foreignersLaw.text`Зберігайте листування з консульством або інші докази дій для отримання власного документа, якщо ваш польський документ видано не за ${foreignersLaw.article("252a", "Art. 252a")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-255",
@@ -617,8 +602,7 @@ export const foreignersActPart08 =
               "Зміна даних, проблеми з ідентифікацією, utrata та uszkodzenie є окремими підставами для подання на wymianę.",
           },
         ],
-        legalEffect:
-          "Art. 256 визначає підстави wymiany конкретного документа; wymiana не є продовженням його строку за окремою процедурою і не змінює підстави pobytu.",
+        legalEffect: foreignersLaw.text`${foreignersLaw.article("256", "Art. 256")} визначає підстави wymiany конкретного документа; wymiana не є продовженням його строку за окремою процедурою і не змінює підстави pobytu.`,
         foreignersCase:
           "Порівняйте документ із актуальними даними та станом фото. Після втрати або пошкодження негайно повідомте орган і уточніть порядок отримання нового документа.",
       },
@@ -646,8 +630,7 @@ export const foreignersActPart08 =
               "Відмова має бути рішенням, яке можна аналізувати за його мотивами та способом оскарження.",
           },
         ],
-        legalEffect:
-          "Art. 257 визначає właściwość wojewody та вимагає decyzji для odmowa, але не встановлює матеріального права на позитивний результат поза умовами інших статей.",
+        legalEffect: foreignersLaw.text`${foreignersLaw.article("257", "Art. 257")} визначає właściwość wojewody та вимагає decyzji для odmowa, але не встановлює матеріального права на позитивний результат поза умовами інших статей.`,
         foreignersCase:
           "Перед поданням перевірте właściwość wojewody за місцем перебування. При odmowie збережіть decyzję та дату doręczenia для перевірки доступного środka zaskarżenia.",
       },
@@ -657,33 +640,28 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Polski dokument podróży для cudzoziemca повертають органу-видавцю після набуття obywatelstwo polskie, stwierdzenia nieważności документа, cofnięcia zezwolenia na pobyt stały, rezydenta długoterminowego UE або zgody humanitarnej, pozbawienia ochrony uzupełniającej, спеціального cofnięcia zezwolenia na pobyt czasowy з Art. 186 ust. 1 pkt 9, якщо документ видано за Art. 252 pkt 2a, cofnięcia тимчасового дозволу у випадку Art. 252a ust. 1 pkt 2 lit. c, або отримання власного dokumentu podróży.",
+            text: foreignersLaw.text`Polski dokument podróży для cudzoziemca повертають органу-видавцю після набуття obywatelstwo polskie, stwierdzenia nieważności документа, cofnięcia zezwolenia na pobyt stały, rezydenta długoterminowego UE або zgody humanitarnej, pozbawienia ochrony uzupełniającej, спеціального cofnięcia zezwolenia na pobyt czasowy з ${foreignersLaw.article("186", "Art. 186")} ust. 1 pkt 9, якщо документ видано за ${foreignersLaw.article("252", "Art. 252")} pkt 2a, cofnięcia тимчасового дозволу у випадку ${foreignersLaw.article("252a", "Art. 252a")} ust. 1 pkt 2 lit. c, або отримання власного dokumentu podróży.`,
             sourceLocator: "Art. 258 ust. 1 pkt 1–5",
           },
           {
             kind: "statute-text",
-            text: "Документ повертають niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство, doręczenia власного dokumentu podróży або дня, коли рішення з ust. 1 pkt 2–4b стало ostateczna; для інших питань zwrot застосовуються Art. 249 ust. 3–4.",
+            text: foreignersLaw.text`Документ повертають niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство, doręczenia власного dokumentu podróży або дня, коли рішення з ust. 1 pkt 2–4b стало ostateczna; для інших питань zwrot застосовуються ${foreignersLaw.article("249", "Art. 249")} ust. 3–4.`,
             sourceLocator: "Art. 258 ust. 2–3",
           },
         ],
-        summary:
-          "Стаття визначає спеціальні підстави zwrotu polskiego dokumentu podróży dla cudzoziemca, 14-денні події для відліку та відсилання до Art. 249 ust. 3–4.",
+        summary: foreignersLaw.text`Стаття визначає спеціальні підстави zwrotu polskiego dokumentu podróży dla cudzoziemca, 14-денні події для відліку та відсилання до ${foreignersLaw.article("249", "Art. 249")} ust. 3–4.`,
         rules: [
           {
             locator: "ust. 1 pkt 1–5",
-            explanation:
-              "Зіставте подію з точним пунктом: громадянство, nieważność, cofnięcie конкретного zezwolenia або zgody, pozbawienie ochrony uzupełniającej чи отримання власного документа; для pkt 4a–4b важливі Art. 252 pkt 2a та Art. 252a ust. 1 pkt 2 lit. c.",
+            explanation: foreignersLaw.text`Зіставте подію з точним пунктом: громадянство, nieważność, cofnięcie конкретного zezwolenia або zgody, pozbawienie ochrony uzupełniającej чи отримання власного документа; для pkt 4a–4b важливі ${foreignersLaw.article("252", "Art. 252")} pkt 2a та ${foreignersLaw.article("252a", "Art. 252a")} ust. 1 pkt 2 lit. c.`,
           },
           {
             locator: "ust. 2–3",
-            explanation:
-              "Рахуйте 14 днів від події, прямо названої в ust. 2: doręczenia документа про громадянство, власного документа або ostateczność рішення; поховання і zaświadczenie регулює Art. 249 ust. 3–4.",
+            explanation: foreignersLaw.text`Рахуйте 14 днів від події, прямо названої в ust. 2: doręczenia документа про громадянство, власного документа або ostateczność рішення; поховання і zaświadczenie регулює ${foreignersLaw.article("249", "Art. 249")} ust. 3–4.`,
           },
         ],
-        legalEffect:
-          "Обов’язок zwrotu виникає з конкретної події Art. 258, а не просто зі спливу строку дії документа; невиконання може впливати на його unieważnienie за Art. 259.",
-        foreignersCase:
-          "Після отримання паспорта або остаточного рішення зафіксуйте дату й поверніть документ органу-видавцю. За потреби попросіть заświadczenie за правилами Art. 249 ust. 4.",
+        legalEffect: foreignersLaw.text`Обов’язок zwrotu виникає з конкретної події ${foreignersLaw.article("258", "Art. 258")}, а не просто зі спливу строку дії документа; невиконання може впливати на його unieważnienie за ${foreignersLaw.article("259", "Art. 259")}.`,
+        foreignersCase: foreignersLaw.text`Після отримання паспорта або остаточного рішення зафіксуйте дату й поверніть документ органу-видавцю. За потреби попросіть заświadczenie за правилами ${foreignersLaw.article("249", "Art. 249")} ust. 4.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-259",
@@ -725,7 +703,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Polski dokument tożsamości cudzoziemca може бути виданий: małoletniemu, народженому в Польщі та перебуваючому без батьківської опіки, якщо цьому не суперечить interes RP і цього вимагає dobro dziecka; cudzoziemcowi, який перебуває за zaświadczeniem з Art. 170; або cudzoziemcowi без жодного obywatelstwa, якщо цього вимагає interes RP. Для кожної категорії додатково потрібно не мати dokumentu podróży та не мати можливості отримати інший документ, що підтверджує tożsamość.",
+            text: foreignersLaw.text`Polski dokument tożsamości cudzoziemca може бути виданий: małoletniemu, народженому в Польщі та перебуваючому без батьківської опіки, якщо цьому не суперечить interes RP і цього вимагає dobro dziecka; cudzoziemcowi, який перебуває за zaświadczeniem з ${foreignersLaw.article("170", "Art. 170")}; або cudzoziemcowi без жодного obywatelstwa, якщо цього вимагає interes RP. Для кожної категорії додатково потрібно не мати dokumentu podróży та не мати можливості отримати інший документ, що підтверджує tożsamość.`,
             sourceLocator: "Art. 260 ust. 1–2",
           },
         ],
@@ -743,8 +721,7 @@ export const foreignersActPart08 =
               "Відсутність документа подорожі та неможливість отримати інший документ особи є додатковою умовою.",
           },
         ],
-        legalEffect:
-          "Документ є винятковим засобом підтвердження tożsamość для категорій Art. 260; він не є загальним замінником паспорта і не підтверджує сам по собі легальний pobyt.",
+        legalEffect: foreignersLaw.text`Документ є винятковим засобом підтвердження tożsamość для категорій ${foreignersLaw.article("260", "Art. 260")}; він не є загальним замінником паспорта і не підтверджує сам по собі легальний pobyt.`,
         foreignersCase:
           "У заяві поясніть спеціальну категорію, відсутність доступного документа подорожі та докази неможливості отримати інший документ особи.",
       },
@@ -859,10 +836,8 @@ export const foreignersActPart08 =
               "Відмова має бути decyzją; з неї потрібно встановити мотиви та доступний засіб оскарження.",
           },
         ],
-        legalEffect:
-          "Стаття встановлює процесуальну компетенцію й форму відмови, але не скасовує матеріальних умов Art. 260.",
-        foreignersCase:
-          "Перевірте właściwość wojewody та збережіть decyzję про відмову разом із датою doręczenia. Окремо аналізуйте, яку умову Art. 260 орган вважав невиконаною.",
+        legalEffect: foreignersLaw.text`Стаття встановлює процесуальну компетенцію й форму відмови, але не скасовує матеріальних умов ${foreignersLaw.article("260", "Art. 260")}.`,
+        foreignersCase: foreignersLaw.text`Перевірте właściwość wojewody та збережіть decyzję про відмову разом із датою doręczenia. Окремо аналізуйте, яку умову ${foreignersLaw.article("260", "Art. 260")} орган вважав невиконаною.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-265",
@@ -870,12 +845,12 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "До wymiany polskiego dokumentu tożsamości cudzoziemca застосовується Art. 256; cudzoziemiec повертає документ після набуття obywatelstwo polskie або якщо видано decyzję про stwierdzenie nieważności документа.",
+            text: foreignersLaw.text`До wymiany polskiego dokumentu tożsamości cudzoziemca застосовується ${foreignersLaw.article("256", "Art. 256")}; cudzoziemiec повертає документ після набуття obywatelstwo polskie або якщо видано decyzję про stwierdzenie nieważności документа.`,
             sourceLocator: "Art. 265 ust. 1–2",
           },
           {
             kind: "statute-text",
-            text: "Документ повертають organowi, який його видав, niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство або від дня, коли decyzja про nieważność стала ostateczna; інші правила zwrotu відсилають до Art. 249 ust. 3–4.",
+            text: foreignersLaw.text`Документ повертають organowi, який його видав, niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство або від дня, коли decyzja про nieważność стала ostateczna; інші правила zwrotu відсилають до ${foreignersLaw.article("249", "Art. 249")} ust. 3–4.`,
             sourceLocator: "Art. 265 ust. 3–4",
           },
         ],
@@ -884,19 +859,16 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Для зміни даних, фото, втрати або пошкодження застосовуйте Art. 256, а не вигадуйте окрему процедуру.",
+            explanation: foreignersLaw.text`Для зміни даних, фото, втрати або пошкодження застосовуйте ${foreignersLaw.article("256", "Art. 256")}, а не вигадуйте окрему процедуру.`,
           },
           {
             locator: "ust. 2–4",
-            explanation:
-              "Після громадянства або остаточного stwierdzenia nieważności діє 14-денний строк zwrotu та відсилання до Art. 249.",
+            explanation: foreignersLaw.text`Після громадянства або остаточного stwierdzenia nieważności діє 14-денний строк zwrotu та відсилання до ${foreignersLaw.article("249", "Art. 249")}.`,
           },
         ],
         legalEffect:
           "Норма не продовжує чинність документа після події, що вимагає повернення; вона визначає технічний порядок обміну й zwrotu.",
-        foreignersCase:
-          "За зміни даних або втрати перевірте Art. 256. За громадянства чи nieważności зафіксуйте дату події, поверніть документ і за потреби отримайте довідку.",
+        foreignersCase: foreignersLaw.text`За зміни даних або втрати перевірте ${foreignersLaw.article("256", "Art. 256")}. За громадянства чи nieważności зафіксуйте дату події, поверніть документ і за потреби отримайте довідку.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-266",
@@ -951,8 +923,7 @@ export const foreignersActPart08 =
               "Потрібні намір повернутися, перебування за кордоном, проблема з власним документом, неможливість отримати новий і одна з названих підстав.",
           },
         ],
-        legalEffect:
-          "Art. 267 передбачає документ для конкретного повернення до Польщі з-за кордону; він не є загальною заміною паспорта або дозволом на необмежені поїздки.",
+        legalEffect: foreignersLaw.text`${foreignersLaw.article("267", "Art. 267")} передбачає документ для конкретного повернення до Польщі з-за кордону; він не є загальною заміною паспорта або дозволом на необмежені поїздки.`,
         foreignersCase:
           "У заяві за кордоном покажіть свій статус у Польщі, обставини втрати або недійсності документа та неможливість отримати новий. Поясніть, що мета — повернення до Польщі.",
       },
@@ -986,7 +957,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "У період чинності tymczasowy polski dokument podróży дає cudzoziemcowi з Art. 267 або Art. 268 pkt 1 право на одноразовий wjazd на територію RP, а cudzoziemcowi з Art. 268 pkt 2 — право на wyjazd з території RP.",
+            text: foreignersLaw.text`У період чинності tymczasowy polski dokument podróży дає cudzoziemcowi з ${foreignersLaw.article("267", "Art. 267")} або ${foreignersLaw.article("268", "Art. 268")} pkt 1 право на одноразовий wjazd на територію RP, а cudzoziemcowi з ${foreignersLaw.article("268", "Art. 268")} pkt 2 — право на wyjazd з території RP.`,
             sourceLocator: "Art. 269 pkt 1–2",
           },
         ],
@@ -995,13 +966,11 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "pkt 1",
-            explanation:
-              "Для повернення за Art. 267 або relokacji чи przesiedlenia за Art. 268 pkt 1 документ дозволяє один в’їзд.",
+            explanation: foreignersLaw.text`Для повернення за ${foreignersLaw.article("267", "Art. 267")} або relokacji чи przesiedlenia за ${foreignersLaw.article("268", "Art. 268")} pkt 1 документ дозволяє один в’їзд.`,
           },
           {
             locator: "pkt 2",
-            explanation:
-              "Для наміру або обов’язку залишити Польщу за Art. 268 pkt 2 документ дозволяє виїзд, а не багаторазове повернення.",
+            explanation: foreignersLaw.text`Для наміру або обов’язку залишити Польщу за ${foreignersLaw.article("268", "Art. 268")} pkt 2 документ дозволяє виїзд, а не багаторазове повернення.`,
           },
         ],
         legalEffect:
@@ -1028,8 +997,7 @@ export const foreignersActPart08 =
               "Дивіться конкретну дату в документі, але в будь-якому разі строк не може перевищувати 7 днів.",
           },
         ],
-        legalEffect:
-          "Після закінчення зазначеного строку документ не можна використовувати для передбаченої Art. 269 поїздки.",
+        legalEffect: foreignersLaw.text`Після закінчення зазначеного строку документ не можна використовувати для передбаченої ${foreignersLaw.article("269", "Art. 269")} поїздки.`,
         foreignersCase:
           "Плануйте маршрут за датою чинності, а не лише за датою видачі. Якщо поїздка зірвалася, уточніть у органу, чи потрібен новий документ.",
       },
@@ -1058,8 +1026,7 @@ export const foreignersActPart08 =
           },
           {
             locator: "ust. 2",
-            explanation:
-              "Підпис і закодовані дані є частиною оформлення; вони не розширюють напрямок чи строк дії документа за Art. 269–270.",
+            explanation: foreignersLaw.text`Підпис і закодовані дані є частиною оформлення; вони не розширюють напрямок чи строк дії документа за ${foreignersLaw.article("269", "Art. 269")}–270.`,
           },
         ],
         legalEffect:
@@ -1120,8 +1087,7 @@ export const foreignersActPart08 =
               "Спочатку має існувати рішення про udzielenie zgody na pobyt tolerowany; ця стаття описує документ, а не підстави надання згоди.",
           },
         ],
-        legalEffect:
-          "Документ підтверджує оформлення наданої згоди, але сам текст Art. 273 не визначає строку чи права на перетин кордону.",
+        legalEffect: foreignersLaw.text`Документ підтверджує оформлення наданої згоди, але сам текст ${foreignersLaw.article("273", "Art. 273")} не визначає строку чи права на перетин кордону.`,
         foreignersCase:
           "Зіставте документ із рішенням про udzielenie zgody. Строк, дані, odbiór та наслідки втрати перевіряйте за наступними статтями.",
       },
@@ -1212,8 +1178,7 @@ export const foreignersActPart08 =
               "Відсутність адреси може пояснюватися відсутністю потрібного meldunku.",
           },
         ],
-        legalEffect:
-          "Реквізити дозволяють ідентифікувати власника та строк документа, але не розширюють права, прямо обмежені Art. 274.",
+        legalEffect: foreignersLaw.text`Реквізити дозволяють ідентифікувати власника та строк документа, але не розширюють права, прямо обмежені ${foreignersLaw.article("274", "Art. 274")}.`,
         foreignersCase:
           "Звірте документ із рішенням про згоду, особливо ім’я, фото, строк і відбитки. Для поїздки не покладайтеся на цей документ як на паспорт.",
       },
@@ -1291,7 +1256,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "До odbioru документа «zgoda na pobyt tolerowany» застосовуються положення Art. 248.",
+            text: foreignersLaw.text`До odbioru документа «zgoda na pobyt tolerowany» застосовуються положення ${foreignersLaw.article("248", "Art. 248")}.`,
             sourceLocator: "Art. 279",
           },
         ],
@@ -1300,14 +1265,11 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "zdanie 1",
-            explanation:
-              "Для особистого отримання, правила щодо дитини до 13 років і перевірки даних застосовуйте Art. 248 у межах цієї відсилки.",
+            explanation: foreignersLaw.text`Для особистого отримання, правила щодо дитини до 13 років і перевірки даних застосовуйте ${foreignersLaw.article("248", "Art. 248")} у межах цієї відсилки.`,
           },
         ],
-        legalEffect:
-          "Стаття не дублює процедуру odbioru, а робить Art. 248 частиною правил для цього документа.",
-        foreignersCase:
-          "Перед odbiorem перевірте, хто має отримати документ, та звірте його дані за правилами Art. 248. Помилку повідомте органу одразу.",
+        legalEffect: foreignersLaw.text`Стаття не дублює процедуру odbioru, а робить ${foreignersLaw.article("248", "Art. 248")} частиною правил для цього документа.`,
+        foreignersCase: foreignersLaw.text`Перед odbiorem перевірте, хто має отримати документ, та звірте його дані за правилами ${foreignersLaw.article("248", "Art. 248")}. Помилку повідомте органу одразу.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-280",
@@ -1315,12 +1277,12 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "До wymiany документа «zgoda na pobyt tolerowany» застосовується Art. 256; cudzoziemiec повертає документ після набуття obywatelstwo polskie, stwierdzenia nieważności документа, cofnięcia zgody або wygaśnięcia рішення про згоду за Art. 354 ust. 1 pkt 1, 3 чи 4 або ust. 2.",
+            text: foreignersLaw.text`До wymiany документа «zgoda na pobyt tolerowany» застосовується ${foreignersLaw.article("256", "Art. 256")}; cudzoziemiec повертає документ після набуття obywatelstwo polskie, stwierdzenia nieważności документа, cofnięcia zgody або wygaśnięcia рішення про згоду за ${foreignersLaw.article("354", "Art. 354")} ust. 1 pkt 1, 3 чи 4 або ust. 2.`,
             sourceLocator: "Art. 280 ust. 1–2 pkt 1–4",
           },
           {
             kind: "statute-text",
-            text: "Документ повертають organowi-видавцю niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство або від дня, коли рішення з ust. 2 pkt 2–4 стало ostateczna чи wygasło; інші правила zwrotu відсилають до Art. 249 ust. 3–4.",
+            text: foreignersLaw.text`Документ повертають organowi-видавцю niezwłocznie, але не пізніше 14 днів від doręczenia документа про громадянство або від дня, коли рішення з ust. 2 pkt 2–4 стало ostateczna чи wygasło; інші правила zwrotu відсилають до ${foreignersLaw.article("249", "Art. 249")} ust. 3–4.`,
             sourceLocator: "Art. 280 ust. 3–4",
           },
         ],
@@ -1329,8 +1291,7 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "ust. 1",
-            explanation:
-              "Причини зміни даних, фото, втрати або пошкодження оцінюйте за Art. 256.",
+            explanation: foreignersLaw.text`Причини зміни даних, фото, втрати або пошкодження оцінюйте за ${foreignersLaw.article("256", "Art. 256")}.`,
           },
           {
             locator: "ust. 2–3",
@@ -1340,8 +1301,7 @@ export const foreignersActPart08 =
         ],
         legalEffect:
           "Повернення документа пов’язане зі зміною чинності згоди або статусу, а не є добровільною відмовою від самого pobytu tolerowanego.",
-        foreignersCase:
-          "Після рішення про cofnięcie чи wygaśnięcie перевірте дату його остаточності, поверніть документ органу-видавцю та попросіть підтвердження zwrotu за Art. 249.",
+        foreignersCase: foreignersLaw.text`Після рішення про cofnięcie чи wygaśnięcie перевірте дату його остаточності, поверніть документ органу-видавцю та попросіть підтвердження zwrotu за ${foreignersLaw.article("249", "Art. 249")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-281",
@@ -1349,12 +1309,12 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Dokument «zgoda na pobyt tolerowany» unieważnia się: при utrata або uszkodzenie — від zgłoszenia; при wymiana через wizerunek або дані — від odbioru нового; після громадянства — зі спливом строку zwrotu; після смерті — від інформації органу; при неповерненні за Art. 280 ust. 2 pkt 2–4 — від ostateczność або wygaśnięcia рішення; при передачі знайденого документа без попереднього zgłoszenie utraty — від передачі; при zwrot odzyskanego документа — від zwrotu.",
+            text: foreignersLaw.text`Dokument «zgoda na pobyt tolerowany» unieważnia się: при utrata або uszkodzenie — від zgłoszenia; при wymiana через wizerunek або дані — від odbioru нового; після громадянства — зі спливом строку zwrotu; після смерті — від інформації органу; при неповерненні за ${foreignersLaw.article("280", "Art. 280")} ust. 2 pkt 2–4 — від ostateczność або wygaśnięcia рішення; при передачі знайденого документа без попереднього zgłoszenie utraty — від передачі; при zwrot odzyskanego документа — від zwrotu.`,
             sourceLocator: "Art. 281 ust. 1 pkt 1–7",
           },
           {
             kind: "statute-text",
-            text: "Unieważnienie здійснює organ, який видав документ, при громадянстві або смерті, передачі знайденого чи поверненні відновленого документа, ostateczność рішення про cofnięcie zgody або nieważność документа та wygaśnięcie zgody за Art. 354; organ wymiany діє при zgłoszenie utraty або uszkodzenia та odbiór нового документа.",
+            text: foreignersLaw.text`Unieważnienie здійснює organ, який видав документ, при громадянстві або смерті, передачі знайденого чи поверненні відновленого документа, ostateczność рішення про cofnięcie zgody або nieważność документа та wygaśnięcie zgody за ${foreignersLaw.article("354", "Art. 354")}; organ wymiany діє при zgłoszenie utraty або uszkodzenia та odbiór нового документа.`,
             sourceLocator: "Art. 281 ust. 2",
           },
         ],
@@ -1374,8 +1334,7 @@ export const foreignersActPart08 =
         ],
         legalEffect:
           "Unieważnienie стосується документа tolerowany; воно не замінює аналіз рішення про cofnięcie або wygaśnięcie zgody.",
-        foreignersCase:
-          "При втраті негайно подайте zgłoszenie. Після рішення або wygaśnięcia поверніть документ у строк Art. 280 і зберігайте підтвердження.",
+        foreignersCase: foreignersLaw.text`При втраті негайно подайте zgłoszenie. Після рішення або wygaśnięcia поверніть документ у строк ${foreignersLaw.article("280", "Art. 280")} і зберігайте підтвердження.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-282",
@@ -1383,7 +1342,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "До odbioru польського документа подорожі, польського документа особи та тимчасового польського документа подорожі застосовуються Art. 248 ust. 1–2.",
+            text: foreignersLaw.text`До odbioru польського документа подорожі, польського документа особи та тимчасового польського документа подорожі застосовуються ${foreignersLaw.article("248", "Art. 248")} ust. 1–2.`,
             sourceLocator: "Art. 282",
           },
         ],
@@ -1392,14 +1351,11 @@ export const foreignersActPart08 =
         rules: [
           {
             locator: "zdanie 1",
-            explanation:
-              "Застосовуйте вимогу особистого odbioru; для особи до 13 років документ отримує przedstawiciel ustawowy або kurator за Art. 248 ust. 2.",
+            explanation: foreignersLaw.text`Застосовуйте вимогу особистого odbioru; для особи до 13 років документ отримує przedstawiciel ustawowy або kurator за ${foreignersLaw.article("248", "Art. 248")} ust. 2.`,
           },
         ],
-        legalEffect:
-          "Відсилання стосується лише Art. 248 ust. 1–2, а не всіх правил перевірки даних з ust. 3.",
-        foreignersCase:
-          "Перед отриманням конкретного документа уточніть, хто має прибути до органу. Не розширюйте відсилання автоматично на інші частини Art. 248.",
+        legalEffect: foreignersLaw.text`Відсилання стосується лише ${foreignersLaw.article("248", "Art. 248")} ust. 1–2, а не всіх правил перевірки даних з ust. 3.`,
+        foreignersCase: foreignersLaw.text`Перед отриманням конкретного документа уточніть, хто має прибути до органу. Не розширюйте відсилання автоматично на інші частини ${foreignersLaw.article("248", "Art. 248")}.`,
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-283",
@@ -1407,7 +1363,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Якщо під час kontroli granicznej або kontroli legalności pobytu встановлено, що cudzoziemiec користується документом, який мав повернути за Art. 233 ust. 2, Art. 249 ust. 1, Art. 258 ust. 1, Art. 265 ust. 2 або Art. 280 ust. 2, organ zatrzymuje документ, безоплатно видає zaświadczenie про zatrzymanie, надсилає документ organowi-видавцю та dokumentuje ці дії.",
+            text: foreignersLaw.text`Якщо під час kontroli granicznej або kontroli legalności pobytu встановлено, що cudzoziemiec користується документом, який мав повернути за ${foreignersLaw.article("233", "Art. 233")} ust. 2, ${foreignersLaw.article("249", "Art. 249")} ust. 1, ${foreignersLaw.article("258", "Art. 258")} ust. 1, ${foreignersLaw.article("265", "Art. 265")} ust. 2 або ${foreignersLaw.article("280", "Art. 280")} ust. 2, organ zatrzymuje документ, безоплатно видає zaświadczenie про zatrzymanie, надсилає документ organowi-видавцю та dokumentuje ці дії.`,
             sourceLocator: "Art. 283 pkt 1–4",
           },
         ],
@@ -1436,7 +1392,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "Якщо cudzoziemiec, попри обов’язок zwrotu одного з документів Art. 226 pkt 1–3 або 5, його не повернув або повідомив про utratę, organ, якому документ належало повернути або якому повідомили про utratę, вносить інформацію про документ до Systemu Informacyjnego Schengen для його zajęcia.",
+            text: foreignersLaw.text`Якщо cudzoziemiec, попри обов’язок zwrotu одного з документів ${foreignersLaw.article("226", "Art. 226")} pkt 1–3 або 5, його не повернув або повідомив про utratę, organ, якому документ належало повернути або якому повідомили про utratę, вносить інформацію про документ до Systemu Informacyjnego Schengen для його zajęcia.`,
             sourceLocator: "Art. 284 ust. 1",
           },
           {
@@ -1498,8 +1454,7 @@ export const foreignersActPart08 =
               "Критерії розпорядження мають забезпечувати повноту, потрібний обсяг даних і можливість усунути wadliwy dokument.",
           },
         ],
-        legalEffect:
-          "Art. 285 не встановлює всі деталі бланка безпосередньо; для подання треба перевірити актуальне розporządzenie та його перехідні правила.",
+        legalEffect: foreignersLaw.text`${foreignersLaw.article("285", "Art. 285")} не встановлює всі деталі бланка безпосередньо; для подання треба перевірити актуальне розporządzenie та його перехідні правила.`,
         foreignersCase:
           "Перед заявою завантажте чинний офіційний formularz, перевірте кількість і технічні вимоги до фото та не використовуйте стару версію без перевірки.",
       },
