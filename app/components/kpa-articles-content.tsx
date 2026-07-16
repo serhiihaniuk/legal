@@ -22,7 +22,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog"
-import type { KpaArticleExplanation } from "~/data/kpa-article-explanations"
+import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
 import { getLegalSourceManifest } from "~/data/legal-corpus"
 import { kpaArticleIndex, type KpaArticleEntry } from "~/data/kpa-article-index"
 import { listProvisions } from "~/data/legal-library"

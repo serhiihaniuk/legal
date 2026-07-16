@@ -9,6 +9,7 @@ type ExplanationTable = Readonly<Record<string, LegalExplanation>>
 const editorialLoaders: Partial<
   Record<LegalDocumentId, () => Promise<ExplanationTable>>
 > = {
+  kpa: async () => (await import("./kpa")).loadKpaExplanations(),
   "ustawa-o-cudzoziemcach": async () =>
     (await import("./ustawa-o-cudzoziemcach")).foreignersActExplanations,
   ppsa: async () => (await import("./ppsa")).ppsaExplanations,

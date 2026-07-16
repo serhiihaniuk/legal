@@ -6,7 +6,7 @@ import {
 } from "~/components/ui/accordion"
 import { LegalLink } from "~/components/legal-link"
 import { LegalText } from "~/components/legal-reference-text"
-import type { KpaArticleExplanation } from "~/data/kpa-article-explanations/types"
+import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
 import { kpaArticleIndex } from "~/data/kpa-article-index"
 
 type KpaModuleArticleGuideProps = {

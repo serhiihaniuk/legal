@@ -1,8 +1,5 @@
-import {
-  createLegalTextAuthor,
-  defineLegalTextContent,
-} from "~/data/legal-library/legal-text"
-import type { KpaArticleExplanation } from "./types"
+import { createLegalTextAuthor } from "../../legal-text"
+import { defineKpaEditorialPart } from "./define-kpa-part"
 
 const kpaLaw = createLegalTextAuthor("kpa")
 const _ppsaLaw = createLegalTextAuthor("ppsa")
@@ -10,10 +7,16 @@ const _foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const RODO_URL = "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 const _ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2024/1045/ogl"
 
-export const kpaArticleExplanationsPart3 = defineLegalTextContent(
-  [
+export const kpaArticleExplanationsPart3 = defineKpaEditorialPart({
+  documentId: "kpa",
+  editionId: "kpa-2025-1691",
+  legalStateDate: "2026-07-14",
+  verifiedAt: "2026-07-14",
+  entries: [
     {
       article: "155a",
+      provisionId: "kpa-art-155a",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Норма виключає milczące załatwienie sprawy у провадженнях про зміну або скасування остаточного рішення за ${kpaLaw.article("154", "art. 154")} і 155 KPA. Саме мовчання органу не створює тут позитивного результату.`,
       rules: [
         {
@@ -28,6 +31,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "156",
+      provisionId: "kpa-art-156",
+      reviewStatus: "reviewed",
       summary:
         "Стаття перелічує вади, через які остаточне рішення може бути визнане недійсним, та встановлює дві межі такого наслідку. Це винятковий контроль законності самого рішення, а не повторна оцінка справи як у звичайному odwołaniu.",
       rules: [
@@ -52,6 +57,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "157",
+      provisionId: "kpa-art-157",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає орган і спосіб початку провадження щодо nieważności decyzji. Зазвичай справу веде орган вищого ступеня, а провадження може початися на вимогу сторони або з уряду.",
       rules: [
@@ -77,6 +84,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "158",
+      provisionId: "kpa-art-158",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає форму завершення провадження щодо недійсності та наслідок, коли сама вада існує, але недійсність уже не можна встановити. Таке провадження не може завершитися мовчазно.",
       rules: [
@@ -102,6 +111,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "159",
+      provisionId: "kpa-art-159",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття дозволяє тимчасово зупинити виконання рішення, якщо є ймовірність однієї з вад, названих в ${kpaLaw.article("156", "art. 156 § 1")}. Це запобіжний захід на час перевірки nieważności.`,
       rules: [
         {
@@ -121,6 +132,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "160",
+      provisionId: "kpa-art-160",
+      reviewStatus: "reviewed",
       summary:
         "Стаття скасована. У цьому номері KPA немає чинного правила, на яке можна самостійно спирати вимогу або рішення.",
       rules: [],
@@ -129,6 +142,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "161",
+      provisionId: "kpa-art-161",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дає виняткові повноваження змінити або скасувати остаточне рішення через загрозу життю чи здоров'ю, серйозну шкоду господарству або особливо важливі інтереси держави. Вона також регулює відшкодування реальної шкоди, завданої таким втручанням.",
       rules: [
@@ -159,6 +174,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "162",
+      provisionId: "kpa-art-162",
+      reviewStatus: "reviewed",
       summary:
         "Норма регулює wygaśnięcie або uchylenie рішення після його видання, коли воно стало безпредметним, не виконано умову чи адресат не виконав установлених дій. Орган оформлює цей наслідок окремим рішенням.",
       rules: [
@@ -184,6 +201,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163",
+      provisionId: "kpa-art-163",
+      reviewStatus: "reviewed",
       summary:
         "Стаття відсилає до спеціальних законів, які можуть передбачити інші випадки та правила зміни або скасування рішення, що створює право. Сама вона не називає окремої матеріальної підстави.",
       rules: [
@@ -198,6 +217,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163a",
+      provisionId: "kpa-art-163a",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття виключає milczące załatwienie sprawy для виняткових проваджень, урегульованих ${kpaLaw.articleRange("161", "163", { start: "art. 161", end: "163" })} KPA. Бездіяльність органу не означає зміни, скасування чи припинення рішення.`,
       rules: [
         {
@@ -212,6 +233,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163b",
+      provisionId: "kpa-art-163b",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає, коли можливе postępowanie uproszczone та які загальні межі цього режиму. Спрощена процедура існує лише за прямою вказівкою спеціального закону.",
       rules: [
@@ -237,6 +260,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163c",
+      provisionId: "kpa-art-163c",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє використовувати urzędowy formularz у спрощеному провадженні й обмежує подальше розширення вимог. Формуляр може одночасно збирати факти, докази та саме żądanie.",
       rules: [
@@ -260,6 +285,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163d",
+      provisionId: "kpa-art-163d",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє вийти зі спрощеного режиму, коли з'являються нові істотні обставини, що потребують довшого розгляду. Сторону потрібно невідкладно повідомити про зміну порядку.",
       rules: [
@@ -276,6 +303,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163e",
+      provisionId: "kpa-art-163e",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття звужує доказове провадження у спрощеному режимі до матеріалів сторони та даних, якими орган уже володіє. Загальне правило ${kpaLaw.article("81", "art. 81")} KPA тут не застосовується.`,
       rules: [
         {
@@ -295,6 +324,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163f",
+      provisionId: "kpa-art-163f",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє скоротити uzasadnienie рішення у спрощеному провадженні. Орган може обмежитися фактами, які визнав доведеними, і правовими нормами, що застосував.",
       rules: [
@@ -311,6 +342,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "163g",
+      provisionId: "kpa-art-163g",
+      reviewStatus: "reviewed",
       summary:
         "Стаття обмежує самостійне оскарження postanowień у спрощеному провадженні. Більшість заперечень можна заявити лише разом з оскарженням рішення.",
       rules: [
@@ -332,6 +365,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "180",
+      provisionId: "kpa-art-180",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює співвідношення KPA і спеціальних правил у справах соціального страхування. KPA застосовується субсидіарно — настільки, наскільки закони про страхування не встановлюють іншої процедури.",
       rules: [
@@ -353,6 +388,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "181",
+      provisionId: "kpa-art-181",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Норма відсилає визначення органів оскарження у справах соціального страхування до спеціальних законів. Принцип субсидіарного застосування KPA з ${kpaLaw.article("180", "art. 180 § 1")} діє відповідно.`,
       rules: [
         {
@@ -372,6 +409,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "182",
+      provisionId: "kpa-art-182",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дає prokuratorowi право вимагати відкриття адміністративного провадження для усунення стану, що суперечить праву. Ініціатива прокурора не замінює компетенцію адміністративного органу.",
       rules: [
@@ -388,6 +427,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "183",
+      provisionId: "kpa-art-183",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє прокурору вступити в уже чинне адміністративне провадження на будь-якій стадії для охорони законності. Орган також може сам повідомити прокурора про потребу його участі.",
       rules: [
@@ -409,6 +450,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "184",
+      provisionId: "kpa-art-184",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює sprzeciw prokuratora проти остаточного рішення та пов'язує його з конкретними надзвичайними режимами перегляду. Прокурор не отримує довільної можливості повторно відкрити кожну справу.",
       rules: [
@@ -434,6 +477,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "185",
+      provisionId: "kpa-art-185",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює строк розгляду sprzeciwu prokuratora і відсилає до правил реагування на затримку. Орган має завершити питання впродовж тридцяти днів від подання sprzeciwu.",
       rules: [
@@ -454,6 +499,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "186",
+      provisionId: "kpa-art-186",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає безпосередній процесуальний наслідок sprzeciwu prokuratora: орган відкриває справу з уряду та повідомляє сторони. Sprzeciw не є готовим новим рішенням по суті.",
       rules: [
@@ -470,6 +517,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "187",
+      provisionId: "kpa-art-187",
+      reviewStatus: "reviewed",
       summary:
         "Норма зобов'язує орган одразу оцінити, чи потрібно зупинити виконання рішення після sprzeciwu прокурора. Це окрема запобіжна оцінка, а не автоматичне зупинення.",
       rules: [
@@ -486,6 +535,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "188",
+      provisionId: "kpa-art-188",
+      reviewStatus: "reviewed",
       summary:
         "Стаття надає прокурору, який бере участь у провадженні, процесуальні права сторони. Це забезпечує йому доступ до інструментів, необхідних для контролю законності.",
       rules: [
@@ -502,6 +553,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189",
+      provisionId: "kpa-art-189",
+      reviewStatus: "reviewed",
       summary:
         "Норма не дозволяє прокурору паралельно використовувати sprzeciw і skargę do sądu administracyjnego проти того самого рішення з тих самих причин. Вона запобігає дублюванню двох шляхів контролю.",
       rules: [
@@ -518,6 +571,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189a",
+      provisionId: "kpa-art-189a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає сферу застосування розділу про administracyjne kary pieniężne і пріоритет спеціальних правил. Вона також відмежовує ці санкції від кримінальних, дисциплінарних і споріднених видів відповідальності.",
       rules: [
@@ -544,6 +599,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189b",
+      provisionId: "kpa-art-189b",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дає легальне визначення administracyjnej kary pieniężnej. Це грошова санкція, яку орган накладає рішенням за порушення обов'язку або заборони особою чи іншим суб'єктом.",
       rules: [
@@ -559,6 +616,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189c",
+      provisionId: "kpa-art-189c",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає, який закон застосовувати, коли між вчиненням порушення і накладенням адміністративної грошової санкції змінилося право. Загалом діє новий закон, але попередній застосовується, якщо він сприятливіший для сторони.",
       rules: [
@@ -580,6 +639,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189d",
+      provisionId: "kpa-art-189d",
+      reviewStatus: "reviewed",
       summary:
         "Стаття перелічує обставини, які орган враховує при визначенні розміру administracyjnej kary pieniężnej. Вони стосуються самого порушення, поведінки суб'єкта, отриманої вигоди та — для фізичної особи — її особистих умов.",
       rules: [
@@ -611,6 +672,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189e",
+      provisionId: "kpa-art-189e",
+      reviewStatus: "reviewed",
       summary:
         "Норма забороняє накладати administracyjną karę pieniężną, якщо порушення сталося внаслідок siły wyższej. Вирішальним є причинний зв'язок між непереборною обставиною і невиконанням обов'язку або порушенням заборони.",
       rules: [
@@ -627,6 +690,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189f",
+      provisionId: "kpa-art-189f",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, коли орган обов'язково або після усунення порушення відмовляється від накладення грошової санкції та обмежується pouczeniem. Вона розрізняє підстави негайного odstąpienia і процедуру, у якій стороні дають строк на виправлення наслідків.",
       rules: [
@@ -657,6 +722,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189g",
+      provisionId: "kpa-art-189g",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює загальні строки давності для накладення та стягнення administracyjnej kary pieniężnej. Обидва строки становлять п'ять років, але їх початок і можливі спеціальні правила відрізняються.",
       rules: [
@@ -683,6 +750,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189h",
+      provisionId: "kpa-art-189h",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює переривання та зупинення строку давності накладення адміністративної грошової санкції. Вона прив'язує новий перебіг або продовження строку до завершення банкрутства, судового контролю, спору про правовідношення, забезпечення чи zawieszenia postępowania.",
       rules: [
@@ -713,6 +782,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189i",
+      provisionId: "kpa-art-189i",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює загальний строк сплати адміністративної грошової санкції та правило нарахування відсотків. Санкція стає zaległą через чотирнадцять днів від остаточності рішення, якщо спеціальний закон не встановлює іншого строку.",
       rules: [
@@ -734,6 +805,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189j",
+      provisionId: "kpa-art-189j",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, коли переривається строк давності примусового виконання administracyjnej kary pieniężnej. Новий строк починається після завершення банкрутства або після застосування повідомленого боржнику заходу egzekucyjnego чи забезпечення.",
       rules: [
@@ -759,6 +832,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189k",
+      provisionId: "kpa-art-189k",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює ulgi w wykonaniu administracyjnej kary pieniężnej: відстрочення, розстрочення та повне або часткове списання санкції чи відсотків. Вона також визначає наслідки прострочення платежів і окремі обмеження для підприємців через правила державної допомоги.",
       rules: [
@@ -790,6 +865,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "189l",
+      provisionId: "kpa-art-189l",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє органу з уряду списати адміністративну грошову санкцію або відсотки, коли стягнення фактично безперспективне, боржника ліквідовано після банкрутства або сума є мінімальною. Для підприємців зберігаються обмеження державної допомоги.",
       rules: [
@@ -820,6 +897,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "217",
+      provisionId: "kpa-art-217",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає, коли орган видає zaświadczenie і в який строк. Довідка підтверджує факти або правовий стан на вимогу особи, але лише за передбаченої законом потреби або її правового інтересу.",
       rules: [
@@ -849,6 +928,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "217a",
+      provisionId: "kpa-art-217a",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює момент виконання інформаційного обов'язку RODO щодо особи, яка просить zaświadczenie. Інформацію надають при першій дії, спрямованій до заявника, якщо він уже не отримував актуальної інформації.",
       rules: [
@@ -869,6 +950,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "218",
+      provisionId: "kpa-art-218",
+      reviewStatus: "reviewed",
       summary:
         "Стаття обмежує zaświadczenie, засноване на interesie prawnym, фактами або правовим станом, що випливають із даних органу. Перед видачею орган може провести лише необхідне пояснювальне провадження.",
       rules: [
@@ -890,6 +973,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "219",
+      provisionId: "kpa-art-219",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає форму відмови у видачі zaświadczenia або довідки саме того змісту, якого просить заявник. Відмова оформлюється postanowieniem і підлягає заżaleniu.",
       rules: [
@@ -906,6 +991,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "220",
+      provisionId: "kpa-art-220",
+      reviewStatus: "reviewed",
       summary:
         "Стаття забороняє органу вимагати від сторони довідки або заяви про дані, які орган знає з уряду чи може отримати сам. Вона також регулює електронну копію офіційного документа і випадки, коли все ж потрібен оригінал.",
       rules: [
@@ -937,6 +1024,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "221",
+      provisionId: "kpa-art-221",
+      reviewStatus: "reviewed",
       summary:
         "Стаття вводить правила реалізації конституційного права подавати skargi і wnioski. Вона визначає допустимий інтерес заявника та межі звернень до суспільних організацій і установ.",
       rules: [
@@ -963,6 +1052,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "222",
+      provisionId: "kpa-art-222",
+      reviewStatus: "reviewed",
       summary:
         "Норма наказує кваліфікувати лист за його змістом, а не заголовком або зовнішньою формою. Неправильна назва звернення не звільняє орган від установлення його справжнього предмета.",
       rules: [
@@ -978,6 +1069,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "223",
+      provisionId: "kpa-art-223",
+      reviewStatus: "reviewed",
       summary:
         "Стаття покладає на органи обов'язок розглядати skargi і wnioski в межах їхньої компетенції та передбачає відповідальність працівника за неналежний або несвоєчасний розгляд. Вона розмежовує компетенцію органу і особисту службову відповідальність.",
       rules: [
@@ -998,6 +1091,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "224",
+      provisionId: "kpa-art-224",
+      reviewStatus: "reviewed",
       summary:
         "Норма розширює значення терміна organy państwowe для всього розділу про skargi і wnioski. До нього включаються також органи державних підприємств та інших державних організаційних одиниць.",
       rules: [
@@ -1014,6 +1109,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "225",
+      provisionId: "kpa-art-225",
+      reviewStatus: "reviewed",
       summary:
         "Стаття захищає особу від шкоди або закидів за законне подання skargi, wniosku чи матеріалу для публікації та зобов'язує органи протидіяти придушенню критики. Захист діє, коли особа діяла в межах, дозволених правом.",
       rules: [
@@ -1035,6 +1132,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "226",
+      provisionId: "kpa-art-226",
+      reviewStatus: "reviewed",
       summary:
         "Стаття уповноважує Radę Ministrów видати виконавчі правила про організацію прийняття і розгляду skarg та wniosków. Деталі організації містяться не в самій статті, а в розпорядженні.",
       rules: [
@@ -1051,6 +1150,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "226a",
+      provisionId: "kpa-art-226a",
+      reviewStatus: "reviewed",
       summary:
         "Норма зобов'язує орган надати скаржнику або заявнику інформацію RODO при першій дії, спрямованій до нього. Вона стосується обробки персональних даних у процедурі skarg і wniosków.",
       rules: [
@@ -1066,6 +1167,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "227",
+      provisionId: "kpa-art-227",
+      reviewStatus: "reviewed",
       summary:
         "Стаття описує предмет skargi: неналежну роботу органу чи працівника, порушення законності або інтересу скаржника, а також затягування і бюрократичний спосіб ведення справ. Перелік відкритий, бо закон використовує формулу w szczególności.",
       rules: [
@@ -1092,6 +1195,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "228",
+      provisionId: "kpa-art-228",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює просте правило адресування skargi: її подають органу, компетентному її розглянути. Конкретного адресата визначають наступні статті або спеціальний закон.",
       rules: [
@@ -1106,6 +1211,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "229",
+      provisionId: "kpa-art-229",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює стандартну таблицю компетенції для skarg на різні державні й самоврядні органи, якщо спеціальний закон не називає іншого адресата. Компетенція залежить від того, чия діяльність оскаржується і в якій сфері.",
       rules: [
@@ -1137,6 +1244,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "230",
+      provisionId: "kpa-art-230",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає орган для skargi на завдання або діяльність organizacji społecznej. Загалом це безпосередньо вищий орган організації, а для її найвищого органу — наглядовий державний орган.",
       rules: [
@@ -1158,6 +1267,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "231",
+      provisionId: "kpa-art-231",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов'язує орган, який отримав skargę поза своєю компетенцією, швидко передати її належному органу або вказати цей орган скаржнику. Разом із повідомленням про передачу надається інформація RODO щодо даних, які обробляє орган-передавач.",
       rules: [
@@ -1178,6 +1289,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "232",
+      provisionId: "kpa-art-232",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє компетентному органу доручити розгляд skargi нижчому органу або службовому керівнику працівника, але забороняє передавати скаргу органу, діяльність якого сама оскаржується. Скаржника повідомляють про передачу.",
       rules: [
@@ -1202,6 +1315,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "233",
+      provisionId: "kpa-art-233",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає наслідок skargi щодо індивідуальної справи, яка ще не була предметом адміністративного провадження. Скарга сторони відкриває провадження, а скарга іншої особи може лише спонукати орган діяти з уряду.",
       rules: [
@@ -1223,6 +1338,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "234",
+      provisionId: "kpa-art-234",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає роль skargi, поданої під час уже відкритого адміністративного провадження. Звернення сторони розглядають усередині цієї справи, а звернення іншої особи стає доказовим матеріалом для оцінки з уряду.",
       rules: [
@@ -1244,6 +1361,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "235",
+      provisionId: "kpa-art-235",
+      reviewStatus: "reviewed",
       summary:
         "Стаття наказує кваліфікувати skargę на справу, завершену остаточним рішенням, як вимогу одного з надзвичайних режимів перегляду залежно від її змісту. Саме слово skarga не створює окремого способу скасувати остаточне рішення.",
       rules: [
@@ -1263,6 +1382,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "236",
+      provisionId: "kpa-art-236",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає компетентний орган для skarg, що перетворюються на індивідуальне або надзвичайне провадження, та регулює захист особи, яка повідомила інформацію. В окремих випадках джерело даних не розкривається стороні без згоди скаржника.",
       rules: [
@@ -1286,6 +1407,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "237",
+      provisionId: "kpa-art-237",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Норма встановлює строк розгляду skargi, обов'язок повідомити скаржника про результат і спеціальний інформаційний строк для депутатів, сенаторів та радних. За прострочення застосовуються механізми ${kpaLaw.articleRange("36", "38", { start: "art. 36", end: "38" })} KPA.`,
       rules: [
         {
@@ -1314,6 +1437,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "238",
+      provisionId: "kpa-art-238",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає обов'язковий зміст повідомлення про спосіб розгляду skargi. Негативна відповідь повинна додатково містити фактичне й правове обґрунтування та pouczenie про наслідок повторної безпідставної скарги.",
       rules: [
@@ -1338,6 +1463,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "239",
+      provisionId: "kpa-art-239",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє органу не відповідати повторно на skargę, якщо попередню вже обґрунтовано визнано безпідставною, а нове звернення не містить нових обставин. Орган лише робить відповідну позначку в матеріалах.",
       rules: [
@@ -1357,6 +1484,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "240",
+      provisionId: "kpa-art-240",
+      reviewStatus: "reviewed",
       summary:
         "Стаття поширює частину механізму skargowego на справи, які не розглядаються за KPA або не належать до адміністративних органів. Водночас решту процедури визначають правила, властиві відповідній справі.",
       rules: [
@@ -1376,6 +1505,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "241",
+      provisionId: "kpa-art-241",
+      reviewStatus: "reviewed",
       summary:
         "Стаття окреслює предмет wniosku в розділі VIII: пропозиції щодо поліпшення роботи, законності, запобігання зловживанням, охорони власності та кращого задоволення потреб населення. Це інструмент ініціювання організаційних змін, а не вимога індивідуального адміністративного рішення.",
       rules: [
@@ -1392,6 +1523,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "242",
+      provisionId: "kpa-art-242",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає адресата wniosku за його предметом. Для питань суспільної організації звернення подають до органів цієї організації.",
       rules: [
@@ -1413,6 +1546,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "243",
+      provisionId: "kpa-art-243",
+      reviewStatus: "reviewed",
       summary:
         "Стаття зобов'язує некомпетентний орган передати wniosek належному органу протягом семи днів і повідомити заявника. Помилка адресата не завершує звернення без розгляду.",
       rules: [
@@ -1433,6 +1568,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "244",
+      provisionId: "kpa-art-244",
+      reviewStatus: "reviewed",
       summary:
         "Норма поширює на wnioski місячний строк, установлений для skarg, і вимагає повідомити заявника про результат. Вона не встановлює обов'язку прийняти запропоноване рішення.",
       rules: [
@@ -1452,6 +1589,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "245",
+      provisionId: "kpa-art-245",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює ситуацію, коли wniosek неможливо розглянути в місячний строк. У межах цього строку орган має повідомити про вже виконані дії та передбачуваний новий термін завершення.",
       rules: [
@@ -1467,6 +1606,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "246",
+      provisionId: "kpa-art-246",
+      reviewStatus: "reviewed",
       summary:
         "Норма дає заявнику право подати skargę, якщо він незадоволений способом розгляду wniosku або якщо орган не дотримався строку. Подальше звернення переходить у режим skargowy розділу 2.",
       rules: [
@@ -1487,6 +1628,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "247",
+      provisionId: "kpa-art-247",
+      reviewStatus: "reviewed",
       summary:
         "Стаття поширює на wnioski окремі правила про компетенцію щодо суспільних організацій, повідомлення парламентарів і форму відповіді. Це точкова відсилка, а не застосування всього розділу про skargi.",
       rules: [
@@ -1502,6 +1645,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "248",
+      provisionId: "kpa-art-248",
+      reviewStatus: "reviewed",
       summary:
         "Норма прирівнює skargi і wnioski, передані редакціями преси, радіо чи телебачення, до звичайних звернень за правилами відповідних розділів. Редакція може також вимагати повідомлення про результат або передачу.",
       rules: [
@@ -1523,6 +1668,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "249",
+      provisionId: "kpa-art-249",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття поширює правила ${kpaLaw.article("248", "art. 248")} на skargi і wnioski, передані суспільними організаціями. Організація є посередником, але звернення зберігає відповідний режим skargi або wniosku.`,
       rules: [
         {
@@ -1537,6 +1684,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "250",
+      provisionId: "kpa-art-250",
+      reviewStatus: "reviewed",
       summary:
         "Стаття скасована. У цьому номері KPA немає чинної норми щодо участі преси чи суспільних організацій.",
       rules: [],
@@ -1545,6 +1694,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "251",
+      provisionId: "kpa-art-251",
+      reviewStatus: "reviewed",
       summary:
         "Норма поширює на редакцію, яка опублікувала й передала органові матеріал, правила про прострочення skargi та wniosku і право на подальшу skargę. Вона стосується саме матеріалу, переданого в режимі цього розділу.",
       rules: [
@@ -1560,6 +1711,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "252",
+      provisionId: "kpa-art-252",
+      reviewStatus: "reviewed",
       summary:
         "Стаття скасована. Вона не містить чинного правила про участь преси або організацій у процедурі skarg і wniosków.",
       rules: [],
@@ -1568,6 +1721,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "253",
+      provisionId: "kpa-art-253",
+      reviewStatus: "reviewed",
       summary:
         "Стаття організує особистий прийом громадян у справах skarg і wniosków. Вона встановлює мінімальну частоту прийому керівництвом, доступність поза робочими годинами та обов'язок оприлюднити графік.",
       rules: [
@@ -1599,6 +1754,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "254",
+      provisionId: "kpa-art-254",
+      reviewStatus: "reviewed",
       summary:
         "Норма зобов'язує реєструвати й зберігати skargi, wnioski та пов'язані документи так, щоб можна було контролювати їхній перебіг і строки. Це вимога до організації документообігу органу.",
       rules: [
@@ -1615,6 +1772,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "255",
+      provisionId: "kpa-art-255",
+      reviewStatus: "reviewed",
       summary:
         "Стаття скасована. У ній немає чинного правила про прийняття або реєстрацію skarg і wniosków.",
       rules: [],
@@ -1623,6 +1782,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "256",
+      provisionId: "kpa-art-256",
+      reviewStatus: "reviewed",
       summary:
         "Стаття забороняє працівникові самому розглядати skargę на власну діяльність. Він зобов'язаний невідкладно передати її службовому керівнику.",
       rules: [
@@ -1639,6 +1800,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "257",
+      provisionId: "kpa-art-257",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає найвищий нагляд за прийманням і розглядом skarg та wniosków. Для звернень до судів його здійснює Krajowa Rada Sądownictwa, а для інших органів і одиниць — Prezes Rady Ministrów.",
       rules: [
@@ -1660,6 +1823,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "258",
+      provisionId: "kpa-art-258",
+      reviewStatus: "reviewed",
       summary:
         "Стаття детально розподіляє нагляд і контроль за розглядом skarg та wniosków між міністрами, урядовими органами, органами вищого ступеня, Прем'єр-міністром і воєводами. Для суспільних організацій діє окрема система статутного та державного нагляду.",
       rules: [
@@ -1690,6 +1855,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "259",
+      provisionId: "kpa-art-259",
+      reviewStatus: "reviewed",
       summary:
         "Норма зобов'язує наглядові органи періодично оцінювати роботу зі skargami і wnioskami та використовувати результати для усунення причин скарг і покращення діяльності. Оцінювання має відбуватися щонайменше раз на два роки.",
       rules: [
@@ -1714,6 +1881,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260",
+      provisionId: "kpa-art-260",
+      reviewStatus: "reviewed",
       summary:
         "Стаття скасована. Вона не встановлює чинного правила про нагляд чи контроль за skargami і wnioskami.",
       rules: [],
@@ -1722,6 +1891,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260a",
+      provisionId: "kpa-art-260a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює обов'язок польських адміністративних органів надавати допомогу органам інших держав ЄС та органам адміністрації ЄС, коли це передбачає право Союзу. Допомога може охоплювати інформацію і процесуальні дії та здійснюється з уряду або на запит.",
       rules: [
@@ -1753,6 +1924,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260b",
+      provisionId: "kpa-art-260b",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає формальні умови іноземного запиту про адміністративну допомогу, порядок усунення недоліків і строк розгляду. Запит без правової підстави або з неусуненими недоліками повертається без розгляду.",
       rules: [
@@ -1784,6 +1957,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260c",
+      provisionId: "kpa-art-260c",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює звернення польського органу по допомогу до іншої держави ЄС або адміністрації ЄС. Вона вимагає європейської правової підстави, обґрунтування та дотримання мовних правил.",
       rules: [
@@ -1809,6 +1984,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260d",
+      provisionId: "kpa-art-260d",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює електронний обмін як основний практичний спосіб передавання інформації між органами в межах європейської адміністративної співпраці. Формула w szczególności не виключає інших допустимих способів.",
       rules: [
@@ -1825,6 +2002,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260e",
+      provisionId: "kpa-art-260e",
+      reviewStatus: "reviewed",
       summary:
         "Стаття розподіляє витрати європейської адміністративної допомоги. Спочатку застосовуються правила ЄС, а за їх відсутності кожний польський орган несе витрати власних дій.",
       rules: [
@@ -1845,6 +2024,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260f",
+      provisionId: "kpa-art-260f",
+      reviewStatus: "reviewed",
       summary:
         "Норма поширює правила європейської адміністративної співпраці на органи держав EFTA — сторін Європейського економічного простору — та Швейцарії. Умовою є застосовність права ЄС до відповідної держави.",
       rules: [
@@ -1861,6 +2042,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "260g",
+      provisionId: "kpa-art-260g",
+      reviewStatus: "reviewed",
       summary:
         "Стаття встановлює пріоритет спеціальних правил європейської адміністративної співпраці над загальним działem VIIIA KPA. Якщо право ЄС або спеціальний закон регулює питання інакше, загальний розділ не застосовується.",
       rules: [
@@ -1876,6 +2059,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "261",
+      provisionId: "kpa-art-261",
+      reviewStatus: "reviewed",
       summary:
         "Стаття регулює несплату наперед opłat і kosztów postępowania: орган дає додатковий строк від семи до чотирнадцяти днів, після чого може повернути заяву або не виконати платну дію. Водночас вона називає три випадки, коли справу треба розглянути попри несплату.",
       rules: [
@@ -1906,6 +2091,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "262",
+      provisionId: "kpa-art-262",
+      reviewStatus: "reviewed",
       summary:
         "Норма визначає, які витрати провадження можуть бути покладені на сторону, та дозволяє вимагати аванс. Сторона відповідає за витрати, спричинені її виною або понесені виключно в її інтересі чи на її вимогу поза законним обов'язком органу.",
       rules: [
@@ -1931,6 +2118,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "263",
+      provisionId: "kpa-art-263",
+      reviewStatus: "reviewed",
       summary:
         "Стаття перелічує типові koszty postępowania і дозволяє включити інші витрати, безпосередньо пов'язані з вирішенням справи. До переліку входять витрати свідків, експертів, огляду, офіційних вручень і медіації.",
       rules: [
@@ -1950,6 +2139,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "263a",
+      provisionId: "kpa-art-263a",
+      reviewStatus: "reviewed",
       summary:
         "Норма уповноважує міністра адміністрації визначити в розпорядженні винагороду медіатора і витрати, що йому відшкодовуються. При цьому мають ураховуватися вид справи, ефективність медіації та необхідні витрати.",
       rules: [
@@ -1970,6 +2161,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "264",
+      provisionId: "kpa-art-264",
+      reviewStatus: "reviewed",
       summary:
         "Стаття визначає форму встановлення kosztów postępowania, осіб, які їх сплачують, строк і спосіб оплати. Для kosztów mediacji діє окремий момент видання postanowienia, а зобов'язана особа може подати zażalenie.",
       rules: [
@@ -1996,6 +2189,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "265",
+      provisionId: "kpa-art-265",
+      reviewStatus: "reviewed",
       summary:
         "Норма встановлює спосіб примусового стягнення несплачених у строк opłat, kosztów postępowania та інших сум, що виникли з провадження. Для цього застосовується адміністративна egzekucja świadczeń pieniężnych.",
       rules: [
@@ -2012,6 +2207,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "266",
+      provisionId: "kpa-art-266",
+      reviewStatus: "reviewed",
       summary: kpaLaw.text`Стаття покладає на працівника органу обов'язок відшкодувати витрати, спричинені його помилковим викликом сторони за ${kpaLaw.article("56", "art. 56 § 1")}. Рішення про обов'язок і стягнення з працівника відбуваються в адміністративному порядку.`,
       rules: [
         {
@@ -2031,6 +2228,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "267",
+      provisionId: "kpa-art-267",
+      reviewStatus: "reviewed",
       summary:
         "Норма дозволяє повністю або частково звільнити сторону від процесуальних платежів і витрат, якщо її нездатність їх нести є безсумнівною. Для opłat skarbowych діють також спеціальні правила про ці платежі.",
       rules: [
@@ -2052,6 +2251,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "268",
+      provisionId: "kpa-art-268",
+      reviewStatus: "reviewed",
       summary:
         "Стаття скасована. У цьому номері KPA немає чинної кінцевої норми.",
       rules: [],
@@ -2060,6 +2261,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "268a",
+      provisionId: "kpa-art-268a",
+      reviewStatus: "reviewed",
       summary:
         "Стаття дозволяє адміністративному органу письмово уповноважити працівника діяти від його імені у визначеному обсязі. Уповноваження може охоплювати рішення, postanowienia, zaświadczenia та засвідчення копій документів.",
       rules: [
@@ -2081,6 +2284,8 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
     },
     {
       article: "269",
+      provisionId: "kpa-art-269",
+      reviewStatus: "reviewed",
       summary:
         "Норма пояснює значення слова prawomocne щодо адміністративних рішень у інших законах. Зазвичай його слід розуміти як ostateczne, якщо контекст не вказує на рішення, перевірене судом або не оскаржене до суду в строк.",
       rules: [
@@ -2101,5 +2306,4 @@ export const kpaArticleExplanationsPart3 = defineLegalTextContent(
         "У справі іноземця слово prawomocna decyzja в іншому законі не слід автоматично трактувати як рішення після WSA. Спочатку діє значення ostateczna, якщо сам припис не вимагає судового етапу або спливу строку skargi.",
     },
   ],
-  "kpa-article-explanations"
-) satisfies KpaArticleExplanation[]
+})

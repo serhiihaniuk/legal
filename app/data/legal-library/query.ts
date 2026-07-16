@@ -1,4 +1,3 @@
-import { getKpaArticleExplanation } from "~/data/kpa-article-explanations"
 import { legalLibraryRegistry } from "~/data/legal-corpus/registry.generated"
 
 import { getEditorialExplanation } from "./editorial"
@@ -11,7 +10,6 @@ import type {
   LegalDocumentReference,
   LegalEdition,
   LegalEditionId,
-  LegalExplanation,
   LegalExplanationResolution,
   LegalProvision,
   LegalProvisionId,
@@ -19,8 +17,6 @@ import type {
   LegalReferenceResolution,
 } from "./contracts"
 
-const REVIEWED_KPA_EDITION = "kpa-2025-1691" as const
-const REVIEWED_LEGAL_STATE_DATE = "2026-07-14" as const
 const SHA256_PATTERN = /^[a-f0-9]{64}$/iu
 const PROVISION_KINDS = new Set([
   "article",
@@ -680,49 +676,6 @@ function explanationFailure(
   }
 }
 
-function articleForProvision(
-  provision: LegalProvision<LegalDocumentId>
-): string {
-  const fromLocator = provision.locator
-    .replace(/^Art\.\s*/u, "")
-    .replace(/\.$/u, "")
-    .trim()
-  return fromLocator || provision.id.replace(/^kpa-art-/u, "")
-}
-
-function makeKpaExplanation(
-  provision: LegalProvision<LegalDocumentId>,
-  source: Awaited<ReturnType<typeof getKpaArticleExplanation>>
-): LegalExplanation<LegalDocumentId> | undefined {
-  if (!source) return undefined
-  return {
-    id: `kpa-explanation-${provision.id}`,
-    documentId: "kpa",
-    provisionId: provision.id as LegalProvisionId<"kpa">,
-    sourceEditionId: REVIEWED_KPA_EDITION,
-    legalStateDate: REVIEWED_LEGAL_STATE_DATE,
-    verifiedAt: REVIEWED_LEGAL_STATE_DATE,
-    reviewStatus: "reviewed",
-    language: "uk",
-    claims: [
-      {
-        kind: "statute-text",
-        text: source.summary,
-        sourceLocator: provision.canonicalPdfLocator,
-      },
-      {
-        kind: "practical-inference",
-        text: source.foreignersCase,
-        sourceLocator: provision.canonicalPdfLocator,
-      },
-    ],
-    summary: source.summary,
-    rules: source.rules,
-    legalEffect: source.legalEffect,
-    foreignersCase: source.foreignersCase,
-  }
-}
-
 export async function getExplanation(
   referenceOrDocumentId: unknown,
   provisionId?: unknown,
@@ -767,53 +720,28 @@ export async function getExplanation(
   if (!provision)
     return explanationFailure("mismatched-provision", requestedEditionId)
 
-  if (documentId !== "kpa") {
-    const editorial = await getEditorialExplanation(
-      documentId,
-      provision.id as LegalProvisionId<typeof documentId>
-    )
-    if (!editorial) {
-      return explanationFailure("source-only", requestedEditionId, provision)
-    }
-    if (
-      editorial.sourceEditionId !== requestedEditionId ||
-      editorial.reviewStatus !== "reviewed"
-    ) {
-      return explanationFailure(
-        "stale-explanation",
-        requestedEditionId,
-        provision
-      )
-    }
-    return {
-      status: "reviewed",
-      state: "reviewed",
-      explanation: editorial,
-      sourceEditionId: editorial.sourceEditionId,
-      requestedEditionId,
-      provision,
-    }
+  const editorial = await getEditorialExplanation(
+    documentId,
+    provision.id as LegalProvisionId<typeof documentId>
+  )
+  if (!editorial) {
+    return explanationFailure("source-only", requestedEditionId, provision)
   }
-  if (requestedEditionId !== REVIEWED_KPA_EDITION)
+  if (
+    editorial.sourceEditionId !== requestedEditionId ||
+    editorial.reviewStatus !== "reviewed"
+  ) {
     return explanationFailure(
       "stale-explanation",
       requestedEditionId,
       provision
     )
-
-  const source = await getKpaArticleExplanation(articleForProvision(provision))
-  const explanation = makeKpaExplanation(provision, source)
-  if (!explanation)
-    return explanationFailure(
-      "missing-explanation",
-      requestedEditionId,
-      provision
-    )
+  }
   return {
     status: "reviewed",
     state: "reviewed",
-    explanation,
-    sourceEditionId: REVIEWED_KPA_EDITION,
+    explanation: editorial,
+    sourceEditionId: editorial.sourceEditionId,
     requestedEditionId,
     provision,
   }

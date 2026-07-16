@@ -2,7 +2,7 @@ import {
   LegalLearningModuleContent,
   legalLearningContentToc,
 } from "~/components/legal-learning-module-content"
-import type { KpaArticleExplanation } from "~/data/kpa-article-explanations"
+import type { KpaArticleExplanation } from "~/data/legal-library/editorial/kpa/compat"
 import { kpaArticleIndex } from "~/data/kpa-article-index"
 import {
   kpaGuideModuleArticles,
