@@ -156,7 +156,7 @@ function DocumentRegister({ documents }: { documents: CaseGuideDocument[] }) {
                 key={`${legalTextPlainText(document.item)}-${legalTextPlainText(document.owner)}`}
               >
                 <TableCell className="align-top font-medium whitespace-normal">
-                  <LegalText text={document.item} />
+                  <LegalText text={document.item} context="reference-section" />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal">
                   <DocumentStatus document={document} />
@@ -168,7 +168,7 @@ function DocumentRegister({ documents }: { documents: CaseGuideDocument[] }) {
                   <LegalText text={document.proves} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
-                  <LegalText text={document.law} />
+                  <LegalText text={document.law} context="reference-section" />
                 </TableCell>
               </TableRow>
             ))}
@@ -184,7 +184,7 @@ function DocumentRegister({ documents }: { documents: CaseGuideDocument[] }) {
           >
             <div className="flex items-start justify-between gap-3">
               <h3 className="text-base font-semibold">
-                <LegalText text={document.item} />
+                <LegalText text={document.item} context="reference-section" />
               </h3>
               <DocumentStatus document={document} />
             </div>
@@ -204,7 +204,7 @@ function DocumentRegister({ documents }: { documents: CaseGuideDocument[] }) {
               <div>
                 <dt className="inline font-medium">Правова роль:</dt>{" "}
                 <dd className="inline text-muted-foreground">
-                  <LegalText text={document.law} />
+                  <LegalText text={document.law} context="reference-section" />
                 </dd>
               </div>
             </dl>
@@ -258,7 +258,7 @@ function DeadlineRegister({ deadlines }: { deadlines: CaseGuideDeadline[] }) {
               <LegalText text={deadline.consequence} />
             </p>
             <p className="text-xs text-muted-foreground">
-              <LegalText text={deadline.law} />
+              <LegalText text={deadline.law} context="reference-section" />
             </p>
           </div>
         </article>
@@ -336,7 +336,10 @@ function StageDetails({ stage }: { stage: CaseGuideStage }) {
                               htmlFor={checkboxId}
                               className="text-base"
                             >
-                              <LegalText text={document.item} />
+                              <LegalText
+                                text={document.item}
+                                context="reference-section"
+                              />
                             </FieldLabel>
                             <DocumentStatus document={document} />
                           </div>
@@ -356,7 +359,10 @@ function StageDetails({ stage }: { stage: CaseGuideStage }) {
                             <div>
                               <dt className="font-medium">Правова роль</dt>
                               <dd className="text-muted-foreground">
-                                <LegalText text={document.law} />
+                                <LegalText
+                                  text={document.law}
+                                  context="reference-section"
+                                />
                               </dd>
                             </div>
                           </dl>
@@ -543,7 +549,10 @@ function ConditionsMatrix({
                   <LegalText text={condition.modelFact} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
-                  <LegalText text={condition.evidence} />
+                  <LegalText
+                    text={condition.evidence}
+                    context="reference-section"
+                  />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal">
                   <Badge
@@ -559,7 +568,10 @@ function ConditionsMatrix({
                     <LegalText text={condition.risk} />
                   </p>
                   <p className="mt-2 text-xs">
-                    <LegalText text={condition.law} />
+                    <LegalText
+                      text={condition.law}
+                      context="reference-section"
+                    />
                   </p>
                 </TableCell>
               </TableRow>
@@ -596,7 +608,10 @@ function ConditionsMatrix({
               <div>
                 <dt className="inline font-medium">Доказ:</dt>{" "}
                 <dd className="inline text-muted-foreground">
-                  <LegalText text={condition.evidence} />
+                  <LegalText
+                    text={condition.evidence}
+                    context="reference-section"
+                  />
                 </dd>
               </div>
               <div>
@@ -608,7 +623,7 @@ function ConditionsMatrix({
               <div>
                 <dt className="inline font-medium">Норма:</dt>{" "}
                 <dd className="inline text-muted-foreground">
-                  <LegalText text={condition.law} />
+                  <LegalText text={condition.law} context="reference-section" />
                 </dd>
               </div>
             </dl>

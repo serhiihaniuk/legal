@@ -65,7 +65,7 @@ function ProvisionText({
   target?: LegalLearningModuleView["provisionGuide"]["items"][number]["target"]
 }) {
   if (typeof text !== "string" || !target || !text.includes(reference)) {
-    return <LearningText text={text} />
+    return <LearningText text={text} context="prose" />
   }
 
   const content: ReactNode[] = []
@@ -74,7 +74,11 @@ function ProvisionText({
   while (matchIndex !== -1) {
     if (matchIndex > cursor) content.push(text.slice(cursor, matchIndex))
     content.push(
-      <LegalLink key={`${matchIndex}-${reference}`} reference={target}>
+      <LegalLink
+        key={`${matchIndex}-${reference}`}
+        reference={target}
+        context="prose"
+      >
         {reference}
       </LegalLink>
     )
@@ -135,7 +139,10 @@ function ProvisionGuide({
               <span className="grid min-w-0 flex-1 gap-2 pr-5 text-left sm:grid-cols-[8rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5">
                 <span className="font-mono text-sm font-medium text-foreground">
                   {item.target ? (
-                    <LegalLink reference={item.target}>
+                    <LegalLink
+                      reference={item.target}
+                      context="reference-section"
+                    >
                       {item.reference}
                     </LegalLink>
                   ) : (
@@ -192,7 +199,10 @@ function ProvisionGuide({
                           <div className="flex min-w-0 flex-col gap-1">
                             <p className="text-sm font-semibold">
                               {item.target ? (
-                                <LegalLink reference={item.target}>
+                                <LegalLink
+                                  reference={item.target}
+                                  context="reference-section"
+                                >
                                   {rule.locator}
                                 </LegalLink>
                               ) : (
@@ -239,6 +249,7 @@ function ProvisionGuide({
                     <p className="mt-4">
                       <LegalLink
                         reference={item.target}
+                        context="reference-section"
                         className="inline-flex items-center gap-1.5"
                       >
                         Відкрити повне пояснення {item.reference}
@@ -272,7 +283,10 @@ export function LegalLearningModuleContent({
           <>
             <Badge variant="secondary">Модуль {module.order}</Badge>
             <Badge variant="outline">
-              <LearningText text={module.provisionScope} />
+              <LearningText
+                text={module.provisionScope}
+                context="reference-section"
+              />
             </Badge>
             <span className="text-xs text-muted-foreground">
               Стан права: {module.legalState}

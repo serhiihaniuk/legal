@@ -10,16 +10,13 @@ import {
 import { cn } from "~/lib/utils"
 
 export const legalLinkVariants = cva(
-  "underline underline-offset-4 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+  "font-medium text-inherit underline decoration-muted-foreground/45 underline-offset-4 hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
   {
     variants: {
       context: {
-        prose:
-          "font-medium decoration-muted-foreground/45 hover:decoration-foreground",
-        "reference-section":
-          "legal-reference-link font-medium decoration-primary/40 hover:decoration-primary",
-        "provision-page":
-          "legal-reference-link font-medium decoration-primary/40 hover:decoration-primary in-data-[slot=badge]:text-inherit",
+        prose: "",
+        "reference-section": "",
+        "provision-page": "",
       },
     },
     defaultVariants: {
@@ -62,6 +59,7 @@ export function LegalLink({
       rel="noreferrer"
       className={linkClassName}
       data-reference-kind={reference.kind}
+      data-reference-context={context}
     >
       {children}
     </a>
@@ -70,6 +68,7 @@ export function LegalLink({
       to={target.href}
       className={linkClassName}
       data-reference-kind={reference.kind}
+      data-reference-context={context}
     >
       {children}
     </Link>

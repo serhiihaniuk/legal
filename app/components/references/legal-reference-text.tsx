@@ -35,6 +35,7 @@ export function LegalReferenceArrow({
       "ml-1 inline-flex align-baseline no-underline"
     ),
     "data-reference-kind": reference.kind,
+    "data-reference-context": context,
   } as const
 
   const trigger = target.external ? (

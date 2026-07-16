@@ -17,7 +17,7 @@ describe("references public API", () => {
     expect(CompatibilityLegalLink).toBe(LegalLink)
   })
 
-  it("renders explicit quiet and full-treatment link contexts", () => {
+  it("renders every semantic context with the same quiet treatment", () => {
     render(
       <MemoryRouter>
         <LegalLink reference={kpaReference} context="prose">
@@ -40,10 +40,16 @@ describe("references public API", () => {
       name: "Provision page",
     })
 
-    expect(prose.className).toContain("decoration-muted-foreground/45")
-    expect(prose.className).not.toContain("legal-reference-link")
-    expect(referenceSection.className).toContain("legal-reference-link")
-    expect(provisionPage.className).toContain("legal-reference-link")
+    for (const [link, context] of [
+      [prose, "prose"],
+      [referenceSection, "reference-section"],
+      [provisionPage, "provision-page"],
+    ] as const) {
+      expect(link.className).toContain("text-inherit")
+      expect(link.className).toContain("decoration-muted-foreground/45")
+      expect(link.className).not.toContain("text-primary")
+      expect(link.getAttribute("data-reference-context")).toBe(context)
+    }
   })
 
   it("passes the selected context through structured LegalText", () => {
@@ -59,8 +65,10 @@ describe("references public API", () => {
       </MemoryRouter>
     )
 
-    expect(screen.getByRole("link", { name: "KPA" }).className).toContain(
-      "legal-reference-link"
+    const link = screen.getByRole("link", { name: "KPA" })
+    expect(link.className).toContain("text-inherit")
+    expect(link.getAttribute("data-reference-context")).toBe(
+      "reference-section"
     )
   })
 })
