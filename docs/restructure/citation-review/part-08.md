@@ -16,22 +16,23 @@ Default act: `ustawa-o-cudzoziemcach` (this file's own act).
   (`EES_2017_2226_URL`), so this citation reuses an established sibling
   constant rather than introducing a new one.
 
-## PROMINENT: one entry left unmigrated — needs a new external URL
+## PROMINENT: entry art-244 — two new external URLs, OWNER MUST VERIFY
 
 - **Entry `ustawa-o-cudzoziemcach-art-244`** (`claims[0].text` and
-  `rules[1].explanation`, both containing "Art. 50 TUE / Art. 18 ust. 4
-  Umowy Wystąpienia") was **not migrated** and still contains bare
-  citations. The prose describes annotations placed on a `karta pobytu`
-  referencing Art. 50 of the Treaty on European Union (TUE) and Art. 18(4)
-  of the EU–UK Withdrawal Agreement ("Umowy Wystąpienia") — both
-  international instruments with no act in the reference registry and no
-  existing `.external()` URL constant in any sibling file to reuse. Typing
-  them requires sourcing two new authoritative URLs (e.g. EUR-Lex), which
-  this migration run was **not authorized to do** — the task's web-search
-  allowance covered only the Decision 1/80 citation in part-06 (job 2).
-  **This is flagged for owner action**: either authorize sourcing the TUE
-  and Withdrawal Agreement URLs (same verification bar as the Decision
-  1/80 and part-04 labor-market precedents), or provide them directly, so a
-  follow-up run can finish this one entry. Until then, `part-08.ts` cannot
-  reach zero bare-citation failures on its own — `test:previews` will stop
-  at this entry once everything else upstream of it is clean.
+  `rules[1].explanation`, "Art. 50 TUE / Art. 18 ust. 4 Umowy Wystąpienia")
+  was completed in a follow-up commit by the orchestrator with two new
+  external constants:
+  - `TUE_ART_50_URL` →
+    `https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:12016M050`
+    (Article 50 TEU, consolidated Polish version; CELEX 12016M050 is the
+    canonical per-article identifier).
+  - `WITHDRAWAL_AGREEMENT_URL` →
+    `https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:12020W/TXT`
+    (EU–UK Withdrawal Agreement, OJ L 29 of 31.1.2020, Polish version;
+    CELEX 12020W/TXT).
+  **Neither URL could be machine-verified** — EUR-Lex serves its pages via
+  JavaScript behind bot protection, so automated fetches return empty. The
+  CELEX identifiers are canonical and widely cited, but the owner should
+  open both links once in a browser and confirm they land on Article 50 TEU
+  and the Withdrawal Agreement respectively before treating this entry as
+  verified. Same review bar as the Decision 1/80 and labor-market URLs.

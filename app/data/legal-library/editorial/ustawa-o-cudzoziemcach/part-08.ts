@@ -4,6 +4,10 @@ import { defineEditorialPart } from "../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
 const EES_2017_2226_URL = "https://eur-lex.europa.eu/eli/reg/2017/2226/oj"
+const TUE_ART_50_URL =
+  "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:12016M050"
+const WITHDRAWAL_AGREEMENT_URL =
+  "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:12020W/TXT"
 
 export const foreignersActPart08 =
   defineEditorialPart<"ustawa-o-cudzoziemcach">({
@@ -170,7 +174,7 @@ export const foreignersActPart08 =
         claims: [
           {
             kind: "statute-text",
-            text: "У karcie pobytu розміщують дані особи, народження, meldunku, громадянства, статі, зросту, кольору очей і PESEL (якщо його надано), інформацію про вид zezwolenia, odciski, орган, дати та фотографію. Залежно від підстави додають adnotacje «naukowiec», «naukowiec – mobilność», «student», «stażysta», «wolontariusz», «Niebieska Karta UE», «dostęp do rynku pracy», «ICT», «mobile ICT», «Były posiadacz Niebieskiej Karty UE», «praca sezonowa», а також спеціальні adnotacje про ochronę międzynarodową і Art. 50 TUE / Art. 18 ust. 4 Umowy Wystąpienia.",
+            text: foreignersLaw.text`У karcie pobytu розміщують дані особи, народження, meldunku, громадянства, статі, зросту, кольору очей і PESEL (якщо його надано), інформацію про вид zezwolenia, odciski, орган, дати та фотографію. Залежно від підстави додають adnotacje «naukowiec», «naukowiec – mobilność», «student», «stażysta», «wolontariusz», «Niebieska Karta UE», «dostęp do rynku pracy», «ICT», «mobile ICT», «Były posiadacz Niebieskiej Karty UE», «praca sezonowa», а також спеціальні adnotacje про ochronę międzynarodową і ${foreignersLaw.external("Art. 50", TUE_ART_50_URL)} TUE / ${foreignersLaw.external("Art. 18", WITHDRAWAL_AGREEMENT_URL)} ust. 4 Umowy Wystąpienia.`,
             sourceLocator: "Art. 244 ust. 1 pkt 1–19",
           },
           {
@@ -189,8 +193,7 @@ export const foreignersActPart08 =
           },
           {
             locator: "ust. 1 pkt 13–19",
-            explanation:
-              "Odciski, organ wydający, дати, fotografia та adnotacje про ochronę międzynarodową або Art. 50 TUE / Art. 18 ust. 4 Umowy Wystąpienia допомагають звірити зміст картки з підставою видачі.",
+            explanation: foreignersLaw.text`Odciski, organ wydający, дати, fotografia та adnotacje про ochronę międzynarodową або ${foreignersLaw.external("Art. 50", TUE_ART_50_URL)} TUE / ${foreignersLaw.external("Art. 18", WITHDRAWAL_AGREEMENT_URL)} ust. 4 Umowy Wystąpienia допомагають звірити зміст картки з підставою видачі.`,
           },
           {
             locator: "ust. 2–4",
