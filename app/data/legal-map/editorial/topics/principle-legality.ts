@@ -1,7 +1,4 @@
-import {
-  createLegalTextAuthor,
-  type LegalTextValue,
-} from "~/data/legal-library/legal-text"
+import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
@@ -9,7 +6,7 @@ import {
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import type { OfficialSource, LegalNode } from "~/data/shared/legal-types"
 
-const kpaLaw = createLegalTextAuthor("kpa")
+import { kpaLaw, mapTopicSources } from "../authoring"
 
 const kpaArticle6 = {
   kind: "legal-provision",
@@ -24,12 +21,6 @@ const kpaArticle7 = {
   provisionId: "kpa-art-7",
   editionId: "kpa-2025-1691",
 } as const
-
-const kpaSource: OfficialSource = {
-  label: "Kodeks postępowania administracyjnego — ELI",
-  url: "https://eli.gov.pl/eli/DU/2025/1691/ogl",
-  note: "Dz.U. 2025 poz. 1691 · чинний текст KPA",
-}
 
 export type LegalMapTopicBody = {
   title: string
@@ -82,7 +73,7 @@ export const principleLegalityTopic: KnowledgeUnit<LegalMapTopicBody> =
     body: {
       title: "Законність і факти",
       polish: kpaLaw.text`${kpaLaw.articleRange("6", "7", { start: "art. 6", end: "7" })} KPA`,
-      sources: [kpaSource],
+      sources: [mapTopicSources.kpa],
       guide: {
         introduction: [
           kpaLaw.text`${kpaLaw.article("6", "Art. 6")} KPA зобов’язує орган діяти на підставі права, а ${kpaLaw.article("7", "art. 7")} KPA — вживати необхідних дій для точного з’ясування фактичного стану та вирішення справи з урахуванням interes społeczny і słuszny interes obywateli.`,

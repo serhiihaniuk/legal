@@ -17,7 +17,11 @@ const UKRAINE_SPECIAL_ACT_URL =
   "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
 const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
-import { principleLegalityMapNode } from "./editorial/topics"
+import {
+  kpaPrinciplesMapNode,
+  principleLegalityMapNode,
+  principleTrustMapNode,
+} from "./editorial/topics"
 
 const S = {
   kpa: {
@@ -1041,30 +1045,11 @@ export const legalData = {
           "Процедурний хребет: organ, strona, doręczenie, termin, dowód, decyzja та контроль.",
         nodes: [
           {
-            id: "kpa-principles",
-            title: "Загальні принципи",
-            polish: kpaLaw.text`zasady ogólne · ${kpaLaw.articleRange("6", "16", { start: "art. 6", end: "16" })} KPA`,
-            summary:
-              "Принципи — не вступна декларація, а правила оцінки всієї поведінки органу: законність, встановлення фактів, довіра, інформування, участь сторони та двоінстанційність.",
-            why: "Коли конкретна стаття не дає повної відповіді, принципи допомагають оцінити, чи organ належно пояснив вимоги, зібрав докази й дозволив стороні висловитися.",
-            checkpoints: [
-              "Чи organ встановив усі істотні факти?",
-              "Чи повідомив про права й обов’язки?",
-              "Чи сторона могла ознайомитися з матеріалом?",
-              "Чи рішення пояснює мотиви?",
-            ],
-            sources: [S.kpa],
+            ...kpaPrinciplesMapNode,
             related: ["evidence", "decision-reading", "inactivity"],
             children: [
               principleLegalityMapNode,
-              {
-                id: "principle-trust",
-                title: "Довіра й інформування",
-                polish: kpaLaw.text`${kpaLaw.articleRange("8", "9", { start: "art. 8", end: "9" })} KPA`,
-                summary:
-                  "Organ має діяти пропорційно, послідовно й належно інформувати сторону, щоб вона не зазнала шкоди через незнання права.",
-                sources: [S.kpa],
-              },
+              principleTrustMapNode,
               {
                 id: "principle-participation",
                 title: "Активна участь сторони",

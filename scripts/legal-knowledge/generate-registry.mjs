@@ -3,6 +3,7 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import process from "node:process"
+import prettier from "prettier"
 
 const repositoryRoot = process.cwd()
 const checkOnly = process.argv.includes("--check")
@@ -93,11 +94,8 @@ function renderRegistry(modules) {
         `import unit${index} from ${JSON.stringify(module.importPath)}`
     )
     .join("\n")
-  const unitExpression =
-    modules.length <= 1
-      ? `[${modules.map((_, index) => `unit${index}`).join(", ")}]`
-      : `[\n${modules.map((_, index) => `  unit${index},`).join("\n")}\n]`
-  return `// This file is generated. Do not edit it by hand.\n// Run npm run knowledge:generate after adding or removing an authored unit.\n\n${imports}\n\nexport const authoredKnowledgeUnits = ${unitExpression} as const\n`
+  const units = modules.map((_, index) => `unit${index}`).join(", ")
+  return `// This file is generated. Do not edit it by hand.\n// Run npm run knowledge:generate after adding or removing an authored unit.\n\n${imports}\n\nexport const authoredKnowledgeUnits = [${units}] as const\n`
 }
 
 const files = (
@@ -122,7 +120,12 @@ for (const module of modules) {
 }
 
 modules.sort((left, right) => left.importPath.localeCompare(right.importPath))
-const rendered = renderRegistry(modules)
+const prettierOptions = (await prettier.resolveConfig(generatedPath)) ?? {}
+const rendered = await prettier.format(renderRegistry(modules), {
+  ...prettierOptions,
+  filepath: generatedPath,
+  parser: "typescript",
+})
 if (checkOnly) {
   let existing
   try {

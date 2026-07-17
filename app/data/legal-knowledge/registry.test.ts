@@ -10,21 +10,25 @@ import {
 describe("authored knowledge registry", () => {
   it("loads the generated units without a hand-maintained content index", () => {
     expect(authoredKnowledgeUnits.map((unit) => unit.id)).toEqual([
+      "map-topic:kpa-principles",
       "map-topic:principle-legality",
+      "map-topic:principle-trust",
     ])
     expect(knowledgeUnitById.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[0]
+      authoredKnowledgeUnits[1]
     )
     expect(knowledgeUnitBySubjectKey.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[0]
+      authoredKnowledgeUnits[1]
     )
   })
 
   it("publishes the deterministic graph for the generated registry", () => {
     expect(authoredKnowledgeGraph.units.map((unit) => unit.id)).toEqual([
+      "map-topic:kpa-principles",
       "map-topic:principle-legality",
+      "map-topic:principle-trust",
     ])
-    expect(authoredKnowledgeGraph.outbound).toHaveLength(4)
+    expect(authoredKnowledgeGraph.outbound).toHaveLength(7)
     expect(authoredKnowledgeGraph.outbound).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
