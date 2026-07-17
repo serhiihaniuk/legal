@@ -1,4 +1,5 @@
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 export const foreignersActPart11 =
   defineEditorialPart<"ustawa-o-cudzoziemcach">({
@@ -6,10 +7,10 @@ export const foreignersActPart11 =
     editionId: "ustawa-o-cudzoziemcach-2025-1079",
     legalStateDate: "2026-07-14",
     verifiedAt: "2026-07-15",
-    entries: [
+    entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
       {
         provisionId: "ustawa-o-cudzoziemcach-art-369",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -38,11 +39,11 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-370",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Komendant Główny Straży Granicznej може відмовити в дозволі на повітряний tranzyt, зокрема через кримінальне переслідування або розшук, неможливість транзиту чи прийняття державою призначення, потребу змінити польський аеропорт, міркування безпеки або неможливість допомогти іншій державі; після надання дозвіл може бути відкликаний, якщо такі обставини виявляться.",
+            text: "Komendant Główny Straży Granicznej може відмовити в udzielenie zezwolenia на tranzyt drogą powietrzną, якщо cudzoziemiec є oskarżony в Rzeczypospolitej Polskiej або poszukiwany для виконання wyroku, tranzyt через інші держави чи прийняття державою повернення неможливі, виконання рішення потребує зміни аеропорту в Польщі, цього вимагають obronność чи bezpieczeństwo państwa, охорона bezpieczeństwa i porządku publicznego або zdrowia publicznego чи stosunki międzynarodowe, або неможливо надати допомогу іншій державі-члену. Після надання zezwolenie можна cofnąć, якщо виявлено одну з цих обставин.",
             sourceLocator: "Art. 370 ust. 1–2",
           },
           {
@@ -57,7 +58,7 @@ export const foreignersActPart11 =
           {
             locator: "ust. 1 pkt 1–5",
             explanation:
-              "Підстави охоплюють розшук чи обвинувачення, неможливість продовження маршруту, зміну аеропорту, оборонність і безпеку держави, publiczny porządek або zdrowie publiczne, а також неможливість допомоги.",
+              "Підстави охоплюють oskarżenie в Польщі або poszukiwanie для виконання wyroku, неможливість tranzyt через інші держави чи прийняття державою повернення, необхідність зміни польського аеропорту, obronność, bezpieczeństwo państwa, bezpieczeństwo i porządek publiczny, zdrowie publiczne, stosunki międzynarodowe або неможливість допомоги іншій державі-члену.",
           },
           {
             locator: "ust. 2",
@@ -72,7 +73,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-371",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -101,17 +102,18 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-372",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Під час повітряного tranzyt іноземні супроводжуючі funkcjonariusze іншої держави-члена можуть носити визначені środki przymusu bezpośredniego та застосовувати або використовувати визначені засоби у випадках безпосередньої незаконної загрози або серйозного ризику втечі, самоушкодження, шкоди третім особам чи майну, коли немає функціонерів Straż Graniczna або Policja або для їх підтримки.",
+            text: "Під час повітряного tranzyt funkcjonariusze іншої держави-члена, які належать до eskorty, у разі bezpośredni i bezprawny zamach на життя, здоров’я або свободу funkcjonariusza чи bezpośrednie i poważne zagrożenie втечі cudzoziemca, самоушкодження, шкоди третім особам або знищення майна, коли немає funkcjonariuszy Straż Graniczna або Policja чи для їх підтримки, можуть носити й застосовувати або використовувати лише перелічені в законі środki przymusu bezpośredniego.",
             sourceLocator: "Art. 372 pkt 1–2",
           },
           {
             kind: "practical-inference",
             text: "Повноваження прив’язані до конкретної небезпеки, відсутності або підтримки польських служб і переліку засобів; це не загальний дозвіл на примус.",
-            sourceLocator: "Art. 372",
+            sourceLocator:
+              "Art. 372 w związku z art. 12 ust. 1 ustawy o środkach przymusu bezpośredniego i broni palnej",
           },
         ],
         summary:
@@ -125,7 +127,7 @@ export const foreignersActPart11 =
           {
             locator: "Art. 12 ust. 1",
             explanation:
-              "Дозволені засоби визначені через конкретні пункти art. 12 ust. 1 ustawa o środkach przymusu bezpośredniego i broni palnej та застосовуються за правилами для funkcjonariuszy Straż Graniczna.",
+              "Носити можна засоби з art. 12 ust. 1 pkt 2, 7, pkt 12 lit. a i d та pkt 13, а застосовувати або використовувати — засоби з art. 12 ust. 1 pkt 1, 2, 7, pkt 12 lit. a i d та pkt 13 ustawa o środkach przymusu bezpośredniego i broni palnej, відповідно до правил для funkcjonariuszy Straż Graniczna.",
           },
         ],
         legalEffect:
@@ -135,7 +137,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-373",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -169,7 +171,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-374",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -203,7 +205,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-375",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -237,11 +239,11 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-376",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Komendant Główny Straży Granicznej може надати допомогу в зоні транзиту міжнародного аеропорту, якщо дозвіл іншої держави відкликано або не надано, tranzyt розпочато на підставі notyfikacja, іноземець увійшов до Польщі без дозволу, примусове виконання чи посадка не вдалися або tranzyt неможливий з іншої причини.",
+            text: "Komendant Główny Straży Granicznej, на wniosek centralnego organu іншої держави-члена Unii Europejskiej, може надати допомогу в strefa tranzytowa lotniska międzynarodowego, коли центральному organowi цієї держави cofnięto zezwolenie, йому не виражено zgody на tranzyt, але tranzyt розпочато на podstawie notyfikacji, cudzoziemiec під час tranzyt увійшов до Польщі без zezwolenia, przymusowe wykonanie рішення або wejście на pokład виявилися безуспішними чи tranzyt неможливий з іншої причини.",
             sourceLocator: "Art. 376 ust. 1 pkt 1–5",
           },
           {
@@ -256,7 +258,7 @@ export const foreignersActPart11 =
           {
             locator: "ust. 1 pkt 1–5",
             explanation:
-              "Спочатку встановлюється одна з перелічених ситуацій, зокрема cofnięcie або відсутність zezwolenie, несанкціонований в’їзд чи безрезультатне примусове виконання.",
+              "Потрібні wniosek centralnego organu іншої держави-члена та одна з п’яти ситуацій: cofnięcie zezwolenia; відсутність zgody за умови початку tranzyt на podstawie notyfikacji; в’їзд до Польщі без zezwolenia; безуспішне przymusowe wykonanie рішення або wejście на pokład; інша неможливість tranzyt.",
           },
           {
             locator: "ust. 2 pkt 1–4",
@@ -271,7 +273,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-377",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -305,7 +307,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-378",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -334,7 +336,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-379",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -363,7 +365,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-380",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -397,7 +399,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-381",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -426,7 +428,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-382",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -455,7 +457,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-383",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -484,7 +486,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-384",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -518,7 +520,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-385",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -552,11 +554,11 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-386",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Рішення про повернення, видане państwo członkowskie wydające, не підлягає виконанню в Польщі в перелічених випадках, зокрема під час провадження про ochronę międzynarodową, визначені дозволи або zgoda, чинний дозвіл pobyt, окремі сімейні та безпекові обставини, позбавлення волі, а також відсутність необхідних документів чи підтвердження відшкодування витрат.",
+            text: "Рішення про повернення, видане organem wydającego państwa członkowskiego, не підлягає wykonaniu в Польщі в перелічених законом випадках: під час postępowanie про ochronę międzynarodową; postępowanie про zgoda na pobyt tolerowany або визначені zezwolenia; перебування на спеціальній wiza Schengen чи zaświadczenie art. 170, наявності вже наданого дозволу або захисту, захищеного законом шлюбу, позбавлення свободи чи zakaz opuszczania kraju; або коли organ państwo wydające не передав документи про wykonalność чи не підтвердив готовність повернути витрати.",
             sourceLocator: "Art. 386 pkt 1–7",
           },
           {
@@ -571,7 +573,7 @@ export const foreignersActPart11 =
           {
             locator: "pkt 1–4",
             explanation:
-              "Перевіряються незавершене провадження про ochronę międzynarodową або окремі дозволи, спеціальна віза чи zaświadczenie, а також уже наданий дозвіл pobyt, статус uchodźca, ochronа uzupełniająca чи визначені zgoda.",
+              "Перевіряються postępowanie про ochronę międzynarodową; postępowanie про zgoda na pobyt tolerowany або zezwolenia з art. 176, art. 181 ust. 1, art. 187 pkt 6 або 7; спеціальна wiza Schengen для art. 60 ust. 1 pkt 23 або zaświadczenie art. 170, а також уже надані zezwolenia na pobyt, status uchodźcy, ochrona uzupełniająca, zgoda na pobyt ze względów humanitarnych чи zgoda na pobyt tolerowany.",
           },
           {
             locator: "pkt 5–6",
@@ -591,7 +593,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-387",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -620,7 +622,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-388",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -649,7 +651,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-389",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -688,7 +690,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-390",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -717,7 +719,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-391",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -751,7 +753,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-392",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -780,7 +782,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-393",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -814,11 +816,11 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-393a",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Орган Straż Graniczna передає Szef Urzędu докази або посилки з załącznik nr 2 до rozporządzenie wykonawcze Komisji UE nr 118/2014 щодо іноземця в Польщі без чинного документа для в’їзду і pobyt, який не просить ochronę międzynarodową, у межах необхідного для визначення відповідальної держави за art. 23–25 rozporządzenie 604/2013.",
+            text: "Орган Straż Graniczna передає Szef Urzędu dowody lub poszlaki з załącznik nr 2 до rozporządzenie wykonawcze Komisji UE nr 118/2014 щодо іноземця в Польщі без чинного документа для в’їзду і pobyt, який не просить ochronę międzynarodową, у межах необхідного для визначення відповідальної держави за art. 23–25 rozporządzenie 604/2013.",
             sourceLocator: "Art. 393a ust. 1",
           },
           {
@@ -833,7 +835,7 @@ export const foreignersActPart11 =
           {
             locator: "ust. 1",
             explanation:
-              "Передаються лише такі докази або poszlaki, які потрібні для перевірки відповідальності іншої держави за розпорядженням 604/2013.",
+              "Передаються лише dowody lub poszlaki, необхідні для встановлення, чи інша państwo członkowskie є właściwe do wtórnego przejęcia cudzoziemca за art. 23–25 rozporządzenie 604/2013.",
           },
           {
             locator: "ust. 2–3",
@@ -848,11 +850,11 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-393b",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Якщо відповідальна інша держава-член погодилася прийняти іноземця за rozporządzenie 604/2013, Szef Urzędu видає decyzja o przekazaniu; він також є органом для wydanie przepustka за art. 29 ust. 1 цього розпорядження.",
+            text: "Якщо відповідальна інша держава-член погодилася прийняти іноземця за rozporządzenie 604/2013, Szef Urzędu видає decyzja o przekazaniu; він також є органом для wydanie przepustka за art. 29 ust. 1 zdanie trzecie цього розпорядження.",
             sourceLocator: "Art. 393b ust. 1–2",
           },
           {
@@ -887,7 +889,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-393c",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -921,7 +923,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-393d",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -950,7 +952,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-393e",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -979,11 +981,11 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-394",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Іноземця можна zatrzymać не більш як на 48 годин, коли є обставини для рішення про powrót, він ухиляється від обов’язків такого рішення або не виконує обов’язків із postanowienie про заходи art. 398 ust. 2; також Straż Graniczna може затримати його для примусового виконання чи передачі за названими міжнародними режимами.",
+            text: "Іноземця можна zatrzymać не більш як на 48 годин, коли є обставини для рішення про powrót, він ухиляється від обов’язків такого рішення або не виконує обов’язків із postanowienie про заходи art. 398 ust. 2; Straż Graniczna також може zatrzymać його для przymusowego wykonania рішення, przekazania за rozporządzenie 604/2013, przekazania до іншої держави-члена ЄС або держави EFTA–ЄЕП чи Швейцарії за міжнародною угодою, або przekazania до państwo trzecie за такою угодою.",
             sourceLocator: "Art. 394 ust. 1–1a",
           },
           {
@@ -998,17 +1000,17 @@ export const foreignersActPart11 =
           {
             locator: "ust. 1–1a",
             explanation:
-              "Підставою може бути підготовка або виконання powrót, невиконання обов’язків, передача за rozporządzenie 604/2013 чи міжнародною угодою. Максимальний строк zatrzymanie у цій статті — 48 годин.",
+              "Підстави охоплюють обставини для decyzja o zobowiązaniu do powrotu, ухилення від її обов’язків, невиконання obowiazki з art. 398 ust. 2, а також окремі цілі przekazanie або przymusowe wykonanie. За кожною з названих підстав максимальний строк zatrzymanie — 48 годин.",
           },
           {
             locator: "ust. 2–4",
             explanation:
-              "Зазвичай затримують Straż Graniczna або Policja, але для цілей ust. 1a — Straż Graniczna; далі органи передають особу, подають wniosek або готують інші передбачені дії.",
+              "Zatrzymanie здійснює Straż Graniczna або Policja, а для цілей ust. 1a — лише Straż Graniczna. Policja після цього передає особу до органу Straż Graniczna і подає wniosek про decyzja o zobowiązaniu do powrotu; Straż Graniczna обирає передбачену законом подальшу дію.",
           },
           {
             locator: "ust. 5",
             explanation:
-              "Особа підлягає звільненню, якщо не передана суду і не подано wniosek у 48 годин, якщо протягом наступних 24 годин не вручено судове postanowienie, за розпорядженням суду або після припинення причини.",
+              "Особа підлягає звільненню, якщо в межах 48 годин від zatrzymanie її не передано до dyspozycja sądu і одночасно не подано wniosek про strzeżony ośrodek або areszt; якщо протягом 24 годин від передачі суду не вручено відповідне postanowienie; за вказівкою sąd або після припинення причини zatrzymanie.",
           },
         ],
         legalEffect:
@@ -1018,7 +1020,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-395",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1052,7 +1054,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-396",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1086,7 +1088,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-397",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1130,7 +1132,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-398",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1140,7 +1142,7 @@ export const foreignersActPart11 =
           {
             kind: "statute-text",
             text: "Такі заходи полягають у періодичній явці до Straż Graniczna, грошовому zabezpieczenie не нижче подвійної мінімальної зарплати, передачі документа подорожі в depozyt та проживанні у визначеному місці; postanowienie можна оскаржити до sąd rejonowy протягом 7 днів і воно негайно виконується.",
-            sourceLocator: "Art. 398 ust. 2, 5–8",
+            sourceLocator: "Art. 398 ust. 2–8",
           },
         ],
         summary:
@@ -1149,7 +1151,7 @@ export const foreignersActPart11 =
           {
             locator: "ust. 1",
             explanation:
-              "Потрібна одна з конкретних обставин: ризик рішення без строку dobrowolny wyjazd, необхідність забезпечити його виконання, прострочений виїзд або ризик і неможливість негайної передачі.",
+              "Потрібна одна з конкретних обставин: prawdopodobieństwo decyzja без строку dobrowolny wyjazd через art. 315 ust. 2 pkt 1; уже видана така decyzja і потреба zabezpieczenie її виконання; пропущений строк виїзду та неможливість негайного wykonanie; потреба zabezpieczenie передачі за art. 28 rozporządzenie 604/2013 із значною ймовірністю ucieczka та неможливістю негайної передачі; або потреба zabezpieczenie передачі до іншої держави за міжнародною угодою, коли негайна передача неможлива.",
           },
           {
             locator: "ust. 2–4",
@@ -1159,21 +1161,21 @@ export const foreignersActPart11 =
           {
             locator: "ust. 5–8",
             explanation:
-              "Визначений орган Straż Graniczna видає postanowienie; zażalenie подається до właściwy sąd rejonowy протягом 7 днів, а postanowienie має natychmiastowe wykonanie.",
+              "Postanowienie видає organ Straż Graniczna, який встановив обставини з ust. 1 pkt 1 або 3, видав decyzja з pkt 2 або затримав cudzoziemca для цілей art. 394 ust. 1a pkt 2 або 3. Zażalenie подається до sąd rejonowy за місцезнаходженням цього органу протягом 7 днів від doręczenie; суд розглядає його протягом 7 днів, а postanowienie виконується негайно.",
           },
         ],
         legalEffect:
-          "Норма дає менш ізоляційний спосіб zabezpieczenie, але він створює обов’язкові умови та фінансовий ризик. Негайне виконання не означає, що апеляційний строк зникає.",
+          "Норма дає менш ізоляційний спосіб zabezpieczenie, але він створює обов’язкові умови та фінансовий ризик. Негайне виконання не означає, що строк для zażalenie зникає.",
         foreignersCase:
           "Прочитайте postanowienie рядок за рядком: підстава, орган, графік явок, сума zabezpieczenie, depozyt, адреса і дата doręczenie. За потреби рахуйте 7-денний строк для zażalenie.",
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-398a",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Іноземця umieszcza się в strzeżony ośrodek, коли є ризик рішення про powrót без строку dobrowolny wyjazd за art. 315 ust. 2 pkt 2, необхідність забезпечити таке рішення, необхідність забезпечити передачу до państwo trzecie або коли наявна справа art. 398 ust. 1 і альтернативні заходи неможливі чи не виконуються.",
+            text: "Іноземця umieszcza się в strzeżony ośrodek, коли є ризик рішення про powrót без строку dobrowolny wyjazd за art. 315 ust. 2 pkt 1, необхідність забезпечити таке рішення, необхідність забезпечити передачу до państwo trzecie або коли наявна справа art. 398 ust. 1 і альтернативні заходи неможливі чи не виконуються.",
             sourceLocator: "Art. 398a pkt 1–4",
           },
           {
@@ -1203,7 +1205,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-399",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1237,7 +1239,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-400",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1271,7 +1273,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-400a",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1305,7 +1307,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-400b",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1314,7 +1316,7 @@ export const foreignersActPart11 =
           },
           {
             kind: "statute-text",
-            text: "Фінансування надається до 6 місяців від doręczenie decyzja про świadczenia; у особливо обґрунтованих випадках через стан здоров’я строк продовжується до виконання powrót або передачі. Надання świadczenia не зупиняє виконання decyzja o zobowiązaniu do powrotu.",
+            text: "Фінансування надається до 6 місяців від doręczenie decyzja про świadczenia; у особливо обґрунтованих випадках через стан здоров’я строк продовжується до виконання powrót або przekazania до іншої держави-члена ЄС, держави EFTA–ЄЕП чи Швейцарії. Надання świadczenia не зупиняє виконання decyzja o zobowiązaniu do powrotu.",
             sourceLocator: "Art. 400b ust. 2–5",
           },
         ],
@@ -1332,9 +1334,9 @@ export const foreignersActPart11 =
               "Медична й психологічна допомога охоплює лікарів, лікувальний заклад, необхідні засоби, психолога та psychoterapia.",
           },
           {
-            locator: "ust. 2–4",
+            locator: "ust. 2–5",
             explanation:
-              "Базовий період — до 6 місяців від doręczenie decyzja; за особливих медичних обставин його можна продовжити. świadczenia не є автоматичним wstrzymanie повороту.",
+              "Базовий період фінансування — до 6 місяців від doręczenie decyzja про przyznanie świadczeń; за особливо обґрунтованих медичних обставин його продовжують до wykonanie powrotu або передачі до названої держави-члена. Przyznanie świadczeń не є wstrzymanie виконання powrót, а ust. 5 визначає бюджетне джерело фінансування.",
           },
         ],
         legalEffect:
@@ -1344,7 +1346,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-400c",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1378,7 +1380,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-400d",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1412,7 +1414,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-401",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1421,8 +1423,8 @@ export const foreignersActPart11 =
           },
           {
             kind: "statute-text",
-            text: "Wniosek має містити ідентифікаційні дані, громадянство, місця проживання, правову підставу, строк заходу та uzasadnienie; суд оцінює також dobro неповнолітнього і можливість альтернатив art. 398 ust. 2. На postanowienie про альтернативи є zażalenie до sąd okręgowy протягом 7 днів.",
-            sourceLocator: "Art. 401 ust. 3–6",
+            text: "Wniosek має містити ідентифікаційні дані, громадянство, місця проживання, правову підставу, строк заходу та uzasadnienie; суд враховує dobro małoletni, який перебуває під опікою cudzoziemca, і при розгляді wniosek про strzeżony ośrodek оцінює можливість альтернатив art. 398 ust. 2. На postanowienie про альтернативи є zażalenie до sąd okręgowy протягом 7 днів.",
+            sourceLocator: "Art. 401 ust. 3–7",
           },
         ],
         summary:
@@ -1441,7 +1443,7 @@ export const foreignersActPart11 =
           {
             locator: "ust. 4–6",
             explanation:
-              "Суд враховує dobro неповнолітнього, оцінює art. 398 ust. 2 і може застосувати ці заходи; заżalenie подається до sąd okręgowy протягом 7 днів.",
+              "За ust. 4 суд враховує dobro małoletni, який перебуває під опікою cudzoziemca; за ust. 5 оцінює можливість art. 398 ust. 2 саме при rozpatrywanie wniosku про strzeżony ośrodek. За ust. 6 суд може застосувати ці środki, а zażalenie подається до sąd okręgowy протягом 7 днів від doręczenie.",
           },
         ],
         legalEffect:
@@ -1451,7 +1453,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-402",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1485,7 +1487,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-403",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1534,7 +1536,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-404",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1568,7 +1570,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-405",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1602,17 +1604,17 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-406",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Орган Straż Graniczna, якому підпорядкований strzeżony ośrodek або areszt, невідкладно з urzędu або на wniosek іноземця видає postanowienie про zwolnienie, коли припинилася причина заходу, є обставини art. 400, інші юридичні чи фактичні перешкоди, визначене провадження або інша підстава з ust. 1.",
+            text: "Орган Straż Graniczna, якому підпорядкований strzeżony ośrodek або areszt, невідкладно з urzędu або на wniosek іноземця видає postanowienie про zwolnienie, якщо припинилися причини заходу, наявні обставини art. 400, інші правові або фактичні перешкоди, cudzoziemiec отримав zaświadczenie art. 170 чи щодо нього триває провадження про zezwolenie art. 176, застосовано tymczasowe aresztowanie або інший захід, що позбавляє свободи, чи виконання powrót має znikome prawdopodobieństwo.",
             sourceLocator: "Art. 406 ust. 1–1b",
           },
           {
             kind: "statute-text",
             text: "На odmowa uwzględnienia wniosku про zwolnienie можна подати zażalenie протягом 7 днів, але лише якщо wniosek подано не раніше ніж через місяць від попереднього postanowienie; у визначених випадках особу звільняють також після спливу строку, виконання powrót або передачі чи вручення рішень про захист.",
-            sourceLocator: "Art. 406 ust. 2–5",
+            sourceLocator: "Art. 406 ust. 2–6",
           },
         ],
         summary:
@@ -1621,17 +1623,17 @@ export const foreignersActPart11 =
           {
             locator: "ust. 1 pkt 1–6",
             explanation:
-              "Звільнення можливе, зокрема, після припинення причини, за медичними або іншими перешкодами, за визначеним zaświadczenie чи провадженням, позбавленням свободи в іншій справі або малою ймовірністю виконання powrót.",
+              "Звільнення за ust. 1 охоплює припинення причин, обставини art. 400, інші правові або фактичні перешкоди, zaświadczenie art. 170 чи провадження про zezwolenie art. 176, позбавлення свободи в іншій справі та znikome prawdopodobieństwo виконання powrót.",
           },
           {
             locator: "ust. 1a–1c",
             explanation:
-              "Перед звільненням у випадках art. 400 або іншої перешкоди орган оцінює заходи art. 398 ust. 2 і може видати postanowienie про них; на нього є 7-денне zażalenie до sąd rejonowy.",
+              "Перед z urzędu zwolnienie у випадках ust. 1 pkt 2, 3 і 6, а також під час розгляду будь-якого wniosek про zwolnienie, орган оцінює необхідність art. 398 ust. 2. Він видає відповідне postanowienie; zażalenie протягом 7 днів подається до sąd rejonowy за місцезнаходженням органу.",
           },
           {
             locator: "ust. 2–4",
             explanation:
-              "На відмову у звільненні подається zażalenie протягом 7 днів через відповідний орган; таке оскарження доступне, якщо після попереднього рішення минув щонайменше місяць, а суд розглядає його протягом 7 днів.",
+              "На odmowa uwzględnienia wniosku подається zażalenie через орган Straż Graniczna до właściwy sąd rejonowy протягом 7 днів. Воно належить лише після спливу щонайменше місяця від postanowienie про umieszczenie, areszt, przedłużenie pobytu або попереднє zwolnienie; суд розглядає його протягом 7 днів.",
           },
           {
             locator: "ust. 5–6",
@@ -1646,7 +1648,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-407",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1680,7 +1682,7 @@ export const foreignersActPart11 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-408",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1707,5 +1709,5 @@ export const foreignersActPart11 =
         foreignersCase:
           "Не використовуйте art. 408 як єдину підставу для вимоги особистої виплати. Для конкретної потреби перевірте art. 400a–400d, art. 406 або art. 407.",
       },
-    ],
+    ]),
   })

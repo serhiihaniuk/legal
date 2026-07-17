@@ -36,7 +36,7 @@ attribution goes on this list for owner review.
   cited it before (no existing URL constant to copy). The Dz.U. position was
   independently verified via web search (ISAP/Dziennik Ustaw), since the
   migration prompt's "copy the sibling files' choice" instruction had no
-  precedent to copy here. **This is the one entry on this list the owner
-  should double-check** — the act identity and position number are
-  well-sourced, but this is the only citation in the file where a brand-new
-  external URL constant had to be introduced rather than reused.
+  precedent to copy here. The ELI page was opened in the browser on 2026-07-17
+  and confirmed the exact act title, Dz.U. 2025 poz. 620, status `obowiązujący`,
+  and entry into force on 2025-06-01. The external URL is verified for this
+  migration.

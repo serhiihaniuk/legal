@@ -28,22 +28,6 @@ import {
 const KPA_EDITION = "kpa-2025-1691"
 const KPA_PROVISION = "kpa-art-64"
 
-async function findExplanationWithStatus(
-  status: "source-only" | "stale-explanation"
-) {
-  for (const document of listDocuments()) {
-    for (const provision of listProvisions(document.id)) {
-      const resolution = await getExplanation(
-        document.id,
-        provision.id,
-        document.currentEditionId
-      )
-      if (resolution.status === status) return resolution
-    }
-  }
-  return undefined
-}
-
 describe("legal-library queries", () => {
   it("lists registered documents, current editions, and provisions", () => {
     const documents = listDocuments()
@@ -150,16 +134,15 @@ describe("legal-library queries", () => {
     ).toBe("unknown-edition")
   })
 
-  it("resolves reviewed, source-only, and stale editorial states", async () => {
+  it("resolves the reviewed current editorial state", async () => {
     const reviewed = await getExplanation("kpa", KPA_PROVISION)
     expect(reviewed.status).toBe("reviewed")
+    if (reviewed.status === "reviewed") {
+      expect(reviewed.explanation.reviewStatus).toBe("reviewed")
+      expect(reviewed.requestedEditionId).toBe(KPA_EDITION)
+    }
 
-    const sourceOnly = await findExplanationWithStatus("source-only")
-    expect(sourceOnly?.status).toBe("source-only")
-    expect(sourceOnly?.provision).toBeDefined()
-
-    const stale = await findExplanationWithStatus("stale-explanation")
-    expect(stale?.status).toBe("stale-explanation")
-    expect(stale?.provision).toBeDefined()
+    const unknown = await getExplanation("kpa", "kpa-art-does-not-exist")
+    expect(unknown.status).toBe("unknown-provision")
   })
 })

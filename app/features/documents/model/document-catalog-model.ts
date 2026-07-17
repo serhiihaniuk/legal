@@ -3,7 +3,7 @@ import {
   listEvidenceDocumentCategories,
   type EvidenceDocumentCategory,
 } from "~/data/document-library"
-import type { DocumentCatalogEntry } from "~/data/document-index"
+import type { DocumentCatalogEntry } from "~/data/documents/catalog"
 
 export const documentCatalogToc = [
   { href: "#documents-overview", label: "Що є в каталозі" },

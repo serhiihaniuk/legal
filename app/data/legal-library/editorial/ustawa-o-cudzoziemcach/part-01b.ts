@@ -1,4 +1,8 @@
-import { createLegalTextAuthor, type LegalTextValue } from "../../legal-text"
+import {
+  authorLegalTextCitationsTree,
+  createLegalTextAuthor,
+  type LegalTextValue,
+} from "../../legal-text"
 import type { LegalProvisionId } from "../../contracts"
 
 const kpaLaw = createLegalTextAuthor("kpa")
@@ -13,30 +17,32 @@ import { defineEditorialPart } from "../define-editorial-part"
 
 type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
 
-type DraftClaim = {
+type ReviewedClaim = {
   kind: "statute-text" | "practical-inference"
   text: LegalTextValue
   sourceLocator: string
 }
 
-type DraftRule = {
+type ReviewedRule = {
   locator: string
   explanation: LegalTextValue
 }
 
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
+type ReviewedArticleMetadata = {
+  provisionId: ForeignersActProvisionId
+  reviewStatus: "reviewed"
+}
 
-const draftArticle = (
-  article: string,
-  claims: readonly DraftClaim[],
+const reviewedArticle = (
+  _article: string,
+  claims: readonly ReviewedClaim[],
   summary: LegalTextValue,
-  rules: readonly DraftRule[],
+  rules: readonly ReviewedRule[],
   legalEffect: LegalTextValue,
-  foreignersCase: LegalTextValue
+  foreignersCase: LegalTextValue,
+  metadata: ReviewedArticleMetadata
 ) => ({
-  provisionId: provisionId(article),
-  reviewStatus: "reviewed" as const,
+  ...metadata,
   claims,
   summary,
   rules,
@@ -50,8 +56,8 @@ export const foreignersActPart01b =
     editionId: "ustawa-o-cudzoziemcach-2025-1079",
     legalStateDate: "2026-07-14",
     verifiedAt: "2026-07-15",
-    entries: [
-      draftArticle(
+    entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
+      reviewedArticle(
         "26",
         [
           {
@@ -84,9 +90,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("26", "Art. 26")} сама не встановлює конкретної суми або вичерпного переліку документів: їх треба шукати в чинному розporządzenie, застосовному до дати та обставин справи.`,
-        foreignersLaw.text`Для перевірки в’їзду знайдіть актуальне rozporządzenie за ${foreignersLaw.article("26", "art. 26")}, визначте cel і строк pobytu та зіставте з ним докази коштів і можливості їх законного отримання.`
+        foreignersLaw.text`Для перевірки в’їзду знайдіть актуальне rozporządzenie за ${foreignersLaw.article("26", "art. 26")}, визначте cel і строк pobytu та зіставте з ним докази коштів і можливості їх законного отримання.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-26",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "27",
         [
           {
@@ -104,9 +114,13 @@ export const foreignersActPart01b =
           },
         ],
         "Стаття не створює загального звільнення для будь-якого неповнолітнього чи туриста; наслідок залежить від умов і документів, передбачених названим рішенням Ради.",
-        "У справі підтвердьте, що особа є учнем школи з państwa trzeciego, входить до шкільної екскурсії з іншої держави-члена UE і має документи для цього спеціального режиму."
+        "У справі підтвердьте, що особа є учнем школи з państwa trzeciego, входить до шкільної екскурсії з іншої держави-члена UE і має документи для цього спеціального режиму.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-27",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "28",
         [
           {
@@ -138,9 +152,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`За наявності статутної підстави орган може відмовити у в’їзді з урахуванням винятків ${foreignersLaw.article("28", "art. 28")}; сама відсутність одного документа не пояснює результат, якщо застосовне спеціальне правило.`,
-        "Складіть таблицю: dokument podróży, wiza або інша підстава, дні 90/180, cel pobytu, кошти, записи в wykaz/SIS і можливі винятки. Окремо відрізняйте odmowa wjazdu від подальшого рішення про pobyt."
+        "Складіть таблицю: dokument podróży, wiza або інша підстава, дні 90/180, cel pobytu, кошти, записи в wykaz/SIS і можливі винятки. Окремо відрізняйте odmowa wjazdu від подальшого рішення про pobyt.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-28",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "29",
         [
           {
@@ -158,9 +176,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`З поточної редакції ${foreignersLaw.article("29", "Art. 29")} не випливає самостійне чинне право, обов’язок, компетенція або підстава відмови.`,
-        foreignersLaw.text`Не використовуйте ${foreignersLaw.article("29", "Art. 29")} як актуальну правову підставу; знайдіть чинну норму для конкретного питання в’їзду або pobyt.`
+        foreignersLaw.text`Не використовуйте ${foreignersLaw.article("29", "Art. 29")} як актуальну правову підставу; знайдіть чинну норму для конкретного питання в’їзду або pobyt.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-29",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "30",
         [
           {
@@ -177,9 +199,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("30", "Art. 30")} не встановлює самостійної підстави для в’їзду чи відмови, а розмежовує застосування названих норм у сфері Schengen.`,
-        "У справі зафіксуйте вид кордону й застосовний режим Schengen, після чого не посилайтеся на виключені цією статтею положення як на єдину основу оцінки."
+        "У справі зафіксуйте вид кордону й застосовний режим Schengen, після чого не посилайтеся на виключені цією статтею положення як на єдину основу оцінки.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-30",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "31",
         [
           {
@@ -202,9 +228,13 @@ export const foreignersActPart01b =
           },
         ],
         "Норма не скасовує саму odmowa wjazdu і не є загальним дозволом на pobyt; вона регулює подальше передання та медичну допомогу у визначених обставинах.",
-        "Зберіть рішення про odmowa wjazdu, медичні факти й документи про ризик для життя або здоров’я. Не підміняйте спеціальне правило загальним твердженням про право залишитися."
+        "Зберіть рішення про odmowa wjazdu, медичні факти й документи про ризик для життя або здоров’я. Не підміняйте спеціальне правило загальним твердженням про право залишитися.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-31",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "32",
         [
           {
@@ -236,9 +266,13 @@ export const foreignersActPart01b =
           },
         ],
         "Це обмежений дозвіл на конкретний строк і випадок, а не звичайне zezwolenie na pobyt; з тексту не випливає автоматичне продовження після 15 днів.",
-        "Перевірте підставу за kodeks graniczny Schengen, згоду компетентного органу, максимальний строк і можливий SIS-запис. Не описуйте цей дозвіл як позитивне рішення у звичайній адміністративній процедурі."
+        "Перевірте підставу за kodeks graniczny Schengen, згоду компетентного органу, максимальний строк і можливий SIS-запис. Не описуйте цей дозвіл як позитивне рішення у звичайній адміністративній процедурі.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-32",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "32a",
         [
           {
@@ -255,9 +289,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("32a", "Art. 32a")} встановлює інформаційну дію органів і не є самостійним дозволом на в’їзд, підставою pobyt або рішенням про відмову.`,
-        foreignersLaw.text`Якщо в матеріалах є посилання на ${foreignersLaw.article("32a", "Art. 32a")}, перевірте напрямок перетину, вид SIS-запису та факт міжорганізаційного повідомлення; не ототожнюйте його з результатом справи про pobyt.`
+        foreignersLaw.text`Якщо в матеріалах є посилання на ${foreignersLaw.article("32a", "Art. 32a")}, перевірте напрямок перетину, вид SIS-запису та факт міжорганізаційного повідомлення; не ототожнюйте його з результатом справи про pobyt.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-32a",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "33",
         [
           {
@@ -285,9 +323,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("33", "Art. 33")} визначає процесуальну рамку відмови на кордоні, але не називає самі матеріальні підстави: їх потрібно встановлювати за ${foreignersLaw.article("28", "Art. 28")} або іншою застосовною нормою.`,
-        foreignersLaw.text`Збережіть рішення, дату вручення, відмітку в документі та матеріали контролю. Для оскарження окремо перевірте підставу ${foreignersLaw.article("28", "Art. 28")} і строк та спосіб odwołanie.`
+        foreignersLaw.text`Збережіть рішення, дату вручення, відмітку в документі та матеріали контролю. Для оскарження окремо перевірте підставу ${foreignersLaw.article("28", "Art. 28")} і строк та спосіб odwołanie.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-33",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "34",
         [
           {
@@ -310,9 +352,13 @@ export const foreignersActPart01b =
           },
         ],
         "Норма визначає процесуальний обсяг прикордонної перевірки, але сама не доводить, що умови в’їзду виконані або порушені у конкретній справі.",
-        "Порівняйте висновок органу з документами та зафіксованими перевірками. Якщо рішення спирається лише на документи, перевірте, чи справді відсутність умови була безсумнівною."
+        "Порівняйте висновок органу з документами та зафіксованими перевірками. Якщо рішення спирається лише на документи, перевірте, чи справді відсутність умови була безсумнівною.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-34",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "35",
         [
           {
@@ -340,9 +386,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("35", "Art. 35")} не є процедурою надання дозволу на pobyt і не скасовує необхідності встановити факти затримання та перетину, передбачені статтею.`,
-        "У справі встановіть час і місце затримання, характер перетину та чи було негайне doprowadzenie. Окремо перевірте повідомлення про відбитки й дані реєстру."
+        "У справі встановіть час і місце затримання, характер перетину та чи було негайне doprowadzenie. Окремо перевірте повідомлення про відбитки й дані реєстру.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-35",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "36",
         [
           {
@@ -370,9 +420,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("36", "Art. 36")} сама не називає конкретний діагноз і не є автоматичною відмовою; для справи потрібні чинне rozporządzenie та факти, які підпадають під його критерії.`,
-        "Перевірте медичні документи, чинний wykaz chorób і критерії підозри на дату контролю. Не робіть висновок про odmowa wjazdu лише з назви хвороби без застосовного підзаконного правила."
+        "Перевірте медичні документи, чинний wykaz chorób і критерії підозри на дату контролю. Не робіть висновок про odmowa wjazdu лише з назви хвороби без застосовного підзаконного правила.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-36",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "37",
         [
           {
@@ -389,9 +443,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`Норма створює правову рамку для такого дозволу, але сама по собі не доводить виконання умов ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} і не гарантує його видачу.`,
-        foreignersLaw.text`У справі випишіть кожну умову ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} rozporządzenia nr 1931/2006 та підтвердьте її окремим документом; не обмежуйтеся фактом проживання біля кордону.`
+        foreignersLaw.text`У справі випишіть кожну умову ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} rozporządzenia nr 1931/2006 та підтвердьте її окремим документом; не обмежуйтеся фактом проживання біля кордону.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-37",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "38",
         [
           {
@@ -408,9 +466,13 @@ export const foreignersActPart01b =
           },
         ],
         "Наслідок стосується саме udzielenie zezwolenia в режимі малого прикордонного руху; він не є загальною відмовою у в’їзді в усіх режимах.",
-        foreignersLaw.text`У рішенні або проєкті аналізу назвіть невиконану умову ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} і доказ, який це підтверджує. Окремо відрізняйте відмову в дозволі від odmowa wjazdu за ${foreignersLaw.article("41", "Art. 41")}.`
+        foreignersLaw.text`У рішенні або проєкті аналізу назвіть невиконану умову ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} і доказ, який це підтверджує. Окремо відрізняйте відмову в дозволі від odmowa wjazdu за ${foreignersLaw.article("41", "Art. 41")}.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-38",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "39",
         [
           {
@@ -432,9 +494,13 @@ export const foreignersActPart01b =
           },
         ],
         "Cofnięcie має одну з двох прямо названих підстав; чинність дозволу не слід оцінювати лише за датою на картці.",
-        foreignersLaw.text`Порівняйте умови ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} на дату видачі та на дату перевірки, встановивши, чи йдеться про первісне порушення або подальшу втрату умови.`
+        foreignersLaw.text`Порівняйте умови ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} на дату видачі та на дату перевірки, встановивши, чи йдеться про первісне порушення або подальшу втрату умови.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-39",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "40",
         [
           {
@@ -461,9 +527,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`Наслідок залежить від конкретної підстави unieważnienie та доведених дат, місця і мети; ${foreignersLaw.article("40", "Art. 40")} не є автоматичним дозволом на інший вид pobyt.`,
-        "Зіставте штампи або інші дані перетину, дозволений строк, межі strefa przygraniczna та фактичну мету поїздок із даними zezwolenie."
+        "Зіставте штампи або інші дані перетину, дозволений строк, межі strefa przygraniczna та фактичну мету поїздок із даними zezwolenie.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-40",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "41",
         [
           {
@@ -490,9 +560,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("41", "Art. 41")} стосується лише в’їзду в режимі mały ruch graniczny і не замінює підстави відмови для іншого режиму перетину кордону.`,
-        "У справі спочатку підтвердьте, що в’їзд відбувається в режимі малого прикордонного руху, потім співвіднесіть факт із конкретним pkt і збережіть decyzja та документи перевірки."
+        "У справі спочатку підтвердьте, що в’їзд відбувається в режимі малого прикордонного руху, потім співвіднесіть факт із конкретним pkt і збережіть decyzja та документи перевірки.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-41",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "42",
         [
           {
@@ -515,9 +589,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`Стаття встановлює процесуальний шлях перегляду, але не скасовує матеріальні умови ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} rozporządzenia nr 1931/2006 або підстави ${foreignersLaw.article("39", "Art. 39")}.`,
-        "Перевірте stałe zamieszkanie, орган, вид рішення та дату його doręczenie. Для строку в 14 днів збережіть доказ подання wniosek o ponowne rozpatrzenie."
+        "Перевірте stałe zamieszkanie, орган, вид рішення та дату його doręczenie. Для строку в 14 днів збережіть доказ подання wniosek o ponowne rozpatrzenie.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-42",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "43",
         [
           {
@@ -540,9 +618,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("43", "Art. 43")} регулює компетенцію та оскарження рішення, але не доводить саму матеріальну підставу unieważnienie без фактів контролю.`,
-        "З’ясуйте, який саме komendant видав decyzja, що зафіксував контроль legalność pobytu, та до якого wojewoda і в який строк подається odwołanie."
+        "З’ясуйте, який саме komendant видав decyzja, що зафіксував контроль legalność pobytu, та до якого wojewoda і в який строк подається odwołanie.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-43",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "44",
         [
           {
@@ -570,9 +652,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`Подання formularz і документів дозволяє розпочати перевірку, але не гарантує zezwolenie; окремо потрібно виконати умови ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} rozporządzenia nr 1931/2006.`,
-        "Підготуйте копію formularz, чинний документ подорожі, фото, докази проживання в зоні та причини частих поїздок. Збережіть підтвердження здачі відбитків."
+        "Підготуйте копію formularz, чинний документ подорожі, фото, докази проживання в зоні та причини частих поїздок. Збережіть підтвердження здачі відбитків.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-44",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "45",
         [
           {
@@ -594,9 +680,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("45", "Art. 45")} описує зміст і захист документа, але сама не надає дозволу та не доводить право на перетин кордону поза його умовами.`,
-        "Порівняйте документ із даними заяви та перевірте наявність обов’язкових реквізитів. Не робіть висновок про чинність лише за серією та номером без перевірки строку й умов."
+        "Порівняйте документ із даними заяви та перевірте наявність обов’язкових реквізитів. Не робіть висновок про чинність лише за серією та номером без перевірки строку й умов.",
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-45",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "194",
         [
           {
@@ -618,9 +708,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`Конкретні суми та допустимі документи випливають із чинного rozporządzenie, тому ${foreignersLaw.article("194", "Art. 194")} сама не підтверджує виконання фінансової умови.`,
-        foreignersLaw.text`Спочатку встановіть, чи справа підпадає під ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 6–7 або ${foreignersLaw.article("187", "art. 187")} pkt 1 lit. a, потім перевірте чинний акт і докази коштів для заявника та утримуваних членів сім’ї.`
+        foreignersLaw.text`Спочатку встановіть, чи справа підпадає під ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 6–7 або ${foreignersLaw.article("187", "art. 187")} pkt 1 lit. a, потім перевірте чинний акт і докази коштів для заявника та утримуваних членів сім’ї.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-194",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "195",
         [
           {
@@ -653,9 +747,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`${foreignersLaw.article("195", "Art. 195")} визначає підстави для подання та матеріальний тест, але конкретний pkt вимагає власних доказів і перевірки відмовних обставин; скасований pkt 7 не є чинною підставою.`,
-        foreignersLaw.text`Визначте точний pkt ${foreignersLaw.article("195", "Art. 195")}, складіть хронологію pobyt і перерв, а для сімейних, польського походження, Karta Polaka чи доходу підготуйте докази саме відповідної умови.`
+        foreignersLaw.text`Визначте точний pkt ${foreignersLaw.article("195", "Art. 195")}, складіть хронологію pobyt і перерв, а для сімейних, польського походження, Karta Polaka чи доходу підготуйте докази саме відповідної умови.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-195",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "196",
         [
           {
@@ -687,9 +785,13 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`Odmowa wszczęcia за ${foreignersLaw.article("196", "Art. 196")} означає процесуальну перешкоду для розгляду заяви, а не висновок, що конкретна підстава ${foreignersLaw.article("195", "Art. 195")} матеріально не виконана; винятки та дата подання мають значення.`,
-        foreignersLaw.text`Зафіксуйте статус cudzoziemiec саме в день подання, усі рішення про повернення або ізоляцію та доказ здачі відбитків. Потім перевірте, чи не застосовується виняток ${foreignersLaw.article("196", "Art. 196")} ust. 2–4.`
+        foreignersLaw.text`Зафіксуйте статус cudzoziemiec саме в день подання, усі рішення про повернення або ізоляцію та доказ здачі відбитків. Потім перевірте, чи не застосовується виняток ${foreignersLaw.article("196", "Art. 196")} ust. 2–4.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-196",
+          reviewStatus: "reviewed",
+        }
       ),
-      draftArticle(
+      reviewedArticle(
         "197",
         [
           {
@@ -720,7 +822,11 @@ export const foreignersActPart01b =
           },
         ],
         foreignersLaw.text`Наявність підстави ${foreignersLaw.article("197", "Art. 197")} може вести до відмови, але її застосування залежить від точного pkt ${foreignersLaw.article("195", "Art. 195")}, винятків ust. 2–4 та доказів у справі; це не тотожне автоматичній відмові за будь-яку невідповідність документа.`,
-        foreignersLaw.text`Спочатку визначте підставу ${foreignersLaw.article("195", "Art. 195")}, потім перевірте кожну релевантну відмовну обставину й докази її наявності. Для сумнівів щодо даних або документів врахуйте спеціальне правило ${foreignersLaw.article("197", "Art. 197")} ust. 4.`
+        foreignersLaw.text`Спочатку визначте підставу ${foreignersLaw.article("195", "Art. 195")}, потім перевірте кожну релевантну відмовну обставину й докази її наявності. Для сумнівів щодо даних або документів врахуйте спеціальне правило ${foreignersLaw.article("197", "Art. 197")} ust. 4.`,
+        {
+          provisionId: "ustawa-o-cudzoziemcach-art-197",
+          reviewStatus: "reviewed",
+        }
       ),
-    ],
+    ]),
   })

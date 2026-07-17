@@ -12,7 +12,11 @@ import {
   resolveLegalMapNode,
   stageForNode,
 } from "~/features/legal-map"
-import type { LegalMapJourneyStage } from "~/data/legal-map-journey"
+import type { LegalMapJourneyStage } from "~/data/legal-map/journey"
+
+export function meta() {
+  return [{ title: "Карта права — Legalizacja" }]
+}
 
 function scrollToTop() {
   requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))

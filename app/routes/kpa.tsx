@@ -2,6 +2,10 @@ import { useLoaderData, type LoaderFunctionArgs } from "react-router"
 
 import { KpaGuideRoute, loadKpaRouteData } from "~/features/law-library"
 
+export function meta() {
+  return [{ title: "KPA — навчальний гайд" }]
+}
+
 export async function loader({ request, params }: LoaderFunctionArgs) {
   return loadKpaRouteData({
     request,

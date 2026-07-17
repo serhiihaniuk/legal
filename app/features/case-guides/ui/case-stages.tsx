@@ -19,7 +19,7 @@ import {
   FieldLegend,
   FieldSet,
 } from "~/components/ui/field"
-import type { CaseGuideStage } from "~/data/case-guide-types"
+import type { CaseGuideStage } from "~/data/case-guides/types"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 
 import { documentChecklistHint, DocumentStatus } from "./case-guide-shared"

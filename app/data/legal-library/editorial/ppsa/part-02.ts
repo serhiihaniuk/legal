@@ -1,56 +1,63 @@
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 export const ppsaPart02 = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
   editionId: "ppsa-2026-143",
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
-  entries: [
+  entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-48",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 48 регулює подання оригіналу документа, urzędowo poświadczonego odpisu або засвідченого odpisu та можливість вимагати оригінал.",
+          text: "Art. 48 вимагає подати оригінал документа на żądanie sądu, допускає urzędowo poświadczony odpis або wyciąg документа з визначених akt органу та засвідчений odpis; за умовами статті sąd може вимагати оригінал.",
           sourceLocator: "Art. 48 § 1–5",
         },
       ],
       summary:
-        "Документ, на який посилається strona, подається в оригіналі на вимогу sądu; закон передбачає також визначені форми odpisu.",
+        "Оригінал подається на вимогу sądu, а odpis замінює його лише у формах і за умовами Art. 48; для документа в aktach визначеного органу діє окреме правило.",
       rules: [
         {
           locator: "§ 1",
-          explanation: "На вимогу sądu оригінал треба подати ще до rozprawa.",
+          explanation:
+            "Strona, яка посилається на документ, на żądanie sądu подає оригінал ще перед rozprawa.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Для документа в aktach органу може бути достатньо urzędowo poświadczony odpis або wyciąg; суд може витребувати оригінал.",
+            "Якщо документ міститься в aktach органу, названого в § 2, достатньо urzędowo poświadczony przez ten organ odpis або wyciąg; якщо strona не може його отримати, sąd просить орган надати копію, а за необхідності може попросити оригінал.",
         },
         {
-          locator: "§ 3–5",
+          locator: "§ 3–3a",
           explanation:
-            "Notariusz або визначений професійний pełnomocnik може засвідчити odpis, але sąd за обставинами може вимагати оригінал.",
+            "Замість оригіналу можна подати odpis, засвідчений notariusz або професійним pełnomocnik: adwokat, radca prawny, rzecznik patentowy, doradca podatkowy чи radca Prokuratorii Generalnej RP; для електронного odpis потрібен kwalifikowany, zaufany або osobisty podpis у визначеній формі.",
+        },
+        {
+          locator: "§ 4–5",
+          explanation:
+            "Poświadczenie професійного pełnomocnik має характер dokument urzędowy, але за обставинами справи sąd на wniosek сторони або з urzędu може вимагати оригінал.",
         },
       ],
       legalEffect:
-        "Норма визначає форму підтвердження документа в суді, але сама не робить кожен odpis достатнім у конкретній справі.",
+        "Норма визначає допустиму форму документа й не означає, що кожен odpis автоматично достатній для доведення конкретної обставини.",
       foreignersCase:
-        "У справі про pobyt зберігайте оригінали decyzja, doręczenie та ключових доказів і подавайте odpis у дозволеній формі; на вимогу sądu готуйте оригінал.",
+        "У справі про pobyt зберігайте оригінали decyzja, doręczenie та ключових доказів; для odpis перевірте конкретний спосіб poświadczenie й будьте готові подати оригінал на żądanie sądu.",
     },
     {
       provisionId: "ppsa-art-49",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Якщо pismo не може отримати правильного ходу через невиконання warunków formalnych, przewodniczący закликає усунути або виправити їх протягом семи днів; вчасно виправлене pismo зберігає наслідки від дня подання.",
+          text: "Якщо pismo не може отримати правильного ходу через невиконання warunków formalnych, przewodniczący закликає усунути або виправити їх протягом семи днів; вчасно виправлене pismo зберігає наслідки від дня подання, а за невиконання zarządzenie залишає його без розгляду.",
           sourceLocator: "Art. 49 § 1–4",
         },
       ],
       summary:
-        "Braki formalne skargi мають бути усунені у строк, зазначений у wezwanie; інакше pismo може залишитися без розгляду.",
+        "Braki formalne skargi треба усунути або виправити у семиденний строк із wezwanie; інакше przewodniczący zarządza pozostawienie pisma bez rozpoznania.",
       rules: [
         {
           locator: "§ 1",
@@ -60,12 +67,12 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 2",
           explanation:
-            "Розпорядження про залишення без розгляду має доступне zażalenie.",
+            "Якщо pismo не виправлено вчасно, przewodniczący видає zarządzenie про залишення без розгляду; на нього przysługuje zażalenie.",
         },
         {
-          locator: "§ 3",
+          locator: "§ 3–4",
           explanation:
-            "Вчасно виправлене або доповнене pismo діє від первісної дати wniesienia.",
+            "Вчасно виправлене або доповнене pismo діє від первісної дати wniesienia; дії за § 1–2 може виконувати referendarz sądowy.",
         },
       ],
       legalEffect:
@@ -75,7 +82,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-49a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -99,7 +106,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-49b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -127,7 +134,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-50",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -156,7 +163,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-51",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -180,7 +187,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-52",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -214,16 +221,16 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-53",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Основний строк wniesienia skarga становить тридцять днів від doręczenie rozstrzygnięcia; для деяких актів строк рахується від відомості про акт або skarga можлива в будь-який час, а skarga на bezczynność чи przewlekłość — після ponaglenie.",
+          text: "Основний строк wniesienia skarga становить тридцять днів від doręczenie rozstrzygnięcia; для деяких актів строк рахується від відомості про акт або skarga можлива в будь-який час, а skarga на bezczynność чи przewlekłość — після ponaglenie; для prokurator, RPO і RPD діє окремий шестимісячний строк із винятком для § 2a.",
           sourceLocator: "Art. 53 § 1–4",
         },
       ],
       summary:
-        "Строк skarga залежить від виду предмета: найчастіше це тридцять днів від doręczenie, але стаття передбачає спеціальні режими.",
+        "Строк skarga залежить від виду предмета: найчастіше це тридцять днів від doręczenie, але стаття передбачає спеціальні режими та окремий строк для prokurator, RPO і RPD.",
       rules: [
         {
           locator: "§ 1",
@@ -233,7 +240,12 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 2–2b",
           explanation:
-            "Для визначених aktów строк може рахуватися від моменту знання, бути безстроковим або починатися після ponaglenie; вид акту треба класифікувати точно.",
+            "Для aktów або czynności без доступного środka zaskarżenia строк може рахуватися від моменту знання; для інших aktów — бути безстроковим, а skarga на bezczynność чи przewlekłość можлива в будь-який час після ponaglenie.",
+        },
+        {
+          locator: "§ 3",
+          explanation:
+            "Prokurator, RPO та RPD можуть подати skarga протягом шести місяців у справах § 1–2; цей строк не застосовується до справ § 2a.",
         },
         {
           locator: "§ 4",
@@ -242,47 +254,52 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Стаття задає процесуальні строки й винятки, але не вирішує сама питання відновлення пропущеного строку чи правильності doręczenie.",
+        "Стаття задає процесуальні строки й винятки, але не вирішує сама питання відновлення пропущеного строку чи правильності doręczenie; для § 2 sąd може оцінити відсутність вини skarżący.",
       foreignersCase:
         "Зафіксуйте день doręczenie decyzja про pobyt, визначте предмет skarga і не переносіть автоматично тридцятиденне правило на bezczynność чи інший akt.",
     },
     {
       provisionId: "ppsa-art-54",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Skargę подають за посередництвом органу, дії або бездіяльність якого оскаржуються; орган передає її разом із повними впорядкованими aktami та відповіддю, а за умовами § 3 може повністю її задовольнити.",
+          text: "Skargę подають за посередництвом органу, дії, бездіяльність або przewlekłe prowadzenie postępowania якого оскаржуються; у чинній на 14.07.2026 редакції електронну skarga подають до elektroniczna skrzynka podawcza органу, а орган передає матеріали в установлені строки й за умовами § 3 може повністю її врахувати. Перехід на adres do doręczeń elektronicznych є майбутньою зміною з 1.10.2029.",
           sourceLocator: "Art. 54 § 1–6",
         },
       ],
       summary:
-        "Орган є каналом подання skarga до sąd і має передати матеріали та відповідь; у визначених межах він може сам скасувати decyzja і видати нову.",
+        "Орган є каналом подання skarga до sąd і має передати повні akta та відповідь; у визначених межах він може сам скасувати decyzja і видати нову.",
       rules: [
         {
           locator: "§ 1–1a",
           explanation:
-            "Skarga подається через оскаржений орган, а електронна skarga — на відповідний електронний адрес за застосовним режимом.",
+            "Skarga подається через оскаржений орган. На legalStateDate електронна skarga у formie dokumentu elektronicznego надсилається до elektroniczna skrzynka podawcza цього органу; варіант подання на adres do doręczeń elektronicznych набирає чинності 1.10.2029, а art. 49a застосовується відповідно.",
         },
         {
-          locator: "§ 2",
+          locator: "§ 2–2a",
           explanation:
-            "Орган передає skarga, повні akta та відповідь протягом тридцяти днів; для передбачених справ MSZ або konsul у тексті встановлено шістдесят днів.",
+            "Орган передає skarga, kompletnymi i uporządkowanymi aktami та відповіддю протягом тридцяти днів; для skarga через konsul або на рішення MSZ у справах за ustawa o cudzoziemcach — шістдесяти днів. Перед передачею орган також готує uzasadnienie рішення, якщо раніше від нього відмовився через повне врахування вимоги сторони.",
         },
         {
           locator: "§ 3",
           explanation:
-            "Орган може повністю врахувати skarga у межах компетенції; для decyzja це означає uchylenie та нову decyzja.",
+            "Орган може в межах właściwość повністю врахувати skarga протягом тридцяти днів; щодо decyzja він uchyla її та видає нову, одночасно зазначаючи, чи дія або бездіяльність були без правової підстави чи з rażące naruszenie prawa.",
+        },
+        {
+          locator: "§ 4–6",
+          explanation:
+            "Для випадку з art. 33 § 1a передбачено публічне повідомлення; Президент RP визначає технічний порядок передачі skarga, akt і відповіді та враховує їх форму, безпеку й єдиний стандарт.",
         },
       ],
       legalEffect:
-        "Подання через орган запускає обмін матеріалами із sąd, але не гарантує, що орган визнає skarga або що sąd прийме її до розгляду.",
+        "Подання через орган запускає обмін матеріалами із sąd, але не гарантує, що орган визнає skarga або що sąd прийме її до розгляду; повне врахування § 3 має передбачені статтею умови й наслідки.",
       foreignersCase:
         "Для skarga на decyzja воєводи про pobyt перевірте правильний орган-посередник, підтвердження подання та повноту копій.",
     },
     {
       provisionId: "ppsa-art-54a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -311,36 +328,41 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-55",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "За невиконання обов’язку передати skarga, akta та відповідь sąd може на wniosek skarżący накласти на орган grzywna; після цього за умовами статті може розглянути справу за odpis skarga.",
+          text: "За невиконання обов’язку передати skarga, akta та відповідь sąd може на wniosek skarżący накласти на орган grzywna; після накладення grzywna за додатковим żądanie skarżący суд може розглянути справу за odpis skarga лише коли фактичний і правовий стан у skarga не викликає обґрунтованих сумнівів. Про rażące випадки суд повідомляє компетентні органи.",
           sourceLocator: "Art. 55 § 1–3",
         },
       ],
       summary:
-        "Стаття дає судовий інструмент проти невиконання органом обов’язків передачі матеріалів.",
+        "Стаття дає судовий інструмент проти невиконання органом обов’язків передачі матеріалів, але кожен захід має власні умови.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Grzywna призначається на wniosek skarżący за невиконання обов’язків art. 54 § 2; розмір відсилає до art. 154 § 6.",
+            "Sąd на wniosek skarżący може постановити grzywna за невиконання обов’язків art. 54 § 2; розмір відсилає до art. 154 § 6, а postanowienie може бути на posiedzenie niejawne.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Якщо після grzywna орган не передав skarga, sąd може використати odpis, коли фактична і правова картина не викликає обґрунтованих сумнівів.",
+            "Якщо після grzywna орган не передав skarga, sąd може на żądanie skarżący розглянути справу за надісланим odpis skarga, коли фактичний і правовий стан, викладений у ній, не викликає обґрунтованих сумнівів.",
+        },
+        {
+          locator: "§ 3",
+          explanation:
+            "Про rażące випадки порушення обов’язків за § 2 або art. 54 § 2 skład orzekający чи prezes sądu повідомляє органи, компетентні розглядати petycje, skargi та wnioski.",
         },
       ],
       legalEffect:
-        "Механізм захищає доступ до суду від бездіяльності органу, але суд оцінює умови застосування кожного заходу.",
+        "Механізм захищає доступ до суду від бездіяльності органу, але grzywna та розгляд за odpis не виникають автоматично: потрібні передбачені статтею wniosek або żądanie й фактичні умови.",
       foreignersCase:
-        "Якщо орган у справі cudzoziemca не передає skarga, документуйте дату її отримання органом і розглядайте wniosek про grzywna окремо від суті спору.",
+        "Якщо орган у справі cudzoziemca не передає skarga, документуйте дату її отримання органом; окремо оцініть wniosek про grzywna і, після неї, żądanie розгляду за odpis.",
     },
     {
       provisionId: "ppsa-art-56",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -364,7 +386,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-57",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -398,26 +420,26 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-57a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Skarga на перелічені індивідуальні податкові interpretacje та opinie може ґрунтуватися лише на порушенні postępowanie, помилці wykładnia або неправильній оцінці застосування prawa materialnego; sąd пов’язаний zarzuty skarga та її правовою підставою.",
+          text: "Skarga на письмову індивідуальну podatkową interpretację, opinię zabezpieczającą, визначені opinie та відмови в їх видачі, включно з opinión у справах opodatkowania wyrównawczego, може ґрунтуватися лише на порушенні postępowanie, помилці wykładnia або неправильній оцінці застосування prawa materialnego; sąd пов’язаний zarzuty skarga та її правовою підставою.",
           sourceLocator: "Art. 57a",
         },
       ],
       summary:
-        "Для спеціально перелічених податкових актів стаття обмежує підстави skarga і пов’язує суд із наведеними zarzuty.",
+        "Для спеціально перелічених podatkowe interpretacje, opinie та відмов стаття обмежує підстави skarga і пов’язує суд із наведеними zarzuty.",
       rules: [
         {
           locator: "Art. 57a",
           explanation:
-            "Спочатку перевірте, чи предмет належить до перелічених podatkowe interpretacje або opinie; правило не поширюється автоматично на pobyt.",
+            "Спочатку перевірте, чи предмет належить до повного переліку статті: індивідуальна interpretacja, opinia zabezpieczająca, opinia з art. 119zzl § 1 Ordynacja podatkowa, відповідні відмови та opinie щодо opodatkowania wyrównawczego; правило не поширюється автоматично на pobyt.",
         },
         {
           locator: "Art. 57a",
           explanation:
-            "У межах цього предмета відокремлюйте порушення процедури, помилку wykładnia та неправильне застосування матеріального права.",
+            "У межах цього предмета відокремлюйте порушення postępowanie, помилку wykładnia та неправильну оцінку застосування матеріального права; суд пов’язаний zarzuty і powołaną podstawą prawną.",
         },
       ],
       legalEffect:
@@ -427,16 +449,16 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-58",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd відкидає skarga, зокрема коли справа не належить до його właściwość, строк пропущено, brak formalny не усунуто, справа вже розглядається або вирішена, немає zdolność, право на skarga відсутнє чи wniesienie є недопустимим.",
+          text: "Sąd odrzuca skarga, зокрема коли справа не належить до właściwość sąd administracyjny, строк пропущено, brak formalny не усунуто, та сама справа між тими самими сторонами вже в toku або правомочно вирішена, немає здатності чи особливого interes prawny або wniesienie є недопустимим; окремі недоліки спершу підлягають усуненню.",
           sourceLocator: "Art. 58 § 1–4",
         },
       ],
       summary:
-        "Odrzucenie skarga — це процесуальне закриття без розгляду її суті через встановлену перешкоду.",
+        "Odrzucenie skargi — це процесуальне закриття без розгляду її суті через встановлену законом перешкоду; деякі дефекти спершу можна виправити.",
       rules: [
         {
           locator: "§ 1 pkt 1–3",
@@ -446,22 +468,27 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1 pkt 4–6",
           explanation:
-            "Також враховуються повторність справи, zdolność, спеціальна вимога interes prawny та інша недопустимість.",
+            "Також враховуються та сама справа між тими самими сторонами, brak zdolność sądowa або zdolność procesowa чи органів, відсутність спеціального interes prawny або uprawnienie для art. 3 § 2 pkt 5–6 та інша недопустимість.",
+        },
+        {
+          locator: "§ 2",
+          explanation:
+            "За дефекту zdolność або складу органів sąd odrzuca skarga лише після того, як недолік не було усунуто.",
         },
         {
           locator: "§ 3–4",
           explanation:
-            "Odrzucenie оформлюється postanowienie; за передбаченою ситуацією суд не може відкинути skarga лише через niewłaściwość після рішення sąd powszechny.",
+            "Odrzucenie оформлюється postanowienie і може бути на posiedzenie niejawne; через art. 58 § 1 pkt 1 суд не відкидає skarga, якщо sąd powszechny вже визнав себе niewłaściwy.",
         },
       ],
       legalEffect:
-        "Odrzucenie не є висновком, що орган мав рацію по суті; це висновок про процесуальну неможливість розгляду.",
+        "Odrzucenie не є висновком, що орган мав рацію по суті; це висновок про процесуальну неможливість розгляду за конкретною перешкодою.",
       foreignersCase:
         "Перед skarga про pobyt перевірте строк, właściwy sąd, wyczerpanie środków zaskarżenia та повне усунення wezwanie.",
     },
     {
       provisionId: "ppsa-art-59",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -490,7 +517,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-60",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -519,41 +546,46 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-61",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Wniesienie skarga саме по собі не зупиняє виконання акту або czynność; орган, а після передачі skarga також sąd, можуть зупинити виконання, зокрема при небезпеці значної шкоди або важко оборотних наслідків.",
+          text: "Wniesienie skarga саме по собі не зупиняє виконання aktu або czynność; орган у визначених категоріях, а після передачі skarga також sąd, можуть зупинити виконання, зокрема при небезпеці znaczna szkoda або trudne do odwrócenia skutki, із передбаченими винятками.",
           sourceLocator: "Art. 61 § 1–6",
         },
       ],
       summary:
-        "Подання skarga не дорівнює автоматичному wstrzymanie виконання; потрібне окреме рішення органу або sąd.",
+        "Подання skarga не дорівнює автоматичному wstrzymanie виконання; потрібне окреме рішення органу або sąd і перевірка винятків.",
       rules: [
         {
           locator: "§ 1–2",
           explanation:
-            "Не виходьте з автоматичної зупинки: орган має окремі повноваження щодо decyzja, postanowienie та інших актів.",
+            "Не виходьте з автоматичної зупинки: орган може з urzędu або на wniosek skarżący зупинити decyzja/postanowienie, інші акти чи окремі uchwały, але діють винятки, зокрема rygor natychmiastowej wykonalności, спеціальне виключення закону та чинні przepisy prawa miejscowego.",
         },
         {
           locator: "§ 3",
           explanation:
-            "Після передачі skarga sąd може зупинити виконання на wniosek, якщо є небезпека znaczna szkoda або trudne do odwrócenia skutki.",
+            "Після передачі skarga sąd може на wniosek skarżący зупинити акт або czynność повністю чи частково, якщо є небезпека znaczna szkoda або trudne do odwrócenia skutki; відмова органу не позбавляє права звернутися до sąd.",
         },
         {
-          locator: "§ 4–6",
+          locator: "§ 4–5",
           explanation:
-            "Postanowienie можна змінити або скасувати при зміні обставин; wstrzymanie припиняється за вказаними судовими рішеннями.",
+            "Sąd може в будь-який час змінити або скасувати wstrzymanie при зміні обставин; postanowienie за § 3–4 може бути видане на posiedzenie niejawne.",
+        },
+        {
+          locator: "§ 6",
+          explanation:
+            "Wstrzymanie припиняється в день судового рішення, що враховує skarga, або з моменту prawomocność рішення, що її відхиляє.",
         },
       ],
       legalEffect:
-        "Wstrzymanie є тимчасовим процесуальним захистом і не є остаточним рішенням про законність акту.",
+        "Wstrzymanie є тимчасовим процесуальним захистом і не є остаточним рішенням про законність aktu; його надання залежить від виду предмета, винятків і доведених ризиків.",
       foreignersCase:
         "Якщо decyzja про pobyt створює ризик виконання до розгляду skarga, подайте окремий wniosek про wstrzymanie та опишіть шкоду й незворотні наслідки.",
     },
     {
       provisionId: "ppsa-art-62",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -582,7 +614,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-63",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -606,7 +638,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-64",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -640,7 +672,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-64a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -669,7 +701,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-64b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -703,41 +735,46 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-64c",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Sprzeciw od decyzji подається через орган протягом чотирнадцяти днів від doręczenie; пряме подання до sąd зберігає строк, орган має передати akta протягом чотирнадцяти днів і може повністю врахувати sprzeciw.",
+          text: "Sprzeciw od decyzji подається через орган протягом чотирнадцяти днів від doręczenie; пряме подання до sąd зберігає строк, але тоді sąd закликає орган передати akta. Орган має передати sprzeciw і akta у визначеному випадку протягом чотирнадцяти днів та може повністю врахувати sprzeciw лише у межах art. 138 § 1 або § 4 KPA; за невиконання після grzywna sąd розглядає справу за odpis sprzeciw.",
           sourceLocator: "Art. 64c § 1–7",
         },
       ],
       summary:
-        "Sprzeciw має спеціальний чотирнадцятиденний строк і канал подання через орган, із резервом прямого подання до sąd.",
+        "Sprzeciw має спеціальний чотирнадцятиденний строк і канал подання через орган, із резервом прямого подання до sąd; для прямого подання діє окремий обов’язок органу щодо akt.",
       rules: [
         {
           locator: "§ 1–2",
           explanation:
-            "Строк рахується від doręczenie decyzja, а sprzeciw подається за посередництвом органу.",
+            "Строк рахується від doręczenie decyzja, а sprzeciw подається за посередництвом органу, рішення якого оскаржується.",
         },
         {
-          locator: "§ 3–5",
+          locator: "§ 3–4",
           explanation:
-            "Пряме подання до sąd зберігає строк; орган передає akta за чотирнадцять днів і може скасувати рішення та видати нове.",
+            "Пряме подання до sąd до спливу строку його зберігає; тоді sąd закликає орган передати kompletnе й uporządkowane akta, а орган робить це протягом чотирнадцяти днів від отримання wezwanie. При звичайному поданні орган передає sprzeciw і akta протягом чотирнадцяти днів від його отримання.",
+        },
+        {
+          locator: "§ 5",
+          explanation:
+            "Орган може протягом чотирнадцяти днів повністю врахувати sprzeciw, uchylając decyzja і видаючи нову на підставі art. 138 § 1 або § 4 KPA.",
         },
         {
           locator: "§ 6–7",
           explanation:
-            "За невиконання передачі можливі grzywna та розгляд за odpis sprzeciw за умовами статті.",
+            "За невиконання обов’язку § 4 sąd на wniosek skarżący може накласти grzywna; якщо орган і після неї не передав sprzeciw, sąd розглядає справу за надісланим skarżący odpis sprzeciw.",
         },
       ],
       legalEffect:
-        "Норма визначає строки й рух sprzeciw, але не гарантує прийняття рішення органом у повному обсязі.",
+        "Норма визначає строки й рух sprzeciw, але не гарантує повного врахування його органом або позитивного результату судового контролю.",
       foreignersCase:
         "У ситуації art. 138 § 2 у справі pobyt зафіксуйте doręczenie, відрахуйте чотирнадцять днів і збережіть підтвердження передачі.",
     },
     {
       provisionId: "ppsa-art-64d",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -765,7 +802,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-64e",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -789,7 +826,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-64f",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -818,142 +855,162 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-65",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd доручає pismo на adres do doręczeń elektronicznych за art. 65a, а якщо це неможливо — через operator pocztowy, працівників або інших уповноважених осіб чи органи; для поштового doręczenia відповідно діє цивільний режим.",
+          text: "У редакції, чинній на 14.07.2026, Art. 65 § 1 дозволяє sąd вручати pismo через operator pocztowy, своїх працівників, інших уповноважених осіб або органи чи за допомогою засобів електронної комунікації на умовах Art. 74a; для поштового doręczenia діє цивільний режим. Варіант із пріоритетом adres do doręczeń elektronicznych за Art. 65a набирає чинності 1.10.2029.",
           sourceLocator: "Art. 65 § 1–3",
         },
       ],
       summary:
-        "Стаття встановлює пріоритет електронного doręczenia та резервні способи вручення судових документів.",
+        "На legalStateDate Art. 65 зберігає перелічені поштові, особисті та електронні способи вручення; нова модель із Art. 65a є майбутньою до 1.10.2029.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Основним каналом є адреса do doręczeń elektronicznych за art. 65a.",
+            "Поточний § 1 не встановлює пріоритет Art. 65a: sąd може використати operator pocztowy, працівників або інших уповноважених осіб чи органи, а також електронні засоби на умовах чинного Art. 74a.",
         },
         {
           locator: "§ 2–3",
           explanation:
-            "За неможливості електронного вручення застосовуються перелічені способи та відповідні правила doręczenia в цивільному процесі.",
+            "Якщо застосовано operator pocztowy, діє порядок doręczenia судових pism у postępowanie cywilne, якщо Розділ 4 PPSA не встановлює іншого; § 3 у чинній редакції uchylony.",
+        },
+        {
+          locator: "Примітки 33–34",
+          explanation:
+            "Редакція з адресою do doręczeń elektronicznych і відсиланням до Art. 65a є майбутньою зміною, що wejście w życie 1.10.2029; не застосовуйте її як поточне правило.",
         },
       ],
       legalEffect:
-        "Спосіб doręczenia впливає на момент ознайомлення з pismo; конкретна чинна редакція й докази вручення мають бути перевірені.",
+        "Спосіб doręczenia впливає на skuteczność і строки, але на legalStateDate треба спершу визначити поточний канал за Art. 65 та Art. 74a, а не підміняти його майбутньою Art. 65a.",
       foreignersCase:
-        "У справі pobyt перевіряйте адресу, на яку sąd надсилає wezwanie або wyrok, і зберігайте електронні та поштові підтвердження.",
+        "У справі pobyt перевіряйте, чи sąd використав поточний канал Art. 65 або Art. 74a, адресу, awizo чи UPO; зберігайте підтвердження вручення й не відраховуйте строк лише за майбутньою моделлю Art. 65a.",
     },
     {
       provisionId: "ppsa-art-65a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd надсилає pismo на адресу do doręczeń elektronicznych із бази або пов’язану з кваліфікованою послугою doręczenia; фізичній особі — за умов подання або вказання такої адреси, а doręczenie підтверджує dowód otrzymania.",
+          text: "Art. 65a є майбутньою редакцією правил електронного doręczenie: з 1.10.2029 sąd надсилатиме pismo на adres do doręczeń elektronicznych із бази або пов’язану з kwalifikowana usługa rejestrowanego doręczenia; для фізичної особи потрібне подання або вказання адреси, крім przedsiębiorca у CEIDG.",
           sourceLocator: "Art. 65a § 1–5",
         },
       ],
       summary:
-        "Електронне doręczenie залежить від джерела адреси та волевиявлення фізичної особи, а його момент підтверджує dowód otrzymania.",
+        "Art. 65a описує майбутню модель електронного doręczenie; на legalStateDate 14.07.2026 вона ще не є чинною заміною Art. 74a.",
       rules: [
         {
           locator: "§ 1–2",
           explanation:
-            "Для фізичної особи перевірте, чи вона подала pismo з електронної адреси або прямо її вказала; для przedsiębiorca CEIDG є виняток.",
+            "Після 1.10.2029 адреса братиметься з бази або з kwalifikowana usługa rejestrowanego doręczenia; для фізичної особи перевірятиметься подання з адреси або її вказання, з винятком przedsiębiorca у CEIDG.",
         },
         {
           locator: "§ 3",
           explanation:
-            "Органу та окремим учасникам pismo надсилається на адресу з бази адрес електронних doręczeń.",
+            "Після набрання чинності pismo органу та визначеним учасникам надсилатиметься на адресу з бази adresów elektronicznych.",
         },
         {
           locator: "§ 4–5",
           explanation:
-            "Ефективність пов’язана з dowód otrzymania; при неотриманні стаття передбачає автоматичний доказ після чотирнадцяти днів.",
+            "Майбутній момент skuteczne doręczenie пов’язаний із dowód otrzymania; за неотримання автоматичний доказ формується після чотирнадцяти днів.",
+        },
+        {
+          locator: "Przypisy 35",
+          explanation:
+            "Усі правила Art. 65a додані як зміна з wejście w życie 1.10.2029; до цієї дати для електронного doręczenie перевіряйте Art. 74a.",
         },
       ],
       legalEffect:
-        "Норма визначає технічний момент doręczenie, але висновок залежить від фактичної адреси та записів системи.",
+        "Art. 65a не дає поточної підстави для висновку про skuteczne doręczenie на 14.07.2026; її умови слід застосовувати лише після зазначеної дати, якщо перехідні правила не зміняться.",
       foreignersCase:
-        "Cudzoziemiec, який подає електронну skarga, має контролювати адресу і dowód otrzymania; не покладайтеся лише на відсутність відкриття pismo.",
+        "Cudzoziemiec, який подає електронну skarga у поточному стані права, має перевіряти Art. 74a; не покладайтеся на Art. 65a або майбутній dowód otrzymania до 1.10.2029.",
     },
     {
       provisionId: "ppsa-art-65b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Електронні pismo sąd, odpisy pism і załączniki та orzeczenia, які sąd надсилає електронно, мають бути скріплені kwalifikowany podpis elektroniczny або kwalifikowana pieczęć elektroniczna.",
+          text: "Art. 65b — майбутня норма: після 1.10.2029 pismo sąd, odpisy pism і załączniki та orzeczenia, які sąd надсилає в postaci elektronicznej, мають бути скріплені kwalifikowany podpis elektroniczny або kwalifikowana pieczęć elektroniczna.",
           sourceLocator: "Art. 65b",
         },
       ],
       summary:
-        "Електронні копії й судові рішення мають містити кваліфікований електронний підпис або печатку.",
+        "Art. 65b ще не діє на legalStateDate; до 1.10.2029 вимога до електронних судових документів міститься в чинному Art. 74a § 12.",
       rules: [
         {
           locator: "Art. 65b",
           explanation:
-            "Перевірте в отриманому електронному pismo наявність передбаченого підпису або pieczęć, а не лише формат файла.",
+            "Ця норма додана майбутньою зміною, що набирає чинності 1.10.2029; не використовуйте її як поточну окрему підставу.",
+        },
+        {
+          locator: "Art. 74a § 12 / Przypis 35",
+          explanation:
+            "На 14.07.2026 перевіряйте в електронному pismo Art. 74a § 12: kwalifikowany podpis або kwalifikowana pieczęć; після 1.10.2029 відповідне правило міститиме Art. 65b.",
         },
       ],
       legalEffect:
-        "Вимога стосується електронного оформлення судових документів; вона не вирішує правильність їх змісту.",
+        "Вимога стосується електронного оформлення судових документів, але застосовна стаття залежить від дати: Art. 74a § 12 нині, Art. 65b у майбутній редакції.",
       foreignersCase:
-        "Зберігайте оригінальний електронний файл рішення у справі pobyt разом із даними підпису або печатки.",
+        "Зберігайте оригінальний електронний файл рішення у справі pobyt разом із даними підпису або печатки та перевірте, чи посилання зроблено на чинний Art. 74a § 12.",
     },
     {
       provisionId: "ppsa-art-66",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Під час справи професійні pełnomocnicy надсилають один одному pismo на адреси do doręczeń elektronicznych і заявляють у pismo до sąd про таке doręczenie; відсутнє oświadczenie спричиняє zwrot без wezwanie, крім перелічених процесуальних pism.",
-          sourceLocator: "Art. 66 § 1–2",
+          text: "У чинній на 14.07.2026 редакції Art. 66 професійні представники — adwokat, radca prawny, doradca podatkowy, rzecznik patentowy та Prokuratoria Generalna RP — надсилають pismo один одному безпосередньо з potwierdzenie odbioru і датою або przesyłka polecona та додають oświadczenie; електронні pismo мають виняток. Електронна модель на адреси do doręczeń elektronicznych набирає чинності 1.10.2029.",
+          sourceLocator: "Art. 66 § 1–3",
         },
       ],
       summary:
-        "Для визначених професійних представників взаємне електронне вручення є частиною оформлення pismo, але стаття містить винятки.",
+        "На legalStateDate для визначених професійних представників діє переважно безпосереднє або рекомендоване вручення; електронна модель із адресами do doręczeń elektronicznych є майбутньою та має окремі винятки.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "§ 1–1a",
           explanation:
-            "До pismo, поданого до sąd, додається oświadczenie про doręczenie іншій стороні; без нього pismo повертається без wezwanie.",
+            "Поточний § 1 вимагає oświadczenie про вручення odpis іншій стороні або його надсилання przesyłka polecona; без oświadczenie pismo повертається без wezwanie. Для електронного документа, адресованого професійному представнику, який застосовує електронні засоби, діє виняток § 1a.",
         },
         {
-          locator: "§ 2",
+          locator: "§ 2–3",
           explanation:
-            "Правило не стосується skarga, sprzeciw od decyzji, skarga kasacyjna, zażalenie та інших прямо перелічених pism.",
+            "Поточний § 2 допускає вручення адресату безпосередньо в sekretariat sądu, а § 3 виключає з § 1 skarga, skarga kasacyjna, zażalenie, sprzeciw, skarga o wznowienie та skarga o stwierdzenie niezgodności z prawem prawomocnego orzeczenia.",
+        },
+        {
+          locator: "Przypisy 36–37",
+          explanation:
+            "З 1.10.2029 § 1 перейде на адреси do doręczeń elektronicznych, а § 2 міститиме ширший перелік винятків, зокрема sprzeciw od decyzji та odpowiedź na skargę kasacyjną; це не поточне правило.",
         },
       ],
       legalEffect:
-        "Наслідок zwrot стосується умов § 1; не можна механічно застосовувати його до виняткових процесуальних документів.",
+        "Наслідок zwrot стосується чинних умов § 1; не можна механічно застосовувати майбутню електронну модель або її перелік винятків до дій на 14.07.2026.",
       foreignersCase:
-        "Якщо cudzoziemca представляє adwokat або radca prawny, перевірте, чи конкретне pismo входить до винятків і чи потрібне oświadczenie.",
+        "Якщо cudzoziemca представляє adwokat або radca prawny, за поточною редакцією перевірте вид pismo, спосіб безпосереднього doręczenie та oświadczenie; не застосовуйте майбутній § 1 до 1.10.2029.",
     },
     {
       provisionId: "ppsa-art-67",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Фізичній особі pismo doręczaється особисто або її przedstawiciel ustawowy; юридичній особі та організаційній одиниці — органу представництва або уповноваженому працівнику, а за наявності pełnomocnik doręczenie здійснюється йому.",
+          text: "Фізичній особі pismo doręczaється особисто або jej przedstawiciel ustawowy; юридичній особі та організаційній одиниці — organowi представництва або уповноваженому працівнику, а за наявності pełnomocnik doręczenie здійснюється йому. Для підприємців і wspólnicy spółek handlowych у реєстрі на legalStateDate діє адреса з реєстру, якщо сторона не вказала іншу; адреса do doręczeń elektronicznych — майбутній варіант із 1.10.2029.",
           sourceLocator: "Art. 67 § 1–5",
         },
       ],
       summary:
-        "Належний отримувач залежить від статусу сторони та наявності pełnomocnik; для przedsiębiorca в corpus наведені редакційні варіанти адреси з перехідними примітками.",
+        "Належний отримувач залежить від статусу сторони та наявності pełnomocnik; для зареєстрованих підприємців поточне правило про адресу з реєстру не слід плутати з майбутньою електронною редакцією.",
       rules: [
         {
           locator: "§ 1–2",
           explanation:
-            "Визначте, чи сторона є особою фізичною, юридичною або організаційною одиницею, і хто має право отримати pismo.",
+            "Визначте, чи сторона є особою фізичною, юридичною або організаційною одиницею, і хто має право отримати pismo: особа/представник або organ представництва чи уповноважений працівник.",
         },
         {
           locator: "§ 3–4",
           explanation:
-            "Для підприємців застосовується адресне правило, а за неможливості — відповідне правило art. 70 § 2; редакційний варіант перевіряйте на дату.",
+            "На 14.07.2026 для przedsiębiorca та wspólnicy spółek handlowych, внесених до rejestr sądowy, застосовується адреса з реєстру, якщо сторона не вказала іншу; за неможливості діє відповідне правило Art. 70 § 2. Варіант адреси do doręczeń elektronicznych набирає чинності 1.10.2029.",
         },
         {
           locator: "§ 5",
@@ -962,13 +1019,13 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Належний адресат впливає на skuteczność doręczenia; сама назва отримувача не вирішує всіх фактичних питань.",
+        "Належний адресат і поточна редакція адресного правила впливають на skuteczność doręczenia; сама назва отримувача не вирішує всіх фактичних питань.",
       foreignersCase:
-        "Cudzoziemiec має повідомити sąd про pełnomocnik та перевірити, хто отримав pismo; для підприємця окремо перевіряйте його статус.",
+        "Cudzoziemiec має повідомити sąd про pełnomocnik та перевірити, хто отримав pismo; якщо сторона — підприємець, перевірте реєстр і дату застосовної редакції Art. 67.",
     },
     {
       provisionId: "ppsa-art-68",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -996,7 +1053,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-69",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1025,41 +1082,41 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-70",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Strony та їхні przedstawiciele повинні повідомляти sąd про зміну місця проживання, siedziba або адреси do doręczeń, зокрема електронної; при нехтуванні pismo залишають в aktach зі skutkiem doręczenia, крім skarga o wznowienie.",
+          text: "Strony та їхні przedstawiciele повинні повідомляти sąd про кожну зміну miejsca zamieszkania, siedziba або адреси do doręczeń, включно з електронною; якщо обов’язок занедбано, pismo залишають в aktach зі skutkiem doręczenia, крім skarga o wznowienie. Перехідна редакція уточнює термін adres do doręczeń elektronicznych і набирає чинності 1.10.2029.",
           sourceLocator: "Art. 70 § 1–3",
         },
       ],
       summary:
-        "Обов’язок оновлювати адресу лежить на стороні; його порушення може спричинити doręczenie через залишення pismo в aktach.",
+        "Обов’язок оновлювати адресу лежить на стороні; його порушення може спричинити doręczenie через залишення pismo в aktach. Термінологічна редакція про електронну адресу є майбутньою до 1.10.2029.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Повідомляйте зміну mieszkanie, siedziba та адреси do doręczeń, включно з електронною.",
+            "На legalStateDate повідомляйте зміну miejsca zamieszkania, siedziba та адреси do doręczeń, включно з elektroniczny адресою; варіант формулювання adres do doręczeń elektronicznych набирає чинності 1.10.2029.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Якщо адресу не оновлено й нова не відома sąd, pismo залишається в aktach зі skutkiem doręczenia після належного pouczenie.",
+            "Якщо адресу не оновлено й нова не відома sąd, pismo залишають в aktach зі skutkiem doręczenia; sąd має pouczyć про цей обов’язок і наслідки при першому doręczenie.",
         },
         {
           locator: "§ 3",
           explanation:
-            "Для skarga o wznowienie postępowania наслідок § 2 не застосовується.",
+            "Для doręczenie skarga o wznowienie postępowania наслідок § 2 не застосовується.",
         },
       ],
       legalEffect:
-        "Норма може запустити процесуальні наслідки без фактичного отримання pismo, якщо сторона не повідомила нову адресу.",
+        "Норма може запустити процесуальні наслідки без фактичного отримання pismo, якщо сторона не повідомила нову адресу; оцінюйте, чи нова адреса все ж була відома sąd.",
       foreignersCase:
-        "При переїзді cudzoziemca під час спору про pobyt негайно повідомте sąd нову адресу та збережіть доказ.",
+        "При переїзді cudzoziemca під час спору про pobyt негайно повідомте sąd нову адресу та збережіть доказ; не покладайтеся на фактичне пересилання пошти.",
     },
     {
       provisionId: "ppsa-art-71",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1088,7 +1145,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-72",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1117,7 +1174,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-73",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1151,7 +1208,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-74",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1179,31 +1236,51 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-74a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 74a у corpus має статус repealed і містить лише позначення «uchylony»; чинного правила в цій статті немає.",
-          sourceLocator: "Art. 74a",
+          text: "На legalStateDate 14.07.2026 Art. 74a є чинною нормою електронного doręczenie: вона охоплює умови згоди або подання електронного pismo, zawiadomienie, UPO, повторне повідомлення, fikcja doręczenia після чотирнадцяти днів, доступ до документа та підпис судових документів. Позначка про uchylenie в примітці 43 є майбутньою зміною з 1.10.2029, а не поточним статусом.",
+          sourceLocator: "Art. 74a § 1–12, przypisy 42–43",
         },
       ],
       summary:
-        "Ця стаття вилучена: її не можна використовувати як чинну самостійну підставу для doręczenie.",
+        "На 14.07.2026 Art. 74a — чинна окрема підстава електронного doręczenie; її майбутнє uchylenie заплановане на 1.10.2029.",
       rules: [
         {
-          locator: "Art. 74a",
+          locator: "§ 1–2",
           explanation:
-            "Позначка uchylony означає, що в редакції corpus на legalStateDate немає операційного правила для застосування.",
+            "Електронне doręczenie можливе, якщо strona подала pismo як dokument elektroniczny через elektroniczna skrzynka podawcza sądu або органу, попросила про такий спосіб і вказала адресу чи дала згоду та вказала адресу. Відмова подається як dokument elektroniczny й переводить вручення на неелектронний спосіб.",
+        },
+        {
+          locator: "§ 3–5",
+          explanation:
+            "Sąd надсилає zawiadomienie з адресою отримання та pouczenie; дата doręczenie — дата підписання urzędowe poświadczenie odbioru kwalifikowany podpis, podpis zaufany або podpis osobisty.",
+        },
+        {
+          locator: "§ 6–9",
+          explanation:
+            "Якщо pismo не отримано, після семи днів надсилається повторне zawiadomienie, а doręczenie вважається здійсненим після чотирнадцяти днів від першого повідомлення. Доступ до документа та даних про повідомлення має бути забезпечений щонайменше три місяці.",
+        },
+        {
+          locator: "§ 10–12",
+          explanation:
+            "Для prokurator, RPO, RPD та оскарженого organu pismo надсилається безпосередньо до elektroniczna skrzynka podawcza, а дата береться з UPO; електронні pismo, odpisy, załączniki та orzeczenia мають kwalifikowany podpis або kwalifikowana pieczęć.",
+        },
+        {
+          locator: "Przypisy 42–43",
+          explanation:
+            "Corpus позначає майбутнє uchylenie Art. 74a за зміною, що wejście w życie 1.10.2029; до цієї дати застосовується наведений чинний режим.",
         },
       ],
       legalEffect:
-        "Відсутність чинного тексту виключає висновок про права чи строки на підставі цієї статті; посилання треба звіряти з актуальною нормою.",
+        "Art. 74a може визначити skuteczność електронного doręczenie та запустити строк, але потрібні конкретна підстава електронної доставки, належні повідомлення й UPO; майбутнє uchylenie не слід описувати як поточне.",
       foreignersCase:
-        "У справі cudzoziemca не обґрунтовуйте електронне doręczenie art. 74a; перевіряйте art. 49a, art. 65a та dowód otrzymania.",
+        "Якщо cudzoziemiec подає електронну skarga або отримує pismo у справі pobyt, перевірте умову Art. 74a § 1, zawiadomienia, дату UPO чи 14-денну fikcja та збережіть оригінали системних підтверджень.",
     },
     {
       provisionId: "ppsa-art-75",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1232,7 +1309,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-76",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1266,7 +1343,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-77",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1300,7 +1377,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-78",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1329,7 +1406,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-79",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1363,7 +1440,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-80",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1387,7 +1464,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-81",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1416,7 +1493,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-82",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1440,7 +1517,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-83",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1474,7 +1551,7 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-84",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1501,5 +1578,5 @@ export const ppsaPart02 = defineEditorialPart<"ppsa">({
       foreignersCase:
         "Якщо сторона у справі pobyt не встигає виконати судове wezwanie, подайте обґрунтований wniosek до спливу terminu і не припускайте автоматичного продовження.",
     },
-  ],
+  ]),
 })

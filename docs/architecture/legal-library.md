@@ -49,7 +49,7 @@ The current KPA implementation is valuable evidence, not the target public contr
 | The legal-library query projects generated provision text and PDF locators for every document. | Keep source text behind generic corpus queries; the official PDF remains the trust source. |
 | `app/components/kpa-articles-content.tsx` provides the exact-PDF-page dialog, ELI link, source text, explanation, and previous/next controls. | Preserve these UX strengths in a generic provision reader. Its current hardcoded KPA labels and source ID move behind the query Module. |
 | `app/routes/kpa.tsx` owns `view`, `article`, and `module` query semantics. | Keep a route compatibility Adapter for all known deep links while `/law` becomes canonical. |
-| `app/data/legal-references.ts` assumes an article is KPA unless context says otherwise. | Replace the string article reference with a document-dependent `LegalReference` and a runtime resolver. |
+| `app/data/references/legal-references.ts` assumes an article is KPA unless context says otherwise. | Replace the string article reference with a document-dependent `LegalReference` and a runtime resolver. |
 | `app/routes.ts` exposes `/guide/kpa`. | Add the `/law` route family without breaking existing URLs. |
 
 The current deterministic checks are `npm.cmd run typecheck` and `npm.cmd run build`. There is no configured test runner. Target corpus commands listed below are plans, not existing commands.
@@ -270,20 +270,21 @@ flowchart LR
 
 #### Internal query implementation split
 
-The compatibility module `app/data/legal-library/query.ts` remains the public query
+The compatibility module `app/data/legal-library/query.ts` remains the stable public query
 facade and preserves all existing direct imports and overloads. Its implementation is
-split into three one-way layers:
+split into private modules under `app/data/legal-library/query/`:
 
-- `corpus-parsing.ts` owns unknown-value guards plus manifest and provision parsing;
-- `domain-construction.ts` owns generated-registry access, explicit current-edition
+- `query/corpus-parsing.ts` owns unknown-value guards plus manifest and provision parsing;
+- `query/domain-construction.ts` owns generated-registry access, explicit current-edition
   selection, raw lookups, `LegalDocument`/`LegalEdition`/`LegalProvision` construction,
   and canonical PDF locators;
-- `query.ts` owns ID/reference parsing and guards, list/get/navigation queries,
+- root `query.ts` owns ID/reference parsing and guards, list/get/navigation queries,
   resolution statuses, aliases, and lazy editorial explanation resolution. It
   re-exports the corpus parsers and PDF locator APIs for compatibility.
 
 The dependency direction is corpus parsing → domain construction → public query;
-editorial loading is used only by the public query layer. The barrel's exported symbol
+editorial loading is used only by the public query layer. The root contracts, legal-text,
+query, index, and current-editions pointer paths are stable; the barrel's exported symbol
 set is unchanged.
 
 ### 6.2 `legal-library` Interface
@@ -475,11 +476,26 @@ app/data/legal-corpus/
   registry.ts                           # generated `as const` type/runtime index
 
 app/data/legal-library/
-  contracts.ts                          # hand-authored public types
-  query.ts                              # hand-authored query/resolution Implementation
+  index.ts                              # stable public barrel
+  contracts.ts                          # stable public authoring/type module
+  legal-text.ts                         # stable public authoring/type module
+  query.ts                              # stable public query facade
+  current-editions.json                 # pipeline pointer; scripts use this exact path
+  query/                                # private query implementation modules
+    corpus-parsing.ts
+    domain-construction.ts
+  navigation/                           # private navigation helpers
+    navigation.ts
+    provision-outline.ts
+  references/                            # private source/reference helpers
+    official-sources.ts
+    reference-registry.ts
+  fixtures/                              # type-contract fixtures
+    contracts.fixture.ts
   editorial/
     <documentId>/                       # reviewed explanations, lazy-loadable
       <provision-id>.ts
+  learning/                             # authored learning data
 
 public/legal-sources/
   <editionId>/
@@ -572,7 +588,7 @@ Legal instruments and evidence documents are separate concepts. The Law library 
 
 ### 9.1 Typed-reference preview contract
 
-Every authored `LegalReference` rendered through `app/components/references/` may expose one shadcn `HoverCard`. That directory is the single rendering Interface for `LegalLink`, structured `LegalText`, reference arrows, previews, and official-source entries; the former root component paths are compatibility re-exports only. Its explicit `prose`, `reference-section`, and `provision-page` contexts retain semantic provenance while sharing one quiet inherited-color link treatment without navigation-blue. `app/data/reference-previews.ts` owns the preview contract, while `legal-references.ts` remains a fail-closed navigation resolver and never imports the preview layer.
+Every authored `LegalReference` rendered through `app/components/references/` may expose one shadcn `HoverCard`. That directory is the single rendering Interface for `LegalLink`, structured `LegalText`, reference arrows, previews, and official-source entries; the former root component adapters have been retired. Its explicit `prose`, `reference-section`, and `provision-page` contexts retain semantic provenance while sharing one quiet inherited-color link treatment without navigation-blue. `app/data/references/reference-previews.ts` owns the preview contract, while `app/data/references/legal-references.ts` remains a fail-closed navigation resolver and never imports the preview layer.
 
 A preview has a stable identity, bounded title and summary, `status` (`reviewed`, `draft`, or `source-only`), and provenance metadata. Reviewed provision copy comes only from a reviewed `LegalExplanation`. A non-reviewed editorial summary may appear only as visibly labelled `draft`, with its actual review status and only when `sourceEditionId` exactly matches the requested edition. Without matching editorial content, the card uses the exact locator and a bounded generated source-text excerpt. Evidence documents, map nodes, case routes, and official sources reuse their canonical descriptions. Arbitrary HTTPS references remain `source-only`; if the exact URL has unambiguous authored source metadata, the card reuses that label and note. The resolver never infers a provision or creates interpretation.
 

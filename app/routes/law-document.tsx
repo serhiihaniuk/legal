@@ -27,7 +27,7 @@ import {
   getLegalLearningModule,
   listProvisions,
 } from "~/data/legal-library"
-import { officialSourceIdByLegalDocument } from "~/data/legal-library/official-sources"
+import { officialSourceIdByLegalDocument } from "~/data/legal-library/references/official-sources"
 
 const legacyTechnicalModuleIds = new Set([
   "overview",
@@ -35,6 +35,10 @@ const legacyTechnicalModuleIds = new Set([
   "structure",
   "source",
 ])
+
+export function meta() {
+  return [{ title: "Навчання за актом — Legalizacja" }]
+}
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const document = getDocument(params.documentId)

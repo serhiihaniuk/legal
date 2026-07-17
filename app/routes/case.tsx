@@ -8,9 +8,13 @@ import { DocsLayout } from "~/components/layout"
 import { LegalText } from "~/components/references"
 import { Button } from "~/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
-import { caseGuideCases, getCaseGuideCase } from "~/data/case-guide-navigation"
-import { caseGuideRoutes, getCaseGuideRoute } from "~/data/case-guide-routes"
-import { legalData } from "~/data/legal-data"
+import { caseGuideCases, getCaseGuideCase } from "~/data/case-guides/navigation"
+import { caseGuideRoutes, getCaseGuideRoute } from "~/data/case-guides/routes"
+import { legalData } from "~/data/legal-map/data"
+
+export function meta() {
+  return [{ title: "Гайди по справах — Legalizacja" }]
+}
 
 function scrollToTop() {
   requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))

@@ -1,5 +1,5 @@
 import type { LegalTextValue } from "~/data/legal-library/legal-text"
-import type { OfficialSource } from "~/data/legal-types"
+import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
   | "employment-annex-1"

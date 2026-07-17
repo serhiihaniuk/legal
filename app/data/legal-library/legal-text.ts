@@ -242,6 +242,150 @@ export function legalTextProvisionReferences(
   )
 }
 
+const autoCitationPattern =
+  /\b[Aa]rt\.\s*\d+[a-z]?|§{1,2}\s*\d+[a-z]?|\bzałącznik(?:i|a|u|iem|ach|ami)?(?:\s+nr)?\s*\d+/gu
+
+function inferCitationDocument(
+  defaultDocumentId: LegalDocumentId,
+  text: string,
+  end: number
+): LegalDocumentId {
+  const context = text.slice(end, end + 90)
+  if (/\b(?:KPA|Kodeks postępowania administracyjnego)\b/u.test(context)) {
+    return "kpa"
+  }
+  if (
+    /\b(?:PPSA|p\.p\.s\.a\.|Prawo o postępowaniu przed sądami administracyjnymi)\b/u.test(
+      context
+    )
+  ) {
+    return "ppsa"
+  }
+  if (/\bpowierzania pracy\b/u.test(context)) {
+    return "powierzanie-pracy"
+  }
+  if (/\bustaw(?:a|y) o cudzoziemcach\b/u.test(context)) {
+    return "ustawa-o-cudzoziemcach"
+  }
+  return defaultDocumentId
+}
+
+/**
+ * Adds explicit typed targets to plain editorial citations. This is used only
+ * at the boundary for legacy authored entries that predate typed legal prose;
+ * already authored text is preserved verbatim.
+ */
+export function authorLegalTextCitations<D extends LegalDocumentId>(
+  documentId: D,
+  value: LegalTextValue
+): LegalTextValue {
+  if (typeof value !== "string" || !autoCitationPattern.test(value)) {
+    autoCitationPattern.lastIndex = 0
+    return value
+  }
+
+  autoCitationPattern.lastIndex = 0
+  const parts: LegalTextPart[] = []
+  let cursor = 0
+  for (const match of value.matchAll(autoCitationPattern)) {
+    const index = match.index ?? 0
+    if (index > cursor) parts.push({ text: value.slice(cursor, index) })
+    const label = match[0]
+    const targetDocumentId = inferCitationDocument(
+      documentId,
+      value,
+      index + label.length
+    )
+    const articleMatch = label.match(/^[Aa]rt\.\s*(\d+[a-z]?)/u)
+    const isPswinCitation = /\b(?:PSWiN|szkolnictwie wyższym i nauce)\b/u.test(
+      value.slice(index + label.length, index + label.length + 90)
+    )
+    if (isPswinCitation) {
+      parts.push({
+        text: label,
+        target: {
+          kind: "external",
+          url: "https://eli.gov.pl/eli/DU/2024/1571/ogl",
+        },
+      })
+    } else if (articleMatch) {
+      parts.push({
+        text: label,
+        target: {
+          kind: "legal-provision",
+          documentId: targetDocumentId,
+          provisionId:
+            `${targetDocumentId}-art-${articleMatch[1]}` as LegalProvisionId<LegalDocumentId>,
+        } as LegalProvisionReference,
+      })
+    } else {
+      parts.push({
+        text: label,
+        target: { kind: "legal-document", documentId: targetDocumentId },
+      })
+    }
+    cursor = index + label.length
+  }
+  if (cursor < value.length) parts.push({ text: value.slice(cursor) })
+  return {
+    kind: "authored-legal-text",
+    plainText: value,
+    parts,
+  }
+}
+
+/** Recursively applies `authorLegalTextCitations` while preserving entry shape. */
+export function authorLegalTextCitationsTree<D extends LegalDocumentId, T>(
+  documentId: D,
+  value: T
+): T {
+  if (typeof value === "string") {
+    return authorLegalTextCitations(documentId, value) as T
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) =>
+      authorLegalTextCitationsTree(documentId, item)
+    ) as T
+  }
+  if (!value || typeof value !== "object") return value
+  if (
+    "kind" in value &&
+    (value as { kind?: unknown }).kind === "authored-legal-text"
+  ) {
+    const authored = value as unknown as AuthoredLegalText
+    const parts = authored.parts.flatMap((part) => {
+      if ("target" in part) return [part]
+      const normalized = authorLegalTextCitations(documentId, part.text)
+      return typeof normalized === "string"
+        ? [{ text: normalized }]
+        : normalized.parts
+    })
+    return {
+      kind: "authored-legal-text",
+      plainText: parts.map((part) => part.text).join(""),
+      parts,
+    } as T
+  }
+  const result: Record<string, unknown> = {}
+  for (const [key, item] of Object.entries(value)) {
+    if (
+      key === "locator" ||
+      key === "sourceLocator" ||
+      key === "provisionId" ||
+      key === "documentId" ||
+      key === "editionId" ||
+      key === "legalStateDate" ||
+      key === "verifiedAt" ||
+      key === "reviewStatus"
+    ) {
+      result[key] = item
+    } else {
+      result[key] = authorLegalTextCitationsTree(documentId, item)
+    }
+  }
+  return result as T
+}
+
 /**
  * Deep authoring interface for learning prose.
  *

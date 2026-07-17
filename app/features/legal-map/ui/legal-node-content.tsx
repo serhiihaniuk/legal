@@ -8,21 +8,21 @@ import { LegalText, OfficialSourceEntry } from "~/components/references"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import { Separator } from "~/components/ui/separator"
-import { legalData } from "~/data/legal-data"
+import { legalData } from "~/data/legal-map/data"
 import {
   legalMapJourney,
   legalMapJourneyStageForNode,
   type LegalMapJourneyStage,
-} from "~/data/legal-map-journey"
+} from "~/data/legal-map/journey"
 import {
   joinLegalText,
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
-import type { LegalNodeGuide } from "~/data/legal-node-guide-types"
-import { legalNodeGuides } from "~/data/legal-node-guides"
-import { nodeById, type IndexedNode } from "~/data/legal-index"
-import type { LegalNode } from "~/data/legal-types"
+import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { legalNodeGuides } from "~/data/legal-map/node-guides"
+import { nodeById, type IndexedNode } from "~/data/legal-map/index"
+import type { LegalNode } from "~/data/shared/legal-types"
 
 import {
   descendantNodes,

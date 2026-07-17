@@ -1,4 +1,5 @@
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 export const foreignersActPart09 =
   defineEditorialPart<"ustawa-o-cudzoziemcach">({
@@ -6,14 +7,14 @@ export const foreignersActPart09 =
     editionId: "ustawa-o-cudzoziemcach-2025-1079",
     legalStateDate: "2026-07-14",
     verifiedAt: "2026-07-15",
-    entries: [
+    entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
       {
         provisionId: "ustawa-o-cudzoziemcach-art-287",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 287 ust. 1–2 уповноважує ministra właściwego do spraw wewnętrznych у погодженні з іншими міністрами визначити розпорядженням wzór formularza listy podróżujących для шкільних поїздок у Європейському Союзі та вимагає врахувати необхідні персональні дані, їх перевірку і швидке перетинання кордону.",
+            text: "Art. 287 ust. 1–2 визначає, що minister właściwy do spraw wewnętrznych у porozumieniu з ministrem właściwym do spraw zagranicznych та ministrem właściwym do spraw oświaty i wychowania визначає розпорядженням wzór formularza listy podróżujących для wycieczek w Unii Europejskiej; у розпорядженні враховуються персональні дані лише в обсязі, необхідному для умов в’їзду до Польщі та pobytu на її території учнів із państw trzecich, можливість перевірки цих даних і sprawne przekraczanie granicy.",
             sourceLocator: "Art. 287 ust. 1–2",
           },
         ],
@@ -28,7 +29,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 2",
             explanation:
-              "У списку можуть бути лише персональні дані в обсязі, необхідному для умов в’їзду і перебування, із можливістю їх перевірки.",
+              "Розпорядження має враховувати персональні дані лише в обсязі, необхідному для умов в’їзду до Польщі та pobytu на її території учнів із państw trzecich, можливість перевірки цих даних і потребу у sprawne przekraczanie granicy.",
           },
         ],
         legalEffect:
@@ -38,7 +39,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-288",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -62,16 +63,16 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-289",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 289 ust. 1–3 визначає, що контроль legalności pobytu для встановлення фактичного стану щодо умов в’їзду і перебування проводять Straż Graniczna та Policja; Szef Urzędu і wojewoda можуть контролювати в обсязі, необхідному для їхніх проваджень, а naczelnik urzędu celno-skarbowego — у межах визначених законом контролів.",
+            text: "Art. 289 ust. 1–3 визначає, що контроль legalności pobytu для встановлення фактичного стану щодо умов в’їзду і перебування проводять Straż Graniczna та Policja; Szef Urzędu і wojewoda можуть контролювати в обсязі, необхідному для їхніх проваджень, а naczelnik urzędu celno-skarbowego — лише в межах контролів, що проводяться за правилами актів, перелічених у ust. 3.",
             sourceLocator: "Art. 289 ust. 1–3",
           },
         ],
         summary:
-          "Стаття розподіляє повноваження щодо kontroli legalności pobytu між Straż Graniczna, Policja, Szef Urzędu, wojewoda та в окремому обсязі Krajowa Administracja Skarbowa.",
+          "Стаття розподіляє повноваження щодо kontroli legalności pobytu між Straż Graniczna, Policja, Szef Urzędu, wojewoda та naczelnik urzędu celno-skarbowego в межах окремих контролів.",
         rules: [
           {
             locator: "ust. 1",
@@ -81,7 +82,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 2–3",
             explanation:
-              "Szef Urzędu і wojewoda діють у межах своїх проваджень, а орган celno-skarbowy — лише в рамках контролів, названих у статті.",
+              "Szef Urzędu і wojewoda діють у межах своїх проваджень, а naczelnik urzędu celno-skarbowego — лише в рамках контролів за актами, переліченими в ust. 3.",
           },
         ],
         legalEffect:
@@ -91,7 +92,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-290",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -115,11 +116,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-291",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 291 встановлює, що контроль legalności pobytu зазвичай проводять щонайменше двоє funkcjonariuszy або щонайменше двоє уповноважених pracowników; спільний контроль також проводять щонайменше дві особи, але в siedzibie Urzędu або urzędu wojewódzkiego може діяти один pracownik, а один funkcjonariusz — коли обставини виявлено під час інших службових дій.",
+            text: "Art. 291 встановлює, що контроль legalności pobytu зазвичай проводять щонайменше двоє funkcjonariuszy Straży Granicznej, Policji або Służby Celno-Skarbowej чи щонайменше двоє upoważnionych pracowników Urzędu або urzędu wojewódzkiego; спільний контроль також проводять щонайменше дві особи, але в siedzibie Urzędu або urzędu wojewódzkiego може діяти один pracownik, а один funkcjonariusz — коли обставини виявлено під час інших службових дій.",
             sourceLocator: "Art. 291 ust. 1–4",
           },
         ],
@@ -129,7 +130,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1–2",
             explanation:
-              "Звичайний і спільний контроль проводять щонайменше дві особи з визначених категорій.",
+              "Звичайний контроль проводять щонайменше двоє названих funkcjonariuszy або щонайменше двоє upoważnionych pracowników; спільний контроль — щонайменше дві особи.",
           },
           {
             locator: "ust. 3–4",
@@ -144,7 +145,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-292",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -173,11 +174,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-293",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 293 дозволяє під час kontroli вимагати документ podróży і документи pobyt, фінансові кошти на utrzymanie, повернення або транзит, документ про законну можливість отримати такі кошти, документи для роботи, działalności gospodarczej або powierzenia pracy, а також документи про cel і warunki pobytu.",
+            text: "Art. 293 дозволяє під час kontroli вимагати документ podróży і документи pobyt, фінансові кошти на utrzymanie, повернення або транзит, документ про законну можливість отримати такі кошти, документи, що уповноважують cudzoziemca до wykonywania pracy, prowadzenia działalności gospodarczej або powierzenia wykonywania pracy, а також документи про cel і warunki pobytu.",
             sourceLocator: "Art. 293 pkt 1–5",
           },
         ],
@@ -202,7 +203,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-294",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -231,7 +232,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-295",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -260,11 +261,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-296",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 296 вимагає скласти protokół kontroli, якщо після контролю встановлено невідповідність pobytu правилам в’їзду або перебування; якщо pobyt відповідає правилам, funkcjonariusz або pracownik фіксує контроль у notatnik або службовій записці, а відповідний орган повідомляє орган Straży Granicznej про встановлену невідповідність.",
+            text: "Art. 296 вимагає, щоб за встановленої невідповідності pobytu правилам в’їзду або перебування funkcjonariusz або pracownik склав protokół kontroli; за відповідності правилу funkcjonariusz записує факт у notatnik służbowy або складає notatka służbowa, а pracownik складає notatka służbowa. Орган Policji, Szef Urzędu, wojewoda або орган Krajowej Administracji Skarbowej повідомляє компетентного komendant oddziału або placówki Straży Granicznej про невідповідність.",
             sourceLocator: "Art. 296 ust. 1–2",
           },
         ],
@@ -279,7 +280,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1 pkt 2",
             explanation:
-              "За відповідності правилу контроль фіксується в notatnik або notatka służbowa залежно від того, хто його проводив.",
+              "За відповідності правилам funkcjonariusz записує факт у notatnik służbowy або складає notatka służbowa, а pracownik складає notatka służbowa.",
           },
           {
             locator: "ust. 2",
@@ -294,7 +295,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-297",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -323,7 +324,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-298",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -352,11 +353,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-299",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 299 визначає обов’язок cudzoziemca залишити Польщу до завершення дозволеного візою або безвізовим режимом pobytu, до закінчення zezwolenia na pobyt czasowy, а в названих випадках — протягом 30 днів після остаточності або вручення відповідної decyzja чи 7 днів після припинення перешкод із Art. 31 ust. 1; у період Art. 299 ust. 6 pobyt вважається легальним за умовами ust. 7.",
+            text: "Art. 299 встановлює різні обов’язки виїзду: до завершення періоду pobytu та чинності wizy, у строки bezwizowy pobyt, до завершення zezwolenia na pobyt czasowy, а для особи з дозволом іншої держави, що застосовує dyrektywę 2008/115/WE, — niezwłocznie до цієї держави; у названих випадках передбачено 30 днів від ostateczność або doręczenie decyzja чи 7 днів після припинення перешкод із Art. 31 ust. 1, причому pobyt у період Art. 299 ust. 6 є legalny за умовами ust. 7 та винятків ust. 8–9.",
             sourceLocator: "Art. 299 ust. 1–11",
           },
         ],
@@ -364,29 +365,34 @@ export const foreignersActPart09 =
           "Стаття визначає, коли іноземець повинен виїхати, і коли після окремих рішень його pobyt тимчасово вважається legalny.",
         rules: [
           {
-            locator: "ust. 1–5",
+            locator: "ust. 1–1a",
             explanation:
-              "Строк виїзду пов’язується із закінченням візового, безвізового або тимчасового дозволеного pobytu.",
+              "За ust. 1 виїзд має відбутися до завершення періоду pobytu та чинності wizy; за ust. 1a особа з дозволом іншої держави, що застосовує dyrektywę 2008/115/WE, яка не відповідає польським умовам, повинна niezwłocznie виїхати до держави, що видала дозвіл.",
+          },
+          {
+            locator: "ust. 2–5",
+            explanation:
+              "За bezwizowy pobyt виїзд має відбутися до строку, встановленого угодою, одностороннім скасуванням або розпорядженням; після припинення угоди чи відновлення візового обов’язку ust. 3–4 передбачають строк не пізніше 3 місяців від відповідної події, а якщо подія сталася до офіційного оголошення — від дня оголошення. Ust. 5 стосується закінчення zezwolenia na pobyt czasowy.",
           },
           {
             locator: "ust. 6–7",
             explanation:
-              "Для перелічених остаточних рішень передбачено 30 днів, а для припинення перешкод із Art. 31 ust. 1 — 7 днів; легальність у цей період залежить, зокрема, від своєчасності відповідної заяви.",
+              "Для перелічених рішень діє 30 днів від ostateczność, а якщо рішення видав organ wyższego stopnia — від його doręczenie; після припинення перешкод із Art. 31 ust. 1 діє 7 днів. Pobyt у цей період є legalny, якщо відповідну заяву не подано після завершення попереднього legalny pobyt.",
           },
           {
             locator: "ust. 8–11",
             explanation:
-              "Стаття встановлює винятки, повідомлення органу Straży Granicznej та перевірку підстав для рішення про zobowiązanie do powrotu.",
+              "Ust. 8 встановлює винятки за наявності чинного документа або іншої законної підстави pobytu; ust. 8a і 9 обмежують застосування правил до окремих справ про повернення, затримання та kolejny wniosek. За ust. 10 органи повідомляють Straż Graniczna, а за ust. 11 цей орган перевіряє підстави для decyzja o zobowiązaniu do powrotu.",
           },
         ],
         legalEffect:
           "Норма визначає обов’язок виїзду та спеціальні періоди, коли pobyt вважається legalny; потрібно перевірити тип документа, дату вручення і своєчасність заяви.",
         foreignersCase:
-          "Складіть хронологію в’їзду, строку візи або безвізу, заяв і doręczenie рішення; не вважайте 30-денний строк автоматичним, якщо застосовується виняток Art. 299 ust. 8–9 або 8a.",
+          "Складіть хронологію в’їзду, строку wizy або bezwizowy pobyt, заяв і doręczenie рішення. Для 30- або 7-денного строку встановіть конкретний pkt ust. 6 і дату ostateczność або doręczenie; окремо перевірте винятки ust. 8, 8a і 9 та повідомлення за ust. 10.",
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-300",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -420,7 +426,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-301",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -449,11 +455,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-302",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 302 ust. 1 перелічує підстави для wydania decyzji o zobowiązaniu cudzoziemca do powrotu, зокрема відсутність потрібної візи або документа, перевищення дозволеного строку, незаконну роботу чи діяльність, відсутність коштів, запис у wykaz або SIS, загрозу безпеці, порушення кордону, окремі вироки, невідповідність cel і warunki pobytu та визначені рішення у справах міжнародного захисту; ust. 2–6 встановлюють винятки й спеціальні правила.",
+            text: "Art. 302 ust. 1 перелічує матеріальні підстави для wydania decyzji o zobowiązaniu cudzoziemca do powrotu: відсутність потрібної wizy або документа, перевищення дозволеного строку, виконання pracy без odpowiedniego zezwolenia na pracę або wpisanego oświadczenia, діяльність усупереч правилам, відсутність коштів, запис у wykaz або SIS, безпекові підстави, незаконне перетинання кордону, виконуване покарання позбавлення волі з підставою для передачі, малий прикордонний рух, publiczne zdrowie або міжнародні відносини, невідповідність cel і warunki pobytu та визначені рішення у справах міжнародного захисту; ust. 2–6 встановлюють винятки й спеціальні правила.",
             sourceLocator: "Art. 302 ust. 1–6",
           },
         ],
@@ -463,36 +469,36 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1 pkt 1–3",
             explanation:
-              "Підставами можуть бути відсутність чинної підстави в’їзду або pobyt і невиїзд після використання дозволеного строку безвізу чи візи.",
+              "Підставами є відсутність чинної wizy або іншого потрібного документа, а також невиїзд після використання дозволеного строку bezwizowy pobyt чи pobytu за wizą Schengen або krajową.",
           },
           {
             locator: "ust. 1 pkt 4–9",
             explanation:
-              "Окремо названо незаконну роботу, діяльність, відсутність коштів, небажаний запис, SIS, а також безпекові та публічні інтереси.",
+              "Pkt 4 стосується wykonywania pracy без odpowiedniego zezwolenia na pracę або oświadczenia wpisanego до ewidencji; pkt 5 — діяльності всупереч правилам; pkt 6 — коштів і wiarygodne źródła; pkt 7–8 — wykaz та SIS; pkt 9 — оборони, безпеки, порядку або інтересу Польщі. Право на pobyt і право на роботу тут є окремими питаннями.",
           },
           {
             locator: "ust. 1 pkt 10–16",
             explanation:
-              "Стаття охоплює незаконне перетинання кордону, окремі вироки, малий прикордонний рух, здоров’я, невідповідність заявленій меті й визначені результати процедури захисту.",
+              "Стаття охоплює незаконне перетинання кордону без винятку Art. 303 ust. 1 pkt 9a, виконуване покарання позбавлення волі з підставою для передачі, малий прикордонний рух, publiczne zdrowie або міжнародні відносини, невідповідність cel і warunki pobytu та визначені рішення щодо ochrony międzynarodowej.",
           },
           {
             locator: "ust. 2–6",
             explanation:
-              "Винятки стосуються, зокрема, періодів Art. 299 ust. 6, legalny pobyt, особливо важливого інтересу та окремої мобільності.",
+              "Ust. 2 виключає pkt 1–3 у випадках Art. 299 ust. 6, ust. 3 — pkt 2–3 за чинного документа або іншої законної підстави pobytu, ust. 4 — pkt 4 після покарання за Art. 84 ust. 3 закону про powierzanie pracy, а ust. 4a — pkt 4–5 за szczególnie ważny interes cudzoziemca. Ust. 5 вимагає врахувати строк pobytu та зв’язки у названих справах, а ust. 6 містить винятки для п’яти видів short-term mobility.",
           },
         ],
         legalEffect:
-          "Наявність однієї названої обставини запускає оцінку процедури, але висновок про рішення потребує перевірки винятків, доказів і повних фактів справи.",
+          "Конкретний pkt Art. 302 ust. 1 є матеріальною підставою для оцінки рішення про повернення, але рішення не можна обґрунтувати лише загальною назвою порушення: треба встановити факти, докази та винятки ust. 2–6. Підстава щодо роботи не ототожнює автоматично легальність pobytu з наявністю права на роботу.",
         foreignersCase:
-          "Розкладіть посилання органу на конкретний pkt Art. 302 ust. 1, перевірте дати, документи, винятки ust. 2–6 і те, чи відповідає фактична мета заявленій.",
+          "Розкладіть посилання органу на конкретний pkt Art. 302 ust. 1, перевірте дати, документи, винятки ust. 2–6 і відповідність фактичної мети заявленій. Якщо йдеться про працю, окремо встановіть підставу pobytu та відповідне zezwolenie na pracę або oświadczenie.",
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-303",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 303 ust. 1 передбачає, що у випадках Art. 302 ust. 1 провадження про zobowiązanie do powrotu не розпочинають або розпочате umarzaють, якщо cudzoziemiec має визначений статус або дозвіл, є особою з названим сімейним чи іншим зв’язком, може бути негайно переданий або доставлений, або належить до інших перелічених категорій; ust. 4 окремо забороняє розпочинати таке провадження під час розгляду wniosku o ochronę międzynarodową, крім kolejny wniosek.",
+            text: "Art. 303 ust. 1 передбачає, що у випадках Art. 302 ust. 1 провадження про zobowiązanie do powrotu не розпочинають або розпочате umarzają, якщо cudzoziemiec має міжнародний захист, визначений дозвіл чи сімейний статус, дозвіл іншої держави, може бути переданий або doprowadzony, був затриманий одразу після незаконного перетинання зовнішнього кордону чи належить до інших категорій pkt 1–15; ust. 2–3 встановлюють окремі винятки, ust. 4 — правило щодо wniosku o ochronę międzynarodową (крім kolejny wniosek), а ust. 5–7 — спеціальні правила передачі та медичної допомоги.",
             sourceLocator: "Art. 303 ust. 1–7",
           },
         ],
@@ -502,31 +508,36 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1 pkt 1–7",
             explanation:
-              "До винятків належать міжнародний захист, zgoda humanitarna або tolerowany, окремі дозволи, сімейні зв’язки та дозвіл іншої держави, що застосовує dyrektywę 2008/115/WE.",
+              "До категорій належать status uchodźcy або ochrona uzupełniająca, zgoda humanitarna або tolerowany, дозволи Art. 187 pkt 6–7, визначений małżonek, окремі wiza або zezwolenia Art. 181 ust. 1 і Art. 176, pobyt stały або rezydent długoterminowy UE та дозвіл іншої держави, що застосовує dyrektywę 2008/115/WE.",
           },
           {
             locator: "ust. 1 pkt 8–15",
             explanation:
-              "Стаття також називає тимчасове відрядження, негайну передачу або доставлення, заświadczenie Art. 170, Dublin та передачу для кримінального провадження.",
+              "Стаття також охоплює тимчасове відрядження для послуг, niezwłoczne przekazanie або doprowadzenie, затримання одразу після незаконного перетинання зовнішнього кордону, заświadczenie Art. 170, передачу за міжнародною угодою або Dublin та передачу для кримінального провадження чи виконання позбавлення волі.",
           },
           {
-            locator: "ust. 2–7",
+            locator: "ust. 2–3",
             explanation:
-              "Додатково визначені наслідки заяви про зміну рішення, міжнародного захисту, медичні витрати в окремому випадку та дії органу при передачі.",
+              "У випадку Art. 302 ust. 1 pkt 1 рішення не видають до завершення процедури зміни рішення за Art. 120; pkt 1 не застосовується у ситуаціях Art. 32 ust. 1 або Art. 33 ust. 2 Konwencji dotyczącej statusu uchodźców.",
+          },
+          {
+            locator: "ust. 4–7",
+            explanation:
+              "Провадження не розпочинають під час розгляду wniosku o ochronę międzynarodową, крім kolejny wniosek; для особи з pkt 9 можливі медичні винятки й допомога за рахунок держави, а в pkt 9 і 11 орган інформує про державу передачі та doprowadza до її кордону, крім Art. 303a.",
           },
         ],
         legalEffect:
-          "Стаття обмежує застосування процедури повернення за наявності спеціальних статусів або процедур, але винятки треба зіставляти з конкретним pkt Art. 303.",
+          "Art. 303 веде до незапочаткування або umorzenie конкретного провадження про повернення, але не є універсальним підтвердженням legalny pobyt чи окремим дозволом на роботу; застосування залежить від точного pkt і доказів.",
         foreignersCase:
-          "Якщо розпочато повернення, перевірте, чи є у вас статус, дозвіл, сімейна обставина, процедура ochrony або підстава для передачі, названі в Art. 303, і подайте підтвердження органу.",
+          "Якщо розпочато повернення, перевірте точний pkt Art. 303 ust. 1, статус, zezwolenie, сімейну обставину, процедуру ochrony або підставу передачі й подайте органу відповідні підтвердження.",
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-303a",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 303a передбачає для cudzoziemca з Art. 303 ust. 1 pkt 11, крім випадку негайної передачі, wydanie decyzji o przekazaniu до іншої держави; до неї відповідно застосовуються правила про рішення про zobowiązanie do powrotu, але не визначаються строк dobrowolnego wyjazdu і zakaz ponownego wjazdu.",
+            text: "Art. 303a ust. 1 передбачає для cudzoziemca з Art. 303 ust. 1 pkt 11, крім випадку niezwłocznego przekazania, wydanie decyzji o przekazaniu до держави-члена ЄС або EFTA–EOG чи Швейцарії за відповідною міжнародною угодою; до неї відповідно застосовуються правила про decyzja o zobowiązaniu do powrotu, але не визначаються termin dobrowolnego wyjazdu і zakaz ponownego wjazdu, а витрати за примусового виконання регулюються ust. 3.",
             sourceLocator: "Art. 303a ust. 1–3",
           },
         ],
@@ -536,12 +547,12 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1",
             explanation:
-              "Рішення видається для особи з Art. 303 ust. 1 pkt 11, якщо її не передають негайно за передбаченою міжнародною угодою.",
+              "Рішення видається особі з Art. 303 ust. 1 pkt 11, якщо її не передають niezwłocznie до держави-члена ЄС, EFTA–EOG або Швейцарії на підставі міжнародної угоди, чинної 13 січня 2009 року.",
           },
           {
             locator: "ust. 2–3",
             explanation:
-              "Правила про рішення повернення застосовуються відповідно, але без строку добровільного виїзду і заборони повторного в’їзду; витрати визначаються за спеціальними відсиланнями.",
+              "Ust. 2 виключає termin dobrowolnego wyjazdu і zakaz ponownego wjazdu; ust. 3 передбачає визначення витрат, якщо рішення підлягає przymusowe wykonanie, із відповідним застосуванням Art. 336–338 і 340–347.",
           },
         ],
         legalEffect:
@@ -551,11 +562,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-303b",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 303b передбачає, що у випадку Art. 303 ust. 1 pkt 9a komendant placówki Straży Granicznej складає protokół przekroczenia granicy та видає postanowienie o opuszczeniu terytorium; на нього подається zażalenie до Komendanta Głównego Straży Granicznej, але заżalenie не зупиняє виконання, а postanowienie містить nakaz виїзду і zakaz ponownego wjazdu на 6 місяців–3 роки.",
+            text: "Art. 303b передбачає, що у випадку Art. 303 ust. 1 pkt 9a komendant placówki Straży Granicznej, właściwy ze względu na miejsce przekroczenia granicy, складає protokół przekroczenia granicy та видає postanowienie o opuszczeniu terytorium; на нього подається zażalenie до Komendanta Głównego Straży Granicznej, але заżalenie не зупиняє виконання, а postanowienie містить nakaz виїзду і zakaz ponownego wjazdu на 6 місяців–3 роки.",
             sourceLocator: "Art. 303b ust. 1–5",
           },
         ],
@@ -565,12 +576,17 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1",
             explanation:
-              "Орган складає протокол і видає postanowienie; заżalenie подається Komendantowi Głównemu Straży Granicznej, але не має suspensywного ефекту.",
+              "Komendant placówki właściwy за місцем перетину кордону складає протокол і видає postanowienie; zażalenie подається Komendantowi Głównemu Straży Granicznej, але не має suspensywного ефекту.",
           },
           {
             locator: "ust. 2–4",
             explanation:
-              "Postanowienie містить наказ залишити територію та заборону повторного в’їзду до Польщі й інших держав Schengen на строк 6 місяців–3 років.",
+              "Postanowienie містить nakaz opuszczenia території та zakaz ponownego wjazdu до Польщі й інших держав Schengen на 6 місяців–3 роки; до цього zakaz відповідно застосовується Art. 320.",
+          },
+          {
+            locator: "ust. 5",
+            explanation:
+              "У справах cofnięcia цього zakaz органом wyższego stopnia щодо komendant placówki є Komendant Główny Straży Granicznej.",
           },
         ],
         legalEffect:
@@ -580,7 +596,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-304",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -604,7 +620,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-305",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -633,11 +649,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-306",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 306 передбачає wygaśnięcie z mocy prawa decyzji o zobowiązaniu cudzoziemca do powrotu, якщо cudzoziemiec, зокрема, отримав status uchodźcy або ochronę uzupełniającą, має zezwolenie na pobyt stały чи pobyt rezydenta długoterminowego UE, перебуває на названому дозволі або отримав визначене рішення щодо міжнародного захисту.",
+            text: "Art. 306 передбачає wygaśnięcie z mocy prawa decyzji o zobowiązaniu cudzoziemca do powrotu, якщо cudzoziemiec, зокрема, posiada status uchodźcy або korzysta z ochrony uzupełniającej, posiada zezwolenie na pobyt stały чи pobyt rezydenta długoterminowego UE, przebywa на підставі названого дозволу або otrzymał визначене рішення щодо міжнародного захисту.",
             sourceLocator: "Art. 306 pkt 1–3",
           },
         ],
@@ -662,7 +678,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-307",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -691,7 +707,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-308",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -720,7 +736,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-308a",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -744,31 +760,31 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-308b",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 308b передбачає застосування Rozdział 5 ustawy z 14 lipca 2006 r. до членів сім’ї громадянина Великої Британії, які мають zezwolenie na pobyt czasowy з Art. 160 pkt 4–6 і перестали перебувати в Польщі разом із цим громадянином.",
+            text: "Art. 308b передбачає застосування Rozdział 5 ustawy z 14 lipca 2006 r. до cudzoziemców, які мають zezwolenie na pobyt czasowy з Art. 160 pkt 4–6 і перестали перебувати на території Польщі разом із obywatelem Zjednoczonego Królestwa.",
             sourceLocator: "Art. 308b",
           },
         ],
         summary:
-          "Стаття охоплює окремих членів сім’ї громадянина Великої Британії з дозволом Art. 160 pkt 4–6 після припинення спільного перебування.",
+          "Стаття охоплює cudzoziemców із дозволом Art. 160 pkt 4–6 після припинення спільного перебування на території Польщі з obywatelem Zjednoczonego Królestwa.",
         rules: [
           {
             locator: "Art. 308b",
             explanation:
-              "Застосування спеціального режиму залежить одночасно від виду zezwolenie, сімейного зв’язку та факту припинення спільного перебування.",
+              "Текст Art. 308b прив’язує режим до виду zezwolenie, спільного перебування на території Польщі з obywatelem Zjednoczonego Królestwa та факту його припинення; перевіряйте кожну з цих обставин.",
           },
         ],
         legalEffect:
           "Стаття визначає відсилання до спеціального режиму, але не замінює перевірку всіх умов закону 2006 року.",
         foreignersCase:
-          "Перевірте підставу вашого zezwolenie за Art. 160 pkt 4–6, статус громадянина Великої Британії та дату припинення спільного pobyt.",
+          "Перевірте підставу вашого zezwolenie за Art. 160 pkt 4–6, статус громадянина Zjednoczonego Królestwa та дату, коли ви перестали перебувати з ним на території Польщі; не замінюйте ці умови самим сімейним або трудовим документом.",
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-309",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -792,7 +808,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-309a",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -816,11 +832,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-310",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 310 визначає, що decyzja o zobowiązaniu cudzoziemca do powrotu видається z urzędu відповідним komendant oddziału або placówki Straży Granicznej, а за заявою названих органів — компетентним комendant через місце органу-заявника або місце pobytu; орган також може передати подальше ведення справи postanowienie іншому компетентному komendant.",
+            text: "Art. 310 визначає, що decyzja o zobowiązaniu cudzoziemca do powrotu видається z urzędu komendant oddziału або placówki Straży Granicznej, який встановив підставу; на wniosek wojewody, Ministra Obrony Narodowej, Szefa ABW, Szefa AW, органу Krajowej Administracji Skarbowej або комendanta Policji — компетентним komendant за siedziba органу-заявника або місцем pobytu cudzoziemca. Орган, який встановив підставу, може postanowienie передати подальше ведення справи компетентному komendant за місцем pobytu.",
             sourceLocator: "Art. 310 ust. 1–2",
           },
         ],
@@ -835,7 +851,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1 pkt 2",
             explanation:
-              "За заявою перелічених органів компетентність визначається за їхньою siedziba або місцем pobytu cudzoziemca.",
+              "На wniosek wojewody, Ministra Obrony Narodowej, Szefa ABW, Szefa AW, органу Krajowej Administracji Skarbowej або komendanta wojewódzkiego чи powiatowego (miejskiego) Policji компетентність визначається за siedziba органу-заявника або місцем pobytu cudzoziemca.",
           },
           {
             locator: "ust. 2",
@@ -850,7 +866,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-311",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -873,7 +889,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-312",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -902,7 +918,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-313",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -925,7 +941,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-314",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -954,11 +970,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-315",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 315 ust. 1 передбачає в decyzji o zobowiązaniu do powrotu termin dobrowolnego wyjazdu від 8 до 30 днів від doręczenia; за ймовірності втечі або вимог безпеки строк не визначають, а така decyzja у випадку Art. 315 ust. 2 pkt 2 підлягає негайному виконанню; ust. 4a позначений як «(uchylony)».",
+            text: "Art. 315 ust. 1 передбачає в decyzji o zobowiązaniu do powrotu termin dobrowolnego wyjazdu від 8 до 30 днів від doręczenia; за ймовірності втечі або вимог оборони, безпеки чи порядку строк не визначають, а decyzja без строку з підстави Art. 315 ust. 2 pkt 2 підлягає негайному виконанню. Ust. 3 називає обставини оцінки ризику втечі, ust. 4a є «uchylony», а ust. 4b передбачає окреме umorzenie щодо строку.",
             sourceLocator: "Art. 315 ust. 1–9",
           },
         ],
@@ -968,27 +984,27 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1–3",
             explanation:
-              "Строк становить 8–30 днів від doręczenia; його не визначають за ймовірності втечі або з міркувань оборони, безпеки чи порядку, а ризик оцінюють за названими обставинами.",
+              "Строк становить 8–30 днів від doręczenia; його не визначають за ймовірності втечі або з міркувань оборони, безпеки чи порядку. Ризик оцінюють, зокрема, за заявою про непідкорення, відсутністю документів особи, незаконним перетинанням кордону або в’їздом під час wpis до wykaz чи SIS.",
           },
           {
             locator: "ust. 4–6",
             explanation:
-              "Без строку вказують державу повернення; ust. 4a є uchylony; у визначених випадках строк може припинитися з мocy prawa, а рішення без строку з безпекової підстави виконується негайно.",
+              "Рішення без terminu називає państwo powrotu; ust. 4a є uchylony, а ust. 4b допускає umorzenie провадження в частині строку, коли особа добровільно перетинає кордон, залишаючи państwa obszaru Schengen. За безпекової підстави рішення виконується негайно, а після незаконного перетинання кордону строк припиняється z mocy prawa.",
           },
           {
             locator: "ust. 7–9",
             explanation:
-              "Для осіб зі збереженим захистом або статусом в іншій державі ЄС стаття містить спеціальні правила визначення państwo powrotu.",
+              "Ust. 7 визначає як państwo powrotu державу ЄС, де cudzoziemiec з Art. 309 або 309a зберігає ochronę międzynarodową. Ust. 8 стосується особи, яка мала pobyt за Art. 186 ust. 1 pkt 3, а ust. 9 — члена її сім’ї; у цих випадках називається держава з zezwolenie na pobyt rezydenta długoterminowego UE.",
           },
         ],
         legalEffect:
           "Наявність або відсутність строку істотно впливає на час добровільного виїзду, але висновок залежить від конкретної підстави, оцінки ризику та тексту decyzja.",
         foreignersCase:
-          "Перевірте дату doręczenia, кількість днів і мотив, чому строк не надано; окремо зверніть увагу на позначений як uchylony ust. 4a та спеціальні ust. 7–9.",
+          "Перевірте дату doręczenia, кількість днів і мотив, чому строк не надано; окремо зверніть увагу на ust. 3, позначений як uchylony ust. 4a, можливе umorzenie за ust. 4b та спеціальні правила państwo powrotu в ust. 7–9.",
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-316",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1017,11 +1033,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-317",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 317 дозволяє в рішенні про продовження terminu dobrowolnego wyjazdu зобов’язати cudzoziemca періодично з’являтися, внести zabezpieczenie pieniężne не менше подвійної мінімальної заробітної плати, передати dokument podróży або інший документ до depozyt та проживати у визначеному місці; можна застосувати один або кілька заходів, а місце не можна змінювати без зміни decyzja.",
+            text: "Art. 317 дозволяє в decyzja з Art. 316 ust. 1–2 до добровільного виїзду зобов’язати cudzoziemca періодично з’являтися, внести zabezpieczenie pieniężne не менше подвійної мінімальної заробітної плати, передати dokument podróży або інший документ до depozyt та проживати у визначеному місці; можна застосувати один або кілька заходів, а місце не можна змінювати без зміни decyzja.",
             sourceLocator: "Art. 317 ust. 1–4",
           },
         ],
@@ -1031,12 +1047,17 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1–2",
             explanation:
-              "Орган може призначити один або кілька заходів: явку, грошове забезпечення, depozyt документа або проживання у визначеному місці.",
+              "У decyzja з Art. 316 ust. 1–2 орган може призначити один або кілька заходів: явку, грошове забезпечення, depozyt документа або проживання у визначеному місці.",
+          },
+          {
+            locator: "ust. 2a",
+            explanation:
+              "До zabezpieczenie pieniężne відповідно застосовуються Art. 398 ust. 3 і 4.",
           },
           {
             locator: "ust. 3–4",
             explanation:
-              "Кошти й документи зберігаються до підтвердження запланованої зворотної подорожі; визначене місце проживання не можна змінити без зміни рішення.",
+              "Кошти й документи зберігаються до пред’явлення квитка або іншого доказу запланованої зворотної подорожі; визначене місце проживання не можна змінити без зміни decyzja.",
           },
         ],
         legalEffect:
@@ -1046,7 +1067,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-318",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1065,7 +1086,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 1a–1d",
             explanation:
-              "Для відмови від заборони оцінюються підстава повернення та актуальний реальний ризик; є виняток для особи, якій протягом попередніх двох років уже надавали такий відступ, і умовна заборона на випадок порушення.",
+              "Для odstąpienie оцінюються обставини підстави Art. 302 ust. 1 та актуальний реальний ризик порушення права; ust. 1a не застосовується, якщо протягом двох попередніх років уже було рішення з таким odstąpienie, а ust. 1d встановлює умовний zakaz на випадок невиїзду з Schengen або незаконного перетинання кордону.",
           },
           {
             locator: "ust. 2–3",
@@ -1080,7 +1101,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-319",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1099,7 +1120,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 2",
             explanation:
-              "Несплачені витрати можуть продовжити заборону z mocy prawa до дня сплати, але в межах максимуму, названого статтею.",
+              "Якщо до завершення строку за ust. 1 pkt 1–3 cudzoziemiec не сплатив витрати, zakaz продовжується z mocy prawa до дня сплати, але не довше ніж до 5 років.",
           },
         ],
         legalEffect:
@@ -1109,11 +1130,11 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-320",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
-            text: "Art. 320 дозволяє organ першої інстанції на wniosek cudzoziemca cofnięcie zakazu, якщо особа виконала рішення про повернення, має обґрунтовані обставини для повторного в’їзду, зокрема гуманітарні, або отримала допомогу в dobrowolny powrót; заборону не скасовують за безпекових ризиків, несплати витрат, нового zakaz протягом двох років або до спливу половини строку, крім гуманітарного в’їзду.",
+            text: "Art. 320 дозволяє organ, який у першій інстанції видав decyzja o zobowiązaniu do powrotu, на wniosek cudzoziemca cofnięcie zakazu, якщо особа доведе виконання обов’язків, обґрунтовані обставини повторного в’їзду, зокрема гуманітарні, або надання допомоги в dobrowolny powrót; ust. 1a вимагає врахувати обставини первісного рішення та майбутнього в’їзду, а ust. 2–3 встановлюють перешкоди й гуманітарний виняток.",
             sourceLocator: "Art. 320 ust. 1–3",
           },
         ],
@@ -1128,7 +1149,7 @@ export const foreignersActPart09 =
           {
             locator: "ust. 2",
             explanation:
-              "Перешкодами є загроза безпеці або порядку, несплачені витрати, нова заборона після рішення про скасування та несплив половини строку.",
+              "Перешкодами є загроза обороні, безпеці, порядку або інтересу Польщі, несплачені витрати, новий zakaz, винесений після рішення про cofnięcie, якщо від цього рішення не минуло 2 роки, або несплив половини строку zakaz.",
           },
           {
             locator: "ust. 3",
@@ -1143,7 +1164,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-321",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1172,7 +1193,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-322",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1196,7 +1217,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-323",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1225,7 +1246,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-324",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1254,7 +1275,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-325",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1288,7 +1309,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-326",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1317,7 +1338,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-327",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1346,7 +1367,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-328",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1370,7 +1391,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-329",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1404,7 +1425,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-329a",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1433,7 +1454,7 @@ export const foreignersActPart09 =
       },
       {
         provisionId: "ustawa-o-cudzoziemcach-art-330",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -1465,5 +1486,5 @@ export const foreignersActPart09 =
         foreignersCase:
           "Встановіть, яка саме справа або підстава Art. 330 існує, чи це перший або kolejny wniosek, і до якої дати закон відкладає виконання; зберігайте підтвердження кожної заяви.",
       },
-    ],
+    ]),
   })

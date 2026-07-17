@@ -1,5 +1,6 @@
 import { createLegalTextAuthor } from "../../legal-text"
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 const ppsaLaw = createLegalTextAuthor("ppsa")
 
@@ -8,7 +9,7 @@ export const ppsaPart00 = defineEditorialPart<"ppsa">({
   editionId: "ppsa-2026-143",
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
-  entries: [
+  entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-3",
       reviewStatus: "reviewed",
@@ -48,5 +49,5 @@ export const ppsaPart00 = defineEditorialPart<"ppsa">({
       foreignersCase:
         "Після адміністративної справи про pobyt спочатку визначте, що саме оскаржується: decyzja, postanowienie, bezczynność чи przewlekłość. Потім перевірте остаточність, належний шлях, строк і вимоги до skargi.",
     },
-  ],
+  ]),
 })

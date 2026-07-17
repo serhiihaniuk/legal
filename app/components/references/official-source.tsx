@@ -1,12 +1,12 @@
 import { ExternalLink } from "lucide-react"
 
 import { LegalText } from "./legal-reference-text"
-import { legalReferenceTarget } from "~/data/legal-references"
+import { legalReferenceTarget } from "~/data/references/legal-references"
 import {
   getOfficialSource,
   type OfficialSourceId,
-} from "~/data/legal-library/official-sources"
-import type { OfficialSource } from "~/data/legal-types"
+} from "~/data/legal-library/references/official-sources"
+import type { OfficialSource } from "~/data/shared/legal-types"
 
 const officialSourceLabelClassName = "text-sm font-medium"
 const officialSourceLinkClassName =

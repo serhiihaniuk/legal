@@ -21,7 +21,11 @@ import {
   legacyEvidenceDocumentIdMap,
   type EvidenceDocumentCategory,
 } from "~/data/document-library"
-import { documentById } from "~/data/document-index"
+import { documentById } from "~/data/documents/catalog"
+
+export function meta() {
+  return [{ title: "Документи — Legalizacja" }]
+}
 
 export function loader({ params }: LoaderFunctionArgs) {
   const documentId = params.documentId

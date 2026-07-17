@@ -1,7 +1,0 @@
-export {
-  DocsSidebar,
-  DocsSidebarBackLink,
-  DocsSidebarItem,
-  DocsSidebarList,
-  DocsSidebarSection,
-} from "~/components/layout"

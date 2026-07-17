@@ -7,34 +7,44 @@ export {
   type KpaRouteParams,
   type KpaRouteState,
   type KpaSelection,
-} from "./model/kpa-route"
-export { KpaGuideRoute } from "./ui/kpa-guide-route"
+} from "./model/kpa/kpa-route"
+export { KpaGuideRoute } from "./ui/kpa/kpa-guide-route"
 export {
   buildLegalLearningModuleView,
   findModuleProvisions,
   toLegalExplanationView,
   type LegalExplanationView,
   type LegalLearningModuleView,
-} from "./model/legal-learning-view"
+} from "./model/learning/legal-learning-view"
 export {
   KpaArticlesContent,
   kpaArticlesToc,
   type KpaArticlesContentProps,
-} from "./ui/kpa-articles-content"
+} from "./ui/kpa/kpa-articles-content"
 export {
   KpaLearningContent,
   kpaLearningContentToc,
   type KpaLearningContentProps,
-} from "./ui/kpa-learning-content"
-export { KpaPracticeContent, kpaPracticeToc } from "./ui/kpa-practice-content"
+} from "./ui/kpa/kpa-learning-content"
+export {
+  KpaPracticeContent,
+  kpaPracticeToc,
+} from "./ui/kpa/kpa-practice-content"
 export {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
   type LawDocumentSection,
-} from "./ui/law-document-navigation"
-export { LawLibraryNavigation } from "./ui/law-library-navigation"
+} from "./ui/navigation/law-document-navigation"
+export { LawLibraryNavigation } from "./ui/navigation/law-library-navigation"
 export {
   LegalLearningModuleContent,
   legalLearningContentToc,
-} from "./ui/legal-learning-module-content"
-export { LegalProvisionSelector } from "./ui/legal-provision-selector"
+} from "./ui/learning/legal-learning-module-content"
+export { LegalProvisionSelector } from "./ui/provision/legal-provision-selector"
+export {
+  LegalProvisionSource,
+  normalizeLegalProvisionSourceText,
+  splitLegalProvisionSourceText,
+  type LegalProvisionSourceProps,
+  type LegalProvisionSourceRow,
+} from "./ui/provision/legal-provision-source"

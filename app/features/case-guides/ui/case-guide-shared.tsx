@@ -1,5 +1,5 @@
 import { Badge } from "~/components/ui/badge"
-import type { CaseGuideDocument } from "~/data/case-guide-types"
+import type { CaseGuideDocument } from "~/data/case-guides/types"
 
 function documentStatusVariant(level: string) {
   if (level === "required") return "default" as const

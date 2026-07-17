@@ -106,7 +106,7 @@
 - Variants and states: selected, matched, dimmed, overview/full-depth, expanded/collapsed, foundational, procedural, practical, active case route, positive/negative procedural branch
 - Token/component ownership: semantyczne CSS variables i Tailwind v4 theme tokens w `app/app.css`
 - Shared documentation patterns: `app/components/patterns/` owns the typeset document shell, badge header, definition/reference rows, heading-to-TOC projection, and the paired desktop/mobile section selector. `app/components/layout/` owns the documentation frame. `app/components/references/` is the only rendering public API for `LegalLink`, `LegalText`, previews, and official sources; callers keep `prose`, `reference-section`, and `provision-page` contexts semantically explicit, while all three share the same quiet inherited-color treatment. A URL-backed selection route derives one selection state from its URL and passes one `useUrlSelection` model to its desktop and mobile selectors; those controls must not maintain parallel state.
-- Feature ownership: route composition imports the public `app/features/{law-library,legal-map,case-guides,documents,study}` Interfaces. Root-level compatibility exports remain temporarily for direct-import stability; feature implementation moves behind those Interfaces one bounded decomposition at a time.
+- Feature ownership: route composition and internal code import the public `app/features/{law-library,legal-map,case-guides,documents,study}` and shared `app/components/{layout,patterns,references}` APIs. The temporary root compatibility adapters have been retired.
 
 ## Accessibility
 

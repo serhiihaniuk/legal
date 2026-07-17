@@ -11,7 +11,7 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import {
   legalReferenceTarget,
   type LegalReference,
-} from "~/data/legal-references"
+} from "~/data/references/legal-references"
 import { cn } from "~/lib/utils"
 
 export function LegalReferenceArrow({

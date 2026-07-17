@@ -6,3 +6,4 @@ export {
   DocsSidebarList,
   DocsSidebarSection,
 } from "./docs-sidebar-navigation"
+export { SiteHeader } from "./site-header"

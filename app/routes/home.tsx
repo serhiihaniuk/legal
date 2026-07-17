@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router"
 
 import { LegalText } from "~/components/references"
 import { buttonVariants } from "~/components/ui/button"
-import { caseGuideRouteById } from "~/data/case-guide-routes"
+import { caseGuideRouteById } from "~/data/case-guides/routes"
 import { listEvidenceDocuments } from "~/data/document-library"
 import { legalReferenceRegistry } from "~/data/legal-corpus/reference-registry.generated"
 

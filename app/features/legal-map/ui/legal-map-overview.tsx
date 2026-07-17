@@ -13,8 +13,8 @@ import {
 } from "~/components/ui/accordion"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
-import { legalMapJourney } from "~/data/legal-map-journey"
-import type { IndexedNode } from "~/data/legal-index"
+import { legalMapJourney } from "~/data/legal-map/journey"
+import type { IndexedNode } from "~/data/legal-map/index"
 
 import { journeyNodes } from "../model/legal-map-model"
 

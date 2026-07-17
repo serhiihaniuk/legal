@@ -11,8 +11,8 @@ import {
   getLegalReferencePreview,
   legalReferencePreviewIdentity,
   type LegalReferencePreview,
-} from "~/data/reference-previews"
-import type { LegalReference } from "~/data/legal-references"
+} from "~/data/references/reference-previews"
+import type { LegalReference } from "~/data/references/legal-references"
 import { cn } from "~/lib/utils"
 
 const statusLabels: Record<LegalReferencePreview["status"], string> = {

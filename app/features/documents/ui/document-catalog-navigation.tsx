@@ -9,7 +9,7 @@ import {
   getEvidenceDocumentPath,
   type EvidenceDocumentCategory,
 } from "~/data/document-library"
-import { documentsForCategory } from "~/data/document-index"
+import { documentsForCategory } from "~/data/documents/catalog"
 import {
   categories,
   categoryNavigationOptions,

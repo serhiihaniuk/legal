@@ -9,6 +9,7 @@ import { ppsaPart06a } from "./part-06a"
 import { ppsaPart06b } from "./part-06b"
 import { ppsaPart07a } from "./part-07a"
 import { ppsaPart07b } from "./part-07b"
+import { ppsaPart08 } from "./part-08"
 
 export const ppsaExplanations = {
   ...ppsaPart00,
@@ -21,4 +22,5 @@ export const ppsaExplanations = {
   ...ppsaPart06b,
   ...ppsaPart07a,
   ...ppsaPart07b,
+  ...ppsaPart08,
 } as const satisfies Readonly<Record<string, LegalExplanation<"ppsa">>>

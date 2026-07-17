@@ -1,1 +1,1 @@
-export { default, loader } from "./kpa"
+export { default, loader, meta } from "./kpa"

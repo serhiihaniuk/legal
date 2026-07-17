@@ -12,7 +12,7 @@ import {
 import {
   legalMapJourney,
   type LegalMapJourneyStage,
-} from "~/data/legal-map-journey"
+} from "~/data/legal-map/journey"
 
 import { journeyNodes } from "../model/legal-map-model"
 

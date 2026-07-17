@@ -1,13 +1,8 @@
 import { describe, expect, it } from "vitest"
 
-import {
-  CaseStudyContent as CompatibilityCaseStudyContent,
-  caseStudyTableOfContents as compatibilityTableOfContents,
-} from "~/components/case-study-content"
-import { getCaseGuideRoute } from "~/data/case-guide-routes"
+import { getCaseGuideRoute } from "~/data/case-guides/routes"
 
 import {
-  CaseStudyContent,
   caseStudySectionIds,
   caseStudyStageNavigation,
   caseStudyTableOfContents,
@@ -15,11 +10,6 @@ import {
 } from "."
 
 describe("case-guides public API", () => {
-  it("preserves the root compatibility exports", () => {
-    expect(CompatibilityCaseStudyContent).toBe(CaseStudyContent)
-    expect(compatibilityTableOfContents).toBe(caseStudyTableOfContents)
-  })
-
   it("inserts route stages into the stable section table of contents", () => {
     const route = getCaseGuideRoute("cukr")
     const stageNavigation = caseStudyStageNavigation(route)

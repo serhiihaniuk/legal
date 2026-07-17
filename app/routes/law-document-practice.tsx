@@ -31,6 +31,10 @@ const headings = defineDocumentHeadings({
 
 const toc = tableOfContentsFromHeadings(headings)
 
+export function meta() {
+  return [{ title: "Практикум за актом — Legalizacja" }]
+}
+
 export async function loader({ params }: LoaderFunctionArgs) {
   const document = getDocument(params.documentId)
   if (!document) throw new Response("Legal document not found", { status: 404 })

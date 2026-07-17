@@ -1,14 +1,15 @@
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 export const ppsaPart07a = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
   editionId: "ppsa-2026-143",
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
-  entries: [
+  entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-271",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -22,22 +23,22 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "pkt 1",
           explanation:
-            "Перевіряйте, чи особа у складі суду була uprawniona, чи sędzia був wyłączony z mocy ustawy, і чи сторона до uprawomocnienie реально могла просити про wyłączenie.",
+            "Перевіряйте, чи у складі суду брала участь osoba nieuprawniona, чи sędzia був wyłączony z mocy ustawy, і чи сторона до uprawomocnienia orzeczenia не могла вимагати його wyłączenie.",
         },
         {
           locator: "pkt 2",
           explanation:
-            "Для strony важливі zdolność sądowa, zdolność procesowa, należyta reprezentacja та фактична możność działania; текст також виключає wznowienie у названих випадках припинення перешкоди, заявленого zarzut або підтвердження czynności.",
+            "Для strony важливі zdolność sądowa, zdolność procesowa, należyta reprezentacja та możność działania; wznowienie не можна вимагати, якщо до uprawomocnienia niemożność działania уstała, brak reprezentacji був піднятий у zarzut або strona підтвердила dokonane czynności procesowe.",
         },
       ],
       legalEffect:
         "Норма відкриває спеціальний шлях wznowienie лише за описаних умов nieważność; сама наявність процесуальної помилки не доводить автоматично, що skarga буде прийнята або задоволена.",
       foreignersCase:
-        "У справі іноземця перевірте склад суду, umocowanie представника, zdolność procesowa та докази реальної можливості діяти. Не ототожнюйте незнання польської мови саме по собі з підставою Art. 271 без оцінки всього провадження.",
+        "У справі іноземця перевірте, чи брала участь osoba nieuprawniona або sędzia wyłączony z mocy ustawy, а також zdolność sądowa, zdolność procesowa, należyta reprezentacja та конкретну możność działania. Не припускайте, що будь-яка процесуальна помилка автоматично дає підставу Art. 271.",
     },
     {
       provisionId: "ppsa-art-272",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -51,7 +52,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1–2",
           explanation:
-            "Для підстави, пов’язаної з orzeczenie Trybunału Konstytucyjnego, строк становить три місяці від wejście w życie цього orzeczenie; у спеціальній ситуації з відхиленим środkiem odwoławczym він рахується від doręczenie postanowienia o odrzuceniu.",
+            "Для підстави, пов’язаної з orzeczenie Trybunału Konstytucyjnego, строк становить три місяці від wejścia w życie цього orzeczenia; якщо на момент його ухвалення судове orzeczenie ще не було prawomocne через wniesiony środek odwoławczy, який потім відхилено, строк рахується від doręczenia postanowienia o odrzuceniu.",
         },
         {
           locator: "§ 2a–3",
@@ -66,7 +67,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-273",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -75,7 +76,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Норма охоплює нові обставини, докази, злочинне походження orzeczenie, скасований обвинувальний вирок і повторне prawomocne orzeczenie щодо тієї самої справи.",
+        "Норма охоплює нові обставини, докази, злочинне походження orzeczenie, скасований обвинувальний вирок і пізніше виявлене prawomocne orzeczenie щодо тієї самої справи.",
       rules: [
         {
           locator: "§ 1",
@@ -85,17 +86,17 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 2–3",
           explanation:
-            "Нові facts або dowody мають бути потенційно важливими для wynik справи і недоступними стороні в попередньому провадженні; при другому prawomocne orzeczenie суд за законом бере до уваги також інші такі рішення з urzędu.",
+            "Нові facts або dowody мають бути такими, що могли б вплинути на wynik справи, і такими, якими strona не могла скористатися в попередньому провадженні; при пізньому виявленні prawomocne orzeczenie щодо тієї самої справи суд бере до уваги також інші такі рішення з urzędu.",
         },
       ],
       legalEffect:
         "Перелік дає процесуальну можливість просити wznowienie, але не встановлює наперед, що новий доказ змінить результат; його пізніше виявлення та вплив потребують обґрунтування.",
       foreignersCase:
-        "У спорі про pobyt відокремте справді новий документ або факт від документа, який уже був у aktach. Покажіть, коли і як його виявлено та чому ним не можна було скористатися раніше.",
+        "У спорі про pobyt відокремте пізніше виявлені facts або dowody від тих, якими strona вже могла скористатися. Покажіть, коли і як їх виявлено та чому strona не могла скористатися ними в попередньому провадженні.",
     },
     {
       provisionId: "ppsa-art-274",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -109,7 +110,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "Art. 274",
           explanation:
-            "Звичайне припущення про злочин недостатнє: основним доказом є prawomocny wyrok skazujący, якщо немає винятку щодо неможливості wszczęcia або іншого umorzenie.",
+            "Звичайне припущення про злочин недостатнє: для цієї підстави czyn має бути встановлений prawomocnym wyrokiem skazującym, якщо немає винятку щодо неможливості wszczęcia або іншого umorzenie.",
         },
       ],
       legalEffect:
@@ -119,7 +120,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-275",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -143,7 +144,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-276",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -172,7 +173,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-277",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -192,11 +193,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       legalEffect:
         "Пропуск тримісячного строку може вплинути на допустимість skarga o wznowienie; дата знання має підтверджуватися матеріалами справи, а не припущенням.",
       foreignersCase:
-        "Для іноземця зберіть доказ doręczenie, перекладу та фактичного отримання відомостей про підставу. Не рахуйте строк лише від дати, надрукованої на orzeczenie.",
+        "Для іноземця зафіксуйте документами, коли strona дізналася про podstawę wznowienia, а у випадках позбавлення możność działania або brak należytej reprezentacji — коли відповідна strona, її organ чи przedstawiciel ustawowy дізналися про orzeczenie. Якщо посилаєтеся на doręczenie або отримання, збережіть відповідне підтвердження; не рахуйте строк лише від дати, надрукованої на orzeczenie.",
     },
     {
       provisionId: "ppsa-art-278",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -220,7 +221,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-279",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -244,7 +245,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-280",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -269,11 +270,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       legalEffect:
         "Проходження попередньої перевірки означає лише призначення rozprawa, а не визнання підстави доведеною і не позитивний результат wznowienie.",
       foreignersCase:
-        "Якщо skarga іноземця прийшла до суду, відокремте posiedzenie nejawne щодо допустимості від розгляду по суті. На wezwanie подайте докази строку, doręczenie та заявленої підстави.",
+        "Якщо skarga іноземця подана до суду, відокремте posiedzenie niejawne щодо строку й ustawowa podstawa від подальшої rozprawa. На żądanie суду заявник має uprawdopodobnić обставини, що підтверджують строк або dopuszczalność wznowienia.",
     },
     {
       provisionId: "ppsa-art-281",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -297,11 +298,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-282",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 282 встановлює, що суд розглядає справу наново в межах, визначених підставою wznowienia; після повторного розгляду він oddala або uwzględnia skargę, застосовуючи відповідні правила, або uchyla оскаржене orzeczenie й odrzuca skargę чи umarza postępowanie. Для випадку Art. 273 § 3 передбачені спеціальні варіанти щодо інших prawomocne orzeczenia тієї самої справи.",
+          text: "Art. 282 § 1 вимагає розгляду справи наново в межах підстави wznowienia; § 2 передбачає oddalenie або uwzględnienie skargi із відповідним застосуванням правил провадження перед судом, який wznowił postępowanie, або uchylenie оскарженого orzeczenia з odrzuceniem skargi чи umorzeniem postępowania. Для випадку Art. 273 § 3 передбачені спеціальні варіанти щодо prawomocne orzeczenia тієї самої справи.",
           sourceLocator: "Art. 282 § 1–3",
         },
       ],
@@ -316,17 +317,17 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 2–3",
           explanation:
-            "Після розгляду суд може залишити skargę без задоволення, задовольнити її або скасувати orzeczenie з подальшим odrzucenie чи umorzenie; § 3 окремо регулює пов’язані prawomocne orzeczenia.",
+            "Після повторного розгляду суд може oddalić або uwzględnić skargę, або uchylić оскаржене orzeczenie і odrzucić skargę чи umorzyć postępowanie; § 3 окремо регулює prawomocne orzeczenia тієї самої справи.",
         },
       ],
       legalEffect:
-        "Uwzględnienie skarga може змінити судове orzeczenie в окресленому обсязі, але не означає автоматичного надання іноземцю pobyt чи скасування адміністративної decyzja без потрібного нового розгляду.",
+        "Результат залежить від підстави wznowienia та Art. 282 § 2–3: суд може oddalić або uwzględnić skargę, uchylić orzeczenie з odrzuceniem skargi чи umorzeniem postępowania, а в ситуації Art. 273 § 3 — вирішити щодо одного чи кількох prawomocne orzeczenia. Це не означає автоматичного надання іноземцю pobyt або автоматичної зміни адміністративної decyzja.",
       foreignersCase:
         "Після wznowienie у справі іноземця визначте, яку саме podstawa обмежила повторний розгляд і який результат зазначено в sentencja. Не припускайте, що сама skarga відновлює дозвіл на pobyt.",
     },
     {
       provisionId: "ppsa-art-283",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -350,11 +351,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-284",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 284 встановлює, що wniesienie skarga o wznowienie не зупиняє виконання оскарженого orzeczenie; якщо заявник uprawdopodobni загрозу niepowetowana szkoda, суд може wstrzymać виконання на posiedzenie niejawnym, а на postanowienie доступне zażalenie.",
+          text: "Art. 284 встановлює, що wniesienie skarga o wznowienie не зупиняє виконання оскарженого orzeczenie; якщо заявник uprawdopodobni загрозу niepowetowana szkoda, суд може wstrzymać виконання, а postanowienie може бути видане на posiedzenie niejawnym і оскаржене zażalenie.",
           sourceLocator: "Art. 284",
         },
       ],
@@ -379,7 +380,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -388,7 +389,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Норма обмежує повторне повторне відкриття вже завершеного провадження у справі про wznowienie та називає вузький виняток.",
+        "Норма обмежує подальше wznowienie вже завершеного провадження у справі про wznowienie та називає вузький виняток.",
       rules: [
         {
           locator: "§ 1",
@@ -408,11 +409,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285a § 1 передбачає skarga o stwierdzenie niezgodności z prawem prawomocnego orzeczenia WSA, якщо його видання спричинило стороні szkoda, а зміна чи скасування іншими доступними засобами не було і не є можливим; § 2 допускає її у виняткових випадках за невикористаних засобів, коли порушено основні засади porządek prawny або конституційні свободи чи права; § 3 виключає orzeczenia NSA, крім rażące naruszenie норм права UE, а § 4 встановлює opłata stała.",
+          text: "Art. 285a § 1 передбачає skarga o stwierdzenie niezgodności z prawem prawomocnego orzeczenia WSA, якщо його видання спричинило стороні szkoda, а зміна чи скасування іншими доступними засобами не було і не є можливим; § 2 допускає її у виняткових випадках, коли strony не скористалися доступними засобами, порушено основні засади porządek prawny або конституційні свободи чи права, і зміна або скасування orzeczenia іншим засобом не є можливим; § 3 виключає orzeczenia NSA, крім rażące naruszenie норм prawa UE, а § 4 встановлює opłata stała.",
           sourceLocator: "Art. 285a § 1–4",
         },
       ],
@@ -422,22 +423,22 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1–2",
           explanation:
-            "Потрібно окремо показати prawomocne orzeczenie WSA, szkoda, неможливість іншого засобу, а для § 2 — ще й винятковий випадок та порушення названих основних правових або конституційних гарантій.",
+            "Потрібно окремо показати prawomocne orzeczenie WSA, szkoda та неможливість його зміни або скасування іншими доступними засобами; для § 2 — також що strony не скористалися доступними засобами, винятковий випадок і порушення названих основних правових або конституційних гарантій.",
         },
         {
           locator: "§ 3–4",
           explanation:
-            "Для orzeczenie NSA діє виняток лише щодо rażące naruszenie норм права UE; skarga підлягає opłata stała.",
+            "Від orzeczenia NSA skarga не допускається, крім випадку rażące naruszenie норм prawa UE; такі orzeczenia traktuje się як orzeczenia wydane w postępowaniu wywołanym wniesieniem skargi. Skarga підлягає opłata stała.",
         },
       ],
       legalEffect:
         "Цей засіб не є звичайною ще однією апеляцією: сама szkoda або незгода з wyrok не долає вимоги про prawomocność і відсутність іншого засобу.",
       foreignersCase:
-        "У справі іноземця про pobyt спочатку перевірте всі доступні środki prawne і можливість їх застосування, а потім окремо обґрунтуйте szkoda. Не очікуйте автоматичного скасування wyrok або decyzja органу.",
+        "У справі іноземця про pobyt встановіть, які środki prawne були доступні, чи ними скористалися, чи можлива зміна або скасування orzeczenia, і лише потім обґрунтовуйте szkoda та, за потреби, винятковий випадок за § 2. Не очікуйте автоматичного скасування wyrok або decyzja органу.",
     },
     {
       provisionId: "ppsa-art-285b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -457,11 +458,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       legalEffect:
         "Можливість подання органом не прибирає вимог до підстави, szkoda, prawomocność та допустимості, установлених Art. 285a і наступними нормами.",
       foreignersCase:
-        "Якщо інтереси іноземця представляє Rzecznik Praw Obywatelskich, перевірте, який саме випадок Art. 285a заявлено та які матеріали підтверджують szkoda й відсутність іншого засобу.",
+        "Якщо Rzecznik Praw Obywatelskich розглядає можливість подання skarga в інтересах іноземця, перевірте, який саме випадок Art. 285a заявлено та які матеріали підтверджують відповідні умови, зокрема szkoda й відсутність іншого засобу, якщо вони застосовні.",
     },
     {
       provisionId: "ppsa-art-285c",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -485,7 +486,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285d",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -514,7 +515,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285e",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -539,11 +540,11 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       legalEffect:
         "Формальні елементи дають суду змогу ідентифікувати засіб і його підстави, але подання повного комплекту не доводить незаконність orzeczenie чи факт szkoda.",
       foreignersCase:
-        "Перед поданням скарги іноземця зробіть таблицю: orzeczenie, обсяг, przepis, szkoda, неможливість іншого засобу та wniosek. Окремо перевірте копії й переклад матеріалів, потрібний для зрозумілості подання.",
+        "Перед поданням скарги іноземця зробіть таблицю: orzeczenie, обсяг, przepis, szkoda, неможливість іншого засобу та wniosek. Окремо перевірте odpisy для doręczenia сторонам і учасникам та два odpisy для akt Naczelny Sąd Administracyjny.",
     },
     {
       provisionId: "ppsa-art-285f",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -572,7 +573,7 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285g",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -594,5 +595,5 @@ export const ppsaPart07a = defineEditorialPart<"ppsa">({
       foreignersCase:
         "У справі іноземця перевірте doręczenie skarga та факт передачі akt до NSA окремо від результату. Не вважайте повідомлення WSA про пересилання підтвердженням виграшу.",
     },
-  ],
+  ]),
 })

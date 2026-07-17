@@ -6,6 +6,7 @@ import {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
   LegalProvisionSelector,
+  LegalProvisionSource,
 } from "~/features/law-library"
 import {
   LegalLink,
@@ -33,7 +34,7 @@ import {
   parseLegalProvisionReference,
 } from "~/data/legal-library"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
-import { officialSourceIdByLegalDocument } from "~/data/legal-library/official-sources"
+import { officialSourceIdByLegalDocument } from "~/data/legal-library/references/official-sources"
 import { DocumentArticle } from "~/components/patterns/document-content"
 import { DefinitionRows } from "~/components/patterns/definition-rows"
 
@@ -51,6 +52,10 @@ const claimKindLabels = {
   "case-law": "Orzecznictwo",
   "practical-inference": "Практичний висновок",
 } as const
+
+export function meta() {
+  return [{ title: "Норма — Бібліотека права" }]
+}
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const document = getDocument(params.documentId)
@@ -367,14 +372,11 @@ export default function LawProvisionRoute() {
             Робочий витяг із PDF. Для дослівного цитування відкрийте сторінку
             джерела вище.
           </p>
-          <div
-            data-not-typeset
-            className="not-typeset mt-6 border-l-2 border-foreground/20 pl-5"
-          >
-            <p lang="pl" className="text-sm leading-7 whitespace-pre-line">
-              {provision.text}
-            </p>
-          </div>
+          <LegalProvisionSource
+            locator={provision.locator}
+            startPdfPage={provision.startPdfPage}
+            text={provision.text}
+          />
         </section>
 
         <section id="legal-provision-place">

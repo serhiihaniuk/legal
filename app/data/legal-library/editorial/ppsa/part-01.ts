@@ -1,14 +1,15 @@
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 export const ppsaPart01 = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
   editionId: "ppsa-2026-143",
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
-  entries: [
+  entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-1",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -32,7 +33,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-2",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -56,7 +57,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-4",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -85,7 +86,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-5",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -119,7 +120,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-6",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -143,7 +144,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-7",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -167,7 +168,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-8",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -201,7 +202,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-9",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -225,7 +226,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-10",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -249,7 +250,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-11",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -273,7 +274,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-12",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -297,7 +298,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-12a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -314,9 +315,9 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
             "Akta створюються в електронній або паперовій postaci, а обробка кожної форми пов’язана з визначеним системним способом документообігу.",
         },
         {
-          locator: "Art. 12a § 4–5",
+          locator: "Art. 12a § 4–5a",
           explanation:
-            "Сторони мають право переглядати akta та отримувати odpisy, kopie або wyciągi; електронні akta надаються через систему після автентифікації у вказаний спосіб.",
+            "Сторони мають право переглядати akta та отримувати odpisy, kopie або wyciągi; електронні akta надаються через систему після автентифікації у спосіб, визначений законом. Pełnomocnik для доступу додатково подає sąd свій номер PESEL, якщо зобов’язаний його мати або має його.",
         },
         {
           locator: "Art. 12a § 6–9",
@@ -331,41 +332,41 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-12b",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 12b § 2 встановлює: «W postępowaniu pisma utrwalone w postaci elektronicznej wnosi się do sądu administracyjnego na adres do doręczeń elektronicznych».",
-          sourceLocator: "Art. 12b § 2",
+          text: "На legalStateDate 2026-07-14 чинна редакція Art. 12b § 1–2 передбачає електронний документ, підписаний способом з Art. 46 § 2a, його подання через elektroniczną skrzynkę podawczą та doręczanie засобами електронної комунікації на умовах Art. 74a; редакція з «adresem do doręczeń elektronicznych» позначена corpus як така, що набуде чинності 1 жовтня 2029 року.",
+          sourceLocator: "Art. 12b § 1–5, przypisy 8–9",
         },
       ],
       summary:
-        "Стаття регулює електронну форму письма: за умовами її тексту вимога письмової форми може бути виконана електронним записом із належним підписом, а електронні письма подаються на adres do doręczeń elektronicznych.",
+        "На legalStateDate 2026-07-14 чинна редакція Art. 12b регулює zachowanie formy pisemnej для dokument elektroniczny, подання через elektroniczną skrzynkę podawczą та doręczanie засобами комунікації електронної на умовах Art. 74a. Corpus також показує майбутню редакцію з adres do doręczeń elektronicznych, чинність якої починається 1.10.2029.",
       rules: [
         {
-          locator: "Art. 12b § 1",
+          locator: "Art. 12b § 1, przypis 8–9",
           explanation:
-            "Умова pisemności вважається збереженою, коли pismo utrwalone електронно та підписане способом, який визначає текст статті.",
+            "На legalStateDate чинне правило говорить про dokument elektroniczny, підписаний способом з Art. 46 § 2a; текст із pismo utrwalone w postaci elektronicznej є майбутньою редакцією з датою набрання чинності 1.10.2029.",
         },
         {
-          locator: "Art. 12b § 2–3",
+          locator: "Art. 12b § 2–3, przypis 8–9",
           explanation:
-            "Електронне pismo подається на adres do doręczeń elektronicznych; суд може перетворити електронну або паперову форму для doręczenia стороні, яка користується іншою формою.",
+            "Чинна редакція вимагає подавати dokumenty elektroniczne через elektroniczną skrzynkę podawczą, а doręчення здійснює через środki komunikacji elektronicznej за Art. 74a. Суд перетворює отриманий dokument elektroniczny на uwierzytelniony wydruk для сторони, яка не користується електронними засобами, або паперовий документ на електронну копію, якщо сторона користується ними; майбутня редакція містить інші терміни адрес і doręczeń.",
         },
         {
-          locator: "Art. 12b § 4–5",
+          locator: "Art. 12b § 4–5, przypis 8–9",
           explanation:
-            "Правила електронних doręczeń застосовуються відповідно до органів, а при першому неелектронному письмі суд інформує про електронний спосіб подання та doręczania.",
+            "Чинні правила про zastosowanie środków komunikacji elektronicznej застосовуються відповідно до органів, а при першому письмі не в електронній формі суд інформує про умови електронного подання та doręczania. Перехідна примітка не дозволяє застосовувати майбутню редакцію до legalStateDate.",
         },
       ],
       legalEffect:
-        "Стаття створює процесуальну рамку електронних pism і doręczeń; фактичну придатність конкретного файлу, підпису та адреси треба перевірити за його формою й текстом повідомлення суду.",
+        "Стаття створює процесуальну рамку електронних pism і doręczeń, але не робить майбутню редакцію чинною раніше 1.10.2029; придатність конкретного файлу, підпису, каналу подання та доказу doręczenia треба перевірити за чинною редакцією.",
       foreignersCase:
-        "Перед електронним поданням у справі іноземця перевірте адрес do doręczeń elektronicznych, спосіб підпису та те, як суд повідомив про електронні doręczenia; збережіть підтвердження подання.",
+        "Перед електронним поданням у справі іноземця на legalStateDate перевірте вимоги до dokument elektroniczny, elektroniczna skrzynka podawcza, способу підпису та електронного doręczenia за чинними Art. 12b і Art. 74a; збережіть підтвердження подання й не підміняйте їх майбутнім adresem do doręczeń elektronicznych.",
     },
     {
       provisionId: "ppsa-art-13",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -399,7 +400,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-14",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -423,7 +424,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-14a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -447,7 +448,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-15",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -471,7 +472,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         {
           locator: "Art. 15 § 2",
           explanation:
-            "Для спорів та інших справ застосовуються відповідно правила провадження перед WSA; spory NSA вирішує postanowieniem із зазначенням właściwego органу.",
+            "Для спорів за Art. 4 та інших справ, віднесених до NSA окремими законами, відповідно застосовуються правила провадження перед WSA. Spory NSA розглядає на wniosek postanowieniem із зазначенням właściwego organ; postanowienie видає склад із трьох суддів на posiedzeniu niejawnym.",
         },
       ],
       legalEffect:
@@ -481,7 +482,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-16",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -514,7 +515,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-17",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -543,7 +544,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-18",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -552,17 +553,17 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Стаття перелічує випадки, коли суддя виключений з мocy samej ustawy: особистий правовий зв’язок зі стороною, сімейні та опікунські зв’язки, попередню участь як представника або в ухваленні оскарженого рішення, а також участь у вирішенні справи в органі administracji publicznej.",
+        "Стаття перелічує випадки, коли суддя виключений з мocy samej ustawy: особистий правовий зв’язок зі стороною, родинні, опікунські та представницькі зв’язки, надання правових чи інших пов’язаних зі справою послуг, участь в ухваленні оскарженого orzeczenie або розгляді справи в organ administracji publicznej, а також спеціальну підставу для надзвичайного адміністративного провадження.",
       rules: [
         {
           locator: "Art. 18 § 1 pkt 1–7",
           explanation:
-            "Перевіряються названі статтею особисті, родинні, представницькі та службові зв’язки судді зі справою, сторонами або попереднім розглядом.",
+            "Перевіряються всі названі статтею підстави: власний правовий зв’язок судді, перелічені родинні й опікунські зв’язки, umocowanie або надані послуги одній зі сторін, участь в ухваленні оскарженого orzeczenie чи як prokurator, участь у попередньому zwykłym postępowaniu sądowoadministracyjnym щодо рішення або postanowienie в надзвичайному адміністративному провадженні, а також участь у вирішенні справи в organ administracji publicznej.",
         },
         {
           locator: "Art. 18 § 2–3",
           explanation:
-            "Причини виключення зберігаються після припинення названих сімейних чи опікунських зв’язків; суддя, який ухвалював оскаржене рішення у справі про wznowienie, не може вирішувати цю skarga.",
+            "Причини wyłączenie зберігаються після припинення шлюбу, przysposobienie, opieka або kuratela; суддя, який брав участь в ухваленні orzeczenie, охопленого skarga o wznowienie postępowania, не може вирішувати цю skarga.",
         },
         {
           locator: "Art. 18 § 4",
@@ -577,7 +578,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-19",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -601,7 +602,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-20",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -635,7 +636,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-21",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -659,7 +660,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-22",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -693,7 +694,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-23",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -716,7 +717,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-24",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -745,7 +746,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-25",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -779,7 +780,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-26",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -808,7 +809,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-27",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -832,7 +833,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-28",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -841,7 +842,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Юридичні особи та організаційні одиниці зі zdolność sądowa виконують процесуальні дії через органи або осіб, уповноважених діяти від їхнього імені; стаття також називає правила для Skarb Państwa, Prokuratoria та konsul.",
+        "Юридичні особи та організаційні одиниці зі zdolność sądowa виконують процесуальні дії через органи або осіб, уповноважених діяти від їхнього імені; стаття окремо розподіляє представництво Skarb Państwa, визначених органів через Prokuratoria та konsul.",
       rules: [
         {
           locator: "Art. 28 § 1",
@@ -851,7 +852,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         {
           locator: "Art. 28 § 2–3a",
           explanation:
-            "Для Skarb Państwa та визначених органів державної адміністрації стаття розподіляє дію між органом відповідної jednostki, органом nadrzędny та Prokuratoria.",
+            "За Skarb Państwa діє organ jednostki, з діяльністю якого пов’язана справа, або organ jednostki nadrzędnej. У межах окремого закону за organs administracji rządowej, державні організаційні одиниці без osobowość prawna та Skarb Państwa діє Prokuratoria; у такому випадку sąd може повідомити її про провадження, якщо предмет справи може вимагати захисту важливих прав або інтересів Rzeczypospolitej Polskiej.",
         },
         {
           locator: "Art. 28 § 4",
@@ -866,7 +867,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-29",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -875,7 +876,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Представник, орган або уповноважена особа мають при першій процесуальній дії підтвердити своє umocowanie документом, якщо суд не може встановити його через доступний електронний wykaz або реєстр; підставу повноваження все одно треба вказати.",
+        "Przedstawiciel ustawowy, organ або особи, названі в Art. 28, мають при першій процесуальній дії підтвердити своє umocowanie документом, якщо суд не може встановити його через доступний електронний wykaz або реєстр; підставу повноваження все одно треба вказати. Для pełnomocnik діють окремі правила Art. 37 та Art. 46 § 3.",
       rules: [
         {
           locator: "Art. 29",
@@ -886,11 +887,11 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
       legalEffect:
         "Норма визначає момент і спосіб підтвердження представництва, не роблячи сам запис або документ доказом обґрунтованості основної справи.",
       foreignersCase:
-        "Якщо pismo іноземця подає представник, при першій дії долучіть документ про umocowanie або вкажіть реєстр і правову підставу, за якою суд може його перевірити.",
+        "Якщо першу czynność у справі іноземця виконує przedstawiciel ustawowy, organ або особа з Art. 28, долучіть документ про umocowanie або вкажіть реєстр і правову підставу, за якою суд може його перевірити; для pełnomocnik перевірте Art. 37.",
     },
     {
       provisionId: "ppsa-art-30",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -919,7 +920,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-31",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -933,7 +934,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         {
           locator: "Art. 31 § 1",
           explanation:
-            "Суд визначає відповідний termin для усунення виправного недоліку; стаття не називає тут конкретної кількості днів.",
+            "Суд визначає відповідний termin для усунення виправного недоліку; якщо ustanowienie przedstawiciel ustawowy має відбутися з urzędu, sąd звертається до właściwy sąd opiekuńczy. Стаття не називає тут конкретної кількості днів.",
         },
         {
           locator: "Art. 31 § 2",
@@ -953,7 +954,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-32",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -977,7 +978,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-33",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1011,7 +1012,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-34",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1035,7 +1036,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-35",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1069,7 +1070,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-36",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1103,7 +1104,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-37",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1112,17 +1113,17 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Pełnomocnik при першій процесуальній дії додає до akt pełnomocnictwo з підписом mocodawcy або його wierzytelny odpis; стаття регулює також електронне засвідчення, усне надання доручення та виняток для доступного реєстру.",
+        "Pełnomocnik при першій процесуальній дії додає до akt pełnomocnictwo з підписом mocodawcy або його wierzytelny odpis; стаття регулює також електронне засвідчення, усне надання доручення, можливість вимоги офіційного засвідчення підпису та виняток для доступного реєстру; електронні формулювання мають перехідні редакції.",
       rules: [
         {
           locator: "Art. 37 § 1",
           explanation:
-            "Основне правило — додати документ про повноваження при першій czynność; професійний представник може засвідчувати odpis у межах тексту, а реєстрова перевірка може звільнити від подання документа.",
+            "Основне правило — додати документ про повноваження при першій czynność; adwokat, radca prawny, rzecznik patentowy або doradca podatkowy можуть самі засвідчувати odpis у межах тексту, а реєстрова перевірка може звільнити від подання документа. За сумніву sąd може вимагати urzędowe poświadczenie підпису strony.",
         },
         {
           locator: "Art. 37 § 1a",
           explanation:
-            "Електронний odpis pełnomocnictwa засвідчується визначеним електронним підписом; застосовну редакцію способу засвідчення треба звірити з датою та текстом джерела.",
+            "На legalStateDate чинна § 1a говорить про odpis, складений w formie dokumentu elektronicznego, та називає kwalifikowany podpis elektroniczny, podpis zaufany або podpis osobisty і встановлені формати даних. Варіант w postaci elektronicznej є майбутньою редакцією, що набуде чинності 1.10.2029; спосіб засвідчення треба звіряти з датою.",
         },
         {
           locator: "Art. 37 § 2",
@@ -1133,35 +1134,35 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
       legalEffect:
         "Стаття визначає доказ повноваження та момент його подання, але не розширює межі доручення понад його зміст.",
       foreignersCase:
-        "Якщо представник подає перше pismo у справі іноземця, долучіть підписане pełnomocnictwo або допустиме підтвердження з реєстру; для електронного odpis перевірте спосіб засвідчення.",
+        "Якщо pełnomocnik подає перше pismo у справі іноземця, долучіть підписане pełnomocnictwo або допустиме підтвердження з реєстру; для електронного odpis на legalStateDate перевірте, що він засвідчений допустимим підписом і належить до formie dokumentu elektronicznego, а не до майбутньої редакції.",
     },
     {
       provisionId: "ppsa-art-37a",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 37a встановлює: «Pełnomocnictwo udzielone w postaci elektronicznej podpisuje się kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym».",
-          sourceLocator: "Art. 37a",
+          text: "На legalStateDate 2026-07-14 чинна редакція Art. 37a встановлює: «Pełnomocnictwo udzielone w formie dokumentu elektronicznego podpisuje się kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym»; варіант «w postaci elektronicznej» у corpus позначений як майбутня редакція до 1.10.2029.",
+          sourceLocator: "Art. 37a, przypisy 14–15",
         },
       ],
       summary:
-        "Електронне pełnomocnictwo підписується kwalifikowany podpis elektroniczny, podpis zaufany або podpis osobisty.",
+        "На legalStateDate електронне pełnomocnictwo у formie dokumentu elektronicznego підписується kwalifikowany podpis elektroniczny, podpis zaufany або podpis osobisty; corpus окремо містить майбутню редакцію w postaci elektronicznej з датою 1.10.2029.",
       rules: [
         {
           locator: "Art. 37a",
           explanation:
-            "Для pełnomocnictwo в електронній postaci треба використати один із трьох названих у статті способів підпису.",
+            "Для чинної formie dokumentu elektronicznego треба використати один із трьох названих способів підпису; не застосовуйте до legalStateDate формулювання майбутньої редакції w postaci elektronicznej.",
         },
       ],
       legalEffect:
-        "Стаття встановлює вимогу до підпису електронного доручення, але не вирішує питання особи представника або обсягу його повноваження.",
+        "Стаття встановлює вимогу до підпису електронного доручення в чинній формі документа та містить перехід до іншої редакції, але не вирішує питання особи представника або обсягу його повноваження.",
       foreignersCase:
-        "Перед електронним поданням у справі іноземця перевірте, що pełnomocnictwo підписане одним із способів Art. 37a і відповідає потрібному обсягу доручення.",
+        "Перед електронним поданням у справі іноземця перевірте, що чинне на дату подання pełnomocnictwo у formie dokumentu elektronicznego підписане одним із способів Art. 37a і відповідає потрібному обсягу доручення.",
     },
     {
       provisionId: "ppsa-art-38",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1185,7 +1186,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-39",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1219,7 +1220,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-40",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1243,7 +1244,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-41",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1267,7 +1268,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-42",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1296,7 +1297,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-43",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1320,7 +1321,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-44",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1349,7 +1350,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-45",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1373,7 +1374,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-46",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1382,7 +1383,7 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Кожне pismo strony має містити визначені реквізити: суд, сторони та їхніх представників, вид письма, зміст wniosek або oświadczenie, підпис і перелік додатків. Для першого та електронного письма стаття додає окремі дані.",
+        "Кожне pismo strony має містити визначені реквізити: суд, сторони та їхніх представників, вид письма, зміст wniosek або oświadczenie, підпис і перелік додатків. Для першого та електронного письма стаття додає окремі дані; на legalStateDate електронні реквізити треба читати в чинній редакції, а не в майбутньому варіанті з adresem do doręczeń elektronicznych.",
       rules: [
         {
           locator: "Art. 46 § 1 pkt 1–5",
@@ -1395,19 +1396,24 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
             "Перше pismo у справі має додатково містити адресні або реєстрові дані, потрібні ідентифікатори, а також oznaczenie przedmiotu sprawy; наступні pismo містять sygnatura akt.",
         },
         {
-          locator: "Art. 46 § 2a–2d, § 3–4",
+          locator: "Art. 46 § 2a–2d",
           explanation:
-            "Електронне pismo має містити відповідний електронний адрес і підпис, а стаття також регулює адрес для електронних doręczeń, pełnomocnictwo та підпис за сторону, яка не може підписатися.",
+            "На legalStateDate pismo у formie dokumentu elektronicznego має містити adres elektroniczny і бути підписане kwalifikowanym podpisem elektronicznym, podpisem zaufanym або podpisem osobistym; ці правила поширюються на електронні załączniki. Для неелектронного pismo з вимогою електронного doręczenia діє правило про адрес elektroniczny. Варіант із adresem do doręczeń elektronicznych є майбутньою редакцією до 1.10.2029.",
+        },
+        {
+          locator: "Art. 46 § 3–4",
+          explanation:
+            "До pismo додається pełnomocnictwo або wierzytelny odpis, якщо pełnomocnik ще не подав його до суду, крім випадку перевірки в доступному реєстрі. За сторону, яка не може підписатися, pismo підписує уповноважена особа із зазначенням причини.",
         },
       ],
       legalEffect:
         "Стаття визначає зміст і реквізити pismo strony; сама по собі не встановлює в цьому записі наслідок кожного окремого недоліку.",
       foreignersCase:
-        "Перед поданням письма у справі іноземця пройдіть список Art. 46: суд, сторони, вид pismo, вимога, підпис, додатки, а для першого чи електронного pismo — додаткові реквізити.",
+        "Перед поданням pismo у справі іноземця пройдіть список Art. 46: sąd, сторони, вид pismo, вимога, підпис і załączniki; для першого pismo — адресні та ідентифікаційні дані, а для електронного dokument — чинні адрес elektroniczny і спосіб підпису. Не підміняйте їх майбутнім adresem do doręczeń elektronicznych.",
     },
     {
       provisionId: "ppsa-art-47",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1426,18 +1432,18 @@ export const ppsaPart01 = defineEditorialPart<"ppsa">({
         {
           locator: "Art. 47 § 3",
           explanation:
-            "Для pism і załączników в електронній postaci odpisy не додаються; якщо адресат не користується електронними doręczeniami, суд готує засвідчені wydruki для doręczenia.",
+            "Для pism і załączników, поданих у formie dokumentu elektronicznego, odpisy не додаються; якщо сторона не користується засобами електронної комунікації для отримання pism, суд готує uwierzytelnione wydruki для doręczenia. Майбутня редакція використовує формулювання postaci elektronicznej та adres do doręczeń elektronicznych з 1.10.2029.",
         },
         {
           locator: "Art. 47 § 4",
           explanation:
-            "При doręczeniu odpisów в іншій формі суд інформує сторону про умови подання pism та doręczania через електронні засоби.",
+            "При doręczeniu odpisów у формі, іншій за форму документа електронного, суд інформує сторону про умови подання pism та їхнього doręczania засобами електронної комунікації; майбутня редакція має відповідний варіант для postaci elektronicznej.",
         },
       ],
       legalEffect:
         "Норма регулює копії та спосіб їх дорęчення, але не доводить сама по собі змістовну обґрунтованість pismo або вимоги.",
       foreignersCase:
-        "Для паперового pismo у справі іноземця підготуйте odpisy документа й додатків для сторін; для електронного пакета перевірте, чи суд та адресати користуються електронними doręczeniami.",
+        "Для паперового pismo у справі іноземця підготуйте odpisy документа й додатків для сторін; для електронного пакета перевірте чинний режим środków komunikacji elektronicznej і те, чи потрібні sądowi uwierzytelnione wydruki для адресата, який не користується електронним отриманням pism.",
     },
-  ],
+  ]),
 })

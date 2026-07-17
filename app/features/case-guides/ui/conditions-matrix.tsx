@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table"
-import type { CaseGuideCondition } from "~/data/case-guide-types"
+import type { CaseGuideCondition } from "~/data/case-guides/types"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 
 function conditionStatusLabel(status: CaseGuideCondition["status"]) {

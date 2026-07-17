@@ -6,7 +6,7 @@ import { LegalReferencePreview } from "./legal-reference-preview"
 import {
   legalReferenceTarget,
   type LegalReference,
-} from "~/data/legal-references"
+} from "~/data/references/legal-references"
 import { cn } from "~/lib/utils"
 
 export const legalLinkVariants = cva(

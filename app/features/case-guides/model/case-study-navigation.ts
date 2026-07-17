@@ -1,4 +1,4 @@
-import type { CaseGuideRoute } from "~/data/case-guide-types"
+import type { CaseGuideRoute } from "~/data/case-guides/types"
 
 export const caseStudySectionIds = {
   overview: "case-overview",

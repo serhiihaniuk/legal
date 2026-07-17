@@ -1,6 +1,10 @@
 import { Outlet } from "react-router"
 
-import { SiteHeader } from "~/components/site-header"
+import { SiteHeader } from "~/components/layout"
+
+export function meta() {
+  return [{ title: "Legalizacja — навчальний атлас права" }]
+}
 
 export default function Shell() {
   return (

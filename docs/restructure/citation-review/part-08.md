@@ -30,9 +30,9 @@ Default act: `ustawa-o-cudzoziemcach` (this file's own act).
     `https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:12020W/TXT`
     (EU–UK Withdrawal Agreement, OJ L 29 of 31.1.2020, Polish version;
     CELEX 12020W/TXT).
-  **Neither URL could be machine-verified** — EUR-Lex serves its pages via
-  JavaScript behind bot protection, so automated fetches return empty. The
-  CELEX identifiers are canonical and widely cited, but the owner should
-  open both links once in a browser and confirm they land on Article 50 TEU
-  and the Withdrawal Agreement respectively before treating this entry as
-  verified. Same review bar as the Decision 1/80 and labor-market URLs.
+  Browser verification on 2026-07-17 confirmed that `12016M050` resolves to the
+  consolidated Polish Traktat o Unii Europejskiej and visibly contains `Artykuł 50`.
+  The `12020W/TXT` page resolves to the Polish Umowa o wystąpieniu, OJ L 29, and
+  reports an in-force consolidated version dated 2025-04-30. Both URLs are verified
+  for this migration. Decision 1/80 remains the only unresolved external-source
+  review because its reproduction PDF has no inspectable browser text layer.

@@ -3,7 +3,7 @@ import {
   isRecord,
   isString,
   parseCorpusManifest as parseManifest,
-} from "./corpus-parsing"
+} from "./query/corpus-parsing"
 import {
   constructDocument,
   constructEdition,
@@ -16,7 +16,7 @@ import {
   getRawProvisions,
   getRegisteredDocumentIds,
   isRegisteredDocumentId,
-} from "./domain-construction"
+} from "./query/domain-construction"
 import type {
   LegalDocument,
   LegalDocumentId,
@@ -33,8 +33,11 @@ import type {
 export {
   buildCanonicalPdfHref,
   buildCanonicalPdfLocator,
-} from "./domain-construction"
-export { parseCorpusManifest, parseCorpusProvision } from "./corpus-parsing"
+} from "./query/domain-construction"
+export {
+  parseCorpusManifest,
+  parseCorpusProvision,
+} from "./query/corpus-parsing"
 
 function requestedReference(
   referenceOrDocumentId: unknown,

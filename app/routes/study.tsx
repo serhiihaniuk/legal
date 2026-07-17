@@ -7,8 +7,12 @@ import {
   type SectionNavigationOption,
 } from "~/components/patterns/section-navigation"
 import { StudyPlanContent, studyPlanToc } from "~/features/study"
-import { studyModules } from "~/data/study-plan-data"
+import { studyModules } from "~/data/study/plan-data"
 import { useUrlSelection } from "~/hooks/use-url-selection"
+
+export function meta() {
+  return [{ title: "План навчання — Legalizacja" }]
+}
 
 const studyNavigationOptions: readonly SectionNavigationOption[] =
   studyModules.map((module, index) => ({

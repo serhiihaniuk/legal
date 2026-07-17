@@ -12,7 +12,7 @@ import {
 import type {
   CaseGuideDeadline,
   CaseGuideDocument,
-} from "~/data/case-guide-types"
+} from "~/data/case-guides/types"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 
 import { DocumentStatus } from "./case-guide-shared"

@@ -3,13 +3,13 @@ import {
   legalMapJourney,
   legalMapJourneyStageForNode,
   type LegalMapJourneyStage,
-} from "~/data/legal-map-journey"
+} from "~/data/legal-map/journey"
 import {
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
-import { nodeById, type IndexedNode } from "~/data/legal-index"
-import type { LegalNode } from "~/data/legal-types"
+import { nodeById, type IndexedNode } from "~/data/legal-map/index"
+import type { LegalNode } from "~/data/shared/legal-types"
 
 export const legalMapOverviewToc: TocItem[] = [
   { href: "#map-overview", label: "Як влаштована карта" },

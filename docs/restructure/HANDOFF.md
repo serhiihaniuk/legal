@@ -1,4 +1,4 @@
-# Session handoff — 2026-07-16
+# Session handoff — 2026-07-17
 
 ## Current main
 
@@ -20,7 +20,7 @@ Merged work:
 - `5e9a36e` — Phase 3 step 3c, KPA route decomposition
 - `ecf6820` — Phase 3 step 3d, document catalog decomposition
 
-`npm run verify` passes on merged `main`. No local branch remains unmerged.
+The working tree remains intentionally uncommitted while the migration is reviewed. The editorial finalization and route-meta pass are complete; `npm run verify` and `npm run verify:content` both pass. No files are staged.
 
 ## Completed Phase 2 data-layer restructure
 
@@ -177,30 +177,31 @@ produced the expected paths without changing the existing responsive behavior.
 
 ## User-owned dirty files — preserve
 
-The main checkout intentionally remains dirty only with:
+The checkout contains a large pre-existing migration diff across legacy adapters, feature
+folders, routes, and documentation. Do not stage, commit, reset, or discard it. The
+editorial, legal-text, validator, fixture, and route-meta changes made in this continuation
+remain unstaged alongside that migration work.
 
-- staged `A  docs/restructure/prompts/citations-parts-08-09-11.md`
-- untracked `docs/restructure/HANDOFF.md`
-- untracked `docs/restructure/prompts/phase-1b-build-correctness.md`
+## Content and verification status
 
-Do not discard them. This handoff file has been updated during the explicitly requested
-continuation.
+The current editorial corpus now validates at 1,421/1,421 provisions with zero missing or
+duplicate IDs. Runtime resolution and reference previews report all 1,421 current provisions
+as reviewed; no draft, blocked, stale, superseded, or source-only editorial status remains.
+Parts 01b, 03, 09, and 11 were finalized against their current local corpus editions, and
+legacy suffixed editorial parts are included by the validator with later canonical parts
+winning intentional partition overlaps.
 
-## Remaining content debt
-
-Phase 2 step 5 citation wrapping is complete for reviewed prose and `test:previews` is green.
-Editorial parts 03, 09, and 11 remain draft/content-completion debt and require an explicit
-editorial finalization pass before typed-reference wrapping. Four external URLs in
-`docs/restructure/citation-review/` still await owner verification. Do not silently present
-those items as reviewed.
+`npm run verify:content` is green. The labor-market, TEU Article 50, and Withdrawal
+Agreement URLs were verified in the browser on 2026-07-17. The Decision 1/80 reproduction
+PDF remains the only external citation awaiting owner acceptance; it is not used as the
+sole basis for the current editorial coverage claim.
 
 ## Next implementation unit
 
-Continue Phase 3 step 3 from `docs/restructure/PLAN.md`, one monolith per run. The next unit
-is `app/components/legal-learning-module-content.tsx` → `app/features/law-library/`. Preserve
-module view construction, provision explanations, typed references, source provenance, route
-loaders, previous/next navigation, keyboard behavior, SSR, and responsive layout. Do not combine
-it with the provision reader or route-meta hygiene.
-
-No legal prose or legal-state baseline changed in Phase 2 steps 1–4 or Phase 3 steps 1–3d. The retained baseline is
-`14.07.2026` / edition `kpa-2025-1691`.
+The shared learning-module implementation is now under
+`app/features/law-library/ui/learning/`, with the old root implementation retained only as
+migration history. Route metadata is now exported by every application route, including
+compatibility routes; direct route checks for the library, provision, KPA, documents, map,
+cases, and study pages passed with Ukrainian titles and rendered `<main>` content. The next
+focused review is the Decision 1/80 source acceptance, without changing the legal-state
+baseline (`14.07.2026`).

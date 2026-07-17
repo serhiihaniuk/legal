@@ -1,18 +1,19 @@
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 export const ppsaPart07b = defineEditorialPart<"ppsa">({
   documentId: "ppsa",
   editionId: "ppsa-2026-143",
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
-  entries: [
+  entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-285h",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285h передбачає, що NSA на posiedzeniu niejawnym відхиляє skargę o stwierdzenie niezgodności z prawem prawomocnego orzeczenia, якщо її мав відхилити суд нижчої інстанції, її подано після строку, вона не відповідає вимогам Art. 285e § 1 або є niedopuszczalna з іншої причини; скаргу також відхиляють, якщо змінити оскаржене orzeczenie іншими засобами було або є можливим чи немає винятку з Art. 285a § 2.",
+          text: "Art. 285h передбачає, що NSA на posiedzeniu niejawnym odrzuca skargę o stwierdzenie niezgodności z prawem prawomocnego orzeczenia, якщо вона підлягала odrzuceniu судом нижчої інстанції, подана після спливу строку, не відповідає вимогам Art. 285e § 1 або є niedopuszczalna з іншої причини; skarga також підлягає odrzuceniu, якщо змінити оскаржене orzeczenie іншими засобами було або є можливим чи немає винятку з Art. 285a § 2.",
           sourceLocator: "Art. 285h § 1–2",
         },
       ],
@@ -22,7 +23,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
         {
           locator: "§ 1",
           explanation:
-            "Перевірте строк, вимоги Art. 285e § 1, допустимість skarga та те, чи не була вона такою, що підлягала odrzucenie в суді нижчої інстанції.",
+            "Перевірте строк, вимоги Art. 285e § 1, допустимість skarga та те, чи підлягала вона odrzuceniu судом нижчої інстанції.",
         },
         {
           locator: "§ 2",
@@ -37,7 +38,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285i",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -65,7 +66,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285j",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -94,7 +95,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285k",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -123,7 +124,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-285l",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -147,7 +148,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-286",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -176,7 +177,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-287",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -200,7 +201,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-288",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -229,7 +230,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-289",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -258,7 +259,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-290",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -287,7 +288,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-291",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -316,7 +317,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-292",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -345,7 +346,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-293",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -374,7 +375,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-294",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -403,7 +404,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-295",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -432,7 +433,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-296",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -461,7 +462,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-297",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -490,7 +491,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-298",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -519,7 +520,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-299",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -548,7 +549,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-300",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -572,7 +573,7 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-301",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -599,5 +600,5 @@ export const ppsaPart07b = defineEditorialPart<"ppsa">({
       foreignersCase:
         "У справі іноземця не використовуйте Art. 301 як відповідь на сучасний строк чи право на pobyt; посилайтеся на нього лише для питання wejście w życie та перевірки застосовної редакції.",
     },
-  ],
+  ]),
 })

@@ -9,6 +9,14 @@ import {
   validateEditorial,
 } from "../validate.mjs"
 
+/**
+ * @param {{
+ *   partSource: string,
+ *   provisions: unknown[],
+ *   currentEditions?: Record<string, string>,
+ * }} fixture
+ * @returns {{ editorialRoot: string, corpusRoot: string, currentEditionsPath: string }}
+ */
 function writeFixture({ partSource, provisions, currentEditions = { alpha: "alpha-1" } }) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "legal-editorial-"))
   const editorialRoot = path.join(root, "editorial")
@@ -25,6 +33,7 @@ function writeFixture({ partSource, provisions, currentEditions = { alpha: "alph
   return { editorialRoot, corpusRoot, currentEditionsPath }
 }
 
+/** @param {string} provisionId @param {string} [reviewStatus="reviewed"] @returns {string} */
 const entry = (provisionId, reviewStatus = "reviewed") => `
     {
       provisionId: "${provisionId}",
@@ -36,6 +45,10 @@ const entry = (provisionId, reviewStatus = "reviewed") => `
       foreignersCase: "case"
     }`
 
+/**
+ * @param {{ documentId?: string, editionId?: string, entries: string[] }} partOptions
+ * @returns {string}
+ */
 const part = ({ documentId = "alpha", editionId = "alpha-1", entries }) => `
 import { defineEditorialPart } from "../define-editorial-part"
 export const part = defineEditorialPart({

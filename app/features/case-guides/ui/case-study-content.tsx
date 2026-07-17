@@ -7,12 +7,12 @@ import { LegalText, OfficialSourceEntry } from "~/components/references"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import { Separator } from "~/components/ui/separator"
-import type { CaseGuideRoute, CaseGuideSource } from "~/data/case-guide-types"
+import type { CaseGuideRoute, CaseGuideSource } from "~/data/case-guides/types"
 import {
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
-import type { OfficialSource } from "~/data/legal-types"
+import type { OfficialSource } from "~/data/shared/legal-types"
 
 import { caseStudySectionIds } from "../model/case-study-navigation"
 import { CaseStages } from "./case-stages"

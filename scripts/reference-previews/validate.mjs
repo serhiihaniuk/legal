@@ -15,7 +15,7 @@ const server = await createServer({
 
 try {
   const fixture = await server.ssrLoadModule(
-    path.join(root, "app/data/reference-preview.fixture.ts")
+    path.join(root, "app/data/references/reference-preview.fixture.ts")
   )
   const result = await fixture.validateReferencePreviewFixture()
   console.log("reference previews: passed")

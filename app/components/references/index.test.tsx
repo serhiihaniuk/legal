@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
 import { MemoryRouter } from "react-router"
 
-import { LegalLink as CompatibilityLegalLink } from "~/components/legal-link"
 import type { LegalTextValue } from "~/data/legal-library/legal-text"
 
 import { LegalLink, LegalText } from "."
@@ -13,10 +12,6 @@ const kpaReference = {
 } as const
 
 describe("references public API", () => {
-  it("preserves the compatibility export", () => {
-    expect(CompatibilityLegalLink).toBe(LegalLink)
-  })
-
   it("renders every semantic context with the same quiet treatment", () => {
     render(
       <MemoryRouter>

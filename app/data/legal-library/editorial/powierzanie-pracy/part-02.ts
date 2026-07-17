@@ -1,18 +1,19 @@
 import { defineEditorialPart } from "../define-editorial-part"
+import { authorLegalTextCitationsTree } from "../../legal-text"
 
 export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
   editionId: "powierzanie-pracy-2025-621",
   legalStateDate: "2026-07-14",
   verifiedAt: "2026-07-15",
-  entries: [
+  entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-51",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 51 дозволяє видати zezwolenie na pracę sezonową після в'їзду cudzoziemca, якщо wniosek уже wpisano до ewidencji wniosków і polski podmiot подав staroście oświadczenie про явку до роботи та документи про в'їзд.",
+          text: "Art. 51 дозволяє видати zezwolenie na pracę sezonową після в'їзду cudzoziemca, якщо wniosek уже wpisano до ewidencji wniosków і polski podmiot подав właściwemu staroście oświadczenie про явку до роботи, копію документа подорожі з актуальною візою або відбиток штампа про в'їзд у ruch bezwizowy та підтвердження дати в'їзду до держав Schengen.",
           sourceLocator: "Art. 51 ust. 1–4",
         },
       ],
@@ -37,7 +38,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-52",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -56,7 +57,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 2",
           explanation:
-            "Після umorzenie wpis до ewidencji wniosków також unieważnia się з мadu закону.",
+            "Після umorzenie wpis до ewidencji wniosków також unieważnia się за прямим приписом закону.",
         },
       ],
       legalEffect:
@@ -66,7 +67,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-53",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -95,7 +96,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-54",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -124,7 +125,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-55",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -153,7 +154,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-56",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -182,7 +183,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-57",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -206,7 +207,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-58",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -215,7 +216,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         },
       ],
       summary:
-        "Можливість przedłużenie залежить від способу в'їзду і зв'язку з wpisem wniosku. Для належного wniosku робота може залишатися legalною до остаточності рішення, а для нового podmiot без попередньої роботи — лише до doręczenia рішення і максимум 30 днів.",
+        "Можливість przedłużenie залежить від способу в'їзду і зв'язку з wpisem wniosku. Для належного wniosku робота може залишатися legalною до остаточності рішення, а для podmiot, який безпосередньо перед поданням не доручав цій особі сезонну роботу, — лише до doręczenia рішення і не довше 30 днів.",
       rules: [
         {
           locator: "ust. 1–3",
@@ -225,7 +226,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 4–6",
           explanation:
-            "За wniosek без braków formalnych або з ними, усуненими вчасно, робота legalна до остаточного рішення, без зарахування zawieszenia на прохання strony. Для podmiot, який безпосередньо перед заявою не доручав роботу, діє межа 30 днів до decyzja.",
+            "За wniosek без braków formalnych або з ними, усуненими вчасно, робота legalна до остаточного рішення, без зарахування zawieszenia на прохання strony. Для podmiot, який безпосередньо перед заявою не доручав цій особі сезонну роботу, за wniosek без braków formalnych діє межа 30 днів від дня подання до doręczenia decyzja.",
         },
         {
           locator: "ust. 7–8",
@@ -234,13 +235,13 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         },
       ],
       legalEffect:
-        "Поданий належний wniosek може тимчасово зберегти legalність роботи, але не скасовує річний ліміт і не робить результат передбаченим.",
+        "У передбачених art. 58 випадках поданий належний wniosek може тимчасово зберегти legalність роботи, але не скасовує річний ліміт і не робить результат передбаченим.",
       foreignersCase:
         "Звірте підставу в'їзду, попереднього podmiot, brak formalny та дату рішення. Не включайте до періоду legalної роботи час zawieszenia, якого просила сторона.",
     },
     {
       provisionId: "powierzanie-pracy-art-59",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -274,7 +275,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-60",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -303,7 +304,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-61",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -337,7 +338,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-62",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -371,7 +372,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-63",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -405,7 +406,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-64",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -434,7 +435,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-65",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -468,7 +469,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-66",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -492,11 +493,11 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-67",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 67 виключає art. 37 KPA з провадження щодо wpis oświadczenie, визначає єдиною стороною podmiot, обмежує art. 31 KPA і вимагає подавати środek zaskarżenia через систему; органом вищого ступеня є minister właściwy do spraw pracy.",
+          text: "Art. 67 виключає art. 37 KPA з провадження щодо wpis oświadczenie, визначає єдиною стороною podmiot, виключає застосування art. 31 KPA і вимагає подавати środek zaskarżenia через систему; органом вищого ступеня є minister właściwy do spraw pracy.",
           sourceLocator: "Art. 67 ust. 1–5",
         },
       ],
@@ -506,7 +507,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 1–2",
           explanation:
-            "Art. 37 і art. 31 KPA не застосовуються у вказаному обсязі, а стороною є виключно podmiot powierzający pracę.",
+            "Art. 37 і art. 31 KPA не застосовуються у цьому провадженні, а стороною є виключно podmiot powierzający pracę.",
         },
         {
           locator: "ust. 3–4",
@@ -526,7 +527,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-68",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -550,7 +551,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 1 pkt 6–8; ust. 2–3",
           explanation:
-            "Podmiot має zachować należytą staranność, надати документи уповноваженим органам і копію для pracodawca użytkownik; порушення треба негайно виправити, а невиплачене wynagrodzenie — доплатити.",
+            "Podmiot має zachować należytą staranność, надати документи уповноваженим органам і на вимогу pracodawca użytkownik — копію oświadczenie; порушення треба негайно виправити, а невиплачене wynagrodzenie — доплатити.",
         },
       ],
       legalEffect:
@@ -560,7 +561,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-69",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -589,7 +590,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-70",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -598,7 +599,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         },
       ],
       summary:
-        "Повідомлення подаються через систему. Якщо система не працювала, допускається подання першого робочого дня після усунення несправності; повідомлення про непочаток тягне unieważnienie wpis з мadu закону.",
+        "Повідомлення подаються через систему. Якщо система не працювала, допускається подання першого робочого дня після усунення несправності; повідомлення про непочаток тягне unieważnienie wpis за прямим приписом закону.",
       rules: [
         {
           locator: "ust. 1–2",
@@ -613,7 +614,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 5",
           explanation:
-            "Після повідомлення за ust. 2 wpis oświadczenie до ewidencji oświadczeń unieważniaється з мadu закону.",
+            "Після повідомлення за ust. 2 wpis oświadczenie до ewidencji oświadczeń unieważniaється за прямим приписом закону.",
         },
       ],
       legalEffect:
@@ -623,7 +624,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-71",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -657,7 +658,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-72",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -691,7 +692,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-73",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -720,7 +721,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-74",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -749,7 +750,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-75",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -783,7 +784,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-76",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -817,7 +818,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-77",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -841,7 +842,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-78",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -875,7 +876,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-79",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -909,7 +910,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-80",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -938,7 +939,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-81",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -972,7 +973,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-82",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1006,7 +1007,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-83",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1035,7 +1036,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-84",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1069,7 +1070,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-85",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1098,7 +1099,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-86",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1127,7 +1128,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-87",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1156,7 +1157,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-88",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1180,7 +1181,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-89",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1204,7 +1205,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-90",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1233,7 +1234,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-91",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1258,11 +1259,11 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
       legalEffect:
         "Верхня межа стосується накладення mandat у визначеній процедурі, а не автоматичного розміру кожного штрафу чи доведеності порушення.",
       foreignersCase:
-        "У разі mandat перевірте статтю, орган-оскаpжувач і вид процедури. Не змішуйте максимум 10000 zł для mandat із мінімумами art. 84.",
+        "У разі mandat перевірте статтю, орган-публічний обвинувач і вид процедури. Не змішуйте максимум 10000 zł для mandat із мінімумами art. 84.",
     },
     {
       provisionId: "powierzanie-pracy-art-92",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1291,7 +1292,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-93",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1315,7 +1316,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-94",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1339,7 +1340,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-95",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1373,7 +1374,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-96",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1412,7 +1413,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-97",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1436,7 +1437,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-98",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1466,7 +1467,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-99",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1496,7 +1497,7 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
     },
     {
       provisionId: "powierzanie-pracy-art-100",
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
@@ -1518,5 +1519,5 @@ export const powierzaniePracyPart02 = defineEditorialPart<"powierzanie-pracy">({
       foreignersCase:
         "Для викладача або науковця зафіксуйте конкретні завдання та перевірте, чи установа входить до art. 7 ust. 1 pkt 1–7 PSWiN. Іншу роботу в тій самій установі оцінюйте окремо.",
     },
-  ],
+  ]),
 })

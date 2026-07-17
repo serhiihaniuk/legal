@@ -51,12 +51,14 @@ new restrictions on the conditions of access to employment applicable to
 workers and members of their families legally resident and employed in
 their respective territories.").
 
-**Owner action requested**: confirm this URL is an acceptable citation
-target for Article 13 of Decision 1/80, or substitute a preferred
-authoritative mirror (e.g. an official EU institution PDF, a national
-transposition register, or a specific EUR-Lex case-law page reproducing
-the article) if one is preferred over a national immigration authority's
-hosted copy.
+**Owner action requested**: confirm this reproduction PDF is an acceptable
+citation target for Article 13 of Decision 1/80, or substitute a preferred
+primary mirror. As an official corroborating source, EUR-Lex case C-92/07 was
+opened in the browser on 2026-07-17 and identifies Decision No 1/80 and its
+Article 13 standstill context:
+`https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62021CJ0279`.
+This case-law URL supports the citation but does not replace the reproduced
+instrument text.
 
 ## Two more latent bare mentions found in part-06.ts (loop-until-clean pass)
 

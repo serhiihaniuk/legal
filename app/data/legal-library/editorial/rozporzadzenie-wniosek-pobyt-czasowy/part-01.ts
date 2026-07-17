@@ -279,7 +279,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-1",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -312,7 +312,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-2",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -345,7 +345,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-3",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -379,7 +379,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-4",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -413,7 +413,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-5",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -447,7 +447,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-6",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -486,7 +486,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-7",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -519,7 +519,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-8",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -552,7 +552,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-9",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -584,7 +584,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-10",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",
@@ -618,7 +618,7 @@ export const temporaryResidenceApplicationPart01 =
       },
       {
         provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-11",
-        reviewStatus: "draft",
+        reviewStatus: "reviewed",
         claims: [
           {
             kind: "statute-text",

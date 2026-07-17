@@ -32,6 +32,10 @@ const headings = defineDocumentHeadings({
 
 const toc = tableOfContentsFromHeadings(headings)
 
+export function meta() {
+  return [{ title: "Бібліотека права — Legalizacja" }]
+}
+
 export default function LawLibraryRoute() {
   const documents = listDocuments()
 

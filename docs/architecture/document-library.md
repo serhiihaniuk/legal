@@ -90,7 +90,7 @@ app/data/document-library/
   legal-text.ts         # typed Evidence Document authoring helper
   index.ts              # public Interface
 
-app/data/document-index.ts
+app/data/documents/catalog.ts
   # compatibility Adapter for map/case mention ingestion only
 ```
 

@@ -18,7 +18,7 @@ import {
   getEvidenceDocumentNavigation,
   getEvidenceDocumentPath,
 } from "~/data/document-library"
-import type { DocumentCatalogEntry } from "~/data/document-index"
+import type { DocumentCatalogEntry } from "~/data/documents/catalog"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 
 export function DocumentDetailContent({

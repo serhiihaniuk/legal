@@ -47,12 +47,25 @@ function lineAt(source, index) {
 
 /** @param {string} file @returns {string} */
 function familyForFile(file) {
-  if (file === "app/data/legal-data.ts") return "legal-data.ts"
-  if (/^app\/data\/legal-node-guides-[^/]+\.ts$/u.test(file)) return "legal-node-guides-*.ts"
+  if (file === "app/data/legal-map/data.ts") return "legal-map/data.ts"
+  if (/^app\/data\/legal-map\/node-guides-[^/]+\.ts$/u.test(file)) return "legal-map/node-guides-*.ts"
   if (file.startsWith("app/data/legal-library/editorial/")) return "editorial"
   if (file.startsWith("app/data/legal-library/learning/")) return "learning"
+  if (file === "app/data/case-guides/routes.ts") return "case-guides/routes.ts"
+  // Temporary fixture aliases retained for existing scanner unit tests.
+  if (file === "app/data/legal-data.ts") return "legal-data.ts"
+  if (/^app\/data\/legal-node-guides-[^/]+\.ts$/u.test(file)) return "legal-node-guides-*.ts"
   if (file === "app/data/case-guide-routes.ts") return "case-guide-routes.ts"
   return "other"
+}
+
+/** @param {string} file @returns {boolean} */
+function isPriorityFile(file) {
+  return file === "app/data/legal-map/data.ts"
+    || /^app\/data\/legal-map\/node-guides-[^/]+\.ts$/u.test(file)
+    // Temporary fixture aliases retained for existing scanner unit tests.
+    || file === "app/data/legal-data.ts"
+    || /^app\/data\/legal-node-guides-[^/]+\.ts$/u.test(file)
 }
 
 /** @param {string} directory @returns {Promise<string[]>} */
@@ -84,11 +97,23 @@ export async function listReferenceSourceFiles(projectRoot) {
   const learningFiles = (await walk(path.join(dataRoot, "legal-library/learning")))
     .filter((/** @type {string} */ file) => path.extname(file) === ".ts" && path.dirname(file) === path.join(dataRoot, "legal-library/learning"))
   const fixedRelative = [
+    "case-guides/routes.ts",
+    "legal-map/data.ts",
+  ]
+  const legacyFixedRelative = [
     "case-guide-routes.ts",
     "legal-data.ts",
   ]
-  const nodeGuideFiles = (await walk(dataRoot)).filter((/** @type {string} */ file) => /^legal-node-guides-[^/]+\.ts$/u.test(path.basename(file)) && path.dirname(file) === dataRoot)
-  const fixedFiles = [...fixedRelative.map((relative) => path.join(dataRoot, relative)), ...nodeGuideFiles]
+  const legalMapRoot = path.join(dataRoot, "legal-map")
+  const nodeGuideFiles = (await walk(legalMapRoot)).filter((/** @type {string} */ file) => /^node-guides-[^/]+\.ts$/u.test(path.basename(file)) && path.dirname(file) === legalMapRoot)
+  // Temporary fixture aliases retained for existing scanner unit tests.
+  const legacyNodeGuideFiles = (await walk(dataRoot)).filter((/** @type {string} */ file) => /^legal-node-guides-[^/]+\.ts$/u.test(path.basename(file)) && path.dirname(file) === dataRoot)
+  const fixedFiles = [
+    ...fixedRelative.map((relative) => path.join(dataRoot, relative)),
+    ...nodeGuideFiles,
+    ...legacyFixedRelative.map((relative) => path.join(dataRoot, relative)),
+    ...legacyNodeGuideFiles,
+  ]
   const all = [...editorialFiles, ...learningFiles, ...fixedFiles]
   const existing = []
   for (const file of all) {
@@ -231,7 +256,7 @@ export async function auditCitations({ projectRoot = DEFAULT_PROJECT_ROOT, regis
   for (const citation of scan.citations) {
     const acts = [...(registry.get(citation.articleNumber) ?? [])].sort((a, b) => a.localeCompare(b))
     if (acts.length < 2) continue
-    const priority = citation.family === "legal-data.ts" || citation.family === "legal-node-guides-*.ts"
+    const priority = isPriorityFile(citation.file)
     ambiguous.push({ ...citation, chosenAct: citation.documentId, competingActs: acts.filter((act) => act !== citation.documentId), priority })
   }
   ambiguous.sort((a, b) => a.file.localeCompare(b.file) || a.line - b.line || a.provisionId.localeCompare(b.provisionId))
@@ -261,7 +286,7 @@ export async function auditCitations({ projectRoot = DEFAULT_PROJECT_ROOT, regis
   for (const file of scan.files) lines.push(`- \`${file}\``)
   lines.push("", "## Review by file", "")
   for (const [file, citations] of byFile) {
-    const priority = file === "app/data/legal-data.ts" || /^app\/data\/legal-node-guides-[^/]+\.ts$/u.test(file)
+    const priority = isPriorityFile(file)
     lines.push(`### \`${file}\`${priority ? " — PRIORITY" : ""}`, "")
     if (!citations.length) lines.push("No ambiguous typed citations.", "")
     else for (const citation of citations) lines.push(`- line ${citation.line}, \`${citation.provisionId}\` (article ${citation.articleNumber}): chosen act \`${citation.chosenAct}\`; competing acts: ${citation.competingActs.map((act) => `\`${act}\``).join(", ")}${citation.priority ? " — PRIORITY" : ""}`)

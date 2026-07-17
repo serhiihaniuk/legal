@@ -1,8 +1,8 @@
 export * from "./contracts"
 export * from "./learning"
-export * from "./official-sources"
-export * from "./navigation"
-export * from "./reference-registry"
+export * from "./references/official-sources"
+export * from "./navigation/navigation"
+export * from "./references/reference-registry"
 export {
   buildCanonicalPdfHref,
   buildCanonicalPdfLocator,

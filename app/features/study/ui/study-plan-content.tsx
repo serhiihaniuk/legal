@@ -5,8 +5,8 @@ import { LegalText } from "~/components/references"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import { Separator } from "~/components/ui/separator"
-import { legalData } from "~/data/legal-data"
-import { studyModules } from "~/data/study-plan-data"
+import { legalData } from "~/data/legal-map/data"
+import { studyModules } from "~/data/study/plan-data"
 import {
   defineDocumentHeadings,
   DocumentArticle,

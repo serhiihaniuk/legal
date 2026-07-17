@@ -1200,7 +1200,7 @@ export const ppsaPart05 = defineEditorialPart<"ppsa">({
     },
     {
       provisionId: "ppsa-art-221",
-      reviewStatus: "blocked",
+      reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",

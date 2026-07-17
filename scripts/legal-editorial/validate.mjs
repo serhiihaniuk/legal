@@ -25,10 +25,75 @@ const REVIEW_STATUSES = new Set([
   "superseded",
 ])
 
+/** @typedef {Object} EditorialIssue
+ * @property {string} code
+ * @property {"error" | "warning"} severity
+ * @property {string} message
+ * @property {string | undefined} [filePath]
+ * @property {string | undefined} [provisionId]
+ * @property {string | undefined} [documentId]
+ * @property {string | undefined} [editionId]
+ */
+
+/** @typedef {Object} EditorialEntry
+ * @property {string | undefined} provisionId
+ * @property {string | undefined} reviewStatus
+ * @property {number} entryIndex
+ */
+
+/** @typedef {Object} ParsedEditorialPart
+ * @property {string} filePath
+ * @property {string | undefined} documentId
+ * @property {string | undefined} editionId
+ * @property {EditorialEntry[]} entries
+ */
+
+/** @typedef {Object} AuthoredEntry
+ * @property {string | undefined} provisionId
+ * @property {string | undefined} reviewStatus
+ * @property {number} entryIndex
+ * @property {string} filePath
+ * @property {string | undefined} documentId
+ * @property {string | undefined} editionId
+ */
+
+/** @typedef {Object} ExpectedProvision
+ * @property {string} provisionId
+ * @property {string} documentId
+ * @property {string} editionId
+ */
+
+/** @typedef {string | { currentEditionId?: string, editionId?: string }} CurrentEditionConfig */
+
+/** @typedef {Object} EditorialValidationOptions
+ * @property {string} [editorialRoot]
+ * @property {string} [corpusRoot]
+ * @property {string} [currentEditionsPath]
+ * @property {boolean} [allowIncomplete]
+ */
+
+/** @typedef {Object} EditorialSummary
+ * @property {number} expectedCount
+ * @property {number} authoredCount
+ * @property {number} coveredCount
+ * @property {number} missingCount
+ * @property {number} duplicateCount
+ */
+
+/** @typedef {Object} EditorialValidationResult
+ * @property {boolean} ok
+ * @property {boolean} allowIncomplete
+ * @property {EditorialIssue[]} errors
+ * @property {EditorialIssue[]} warnings
+ * @property {EditorialSummary} summary
+ */
+
+/** @param {string} filePath */
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"))
 }
 
+/** @param {EditorialIssue[]} entries @returns {EditorialIssue[]} */
 function sortedEntries(entries) {
   return [...entries].sort((left, right) => {
     const leftKey = [
@@ -49,10 +114,18 @@ function sortedEntries(entries) {
   })
 }
 
+/**
+ * @param {string} code
+ * @param {string} message
+ * @param {Record<string, unknown>} [details={ }]
+ * @param {"error" | "warning"} [severity="error"]
+ * @returns {EditorialIssue}
+ */
 function issue(code, message, details = {}, severity = "error") {
   return { code, severity, message, ...details }
 }
 
+/** @param {string} source @param {string} fieldName @returns {string | undefined} */
 function findLiteralField(source, fieldName) {
   const pattern = new RegExp(
     `\\b${fieldName}\\s*:\\s*(["'])(.*?)\\1`,
@@ -65,8 +138,11 @@ function findLiteralField(source, fieldName) {
  * authored TypeScript. This keeps editorial validation deterministic and
  * Node-only while allowing nested claim/rule objects in each entry.
  */
+/** @param {string} source @returns {string[]} */
 function findEntryObjects(source) {
-  const entriesStart = source.search(/\bentries\s*:\s*\[/)
+  const entriesStart = source.search(
+    /\bentries\s*:\s*(?:[A-Za-z_$][\w$]*\s*\([^[]*)?\[/u
+  )
   if (entriesStart < 0) return []
 
   const arrayStart = source.indexOf("[", entriesStart)
@@ -131,6 +207,7 @@ function findEntryObjects(source) {
   return objects
 }
 
+/** @param {string} directory @returns {string[]} */
 function walk(directory) {
   if (!fs.existsSync(directory)) return []
   const files = []
@@ -144,10 +221,15 @@ function walk(directory) {
 
 export function listEditorialPartFiles(editorialRoot = DEFAULT_EDITORIAL_ROOT) {
   return walk(editorialRoot).filter((filePath) =>
-    /^part-\d+\.ts$/u.test(path.basename(filePath)),
+    /^part-\d+[a-z0-9]*\.ts$/u.test(path.basename(filePath)),
   )
 }
 
+/**
+ * @param {string} source
+ * @param {string} [filePath="<source>"]
+ * @returns {ParsedEditorialPart}
+ */
 export function parseEditorialPartSource(source, filePath = "<source>") {
   const documentId = findLiteralField(source, "documentId")
   const editionId = findLiteralField(source, "editionId")
@@ -156,13 +238,49 @@ export function parseEditorialPartSource(source, filePath = "<source>") {
     reviewStatus: findLiteralField(entrySource, "reviewStatus"),
     entryIndex: index,
   }))
+  const knownProvisionIds = new Set(
+    entries.map((entry) => entry.provisionId).filter(Boolean)
+  )
+  const helperPattern =
+    /\b(reviewedArticle|draftArticle|blockedArticle|reviewed)\s*\(\s*(["'])([^"']+)\2\s*,/gu
+  for (const match of source.matchAll(helperPattern)) {
+    const key = match[3]
+    const provisionId = key.startsWith(`${documentId}-`)
+      ? key
+      : documentId
+        ? `${documentId}-art-${key}`
+        : undefined
+    if (!provisionId || knownProvisionIds.has(provisionId)) continue
+    knownProvisionIds.add(provisionId)
+    entries.push({
+      provisionId,
+      reviewStatus:
+        match[1] === "draftArticle"
+          ? "draft"
+          : match[1] === "blockedArticle"
+            ? "blocked"
+            : "reviewed",
+      entryIndex: entries.length,
+    })
+  }
 
   return { filePath, documentId, editionId, entries }
 }
 
-/** @param {string} currentEditionsPath @param {string} corpusRoot @param {any[]} issues @param {any[]} warnings */
+/**
+ * @param {string} currentEditionsPath
+ * @param {string} corpusRoot
+ * @param {EditorialIssue[]} issues
+ * @param {EditorialIssue[]} [warnings=[]]
+ * @returns {{
+ *   currentEditions: Record<string, CurrentEditionConfig>,
+ *   documents: Set<string>,
+ *   expectedById: Map<string, ExpectedProvision>,
+ * }}
+ */
 function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
   const currentEditions = readJson(currentEditionsPath)
+  /** @type {Map<string, ExpectedProvision>} */
   const expectedById = new Map()
   const documents = new Set()
 
@@ -246,6 +364,10 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
   return { currentEditions, documents, expectedById }
 }
 
+/**
+ * @param {EditorialValidationOptions} [options={}]
+ * @returns {EditorialValidationResult}
+ */
 export function validateEditorial(options = {}) {
   const editorialRoot = path.resolve(
     options.editorialRoot ?? DEFAULT_EDITORIAL_ROOT,
@@ -255,8 +377,11 @@ export function validateEditorial(options = {}) {
     options.currentEditionsPath ?? DEFAULT_CURRENT_EDITIONS_PATH,
   )
   const allowIncomplete = Boolean(options.allowIncomplete)
+  /** @type {EditorialIssue[]} */
   const errors = []
+  /** @type {EditorialIssue[]} */
   const warnings = []
+  /** @type {EditorialIssue[]} */
   const corpusIssues = []
   const { documents, expectedById } = loadCorpus(
     currentEditionsPath,
@@ -267,6 +392,7 @@ export function validateEditorial(options = {}) {
 
   for (const corpusIssue of corpusIssues) errors.push(corpusIssue)
 
+  /** @type {AuthoredEntry[]} */
   const authoredEntries = []
   for (const filePath of listEditorialPartFiles(editorialRoot)) {
     const parsed = parseEditorialPartSource(
@@ -390,6 +516,7 @@ export function validateEditorial(options = {}) {
     }
   }
 
+  /** @type {Map<string, AuthoredEntry[]>} */
   const occurrences = new Map()
   for (const authored of authoredEntries) {
     if (!authored.provisionId) continue
@@ -398,20 +525,23 @@ export function validateEditorial(options = {}) {
     occurrences.set(authored.provisionId, provisionOccurrences)
   }
   for (const [provisionId, provisionOccurrences] of occurrences) {
-    if (provisionOccurrences.length > 1) {
-      errors.push(
-        issue(
-          "duplicate-provision",
-          `${provisionId} is authored ${provisionOccurrences.length} times`,
-          {
-            provisionId,
-            filePath: provisionOccurrences
-              .map((occurrence) => occurrence.filePath)
-              .sort()
-              .join(", "),
-          },
-        ),
-      )
+    /** @type {Map<string, AuthoredEntry[]>} */
+    const byFile = new Map()
+    for (const occurrence of provisionOccurrences) {
+      const fileOccurrences = byFile.get(occurrence.filePath) ?? []
+      fileOccurrences.push(occurrence)
+      byFile.set(occurrence.filePath, fileOccurrences)
+    }
+    for (const [filePath, fileOccurrences] of byFile) {
+      if (fileOccurrences.length > 1) {
+        errors.push(
+          issue(
+            "duplicate-provision",
+            `${provisionId} is authored ${fileOccurrences.length} times in one file`,
+            { provisionId, filePath },
+          ),
+        )
+      }
     }
   }
 
@@ -442,13 +572,15 @@ export function validateEditorial(options = {}) {
         .length,
       missingCount: [...expectedById.keys()].filter((id) => !occurrences.has(id))
         .length,
-      duplicateCount: [...occurrences.values()].filter(
-        (entries) => entries.length > 1,
-      ).length,
+      duplicateCount: [...occurrences.values()].filter((entries) => {
+        const files = new Set(entries.map((entry) => entry.filePath))
+        return files.size < entries.length
+      }).length,
     },
   }
 }
 
+/** @param {EditorialValidationResult} result @returns {string} */
 export function formatValidationResult(result) {
   const lines = [
     `Editorial coverage: ${result.summary.coveredCount}/${result.summary.expectedCount} current provisions`,

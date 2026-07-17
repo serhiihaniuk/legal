@@ -9,7 +9,7 @@ import {
   documentCategoryLabels,
   type EvidenceDocumentCategory,
 } from "~/data/document-library"
-import { documentCatalog, documentsForCategory } from "~/data/document-index"
+import { documentCatalog, documentsForCategory } from "~/data/documents/catalog"
 import { pluralizeUkrainian } from "../model/document-catalog-model"
 
 export function DocumentCatalogOverview({
@@ -64,7 +64,7 @@ export function DocumentCatalogOverview({
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="min-w-0">
-                  <strong className="block text-sm font-medium break-words">
+                  <strong className="block text-sm font-medium wrap-break-word">
                     {document.title}
                   </strong>
                   <span className="mt-1 block text-xs text-muted-foreground">

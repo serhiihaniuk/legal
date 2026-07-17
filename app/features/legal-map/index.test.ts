@@ -1,15 +1,8 @@
 import { describe, expect, it } from "vitest"
 
-import {
-  LegalMapOverview as CompatibilityLegalMapOverview,
-  ModelExplanation as CompatibilityModelExplanation,
-  resolveLegalMapNode as compatibilityResolveLegalMapNode,
-} from "~/components/legal-map-content"
-import { legalMapJourney } from "~/data/legal-map-journey"
+import { legalMapJourney } from "~/data/legal-map/journey"
 
 import {
-  LegalMapOverview,
-  ModelExplanation,
   legalMapNodeToc,
   legalMapOverviewToc,
   resolveLegalMapNode,
@@ -17,12 +10,6 @@ import {
 } from "."
 
 describe("legal-map public API", () => {
-  it("preserves the root compatibility exports", () => {
-    expect(CompatibilityLegalMapOverview).toBe(LegalMapOverview)
-    expect(CompatibilityModelExplanation).toBe(ModelExplanation)
-    expect(compatibilityResolveLegalMapNode).toBe(resolveLegalMapNode)
-  })
-
   it("resolves canonical nodes, stages, and conditional node sections", () => {
     const node = resolveLegalMapNode("start-case")
     expect(node?.id).toBe("start-case")
