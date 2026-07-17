@@ -5,6 +5,9 @@ export const kpaLaw = createLegalTextAuthor("kpa")
 export const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export const ppsaLaw = createLegalTextAuthor("ppsa")
+export const residenceLaw = createLegalTextAuthor(
+  "rozporzadzenie-wniosek-pobyt-czasowy"
+)
 
 export const mapTopicSources = {
   kpa: {

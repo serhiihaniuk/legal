@@ -19,6 +19,8 @@ const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
 import {
   appealMapNode,
+  blueCardMapNode,
+  businessStayMapNode,
   complaintMapNode,
   cukrRouteMapNode,
   deadlinesDeliveryMapNode,
@@ -28,6 +30,7 @@ import {
   entryCurrentBasisMapNode,
   evidenceMapNode,
   extraordinaryWsaMapNode,
+  familyStayMapNode,
   inactivityMapNode,
   goalOfStayMapNode,
   initiationMapNode,
@@ -36,6 +39,7 @@ import {
   legalAnatomyMapNode,
   mosProcedureMapNode,
   organPartyMapNode,
+  otherStayMapNode,
   pendingStayMapNode,
   principleLegalityMapNode,
   principleParticipationMapNode,
@@ -45,8 +49,10 @@ import {
   reopeningMapNode,
   sourceCheckMapNode,
   specialVsKpaMapNode,
+  stayWorkMapNode,
   startCaseMapNode,
   studyLoopMapNode,
+  studyResearchMapNode,
   temporaryCommonMapNode,
   temporaryGoalsMapNode,
   twoKeysMapNode,
@@ -1058,37 +1064,7 @@ export const legalData = {
             ...temporaryGoalsMapNode,
             children: [
               {
-                id: "stay-work",
-                title: "Pobyt czasowy i praca",
-                polish: foreignersLaw.text`${foreignersLaw.articleRange("114", "126", { start: "art. 114", end: "126" })}`,
-                summary: foreignersLaw.text`Єдиний дозвіл, у якому мета перебування випливає з роботи. Аналіз складається з позитивних умов ${foreignersLaw.article("114", "art. 114")}, odmowy wszczęcia ${foreignersLaw.article("116", "art. 116")}, відмов по суті ${foreignersLaw.articleRange("117", "117a", { start: "art. 117", end: "117a" })}, treści decyzji ${foreignersLaw.article("118", "art. 118")} та правил зміни/втрати роботи ${foreignersLaw.articleRange("119", "123", { start: "art. 119", end: "123" })}.`,
-                why: foreignersLaw.text`Назва процедури не означає, що кожна decyzja однаково прив’язана до роботодавця. Для особи, звільненої від zezwolenia na pracę, ${foreignersLaw.article("118", "art. 118")} може не вписувати конкретних умов — вирішальне rozstrzygnięcie, а не шаблон.`,
-                checkpoints: [
-                  "Чи мета роботи обґрунтовує pobyt понад 3 місяці?",
-                  "Чи є страхування та мінімальна місячна винагорода?",
-                  "Хто реальний роботодавець і хто фактично керує працею?",
-                  "Чи podmiot веде реальну діяльність і має засоби виконувати обов’язки?",
-                  "Чи діє exemption від zezwolenia na pracę?",
-                  "Що саме записано в rozstrzygnięciu decyzji?",
-                ],
-                steps: [
-                  foreignersLaw.text`Розклади ${foreignersLaw.article("114", "art. 114")} на окремі умови й докази.`,
-                  "Перевір odmowę wszczęcia до аналізу merits.",
-                  "Зістав umowę, Załącznik nr 1 і фактичну організацію праці.",
-                  foreignersLaw.text`Оціни ризики ${foreignersLaw.articleRange("117", "117a", { start: "art. 117", end: "117a" })}, зокрема роботу на користь третьої особи.`,
-                  "Після decyzji окремо випиши її межі, obowiązki і тригери зміни.",
-                ],
-                documents: [
-                  "wniosek MOS",
-                  "Załącznik nr 1",
-                  "umowa o pracę",
-                  "паспорт і фото",
-                  "страхування/ZUS за потреби",
-                  "оплати",
-                  "докази реальної діяльності або представництва — якщо це спірна умова",
-                  "UPO та akta sprawy",
-                ],
-                sources: [S.aliens, S.work, S.mosWork, S.mosWorkQa],
+                ...stayWorkMapNode,
                 related: [
                   "outsourcing-case",
                   "work-entry",
@@ -1096,46 +1072,11 @@ export const legalData = {
                   "mos-procedure",
                 ],
               },
-              {
-                id: "blue-card",
-                title: "Niebieska Karta UE",
-                polish: foreignersLaw.text`${foreignersLaw.articleRange("127", "138", { start: "art. 127", end: "138" })}`,
-                summary:
-                  "Підстава для роботи, що вимагає високих кваліфікацій; після реформи 2025 року перевіряй актуальні умови, мобільність і treść decyzji.",
-                sources: [S.aliens],
-              },
-              {
-                id: "business-stay",
-                title: "Działalność gospodarcza",
-                polish: foreignersLaw.text`${foreignersLaw.articleRange("142", "143", { start: "art. 142", end: "143" })}`,
-                summary:
-                  "Сам факт реєстрації компанії не достатній. Закон перевіряє реальність і результати діяльності або здатність виконати встановлені умови.",
-                sources: [S.aliens],
-              },
-              {
-                id: "study-research",
-                title: "Studia, badania, staż",
-                polish: foreignersLaw.text`${foreignersLaw.articleRange("144", "157f", { start: "art. 144", end: "157f" })}`,
-                summary:
-                  "Окремі підстави для навчання, mobilności studenta, досліджень і стажу; важливі статус установи, мета та достатні засоби.",
-                sources: [S.aliens],
-              },
-              {
-                id: "family-stay",
-                title: "Rodzina",
-                polish: foreignersLaw.text`${foreignersLaw.articleRange("158", "169", { start: "art. 158", end: "169" })}`,
-                summary:
-                  "Підстави залежать від статусу особи, з якою відбувається połączenie, реальності сімейного зв’язку та виконання спеціальних умов.",
-                sources: [S.aliens],
-              },
-              {
-                id: "other-stay",
-                title: "Інші обставини",
-                polish: foreignersLaw.text`${foreignersLaw.articleRange("170", "194", { start: "art. 170", end: "194" })}`,
-                summary:
-                  "Окремі режими охоплюють, зокрема, жертв торгівлі людьми, короткотривалі обставини, сезонну роботу та інші підстави.",
-                sources: [S.aliens],
-              },
+              blueCardMapNode,
+              businessStayMapNode,
+              studyResearchMapNode,
+              familyStayMapNode,
+              otherStayMapNode,
             ],
           },
           {
