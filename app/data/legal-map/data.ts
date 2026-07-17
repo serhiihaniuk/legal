@@ -19,8 +19,11 @@ const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
 import {
   kpaPrinciplesMapNode,
+  organPartyMapNode,
   principleLegalityMapNode,
+  principleParticipationMapNode,
   principleTrustMapNode,
+  principleTwoInstanceMapNode,
 } from "./editorial/topics"
 
 const S = {
@@ -1050,44 +1053,11 @@ export const legalData = {
             children: [
               principleLegalityMapNode,
               principleTrustMapNode,
-              {
-                id: "principle-participation",
-                title: "Активна участь сторони",
-                polish: kpaLaw.text`${kpaLaw.article("10", "art. 10")} KPA`,
-                summary:
-                  "Перед рішенням сторона повинна мати реальну можливість висловитися щодо доказів і вимог.",
-                sources: [S.kpa],
-              },
-              {
-                id: "principle-two-instance",
-                title: "Дві інстанції та остаточність",
-                polish: kpaLaw.text`${kpaLaw.articleRange("15", "16", { start: "art. 15", end: "16" })} KPA`,
-                summary:
-                  "Звичайний контроль відбувається в адміністративній другій інстанції, а остаточне рішення може перейти під контроль суду.",
-                sources: [S.kpa, S.ppsa],
-              },
+              principleParticipationMapNode,
+              principleTwoInstanceMapNode,
             ],
           },
-          {
-            id: "organ-party",
-            title: "Organ, właściwość, strona",
-            polish: kpaLaw.text`${kpaLaw.articleRange("17", "34", { start: "art. 17", end: "34" })} KPA`,
-            summary:
-              "Спочатку визнач, який орган компетентний, хто має статус сторони та чи діє представник із належним повноваженням.",
-            why: "Помилка в адресаті, статусі сторони або pełnomocnictwie може зупинити справу ще до аналізу її суті.",
-            checkpoints: [
-              "Який organ першої інстанції?",
-              "Який organ вищого рівня?",
-              "Хто має інтерес правний?",
-              "Чи повноваження охоплює цю дію?",
-            ],
-            documents: [
-              "pełnomocnictwo",
-              "доказ сплати opłaty skarbowej, якщо потрібна",
-              "документи статусу сторони",
-            ],
-            sources: [S.kpa, S.aliens],
-          },
+          organPartyMapNode,
           {
             id: "initiation",
             title: "Початок справи й формальні недоліки",
