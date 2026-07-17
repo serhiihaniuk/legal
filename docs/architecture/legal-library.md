@@ -1,12 +1,12 @@
 # Multi-document legal library architecture
 
-**Status:** implemented source of truth; phases 1–6 active as of 2026-07-15
+**Status:** accepted source/library architecture
 
 **Scope:** maintain the local, versioned multi-document library without changing the legal-source or editorial safety rules.
 
 **Audience:** the implementer of the corpus pipeline, the library data module, routes, and the editorial workflow.
 
-This document defines the active architecture. The repository now has generic corpus profiles, generated typed registries, the `legal-library` query Module, canonical `/law` routes, KPA compatibility, and the deterministic review/promotion workflow. Sections describing the former KPA-only state remain as migration history.
+This document defines the accepted source/library architecture. The repository has generic corpus profiles, generated typed registries, the `legal-library` query Module, canonical `/law` routes, KPA compatibility, and the deterministic review/promotion workflow. Forward implementation of source-first authored knowledge units is governed by the [active legal knowledge plan](../plans/legal-knowledge.md).
 
 ## 1. Purpose and governing invariants
 
@@ -767,66 +767,12 @@ Example diff shape:
 | Explanation keys | Every explanation document/provision key exists; `sourceEditionId`, `verifiedAt`, status, and claim labels exist. | Block affected explanation/promotion. | Editorial validation. |
 | References | Every related provision and document reference resolves with the correct document-dependent type and runtime guard. | Block unresolved references; show no broken link. | Library validation. |
 | Source links | Every visible source URL is HTTPS and authoritative; ELI link remains present. | Block claim/promotion. | Editorial validation. |
-| Legacy links | Known `/guide/kpa` query variants resolve to the same provision/module/practice state. | Migration failure; keep Adapter and fix mapping. | Route verification. |
-| UX | Exact PDF page dialog, source text, explanation, previous/next, keyboard focus, mobile layout, and no horizontal overflow. | Fix before route phase completion. | UI implementation. |
+| Legacy links | Known `/guide/kpa` query variants resolve to the same provision/module/practice state. | Release failure; keep Adapter and fix mapping. | Route verification. |
+| UX | Exact PDF page dialog, source text, explanation, previous/next, keyboard focus, mobile layout, and no horizontal overflow. | Fix before release. | UI implementation. |
 | Build | `npm.cmd run typecheck` and `npm.cmd run build` pass. | No promotion. | Repository verification. |
 | Scope | Approved paths are exact canonical repository-relative files; traversal, absolute paths, globs, symlinks, generated/pointer paths, and any actual changed file outside the set are rejected. | Fatal; no validation or promotion. | Validation automation. |
 
-## 14. Migration phases and exit criteria
-
-### Phase 0 — ratify contracts (this document)
-
-- Keep current KPA runtime unchanged.
-- Add the config/schema, identity, provision, explanation, reference, work-order, and promotion rules to implementation planning.
-- Exit when the implementer can name every ID and artifact without deriving semantics from a filename.
-
-### Phase 1 — generic generated facts with KPA projection
-
-- Add explicit `documentId`/`editionId` config support and a versioned reader.
-- Refactor the builder's extraction result into generic `provisions.json`, `structure.json`, diagnostics, and hashes.
-- Generate `articles.json` as a KPA compatibility projection from provisions.
-- Keep the canonical KPA learning projection, source reader, and `/guide/kpa` unchanged or fed by promoted corpus facts.
-- Exit when a clean rebuild reproduces KPA navigation and exact PDF pages with no editorial file changes.
-
-### Phase 2 — generated registry and `legal-library` query Module
-
-- Generate the literal registry and document-dependent unions.
-- Implement query methods, runtime ID guards, current-edition selection, source-only fallback, and edition-aware explanation loading.
-- Add compile-time fixtures with `@ts-expect-error` for mismatched document/provision and document/edition pairs, plus runtime fixtures for unknown and stale IDs.
-- Move direct manifest/article-text imports behind the query Module.
-- Exit when typecheck proves the invalid pairs fail and runtime stale/unknown/historical-edition IDs return safe results.
-
-### Phase 3 — canonical `/law` shell and route Adapter
-
-- Add `/law`, `/law/:documentId`, and `/law/:documentId/provisions/:provisionId`.
-- Preserve exact PDF dialog, ELI link, source text, explanation, order navigation, and KPA learning/practice modules.
-- Add `/guide/kpa` compatibility mapping and a deterministic route matrix covering default, article (including superscript aliases), learning module, `case-workflow` practice, malformed, and unknown query shapes before changing internal links.
-- Exit when old bookmarked KPA article/module/practice URLs work and canonical routes render the same learning material.
-
-### Phase 4 — editorial migration
-
-- Keep `app/data/legal-library/editorial/kpa/` in the generic editorial key shape.
-- Keep generated provision text behind legal-library queries after the compatibility projection is proven equivalent.
-- Change `LegalReference` and its resolver to use typed document/provision pairs.
-- Exit when no generic caller assumes that an article means KPA and every explanation reports source edition/date/status.
-
-### Phase 5 — add another document
-
-- Add one real document, initially using the same Polish-statute profile where appropriate, with its own explanations and routes.
-- Verify Leverage: the shell, source reader, registry, query Module, and validation are reused without KPA-specific branches for source facts.
-- Keep document-specific learning modules local to that document.
-- Exit when cross-document references cannot compile or resolve with the wrong pair.
-
-### Phase 6 — second extraction format and cleanup
-
-- Only after a paragraph-led regulation or EU instrument is accepted, introduce the parser profile Interface and format Adapters.
-- Retire `articles.json`, KPA-only manifest helpers, and direct per-document JSON imports after compatibility telemetry/verification is complete.
-- Keep legacy route support for the documented compatibility period.
-- Exit when old and canonical routes, generated artifacts, type unions, and source links all pass the validation matrix.
-
-Each phase should be mergeable and reversible. Do not combine a corpus rewrite, route rewrite, and editorial rewrite into one unreviewable change.
-
-## 15. Explicit non-goals
+## 14. Explicit non-goals
 
 - No automated legal conclusion, eligibility decision, or outcome prediction.
 - No promise that a template, contract clause, or one document guarantees an authority's result.
@@ -835,12 +781,12 @@ Each phase should be mergeable and reversible. Do not combine a corpus rewrite, 
 - No hand editing of generated source artifacts.
 - No speculative parser framework for formats not present in the corpus.
 - No requirement that every act have KPA's `learning`, `articles`, and `practice` sections.
-- No runtime HTTP endpoint, database, or background source updater in the first library migration; local committed data remains the operating model.
+- No runtime HTTP endpoint, database, or background source updater; local committed data remains the operating model.
 - No silent rewriting of unrelated editorial content or cross-document links.
 - No broad search control added to the learning UI; navigation follows the existing design contract.
 - No inclusion of original client documents or identifying case data.
 
-## 16. Risks and open decisions
+## 15. Risks and open decisions
 
 ### Known risks
 
@@ -873,9 +819,9 @@ Each phase should be mergeable and reversible. Do not combine a corpus rewrite, 
 | Explanation history retention | **Deferred** | Keep `sourceEditionId` and status now; decide whether old prose gets a visible revision list later. |
 | Second extraction profile trigger | **Deferred detail** | Add the profile Interface when the first paragraph-led regulation or EU instrument is actually ingested. |
 
-## 17. Implementation checklist
+## 16. Architecture verification checklist
 
-Before declaring the library migration complete, an implementer should be able to answer “yes” to all of these:
+An implementer should be able to answer “yes” to all of these:
 
 - Can a caller name a document, edition, and provision without looking at a filename?
 - Does a generated registry make an invalid document/provision pair fail at compile time?

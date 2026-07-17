@@ -49,4 +49,4 @@ Promotion завжди є явною дією: нове видання не ст
 - [DESIGN.md](DESIGN.md) — дизайн і правила UX.
 - [AGENTS.md](AGENTS.md) — правила проєкту та юридичного контенту.
 - [Architecture docs](docs/architecture/) — архітектурні рішення.
-- [Restructure plan](docs/restructure/PLAN.md) — план перебудови та його обмеження.
+- [Legal knowledge architecture plan](docs/plans/legal-knowledge.md) — єдиний активний план source-first перебудови знань.
