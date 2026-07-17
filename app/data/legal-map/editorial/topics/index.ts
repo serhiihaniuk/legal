@@ -20,6 +20,7 @@ export {
 } from "./extraordinary-wsa"
 export { initiationMapNode, initiationTopic } from "./initiation"
 export { kpaPrinciplesMapNode, kpaPrinciplesTopic } from "./kpa-principles"
+export { legalAnatomyMapNode, legalAnatomyTopic } from "./legal-anatomy"
 export { organPartyMapNode, organPartyTopic } from "./organ-party"
 export {
   principleLegalityMapNode,
@@ -44,5 +45,7 @@ export {
 export { invalidityMapNode, invalidityTopic } from "./invalidity"
 export { inactivityMapNode, inactivityTopic } from "./inactivity"
 export { sourceCheckMapNode, sourceCheckTopic } from "./source-check"
+export { specialVsKpaMapNode, specialVsKpaTopic } from "./special-vs-kpa"
+export { startCaseMapNode, startCaseTopic } from "./start-case"
 export { studyLoopMapNode, studyLoopTopic } from "./study-loop"
 export { wsaMapNode, wsaTopic } from "./wsa"

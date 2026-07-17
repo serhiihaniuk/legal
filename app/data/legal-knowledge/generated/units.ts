@@ -13,17 +13,20 @@ import unit8 from "../../legal-map/editorial/topics/inactivity"
 import unit9 from "../../legal-map/editorial/topics/initiation"
 import unit10 from "../../legal-map/editorial/topics/invalidity"
 import unit11 from "../../legal-map/editorial/topics/kpa-principles"
-import unit12 from "../../legal-map/editorial/topics/organ-party"
-import unit13 from "../../legal-map/editorial/topics/principle-legality"
-import unit14 from "../../legal-map/editorial/topics/principle-participation"
-import unit15 from "../../legal-map/editorial/topics/principle-trust"
-import unit16 from "../../legal-map/editorial/topics/principle-two-instance"
-import unit17 from "../../legal-map/editorial/topics/reopening"
-import unit18 from "../../legal-map/editorial/topics/source-check"
-import unit19 from "../../legal-map/editorial/topics/study-loop"
-import unit20 from "../../legal-map/editorial/topics/wezwanie"
-import unit21 from "../../legal-map/editorial/topics/wezwanie-workflow"
-import unit22 from "../../legal-map/editorial/topics/wsa"
+import unit12 from "../../legal-map/editorial/topics/legal-anatomy"
+import unit13 from "../../legal-map/editorial/topics/organ-party"
+import unit14 from "../../legal-map/editorial/topics/principle-legality"
+import unit15 from "../../legal-map/editorial/topics/principle-participation"
+import unit16 from "../../legal-map/editorial/topics/principle-trust"
+import unit17 from "../../legal-map/editorial/topics/principle-two-instance"
+import unit18 from "../../legal-map/editorial/topics/reopening"
+import unit19 from "../../legal-map/editorial/topics/source-check"
+import unit20 from "../../legal-map/editorial/topics/special-vs-kpa"
+import unit21 from "../../legal-map/editorial/topics/start-case"
+import unit22 from "../../legal-map/editorial/topics/study-loop"
+import unit23 from "../../legal-map/editorial/topics/wezwanie"
+import unit24 from "../../legal-map/editorial/topics/wezwanie-workflow"
+import unit25 from "../../legal-map/editorial/topics/wsa"
 
 export const authoredKnowledgeUnits = [
   unit0,
@@ -49,4 +52,7 @@ export const authoredKnowledgeUnits = [
   unit20,
   unit21,
   unit22,
+  unit23,
+  unit24,
+  unit25,
 ] as const

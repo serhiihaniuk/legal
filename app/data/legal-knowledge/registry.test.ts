@@ -22,6 +22,7 @@ describe("authored knowledge registry", () => {
       "map-topic:initiation",
       "map-topic:invalidity",
       "map-topic:kpa-principles",
+      "map-topic:legal-anatomy",
       "map-topic:organ-party",
       "map-topic:principle-legality",
       "map-topic:principle-participation",
@@ -29,16 +30,18 @@ describe("authored knowledge registry", () => {
       "map-topic:principle-two-instance",
       "map-topic:reopening",
       "map-topic:source-check",
+      "map-topic:special-vs-kpa",
+      "map-topic:start-case",
       "map-topic:study-loop",
       "map-topic:wezwanie",
       "map-topic:wezwanie-workflow",
       "map-topic:wsa",
     ])
     expect(knowledgeUnitById.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[13]
+      authoredKnowledgeUnits[14]
     )
     expect(knowledgeUnitBySubjectKey.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[13]
+      authoredKnowledgeUnits[14]
     )
   })
 
@@ -56,6 +59,7 @@ describe("authored knowledge registry", () => {
       "map-topic:initiation",
       "map-topic:invalidity",
       "map-topic:kpa-principles",
+      "map-topic:legal-anatomy",
       "map-topic:organ-party",
       "map-topic:principle-legality",
       "map-topic:principle-participation",
@@ -63,12 +67,14 @@ describe("authored knowledge registry", () => {
       "map-topic:principle-two-instance",
       "map-topic:reopening",
       "map-topic:source-check",
+      "map-topic:special-vs-kpa",
+      "map-topic:start-case",
       "map-topic:study-loop",
       "map-topic:wezwanie",
       "map-topic:wezwanie-workflow",
       "map-topic:wsa",
     ])
-    expect(authoredKnowledgeGraph.outbound).toHaveLength(40)
+    expect(authoredKnowledgeGraph.outbound).toHaveLength(46)
     expect(authoredKnowledgeGraph.outbound).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
