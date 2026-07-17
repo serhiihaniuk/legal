@@ -17,6 +17,7 @@ const UKRAINE_SPECIAL_ACT_URL =
   "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
 const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
+import { principleLegalityMapNode } from "./editorial/topics"
 
 const S = {
   kpa: {
@@ -1055,14 +1056,7 @@ export const legalData = {
             sources: [S.kpa],
             related: ["evidence", "decision-reading", "inactivity"],
             children: [
-              {
-                id: "principle-legality",
-                title: "Законність і факти",
-                polish: kpaLaw.text`${kpaLaw.articleRange("6", "7", { start: "art. 6", end: "7" })} KPA`,
-                summary:
-                  "Organ діє на підставі права та вживає дій для точного з’ясування фактичного стану.",
-                sources: [S.kpa],
-              },
+              principleLegalityMapNode,
               {
                 id: "principle-trust",
                 title: "Довіра й інформування",
