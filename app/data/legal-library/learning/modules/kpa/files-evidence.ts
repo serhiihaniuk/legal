@@ -57,6 +57,177 @@ const moduleContent: KpaGuideModule = {
       answer: kpaLaw.text`${kpaLaw.article("80", "Art. 80")} вимагає оцінки на основі całokształtu materiału dowodowego, тому суттєві зв’язки й суперечності мають бути розглянуті разом.`,
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Postępowanie dowodowe перетворює твердження сторони на встановлені факти. Відкритий каталог доказів означає, що значення має не назва документа, а його здатність підтвердити конкретну обставину. Organ збирає й оцінює матеріал, але сторона повинна активно показувати зв’язок між przesłanką, фактом і доказом.",
+      "Akta sprawy — це пам’ять провадження. У них можуть бути документи сторони, відповіді інших установ, службові нотатки, підтвердження doręczeń і невідомі вам суперечності. Перед завершенням справи перевірте акти, а не лише власну папку. Особливо важливо зіставити інформацію про невиконані умови з майбутнім uzasadnieniem негативної decyzji.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 73–74",
+          parts: [
+            {
+              text: "art. 73",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-73",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "74",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-74",
+              },
+            },
+          ],
+        },
+        role: "Дають стороні доступ до akt і визначають межі відмови; доступ дозволяє реально контролювати матеріал справи.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 75–81",
+          parts: [
+            {
+              text: "art. 75",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-75",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "81",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-81",
+              },
+            },
+          ],
+        },
+        role: "Створюють систему допустимості, збирання, заявлення й оцінки доказів та участі сторони.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 79a–81a",
+          parts: [
+            {
+              text: "art. 79a",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-79a",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "81a",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-81a",
+              },
+            },
+          ],
+        },
+        role: "Додають інструменти інформування про недоведені залежні умови та спеціальне правило сумнівів щодо фактів із винятками.",
+      },
+    ],
+    terms: [
+      {
+        term: "wniosek dowodowy",
+        meaning:
+          "Прохання провести або долучити конкретний доказ із поясненням факту, який він має встановити.",
+      },
+      {
+        term: "całokształt materiału",
+        meaning:
+          "Усі релевантні докази та їх взаємні зв’язки, а не вибраний organem один документ.",
+      },
+      {
+        term: "swobodna ocena dowodów",
+        meaning:
+          "Оцінка за логікою, досвідом і правом, яка не є довільною та повинна бути пояснена.",
+      },
+    ],
+    caseExample: {
+      title: "ZUS показує іншу дату праці",
+      facts:
+        "Umowa вказує початок роботи 1 березня, а дані ZUS — пізнішу дату. Organ бачить суперечність, заявник — ні.",
+      analysis:
+        "Отримуємо доступ до akt, встановлюємо джерело даних, пояснюємо хронологію і подаємо докази. Вимагаємо оцінки всього матеріалу, а не автоматичного вибору одного запису.",
+      lesson:
+        "Доступ до akt перетворює припущення про позицію organu на конкретне доказове завдання.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Обсяг права доступу в art. 73",
+        parts: [
+          {
+            text: "Обсяг права доступу в ",
+          },
+          {
+            text: "art. 73",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-73",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Відкриту формулу доказу в art. 75",
+        parts: [
+          {
+            text: "Відкриту формулу доказу в ",
+          },
+          {
+            text: "art. 75",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-75",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Умови інформації art. 79a",
+        parts: [
+          {
+            text: "Умови інформації ",
+          },
+          {
+            text: "art. 79a",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-79a",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaFilesEvidenceLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

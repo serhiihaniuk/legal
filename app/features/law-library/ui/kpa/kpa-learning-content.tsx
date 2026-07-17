@@ -11,7 +11,6 @@ import {
 } from "~/data/legal-library/learning/kpa"
 import {
   kpaGuideLegalState,
-  kpaGuideLessons,
   kpaGuideModules,
 } from "~/data/legal-library/learning/kpa"
 import { parseLegalProvisionReference } from "~/data/legal-library/query"
@@ -69,9 +68,7 @@ export function KpaLearningContent({
   onSelectModule,
 }: KpaLearningContentProps) {
   const guideModule = kpaGuideModules.find((item) => item.id === selectedId)
-  const lesson = guideModule
-    ? kpaGuideLessons[guideModule.id as keyof typeof kpaGuideLessons]
-    : undefined
+  const lesson = guideModule?.lesson
 
   if (!guideModule || !lesson) {
     return (

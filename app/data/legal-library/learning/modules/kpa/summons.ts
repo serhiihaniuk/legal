@@ -62,6 +62,185 @@ const moduleContent: KpaGuideModule = {
         "Ні. Wezwanie може стосуватися доказів, пояснень, особистої дії або іншої процесуальної потреби. Правову природу треба встановити з підстави і змісту.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Wezwanie організовує конкретну процесуальну дію: явку, пояснення, показання або подання матеріалу. Воно повинно дозволяти адресатові зрозуміти, хто звертається, у якій справі, що саме треба зробити, коли, яким способом і з яким наслідком. Але правова підстава самого wezwania не завжди є підставою матеріальної вимоги документа.",
+      "Розбирайте wezwanie як таблицю, а не як суцільний лист. Для кожного пункту встановіть тип вимоги, факт, який organ хоче довести, норму цієї умови, доступний документ і ризик невиконання. Якщо документа немає, до строку поясніть причину, запропонуйте альтернативний доказ і сформулюйте чітке клопотання; мовчання залишає organу лише неповний матеріал.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 50–53",
+          parts: [
+            {
+              text: "art. 50",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-50",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "53",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-53",
+              },
+            },
+          ],
+        },
+        role: "Визначають мету wezwania, територіальні обмеження особистої явки та способи участі.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 54",
+          parts: [
+            {
+              text: "art. 54",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-54",
+              },
+            },
+          ],
+        },
+        role: "Містить карту обов’язкових елементів wezwania; це головний checklist для першого читання.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 55–56",
+          parts: [
+            {
+              text: "art. 55",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-55",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "56",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-56",
+              },
+            },
+          ],
+        },
+        role: "Регулюють невідкладні wezwania та витрати особи, яка виконала виклик.",
+      },
+    ],
+    terms: [
+      {
+        term: "rygor",
+        meaning:
+          "Заздалегідь названий процесуальний наслідок невиконання вимоги; він має спиратися на закон.",
+      },
+      {
+        term: "osobiste stawiennictwo",
+        meaning:
+          "Обов’язок особисто з’явитися, який не слід припускати, якщо мети можна досягти інакше або закон не вимагає особистої дії.",
+      },
+      {
+        term: "wyjaśnienia",
+        meaning:
+          "Позиція або інформація учасника; її роль відрізняється від документа чи zeznania świadka.",
+      },
+    ],
+    caseExample: {
+      title: "Вимога 18 різних документів",
+      facts:
+        "Wezwanie містить довгий перелік без пояснення, які умови підтверджують окремі позиції.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Нумеруємо вимоги, знаходимо їх матеріальну мету, перевіряємо art. 54 і пропорційність. Відповідаємо індексом; для надмірно широких або неможливих пунктів даємо мотивовану позицію й альтернативу.",
+        parts: [
+          {
+            text: "Нумеруємо вимоги, знаходимо їх матеріальну мету, перевіряємо ",
+          },
+          {
+            text: "art. 54",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-54",
+            },
+          },
+          {
+            text: " і пропорційність. Відповідаємо індексом; для надмірно широких або неможливих пунктів даємо мотивовану позицію й альтернативу.",
+          },
+        ],
+      },
+      lesson:
+        "Комплектна відповідь — це карта вимог і доказів, а не просто великий PDF.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Критерій необхідності в art. 50",
+        parts: [
+          {
+            text: "Критерій необхідності в ",
+          },
+          {
+            text: "art. 50",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-50",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Можливість письмової/електронної дії в art. 50 § 1",
+        parts: [
+          {
+            text: "Можливість письмової/електронної дії в ",
+          },
+          {
+            text: "art. 50 § 1",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-50",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Повний перелік art. 54",
+        parts: [
+          {
+            text: "Повний перелік ",
+          },
+          {
+            text: "art. 54",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-54",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaSummonsLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

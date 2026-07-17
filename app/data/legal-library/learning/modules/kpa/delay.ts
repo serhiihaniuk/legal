@@ -59,6 +59,209 @@ const moduleContent: KpaGuideModule = {
       answer: kpaLaw.text`Щонайменше uzasadnienie: конкретна хронологія і пояснення, чому є bezczynność або przewlekłość. ${kpaLaw.article("37", "Art. 37")} прямо вимагає мотивування.`,
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Bezczynność означає, що справа не завершена в належний строк, а przewlekłość — що дії ведуться довше, ніж це потрібно. Для обох потрібна хронологія, а не лише число місяців. Треба встановити застосовний строк, періоди, які закон не враховує, wezwania, відповіді сторони й останню змістовну дію organu.",
+      "Ponaglenie — формальний засіб, який має бути мотивованим і поданим правильним маршрутом. Воно не замінює виконання обов’язку сторони і не гарантує негайної decyzji, але створює механізм контролю затримки та важливий доказ для подальшої skargi na bezczynność або przewlekłość.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 35",
+          parts: [
+            {
+              text: "art. 35",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-35",
+              },
+            },
+          ],
+        },
+        role: "Встановлює загальні строки й перелік періодів, які не входять до їх обчислення.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 36",
+          parts: [
+            {
+              text: "art. 36",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-36",
+              },
+            },
+          ],
+        },
+        role: "Зобов’язує organ пояснити затримку, назвати новий строк і pouczyć про ponaglenie.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 37–38",
+          parts: [
+            {
+              text: "art. 37",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-37",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "38",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-38",
+              },
+            },
+          ],
+        },
+        role: "Визначають поняття, маршрут, обґрунтування, спосіб розгляду ponaglenia та відповідальність.",
+      },
+    ],
+    terms: [
+      {
+        term: "bezczynność",
+        meaning:
+          "Незавершення справи в законному або належно визначеному додатковому строку.",
+      },
+      {
+        term: "przewlekłość",
+        meaning:
+          "Ведення справи довше, ніж об’єктивно потрібно для її завершення.",
+      },
+      {
+        term: "ponaglenie",
+        meaning:
+          "Мотивований процесуальний засіб контролю bezczynności або przewlekłości.",
+      },
+    ],
+    caseExample: {
+      title: {
+        kind: "authored-legal-text",
+        plainText: "Два роки й повторні повідомлення art. 36",
+        parts: [
+          {
+            text: "Два роки й повторні повідомлення ",
+          },
+          {
+            text: "art. 36",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-36",
+            },
+          },
+        ],
+      },
+      facts:
+        "Organ кілька разів переносив строк однаковою загальною фразою, а всі żądane dokumenty подані давно.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Будуємо timeline, перевіряємо спеціальний строк і art. 35 § 5, відділяємо реальні процесуальні дії від повторних повідомлень та мотивуємо przewlekłość/bezczynność.",
+        parts: [
+          {
+            text: "Будуємо timeline, перевіряємо спеціальний строк і ",
+          },
+          {
+            text: "art. 35 § 5",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-35",
+            },
+          },
+          {
+            text: ", відділяємо реальні процесуальні дії від повторних повідомлень та мотивуємо przewlekłość/bezczynność.",
+          },
+        ],
+      },
+      lesson: {
+        kind: "authored-legal-text",
+        plainText:
+          "Нове повідомлення art. 36 не робить автоматично кожну подальшу затримку правомірною.",
+        parts: [
+          {
+            text: "Нове повідомлення ",
+          },
+          {
+            text: "art. 36",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-36",
+            },
+          },
+          {
+            text: " не робить автоматично кожну подальшу затримку правомірною.",
+          },
+        ],
+      },
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Строки art. 35 § 3",
+        parts: [
+          {
+            text: "Строки ",
+          },
+          {
+            text: "art. 35 § 3",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-35",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Зміст повідомлення art. 36",
+        parts: [
+          {
+            text: "Зміст повідомлення ",
+          },
+          {
+            text: "art. 36",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-36",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Визначення і маршрут art. 37",
+        parts: [
+          {
+            text: "Визначення і маршрут ",
+          },
+          {
+            text: "art. 37",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-37",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaDelayLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

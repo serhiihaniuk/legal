@@ -61,6 +61,185 @@ const moduleContent: KpaGuideModule = {
       answer: kpaLaw.text`Ні. ${kpaLaw.article("32", "Art. 32")} зберігає виняток для дій, характер яких вимагає особистої участі; додаткові особисті обов’язки може встановлювати спеціальний закон.`,
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Статус strony відкриває набір процесуальних прав: доступ до akt, участь у доказах, отримання рішень та їх оскарження. Джерелом статусу є interes prawny або obowiązek, а не лише цікавість, родинний зв’язок чи економічна зацікавленість. У кожній справі спитайте, яка конкретна норма права пов’язує результат саме з цією особою.",
+      "Pełnomocnik може виконувати більшість процесуальних дій, але не замінює сторону там, де характер дії або спеціальний закон вимагає особистої участі. Для щоденної роботи важливі форма, обсяг і дата повноваження, opłata skarbowa та правила doręczeń. Помилка в адресаті письма може змінити обчислення строку й право на захист.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 28–30",
+          parts: [
+            {
+              text: "art. 28",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-28",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "30",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-30",
+              },
+            },
+          ],
+        },
+        role: "Визначають, хто може бути стороною та як оцінюється її здатність бути учасником і діяти.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 32–34",
+          parts: [
+            {
+              text: "art. 32",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-32",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "34",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-34",
+              },
+            },
+          ],
+        },
+        role: "Регулюють представництво, форму повноваження та забезпечення представника в необхідних випадках.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 40",
+          parts: [
+            {
+              text: "art. 40",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-40",
+              },
+            },
+          ],
+        },
+        role: "Вказує, кому organ вручає письма, коли діє przedstawiciel або pełnomocnik.",
+      },
+    ],
+    terms: [
+      {
+        term: "interes prawny",
+        meaning:
+          "Особистий, конкретний і актуальний зв’язок із нормою права, від якої залежить становище особи.",
+      },
+      {
+        term: "pełnomocnik",
+        meaning:
+          "Фізична особа, уповноважена діяти від імені strony у визначеному обсязі.",
+      },
+      {
+        term: "przedstawiciel ustawowy",
+        meaning:
+          "Особа, право якої представляти випливає із закону або відповідного правового акта, а не лише з pełnomocnictwa.",
+      },
+    ],
+    caseExample: {
+      title: "Wezwanie вручено лише заявнику",
+      facts:
+        "У справі є чинне pełnomocnictwo, але wezwanie надіслано на приватну адресу іноземця, а pełnomocnik довідався після строку.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Перевіряємо акти, обсяг повноваження, art. 40, фактичне doręczenie і можливий вплив на строк. Окремо визначаємо, чи wezwanie вимагало особистої дії.",
+        parts: [
+          {
+            text: "Перевіряємо акти, обсяг повноваження, ",
+          },
+          {
+            text: "art. 40",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-40",
+            },
+          },
+          {
+            text: ", фактичне doręczenie і можливий вплив на строк. Окремо визначаємо, чи wezwanie вимагало особистої дії.",
+          },
+        ],
+      },
+      lesson:
+        "Спочатку встановіть правильного адресата, а вже потім рахуйте строк і оцінюйте пропуск.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Дві частини визначення strony в art. 28",
+        parts: [
+          {
+            text: "Дві частини визначення strony в ",
+          },
+          {
+            text: "art. 28",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-28",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Виняток особистої дії в art. 32",
+        parts: [
+          {
+            text: "Виняток особистої дії в ",
+          },
+          {
+            text: "art. 32",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-32",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Правила для кількох pełnomocników у art. 40",
+        parts: [
+          {
+            text: "Правила для кількох pełnomocników у ",
+          },
+          {
+            text: "art. 40",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-40",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaPartyLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

@@ -63,6 +63,166 @@ const moduleContent: KpaGuideModule = {
         "У спеціальному законі. KPA допоможе встановити, як орган має зібрати, оцінити й обговорити докази цієї умови.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "KPA не відповідає на питання, чи іноземець виконує матеріальні умови конкретного дозволу. Кодекс організовує шлях до відповіді: визначає процесуальні ролі, спосіб подання, участь сторони, збір доказів, форму завершення та засоби захисту. Тому в одній справі одночасно працюють щонайменше два шари: ustawa o cudzoziemcach описує право на статус, а KPA — стандарт роботи organu над індивідуальною справою.",
+      "Починайте не з випадкової статті KPA, а з предмета справи. Далі знайдіть lex specialis і відмітьте, що він регулює сам: właściwość, спеціальний строк, особисту явку, перелік умов або особливий наслідок. Лише після цього заповнюйте прогалини KPA. Така послідовність захищає від помилки, коли правильне загальне правило застосовують там, де спеціальний закон встановив інше.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 1–2",
+          parts: [
+            {
+              text: "art. 1",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-1",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "2",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-2",
+              },
+            },
+          ],
+        },
+        role: "Окреслюють види справ і процедур, які кодекс регулює; це вхідна перевірка, чи ми взагалі перебуваємо в полі KPA.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 3–4",
+          parts: [
+            {
+              text: "art. 3",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-3",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "4",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-4",
+              },
+            },
+          ],
+        },
+        role: "Показують виключення та межі застосування. Вчать не вважати KPA універсальним для будь-якого контакту з адміністрацією.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 5",
+          parts: [
+            {
+              text: "art. 5",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-5",
+              },
+            },
+          ],
+        },
+        role: "Містить дефініції для читання кодексу. Перед складним висновком перевірте, чи термін має спеціальне кодексне значення.",
+      },
+    ],
+    terms: [
+      {
+        term: "lex specialis",
+        meaning:
+          "Спеціальний закон, який для конкретної справи може доповнювати або змінювати загальну модель KPA.",
+      },
+      {
+        term: "sprawa indywidualna",
+        meaning:
+          "Справа про права чи обов’язки конкретно визначеної особи, а не абстрактне роз’яснення права.",
+      },
+      {
+        term: "decyzja administracyjna",
+        meaning:
+          "Владний акт, яким organ у передбаченій законом формі вирішує індивідуальну справу.",
+      },
+    ],
+    caseExample: {
+      title: "Wniosek o pobyt czasowy i pracę",
+      facts:
+        "Заявник подав wniosek і хоче знати, які документи підтверджують умови та як organ має реагувати на їх нестачу.",
+      analysis:
+        "Умови дозволу шукаємо в ustawie o cudzoziemcach. У KPA перевіряємо podanie, wezwanie, dowody, czynny udział, decyzję та odwołanie; окремо відмічаємо спеціальні відступи.",
+      lesson:
+        "Одна справа потребує паралельного читання двох законів, а не вибору лише одного з них.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Повний перелік процедур в art. 1",
+        parts: [
+          {
+            text: "Повний перелік процедур в ",
+          },
+          {
+            text: "art. 1",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-1",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Виключення з art. 3",
+        parts: [
+          {
+            text: "Виключення з ",
+          },
+          {
+            text: "art. 3",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-3",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Визначення organu administracji publicznej в art. 5",
+        parts: [
+          {
+            text: "Визначення organu administracji publicznej в ",
+          },
+          {
+            text: "art. 5",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-5",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaSystemLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

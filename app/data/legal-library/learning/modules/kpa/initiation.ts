@@ -61,6 +61,205 @@ const moduleContent: KpaGuideModule = {
         "Ні. Часто це питання доведення матеріальної умови. Потрібно перевірити спеціальний закон і точну правову підставу wezwania.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Wszczęcie створює процесуальну рамку конкретної справи. Podanie має дозволяти зрозуміти, хто звертається, чого вимагає та як із ним контактувати, але спеціальний закон може додати форму, додатки й особисті дії. Не кожна відсутність документа означає, що справа формально не може рухатися.",
+      {
+        kind: "authored-legal-text",
+        plainText:
+          "Brak formalny стосується вимоги до самого podania; brak materialny або dowodowy — того, чи доведено умову бажаного результату. Для art. 64 важливі точне формулювання недоліку, строк і pouczenie про наслідок. Для доказової нестачі потрібна логіка postępowania wyjaśniającego. Перед відповіддю на wezwanie класифікуйте кожен пункт окремо.",
+        parts: [
+          {
+            text: "Brak formalny стосується вимоги до самого podania; brak materialny або dowodowy — того, чи доведено умову бажаного результату. Для ",
+          },
+          {
+            text: "art. 64",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-64",
+            },
+          },
+          {
+            text: " важливі точне формулювання недоліку, строк і pouczenie про наслідок. Для доказової нестачі потрібна логіка postępowania wyjaśniającego. Перед відповіддю на wezwanie класифікуйте кожен пункт окремо.",
+          },
+        ],
+      },
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 61–63",
+          parts: [
+            {
+              text: "art. 61",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-61",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "63",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-63",
+              },
+            },
+          ],
+        },
+        role: "Пояснюють способи wszczęcia, загальну дату початку на вимогу та поняття й мінімальну форму podania.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 64",
+          parts: [
+            {
+              text: "art. 64",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-64",
+              },
+            },
+          ],
+        },
+        role: "Розрізняє відсутність адреси та інші формальні недоліки і пов’язує їх з різними процесуальними діями.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 65–66",
+          parts: [
+            {
+              text: "art. 65",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-65",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "66",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-66",
+              },
+            },
+          ],
+        },
+        role: "Регулюють неправильного адресата й ситуацію, коли одне podanie містить справи різної компетенції.",
+      },
+    ],
+    terms: [
+      {
+        term: "wszczęcie",
+        meaning:
+          "Юридичний початок конкретного провадження, з яким закон пов’язує подальші обов’язки та строки.",
+      },
+      {
+        term: "brak formalny",
+        meaning:
+          "Невиконана вимога до допустимої форми або мінімального змісту podania.",
+      },
+      {
+        term: "pozostawienie bez rozpoznania",
+        meaning:
+          "Процесуальний наслідок, за якого organ не переходить до розгляду вимоги по суті; його підстава має бути законною.",
+      },
+    ],
+    caseExample: {
+      title: "Відсутня umowa o pracę",
+      facts:
+        "Organ назвав відсутність актуальної umowy «brakiem formalnym» і пригрозив pozostawieniem wniosku bez rozpoznania.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Зіставляємо вимогу до форми wniosku в lex specialis з матеріальною умовою та art. 64. Визначаємо, чи це справді дефект podania, чи доказова проблема, яку слід оцінювати по суті.",
+        parts: [
+          {
+            text: "Зіставляємо вимогу до форми wniosku в lex specialis з матеріальною умовою та ",
+          },
+          {
+            text: "art. 64",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-64",
+            },
+          },
+          {
+            text: ". Визначаємо, чи це справді дефект podania, чи доказова проблема, яку слід оцінювати по суті.",
+          },
+        ],
+      },
+      lesson:
+        "Назва в wezwanie не вирішує класифікацію; вирішує правова природа вимоги.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Дату wszczęcia в art. 61 § 3",
+        parts: [
+          {
+            text: "Дату wszczęcia в ",
+          },
+          {
+            text: "art. 61 § 3",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-61",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Способи внесення і мінімум podania в art. 63",
+        parts: [
+          {
+            text: "Способи внесення і мінімум podania в ",
+          },
+          {
+            text: "art. 63",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-63",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Строк і pouczenie з art. 64 § 2",
+        parts: [
+          {
+            text: "Строк і pouczenie з ",
+          },
+          {
+            text: "art. 64 § 2",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-64",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaInitiationLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

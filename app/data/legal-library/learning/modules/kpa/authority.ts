@@ -59,6 +59,176 @@ const moduleContent: KpaGuideModule = {
       answer: kpaLaw.text`Ні. ${kpaLaw.article("19", "Art. 19")} прямо покладає на organ обов’язок дотримуватися своєї rzeczowej і miejscowej właściwości з уряду.`,
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Właściwość відповідає не на одне, а на три питання: який тип organu вирішує цей предмет, який територіальний зв’язок обирає конкретний organ і хто контролює рішення в наступній інстанції. Компетенція не виникає з того, що urząd уже прийняв документи або веде листування; вона має випливати з закону та фактів.",
+      "У справах cudzoziemców місце проживання, місце роботи, адреса korespondencyjna і фактичний pobyt можуть не збігатися. Тому запишіть норму właściwości зі спеціального закону, конкретний факт-прив’язку і документ, який його доводить. Якщо podanie потрапило не туди, аналізуйте передачу, дату першого внесення та повідомлення сторони, а не подавайте все заново без потреби.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 19–21",
+          parts: [
+            {
+              text: "art. 19",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-19",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "21",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-21",
+              },
+            },
+          ],
+        },
+        role: "Зобов’язують organ контролювати rzeczową і miejscową właściwość та дають загальні способи визначення територіальної компетенції.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 22–23",
+          parts: [
+            {
+              text: "art. 22",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-22",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "23",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-23",
+              },
+            },
+          ],
+        },
+        role: "Регулюють спори про компетенцію та вузький обсяг невідкладних дій до їх вирішення.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 65–66",
+          parts: [
+            {
+              text: "art. 65",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-65",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "66",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-66",
+              },
+            },
+          ],
+        },
+        role: "Пояснюють поводження з podaniem, адресованим невластивому organowi, або з вимогами різної компетенції.",
+      },
+    ],
+    terms: [
+      {
+        term: "właściwość rzeczowa",
+        meaning: "Компетенція за предметом справи.",
+      },
+      {
+        term: "właściwość miejscowa",
+        meaning: "Компетенція за територіальним зв’язком, визначеним законом.",
+      },
+      {
+        term: "organ wyższego stopnia",
+        meaning:
+          "Орган, якому закон доручає інстанційний контроль або інші визначені дії.",
+      },
+    ],
+    caseExample: {
+      title: "Переїзд між воєводствами",
+      facts:
+        "Після подання wniosku іноземець фактично переїхав і повідомив нову адресу, але робота залишилася в попередньому воєводстві.",
+      analysis:
+        "Не робимо висновку з одного факту. Перевіряємо спеціальну норму właściwości, значення переїзду для вже розпочатої справи, докази нового місця та процес передачі.",
+      lesson:
+        "Зміна адреси й зміна właściwości — пов’язані, але не тотожні події.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Обов’язок контролю з art. 19",
+        parts: [
+          {
+            text: "Обов’язок контролю з ",
+          },
+          {
+            text: "art. 19",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-19",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Загальні прив’язки art. 21",
+        parts: [
+          {
+            text: "Загальні прив’язки ",
+          },
+          {
+            text: "art. 21",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-21",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText:
+          "Наслідок своєчасного подання до неправильного organu в art. 65",
+        parts: [
+          {
+            text: "Наслідок своєчасного подання до неправильного organu в ",
+          },
+          {
+            text: "art. 65",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-65",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaAuthorityLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

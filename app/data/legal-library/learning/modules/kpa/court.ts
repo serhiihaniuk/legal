@@ -63,6 +63,181 @@ const moduleContent: KpaGuideModule = {
         "Ні. WSA здійснює судовий контроль законності у межах p.p.s.a.; його роль і можливі розstrzygnięcia відрізняються від адміністративного odwołania.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "WSA не веде справу про pobyt замість wojewody і не є третьою адміністративною інстанцією. Суд контролює законність оstatecznego aktu або бездіяльності в межах p.p.s.a. Тому skarga повинна показувати порушення права та його вплив, а не лише повторювати прохання надати дозвіл.",
+      "Перед skargą визначте її предмет: decyzja, bezczynność/przewlekłość чи інший акт. Перевірте вичерпання адміністративних засобів, окремий судовий строк і маршрут через organ. Зберіть повний пакет aktów, odwołanie, doręczenia та список норм. Питання wstrzymania виконання аналізуйте окремо — саме внесення skargi не завжди дає такий ефект.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 3 p.p.s.a.",
+          parts: [
+            {
+              text: "art. 3",
+              target: {
+                kind: "legal-provision",
+                documentId: "ppsa",
+                provisionId: "ppsa-art-3",
+              },
+            },
+            {
+              text: " p.p.s.a.",
+            },
+          ],
+        },
+        role: "Окреслює предмети судового контролю, включно з decyzjami та бездіяльністю у визначених законом випадках.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 52 p.p.s.a.",
+          parts: [
+            {
+              text: "art. 52",
+              target: {
+                kind: "legal-provision",
+                documentId: "ppsa",
+                provisionId: "ppsa-art-52",
+              },
+            },
+            {
+              text: " p.p.s.a.",
+            },
+          ],
+        },
+        role: "Встановлює загальну передумову вичерпання доступних адміністративних засобів перед skargą.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 53–54 p.p.s.a.",
+          parts: [
+            {
+              text: "art. 53",
+              target: {
+                kind: "legal-provision",
+                documentId: "ppsa",
+                provisionId: "ppsa-art-53",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "54",
+              target: {
+                kind: "legal-provision",
+                documentId: "ppsa",
+                provisionId: "ppsa-art-54",
+              },
+            },
+            {
+              text: " p.p.s.a.",
+            },
+          ],
+        },
+        role: "Регулюють строки та внесення skargi за посередництвом organu, діяльність якого оскаржується.",
+      },
+    ],
+    terms: [
+      {
+        term: "kontrola legalności",
+        meaning:
+          "Перевірка відповідності дій адміністрації матеріальному й процесуальному праву.",
+      },
+      {
+        term: "wyczerpanie środków zaskarżenia",
+        meaning:
+          "Використання доступного адміністративного засобу, після якого відкривається судова дорога за правилами p.p.s.a.",
+      },
+      {
+        term: "skarga",
+        meaning:
+          "Процесуальне звернення до суду з визначеним предметом, вимогами, строком і формою.",
+      },
+    ],
+    caseExample: {
+      title: "Decyzja II instancji підтримала відмову",
+      facts:
+        "Organ odwoławczy не відповів на ключовий zarzut щодо пропущеного доказу й utrzymał decyzję w mocy.",
+      analysis:
+        "Рахуємо судовий строк від doręczenia ostatecznej decyzji, подаємо skargę через organ і показуємо порушення норм доказування, uzasadnienia та інстанційного контролю.",
+      lesson:
+        "Skarga адаптує помилки справи до судового контролю законності; вона не є копією odwołania.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Каталог контролю art. 3 p.p.s.a.",
+        parts: [
+          {
+            text: "Каталог контролю ",
+          },
+          {
+            text: "art. 3",
+            target: {
+              kind: "legal-provision",
+              documentId: "ppsa",
+              provisionId: "ppsa-art-3",
+            },
+          },
+          {
+            text: " p.p.s.a.",
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Передумови art. 52 p.p.s.a.",
+        parts: [
+          {
+            text: "Передумови ",
+          },
+          {
+            text: "art. 52 p.p.s.a.",
+            target: {
+              kind: "legal-provision",
+              documentId: "ppsa",
+              provisionId: "ppsa-art-52",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "30-денний строк і маршрут art. 53–54 для skargi na decyzję",
+        parts: [
+          {
+            text: "30-денний строк і маршрут ",
+          },
+          {
+            text: "art. 53",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-53",
+            },
+          },
+          {
+            text: "–",
+          },
+          {
+            text: "54",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-54",
+            },
+          },
+          {
+            text: " для skargi na decyzję",
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaCourtLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

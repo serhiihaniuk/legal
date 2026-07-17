@@ -60,6 +60,249 @@ const moduleContent: KpaGuideModule = {
         "Ні. Ця підстава вимагає істотного факту або доказу, який існував у день рішення і був невідомий organowi.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Tryby nadzwyczajne захищають стабільність ostatecznych decyzji, одночасно дозволяючи реагувати на визначені тяжкі дефекти. Це не додаткова інстанція і не спосіб повторити пропущене odwołanie. Спочатку назвіть ваду, потім перевірте, чи вона точно входить до законної підстави конкретного режиму.",
+      {
+        kind: "authored-legal-text",
+        plainText:
+          "Wznowienie переважно повертається до дефекту провадження або нововиявленого матеріалу, який уже існував у день decyzji. Nieważność стосується закритого каталогу найтяжчих вад акта. Art. 154–155 мають іншу функцію: допускають зміну визначених ostatecznych decyzji за окремих умов, а не визнають їх первісно незаконними.",
+        parts: [
+          {
+            text: "Wznowienie переважно повертається до дефекту провадження або нововиявленого матеріалу, який уже існував у день decyzji. Nieważność стосується закритого каталогу найтяжчих вад акта. ",
+          },
+          {
+            text: "Art. 154",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-154",
+            },
+          },
+          {
+            text: "–",
+          },
+          {
+            text: "155",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-155",
+            },
+          },
+          {
+            text: " мають іншу функцію: допускають зміну визначених ostatecznych decyzji за окремих умов, а не визнають їх первісно незаконними.",
+          },
+        ],
+      },
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 145–152",
+          parts: [
+            {
+              text: "art. 145",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-145",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "152",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-152",
+              },
+            },
+          ],
+        },
+        role: "Регулюють підстави, строки, właściwość, відкриття та результат wznowienia postępowania.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 154–155",
+          parts: [
+            {
+              text: "art. 154",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-154",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "155",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-155",
+              },
+            },
+          ],
+        },
+        role: "Дозволяють зміну або uchylenie визначених ostatecznych decyzji залежно від набутого права, згоди та інтересів.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 156–159",
+          parts: [
+            {
+              text: "art. 156",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-156",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "159",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-159",
+              },
+            },
+          ],
+        },
+        role: "Містять підстави й межі nieważności, właściwy organ, форму результату та можливість wstrzymania.",
+      },
+    ],
+    terms: [
+      {
+        term: "wznowienie",
+        meaning:
+          "Повторне відкриття завершеної справи через одну з конкретних вад, перелічених законом.",
+      },
+      {
+        term: "stwierdzenie nieważności",
+        meaning:
+          "Надзвичайний контроль ostatecznej decyzji через найтяжчі кваліфіковані дефекти.",
+      },
+      {
+        term: "rażące naruszenie prawa",
+        meaning:
+          "Кваліфіковане, очевидне і серйозне порушення; не кожна правова помилка досягає цього рівня.",
+      },
+    ],
+    caseExample: {
+      title: "Сторона не знала про провадження",
+      facts:
+        "Decyzję ostateczną видано без реальної участі особи, яка була stroną, а про акт вона дізналась значно пізніше.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Перевіряємо brak winy, art. 145 § 1 pkt 4, дату знання про decyzję, місячний строк art. 148 і właściwy organ. Доказуємо не лише невручення, а втрату участі.",
+        parts: [
+          {
+            text: "Перевіряємо brak winy, ",
+          },
+          {
+            text: "art. 145 § 1",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-145",
+            },
+          },
+          {
+            text: " pkt 4, дату знання про decyzję, місячний строк ",
+          },
+          {
+            text: "art. 148",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-148",
+            },
+          },
+          {
+            text: " і właściwy organ. Доказуємо не лише невручення, а втрату участі.",
+          },
+        ],
+      },
+      lesson:
+        "Для wznowienia потрібні точна підстава та хронологія знання, а не загальне відчуття несправедливості.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Закритий перелік art. 145",
+        parts: [
+          {
+            text: "Закритий перелік ",
+          },
+          {
+            text: "art. 145",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-145",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Строки art. 148",
+        parts: [
+          {
+            text: "Строки ",
+          },
+          {
+            text: "art. 148",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-148",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Підстави і часові межі art. 156–158",
+        parts: [
+          {
+            text: "Підстави і часові межі ",
+          },
+          {
+            text: "art. 156",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-156",
+            },
+          },
+          {
+            text: "–",
+          },
+          {
+            text: "158",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-158",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaExtraordinaryLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

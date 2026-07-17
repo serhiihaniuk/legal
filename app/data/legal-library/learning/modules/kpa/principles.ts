@@ -61,6 +61,219 @@ const moduleContent: KpaGuideModule = {
         "Ні. Він зобов’язує орган інформувати і давати необхідні пояснення, але не усуває матеріальних та процесуальних обов’язків сторони.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Zasady ogólne — це обов’язковий стандарт усієї процедури. Вони пояснюють, як organ має користуватися конкретними повноваженнями: діяти на правовій основі, точно з’ясувати факти, інформувати, дозволити стороні участь, поводитися послідовно та вести справу без зайвої затримки. Принцип стає практичним, коли ви пов’язуєте його з конкретною дією або пропуском у матеріалах справи.",
+      {
+        kind: "authored-legal-text",
+        plainText:
+          "У legalizacji принципи особливо корисні, коли рішення формально посилається на правильну норму, але organ не побачив поданого документа, не дав відповісти на новий доказ або вимагав інформацію без пояснення її ролі. Не пишіть лише «naruszono art. 7 i 8». Покажіть: який факт не встановлено, який доказ пропущено, яку участь заблоковано і як це могло вплинути на wynik.",
+        parts: [
+          {
+            text: "У legalizacji принципи особливо корисні, коли рішення формально посилається на правильну норму, але organ не побачив поданого документа, не дав відповісти на новий доказ або вимагав інформацію без пояснення її ролі. Не пишіть лише «naruszono ",
+          },
+          {
+            text: "art. 7",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-7",
+            },
+          },
+          {
+            text: " i 8». Покажіть: який факт не встановлено, який доказ пропущено, яку участь заблоковано і як це могло вплинути на wynik.",
+          },
+        ],
+      },
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 6–9",
+          parts: [
+            {
+              text: "art. 6",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-6",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "9",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-9",
+              },
+            },
+          ],
+        },
+        role: "Встановлюють законність, обов’язок з’ясування справи, довіру, пропорційність, рівність та інформаційний обов’язок.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 10–12",
+          parts: [
+            {
+              text: "art. 10",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-10",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "12",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-12",
+              },
+            },
+          ],
+        },
+        role: "Захищають активну участь сторони, зрозумілість мотивів та швидке, водночас уважне ведення справи.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 14–16",
+          parts: [
+            {
+              text: "art. 14",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-14",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "16",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-16",
+              },
+            },
+          ],
+        },
+        role: "Регулюють письмове закріплення справи та базові властивості інстанційності й остаточності рішень.",
+      },
+    ],
+    terms: [
+      {
+        term: "czynny udział",
+        meaning:
+          "Реальна можливість знати матеріал, подавати позицію і висловитися перед рішенням, а не лише формальна присутність у справі.",
+      },
+      {
+        term: "zasada zaufania",
+        meaning:
+          "Вимога передбачуваної, безсторонньої й пропорційної поведінки органу.",
+      },
+      {
+        term: "praworządność",
+        meaning:
+          "Organ діє в межах і на підставі права та сам контролює законність своїх дій.",
+      },
+    ],
+    caseExample: {
+      title: "Новий негативний доказ перед decyzją",
+      facts:
+        "Після відповіді заявника organ отримав інформацію від іншої установи й одразу видав відмову, не відкривши стороні можливості висловитися.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Перевіряємо art. 10 разом із нормами про докази та uzasadnienie. Важливо показати, яку відповідь або контрдоказ сторона могла подати і чому це мало значення.",
+        parts: [
+          {
+            text: "Перевіряємо ",
+          },
+          {
+            text: "art. 10",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-10",
+            },
+          },
+          {
+            text: " разом із нормами про докази та uzasadnienie. Важливо показати, яку відповідь або контрдоказ сторона могла подати і чому це мало значення.",
+          },
+        ],
+      },
+      lesson:
+        "Порушення принципу доводиться через втрачену процесуальну можливість та її вплив на рішення.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Обов’язки organu в art. 7 і 9",
+        parts: [
+          {
+            text: "Обов’язки organu в ",
+          },
+          {
+            text: "art. 7",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-7",
+            },
+          },
+          {
+            text: " і 9",
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Виняток із czynnego udziału в art. 10 § 2–3",
+        parts: [
+          {
+            text: "Виняток із czynnego udziału в ",
+          },
+          {
+            text: "art. 10 § 2–3",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-10",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Різницю між ostatecznością і prawomocnością в art. 16",
+        parts: [
+          {
+            text: "Різницю між ostatecznością і prawomocnością в ",
+          },
+          {
+            text: "art. 16",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-16",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaPrinciplesLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

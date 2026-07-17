@@ -62,6 +62,169 @@ const moduleContent: KpaGuideModule = {
         "Ні. Потрібна пряма норма спеціального закону. Інакше аналізуємо строки, bezczynność/przewlekłość і ponaglenie.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Milczące załatwienie не є покаранням organu за повільність. Це спеціально сконструйований позитивний або завершальний наслідок, який працює лише тоді, коли інший закон прямо підключає цей режим. Без такої норми тривала відсутність decyzji залишається проблемою строку, bezczynności або przewlekłości.",
+      "Навіть коли спеціальний закон передбачає milczenie, треба встановити вид механізму, початок строку, kompletność sprawy та дії organu в цей період. KPA пояснює наслідок і документування результату, але не дозволяє переносити milczącą zgodę з однієї процедури на іншу за аналогією.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 122a",
+          parts: [
+            {
+              text: "art. 122a",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-122a",
+              },
+            },
+          ],
+        },
+        role: "Встановлює ключовий шлюз: milczące załatwienie застосовується лише за прямою нормою спеціального закону.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 122b–122f",
+          parts: [
+            {
+              text: "art. 122b",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-122b",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "122f",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-122f",
+              },
+            },
+          ],
+        },
+        role: "Регулюють перебіг строку, повідомлення, наслідок і zaświadczenie про milczące załatwienie.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 122g",
+          parts: [
+            {
+              text: "art. 122g",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-122g",
+              },
+            },
+          ],
+        },
+        role: "Підключає відповідно окремі механізми контролю до справ, завершених milcząco.",
+      },
+    ],
+    terms: [
+      {
+        term: "milcząca zgoda",
+        meaning:
+          "Варіант, у якому відсутність sprzeciwu у встановлений строк створює передбачений законом позитивний ефект.",
+      },
+      {
+        term: "milczące zakończenie",
+        meaning:
+          "Варіант завершення справи після спливу строку без klasycznej decyzji.",
+      },
+      {
+        term: "bezczynność",
+        meaning:
+          "Незавершення справи у належний строк; сама по собі не створює milczącej zgody.",
+      },
+    ],
+    caseExample: {
+      title: "Шість місяців без decyzji pobytowej",
+      facts:
+        "Заявник вважає, що тривале мовчання означає автоматичне надання дозволу.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Шукаємо пряму норму lex specialis про milczące załatwienie саме цього виду справи. Якщо її немає, переходимо до art. 35–37 KPA і спеціальних строків ustawy o cudzoziemcach.",
+        parts: [
+          {
+            text: "Шукаємо пряму норму lex specialis про milczące załatwienie саме цього виду справи. Якщо її немає, переходимо до ",
+          },
+          {
+            text: "art. 35",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-35",
+            },
+          },
+          {
+            text: "–",
+          },
+          {
+            text: "37",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-37",
+            },
+          },
+          {
+            text: " KPA і спеціальних строків ustawy o cudzoziemcach.",
+          },
+        ],
+      },
+      lesson:
+        "Спочатку правова підстава milczenia, ніколи — припущення з тривалості очікування.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Фразу про пряму норму в art. 122a",
+        parts: [
+          {
+            text: "Фразу про пряму норму в ",
+          },
+          {
+            text: "art. 122a",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-122a",
+            },
+          },
+        ],
+      },
+      "Різницю двох форм milczenia",
+      {
+        kind: "authored-legal-text",
+        plainText: "Правило zaświadczenia в art. 122f",
+        parts: [
+          {
+            text: "Правило zaświadczenia в ",
+          },
+          {
+            text: "art. 122f",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-122f",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaSilenceLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

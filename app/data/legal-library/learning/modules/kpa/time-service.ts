@@ -62,6 +62,234 @@ const moduleContent: KpaGuideModule = {
         "Від юридично значущого doręczenia/ogłoszenia, тобто не автоматично від дати створення письма. Точний початок перевіряємо за правилами вручення.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "У процедурі працюють різні строки: organ має строк заłatwienia sprawy, а сторона — строк на відповідь, odwołanie чи іншу дію. Обидва можуть залежати від подій, які не видно з дати на документі. Doręczenie — окремий юридичний інститут, тому спочатку встановлюють його адресата, спосіб і дату, а лише потім рахують.",
+      {
+        kind: "authored-legal-text",
+        plainText:
+          "Строк у днях рахуйте механічно за art. 57: не включайте день події, перевірте останній день і спосіб своєчасного внесення. Якщо строк уже пропущено, не називайте прохання «продовженням». Przywrócenie terminu потребує brak winy, короткого строку реакції після припинення перешкоди та одночасного виконання пропущеної дії.",
+        parts: [
+          {
+            text: "Строк у днях рахуйте механічно за ",
+          },
+          {
+            text: "art. 57",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-57",
+            },
+          },
+          {
+            text: ": не включайте день події, перевірте останній день і спосіб своєчасного внесення. Якщо строк уже пропущено, не називайте прохання «продовженням». Przywrócenie terminu потребує brak winy, короткого строку реакції після припинення перешкоди та одночасного виконання пропущеної дії.",
+          },
+        ],
+      },
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 35–38",
+          parts: [
+            {
+              text: "art. 35",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-35",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "38",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-38",
+              },
+            },
+          ],
+        },
+        role: "Регулюють швидкість organu, строки, повідомлення про затримку та реакцію на bezczynność/przewlekłość.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 39–49b",
+          parts: [
+            {
+              text: "art. 39",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-39",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "49b",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-49b",
+              },
+            },
+          ],
+        },
+        role: "Створюють систему паперових та електронних doręczeń і юридичних наслідків різних способів.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 57–60",
+          parts: [
+            {
+              text: "art. 57",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-57",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "60",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-60",
+              },
+            },
+          ],
+        },
+        role: "Пояснюють обчислення, збереження і відновлення процесуальних строків.",
+      },
+    ],
+    terms: [
+      {
+        term: "doręczenie",
+        meaning:
+          "Врегульоване законом доведення письма до адресата, з яким пов’язуються процесуальні наслідки.",
+      },
+      {
+        term: "uchybienie terminu",
+        meaning: "Виконання дії після спливу процесуального строку.",
+      },
+      {
+        term: "przywrócenie terminu",
+        meaning: {
+          kind: "authored-legal-text",
+          plainText:
+            "Виняткове відновлення можливості дії за сукупності умов art. 58, а не звичайне продовження.",
+          parts: [
+            {
+              text: "Виняткове відновлення можливості дії за сукупності умов ",
+            },
+            {
+              text: "art. 58",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-58",
+              },
+            },
+            {
+              text: ", а не звичайне продовження.",
+            },
+          ],
+        },
+      },
+    ],
+    caseExample: {
+      title: "Awizo під час госпіталізації",
+      facts:
+        "Письмо вважалося врученим після awizo, а заявник перебував у лікарні та пропустив строк odwołania.",
+      analysis:
+        "Перевіряємо правильність адреси й процедури doręczenia, точні дати перешкоди та її припинення. Разом із prośbą o przywrócenie подаємо odwołanie і докази brak winy.",
+      lesson: {
+        kind: "authored-legal-text",
+        plainText:
+          "Хронологія та одночасне виконання пропущеної дії критичні для art. 58.",
+        parts: [
+          {
+            text: "Хронологія та одночасне виконання пропущеної дії критичні для ",
+          },
+          {
+            text: "art. 58",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-58",
+            },
+          },
+          {
+            text: ".",
+          },
+        ],
+      },
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Періоди, що не входять у строк organu в art. 35 § 5",
+        parts: [
+          {
+            text: "Періоди, що не входять у строк organu в ",
+          },
+          {
+            text: "art. 35 § 5",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-35",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Обов’язок зміни адреси в art. 41",
+        parts: [
+          {
+            text: "Обов’язок зміни адреси в ",
+          },
+          {
+            text: "art. 41",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-41",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Усі умови art. 58",
+        parts: [
+          {
+            text: "Усі умови ",
+          },
+          {
+            text: "art. 58",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-58",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaTimeServiceLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

@@ -62,6 +62,196 @@ const moduleContent: KpaGuideModule = {
         "Sentencję/rozstrzygnięcie: вона визначає юридичний результат. Потім — підставу, факти, оцінку доказів і pouczenie.",
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Decyzja — це юридичний результат справи, тому її читають від sentencji. Саме sentencja говорить, що надано, у чому відмовлено, що припинено і кого це стосується. Uzasadnienie має показати дорогу до результату: встановлені факти, докази, оцінку суперечностей, застосовані норми та subsumpcję.",
+      "Postanowienie зазвичай вирішує процесуальне питання в ході справи, але назва документа не звільняє від перевірки його правової природи. Для обох актів окремо перевіряйте doręczenie, pouczenie, доступний засіб, строк і wykonalność. Не змішуйте ostateczność, prawomocność та можливість негайного виконання.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 104–107",
+          parts: [
+            {
+              text: "art. 104",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-104",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "107",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-107",
+              },
+            },
+          ],
+        },
+        role: "Визначають роль decyzji, спосіб її формування й обов’язкові елементи, включно з фактичним і правовим uzasadnieniem.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 109–113",
+          parts: [
+            {
+              text: "art. 109",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-109",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "113",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-113",
+              },
+            },
+          ],
+        },
+        role: "Регулюють doręczenie, зв’язаність organu рішенням, uzupełnienie, sprostowanie та пояснення сумнівів.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 123–126",
+          parts: [
+            {
+              text: "art. 123",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-123",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "126",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-126",
+              },
+            },
+          ],
+        },
+        role: "Створюють базову модель postanowienia і вказують, які правила decyzji застосовуються відповідно.",
+      },
+    ],
+    terms: [
+      {
+        term: "sentencja",
+        meaning:
+          "Владна частина акта, що безпосередньо встановлює юридичний результат.",
+      },
+      {
+        term: "uzasadnienie faktyczne",
+        meaning:
+          "Пояснення встановлених фактів, доказів і причин відмови іншим доказам у силі чи вірогідності.",
+      },
+      {
+        term: "pouczenie",
+        meaning:
+          "Інформація про доступний засіб, маршрут і строк; її треба перевірити за законом.",
+      },
+    ],
+    caseExample: {
+      title: "Відмова через «нестабільну працю»",
+      facts:
+        "Sentencja відмовляє у дозволі, а uzasadnienie згадує лише одну коротку umowę, ігноруючи продовження та виплати.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Зіставляємо кожну матеріальну умову з висновком organu, актами та art. 107. Фіксуємо пропущені докази й показуємо, як вони змінюють оцінку факту.",
+        parts: [
+          {
+            text: "Зіставляємо кожну матеріальну умову з висновком organu, актами та ",
+          },
+          {
+            text: "art. 107",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-107",
+            },
+          },
+          {
+            text: ". Фіксуємо пропущені докази й показуємо, як вони змінюють оцінку факту.",
+          },
+        ],
+      },
+      lesson:
+        "Odwołanie будується на розриві між sentencją, повним матеріалом і поясненою subsumpcją.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Види завершення в art. 104",
+        parts: [
+          {
+            text: "Види завершення в ",
+          },
+          {
+            text: "art. 104",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-104",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Усі елементи decyzji в art. 107",
+        parts: [
+          {
+            text: "Усі елементи decyzji в ",
+          },
+          {
+            text: "art. 107",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-107",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Строк uzupełnienia decyzji в art. 111",
+        parts: [
+          {
+            text: "Строк uzupełnienia decyzji в ",
+          },
+          {
+            text: "art. 111",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-111",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaDecisionsLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =

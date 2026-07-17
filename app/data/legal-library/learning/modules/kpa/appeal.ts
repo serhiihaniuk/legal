@@ -59,6 +59,225 @@ const moduleContent: KpaGuideModule = {
       answer: kpaLaw.text`Ні. За ${kpaLaw.article("141", "art. 141")} — лише коли кодекс або інший закон прямо це передбачає; інакше можливість заперечення може виникнути разом з odwołaniem від decyzji.`,
     },
   ],
+  lesson: {
+    paragraphs: [
+      "Odwołanie запускає повторний інстанційний контроль decyzji, а не лише перевірку оформлення. Спочатку захистіть допустимість: встановіть тип акта, дату doręczenia, правильний строк і маршрут через organ першої інстанції. Потім визначте zakres zaskarżenia і бажаний результат.",
+      "Аргументи групуйте за помилками: неправильне право, неповні факти, хибна оцінка доказів, порушення процедури. Для кожної помилки покажіть вплив і сформулюйте wniosek. Zażalenie має іншу логіку: воно доступне на postanowienie лише за прямим дозволом закону, а решту процесуальних заперечень інколи треба підняти в odwołaniu від decyzji.",
+    ],
+    articles: [
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 127–130",
+          parts: [
+            {
+              text: "art. 127",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-127",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "130",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-130",
+              },
+            },
+          ],
+        },
+        role: "Визначають право, мінімальний зміст, маршрут, строк та вплив odwołania на виконання decyzji.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 132–140",
+          parts: [
+            {
+              text: "art. 132",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-132",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "140",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-140",
+              },
+            },
+          ],
+        },
+        role: "Описують реакцію першої інстанції, передачу справи, дослідження доказів та можливі рішення другої інстанції.",
+      },
+      {
+        reference: {
+          kind: "authored-legal-text",
+          plainText: "art. 141–144",
+          parts: [
+            {
+              text: "art. 141",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-141",
+              },
+            },
+            {
+              text: "–",
+            },
+            {
+              text: "144",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-144",
+              },
+            },
+          ],
+        },
+        role: "Регулюють допустимість, строк і наслідки zażalenia та відповідне застосування правил odwołania.",
+      },
+    ],
+    terms: [
+      {
+        term: "zarzut",
+        meaning:
+          "Конкретно названа помилка рішення або процедури з поясненням її змісту.",
+      },
+      {
+        term: "wniosek odwoławczy",
+        meaning:
+          "Чітке прохання про спосіб зміни, uchylenia або іншого вирішення акта.",
+      },
+      {
+        term: "decyzja kasacyjna",
+        meaning: {
+          kind: "authored-legal-text",
+          plainText:
+            "Рішення другої інстанції, яке в умовах art. 138 § 2 скасовує акт і повертає справу на повторний розгляд.",
+          parts: [
+            {
+              text: "Рішення другої інстанції, яке в умовах ",
+            },
+            {
+              text: "art. 138 § 2",
+              target: {
+                kind: "legal-provision",
+                documentId: "kpa",
+                provisionId: "kpa-art-138",
+              },
+            },
+            {
+              text: " скасовує акт і повертає справу на повторний розгляд.",
+            },
+          ],
+        },
+      },
+    ],
+    caseExample: {
+      title: "Odwołanie в останній день",
+      facts:
+        "Негативну decyzję вручено pełnomocnikowi, а заявник планує надіслати odwołanie прямо до organu другої інстанції.",
+      analysis: {
+        kind: "authored-legal-text",
+        plainText:
+          "Рахуємо 14 днів від правильного doręczenia за art. 57 і перевіряємо art. 129: адресуємо organowi odwoławczemu, але вносимо через organ, який видав decyzję.",
+        parts: [
+          {
+            text: "Рахуємо 14 днів від правильного doręczenia за ",
+          },
+          {
+            text: "art. 57",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-57",
+            },
+          },
+          {
+            text: " і перевіряємо ",
+          },
+          {
+            text: "art. 129",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-129",
+            },
+          },
+          {
+            text: ": адресуємо organowi odwoławczemu, але вносимо через organ, який видав decyzję.",
+          },
+        ],
+      },
+      lesson: "Зміст не допоможе, якщо не захищені строк і маршрут подання.",
+    },
+    findInText: [
+      {
+        kind: "authored-legal-text",
+        plainText: "Мінімум odwołania в art. 128",
+        parts: [
+          {
+            text: "Мінімум odwołania в ",
+          },
+          {
+            text: "art. 128",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-128",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Маршрут і строк art. 129",
+        parts: [
+          {
+            text: "Маршрут і строк ",
+          },
+          {
+            text: "art. 129",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-129",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Каталог rozstrzygnięć art. 138",
+        parts: [
+          {
+            text: "Каталог rozstrzygnięć ",
+          },
+          {
+            text: "art. 138",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-138",
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const kpaAppealLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =
