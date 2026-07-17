@@ -1,5 +1,6 @@
 export { appealMapNode, appealTopic } from "./appeal"
 export { blueCardMapNode, blueCardTopic } from "./blue-card"
+export { caseFileMapNode, caseFileTopic } from "./case-file"
 export { businessStayMapNode, businessStayTopic } from "./business-stay"
 export { complaintMapNode, complaintTopic } from "./complaint"
 export {
@@ -16,11 +17,18 @@ export {
   entryCurrentBasisTopic,
 } from "./entry-current-basis"
 export { evidenceMapNode, evidenceTopic } from "./evidence"
+export { evidenceMatrixMapNode, evidenceMatrixTopic } from "./evidence-matrix"
 export { familyStayMapNode, familyStayTopic } from "./family-stay"
+export {
+  foreignDocumentsMapNode,
+  foreignDocumentsTopic,
+} from "./foreign-documents"
 export {
   decisionWorkflowMapNode,
   decisionWorkflowTopic,
 } from "./decision-workflow"
+export { documentMatrixMapNode, documentMatrixTopic } from "./document-matrix"
+export { documentTypesMapNode, documentTypesTopic } from "./document-types"
 export {
   extraordinaryWsaMapNode,
   extraordinaryWsaTopic,
