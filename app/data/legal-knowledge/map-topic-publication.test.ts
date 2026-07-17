@@ -24,7 +24,7 @@ describe("map-topic publication resolution", () => {
   })
 
   it("fails closed for a structural node that has not been authored yet", () => {
-    expect(resolveMapTopicPublication("temporary-common")).toBeUndefined()
+    expect(resolveMapTopicPublication("stay-work")).toBeUndefined()
     expect(resolveMapTopicPublication("missing-node")).toBeUndefined()
   })
 })

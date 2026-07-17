@@ -55,6 +55,11 @@ export { sourceCheckMapNode, sourceCheckTopic } from "./source-check"
 export { specialVsKpaMapNode, specialVsKpaTopic } from "./special-vs-kpa"
 export { personStatusMapNode, personStatusTopic } from "./person-status"
 export { startCaseMapNode, startCaseTopic } from "./start-case"
+export {
+  temporaryCommonMapNode,
+  temporaryCommonTopic,
+} from "./temporary-common"
+export { temporaryGoalsMapNode, temporaryGoalsTopic } from "./temporary-goals"
 export { twoKeysMapNode, twoKeysTopic } from "./two-keys"
 export { cukrRouteMapNode, cukrRouteTopic } from "./cukr-route-2026"
 export { visaFreeMapNode, visaFreeTopic } from "./visa-free"

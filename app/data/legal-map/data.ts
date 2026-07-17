@@ -47,6 +47,8 @@ import {
   specialVsKpaMapNode,
   startCaseMapNode,
   studyLoopMapNode,
+  temporaryCommonMapNode,
+  temporaryGoalsMapNode,
   twoKeysMapNode,
   ukrBaselineMapNode,
   ukraineOrdinaryMapNode,
@@ -1051,29 +1053,9 @@ export const legalData = {
               },
             ],
           },
+          temporaryCommonMapNode,
           {
-            id: "temporary-common",
-            title: "Pobyt czasowy — спільні правила",
-            polish: foreignersLaw.text`${foreignersLaw.articleRange("98", "113a", { start: "art. 98", end: "113a" })} ustawy o cudzoziemcach`,
-            summary:
-              "Дозвіл на тимчасове перебування пов’язаний із конкретною метою понад 3 місяці й зазвичай надається максимум до 3 років. Спільні статті регулюють початок, відмову, відкликання, organ та процедуру.",
-            checkpoints: [
-              "Чи мета триває понад 3 місяці?",
-              "Чи немає odmowy wszczęcia?",
-              "Чи виконано загальні та спеціальні умови?",
-              "Який обов’язок повідомлення після зміни підстави?",
-            ],
-            sources: [S.aliens, S.aliensChange],
-            related: ["goal-of-stay", "temporary-goals", "mos-procedure"],
-          },
-          {
-            id: "temporary-goals",
-            title: "Головні цілі pobytu czasowego",
-            polish: "rozdziały 2–11 ustawy o cudzoziemcach",
-            summary:
-              "Кожна ціль має власний набір позитивних умов, відмов, документів, обов’язків і правил доступу до праці. Порівнюй їх за однаковим шаблоном.",
-            why: "Цілі не мають універсального рейтингу. «Пріоритет» залежить від правдивих фактів і того, яка спеціальна підстава найбільш точно їх охоплює.",
-            sources: [S.aliens],
+            ...temporaryGoalsMapNode,
             children: [
               {
                 id: "stay-work",

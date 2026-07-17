@@ -30,15 +30,17 @@ import unit25 from "../../legal-map/editorial/topics/source-check"
 import unit26 from "../../legal-map/editorial/topics/special-vs-kpa"
 import unit27 from "../../legal-map/editorial/topics/start-case"
 import unit28 from "../../legal-map/editorial/topics/study-loop"
-import unit29 from "../../legal-map/editorial/topics/two-keys"
-import unit30 from "../../legal-map/editorial/topics/ukr-baseline-2026"
-import unit31 from "../../legal-map/editorial/topics/ukraine-ordinary-2026"
-import unit32 from "../../legal-map/editorial/topics/ukraine-routes-2026"
-import unit33 from "../../legal-map/editorial/topics/visa"
-import unit34 from "../../legal-map/editorial/topics/visa-free"
-import unit35 from "../../legal-map/editorial/topics/wezwanie"
-import unit36 from "../../legal-map/editorial/topics/wezwanie-workflow"
-import unit37 from "../../legal-map/editorial/topics/wsa"
+import unit29 from "../../legal-map/editorial/topics/temporary-common"
+import unit30 from "../../legal-map/editorial/topics/temporary-goals"
+import unit31 from "../../legal-map/editorial/topics/two-keys"
+import unit32 from "../../legal-map/editorial/topics/ukr-baseline-2026"
+import unit33 from "../../legal-map/editorial/topics/ukraine-ordinary-2026"
+import unit34 from "../../legal-map/editorial/topics/ukraine-routes-2026"
+import unit35 from "../../legal-map/editorial/topics/visa"
+import unit36 from "../../legal-map/editorial/topics/visa-free"
+import unit37 from "../../legal-map/editorial/topics/wezwanie"
+import unit38 from "../../legal-map/editorial/topics/wezwanie-workflow"
+import unit39 from "../../legal-map/editorial/topics/wsa"
 
 export const authoredKnowledgeUnits = [
   unit0,
@@ -79,4 +81,6 @@ export const authoredKnowledgeUnits = [
   unit35,
   unit36,
   unit37,
+  unit38,
+  unit39,
 ] as const
