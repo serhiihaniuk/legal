@@ -1,0 +1,37 @@
+import { defineKpaEditorialPart } from "../define-kpa-part"
+export default defineKpaEditorialPart({
+  documentId: "kpa",
+  editionId: "kpa-2025-1691",
+  legalStateDate: "2026-07-14",
+  verifiedAt: "2026-07-14",
+  entries: [
+    {
+      article: "81a",
+      provisionId: "kpa-art-81a",
+      reviewStatus: "reviewed",
+      summary:
+        "Стаття наказує вирішувати неусувні фактичні сумніви на користь сторони у справах про накладення обов’язку або обмеження чи позбавлення права, але встановлює чотири групи винятків.",
+      rules: [
+        {
+          locator: "§ 1",
+          explanation:
+            "Коли після доказування залишаються niedające się usunąć wątpliwości co do stanu faktycznego, їх розstrzyga się na korzyść strony у справах про obowiązek або odebranie bądź ograniczenie uprawnienia.",
+        },
+        {
+          locator: "§ 2 pkt 1–2",
+          explanation:
+            "Принцип не діє, якщо у справі є сторони з суперечливими інтересами або результат безпосередньо впливає на інтереси третіх осіб, а також коли спеціальний закон покладає доведення конкретного факту на сторону.",
+        },
+        {
+          locator: "§ 2 pkt 3–4",
+          explanation:
+            "Виняток охоплює важливий інтерес публічний, включно з безпекою, обороною і громадським порядком, та особові справи funkcjonariuszy і zawodowych żołnierzy.",
+        },
+      ],
+      legalEffect:
+        "Правило допомагає стороні лише за неусувної фактичної невизначеності, у визначеному типі справ і за відсутності законного винятку.",
+      foreignersCase:
+        "Це загальна процесуальна норма, а не автоматичне правило для кожної справи pobytowej; спершу треба визначити характер рішення, ciężar dowodu та можливий інтерес третіх осіб або публічний.",
+    },
+  ],
+})
