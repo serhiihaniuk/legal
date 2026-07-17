@@ -48,6 +48,46 @@ export const mapTopicSources = {
     url: "https://orzeczenia.nsa.gov.pl/cbo/query",
     note: "Офіційна навчально-інформаційна база судової практики",
   },
+  ukraine2026: {
+    label: "Ustawa z 23.01.2026 — zmiany dotyczące obywateli Ukrainy",
+    url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
+    note: "Dz.U. 2026 poz. 203 · спеціальні та перехідні правила з 05.03.2026",
+  },
+  ukraineSpecialCurrent: {
+    label: "Specustawa ukraińska — актуальний текст",
+    url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+    note: "Умови, процедура та наслідки CUKR",
+  },
+  ukraineChanges: {
+    label: "UdSC — zmiany zasad pobytu obywateli Ukrainy",
+    url: "https://www.gov.pl/web/udsc/zmiany-w-szczegolnych-zasadach-dotyczacych-legalnosci-pobytu-obywateli-ukrainy-na-terytorium-rzeczypospolitej-polskiej",
+    note: "Офіційне пояснення доступних дозволів після 05.03.2026",
+  },
+  cukr: {
+    label: "UdSC — procedura CUKR",
+    url: "https://www.gov.pl/web/udsc/CUKR-procedura",
+    note: "Умови, оплати, строк дії та подання через MOS",
+  },
+  cukrQa: {
+    label: "UdSC — CUKR pytania i odpowiedzi",
+    url: "https://www.gov.pl/web/udsc/cukr-QA",
+    note: "Офіційні відповіді про подання, отримання карти й обов’язки",
+  },
+  ukrainianWork: {
+    label: "Praca.gov.pl — powiadomienie o pracy obywatela Ukrainy",
+    url: "https://psz.praca.gov.pl/web/8188476/powiadomienie-o-podjeciu-pracy-przez-obywatela-ukrainy",
+    note: "Обов’язок роботодавця та електронне повідомлення про працевлаштування",
+  },
+  mosWork: {
+    label: "UdSC — elektroniczny załącznik pracodawcy w MOS",
+    url: "https://www.gov.pl/web/udsc/informacja-dla-pracodawcow-na-temat-koniecznosci-elektronicznego-podpisywania-zalacznikow-do-wnioskow-o-udzielenie-zezwolenia-na-pobyt-czasowy-i-prace-w-polsce",
+    note: "Роль роботодавця та електронний підпис Załącznika nr 1",
+  },
+  mosWorkQa: {
+    label: "MOS — zezwolenie na pobyt czasowy i pracę",
+    url: "https://www.mos.cudzoziemcy.gov.pl/baza-pytan-i-odpowiedzi/zezwolenia-pobyt-i-praca/zezwolenie-na-pobyt-czasowy-i-prace/",
+    note: "Офіційні практичні відповіді про умови, оплату й строк",
+  },
   mos: {
     label: "UdSC — Moduł Obsługi Spraw (MOS)",
     url: "https://www.gov.pl/web/udsc/info-mos",
