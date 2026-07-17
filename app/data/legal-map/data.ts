@@ -18,12 +18,15 @@ const UKRAINE_SPECIAL_ACT_URL =
 const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
 import {
+  deadlinesDeliveryMapNode,
+  initiationMapNode,
   kpaPrinciplesMapNode,
   organPartyMapNode,
   principleLegalityMapNode,
   principleParticipationMapNode,
   principleTrustMapNode,
   principleTwoInstanceMapNode,
+  wezwanieMapNode,
 } from "./editorial/topics"
 
 const S = {
@@ -1059,75 +1062,14 @@ export const legalData = {
           },
           organPartyMapNode,
           {
-            id: "initiation",
-            title: "Початок справи й формальні недоліки",
-            polish: kpaLaw.text`wszczęcie, podanie, braki formalne · ${kpaLaw.articleRange("61", "66", { start: "art. 61", end: "66" })} KPA`,
-            summary: kpaLaw.text`Відрізняй початок провадження, мінімальний зміст заяви та wezwanie до усунення формальних недоліків за ${kpaLaw.article("64", "art. 64")} KPA.`,
-            why: "Brak formalny означає, що орган не може правильно надати заяві хід. Це не те саме, що недоведена матеріальна умова дозволу.",
-            checkpoints: [
-              "Яка дата початку справи?",
-              "Чого бракує: підпису/адреси чи доказу умови?",
-              "Який строк і наслідок вказані?",
-              "Чи спеціальний закон вимагає електронного подання?",
-            ],
-            steps: [
-              "Класифікуй недолік як formalny або materialny.",
-              kpaLaw.text`Перевір ${kpaLaw.articleRange("63", "64", { start: "art. 63", end: "64" })} KPA і спеціальний закон.`,
-              "Запиши дату doręczenia та останній день строку.",
-              "Подай повну відповідь із доказом подання.",
-            ],
-            sources: [S.kpa, S.aliensChange, S.mos],
+            ...initiationMapNode,
             related: ["deadlines-delivery", "wezwanie", "mos-procedure"],
           },
           {
-            id: "deadlines-delivery",
-            title: "Doręczenia і строки",
-            polish: kpaLaw.text`${kpaLaw.articleRange("39", "60", { start: "art. 39", end: "60" })} KPA`,
-            summary:
-              "Спочатку встанови юридичну дату вручення, а вже потім рахуй строк. Awizo, e-Doręczenia, представник і зміна адреси можуть змінити результат.",
-            why: "Навіть правильна відповідь, подана після строку, може не захистити справу. З іншого боку, неправильне вручення може означати, що строк ще не почався.",
-            checkpoints: [
-              "Кому й коли юридично вручено лист?",
-              "Чи діє фікція doręczenia?",
-              "Строк у днях, тижнях чи місяцях?",
-              "Чи останній день є вихідним?",
-            ],
-            steps: [
-              "Збережи kopertę/UPO/доказ e-Doręczenia.",
-              kpaLaw.text`Визнач дату вручення за ${kpaLaw.articleRange("39", "49b", { start: "art. 39", end: "49b" })}.`,
-              kpaLaw.text`Порахуй строк за ${kpaLaw.article("57", "art. 57")}.`,
-              kpaLaw.text`Якщо пропущено без вини — перевір ${kpaLaw.articleRange("58", "60", { start: "art. 58", end: "60" })}.`,
-            ],
-            documents: [
-              "конверт і awizo",
-              "UPO/UPP",
-              "підтвердження e-Doręczenia",
-              "доказ перешкоди при przywróceniu terminu",
-            ],
-            sources: [S.kpa, S.edelivery],
+            ...deadlinesDeliveryMapNode,
           },
           {
-            id: "wezwanie",
-            title: "Як читати wezwanie",
-            polish: kpaLaw.text`${kpaLaw.articleRange("50", "56", { start: "art. 50", end: "56" })} KPA; ${kpaLaw.article("54", "art. 54")} KPA`,
-            summary:
-              "Wezwanie треба розкласти на: organ, sprawa, підстава, точна вимога, форма виконання, строк і наслідок невиконання.",
-            why: "Юридична мова часто об’єднує кілька різних вимог в одному абзаці. Відповідай не «листом загалом», а таблицею: вимога → факт → доказ → додаток.",
-            checkpoints: [
-              "Хто викликає й у якій справі?",
-              "Що саме треба зробити або довести?",
-              "Чи вимога необхідна для справи?",
-              "Який строк і наслідок?",
-              "Чи можна просити уточнення або продовження?",
-            ],
-            steps: [
-              "Пронумеруй кожну вимогу.",
-              "Під кожною запиши юридичний термін простими словами.",
-              "Знайди статтю, умову та релевантний доказ.",
-              "Склади перелік додатків і перевір строк.",
-              "Збережи доказ подання відповіді.",
-            ],
-            sources: [S.kpa, S.aliens],
+            ...wezwanieMapNode,
             related: ["evidence", "wezwanie-workflow", "outsourcing-case"],
           },
           {
