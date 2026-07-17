@@ -7,9 +7,7 @@ import {
   FOREIGNERS_MOS_AMENDMENT_URL,
   documentSources,
   foreignersLaw,
-  kpaLaw,
   regulationLaw,
-  workLaw,
 } from "../authoring"
 
 const guide: DocumentGuide = {

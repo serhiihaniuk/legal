@@ -8,8 +8,6 @@ import {
   documentSources,
   foreignersLaw,
   kpaLaw,
-  regulationLaw,
-  workLaw,
 } from "../authoring"
 
 const guide: DocumentGuide = {

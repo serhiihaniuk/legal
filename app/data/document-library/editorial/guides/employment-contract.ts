@@ -4,10 +4,8 @@ import {
 } from "~/data/legal-knowledge/contracts"
 import type { DocumentGuide } from "~/data/document-library/contracts"
 import {
-  FOREIGNERS_MOS_AMENDMENT_URL,
   documentSources,
   foreignersLaw,
-  kpaLaw,
   regulationLaw,
   workLaw,
 } from "../authoring"

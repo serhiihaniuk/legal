@@ -5,7 +5,7 @@ import {
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
 
-import { kpaLaw, mapTopicSources } from "../authoring"
+import { mapTopicSources } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
 const kpaSourceReference = {

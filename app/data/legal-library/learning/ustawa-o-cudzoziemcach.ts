@@ -1,4 +1,3 @@
-import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
 
 import { entryAndCurrentBasisLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/entry-and-current-basis"
@@ -10,7 +9,6 @@ import { permanentAndEuLongTermResidentLearningModuleTopic } from "./modules/ust
 import { cardsAndDocumentsLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/cards-and-documents"
 import { refusalWithdrawalExpiryRemediesLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/refusal-withdrawal-expiry-remedies"
 import { returnAndDateSensitiveAnalysisLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/return-and-date-sensitive-analysis"
-const foreignersLaw = createLegalLearningTextAuthor("ustawa-o-cudzoziemcach")
 
 export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
   documentId: "ustawa-o-cudzoziemcach",

@@ -4,10 +4,8 @@ import {
 } from "~/data/legal-library/legal-text"
 import type { LegalAtlasData } from "~/data/shared/legal-types"
 
-const kpaLaw = createLegalTextAuthor("kpa")
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
-const ppsaLaw = createLegalTextAuthor("ppsa")
 const _residenceLaw = createLegalTextAuthor(
   "rozporzadzenie-wniosek-pobyt-czasowy"
 )
@@ -15,7 +13,6 @@ const _WORK_REGULATION_URL = "https://eli.gov.pl/eli/DU/2025/1629/ogl"
 const TEMPORARY_WORK_URL = "https://eli.gov.pl/eli/DU/2025/236/ogl"
 const UKRAINE_SPECIAL_ACT_URL =
   "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
-const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
 import {
   appealMapNode,

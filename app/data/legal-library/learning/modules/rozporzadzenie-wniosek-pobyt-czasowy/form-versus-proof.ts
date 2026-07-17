@@ -2,12 +2,7 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { createLegalLearningTextAuthor } from "~/data/legal-library/learning/legal-text"
 import type { LegalLearningModule } from "~/data/legal-library/learning/types"
-
-const regulationLaw = createLegalLearningTextAuthor(
-  "rozporzadzenie-wniosek-pobyt-czasowy"
-)
 
 const moduleContent: LegalLearningModule = {
   id: "form-versus-proof",

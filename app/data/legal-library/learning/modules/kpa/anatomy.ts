@@ -2,10 +2,7 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import type { KpaGuideModule } from "~/data/legal-library/learning/kpa"
-
-const kpaLaw = createLegalTextAuthor("kpa")
 
 const moduleContent: KpaGuideModule = {
   id: "anatomy",

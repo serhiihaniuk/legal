@@ -1,4 +1,3 @@
-import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
 
 import { scopeLearningModuleTopic } from "./modules/ppsa/scope"
@@ -8,7 +7,6 @@ import { reviewAndSuspensionLearningModuleTopic } from "./modules/ppsa/review-an
 import { judgmentsAndEffectsLearningModuleTopic } from "./modules/ppsa/judgments-and-effects"
 import { cassationAndNsaLearningModuleTopic } from "./modules/ppsa/cassation-and-nsa"
 import { executionAndCostsLearningModuleTopic } from "./modules/ppsa/execution-and-costs"
-const ppsaLaw = createLegalLearningTextAuthor("ppsa")
 
 export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
   documentId: "ppsa",

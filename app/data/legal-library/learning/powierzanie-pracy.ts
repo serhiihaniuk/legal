@@ -1,4 +1,3 @@
-import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
 import { legalStayWorkModuleTopic } from "./modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy"
 import { uczestnicyIDefinicjeLearningModuleTopic } from "./modules/powierzanie-pracy/uczestnicy-i-definicje"
@@ -7,8 +6,6 @@ import { obowiazkiPodmiotuLearningModuleTopic } from "./modules/powierzanie-prac
 import { zmianyICiagloscLearningModuleTopic } from "./modules/powierzanie-pracy/zmiany-i-ciaglosc"
 import { kontrolaISankcjeLearningModuleTopic } from "./modules/powierzanie-pracy/kontrola-i-sankcje"
 import { outsourcingAPracaTymczasowaLearningModuleTopic } from "./modules/powierzanie-pracy/outsourcing-a-praca-tymczasowa"
-
-const workLaw = createLegalLearningTextAuthor("powierzanie-pracy")
 
 export const workActLearningCurriculum = defineLegalLearningCurriculum({
   documentId: "powierzanie-pracy",

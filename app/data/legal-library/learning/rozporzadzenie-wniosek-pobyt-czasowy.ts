@@ -1,4 +1,3 @@
-import { createLegalLearningTextAuthor } from "./legal-text"
 import { defineLegalLearningCurriculum } from "./types"
 
 import { roleOfRegulationLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/role-of-regulation"
@@ -6,9 +5,6 @@ import { chooseFormLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-
 import { consistentFieldsLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/consistent-fields"
 import { formVersusProofLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/form-versus-proof"
 import { submissionAuditLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/submission-audit"
-const regulationLaw = createLegalLearningTextAuthor(
-  "rozporzadzenie-wniosek-pobyt-czasowy"
-)
 
 export const temporaryResidenceApplicationLearningCurriculum =
   defineLegalLearningCurriculum({

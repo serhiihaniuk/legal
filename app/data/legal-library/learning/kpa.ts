@@ -27,8 +27,6 @@ const kpaCorpusProvisions =
     .provisions
 
 const kpaLaw = createLegalTextAuthor("kpa")
-const ppsaLaw = createLegalTextAuthor("ppsa")
-const _foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
 export type KpaGuideLevel = "beginner" | "practical" | "advanced"
 
