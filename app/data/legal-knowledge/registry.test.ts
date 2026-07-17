@@ -16,20 +16,24 @@ describe("authored knowledge registry", () => {
       "map-topic:decision-appeal",
       "map-topic:decision-reading",
       "map-topic:evidence",
+      "map-topic:extraordinary-wsa",
       "map-topic:initiation",
+      "map-topic:invalidity",
       "map-topic:kpa-principles",
       "map-topic:organ-party",
       "map-topic:principle-legality",
       "map-topic:principle-participation",
       "map-topic:principle-trust",
       "map-topic:principle-two-instance",
+      "map-topic:reopening",
       "map-topic:wezwanie",
+      "map-topic:wsa",
     ])
     expect(knowledgeUnitById.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[9]
+      authoredKnowledgeUnits[11]
     )
     expect(knowledgeUnitBySubjectKey.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[9]
+      authoredKnowledgeUnits[11]
     )
   })
 
@@ -41,16 +45,20 @@ describe("authored knowledge registry", () => {
       "map-topic:decision-appeal",
       "map-topic:decision-reading",
       "map-topic:evidence",
+      "map-topic:extraordinary-wsa",
       "map-topic:initiation",
+      "map-topic:invalidity",
       "map-topic:kpa-principles",
       "map-topic:organ-party",
       "map-topic:principle-legality",
       "map-topic:principle-participation",
       "map-topic:principle-trust",
       "map-topic:principle-two-instance",
+      "map-topic:reopening",
       "map-topic:wezwanie",
+      "map-topic:wsa",
     ])
-    expect(authoredKnowledgeGraph.outbound).toHaveLength(24)
+    expect(authoredKnowledgeGraph.outbound).toHaveLength(31)
     expect(authoredKnowledgeGraph.outbound).toEqual(
       expect.arrayContaining([
         expect.objectContaining({

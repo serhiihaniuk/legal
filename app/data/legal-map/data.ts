@@ -24,14 +24,18 @@ import {
   decisionAppealMapNode,
   decisionReadingMapNode,
   evidenceMapNode,
+  extraordinaryWsaMapNode,
   initiationMapNode,
+  invalidityMapNode,
   kpaPrinciplesMapNode,
   organPartyMapNode,
   principleLegalityMapNode,
   principleParticipationMapNode,
   principleTrustMapNode,
   principleTwoInstanceMapNode,
+  reopeningMapNode,
   wezwanieMapNode,
+  wsaMapNode,
 } from "./editorial/topics"
 
 const S = {
@@ -1090,45 +1094,8 @@ export const legalData = {
             children: [decisionReadingMapNode, appealMapNode, complaintMapNode],
           },
           {
-            id: "extraordinary-wsa",
-            title: "Після остаточного рішення",
-            polish: "tryby nadzwyczajne i kontrola WSA",
-            summary:
-              "Не плутай odwołanie з wznowieniem, stwierdzeniem nieważności та skargą do WSA. Кожен механізм має іншу мету й підстави.",
-            why: "Звичайне odwołanie контролює неостаточне рішення. Надзвичайні режими усувають лише спеціальні вади остаточних рішень, а WSA контролює законність діяльності адміністрації.",
-            checkpoints: [
-              "Чи рішення вже остаточне?",
-              "Є нова спеціальна обставина чи тяжка юридична вада?",
-              "Чи вичерпано адміністративний засіб?",
-              "Який строк до WSA?",
-            ],
-            sources: [S.kpa, S.ppsa, S.nsa],
-            children: [
-              {
-                id: "reopening",
-                title: "Wznowienie postępowania",
-                polish: kpaLaw.text`${kpaLaw.articleRange("145", "152", { start: "art. 145", end: "152" })} KPA`,
-                summary:
-                  "Повторний розгляд остаточної справи через закритий перелік спеціальних процесуальних обставин; заява сторони зазвичай у місячний строк від дізнання про підставу.",
-                sources: [S.kpa],
-              },
-              {
-                id: "invalidity",
-                title: "Stwierdzenie nieważności",
-                polish: kpaLaw.text`${kpaLaw.articleRange("156", "159", { start: "art. 156", end: "159" })} KPA`,
-                summary:
-                  "Механізм для найтяжчих, прямо перелічених вад рішення. Це не «ще одне odwołanie» і не спосіб повторити звичайну оцінку справи.",
-                sources: [S.kpa],
-              },
-              {
-                id: "wsa",
-                title: "Skarga do WSA",
-                polish: kpaLaw.text`${ppsaLaw.article("3", "art. 3")}, ${ppsaLaw.articleRange("50", "61", { start: "50", end: "61" })}, ${ppsaLaw.articleRange("145", "153", { start: "145", end: "153" })} p.p.s.a.`,
-                summary:
-                  "Суд перевіряє законність адміністративного акта або бездіяльності. Загальний строк скарги на рішення — 30 днів; подання відбувається через organ.",
-                sources: [S.ppsa, S.nsa],
-              },
-            ],
+            ...extraordinaryWsaMapNode,
+            children: [reopeningMapNode, invalidityMapNode, wsaMapNode],
           },
         ],
       },

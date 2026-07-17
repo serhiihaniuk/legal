@@ -33,6 +33,11 @@ export const mapTopicSources = {
     url: "https://eli.gov.pl/eli/DU/2026/143/ogl",
     note: "Dz.U. 2026 poz. 143 · перевіряй застосовну редакцію",
   },
+  nsa: {
+    label: "Centralna Baza Orzeczeń Sądów Administracyjnych",
+    url: "https://orzeczenia.nsa.gov.pl/cbo/query",
+    note: "Офіційна навчально-інформаційна база судової практики",
+  },
   mos: {
     label: "UdSC — Moduł Obsługi Spraw (MOS)",
     url: "https://www.gov.pl/web/udsc/info-mos",
