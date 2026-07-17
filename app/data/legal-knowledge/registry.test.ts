@@ -15,8 +15,10 @@ describe("authored knowledge registry", () => {
       "map-topic:deadlines-delivery",
       "map-topic:decision-appeal",
       "map-topic:decision-reading",
+      "map-topic:decision-workflow",
       "map-topic:evidence",
       "map-topic:extraordinary-wsa",
+      "map-topic:inactivity",
       "map-topic:initiation",
       "map-topic:invalidity",
       "map-topic:kpa-principles",
@@ -26,14 +28,17 @@ describe("authored knowledge registry", () => {
       "map-topic:principle-trust",
       "map-topic:principle-two-instance",
       "map-topic:reopening",
+      "map-topic:source-check",
+      "map-topic:study-loop",
       "map-topic:wezwanie",
+      "map-topic:wezwanie-workflow",
       "map-topic:wsa",
     ])
     expect(knowledgeUnitById.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[11]
+      authoredKnowledgeUnits[13]
     )
     expect(knowledgeUnitBySubjectKey.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[11]
+      authoredKnowledgeUnits[13]
     )
   })
 
@@ -44,8 +49,10 @@ describe("authored knowledge registry", () => {
       "map-topic:deadlines-delivery",
       "map-topic:decision-appeal",
       "map-topic:decision-reading",
+      "map-topic:decision-workflow",
       "map-topic:evidence",
       "map-topic:extraordinary-wsa",
+      "map-topic:inactivity",
       "map-topic:initiation",
       "map-topic:invalidity",
       "map-topic:kpa-principles",
@@ -55,10 +62,13 @@ describe("authored knowledge registry", () => {
       "map-topic:principle-trust",
       "map-topic:principle-two-instance",
       "map-topic:reopening",
+      "map-topic:source-check",
+      "map-topic:study-loop",
       "map-topic:wezwanie",
+      "map-topic:wezwanie-workflow",
       "map-topic:wsa",
     ])
-    expect(authoredKnowledgeGraph.outbound).toHaveLength(31)
+    expect(authoredKnowledgeGraph.outbound).toHaveLength(40)
     expect(authoredKnowledgeGraph.outbound).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
