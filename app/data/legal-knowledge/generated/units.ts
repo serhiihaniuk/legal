@@ -7,29 +7,34 @@ import unit2 from "../../legal-map/editorial/topics/deadlines-delivery"
 import unit3 from "../../legal-map/editorial/topics/decision-appeal"
 import unit4 from "../../legal-map/editorial/topics/decision-reading"
 import unit5 from "../../legal-map/editorial/topics/decision-workflow"
-import unit6 from "../../legal-map/editorial/topics/evidence"
-import unit7 from "../../legal-map/editorial/topics/extraordinary-wsa"
-import unit8 from "../../legal-map/editorial/topics/goal-of-stay"
-import unit9 from "../../legal-map/editorial/topics/inactivity"
-import unit10 from "../../legal-map/editorial/topics/initiation"
-import unit11 from "../../legal-map/editorial/topics/invalidity"
-import unit12 from "../../legal-map/editorial/topics/kpa-principles"
-import unit13 from "../../legal-map/editorial/topics/legal-anatomy"
-import unit14 from "../../legal-map/editorial/topics/organ-party"
-import unit15 from "../../legal-map/editorial/topics/person-status"
-import unit16 from "../../legal-map/editorial/topics/principle-legality"
-import unit17 from "../../legal-map/editorial/topics/principle-participation"
-import unit18 from "../../legal-map/editorial/topics/principle-trust"
-import unit19 from "../../legal-map/editorial/topics/principle-two-instance"
-import unit20 from "../../legal-map/editorial/topics/reopening"
-import unit21 from "../../legal-map/editorial/topics/source-check"
-import unit22 from "../../legal-map/editorial/topics/special-vs-kpa"
-import unit23 from "../../legal-map/editorial/topics/start-case"
-import unit24 from "../../legal-map/editorial/topics/study-loop"
-import unit25 from "../../legal-map/editorial/topics/two-keys"
-import unit26 from "../../legal-map/editorial/topics/wezwanie"
-import unit27 from "../../legal-map/editorial/topics/wezwanie-workflow"
-import unit28 from "../../legal-map/editorial/topics/wsa"
+import unit6 from "../../legal-map/editorial/topics/entry-current-basis"
+import unit7 from "../../legal-map/editorial/topics/evidence"
+import unit8 from "../../legal-map/editorial/topics/extraordinary-wsa"
+import unit9 from "../../legal-map/editorial/topics/goal-of-stay"
+import unit10 from "../../legal-map/editorial/topics/inactivity"
+import unit11 from "../../legal-map/editorial/topics/initiation"
+import unit12 from "../../legal-map/editorial/topics/invalidity"
+import unit13 from "../../legal-map/editorial/topics/kpa-principles"
+import unit14 from "../../legal-map/editorial/topics/legal-anatomy"
+import unit15 from "../../legal-map/editorial/topics/mos-procedure"
+import unit16 from "../../legal-map/editorial/topics/organ-party"
+import unit17 from "../../legal-map/editorial/topics/pending-stay"
+import unit18 from "../../legal-map/editorial/topics/person-status"
+import unit19 from "../../legal-map/editorial/topics/principle-legality"
+import unit20 from "../../legal-map/editorial/topics/principle-participation"
+import unit21 from "../../legal-map/editorial/topics/principle-trust"
+import unit22 from "../../legal-map/editorial/topics/principle-two-instance"
+import unit23 from "../../legal-map/editorial/topics/reopening"
+import unit24 from "../../legal-map/editorial/topics/source-check"
+import unit25 from "../../legal-map/editorial/topics/special-vs-kpa"
+import unit26 from "../../legal-map/editorial/topics/start-case"
+import unit27 from "../../legal-map/editorial/topics/study-loop"
+import unit28 from "../../legal-map/editorial/topics/two-keys"
+import unit29 from "../../legal-map/editorial/topics/visa"
+import unit30 from "../../legal-map/editorial/topics/visa-free"
+import unit31 from "../../legal-map/editorial/topics/wezwanie"
+import unit32 from "../../legal-map/editorial/topics/wezwanie-workflow"
+import unit33 from "../../legal-map/editorial/topics/wsa"
 
 export const authoredKnowledgeUnits = [
   unit0,
@@ -61,4 +66,9 @@ export const authoredKnowledgeUnits = [
   unit26,
   unit27,
   unit28,
+  unit29,
+  unit30,
+  unit31,
+  unit32,
+  unit33,
 ] as const

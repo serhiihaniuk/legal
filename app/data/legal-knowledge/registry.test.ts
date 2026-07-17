@@ -8,79 +8,50 @@ import {
 } from "./registry"
 
 describe("authored knowledge registry", () => {
-  it("loads the generated units without a hand-maintained content index", () => {
-    expect(authoredKnowledgeUnits.map((unit) => unit.id)).toEqual([
-      "map-topic:appeal",
-      "map-topic:complaint",
-      "map-topic:deadlines-delivery",
-      "map-topic:decision-appeal",
-      "map-topic:decision-reading",
-      "map-topic:decision-workflow",
-      "map-topic:evidence",
-      "map-topic:extraordinary-wsa",
-      "map-topic:goal-of-stay",
-      "map-topic:inactivity",
-      "map-topic:initiation",
-      "map-topic:invalidity",
-      "map-topic:kpa-principles",
-      "map-topic:legal-anatomy",
-      "map-topic:organ-party",
-      "map-topic:person-status",
-      "map-topic:principle-legality",
-      "map-topic:principle-participation",
-      "map-topic:principle-trust",
-      "map-topic:principle-two-instance",
-      "map-topic:reopening",
-      "map-topic:source-check",
-      "map-topic:special-vs-kpa",
-      "map-topic:start-case",
-      "map-topic:study-loop",
-      "map-topic:two-keys",
-      "map-topic:wezwanie",
-      "map-topic:wezwanie-workflow",
-      "map-topic:wsa",
-    ])
+  it("loads generated units in deterministic order", () => {
+    const unitIds = authoredKnowledgeUnits.map((unit) => unit.id)
+    const sortedUnitIds = [...unitIds].sort((left, right) =>
+      left.localeCompare(right, "en")
+    )
+
+    expect(unitIds).toEqual(sortedUnitIds)
+    expect(new Set(unitIds).size).toBe(unitIds.length)
+    expect(unitIds).toEqual(
+      expect.arrayContaining([
+        "map-topic:entry-current-basis",
+        "map-topic:principle-legality",
+        "map-topic:source-check",
+        "map-topic:visa",
+      ])
+    )
     expect(knowledgeUnitById.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[16]
+      authoredKnowledgeUnits.find(
+        (unit) => unit.id === "map-topic:principle-legality"
+      )
     )
     expect(knowledgeUnitBySubjectKey.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[16]
+      authoredKnowledgeUnits.find(
+        (unit) => unit.id === "map-topic:principle-legality"
+      )
     )
   })
 
-  it("publishes the deterministic graph for the generated registry", () => {
-    expect(authoredKnowledgeGraph.units.map((unit) => unit.id)).toEqual([
-      "map-topic:appeal",
-      "map-topic:complaint",
-      "map-topic:deadlines-delivery",
-      "map-topic:decision-appeal",
-      "map-topic:decision-reading",
-      "map-topic:decision-workflow",
-      "map-topic:evidence",
-      "map-topic:extraordinary-wsa",
-      "map-topic:goal-of-stay",
-      "map-topic:inactivity",
-      "map-topic:initiation",
-      "map-topic:invalidity",
-      "map-topic:kpa-principles",
-      "map-topic:legal-anatomy",
-      "map-topic:organ-party",
-      "map-topic:person-status",
-      "map-topic:principle-legality",
-      "map-topic:principle-participation",
-      "map-topic:principle-trust",
-      "map-topic:principle-two-instance",
-      "map-topic:reopening",
-      "map-topic:source-check",
-      "map-topic:special-vs-kpa",
-      "map-topic:start-case",
-      "map-topic:study-loop",
-      "map-topic:two-keys",
-      "map-topic:wezwanie",
-      "map-topic:wezwanie-workflow",
-      "map-topic:wsa",
-    ])
-    expect(authoredKnowledgeGraph.outbound).toHaveLength(50)
+  it("publishes every typed basis and relationship in the deterministic graph", () => {
+    const expectedEdgeCount = authoredKnowledgeUnits.reduce(
+      (count, unit) =>
+        count +
+        unit.claims.reduce(
+          (claimCount, claim) => claimCount + claim.basis.length,
+          0
+        ) +
+        unit.relationships.length,
+      0
+    )
+
+    expect(authoredKnowledgeGraph.units.map((unit) => unit.id)).toEqual(
+      authoredKnowledgeUnits.map((unit) => unit.id)
+    )
+    expect(authoredKnowledgeGraph.outbound).toHaveLength(expectedEdgeCount)
     expect(authoredKnowledgeGraph.outbound).toEqual(
       expect.arrayContaining([
         expect.objectContaining({

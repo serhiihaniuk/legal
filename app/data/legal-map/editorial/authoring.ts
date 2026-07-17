@@ -22,6 +22,16 @@ export const mapTopicSources = {
     url: "https://eli.gov.pl/eli/DU/2025/1794/ogl",
     note: "Dz.U. 2025 poz. 1794 · значна частина змін діє з 27.04.2026",
   },
+  udscVisa: {
+    label: "UdSC — Wizy",
+    url: "https://www.gov.pl/web/udsc/wizy",
+    note: "Офіційне практичне пояснення візових процедур",
+  },
+  schengen: {
+    label: "Kodeks graniczny Schengen — 2016/399",
+    url: "https://eur-lex.europa.eu/eli/reg/2016/399/oj",
+    note: "Умови перетину зовнішніх кордонів",
+  },
   work: {
     label:
       "Ustawa o warunkach dopuszczalności powierzania pracy cudzoziemcom — ELI",
@@ -42,6 +52,11 @@ export const mapTopicSources = {
     label: "UdSC — Moduł Obsługi Spraw (MOS)",
     url: "https://www.gov.pl/web/udsc/info-mos",
     note: "Електронні процедури перебування з 27.04.2026",
+  },
+  mosQa: {
+    label: "UdSC — MOS pytania i odpowiedzi",
+    url: "https://www.gov.pl/web/udsc/mos-qa",
+    note: "Офіційні практичні відповіді про подання через MOS",
   },
   edelivery: {
     label: "gov.pl — e-Doręczenia",
