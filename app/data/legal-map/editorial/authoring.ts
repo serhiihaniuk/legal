@@ -91,6 +91,11 @@ export const mapTopicSources = {
     url: "https://www.mos.cudzoziemcy.gov.pl/baza-pytan-i-odpowiedzi/zezwolenia-pobyt-i-praca/zezwolenie-na-pobyt-czasowy-i-prace/",
     note: "Офіційні практичні відповіді про умови, оплату й строк",
   },
+  udscResident: {
+    label: "UdSC — rezydent długoterminowy UE",
+    url: "https://www.gov.pl/web/udsc/zezwolenie-na-pobyt-rezydenta-dlugoterminowego-ue2",
+    note: "Офіційна інформація для заявника",
+  },
   mos: {
     label: "UdSC — Moduł Obsługi Spraw (MOS)",
     url: "https://www.gov.pl/web/udsc/info-mos",

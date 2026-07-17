@@ -29,8 +29,14 @@ export { initiationMapNode, initiationTopic } from "./initiation"
 export { kpaPrinciplesMapNode, kpaPrinciplesTopic } from "./kpa-principles"
 export { goalOfStayMapNode, goalOfStayTopic } from "./goal-of-stay"
 export { mosProcedureMapNode, mosProcedureTopic } from "./mos-procedure"
+export { permanentMapNode, permanentTopic } from "./permanent"
+export {
+  permanentResidentMapNode,
+  permanentResidentTopic,
+} from "./permanent-resident"
 export { pendingStayMapNode, pendingStayTopic } from "./pending-stay"
 export { legalAnatomyMapNode, legalAnatomyTopic } from "./legal-anatomy"
+export { longTermEuMapNode, longTermEuTopic } from "./long-term-eu"
 export { organPartyMapNode, organPartyTopic } from "./organ-party"
 export { otherStayMapNode, otherStayTopic } from "./other-stay"
 export {
