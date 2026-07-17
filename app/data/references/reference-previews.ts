@@ -10,17 +10,18 @@ import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import {
   getDocument,
   getEdition,
-  getExplanation,
   getProvision,
 } from "~/data/legal-library/query"
+import {
+  resolveProvisionPublication,
+  type ProvisionPublication,
+} from "~/data/legal-knowledge"
 import type {
   LegalDocument,
   LegalDocumentId,
   LegalEdition,
   LegalExplanation,
-  LegalProvision,
 } from "~/data/legal-library/contracts"
-import { getEditorialExplanation } from "~/data/legal-library/editorial"
 import {
   getOfficialSource,
   officialSourceIdByLegalDocument,
@@ -167,12 +168,9 @@ function provisionPreview(
     LegalReference,
     { kind: "legal-provision" | "legacy-kpa-article" }
   >,
-  document: LegalDocument,
-  edition: LegalEdition,
-  provision: LegalProvision,
-  explanation: Awaited<ReturnType<typeof getExplanation>> | undefined,
-  editorial: Awaited<ReturnType<typeof getEditorialExplanation>> | undefined
+  publication: ProvisionPublication
 ): LegalReferencePreview {
+  const { document, edition, provision } = publication
   const source = officialSourceForDocument(document.id)
   const metadata = editionMetadata(edition)
   const common = {
@@ -183,47 +181,52 @@ function provisionPreview(
     ...source,
   }
 
-  if (explanation?.status === "reviewed" && explanation.explanation) {
+  if (
+    publication.previewStatus === "reviewed" &&
+    publication.reviewedExplanation
+  ) {
+    const explanation = publication.reviewedExplanation
     return {
       ...basePreview(
         identity,
         reference,
         reference.kind,
         provision.locator,
-        legalTextPlainText(explanation.explanation.summary),
+        legalTextPlainText(explanation.summary),
         "reviewed",
         source
       ),
       ...common,
       subtitle: `${document.shortName} · ${edition.citation}`,
       sourceEditionId: explanation.sourceEditionId,
-      legalStateDate: explanation.explanation.legalStateDate,
-      verifiedAt: explanation.explanation.verifiedAt,
-      reviewStatus: explanation.explanation.reviewStatus,
+      legalStateDate: explanation.legalStateDate,
+      verifiedAt: explanation.verifiedAt,
+      reviewStatus: explanation.reviewStatus,
     }
   }
 
-  if (editorial?.sourceEditionId === edition.editionId) {
+  if (publication.previewStatus === "draft" && publication.previewExplanation) {
+    const explanation = publication.previewExplanation
     return {
       ...basePreview(
         identity,
         reference,
         reference.kind,
         provision.locator,
-        legalTextPlainText(editorial.summary),
+        legalTextPlainText(explanation.summary),
         "draft",
         source
       ),
       ...common,
       subtitle: `${document.shortName} · ${edition.citation}`,
-      sourceEditionId: editorial.sourceEditionId,
-      legalStateDate: editorial.legalStateDate,
-      verifiedAt: editorial.verifiedAt,
-      reviewStatus: editorial.reviewStatus,
+      sourceEditionId: explanation.sourceEditionId,
+      legalStateDate: explanation.legalStateDate,
+      verifiedAt: explanation.verifiedAt,
+      reviewStatus: explanation.reviewStatus,
     }
   }
 
-  const excerpt = trimText(provision.text, 220)
+  const excerpt = publication.sourceTextExcerpt
   return {
     ...basePreview(
       identity,
@@ -477,39 +480,11 @@ async function buildPreview(
       )
     }
     case "legal-provision": {
-      const document = getDocument(reference.documentId)
-      const provision = document
-        ? getProvision(document.id, reference.provisionId, reference.editionId)
+      if (!legalReferenceTarget(reference)) return undefined
+      const publication = await resolveProvisionPublication(reference)
+      return publication
+        ? provisionPreview(identity, reference, publication)
         : undefined
-      const edition = document
-        ? getEdition(
-            document.id,
-            provision?.editionId ??
-              reference.editionId ??
-              document.currentEditionId
-          )
-        : undefined
-      if (
-        !document ||
-        !provision ||
-        !edition ||
-        !legalReferenceTarget(reference)
-      )
-        return undefined
-      const explanation = await getExplanation(reference)
-      const editorial =
-        explanation.status === "reviewed" || document.id === "kpa"
-          ? undefined
-          : await getEditorialExplanation(document.id, provision.id as never)
-      return provisionPreview(
-        identity,
-        reference,
-        document,
-        edition,
-        provision,
-        explanation,
-        editorial
-      )
     }
     case "evidence-document": {
       const document = getEvidenceDocument(reference.documentId)
@@ -536,34 +511,15 @@ async function buildPreview(
       if (!kpaArticleIndex.some((entry) => entry.article === reference.article))
         return undefined
       const provisionId = kpaProvisionId(reference.article)
-      const document = provisionId ? getDocument("kpa") : undefined
-      const provision = provisionId
-        ? getProvision("kpa", provisionId)
-        : undefined
-      const edition = document
-        ? getEdition(document.id, document.currentEditionId)
-        : undefined
-      if (
-        !document ||
-        !provision ||
-        !edition ||
-        !legalReferenceTarget(reference)
-      )
-        return undefined
-      const explanation = await getExplanation({
+      if (!provisionId || !legalReferenceTarget(reference)) return undefined
+      const publication = await resolveProvisionPublication({
         kind: "legal-provision",
         documentId: "kpa",
-        provisionId: provision.id,
+        provisionId,
       })
-      return provisionPreview(
-        identity,
-        reference,
-        document,
-        edition,
-        provision,
-        explanation,
-        undefined
-      )
+      return publication
+        ? provisionPreview(identity, reference, publication)
+        : undefined
     }
   }
 }

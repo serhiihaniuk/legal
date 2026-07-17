@@ -24,15 +24,12 @@ import {
   DialogTrigger,
 } from "~/components/ui/dialog"
 import {
-  getDocument,
-  getEdition,
-  getExplanation,
   getNextProvision,
   getPreviousProvision,
-  getProvision,
   listProvisions,
   parseLegalProvisionReference,
 } from "~/data/legal-library"
+import { resolveProvisionPublication } from "~/data/legal-knowledge"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import { officialSourceIdByLegalDocument } from "~/data/legal-library/references/official-sources"
 import { DocumentArticle } from "~/components/patterns/document-content"
@@ -58,20 +55,17 @@ export function meta() {
 }
 
 export async function loader({ params }: LoaderFunctionArgs) {
-  const document = getDocument(params.documentId)
-  if (!document) throw new Response("Legal document not found", { status: 404 })
-  const edition = getEdition(document.id, document.currentEditionId)
-  const provision = getProvision(document.id, params.provisionId)
-  if (!edition || !provision) {
+  const reference = parseLegalProvisionReference({
+    kind: "legal-provision",
+    documentId: params.documentId,
+    provisionId: params.provisionId,
+  })
+  const publication = await resolveProvisionPublication(reference)
+  if (!publication) {
     throw new Response("Legal provision not found", { status: 404 })
   }
-  const [explanation] = await Promise.all([
-    getExplanation({
-      kind: "legal-provision",
-      documentId: document.id,
-      provisionId: provision.id,
-    }),
-  ])
+
+  const { document, edition, provision, explanation } = publication
   const previous = getPreviousProvision(document.id, provision.id)
   const next = getNextProvision(document.id, provision.id)
 
