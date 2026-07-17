@@ -40,6 +40,10 @@ export { longTermEuMapNode, longTermEuTopic } from "./long-term-eu"
 export { organPartyMapNode, organPartyTopic } from "./organ-party"
 export { otherStayMapNode, otherStayTopic } from "./other-stay"
 export {
+  outsourcingCaseMapNode,
+  outsourcingCaseTopic,
+} from "./outsourcing-case"
+export {
   principleLegalityMapNode,
   principleLegalityTopic,
   type LegalMapTopicBody,
@@ -62,7 +66,9 @@ export {
 export { invalidityMapNode, invalidityTopic } from "./invalidity"
 export { inactivityMapNode, inactivityTopic } from "./inactivity"
 export { sourceCheckMapNode, sourceCheckTopic } from "./source-check"
+export { seasonalMapNode, seasonalTopic } from "./seasonal"
 export { stayWorkMapNode, stayWorkTopic } from "./stay-work"
+export { temporaryWorkMapNode, temporaryWorkTopic } from "./temporary-work"
 export { specialVsKpaMapNode, specialVsKpaTopic } from "./special-vs-kpa"
 export { personStatusMapNode, personStatusTopic } from "./person-status"
 export { startCaseMapNode, startCaseTopic } from "./start-case"
@@ -81,6 +87,9 @@ export {
 } from "./ukraine-ordinary-2026"
 export { ukraineRoutesMapNode, ukraineRoutesTopic } from "./ukraine-routes-2026"
 export { visaMapNode, visaTopic } from "./visa"
+export { workPermitMapNode, workPermitTopic } from "./work-permit"
+export { declarationMapNode, declarationTopic } from "./declaration"
+export { delegationMapNode, delegationTopic } from "./delegation"
 export { studyLoopMapNode, studyLoopTopic } from "./study-loop"
 export { studyResearchMapNode, studyResearchTopic } from "./study-research"
 export { wsaMapNode, wsaTopic } from "./wsa"
