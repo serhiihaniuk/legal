@@ -4,6 +4,7 @@ import {
 } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 import type { DocumentGuide } from "./contracts"
+import { employmentAnnex1Topic } from "./editorial/guides/employment-annex-1"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const regulationLaw = createLegalTextAuthor(
@@ -127,43 +128,7 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
-    {
-      id: "employment-annex-1",
-      title: "Załącznik nr 1",
-      category: "work",
-      aliases: ["załącznik nr 1"],
-      description:
-        "Структурована частина заяви про pobyt czasowy i pracę, у якій роботодавець офіційно подає дані про суб’єкта та заявлені умови праці.",
-      preparedBy:
-        "Заповнює podmiot powierzający pracę; підписує особа, яка має право представляти роботодавця, або належний представник.",
-      purpose: [
-        "Фіксує роботодавця, посаду або вид роботи, вид договору, робочий час і винагороду.",
-        foreignersLaw.text`Дає органу структуровані дані для перевірки умов ${foreignersLaw.article("114", "art. 114 ustawy o cudzoziemcach")}.`,
-      ],
-      doesNotProve: [
-        "Не доводить, що робота фактично виконується саме так.",
-        "Не доводить реальність діяльності роботодавця або відсутність outsourcingu pracowniczego.",
-      ],
-      legalBasis: [
-        foreignersLaw.text`${foreignersLaw.article("106", "Art. 106 ust. 2 ustawy o cudzoziemcach")}, ${foreignersLaw.external("art. 106d ustawy o cudzoziemcach", FOREIGNERS_MOS_AMENDMENT_URL)}, ${foreignersLaw.article("114", "art. 114 ustawy o cudzoziemcach")} і ${foreignersLaw.article("118", "art. 118 ustawy o cudzoziemcach")}.`,
-        regulationLaw.text`${regulationLaw.paragraph("2", "§ 2 ust. 2")} і ${regulationLaw.annex("2")} do rozporządzenia Dz.U. 2026 poz. 553.`,
-      ],
-      keyChecks: [
-        "Хто підписав документ і чи відповідає спосіб представництва KRS/CEIDG.",
-        "Чи збігаються роботодавець, посада, час праці, винагорода та дата з umową o pracę.",
-        "Чи використана актуальна форма для правильної процедури.",
-      ],
-      sources: [
-        OFFICIAL.aliens,
-        OFFICIAL.regulation553,
-        {
-          label: "UdSC — електронний Załącznik nr 1",
-          url: "https://www.gov.pl/web/udsc/informacja-dla-pracodawcow-na-temat-koniecznosci-elektronicznego-podpisywania-zalacznikow-do-wnioskow-o-udzielenie-zezwolenia-na-pobyt-czasowy-i-prace-w-polsce",
-          note: "Офіційне пояснення ролі роботодавця та електронного підпису.",
-        },
-      ],
-      verifiedAt: "2026-07-14",
-    },
+    employmentAnnex1Topic.body,
     {
       id: "employment-contract",
       title: "Umowa o pracę",
