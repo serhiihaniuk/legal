@@ -69,7 +69,9 @@ export function KpaLearningContent({
   onSelectModule,
 }: KpaLearningContentProps) {
   const guideModule = kpaGuideModules.find((item) => item.id === selectedId)
-  const lesson = guideModule ? kpaGuideLessons[guideModule.id] : undefined
+  const lesson = guideModule
+    ? kpaGuideLessons[guideModule.id as keyof typeof kpaGuideLessons]
+    : undefined
 
   if (!guideModule || !lesson) {
     return (
