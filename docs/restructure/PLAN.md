@@ -33,7 +33,7 @@ corpus pipeline whose trust model has gaps.
   composition only). No FSD, no state library — URL + local state is sufficient here.
 - **Data**: finish the migrations the repo's own docs declare — KPA folds into the
   canonical legal-library families; `query.ts` splits into parse/domain/query modules.
-- **Pipeline**: harden trust _inside_ the existing lifecycle (prepare/validate/diff/promote)
+- **Pipeline**: harden trust *inside* the existing lifecycle (prepare/validate/diff/promote)
   rather than replacing it — the domain model is right, the enforcement is incomplete.
 - **Scripts typing**: `tsconfig.scripts.json` with checkJs; errors fixed during Phase 1
   (pipeline work), not Phase 0.
@@ -58,9 +58,8 @@ corpus pipeline whose trust model has gaps.
 
 - **Citation attribution review.** Owner samples the ambiguous-citation packet produced
   by Phase 1 step 7 (below) and confirms or fixes misattributed codemod-era citations.
-- **Sourced-URL verification.** One Decision 1/80 reproduction URL still needs owner
-  acceptance; the labor-market, TEU Article 50, and Withdrawal Agreement URLs were
-  verified in the browser on 2026-07-17 (see docs/restructure/citation-review/).
+- **Sourced-URL verification.** Four externally sourced citation URLs need one-click
+  browser verification (see docs/restructure/citation-review/).
 
 ## Phases
 
@@ -135,14 +134,23 @@ gate green and a conventional commit. Orchestrator reviews at each phase boundar
    hold three) — the fail-fast validator masks them, so each migration run also repairs
    any latent mention the validator surfaces next, until previews reports zero
    bare-citation failures repo-wide.
-   **CONTENT FINALIZATION COMPLETE (2026-07-17):** Parts 01b, 03, 09, and 11 were
-   reviewed against their current local corpus editions and the official ELI acts. The
-   validator now includes suffixed editorial parts, resolves intentional later-part
-   overrides, and reports 1,421/1,421 current provisions with no missing or duplicate IDs.
-   `npm run verify:content` and `test:previews` are green. One Decision 1/80 reproduction
-   URL still awaits owner acceptance; the other three external URLs were browser-verified
-   on 2026-07-17 and documented in docs/restructure/citation-review/. The unresolved URL
-   remains explicitly marked and is not presented as the basis for the reviewed coverage claim.
+   **Part-03 reclassified (2026-07-16 gate):** it is NOT wrappable prose — all 46
+   entries are `reviewStatus: "draft"` boilerplate from a `draftArticle()` factory,
+   never given the "review: finalize" pass its siblings got. Wrap-only migration does
+   not apply; it needs an editorial finalization pass first (content-completion debt,
+   owner-scheduled). Draft entries are exempt from the bare-citation check by design,
+   so part-03 does not block previews; the validator picks it up automatically once
+   its entries become reviewed.
+   **WRAPPING COMPLETE (2026-07-16):** `test:previews` is green repo-wide (1,421
+   provisions). Parts 04 and 08 migrated; part-06's five latents repaired. Parts 09
+   and 11 turned out to be draft-status like part-03 (real prose, but never given the
+   "review: finalize" pass — validator-exempt by design), so they join part-03 in the
+   content-completion debt: finalize the editorial review first, then the wrapping
+   recipe applies. Four externally sourced URLs await owner verification in
+   docs/restructure/citation-review/ (labor-market act; Decision 1/80 — weakest
+   sourcing, an Irish-government PDF since the decision was never OJ-published; TEU
+   art. 50 and the Withdrawal Agreement — canonical CELEX links that could not be
+   machine-verified due to EUR-Lex bot-gating).
 
 ### Phase 3 — UI architecture (`restructure/phase-3-ui`)
 
@@ -160,14 +168,14 @@ gate green and a conventional commit. Orchestrator reviews at each phase boundar
    case-study-content (890) → case-guides feature; legal-map-content (711); kpa.tsx route
    (578, after Phase 2 it composes law-library); document-catalog-content (540);
    legal-learning-module-content (493); law-provision.tsx (435).
-4. Route hygiene: every route exports `meta` (title from loader data); routes reduced to
+4. Route hwhaygiene: every route exports `meta` (title from loader data); routes reduced to
    loader + meta + composition; localization fixes (error boundary, sheet close label).
    Visual regression check per step: dev server + manual pass on the touched routes
    (screenshots before/after).
 
 ### Phase 4 — content model (SEPARATE, not this restructure)
 
-UX-CONTENT-REVIEW.md's deepest finding — no single canonical knowledge model across
+ .md's deepest finding — no single canonical knowledge model across
 map/case/document content — is content work with its own editorial review cycle. It gets
 its own plan after Phase 2 makes the canonical families the only families.
 
@@ -175,13 +183,13 @@ its own plan after Phase 2 makes the canonical families the only families.
 
 Two gate chains, split deliberately (decided at the Phase 0 gate, 2026-07-16):
 
-- **`verify` (code gate)**: typecheck + `typecheck:scripts` + lint + format:check +
-  test + test:corpus + test:editorial in `--incomplete` mode (structural editorial
-  checks: IDs, duplicates, status vocabulary) + build. It is green on the current working tree.
-- **`verify:content` (content gate)**: strict editorial coverage + reference previews.
-  It is green at 1,421/1,421 current provisions after the editorial finalization pass.
-  The one unresolved Decision 1/80 reproduction URL remains a separate owner-verification
-  decision, not a failing automated gate.
+- **`verify` (code gate, always green)**: typecheck + lint + format:check + test +
+  test:corpus + test:editorial in `--incomplete` mode (structural editorial checks:
+  IDs, duplicates, status vocabulary) + build. Red `verify` blocks any commit.
+- **`verify:content` (content gate, red until content completion)**: strict editorial
+  coverage + reference previews. Red today for known, tracked reasons: editorial
+  coverage 736/1115 and the five unmigrated citation files (Phase 2 step 5). Goes
+  green at the content-completion milestone, after which it merges into `verify`.
   A permanently red gate teaches people to ignore gates — hence the split.
 
 Per step: `npm run verify` green + conventional commit. Per phase: orchestrator diff

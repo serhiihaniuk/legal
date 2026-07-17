@@ -10,7 +10,7 @@ export type KpaEditorialProvision = {
 const currentKpaEdition =
   legalLibraryRegistry.kpa.editions[legalLibraryRegistry.kpa.currentEditionId]
 
-/** Low-level current-edition identity/order projection for lazy KPA editorial parts. */
+/** Low-level current-edition identity/order projection for KPA article modules. */
 export const kpaEditorialProvisionIndex = currentKpaEdition.provisions
   .filter((provision) => provision.kind === "article")
   .sort((left, right) => left.order - right.order)

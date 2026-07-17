@@ -219,9 +219,12 @@ function walk(directory) {
   return files.sort((left, right) => left.localeCompare(right))
 }
 
+/** List one-file article modules plus legacy part-shaped test fixtures. */
 export function listEditorialPartFiles(editorialRoot = DEFAULT_EDITORIAL_ROOT) {
   return walk(editorialRoot).filter((filePath) =>
-    /^part-\d+[a-z0-9]*\.ts$/u.test(path.basename(filePath)),
+    /^(?:part-\d+[a-z0-9]*|article-[a-z0-9_-]+)\.ts$/u.test(
+      path.basename(filePath),
+    ),
   )
 }
 

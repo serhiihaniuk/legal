@@ -26,7 +26,7 @@ const DEFAULT_PROJECT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta
  * than guessed. This keeps the graph deterministic and fail-visible.
  */
 
-const EDITORIAL_PART_PATTERN = /^part-[^/]+\.ts$/u
+const EDITORIAL_MODULE_PATTERN = /^(?:part-[^/]+|article-[^/]+)\.ts$/u
 const AUTHOR_PATTERN = /(?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=\s*createLegal(?:Learning)?TextAuthor\(\s*(["'])([^"']+)\2\s*\)/gu
 const CALL_PATTERN = /([A-Za-z_$][\w$]*)\s*\.\s*(articleRange|article)\s*\(\s*(["'])([^"']+)\3(?:\s*,\s*(["'])([^"']+)\5)?/gu
 const UNSUPPORTED_AUTHOR_PATTERN = /createLegal(?:Learning)?TextAuthor\(\s*([^"')\s][^)]*)\)/gu
@@ -93,7 +93,7 @@ async function walk(directory) {
 export async function listReferenceSourceFiles(projectRoot) {
   const dataRoot = path.join(projectRoot, "app/data")
   const editorialFiles = (await walk(path.join(dataRoot, "legal-library/editorial")))
-    .filter((/** @type {string} */ file) => EDITORIAL_PART_PATTERN.test(path.basename(file)))
+    .filter((/** @type {string} */ file) => EDITORIAL_MODULE_PATTERN.test(path.basename(file)))
   const learningFiles = (await walk(path.join(dataRoot, "legal-library/learning")))
     .filter((/** @type {string} */ file) => path.extname(file) === ".ts" && path.dirname(file) === path.join(dataRoot, "legal-library/learning"))
   const fixedRelative = [

@@ -99,12 +99,15 @@ test("parses entries containing authored legal-text templates", () => {
 })
 
 test("incomplete mode accepts the scaffold but reports missing and draft coverage", () => {
-  const result = validateEditorial({
-    allowIncomplete: true,
+  const fixture = writeFixture({
+    partSource: part({ entries: [entry("alpha-art-1", "draft")] }),
+    provisions,
   })
+  const result = validateEditorial({ ...fixture, allowIncomplete: true })
   assert.equal(result.ok, true)
   assert.ok(result.summary.expectedCount > result.summary.authoredCount)
   assert.ok(result.warnings.some(({ code }) => code === "missing-provision"))
+  assert.ok(result.warnings.some(({ code }) => code === "not-reviewed"))
 })
 
 test("validates authored KPA parts as ordinary editorial coverage", () => {

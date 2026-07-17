@@ -187,9 +187,11 @@ remain unstaged alongside that migration work.
 The current editorial corpus now validates at 1,421/1,421 provisions with zero missing or
 duplicate IDs. Runtime resolution and reference previews report all 1,421 current provisions
 as reviewed; no draft, blocked, stale, superseded, or source-only editorial status remains.
-Parts 01b, 03, 09, and 11 were finalized against their current local corpus editions, and
-legacy suffixed editorial parts are included by the validator with later canonical parts
-winning intentional partition overlaps.
+The former large editorial parts have now been split into 1,421 canonical article/provision
+modules under `app/data/legal-library/editorial/<documentId>/articles/`; each module is an
+independent review unit. Document indexes preserve the existing public explanation exports,
+and the migration resolved the 30 intentional cross-part overlaps using the previous
+canonical winner order.
 
 `npm run verify:content` is green. The labor-market, TEU Article 50, and Withdrawal
 Agreement URLs were verified in the browser on 2026-07-17. The Decision 1/80 reproduction

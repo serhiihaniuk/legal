@@ -188,15 +188,17 @@ export function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
           aria-labelledby={`case-stage-${stage.id}-heading`}
           className="relative scroll-mt-28 border-t py-7 first:border-t-0 first:pt-0"
         >
-          <div
-            aria-hidden="true"
-            className="absolute top-7 -left-12 hidden size-8 items-center justify-center rounded-full border bg-background text-sm font-semibold lg:flex"
-          >
-            {index + 1}
+          <div className="relative flex items-center">
+            <div
+              aria-hidden="true"
+              className="absolute top-1/2 -left-12 hidden size-8 -translate-y-1/2 items-center justify-center rounded-full border bg-background text-sm font-semibold lg:flex"
+            >
+              {index + 1}
+            </div>
+            <p className="m-0 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+              Етап {index + 1} · <LegalText text={stage.question} />
+            </p>
           </div>
-          <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Етап {index + 1} · <LegalText text={stage.question} />
-          </p>
           <h3 id={`case-stage-${stage.id}-heading`} className="mt-2">
             {stage.title}
           </h3>
@@ -239,9 +241,11 @@ export function CaseStages({ stages }: { stages: CaseGuideStage[] }) {
             {stage.actions.map((action, actionIndex) => (
               <li
                 key={legalTextPlainText(action)}
-                className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-2 py-2"
+                className="grid grid-cols-[1.75rem_minmax(0,1fr)] items-center gap-2 py-2"
               >
-                <span className="text-muted-foreground">{actionIndex + 1}</span>
+                <span className="text-center text-muted-foreground">
+                  {actionIndex + 1}
+                </span>
                 <span>
                   <LegalText text={action} />
                 </span>

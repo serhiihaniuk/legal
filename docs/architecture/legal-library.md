@@ -45,7 +45,7 @@ The current KPA implementation is valuable evidence, not the target public contr
 | `legal-corpus/documents/kpa-2025-1691.json` uses `id` as the edition directory identifier. | Add explicit stable `documentId`, `editionId`, `schemaVersion`, source provider, and extraction expectations. Accept the old shape only through a migration reader. |
 | `app/data/legal-corpus/` contains generated manifests and provision facts for all registered documents and editions. | Generate one literal registry for all documents and editions. Keep manifest parsing inside the library Implementation. |
 | `app/data/legal-library/learning/kpa.ts` owns the KPA learning projection; corpus facts provide article identity, order, status, and PDF locators while authored metadata supplies learner labels. | Keep the compatibility shape inside the canonical KPA learning module and move shared navigation to generic provision/structure queries. |
-| `app/data/legal-library/editorial/kpa/` contains reviewed lazy-loaded explanations keyed by stable provision IDs. | Preserve its editorial quality, and record `sourceEditionId`, `verifiedAt`, and review status. |
+| `app/data/legal-library/editorial/<documentId>/articles/` contains one reviewed article/provision module per stable provision; the document `index.ts` combines those modules into the existing export. | Preserve the one-review-unit-per-file workflow, `sourceEditionId`, `verifiedAt`, review status, deterministic aggregation, and duplicate rejection. |
 | The legal-library query projects generated provision text and PDF locators for every document. | Keep source text behind generic corpus queries; the official PDF remains the trust source. |
 | `app/components/kpa-articles-content.tsx` provides the exact-PDF-page dialog, ELI link, source text, explanation, and previous/next controls. | Preserve these UX strengths in a generic provision reader. Its current hardcoded KPA labels and source ID move behind the query Module. |
 | `app/routes/kpa.tsx` owns `view`, `article`, and `module` query semantics. | Keep a route compatibility Adapter for all known deep links while `/law` becomes canonical. |
@@ -493,8 +493,10 @@ app/data/legal-library/
   fixtures/                              # type-contract fixtures
     contracts.fixture.ts
   editorial/
-    <documentId>/                       # reviewed explanations, lazy-loadable
-      <provision-id>.ts
+    <documentId>/                       # one document-scoped editorial family
+      articles/                         # one independently reviewable provision per file
+        article-<provision-id>.ts
+      index.ts                          # one combined document export
   learning/                             # authored learning data
 
 public/legal-sources/
@@ -504,6 +506,8 @@ public/legal-sources/
 ```
 
 The current `app/data/legal-corpus/kpa-2025-1691/{manifest,metadata,pages,articles}.json` and `public/legal-sources/kpa-2025-1691/source.pdf` remain readable during migration. `articles.json` becomes a generated compatibility projection from `provisions.json`; it is not edited or treated as the generic model.
+
+Editorial content is now organized as one independently reviewable module per canonical current provision under `editorial/<documentId>/articles/`. Each module keeps the existing typed authoring and `defineEditorialPart` contract, while the document index combines the modules through `mergeEditorialParts`. The split collapses the former intentional cross-part overlaps to the same canonical winner used by the old index order; the merge helper and strict validator both fail closed on a duplicate.
 
 ### Artifact contract
 

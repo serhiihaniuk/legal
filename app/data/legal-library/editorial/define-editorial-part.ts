@@ -29,7 +29,7 @@ export type EditorialPartInput<D extends LegalDocumentId> = {
   entries: readonly EditorialEntry<D>[]
 }
 
-/** A document-scoped, lazily importable slice of reviewed editorial content. */
+/** A document-scoped slice of reviewed editorial content. */
 export type EditorialPart<D extends LegalDocumentId> = Readonly<
   Partial<Record<LegalProvisionId<D>, LegalExplanation<D>>>
 >
@@ -62,4 +62,24 @@ export function defineEditorialPart<D extends LegalDocumentId>(
   }
 
   return table as EditorialPart<D>
+}
+
+/** Combine independently authored article modules into one document export. */
+export function mergeEditorialParts<D extends LegalDocumentId>(
+  parts: readonly EditorialPart<D>[]
+): EditorialPart<D> {
+  const merged: Record<string, LegalExplanation<D>> = {}
+
+  for (const part of parts) {
+    for (const [provisionId, explanation] of Object.entries(part) as Array<
+      [string, LegalExplanation<D>]
+    >) {
+      if (Object.prototype.hasOwnProperty.call(merged, provisionId)) {
+        throw new Error(`Duplicate editorial provision ID: ${provisionId}`)
+      }
+      merged[provisionId] = explanation
+    }
+  }
+
+  return merged as EditorialPart<D>
 }

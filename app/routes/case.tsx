@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router"
+import { Link, useParams } from "react-router"
 
 import {
   CaseStudyContent,
@@ -7,7 +7,7 @@ import {
 import { DocsLayout } from "~/components/layout"
 import { LegalText } from "~/components/references"
 import { Button } from "~/components/ui/button"
-import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
+import { cn } from "~/lib/utils"
 import { caseGuideCases, getCaseGuideCase } from "~/data/case-guides/navigation"
 import { caseGuideRoutes, getCaseGuideRoute } from "~/data/case-guides/routes"
 import { legalData } from "~/data/legal-map/data"
@@ -22,19 +22,12 @@ function scrollToTop() {
 
 export default function CasePage() {
   const { routeId } = useParams()
-  const navigate = useNavigate()
   const route = getCaseGuideRoute(routeId)
   const activeCase = getCaseGuideCase(route.id)
   const caseRoutes = caseGuideRoutes.filter((item) =>
     activeCase.routeIds.includes(item.id)
   )
   const toc = caseStudyTableOfContents(route)
-
-  function selectRoute(id: string | number | null) {
-    if (typeof id !== "string" || id === route.id) return
-    navigate(`/cases/${id}`)
-    scrollToTop()
-  }
 
   const navigation = (
     <nav aria-label="Види справ" className="pb-10">
@@ -91,24 +84,32 @@ export default function CasePage() {
         <p className="mb-2 text-xs font-medium text-muted-foreground">
           {activeCase.label} · оберіть підставу
         </p>
-        <Tabs value={route.id} onValueChange={selectRoute}>
-          <div className="-mx-4 overflow-x-auto overflow-y-hidden px-4">
-            <TabsList
-              variant="line"
-              className="h-10 w-max min-w-full justify-start"
-            >
-              {caseRoutes.map((item) => (
-                <TabsTrigger
+        <nav
+          aria-label="Підстави перебування"
+          className="-mx-4 overflow-x-auto overflow-y-hidden px-4"
+        >
+          <div className="flex min-w-max border-b">
+            {caseRoutes.map((item) => {
+              const isActive = item.id === route.id
+
+              return (
+                <Link
                   key={item.id}
-                  value={item.id}
-                  className="flex-none px-3"
+                  to={`/cases/${item.id}`}
+                  aria-current={isActive ? "page" : undefined}
+                  onClick={isActive ? undefined : scrollToTop}
+                  className={cn(
+                    "relative inline-flex h-10 flex-none items-center justify-center px-3 text-sm font-medium whitespace-nowrap text-foreground/60 transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
+                    "after:absolute after:inset-x-0 after:bottom-[-1px] after:h-0.5 after:bg-foreground after:opacity-0 after:transition-opacity",
+                    isActive && "text-foreground after:opacity-100"
+                  )}
                 >
                   {item.tab}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+                </Link>
+              )
+            })}
           </div>
-        </Tabs>
+        </nav>
       </div>
 
       <CaseStudyContent
