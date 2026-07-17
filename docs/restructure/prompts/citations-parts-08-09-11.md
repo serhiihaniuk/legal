@@ -1,0 +1,13 @@
+You are finishing the citation-wrapping workstream (Phase 2 step 5 of docs/restructure/PLAN.md — read that step first; it records why part-03 is excluded).
+
+Branch: git checkout -b content/citations-parts-08-09-11 (from main).
+
+JOB 1 — migrate three files, one at a time, in this order: part-08.ts, part-09.ts, part-11.ts (all in app/data/legal-library/editorial/ustawa-o-cudzoziemcach/). The rules are exactly those in docs/restructure/prompts/citations-part-04.md "Rules for part-04.ts" (read it) — wrap-only, prose byte-identical, default act = ustawa-o-cudzoziemcach, cross-act only when the prose explicitly names it, .article() only for registry-known IDs, .external() with existing sibling URL constants otherwise. The migrated part-04.ts on main is the best pattern reference. Per file: one commit "feat: type citations in foreigners act editorial part NN" and one review list docs/restructure/citation-review/part-NN.md (cross-act + ambiguous attributions), committed together as "docs: record part NN citation attribution review".
+
+JOB 2 — part-06's last latent citation: entry ustawa-o-cudzoziemcach-art-189 contains "art. 13 Decision nr 1/80" twice (claims[0].text and rules[0].explanation). This cites Article 13 of Decision No 1/80 of the EEC–Turkey Association Council (19 September 1980) — an international instrument outside every registry. Wrap both occurrences with .external() to an authoritative URL (EUR-Lex or an equivalent official source) that you source and verify by web search. Introduce one named URL constant. Record this PROMINENTLY in docs/restructure/citation-review/part-06-decision-1-80.md as requiring owner verification (same precedent as part-04's labor-market URL). Commit: "fix: type the Decision 1/80 citations in foreigners act part 06".
+
+LOOP-UNTIL-CLEAN: after all jobs, run npm run test:previews repeatedly. If it surfaces further latent bare mentions in already-migrated files: one-token .article() wraps you may repair (own commit, add to the nearest review list); anything needing a NEW external URL beyond Decision 1/80 — stop on that item and report it instead. The target end state: test:previews reports ZERO bare-citation failures (part-03 is draft-exempt by design). If test:previews then fails for a NON-citation reason, do not fix it — quote it in the summary.
+
+Final verification: npm run typecheck green, npm run test:previews (state exactly what it reports), npm run verify green. Do not push.
+
+Final summary: per-file citation counts and .article/.external splits, review-list entry counts, extra latent repairs made, the Decision 1/80 URL chosen and its source, and the exact final test:previews outcome.
