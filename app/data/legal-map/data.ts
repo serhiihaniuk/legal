@@ -18,7 +18,12 @@ const UKRAINE_SPECIAL_ACT_URL =
 const FOREIGNERS_2026_CHANGE_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
 import {
+  appealMapNode,
+  complaintMapNode,
   deadlinesDeliveryMapNode,
+  decisionAppealMapNode,
+  decisionReadingMapNode,
+  evidenceMapNode,
   initiationMapNode,
   kpaPrinciplesMapNode,
   organPartyMapNode,
@@ -1073,25 +1078,7 @@ export const legalData = {
             related: ["evidence", "wezwanie-workflow", "outsourcing-case"],
           },
           {
-            id: "evidence",
-            title: "Доказове провадження",
-            polish: kpaLaw.text`postępowanie dowodowe · ${kpaLaw.articleRange("75", "88a", { start: "art. 75", end: "88a" })} KPA`,
-            summary:
-              "Доказом може бути все законне, що допомагає встановити факт. Organ збирає й оцінює весь матеріал, а сторона може подавати докази та висловлюватися щодо них.",
-            why: "Документ має значення не через назву, а тому, що підтверджує конкретну умову закону. Один факт може вимагати кількох взаємно узгоджених доказів.",
-            checkpoints: [
-              "Яку саме умову доводить документ?",
-              "Чи доказ актуальний і стосується потрібного періоду?",
-              "Чи дані не суперечать іншим документам?",
-              "Чи organ вказав, які умови ще не доведені?",
-            ],
-            steps: [
-              "Створи матрицю умова → факт → доказ.",
-              "Додай пояснення зв’язку, якщо він неочевидний.",
-              kpaLaw.text`Перевір право доступу до akt sprawy за ${kpaLaw.article("73", "art. 73")}.`,
-              kpaLaw.text`Перед рішенням перевір можливість висловитися за ${kpaLaw.article("10", "art. 10")} і ${kpaLaw.article("81", "81")}.`,
-            ],
-            sources: [S.kpa],
+            ...evidenceMapNode,
             related: [
               "evidence-matrix",
               "decision-reading",
@@ -1099,57 +1086,8 @@ export const legalData = {
             ],
           },
           {
-            id: "decision-appeal",
-            title: "Decyzja, postanowienie, odwołanie",
-            polish: kpaLaw.text`${kpaLaw.articleRange("104", "144", { start: "art. 104", end: "144" })} KPA`,
-            summary:
-              "Decyzja зазвичай вирішує справу по суті, postanowienie — процесуальне питання. Odwołanie на decyzję має загальний строк 14 днів, zażalenie допускається лише коли закон прямо це передбачає й зазвичай має 7 днів.",
-            why: "Назва акта визначає доступний засіб, строк і те, чи зупиняється виконання. Неправильно обраний засіб може коштувати права на контроль.",
-            checkpoints: [
-              "Що це за акт: decyzja чи postanowienie?",
-              "Коли і як його вручено?",
-              "Який organ другої інстанції?",
-              "Що саме оскаржується: факти, право, процедура?",
-            ],
-            sources: [S.kpa],
-            children: [
-              {
-                id: "decision-reading",
-                title: "Читання decyzji",
-                polish: kpaLaw.text`${kpaLaw.article("107", "art. 107")} KPA`,
-                summary:
-                  "Перевір organ, сторону, підставу правову, rozstrzygnięcie, обґрунтування фактів і права та pouczenie про оскарження.",
-                checkpoints: [
-                  "Які факти organ визнав?",
-                  "Які докази відкинув і чому?",
-                  "Як застосував умови статті?",
-                  "Чи pouczenie правильне?",
-                ],
-                sources: [S.kpa],
-              },
-              {
-                id: "appeal",
-                title: "Odwołanie",
-                polish: kpaLaw.text`${kpaLaw.articleRange("127", "140", { start: "art. 127", end: "140" })} KPA`,
-                summary:
-                  "Подання через organ першої інстанції, загальний строк 14 днів. Будуй zarzuty окремо для фактів, доказів, процедури та матеріального права.",
-                steps: [
-                  "Зафіксуй строк.",
-                  "Розклади мотиви decyzji.",
-                  "Сформулюй порушення й їх вплив.",
-                  "Вкажи бажаний результат.",
-                ],
-                sources: [S.kpa],
-              },
-              {
-                id: "complaint",
-                title: "Zażalenie",
-                polish: kpaLaw.text`${kpaLaw.articleRange("141", "144", { start: "art. 141", end: "144" })} KPA`,
-                summary:
-                  "Окреме zażalenie можливе лише за прямою нормою. Загальний строк — 7 днів; саме подання зазвичай не зупиняє виконання.",
-                sources: [S.kpa],
-              },
-            ],
+            ...decisionAppealMapNode,
+            children: [decisionReadingMapNode, appealMapNode, complaintMapNode],
           },
           {
             id: "extraordinary-wsa",

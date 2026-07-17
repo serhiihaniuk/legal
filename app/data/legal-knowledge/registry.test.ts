@@ -10,7 +10,12 @@ import {
 describe("authored knowledge registry", () => {
   it("loads the generated units without a hand-maintained content index", () => {
     expect(authoredKnowledgeUnits.map((unit) => unit.id)).toEqual([
+      "map-topic:appeal",
+      "map-topic:complaint",
       "map-topic:deadlines-delivery",
+      "map-topic:decision-appeal",
+      "map-topic:decision-reading",
+      "map-topic:evidence",
       "map-topic:initiation",
       "map-topic:kpa-principles",
       "map-topic:organ-party",
@@ -21,16 +26,21 @@ describe("authored knowledge registry", () => {
       "map-topic:wezwanie",
     ])
     expect(knowledgeUnitById.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[4]
+      authoredKnowledgeUnits[9]
     )
     expect(knowledgeUnitBySubjectKey.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[4]
+      authoredKnowledgeUnits[9]
     )
   })
 
   it("publishes the deterministic graph for the generated registry", () => {
     expect(authoredKnowledgeGraph.units.map((unit) => unit.id)).toEqual([
+      "map-topic:appeal",
+      "map-topic:complaint",
       "map-topic:deadlines-delivery",
+      "map-topic:decision-appeal",
+      "map-topic:decision-reading",
+      "map-topic:evidence",
       "map-topic:initiation",
       "map-topic:kpa-principles",
       "map-topic:organ-party",
@@ -40,7 +50,7 @@ describe("authored knowledge registry", () => {
       "map-topic:principle-two-instance",
       "map-topic:wezwanie",
     ])
-    expect(authoredKnowledgeGraph.outbound).toHaveLength(19)
+    expect(authoredKnowledgeGraph.outbound).toHaveLength(24)
     expect(authoredKnowledgeGraph.outbound).toEqual(
       expect.arrayContaining([
         expect.objectContaining({

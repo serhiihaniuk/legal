@@ -1,6 +1,11 @@
 import type { LegalNodeGuideMap } from "~/data/legal-map/node-guide-types"
 import {
+  appealTopic,
+  complaintTopic,
   deadlinesDeliveryTopic,
+  decisionAppealTopic,
+  decisionReadingTopic,
+  evidenceTopic,
   initiationTopic,
   kpaPrinciplesTopic,
   organPartyTopic,
@@ -16,7 +21,12 @@ import { legalNodeGuidesWorkDocs } from "~/data/legal-map/node-guides-work-docs"
 
 export const legalNodeGuides: LegalNodeGuideMap = {
   ...legalNodeGuidesKpa,
+  appeal: appealTopic.body.guide,
+  complaint: complaintTopic.body.guide,
   "deadlines-delivery": deadlinesDeliveryTopic.body.guide,
+  "decision-appeal": decisionAppealTopic.body.guide,
+  "decision-reading": decisionReadingTopic.body.guide,
+  evidence: evidenceTopic.body.guide,
   initiation: initiationTopic.body.guide,
   "kpa-principles": kpaPrinciplesTopic.body.guide,
   "organ-party": organPartyTopic.body.guide,

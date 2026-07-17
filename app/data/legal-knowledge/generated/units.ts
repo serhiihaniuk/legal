@@ -1,15 +1,20 @@
 // This file is generated. Do not edit it by hand.
 // Run npm run knowledge:generate after adding or removing an authored unit.
 
-import unit0 from "../../legal-map/editorial/topics/deadlines-delivery"
-import unit1 from "../../legal-map/editorial/topics/initiation"
-import unit2 from "../../legal-map/editorial/topics/kpa-principles"
-import unit3 from "../../legal-map/editorial/topics/organ-party"
-import unit4 from "../../legal-map/editorial/topics/principle-legality"
-import unit5 from "../../legal-map/editorial/topics/principle-participation"
-import unit6 from "../../legal-map/editorial/topics/principle-trust"
-import unit7 from "../../legal-map/editorial/topics/principle-two-instance"
-import unit8 from "../../legal-map/editorial/topics/wezwanie"
+import unit0 from "../../legal-map/editorial/topics/appeal"
+import unit1 from "../../legal-map/editorial/topics/complaint"
+import unit2 from "../../legal-map/editorial/topics/deadlines-delivery"
+import unit3 from "../../legal-map/editorial/topics/decision-appeal"
+import unit4 from "../../legal-map/editorial/topics/decision-reading"
+import unit5 from "../../legal-map/editorial/topics/evidence"
+import unit6 from "../../legal-map/editorial/topics/initiation"
+import unit7 from "../../legal-map/editorial/topics/kpa-principles"
+import unit8 from "../../legal-map/editorial/topics/organ-party"
+import unit9 from "../../legal-map/editorial/topics/principle-legality"
+import unit10 from "../../legal-map/editorial/topics/principle-participation"
+import unit11 from "../../legal-map/editorial/topics/principle-trust"
+import unit12 from "../../legal-map/editorial/topics/principle-two-instance"
+import unit13 from "../../legal-map/editorial/topics/wezwanie"
 
 export const authoredKnowledgeUnits = [
   unit0,
@@ -21,4 +26,9 @@ export const authoredKnowledgeUnits = [
   unit6,
   unit7,
   unit8,
+  unit9,
+  unit10,
+  unit11,
+  unit12,
+  unit13,
 ] as const
