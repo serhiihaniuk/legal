@@ -18,12 +18,14 @@ describe("authored knowledge registry", () => {
       "map-topic:decision-workflow",
       "map-topic:evidence",
       "map-topic:extraordinary-wsa",
+      "map-topic:goal-of-stay",
       "map-topic:inactivity",
       "map-topic:initiation",
       "map-topic:invalidity",
       "map-topic:kpa-principles",
       "map-topic:legal-anatomy",
       "map-topic:organ-party",
+      "map-topic:person-status",
       "map-topic:principle-legality",
       "map-topic:principle-participation",
       "map-topic:principle-trust",
@@ -33,15 +35,16 @@ describe("authored knowledge registry", () => {
       "map-topic:special-vs-kpa",
       "map-topic:start-case",
       "map-topic:study-loop",
+      "map-topic:two-keys",
       "map-topic:wezwanie",
       "map-topic:wezwanie-workflow",
       "map-topic:wsa",
     ])
     expect(knowledgeUnitById.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[14]
+      authoredKnowledgeUnits[16]
     )
     expect(knowledgeUnitBySubjectKey.get("map-topic:principle-legality")).toBe(
-      authoredKnowledgeUnits[14]
+      authoredKnowledgeUnits[16]
     )
   })
 
@@ -55,12 +58,14 @@ describe("authored knowledge registry", () => {
       "map-topic:decision-workflow",
       "map-topic:evidence",
       "map-topic:extraordinary-wsa",
+      "map-topic:goal-of-stay",
       "map-topic:inactivity",
       "map-topic:initiation",
       "map-topic:invalidity",
       "map-topic:kpa-principles",
       "map-topic:legal-anatomy",
       "map-topic:organ-party",
+      "map-topic:person-status",
       "map-topic:principle-legality",
       "map-topic:principle-participation",
       "map-topic:principle-trust",
@@ -70,11 +75,12 @@ describe("authored knowledge registry", () => {
       "map-topic:special-vs-kpa",
       "map-topic:start-case",
       "map-topic:study-loop",
+      "map-topic:two-keys",
       "map-topic:wezwanie",
       "map-topic:wezwanie-workflow",
       "map-topic:wsa",
     ])
-    expect(authoredKnowledgeGraph.outbound).toHaveLength(46)
+    expect(authoredKnowledgeGraph.outbound).toHaveLength(50)
     expect(authoredKnowledgeGraph.outbound).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
