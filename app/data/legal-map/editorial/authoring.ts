@@ -41,6 +41,26 @@ export const mapTopicSources = {
     url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
     note: "Dz.U. 2025 poz. 621 · чинна з 01.06.2025",
   },
+  workChange: {
+    label: "Zmiana zasad powierzania pracy — 2026",
+    url: "https://eli.gov.pl/eli/DU/2026/473/ogl",
+    note: "Dz.U. 2026 poz. 473 · зміни з 08.07.2026",
+  },
+  temporaryWork: {
+    label: "Ustawa o zatrudnianiu pracowników tymczasowych",
+    url: "https://eli.gov.pl/eli/DU/2025/236/ogl",
+    note: "Agencja, pracownik tymczasowy, pracodawca użytkownik",
+  },
+  labourMarket: {
+    label: "Ustawa o rynku pracy i służbach zatrudnienia",
+    url: "https://eli.gov.pl/eli/DU/2025/620/ogl",
+    note: "Зокрема діяльність agencji zatrudnienia",
+  },
+  outsourcing: {
+    label: "MRPiPS — stanowisko o outsourcingu (03.04.2026)",
+    url: "https://www.senat.gov.pl/gfx/senat/userfiles/_public/k11/komisje/kp/75/2/odp._mrpips_03-04-2026.pdf",
+    note: "Офіційне пояснення outsourcingu procesowego та pracowniczego",
+  },
   ppsa: {
     label: "Prawo o postępowaniu przed sądami administracyjnymi — ELI",
     url: "https://eli.gov.pl/eli/DU/2026/143/ogl",

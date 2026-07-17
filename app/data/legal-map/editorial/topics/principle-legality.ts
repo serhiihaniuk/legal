@@ -31,6 +31,7 @@ export type LegalMapTopicBody = {
   checkpoints?: readonly LegalTextValue[]
   steps?: readonly LegalTextValue[]
   documents?: readonly LegalTextValue[]
+  related?: readonly string[]
 }
 
 export const principleLegalityTopic: KnowledgeUnit<LegalMapTopicBody> =

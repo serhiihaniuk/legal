@@ -27,6 +27,7 @@ import {
   decisionAppealMapNode,
   decisionReadingMapNode,
   decisionWorkflowMapNode,
+  employerDutiesMapNode,
   entryCurrentBasisMapNode,
   evidenceMapNode,
   extraordinaryWsaMapNode,
@@ -64,6 +65,8 @@ import {
   ukraineRoutesMapNode,
   visaFreeMapNode,
   visaMapNode,
+  workEntryMapNode,
+  workInstrumentsMapNode,
   wezwanieMapNode,
   wezwanieWorkflowMapNode,
   wsaMapNode,
@@ -1097,56 +1100,12 @@ export const legalData = {
           "Хто може працювати, на яких умовах і хто фактично відповідає за організацію праці.",
         nodes: [
           {
-            id: "work-entry",
-            title: "Карта доступу до праці",
-            polish: workLaw.text`${workLaw.article("3", "art. 3")} i 6 ustawy z 20.03.2025`,
-            summary:
-              "Спочатку перевір, чи особа має вільний доступ до ринку праці. Якщо ні — який інструмент потрібен: zezwolenie, oświadczenie, praca sezonowa або інша спеціальна підстава.",
-            checkpoints: [
-              "Чи статус особи звільняє від дозволу?",
-              "Яка підстава pobytu?",
-              "Хто доручає роботу?",
-              "Який тип і місце роботи?",
-              "Чи умови відповідають документу?",
-            ],
-            steps: [
-              "Перевір pobyt.",
-              workLaw.text`Перевір ${workLaw.article("3", "art. 3")} — доступ без дозволу.`,
-              "Якщо потрібна легалізація — вибери інструмент за видом праці.",
-              "Порівняй faktyczne warunki з документом.",
-            ],
-            sources: [S.work, S.workChange],
+            ...workEntryMapNode,
             related: ["two-keys", "stay-work", "employer-duties"],
           },
+          employerDutiesMapNode,
           {
-            id: "employer-duties",
-            title: "Обов’язки роботодавця",
-            polish: workLaw.text`${workLaw.articleRange("4", "5", { start: "art. 4", end: "5" })}, ${workLaw.article("17", "17")}, ${workLaw.articleRange("19", "20", { start: "19", end: "20" })} ustawy z 20.03.2025`,
-            summary:
-              "Podmiot powierzający pracę перевіряє документ pobytowy, укладає письмову умову, надає зрозумілу версію, зберігає документи та виконує електронні повідомлення.",
-            why: "Легальність праці — це не лише отримання дозволу. Фактична umowa, wynagrodzenie, wymiar czasu й обов’язкові повідомлення мають відповідати заявленим умовам.",
-            checkpoints: [
-              "Чи є копія чинного документа pobytowego?",
-              "Чи cudzoziemiec розуміє текст умови?",
-              "Чи копію умови подано до системи, коли це потрібно?",
-              "Чи повідомлено про початок/перерву/закінчення?",
-            ],
-            documents: [
-              "документ pobytowy",
-              "письмова umowa",
-              "зрозумілий переклад/версія",
-              "електронні підтвердження повідомлень",
-              "доказ виплат і ZUS",
-            ],
-            sources: [S.work, S.workChange],
-          },
-          {
-            id: "work-instruments",
-            title: "Інструменти легалізації праці",
-            polish: "zezwolenie, oświadczenie, praca sezonowa",
-            summary:
-              "Різні моделі праці мають окремі процедури. Не використовуй oświadczenie або звичайний дозвіл лише тому, що він знайоміший.",
-            sources: [S.work],
+            ...workInstrumentsMapNode,
             children: [
               {
                 id: "work-permit",

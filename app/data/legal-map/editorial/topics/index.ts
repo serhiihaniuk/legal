@@ -84,3 +84,9 @@ export { visaMapNode, visaTopic } from "./visa"
 export { studyLoopMapNode, studyLoopTopic } from "./study-loop"
 export { studyResearchMapNode, studyResearchTopic } from "./study-research"
 export { wsaMapNode, wsaTopic } from "./wsa"
+export { employerDutiesMapNode, employerDutiesTopic } from "./employer-duties"
+export { workEntryMapNode, workEntryTopic } from "./work-entry"
+export {
+  workInstrumentsMapNode,
+  workInstrumentsTopic,
+} from "./work-instruments"
