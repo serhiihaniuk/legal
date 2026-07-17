@@ -1,4 +1,5 @@
 export * from "./contracts"
 export * from "./dependencies"
+export * from "./map-topic-publication"
 export * from "./provision-publication"
 export * from "./registry"

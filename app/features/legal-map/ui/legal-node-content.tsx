@@ -21,6 +21,7 @@ import {
 } from "~/data/legal-library/legal-text"
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import { legalNodeGuides } from "~/data/legal-map/node-guides"
+import { resolveMapTopicPublication } from "~/data/legal-knowledge"
 import { nodeById, type IndexedNode } from "~/data/legal-map/index"
 import type { LegalNode } from "~/data/shared/legal-types"
 
@@ -137,6 +138,16 @@ export function LegalNodeContent({
   onNodeSelect: (nodeId: string) => void
   onOverviewSelect: (stageId: LegalMapJourneyStage["id"]) => void
 }) {
+  const publication = resolveMapTopicPublication(node.id)
+  const contentNode: IndexedNode = publication
+    ? {
+        ...node,
+        title: publication.title,
+        polish: publication.polish,
+        summary: publication.summary,
+        sources: [...publication.sources],
+      }
+    : node
   const group = legalData.groups.find((item) => item.id === node.groupId)
   const stage = legalMapJourneyStageForNode(node.id) ?? legalMapJourney[0]
   const path = nodePath(node)
@@ -144,12 +155,12 @@ export function LegalNodeContent({
   const related = (node.related ?? [])
     .map((id) => nodeById.get(id))
     .filter((item): item is IndexedNode => Boolean(item))
-  const guide = legalNodeGuides[node.id]
-  const introduction = guide?.introduction ?? [node.summary]
-  const procedure = uniqueStatements(guide?.procedure, node.steps)
+  const guide = publication?.guide ?? legalNodeGuides[node.id]
+  const introduction = guide?.introduction ?? [contentNode.summary]
+  const procedure = uniqueStatements(guide?.procedure, contentNode.steps)
   const practicalContext = uniqueStatements(
     guide?.foreignersContext,
-    node.why ? [node.why] : undefined
+    contentNode.why ? [contentNode.why] : undefined
   )
 
   return (
@@ -184,9 +195,9 @@ export function LegalNodeContent({
             </span>
           ))}
         </p>
-        <h1>{node.title}</h1>
+        <h1>{contentNode.title}</h1>
         <p className="lead">
-          <LegalText text={node.polish} />
+          <LegalText text={contentNode.polish} />
         </p>
         {introduction.map((paragraph) => (
           <p key={legalTextPlainText(paragraph)}>
@@ -221,11 +232,11 @@ export function LegalNodeContent({
 
       <section id="node-model">
         <h2>Правова модель</h2>
-        <ModelExplanation node={node} guide={guide} />
+        <ModelExplanation node={contentNode} guide={guide} />
         <div data-not-typeset className="not-typeset mt-6 border-y">
           <StatementBlock
             title="Що регулює"
-            items={uniqueStatements(guide?.regulated ?? [node.summary])}
+            items={uniqueStatements(guide?.regulated ?? [contentNode.summary])}
           />
           <StatementBlock
             title="Коли застосовується"
@@ -242,7 +253,7 @@ export function LegalNodeContent({
           <StatementBlock
             title="Правовий наслідок"
             items={uniqueStatements(
-              guide?.consequences ?? [node.why ?? node.summary]
+              guide?.consequences ?? [contentNode.why ?? contentNode.summary]
             )}
           />
         </div>
@@ -254,16 +265,16 @@ export function LegalNodeContent({
         <StatementBlock title="Послідовність роботи" items={procedure} />
       </section>
 
-      {node.documents?.length || node.checkpoints?.length ? (
+      {contentNode.documents?.length || contentNode.checkpoints?.length ? (
         <section id="node-materials">
           <h2>Документи і контроль</h2>
           <p>
             Назва документа сама по собі не доводить виконання умови. У справі
             перевіряйте його зміст, період, автора, форму та зв’язок із фактом.
           </p>
-          {node.documents?.length ? (
+          {contentNode.documents?.length ? (
             <div data-not-typeset className="not-typeset mt-6 border-y">
-              {node.documents.map((item) => (
+              {contentNode.documents.map((item) => (
                 <div
                   key={legalTextPlainText(item)}
                   className="flex gap-3 border-b py-4 last:border-b-0"
@@ -276,11 +287,11 @@ export function LegalNodeContent({
               ))}
             </div>
           ) : null}
-          {node.checkpoints?.length ? (
+          {contentNode.checkpoints?.length ? (
             <>
               <h3>Що перевірити у матеріалах справи</h3>
               <ul data-not-typeset className="not-typeset mt-4 grid gap-3">
-                {node.checkpoints.map((item) => (
+                {contentNode.checkpoints.map((item) => (
                   <li
                     key={legalTextPlainText(item)}
                     className="flex gap-3 text-sm leading-6"
@@ -323,11 +334,11 @@ export function LegalNodeContent({
         <h2>Правова основа й офіційні джерела</h2>
         <p>
           <strong>Локатор у праві:</strong>{" "}
-          <LegalText text={node.polish} context="reference-section" />
+          <LegalText text={contentNode.polish} context="reference-section" />
         </p>
-        {node.sources?.length ? (
+        {contentNode.sources?.length ? (
           <ul data-not-typeset className="not-typeset mt-5 grid gap-4">
-            {node.sources.map((source, index) => (
+            {contentNode.sources.map((source, index) => (
               <li key={`${source.url}-${index}`}>
                 {index > 0 ? <Separator className="mb-4" /> : null}
                 <OfficialSourceEntry source={source} />

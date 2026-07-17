@@ -13,6 +13,7 @@ import {
   getProvision,
 } from "~/data/legal-library/query"
 import {
+  resolveMapTopicPublication,
   resolveProvisionPublication,
   type ProvisionPublication,
 } from "~/data/legal-knowledge"
@@ -275,17 +276,22 @@ function evidencePreview(
 function mapNodePreview(
   identity: string,
   reference: Extract<LegalReference, { kind: "map-node" }>,
-  node: LegalNode
+  node: LegalNode,
+  publication = resolveMapTopicPublication(node.id)
 ): LegalReferencePreview {
-  const source = node.sources?.[0]
+  const source = publication?.sources[0] ?? node.sources?.[0]
+  const title = publication?.title ?? node.title
+  const summary = publication?.summary ?? node.summary
+  const polish = publication?.polish ?? node.polish
+  const status = publication?.status ?? "draft"
   return {
     ...basePreview(
       identity,
       reference,
       "map-node",
-      node.title,
-      legalTextPlainText(node.summary),
-      "draft",
+      title,
+      legalTextPlainText(summary),
+      status,
       source
         ? {
             sourceUrl: source.url,
@@ -294,7 +300,15 @@ function mapNodePreview(
           }
         : {}
     ),
-    subtitle: legalTextPlainText(node.polish),
+    subtitle: legalTextPlainText(polish),
+    ...(publication
+      ? {
+          legalStateDate: publication.unit.review.legalStateDate,
+          verifiedAt: publication.unit.review.verifiedAt,
+          reviewStatus: publication.unit.review.reviewStatus,
+          sourceEditionId: publication.unit.review.sourceEditionId,
+        }
+      : {}),
   }
 }
 
@@ -494,7 +508,12 @@ async function buildPreview(
     case "map-node": {
       const node = nodeById.get(reference.nodeId)
       if (!node || !legalReferenceTarget(reference)) return undefined
-      return mapNodePreview(identity, reference, node)
+      return mapNodePreview(
+        identity,
+        reference,
+        node,
+        resolveMapTopicPublication(reference.nodeId)
+      )
     }
     case "case-route": {
       const route = caseGuideRouteById.get(reference.routeId)
