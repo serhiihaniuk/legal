@@ -11,6 +11,8 @@
     "corpus:diff": "node scripts/legal-corpus/workflow.mjs diff",
     "corpus:generate": "node scripts/legal-corpus/generate-registry.mjs",
     "corpus:promote": "node scripts/legal-corpus/workflow.mjs promote",
+    "knowledge:generate": "node scripts/legal-knowledge/generate-registry.mjs",
+    "knowledge:check": "node scripts/legal-knowledge/generate-registry.mjs --check",
     "test:corpus": "node --test scripts/legal-corpus/test/*.test.mjs",
     "test:editorial": "node scripts/legal-editorial/validate.mjs --incomplete",
     "test:editorial:strict": "node scripts/legal-editorial/validate.mjs",
@@ -23,7 +25,7 @@
     "lint": "oxlint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx}\"",
-    "verify": "npm run typecheck && npm run typecheck:scripts && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:editorial && npm run build",
+    "verify": "npm run typecheck && npm run typecheck:scripts && npm run knowledge:check && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:editorial && npm run build",
     "verify:content": "npm run test:editorial:strict && npm run test:previews"
   },
   "dependencies": {

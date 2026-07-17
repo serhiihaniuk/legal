@@ -2,7 +2,10 @@ import {
   createLegalTextAuthor,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
-import { defineKnowledgeUnit, type KnowledgeUnit } from "~/data/legal-knowledge"
+import {
+  defineKnowledgeUnit,
+  type KnowledgeUnit,
+} from "~/data/legal-knowledge/contracts"
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import type { OfficialSource, LegalNode } from "~/data/shared/legal-types"
 
@@ -111,6 +114,8 @@ export const principleLegalityTopic: KnowledgeUnit<LegalMapTopicBody> =
   })
 
 /** Projection consumed by the legacy map tree while the family migrates. */
+export default principleLegalityTopic
+
 export const principleLegalityMapNode: LegalNode = {
   id: "principle-legality",
   title: principleLegalityTopic.body.title,
