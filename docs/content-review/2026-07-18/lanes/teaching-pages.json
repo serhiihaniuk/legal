@@ -4484,25 +4484,25 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "4811ae34176f0e045d3582ad291a4e4b12f2e7ce446f2da9738640ae158509b8",
+      "contentHash": "4e8de0e27f9e4cfb4135ea2230d2674764b0199e66a5ed8e504af29d657b5495",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
+        "reviewedAt": "2026-07-18T12:38:55.625Z",
         "status": "accepted",
         "blockers": [],
         "hashAttestation": {
-          "contentHash": "4811ae34176f0e045d3582ad291a4e4b12f2e7ce446f2da9738640ae158509b8",
+          "contentHash": "4e8de0e27f9e4cfb4135ea2230d2674764b0199e66a5ed8e504af29d657b5495",
           "sourceTextHash": null
         }
       },
       "crossReview": {
         "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
+        "reviewedAt": "2026-07-18T12:42:15.515Z",
         "status": "accepted",
         "blockers": [],
         "hashAttestation": {
-          "contentHash": "4811ae34176f0e045d3582ad291a4e4b12f2e7ce446f2da9738640ae158509b8",
+          "contentHash": "4e8de0e27f9e4cfb4135ea2230d2674764b0199e66a5ed8e504af29d657b5495",
           "sourceTextHash": null
         }
       }

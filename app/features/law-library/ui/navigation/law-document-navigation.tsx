@@ -62,7 +62,7 @@ function ProvisionNavigation({
       title={document.id === "kpa" ? "Розділи кодексу" : "Структура акта"}
       meta={articleCountLabel(document.provisionIds.length)}
     >
-      <div className="mt-3 grid gap-5">
+      <DocsSidebarList>
         {groups.map((group) => {
           const active = group.provisions.some(
             (provision) => provision.id === currentProvisionId
@@ -73,36 +73,33 @@ function ProvisionNavigation({
               ? group.start
               : `${group.start}–${group.end}`
           return (
-            <section key={group.id} aria-label={group.title}>
-              <DocsSidebarList>
-                <DocsSidebarItem
-                  href={getDocumentProvisionPath(document.id, first.id)}
-                  active={active}
-                  size="default"
-                  className="min-h-12 items-start px-2 py-2"
-                >
-                  <span className="grid min-w-0 flex-1 gap-1">
-                    <span className="text-[0.78rem] leading-5 font-medium break-words">
-                      {group.title}
-                    </span>
-                    <span className="flex flex-wrap items-center gap-1.5">
-                      <span className="text-navigation-meta leading-4 font-normal text-muted-foreground tabular-nums">
-                        {range}
-                      </span>
-                      <Badge
-                        variant="outline"
-                        className="h-5 px-1.5 text-micro font-normal text-muted-foreground"
-                      >
-                        {articleCountLabel(group.provisions.length)}
-                      </Badge>
-                    </span>
+            <DocsSidebarItem
+              key={group.id}
+              href={getDocumentProvisionPath(document.id, first.id)}
+              active={active}
+              size="default"
+              className="min-h-12 items-start px-2 py-2"
+            >
+              <span className="grid min-w-0 flex-1 gap-1">
+                <span className="text-[0.78rem] leading-5 font-medium break-words">
+                  {group.title}
+                </span>
+                <span className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-navigation-meta leading-4 font-normal text-muted-foreground tabular-nums">
+                    {range}
                   </span>
-                </DocsSidebarItem>
-              </DocsSidebarList>
-            </section>
+                  <Badge
+                    variant="outline"
+                    className="h-5 px-1.5 text-micro font-normal text-muted-foreground"
+                  >
+                    {articleCountLabel(group.provisions.length)}
+                  </Badge>
+                </span>
+              </span>
+            </DocsSidebarItem>
           )
         })}
-      </div>
+      </DocsSidebarList>
     </DocsSidebarSection>
   )
 }
