@@ -1,10 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import {
-  redirect,
-  useNavigate,
-  useParams,
-  type LoaderFunctionArgs,
-} from "react-router"
+import { useNavigate, useParams, type LoaderFunctionArgs } from "react-router"
 
 import {
   DocumentCatalogNavigation,
@@ -18,7 +13,6 @@ import { DocsLayout } from "~/components/layout"
 import {
   getEvidenceDocument,
   getEvidenceDocumentPath,
-  legacyEvidenceDocumentIdMap,
   type EvidenceDocumentCategory,
 } from "~/data/document-library"
 import { documentById } from "~/data/documents/catalog"
@@ -31,10 +25,6 @@ export function loader({ params }: LoaderFunctionArgs) {
   const documentId = params.documentId
   if (!documentId) return null
 
-  const legacyDocumentId = legacyEvidenceDocumentIdMap.get(documentId)
-  if (legacyDocumentId) {
-    throw redirect(getEvidenceDocumentPath(legacyDocumentId) ?? "/documents")
-  }
   if (!getEvidenceDocument(documentId)) {
     throw new Response("Evidence document not found", { status: 404 })
   }

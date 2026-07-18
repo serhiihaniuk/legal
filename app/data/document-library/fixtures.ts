@@ -6,7 +6,6 @@ import {
   resolveEvidenceDocumentReference,
 } from "./query"
 import { getEvidenceDocumentPath } from "./navigation"
-import { legacyEvidenceDocumentIdMap } from "./compatibility"
 import { createEvidenceDocumentTextAuthor } from "./legal-text"
 
 export type DocumentLibraryFixture = {
@@ -65,15 +64,6 @@ export function validateDocumentLibraryFixture(): DocumentLibraryFixture {
     }
     return path
   })
-
-  for (const [legacyId, stableId] of legacyEvidenceDocumentIdMap) {
-    if (
-      !/^dokument-[a-z0-9]+$/u.test(legacyId) ||
-      !getEvidenceDocument(stableId)
-    ) {
-      throw new Error(`Invalid legacy Evidence Document redirect: ${legacyId}`)
-    }
-  }
 
   const unknownReference = resolveEvidenceDocumentReference({
     kind: "evidence-document",
