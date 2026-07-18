@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-69",
@@ -17,7 +17,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("69", "Art. 69")} ust. 1–4 зобов’язує konsul звернутися до Szef Urzędu щодо обставин odmowa wiza Schengen за ${foreignersLaw.external("Art. 32", VISA_CODE_URL)} ust. 1 lit. a tiret ii або vi Visa Code для громадян держав, щодо яких потрібна думка польських органів; ust. 2 дає 10 днів, а ust. 3–4 встановлюють консультації.`,
+          text: foreignersLaw.text`${foreignersLaw.article("69", "Art. 69")} ust. 1–4 зобов’язує konsul звернутися до Szef Urzędu щодо обставин odmowa wiza Schengen за ${foreignersLaw.external("Art. 32 kodeksu wizowego", VISA_CODE_URL)} ust. 1 lit. a tiret ii або vi для громадян держав, щодо яких потрібна думка польських органів; ust. 2 дає 10 днів, а ust. 3–4 встановлюють консультації.`,
           sourceLocator: "Art. 69 ust. 1–4",
         },
         {

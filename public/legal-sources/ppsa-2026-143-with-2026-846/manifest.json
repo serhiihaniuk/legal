@@ -1,0 +1,317 @@
+{
+  "id": "ppsa-2026-143-with-2026-846",
+  "schemaVersion": 2,
+  "documentId": "ppsa",
+  "editionId": "ppsa-2026-143-with-2026-846",
+  "shortName": "PPSA",
+  "title": "Prawo o postępowaniu przed sądami administracyjnymi",
+  "citation": "Dz.U. 2026 poz. 143",
+  "publisher": "DU",
+  "year": 2026,
+  "position": 143,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/143",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/143/text/T/D20260143L.pdf",
+    "expectedPdfSha256": "6df6ba04cc5a1121c1e5c06f672d8c41bd52556e3fe80d746cd305b465e0a51d"
+  },
+  "sourceMaterials": [
+    {
+      "id": "base",
+      "role": "base",
+      "citation": "Dz.U. 2026 poz. 143",
+      "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl",
+      "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/143",
+      "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/143/text/T/D20260143L.pdf",
+      "localPdfUrl": "/legal-sources/ppsa-2026-143-with-2026-846/source.pdf",
+      "pdfSha256": "6df6ba04cc5a1121c1e5c06f672d8c41bd52556e3fe80d746cd305b465e0a51d",
+      "expectedPdfSha256": "6df6ba04cc5a1121c1e5c06f672d8c41bd52556e3fe80d746cd305b465e0a51d"
+    },
+    {
+      "id": "du-2026-846",
+      "role": "amendment",
+      "citation": "Dz.U. 2026 poz. 846",
+      "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/846/ogl",
+      "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/846",
+      "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/846/text/O/D20260846.pdf",
+      "expectedPdfSha256": "7bfabbeca53808bca583e8027b8b1e9c3c7e28c24f83fec18977ff51417b24e2",
+      "pdfSha256": "7bfabbeca53808bca583e8027b8b1e9c3c7e28c24f83fec18977ff51417b24e2",
+      "localPdfUrl": "/legal-sources/ppsa-2026-143-with-2026-846/amendment-source.pdf",
+      "effectiveDate": "2026-06-26"
+    }
+  ],
+  "amendmentOverlay": {
+    "kind": "amendment-overlay-v1",
+    "baseEditionId": "ppsa-2026-143",
+    "effectiveDate": "2026-06-26",
+    "amendmentSource": {
+      "id": "du-2026-846",
+      "role": "amendment",
+      "citation": "Dz.U. 2026 poz. 846",
+      "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/846/ogl",
+      "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/846",
+      "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/846/text/O/D20260846.pdf",
+      "expectedPdfSha256": "7bfabbeca53808bca583e8027b8b1e9c3c7e28c24f83fec18977ff51417b24e2",
+      "pdfSha256": "7bfabbeca53808bca583e8027b8b1e9c3c7e28c24f83fec18977ff51417b24e2"
+    },
+    "operations": [
+      {
+        "provisionId": "ppsa-art-53",
+        "type": "replace-once",
+        "amendmentLocator": "Dz.U. 2026 poz. 846, Art. 10 pkt 1",
+        "search": "art. 3 § 2 pkt 4a",
+        "replace": "art. 3 § 2 pkt 4a i 4b"
+      },
+      {
+        "provisionId": "ppsa-art-264",
+        "type": "replace-once",
+        "amendmentLocator": "Dz.U. 2026 poz. 846, Art. 10 pkt 2",
+        "search": "Rzecznika Praw Dziecka, a uchwały",
+        "replace": "Rzecznika Praw Dziecka, ministra właściwego do spraw finansów\npublicznych, a uchwały"
+      }
+    ]
+  },
+  "officialPageUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl",
+  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/143",
+  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2026/143/text/T/D20260143L.pdf",
+  "checkedAt": "2026-07-18",
+  "legalStateDate": "2026-07-18",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 344,
+    "expectedTextCoverage": 0.98,
+    "expectedPageCount": 51,
+    "ignoredArticleOccurrences": [
+      {
+        "locator": "Art. 31",
+        "pdfPage": 1,
+        "matchIndex": 2103,
+        "reason": "Obwieszczenie reference, not a PPSA provision boundary."
+      },
+      {
+        "locator": "Art. 3",
+        "pdfPage": 2,
+        "matchIndex": 1116,
+        "reason": "Obwieszczenie reference, not a PPSA provision boundary."
+      }
+    ],
+    "excludedArticleOccurrences": [
+      {
+        "locator": "Art. 12b",
+        "pdfPage": 6,
+        "matchIndex": 465,
+        "reason": "Future wording effective from 2029-10-01; retain the current occurrence on page 5."
+      },
+      {
+        "locator": "Art. 37a",
+        "pdfPage": 11,
+        "matchIndex": 214,
+        "reason": "Future wording effective from 2029-10-01; retain the earlier current occurrence."
+      },
+      {
+        "locator": "Art. 49a",
+        "pdfPage": 13,
+        "matchIndex": 4298,
+        "reason": "Future wording effective from 2029-10-01; retain the earlier current occurrence."
+      },
+      {
+        "locator": "Art. 65",
+        "pdfPage": 18,
+        "matchIndex": 2524,
+        "reason": "Future wording effective from 2029-10-01; retain the earlier current occurrence."
+      },
+      {
+        "locator": "Art. 66",
+        "pdfPage": 19,
+        "matchIndex": 2267,
+        "reason": "Future wording effective from 2029-10-01; retain the earlier current occurrence."
+      },
+      {
+        "locator": "Art. 74a",
+        "pdfPage": 21,
+        "matchIndex": 3280,
+        "reason": "Future repeal effective from 2029-10-01; retain the current occurrence on page 20."
+      }
+    ],
+    "futureTextExclusions": [
+      {
+        "locator": "Art. 37",
+        "startMarker": "§ 1a. 13 )",
+        "endMarker": "§ 2.",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 13."
+      },
+      {
+        "locator": "Art. 46",
+        "startMarker": "§ 2a. 17 )",
+        "endMarker": "§ 2b. 16 )",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 17."
+      },
+      {
+        "locator": "Art. 46",
+        "startMarker": "§ 2b. 17 )",
+        "endMarker": "§ 2c. 16 )",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 17."
+      },
+      {
+        "locator": "Art. 46",
+        "startMarker": "§ 2c. 17 )",
+        "endMarker": "§ 2d. 16 )",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 17."
+      },
+      {
+        "locator": "Art. 46",
+        "startMarker": "§ 2d. 17 )",
+        "endMarker": "§ 3.",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 17."
+      },
+      {
+        "locator": "Art. 47",
+        "startMarker": "W przypadku pism i załączników wnoszonych w postaci elektronicznej",
+        "endMarker": "W celu doręczania",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future sentence wording identified by official footnote 20."
+      },
+      {
+        "locator": "Art. 47",
+        "startMarker": "§ 4. 22 )",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 22."
+      },
+      {
+        "locator": "Art. 48",
+        "startMarker": "Jeżeli odpis dokumentu został sporządzony w postaci elektronicznej",
+        "endMarker": "Odpisy dokumentów poświadczane elektronicznie",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future sentence wording identified by official footnote 24."
+      },
+      {
+        "locator": "Art. 54",
+        "startMarker": "Skargę w postaci elektronicznej wnosi się",
+        "endMarker": "Przepis art. 49a",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future sentence wording identified by official footnote 29."
+      },
+      {
+        "locator": "Art. 67",
+        "startMarker": "§ 3. 39 )",
+        "endMarker": "§ 4.",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 39."
+      },
+      {
+        "locator": "Art. 70",
+        "startMarker": "§ 1. 41 )",
+        "endMarker": "§ 2.",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 41."
+      },
+      {
+        "locator": "Art. 75",
+        "startMarker": "§ 2. 45 )",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 45."
+      },
+      {
+        "locator": "Art. 77",
+        "startMarker": "§ 1a. (uchylony) 47 )",
+        "endMarker": "§ 2.",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future repeal identified by official footnote 47."
+      },
+      {
+        "locator": "Art. 83",
+        "startMarker": "§ 5. 49 )",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 49."
+      },
+      {
+        "locator": "Art. 156",
+        "startMarker": "§ 2a. 55 )",
+        "endMarker": "§ 3.",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future paragraph wording identified by official footnote 55."
+      }
+    ],
+    "provisionStatusOverrides": [
+      {
+        "locator": "Art. 65a",
+        "status": "future",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future-only provision identified by official footnote 35."
+      },
+      {
+        "locator": "Art. 65b",
+        "status": "future",
+        "effectiveDate": "2029-10-01",
+        "reason": "Future-only provision identified by official footnote 35."
+      }
+    ],
+    "observedProvisionCount": 344,
+    "observedPageCount": 51,
+    "observedTextCoverage": 1,
+    "textLayerPageCount": 51
+  },
+  "extractionProfile": "polish-statute-art-v1",
+  "localPdfUrl": "/legal-sources/ppsa-2026-143-with-2026-846/source.pdf",
+  "pageCount": 51,
+  "textLayerPageCount": 51,
+  "textCoverage": 1,
+  "detectedArticleCount": 344,
+  "detectedProvisionCount": 344,
+  "provisionCount": 344,
+  "promotedProvisionCount": 344,
+  "pdfSha256": "6df6ba04cc5a1121c1e5c06f672d8c41bd52556e3fe80d746cd305b465e0a51d",
+  "sourcePdfSha256": "6df6ba04cc5a1121c1e5c06f672d8c41bd52556e3fe80d746cd305b465e0a51d",
+  "builtAt": "2026-07-18T09:17:30Z",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2026-01-15",
+    "legalStateDate": "2026-07-18",
+    "consolidatedTextIdentifier": "DU/2026/143 + DU/2026/846 overlay",
+    "checkedAt": "2026-07-18",
+    "sourceUrls": [
+      "https://eli.gov.pl/eli/DU/2026/143/ogl",
+      "https://eli.gov.pl/api/acts/DU/2026/143/text/T/D20260143L.pdf",
+      "https://eli.gov.pl/eli/DU/2026/846/ogl",
+      "https://eli.gov.pl/api/acts/DU/2026/846/text/O/D20260846.pdf"
+    ],
+    "amendmentsCheckedThrough": "2026-07-18",
+    "entryIntoForce": [
+      {
+        "locator": "ELI metadata DU/2026/143 and DU/2026/846",
+        "result": "The base PPSA consolidated text and the amendment act are marked obowiązujący and IN_FORCE in official ELI metadata."
+      },
+      {
+        "locator": "Dz.U. 2026 poz. 846, Art. 35 pkt 1",
+        "result": "Art. 10 of the amendment act entered into force on the day following promulgation; the act was promulgated on 2026-06-25, so the PPSA overlay changes are effective from 2026-06-26."
+      }
+    ],
+    "transitionalRules": [
+      {
+        "locator": "Dz.U. 2026 poz. 846, Art. 10 pkt 1-2",
+        "result": "Only PPSA Art. 53 § 1 and Art. 264 § 2 are changed by this overlay. No broader PPSA text rewrite is inferred."
+      }
+    ],
+    "unresolved": [],
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2026/143/ogl"
+  },
+  "diagnostics": {
+    "fatalCount": 0,
+    "warningCount": 0
+  },
+  "eli": {
+    "identifier": "DU/2026/143",
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2026-01-15",
+    "textHTML": false,
+    "textPDF": true
+  }
+}

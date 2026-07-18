@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-194",
@@ -15,26 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Zażalenie do NSA przysługuje na postanowienia WSA w przypadkach przewidzianych w ustawie oraz na wskazane w ${ppsaLaw.article("194", "art. 194")} przedmioty, m.in. przekazanie sprawy, odrzucenie skargi w ${ppsaLaw.article("58", "art. 58 § 1")} pkt 2–4 i ${ppsaLaw.article("220", "art. 220 § 3")}, umorzenie, wstrzymanie wykonania, odmowę uzasadnienia, sprostowanie lub wykładnię, uzupełnienie wyroku, wyłączenie sędziego, odrzucenie skargi kasacyjnej lub zażalenia, zwrot kosztów i ukaranie grzywną. ${ppsaLaw.article("194", "§ 1")} pkt 3 jest uchylony.`,
-          sourceLocator: "Art. 194 § 1 pkt 1, 1a–10, § 2–4",
+          text: "Окреме оскарження до NSA (zażalenie) доступне проти ухвал WSA у випадках, прямо передбачених законом, і щодо додаткового переліку питань у цій статті. Його подають протягом семи днів від вручення ухвали; документ має вказувати оскаржену ухвалу, вимогу про зміну або скасування та стисливе обґрунтування.",
+          sourceLocator: "Art. 194 § 1–4",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("194", "Art. 194")} zawiera zamknięty katalog wskazanych postanowień WSA, na które przysługuje zażalenie do NSA, oraz określa termin i wymagania pisma.`,
+      summary:
+        "Стаття визначає предмет, строк і мінімальний зміст окремого оскарження ухвали WSA.",
       rules: [
         {
-          locator: "§ 1 pkt 1, 1a–2, 3 (uchylony), 4–10",
+          locator: "Art. 194 § 1–4",
           explanation:
-            "Porównaj przedmiot postanowienia z konkretną pozycją katalogu; uchylony pkt 3 nie jest czynną podstawą zażalenia.",
-        },
-        {
-          locator: "§ 2–4",
-          explanation:
-            "Zażalenie wnosi się w siedem dni od doręczenia, wskazuje postanowienie, żądanie i zwięzłe uzasadnienie; odrzucenie skargi kasacyjnej wymaga adwokata lub radcy prawnego.",
+            "Спочатку знайдіть предмет ухвали в законному переліку. Потім порахуйте сім днів від вручення. Якщо оскаржується відхилення касаційної скарги, документ має скласти адвокат або юридичний радник (adwokat albo radca prawny), крім передбачених законом винятків.",
         },
       ],
       legalEffect:
-        "Samo nazwanie dokumentu postanowieniem nie tworzy prawa do zażalenia; trzeba znaleźć ustawową kategorię, zachować termin i spełnić wymagania formy.",
-      foreignersCase: ppsaLaw.text`W sprawie pobytowej odczytaj przedmiot postanowienia i pouczenie, a następnie porównaj je z czynnym katalogiem ${ppsaLaw.article("194", "art. 194")}. Przy odrzuceniu kasacji uwzględnij wymóg profesjonalnego sporządzenia.`,
+        "За відсутності законної підстави проміжну ухвалу не можна оскаржити лише тому, що вона шкодить позиції сторони.",
+      foreignersCase:
+        "У справі про перебування складіть коротку картку документа: предмет ухвали, дата вручення, пункт правової підстави та кінцева вимога.",
     },
   ],
 })

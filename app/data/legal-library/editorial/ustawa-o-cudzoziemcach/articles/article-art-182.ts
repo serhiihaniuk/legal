@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-182",
@@ -15,12 +15,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`У провадженні про permit з ${foreignersLaw.article("181", "art. 181")} ust. 1 ${foreignersLaw.article("182", "Art. 182")} виключає застосування ${foreignersLaw.article("99", "art. 99")} ust. 1 pkt 2, 3, 6–8.`,
+          text: foreignersLaw.text`У провадженні про zezwolenie з ${foreignersLaw.article("181", "art. 181")} ust. 1 ${foreignersLaw.article("182", "Art. 182")} виключає застосування ${foreignersLaw.article("99", "art. 99")} ust. 1 pkt 2, 3, 6–8.`,
           sourceLocator: "Art. 182",
         },
       ],
       summary:
-        "Для короткострокового permit закон не застосовує вичерпно перелічені перешкоди wszczęcia, але не всі правила про заяву.",
+        "Для короткострокового zezwolenie закон не застосовує вичерпно перелічені перешкоди wszczęcia, але не всі правила про заяву.",
       rules: [
         {
           locator: "весь припис",

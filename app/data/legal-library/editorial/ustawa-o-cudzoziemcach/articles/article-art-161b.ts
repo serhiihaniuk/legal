@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-161b",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Long-term mobility permit члена сім'ї прив'язаний до документа дослідника, виданого іншою державою UE, та до попереднього сімейного статусу.",
+        "mobilność długoterminowa zezwolenie члена сім'ї прив'язаний до документа дослідника, виданого іншою державою UE, та до попереднього сімейного статусу.",
       rules: [
         {
           locator: "ust. 1 pkt 1",
@@ -30,7 +30,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1 pkt 2 lit. a",
           explanation:
-            "Член сім'ї повинен мати дозвіл на pobyt для połączenie з родиною та пов'язаний із ним документ побytu, видані державою-членом, яка видала документ або візу naukowiec.",
+            "Член сім'ї повинен мати дозвіл на pobyt для połączenie з родиною та пов'язаний із ним dokument pobytowy, видані державою-членом, яка видала документ або візу naukowiec.",
         },
         {
           locator: "ust. 1 pkt 2 lit. b–c",
@@ -48,7 +48,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Це похідний режим mobility: строк і право залежать від чинного статусу naukowiec та сімейного документа, а не лише від факту спорідненості.",
+        "Це похідний режим mobilność: строк і право залежать від чинного статусу naukowiec та сімейного документа, а не лише від факту спорідненості.",
       foreignersCase:
         "Звірте документи дослідника і члена сім'ї, державу їх видачі, adnotacja «naukowiec», страховку, склад домогосподарства та розрахунок коштів після житлових витрат; кожну іноземну довідку перекладіть за вимогами органу.",
     },

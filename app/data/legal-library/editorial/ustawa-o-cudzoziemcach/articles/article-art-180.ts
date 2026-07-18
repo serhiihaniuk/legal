@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-180",
@@ -15,12 +15,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("180", "Art. 180")} вимагає cofnięcie permit для ofiary handlu ludźmi, якщо настав випадок з ${foreignersLaw.article("101", "art. 101")} pkt 1 або 2, зокрема припинилася співпраця або завершилося кримінальне провадження, або виникла обставина з ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 4 або 5.`,
+          text: foreignersLaw.text`${foreignersLaw.article("180", "Art. 180")} вимагає cofnięcie zezwolenie для ofiary handlu ludźmi, якщо настав випадок з ${foreignersLaw.article("101", "art. 101")} pkt 1 або 2, зокрема припинилася співпраця або завершилося кримінальне провадження, або виникла обставина з ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 4 або 5.`,
           sourceLocator: "Art. 180 pkt 1–2",
         },
       ],
       summary:
-        "Спеціальний permit відкликається при припиненні мети співпраці або за окремими загальними обставинами, названими законом.",
+        "Спеціальний zezwolenie відкликається при припиненні мети співпраці або за окремими загальними обставинами, названими законом.",
       rules: [
         {
           locator: "pkt 1",

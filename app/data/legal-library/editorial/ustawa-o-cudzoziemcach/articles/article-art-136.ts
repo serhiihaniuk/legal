@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-136",
@@ -27,7 +27,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Із цієї статті не можна вивести чинне правило для справи за редакцією corpus.",
+        "Із цієї статті не можна вивести чинне правило для справи за цією редакцією джерела.",
       foreignersCase: foreignersLaw.text`Не посилайтеся на ${foreignersLaw.article("136", "Art. 136")} як на чинну норму; знайдіть актуальний припис, що відповідає фактам.`,
     },
   ],

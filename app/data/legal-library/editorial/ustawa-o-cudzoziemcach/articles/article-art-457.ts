@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-457",
@@ -34,7 +34,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect: foreignersLaw.text`${foreignersLaw.article("457", "Art. 457")} є нормою про делегування до rozporządzenie і форми контрольних документів. Він сам не встановлює конкретну процедуру перевірки поза межами делегованих питань і не доводить наявність порушення.`,
-      foreignersCase: foreignersLaw.text`У справі про kontrola звірте фактичні дії з чинним розporządzenie, wzór upoważnienie та protokół, на які посилається ${foreignersLaw.article("455", "Art. 455")}; окремо перевірте, як враховано безпеку обробки даних.`,
+      foreignersCase: foreignersLaw.text`У справі про kontrola звірте фактичні дії з чинним rozporządzenie, wzór upoważnienie та protokół, на які посилається ${foreignersLaw.article("455", "Art. 455")}; окремо перевірте, як враховано безпеку обробки даних.`,
     },
   ],
 })

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-430",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Точний текст ${foreignersLaw.article("430", "Art. 430")} ust. 1: «W rejestrach ... przechowuje się informacje o wnioskach, postanowieniach, decyzjach administracyjnych, orzeczeniach sądu oraz dane osobowe przetwarzane zgodnie z niniejszą ustawą».`,
+          text: foreignersLaw.text`${foreignersLaw.article("430", "Art. 430")} визначає, які категорії інформації зберігають у конкретних rejestry та ewidencja zaproszeń: дані про wnioski, postanowienia, decyzje administracyjne, orzeczenia sądu й особові дані, а для окремих реєстрів також відомості про документи, фотографії, odciski, виїзд, витрати повернення, mobilność, запрошення та інші прямо названі події.`,
           sourceLocator: "Art. 430 ust. 1",
         },
         {
@@ -43,9 +43,8 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Норма визначає обсяг інформації, яку органи зберігають у конкретних реєстрах. Редакційні odnośniki 182–186 показують зміни тексту, тому часовий режим не можна виводити без перевірки дати.",
-      foreignersCase:
-        "Якщо потрібна інформація про власну справу, назвіть rejestr і тип даних; для старих подій окремо перевірте редакційні odnośniki 182–186 та дату зміни.",
+        "Норма визначає обсяг інформації, яку органи зберігають у кожному конкретному rejestr. Сам запис даних є дією обліку й не замінює рішення або доказової оцінки у провадженні.",
+      foreignersCase: foreignersLaw.text`Якщо потрібна інформація про власну справу, спочатку назвіть rejestr за ${foreignersLaw.article("428", "Art. 428")}, потім знайдіть у ${foreignersLaw.article("430", "Art. 430")} відповідний пункт і конкретну категорію даних. Не вимагайте від органу абстрактно «всі дані» без визначення запису та мети запиту.`,
     },
   ],
 })

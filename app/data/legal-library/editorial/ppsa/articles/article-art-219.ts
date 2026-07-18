@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-219",
@@ -15,26 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Opłatę sądową uiszcza się przy wniesieniu do sądu pisma podlegającego opłacie. Opłatę można uiścić gotówką w kasie właściwego sądu administracyjnego albo na jego rachunek bankowy, a końcówki opłat zaokrągla się w górę do pełnych złotych.",
+          text: "Судовий збір сплачують під час подання платного документа — готівкою до каси компетентного адміністративного суду або на його банківський рахунок. Кінцеву суму округлюють угору до повних злотих.",
           sourceLocator: "Art. 219 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("219", "Art. 219")} określa moment, podstawowe sposoby i sposób zaokrąglenia opłaty sądowej.`,
+      summary:
+        "Стаття пов’язує платіж із моментом подання та правильним одержувачем.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 219 § 1–2",
           explanation:
-            "Opłatę trzeba uiścić przy wniesieniu pisma podlegającego opłacie, a nie dopiero po merytorycznym rozpoznaniu.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Sprawdź kasę albo rachunek właściwego sądu i zaokrąglij końcówkę w górę do pełnych złotych.",
+            "Перед поданням встановіть належний суд, суму й спосіб оплати. У призначенні платежу вкажіть дані, які дозволяють пов’язати його з документом або справою.",
         },
       ],
-      legalEffect: ppsaLaw.text`Prawidłowe wniesienie pisma nie zastępuje prawidłowej opłaty; brak lub niedopłata mogą uruchomić ${ppsaLaw.article("220", "art. 220")}, z uwzględnieniem zwolnienia i innych wyjątków.`,
+      legalEffect:
+        "Своєчасний платіж дає суду підставу розпочати дії за документом; помилкова оплата може вимагати пояснення або доплати.",
       foreignersCase:
-        "Przy skardze na decyzję pobytową ustal właściwy sąd, rachunek i kwotę wpisu, zachowaj potwierdzenie oraz sprawdź, czy nie działa zwolnienie.",
+        "У справі про перебування збережіть банківське підтвердження й додайте його до процесуального пакета, особливо коли подаєте документ в останній день строку.",
     },
   ],
 })

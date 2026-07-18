@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-167",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Приписи цього розділу відповідно застосовуються до zarządzenia przewodniczącego.",
+          text: "Правила цього розділу відповідно застосовують до розпоряджень головуючого (zarządzenia przewodniczącego).",
           sourceLocator: "Art. 167",
         },
       ],
       summary:
-        "Норма поширює правила цього розділу на zarządzenia przewodniczącego у відповідному обсязі.",
+        "Стаття визначає допоміжне джерело правил для ще однієї форми процесуального документа.",
       rules: [
         {
           locator: "Art. 167",
           explanation:
-            "Спершу встановіть, що документ є саме zarządzenie przewodniczącego; лише тоді перевіряйте відповідні правила розділу.",
+            "Спочатку встановіть, що документ є саме розпорядженням головуючого (zarządzenie przewodniczącego), а потім доберіть правило розділу, сумісне з його функцією.",
         },
       ],
       legalEffect:
-        "Відповідне застосування не означає, що кожне zarządzenie має ідентичний режим wyrok або postanowienie.",
+        "Відповідне застосування не перетворює розпорядження на ухвалу й не дає автоматичного права на оскарження.",
       foreignersCase:
-        "Якщо в судовій справі про pobyt отримано zarządzenie przewodniczącego, класифікуйте його окремо й не припускайте автоматичної наявності środka zaskarżenia.",
+        "У справі про перебування прочитайте підпис і назву документа: помилка в класифікації веде до помилки у виборі строку та засобу реакції.",
     },
   ],
 })

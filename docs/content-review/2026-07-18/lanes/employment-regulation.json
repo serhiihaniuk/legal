@@ -1,0 +1,4971 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-07-18",
+  "lane": "employment-regulation",
+  "entries": [
+    {
+      "id": "learning-module:instrumenty-dostepu",
+      "path": "app/data/legal-library/learning/modules/powierzanie-pracy/instrumenty-dostepu.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "instrumenty-dostepu",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "737bc43498001bdf86b9481a574f6f7401418b266a29a84a27232ec3249c6876",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:kontrola-i-sankcje",
+      "path": "app/data/legal-library/learning/modules/powierzanie-pracy/kontrola-i-sankcje.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "kontrola-i-sankcje",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "5f67469f4c9eee830d1cc1d72c6d33025688f25a9bf8e3bb614dab6e784a684a",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:legalny-pobyt-a-rynek-pracy",
+      "path": "app/data/legal-library/learning/modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "legalny-pobyt-a-rynek-pracy",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "eb794420ba6708fe45f13692f140d03667337115225420b2154f13b85491d0a9",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:obowiazki-podmiotu",
+      "path": "app/data/legal-library/learning/modules/powierzanie-pracy/obowiazki-podmiotu.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "obowiazki-podmiotu",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "04289463bc3979aa15a6621b47a7ff7d96d2d0acebe600a6b4c189a0faf61cb2",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:outsourcing-a-praca-tymczasowa",
+      "path": "app/data/legal-library/learning/modules/powierzanie-pracy/outsourcing-a-praca-tymczasowa.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "outsourcing-a-praca-tymczasowa",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "d8f014afd3be550557ee655b3f5cb3bf3fb01267f5dbaddbd4805d9a4fd774ca",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:uczestnicy-i-definicje",
+      "path": "app/data/legal-library/learning/modules/powierzanie-pracy/uczestnicy-i-definicje.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "uczestnicy-i-definicje",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "675f1e11358ba832b8ea2b0c93b4108965ee671e8b8bd669dc78e00d9f71cf6c",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:zmiany-i-ciaglosc",
+      "path": "app/data/legal-library/learning/modules/powierzanie-pracy/zmiany-i-ciaglosc.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "zmiany-i-ciaglosc",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "1fc622d508088eeed79cfd7bd3066f71711d4c8e130de694d3ee5d57c1ee2cf4",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:choose-form",
+      "path": "app/data/legal-library/learning/modules/rozporzadzenie-wniosek-pobyt-czasowy/choose-form.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "choose-form",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "d8755b852230ae240c9d4fb11210abeb60ea94b32a59e222791a2bcb93290096",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:consistent-fields",
+      "path": "app/data/legal-library/learning/modules/rozporzadzenie-wniosek-pobyt-czasowy/consistent-fields.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "consistent-fields",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "17f1952a03092bd50377c87ce5f8c588a8db5f1929f3130cf7e915e09380cd76",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:form-versus-proof",
+      "path": "app/data/legal-library/learning/modules/rozporzadzenie-wniosek-pobyt-czasowy/form-versus-proof.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "form-versus-proof",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "9fb59a55c47cbd2e100627cc016a1d0816f8e04aac9ee363d5ff27cabe11acd3",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:role-of-regulation",
+      "path": "app/data/legal-library/learning/modules/rozporzadzenie-wniosek-pobyt-czasowy/role-of-regulation.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "role-of-regulation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "591fd19f2d03f4c1b2badd0b3dec5f3e86ddbdb89e4b668f93172cf78af7ee66",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "learning-module:submission-audit",
+      "path": "app/data/legal-library/learning/modules/rozporzadzenie-wniosek-pobyt-czasowy/submission-audit.ts",
+      "family": "learning-module",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "submission-audit",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "30372f086eb4b14e776d0a3660f69020dbdc8541e7fe6b91fdd74fd93019bc8f",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-1",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-1.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-1",
+      "provisionId": "powierzanie-pracy-art-1",
+      "provisionIndex": 1,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "6409e7f0ad473693b5f734b25d6da61ddce94fb3d0618d9b22adb5e14cc31284",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "945776eb8baaf30b3e40afbfe81abc0507196c23382ca65210e211d60cd6618e",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-10",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-10",
+      "provisionId": "powierzanie-pracy-art-10",
+      "provisionIndex": 10,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "9466b9dd318a653411d9c1094dc7aeb70d361f736be11ef74f22f7e3e76c8681",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "91dc5971a2a6e90a1181453aa8c7944eaf6fa828dc352dfa3a7b84ec050b92de",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-100",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-100.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-100",
+      "provisionId": "powierzanie-pracy-art-100",
+      "provisionIndex": 100,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "642d3902089893e9118f8e8bf2318c8306488be0773905957f6461e84fbb6b71",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "3f163e4921e1d9099e5cf86b20324553be5205af5b65142a7e5ea0dc29bf1906",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-101",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-101.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-101",
+      "provisionId": "powierzanie-pracy-art-101",
+      "provisionIndex": 101,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "d68518dc7bf5a77a48804a713dca47ae7bf2dce9ae8e58b6bf34293ca23b367b",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "9e16b731efdca5695560da8b68e9d4e8f7237a4b15c3e8750c2d1f6ae7b7cd78",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-102",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-102.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-102",
+      "provisionId": "powierzanie-pracy-art-102",
+      "provisionIndex": 102,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "dc1a4313e24a61162b5d24a4718b854d0b644f27af5ab252dddd47bf95ea531d",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "de1b06b240eb69d8fc8ded73c0956332b23dc595eea6d20b52ed21244c0823b6",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-103",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-103.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-103",
+      "provisionId": "powierzanie-pracy-art-103",
+      "provisionIndex": 103,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "8200ee6888d6cb73210fb12d52873050a2ff21e8495ebf85de5120566026894b",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "9b5b4b01b38df4944f5348b481cfdfec8b18ff4da8521c7f3a3680bb573dd8c9",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-104",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-104.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-104",
+      "provisionId": "powierzanie-pracy-art-104",
+      "provisionIndex": 104,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "3a99b549bf49eaa9f96300d937fbe56c19d65414fd7a5494a4084754f5d07d43",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "a1250f162e3c4bc0f1676fed47d9c2fc725597442316b07c168a1e5f8ee18f8a",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-105",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-105.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-105",
+      "provisionId": "powierzanie-pracy-art-105",
+      "provisionIndex": 105,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "47d8b47d400587b590af3bdae30a94719b5347372905bb1fa7a947e83bed67f4",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "a07ef9c8120b13008754336bedfb127e5db47319f5aafe3767de6e131261968b",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-106",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-106.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-106",
+      "provisionId": "powierzanie-pracy-art-106",
+      "provisionIndex": 106,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "20ecc0a93e7e24e9599e0bbe4c6ffa1dbb6c2369dd43deb1eca1e5a752081dd4",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "48ced2a4adbd3feb22e3a1dc971c0055f08bab30142b4a44e304d98d9905f179",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-107",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-107.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-107",
+      "provisionId": "powierzanie-pracy-art-107",
+      "provisionIndex": 107,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "50306662fda243089cfded5b29159ec66d41af4ddd173bc20823a97c6fa2062c",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "3a27c61f0845520ded46f2e33e7dd5d814583d5da62e9b921af768561d0a1613",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-108",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-108.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-108",
+      "provisionId": "powierzanie-pracy-art-108",
+      "provisionIndex": 108,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "4af17fbfa0a086029a9d8c1a0928bb0b8448751a8156f87a324a9d0133118398",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "3d1ed1e6a47c8d728b511a3f793129d9d5c70ee314d1932a5d88be6a60ac4f54",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-109",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-109.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-109",
+      "provisionId": "powierzanie-pracy-art-109",
+      "provisionIndex": 109,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "8a6ef1f3196a249dda5614424821abdefe14304c817eadfa3d833cba5cf961dd",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "bfb57031fda1803e3f2b16393416914252fcaa4f57236b620d4b899b117625b1",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-11",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-11.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-11",
+      "provisionId": "powierzanie-pracy-art-11",
+      "provisionIndex": 11,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "26b820eb26e889bf9286bd6bbadf530e00ba951a89f6fbf6ca910d0ba36c82b2",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "ea14493f8f7494c0d8105c1bea029f3746855a4c379035f8b08d6761be563012",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-110",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-110.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-110",
+      "provisionId": "powierzanie-pracy-art-110",
+      "provisionIndex": 110,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2fa4120c504ef17dd898ad5041e3f0fa2aa2a43e1e9814b8b6a0f74f527fd4d9",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "51c96426c84e29cb355501d7bee377092760cf7db70cf23e19551c55a2285487",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-111",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-111.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-111",
+      "provisionId": "powierzanie-pracy-art-111",
+      "provisionIndex": 111,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "012159331f9dc392e2faf1adfc916e0628f933d5867fd1878de3d41148bbf7ec",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "a022e25ec3dd3bf2281befeb5802a96542c5bb1aa372b4a471c4e1f9728c8e2d",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-112",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-112.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-112",
+      "provisionId": "powierzanie-pracy-art-112",
+      "provisionIndex": 112,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "1a2231a37bd47da69f42ce8b21a2b81852dbc68047fc9956647ee8edbd261347",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "cf07f5459016032e168b01f8ca22374cac0d81b6f25feac7d1eecb4d5d132659",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-113",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-113.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-113",
+      "provisionId": "powierzanie-pracy-art-113",
+      "provisionIndex": 113,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "258f90f66f54a0b031b6bc83943ad8654885c79624d2a482c8a234b6615dff96",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "2e66d6075db399f1d95ed2f7236f9f1fbc1b8051d1dbba68c65e1828170a0554",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-114",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-114.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-114",
+      "provisionId": "powierzanie-pracy-art-114",
+      "provisionIndex": 114,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "65d7aa56bd57a3d7ab737156fd9c7bd5d93d035f2ea1003b89b3eb296eaa5ee3",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "fbd2de65f14fc9b47e0d8160193de10758f7de63342822e0ea0a9d8dac4a02ac",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-12",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-12.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-12",
+      "provisionId": "powierzanie-pracy-art-12",
+      "provisionIndex": 12,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "7a11eb631475d79df267a9563146f9a390609d2ac155030ef99c9e0879be91e7",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "fb66129f309fc01e79ec3b321f8ee8f28f6b7b81ee9f4abe32a310337926fb94",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-13",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-13.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-13",
+      "provisionId": "powierzanie-pracy-art-13",
+      "provisionIndex": 13,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "b30d081a24bd3c34ed7f1971aec8e5528511448136424eb549ad3ec9cb19c5ba",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "78c13fcf6ecf31aa1e70e7eb213c2f2abebcd43f1b68b86099b2ad4a23ccf547",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-14",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-14.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-14",
+      "provisionId": "powierzanie-pracy-art-14",
+      "provisionIndex": 14,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "3f75ae869600dd89a4d4d698621292dc85ead08318c522c12d30a5805def322e",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "c4c929d33371f263c849e38689863cbb2024914fc4f8d4abbfe4aa7542c8f74c",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-15",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-15.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-15",
+      "provisionId": "powierzanie-pracy-art-15",
+      "provisionIndex": 15,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "1f2fb12b4d4ae952fe71cfbe335ccecb75c3186189f32af39e3a2b748e9f0644",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "ec8753934f28b7d457d87080288d8b7301a19ef59602e6300568231b875dbbf7",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-16",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-16.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-16",
+      "provisionId": "powierzanie-pracy-art-16",
+      "provisionIndex": 16,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "7d0f6a0386a3a68af2e0e46545be8080e64c46beb3f6adb33088b1ac4d9c3730",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "de93d058c6494b9bb87f02472f4fb828fac1e64c38b466dd46634723dabedbb4",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-17",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-17.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-17",
+      "provisionId": "powierzanie-pracy-art-17",
+      "provisionIndex": 17,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "f8b29f56538c36c1b1698059d30f4c2ce245a21734d0613ca29d7ff698b61fa8",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "d8d7994c66bd06532d046bef3fd27890f8d86780427dfae59103bac00d048d33",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-18",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-18.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-18",
+      "provisionId": "powierzanie-pracy-art-18",
+      "provisionIndex": 18,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2195b33a2eb77da657c1e71b8a6373568f476b0a183a32ad81013496c994819b",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "7e61aba6cfd8c7b392c7a0785a3d3a67385d6e2d5207ee1ebeb29c971205be9d",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-19",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-19.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-19",
+      "provisionId": "powierzanie-pracy-art-19",
+      "provisionIndex": 19,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "327cb5e871f7741c26ad9d03e6954b5a96bfe63077d1daf4558b376e0901c59e",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "1fffab93b37c52d537ecb67794601a311d20eaa0d541580e7d713270d59ba8bf",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-2",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-2.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-2",
+      "provisionId": "powierzanie-pracy-art-2",
+      "provisionIndex": 2,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "7d9ca2ac21498f831155538fe9f454afe942953b127e6beddec92f1a44e9fa4b",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "c21d12c701096f35fb0f0d0fcdd3591ad2c9015a24f00f0957bee0c909e96b56",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-20",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-20",
+      "provisionId": "powierzanie-pracy-art-20",
+      "provisionIndex": 20,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "c126c632b33b0661f140a73b993ebcbd3dc7df30e594c34ba3fa9fa7fd271439",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "9b21526a8d558c54bf2bb790356bcf74114d2b001af52f409ab88223ea35e73f",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-21",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-21",
+      "provisionId": "powierzanie-pracy-art-21",
+      "provisionIndex": 21,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "aca74b464f6df1313d73e2d70c805de538e5cf082656187eb3211d2dfd5eda84",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "ed4811de3fc55fc22ab43c57a5061b9413993aee71ac12a3a4530c948c34132c",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-22",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-22",
+      "provisionId": "powierzanie-pracy-art-22",
+      "provisionIndex": 22,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "6c1ad5d1791c9be759999102296536918fcdfc0563c2d56e5b888d95406bcc34",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "6be9a566cec81d1acdadc5505497b5ee70acff823dbaefea026be5081a8ddcbe",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-23",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-23.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-23",
+      "provisionId": "powierzanie-pracy-art-23",
+      "provisionIndex": 23,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "9b2b2474b7208c761d524f95281a2e94248af67d8a9ae152a2dc6f968e175c13",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "6fa03f76468f2603cffb90a3797abe7dee73af1d2b6fe83fe992be89e25ce361",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-24",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-24.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-24",
+      "provisionId": "powierzanie-pracy-art-24",
+      "provisionIndex": 24,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "26a7d93b2eac54c6141726dbfbfeaeea6b861192bda7a7a212b8cc7656797515",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "7b6b31a9cae33da0151fe886a9821dccd1cf90ce55e1e1db3c3c6dcba0584cfd",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-25",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-25.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-25",
+      "provisionId": "powierzanie-pracy-art-25",
+      "provisionIndex": 25,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "0d627f8a7591d99fc9a204b2ac7deeb2a2b7b61c9dae8745ae1ffa84061b145a",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "54d13e0687dc0ba086cb76044e86472860e2f98c88f06b817a633256094974ea",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-26",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-26.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-26",
+      "provisionId": "powierzanie-pracy-art-26",
+      "provisionIndex": 26,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2abd3cb000fc9b0debd1ff436df787a8ab2b3731e7cf7256e12ee819f3eb0216",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "87ee86f95331db18ff58c3c8c221376624ca946bc8e0fe170020a7d87ad26657",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-27",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-27.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-27",
+      "provisionId": "powierzanie-pracy-art-27",
+      "provisionIndex": 27,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "8276fa4d3f8ac5d4d3ec9d72a45ddc942203f714510b20dafdb1ceb335bdbc27",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "02539f82b624b3b0cc3ea6de4cad5aa94dad127f789b18a38b6c7c2613e1c451",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-28",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-28.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-28",
+      "provisionId": "powierzanie-pracy-art-28",
+      "provisionIndex": 28,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "723e32a1fea91c6e455340cf2dadb05e84df37e2c93e9efef268a683a9771065",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "405efc3fbeec7bb8f6cac326f2d41cdb30fa79c018e9b786f4606c9a2d428b8e",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-29",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-29.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-29",
+      "provisionId": "powierzanie-pracy-art-29",
+      "provisionIndex": 29,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "c0eaf628644ffebedd5aacddd41fea24b96ea2248961a5745c071a807ee4c584",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e89201a2f9f8b5f67211eecb4d17b7af7775173f53f1471c7e1448782f7c011f",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-3",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-3.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-3",
+      "provisionId": "powierzanie-pracy-art-3",
+      "provisionIndex": 3,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "129bd2612c0e167da2a75c121b3c0df16518766ce6f0e6b0ec26be4c499e6cd5",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "3b19215fc50fdc894afb17053ead5120e10978857ae777c4d3c158e60d342348",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-30",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-30.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-30",
+      "provisionId": "powierzanie-pracy-art-30",
+      "provisionIndex": 30,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "7d15851bf8bcdae60fe5d3ae204b46947cde2bcd1d979677f2268acaa3fa7bfc",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "ac78c7d55ddb8774b5f34d1e2147a3a6230c13edcf0f4b61884fcba2d305e9c8",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-31",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-31.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-31",
+      "provisionId": "powierzanie-pracy-art-31",
+      "provisionIndex": 31,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "7cda62c6130bede80acb432d214717e03bc4c243b4245df05588898465e30c12",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "b026f0a1556f171fface9c43d1b9a2831b21d4922ffb978173c7752fbbb927ee",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-32",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-32.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-32",
+      "provisionId": "powierzanie-pracy-art-32",
+      "provisionIndex": 32,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "e853fb14ab5f4029e06c352407637c2afe234262f3fa2fd67adb6ae1b8bafcf0",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "3453e2036ffb0ed2a0a5d8e837e763239a5fad32466002aa13aad03951c71a84",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-33",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-33.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-33",
+      "provisionId": "powierzanie-pracy-art-33",
+      "provisionIndex": 33,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "374a331f3f6ac7e3048371177452b422c7752be5659785e7e25f187313ac33ee",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "17159062430aeb205da8fdbd21c1a8016ffa8787ec3af6a1e6c6e2e9980d90a4",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-34",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-34.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-34",
+      "provisionId": "powierzanie-pracy-art-34",
+      "provisionIndex": 34,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "7d9ac420a61de2f8de2de686ecb0ca2f22279b1fb1127dfbd37da7686a859bff",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "56c9b12734eaa28852a1041b5e1356ff0288e9c0be9a2437f26701561c710c9c",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-35",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-35.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-35",
+      "provisionId": "powierzanie-pracy-art-35",
+      "provisionIndex": 35,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "81b129d1b64357ccc4e1c045f9b196340dba91d3204a4a1665ae55ad039a2eec",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "4b8eb2f7adbe2d86a6f44e09b1ed09aa41e7e19f318d1502d57f03d60e4b5b7a",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-36",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-36.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-36",
+      "provisionId": "powierzanie-pracy-art-36",
+      "provisionIndex": 36,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "c80a01ae34fecd5225f06568d1215c85721cd7edc4bfef0faf3fe74997b04d71",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "c4c3dad94ee6b6f463e4be3a516fe415eb7df348a1f56d64c0d7070e054a7390",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-37",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-37.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-37",
+      "provisionId": "powierzanie-pracy-art-37",
+      "provisionIndex": 37,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "91808d29f3f09a44097d52aa714f3a831fc2fd26b006712b5af2a08f5c77dee2",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "21c2e5e5ce6e2e19b38e287bc0e68361f417fb906b1fa5751c1ff729b6e0e018",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-38",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-38.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-38",
+      "provisionId": "powierzanie-pracy-art-38",
+      "provisionIndex": 38,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "1e6d74e5c7ba762c9bc9b5281bcd39da416a5fc57a21501768a3df8c2335b649",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "834492136b2565bf373c0f0c6e130e3156774d33f1d61af06bb8946be131eeec",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-39",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-39.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-39",
+      "provisionId": "powierzanie-pracy-art-39",
+      "provisionIndex": 39,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "8c7454e6c81d8e6b3fdeaec7dff80ebf4b4d1b90629b43db6aedb904544b4291",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "01ba8c57bdb8faea468bbb18109bb8048053c57be9087f0176b422a2599a0ad5",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-4",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-4.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-4",
+      "provisionId": "powierzanie-pracy-art-4",
+      "provisionIndex": 4,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "267b9f1d27af46c7353f2e21f4784666a6ab712e5021f865e14ef262837684e9",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "308c0ee0e2ccfd0704c6949ab3b598e23a21c5b8e1c598c0b8d71d1b5a06dc62",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-40",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-40.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-40",
+      "provisionId": "powierzanie-pracy-art-40",
+      "provisionIndex": 40,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "65e2721fc36df231e333a7799696470ecd88cd61e13cfeaa057932eb70032749",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "23290cd6d851423cbc91a529707c31c3908ac9ec08952421582c686bbefdef7e",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-41",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-41.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-41",
+      "provisionId": "powierzanie-pracy-art-41",
+      "provisionIndex": 41,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "df158572e4bb8c1b88c33e3ff4520d6a2f8f7b554dd1c9ee606c584fde92dcee",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "8d121f7336295c3391b77ee7882795cb122c95c6f752925715a012d8fc637bc3",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-42",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-42.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-42",
+      "provisionId": "powierzanie-pracy-art-42",
+      "provisionIndex": 42,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "c9f0040f09ef1ef8736128b0625d44d400be12f65cc53c33996c762c843b3019",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "1d32e7a3b46bcca97ca82105256794e2e3ecb7e3c840227c9727daa0e094f95e",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-43",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-43.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-43",
+      "provisionId": "powierzanie-pracy-art-43",
+      "provisionIndex": 43,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "a2c6130761542fee358a2707dbcffec13876d98c5143e345a96ffcf8b5ad9210",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "97f935e972640625a063fd85cf536117c60508a007bd253709308c6351a85430",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-44",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-44.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-44",
+      "provisionId": "powierzanie-pracy-art-44",
+      "provisionIndex": 44,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "d44aa7c55c1b3c0573dbcd33f02f0c0382cae26e2eb9a6108f6e038beeedc9cb",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "c72176db0ce7eec3dac5623a2a6060656cc22b123adcc64195b60c11dc2de73a",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-45",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-45.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-45",
+      "provisionId": "powierzanie-pracy-art-45",
+      "provisionIndex": 45,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "5abde385ddbda9218dfdb957dc198315e61b9065cb3327c2cb319f6c95e4541d",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "0daa204a4c0a35c866abf60db0c31adf27ff2f2b9362b60dc25e8e48e8847d25",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-46",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-46.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-46",
+      "provisionId": "powierzanie-pracy-art-46",
+      "provisionIndex": 46,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "9a5ac4ccb9e7cd952d67557e7abf27de1b6d9de995d3ef3ab61a5dc65450fe90",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "5cb28aaaa870de5258711b0b8cb877f1dcb6fe77819fa43957ccfd38c97a8c06",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-47",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-47.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-47",
+      "provisionId": "powierzanie-pracy-art-47",
+      "provisionIndex": 47,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "234705782243a571eb448b2eecd3c3b58acb0cc098751bf6ad7376d80b5d4578",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "fc4de34bc660a12fd0850aecc82d7d19a7813fc2b9b39ac05cf0587971998c80",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-48",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-48.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-48",
+      "provisionId": "powierzanie-pracy-art-48",
+      "provisionIndex": 48,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "c602ec497792fb7a7c88e74ab800a33982eef1cdc0fb28dd75886e8f242bcc8e",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "01f706ebda42c9e1f533103f5a0caf3d4fb79ec4640bdcd0641cff3c3506ccd2",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-49",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-49.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-49",
+      "provisionId": "powierzanie-pracy-art-49",
+      "provisionIndex": 49,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "4633cdfdea20dc24118598905bb39d8f02bcb14a0d7416a9b1fd5dc2c7df63fb",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "c62bce1943fd44b248c83a1624338b0e9bd39c9f4d7764bda4c7abb13a7c4a94",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-5",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-5.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-5",
+      "provisionId": "powierzanie-pracy-art-5",
+      "provisionIndex": 5,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2cf9fc81eaaeffe39aa9162bdcb1e30b2411fcb6a60989ee18484fceca1585a3",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "df53dcc0a5245ca50d9168844a9a39dbc438b528faa6a09dd39907385cb20877",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-50",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-50",
+      "provisionId": "powierzanie-pracy-art-50",
+      "provisionIndex": 50,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "d0e27c5dd9dcd48c3837893689b6d68d274d989088e4e85faec8615d78ab3645",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e0f746c711bceeced2a9fd28a271ce97f0520c51c8b5b00716e8a86d3bc5dd18",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-51",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-51.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-51",
+      "provisionId": "powierzanie-pracy-art-51",
+      "provisionIndex": 51,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "3c22b055e11427fa7ae11305e4dda54d3cae90b9dee6062fb30f21dab131a0ff",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "7bb9a94849dc7bdce31af6075a5e4c73ba5fb175c55bf61e2f2461cfb5dbc87b",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-52",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-52.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-52",
+      "provisionId": "powierzanie-pracy-art-52",
+      "provisionIndex": 52,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "d9f85364934be49bbbe53c7b52a8b5bcf0a6ba2c81fcfb649568bea8bb35851e",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "1bcc06397efb3403a80a5fd4fa8e23ab87c7c811aa779ec7b314172013924db7",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-53",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-53.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-53",
+      "provisionId": "powierzanie-pracy-art-53",
+      "provisionIndex": 53,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "42ece9a22e221e82746c591b8fab4ca4af93c705fd0989e803676397a4041b1d",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "4f1af46097207742accf018d09af72115cee9a3de48a215eefe314fe549e00ad",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-54",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-54.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-54",
+      "provisionId": "powierzanie-pracy-art-54",
+      "provisionIndex": 54,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "0d5fd1ed56dc61ac5e26448a75790f90354f48cbad5005ed9fd1602005bf246e",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "d54e7f6cf6c9d062a0bf86b02201ac84a8166c748772ceed88c03facf64a0fc3",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-55",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-55.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-55",
+      "provisionId": "powierzanie-pracy-art-55",
+      "provisionIndex": 55,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "4401f406bc6ed34eeea64db9cf85e020d736150b54a53934fbd328edcf754182",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "dc537861941d566b7d639cd8dd470611cb4a488ab01ae76167a4be12401bcd5c",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-56",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-56.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-56",
+      "provisionId": "powierzanie-pracy-art-56",
+      "provisionIndex": 56,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "d1aa1c870b40a7c3e6ad254992ec0790e529458ceb9a42c1555d7de6aec154c1",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "b9cc40e0157278eeb77761dbc983bc6cc78eb19dfc52d44d09b7cef5568b6500",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-57",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-57.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-57",
+      "provisionId": "powierzanie-pracy-art-57",
+      "provisionIndex": 57,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2bb3f0ba904ee01934e538e389e3efc2a5f03865c85b0a241bf268dc33fbc5e7",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "8d3b107a0a097acaba72f87a5d5513d598bfbf4496329bc04034c66687af60d6",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-58",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-58.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-58",
+      "provisionId": "powierzanie-pracy-art-58",
+      "provisionIndex": 58,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "3cc8a0a2548255d0a5cc5f8419ca2c185ad338117ddd66e026de34fe29f4884f",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "77bf1864777eb4e12cc168911f74e735e51e000e25f3f36ba440241d6eea61c0",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-59",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-59.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-59",
+      "provisionId": "powierzanie-pracy-art-59",
+      "provisionIndex": 59,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "1141dda28073e979b0ae635c3b0b567848ab7390cf755b09d1cfd7eb2b260af0",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "0aa6f8caa182dc01fd2da5fe4fd3ec17be1bde845927c816fb59a3e357ed1578",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-6",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-6.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-6",
+      "provisionId": "powierzanie-pracy-art-6",
+      "provisionIndex": 6,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "968bb93baec7126eeadd71ba80de573dd153f0a64eb71b3fd62ab69ec1663936",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "aa17a226cb3b371b77c38c1530b053ec943971c00a87327b75407fb36b8f3677",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-60",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-60.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-60",
+      "provisionId": "powierzanie-pracy-art-60",
+      "provisionIndex": 60,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "ba3ae4a7bb53f239df92d1e5ff189829406de7ec93a13fad7a75c84157654589",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "caae179e0b348a2f91ea357d5697db30ce1e5d7cef63fdb63b5e4373172cb4d8",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-61",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-61.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-61",
+      "provisionId": "powierzanie-pracy-art-61",
+      "provisionIndex": 61,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "abd4ad5bf688162118ff4648607aa64bbe5acaa8b222d23a8c72246986a1a3fa",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "a367ba68159e6e8ff8e3df09dd12f078fb69337dde35f2524ed2aaf5a97a14cd",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-62",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-62.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-62",
+      "provisionId": "powierzanie-pracy-art-62",
+      "provisionIndex": 62,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "50eab5e10b9eaef9b5b45fd13df0318ebe6df66860b036139fe86ee7da433c79",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "7e98db14d24eb0b028899f1f2c44cbc3f003544b55b8d93386ea7f91eb96ab06",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-63",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-63.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-63",
+      "provisionId": "powierzanie-pracy-art-63",
+      "provisionIndex": 63,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "27633dfe44073613fe96b1111e6812a9e06a71c2eb9402b9680092b61d26b374",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "b3c0bd736b923d3adc56414565b18296ffb9cbcbee638db2e9f24f6f5aeeca7f",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-64",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-64.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-64",
+      "provisionId": "powierzanie-pracy-art-64",
+      "provisionIndex": 64,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "792c3f13b170a84896d2f007ad976332629a4ba1cafbb901393e6bc61bc96899",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "c6d26eb101a372f53dcfad8d8dbb8f57cd0b3c55027a10a6d8a1e093d533bafa",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-65",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-65.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-65",
+      "provisionId": "powierzanie-pracy-art-65",
+      "provisionIndex": 65,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "28de7c2c4d38065b84b6c2e607436521b41ff57e5c842ab1611f3d91c14f3392",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "54f063e6d40fe0637585df4914e20d0ac3a1c5422f6a34be707e51ff03e15296",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-66",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-66.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-66",
+      "provisionId": "powierzanie-pracy-art-66",
+      "provisionIndex": 66,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "ed76f3e0430bb84e1d8055832d43fd1ef0dbe1f01e67d536309b0a2976cacfc1",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "298f4390f4ac2efc7263b9d51bf500d23e4887275a46573b4401e5d511c0bf56",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-67",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-67.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-67",
+      "provisionId": "powierzanie-pracy-art-67",
+      "provisionIndex": 67,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2bbf65c5f90278bb121e6b6d8d0b755635ca515fce559896379e4d574e0ce1b6",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "bde49d99e8a232cfee41cfe6dcfeee5336e3bfbda48e16c3d18520659e5fd2f3",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-68",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-68.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-68",
+      "provisionId": "powierzanie-pracy-art-68",
+      "provisionIndex": 68,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "23d5bfdb10ef6a1faefd063b466c27c9de101d87155dce3a7821f5571e8f007e",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "3b0ed1da04c617e345a16293a52bd67950f07994a3caf7c19591b83ff1ef79a1",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-69",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-69.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-69",
+      "provisionId": "powierzanie-pracy-art-69",
+      "provisionIndex": 69,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "bb1ab51667880e1a444587117fee4f61516bdd7a9625748ee184ead9e1b8ef09",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e2a8f3c58cbd7b8e87653fc60357f63d9969a9188107c32748dd245b11658d89",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-7",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-7",
+      "provisionId": "powierzanie-pracy-art-7",
+      "provisionIndex": 7,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "0b419753602d72138f5c07cdc5d0904312dbdec4380aa1c3ee9a448f7dec458f",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e83ed8da132f0543d7cc3655654b52d786c5590e6236c10104f51e881618e673",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-70",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-70.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-70",
+      "provisionId": "powierzanie-pracy-art-70",
+      "provisionIndex": 70,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "f1013f9416d58881bdc2c32898432dc5c90a0b156b14e80c7cbbd7ec0dd46edb",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "12fc7e532dbf9d3a1162a506b872e6e1364444185fed9cb5867cbf57f613d188",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-71",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-71.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-71",
+      "provisionId": "powierzanie-pracy-art-71",
+      "provisionIndex": 71,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "36c7e05e304770316786d3ca30b3e656054fdcf54264ecef6134df92578a9f75",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "d0cf5112554d9608ec2254e2af0dad6b2ab7da80a6d9cf33cd3070e43bf69257",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-72",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-72.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-72",
+      "provisionId": "powierzanie-pracy-art-72",
+      "provisionIndex": 72,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "fdcad7e68207cad7926c280d0da96781d03bd178ab72ba468fc8ca02a8ddacd1",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "ba14f9c8402b4f0527185941aa55795bc4467357e8bc284bd66eef0ca0234d34",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-73",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-73.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-73",
+      "provisionId": "powierzanie-pracy-art-73",
+      "provisionIndex": 73,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "f5833351de2c8781be988b99859b7d0222180d690ac0271ede7034337c092755",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "4501ec2888e791e6e800268dc3f9742c0de527c54cc11ddc6ab19e3f2462c696",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-74",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-74.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-74",
+      "provisionId": "powierzanie-pracy-art-74",
+      "provisionIndex": 74,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "a4e59034a7b538bde148f07060d8cc7031be3034b2ddb5ff8179061ae38b1275",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "4bfa3ce82ca99c327d4abd64e98d1a4206cc36ad7d118e4c569937fecfe384bb",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-75",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-75.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-75",
+      "provisionId": "powierzanie-pracy-art-75",
+      "provisionIndex": 75,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "6b13cb8df18af4753e5a2d230f958c954e224d442a360f0c645fab5d4e46191c",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "1b56c582c14e8f7bd43f65d2ad1cacc81d01cbbe9cd3155d8293ebc734ae6b22",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-76",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-76.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-76",
+      "provisionId": "powierzanie-pracy-art-76",
+      "provisionIndex": 76,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "6ee7b4a254f7837cce31a687bc11e6694b1a9c0e7939ce0ac527c4830ecb4cf2",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "6a217dcaad0deeab35226a0fe17b6ab89f3b1a571ebc83276293c1b2df5202cd",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-77",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-77.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-77",
+      "provisionId": "powierzanie-pracy-art-77",
+      "provisionIndex": 77,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "78900be860dcbefb1e19fa01d07a3e25202d69a25e39b7c7162c15f8a0d7671e",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "cdeca15f3309b9dfb39a9c7431dd4e74219b98333cbcd6afc7153f7d15234c92",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-78",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-78.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-78",
+      "provisionId": "powierzanie-pracy-art-78",
+      "provisionIndex": 78,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "6cfc54118f38eb810560d4f50237a98ee66cf08caca9e4c6156d601db321c533",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "8403bc0c6016039bd9ecca4c38d7d48121758a0c6fd88ad8167e63b641c6f3c3",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-79",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-79.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-79",
+      "provisionId": "powierzanie-pracy-art-79",
+      "provisionIndex": 79,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "cecc8302f691d8abb4df7e0f5abf662e587d7ae715846335d680d95bd3503d85",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "8168fd57b04d831094cff275e66ea8ef5ebd1abc8e341b546109e20527a6ed7e",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-8",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-8.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-8",
+      "provisionId": "powierzanie-pracy-art-8",
+      "provisionIndex": 8,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "592856a722dcf19c7473c2188828d8737c6106996c0be32bb89d347f686e22e7",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "497d849e257dd8220da1b7434dbff0277653e2f69f880366e5bbac268ca00a86",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-80",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-80.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-80",
+      "provisionId": "powierzanie-pracy-art-80",
+      "provisionIndex": 80,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "becf3a2709b8b61b2c267f3dc5aac03f0750aa97e340186b8cf28989b6031815",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "2ff80c8e4f6d33c8e6fcb518d5dc0162f90900b156cc6c0f0ce1031f6348795a",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-81",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-81.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-81",
+      "provisionId": "powierzanie-pracy-art-81",
+      "provisionIndex": 81,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "be9fa7fc7ea7459b6ae06ae94a551dd92a8278dfdaa346ccc084f2a48de1ef82",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e52e2d3c90c1022a7636c714c033c336466c94a37a6407fb31d6346391a09d38",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-82",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-82.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-82",
+      "provisionId": "powierzanie-pracy-art-82",
+      "provisionIndex": 82,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "b871df836f7cb34c055b25976d1b86aa966fa2b27c922f0896c93f4ea823c7b8",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "88c86297f47504111426ac37d9af4cc2e8686a785518a589429b1c2dc9b82e7c",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-83",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-83.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-83",
+      "provisionId": "powierzanie-pracy-art-83",
+      "provisionIndex": 83,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "c7cdee7d3bd8521f689e956e37829059cc0a300803d69e69a8e714a0079717ad",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "4da0726e2fb932baa2eda21bd2b180df055f77a897686cb100c50826d1776df1",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-84",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-84.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-84",
+      "provisionId": "powierzanie-pracy-art-84",
+      "provisionIndex": 84,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "4e42a97ef89f2a5ed6b2b1777b5fdac60132364ade8b31a7a1f28c591dc55665",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e9bf6ba292cb0142f8b525a2e31f38183c6bee72234e651cd3d4f51fc006a35a",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-85",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-85.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-85",
+      "provisionId": "powierzanie-pracy-art-85",
+      "provisionIndex": 85,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "a7ee03f1dbf2d05a505ab06850a7143da5525c2e9622785a35bde41403018c46",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "9f7e7c026e9c7be61cfba66edd6685df8101b2f434f8d50707210b8be9d94ab7",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-86",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-86.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-86",
+      "provisionId": "powierzanie-pracy-art-86",
+      "provisionIndex": 86,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "cd2e4af1f268c29006bfcc1c090578ce87bbe106c0f3571d97954621b2f1f108",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "ebc01cb5f45a3b9dcefe27473b0cef3ac8c3d5cbf13d986b2859a69aa695b126",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-87",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-87.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-87",
+      "provisionId": "powierzanie-pracy-art-87",
+      "provisionIndex": 87,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "22268205fb3c0c340010723be7271cd350acf936858f3d6ff3a153a6f7ed653f",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e032f3458fc53429e4c2db853097160f7dc96d10e467bd8876704513430db42a",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-88",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-88.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-88",
+      "provisionId": "powierzanie-pracy-art-88",
+      "provisionIndex": 88,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "fbeb491fcaa67e42b91e7d5ba789ede03f2787233a50e70c24333c41b65f27cf",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "b2f96a115905a5393d6594399ebad92693461ea70b3fb5b5ad0aea97c4bf40ab",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-89",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-89.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-89",
+      "provisionId": "powierzanie-pracy-art-89",
+      "provisionIndex": 89,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2cba000226e95ddf0013f633dd16daff1b55f9f72089fc58a3831ec575554efa",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "63dc59f7ebf63704df6176d714eb9b7879eb6cc36e5a8fe7b9fc9b9ee854d49b",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-9",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-9.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-9",
+      "provisionId": "powierzanie-pracy-art-9",
+      "provisionIndex": 9,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "bd7fe387aef38f438987599df7ed18235fc52ce2282cd0526b47b80a12e861d5",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "1238b6ad0e5bd64c340522743cfe9ee5cafad36aed77fb50f471ca3691dfc173",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-90",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-90.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-90",
+      "provisionId": "powierzanie-pracy-art-90",
+      "provisionIndex": 90,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "b41d5125b05b2ef2cd69dae78bde25c2fa91b9aed1bfc4dea62e9756e2b4bcba",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "777d33b19302001f62fe3d1fd53e83a6284e17fbe89d09b9ad0cfee537f91e2e",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-91",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-91.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-91",
+      "provisionId": "powierzanie-pracy-art-91",
+      "provisionIndex": 91,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "1b03a8f7809131570ea294470434399b7f9be8cff96a435139bd4586047a6626",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "5cf2fbe1a15d6bb4f3ae82fa33313a7ec98711c38b3733eb1c8310b1301d4a78",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-92",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-92.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-92",
+      "provisionId": "powierzanie-pracy-art-92",
+      "provisionIndex": 92,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "3f900f4d074576b346e31880282b487069a519010940085beed9e39147e2fa1b",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "35620aeb6c085582e920176c760ff49cb33e82207e8933283aa3793dbd2770c9",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-93",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-93.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-93",
+      "provisionId": "powierzanie-pracy-art-93",
+      "provisionIndex": 93,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "93b2ebc5f1b271fc42370ffaa92490eb71175522237d5162da6f2629e17e5f51",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "7696b1d9d9fe99c229ef664f2d99fe283bacd2348fbdd1b84da5871fd33a23f4",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-94",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-94.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-94",
+      "provisionId": "powierzanie-pracy-art-94",
+      "provisionIndex": 94,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "abe876c280dd39b1f8e8dfdaaf9c524962054a7aa27f639e70160ec73e950a81",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "e5292dba8eca2953ea80307f3c0e36d0d63fe3d58276655989ff9299cd0a0a1e",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-95",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-95.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-95",
+      "provisionId": "powierzanie-pracy-art-95",
+      "provisionIndex": 95,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "2ac7a5d8e74206dcdfbcad53fdb8a942bc5b32cf0e9abbaa3d18d21ed2caea60",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "ec36da8df6e115d8f8d9bfeec1295950e3d67fed990757cce31bc7c4617be019",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-96",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-96.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-96",
+      "provisionId": "powierzanie-pracy-art-96",
+      "provisionIndex": 96,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "e8d3d6a7491dc54296606c156ac0509d36419a4ac196412ba105e3c6bd95862b",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "d1c41036bc586dce45b05bbf35c6a3c948bc03b2c863ca6471bb8ebd92596394",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-97",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-97.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-97",
+      "provisionId": "powierzanie-pracy-art-97",
+      "provisionIndex": 97,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "39ebbfee3906393d60ed082f5453dce6696f4da69cc90fe3e9bc6f34c4b906f2",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "29b32c80131b3e0c3b4ec5009aed7e8f8347fd6027251bdc1b40562fb167ee3f",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-98",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-98.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-98",
+      "provisionId": "powierzanie-pracy-art-98",
+      "provisionIndex": 98,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "b1554c0847e8b208d8d30d95a104e7e390dc37fa3192033a190aa3467d7ec53d",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "b1b535e04ddc3a0801370d1a3deec5d9ce40b2fae1afe03aaea623e676d9ea31",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:powierzanie-pracy-art-99",
+      "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-99.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "powierzanie-pracy",
+      "contentId": "powierzanie-pracy-art-99",
+      "provisionId": "powierzanie-pracy-art-99",
+      "provisionIndex": 99,
+      "sourceProvisionCount": 114,
+      "currentSourceEdition": "powierzanie-pracy-2025-621",
+      "sourceTextHash": "15557bd436276558057cb412058b06e7c4832b42a3dc80843b4e2c6f4f2d557a",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+        "https://eli.gov.pl/api/acts/DU/2025/621/text/T/D20250621L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/621/ogl"
+      ],
+      "contentHash": "734239f855c5246c838344aa016f2209d4d54d14172cfa19103412ea882069c2",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-1",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-1.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-1",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-1",
+      "provisionIndex": 10,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "bd6e20ea2cbb8ef6243c4c13bd7911ee96540652b18884cd666a6f5b3174269c",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "b0ae8bb004f3599d1e7402fc1a9c4c06f109ea6e94c74dd48d2064042d68e6d4",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-10",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-10.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-10",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-10",
+      "provisionIndex": 19,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "51f27dc594b05975cbe13e56acae457bf8789b37c0dfd1c67b7655e22d47a5e0",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "fa3c4f3211ac7c2122a3fd46e1ca58e84d122c2f53b97e0e8e0741ef7a4a41c5",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-11",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-11.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-11",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-11",
+      "provisionIndex": 20,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "ffa2e0686df66a9cdb886644ef1a53583d318625f21774ece234893ff1388c62",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "c7822fb3e04846fa65edf6b971fd15d0a25a3424349fb1e53186e8cda1edf81d",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-2",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-2.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-2",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-2",
+      "provisionIndex": 11,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "8600592ad1deb764cd2efb373767801c0b0b3804e86a1e5f6442fbd9e33b1b5d",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "dd07cf0c86627458f40846d984c1c6e0b0d085debf63235a3000dc8aaf638a19",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-3",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-3.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-3",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-3",
+      "provisionIndex": 12,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "09f86eb33ee91f0027252f3247fc183a82124d2a9aacdd31fb360fc16ae9ccb9",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "2f1cf65d2704c083e6aa95d108d44e47d601f87b6e8875ec64ec4947af3efb9c",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-4",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-4.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-4",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-4",
+      "provisionIndex": 13,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "91cf87944992165b8e8a2dfde4bfb0e07811c60bdde9675d42de05ebb4b6148b",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "4c49e5353c8af9ba93309df90e4914b3f4126c5e2f67d2eacf7279f6e80a71e3",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-5",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-5.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-5",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-5",
+      "provisionIndex": 14,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "e351ed165c63a07a7aa06a48e33d18f4231b846d90d132ab2b03926a1ffc87a7",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "baef71f66d4f9886fa68de6cb34890e4a319abeba5de826dcdb3f6deb27e1506",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-6",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-6.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-6",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-6",
+      "provisionIndex": 15,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "b2eb7a0465a122bbb916bc3e658ddcfdaff9902b2de52c9a05bf97dd3727d23d",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "31c2b6291394d9982ebeff975787cb37b6fbf7c086bdb7c6c28d8f456980d5fb",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-7",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-7.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-7",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-7",
+      "provisionIndex": 16,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "f53d2ac7dc18d28884a2fb761c87a5dc4f7f05f98e232bbf049967f1c5879f70",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "febbac0e5e9403454c7a9d974a604635ed2c1e8cb8570144dfc35442ccf22c0f",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-8",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-8.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-8",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-8",
+      "provisionIndex": 17,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "020a8f7c91b82791532e870e3944d1f51682630cf4ec672b0589f04f259d6ac8",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "c0b2df237d6722a5fbe16dc827eab13ecdeb1e9cf51068495fe5a8d289a09cc5",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-annex-9",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-annex-9.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-9",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-annex-9",
+      "provisionIndex": 18,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "7e97f664fc8c3e5fd42b99b3193f85ed81847f065ed476033a3c76a85193aea8",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "0a611a9442bc0f9c651913fefca5a697415ffbb3a9b81a85b9746715ad17714d",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-1",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-1.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-1",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-1",
+      "provisionIndex": 1,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "393dd4b5536bdfe8440c7d41a34b3bb629bbcc430885340a710918cc1e3678c6",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "749a97f6566ea0eff444e42e16f21a145ff28e422ad67460e4f2b80fbb71fb1f",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-2",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-2.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-2",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-2",
+      "provisionIndex": 2,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "0040bf4aa05e0018ff81a221ac293be3f527c14573b750080836888892396fa2",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "dec27fca32648f6594460d53cb884c002b7a5a34b2b73f955da029e4197e22a3",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-3",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-3.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-3",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-3",
+      "provisionIndex": 3,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "2f2fd98ec398eb51398e62fbddec45a620df3ac4c9fee5405d10b57983cfe65a",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "1da2eab5e0d5077ce47ab3ae98d3b74465dea91fb6f49f74b366dc0358b7cea6",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-4",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-4.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-4",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-4",
+      "provisionIndex": 4,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "a01284931e8f0bed3e98f9b7cbe5e56cfaba4321c0baa05f7576ebec22b40eb0",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "ea02fa6d9e1986e29582ad4593d3134fba7f153d1b5d6fdb9df7036f5ded825d",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-5",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-5.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-5",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-5",
+      "provisionIndex": 5,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "51665c2b41cc99cfb77dde3902e39595fab66c9043c06d50a82d4917d6448fcf",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "65fe7ebb8b1e875b53b45cd6aa8cf4f8a1a7d24b1d678da6a7d13408cb56e1d5",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-6",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-6.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-6",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-6",
+      "provisionIndex": 6,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "7be1426021078299289102b3452f50cf4cbce062526414feee525f202f0e1bc4",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "99443aa573c58eb242af33ba7462a79be3e5f15f0b06b5c0fe515d3967381e4b",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-7",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-7.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-7",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-7",
+      "provisionIndex": 7,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "b5b2525b02544f5de8360f605fefd65677212130ddb97e5770037c37e6a1809f",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "0e483da4972d486fb7601b15697d0d5e60766ee386b24c136d0a71fbeb647ecc",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-8",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-8.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-8",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-8",
+      "provisionIndex": 8,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "7ef98f63a2cedb47cb0734a4c38723644dd527c9ff5bd3f21df3a7db7b3685ce",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "2216eae63d6598c5265dffbbd4c9232edf75a4d995ec085db1dbb215ee4da552",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "provision:rozporzadzenie-wniosek-pobyt-czasowy-par-9",
+      "path": "app/data/legal-library/editorial/rozporzadzenie-wniosek-pobyt-czasowy/articles/article-par-9.ts",
+      "family": "provision",
+      "lane": "employment-regulation",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "rozporzadzenie-wniosek-pobyt-czasowy-par-9",
+      "provisionId": "rozporzadzenie-wniosek-pobyt-czasowy-par-9",
+      "provisionIndex": 9,
+      "sourceProvisionCount": 20,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": "1da56ac1202957490af8de00f0052aa1c204bce72e5d73b92e0af4428dbc8c7f",
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "851a49ebdb9752fff679fcd8870e20880f87637f1b997aecda131a37a7292518",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    }
+  ]
+}

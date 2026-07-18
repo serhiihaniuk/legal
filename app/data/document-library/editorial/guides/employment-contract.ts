@@ -78,7 +78,7 @@ export const employmentContractTopic: KnowledgeUnit<DocumentGuide> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: guide.verifiedAt,

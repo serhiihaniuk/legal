@@ -20,7 +20,7 @@ const moduleContent: KpaGuideModule = {
       focus:
         "Bezczynność — справу не завершено у строк; przewlekłość — її ведуть довше, ніж потрібно. Ponaglenie має містити uzasadnienie.",
       law: kpaLaw.text`Ці визначення і право на ponaglenie містить ${kpaLaw.article("37", "art. 37")}. ${kpaLaw.article("36", "Art. 36")} зобов’язує organ повідомити причину затримки, новий строк і право на ponaglenie.`,
-      practice: kpaLaw.text`Спочатку побудуйте timeline: wszczęcie, wezwania, ваші відповіді, паузи, повідомлення ${kpaLaw.article("36", "art. 36")}, остання дія organu.`,
+      practice: kpaLaw.text`Спочатку побудуйте хронологію справи: wszczęcie, wezwania, ваші відповіді, паузи, повідомлення ${kpaLaw.article("36", "art. 36")}, остання дія organu.`,
       pitfall:
         "Саме відчуття, що «довго», слабше за точну хронологію і зіставлення з правовим строком.",
     },
@@ -37,7 +37,7 @@ const moduleContent: KpaGuideModule = {
         "Після ponaglenia можливий судовий контроль bezczynności або przewlekłości за p.p.s.a.; це окремий предмет від оскарження майбутньої decyzji.",
       law: kpaLaw.text`${kpaLaw.article("38", "Art. 38")} KPA пов’язує необґрунтовану бездіяльність/затягування з відповідальністю працівника; судові наслідки визначає p.p.s.a.`,
       practice:
-        "У судовій перспективі зберігайте доказ внесення ponaglenia, повний timeline і докази того, що справа була готова до дії.",
+        "У судовій перспективі зберігайте доказ внесення ponaglenia, повну хронологію справи і докази того, що справа була готова до дії.",
       pitfall:
         "Негативне postanowienie щодо ponaglenia не означає, що майбутня skarga на бездіяльність автоматично неможлива; предмет і допустимість треба аналізувати за p.p.s.a.",
     },
@@ -49,7 +49,7 @@ const moduleContent: KpaGuideModule = {
     "Подайте мотивоване ponaglenie правильним маршрутом",
   ],
   checklist: [
-    "Є timeline",
+    "Є хронологія справи",
     kpaLaw.text`Враховано ${kpaLaw.article("35", "art. 35 § 5")}`,
     "Є доказ подання ponaglenia",
   ],
@@ -168,10 +168,10 @@ const moduleContent: KpaGuideModule = {
       analysis: {
         kind: "authored-legal-text",
         plainText:
-          "Будуємо timeline, перевіряємо спеціальний строк і art. 35 § 5, відділяємо реальні процесуальні дії від повторних повідомлень та мотивуємо przewlekłość/bezczynność.",
+          "Будуємо хронологію справи, перевіряємо спеціальний строк і art. 35 § 5, відділяємо реальні процесуальні дії від повторних повідомлень та мотивуємо przewlekłość/bezczynność.",
         parts: [
           {
-            text: "Будуємо timeline, перевіряємо спеціальний строк і ",
+            text: "Будуємо хронологію справи, перевіряємо спеціальний строк і ",
           },
           {
             text: "art. 35 § 5",
@@ -291,7 +291,7 @@ export const kpaDelayLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

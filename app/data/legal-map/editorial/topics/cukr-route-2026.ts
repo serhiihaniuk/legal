@@ -42,7 +42,7 @@ export const cukrRouteTopic: KnowledgeUnit<CukrRouteBody> = defineKnowledgeUnit(
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

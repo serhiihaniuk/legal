@@ -1,85 +1,45 @@
-import type { LegalProvisionId } from "../../../contracts"
-
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type ReviewedArticleData = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  statuteText: string
-  statuteLocator: string
-  practicalText: string
-  practicalLocator: string
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
-  provisionId: data.provisionId ?? provisionId(article),
-  reviewStatus: data.reviewStatus,
-  claims: [
-    {
-      kind: "statute-text" as const,
-      text: data.statuteText,
-      sourceLocator: data.statuteLocator,
-    },
-    {
-      kind: "practical-inference" as const,
-      text: data.practicalText,
-      sourceLocator: data.practicalLocator,
-    },
-  ],
-  summary: data.summary,
-  rules: data.rules,
-  legalEffect: data.legalEffect,
-  foreignersCase: data.foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle("120a", {
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
       provisionId: "ustawa-o-cudzoziemcach-art-120a",
       reviewStatus: "reviewed",
-      statuteText:
-        "Wniosek про зміну permit i pracę подається cudzoziemiec на formularz із ідентифікаційними та сімейними даними, information про ubezpieczenie та oświadczenie про правдивість під кримінальною відповідальністю. Додаються annex podmiot за Art. 106 ust. 1a та документи, що підтверджують дані й обставини зміни; відповідно застосовуються Art. 106 ust. 2a–2b і Art. 112a ust. 1, 2, 4–5.",
-      statuteLocator: "Art. 120a ust. 1–3",
-      practicalText:
-        "Art. 120a визначає комплект для розгляду зміни, але сама заява не змінює старі умови permit і не дозволяє автоматично почати іншу роботу. Потрібно довести саме новий podmiot/user або нові параметри, а також дотримати wezwanie і строки провадження.",
-      practicalLocator: "Art. 120a ust. 1–3",
+      claims: [
+        {
+          kind: "statute-text",
+          text: foreignersLaw.text`${foreignersLaw.article("120a", "Art. 120a")} вимагає подавати wniosek o zmianę zezwolenia na pobyt czasowy i pracę у паперовій формі. Форма описує особу й сім’ю, причину зміни, ubezpieczenie, а також названі дані про судимість і кримінальні провадження.`,
+          sourceLocator: "Art. 120a ust. 1–3",
+        },
+      ],
       summary:
-        "Art. 120a встановлює форму, додатки, докази та процесуальні відсилання для wniosek про зміну permit i pracę.",
+        "Зміна дозволу — окреме паперове провадження. Заява повинна пояснити, що саме змінилося, а нові умови праці мають бути підтверджені роботодавцем і документами.",
       rules: [
         {
-          locator: "Art. 120a ust. 1 pkt 1–4",
-          explanation:
-            "Formularz містить необхідні дані cudzoziemiec і сім’ї, health insurance та письмове oświadczenie про правдивість.",
+          locator: "Art. 120a ust. 1 i 2a",
+          explanation: foreignersLaw.text`Форма містить визначені дані з ${foreignersLaw.article("13", "Art. 13")}, сімейні відомості, причину wniosku, ubezpieczenie та інформацію про злочини з ${foreignersLaw.external("art. 270–275 Kodeksu karnego", "https://eli.gov.pl/eli/DU/2025/383/ogl")}, пов’язані з провадженням щодо дозволу на роботу або комбінованого дозволу. Oświadczenie про правдивість подається з установленою klauzulą кримінальної відповідальності.`,
         },
         {
-          locator: "Art. 120a ust. 2 pkt 1–2",
-          explanation:
-            "До wniosek додаються заповнений podmiot annex з Art. 106 ust. 1a та документи для підтвердження даних і причин зміни permit.",
+          locator: "Art. 120a ust. 2",
+          explanation: foreignersLaw.text`Додаються заповнений роботодавцем załącznik з ${foreignersLaw.article("106", "Art. 106")} ust. 2 та докази даних і обставин, які обґрунтовують зміну.`,
         },
         {
           locator: "Art. 120a ust. 3",
-          explanation:
-            "До процедури відповідно застосовуються wezwanie за Art. 106 ust. 2a–2b та строки Art. 112a ust. 1, 2, 4–5.",
+          explanation: foreignersLaw.text`До доказового wezwania відповідно застосовується ${foreignersLaw.article("106f", "Art. 106f")}, а до строків першої та апеляційної інстанцій — названі положення ${foreignersLaw.article("112a", "Art. 112a")}.`,
         },
       ],
       legalEffect:
-        "Стаття запускає документований розгляд зміни, але не є новою decyzja і не надає до неї права на іншу працю. Legal stay та чинні параметри роботи визначаються окремо за чинним permit і законом.",
+        "Подання wniosku запускає розгляд, але саме по собі не змінює чинну decyzję й не дозволяє автоматично працювати за новими параметрами.",
       foreignersCase:
-        "Подайте formularz від імені cudzoziemiec, перевірте сімейні дані й insurance, отримайте повний annex podmiot, додайте нову umowa/опис умов і докази зміни. Збережіть підтвердження подання та відповіді на wezwanie.",
-    }),
-  ]),
+        "Зіставте стару decyzję з новим роботодавцем, stanowiskiem, wynagrodzeniem та іншими параметрами. У формі назвіть точну причину зміни, а кожну нову умову підтвердьте załącznikiem і доказом.",
+    },
+  ],
 })

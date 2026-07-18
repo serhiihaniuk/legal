@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-207",
@@ -15,24 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Przepisy ${ppsaLaw.article("202", "art. 202")}, ${ppsaLaw.article("205", "205")} i ${ppsaLaw.article("206", "206")} stosuje się odpowiednio w przypadkach z ${ppsaLaw.article("203", "art. 203")} i ${ppsaLaw.article("204", "204")}. W przypadkach szczególnie uzasadnionych sąd może odstąpić od zasądzenia zwrotu kosztów postępowania kasacyjnego w całości lub części.`,
+          text: "До касаційних витрат відповідно застосовують правила про кількох заявників, склад необхідних витрат і можливість відступити від їх присудження. В особливо виправданому випадку суд може не присудити касаційні витрати повністю або частково.",
           sourceLocator: "Art. 207 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("207", "Art. 207")} uzupełnia reguły kosztów kasacyjnych o odesłanie do zasad rozdziału i szczególną możliwość odstąpienia od zwrotu.`,
+      summary:
+        "Стаття переносить ключові правила першої інстанції на касаційний етап і додає окреме застереження справедливості.",
       rules: [
         {
-          locator: "§ 1",
-          explanation: ppsaLaw.text`Przy kosztach z ${ppsaLaw.article("203", "art. 203")}–${ppsaLaw.article("204", "204")} odpowiednio uwzględnia się reguły o kilku uprawnionych, niezbędnych kosztach i odstąpieniu z ${ppsaLaw.article("202", "art. 202")}, ${ppsaLaw.article("205", "205")}–${ppsaLaw.article("206", "206")}.`,
-        },
-        {
-          locator: "§ 2",
+          locator: "Art. 207 § 1–2",
           explanation:
-            "Odstąpienie od zwrotu kasacyjnego wymaga przypadku szczególnie uzasadnionego i może być całkowite albo częściowe.",
+            "Розрахуйте необхідні витрати так само дисципліновано, як у WSA, але окремо обґрунтуйте особливі обставини для можливого відступу.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("207", "Art. 207")} nie ustanawia automatycznej proporcji kosztów; modyfikuje ich rozliczenie w konkretnym wyniku kasacji i pozostawia sądowi ocenę szczególnej sytuacji.`,
-      foreignersCase: ppsaLaw.text`Przy kasacji w sprawie pobytowej sprawdź najpierw ${ppsaLaw.article("203", "art. 203")} lub ${ppsaLaw.article("204", "204")}, a potem odpowiednie odesłania ${ppsaLaw.article("207", "art. 207")}. Nie przedstawiaj częściowego wyniku jako gwarancji określonego zwrotu.`,
+      legalEffect:
+        "Результат касації створює базове правило витрат, однак суд зберігає вузьку можливість його пом’якшити.",
+      foreignersCase:
+        "У справі про перебування подайте документи про касаційні витрати й не змішуйте їх з витратами першої інстанції.",
     },
   ],
 })

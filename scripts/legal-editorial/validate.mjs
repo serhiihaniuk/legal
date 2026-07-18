@@ -6,15 +6,15 @@ const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url))
 const REPOSITORY_ROOT = path.resolve(SCRIPT_DIR, "../..")
 export const DEFAULT_EDITORIAL_ROOT = path.join(
   REPOSITORY_ROOT,
-  "app/data/legal-library/editorial",
+  "app/data/legal-library/editorial"
 )
 export const DEFAULT_CORPUS_ROOT = path.join(
   REPOSITORY_ROOT,
-  "app/data/legal-corpus",
+  "app/data/legal-corpus"
 )
 export const DEFAULT_CURRENT_EDITIONS_PATH = path.join(
   REPOSITORY_ROOT,
-  "app/data/legal-library/current-editions.json",
+  "app/data/legal-library/current-editions.json"
 )
 
 const REVIEW_STATUSES = new Set([
@@ -69,6 +69,8 @@ const REVIEW_STATUSES = new Set([
  * @property {string} [editorialRoot]
  * @property {string} [corpusRoot]
  * @property {string} [currentEditionsPath]
+ * @property {Record<string, CurrentEditionConfig>} [currentEditions]
+ * @property {string} [documentId]
  * @property {boolean} [allowIncomplete]
  */
 
@@ -127,9 +129,7 @@ function issue(code, message, details = {}, severity = "error") {
 
 /** @param {string} source @param {string} fieldName @returns {string | undefined} */
 function findLiteralField(source, fieldName) {
-  const pattern = new RegExp(
-    `\\b${fieldName}\\s*:\\s*(["'])(.*?)\\1`,
-  )
+  const pattern = new RegExp(`\\b${fieldName}\\s*:\\s*(["'])(.*?)\\1`)
   return source.match(pattern)?.[2]
 }
 
@@ -223,8 +223,8 @@ function walk(directory) {
 export function listEditorialPartFiles(editorialRoot = DEFAULT_EDITORIAL_ROOT) {
   return walk(editorialRoot).filter((filePath) =>
     /^(?:part-\d+[a-z0-9]*|article-[a-z0-9_-]+)\.ts$/u.test(
-      path.basename(filePath),
-    ),
+      path.basename(filePath)
+    )
   )
 }
 
@@ -271,36 +271,56 @@ export function parseEditorialPartSource(source, filePath = "<source>") {
 }
 
 /**
- * @param {string} currentEditionsPath
+ * @param {Record<string, CurrentEditionConfig>} currentEditions
  * @param {string} corpusRoot
  * @param {EditorialIssue[]} issues
  * @param {EditorialIssue[]} [warnings=[]]
+ * @param {string | undefined} [targetDocumentId]
  * @returns {{
  *   currentEditions: Record<string, CurrentEditionConfig>,
  *   documents: Set<string>,
  *   expectedById: Map<string, ExpectedProvision>,
  * }}
  */
-function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
-  const currentEditions = readJson(currentEditionsPath)
+function loadCorpus(
+  currentEditions,
+  corpusRoot,
+  issues,
+  warnings = [],
+  targetDocumentId
+) {
   /** @type {Map<string, ExpectedProvision>} */
   const expectedById = new Map()
   const documents = new Set()
 
+  if (
+    targetDocumentId &&
+    !Object.prototype.hasOwnProperty.call(currentEditions, targetDocumentId)
+  ) {
+    issues.push(
+      issue(
+        "invalid-current-edition",
+        `No current edition is configured for ${targetDocumentId}`,
+        { documentId: targetDocumentId }
+      )
+    )
+  }
+
   for (const [documentId, configuredEdition] of Object.entries(
-    currentEditions,
+    currentEditions
   )) {
+    if (targetDocumentId && documentId !== targetDocumentId) continue
     const editionId =
       typeof configuredEdition === "string"
         ? configuredEdition
-        : configuredEdition?.currentEditionId ?? configuredEdition?.editionId
+        : (configuredEdition?.currentEditionId ?? configuredEdition?.editionId)
     if (!editionId) {
       issues.push(
         issue(
           "invalid-current-edition",
           `No current edition is configured for ${documentId}`,
-          { documentId },
-        ),
+          { documentId }
+        )
       )
       continue
     }
@@ -309,15 +329,15 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
     const editionDirectory = walk(corpusRoot).find(
       (candidate) =>
         path.basename(candidate) === "provisions.json" &&
-        path.basename(path.dirname(candidate)) === editionId,
+        path.basename(path.dirname(candidate)) === editionId
     )
     if (!editionDirectory) {
       issues.push(
         issue(
           "missing-current-corpus",
           `Current edition ${editionId} has no provisions.json`,
-          { documentId, editionId },
-        ),
+          { documentId, editionId }
+        )
       )
       continue
     }
@@ -328,8 +348,8 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
         issue(
           "invalid-corpus-provisions",
           `${editionDirectory} must contain an array`,
-          { documentId, editionId },
-        ),
+          { documentId, editionId }
+        )
       )
       continue
     }
@@ -340,8 +360,8 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
           issue(
             "invalid-corpus-provision",
             `${editionDirectory} contains a provision without a string id`,
-            { documentId, editionId },
-          ),
+            { documentId, editionId }
+          )
         )
         continue
       }
@@ -355,8 +375,8 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
           issue(
             "duplicate-corpus-provision",
             `Current corpus contains ${provision.id} more than once`,
-            { documentId, editionId, provisionId: provision.id },
-          ),
+            { documentId, editionId, provisionId: provision.id }
+          )
         )
       } else {
         expectedById.set(provision.id, expected)
@@ -373,12 +393,15 @@ function loadCorpus(currentEditionsPath, corpusRoot, issues, warnings = []) {
  */
 export function validateEditorial(options = {}) {
   const editorialRoot = path.resolve(
-    options.editorialRoot ?? DEFAULT_EDITORIAL_ROOT,
+    options.editorialRoot ?? DEFAULT_EDITORIAL_ROOT
   )
   const corpusRoot = path.resolve(options.corpusRoot ?? DEFAULT_CORPUS_ROOT)
-  const currentEditionsPath = path.resolve(
-    options.currentEditionsPath ?? DEFAULT_CURRENT_EDITIONS_PATH,
-  )
+  const currentEditions =
+    options.currentEditions ??
+    readJson(
+      path.resolve(options.currentEditionsPath ?? DEFAULT_CURRENT_EDITIONS_PATH)
+    )
+  const targetDocumentId = options.documentId?.trim() || undefined
   const allowIncomplete = Boolean(options.allowIncomplete)
   /** @type {EditorialIssue[]} */
   const errors = []
@@ -387,10 +410,11 @@ export function validateEditorial(options = {}) {
   /** @type {EditorialIssue[]} */
   const corpusIssues = []
   const { documents, expectedById } = loadCorpus(
-    currentEditionsPath,
+    currentEditions,
     corpusRoot,
     corpusIssues,
     warnings,
+    targetDocumentId
   )
 
   for (const corpusIssue of corpusIssues) errors.push(corpusIssue)
@@ -398,19 +422,23 @@ export function validateEditorial(options = {}) {
   /** @type {AuthoredEntry[]} */
   const authoredEntries = []
   for (const filePath of listEditorialPartFiles(editorialRoot)) {
+    const directoryDocumentId = path
+      .relative(editorialRoot, filePath)
+      .split(path.sep)[0]
+    if (targetDocumentId && directoryDocumentId !== targetDocumentId) continue
+
     const parsed = parseEditorialPartSource(
       fs.readFileSync(filePath, "utf8"),
-      filePath,
+      filePath
     )
-    const directoryDocumentId = path.relative(editorialRoot, filePath).split(path.sep)[0]
 
     if (!parsed.documentId || !parsed.editionId) {
       errors.push(
         issue(
           "missing-part-metadata",
           `${filePath} must declare documentId and editionId`,
-          { filePath },
-        ),
+          { filePath }
+        )
       )
     }
     if (parsed.documentId && parsed.documentId !== directoryDocumentId) {
@@ -418,8 +446,8 @@ export function validateEditorial(options = {}) {
         issue(
           "document-directory-mismatch",
           `${filePath} declares ${parsed.documentId}, not its document directory ${directoryDocumentId}`,
-          { filePath, documentId: parsed.documentId },
-        ),
+          { filePath, documentId: parsed.documentId }
+        )
       )
     }
     if (parsed.documentId && !documents.has(parsed.documentId)) {
@@ -427,8 +455,8 @@ export function validateEditorial(options = {}) {
         issue(
           "unknown-document",
           `${filePath} declares document ${parsed.documentId}, which is not current`,
-          { filePath, documentId: parsed.documentId },
-        ),
+          { filePath, documentId: parsed.documentId }
+        )
       )
     }
 
@@ -446,8 +474,8 @@ export function validateEditorial(options = {}) {
           issue(
             "missing-provision-id",
             `${filePath} entry ${entry.entryIndex} has no provisionId`,
-            { filePath },
-          ),
+            { filePath }
+          )
         )
         continue
       }
@@ -456,16 +484,16 @@ export function validateEditorial(options = {}) {
           issue(
             "missing-review-status",
             `${entry.provisionId} in ${filePath} has no reviewStatus`,
-            { filePath, provisionId: entry.provisionId },
-          ),
+            { filePath, provisionId: entry.provisionId }
+          )
         )
       } else if (!REVIEW_STATUSES.has(entry.reviewStatus)) {
         errors.push(
           issue(
             "invalid-review-status",
             `${entry.provisionId} in ${filePath} uses unknown reviewStatus ${entry.reviewStatus}`,
-            { filePath, provisionId: entry.provisionId },
-          ),
+            { filePath, provisionId: entry.provisionId }
+          )
         )
       } else if (entry.reviewStatus !== "reviewed") {
         const target = allowIncomplete ? warnings : errors
@@ -474,8 +502,8 @@ export function validateEditorial(options = {}) {
             "not-reviewed",
             `${entry.provisionId} in ${filePath} is ${entry.reviewStatus}, not reviewed`,
             { filePath, provisionId: entry.provisionId },
-            allowIncomplete ? "warning" : "error",
-          ),
+            allowIncomplete ? "warning" : "error"
+          )
         )
       }
 
@@ -485,8 +513,8 @@ export function validateEditorial(options = {}) {
           issue(
             "unknown-provision",
             `${entry.provisionId} in ${filePath} is not a current provision`,
-            { filePath, provisionId: entry.provisionId },
-          ),
+            { filePath, provisionId: entry.provisionId }
+          )
         )
         continue
       }
@@ -499,8 +527,8 @@ export function validateEditorial(options = {}) {
               filePath,
               provisionId: entry.provisionId,
               documentId: parsed.documentId,
-            },
-          ),
+            }
+          )
         )
       }
       if (parsed.editionId !== expected.editionId) {
@@ -512,8 +540,8 @@ export function validateEditorial(options = {}) {
               filePath,
               provisionId: entry.provisionId,
               editionId: parsed.editionId,
-            },
-          ),
+            }
+          )
         )
       }
     }
@@ -541,8 +569,8 @@ export function validateEditorial(options = {}) {
           issue(
             "duplicate-provision",
             `${provisionId} is authored ${fileOccurrences.length} times in one file`,
-            { provisionId, filePath },
-          ),
+            { provisionId, filePath }
+          )
         )
       }
     }
@@ -556,8 +584,8 @@ export function validateEditorial(options = {}) {
         "missing-provision",
         `${provisionId} has no authored editorial entry`,
         { provisionId },
-        allowIncomplete ? "warning" : "error",
-      ),
+        allowIncomplete ? "warning" : "error"
+      )
     )
   }
 
@@ -573,8 +601,9 @@ export function validateEditorial(options = {}) {
       authoredCount: authoredEntries.length,
       coveredCount: [...occurrences.keys()].filter((id) => expectedById.has(id))
         .length,
-      missingCount: [...expectedById.keys()].filter((id) => !occurrences.has(id))
-        .length,
+      missingCount: [...expectedById.keys()].filter(
+        (id) => !occurrences.has(id)
+      ).length,
       duplicateCount: [...occurrences.values()].filter((entries) => {
         const files = new Set(entries.map((entry) => entry.filePath))
         return files.size < entries.length

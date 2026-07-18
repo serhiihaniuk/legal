@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-399",
@@ -23,7 +23,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Стаття відрізняє areszt dla cudzoziemców від strzeżony ośrodek і пов’язує його з ризиком непідпорядкування правилам перебування в оśrodek.",
+        "Стаття відрізняє areszt dla cudzoziemców від strzeżony ośrodek і пов’язує його з ризиком непідпорядкування правилам перебування в ośrodek.",
       rules: [
         {
           locator: "ust. 1",

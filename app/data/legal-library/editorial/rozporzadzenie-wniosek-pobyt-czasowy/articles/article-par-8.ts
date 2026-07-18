@@ -10,8 +10,8 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-8",

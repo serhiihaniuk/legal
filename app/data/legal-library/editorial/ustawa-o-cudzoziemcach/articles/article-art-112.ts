@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("112", {
       provisionId: "ustawa-o-cudzoziemcach-art-112",
@@ -55,7 +55,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         "Art. 112 у тексті редакції Dz.U. 2025 poz. 1079 позначена як `uchylony` і не містить чинного правила.",
       statuteLocator: "Art. 112",
       practicalText:
-        "Скасований запис не можна використовувати як чинну підставу для надання, cofnięcie або строку temporary residence permit. Для правової оцінки використовуйте чинний текст сусідніх статей і source reader, а історичну редакцію — лише з її датою.",
+        "Скасований запис не можна використовувати як чинну підставу для надання, cofnięcie або строку zezwolenie na pobyt czasowy. Для правової оцінки використовуйте чинний текст сусідніх статей і офіційний текст джерела, а історичну редакцію — лише з її датою.",
       practicalLocator: "Art. 112",
       summary:
         "Art. 112 скасована (uchylony); поточна редакція не містить припису, який можна застосувати самостійно.",
@@ -63,13 +63,13 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 112",
           explanation:
-            "Локальний corpus і PDF містять лише позначення `(uchylony)`.",
+            "Локальний текст джерела та PDF містять лише позначення `(uchylony)`.",
         },
       ],
       legalEffect:
-        "Art. 112 не створює чинного обов’язку, умови permit чи процесуального строку в редакції Dz.U. 2025 poz. 1079.",
+        "Art. 112 не створює чинного обов’язку, умови zezwolenie чи процесуального строку в редакції Dz.U. 2025 poz. 1079.",
       foreignersCase:
-        "Не будуйте висновок на Art. 112 як на чинній нормі. Перевірте дату цитованого документа і перейдіть до source reader для актуальної норми, що регулює питання.",
+        "Не будуйте висновок на Art. 112 як на чинній нормі. Перевірте дату цитованого документа і перейдіть до офіційний текст джерела для актуальної норми, що регулює питання.",
     }),
   ]),
 })

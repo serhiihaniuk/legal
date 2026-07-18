@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-213",
@@ -20,8 +20,8 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Також перешкодами є транскордонний працівник або usługodawca, затримання, strzeżony ośrodek, zakaz opuszczania kraju, позбавлення волі, незавершений dobrowolny wyjazd після рішення про powrót, обов’язок виїхати за ${foreignersLaw.article("299", "art. 299")} ust. 6, перебування поза Польщею та неподання відбитків у строк ${foreignersLaw.article("219", "art. 219")} ust. 6.`,
-          sourceLocator: "Art. 213 ust. 1 pkt 2–7, ust. 2",
+          text: foreignersLaw.text`Також перешкодами є статус працівника, делегованого usługodawca для транскордонного надання послуг, або самого транскордонного usługodawca; затримання, strzeżony ośrodek, areszt dla cudzoziemców чи zakaz opuszczania kraju; позбавлення волі або tymczasowe aresztowanie; перебування після рішення про powrót до завершення строку dobrowolnego wyjazdu; обов’язок виїхати за ${foreignersLaw.article("299", "art. 299")} ust. 6; а також перебування поза Польщею.`,
+          sourceLocator: "Art. 213 ust. 1 pkt 2–7",
         },
       ],
       summary:
@@ -37,14 +37,10 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           explanation:
             "Процесуальні та поворотні обставини також перешкоджають wszczęcie, навіть якщо заявник накопичив певний попередній стаж.",
         },
-        {
-          locator: "ust. 2",
-          explanation: foreignersLaw.text`Неподання odcisków linii papilarnych під час wniosku або у строк ${foreignersLaw.article("219", "art. 219")} ust. 6 є окремою підставою odmowa wszczęcia.`,
-        },
       ],
       legalEffect: foreignersLaw.text`${foreignersLaw.article("213", "Art. 213")} відрізняється від відмови у наданні статусу за ${foreignersLaw.article("214", "Art. 214")}: йдеться про недопустимість початку провадження за наявної обставини.`,
       foreignersCase:
-        "На дату wniosku підтвердьте вид і чинність поточного pobyt, відсутність поворотних перешкод та виконання вимоги щодо відбитків; у документі органу перевірте правильність стадії odmowa.",
+        "На дату wniosku підтвердьте вид і чинність поточного pobyt, місце перебування та відсутність кожної процесуальної або поворотної перешкоди з ust. 1. У документі органу перевірте, чи йдеться саме про odmowa wszczęcia, а не про відмову по суті.",
     },
   ],
 })

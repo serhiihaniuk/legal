@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-354",
@@ -25,7 +25,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1 pkt 1–4",
           explanation:
-            "Вигасання настає при status uchodźcy, ochronа uzupełniająca, польське громадянство, письмове повідомлення про відмову від права або zezwolenie na pobyt stały.",
+            "Вигасання настає при status uchodźcy, ochrona uzupełniająca, польське громадянство, письмове повідомлення про відмову від права або zezwolenie na pobyt stały.",
         },
         {
           locator: "ust. 2",

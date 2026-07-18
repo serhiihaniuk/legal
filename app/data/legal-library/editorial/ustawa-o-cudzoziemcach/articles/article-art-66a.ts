@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-66a",
@@ -22,7 +22,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "practical-inference",
-          text: "Через konsul реалізується конкретна процедурна дія Visa Code; це не означає автоматичної передачі konsul повноваження видати або відмовити у візі замість міністра.",
+          text: "Через konsul реалізується конкретна процедурна дія, передбачена kodeks wizowy; це не означає автоматичної передачі konsul повноваження видати або відмовити у візі замість міністра.",
           sourceLocator: "Art. 66a",
         },
       ],

@@ -21,7 +21,10 @@ export const SUPERSCRIPT_DIGITS = {
 }
 
 const ASCII_TO_SUPERSCRIPT = Object.fromEntries(
-  Object.entries(SUPERSCRIPT_DIGITS).map(([superscript, digit]) => [digit, superscript])
+  Object.entries(SUPERSCRIPT_DIGITS).map(([superscript, digit]) => [
+    digit,
+    superscript,
+  ])
 )
 
 const ARTICLE_PATTERN =
@@ -33,6 +36,11 @@ const REPEALED_ARTICLE_PATTERN =
 const PARAGRAPH_PATTERN = /^§\s*(\d+)([a-z]{0,2})?\s*\./gimu
 const ANNEX_PATTERN = /^Załącznik nr\s+(\d+[a-z]?)/imu
 const URL_SAFE_DOCUMENT_ID = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/
+const TEMPORAL_PAGE_BOUNDARY = "\u0000LEGAL_CORPUS_PAGE_BOUNDARY\u0000"
+const OLD_TEMPORAL_BLOCK_PATTERN = /\[[\s\S]*?\]/gu
+const CURRENT_TEMPORAL_BLOCK_PATTERN = /<([\s\S]*?)>/gu
+const TEMPORAL_ARTICLE_HEADING_PATTERN =
+  /(?:^|\n)\s*Art\.\s+(\d+)(?:\s*([a-z]{1,2})|\s+([0-9]+)|\s*([\u2070\u00b9\u00b2\u00b3\u2074-\u2079]+))?\s*\./gmu
 
 /**
  * @param {unknown} value
@@ -57,13 +65,222 @@ export function sha256(value) {
 }
 
 /**
+ * @param {string} message
+ * @param {string} code
+ * @param {string} path
+ * @param {unknown} [details]
+ * @returns {never}
+ */
+function failTemporalSelection(message, code, path, details = undefined) {
+  throw new CorpusValidationError(message, {
+    fatal: [
+      {
+        severity: "fatal",
+        code,
+        path,
+        message,
+        ...(details === undefined ? {} : { details }),
+      },
+    ],
+  })
+}
+
+/**
+ * @param {any} range
+ * @param {number} index
+ * @returns {boolean}
+ */
+function rangeContains(range, index) {
+  return index >= range.first && index <= range.last
+}
+
+/**
+ * @param {any[]} sources
+ * @param {"old" | "current"} kind
+ * @param {number} index
+ * @returns {any}
+ */
+function sourceForTemporalBlock(sources, kind, index) {
+  const rangeField = kind === "old" ? "oldBlockRange" : "currentBlockRange"
+  const matches = sources.filter((source) =>
+    rangeContains(source[rangeField], index)
+  )
+  if (matches.length !== 1) {
+    failTemporalSelection(
+      `Temporal ${kind} block ${index} must map to exactly one effective-date source`,
+      "temporal-selection.source-range-mismatch",
+      `temporalTextSelection.sources.${rangeField}`,
+      {
+        kind,
+        index,
+        matchingSourceIds: matches.map((source) => source.sourceId),
+      }
+    )
+  }
+  return matches[0]
+}
+
+/**
+ * Retain page separators when an obsolete block crosses page boundaries. The
+ * selected text still maps to the original PDF pages even though the old
+ * wording itself is removed.
+ * @param {string} value
+ * @returns {string}
+ */
+function retainedPageBoundaries(value) {
+  return [...value.matchAll(new RegExp(TEMPORAL_PAGE_BOUNDARY, "gu"))]
+    .map((match) => match[0])
+    .join("")
+}
+
+/**
+ * @param {Page[]} pages
+ * @param {any} selection
+ * @param {string} [leaveSourceId]
+ * @returns {{ pages: Page[], introducedArticleLocatorsBySourceId: Map<string, Set<string>> }}
+ */
+function transformTemporalText(pages, selection, leaveSourceId = undefined) {
+  const introducedArticleLocatorsBySourceId = new Map(
+    selection.sources.map((/** @type {any} */ source) => [
+      source.sourceId,
+      new Set(),
+    ])
+  )
+  let oldBlockCount = 0
+  let currentBlockCount = 0
+  let joined = pages.map((page) => page.text).join(TEMPORAL_PAGE_BOUNDARY)
+
+  joined = joined.replace(OLD_TEMPORAL_BLOCK_PATTERN, (block) => {
+    oldBlockCount += 1
+    const source = sourceForTemporalBlock(
+      selection.sources,
+      "old",
+      oldBlockCount
+    )
+    return source.sourceId === leaveSourceId
+      ? block
+      : retainedPageBoundaries(block)
+  })
+  joined = joined.replace(
+    CURRENT_TEMPORAL_BLOCK_PATTERN,
+    (block, selectedText) => {
+      currentBlockCount += 1
+      const source = sourceForTemporalBlock(
+        selection.sources,
+        "current",
+        currentBlockCount
+      )
+      for (const match of selectedText.matchAll(
+        TEMPORAL_ARTICLE_HEADING_PATTERN
+      )) {
+        introducedArticleLocatorsBySourceId
+          .get(source.sourceId)
+          ?.add(`Art. ${articleLabelFromMatch(match)}`)
+      }
+      return source.sourceId === leaveSourceId ? block : selectedText
+    }
+  )
+
+  if (
+    oldBlockCount !== selection.expectedOldBlockCount ||
+    currentBlockCount !== selection.expectedCurrentBlockCount
+  ) {
+    failTemporalSelection(
+      "Temporal marker inventory differs from the pinned extraction configuration",
+      "temporal-selection.block-count-mismatch",
+      "temporalTextSelection",
+      {
+        expectedOld: selection.expectedOldBlockCount,
+        observedOld: oldBlockCount,
+        expectedCurrent: selection.expectedCurrentBlockCount,
+        observedCurrent: currentBlockCount,
+      }
+    )
+  }
+
+  const selectedPageText = joined.split(TEMPORAL_PAGE_BOUNDARY)
+  if (selectedPageText.length !== pages.length) {
+    failTemporalSelection(
+      "Temporal selection did not preserve the source PDF page inventory",
+      "temporal-selection.page-boundary-mismatch",
+      "temporalTextSelection",
+      { expected: pages.length, observed: selectedPageText.length }
+    )
+  }
+
+  return {
+    pages: pages.map((page, index) => {
+      const text = normalizeText(selectedPageText[index])
+      return { ...page, text, characterCount: text.length }
+    }),
+    introducedArticleLocatorsBySourceId,
+  }
+}
+
+/**
+ * Resolve consolidated-text editorial markers against explicit, checksum-
+ * pinned effective-date sources. Counterfactual page sets are retained only
+ * in memory so the builder can identify every provision whose compiled text
+ * depends on each source.
+ * @param {Page[]} pages
+ * @param {any} selection
+ * @returns {{
+ *   pages: Page[],
+ *   traces: Array<{
+ *     sourceId: string,
+ *     effectiveDate: string,
+ *     locator: string,
+ *     textMarkers: string[],
+ *     expectedProvisionCount: number,
+ *     introducedArticleLocators: Set<string>,
+ *     counterfactualPages: Page[],
+ *   }>,
+ * }}
+ */
+export function selectTemporalText(pages, selection) {
+  if (!selection) return { pages, traces: [] }
+  if (selection.kind !== "bracket-angle-v1") {
+    failTemporalSelection(
+      `Unsupported temporal text selection ${selection.kind}`,
+      "temporal-selection.unsupported-kind",
+      "temporalTextSelection.kind"
+    )
+  }
+
+  const selected = transformTemporalText(pages, selection)
+  return {
+    pages: selected.pages,
+    traces: selection.sources.map((/** @type {any} */ source) => ({
+      sourceId: source.sourceId,
+      effectiveDate: source.effectiveDate,
+      locator: source.locator,
+      textMarkers: source.textMarkers ?? [],
+      expectedProvisionCount: source.expectedProvisionCount,
+      introducedArticleLocators:
+        selected.introducedArticleLocatorsBySourceId.get(source.sourceId) ??
+        new Set(),
+      counterfactualPages: transformTemporalText(
+        pages,
+        selection,
+        source.sourceId
+      ).pages,
+    })),
+  }
+}
+
+/**
  * @param {string} value
  * @returns {string}
  */
 function superscriptValue(value) {
   return value
     .split("")
-    .map((digit) => SUPERSCRIPT_DIGITS[/** @type {keyof typeof SUPERSCRIPT_DIGITS} */ (digit)])
+    .map(
+      (digit) =>
+        SUPERSCRIPT_DIGITS[
+          /** @type {keyof typeof SUPERSCRIPT_DIGITS} */ (digit)
+        ]
+    )
     .join("")
 }
 
@@ -75,7 +292,10 @@ function articleLabelFromMatch(match) {
   const number = match[1]
   const letters = match[2]?.toLowerCase() ?? ""
   const asciiSuperscript = match[3]
-    ? match[3].split("").map((digit) => ASCII_TO_SUPERSCRIPT[digit]).join("")
+    ? match[3]
+        .split("")
+        .map((digit) => ASCII_TO_SUPERSCRIPT[digit])
+        .join("")
     : ""
   const superscript = match[4] ?? asciiSuperscript
   return `${number}${letters}${superscript}`
@@ -158,7 +378,8 @@ export function createProvisionId(documentId, locator, kind = "article") {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
-  if (!normalizedLocator) throw new TypeError(`Unsupported provision locator: ${locator}`)
+  if (!normalizedLocator)
+    throw new TypeError(`Unsupported provision locator: ${locator}`)
   return `${documentId}-${kind}-${normalizedLocator}`
 }
 
@@ -194,7 +415,9 @@ function assertNoDuplicateLocators(items, describe) {
     byLocator.set(key, occurrences)
   }
 
-  const duplicates = [...byLocator.values()].filter((occurrences) => occurrences.length > 1)
+  const duplicates = [...byLocator.values()].filter(
+    (occurrences) => occurrences.length > 1
+  )
   if (duplicates.length === 0) return
 
   /** @type {import("./types.mjs").Diagnostic[]} */
@@ -204,13 +427,18 @@ function assertNoDuplicateLocators(items, describe) {
       severity: /** @type {const} */ ("fatal"),
       code: "extraction.duplicate-locator",
       message: `Duplicate ${kind} locator ${locator} found on pages ${occurrences
-        .map((occurrence) => `${occurrence.startPdfPage}-${occurrence.endPdfPage}`)
+        .map(
+          (occurrence) => `${occurrence.startPdfPage}-${occurrence.endPdfPage}`
+        )
         .join(" and ")}`,
       path: "extraction",
       details: {
         kind,
         locator,
-        occurrences: occurrences.map(({ startPdfPage, endPdfPage }) => ({ startPdfPage, endPdfPage })),
+        occurrences: occurrences.map(({ startPdfPage, endPdfPage }) => ({
+          startPdfPage,
+          endPdfPage,
+        })),
       },
     }
   })
@@ -224,22 +452,228 @@ function assertNoDuplicateLocators(items, describe) {
 
 /**
  * @typedef {{ article: string, pdfPage: number, endPdfPage: number, textParts: string[] }} ArticleAccumulator
+ * @typedef {{ locator: string, pdfPage: number, matchIndex: number }} ArticleOccurrence
+ * @typedef {{ locator: string, startMarker: string, endMarker?: string, effectiveDate: string }} FutureTextExclusion
+ * @typedef {{ locator: string, status: string, effectiveDate?: string }} ProvisionStatusOverride
  */
 
 /**
  * Extract article-shaped compatibility facts from normalized PDF pages.
  * Article-level records are the only promoted unit in profile v1; nested
  * paragraph/point records are intentionally left for a later profile revision.
- * @param {Page[]} pages
+ * @param {RegExpMatchArray} match
+ * @returns {string}
  */
-export function extractArticles(pages) {
+function articleLocatorFromMatch(match) {
+  return `Art. ${articleLabelFromMatch(match)}`
+}
+
+/**
+ * @param {RegExpMatchArray} match
+ * @param {Page} page
+ * @param {ArticleOccurrence[]} occurrences
+ * @returns {boolean}
+ */
+function matchesArticleOccurrence(match, page, occurrences) {
+  const locator = articleLocatorFromMatch(match)
+  return occurrences.some(
+    (occurrence) =>
+      occurrence.locator === locator &&
+      occurrence.pdfPage === page.pdfPage &&
+      occurrence.matchIndex === (match.index ?? 0)
+  )
+}
+
+/**
+ * @param {ArticleOccurrence} occurrence
+ * @returns {string}
+ */
+function articleOccurrenceKey(occurrence) {
+  return `${occurrence.locator}|${occurrence.pdfPage}|${occurrence.matchIndex}`
+}
+
+/**
+ * @param {string} message
+ * @param {string} code
+ * @param {string} path
+ * @param {unknown} [details]
+ * @returns {never}
+ */
+function failExtraction(message, code, path, details = undefined) {
+  throw new CorpusValidationError(message, {
+    fatal: [
+      {
+        severity: "fatal",
+        code,
+        path,
+        message,
+        ...(details === undefined ? {} : { details }),
+      },
+    ],
+  })
+}
+
+/**
+ * @param {string} text
+ * @param {string} marker
+ * @returns {number[]}
+ */
+function literalMatchIndexes(text, marker) {
+  const indexes = []
+  let offset = 0
+  while (offset <= text.length - marker.length) {
+    const index = text.indexOf(marker, offset)
+    if (index === -1) break
+    indexes.push(index)
+    offset = index + Math.max(marker.length, 1)
+  }
+  return indexes
+}
+
+/**
+ * Remove a future-dated fragment only when its exact semantic boundaries occur
+ * once inside the configured provision. A stale or ambiguous selector is fatal
+ * so a changed official PDF cannot silently reintroduce future wording.
+ * @param {Array<{ article: string, pdfPage: number, endPdfPage: number, status: string, text: string }>} articles
+ * @param {FutureTextExclusion[]} exclusions
+ */
+function applyFutureTextExclusions(articles, exclusions) {
+  const matched = new Set()
+  const transformed = articles.map((article) => {
+    const locator = `Art. ${article.article}`
+    const applicable = exclusions
+      .map((exclusion, index) => ({ exclusion, index }))
+      .filter(({ exclusion }) => exclusion.locator === locator)
+    if (applicable.length === 0) return article
+
+    const ranges = applicable.map(({ exclusion, index }) => {
+      const startMarker = normalizeText(exclusion.startMarker)
+      const startMatches = literalMatchIndexes(article.text, startMarker)
+      if (startMatches.length !== 1) {
+        failExtraction(
+          `Future text exclusion for ${locator} expected one start marker but found ${startMatches.length}`,
+          "extraction.future-text-start-mismatch",
+          `extraction.futureTextExclusions[${index}].startMarker`,
+          { locator, observed: startMatches.length }
+        )
+      }
+      const start = startMatches[0]
+      let end = article.text.length
+      if (exclusion.endMarker !== undefined) {
+        const endMarker = normalizeText(exclusion.endMarker)
+        const suffixStart = start + startMarker.length
+        const suffix = article.text.slice(suffixStart)
+        const endMatches = literalMatchIndexes(suffix, endMarker)
+        if (endMatches.length !== 1) {
+          failExtraction(
+            `Future text exclusion for ${locator} expected one following end marker but found ${endMatches.length}`,
+            "extraction.future-text-end-mismatch",
+            `extraction.futureTextExclusions[${index}].endMarker`,
+            { locator, observed: endMatches.length }
+          )
+        }
+        end = suffixStart + endMatches[0]
+      }
+      matched.add(index)
+      return { start, end, index }
+    })
+
+    const ordered = [...ranges].sort((left, right) => left.start - right.start)
+    for (let index = 1; index < ordered.length; index += 1) {
+      if (ordered[index].start < ordered[index - 1].end) {
+        failExtraction(
+          `Future text exclusions for ${locator} overlap`,
+          "extraction.future-text-overlap",
+          `extraction.futureTextExclusions[${ordered[index].index}]`,
+          { locator }
+        )
+      }
+    }
+
+    let text = article.text
+    for (const range of [...ordered].sort(
+      (left, right) => right.start - left.start
+    )) {
+      text = `${text.slice(0, range.start)}\n${text.slice(range.end)}`
+    }
+    text = normalizeText(text)
+    return { ...article, status: articleStatus(text), text }
+  })
+
+  const unmatched = exclusions
+    .map((exclusion, index) => ({ exclusion, index }))
+    .filter(({ index }) => !matched.has(index))
+  if (unmatched.length > 0) {
+    failExtraction(
+      `Future text exclusions target missing provisions: ${unmatched
+        .map(({ exclusion }) => exclusion.locator)
+        .join(", ")}`,
+      "extraction.future-text-provision-mismatch",
+      "extraction.futureTextExclusions",
+      { locators: unmatched.map(({ exclusion }) => exclusion.locator) }
+    )
+  }
+  return transformed
+}
+
+/**
+ * @param {Page[]} pages
+ * @param {{
+ *   ignoredArticleOccurrences?: ArticleOccurrence[],
+ *   excludedArticleOccurrences?: ArticleOccurrence[],
+ *   futureTextExclusions?: FutureTextExclusion[],
+ * }} [options]
+ */
+export function extractArticles(
+  pages,
+  {
+    ignoredArticleOccurrences = [],
+    excludedArticleOccurrences = [],
+    futureTextExclusions = [],
+  } = {}
+) {
   /** @type {ArticleAccumulator[]} */
   const articles = []
   /** @type {ArticleAccumulator | null} */
   let current = null
+  const observedIgnored = new Set()
+  const observedExcluded = new Set()
 
   for (const page of pages) {
-    const matches = Array.from(page.text.matchAll(ARTICLE_PATTERN))
+    const matches = Array.from(page.text.matchAll(ARTICLE_PATTERN)).flatMap(
+      (match) => {
+        const locator = articleLocatorFromMatch(match)
+        const occurrence = {
+          locator,
+          pdfPage: page.pdfPage,
+          matchIndex: match.index ?? 0,
+        }
+        const ignored = matchesArticleOccurrence(
+          match,
+          page,
+          ignoredArticleOccurrences
+        )
+        const excluded = matchesArticleOccurrence(
+          match,
+          page,
+          excludedArticleOccurrences
+        )
+        if (ignored && excluded) {
+          failExtraction(
+            `Article occurrence ${locator} on page ${page.pdfPage} cannot be both ignored and excluded`,
+            "extraction.article-occurrence-conflict",
+            "extraction",
+            occurrence
+          )
+        }
+        if (ignored) {
+          observedIgnored.add(articleOccurrenceKey(occurrence))
+          return []
+        }
+        if (excluded) observedExcluded.add(articleOccurrenceKey(occurrence))
+        return [{ match, excluded }]
+      }
+    )
 
     if (matches.length === 0) {
       if (current && page.text) {
@@ -249,7 +683,7 @@ export function extractArticles(pages) {
       continue
     }
 
-    const leading = page.text.slice(0, matches[0].index).trim()
+    const leading = page.text.slice(0, matches[0].match.index).trim()
     if (current && leading) {
       current.textParts.push(leading)
       current.endPdfPage = page.pdfPage
@@ -258,10 +692,16 @@ export function extractArticles(pages) {
     // A plain loop (rather than matches.forEach) keeps `current`'s reassignment
     // in the same function scope as the narrowing checks above and below, so
     // TypeScript's control-flow analysis can track it across iterations.
-    for (const [index, match] of matches.entries()) {
+    for (const [index, boundary] of matches.entries()) {
       if (current) articles.push(current)
 
-      const next = matches[index + 1]
+      if (boundary.excluded) {
+        current = null
+        continue
+      }
+
+      const match = boundary.match
+      const next = matches[index + 1]?.match
       const end = next?.index ?? page.text.length
       const article = articleLabelFromMatch(match)
       current = {
@@ -275,6 +715,29 @@ export function extractArticles(pages) {
 
   if (current) articles.push(current)
 
+  /** @type {Array<[string, ArticleOccurrence[], Set<string>]>} */
+  const configuredOccurrences = [
+    ["ignoredArticleOccurrences", ignoredArticleOccurrences, observedIgnored],
+    [
+      "excludedArticleOccurrences",
+      excludedArticleOccurrences,
+      observedExcluded,
+    ],
+  ]
+  for (const [field, configured, observed] of configuredOccurrences) {
+    const missing = configured.filter(
+      (occurrence) => !observed.has(articleOccurrenceKey(occurrence))
+    )
+    if (missing.length > 0) {
+      failExtraction(
+        `Configured ${field} did not match ${missing.length} source occurrence(s)`,
+        "extraction.article-occurrence-mismatch",
+        `extraction.${field}`,
+        { missing }
+      )
+    }
+  }
+
   assertNoDuplicateLocators(articles, (article) => ({
     kind: "article",
     locator: `Art. ${article.article}`,
@@ -282,7 +745,7 @@ export function extractArticles(pages) {
     endPdfPage: article.endPdfPage,
   }))
 
-  return articles.map(({ textParts, ...article }) => {
+  const normalized = articles.map(({ textParts, ...article }) => {
     const text = normalizeText(textParts.join("\n"))
     return {
       ...article,
@@ -290,6 +753,7 @@ export function extractArticles(pages) {
       text,
     }
   })
+  return applyFutureTextExclusions(normalized, futureTextExclusions)
 }
 
 /**
@@ -374,7 +838,16 @@ function extractParagraphLedUnits(pages) {
 
 /**
  * @param {Page[]} pages
- * @param {{ documentId: string, editionId: string, sourcePdfSha256: string, profile?: string }} [options]
+ * @param {{
+ *   documentId: string,
+ *   editionId: string,
+ *   sourcePdfSha256: string,
+ *   profile?: string,
+ *   ignoredArticleOccurrences?: ArticleOccurrence[],
+ *   excludedArticleOccurrences?: ArticleOccurrence[],
+ *   futureTextExclusions?: FutureTextExclusion[],
+ *   provisionStatusOverrides?: ProvisionStatusOverride[],
+ * }} [options]
  * @returns {Provision[]}
  */
 export function extractProvisions(
@@ -384,6 +857,10 @@ export function extractProvisions(
     editionId,
     sourcePdfSha256,
     profile = "polish-statute-art-v1",
+    ignoredArticleOccurrences = [],
+    excludedArticleOccurrences = [],
+    futureTextExclusions = [],
+    provisionStatusOverrides = [],
   } = /** @type {any} */ ({})
 ) {
   if (!documentId || !editionId || !sourcePdfSha256) {
@@ -392,19 +869,40 @@ export function extractProvisions(
     )
   }
 
-  const units = profile === "polish-regulation-paragraph-v1"
-    ? extractParagraphLedUnits(pages)
-    : extractArticles(pages).map((article) => ({
-        kind: "article",
-        locator: `Art. ${article.article}`,
-        startPdfPage: article.pdfPage,
-        endPdfPage: article.endPdfPage,
-        status: article.status,
-        text: article.text,
-      }))
+  const units =
+    profile === "polish-regulation-paragraph-v1"
+      ? extractParagraphLedUnits(pages)
+      : extractArticles(pages, {
+          ignoredArticleOccurrences,
+          excludedArticleOccurrences,
+          futureTextExclusions,
+        }).map((article) => ({
+          kind: "article",
+          locator: `Art. ${article.article}`,
+          startPdfPage: article.pdfPage,
+          endPdfPage: article.endPdfPage,
+          status: article.status,
+          text: article.text,
+        }))
 
-  return units.map((unit, index) => {
+  const overridesByLocator = new Map()
+  for (const [index, override] of provisionStatusOverrides.entries()) {
+    const existing = overridesByLocator.get(override.locator)
+    if (existing) {
+      failExtraction(
+        `Provision status override for ${override.locator} is duplicated`,
+        "extraction.duplicate-status-override",
+        `extraction.provisionStatusOverrides[${index}].locator`
+      )
+    }
+    overridesByLocator.set(override.locator, { override, index })
+  }
+  const matchedOverrides = new Set()
+
+  const provisions = units.map((unit, index) => {
     const text = normalizeText(unit.text)
+    const statusOverride = overridesByLocator.get(unit.locator)
+    if (statusOverride) matchedOverrides.add(statusOverride.index)
     return {
       id: createProvisionId(documentId, unit.locator, unit.kind),
       documentId,
@@ -416,12 +914,29 @@ export function extractProvisions(
       order: index + 1,
       startPdfPage: unit.startPdfPage,
       endPdfPage: unit.endPdfPage,
-      status: unit.status,
+      status: statusOverride?.override.status ?? unit.status,
+      ...(statusOverride?.override.effectiveDate
+        ? { effectiveDate: statusOverride.override.effectiveDate }
+        : {}),
       sourcePdfSha256,
       sourceTextHash: sha256(text),
       text,
     }
   })
+  if (matchedOverrides.size !== provisionStatusOverrides.length) {
+    const missing = provisionStatusOverrides.filter(
+      (_override, index) => !matchedOverrides.has(index)
+    )
+    failExtraction(
+      `Provision status overrides target missing locators: ${missing
+        .map((override) => override.locator)
+        .join(", ")}`,
+      "extraction.status-override-mismatch",
+      "extraction.provisionStatusOverrides",
+      { locators: missing.map((override) => override.locator) }
+    )
+  }
+  return provisions
 }
 
 /**

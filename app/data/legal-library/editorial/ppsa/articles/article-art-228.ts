@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-228",
@@ -15,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("228", "Art. 228")} визначає, що grzywny, присуджені у провадженні перед sądem administracyjnym, є доходами budżet państwa поряд із kosztami sądowymi та підлягають egzekucji sądowej без nadawania orzeczeniu klauzuli wykonalności.`,
+          text: "Штрафи, накладені адміністративним судом, поряд із судовими витратами є доходами державного бюджету й виконуються в судовому порядку без надання рішенню виконавчого напису.",
           sourceLocator: "Art. 228",
         },
       ],
       summary:
-        "Присуджені адміністративним судом grzywny надходять до budżet państwa і можуть примусово стягуватися без окремої klauzula wykonalności.",
+        "Стаття визначає публічний характер штрафу та спрощує його примусове виконання.",
       rules: [
         {
           locator: "Art. 228",
           explanation:
-            "Відрізняйте grzywna від самих kosztów sądowych: стаття визначає їх бюджетний статус і спосіб egzekucja.",
+            "Відділіть штраф (grzywna) від судових витрат (koszty sądowe) у розрахунку, хоча обидві суми надходять до бюджету. Для виконання штрафу окреме підтвердження виконавчої сили (klauzula wykonalności) не потрібне.",
         },
       ],
       legalEffect:
-        "Стаття визначає фінансовий статус і виконання grzywny; вона не є самостійною підставою для накладення конкретного штрафу.",
+        "Остаточне рішення про штраф може перейти до примусового виконання без додаткового підтвердження виконавчості.",
       foreignersCase:
-        "Якщо в судовій справі іноземця винесено grzywna, прочитайте окреме orzeczenie та його підставу; відсутність klauzula wykonalności не означає відсутності обов’язку.",
+        "У справі іноземця не плутайте штраф органу за бездіяльність із компенсацією заявникові: одержувач і спосіб виконання різні.",
     },
   ],
 })

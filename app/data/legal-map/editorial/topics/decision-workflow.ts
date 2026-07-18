@@ -34,7 +34,7 @@ export const decisionWorkflowTopic: KnowledgeUnit<DecisionWorkflowBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -58,7 +58,7 @@ export const decisionWorkflowTopic: KnowledgeUnit<DecisionWorkflowBody> =
           "Строк засобу обчислюється від skutecznego doręczenia, а виконуваність оцінюється окремо від остаточності.",
         ],
         exceptions: [
-          kpaLaw.text`Очевидна описка, арифметична помилка або неясність може підпадати під sprostowanie, uzupełnienie чи wykładnię за ${kpaLaw.articleRange("111", "113", { start: "art. 111", end: "113" })} KPA, але ці інструменти не замінюють odwołання щодо суті.`,
+          kpaLaw.text`Очевидна описка, арифметична помилка або неясність може підпадати під sprostowanie, uzupełnienie чи wykładnię за ${kpaLaw.articleRange("111", "113", { start: "art. 111", end: "113" })} KPA, але ці інструменти не замінюють оскарження суті через odwołanie.`,
         ],
         consequences: [
           "Карта дефектів визначає належний засіб: odwołanie для неостаточної decyzji, skarga do WSA після адміністративної дороги, або надзвичайний режим за окремими підставами.",

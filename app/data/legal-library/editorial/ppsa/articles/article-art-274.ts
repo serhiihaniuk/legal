@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-274",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 274 передбачає, що з powodu przestępstwo wznowienie можна вимагати лише тоді, коли czyn встановлено prawomocnym wyrokiem skazującym, крім випадку, коли кримінальне провадження не може бути wszczęte або його umorzono з іншої причини, ніж brak dowodów.",
+          text: "Поновлення через злочин, як правило, можливе лише після встановлення діяння остаточним обвинувальним вироком. Виняток діє, коли кримінальне провадження не можна розпочати або його припинено з причини, іншої ніж брак доказів.",
           sourceLocator: "Art. 274",
         },
       ],
       summary:
-        "Стаття обмежує посилання на przestępstwo як підставу wznowienie вимогою про остаточне встановлення діяння або наявність прямо названої перешкоди кримінальному провадженню.",
+        "Стаття встановлює високий доказовий поріг для кримінальної підстави поновлення (wznowienie).",
       rules: [
         {
           locator: "Art. 274",
           explanation:
-            "Звичайне припущення про злочин недостатнє: для цієї підстави czyn має бути встановлений prawomocnym wyrokiem skazującym, якщо немає винятку щодо неможливості wszczęcia або іншого umorzenie.",
+            "Додайте остаточний вирок або точно доведіть один із двох винятків. Саме повідомлення про підозру чи власне твердження сторони не встановлює злочин.",
         },
       ],
       legalEffect:
-        "Норма встановлює поріг для цієї конкретної підстави wznowienie і не перетворює будь-яке кримінальне повідомлення на доказ przestępstwo.",
+        "Без належного кримінального підтвердження підстава поновлення не виникає.",
       foreignersCase:
-        "Якщо у справі іноземця наводять можливе підроблення документа, перевірте стан кримінального провадження та наявність prawomocny wyrok. Не називайте повідомлення до поліції встановленим czyn.",
+        "Якщо іноземець вважає документ органу підробленим, спершу відділіть підозру від установленого злочину й зберіть процесуальне рішення кримінального органу.",
     },
-  ]),
+  ],
 })

@@ -1,13 +1,13 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
 const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-130",
@@ -34,7 +34,7 @@ export default defineEditorialPart<"ppsa">({
       ],
       legalEffect: ppsaLaw.text`За наявності описаних у ${ppsaLaw.article("130", "§ 1")} умов суд припиняє саме zawieszone postępowanie; стаття не вирішує матеріальну законність адміністративної справи.`,
       foreignersCase:
-        "У справі про pobyt, яка опинилася в суді й була zawieszona, зафіксуйте підставу та дату postanowienie і перевірте, чи подано wniosek про podjęcie вчасно. Не сприймайте ці строки як загальний строк для wniesienia skargi.",
+        "У справі про pobyt, яка опинилася в суді й була zawieszona, зафіксуйте підставу та дату postanowienie і перевірте, чи подано wniosek про podjęcie вчасно. Не сприймайте ці строки як загальний строк для подання skargi.",
     },
   ],
 })

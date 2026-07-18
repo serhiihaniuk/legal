@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-254",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 254 передбачає, що wniosek o przyznanie prawa pomocy та wniosek про przyznanie kosztów nieopłaconej pomocy prawnej подаються до właściwy wojewódzki sąd administracyjny. Сторона без місця zamieszkania, pobytu або siedziba в юрисдикції цього суду може подати wniosek до іншого WSA, який невідкладно пересилає його właściwy суд.",
+          text: "Заяву про право допомоги та заяву про оплату неоплаченої правової допомоги подають до компетентного WSA. Сторона без місця проживання, перебування чи осідку в окрузі цього суду може подати заяву до іншого WSA, який невідкладно перешле її належному суду.",
           sourceLocator: "Art. 254 § 1–2",
         },
       ],
       summary:
-        "Стаття визначає суд для подання заяви і дає практичний запасний маршрут стороні, яка не перебуває в територіальній юрисдикції потрібного WSA.",
+        "Стаття полегшує подання особі, яка перебуває поза територією компетентного суду.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 254 § 1–2",
           explanation:
-            "Зазвичай подавайте wniosek до właściwy wojewódzki sąd administracyjny; це стосується і права допомоги, і витрат на неоплачену правову допомогу.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Якщо сторона не має zamieszkania, pobytu або siedziba в межах юрисдикції właściwy суду, wniosek можна подати до іншого WSA, але він має бути невідкладно пересланий компетентному суду.",
+            "У документі вкажіть основну справу й належний WSA. Подання через інший WSA є запасним каналом для особи без територіального зв’язку, а не зміною компетентного суду.",
         },
       ],
       legalEffect:
-        "Подання до іншого WSA у передбаченій ситуації не змінює właściwość: остаточно заяву розглядає właściwy суд, а не той, який лише її переслав.",
+        "Заява з іншого WSA повинна бути переслана, тому сторона не втрачає доступ лише через місце перебування.",
       foreignersCase:
-        "Для іноземця перевірте, де він має фактичний pobyt і який WSA є właściwy у справі. Якщо він перебуває поза цією юрисдикцією, збережіть підтвердження подання до іншого WSA та не плутайте пересилання із самим рішенням про prawo pomocy.",
+        "Іноземець за кордоном може використати цей канал, але повинен врахувати час пересилання й окремі строки основної справи.",
     },
-  ]),
+  ],
 })

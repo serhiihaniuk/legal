@@ -8,8 +8,8 @@ const regulationLaw = createLegalTextAuthor(
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-2",
@@ -17,7 +17,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
       claims: [
         {
           kind: "statute-text",
-          text: regulationLaw.text`${regulationLaw.annex("2", "Załącznik nr 2")} є WZÓR заłącznika nr 1 до wniosku; його заповнює podmiot powierzający pracę cudzoziemcowi для названих видів pobyt czasowy, а extracted text містить частини про цей суб’єкт, pracodawca użytkownik, роботу, oświadczenia та основні обов’язки й строк роботи.`,
+          text: regulationLaw.text`${regulationLaw.annex("2", "Załącznik nr 2")} є WZÓR першого додатка до wniosku; його заповнює podmiot powierzający pracę cudzoziemcowi для названих видів pobyt czasowy, а текст форми містить частини про цей суб’єкт, pracodawca użytkownik, роботу, oświadczenia та основні обов’язки й строк роботи.`,
           sourceLocator: "Załącznik nr 2, nagłówek, Uwaga та części I–VI",
         },
       ],
@@ -32,7 +32,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
         {
           locator: "części I–III",
           explanation:
-            "Текст показує поля personal data cudzoziemca, podmiot powierzający pracę та pracodawca użytkownik, зокрема назву, адресу, правову підставу діяльності, реєстрові і контактні дані.",
+            "Текст показує поля dane osobowe cudzoziemca, podmiot powierzający pracę та pracodawca użytkownik, зокрема назву, адресу, правову підставу діяльності, реєстрові і контактні дані.",
         },
         {
           locator: "części IV–VI",

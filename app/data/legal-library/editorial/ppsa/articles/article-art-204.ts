@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-204",
@@ -11,23 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Jeżeli skarga kasacyjna zostaje oddalona, strona, która ją wniosła, zwraca niezbędne koszty postępowania kasacyjnego poniesione przez organ, gdy zaskarżono wyrok pierwszej instancji oddalający skargę, albo przez skarżącego, gdy zaskarżono wyrok uwzględniający skargę.",
-          sourceLocator: "Art. 204 pkt 1–2",
+          text: "Коли NSA відхиляє касаційну скаргу, сторона, яка її подала, повертає необхідні касаційні витрати опонентові: органу, якщо WSA відхилив первісну скаргу, або заявникові, якщо WSA її задовольнив.",
+          sourceLocator: "Art. 204",
         },
       ],
-      summary:
-        "Przy oddaleniu kasacji jej wnoszący może zostać obciążony niezbędnymi kosztami drugiej strony, zależnie od rodzaju zaskarżonego wyroku WSA.",
+      summary: "Стаття визначає наслідок витрат для невдалої касації.",
       rules: [
         {
-          locator: "Art. 204 pkt 1–2",
+          locator: "Art. 204",
           explanation:
-            "Kasacja od wyroku oddalającego skargę oznacza zwrot kosztów organu, a kasacja od wyroku uwzględniającego skargę — zwrot kosztów skarżącego.",
+            "Зіставте касатора, результат WSA та сторону, яка понесла витрати на захист цього результату в NSA.",
         },
       ],
       legalEffect:
-        "Oddalenie kasacji może powodować obowiązek zwrotu kosztów, ale wysokość obejmuje tylko koszty niezbędne ustalone według dalszych przepisów.",
+        "Відхилення касаційної скарги по суті (oddalenie skargi kasacyjnej) може створити обов’язок відшкодувати необхідні витрати опонента незалежно від власних витрат касатора.",
       foreignersCase:
-        "Przed kasacją w sprawie odmowy pobytu uwzględnij ryzyko kosztowe i ustal, czy zaskarżany wyrok WSA oddalił, czy uwzględnił skargę.",
+        "Перед касацією у справі про перебування оцініть не лише судову перспективу, а й можливий обов’язок повернути органу касаційні витрати.",
     },
   ],
 })

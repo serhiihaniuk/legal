@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-30",
@@ -15,32 +15,32 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("30", "Art. 30")} ust. 1 передбачає видачу zezwolenie на користь polski podmiot, якщо cudzoziemiec працюватиме за umowa з цим podmiot, wynagrodzenie буде не нижчим за оплату порівнюваних працівників і мінімальне wynagrodzenie, а wymiar часу становитиме від 1/4 до повного. За неповного часу оплату враховують пропорційно wymiar.`,
+          text: workLaw.text`${workLaw.article("30", "Art. 30")} у частині 1 передбачає видачу дозволу на користь польського суб’єкта, якщо іноземець працюватиме за договором із цим суб’єктом, винагорода буде не нижчою за оплату працівників порівнюваного виду або на порівнюваній посаді й водночас не нижчою за встановлений законом мінімум, а робочий час становитиме від чверті до повної ставки. За неповного робочого часу мінімальний поріг винагороди визначають пропорційно.`,
           sourceLocator: "Art. 30 ust. 1 pkt 1–3 і ust. 2",
         },
       ],
       summary:
-        "Для цього виду zezwolenie потрібно зіставити umowa, оплату та час роботи. Мінімум 1/4 і максимум повний wymiar часу — межі саме умови дозволу, а не загальна відповідь на питання про legalny pobyt.",
+        "Для цього виду дозволу потрібно зіставити договір, винагороду та робочий час. Межі від чверті до повної ставки стосуються умови дозволу, а не законності перебування.",
       rules: [
         {
           locator: "ust. 1 pkt 1",
           explanation:
-            "Підставою має бути umowa між cudzoziemiec і polski podmiot powierzający pracę.",
+            "Підставою має бути договір між іноземцем і польським суб’єктом, який доручає роботу.",
         },
         {
           locator: "ust. 1 pkt 2",
           explanation:
-            "Wynagrodzenie має бути не нижчим одночасно за оплату працівників порівнюваного виду або stanowisko та за ustawowe minimalne wynagrodzenie.",
+            "Винагорода має бути не нижчою одночасно за оплату працівників порівнюваного виду або на порівнюваній посаді та за мінімум, установлений законом.",
         },
         {
           locator: "ust. 1 pkt 3, ust. 2",
           explanation:
-            "Wymiar часу — від 1/4 до повного. Для неповного часу поріг wynagrodzenie оцінюють пропорційно часу, записаному в umowa.",
+            "Робочий час — від чверті до повної ставки. Для неповної ставки поріг винагороди оцінюють пропорційно робочому часу, записаному в договорі.",
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("30", "Art. 30")} визначає матеріальні умови zezwolenie на роботу. Виконання цих умов не продовжує visa або pobyt і не скасовує інших вимог доступу до роботи.`,
+      legalEffect: workLaw.text`${workLaw.article("30", "Ст. 30")} визначає матеріальні умови дозволу на роботу. Виконання цих умов не продовжує візи або перебування і не скасовує інших вимог доступу до праці.`,
       foreignersCase:
-        "Порівняйте umowa з оплатою аналогічних працівників, мінімальним wynagrodzenie та wymiar часу. Окремо перевірте, чи має cudzoziemiec чинний документ legalnego pobytu і потрібну підставу роботи.",
+        "Порівняйте умови договору з оплатою аналогічних працівників, мінімальною винагородою та робочим часом. Окремо перевірте, чи має іноземець чинний документ про законне перебування і потрібну підставу роботи.",
     },
   ],
 })

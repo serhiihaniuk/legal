@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("117a", {
       provisionId: "ustawa-o-cudzoziemcach-art-117a",
       reviewStatus: "reviewed",
       statuteText:
-        "Permit i pracę відмовляють, якщо podmiot або pracodawca użytkownik не веде діяльності, що виправдовує зайнятість cudzoziemiec у відповідний період, зокрема має zawieszona działalność, викреслений із реєстру або перебуває в ліквідації; podmiot не має коштів/доходу для трудових зобов’язань; podmiot створений або діє головно для нелегального в’їзду; або факти вказують, що особу наймає неagencja pracy tymczasowej для роботи на користь третьої особи.",
+        "zezwolenie i pracę відмовляють, якщо podmiot або pracodawca użytkownik не веде діяльності, що виправдовує зайнятість cudzoziemiec у відповідний період, зокрема має zawieszona działalność, викреслений із реєстру або перебуває в ліквідації; podmiot не має коштів/доходу для трудових зобов’язань; podmiot створений або діє головно для нелегального в’їзду; або факти вказують, що особу наймає суб’єкт, який не є agencją pracy tymczasowej для роботи на користь третьої особи.",
       statuteLocator: "Art. 117a pkt 1–4",
       practicalText:
-        "Оцінюється реальна діяльність і організація роботи, не лише назва `outsourcing` чи пункт договору. Особливо треба розрізнити звичайне powierzanie pracy, тимчасове працевлаштування через agencja та фактичне направлення до третьої особи без статусу agencja.",
+        "Оцінюються реальна діяльність і організація роботи, а не лише назва `outsourcing procesowy` чи окремий пункт договору. Особливо важливо відрізнити звичайне powierzanie pracy від pracy tymczasowej через agencja та від фактичного направлення працівника до третьої особи без статусу agencja pracy tymczasowej.",
       practicalLocator: "Art. 117a pkt 1–4",
       summary:
-        "Art. 117a встановлює додаткові materialні підстави відмови, пов’язані з діяльністю, фінансуванням та фактичною моделлю роботодавця.",
+        "Art. 117a встановлює додаткові матеріальні підстави відмови, пов’язані з діяльністю, фінансуванням та фактичною моделлю роботодавця.",
       rules: [
         {
           locator: "Art. 117a pkt 1",
@@ -77,7 +77,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Встановлена підстава веде до odmowa permit i pracę. Art. 117a не встановлює, що будь-який outsourcing незаконний, але вимагає оцінити фактичних суб’єктів, контроль і правову модель роботи.",
+        "Встановлена підстава веде до odmowa zezwolenia na pobyt czasowy i pracę. Art. 117a не означає, що будь-який outsourcing procesowy незаконний, але вимагає перевірити фактичних учасників, контроль над працею та правову модель її організації.",
       foreignersCase:
         "Намалюйте схему: хто підписує договір, хто платить, хто керує, де і для кого працює cudzoziemiec, чи є pracodawca użytkownik та чи зареєстрована agencja. Додайте реєстраційні, фінансові й фактичні докази діяльності.",
     }),

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-212",
@@ -15,26 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Opłatami sądowymi są wpis i opłata kancelaryjna; opłaty sądowe są dochodami budżetu państwa.",
+          text: "Судовими зборами є збір за подання (wpis) та канцелярський збір (opłata kancelaryjna); вони надходять до державного бюджету.",
           sourceLocator: "Art. 212 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("212", "Art. 212")} rozróżnia wpis i opłatę kancelaryjną oraz określa ich publicznoprawny charakter jako dochodów budżetu państwa.`,
+      summary:
+        "Стаття називає два види платежів, які закон вважає судовими зборами.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 212 § 1–2",
           explanation:
-            "Najpierw ustal, czy konkretna należność jest wpisem, czy opłatą kancelaryjną; są to dwie kategorie opłat sądowych.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Przepis wskazuje odbiorcę dochodu, ale nie ustala stawki konkretnego pisma.",
+            "Перед оплатою визначте, чи йдеться про збір за ініціювання провадження або канцелярський платіж за документ чи іншу дію.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("212", "Art. 212")} nie przesądza wysokości opłaty ani prawa do zwolnienia; służy klasyfikacji należności.`,
+      legalEffect:
+        "Правильна категорія визначає підставу, розмір і момент оплати.",
       foreignersCase:
-        "Przy składaniu skargi na decyzję pobytową nazwij żądany i uiszczony rodzaj opłaty zgodnie z ustawą, nie utożsamiając każdego płatnego pisma z wpisem.",
+        "У справі про перебування не плутайте збір за подання скарги (wpis) з канцелярським збором (opłata kancelaryjna) за копію рішення з обґрунтуванням.",
     },
   ],
 })

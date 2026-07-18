@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-79",
@@ -13,7 +13,7 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd ustanowі kurator, якщо wnioskodawca uprawdopodobni, що місце перебування сторони невідоме; про це оголошують публічно, а doręczenie kurator стає ефективним, із можливістю визначити строк від оголошення.",
+          text: "Sąd ustanowi kurator, якщо wnioskodawca uprawdopodobni, що місце перебування сторони невідоме; про це оголошують публічно, а doręczenie kurator стає ефективним, із можливістю визначити строк від оголошення.",
           sourceLocator: "Art. 79 § 1–4",
         },
       ],

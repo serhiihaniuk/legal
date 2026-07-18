@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-64",
@@ -24,11 +24,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           sourceLocator: "Art. 64 ust. 4–7",
         },
       ],
-      summary: foreignersLaw.text`${foreignersLaw.article("64", "Art. 64")} пов’язує окремі робочі цілі візи з доказом допуску до праці: zezwolenie na pracę, oświadczenie о дорученні роботи або заświadczenie для роботи сезонної. Тривалість pobytu за візою не може бути довшою за строк підтвердного документа і межі відповідного типу wiza.`,
+      summary: foreignersLaw.text`${foreignersLaw.article("64", "Art. 64")} пов’язує окремі робочі цілі візи з доказом допуску до праці: zezwolenie na pracę, oświadczenie о дорученні роботи або zaświadczenie для роботи сезонної. Тривалість pobytu за візою не може бути довшою за строк підтвердного документа і межі відповідного типу wiza.`,
       rules: [
         {
           locator: "Art. 64 ust. 1–3",
-          explanation: foreignersLaw.text`Для ${foreignersLaw.article("60", "Art. 60")} ust. 1 pkt 6 подається zezwolenie na pracę за названими положеннями закону про powierzanie pracy, якщо дозвіл не є потрібним; для pkt 5 — oświadczenie, внесене до ewidencja; для pkt 5a — заświadczenie про сезонний wniosek, внесений до ewidencja.`,
+          explanation: foreignersLaw.text`Для ${foreignersLaw.article("60", "Art. 60")} ust. 1 pkt 6 подається zezwolenie na pracę за названими положеннями закону про powierzanie pracy, якщо дозвіл не є потрібним; для pkt 5 — oświadczenie, внесене до ewidencja; для pkt 5a — zaświadczenie про сезонний wniosek, внесений до ewidencja.`,
         },
         {
           locator: "Art. 64 ust. 4–6",

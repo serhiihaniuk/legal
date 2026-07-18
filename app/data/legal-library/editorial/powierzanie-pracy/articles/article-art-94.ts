@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-94",
@@ -13,23 +13,23 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 94 встановлює у art. 93 ustawy o Polskiej Akademii Nauk, що особа без польського громадянства може бути zatrudniona на stanowiska art. 88 без zezwolenie або oświadczenie, про яке йдеться в art. 3 ust. 3 нової ustawa.",
+          text: "Art. 94 є виконаною нормою про зміну art. 93 закону «ustawa o Polskiej Akademii Nauk». У наукових підрозділах особу без польського громадянства можна працевлаштувати на посади з art. 88 без дозволу на роботу або заяви про доручення роботи, про яку йдеться в art. 3 ust. 3 закону від 20 березня 2025 року.",
           sourceLocator: "Art. 94; art. 93 ustawy o PAN",
         },
       ],
       summary:
-        "Виняток стосується праці в jednostki naukowe на stanowiska, названі art. 88 ustawy o PAN. Він сформульований як відсутність вимоги до zezwolenie або oświadczenie, а не як загальне звільнення всіх працівників PAN.",
+        "Виняток стосується лише праці в наукових підрозділах на посадах, названих у art. 88 закону про Польську академію наук. Це звільнення від вимоги мати дозвіл або записану заяву, а не загальний виняток для всіх працівників PAN.",
       rules: [
         {
           locator: "Art. 94; art. 93 ustawy o PAN",
           explanation:
-            "Особа без польського громадянства може бути zatrudniona без цих документів лише на stanowiska, про які говорить art. 88 ustawy o PAN, у jednostki naukowe.",
+            "Особу без польського громадянства можна працевлаштувати без цих документів лише в науковому підрозділі та лише на посаді, названій у art. 88 закону про Польську академію наук.",
         },
       ],
       legalEffect:
-        "Виняток прив'язаний одночасно до типу установи та stanowisko; інші підстави pobyt, страхування чи професійний допуск цим не вирішуються.",
+        "Виняток прив'язаний одночасно до типу установи та посади. Він не вирішує питання законності перебування, страхування чи професійного допуску.",
       foreignersCase:
-        "Для наукового працівника перевірте, чи роботодавець є jednostka naukowa і чи конкретне stanowisko входить до art. 88 PAN. Не поширюйте виняток на адміністративну або іншу роботу без окремої підстави.",
+        "Для наукового працівника перевірте, чи роботодавець є науковим підрозділом і чи конкретна посада входить до art. 88 закону про Польську академію наук. Не поширюйте виняток на адміністративну або іншу роботу без окремої підстави.",
     },
   ]),
 })

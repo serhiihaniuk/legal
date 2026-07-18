@@ -18,7 +18,7 @@ export const documentTypesTopic: KnowledgeUnit<DocumentTypesBody> =
       reference: { kind: "map-node", nodeId: "document-types" },
     },
     summary:
-      "Використовуй не лише додатки з checklisty. KPA допускає все законне, що допомагає встановити факт: документи, реєстри, пояснення, свідків, експерта, oględziny.",
+      "Використовуй не лише додатки зі списком перевірки. KPA допускає все законне, що допомагає встановити факт: документи, реєстри, пояснення, свідків, експерта, oględziny.",
     claims: [
       {
         id: "open-evidence-catalog",
@@ -29,7 +29,7 @@ export const documentTypesTopic: KnowledgeUnit<DocumentTypesBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -40,7 +40,7 @@ export const documentTypesTopic: KnowledgeUnit<DocumentTypesBody> =
       sources: [mapTopicSources.kpa, mapTopicSources.aliens],
       guide: {
         introduction: [
-          "KPA не обмежує доказування закритим checklistem документів. Dowodem може бути все, що допомагає з'ясувати справу, не суперечить праву та стосується істотного факту: dokument urzędowy, dokument prywatny, дані rejestru, zeznania, opinia biegłego, oględziny або інший носій інформації.",
+          "KPA не обмежує доказування закритим списком документів. Dowodem може бути все, що допомагає з'ясувати справу, не суперечить праву та стосується істотного факту: dokument urzędowy, dokument prywatny, дані rejestru, zeznania, opinia biegłego, oględziny або інший носій інформації.",
           "Вид доказу визначає не його назва, а походження, спосіб створення й те, яку саме обставину він здатний підтвердити.",
         ],
         regulated: [

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-214",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Jeżeli ustawa nie stanowi inaczej, koszty sądowe uiszcza ten, kto wnosi do sądu pismo podlegające opłacie lub powodujące wydatki. Pismo kilku osób o wspólnych uprawnieniach lub obowiązkach podlega jednej opłacie; w przeciwnym razie każda osoba uiszcza opłatę oddzielnie stosownie do swojego uprawnienia lub obowiązku.",
+          text: "Якщо спеціальна норма не встановлює іншого, судові витрати сплачує особа, яка подає платний документ або спричиняє видаток. Спільний документ кількох осіб із спільними правами чи обов’язками має один збір; за окремих прав кожна сплачує свою частину.",
           sourceLocator: "Art. 214 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("214", "Art. 214")} wskazuje podstawowego płatnika i rozdziela jedną albo odrębne opłaty przy piśmie wniesionym przez kilka osób.`,
+      summary:
+        "Стаття визначає первинного платника та правило для кількох подавачів.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 214 § 1–2",
           explanation:
-            "Co do zasady płaci wnoszący pismo, chyba że inna ustawa przewiduje wyjątek; dotyczy to opłaty albo pisma powodującego wydatek.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Wspólne uprawnienia lub obowiązki oznaczają jedną opłatę, a brak wspólności — opłatę każdej osoby według jej zakresu.",
+            "Встановіть, хто подає документ, що саме створює платіж і чи права подавачів спільні. Не визначайте кількість зборів лише за кількістю підписів.",
         },
       ],
       legalEffect:
-        "Przepis ustala obowiązek uiszczenia, lecz nie rozstrzyga zwolnienia ani ostatecznego zwrotu kosztów; te kwestie wymagają osobnej podstawy.",
+        "Первинний обов’язок оплатити не дорівнює остаточному розподілу витрат після рішення.",
       foreignersCase:
-        "Przy wspólnej skardze członków rodziny ustal, czy ich uprawnienia lub obowiązki wobec zaskarżenia są wspólne. Od tego zależy jedna albo odrębne opłaty.",
+        "У сімейних справах про перебування окремі рішення щодо кожної особи можуть означати окремі права й платежі, навіть якщо документи подають разом.",
     },
   ],
 })

@@ -49,9 +49,9 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "38",
@@ -62,7 +62,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           sourceLocator: "Art. 38",
         },
       ],
-      foreignersLaw.text`Стаття визначає відмову у дозволі на mały ruch graniczny через невиконання умов ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} розporządzenie nr 1931/2006.`,
+      foreignersLaw.text`Стаття визначає відмову у дозволі на mały ruch graniczny через невиконання умов ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} rozporządzenie nr 1931/2006.`,
       [
         {
           locator: "cały przepis",

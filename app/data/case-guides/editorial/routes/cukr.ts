@@ -1011,13 +1011,14 @@ const route: CaseGuideRoute = {
           proves: "Законність поточної роботи до отримання CUKR",
           law: {
             kind: "authored-legal-text",
-            plainText: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            plainText:
+              "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
             parts: [
               {
-                text: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+                text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
                 target: {
                   kind: "external",
-                  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
                 },
               },
             ],
@@ -1340,7 +1341,7 @@ const route: CaseGuideRoute = {
       actions: [
         "Зіставити rozstrzygnięcie з заявленою підставою й установленими фактами.",
         "Зафіксувати момент виникнення статусу та окремо строк ważności карти.",
-        "Виписати post-decision duties, тригери зміни та строк оскарження.",
+        "Виписати обов’язки після decyzji, тригери зміни та строк оскарження.",
       ],
       outcome:
         "Картка наслідків рішення: статус, praca, зміни, оскарження й наступний маршрут.",
@@ -1387,13 +1388,14 @@ const route: CaseGuideRoute = {
           proves: "Законність поточної роботи до отримання CUKR",
           law: {
             kind: "authored-legal-text",
-            plainText: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            plainText:
+              "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
             parts: [
               {
-                text: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+                text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
                 target: {
                   kind: "external",
-                  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
                 },
               },
             ],
@@ -1477,7 +1479,7 @@ const route: CaseGuideRoute = {
         {
           title: "Пропущено odwołanie або обов’язок повідомлення",
           explanation:
-            "Строк захисту й post-decision duties запускаються різними подіями та не контролюються автоматично після закриття справи.",
+            "Строк захисту й обов’язки після decyzji запускаються різними подіями та не контролюються автоматично після закриття справи.",
           check:
             "Створіть картку строків із тригером, адресатом, дією, доказом виконання та відповідальною особою.",
         },
@@ -1762,13 +1764,14 @@ const route: CaseGuideRoute = {
       proves: "Законність поточної роботи до отримання CUKR",
       law: {
         kind: "authored-legal-text",
-        plainText: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+        plainText:
+          "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
         parts: [
           {
-            text: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
             target: {
               kind: "external",
-              url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+              url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
             },
           },
         ],
@@ -1815,13 +1818,14 @@ const route: CaseGuideRoute = {
         "Прострочення ставить під ризик законність поточної роботи; CUKR цього не виправляє заднім числом.",
       law: {
         kind: "authored-legal-text",
-        plainText: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+        plainText:
+          "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
         parts: [
           {
-            text: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
             target: {
               kind: "external",
-              url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+              url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
             },
           },
         ],
@@ -2093,7 +2097,7 @@ export const cukrCaseGuide: KnowledgeUnit<CaseGuideRoute> = defineKnowledgeUnit(
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

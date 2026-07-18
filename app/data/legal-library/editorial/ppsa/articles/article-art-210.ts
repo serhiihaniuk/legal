@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-210",
@@ -15,24 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Strona traci uprawnienie do żądania zwrotu kosztów, jeżeli najpóźniej przed zamknięciem rozprawy bezpośrednio poprzedzającej orzeczenie nie zgłosi wniosku; sąd powinien pouczyć stronę bez profesjonalnego pełnomocnika o skutkach zaniechania. Reguła ta nie działa przy orzekaniu na posiedzeniu niejawnym, gdy strona nie jest reprezentowana przez adwokata, radcę prawnego, doradcę podatkowego lub rzecznika patentowego — wtedy sąd orzeka o należnych kosztach z urzędu.",
+          text: "Сторона втрачає право вимагати повернення витрат, якщо не заявить його найпізніше до закриття засідання безпосередньо перед рішенням. Суд має попередити про це сторону без професійного представника. На закритому засіданні суд вирішує витрати такої непредставленої сторони з власної ініціативи.",
           sourceLocator: "Art. 210 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("210", "Art. 210")} określa termin zgłoszenia wniosku o zwrot kosztów i wyjątek, w którym na posiedzeniu niejawnym sąd rozstrzyga koszty z urzędu.`,
+      summary:
+        "Стаття встановлює момент, до якого зазвичай треба заявити вимогу про витрати, і захищає непредставлену сторону в письмовому розгляді.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 210 § 1–2",
           explanation:
-            "Zwykły termin kończy się przed zamknięciem rozprawy bezpośrednio poprzedzającej orzeczenie; osoba bez profesjonalnego pełnomocnika powinna otrzymać pouczenie.",
-        },
-        {
-          locator: "§ 2",
-          explanation: ppsaLaw.text`Przy posiedzeniu niejawnym i braku wskazanego pełnomocnika wniosek nie jest wymagany na zasadzie ${ppsaLaw.article("210", "§ 1")}, bo sąd orzeka z urzędu.`,
+            "На відкритому засіданні (rozprawa) подайте заяву до його закриття й перевірте її внесення до протоколу. Виняток для закритого засідання (posiedzenie niejawne) діє лише для сторони без названого професійного представника.",
         },
       ],
-      legalEffect: ppsaLaw.text`Późny wniosek może oznaczać utratę uprawnienia, lecz przed zastosowaniem ${ppsaLaw.article("210", "§ 1")} trzeba sprawdzić tryb orzekania i reprezentację strony.`,
-      foreignersCase: ppsaLaw.text`W sprawie pobytowej pełnomocnik powinien zgłosić wniosek przed zamknięciem rozprawy. Jeżeli nie ma profesjonalnego pełnomocnika i sprawa jest na posiedzeniu niejawnym, sprawdź zastosowanie ${ppsaLaw.article("210", "§ 2")}.`,
+      legalEffect:
+        "Пропуск моменту на відкритому засіданні припиняє право на вимогу; судове роз’яснення (pouczenie) важливе для непредставленої особи.",
+      foreignersCase:
+        "Якщо іноземець діє сам, він повинен прямо попросити про витрати до закриття засідання, а не чекати рішення.",
     },
   ],
 })

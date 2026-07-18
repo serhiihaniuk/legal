@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-227",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("227", "Art. 227 § 1")} допускає zażalenie на zarządzenie przewodniczącego та postanowienie wojewódzkiego sądu administracyjnego щодо kosztów sądowych, якщо сторона не подає środka odwoławczego щодо суті справи; ${ppsaLaw.article("227", "§ 2")} звільняє такі zażalenia від opłat sądowych.`,
+          text: "На розпорядження головуючого або ухвалу WSA щодо судових витрат можна подати окреме оскарження (zażalenie), якщо сторона не оскаржує рішення по суті справи. За такий документ судовий збір не стягують.",
           sourceLocator: "Art. 227 § 1–2",
         },
       ],
       summary:
-        "Окреме zażalenie на рішення про koszty sądowe можливе за умов статті й не обкладається opłata sądowa.",
+        "Стаття дає окремий шлях оскарження фінансового питання, коли воно не йде разом з основним оскарженням.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 227 § 1–2",
           explanation:
-            "Визначте, чи оскаржується саме zarządzenie przewodniczącego або postanowienie WSA про koszty і чи немає środka odwoławczego по суті справи.",
-        },
-        {
-          locator: "§ 2",
-          explanation: ppsaLaw.text`Для зажаленія, охопленого ${ppsaLaw.article("227", "§ 1")}, opłata sądowa не стягується.`,
+            "Перевірте, чи одночасно оскаржується суть справи. Якщо ні, точно вкажіть фінансовий документ і помилку розрахунку або правової підстави.",
         },
       ],
       legalEffect:
-        "Норма встановлює названий процесуальний засіб і звільнення від opłata, але не гарантує задоволення зажаленія або зміну розподілу витрат.",
+        "Окреме оскарження щодо витрат (zażalenie) є безоплатним, але все одно має відповідати строку й формі, встановленим для цього засобу.",
       foreignersCase:
-        "У справі іноземця відокремте zażalenie на koszty від оскарження рішення про pobyt по суті та перевірте, яке саме рішення WSA або przewodniczącego отримано.",
+        "Якщо результат справи про перебування не оскаржується, але суд неправильно визначив збір за подання (wpis), використовуйте окремий фінансовий шлях, а не касаційну скаргу по суті.",
     },
   ],
 })

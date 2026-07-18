@@ -49,16 +49,16 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "44",
       [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("44", "Art. 44")} вимагає подавати заяву на zezwolenie для mały ruch graniczny на formularz, пред’явити чинний dokument podróży, подати фотографію, докази stałe zamieszkanie у strefa przygraniczna та причини частого перетину, а також здати odciski linii papilarnych.`,
+          text: foreignersLaw.text`${foreignersLaw.article("44", "Art. 44")} вимагає подавати заяву на zezwolenie для mały ruch graniczny на встановленій формі, пред’явити чинний dokument podróży, подати фотографію, докази stałe zamieszkanie у strefa przygraniczna та причини частого перетину, а також здати odciski linii papilarnych.`,
           sourceLocator: "Art. 44 ust. 1–3",
         },
         {
@@ -77,11 +77,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 3–4",
           explanation:
-            "Від cudzoziemiec беруть fingerprints; ненадання їх за обов’язку є підставою odmowa wszczęcia postępowania.",
+            "Від cudzoziemiec беруть odciski linii papilarnych; ненадання їх за обов’язку є підставою odmowa wszczęcia postępowania.",
         },
       ],
-      foreignersLaw.text`Подання formularz і документів дозволяє розпочати перевірку, але не гарантує zezwolenie; окремо потрібно виконати умови ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} rozporządzenia nr 1931/2006.`,
-      "Підготуйте копію formularz, чинний документ подорожі, фото, докази проживання в зоні та причини частих поїздок. Збережіть підтвердження здачі відбитків.",
+      foreignersLaw.text`Подання форми й документів дозволяє розпочати перевірку, але не гарантує zezwolenie; окремо потрібно виконати умови ${foreignersLaw.external("art. 9", LOCAL_BORDER_TRAFFIC_URL)} rozporządzenia nr 1931/2006.`,
+      "Підготуйте копію поданої форми, чинний документ подорожі, фото, докази проживання в зоні та причини частих поїздок. Збережіть підтвердження здачі відбитків.",
       {
         provisionId: "ustawa-o-cudzoziemcach-art-44",
         reviewStatus: "reviewed",

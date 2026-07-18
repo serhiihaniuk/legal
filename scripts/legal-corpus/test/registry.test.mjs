@@ -30,7 +30,12 @@ const manifest = (documentId, editionId) => ({
 /**
  * @param {{ documentId: string, editionId: string, id?: string, order?: number }} options
  */
-const provision = ({ documentId, editionId, id = `${documentId}-art-1`, order = 1 }) => ({
+const provision = ({
+  documentId,
+  editionId,
+  id = `${documentId}-art-1`,
+  order = 1,
+}) => ({
   id,
   documentId,
   editionId,
@@ -56,8 +61,14 @@ const provision = ({ documentId, editionId, id = `${documentId}-art-1`, order = 
 async function writeEdition(root, directory, editionManifest, provisions) {
   const target = path.join(root, directory)
   await mkdir(target, { recursive: true })
-  await writeFile(path.join(target, "manifest.json"), JSON.stringify(editionManifest))
-  await writeFile(path.join(target, "provisions.json"), JSON.stringify(provisions))
+  await writeFile(
+    path.join(target, "manifest.json"),
+    JSON.stringify(editionManifest)
+  )
+  await writeFile(
+    path.join(target, "provisions.json"),
+    JSON.stringify(provisions)
+  )
 }
 
 /**
@@ -74,14 +85,30 @@ async function withTempCorpus(callback) {
 
 test("rejects missing and ambiguous current-edition pointers", async () => {
   await withTempCorpus(async (root) => {
-    await writeEdition(root, "alpha-2025-1", manifest("alpha", "alpha-2025-1"), [provision({ documentId: "alpha", editionId: "alpha-2025-1" })])
+    await writeEdition(
+      root,
+      "alpha-2025-1",
+      manifest("alpha", "alpha-2025-1"),
+      [provision({ documentId: "alpha", editionId: "alpha-2025-1" })]
+    )
     const editions = await scanCorpusEditions(root)
-    assert.throws(() => groupEditions(editions, {}), /missing explicit current-edition pointer/)
+    assert.throws(
+      () => groupEditions(editions, {}),
+      /missing explicit current-edition pointer/
+    )
 
-    await writeEdition(root, "alpha-2026-2", manifest("alpha", "alpha-2026-2"), [provision({ documentId: "alpha", editionId: "alpha-2026-2" })])
+    await writeEdition(
+      root,
+      "alpha-2026-2",
+      manifest("alpha", "alpha-2026-2"),
+      [provision({ documentId: "alpha", editionId: "alpha-2026-2" })]
+    )
     const ambiguous = await scanCorpusEditions(root)
     assert.throws(() => groupEditions(ambiguous, {}), /ambiguous editions/)
-    assert.throws(() => groupEditions(ambiguous, { alpha: "alpha-2027-3" }), /exactly one scanned edition/)
+    assert.throws(
+      () => groupEditions(ambiguous, { alpha: "alpha-2027-3" }),
+      /exactly one scanned edition/
+    )
   })
 })
 
@@ -93,7 +120,10 @@ test("rejects a provision whose document or edition identity differs from its ma
       manifest("alpha", "alpha-2025-1"),
       [provision({ documentId: "beta", editionId: "alpha-2025-1" })]
     )
-    await assert.rejects(() => scanCorpusEditions(root), /mismatched document or edition/)
+    await assert.rejects(
+      () => scanCorpusEditions(root),
+      /mismatched document or edition/
+    )
   })
 })
 
@@ -104,14 +134,32 @@ test("renders deterministic imports and preserves source provision order", async
       "alpha-2025-1",
       manifest("alpha", "alpha-2025-1"),
       [
-        provision({ documentId: "alpha", editionId: "alpha-2025-1", id: "alpha-art-2", order: 2 }),
-        provision({ documentId: "alpha", editionId: "alpha-2025-1", id: "alpha-art-1", order: 1 }),
+        provision({
+          documentId: "alpha",
+          editionId: "alpha-2025-1",
+          id: "alpha-art-2",
+          order: 2,
+        }),
+        provision({
+          documentId: "alpha",
+          editionId: "alpha-2025-1",
+          id: "alpha-art-1",
+          order: 1,
+        }),
       ]
     )
     const editions = await scanCorpusEditions(root)
     const groups = groupEditions(editions, { alpha: "alpha-2025-1" })
-    const first = renderRegistry(groups, root, path.join(root, "registry.generated.ts"))
-    const second = renderRegistry(groups, root, path.join(root, "registry.generated.ts"))
+    const first = renderRegistry(
+      groups,
+      root,
+      path.join(root, "registry.generated.ts")
+    )
+    const second = renderRegistry(
+      groups,
+      root,
+      path.join(root, "registry.generated.ts")
+    )
     assert.equal(first, second)
     assert.ok(first.indexOf('provisionIds: ["alpha-art-2", "alpha-art-1"]') > 0)
 
@@ -163,5 +211,44 @@ test("generateRegistry accepts an explicit currentEditions override instead of r
     assert.match(result.referenceSource, /currentEditionId: "alpha-2026-2"/)
     const written = await readFile(result.referenceOutputPath, "utf8")
     assert.equal(written, result.referenceSource)
+  })
+})
+
+test("a promoted recovered article is present in the generated current provision union", async () => {
+  await withTempCorpus(async (root) => {
+    await writeEdition(
+      root,
+      "app/data/legal-corpus/ustawa-old",
+      manifest("ustawa-o-cudzoziemcach", "ustawa-old"),
+      [
+        provision({
+          documentId: "ustawa-o-cudzoziemcach",
+          editionId: "ustawa-old",
+          id: "ustawa-o-cudzoziemcach-art-106a",
+        }),
+      ]
+    )
+    await writeEdition(
+      root,
+      "app/data/legal-corpus/ustawa-corrected",
+      manifest("ustawa-o-cudzoziemcach", "ustawa-corrected"),
+      [
+        provision({
+          documentId: "ustawa-o-cudzoziemcach",
+          editionId: "ustawa-corrected",
+          id: "ustawa-o-cudzoziemcach-art-106b",
+        }),
+      ]
+    )
+
+    const result = await generateRegistry({
+      projectRoot: root,
+      currentEditions: { "ustawa-o-cudzoziemcach": "ustawa-corrected" },
+    })
+    assert.match(
+      result.referenceSource,
+      /currentEditionId: "ustawa-corrected"/u
+    )
+    assert.match(result.referenceSource, /"ustawa-o-cudzoziemcach-art-106b"/u)
   })
 })

@@ -8,8 +8,8 @@ const regulationLaw = createLegalTextAuthor(
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-1",
@@ -37,7 +37,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
         {
           locator: "pouczenie pkt 14–18; części A–X",
           explanation:
-            "Вказано вимоги до JPG-фото, цифрової копії документа подорожі, підпису та отримання urzędowe poświadczenie odbioru; поля форми охоплюють personal data, адреси, cel pobytu, поточне перебування, закордонні поїздки, кошти, ubezpieczenie та запитання про окремі обставини.",
+            "Вказано вимоги до JPG-фото, цифрової копії документа подорожі, підпису та отримання urzędowe poświadczenie odbioru; поля форми охоплюють dane osobowe, адреси, cel pobytu, поточне перебування, закордонні поїздки, кошти, ubezpieczenie та запитання про окремі обставини.",
         },
       ],
       legalEffect: regulationLaw.text`${regulationLaw.annex("1", "Załącznik nr 1")} структурує подання та попереджає про процедурні наслідки brak formalny, але заповнений formularz сам по собі не доводить матеріальні умови zezwolenia і не гарантує позитивного рішення.`,

@@ -1,35 +1,33 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-283",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 283 встановлює, що sędzia, участь або поведінка якого в попередньому провадженні є предметом skarga o wznowienie, wyłączony від ухвалення рішення у цьому провадженні.",
+          text: "Суддя, чия участь або поведінка в попередньому провадженні є предметом скарги про поновлення, не може розглядати цю скаргу.",
           sourceLocator: "Art. 283",
         },
       ],
-      summary:
-        "Норма виключає з розгляду wznowienie суддю, чия участь або поведінка в попередній справі оскаржується.",
+      summary: "Стаття захищає неупередженість повторного розгляду.",
       rules: [
         {
           locator: "Art. 283",
           explanation:
-            "Порівняйте предмет skarga з участю або zachowanie sędzia в попередньому провадженні; саме цей зв’язок запускає wyłączenie за статтею.",
+            "Зіставте підставу поновлення (wznowienie) з особою судді. Виключення діє тоді, коли скарга стосується саме його участі або поведінки.",
         },
       ],
       legalEffect:
-        "Стаття встановлює гарантію неупередженого складу для цього провадження, але сама не доводить, що заявлена підстава wznowienie є обґрунтованою.",
+        "Справу про дефект попереднього розгляду оцінює інший суддя.",
       foreignersCase:
-        "Якщо в skarga іноземця прямо оскаржується участь або поведінка конкретного sędzia, перевірте склад суду у провадженні wznowienie та відокремте це питання від оцінки рішення по pobyt.",
+        "У справі іноземця чітко назвіть, яка дія судді утворює підставу поновлення; загальна незгода з рішенням не запускає автоматичне виключення.",
     },
-  ]),
+  ],
 })

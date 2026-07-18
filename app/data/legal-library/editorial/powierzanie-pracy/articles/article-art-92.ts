@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-92",
@@ -13,28 +13,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 92 змінює art. 35 ust. 1–2 ustawy o udzielaniu cudzoziemcom ochrony: за незавершення справи про ochronę internationalna за 6 місяців без вини wnioskodawca відповідне zaświadczenie разом із tymczasowe zaświadczenie tożsamości дає право працювати за правилами нової ustawa.",
+          text: "Art. 92 є виконаною нормою про зміну art. 35 ust. 1–2 закону «ustawa o udzielaniu cudzoziemcom ochrony». Якщо справу про міжнародний захист не завершено протягом шести місяців не з вини заявника, спеціальна довідка разом із тимчасовим посвідченням особи іноземця дає право працювати за правилами закону від 20 березня 2025 року.",
           sourceLocator: "Art. 92; art. 35 ust. 1–2 ustawy o ochronie",
         },
       ],
       summary:
-        "Право працювати виникає не просто через тривале очікування. Потрібні wniosek, затримка не з вини заявника, заświadczenie Szef Urzędu та тимчасовий документ особи; робота відбувається на умовах і в порядку ustawa o powierzaniu pracy.",
+        "Самого тривалого очікування недостатньо. Потрібні затримка не з вини заявника, його заява, довідка Szef Urzędu do Spraw Cudzoziemców і чинне тимчасове посвідчення особи іноземця. Роботу виконують на умовах і в порядку, встановлених законом про доручення роботи іноземцям.",
       rules: [
         {
           locator: "art. 35 ust. 1",
           explanation:
-            "Szef Urzędu видає zaświadczenie на wniosek особи, якщо справа не вирішена у строк і затримка не з її вини; разом із tymczasowe zaświadczenie документ уповноважує до роботи за новою ustawa.",
+            "Szef Urzędu видає довідку за заявою особи, якої стосується заява про міжнародний захист, якщо справа не вирішена у строк і затримка виникла не з її вини. Разом із тимчасовим посвідченням особи ця довідка дає право працювати за новим законом.",
         },
         {
           locator: "art. 35 ust. 2",
           explanation:
-            "У zaświadczenie підтверджують незавершення за 6 місяців і відсутність вини заявника та вказують особу, яка має право працювати.",
+            "У довідці підтверджують, що справу не завершено протягом шести місяців і затримка виникла не з вини заявника, а також вказують іноземця, який має право працювати.",
         },
       ],
       legalEffect:
-        "Це спеціальна підстава доступу до роботи під час процедури ochronę internationalna, але вона не є рішенням про надання захисту і не скасовує умов нової ustawa.",
+        "Це спеціальна підстава доступу до роботи під час процедури міжнародного захисту. Вона не є рішенням про надання захисту і не скасовує умов закону про доручення роботи.",
       foreignersCase:
-        "Перевірте, чи є саме заświadczenie і tymczasowe zaświadczenie tożsamości та що в ньому підтверджено 6-місячну затримку без вини. Лише після цього оцінюйте умови powierzenie pracy.",
+        "Перевірте наявність саме довідки з art. 35 і тимчасового посвідчення особи іноземця, а також підтвердження шестимісячної затримки без вини заявника. Після цього окремо оцініть умови доручення роботи.",
     },
   ]),
 })

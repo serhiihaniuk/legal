@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-351",
@@ -34,10 +34,10 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "pkt 3",
           explanation:
-            "Згода можлива, коли видача до єдиної можливої держави заборонена судовим рішенням або розпорядженням Ministra Sprawiedliwości.",
+            "Підстава виконана, коли повернення можливе лише до держави, до якої видача заборонена судовим рішенням або розпорядженням Ministra Sprawiedliwości.",
         },
       ],
-      legalEffect: foreignersLaw.text`Вид режиму залежить від конкретної підстави; ${foreignersLaw.article("351", "Art. 351")} не дає автоматичного права на tolerowany pobyt через сам факт тривалого перебування чи складності повернення.`,
+      legalEffect: foreignersLaw.text`${foreignersLaw.article("351", "Art. 351")} формулює зв’язану компетенцію: «zgody ... udziela się». Якщо орган встановив хоча б одну повну підставу pkt 1–3, він повинен надати zgodę na pobyt tolerowany; сама тривалість pobytu чи загальна складність повернення такою підставою не є.`,
       foreignersCase: foreignersLaw.text`З’ясуйте, чи орган посилається на ${foreignersLaw.article("351", "Art. 351")} pkt 1, 2 або 3, хто перешкоджає поверненню та які документи підтверджують неможливість або юридичну заборону.`,
     },
   ],

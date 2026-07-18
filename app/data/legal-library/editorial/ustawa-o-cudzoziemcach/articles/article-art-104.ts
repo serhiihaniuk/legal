@@ -1,80 +1,46 @@
-import type { LegalProvisionId } from "../../../contracts"
-
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type ReviewedArticleData = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  statuteText: string
-  statuteLocator: string
-  practicalText: string
-  practicalLocator: string
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
-  provisionId: data.provisionId ?? provisionId(article),
-  reviewStatus: data.reviewStatus,
-  claims: [
-    {
-      kind: "statute-text" as const,
-      text: data.statuteText,
-      sourceLocator: data.statuteLocator,
-    },
-    {
-      kind: "practical-inference" as const,
-      text: data.practicalText,
-      sourceLocator: data.practicalLocator,
-    },
-  ],
-  summary: data.summary,
-  rules: data.rules,
-  legalEffect: data.legalEffect,
-  foreignersCase: data.foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle("104", {
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
       provisionId: "ustawa-o-cudzoziemcach-art-104",
       reviewStatus: "reviewed",
-      statuteText:
-        "Temporary residence permit, крім дозволів Art. 139a ust. 1 та Art. 139o ust. 1, надає або відмовляє у його наданні wojewoda за місцем pobytu cudzoziemiec у формі decyzja. Cofає permit wojewoda, який його надав; якщо permit надав Szef Urzędu у другій інстанції, cofає wojewoda, який вирішував справу в першій інстанції.",
-      statuteLocator: "Art. 104 ust. 1–3",
-      practicalText:
-        "Спочатку визначте właściwość органу за місцем pobytu та історією інстанцій. Art. 104 розподіляє компетенцію, але не доводить виконання матеріальних умов permit або права працювати.",
-      practicalLocator: "Art. 104 ust. 1–3",
+      claims: [
+        {
+          kind: "statute-text",
+          text: foreignersLaw.text`${foreignersLaw.article("104", "Art. 104")} розподіляє właściwość wojewody: загалом за місцем pobytu іноземця, для дозволів з ${foreignersLaw.article("139a", "Art. 139a")} і ${foreignersLaw.article("139o", "Art. 139o")} — за siedzibą jednostki przyjmującej, а для названих сімейних дозволів особі за межами Польщі — за місцем pobytu członka rodziny rozdzielonej.`,
+          sourceLocator: "Art. 104 ust. 1–3",
+        },
+      ],
       summary:
-        "Art. 104 встановлює, який organ видає, відмовляє або cofає temporary residence permit.",
+        "Компетентний organ залежить не лише від виду дозволу, а інколи й від того, хто фактично подає заяву та де перебуває іноземець.",
       rules: [
         {
           locator: "Art. 104 ust. 1",
           explanation:
-            "Wojewoda за місцем pobytu приймає рішення про надання або відмову, крім двох спеціальних видів дозволів Art. 139a та Art. 139o.",
+            "Для звичайної справи про pobyt czasowy рішення про надання або відмову приймає wojewoda за місцем pobytu іноземця.",
+        },
+        {
+          locator: "Art. 104 ust. 1a–1b",
+          explanation: foreignersLaw.text`Для ICT і mobilności długoterminowej ICT właściwość визначає siedziba jednostki przyjmującej. Для сімейних заяв з ${foreignersLaw.article("159", "Art. 159")} ust. 1 або названих пунктів ${foreignersLaw.article("160", "Art. 160")} щодо іноземця за кордоном — місце pobytu członka rodziny rozdzielonej.`,
         },
         {
           locator: "Art. 104 ust. 2–3",
           explanation:
-            "Cofає permit wojewoda, який його надав; після надання Szef Urzędu у другій інстанції це робить wojewoda першої інстанції.",
+            "Cofnięcie загалом здійснює wojewoda, який надав дозвіл; якщо Szef Urzędu надав його у другій інстанції, справу про cofnięcie веде wojewoda першої інстанції.",
         },
       ],
-      legalEffect:
-        "Норма визначає належного decision-maker та форму рішення. Вона сама не надає permit, legal stay або work authorization.",
+      legalEffect: foreignersLaw.text`${foreignersLaw.article("104", "Art. 104")} визначає належний орган і форму decyzji, але не доводить матеріальних умов дозволу й не створює права на роботу.`,
       foreignersCase:
-        "Підтвердьте актуальне місце pobytu, компетентного wojewoda, орган першої та другої інстанції, а також хто видав попередній permit. Усі матеріальні умови перевіряйте окремо.",
-    }),
-  ]),
+        "Перед поданням встановіть точний вид дозволу, фактичне місце pobytu іноземця, siedzibę jednostki przyjmującej або місце pobytu члена сім’ї — залежно від маршруту. Потім окремо перевірте матеріальні умови.",
+    },
+  ],
 })

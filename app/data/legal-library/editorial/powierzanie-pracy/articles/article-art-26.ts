@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-26",
@@ -15,26 +15,26 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("26", "Art. 26")} ust. 1 визначає właściwy wojewoda для zezwolenie na pracę на користь польського podmiot за його siedziba або місцем stałego pobytu. Ust. 2 вимагає відмовити у wszczęciu, а вже розпочате postępowanie umorzyć, якщо powierzenie стосувалося б діяльності з rozporządzenie за ${workLaw.article("45", "art. 45")} ust. 2 або випадків ${workLaw.article("2", "art. 2")} pkt 9 lit. c–e.`,
+          text: workLaw.text`${workLaw.article("26", "Art. 26")} у частині 1 визначає компетентного воєводу у справі про дозвіл на роботу на користь польського суб’єкта — за місцезнаходженням або місцем постійного проживання цього суб’єкта. Частина 2 вимагає відмовити у відкритті провадження, а вже відкрите провадження припинити, якщо робота належить до сезонної діяльності, визначеної приписом із частини 2 ${workLaw.article("45", "ст. 45")}, або до корпоративних функцій із пункту 9 літер c–e ${workLaw.article("2", "ст. 2")}.`,
           sourceLocator: "Art. 26 ust. 1–2 pkt 1–2",
         },
       ],
       summary:
-        "Стаття встановлює компетентного wojewoda для звичайного zezwolenie на роботу на користь польського podmiot та відсіює моделі, які мають інший режим. Sezonowa praca і визначені функції не повинні автоматично проводитися за цією процедурою.",
+        "Стаття визначає компетентного воєводу у справі дозволу на роботу на користь польського суб’єкта й відмежовує моделі, для яких діє інша процедура. Сезонна робота та визначені корпоративні функції не розглядаються за цим маршрутом.",
       rules: [
         {
           locator: "ust. 1",
           explanation:
-            "Звернення подають до wojewoda, właściwość якого пов'язана із siedziba або місцем stałego pobytu polski podmiot powierzający pracę.",
+            "Заяву подають воєводі, компетенція якого визначається за місцезнаходженням або місцем постійного проживання польського суб’єкта, який доручає роботу.",
         },
         {
           locator: "ust. 2 pkt 1–2",
-          explanation: workLaw.text`Провадження не відкривають або припиняють, якщо робота належить до діяльності, визначеної для zezwolenie sezonowe за ${workLaw.article("45", "art. 45")} ust. 2, або до функцій з ${workLaw.article("2", "art. 2")} pkt 9 lit. c–e: зокрема zarząd, ведення чи представництво spółka та prokura.`,
+          explanation: workLaw.text`Провадження не відкривають або припиняють, якщо робота належить до діяльності, для якої потрібен сезонний дозвіл за частиною 2 ${workLaw.article("45", "ст. 45")}, або до функцій із пункту 9 літер c–e ${workLaw.article("2", "ст. 2")}: участі в правлінні, ведення справ чи представництва визначених товариств або виконання функції прокуриста.`,
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("26", "Art. 26")} розподіляє компетенцію та процедуру, але не надає legalny pobyt і не підтверджує uprawnienie do pracy. Неправильно обраний режим може перешкодити розгляду wniosek.`,
+      legalEffect: workLaw.text`${workLaw.article("26", "Ст. 26")} розподіляє компетенцію та процедуру, але не надає законного перебування і не підтверджує права на роботу. Неправильно обрана процедура може перешкодити розгляду заяви.`,
       foreignersCase:
-        "Встановіть siedziba або місце stałego pobytu podmiot, фактичний вид роботи та правову модель: звичайна робота, sezonowa praca чи функція. Окремо перевірте документ legalnego pobytu і підставу доступу до роботи.",
+        "Встановіть місцезнаходження або місце постійного проживання суб’єкта, фактичний вид роботи та правову модель: робота за договором, сезонна робота чи корпоративна функція. Окремо перевірте документ про законне перебування і підставу доступу до роботи.",
     },
   ],
 })

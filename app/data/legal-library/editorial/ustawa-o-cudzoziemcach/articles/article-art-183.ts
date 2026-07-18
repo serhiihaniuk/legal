@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-183",
@@ -15,12 +15,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("183", "Art. 183")} визначає обов'язковий збір wojewoda інформації про загрозу для оборони, безпеки держави або publiczny porządek у справі permit з ${foreignersLaw.article("181", "art. 181")} ust. 1, органи-адресати, строки 7 і 30 dni roboczych, правило про виконання вимоги та виняток для дитини до 13 років.`,
+          text: foreignersLaw.text`${foreignersLaw.article("183", "Art. 183")} визначає обов'язковий збір wojewoda інформації про загрозу для оборони, безпеки держави або porządek publiczny у справі zezwolenie з ${foreignersLaw.article("181", "art. 181")} ust. 1, органи-адресати, строки 7 і 30 dni roboczych, правило про виконання вимоги та виняток для дитини до 13 років.`,
           sourceLocator: "Art. 183 ust. 1–6",
         },
       ],
       summary:
-        "Стаття встановлює безпекову перевірку короткострокового permit і строки відповіді органів, включно з процедурою другої інстанції.",
+        "Стаття встановлює безпекову перевірку короткострокового zezwolenie і строки відповіді органів, включно з процедурою другої інстанції.",
       rules: [
         {
           locator: "ust. 1–2",
@@ -34,7 +34,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 5–5a",
-          explanation: foreignersLaw.text`Після спливу строку з ust. 3 або 4 вимога отримати інформацію вважається виконаною. Якщо Szef Urzędu у другій інстанції має намір надати permit з ${foreignersLaw.article("181", "art. 181")} і wojewoda не робив запиту, Szef Urzędu звертається сам, а правила про строки застосовуються відповідно.`,
+          explanation: foreignersLaw.text`Після спливу строку з ust. 3 або 4 вимога отримати інформацію вважається виконаною. Якщо Szef Urzędu у другій інстанції має намір надати zezwolenie з ${foreignersLaw.article("181", "art. 181")} і wojewoda не робив запиту, Szef Urzędu звертається сам, а правила про строки застосовуються відповідно.`,
         },
         {
           locator: "ust. 4a, 6",

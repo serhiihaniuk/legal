@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-18",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("18", "Art. 18")} визначає зміни, за яких не потрібні зміна або нове zezwolenie na pracę: зміна siedziba, miejsca pobytu stałego, назви чи форми prawnej podmiot, podmiot delegujący або pracodawca użytkownik, przejście zakładu праці до іншого pracodawca та зміна назви stanowisko без зміни обсягу обов'язків. Podmiot має повідомити орган, який видав zezwolenie.`,
+          text: workLaw.text`${workLaw.article("18", "Art. 18")} називає зміни, за яких не потрібно змінювати дозвіл на роботу чи отримувати новий. Йдеться про зміну адреси, назви або правової форми суб’єкта, суб’єкта, до якого відряджено працівника, чи роботодавця-користувача; перехід підприємства або його частини до іншого роботодавця; а також зміну назви посади без зміни обсягу обов’язків. Про кожну таку подію суб’єкт повідомляє орган, який видав дозвіл.`,
           sourceLocator: "Art. 18 ust. 1–2",
         },
       ],
@@ -25,22 +25,22 @@ export default defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 1 pkt 1",
           explanation:
-            "Зміна назви, форми prawnej або адресних даних названого podmiot, podmiot delegujący чи pracodawca użytkownik не вимагає зміни/нового zezwolenie в межах цього пункту.",
+            "Зміна назви, правової форми або названих адресних даних суб’єкта, суб’єкта, до якого відряджено працівника, чи роботодавця-користувача не вимагає змінювати дозвіл або отримувати новий.",
         },
         {
           locator: "ust. 1 pkt 2–3",
           explanation:
-            "Перехід zakład pracy до іншого pracodawca та зміна лише назви stanowisko допускаються без нового дозволу, якщо не змінюється zakres obowiązków cudzoziemiec.",
+            "Перехід підприємства або його частини до іншого роботодавця та зміна лише назви посади допускаються без нового дозволу. У другому випадку обсяг обов’язків іноземця не повинен змінитися.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Про обставини ust. 1 podmiot повинен повідомити organ, який видав zezwolenie; виняток не означає відсутності повідомлення.",
+            "Про обставини з частини 1 суб’єкт повинен повідомити орган, який видав дозвіл. Відсутність обов’язку отримати новий дозвіл не скасовує обов’язку повідомлення.",
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("18", "Art. 18")} зберігає чинність дозволу лише для визначених змін. Він не легалізує нове stanowisko, інші обов'язки або новий вид роботи за межами переліку та не вирішує legalny pobyt.`,
+      legalEffect: workLaw.text`${workLaw.article("18", "Ст. 18")} зберігає чинність дозволу лише за визначених змін. Вона не легалізує іншу посаду, інші обов’язки або новий вид роботи поза межами переліку та не вирішує питання законності перебування.`,
       foreignersCase:
-        "Опишіть зміну фактично, а не лише її назвою: podmiot, адреса, pracodawca, stanowisko й обов'язки. Переконайтеся, що повідомлення надіслано, і окремо перевірте, чи документ pobyt дозволяє продовження роботи.",
+        "Опишіть зміну фактично, а не лише її назвою: суб’єкт, адреса, роботодавець-користувач, посада й обов’язки. Переконайтеся, що повідомлення надіслано, і окремо перевірте, чи підстава перебування дозволяє продовжити роботу.",
     },
   ],
 })

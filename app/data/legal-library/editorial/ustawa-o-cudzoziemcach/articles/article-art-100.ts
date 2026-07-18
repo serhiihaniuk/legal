@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("100", {
       provisionId: "ustawa-o-cudzoziemcach-art-100",
@@ -58,7 +58,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         "На відміну від Art. 99, тут орган оцінює матеріальне право і приймає odmowa udzielenia. Кожна підстава потребує власного доказу; наявність заявленої роботи або договору не усуває SIS, безпекові, податкові чи документальні перешкоди.",
       practicalLocator: "Art. 100 ust. 1–2",
       summary:
-        "Art. 100 визначає materialні підстави відмови у тимчасовому pobyt і спеціальний порядок реагування на SIS-запис та невиконання обов’язку повідомлення за Art. 113.",
+        "Art. 100 визначає матеріальні підстави відмови у тимчасовому pobyt і спеціальний порядок реагування на SIS-запис та невиконання обов’язку повідомлення за Art. 113.",
       rules: [
         {
           locator: "Art. 100 ust. 1 pkt 1–4",
@@ -83,13 +83,13 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 100 ust. 2",
           explanation:
-            "Наступний temporary permit може бути відмовлений, якщо не виконано Art. 113 і новий wniosek подано до року від завершення попереднього дозволу або остаточного cofnięcie.",
+            "Наступний zezwolenie na pobyt czasowy може бути відмовлений, якщо не виконано Art. 113 і новий wniosek подано до року від завершення попереднього дозволу або остаточного cofnięcie.",
         },
       ],
       legalEffect:
         "Встановлена підстава веде до odmowa udzielenia, а не лише до неприйняття wniosku. Виняток для SIS є оцінкою, а не автоматичним дозволом; рішення про pobyt не слід плутати з правом виконувати конкретну роботу.",
       foreignersCase:
-        "Побудуйте таблицю доказів за pkt 1–9: cel і тривалість, wykaz/SIS, безпека, достовірність, податки, витрати powrót, лікування та legal stay. Якщо посилаються на Art. 113, порахуйте рік і додайте доказ повідомлення або причину його відсутності.",
+        "Побудуйте таблицю доказів за pkt 1–9: cel і тривалість, wykaz/SIS, безпека, достовірність, податки, витрати powrót, лікування та legalność pobytu. Якщо посилаються на Art. 113, порахуйте рік і додайте доказ повідомлення або причину його відсутності.",
     }),
   ]),
 })

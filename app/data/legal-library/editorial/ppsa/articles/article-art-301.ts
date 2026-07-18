@@ -1,40 +1,34 @@
 import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-301",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 301 відсилає питання набрання чинності PPSA до ustawa z dnia 30 sierpnia 2002 r. — Przepisy wprowadzające ustawę — Prawo o ustroju sądów administracyjnych i ustawę — Prawo o postępowaniu przed sądami administracyjnymi; примітка до джерельного тексту зазначає, що ustawa wchodziła w życie 1 stycznia 2004 r. на підставі Art. 2 цієї ustawa wprowadzająca.",
-          sourceLocator: "Art. 301 та przypisy 63–64",
+          text: "p.p.s.a. набрала чинності 1 січня 2004 року на строках і за правилами, визначеними актом про введення законів щодо адміністративних судів.",
+          sourceLocator: "Art. 301",
         },
       ],
       summary:
-        "Це кінцеве положення про набрання чинності, яке відсилає до окремого перехідного закону; у джерелі наведено дату 1 stycznia 2004 r.",
+        "Це прикінцеве правило про початок дії закону, а не інструкція для поточного процесуального кроку.",
       rules: [
         {
           locator: "Art. 301",
           explanation:
-            "Для питання wejście w życie звертайтеся до названої ustawa wprowadzająca, а не виводьте дату лише з номера Art. 301.",
-        },
-        {
-          locator: "Przypis 63",
-          explanation:
-            "Джерельна примітка вказує на 1 stycznia 2004 r.; для подій минулого періоду все одно звіряйте перехідні положення відповідної редакції.",
+            "Для сучасної справи використовуйте чинну консолідовану редакцію та перехідні норми конкретних пізніших змін. Історичну дату введення застосовуйте лише до питань у часі.",
         },
       ],
       legalEffect:
-        "Art. 301 має історичну функцію визначення wejście w życie і не є самостійною підставою для сучасної процесуальної дії.",
+        "Стаття підтверджує початкову дату дії p.p.s.a.; вона не визначає строк подання конкретної сучасної скарги.",
       foreignersCase:
-        "У справі іноземця не використовуйте Art. 301 як відповідь на сучасний строк чи право на pobyt; посилайтеся на нього лише для питання wejście w życie та перевірки застосовної редакції.",
+        "У справі про перебування не посилайтеся на цю прикінцеву норму як на підставу сучасного судового засобу. Потрібна матеріальна й процесуальна норма, чинна на дату відповідної дії.",
     },
-  ]),
+  ],
 })

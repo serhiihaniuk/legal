@@ -1,85 +1,46 @@
-import type { LegalProvisionId } from "../../../contracts"
-
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type ReviewedArticleData = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  statuteText: string
-  statuteLocator: string
-  practicalText: string
-  practicalLocator: string
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
-  provisionId: data.provisionId ?? provisionId(article),
-  reviewStatus: data.reviewStatus,
-  claims: [
-    {
-      kind: "statute-text" as const,
-      text: data.statuteText,
-      sourceLocator: data.statuteLocator,
-    },
-    {
-      kind: "practical-inference" as const,
-      text: data.practicalText,
-      sourceLocator: data.practicalLocator,
-    },
-  ],
-  summary: data.summary,
-  rules: data.rules,
-  legalEffect: data.legalEffect,
-  foreignersCase: data.foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle("107", {
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
       provisionId: "ustawa-o-cudzoziemcach-art-107",
       reviewStatus: "reviewed",
-      statuteText:
-        "Minister właściwy do spraw wewnętrznych визначає w drodze rozporządzenia wzory основного formularz і annexes за Art. 106, форми wnioski для Art. 139a та Art. 139o, кількість і технічні вимоги до фотографій, wzór stamp, спосіб pobierania fingerprints та закріплення і передавання даних для персоналізації karty pobytu. У розпорядженні враховується ефективність провадження і можливість перевірити przesłanki permit.",
-      statuteLocator: "Art. 107 ust. 1 pkt 1–5; ust. 2",
-      practicalText:
-        "Конкретна форма заяви та annex не випливає лише з Art. 107: потрібно користуватися чинним rozporządzenie. Технічна відповідність форми не доводить матеріальних умов pobyt або права на працю.",
-      practicalLocator: "Art. 107 ust. 1–2",
-      summary:
-        "Art. 107 делегує встановлення форм, фото, stamp, fingerprints і технічного обігу даних для картки pobytu.",
-      rules: [
+      claims: [
         {
-          locator: "Art. 107 ust. 1 pkt 1–3",
-          explanation:
-            "Розпорядження встановлює форми wnioski/annexes, кількість і параметри фото та wzór stamp про подання temporary residence permit.",
-        },
-        {
-          locator: "Art. 107 ust. 1 pkt 4–5",
-          explanation:
-            "Воно також визначає спосіб fingerprints і технічне закріплення та передавання даних для персоналізації karty pobytu.",
-        },
-        {
-          locator: "Art. 107 ust. 2",
-          explanation:
-            "Критеріями є sprawność postępowania і skuteczna weryfikacja przesłanek надання permit.",
+          kind: "statute-text",
+          text: foreignersLaw.text`${foreignersLaw.article("107", "Art. 107")} делегує ministrowi właściwemu do spraw wewnętrznych визначити rozporządzeniem wzory wniosku, załączników, спеціальних паперових заяв і згоди, технічні вимоги до фотографій та електронних документів, а також правила відбитків, підпису й даних для karty pobytu.`,
+          sourceLocator: "Art. 107 ust. 1–2",
         },
       ],
-      legalEffect:
-        "Стаття створює делегацію для технічного оформлення, але не надає permit, legal stay або права виконувати роботу.",
+      summary:
+        "Закон визначає зміст і ролі, а rozporządzenie — чинні технічні форми. Тому правильний маршрут потребує одночасної перевірки ustawy та актуального wzoru.",
+      rules: [
+        {
+          locator: "Art. 107 ust. 1 pkt 1–5",
+          explanation: foreignersLaw.text`Розпорядження встановлює загальну форму wniosku, załączniki з ${foreignersLaw.article("106", "Art. 106")}, паперові форми з ${foreignersLaw.article("106k", "Art. 106k")} і ${foreignersLaw.article("106l", "Art. 106l")} та wzór zgody для сімейної заяви особі за кордоном.`,
+        },
+        {
+          locator: "Art. 107 ust. 1 pkt 6–9",
+          explanation:
+            "Окремо регулюються технічні параметри фотографії, спосіб її додавання в MOS, кількість фото у спеціальних паперових справах і вимоги до електронних документів та цифрових копій.",
+        },
+        {
+          locator: "Art. 107 ust. 1 pkt 10–13 i ust. 2",
+          explanation:
+            "Також визначаються спосіб зняття відбитків, передавання даних для персоналізації karty pobytu, інформація про відбитки або їх відсутність і форму для wzoru podpisu. Усе це має підтримувати справне провадження й перевірку умов дозволу.",
+        },
+      ],
+      legalEffect: foreignersLaw.text`${foreignersLaw.article("107", "Art. 107")} створює технічну делегацію. Він не надає zezwolenia, не легалізує pobytu й не доводить права на роботу.`,
       foreignersCase:
-        "Перед поданням перевірте чинний wzór відповідної заяви й annex, фото, stamp і процедуру fingerprints у розпорядженні. Додайте змістовні докази мети, коштів, страхування та роботи окремо.",
-    }),
-  ]),
+        "Перед поданням звірте дату чинності rozporządzenia, потрібну форму, спосіб підпису й параметри файлів. Формальну технічну відповідність доповніть доказами кожної матеріальної умови.",
+    },
+  ],
 })

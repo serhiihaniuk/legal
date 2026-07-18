@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-191",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Na wniosek strony NSA rozpoznaje także te postanowienia WSA, które nie podlegały zaskarżeniu zażaleniem, ale miały wpływ na rozstrzygnięcie sprawy.",
+          text: "На заяву сторони NSA разом із касаційною справою перевіряє ті проміжні ухвали WSA, які не підлягали окремому оскарженню (zażalenie), але вплинули на кінцевий результат.",
           sourceLocator: "Art. 191",
         },
       ],
       summary:
-        "Niektóre niezaskarżalne odrębnie postanowienia WSA mogą zostać zbadane w kasacji, jeżeli wpłynęły na rozstrzygnięcie sprawy.",
+        "Стаття дозволяє відкладений контроль важливої проміжної ухвали.",
       rules: [
         {
           locator: "Art. 191",
           explanation:
-            "Potrzebne są zarówno wniosek strony, jak i wykazanie wpływu postanowienia na wynik; przepis nie tworzy odrębnego zażalenia.",
+            "Потрібні три елементи: відсутність окремого оскарження, вплив ухвали на результат і чітка заява сторони про її перевірку.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("191", "Art. 191")} rozszerza przedmiot kontroli w konkretnej kasacji, ale nie czyni każdego postanowienia samodzielnie zaskarżalnym.`,
+      legalEffect:
+        "NSA не переглядає автоматично кожну проміжну дію WSA; сторона має показати її значення для рішення.",
       foreignersCase:
-        "Jeśli postanowienie w sprawie pobytowej nie miało własnego zażalenia, wskaż w kasacji jego konkretny wpływ na wyrok, zamiast poprzestać na samej krytyce czynności.",
+        "У справі про перебування збережіть проміжну ухвалу або запис у протоколі та поясніть у касації, як вона змінила можливість довести вимогу.",
     },
   ],
 })

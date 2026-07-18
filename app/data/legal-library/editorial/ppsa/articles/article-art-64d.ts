@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-64d",
@@ -13,12 +13,12 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd розглядає sprzeciw od decyzji на posiedzenie niejawne протягом тридцяти днів від його надходження і може передати справу на rozprawa.",
+          text: "Sąd розглядає sprzeciw od decyzji на posiedzenie niejawne протягом тридцяти днів від його надходження і може передати справу na rozprawę.",
           sourceLocator: "Art. 64d § 1–2",
         },
       ],
       summary:
-        "Основним форматом розгляду sprzeciw є закрите засідання, але суд може призначити rozprawa.",
+        "Основним форматом розгляду sprzeciw є закрите засідання, але суд може призначити rozprawę.",
       rules: [
         {
           locator: "§ 1",
@@ -27,7 +27,7 @@ export default defineEditorialPart<"ppsa">({
         },
         {
           locator: "§ 2",
-          explanation: "Sąd може направити справу для розгляду на rozprawa.",
+          explanation: "Sąd може направити справу для розгляду na rozprawę.",
         },
       ],
       legalEffect:

@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-285h",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285h передбачає, що NSA на posiedzeniu niejawnym odrzuca skargę o stwierdzenie niezgodności z prawem prawomocnego orzeczenia, якщо вона підлягала odrzuceniu судом нижчої інстанції, подана після спливу строку, не відповідає вимогам Art. 285e § 1 або є niedopuszczalna з іншої причини; skarga також підлягає odrzuceniu, якщо змінити оскаржене orzeczenie іншими засобами було або є можливим чи немає винятку з Art. 285a § 2.",
+          text: "NSA на закритому засіданні відхиляє скаргу, яку слід було відхилити нижчому суду, подану після строку, без обов’язкових елементів, недопустиму з іншої причини, а також коли інший засіб зміни рішення був або залишається можливим чи не доведено виняток для невикористаних засобів.",
           sourceLocator: "Art. 285h § 1–2",
         },
       ],
       summary:
-        "Норма визначає процесуальні підстави, за яких NSA не переходить до змістовного розгляду skarga про stwierdzenie niezgodności з prawem prawomocnego orzeczenia.",
+        "Стаття створює суворий фільтр допустимості надзвичайної скарги в NSA.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 285h § 1–2",
           explanation:
-            "Перевірте строк, вимоги Art. 285e § 1, допустимість skarga та те, чи підлягала вона odrzuceniu судом нижчої інстанції.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Окремо встановіть, чи можна було або ще можна змінити оскаржене orzeczenie іншим środkiem prawnym і чи наявний винятковий випадок Art. 285a § 2.",
+            "Перевірте кожний обов’язковий елемент змісту скарги, строк і остаточну відсутність інших засобів. Ці дефекти можуть привести до відхилення без відкритого засідання (rozprawa).",
         },
       ],
       legalEffect:
-        "Odrzucenie перешкоджає розгляду цієї skarga за суттю; сама стаття не встановлює, що оскаржене orzeczenie є законним.",
+        "Допустимість залежить не лише від сили закиду, а й від субсидіарності засобу та повноти документа.",
       foreignersCase:
-        "У справі іноземця щодо pobyt спочатку перевірте, чи ще доступний інший środek prawny проти orzeczenie та чи виконані вимоги до skarga; не ототожнюйте odrzucenie з оцінкою права на pobyt.",
+        "У справі про перебування складіть перелік усіх використаних і потенційних засобів та поясніть, чому жоден уже не може змінити рішення.",
     },
-  ]),
+  ],
 })

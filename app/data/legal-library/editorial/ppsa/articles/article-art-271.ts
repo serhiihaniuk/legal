@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-271",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 271 допускає wznowienie з підстави nieważność, коли у складі суду була osoba nieuprawniona або судив sędzia wyłączony z mocy ustawy, хоча сторона до uprawomocnienie не могла вимагати його wyłączenie; також коли сторона не мала zdolności sądowej або procesowej, не була należycie reprezentowana чи через порушення права була позбавлена możność działania, з прямо передбаченими винятками.",
+          text: "Поновлення через недійсність можливе, коли в складі була неуповноважена особа або суддя, виключений законом, а сторона раніше не могла вимагати виключення, чи коли сторона не мала процесуальної здатності, належного представництва або через порушення права була позбавлена можливості діяти.",
           sourceLocator: "Art. 271 pkt 1–2",
         },
       ],
       summary:
-        "Стаття перелічує окремі тяжкі дефекти складу суду або участі сторони, які можуть бути підставою для skarga o wznowienie postępowania.",
+        "Стаття охоплює найтяжчі дефекти складу суду та участі сторони, але містить важливі обмеження.",
       rules: [
         {
-          locator: "pkt 1",
+          locator: "Art. 271 pkt 1–2",
           explanation:
-            "Перевіряйте, чи у складі суду брала участь osoba nieuprawniona, чи sędzia був wyłączony z mocy ustawy, і чи сторона до uprawomocnienia orzeczenia не могла вимагати його wyłączenie.",
-        },
-        {
-          locator: "pkt 2",
-          explanation:
-            "Для strony важливі zdolność sądowa, zdolność procesowa, należyta reprezentacja та możność działania; wznowienie не можна вимагати, якщо до uprawomocnienia niemożność działania уstała, brak reprezentacji був піднятий у zarzut або strona підтвердила dokonane czynności procesowe.",
+            "Для дефекту участі перевірте, чи неможливість діяти не припинилася до остаточності, чи сторона раніше не заявила брак представництва та чи не підтвердила процесуальні дії. Для судді покажіть, чому виключення не можна було вимагати раніше.",
         },
       ],
       legalEffect:
-        "Норма відкриває спеціальний шлях wznowienie лише за описаних умов nieważność; сама наявність процесуальної помилки не доводить автоматично, що skarga буде прийнята або задоволена.",
+        "Поновлення усуває провадження, в якому не було законного складу або реальної процесуальної участі; воно не виправляє кожну помилку вручення.",
       foreignersCase:
-        "У справі іноземця перевірте, чи брала участь osoba nieuprawniona або sędzia wyłączony z mocy ustawy, а також zdolność sądowa, zdolność procesowa, należyta reprezentacja та конкретну możność działania. Не припускайте, що будь-яка процесуальна помилка автоматично дає підставу Art. 271.",
+        "Іноземець повинен документально показати, як конкретне порушення фактично позбавило його можливості діяти, а не лише ускладнило участь.",
     },
-  ]),
+  ],
 })

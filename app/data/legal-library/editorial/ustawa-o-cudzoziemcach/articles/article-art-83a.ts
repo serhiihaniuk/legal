@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("83a", {
       provisionId: "ustawa-o-cudzoziemcach-art-83a",
@@ -74,7 +74,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       legalEffect:
         "Стаття встановлює обов’язок консультації або повідомлення між органами. Вона сама не продовжує візу, не легалізує pobyt і не є документом, що uprawnia do pracy.",
       foreignersCase:
-        "У справі зафіксуйте SIS-впис, державу-ініціатора, рішення про powrót і zakaz ponownego wjazdu, а також заяву або decyzja про продовження wizy. Окремо перевірте legal stay та підставу prawa do pracy.",
+        "У справі зафіксуйте SIS-впис, державу-ініціатора, рішення про powrót і zakaz ponownego wjazdu, а також заяву або decyzja про продовження wizy. Окремо перевірте legalność pobytu та підставу prawa do pracy.",
     }),
   ]),
 })

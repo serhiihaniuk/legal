@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-53",
@@ -13,22 +13,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Основний строк wniesienia skarga становить тридцять днів від doręczenie rozstrzygnięcia; для деяких актів строк рахується від відомості про акт або skarga можлива в будь-який час, а skarga на bezczynność чи przewlekłość — після ponaglenie; для prokurator, RPO і RPD діє окремий шестимісячний строк із винятком для § 2a.",
-          sourceLocator: "Art. 53 § 1–4",
+          text: "Основний строк подання скарги (wniesienie skargi) становить тридцять днів від doręczenie skarżącemu rozstrzygnięcia або акту з art. 3 § 2 pkt 4a і 4b; це формулювання враховує зміну з Dz.U. 2026 poz. 846, Art. 10 pkt 1, чинну з 26.06.2026. Для актів і czynności з art. 3 § 2 pkt 4 без окремого środka zaskarżenia строк рахується від відомості про акт або czynność, skarga на інші акти може подаватися в будь-який час, а skarga на bezczynność чи przewlekłość — після ponaglenie. Для prokurator, RPO і RPD діє окремий шестимісячний строк із винятком для § 2a.",
+          sourceLocator: "Art. 53 § 1–4; Dz.U. 2026 poz. 846, Art. 10 pkt 1",
         },
       ],
       summary:
-        "Строк skarga залежить від виду предмета: найчастіше це тридцять днів від doręczenie, але стаття передбачає спеціальні режими та окремий строк для prokurator, RPO і RPD.",
+        "Строк подання скарги (wniesienie skargi) залежить від предмета: найчастіше це тридцять днів від doręczenie, але після зміни DU/2026/846 правило § 1 прямо охоплює також акт з art. 3 § 2 pkt 4b, а наступні параграфи передбачають спеціальні режими та окремий строк для prokurator, RPO і RPD.",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Для rozstrzygnięcie та акту з art. 3 § 2 pkt 4a строк — тридцять днів від його doręczenie skarżący.",
+            "Для rozstrzygnięcie та акту з art. 3 § 2 pkt 4a або 4b строк — тридцять днів від doręczenie skarżącemu.",
         },
         {
           locator: "§ 2–2b",
           explanation:
-            "Для aktów або czynności без доступного środka zaskarżenia строк може рахуватися від моменту знання; для інших aktów — бути безстроковим, а skarga на bezczynność чи przewlekłość можлива в будь-який час після ponaglenie.",
+            "Для aktów або czynności з art. 3 § 2 pkt 4, коли закон не передбачає środka zaskarżenia, строк рахується від дня, коли skarżący дізнався про акт або czynność; sąd може після подання skargi визнати, що пропуск строку стався без вини skarżącego. Для інших aktów з § 2a, якщо закон не встановлює інакше, skarga можлива в будь-який час, а skarga на bezczynność чи przewlekłość — у будь-який час після ponaglenie.",
         },
         {
           locator: "§ 3",
@@ -42,9 +42,9 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Стаття задає процесуальні строки й винятки, але не вирішує сама питання відновлення пропущеного строку чи правильності doręczenie; для § 2 sąd може оцінити відсутність вини skarżący.",
+        "Стаття задає процесуальні строки й винятки. Вона не вирішує сама питання prawidłowość doręczenia чи przywrócenie terminu; лише для ситуації з § 2 прямо дозволяє sąd після подання skargi оцінити, чи uchybienie terminu сталося без вини skarżącego.",
       foreignersCase:
-        "Зафіксуйте день doręczenie decyzja про pobyt, визначте предмет skarga і не переносіть автоматично тридцятиденне правило на bezczynność чи інший akt.",
+        "Зафіксуйте день doręczenie decyzji про pobyt, назвіть предмет skargi за art. 3 і перевірте, чи це rozstrzygnięcie, akt з pkt 4a/4b, akt або czynność з pkt 4, bezczynność чи przewlekłość. Не переносіть автоматично тридцятиденне правило на bezczynność або інший akt без перевірки спеціальної підстави.",
     },
   ]),
 })

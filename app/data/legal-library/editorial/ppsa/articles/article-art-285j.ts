@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-285j",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285j передбачає, що NSA розглядає skargę o stwierdzenie niezgodności z prawem prawomocnego orzeczenia в межах зaskarżenia і в межах підстав; скаргу розглядають на posiedzeniu niejawnym, якщо важливі міркування не виправдовують призначення rozprawa.",
+          text: "NSA розглядає скаргу в межах оскарженої частини та заявлених підстав, зазвичай на закритому засіданні. Відкрите засідання призначають, лише коли цього потребують важливі обставини.",
           sourceLocator: "Art. 285j",
         },
       ],
       summary:
-        "NSA зв’язаний межами оскарження та підставами skarga, а письмовий розгляд є правилом із можливим винятком для rozprawa.",
+        "Стаття робить письмовий документ головною рамкою й основним місцем аргументації.",
       rules: [
         {
-          locator: "Art. 285j zdanie pierwsze",
+          locator: "Art. 285j",
           explanation:
-            "Уточніть, яку частину orzeczenie оскаржено і на яких підставах: за цими межами NSA не описує розгляд.",
-        },
-        {
-          locator: "Art. 285j zdanie drugie",
-          explanation:
-            "Загальним способом є posiedzenie niejawne; rozprawa потребує важливих міркувань, які її виправдовують.",
+            "У скарзі точно позначте обсяг і кожну підставу. Не очікуйте, що суд сам розширить їх або що усний виступ виправить неповний документ.",
         },
       ],
       legalEffect:
-        "Стаття обмежує предмет розгляду і визначає його форму, але не гарантує ні призначення rozprawa, ні задоволення skarga.",
+        "NSA не виходить за межі оскарження та заявлені підстави (granice zaskarżenia i podstawy); відкрите засідання (rozprawa) є винятком, а не правом за замовчуванням.",
       foreignersCase:
-        "У спорі іноземця про pobyt сформулюйте, яку частину prawomocne orzeczenie і які його правові підстави оскаржено; не виводьте результат із того, що засідання є niejawnym.",
+        "У справі про перебування всі правові зв’язки та докази шкоди мають бути зрозумілі з письмової скарги й додатків.",
     },
-  ]),
+  ],
 })

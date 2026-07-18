@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-127",
@@ -22,7 +22,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Blue Card-підстава пов’язана з роботою у zawodzie wymagającym wysokich kwalifikacji та з одночасним виконанням усіх названих умов.",
+        "Підстава Niebieskiej Karty UE пов’язана з роботою у zawodzie wymagającym wysokich kwalifikacji та з одночасним виконанням усіх названих умов.",
       rules: [
         {
           locator: "pkt 1 lit. a–d",

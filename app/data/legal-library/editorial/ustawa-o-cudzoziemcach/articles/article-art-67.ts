@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-67",
@@ -26,7 +26,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           sourceLocator: "Art. 67 ust. 2",
         },
       ],
-      summary: foreignersLaw.text`${foreignersLaw.article("67", "Art. 67")} регулює консультацію з центральним органом іншої держави Schengen перед видачею wiza Schengen, якщо така консультація потрібна за Visa Code.`,
+      summary: foreignersLaw.text`${foreignersLaw.article("67", "Art. 67")} регулює консультацію з центральним органом іншої держави Schengen перед видачею wiza Schengen, якщо такої консультації вимагає kodeks wizowy.`,
       rules: [
         {
           locator: "Art. 67 ust. 1",
@@ -40,8 +40,8 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття забезпечує обов’язкову міждержавну консультацію у визначених випадках. Вона не замінює оцінку всіх умов Visa Code і не означає, що відсутність sprzeciw автоматично видає візу.",
-      foreignersCase: foreignersLaw.text`У справі встановіть, чи потрібна консультація ${foreignersLaw.external("Art. 22", VISA_CODE_URL)} Visa Code, дату запиту через Szef Urzędu і зміст отриманої відповіді; не плутайте її з рішенням konsul.`,
+        "Стаття забезпечує обов’язкову міждержавну консультацію у визначених випадках. Вона не замінює оцінки всіх умов kodeks wizowy і не означає, що відсутність sprzeciw автоматично веде до видачі візи.",
+      foreignersCase: foreignersLaw.text`У справі встановіть, чи потрібна консультація за ${foreignersLaw.external("Art. 22 kodeksu wizowego", VISA_CODE_URL)}, дату запиту через Szef Urzędu і зміст отриманої відповіді; не плутайте її з рішенням konsul.`,
     },
   ],
 })

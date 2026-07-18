@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-201",
@@ -15,25 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Zwrot kosztów przysługuje skarżącemu od organu także przy umorzeniu postępowania z przyczyny określonej w ${ppsaLaw.article("54", "art. 54 § 3")}. Przy umorzeniu w przypadku ${ppsaLaw.article("118", "art. 118 § 2")} ${ppsaLaw.article("206", "art. 206")} stosuje się odpowiednio.`,
+          text: "Заявник може отримати витрати від органу також тоді, коли суд припинив провадження після повного самоконтролю органу. При припиненні після названого законом медіаційного механізму відповідно діє правило про можливість не присуджувати витрати.",
           sourceLocator: "Art. 201 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`Nie każde umorzenie ma taki sam skutek kosztowy: ${ppsaLaw.article("201", "art. 201")} wskazuje dwa szczególne odesłania i ich różne konsekwencje.`,
+      summary:
+        "Стаття регулює витрати у двох спеціальних випадках припинення провадження.",
       rules: [
         {
-          locator: "§ 1",
-          explanation: ppsaLaw.text`Najpierw ustal, czy umorzenie nastąpiło z przyczyny ${ppsaLaw.article("54", "art. 54 § 3")}, bo wtedy przepis przyznaje skarżącemu zwrot od organu.`,
-        },
-        {
-          locator: "§ 2",
-          explanation: ppsaLaw.text`Przy ${ppsaLaw.article("118", "art. 118 § 2")} wynik kosztowy ocenia się przez odpowiednie zastosowanie ${ppsaLaw.article("206", "art. 206")}, a nie przez automatyczny zwrot.`,
+          locator: "Art. 201 § 1–2",
+          explanation:
+            "Спочатку встановіть точну підставу припинення провадження (umorzenie postępowania). Самоконтроль органу й наслідок медіації ведуть до різних правил про витрати.",
         },
       ],
       legalEffect:
-        "Słowo umorzenie samo nie rozstrzyga o kosztach; potrzebna jest dokładna podstawa prawna wskazana w postanowieniu.",
+        "Процесуальне припинення не завжди позбавляє заявника відшкодування, але результат залежить від конкретної підстави.",
       foreignersCase:
-        "Jeśli organ zmienił swoje rozstrzygnięcie w sprawie pobytowej i sąd umorzył sprawę, odczytaj podstawę umorzenia przed żądaniem zwrotu kosztów.",
+        "Якщо орган змінив рішення про перебування після подання скарги, перевірте, чи він повністю застосував передбачений законом самоконтроль і чи суд саме з цієї причини припинив справу.",
     },
   ],
 })

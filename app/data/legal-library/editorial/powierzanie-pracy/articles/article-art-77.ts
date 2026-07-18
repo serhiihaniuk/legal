@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-77",
@@ -13,23 +13,23 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 77 зобов'язує органи після 10 років від дня wydanie ostateczne postanowienie або decyzja у справах zezwolenie na pracę видаляти з реєстрів визначені персональні дані.",
+          text: "Art. 77 зобов'язує органи після спливу 10 років від дня видання остаточної ухвали або рішення у визначених справах про дозвіл на роботу видалити з реєстрів перелічені персональні дані.",
           sourceLocator: "Art. 77",
         },
       ],
       summary:
-        "Строк видалення починається від остаточного postanowienie або decyzja про видачу, uchylenie чи залишення wniosku без розгляду. Перелік охоплює дані cudzoziemiec, podmiot, pracodawca użytkownik або podmiot delegujący.",
+        "Строк видалення починається від дня видання остаточної ухвали або рішення у справі про видачу чи скасування дозволу або залишення заяви без розгляду. Видаляють дані іноземця, суб'єкта, який доручає роботу, роботодавця-користувача або суб'єкта, до якого іноземця відрядили до Польщі.",
       rules: [
         {
           locator: "Art. 77",
           explanation:
-            "Після 10 років органи, що ведуть rejestry за art. 73 ust. 3, усувають названі персональні дані з реєстрів справ про zezwolenie na pracę.",
+            "Після 10 років органи, що ведуть реєстри за art. 73 ust. 3, видаляють названі персональні дані з реєстрів справ про дозволи на роботу.",
         },
       ],
       legalEffect:
-        "Це правило зберігання даних у реєстрі permit на pracę; воно не означає автоматичне видалення кожного документа з усіх інших систем.",
+        "Це правило про строк зберігання персональних даних у реєстрах справ про дозволи на роботу. Воно не означає автоматичного видалення кожного документа з усіх інших систем або архівів.",
       foreignersCase:
-        "Для запиту про стару справу встановіть дату ostateczna decyzja або postanowienie і вид реєстру. Не робіть висновок про відсутність усіх архівних документів лише з art. 77.",
+        "Для запиту про стару справу встановіть дату видання остаточного рішення або ухвали і вид реєстру. Не робіть висновку про відсутність усіх архівних документів лише на підставі art. 77.",
     },
   ]),
 })

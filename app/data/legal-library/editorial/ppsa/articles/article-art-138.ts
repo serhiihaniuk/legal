@@ -1,9 +1,9 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-138",
@@ -21,7 +21,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "Art. 138",
           explanation:
-            "У sentencja окремо шукайте предмет зaskarżenia і саме rozstrzygnięcie, а також дані суду та учасників, названі статтею.",
+            "У sentencja окремо шукайте предмет zaskarżenia і саме rozstrzygnięcie, а також дані суду та учасників, названі статтею.",
         },
       ],
       legalEffect:

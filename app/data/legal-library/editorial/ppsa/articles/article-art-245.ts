@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-245",
@@ -15,33 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("245", "Art. 245 § 1–4")} передбачає, що prawo pomocy може бути całkowite або częściowe; całkowite охоплює zwolnienie od kosztów sądowych та ustanowienie професійного представника, а częściowe — окремі або спільні opłaty, wydatki чи представника, причому zwolnienie від opłat або wydatków може бути часткою або визначеною сумою.`,
+          text: "Право допомоги буває повним або частковим. Повне поєднує звільнення від усіх судових витрат із призначенням представника; часткове може охопити лише збори, лише видатки, їх частину або лише представника.",
           sourceLocator: "Art. 245 § 1–4",
         },
       ],
       summary:
-        "Prawo pomocy має повний або частковий обсяг: часткове рішення може стосуватися лише opłat, лише wydatków, обох або тільки ustanowienie представника.",
+        "Стаття дозволяє пристосувати допомогу до реальної фінансової потреби сторони.",
       rules: [
         {
-          locator: "§ 1–2",
+          locator: "Art. 245 § 1–4",
           explanation:
-            "Знайдіть у postanowienie, чи prawo pomocy є całkowite, і тоді перевірте обидва його компоненти — koszty та представника.",
-        },
-        {
-          locator: "§ 3",
-          explanation:
-            "Для częściowe встановіть, що саме звільнено: opłaty, wydatki, обидва або лише ustanowienie професійного представника.",
-        },
-        {
-          locator: "§ 4",
-          explanation:
-            "Часткове zwolnienie від opłat або wydatki може бути визначене часткою або конкретною kwota pieniężna; перевірте точне формулювання рішення.",
+            "Просіть конкретний обсяг і пояснюйте, які платежі сторона може понести без шкоди. Часткове звільнення може бути виражене часткою або визначеною сумою.",
         },
       ],
       legalEffect:
-        "Обсяг права допомоги визначається категорією та точним змістом postanowienie; часткове prawo pomocy не звільняє автоматично від усіх koszty.",
+        "Суд не зобов’язаний обирати між «усе» і «нічого»; він може надати точково обмежену допомогу.",
       foreignersCase:
-        "У справі іноземця про pobyt перепишіть із postanowienie конкретний zakres prawa pomocy: загальна згадка про «pomoc» не відповідає на питання про wpis, wydatki чи pełnomocnik.",
+        "У справі про перебування покажіть щомісячний бюджет: це допоможе відрізнити потребу в повному звільненні від потреби лише в представникові.",
     },
   ],
 })

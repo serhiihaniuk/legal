@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-107",
@@ -13,33 +13,33 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 107 встановлює, що до незавершених до набрання чинності новою ustawy проваджень у справах про wykroczenia з art. 120 старої ustawy o promocji zatrudnienia застосовуються dotychczasowe przepisy.",
+          text: "Art. 107 встановлює, що до проваджень у справах про проступки з art. 120 попереднього закону «ustawa o promocji zatrudnienia i instytucjach rynku pracy», розпочатих і не завершених до 1 червня 2025 року, застосовуються попередні норми.",
           sourceLocator: "Art. 107",
         },
         {
           kind: "practical-inference",
-          text: "Перехід стосується провадження про wykroczenie, а не визначення legalnego pobytu чи права на роботу; можливі наслідки для іншої справи треба перевіряти за її власною нормою.",
+          text: "Перехід стосується провадження про проступок, а не визначення законності перебування чи права на роботу. Можливі наслідки для іншої справи треба перевіряти за нормами, що регулюють саме ту справу.",
           sourceLocator: "Art. 107",
         },
       ],
       summary:
-        "Стаття зберігає попередні правила для незавершених проваджень щодо визначених wykroczenia за старою трудовою ustawy.",
+        "Стаття зберігає попередні правила для незавершених проваджень щодо проступків, визначених старим законом про сприяння зайнятості.",
       rules: [
         {
           locator: "Art. 107",
           explanation:
-            "Провадження повинно стосуватися wykroczenia, визначеного art. 120 старої ustawy o promocji zatrudnienia i instytucjach rynku pracy.",
+            "Провадження має стосуватися проступку, визначеного art. 120 попереднього закону «ustawa o promocji zatrudnienia i instytucjach rynku pracy».",
         },
         {
           locator: "Art. 107",
           explanation:
-            "Якщо воно було wszczęte і не завершене до набрання чинності новою ustawy, застосовуються dotychczasowe przepisy.",
+            "Якщо провадження було відкрито і не завершено до 1 червня 2025 року, застосовуються попередні норми.",
         },
       ],
       legalEffect:
-        "Стаття визначає процесуальний перехід у справах про wykroczenia. Вона сама не встановлює рішення про pobyt чи дозвіл на роботу.",
+        "Стаття визначає процесуальний перехід у справах про проступки. Вона сама не вирішує питання перебування чи дозволу на роботу.",
       foreignersCase:
-        "Уточніть, яке саме wykroczenie і яке провадження маються на увазі, та зафіксуйте дати wszczęcia й завершення. Не переносіть автоматично цей перехідний режим на адміністративну справу про zezwolenie na pracę або pobyt.",
+        "Уточніть, який саме проступок і яке провадження маються на увазі, та зафіксуйте дати відкриття і завершення. Не переносіть автоматично цей перехідний режим на адміністративну справу про дозвіл на роботу або перебування.",
     },
   ]),
 })

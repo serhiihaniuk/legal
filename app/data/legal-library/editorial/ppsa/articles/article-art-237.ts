@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-237",
@@ -15,28 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("237", "Art. 237 § 1–3")} зобов’язує сторону, яка просить про czynność, пов’язану з wydatki, внести zaliczkę; якщо просять кілька сторін або суд діє з urzędu, суд визначає частки, розмір zaliczka і строк її сплати та може вимагати доплату, коли витрати більші.`,
+          text: "Сторона, яка просить про дію, що створює видатки, повинна внести аванс. Якщо заявників кілька або суд діє з власної ініціативи, він розподіляє аванс між сторонами порівну чи в іншій пропорції, визначає суму й строк та може вимагати доплату.",
           sourceLocator: "Art. 237 § 1–3",
         },
       ],
       summary:
-        "Залучення дії, що спричиняє wydatki, може вимагати zaliczka; суд визначає її розмір і строк та може наказати доплату.",
+        "Стаття забезпечує фінансування конкретної витратної судової дії до її виконання.",
       rules: [
         {
-          locator: "§ 1–2",
+          locator: "Art. 237 § 1–3",
           explanation:
-            "Встановіть, хто просив про czynność і чи є кілька зацікавлених сторін або дія суду з urzędu; від цього залежить розподіл zaliczka.",
-        },
-        {
-          locator: "§ 3",
-          explanation:
-            "Дотримайтеся розміру та строку, визначених судом, і відстежуйте wezwanie про uzupełnienie, якщо прогнозовані wydatki зросли.",
+            "Пов’яжіть аванс із конкретною дією й ухвалою суду. Перевірте суму, частку кожної сторони, строк і можливу вимогу про доплату, якщо прогноз витрат зріс.",
         },
       ],
       legalEffect:
-        "Стаття регулює авансування конкретних wydatki, але не встановлює наперед, що будь-яке прохання сторони обов’язково потребує zaliczka.",
+        "Внесення авансу (wpłata zaliczki) є попереднім фінансуванням, а не остаточним розподілом витрат після рішення.",
       foreignersCase:
-        "У спорі іноземця про pobyt перевірте, чи судова czynność справді пов’язана з wydatki, хто має внести zaliczka і який строк вказано в zarządzenie.",
+        "Якщо у справі іноземця просите переклад або іншу витратну дію, закладіть час на аванс і збережіть доказ його внесення.",
     },
   ],
 })

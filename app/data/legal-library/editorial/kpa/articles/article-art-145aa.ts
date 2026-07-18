@@ -10,17 +10,17 @@ export default defineKpaEditorialPart({
       provisionId: "kpa-art-145aa",
       reviewStatus: "reviewed",
       summary:
-        "Wznowienie можливе через рішення TSUE, яке впливає на зміст виданої decyzji.",
+        "Поновлення провадження (wznowienie postępowania) можливе через рішення TSUE, яке впливає на зміст виданого рішення (decyzja).",
       rules: [
         {
           locator: "§ 1",
           explanation:
-            "Потрібен реальний вплив орzeczenia TSUE на розв’язання конкретної справи.",
+            "Потрібен реальний вплив рішення TSUE (orzeczenie TSUE) на розв’язання конкретної справи.",
         },
         {
           locator: "§ 2",
           explanation:
-            "Skarga подається протягом місяця від публікації sentencji в Dzienniku Urzędowym UE.",
+            "Скаргу про поновлення (skarga o wznowienie) подають протягом місяця від публікації резолютивної частини рішення (sentencja orzeczenia) в Dzienniku Urzędowym UE.",
         },
       ],
       legalEffect:

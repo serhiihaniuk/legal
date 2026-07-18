@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-07-18",
+  "declaredComplete": false,
+  "lanes": [
+    "kpa",
+    "foreigners-a",
+    "foreigners-b",
+    "ppsa",
+    "employment-regulation",
+    "teaching-pages"
+  ],
+  "summary": {
+    "total": 1610,
+    "byFamily": {
+      "learning-module": 43,
+      "provision": 1421,
+      "case-guide": 9,
+      "evidence-document": 18,
+      "map-group-copy": 1,
+      "map-journey": 1,
+      "map-topic": 63,
+      "route-copy": 15,
+      "shared-renderer": 38,
+      "study-plan": 1
+    },
+    "byLane": {
+      "employment-regulation": 146,
+      "foreigners-a": 319,
+      "foreigners-b": 327,
+      "kpa": 321,
+      "ppsa": 351,
+      "teaching-pages": 146
+    },
+    "laneBoundaries": {
+      "ustawa-o-cudzoziemcach": {
+        "total": 637,
+        "midpoint": 319,
+        "laneA": {
+          "lane": "foreigners-a",
+          "indexStart": 1,
+          "indexEnd": 319,
+          "lastProvisionId": "ustawa-o-cudzoziemcach-art-208b",
+          "lastPath": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-208b.ts"
+        },
+        "laneB": {
+          "lane": "foreigners-b",
+          "indexStart": 320,
+          "indexEnd": 637,
+          "firstProvisionId": "ustawa-o-cudzoziemcach-art-209",
+          "firstPath": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-209.ts"
+        }
+      }
+    }
+  }
+}

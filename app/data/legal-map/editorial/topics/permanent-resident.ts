@@ -39,21 +39,21 @@ export const permanentResidentTopic: KnowledgeUnit<PermanentResidentBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
     },
     body: {
       title: "Pobyt stały та rezydent UE",
-      polish: foreignersLaw.text`${foreignersLaw.article("195", "art. 195")}–${foreignersLaw.external("222a", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy o cudzoziemcach`,
+      polish: foreignersLaw.text`${foreignersLaw.article("195", "art. 195")}–${foreignersLaw.article("222a", "222a")} ustawy o cudzoziemcach`,
       sources: [mapTopicSources.aliens, mapTopicSources.udscResident],
       guide: {
         introduction: [
           "Pobyt stały і rezydent długoterminowy UE є двома різними безстроковими zezwoleniami. Перший залежить від спеціальної категорії особи, другий — переважно від тривалості та якості попереднього pobytu.",
         ],
         regulated: [
-          foreignersLaw.text`${foreignersLaw.articleRange("195", "206", { start: "art. 195", end: "206" })} регулюють pobyt stały, а ${foreignersLaw.article("211", "art. 211")}–${foreignersLaw.external("222a", "https://eli.gov.pl/eli/DU/2026/203/ogl")} — rezydenta długoterminowego UE; спільною є електронна процедура MOS від 27.04.2026.`,
+          foreignersLaw.text`${foreignersLaw.articleRange("195", "206", { start: "art. 195", end: "206" })} регулюють pobyt stały, а ${foreignersLaw.article("211", "art. 211")}–${foreignersLaw.article("222a", "222a")} — rezydenta długoterminowego UE; спільною є електронна процедура MOS від 27.04.2026.`,
         ],
         appliesWhen: [
           foreignersLaw.text`Pobyt stały застосовується за однією з підстав ${foreignersLaw.article("195", "art. 195")}, rezydent UE — після належного періоду legalnego i nieprzerwanego pobytu та виконання додаткових умов.`,
@@ -71,7 +71,7 @@ export const permanentResidentTopic: KnowledgeUnit<PermanentResidentBody> =
           "Спочатку обирається один із двох режимів, потім через MOS подається заява з доказами лише його przesłanek.",
         ],
         foreignersContext: [
-          foreignersLaw.text`Період CUKR офіційно зараховується до періоду для rezydenta UE, тоді як сам status UKR і періоди інших режимів потребують оцінки за ${foreignersLaw.external("art. 212", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}.`,
+          foreignersLaw.text`Період CUKR офіційно зараховується до періоду для rezydenta UE, тоді як сам status UKR і періоди інших режимів потребують оцінки за ${foreignersLaw.article("212", "art. 212")}.`,
         ],
       } satisfies LegalNodeGuide,
       why: "Це дві різні безстрокові підстави. Pobyt stały залежить від конкретної категорії особи, rezydent UE — головно від п’ятирічного перебування, доходу, страхування та польської мови.",

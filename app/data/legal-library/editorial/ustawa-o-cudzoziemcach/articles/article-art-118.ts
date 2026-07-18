@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("118", {
       provisionId: "ustawa-o-cudzoziemcach-art-118",
       reviewStatus: "reviewed",
       statuteText:
-        "У decyzja про permit i pracę, крім строку дії, зазначають podmiot powierzający (і pracodawca użytkownik для працівника тимчасового), stanowisko/rodzaj pracy, найнижчу винагороду, wymiar czasu pracy та rodzaj umowy; рішення містить pouczenie про Art. 121 ust. 1. Для кількох podmiot умови визначаються окремо. Якщо cudzoziemiec звільнений від work permit, замість цих даних зазначають право працювати за нормою звільнення; для неповного часу або civil contract мінімальну винагороду вказують пропорційно.",
+        "У decyzja про zezwolenie na pobyt czasowy i pracę, крім строку дії, зазначають podmiot powierzający (і pracodawca użytkownik для працівника тимчасового), stanowisko або rodzaj pracy, найнижчу винагороду, wymiar czasu pracy та rodzaj umowy; рішення містить pouczenie про Art. 121 ust. 1. Для кількох podmiot умови визначаються окремо. Якщо cudzoziemiec звільнений від zezwolenie na pracę, замість цих даних зазначають право працювати на підставі відповідної норми; для неповного часу або umowa cywilnoprawna найнижчу винагороду вказують пропорційно.",
       statuteLocator: "Art. 118 ust. 1–5",
       practicalText:
-        "Art. 118 перетворює умови праці на межі рішення. Тому legal stay за permit і право виконувати роботу треба читати окремо: робота поза podmiot, посадою, оплатою, часом чи договором не підтверджується лише наявністю картки pobytu.",
+        "Art. 118 перетворює умови праці на межі рішення. Тому legalność pobytu за zezwolenie і право виконувати роботу треба читати окремо: робота поза podmiot, посадою, оплатою, часом чи договором не підтверджується лише наявністю картки pobytu.",
       practicalLocator: "Art. 118 ust. 1–5",
       summary:
-        "Art. 118 визначає обов’язковий зміст рішення про temporary residence and work permit та межі роботи за кожним podmiot.",
+        "Art. 118 визначає обов’язковий зміст рішення про zezwolenie na pobyt czasowy i pracę та межі роботи за кожним podmiot.",
       rules: [
         {
           locator: "Art. 118 ust. 1 pkt 1–5; ust. 1a",
@@ -73,18 +73,18 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 118 ust. 3–4",
           explanation:
-            "За звільнення від work permit параметри ust. 1 не вносяться; рішення зазначає право працювати на умовах норми, що є підставою звільнення.",
+            "За звільнення від zezwolenie na pracę параметри ust. 1 не вносяться; рішення зазначає право працювати на умовах норми, що є підставою звільнення.",
         },
         {
           locator: "Art. 118 ust. 5",
           explanation:
-            "Для неповного часу або civil contract найнижчу оплату вказують пропорційно часу або прогнозованому періоду зобов’язань.",
+            "Для неповного часу або umowa cywilnoprawna найнижчу оплату вказують пропорційно часу або прогнозованому періоду виконання зобов’язань.",
         },
       ],
       legalEffect:
-        "Decyzja визначає конкретний обсяг residence-and-work authorization і його обмеження. Вона не скасовує вимоги regulated profession, а legal stay не слід ототожнювати з необмеженим правом на будь-яку працю.",
+        "Decyzja визначає конкретні межі zezwolenia na pobyt czasowy i pracę та дозволеної роботи. Вона не скасовує вимог до zawód regulowany, а legalność pobytu не слід ототожнювати з необмеженим правом виконувати будь-яку працю.",
       foreignersCase:
-        "Порівняйте паспорт і kartа pobytu з кожним рядком decyzja: podmiot, user, stanowisko, зарплата, години, umowa, строк і pouczenie. Перевірте payroll, графік, фактичне місце та модель роботи.",
+        "Порівняйте паспорт і картку перебування (kartę pobytu) з кожним рядком decyzja: podmiot, pracodawca użytkownik, stanowisko, зарплата, години, umowa, строк і pouczenie. Перевірте документи про фактичну виплату, графік, фактичне місце та модель роботи.",
     }),
   ]),
 })

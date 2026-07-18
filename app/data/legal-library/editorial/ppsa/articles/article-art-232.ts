@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-232",
@@ -15,32 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("232", "Art. 232 § 1")} nakazuje sądowi z urzędu zwrócić cały uiszczony wpis od pisma odrzuconego lub cofniętego do dnia rozpoczęcia rozprawy oraz od zażalenia na postanowienie, jeżeli zażalenie uwzględniono; ${ppsaLaw.article("232", "§ 2")} допускає postanowienie про zwrot wpisу на posiedzeniu niejawnym.`,
+          text: "Суд з власної ініціативи повертає весь сплачений збір за подання (wpis) за документ, який відхилено або відкликано до початку засідання, а також за успішне окреме оскарження ухвали (zażalenie). Ухвалу про повернення можна видати на закритому засіданні.",
           sourceLocator: "Art. 232 § 1–2",
         },
       ],
       summary:
-        "У названих випадках суд повертає весь сплачений wpis з urzędu; для цього може бути винесено postanowienie без rozprawa.",
+        "Стаття називає випадки повного, а не часткового повернення збору за подання (wpis).",
       rules: [
         {
-          locator: "§ 1 pkt 1",
+          locator: "Art. 232 § 1–2",
           explanation:
-            "Перевірте, чи письмо odrzucono або cofnięto до дня початку rozprawa.",
-        },
-        {
-          locator: "§ 1 pkt 2",
-          explanation:
-            "Для zażalenie підстава zwrot виникає, якщо його uwzględniono.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Окреме postanowienie про повернення wpis може бути видане на posiedzeniu niejawnym.",
+            "Перевірте підставу завершення документа й момент відкликання. Для окремого оскарження (zażalenie) потрібен результат його задоволення.",
         },
       ],
-      legalEffect: ppsaLaw.text`Повернення за ${ppsaLaw.article("232", "Art. 232")} залежить від точної процесуальної події та її дати; сама сплата wpis не означає, що повернення належить у кожній справі.`,
+      legalEffect:
+        "Право на повернення коштів (zwrot) виникає автоматично за умов статті, але не означає повернення інших витрат провадження.",
       foreignersCase:
-        "Якщо іноземець відкликав skargę або його zażalenie задоволено, зафіксуйте дату початку rozprawa та зміст orzeczenie перед очікуванням zwrot wpisу.",
+        "Якщо скаргу у справі про перебування відкликано, зафіксуйте, чи вже почалося відкрите засідання (rozprawa): від цього залежить повне повернення збору за подання (wpis).",
     },
   ],
 })

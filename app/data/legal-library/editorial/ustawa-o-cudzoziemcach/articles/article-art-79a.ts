@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-79a",
@@ -35,7 +35,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "Art. 79a ust. 2–5",
-          explanation: foreignersLaw.text`MFA може залучити підприємця для дій зовнішнього usługodawca за ${foreignersLaw.external("Art. 43", VISA_CODE_URL)} Visa Code; його дії виконуються з upoważnienie MFA і під наглядом працівників urzędu.`,
+          explanation: foreignersLaw.text`MFA може залучити підприємця для дій зовнішнього usługodawca за ${foreignersLaw.external("Art. 43 kodeksu wizowego", VISA_CODE_URL)}; його дії виконуються з upoważnienie MFA і під наглядом працівників urzędu.`,
         },
         {
           locator: "Art. 79a ust. 6–8",

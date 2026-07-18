@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-65",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("65", "Art. 65")} ust. 1a–1e додає спеціальні підстави для student, науковця, staż і wolontariat, ust. 1f–1g регулює строки та доповнення документів, а ust. 3–4 містять винятки для окремих підстав відмови.`,
+          text: foreignersLaw.text`${foreignersLaw.article("65", "Art. 65")} ust. 1a–1e додає спеціальні підстави відмови для wiza krajowa з adnotacją „student” та віз для наукових досліджень, staż і wolontariat; ust. 1f–1g регулюють строк розгляду й доповнення документів, а ust. 3–4 містять винятки з окремих загальних підстав відмови.`,
           sourceLocator: "Art. 65 ust. 1a–1g; ust. 3–4",
         },
       ],
@@ -34,12 +34,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 65 ust. 1 pkt 6",
           explanation:
-            "Pkt 6 прямо має позначку „uchylony” у corpus; його не можна використовувати як чинну підставу odmowa.",
+            "Pkt 6 прямо має позначку „uchylony” у тексті джерела; його не можна використовувати як чинну підставу odmowa.",
         },
         {
           locator: "Art. 65 ust. 1a–1e",
           explanation:
-            "Для student, науковця, staż і wolontariat закон додає підстави, пов’язані з діяльністю установи, її керівниками, боргами, ліквідацією, попереднім використанням візи не за метою та іншими прямо названими умовами.",
+            "Для wiza krajowa з adnotacją „student” та віз для наукових досліджень, staż і wolontariat закон додає підстави, пов’язані з діяльністю установи, її керівниками, боргами, ліквідацією, попереднім використанням візи не за метою та іншими прямо названими умовами.",
         },
         {
           locator: "Art. 65 ust. 1f–1g; ust. 2–4",

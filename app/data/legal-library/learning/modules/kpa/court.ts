@@ -28,7 +28,7 @@ const moduleContent: KpaGuideModule = {
     },
     practical: {
       focus:
-        "За загальним правилом skargę на decyzję вносять протягом 30 днів від doręczenia розstrzygnięcia через organ, дії якого оскаржуються.",
+        "За загальним правилом skargę на decyzję вносять протягом 30 днів від дня вручення рішення (doręczenie rozstrzygnięcia) через organ, дії якого оскаржуються.",
       law: kpaLaw.text`Цей маршрут випливає з ${ppsaLaw.article("53", "art. 53 § 1")} і ${ppsaLaw.article("54", "art. 54 § 1")} p.p.s.a.; допустимість треба перевірити для конкретного акта.`,
       practice:
         "Зберіть: обидві decyzje, odwołanie, докази doręczeń, повний індекс актів і список процесуальних порушень із впливом.",
@@ -60,12 +60,12 @@ const moduleContent: KpaGuideModule = {
     {
       prompt: "Чи WSA є просто третьою інстанцією після organu II instancji?",
       answer:
-        "Ні. WSA здійснює судовий контроль законності у межах p.p.s.a.; його роль і можливі розstrzygnięcia відрізняються від адміністративного odwołania.",
+        "Ні. WSA здійснює судовий контроль законності у межах p.p.s.a.; його роль і можливі рішення (rozstrzygnięcia) відрізняються від адміністративного odwołania.",
     },
   ],
   lesson: {
     paragraphs: [
-      "WSA не веде справу про pobyt замість wojewody і не є третьою адміністративною інстанцією. Суд контролює законність оstatecznego aktu або бездіяльності в межах p.p.s.a. Тому skarga повинна показувати порушення права та його вплив, а не лише повторювати прохання надати дозвіл.",
+      "WSA не веде справу про pobyt замість wojewody і не є третьою адміністративною інстанцією. Суд контролює законність остаточного акта або бездіяльності в межах p.p.s.a. Тому skarga повинна показувати порушення права та його вплив, а не лише повторювати прохання надати дозвіл.",
       "Перед skargą визначте її предмет: decyzja, bezczynność/przewlekłość чи інший акт. Перевірте вичерпання адміністративних засобів, окремий судовий строк і маршрут через organ. Зберіть повний пакет aktów, odwołanie, doręczenia та список норм. Питання wstrzymania виконання аналізуйте окремо — саме внесення skargi не завжди дає такий ефект.",
     ],
     articles: [
@@ -207,7 +207,8 @@ const moduleContent: KpaGuideModule = {
       },
       {
         kind: "authored-legal-text",
-        plainText: "30-денний строк і маршрут art. 53–54 для skargi na decyzję",
+        plainText:
+          "30-денний строк і маршрут art. 53–54 p.p.s.a. для skargi na decyzję",
         parts: [
           {
             text: "30-денний строк і маршрут ",
@@ -216,8 +217,8 @@ const moduleContent: KpaGuideModule = {
             text: "art. 53",
             target: {
               kind: "legal-provision",
-              documentId: "kpa",
-              provisionId: "kpa-art-53",
+              documentId: "ppsa",
+              provisionId: "ppsa-art-53",
             },
           },
           {
@@ -227,12 +228,12 @@ const moduleContent: KpaGuideModule = {
             text: "54",
             target: {
               kind: "legal-provision",
-              documentId: "kpa",
-              provisionId: "kpa-art-54",
+              documentId: "ppsa",
+              provisionId: "ppsa-art-54",
             },
           },
           {
-            text: " для skargi na decyzję",
+            text: " p.p.s.a. для skargi na decyzję",
           },
         ],
       },
@@ -267,7 +268,7 @@ export const kpaCourtLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

@@ -68,7 +68,10 @@ function scopeValues(value) {
   if (typeof value !== "string") {
     throw new Error("Missing required --scope path[,path]")
   }
-  return value.split(",").map((item) => item.trim()).filter(Boolean)
+  return value
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean)
 }
 
 /**
@@ -78,12 +81,7 @@ function scopeValues(value) {
  */
 async function changedPaths(projectRoot, baseCommit) {
   const [trackedOutput, untrackedOutput] = await Promise.all([
-    runCapture(projectRoot, "git", [
-      "diff",
-      "--name-only",
-      baseCommit,
-      "--",
-    ]),
+    runCapture(projectRoot, "git", ["diff", "--name-only", baseCommit, "--"]),
     runCapture(projectRoot, "git", [
       "ls-files",
       "--others",
@@ -133,7 +131,9 @@ async function validateWithScope(projectRoot, workOrderPath, options = {}) {
       allowedValidationPaths(result.workOrder, workOrderPath)
     )
     if (extras.length > 0) {
-      result.errors.push(`Changed files outside approved scope: ${extras.join(", ")}`)
+      result.errors.push(
+        `Changed files outside approved scope: ${extras.join(", ")}`
+      )
     }
     result.changedPaths = changed
   }
@@ -143,9 +143,31 @@ async function validateWithScope(projectRoot, workOrderPath, options = {}) {
     // edition artifacts actually on disk and mechanically runs the editorial
     // validator, rather than only checking the work order's own claims.
     result.errors.push(
-      ...(await verifyPromotionArtifacts({ projectRoot, workOrder: result.workOrder }))
+      ...(await verifyPromotionArtifacts({
+        projectRoot,
+        workOrder: result.workOrder,
+      }))
     )
-    result.errors.push(...(await runEditorialValidator(projectRoot)))
+    try {
+      const currentEditions = await readJson(
+        path.join(projectRoot, "app/data/legal-library/current-editions.json")
+      )
+      const candidateCurrentEditions = {
+        ...currentEditions,
+        [result.workOrder.documentId]: result.workOrder.newEditionId,
+      }
+      result.errors.push(
+        ...(await runEditorialValidator(
+          projectRoot,
+          candidateCurrentEditions,
+          result.workOrder.documentId
+        ))
+      )
+    } catch (error) {
+      result.errors.push(
+        `Cannot validate candidate editorial corpus: ${error instanceof Error ? error.message : String(error)}`
+      )
+    }
   }
   result.passed = result.errors.length === 0
   return result
@@ -195,19 +217,29 @@ async function commandPrepare(projectRoot, options) {
  */
 async function commandAuditCitations(projectRoot, options) {
   const result = await auditCitations({ projectRoot })
-  const output = typeof options.output === "string"
-    ? path.resolve(projectRoot, options.output)
-    : path.join(projectRoot, "docs/restructure/citation-review/ambiguous-citations.md")
+  const output =
+    typeof options.output === "string"
+      ? path.resolve(projectRoot, options.output)
+      : path.join(
+          projectRoot,
+          "docs/restructure/citation-review/ambiguous-citations.md"
+        )
   if (!options["dry-run"]) {
     const { mkdir, writeFile } = await import("node:fs/promises")
     await mkdir(path.dirname(output), { recursive: true })
     await writeFile(output, result.packet, "utf8")
   }
-  process.stdout.write(`${JSON.stringify({
-    ...result.stats,
-    output: path.relative(projectRoot, output).replaceAll("\\", "/"),
-    dryRun: Boolean(options["dry-run"]),
-  }, null, 2)}\n`)
+  process.stdout.write(
+    `${JSON.stringify(
+      {
+        ...result.stats,
+        output: path.relative(projectRoot, output).replaceAll("\\", "/"),
+        dryRun: Boolean(options["dry-run"]),
+      },
+      null,
+      2
+    )}\n`
+  )
 }
 
 /**
@@ -219,16 +251,36 @@ async function commandDiff(projectRoot, options) {
   const oldEditionId = required(options, "old")
   const newEditionId = required(options, "new")
   const oldProvisions = await readJson(
-    path.join(projectRoot, "app/data/legal-corpus", oldEditionId, "provisions.json")
+    path.join(
+      projectRoot,
+      "app/data/legal-corpus",
+      oldEditionId,
+      "provisions.json"
+    )
   )
   const newProvisions = await readJson(
-    path.join(projectRoot, "app/data/legal-corpus", newEditionId, "provisions.json")
+    path.join(
+      projectRoot,
+      "app/data/legal-corpus",
+      newEditionId,
+      "provisions.json"
+    )
   )
   const oldManifest = await readJson(
-    path.join(projectRoot, "app/data/legal-corpus", oldEditionId, "manifest.json")
+    path.join(
+      projectRoot,
+      "app/data/legal-corpus",
+      oldEditionId,
+      "manifest.json"
+    )
   )
   const newManifest = await readJson(
-    path.join(projectRoot, "app/data/legal-corpus", newEditionId, "manifest.json")
+    path.join(
+      projectRoot,
+      "app/data/legal-corpus",
+      newEditionId,
+      "manifest.json"
+    )
   )
   if (oldManifest.documentId !== newManifest.documentId) {
     throw new Error("Edition diff requires two editions of the same document")

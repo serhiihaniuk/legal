@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-334",
@@ -24,7 +24,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       rules: [
         {
           locator: "ust. 1–4",
-          explanation: foreignersLaw.text`Допомога доступна, зокрема, особі з decyzja про повернення і termin dobrowolnego wyjazdu, деяким особам без тримання, заявникам у справах ochrony międzynarodowej та особам з ${foreignersLaw.article("170", "Art. 170")} або ${foreignersLaw.article("176", "Art. 176")}.`,
+          explanation: foreignersLaw.text`Допомога доступна, зокрема, особі з decyzja про повернення і termin dobrowolnego wyjazdu, деяким особам без тримання, особам після визначених рішень у справах ochrony międzynarodowej, особам з ${foreignersLaw.article("170", "Art. 170")} або ${foreignersLaw.article("176", "Art. 176")}, а також особі, яка перебуває в Польщі після завершення korzystania z ochrony czasowej.`,
         },
         {
           locator: "ust. 5–7",
@@ -39,7 +39,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       legalEffect:
         "Подання wniosek запускає організаційну процедуру, але саме по собі не гарантує допомогу і не замінює дотримання строку повернення.",
       foreignersCase:
-        "Порівняйте тип рішення, дату його doręczenie, кінцевий строк доброчільного виїзду та дату подання wniosek; збережіть підтвердження передачі заяви через належний орган.",
+        "Порівняйте точну категорію ust. 2, дату рішення або завершення ochrony czasowej, застосовний строк і дату подання wniosek; збережіть підтвердження передачі заяви через належний орган.",
     },
   ],
 })

@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-185",
@@ -11,28 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "W razie uwzględnienia skargi kasacyjnej NSA uchyla zaskarżone orzeczenie w całości lub części i przekazuje sprawę do ponownego rozpoznania sądowi, który je wydał, a gdy ten nie może rozpoznać sprawy w innym składzie — innemu sądowi. Sąd rozpoznaje sprawę ponownie w innym składzie.",
+          text: "Коли NSA задовольняє касаційну скаргу, він скасовує оскаржене рішення повністю або частково й передає справу на повторний розгляд суду, який його видав, а за неможливості іншого складу — іншому суду. Повторний розгляд проводить інший склад.",
           sourceLocator: "Art. 185 § 1–2",
         },
       ],
       summary:
-        "Typowym skutkiem uwzględnienia kasacji jest uchylenie i przekazanie sprawy do ponownego rozpoznania w innym składzie.",
+        "Стаття встановлює типовий касаційний наслідок: скасування та повернення справи до нижчої інстанції.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 185 § 1–2",
           explanation:
-            "NSA określa zakres uchylenia i sąd, do którego wraca sprawa; inny sąd jest przewidziany, gdy właściwy nie może orzekać w innym składzie.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Przy przekazaniu ponowne rozpoznanie musi nastąpić w innym składzie sądu.",
+            "Зіставте обсяг задоволеної касації з обсягом скасування. Після передання перевірте, що справу не розглядає той самий склад суду.",
         },
       ],
       legalEffect:
-        "Uchylenie i przekazanie otwiera ponowne rozpoznanie sądowe, ale samo nie zmienia automatycznie decyzji organu ani nie przyznaje pobytu.",
+        "NSA не вирішує тут автоматично адміністративну справу по суті; він відкриває новий судовий розгляд у межах касаційного результату.",
       foreignersCase:
-        "Po wygranej kasacji w sprawie pobytowej przygotuj się na ponowne rozpoznanie przez WSA. Sprawdź zakres wskazany w sentencji, zamiast traktować ją jako końcową decyzję administracyjną.",
+        "Після повернення справи про перебування до WSA працюйте з новим номером або етапом справи та правовими вказівками NSA, а не очікуйте негайного дозволу.",
     },
   ],
 })

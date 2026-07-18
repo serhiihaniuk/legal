@@ -13,6 +13,12 @@
     "corpus:promote": "node scripts/legal-corpus/workflow.mjs promote",
     "knowledge:generate": "node scripts/legal-knowledge/generate-registry.mjs",
     "knowledge:check": "node scripts/legal-knowledge/generate-registry.mjs --check",
+    "content-review:generate": "node scripts/content-review/ledger-cli.mjs generate",
+    "content-review:validate": "node scripts/content-review/ledger-cli.mjs validate",
+    "content-review:validate:strict": "node scripts/content-review/ledger-cli.mjs validate --strict",
+    "content-review:mark-author": "node scripts/content-review/ledger-cli.mjs mark-author",
+    "content-review:mark-cross": "node scripts/content-review/ledger-cli.mjs mark-cross",
+    "test:content-review": "node --test scripts/content-review/test/*.test.mjs",
     "test:corpus": "node --test scripts/legal-corpus/test/*.test.mjs",
     "test:editorial": "node scripts/legal-editorial/validate.mjs --incomplete",
     "test:editorial:strict": "node scripts/legal-editorial/validate.mjs",
@@ -25,8 +31,8 @@
     "lint": "oxlint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx}\"",
-    "verify": "npm run typecheck && npm run typecheck:scripts && npm run knowledge:check && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:editorial && npm run build",
-    "verify:content": "npm run test:editorial:strict && npm run test:previews"
+    "verify": "npm run typecheck && npm run typecheck:scripts && npm run knowledge:check && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:content-review && npm run test:editorial && npm run build",
+    "verify:content": "npm run content-review:validate -- --if-complete && npm run test:editorial:strict && npm run test:previews"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

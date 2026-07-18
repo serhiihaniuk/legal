@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-183",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`NSA rozpoznaje sprawę w granicach skargi kasacyjnej, lecz z urzędu bierze pod rozwagę nieważność postępowania; strony mogą przytaczać nowe uzasadnienie podstaw kasacyjnych. ${ppsaLaw.article("183", "§ 2")} wymienia sześć przypadków nieważności, w tym niedopuszczalność drogi sądowej, brak zdolności lub umocowania, wcześniejsze postępowanie albo prawomocne osądzenie, wadliwy skład, pozbawienie obrony praw oraz orzekanie przez WSA w sprawie właściwej dla NSA.`,
+          text: "NSA розглядає справу в межах касаційної скарги, але з власної ініціативи перевіряє недійсність провадження. Закон перелічує такі дефекти, як відсутність судового шляху чи процесуальної здатності, паралельна або вже вирішена тотожна справа, незаконний склад, позбавлення сторони можливості захисту та розгляд WSA справи, належної NSA.",
           sourceLocator: "Art. 183 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`Zakres kasacji wyznacza skarga, ale nieważność postępowania NSA bada z urzędu w zamkniętym katalogu ${ppsaLaw.article("183", "art. 183 § 2")}.`,
+      summary:
+        "Стаття поєднує контроль за сформульованими підставами з обов’язковою перевіркою найтяжчих процесуальних дефектів.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 183 § 1–2",
           explanation:
-            "Nowe uzasadnienie może rozwijać już przytoczone podstawy kasacyjne; przepis nie pozwala przez samo uzasadnienie dowolnie dodać nowej podstawy.",
-        },
-        {
-          locator: "§ 2 pkt 1–6",
-          explanation:
-            "Każdy zarzut nieważności trzeba porównać z konkretnym punktem katalogu, a nie z każdą niekorzystną czynnością procesową.",
+            "Складіть окремо межі касації та факти можливої недійсності провадження (nieważność postępowania). Сторони можуть додавати нове обґрунтування вже заявлених касаційних підстав, але не підміняти цим самі підстави.",
         },
       ],
       legalEffect:
-        "Nieważność może być uwzględniona bez osobnego zarzutu, lecz zwykłe uchybienie procesowe nie staje się przez to nieważnością.",
+        "Звичайні помилки перевіряють у межах касації; недійсність NSA оцінює незалежно від того, чи сторона її назвала.",
       foreignersCase:
-        "W kasacji dotyczącej pobytu odróżnij nowe uzasadnienie istniejącej podstawy od nowej podstawy. Kwestie reprezentacji, składu i możliwości obrony oceniaj na podstawie akt, nie samego poczucia niesprawiedliwości.",
+        "У справі про перебування документуйте не лише матеріальну помилку, а й те, чи сторона реально могла брати участь, була належно представлена та отримувала процесуальні документи.",
     },
   ],
 })

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-152",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Якщо skarga на akt або czynność задоволено, вони не викликають skutki prawne до набрання wyrok законної сили, якщо суд не постановить інакше; це не стосується aktów prawa miejscowego.",
+          text: "Після задоволення скарги на акт або дію вони, як правило, не породжують правових наслідків до набрання рішенням суду законної сили, якщо суд не постановить інакше. Для актів місцевого права це правило не діє.",
           sourceLocator: "Art. 152 § 1–2",
         },
       ],
       summary:
-        "Стаття визначає тимчасовий наслідок задоволення skarga для akt або czynność до uprawomocnienie wyrok і робить виняток для актів місцевого права.",
+        "Стаття визначає проміжний стан між сприятливим рішенням суду та його остаточністю.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 152 § 1–2",
           explanation:
-            "Перевірте, чи skarga задоволена і чи суд не встановив інше; за базовим правилом skutki prawne не настають до prawomocność.",
-        },
-        {
-          locator: "§ 2",
-          explanation: ppsaLaw.text`Для akt prawa miejscowego правило ${ppsaLaw.article("152", "§ 1")} не застосовується.`,
+            "Перевірте три речі разом: чи скаргу задоволено, чи суд не встановив іншого режиму та чи предмет не є актом місцевого права.",
         },
       ],
       legalEffect:
-        "Наслідок залежить від виду предмета та формулювання wyrok; не можна без перевірки поширювати його на кожен документ адміністрації.",
+        "Правові наслідки оскарженого акта або дії тимчасово блокуються в межах правила, але це не тотожне загальному зупиненню кожного адміністративного рішення.",
       foreignersCase:
-        "У спорі щодо акта, який впливає на pobyt або інше право іноземця, перевірте sentencja, вид akt та момент prawomocność. Не припускайте автоматичної зупинки всіх наслідків decyzja.",
+        "У справі іноземця прочитайте резолютивну частину й визначте вид оскарженого акта. Не робіть висновок про право на перебування лише з факту задоволення скарги.",
     },
   ],
 })

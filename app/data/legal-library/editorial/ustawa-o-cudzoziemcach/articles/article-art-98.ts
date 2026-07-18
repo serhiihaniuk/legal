@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("98", {
       provisionId: "ustawa-o-cudzoziemcach-art-98",
@@ -55,10 +55,10 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         "Zezwolenia na pobyt czasowy надається, а у випадках Art. 160, 181 і 187 може надаватися на wniosek, якщо cudzoziemiec відповідає вимогам, пов’язаним із deklarowany cel pobytu, і обставини виправдовують pobyt у Польщі довше 3 місяців. Заяви за Art. 139a ust. 1 і Art. 139o ust. 1 подає jednostka przyjmująca. Дозвіл надається на необхідний для мети строк, але не довше 3 років.",
       statuteLocator: "Art. 98 ust. 1–2",
       practicalText:
-        "Art. 98 — загальна рамка eligibility для тимчасового pobyt, не позитивна відповідь на будь-яку заяву. Треба довести реальний cel, обставини і тривалість понад 3 місяці; legal stay під час розгляду та право працювати мають окремі підстави.",
+        "Art. 98 — загальна рамка умови надання для тимчасового pobyt, не позитивна відповідь на будь-яку заяву. Треба довести реальний cel, обставини і тривалість понад 3 місяці; legalność pobytu під час розгляду та право працювати мають окремі підстави.",
       practicalLocator: "Art. 98 ust. 1–2",
       summary:
-        "Art. 98 встановлює загальну умову та максимальний строк zezwolenia na pobyt czasowy, а для мобільних спеціальних випадків — заявника-unit przyjmująca.",
+        "Art. 98 встановлює загальну умову та максимальний строк zezwolenia na pobyt czasowy, а для спеціальних випадків мобільності визначає, що заявником є jednostka przyjmująca.",
       rules: [
         {
           locator: "Art. 98 ust. 1",
@@ -79,7 +79,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       legalEffect:
         "Стаття дає критерій для розгляду zezwolenie, але не замінює спеціальних умов конкретного виду дозволу. Вона сама не встановлює права на працю без окремої підстави та параметрів рішення.",
       foreignersCase:
-        "Назвіть фактичний cel pobytu, планований період понад 3 місяці та доказ кожної спеціальної умови. Перевірте, хто має бути заявником, і окремо зафіксуйте legal stay та правову підставу роботи.",
+        "Назвіть фактичний cel pobytu, планований період понад 3 місяці та доказ кожної спеціальної умови. Перевірте, хто має бути заявником, і окремо зафіксуйте legalność pobytu та правову підставу роботи.",
     }),
   ]),
 })

@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-47",
@@ -23,7 +23,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "Art. 47 § 1–2",
           explanation:
-            "Для doręczenie сторонам подаються odpisy pismo й заłączników; якщо оригінали додатків не подані до суду, до akt додається також по одному odpis кожного додатка. Засвідчені fotokopie або wydruki електронної пошти можуть бути odpisami.",
+            "Для doręczenie сторонам подаються odpisy pismo й załączników; якщо оригінали додатків не подані до суду, до akt додається також по одному odpis кожного додатка. Засвідчені fotokopie або wydruki електронної пошти можуть бути odpisami.",
         },
         {
           locator: "Art. 47 § 3",
@@ -37,7 +37,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Норма регулює копії та спосіб їх дорęчення, але не доводить сама по собі змістовну обґрунтованість pismo або вимоги.",
+        "Норма регулює копії та спосіб їх вручення (doręczenie), але не доводить сама по собі змістовну обґрунтованість pismo або вимоги.",
       foreignersCase:
         "Для паперового pismo у справі іноземця підготуйте odpisy документа й додатків для сторін; для електронного пакета перевірте чинний режим środków komunikacji elektronicznej і те, чи потрібні sądowi uwierzytelnione wydruki для адресата, який не користується електронним отриманням pism.",
     },

@@ -46,9 +46,9 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "26",
@@ -82,7 +82,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
             "Розмір має бути диференційований так, щоб забезпечити покриття житла, харчування, транзиту або повернення.",
         },
       ],
-      foreignersLaw.text`${foreignersLaw.article("26", "Art. 26")} сама не встановлює конкретної суми або вичерпного переліку документів: їх треба шукати в чинному розporządzenie, застосовному до дати та обставин справи.`,
+      foreignersLaw.text`${foreignersLaw.article("26", "Art. 26")} сама не встановлює конкретної суми або вичерпного переліку документів: їх треба шукати в чинному rozporządzenie, застосовному до дати та обставин справи.`,
       foreignersLaw.text`Для перевірки в’їзду знайдіть актуальне rozporządzenie за ${foreignersLaw.article("26", "art. 26")}, визначте cel і строк pobytu та зіставте з ним докази коштів і можливості їх законного отримання.`,
       {
         provisionId: "ustawa-o-cudzoziemcach-art-26",

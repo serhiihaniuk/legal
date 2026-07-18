@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-242",
@@ -15,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("242", "Art. 242")} передбачає, що wydatki за сторону, звільнену від kosztów sądowych, авансуються з частини бюджету sądu administracyjnego в межах цього звільнення.`,
+          text: "У межах наданого звільнення судові видатки за сторону тимчасово покриває бюджет адміністративного суду.",
           sourceLocator: "Art. 242",
         },
       ],
       summary:
-        "Витрати за звільнену сторону тимчасово покриває бюджет адміністративного суду, але тільки в межах наданого zwolnienie.",
+        "Стаття пояснює, звідки фінансують потрібну дію, коли сторона законно не платить.",
       rules: [
         {
           locator: "Art. 242",
           explanation:
-            "Зіставте конкретний wydatki з обсягом zwolnienie: стаття не охоплює витрати поза встановленими межами.",
+            "Перевірте точний обсяг звільнення: бюджет покриває лише ту частину видатків (wydatki), від якої сторону звільнено.",
         },
       ],
       legalEffect:
-        "Норма визначає джерело авансування wydatki, а не остаточний розподіл koszty між сторонами після завершення справи.",
+        "Звільнення дозволяє виконати процесуальну дію без авансу сторони в установленій межі.",
       foreignersCase:
-        "Якщо іноземцю надано zwolnienie від судових витрат, перевірте його zakres перед висновком, що судовий бюджет покриває кожен можливий wydatki.",
+        "Якщо іноземцеві надано часткове звільнення, не припускайте, що бюджет покриє весь переклад або інший видаток.",
     },
   ],
 })

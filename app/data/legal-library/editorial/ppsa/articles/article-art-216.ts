@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-216",
@@ -15,22 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Jeżeli przedmiotem zaskarżenia jest należność pieniężna, stanowi ona wartość przedmiotu zaskarżenia.",
+          text: "Коли предметом оскарження є грошова вимога, саме її сума становить вартість предмета оскарження.",
           sourceLocator: "Art. 216",
         },
       ],
-      summary:
-        "Przy zaskarżeniu należności pieniężnej wartość przedmiotu zaskarżenia odpowiada tej należności.",
+      summary: "Стаття дає просте правило для грошових спорів.",
       rules: [
         {
           locator: "Art. 216",
           explanation:
-            "Najpierw ustal, czy przedmiot zaskarżenia rzeczywiście jest należnością pieniężną; wtedy jej wartość jest wartością przedmiotu zaskarżenia.",
+            "Визначте основну грошову належність, яка є предметом рішення органу, а не загальні фінансові наслідки для сторони.",
         },
       ],
       legalEffect:
-        "Przepis dotyczy wyłącznie sposobu oznaczenia wartości i nie przesądza wysokości wpisu bez zastosowania właściwej taryfy.",
-      foreignersCase: ppsaLaw.text`W sporze pobytowym nie przypisuj decyzji niemajątkowej wartości pieniężnej tylko dlatego, że ma skutki finansowe; ${ppsaLaw.article("216", "art. 216")} działa przy należności pieniężnej jako przedmiocie zaskarżenia.`,
+        "Ця сума стає базою для процесуального розрахунку вартості предмета оскарження.",
+      foreignersCase:
+        "Якщо справа іноземця стосується грошового обов’язку, беріть суму самого обов’язку; втрачений дохід через відмову в дозволі не стає автоматично предметом оскарження.",
     },
   ],
 })

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-165",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Postanowienie, які не завершують справу, можуть бути uchylane або змінені через зміну обставин справи, навіть якщо їх оскаржено або вони стали prawomocne.",
+          text: "Проміжну ухвалу, яка не завершує справу, можна скасувати або змінити через зміну обставин, навіть коли її вже оскаржено або вона набула законної сили.",
           sourceLocator: "Art. 165",
         },
       ],
       summary:
-        "Стаття дозволяє переглядати проміжні postanowienie при зміні обставин, включно після оскарження чи prawomocność.",
+        "Норма дозволяє суду пристосувати проміжне процесуальне рішення до нової ситуації.",
       rules: [
         {
           locator: "Art. 165",
           explanation:
-            "Спершу встановіть, що postanowienie не завершує справу, потім покажіть фактичну zmiana okoliczności; сама незгода з рішенням не названа підставою.",
+            "Потрібно показати саме нову обставину та її значення для ухвали. Повторення старих аргументів або проста незгода не є зміною обставин.",
         },
       ],
       legalEffect:
-        "Можливість uchylenie або зміни прив’язана до зміни обставин і не поширюється текстом на postanowienie, яке завершує справу.",
-      foreignersCase: ppsaLaw.text`Якщо у справі про pobyt змінилися обставини після проміжного postanowienie, перевірте його процесуальний характер і докази саме цієї зміни; prawomocność сама по собі не виключає правило ${ppsaLaw.article("165", "art. 165")}.`,
+        "Скасування чи зміна можливі лише для ухвали, що не завершує провадження.",
+      foreignersCase:
+        "У справі про перебування додайте документ, який підтверджує нову обставину, і поясніть, як вона змінює потребу в попередній процесуальній ухвалі.",
     },
   ],
 })

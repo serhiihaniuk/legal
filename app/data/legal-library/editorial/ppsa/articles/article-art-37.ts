@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-37",
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "Art. 37 § 1a",
           explanation:
-            "На legalStateDate чинна § 1a говорить про odpis, складений w formie dokumentu elektronicznego, та називає kwalifikowany podpis elektroniczny, podpis zaufany або podpis osobisty і встановлені формати даних. Варіант w postaci elektronicznej є майбутньою редакцією, що набуде чинності 1.10.2029; спосіб засвідчення треба звіряти з датою.",
+            "Станом на 18.07.2026 чинна § 1a говорить про odpis, складений w formie dokumentu elektronicznego, та називає kwalifikowany podpis elektroniczny, podpis zaufany або podpis osobisty і встановлені формати даних. Варіант w postaci elektronicznej є майбутньою редакцією, що набуде чинності 1.10.2029; спосіб засвідчення треба звіряти з датою.",
         },
         {
           locator: "Art. 37 § 2",
@@ -39,7 +39,7 @@ export default defineEditorialPart<"ppsa">({
       legalEffect:
         "Стаття визначає доказ повноваження та момент його подання, але не розширює межі доручення понад його зміст.",
       foreignersCase:
-        "Якщо pełnomocnik подає перше pismo у справі іноземця, долучіть підписане pełnomocnictwo або допустиме підтвердження з реєстру; для електронного odpis на legalStateDate перевірте, що він засвідчений допустимим підписом і належить до formie dokumentu elektronicznego, а не до майбутньої редакції.",
+        "Якщо pełnomocnik подає перше pismo у справі іноземця, долучіть підписане pełnomocnictwo або допустиме підтвердження з реєстру; для електронного odpis станом на 18.07.2026 перевірте, що він засвідчений допустимим підписом і оформлений w formie dokumentu elektronicznego, а не за майбутньою редакцією.",
     },
   ]),
 })

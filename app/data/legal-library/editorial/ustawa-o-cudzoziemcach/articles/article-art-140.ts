@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-140",
@@ -35,7 +35,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1 pkt 2–4",
           explanation:
-            "Потрібні health insurance або підтвердження покриття лікування, джерело стабільного і регулярного доходу та забезпечене місце проживання в Польщі.",
+            "Потрібні ubezpieczenie zdrowotne або підтвердження покриття лікування, джерело стабільного і регулярного доходу та забезпечене місце проживання в Польщі.",
         },
         {
           locator: "ust. 2",

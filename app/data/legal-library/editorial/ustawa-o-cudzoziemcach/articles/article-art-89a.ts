@@ -44,26 +44,26 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("89a", {
       provisionId: "ustawa-o-cudzoziemcach-art-89a",
       reviewStatus: "reviewed",
       statuteText:
-        "Wojewoda або Szef Urzędu у другій інстанції, який видав рішення про продовження cudzoziemiec wizy Schengen, неzwłocznie отримує з Wizowy System Informacyjny дані з art. 19 ust. 1 rozporządzenia nr 2017/2226 і безпосередньо імпортує їх до останнього запису про в’їзд/виїзд цієї особи в EES відповідно до art. 14 rozporządzenia nr 767/2008.",
+        "Wojewoda або Szef Urzędu у другій інстанції, який видав рішення про продовження cudzoziemiec wizy Schengen, невідкладно отримує з Wizowy System Informacyjny дані з art. 19 ust. 1 rozporządzenia nr 2017/2226 і безпосередньо імпортує їх до останнього запису про в’їзд/виїзд цієї особи в EES відповідно до art. 14 rozporządzenia nr 767/2008.",
       statuteLocator: "Art. 89a",
       practicalText:
-        "Стаття регулює службову синхронізацію VIS та EES після decyzja про продовження Schengen visa. Вона не продовжує документ сама по собі, не легалізує інший pobyt і не дає права працювати.",
+        "Стаття регулює службову синхронізацію VIS та EES після decyzja про продовження wiza Schengen. Вона не продовжує документ сама по собі, не легалізує інший pobyt і не дає права працювати.",
       practicalLocator: "Art. 89a",
       summary:
-        "Art. 89a встановлює обов’язок органу оновити відповідний запис EES даними з VIS після продовження Schengen visa.",
+        "Art. 89a встановлює обов’язок органу оновити відповідний запис EES даними з VIS після продовження wiza Schengen.",
       rules: [
         {
           locator: "Art. 89a",
           explanation:
-            "Адресат обов’язку — орган, який видав рішення про продовження: wojewoda або Szef Urzędu у другій інстанції; дія виконується неzwłocznie.",
+            "Адресат обов’язку — орган, який видав рішення про продовження: wojewoda або Szef Urzędu у другій інстанції; дія виконується невідкладно.",
         },
         {
           locator: "Art. 89a",

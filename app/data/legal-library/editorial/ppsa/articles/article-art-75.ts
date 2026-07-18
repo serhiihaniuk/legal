@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-75",
@@ -13,12 +13,12 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Pisma у судовому провадженні та orzeczenia doręczaються в odpisach; стаття також допускає електронну форму з даними системи teleinformatyczny sąd у відповідній редакції.",
-          sourceLocator: "Art. 75 § 1–2",
+          text: "Pisma у судовому провадженні та orzeczenia вручають у копіях (odpisy). Станом на 18.07.2026 їх можна вручати w formie dokumentu elektronicznego, що містить дані з телекомунікаційної системи суду (system teleinformatyczny sądu). Формулювання w postaci elektronicznej набере чинності 1.10.2029.",
+          sourceLocator: "Art. 75 § 1–2, przypisy 44–45",
         },
       ],
       summary:
-        "Звичайне вручення відбувається через odpis, а закон передбачає електронний варіант; редакційні примітки містять майбутню зміну термінології.",
+        "Вручення відбувається через odpis pismo або orzeczenia; чинний електронний варіант має форму dokument elektroniczny з даними судової системи.",
       rules: [
         {
           locator: "§ 1",
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "§ 2",
           explanation:
-            "Електронне doręczenie пов’язане з даними системи sąd; чинний варіант треба читати разом із перехідною приміткою corpus.",
+            "До 30.09.2029 включно pismo або orzeczenie можна вручити w formie dokumentu elektronicznego, що містить дані з телекомунікаційної системи суду (system teleinformatyczny sądu). Редакція w postaci elektronicznej застосовуватиметься з 1.10.2029.",
         },
       ],
       legalEffect:

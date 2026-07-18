@@ -1,9 +1,9 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-131",
@@ -16,7 +16,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Норма розрізняє спосіб винесення postanowienie і доступність зажаленія для двох названих рішень.",
+        "Норма розрізняє спосіб винесення postanowienie і можливість його оскарження через zażalenie для двох названих рішень.",
       rules: [
         {
           locator: "Art. 131 zdanie pierwsze",
@@ -26,13 +26,13 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "Art. 131 zdanie drugie",
           explanation:
-            "Для zawieszenie та odmowa podjęcia перевірте pouczenie про зажаленія; стаття не поширює прямо це правило на кожне postanowienie про umorzenie.",
+            "Для zawieszenie та odmowa podjęcia перевірте pouczenie про можливість подати zażalenie; стаття прямо не поширює цей засіб оскарження на кожне postanowienie про umorzenie.",
         },
       ],
       legalEffect:
         "Стаття визначає процесуальну форму і названий засіб оскарження, але не встановлює всіх вимог до його подання.",
       foreignersCase:
-        "Якщо судова справа щодо decyzja про pobyt зупинена або відмовлено в її поновленні, прочитайте вид postanowienie і pouczenie: від цього залежить, чи йдеться про зажаленія.",
+        "Якщо судову справу щодо decyzja про pobyt зупинено або відмовлено в її поновленні, прочитайте вид postanowienie і pouczenie: від цього залежить, чи можна подати zażalenie.",
     },
   ],
 })

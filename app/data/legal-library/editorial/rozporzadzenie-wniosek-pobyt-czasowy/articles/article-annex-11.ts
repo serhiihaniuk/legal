@@ -8,8 +8,8 @@ const regulationLaw = createLegalTextAuthor(
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-11",
@@ -40,8 +40,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
             "Підпис складається у відведеній рамці; текст прямо зазначає, що він не може виходити за її межі.",
         },
       ],
-      legalEffect:
-        "Заłącznik nr 11 фіксує зразок підпису або пояснює передбачений формою виняток. Це ідентифікаційна формальність, а не доказ матеріального права на pobyt.",
+      legalEffect: regulationLaw.text`${regulationLaw.annex("11", "Załącznik nr 11")} фіксує зразок підпису або пояснює передбачений формою виняток. Це ідентифікаційна формальність, а не доказ матеріального права на pobyt.`,
       foreignersCase:
         "Перевірте вік на дату подання та, якщо застосовується виняток через стан здоров’я, окремо з’ясуйте вимогу до медичної довідки, зазначену в pouczenie. Сам зразок підпису не доводить умови zezwolenia.",
     },

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-167",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "У reunification-справі орган має оцінити чотири сімейні та соціальні фактори, а не лише формальні документи.",
+        "У справі про połączenie z rodziną орган має оцінити чотири сімейні та соціальні фактори, а не лише формальні документи.",
       rules: [
         {
           locator: "pkt 1–2",
@@ -33,7 +33,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
             "Орган враховує період перебування cudzoziemiec у Польщі та наявність сімейних, культурних і соціальних зв'язків із державою походження; стаття не встановлює наперед, який фактор переважає.",
         },
       ],
-      legalEffect: foreignersLaw.text`Ці критерії є обов'язковою частиною оцінки надання або cofnięcie permit з ${foreignersLaw.article("159", "art. 159")} ust. 1, але самі по собі не замінюють його матеріальні умови.`,
+      legalEffect: foreignersLaw.text`Ці критерії є обов'язковою частиною оцінки надання або cofnięcie zezwolenie з ${foreignersLaw.article("159", "art. 159")} ust. 1, але самі по собі не замінюють його матеріальні умови.`,
       foreignersCase:
         "Подайте конкретні докази інтересу дитини, фактичного спільного життя, тривалості перебування та зв'язків із державою походження; у разі спору перевірте, чи орган відповів на кожен критерій.",
     },

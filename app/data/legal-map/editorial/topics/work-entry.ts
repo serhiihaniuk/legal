@@ -2,7 +2,7 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { foreignersLaw, mapTopicSources, workLaw } from "../authoring"
+import { mapTopicSources, workLaw } from "../authoring"
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
 import type { LegalMapTopicBody } from "./principle-legality"
@@ -11,9 +11,9 @@ const workReference = {
   kind: "official-source",
   sourceId: "eli-powierzanie-pracy",
 } as const
-const ukraineReference = {
+const ukraine2026Reference = {
   kind: "external",
-  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+  url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
 } as const
 type WorkEntryBody = LegalMapTopicBody
 
@@ -33,13 +33,14 @@ export const workEntryTopic: KnowledgeUnit<WorkEntryBody> = defineKnowledgeUnit(
         text: workLaw.text`Доступ до праці визначається поєднанням чинної підстави перебування та підстави виконання конкретної роботи за ${workLaw.article("3", "art. 3")} ustawy z 20.03.2025.`,
         basis: [
           { reference: workReference, locator: "Art. 3" },
-          { reference: ukraineReference, locator: "Art. 5a" },
+          { reference: workReference, locator: "Art. 5a" },
+          { reference: ukraine2026Reference, locator: "Art. 41" },
         ],
       },
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -73,7 +74,7 @@ export const workEntryTopic: KnowledgeUnit<WorkEntryBody> = defineKnowledgeUnit(
         ],
         exceptions: [
           "Swobodny dostęp або ustawowe zwolnienie означає відсутність потреби в zezwoleniu чи oświadczeniu, але не скасовує вимог щодо легального перебування, письмової умови, мінімальних стандартів праці, ZUS і податків.",
-          workLaw.text`Для beneficjenta ochrony czasowej діє окреме powiadomienie do powiatowego urzędu pracy за ${foreignersLaw.external("art. 5a", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}; це інший механізм, ніж zezwolenie або oświadczenie.`,
+          workLaw.text`Для beneficjenta ochrony czasowej діє окреме powiadomienie do powiatowego urzędu pracy за ${workLaw.article("5a", "art. 5a")}; це інший механізм, ніж zezwolenie або oświadczenie.`,
         ],
         consequences: [
           "Робота поза допустимою підставою або поза межами документа може бути визнана nielegalnym wykonywaniem pracy, а доручення такої роботи — nielegalnym powierzeniem pracy cudzoziemcowi.",
@@ -86,7 +87,7 @@ export const workEntryTopic: KnowledgeUnit<WorkEntryBody> = defineKnowledgeUnit(
         ],
         foreignersContext: [
           "У sprawie o pobyt czasowy i pracę право до праці та право перебування можуть бути пов'язані одним рішенням, але законність попередньої й поточної роботи все одно оцінюється за фактичними датами та умовами.",
-          workLaw.text`Для громадянина України після змін, чинних від 05.03.2026, робота на підставі ochrony czasowej оформлюється через ${foreignersLaw.external("art. 5a", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")} ustawy z 20.03.2025; powiadomienie подається протягом 7 днів від початку роботи та повторюється при визначених змінах умов.`,
+          workLaw.text`Для громадянина України після змін, чинних від 05.03.2026, робота на підставі ochrony czasowej оформлюється через ${workLaw.article("5a", "art. 5a")} ustawy z 20.03.2025; powiadomienie подається протягом 7 днів від початку роботи та повторюється при визначених змінах умов. ${workLaw.external("Art. 41", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy z 23.01.2026 окремо поширює цей режим на визначених громадян України, які перебувають легально і не користуються ochroną czasową w Rzeczypospolitej Polskiej.`,
         ],
       } satisfies LegalNodeGuide,
       checkpoints: [

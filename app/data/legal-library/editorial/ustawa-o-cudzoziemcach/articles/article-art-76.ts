@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-76",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("76", "Art. 76")} ust. 4–6 регулює formularz рішення, яким відмову залишено в силі, додаткове обґрунтування та судове pouczenie для wiza Schengen, а також передавання konsul цифрових копій документів MFA у випадку ${foreignersLaw.article("66", "Art. 66")} ust. 1a.`,
+          text: foreignersLaw.text`${foreignersLaw.article("76", "Art. 76")} ust. 4–6 регулює форму рішення, яким відмову залишено в силі, додаткове обґрунтування та судове pouczenie для wiza Schengen, а також передавання konsul цифрових копій документів MFA у випадку ${foreignersLaw.article("66", "Art. 66")} ust. 1a.`,
           sourceLocator: "Art. 76 ust. 4–6",
         },
       ],
@@ -38,7 +38,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 76 ust. 4–5",
           explanation:
-            "Рішення про utrzymanie odmowa в силі оформлюється на formularz; для wiza Schengen воно додатково містить істотні факти, судове pouczenie, wpis і можливість допомоги.",
+            "Рішення про utrzymanie odmowa в силі оформлюється на встановленій формі; для wiza Schengen воно додатково містить істотні факти, судове pouczenie, wpis і можливість допомоги.",
         },
         {
           locator: "Art. 76 ust. 6",

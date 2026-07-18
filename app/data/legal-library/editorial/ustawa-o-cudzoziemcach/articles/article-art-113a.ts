@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("113a", {
       provisionId: "ustawa-o-cudzoziemcach-art-113a",
       reviewStatus: "reviewed",
       statuteText:
-        "У провадженні про надання або cofnięcie temporary residence permit стороною є виключно cudzoziemiec, про якого йдеться відповідно в Art. 98 ust. 1 або Art. 101.",
+        "У провадженні про надання або cofnięcie zezwolenie na pobyt czasowy стороною є виключно cudzoziemiec, про якого йдеться відповідно в Art. 98 ust. 1 або Art. 101.",
       statuteLocator: "Art. 113a",
       practicalText:
-        "Стаття визначає процесуальний статус сторони, а не матеріальну умову permit. Роботодавець, член сім’ї чи інша особа не стає стороною лише через інтерес до результату; це не означає, що їхні документи не можуть бути доказами.",
+        "Стаття визначає процесуальний статус сторони, а не матеріальну умову zezwolenie. Роботодавець, член сім’ї чи інша особа не стає стороною лише через інтерес до результату; це не означає, що їхні документи не можуть бути доказами.",
       practicalLocator: "Art. 113a",
       summary:
-        "Art. 113a обмежує коло сторін у провадженні про надання або cofnięcie temporary residence permit самим cudzoziemiec.",
+        "Art. 113a обмежує коло сторін у провадженні про надання або cofnięcie zezwolenie na pobyt czasowy самим cudzoziemiec.",
       rules: [
         {
           locator: "Art. 113a",
@@ -67,9 +67,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Норма визначає, хто користується процесуальними правами сторони та кому адресують рішення. Вона сама не надає permit, legal stay або права на працю.",
+        "Норма визначає, хто користується процесуальними правами сторони та кому адресують рішення. Вона сама не надає zezwolenie, legalność pobytu або права на працю.",
       foreignersCase:
-        "Перевірте, що вniosek, пояснення, doręczenia та odwołanie оформлені від імені cudzoziemiec; документи роботодавця або сім’ї долучайте як докази без підміни сторони.",
+        "Перевірте, що wniosek, пояснення, doręczenia та odwołanie оформлені від імені cudzoziemiec; документи роботодавця або сім’ї долучайте як докази без підміни сторони.",
     }),
   ]),
 })

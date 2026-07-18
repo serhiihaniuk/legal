@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-249a",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 249a передбачає umorzenie postępowania щодо przyznania prawa pomocy, якщо strona cofnie wniosek або rozpoznanie wniosku стало zbędne.",
+          text: "Коли сторона відкликає заяву про право допомоги або її розгляд стає непотрібним, провадження щодо цієї заяви припиняють.",
           sourceLocator: "Art. 249a",
         },
       ],
       summary:
-        "Провадження про prawo pomocy завершується umorzenie, коли заяву відкликано або її розгляд більше не потрібен.",
+        "Стаття завершує допоміжне провадження без оцінки матеріальних умов допомоги.",
       rules: [
         {
           locator: "Art. 249a",
           explanation:
-            "Встановіть, яка саме подія настала: cofnięcie wniosku стороною чи втрата потреби в його розгляді; це відрізняється від odmowa при оцінці фінансових умов.",
+            "Зафіксуйте, чи заяву справді відкликано або яка подія зробила рішення зайвим. Після припинення провадження (umorzenie) не виникає нового права допомоги.",
         },
       ],
       legalEffect:
-        "Umorzenie припиняє провадження щодо заяви про prawo pomocy без висновку, що сторона виконала або не виконала фінансові умови для його надання.",
+        "Припинення стосується лише заяви про допомогу, а не обов’язково основної судової справи.",
       foreignersCase:
-        "У справі іноземця не плутайте umorzenie wniosku про prawo pomocy з відмовою у pobyt або з відмовою у самій судовій skarga. Зафіксуйте, чи wniosek відкликано і чи ще існувала практична потреба в його розгляді.",
+        "Перед відкликанням заяви у справі про перебування перевірте, чи вже сплачено всі збори та чи не потрібен представник для наступного етапу.",
     },
-  ]),
+  ],
 })

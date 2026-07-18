@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-11",
@@ -15,22 +15,22 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("11", "Art. 11")} уповноважує ministra właściwego do spraw pracy визначити у drodze rozporządzenia перелік документів, які podmiot додає до wniosek про zezwolenie, з урахуванням потреби підтвердити обставини wniosek, підстави видачі zezwolenie та сплату opłata за ${workLaw.article("10", "art. 10")} ust. 1.`,
+          text: workLaw.text`${workLaw.article("11", "Art. 11")} уповноважує міністра, відповідального за питання праці, визначити виконавчим приписом перелік документів, які суб’єкт додає до заяви про дозвіл на роботу. Ці документи мають давати змогу підтвердити дані заяви, обставини, що обґрунтовують видачу дозволу, та сплату збору з частини 1 ${workLaw.article("10", "ст. 10")}.`,
           sourceLocator: "Art. 11",
         },
       ],
       summary:
-        "Сам закон окреслює мету документів, а конкретний wykaz передає до виконавчого rozporządzenie. Тому перелік додатків потрібно перевіряти за чинним актом, що діє для відповідної процедури.",
+        "Сам закон пояснює, що мають доводити документи, а конкретний перелік передає до виконавчого припису («rozporządzenie»). Тому склад додатків треба перевіряти за редакцією цього припису, чинною для відповідної процедури на дату подання.",
       rules: [
         {
           locator: "Art. 11",
           explanation:
-            "Minister визначає документи для sprawnego postępowania, підтвердження даних wniosek, обставин, що обґрунтовують zezwolenie, та opłata.",
+            "Міністр визначає документи, потрібні для належного проведення справи, підтвердження даних заяви, підстав для видачі дозволу та сплати збору.",
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("11", "Art. 11")} не видає zezwolenie і не визначає legalny pobyt; він створює правову основу для деталізації доказів у rozporządzenie.`,
+      legalEffect: workLaw.text`${workLaw.article("11", "Ст. 11")} сама не надає дозволу і не визначає законність перебування. Вона лише створює правову основу для деталізації доказів у виконавчому приписі.`,
       foreignersCase:
-        "Не покладайтеся на неофіційний шаблон списку документів. Для конкретної справи звірте чинне rozporządzenie, wniosek і документи, що підтверджують як роботу, так і legalny pobyt.",
+        "Не покладайтеся на неофіційний шаблон переліку документів. Для конкретної справи звірте виконавчий припис, чинний на дату подання, зміст заяви та докази як запланованої роботи, так і законного перебування.",
     },
   ],
 })

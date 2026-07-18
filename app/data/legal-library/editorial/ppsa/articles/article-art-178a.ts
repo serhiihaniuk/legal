@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-178a",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "WSA na posiedzeniu niejawnym umarza postępowanie kasacyjne, jeżeli strona skutecznie cofnęła skargę kasacyjną przed przedstawieniem jej wraz z aktami sprawy NSA. Na postanowienie przysługuje zażalenie.",
+          text: "Якщо сторона ефективно відкликала касаційну скаргу до передання її разом із матеріалами до NSA, WSA припиняє касаційне провадження на закритому засіданні. На цю ухвалу можна подати окреме оскарження (zażalenie).",
           sourceLocator: "Art. 178a",
         },
       ],
       summary:
-        "Skuteczne cofnięcie skargi kasacyjnej przed przekazaniem jej z aktami do NSA prowadzi do umorzenia postępowania kasacyjnego.",
+        "Стаття визначає момент, до якого наслідок відкликання оформлює WSA.",
       rules: [
         {
           locator: "Art. 178a",
           explanation:
-            "Trzeba łącznie ustalić skuteczność cofnięcia i moment przed przedstawieniem skargi z aktami NSA; przepis przewiduje posiedzenie niejawne.",
+            "Перевірте ефективність відкликання та чи матеріали ще не передано до NSA. Саме ця межа визначає компетентний суд.",
         },
       ],
       legalEffect:
-        "Umorzenie dotyczy tego postępowania kasacyjnego i nie jest merytorycznym rozstrzygnięciem prawa do pobytu; na postanowienie ustawa daje zażalenie.",
+        "Припинення завершує касаційне провадження без перевірки рішення WSA по суті, але сама ухвала підлягає окремому оскарженню.",
       foreignersCase:
-        "Jeżeli w sprawie pobytowej rozważasz cofnięcie kasacji, ustal w aktach, czy WSA nie przedstawił jej już NSA. Przeczytaj także pouczenie o zażaleniu na postanowienie.",
+        "Перед відкликанням касації у справі про перебування письмово оцініть, яке рішення стане остаточним і чи залишиться інший процесуальний шлях.",
     },
   ],
 })

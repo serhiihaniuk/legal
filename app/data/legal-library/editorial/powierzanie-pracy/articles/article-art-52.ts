@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-52",
@@ -13,28 +13,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 52 передбачає umorzenie postępowania з мาจу закону, якщо після wpisu wniosku не подано oświadczenia про явку до роботи у встановлений строк.",
+          text: "Art. 52 передбачає припинення провадження без окремого рішення про це (umorzenie postępowania z mocy prawa), якщо після внесення сезонної заяви до реєстру польський суб’єкт не подав заяву про прибуття іноземця до роботи.",
           sourceLocator: "Art. 52 ust. 1–2",
         },
       ],
       summary:
-        "Якщо oświadczenie про прибуття до сезонної роботи не подано, справа про zezwolenie na pracę sezonową автоматично припиняється після 90 днів від запланованого початку або після запланованого завершення роботи — залежно від того, що настане раніше.",
+        "Якщо повідомлення про прибуття не надійшло, справа про сезонний дозвіл автоматично завершується зі спливом 90 днів від запланованого початку роботи або зі спливом запланованого строку її завершення — залежно від того, що настане раніше.",
       rules: [
         {
           locator: "ust. 1 pkt 1–2",
           explanation:
-            "Строк прив'язаний до дати початку, зазначеної у wpisie, і до дати завершення роботи; закон називає обидві підстави umorzenie.",
+            "Обидві дати беруть із запису в реєстрі: запланований початок і заплановане завершення роботи. Провадження припиняється з настанням першої з двох установлених законом меж.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Після umorzenie wpis до ewidencji wniosków також unieważnia się за прямим приписом закону.",
+            "Після припинення провадження запис у реєстрі також автоматично втрачає чинність (unieważnienie z mocy prawa).",
         },
       ],
       legalEffect:
-        "Невиконання кроку з oświadczeniem припиняє саме це провадження та анулює запис; ця стаття не дає окремої підстави почати роботу.",
+        "Неподання заяви про прибуття припиняє саме це провадження й анулює запис у реєстрі. Стаття не створює окремої підстави почати роботу.",
       foreignersCase:
-        "Якщо cudzoziemiec не приїжджає або план змінився, podmiot має зіставити дати у wpisie з поданим oświadczeniem. Не слід розраховувати на старий запис після umorzenie та unieważnienie.",
+        "Якщо іноземець не приїхав або план змінився, зіставте дати в реєстрі з датою подання заяви про прибуття. Після автоматичного припинення справи й анулювання запису старий запис уже не може бути підставою наступного етапу.",
     },
   ]),
 })

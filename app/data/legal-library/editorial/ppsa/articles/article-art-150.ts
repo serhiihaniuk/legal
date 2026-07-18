@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-150",
@@ -15,21 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`У справах про akty і czynności, не названі в ${ppsaLaw.article("145", "art. 145")}–${ppsaLaw.article("148", "148")}, суд, задовольняючи skarga, uchyla їх або stwierdza bezskuteczność.`,
+          text: "Якщо суд задовольняє скаргу (skarga) на акт або дію, для яких попередні спеціальні норми не визначають іншого наслідку, він скасовує їх (uchyla) або визнає їхню неефективність (stwierdza bezskuteczność).",
           sourceLocator: "Art. 150",
         },
       ],
       summary:
-        "Це залишкове правило наслідку для aktów і czynności, які не входять до категорій попередніх статей.",
+        "Це резервне правило про спосіб усунення з правового обігу іншого акта або дії.",
       rules: [
         {
           locator: "Art. 150",
-          explanation: ppsaLaw.text`Перед застосуванням перевірте, що предмет не належить до ${ppsaLaw.article("145", "art. 145")}–${ppsaLaw.article("148", "148")}; після цього розрізняйте uchylenie та bezskuteczność.`,
+          explanation:
+            "Спершу точно класифікуйте оскаржений акт або дію. Лише після виключення спеціальних категорій можна визначати, чи належним результатом є скасування, чи визнання неефективності.",
         },
       ],
       legalEffect:
-        "Стаття дає два можливі наслідки для залишкової категорії, але сама не вирішує, який із них відповідає конкретному akt або czynność.",
-      foreignersCase: ppsaLaw.text`У справі іноземця не називайте ${ppsaLaw.article("150", "art. 150")} запасним шляхом лише тому, що документ органу незрозумілий. Спершу встановіть точний тип akt або czynność та його правову категорію.`,
+        "Суд усуває дію акта або дії одним із двох способів; стаття не дозволяє довільно обрати наслідок без встановлення предмета скарги.",
+      foreignersCase:
+        "У справі іноземця почніть з назви, правової підстави й фактичного змісту документа органу. Невідомий або незвичний документ не стає автоматично предметом цієї статті.",
     },
   ],
 })

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-59",
@@ -24,7 +24,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           sourceLocator: "Art. 59 ust. 1–3",
         },
       ],
-      summary: foreignersLaw.text`${foreignersLaw.article("59", "Art. 59")} описує функцію wiza krajowa: вона охоплює в’їзд і побyt понад 90 днів сумарно в межах своєї чинності, але період побиту визначається відповідно до заявленої мети, а строк чинності не може перевищувати року.`,
+      summary: foreignersLaw.text`${foreignersLaw.article("59", "Art. 59")} описує функцію wiza krajowa: вона охоплює в’їзд і pobyt понад 90 днів сумарно в межах своєї чинності, але період побиту визначається відповідно до заявленої мети, а строк чинності не може перевищувати року.`,
       rules: [
         {
           locator: "Art. 59 ust. 1",

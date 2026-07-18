@@ -42,7 +42,7 @@ export const inactivityTopic: KnowledgeUnit<InactivityBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -62,7 +62,7 @@ export const inactivityTopic: KnowledgeUnit<InactivityBody> =
           "Bezczynność виникає, коли справу не завершено у законний або повідомлений строк; przewlekłość — коли провадження триває довше, ніж потрібно для його вирішення.",
         ],
         conditions: [
-          kpaLaw.text`За ${kpaLaw.article("35", "art. 35")} KPA справи вирішуються без зайвої затримки; орієнтовні загальні строки становлять місяць, два місяці для особливо складної справи та місяць у відwoławczym провадженні, з урахуванням ${kpaLaw.article("35", "art. 35 § 5")}.`,
+          kpaLaw.text`За ${kpaLaw.article("35", "art. 35")} KPA справи вирішуються без зайвої затримки; орієнтовні загальні строки становлять місяць, два місяці для особливо складної справи та місяць в апеляційному провадженні (postępowanie odwoławcze), з урахуванням ${kpaLaw.article("35", "art. 35 § 5")}.`,
           "Ponaglenie містить обґрунтування і подається до organu wyższego stopnia через organ, який веде справу, або до цього organu, якщо вищого немає.",
         ],
         exceptions: [

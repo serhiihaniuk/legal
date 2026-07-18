@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-77",
@@ -13,12 +13,12 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Одержувач підтверджує odbiór і дату підписом; якщо не може або не хоче підписати, doręczający зазначає дату й причину. Doręczający також фіксує спосіб вручення та дату на pismo.",
-          sourceLocator: "Art. 77 § 1–2",
+          text: "Одержувач підтверджує odbiór і дату власноручним підписом; якщо він не може або не хоче підписати, doręczający зазначає дату вручення та причину відсутності підпису. Станом на 18.07.2026 отримання pismo w formie dokumentu elektronicznego підтверджують способом, визначеним у Art. 74a § 5 або § 10. Скасування § 1a набере чинності лише 1.10.2029.",
+          sourceLocator: "Art. 77 § 1–2, przypisy 46–47",
         },
       ],
       summary:
-        "Доказ doręczenie має показувати факт, дату та спосіб вручення; електронний § 1a у corpus містить редакційні позначки про зміну та uchylony варіант.",
+        "Підтвердження doręczenie має показувати факт, дату та спосіб вручення; для електронного документа чинний § 1a прямо відсилає до Art. 74a § 5 або § 10.",
       rules: [
         {
           locator: "§ 1",
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "§ 1a",
           explanation:
-            "Для електронної форми перевіряйте відповідний чинний режим підтвердження; текст corpus містить редакційні примітки.",
+            "Для pismo w formie dokumentu elektronicznego підтвердження отримання відбувається за Art. 74a § 5 або § 10. Позначка «uchylony» у przypis 47 описує майбутню зміну з 1.10.2029.",
         },
         {
           locator: "§ 2",

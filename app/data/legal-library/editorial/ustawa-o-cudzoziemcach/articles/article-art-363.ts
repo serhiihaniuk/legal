@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-363",
@@ -25,11 +25,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "całość",
           explanation:
-            "До eskortа можуть належати особи, відповідальні за іноземця під час транзиту, зокрема медичний персонал і tłumacze.",
+            "До eskorta можуть належати особи, відповідальні за іноземця під час транзиту, зокрема медичний персонал і tłumacze.",
         },
       ],
       legalEffect:
-        "Стаття дозволяє включення eskortа до wniosek, але не встановлює автоматичної згоди на кожну особу чи обов’язковість супроводу в кожній справі.",
+        "Стаття дозволяє включення eskorta до wniosek, але не встановлює автоматичної згоди на кожну особу чи обов’язковість супроводу в кожній справі.",
       foreignersCase:
         "Якщо стан здоров’я або комунікація потребують супроводу, додайте до wniosek конкретне обґрунтування та документи, не розкриваючи зайвих персональних даних.",
     },

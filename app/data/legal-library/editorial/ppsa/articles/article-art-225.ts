@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-225",
@@ -15,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("225", "Art. 225")} nakazuje z urzędu zwrócić stronie, na jej koszt, opłatę prawomocnie uchyloną w całości lub w części, różnicę między kosztami pobranymi a kosztami należnymi oraz pozostałość zaliczki wpłaconej na pokrycie wydatków.`,
+          text: "Суд з власної ініціативи повертає стороні скасований остаточно збір, різницю між стягненими та належними витратами й невикористаний залишок авансу; витрати на саме повернення несе сторона.",
           sourceLocator: "Art. 225",
         },
       ],
       summary:
-        "Стороні повертають належну до повернення opłata, різницю між стягненими й належними kosztami та залишок zaliczka — з urzędu.",
+        "Стаття регулює технічне повернення переплати або суми, правова підстава якої зникла.",
       rules: [
         {
           locator: "Art. 225",
           explanation:
-            "Визначте, що саме підлягає поверненню: prawomocnie uchylona opłata, різниця koszty або залишок zaliczka на wydatki.",
+            "Зіставте остаточну ухвалу, фактично сплачену суму та належний розрахунок. Надайте актуальні платіжні дані, якщо їх потребує суд.",
         },
       ],
       legalEffect:
-        "Повернення відбувається з urzędu у випадках, названих статтею, але норма не доводить автоматично наявність переплати без розрахунку koszty.",
+        "Повернення відбувається з ініціативи суду (z urzędu), але може бути зменшене на витрати переказу.",
       foreignersCase:
-        "Після завершення судової справи іноземця звірте платежі за opłata та zaliczka з остаточним розрахунком суду; не вимагайте повернення суми, яка ще є належною.",
+        "У справі про перебування перевірте банківський рахунок після остаточного скасування збору й повідомте суд, якщо повернення не можна ідентифікувати.",
     },
   ],
 })

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-206",
@@ -15,22 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd może w uzasadnionych przypadkach odstąpić od zasądzenia zwrotu kosztów postępowania w całości lub części, w szczególności gdy skarga została uwzględniona w części niewspółmiernej do wartości przedmiotu sporu ustalonej dla pobrania wpisu.",
+          text: "У виправданому випадку суд може повністю або частково не присуджувати повернення витрат, зокрема коли скаргу задоволено лише в частині, явно непропорційній вартості предмета спору, визначеній для судового збору.",
           sourceLocator: "Art. 206",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("206", "Art. 206")} daje sądowi możliwość ograniczenia albo pominięcia zwrotu kosztów w uzasadnionej sytuacji, zwłaszcza przy niewspółmiernym częściowym uwzględnieniu skargi.`,
+      summary: "Стаття дає суду пом’якшувальну дискрецію щодо витрат.",
       rules: [
         {
           locator: "Art. 206",
           explanation:
-            "To kompetencja sądu zależna od okoliczności; przepis podaje przykład relacji między zakresem uwzględnienia a wartością przedmiotu sporu dla wpisu.",
+            "Покажіть обставини, які роблять стандартний розподіл несправедливим або непропорційним. Частковий успіх — приклад, а не єдина можлива підстава.",
         },
       ],
       legalEffect:
-        "Nawet istnienie ogólnej podstawy zwrotu nie gwarantuje pełnej kwoty, lecz nie przesądza też z góry o odmowie.",
+        "Навіть формально успішна сторона може не отримати всіх витрат; рішення залежить від мотивованої оцінки суду.",
       foreignersCase:
-        "Po częściowym wygraniu skargi pobytowej nie obiecuj pełnego zwrotu. Sprawdź uzasadnienie WSA i relację zakresu uwzględnienia do wartości przyjętej dla wpisu.",
+        "У справі про перебування не обіцяйте повного повернення витрат лише через часткове скасування рішення органу; порівняйте результат із усіма вимогами.",
     },
   ],
 })

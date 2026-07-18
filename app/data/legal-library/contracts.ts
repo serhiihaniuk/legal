@@ -35,7 +35,10 @@ export type LegalCorpusManifest = {
     officialPageUrl: string
     metadataUrl: string
     pdfUrl: string
+    expectedPdfSha256?: string
   }
+  sourceMaterials?: readonly LegalSourceMaterial[]
+  amendmentOverlay?: unknown
   officialPageUrl: string
   metadataUrl: string
   pdfUrl: string
@@ -53,20 +56,43 @@ export type LegalCorpusManifest = {
   legalStatusEvidence?: {
     status?: string | null
     inForce?: string | null
+    legalStateDate?: string | null
     legalStatusDate?: string | null
     consolidatedTextIdentifier?: string | null
     checkedAt?: string
+    sourceUrls?: readonly string[]
     sourceUrl?: string
+    amendmentsCheckedThrough?: string | null
+    entryIntoForce?: readonly LegalStatusEvidenceEntry[]
+    transitionalRules?: readonly LegalStatusEvidenceEntry[]
     unresolved?: string[]
   }
   [key: string]: unknown
+}
+
+export type LegalStatusEvidenceEntry = {
+  locator: string
+  result: string
+}
+
+export type LegalSourceMaterial = {
+  id: string
+  role: "base" | "amendment" | string
+  citation: string
+  officialPageUrl: string
+  metadataUrl: string
+  pdfUrl: string
+  localPdfUrl: string
+  pdfSha256: string
+  expectedPdfSha256?: string
+  effectiveDate?: string
 }
 
 export type LegalProvisionKind =
   "article" | "paragraph" | "section" | "point" | "annex" | "other"
 
 export type LegalProvisionStatus =
-  "active" | "repealed" | "reserved" | "removed" | "unknown"
+  "active" | "future" | "repealed" | "reserved" | "removed" | "unknown"
 
 export type CorpusProvision = {
   id: string
@@ -80,9 +106,29 @@ export type CorpusProvision = {
   startPdfPage: number
   endPdfPage: number
   status: LegalProvisionStatus
+  effectiveDate?: string
   sourcePdfSha256: string
   sourceTextHash: string
   text: string
+  sourceSpans?: readonly LegalProvisionSourceSpan[]
+  amendmentOverlay?: {
+    kind: string
+    amendmentSourceId: string
+    amendmentLocator: string
+    effectiveDate: string
+    baseSourceTextHash: string
+    compiledSourceTextHash: string
+  }
+}
+
+export type LegalProvisionSourceSpan = {
+  sourceId: string
+  role: "base" | "amendment" | string
+  locator: string
+  startPdfPage?: number
+  endPdfPage?: number
+  sourcePdfSha256?: string
+  effectiveDate?: string
 }
 
 export type LegalDocument<D extends LegalDocumentId = LegalDocumentId> = {

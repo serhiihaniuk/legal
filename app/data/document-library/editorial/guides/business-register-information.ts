@@ -3,7 +3,11 @@ import {
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
 import type { DocumentGuide } from "~/data/document-library/contracts"
-import { documentSources } from "../authoring"
+
+const KRS_INFORMATION_URL =
+  "https://www.gov.pl/web/gov/uzyskaj-informacje-z-krajowego-rejestru-sadowego"
+const CEIDG_INFORMATION_URL =
+  "https://www.gov.pl/web/gov/centralna-ewidencja-dzialalnosci-gospodarczej---portal-informacyjny"
 
 const guide: DocumentGuide = {
   id: "business-register-information",
@@ -38,8 +42,8 @@ const guide: DocumentGuide = {
     "Запис про представництво не підтверджує автентичність конкретного підпису.",
   ],
   legalBasis: [
-    "Відомості та спосіб представництва випливають із відповідного державного реєстру і правил для організаційної форми суб’єкта.",
-    "У справі cudzoziemca реєстровий документ є доказом факту, а не самостійною матеріальною підставою дозволу.",
+    "Офіційні сервіси KRS і CEIDG надають реєстрові відомості відповідно про суб’єктів у KRS та підприємців-фізичних осіб у CEIDG.",
+    "Практичний висновок: у справі cudzoziemca реєстровий документ підтверджує окремі факти про суб’єкта та reprezentację, але не є самостійною матеріальною підставою дозволу.",
   ],
   keyChecks: [
     "Правильний реєстр, статус суб’єкта і дата актуальності.",
@@ -51,8 +55,19 @@ const guide: DocumentGuide = {
     "employment-annex-1",
     "employment-contract",
   ],
-  sources: [documentSources.krs, documentSources.ceidg],
-  verifiedAt: "2026-07-14",
+  sources: [
+    {
+      label: "gov.pl — інформація з KRS",
+      url: KRS_INFORMATION_URL,
+      note: "Офіційна послуга перевірки суб’єкта, статусу та способу reprezentacji в KRS.",
+    },
+    {
+      label: "gov.pl — CEIDG",
+      url: CEIDG_INFORMATION_URL,
+      note: "Офіційна інформація про електронний реєстр підприємців і пошук wpisu.",
+    },
+  ],
+  verifiedAt: "2026-07-18",
 }
 
 export const businessRegisterInformationTopic: KnowledgeUnit<DocumentGuide> =
@@ -68,23 +83,40 @@ export const businessRegisterInformationTopic: KnowledgeUnit<DocumentGuide> =
     summary: guide.description,
     claims: [
       {
-        id: "document-purpose",
-        kind: "requires-verification",
-        text: guide.description,
+        id: "register-scope",
+        kind: "official-guidance",
+        text: "KRS і CEIDG є різними державними реєстрами: KRS охоплює внесені до нього суб’єкти та їх reprezentację, а CEIDG — підприємців-фізичних осіб.",
         basis: [
           {
-            reference: {
-              kind: "official-source",
-              sourceId: "eli-ustawa-o-cudzoziemcach",
-            },
-            locator: "document-specific requirements",
+            reference: { kind: "external", url: KRS_INFORMATION_URL },
+            locator: "sekcje „Kto może uzyskać” i „Jakie informacje uzyskasz”",
+          },
+          {
+            reference: { kind: "external", url: CEIDG_INFORMATION_URL },
+            locator:
+              "sekcje „Informacje”, „Do kogo skierowany jest portal” i „Co znajdziesz w portalu” (wyszukiwarka firm)",
+          },
+        ],
+      },
+      {
+        id: "register-evidence-use",
+        kind: "practical-inference",
+        text: "У справі cudzoziemca актуальні дані KRS або CEIDG допомагають перевірити суб’єкта й повноваження підписанта, але не доводять фактичну діяльність, фінансову спроможність чи реальну організацію праці.",
+        basis: [
+          {
+            reference: { kind: "external", url: KRS_INFORMATION_URL },
+            locator: "sekcja „Jakie informacje uzyskasz”",
+          },
+          {
+            reference: { kind: "external", url: CEIDG_INFORMATION_URL },
+            locator: "sekcja „Co znajdziesz w portalu”",
           },
         ],
       },
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: guide.verifiedAt,

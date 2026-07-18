@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-177",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Skargę kasacyjną wnosi się do sądu, który wydał zaskarżony wyrok lub postanowienie, w terminie trzydziestu dni od doręczenia stronie odpisu orzeczenia z uzasadnieniem. Przepis określa też odrębny początek biegu terminu dla prokuratora, Rzecznika Praw Obywatelskich, Rzecznika Praw Dziecka oraz w kilku sytuacjach prawa pomocy.",
+          text: "Касаційну скаргу подають через суд, який видав оскаржене рішення, протягом тридцяти днів від вручення стороні його копії з обґрунтуванням. Стаття окремо регулює початок строку для публічних суб’єктів та ситуації, коли професійного представника призначено або у праві допомоги відмовлено після рішення.",
           sourceLocator: "Art. 177 § 1–6",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("177", "Art. 177")} wyznacza sąd właściwy do wniesienia skargi kasacyjnej i podstawowy trzydziestodniowy termin, z wyjątkami dotyczącymi określonych podmiotów i prawa pomocy.`,
+      summary:
+        "Стаття визначає канал подання та базовий строк, а також захищає реальну можливість скористатися призначеним представником.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 177 § 1–6",
           explanation:
-            "Punktem wyjścia jest doręczenie odpisu orzeczenia z uzasadnieniem, a pismo wnosi się do sądu, który wydał zaskarżone orzeczenie.",
-        },
-        {
-          locator: "§ 2–6",
-          explanation:
-            "Przy ustalaniu terminu trzeba sprawdzić, czy działa reguła dla organów ochrony prawnej, ustanowionego pełnomocnika z prawa pomocy, opinii o braku podstaw albo odmowy ustanowienia pełnomocnika.",
+            "Зафіксуйте дату вручення рішення з обґрунтуванням і подавайте до WSA, а не безпосередньо до NSA. Якщо діє право допомоги, простежте дату повідомлення представника, його можливий висновок про відсутність підстав і вручення цього висновку стороні; кожна з цих подій може змінити початок строку за умов статті.",
         },
       ],
       legalEffect:
-        "Termin i jego początek wynikają z konkretnego sposobu doręczenia oraz sytuacji procesowej; sama data na orzeczeniu nie przesądza o jego rozpoczęciu.",
+        "Тридцятиденний строк є основним, але його точний початок у справах про право допомоги встановлюють за спеціальною послідовністю подій.",
       foreignersCase:
-        "W sprawie pobytowej ustal datę doręczenia odpisu z uzasadnieniem, status pełnomocnika i ewentualne postanowienie w sprawie prawa pomocy. Nie obliczaj terminu wyłącznie od daty wydania wyroku.",
+        "У справі про перебування зберіть в одному місці рішення, обґрунтування, підтвердження вручення та всі повідомлення про призначення представника. Без них строк не можна визначити надійно.",
     },
   ],
 })

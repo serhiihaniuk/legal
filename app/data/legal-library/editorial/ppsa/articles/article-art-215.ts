@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-215",
@@ -15,26 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "W każdym piśmie wszczynającym postępowanie sądowe w danej instancji należy podać wartość przedmiotu zaskarżenia, jeżeli od tej wartości zależy wysokość opłaty; wartość zaokrągla się w górę do pełnych złotych.",
+          text: "У документі, який починає провадження в певній інстанції, треба вказати вартість предмета оскарження, якщо від неї залежить розмір збору. Суму округлюють угору до повних злотих.",
           sourceLocator: "Art. 215 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("215", "Art. 215")} wymaga podania wartości przedmiotu zaskarżenia tylko wtedy, gdy od niej zależy wysokość opłaty, i nakazuje zaokrąglenie w górę.`,
+      summary:
+        "Стаття забезпечує базу для розрахунку пропорційного збору за подання (wpis).",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 215 § 1–2",
           explanation:
-            "Obowiązek dotyczy pisma wszczynającego postępowanie w konkretnej instancji i zależy od sposobu wyliczenia opłaty.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Podaną wartość zaokrągla się w górę do pełnych złotych, a nie do najbliższej kwoty według zwykłego zaokrąglenia.",
+            "Спершу визначте, чи плата залежить від вартості. Якщо так, обґрунтуйте суму в документі й застосуйте встановлене округлення.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("215", "Art. 215")} nie ustala sam stawki; błędne pominięcie lub oznaczenie wartości może wymagać reakcji według przepisów o brakach i opłacie.`,
+      legalEffect:
+        "Неправильна або відсутня вартість може вплинути на розмір збору та викликати перевірку суду.",
       foreignersCase:
-        "Przed wniesieniem pisma w sprawie pobytowej ustal, czy opłata zależy od wartości przedmiotu zaskarżenia. Nie wyliczaj jej z osobistej wagi decyzji bez podstawy ustawowej.",
+        "У типовій немайновій справі про дозвіл на перебування не вигадуйте вартість; перевірте, чи конкретний предмет справді є грошовим.",
     },
   ],
 })

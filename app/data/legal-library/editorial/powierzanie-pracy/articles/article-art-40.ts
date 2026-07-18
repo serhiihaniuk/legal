@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-40",
@@ -15,31 +15,31 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("40", "Art. 40")} ust. 1 передбачає zezwolenie для cudzoziemiec, якого zatrudnia podmiot zagraniczny, який працює для нього поза Польщею та буде delegowany до oddział, zakład або podmiot пов'язаний, для usługa eksportowa або з іншою метою, яка не є świadczeniem usług. Ust. 2 виключає відкриття або вимагає umorzenie провадження для діяльності за ${workLaw.article("45", "art. 45")} ust. 2 та функцій ${workLaw.article("2", "art. 2")} pkt 9 lit. c–e; ust. 3 визначає usługa eksportowa, а ust. 4–5 — właściwość wojewoda.`,
+          text: workLaw.text`${workLaw.article("40", "Art. 40")} регулює дозвіл на роботу у зв’язку з направленням іноземця до Польщі (zezwolenie na pracę w związku z delegowaniem). Іноземець має бути працівником закордонного суб’єкта (podmiot zagraniczny), зазвичай працювати для нього поза Польщею та бути направленим: до його підрозділу або пов’язаного суб’єкта; для виконання експортної послуги (usługa eksportowa); або з іншою метою, яка не полягає в наданні послуг. Частини 2–5 визначають випадки, коли провадження не відкривають або припиняють, поняття експортної послуги та компетентного воєводу (wojewoda).`,
           sourceLocator: "Art. 40 ust. 1 pkt 1–3, ust. 2–5",
         },
       ],
       summary:
-        "Стаття описує три моделі delegowanie з іноземного podmiot і розподіляє місцеву компетенцію між wojewoda. Exportowa usługa повинна бути тимчасовою та випадковою, а іноземний podmiot не може вести в Польщі господарську діяльність у значенні Prawo przedsiębiorców.",
+        "Стаття розрізняє три моделі направлення працівника закордонним суб’єктом. Для кожної моделі треба встановити фактичну мету приїзду та орган, який розглядає справу. Експортною є лише тимчасова й нерегулярна послуга суб’єкта, який не веде в Польщі господарської діяльності у значенні закону Prawo przedsiębiorców.",
       rules: [
         {
           locator: "ust. 1 pkt 1–3",
           explanation:
-            "Потрібно підтвердити zatrudnienie у podmiot zagraniczny, роботу для нього поза Польщею та одну з моделей: пов'язаний podmiot або oddział, usługa eksportowa чи інша мета, що не є послугою.",
+            "Потрібно підтвердити трудовий зв’язок із закордонним суб’єктом, звичайне виконання роботи для нього поза Польщею та одну з трьох цілей направлення. Самої назви відрядження в договорі недостатньо.",
         },
         {
           locator: "ust. 2–3",
-          explanation: workLaw.text`Провадження не відкривають або umarzają за діяльності з ${workLaw.article("45", "art. 45")} ust. 2 і функцій ${workLaw.article("2", "art. 2")} pkt 9 lit. c–e. Usługa eksportowa має бути tymczasowa й okazjonalna, а іноземний podmiot не веде в Польщі діяльність у розумінні Prawo przedsiębiorców.`,
+          explanation: workLaw.text`Провадження не відкривають, а вже відкрите припиняють, якщо робота належить до сезонних видів діяльності з ${workLaw.article("45", "art. 45")} ust. 2 або полягає у виконанні корпоративних функцій, названих у ${workLaw.article("2", "art. 2")} pkt 9 lit. c–e. Експортна послуга (usługa eksportowa) має бути тимчасовою та нерегулярною.`,
         },
         {
           locator: "ust. 4–5",
           explanation:
-            "Właściwy wojewoda залежить від приймаючого podmiot, odbiorca usługi або головного місця роботи; якщо його неможливо визначити в моделях pkt 2–3, компетентним є wojewoda mazowiecki.",
+            "Компетентного воєводу визначають за місцезнаходженням приймаючого суб’єкта, одержувача послуги або за головним місцем роботи. Якщо в моделях із pkt 2–3 головне місце роботи визначити неможливо, справу розглядає воєвода Мазовецький (wojewoda mazowiecki).",
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("40", "Art. 40")} визначає модель і орган для zezwolenie при delegowanie, але не встановлює legalny pobyt. Іноземний трудовий зв'язок не замінює перевірку права перебувати та працювати в Польщі.`,
+      legalEffect: workLaw.text`${workLaw.article("40", "Art. 40")} визначає модель направлення та компетентний орган у справі дозволу на роботу. Такий дозвіл не легалізує перебування: підставу законного перебування (legalny pobyt) треба перевіряти окремо.`,
       foreignersCase:
-        "Документуйте роботодавця за кордоном, роботу поза Польщею, фактичну мету та місце delegowanie. Перевірте, чи не є це функцією або sezonowa praca; окремо встановіть документ pobyt і потрібне zezwolenie.",
+        "Зберіть документи про закордонного роботодавця, звичайне місце роботи, фактичну мету й місце направлення. Потім перевірте, чи робота не є сезонною або виконанням корпоративної функції, та окремо встановіть підставу перебування і потрібний дозвіл.",
     },
   ],
 })

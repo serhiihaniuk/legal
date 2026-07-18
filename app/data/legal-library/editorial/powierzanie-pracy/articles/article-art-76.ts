@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-76",
@@ -13,27 +13,27 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 76 визначає коло органів, яким на запит надаються дані з centralny rejestr, вимагає ідентифікації доступу, заходів безпеки та обмеження зберігання даних часом, необхідним для провадження.",
+          text: "Art. 76 визначає коло органів, яким на запит надають дані з центрального реєстру. Доступ має бути ідентифікованим, захищеним і контрольованим, а отримані дані можна зберігати лише стільки, скільки потрібно для провадження.",
           sourceLocator: "Art. 76 ust. 1–4",
         },
       ],
       summary:
-        "Доступ мають органи, перелічені законом: зокрема wojewoda, starosta, консул, UdSC, PIP, Straż Graniczna, Policja, KAS, ZUS та служби безпеки — кожен для своєї законної мети.",
+        "Доступ мають лише перелічені законом органи, зокрема воєводи, старости, консули, Szef Urzędu do Spraw Cudzoziemców, PIP, Straż Graniczna, Policja, KAS, ZUS та визначені служби безпеки. Кожен із них отримує дані для конкретної законної мети.",
       rules: [
         {
           locator: "ust. 1",
           explanation:
-            "Dane можуть отримувати органи, названі в пунктах 1–15, для відповідних справ про працю, pobyt, візи, контроль, податки, страхування або завдання безпеки.",
+            "Дані можуть отримувати органи, названі в пунктах 1–15, для відповідних справ про працю, перебування, візи, контроль, податки, страхування або завдання безпеки.",
         },
         {
           locator: "ust. 2–3",
           explanation:
-            "Доступ можливий, якщо можна встановити особу, обсяг, дату і мету доступу, забезпечено безпеку та нагляд; отримані дані зберігаються не довше необхідного для провадження.",
+            "Доступ можливий, якщо система дає змогу встановити особу користувача, обсяг, дату і мету отримання даних, а також забезпечує безпеку, нагляд і реєстрацію доступу. Отримані дані зберігають не довше, ніж це потрібно для провадження.",
         },
         {
           locator: "ust. 4",
           explanation:
-            "Надання даних відбувається з teleinformatyczny system, який веде minister właściwy do spraw pracy.",
+            "Дані надають з інформаційної системи, яку веде міністр, компетентний у справах праці.",
         },
       ],
       legalEffect:

@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("99", {
       provisionId: "ustawa-o-cudzoziemcach-art-99",
@@ -58,7 +58,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         "Art. 99 — фільтр доступу до провадження, а не відмова у дозволі після оцінки його умов. Перевірка має бути прив’язана до статусу саме в день подання і до факту подання odciski; пункт 11 у тексті позначений як uchylony.",
       practicalLocator: "Art. 99 ust. 1 pkt 1–11; ust. 1a–2",
       summary:
-        "Art. 99 перелічує обставини, за яких заяву на temporary residence permit не розпочинають розглядати, включно з відсутністю відбитків.",
+        "Art. 99 перелічує обставини, за яких заяву на zezwolenie na pobyt czasowy не розпочинають розглядати, включно з відсутністю відбитків.",
       rules: [
         {
           locator: "Art. 99 ust. 1 pkt 1–4",
@@ -68,7 +68,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 99 ust. 1 pkt 5–9",
           explanation:
-            "Не розпочинають провадження за заяви про protection/asylum, zatrzymanie/strzeżony ośrodek/zakaz opuszczania kraju, покарання або areszt, незавершений строк добровільного виїзду чи обов’язок залишити територію за Art. 299 ust. 6.",
+            "Не розпочинають провадження, зокрема, коли особа подала заяву про ochronę międzynarodową або azyl, перебуває під zatrzymanie, у strzeżony ośrodek чи під zakaz opuszczania kraju, відбуває покарання або areszt, ще має строк для добровільного виїзду чи зобов’язана залишити територію за Art. 299 ust. 6.",
         },
         {
           locator: "Art. 99 ust. 1 pkt 10–11; ust. 2",
@@ -82,7 +82,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "За наявності переліченої обставини орган не переходить до матеріальної оцінки заяви. Це не є позитивним або негативним рішенням про право на працю; legal stay треба підтвердити окремою нормою та фактичною датою.",
+        "За наявності переліченої обставини орган не переходить до матеріальної оцінки заяви. Це не є позитивним або негативним рішенням про право на працю; legalność pobytu треба підтвердити окремою нормою та фактичною датою.",
       foreignersCase:
         "На день подання перевірте всі документи pobyt, wiza, рішення про powrót, захист, detention, судові обмеження, місце перебування та підтвердження odciski. Відокремте `odmowa wszczęcia` за Art. 99 від `odmowa udzielenia` за Art. 100.",
     }),

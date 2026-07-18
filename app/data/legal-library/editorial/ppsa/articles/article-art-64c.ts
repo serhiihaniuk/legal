@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-64c",
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "§ 3–4",
           explanation:
-            "Пряме подання до sąd до спливу строку його зберігає; тоді sąd закликає орган передати kompletnе й uporządkowane akta, а орган робить це протягом чотирнадцяти днів від отримання wezwanie. При звичайному поданні орган передає sprzeciw і akta протягом чотирнадцяти днів від його отримання.",
+            "Пряме подання до sąd до спливу строку його зберігає; тоді sąd закликає орган передати kompletne i uporządkowane akta, а орган робить це протягом чотирнадцяти днів від отримання wezwanie. При звичайному поданні орган передає sprzeciw і akta протягом чотирнадцяти днів від його отримання.",
         },
         {
           locator: "§ 5",

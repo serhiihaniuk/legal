@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-223",
@@ -15,27 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("223", "Art. 223 § 1–2")} stosuje odpowiednio przepisy ${ppsaLaw.article("220", "art. 220")} i ${ppsaLaw.article("222", "art. 222")}, gdy obowiązek uiszczenia lub uzupełnienia opłaty powstanie wskutek ustalenia wyższej wartości przedmiotu zaskarżenia, cofnięcia przyznanego prawa pomocy albo uchylenia kurateli przed wyznaczeniem terminu rozprawy; nieuiszczoną opłatę sąd nakazuje w orzeczeniu kończącym postępowanie w danej instancji ściągnąć od strony zobowiązanej do jej uiszczenia albo od innej strony, jeżeli z tego orzeczenia wynika obowiązek poniesienia przez nią kosztów postępowania.`,
+          text: "Правила про виклик до оплати та відсутність вимоги збору застосовують також тоді, коли обов’язок сплатити або доплатити виник пізніше через підвищення вартості спору, скасування права допомоги чи припинення опіки до призначення засідання. Несплачений збір суд може стягнути у фінальному рішенні.",
           sourceLocator: "Art. 223 § 1–2",
         },
       ],
-      summary:
-        "Стаття застосовує правила про wezwanie та очевидне odrzucenie, коли обов’язок сплатити або доплатити opłatę виник пізніше з названих у законі причин.",
+      summary: "Стаття охоплює платежі, що з’явилися вже під час провадження.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 223 § 1–2",
           explanation:
-            "Зіставте виникнення обов’язку з вищою wartość przedmiotu zaskarżenia, cofnięcie prawa pomocy або uchylenie kurateli до визначення дати rozprawa.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Якщо належну opłatę не сплачено, спосіб її стягнення має бути зазначений у кінцевому orzeczenie відповідної instancji.",
+            "Визначте подію, яка створила нову суму, дату виклику до оплати (wezwanie) та платника. Якщо оплату не внесено, перевірте, кого фінальне рішення зобов’язує нести витрати.",
         },
       ],
-      legalEffect: ppsaLaw.text`Стаття визначає спеціальне застосування ${ppsaLaw.article("220", "Art. 220")} і ${ppsaLaw.article("222", "Art. 222")} та подальше стягнення належної opłata; вона не скасовує перевірку, хто саме зобов’язаний її сплатити.`,
+      legalEffect:
+        "Пізній обов’язок не зникає через те, що документ уже був прийнятий; сума може бути стягнута наприкінці інстанції.",
       foreignersCase:
-        "Якщо в справі іноземця змінилася wartość przedmiotu zaskarżenia або cofnięto право допомоги, перевірте нову вимогу про opłatę і строк її виконання за документами суду.",
+        "У справі про перебування стежте за рішеннями про право допомоги (prawo pomocy) та кожною зміною вартості спору, бо вони можуть створити новий платіж.",
     },
   ],
 })

@@ -1,11 +1,16 @@
 import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import {
+  authorLegalTextCitationsTree,
+  createLegalTextAuthor,
+} from "../../../legal-text"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-299",
@@ -13,7 +18,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 299 встановлює різні обов’язки виїзду: до завершення періоду pobytu та чинності wizy, у строки bezwizowy pobyt, до завершення zezwolenia na pobyt czasowy, а для особи з дозволом іншої держави, що застосовує dyrektywę 2008/115/WE, — niezwłocznie до цієї держави; у названих випадках передбачено 30 днів від ostateczność або doręczenie decyzja чи 7 днів після припинення перешкод із Art. 31 ust. 1, причому pobyt у період Art. 299 ust. 6 є legalny за умовами ust. 7 та винятків ust. 8–9.",
+          text: foreignersLaw.text`${foreignersLaw.article("299", "Art. 299")} встановлює різні обов’язки виїзду: до завершення періоду pobytu та чинності wizy, у строки bezwizowy pobyt, до завершення zezwolenia na pobyt czasowy, а для особи з дозволом іншої держави, що застосовує dyrektywę 2008/115/WE, — niezwłocznie до цієї держави; у названих випадках передбачено 30 днів від ostateczność або doręczenie decyzja чи 7 днів після припинення перешкод із ${foreignersLaw.article("31", "Art. 31")} ust. 1, причому pobyt у період ${foreignersLaw.article("299", "Art. 299")} ust. 6 є legalny за умовами ust. 7 та винятків ust. 8–9.`,
           sourceLocator: "Art. 299 ust. 1–11",
         },
       ],
@@ -32,8 +37,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 6–7",
-          explanation:
-            "Для перелічених рішень діє 30 днів від ostateczność, а якщо рішення видав organ wyższego stopnia — від його doręczenie; після припинення перешкод із Art. 31 ust. 1 діє 7 днів. Pobyt у цей період є legalny, якщо відповідну заяву не подано після завершення попереднього legalny pobyt.",
+          explanation: foreignersLaw.text`Для перелічених рішень діє 30 днів від ostateczność, а якщо рішення видав organ wyższego stopnia — від його doręczenie; після припинення перешкод із ${foreignersLaw.article("31", "Art. 31")} ust. 1 діє 7 днів. За ust. 6a окремий 30-денний строк рахується від завершення максимального періоду ochrony czasowej. Pobyt у періодах ust. 6 і 6a вважається legalny за умовами ust. 7.`,
         },
         {
           locator: "ust. 8–11",
@@ -42,9 +46,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Норма визначає обов’язок виїзду та спеціальні періоди, коли pobyt вважається legalny; потрібно перевірити тип документа, дату вручення і своєчасність заяви.",
+        "Норма визначає обов’язок виїзду, включно з 30 днями після завершення максимального періоду ochrony czasowej, та спеціальні періоди, коли pobyt вважається legalny; потрібно перевірити тип документа, дату події, дату вручення і своєчасність заяви.",
       foreignersCase:
-        "Складіть хронологію в’їзду, строку wizy або bezwizowy pobyt, заяв і doręczenie рішення. Для 30- або 7-денного строку встановіть конкретний pkt ust. 6 і дату ostateczność або doręczenie; окремо перевірте винятки ust. 8, 8a і 9 та повідомлення за ust. 10.",
+        "Складіть хронологію в’їзду, строку wizy або bezwizowy pobyt, заяв, doręczenie рішення та, якщо застосовно, завершення ochrony czasowej. Для 30- або 7-денного строку встановіть ust. 6 чи 6a і початкову дату; окремо перевірте легальність за ust. 7 та винятки ust. 8–9.",
     },
   ]),
 })

@@ -1,0 +1,62 @@
+import { createLegalTextAuthor } from "../../../legal-text"
+
+import { defineEditorialPart } from "../../define-editorial-part"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
+  documentId: "ustawa-o-cudzoziemcach",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
+      provisionId: "ustawa-o-cudzoziemcach-art-222b",
+      reviewStatus: "reviewed",
+      claims: [
+        {
+          kind: "statute-text",
+          text: "Перед наданням дозволу wojewoda запитує, чи в’їзд і перебування іноземця становлять загрозу для обороноздатності, безпеки держави або охорони громадської безпеки й порядку.",
+          sourceLocator: "Art. 222b ust. 1",
+        },
+        {
+          kind: "statute-text",
+          text: "Запит надсилають до komendanta oddziału Straży Granicznej, komendanta wojewódzkiego Policji та Szefa ABW, а в особливо обґрунтованому випадку також до іншого органу. Відповідь надається за 30 днів, а в особливо обґрунтованому випадку строк можна продовжити до 60 днів із повідомленням wojewoda.",
+          sourceLocator: "Art. 222b ust. 2–7",
+        },
+        {
+          kind: "statute-text",
+          text: "Якщо орган не відповів у 30- або продовжений 60-денний строк, вимогу отримання інформації вважають виконаною. Таку саму консультацію проводить Szef Urzędu у другій інстанції, якщо має намір надати дозвіл, а wojewoda раніше не звертався.",
+          sourceLocator: "Art. 222b ust. 8–9",
+        },
+        {
+          kind: "statute-text",
+          text: "Перевірку за ust. 1 не проводять щодо особи, якій на день подання заяви не виповнилося 13 років.",
+          sourceLocator: "Art. 222b ust. 10",
+        },
+      ],
+      summary:
+        "Стаття встановлює міжвідомчу безпекову перевірку перед позитивним рішенням і строки для відповідей органів.",
+      rules: [
+        {
+          locator: "ust. 2–7",
+          explanation:
+            "Перевірте адресатів, дату отримання кожного запиту та повідомлення про продовження. Електронний обмін допускається, але не змінює встановлених строків.",
+        },
+        {
+          locator: "ust. 8",
+          explanation:
+            "Мовчання органу означає лише виконання вимоги отримати інформацію після спливу строку. Воно не є позитивним висновком про відсутність загрози.",
+        },
+        {
+          locator: "ust. 9–10",
+          explanation:
+            "Друга інстанція доповнює пропущену консультацію перед позитивним рішенням. Для заявника до 13 років закон прямо виключає цю перевірку.",
+        },
+      ],
+      legalEffect:
+        "Позитивне рішення не повинно бути видане до виконання консультаційної вимоги або спливу відповідного строку.",
+      foreignersCase:
+        "У матеріалах справи перевірте запити, дати їх отримання, відповіді й можливе продовження до 60 днів. Вік оцінюйте саме на день подання заяви.",
+    },
+  ],
+})

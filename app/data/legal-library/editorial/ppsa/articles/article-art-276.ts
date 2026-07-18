@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-276",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 276 встановлює, що до skarga o wznowienie застосовуються відповідно правила про postępowanie перед sąd першої інстанції, якщо Dział VII не встановлює інакше; якщо właściwy є Naczelny Sąd Administracyjny, відповідно застосовується Art. 175.",
+          text: "До скарги про поновлення відповідно застосовують правила першої інстанції, якщо цей розділ не встановлює іншого. Коли компетентним є NSA, відповідно діє вимога професійного складання документа.",
           sourceLocator: "Art. 276",
         },
       ],
       summary:
-        "Стаття дає процедурне правило за замовчуванням для wznowienie та окремо відсилає до Art. 175, коли справу розглядає NSA.",
+        "Стаття заповнює процедурні прогалини й установлює додатковий професійний бар’єр для скарги до NSA.",
       rules: [
         {
           locator: "Art. 276",
           explanation:
-            "Порівнюйте спеціальні приписи Dział VII з правилами першої інстанції; загальна відсилка працює лише відповідно і лише там, де спеціальна норма не встановлює іншого.",
-        },
-        {
-          locator: "Art. 276 zdanie drugie",
-          explanation:
-            "Для провадження у NSA перевірте окремі вимоги Art. 175, а не покладайтеся лише на правила першої інстанції.",
+            "Спершу застосовуйте спеціальні правила поновлення (wznowienie), потім сумісні правила WSA. Якщо справу розглядає NSA, перевірте, хто має право скласти скаргу.",
         },
       ],
       legalEffect:
-        "Відсилка визначає спосіб заповнення процесуальних питань, але не скасовує спеціальні умови, строки чи підстави wznowienie.",
+        "Надзвичайний характер не усуває загальних вимог до процесуального письма й представництва.",
       foreignersCase:
-        "При підготовці скарги іноземця зіставте вимоги Dział VII з формальними вимогами відповідного суду. Якщо компетентним може бути NSA, окремо перевірте Art. 175.",
+        "Іноземець, чию скаргу про поновлення має розглядати NSA, повинен завчасно залучити адвоката або юридичного радника (adwokat albo radca prawny), якщо не діє виняток.",
     },
-  ]),
+  ],
 })

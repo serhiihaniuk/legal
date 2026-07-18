@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-451",
@@ -29,7 +29,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       rules: [
         {
           locator: "ust. 1",
-          explanation: foreignersLaw.text`Можливість стосується даних із категорій ${foreignersLaw.article("449", "Art. 449")} ust. 2 pkt 1–7, 8–12 і 16 та має служити виконанню міжнародних зобов’язань або актів міжнародної організації.`,
+          explanation: foreignersLaw.text`Можливість стосується даних із категорій ${foreignersLaw.article("449", "Art. 449")} ust. 2 pkt 1–6, 8–12 і 16 та має служити виконанню міжнародних зобов’язань або актів міжнародної організації. Pkt 7 до цього переліку не входить.`,
         },
         {
           locator: "ust. 2",

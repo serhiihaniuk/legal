@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-211",
@@ -15,22 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Koszty sądowe obejmują opłaty sądowe i zwrot wydatków.",
+          text: "Судові витрати (koszty sądowe) складаються із судових зборів та відшкодування видатків.",
           sourceLocator: "Art. 211",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("211", "Art. 211")} dzieli koszty sądowe na opłaty sądowe i zwrot wydatków.`,
+      summary: "Стаття ділить судові витрати на дві базові категорії.",
       rules: [
         {
           locator: "Art. 211",
           explanation:
-            "Przy analizie płatności rozdziel opłatę sądową od wydatku, bo dalsze przepisy mogą traktować je odmiennie.",
+            "У платіжному календарі окремо ведіть судові збори (opłaty sądowe) та видатки (wydatki), бо для них можуть діяти різні правила внесення й повернення.",
         },
       ],
       legalEffect:
-        "Klasyfikacja nie podaje stawki ani zwolnienia dla konkretnego pisma; te kwestie wymagają dalszych przepisów.",
+        "Не кожна витрата сторони є судовою витратою в сенсі цієї статті.",
       foreignersCase:
-        "W sprawie pobytowej prowadź osobno listę wpisu lub opłaty kancelaryjnej i wydatków, np. należności tłumacza ustanowionego przez sąd.",
+        "У справі про перебування відділіть платіж суду від винагороди представника чи власного проїзду — це різні категорії для розрахунку.",
     },
   ],
 })

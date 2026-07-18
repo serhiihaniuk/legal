@@ -11,9 +11,9 @@ const WITHDRAWAL_AGREEMENT_URL =
   "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:12020W/TXT"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-244",
@@ -26,7 +26,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: "Картка може містити підпис іноземця і закодований запис даних з ust. 1 pkt 1, 2, 4, 5 або 16; відбитки не вміщують, якщо їх фізично неможливо зняти, а дані про адресу не вміщують, якщо іноземець не замельдувався в місці pobyt czasowy понад 2 місяці.",
+          text: foreignersLaw.text`Картка може містити підпис іноземця і закодований запис даних з ust. 1 pkt 1, 2, 4, 5 або 16. Odcisków linii papilarnych не вміщують, якщо їх фізично неможливо зняти, особа не досягла 6 років на визначену законом дату або орган odstąpił від wezwania do osobistego stawiennictwa за ${foreignersLaw.article("106h", "art. 106h")} ust. 1, ${foreignersLaw.article("203h", "art. 203h")} ust. 1 чи ${foreignersLaw.article("219h", "art. 219h")} ust. 1. Адресу не вміщують, якщо немає meldunek на pobyt czasowy понад 2 місяці.`,
           sourceLocator: "Art. 244 ust. 2–4",
         },
       ],
@@ -36,7 +36,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1 pkt 8–12a",
           explanation:
-            "Вид zezwolenia визначає adnotacje: для Blue Card і мобільності, naukowiec, student, stażysta, wolontariusz, ICT, mobile ICT, колишнього Blue Card та praca sezonowa діють саме умови, названі у відповідних пунктах; «dostęp do rynku pracy» ставлять лише за наявності права на роботу або звільнення від work permit.",
+            "Вид zezwolenia визначає adnotacje: для Blue Card і мобільності, naukowiec, student, stażysta, wolontariusz, ICT, mobile ICT, колишнього Blue Card та praca sezonowa діють саме умови, названі у відповідних пунктах; «dostęp do rynku pracy» ставлять лише за наявності права на роботу або звільнення від zezwolenia na pracę.",
         },
         {
           locator: "ust. 1 pkt 13–19",
@@ -45,7 +45,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 2–4",
           explanation:
-            "Перевірте, чи відсутність адреси або відбитків пояснюється винятком, прямо передбаченим статтею.",
+            "Для відсутності відбитків перевірте одну з трьох підстав: фізичну неможливість, вік до 6 років на дату wniosku про картку або zezwolenie для першої картки z urzędu, чи законне odstąpienie від особистої явки. Для відсутності адреси діє окреме правило про meldunek.",
         },
       ],
       legalEffect:

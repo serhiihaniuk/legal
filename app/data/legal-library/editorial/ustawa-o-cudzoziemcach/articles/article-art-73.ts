@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-73",
@@ -43,7 +43,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       ],
       legalEffect:
         "Стаття створює канал повідомлення та внутрішнього доступу до інформації про візи. Вона не змінює чинність уже виданої візи і не є підставою для її скасування сама по собі.",
-      foreignersCase: foreignersLaw.text`Зафіксуйте орган, який видав візу, випадок ${foreignersLaw.external("Art. 25", VISA_CODE_URL)}/${foreignersLaw.external("31", VISA_CODE_URL)} і маршрут повідомлення; не трактуйте обмін даними як нову decyzja щодо legal stay.`,
+      foreignersCase: foreignersLaw.text`Зафіксуйте орган, який видав візу, випадок ${foreignersLaw.external("Art. 25", VISA_CODE_URL)}/${foreignersLaw.external("31", VISA_CODE_URL)} і маршрут повідомлення; не трактуйте обмін даними як нову decyzja щодо legalność pobytu.`,
     },
   ],
 })

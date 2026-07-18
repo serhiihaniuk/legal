@@ -1,4 +1,9 @@
-import type { CorpusProvision, LegalCorpusManifest } from "../contracts"
+import type {
+  CorpusProvision,
+  LegalCorpusManifest,
+  LegalProvisionSourceSpan,
+  LegalSourceMaterial,
+} from "../contracts"
 
 export const SHA256_PATTERN = /^[a-f0-9]{64}$/iu
 
@@ -12,6 +17,7 @@ const PROVISION_KINDS = new Set([
 ])
 const PROVISION_STATUSES = new Set([
   "active",
+  "future",
   "repealed",
   "reserved",
   "removed",
@@ -34,6 +40,14 @@ export function isString(value: unknown): value is string {
 
 export function isInteger(value: unknown): value is number {
   return typeof value === "number" && Number.isInteger(value)
+}
+
+function isCalendarDate(value: unknown): value is string {
+  if (!isString(value) || !/^\d{4}-\d{2}-\d{2}$/u.test(value)) return false
+  const date = new Date(`${value}T00:00:00Z`)
+  return (
+    !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === value
+  )
 }
 
 export function parseCorpusManifest(
@@ -73,9 +87,54 @@ export function parseCorpusManifest(
   ) {
     return undefined
   }
+  if (
+    value.sourceMaterials !== undefined &&
+    (!Array.isArray(value.sourceMaterials) ||
+      !value.sourceMaterials.every(parseLegalSourceMaterial))
+  ) {
+    return undefined
+  }
   // The generated registry is the trusted source of the JSON shape; this assertion
   // is localized immediately after the runtime shape and checksum checks.
   return value as LegalCorpusManifest
+}
+
+function parseLegalSourceMaterial(
+  value: unknown
+): value is LegalSourceMaterial {
+  return (
+    isRecord(value) &&
+    isString(value.id) &&
+    isString(value.role) &&
+    isString(value.citation) &&
+    isString(value.officialPageUrl) &&
+    isString(value.metadataUrl) &&
+    isString(value.pdfUrl) &&
+    isString(value.localPdfUrl) &&
+    isString(value.pdfSha256) &&
+    SHA256_PATTERN.test(value.pdfSha256) &&
+    (value.expectedPdfSha256 === undefined ||
+      (isString(value.expectedPdfSha256) &&
+        SHA256_PATTERN.test(value.expectedPdfSha256))) &&
+    (value.effectiveDate === undefined || isString(value.effectiveDate))
+  )
+}
+
+function parseLegalProvisionSourceSpan(
+  value: unknown
+): value is LegalProvisionSourceSpan {
+  return (
+    isRecord(value) &&
+    isString(value.sourceId) &&
+    isString(value.role) &&
+    isString(value.locator) &&
+    (value.startPdfPage === undefined || isInteger(value.startPdfPage)) &&
+    (value.endPdfPage === undefined || isInteger(value.endPdfPage)) &&
+    (value.sourcePdfSha256 === undefined ||
+      (isString(value.sourcePdfSha256) &&
+        SHA256_PATTERN.test(value.sourcePdfSha256))) &&
+    (value.effectiveDate === undefined || isString(value.effectiveDate))
+  )
 }
 
 export function parseCorpusProvision(
@@ -103,6 +162,13 @@ export function parseCorpusProvision(
   )
     return undefined
   if (
+    value.sourceSpans !== undefined &&
+    (!Array.isArray(value.sourceSpans) ||
+      !value.sourceSpans.every(parseLegalProvisionSourceSpan))
+  ) {
+    return undefined
+  }
+  if (
     value.documentId !== documentId ||
     value.editionId !== editionId ||
     !PROVISION_KINDS.has(value.kind) ||
@@ -112,5 +178,11 @@ export function parseCorpusProvision(
     value.endPdfPage < value.startPdfPage
   )
     return undefined
+  if (
+    (value.status === "future" && !isCalendarDate(value.effectiveDate)) ||
+    (value.status !== "future" && value.effectiveDate !== undefined)
+  ) {
+    return undefined
+  }
   return value as CorpusProvision
 }

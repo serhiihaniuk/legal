@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-171",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Prawomocny wyrok має powaga rzeczy osądzonej лише щодо того, що у зв’язку зі skarga було предметом rozstrzygnięcia.",
+          text: "Судове рішення (wyrok), яке набрало законної сили, має силу вирішеної справи (powaga rzeczy osądzonej) лише щодо того, що у зв’язку зі скаргою було предметом судового вирішення.",
           sourceLocator: "Art. 171",
         },
       ],
       summary:
-        "Норма обмежує powaga rzeczy osądzonej предметом, який справді був вирішений у зв’язку зі skarga.",
+        "Стаття обмежує заборону повторного спору фактичними межами вже вирішеного питання.",
       rules: [
         {
           locator: "Art. 171",
           explanation:
-            "Порівняйте нове питання з предметом rozstrzygnięcia у попередньому wyrok, а не лише з подібними фактами чи документами.",
+            "Порівняйте сторони, предмет скарги та точну резолютивну частину попереднього рішення. Подібна тема або ті самі документи ще не доводять тотожності предмета.",
         },
       ],
       legalEffect:
-        "Остаточний wyrok не має сили речі вирішеної щодо питань, які не були предметом його розгляду за skarga.",
+        "Сила вирішеної справи захищає встановлені межі рішення, але не охоплює питання, яких суд не вирішував.",
       foreignersCase:
-        "Якщо орган у справі про pobyt посилається на попередній wyrok, перевірте точний предмет його rozstrzygnięcia, а не тільки те, що сторони були ті самі.",
+        "У новій справі про перебування зіставте попередню вимогу з новою. Зміна періоду, правової підстави чи рішення органу може змінити предмет спору.",
     },
   ],
 })

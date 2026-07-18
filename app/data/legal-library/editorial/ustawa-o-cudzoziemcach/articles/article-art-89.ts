@@ -44,18 +44,18 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("89", {
       provisionId: "ustawa-o-cudzoziemcach-art-89",
       reviewStatus: "reviewed",
       statuteText:
-        "Minister właściwy do spraw wewnętrznych у porozumieniu з міністром закордонних справ визначає w drodze rozporządzenia формуляри wnioski про продовження Schengen або national visa і технічні вимоги до фотографії, зразок stamp та спосіб розміщення naklejka продовженої national visa. У розпорядженні мають бути враховані контроль правильності wniosek, політика wiza та протидія нелегальній міграції.",
+        "Minister właściwy do spraw wewnętrznych у porozumieniu з міністром закордонних справ визначає w drodze rozporządzenia формуляри wnioski про продовження Schengen або wiza krajowa і технічні вимоги до фотографії, зразок stempel та спосіб розміщення naklejka продовженої wiza krajowa. У розпорядженні мають бути враховані контроль правильності wniosek, політика wiza та протидія нелегальній міграції.",
       statuteLocator: "Art. 89 ust. 1–2 pkt 1–3",
       practicalText:
-        "Це законодавча делегація для технічних форм і способів фіксації. Конкретний formularz або вимога до фотографії береться з чинного rozporządzenie, а не виводиться з номера статті.",
+        "Це законодавча делегація для технічних форм і способів фіксації. Конкретну форму або вимога до фотографії береться з чинного rozporządzenie, а не виводиться з номера статті.",
       practicalLocator: "Art. 89 ust. 1–2",
       summary:
         "Art. 89 уповноважує міністрів встановити технічні правила подання та оформлення продовження візи.",
@@ -63,7 +63,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 89 ust. 1 pkt 1–3",
           explanation:
-            "Розпорядження охоплює wnioski і фотографії, stamp про подання та розміщення наклейки national visa у travel document або на blankiet.",
+            "Розпорядження охоплює wnioski і фотографії, stempel про подання та розміщення наклейки wiza krajowa у dokument podróży або на blankiet.",
         },
         {
           locator: "Art. 89 ust. 2 pkt 1–2",
@@ -72,9 +72,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Art. 89 не є рішенням про продовження візи й не встановлює індивідуального legal stay або prawa do pracy; він визначає межі майбутнього технічного регулювання.",
+        "Art. 89 не є рішенням про продовження візи й не встановлює індивідуального legalność pobytu або prawa do pracy; він визначає межі майбутнього технічного регулювання.",
       foreignersCase:
-        "Для подання використовуйте чинний formularz, вимоги до фото та порядок stamp/наклейки з розпорядження. Перевірте, що технічна форма не підміняє доказів мети, коштів, страховки чи права на роботу.",
+        "Для подання використовуйте чинну форму, вимоги до фото та порядок stempel/наклейки з розпорядження. Перевірте, що технічна форма не підміняє доказів мети, коштів, страховки чи права на роботу.",
     }),
   ]),
 })

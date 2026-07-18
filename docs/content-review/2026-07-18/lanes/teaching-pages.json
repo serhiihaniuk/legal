@@ -1,0 +1,4427 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-07-18",
+  "lane": "teaching-pages",
+  "entries": [
+    {
+      "id": "case-guide:blue-card",
+      "path": "app/data/case-guides/editorial/routes/blue-card.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "blue-card",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "4f00df835fbd0f6f872da9a907b66ddfed61060818529022719dac2faa1b56f9",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:business",
+      "path": "app/data/case-guides/editorial/routes/business.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "business",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "5b526ed10384981cf89ccef162933a7424f3f16bc7d4d7d314a01e02023a6ea1",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:cukr",
+      "path": "app/data/case-guides/editorial/routes/cukr.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "rozporzadzenie-wniosek-pobyt-czasowy",
+      "contentId": "cukr",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
+        "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
+        "https://eli.gov.pl/eli/DU/2026/553/ogl"
+      ],
+      "contentHash": "15d6666199cc12e5f47e00bc0fb3b8d1581bbc197f94aaaafa9d26577dbd74de",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:family",
+      "path": "app/data/case-guides/editorial/routes/family.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "family",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "deb2e1f59dfb44fc733780ff788449a9b16ad7193b2589c587b1a9e6fd9eb301",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:long-term-eu",
+      "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "long-term-eu",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "e82790cfb5553e88ec3f8d8bce2f0e8e7bf33c4a7307e21293a88f01a834c680",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:other",
+      "path": "app/data/case-guides/editorial/routes/other.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "other",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "4e1e5c1dae44f091bba62428b15b623974df2029212a9583e64d7872f70e72bc",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:permanent",
+      "path": "app/data/case-guides/editorial/routes/permanent.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "permanent",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "adcfe730fd8d93e0240a95927311cc5076f92fef142b5e134b49d46d3a67ec5d",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:student",
+      "path": "app/data/case-guides/editorial/routes/student.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "student",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "ae17f79b6fe1d0cc56ee7462529028288e44fd6d7383e49f05c66c160e69e2ec",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "case-guide:work",
+      "path": "app/data/case-guides/editorial/routes/work.ts",
+      "family": "case-guide",
+      "lane": "teaching-pages",
+      "documentId": "ustawa-o-cudzoziemcach",
+      "contentId": "work",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "ustawa-o-cudzoziemcach-2025-1079",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+        "https://eli.gov.pl/api/acts/DU/2025/1079/text/T/D20251079L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+      ],
+      "contentHash": "5e955f9214b7bc984abe2634f539d7a6535903ade1fdb4a20764313c854033a8",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:administrative-decision",
+      "path": "app/data/document-library/editorial/guides/administrative-decision.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "administrative-decision",
+      "contentId": "administrative-decision",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "7b6a8a99454957736c03acce63e4df447f37d85dd2a92206c771751aa4f3c467",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:authority-summons",
+      "path": "app/data/document-library/editorial/guides/authority-summons.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "authority-summons",
+      "contentId": "authority-summons",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9e4b13f78a00c3ee96fe81e7afc5d75f160111f49cb05d80e8b9b45354114162",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:business-register-information",
+      "path": "app/data/document-library/editorial/guides/business-register-information.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "business-register-information",
+      "contentId": "business-register-information",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4ed0243a332b7229643904837adfc100f7817f366244e76e0ed2cd3c6724a20b",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:crbr-information",
+      "path": "app/data/document-library/editorial/guides/crbr-information.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "crbr-information",
+      "contentId": "crbr-information",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "e0a03c22b98dcd6b0a0fc9f5dacc1fe1259c84a4ef15ddfe5d78b9baf3cefc36",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:delivery-proof",
+      "path": "app/data/document-library/editorial/guides/delivery-proof.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "delivery-proof",
+      "contentId": "delivery-proof",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "93b953cf386b04a45e8e621144664a699c135cae040030e698392123c1c86a84",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:employment-annex-1",
+      "path": "app/data/document-library/editorial/guides/employment-annex-1.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "employment-annex-1",
+      "contentId": "employment-annex-1",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "a8c8df7032fd7618b13e9ad33278ac3148908488b359b45003de8eb46a944b3f",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:employment-contract",
+      "path": "app/data/document-library/editorial/guides/employment-contract.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "employment-contract",
+      "contentId": "employment-contract",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "33c5f207970219d9b0a45c91084ae2c41c42a31ccb1288ad97d8492b9537b82a",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:mos-application",
+      "path": "app/data/document-library/editorial/guides/mos-application.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "mos-application",
+      "contentId": "mos-application",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "f52ad3a946e0caea6b121c2d44bf563d36a74b087e3db1ac72096504ab72c486",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:passport",
+      "path": "app/data/document-library/editorial/guides/passport.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "passport",
+      "contentId": "passport",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "087fa1e21515c91b2ccf75470368a995e796b8c1a444693e937b8f6b835ff0d5",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:pesel-ukr-confirmation",
+      "path": "app/data/document-library/editorial/guides/pesel-ukr-confirmation.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "pesel-ukr-confirmation",
+      "contentId": "pesel-ukr-confirmation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c020ae8f5485acc27fca954026916ef953fa8950f3c105b563dd3efe3fe9111d",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:power-of-attorney",
+      "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "power-of-attorney",
+      "contentId": "power-of-attorney",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c8104ddebb1eacef258aa9bcc0b73d47bea2222e4dba796c357d78fb91a68c87",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:residence-card-fee-proof",
+      "path": "app/data/document-library/editorial/guides/residence-card-fee-proof.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "residence-card-fee-proof",
+      "contentId": "residence-card-fee-proof",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "19643df5266a9fd80bc215f05706aeb242035cae7c05ad41fb181a79644b8846",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:residence-card",
+      "path": "app/data/document-library/editorial/guides/residence-card.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "residence-card",
+      "contentId": "residence-card",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "a754c1b3d1909411c6b0eaba689e3bc3a8e505dc27a5ee25b4cd80a96c089551",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:stamp-duty-proof",
+      "path": "app/data/document-library/editorial/guides/stamp-duty-proof.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "stamp-duty-proof",
+      "contentId": "stamp-duty-proof",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b0229159c6da9786ba81045b624279a1710ac777ada2bfea46d0677f13c75d6a",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:sworn-translation",
+      "path": "app/data/document-library/editorial/guides/sworn-translation.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "sworn-translation",
+      "contentId": "sworn-translation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "0d56f5ea29ff6989c65a3a1ed2ee0f959b3dea310a8af7578cf268513fe0bfe3",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:ukraine-work-notification",
+      "path": "app/data/document-library/editorial/guides/ukraine-work-notification.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "ukraine-work-notification",
+      "contentId": "ukraine-work-notification",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "33923c65d0bdd95620bc7ab798e1ead8d6995a11b755c2fa5d3e95f8dcba5b39",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:upo",
+      "path": "app/data/document-library/editorial/guides/upo.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "upo",
+      "contentId": "upo",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "0551de967a918915024f80a55e0e0450f4db967d71730a8bf041ddcc368f0f59",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:zus-confirmation",
+      "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "zus-confirmation",
+      "contentId": "zus-confirmation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "485d67ef85361fe531ee3d5e73020cf3760038dda5a901404dfea94ca178beea",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-group-copy:legal-map-groups",
+      "path": "app/data/legal-map/data.ts",
+      "family": "map-group-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-map-groups",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9ca8fb27f5f56ffd1c25ae42f129998127410873ff0f274c30a8fe811c4e8b8f",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-journey:legal-map-journey",
+      "path": "app/data/legal-map/journey.ts",
+      "family": "map-journey",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-map-journey",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "966910e461cfd06b6652edb73bd2a8c3d793481a8a987c0724493e0c8788d3de",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:appeal",
+      "path": "app/data/legal-map/editorial/topics/appeal.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "appeal",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "107057b55194af0fad6997731bf90fa6fc4e8e5a900280fedce75cf0654b388d",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:blue-card",
+      "path": "app/data/legal-map/editorial/topics/blue-card.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "blue-card",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "5d1b92bbf2dcc70c7666a6d42390813cee49860cf0be9bd7de3755f83af5a55c",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:business-stay",
+      "path": "app/data/legal-map/editorial/topics/business-stay.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "business-stay",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "effa63ad2352cbc842bc0d6d19179b06766ea18abe73f62a54ce574eb6033337",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:case-file",
+      "path": "app/data/legal-map/editorial/topics/case-file.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "case-file",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "95d4c421f166574148e7ef3df2b9550bc76bc0022a490adb1a42c80baf4dd119",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:complaint",
+      "path": "app/data/legal-map/editorial/topics/complaint.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "complaint",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "03bbd135b0614c319d54a6be8700f72edb23a822ac88e1ee7190cc5db404926d",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:cukr-route-2026",
+      "path": "app/data/legal-map/editorial/topics/cukr-route-2026.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "cukr-route-2026",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c1961edfff47c62f40af63e3946c1d6f222144826eabaf66614238f7b316126e",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:deadlines-delivery",
+      "path": "app/data/legal-map/editorial/topics/deadlines-delivery.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "deadlines-delivery",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "574305994c091e0468762f57d17eb59a5532831ca6467d3fc979b67fa561cbb6",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:decision-appeal",
+      "path": "app/data/legal-map/editorial/topics/decision-appeal.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "decision-appeal",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4969aece71bc13af6aaae314af75607cdb8918b097923c69785c1e3db2f1bfe8",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:decision-reading",
+      "path": "app/data/legal-map/editorial/topics/decision-reading.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "decision-reading",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4f3b8b8445c72bd2c9dcad82c3ec4ace88041a29e5f21a762d0d6f4d7a9b6190",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:decision-workflow",
+      "path": "app/data/legal-map/editorial/topics/decision-workflow.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "decision-workflow",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "362255961dd952acc13da8ee9581802fe160b3d3e32216462b647633ca2652c2",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:declaration",
+      "path": "app/data/legal-map/editorial/topics/declaration.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "declaration",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "f31c83465e2d7443e98f8422a98d88e5d90ee6f71ffdfcbe33186175e9316fac",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:delegation",
+      "path": "app/data/legal-map/editorial/topics/delegation.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "delegation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "f4eefd223b0162005191303d16792c05b783032b66b08c792aa2cc087779cacb",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:document-matrix",
+      "path": "app/data/legal-map/editorial/topics/document-matrix.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "document-matrix",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "f451b8f5f7d94838123a3a1360030cec1bbdf4db6869d3e5acc1f10793d34dd2",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:document-types",
+      "path": "app/data/legal-map/editorial/topics/document-types.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "document-types",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9a9018604942e63b0436e5ec0e9d99439786d39457efdd89538325ffbd98be8f",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:employer-duties",
+      "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "employer-duties",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9d851a00b8a2d7319e0844cb433c56df32b380e3eaa56c8e5f639e6bdd23d0f6",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:entry-current-basis",
+      "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "entry-current-basis",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "d9e1321521f35406dc9c325930791eeaf185588fbe9e4ce4100d44e5e06a2beb",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:evidence-matrix",
+      "path": "app/data/legal-map/editorial/topics/evidence-matrix.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "evidence-matrix",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b93f1d9246cf926e9cdf84f46a27712ff4a264cc6c27295988d8c52b08b563df",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:evidence",
+      "path": "app/data/legal-map/editorial/topics/evidence.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "evidence",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "8aade5dc3157df20c2db56e206cc973e525e4ba5d869b8b9851b29ca23da7fe4",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:extraordinary-wsa",
+      "path": "app/data/legal-map/editorial/topics/extraordinary-wsa.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "extraordinary-wsa",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "75d32a07b3d4d2c813c585c5ad538f1b45ef23c1f0a65c2a0b2f21b9867b48ca",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:family-stay",
+      "path": "app/data/legal-map/editorial/topics/family-stay.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "family-stay",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "805fbb60d44ab04e0dc6603a2003ab71994844ba407fbfa4d999c5d4b8598a2f",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:foreign-documents",
+      "path": "app/data/legal-map/editorial/topics/foreign-documents.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "foreign-documents",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "08d59f4f394c921881702840c783a3febcd17a2e9ff9f4e751ab7aa69cea9063",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:goal-of-stay",
+      "path": "app/data/legal-map/editorial/topics/goal-of-stay.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "goal-of-stay",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "7556fc1db21e225eb828bc22df52e83e5089b3b10fd0ba40636eda76fb4bebaf",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:inactivity",
+      "path": "app/data/legal-map/editorial/topics/inactivity.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "inactivity",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "dafdd88c2e398c8a62cb826672bf75efd647352db61f373659b097f57ffe9d25",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:initiation",
+      "path": "app/data/legal-map/editorial/topics/initiation.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "initiation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "244d7608241bcf3f0c5ccf4c2670430077cc216c80c2fe60178f772a8ec6e043",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:invalidity",
+      "path": "app/data/legal-map/editorial/topics/invalidity.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "invalidity",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "364acab7e14c0793c133354c55b65839ff925bc51cd113af2db18bf3534fa7cd",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:kpa-principles",
+      "path": "app/data/legal-map/editorial/topics/kpa-principles.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "kpa-principles",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b8bc383b52e46b99b2ca69f5d38a4167f0c9e75eb7ee2663b6aa3344cace7f9b",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:legal-anatomy",
+      "path": "app/data/legal-map/editorial/topics/legal-anatomy.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-anatomy",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4dc37b69b0d820b8bd5432077eeae63ed104b1d98f1984386100ce1a62eaa899",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:long-term-eu",
+      "path": "app/data/legal-map/editorial/topics/long-term-eu.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "long-term-eu",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "1d59ae525e93cf9262eefbeef9716ca2b7e17d919fe08606fd00b2293faf8d79",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:mos-procedure",
+      "path": "app/data/legal-map/editorial/topics/mos-procedure.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "mos-procedure",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "165aadb7624029ebc39e2953f10091fd99221ab81fa74e9ae988445498993dc4",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:organ-party",
+      "path": "app/data/legal-map/editorial/topics/organ-party.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "organ-party",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "caa2acc7a7e7ee259654679990110459d408324d5619e8022ffc96239264861f",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:other-stay",
+      "path": "app/data/legal-map/editorial/topics/other-stay.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "other-stay",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "041fd369a17df9389ec7cf48737d67973766e2e181743459ed46ddec18b3eb2d",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:outsourcing-case",
+      "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "outsourcing-case",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "57db1b4b3aec8e5d6bdd94f6da0f31528853c4ce86cbb83c709abba24104864a",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:pending-stay",
+      "path": "app/data/legal-map/editorial/topics/pending-stay.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "pending-stay",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "e89a555faf925d7dd48c266a27c675881765714482808b1070f5a5e08454a4d4",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:permanent-resident",
+      "path": "app/data/legal-map/editorial/topics/permanent-resident.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "permanent-resident",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "26103b6c06085963abde459e5f0e200740e8aae664c3b88db93b28830734dfe2",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:permanent",
+      "path": "app/data/legal-map/editorial/topics/permanent.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "permanent",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "e7c87a0158850a11be90352d777b90f1d2f2ce341e2bdf198d8307c825b4c4fb",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:person-status",
+      "path": "app/data/legal-map/editorial/topics/person-status.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "person-status",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "0b25be460d5abdea164b434d83de80b17dcd3ea74fb62ced25ba21a6e4fa70a9",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:principle-legality",
+      "path": "app/data/legal-map/editorial/topics/principle-legality.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": "kpa",
+      "contentId": "principle-legality",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": "kpa-2025-1691",
+      "sourceTextHash": null,
+      "officialSourceUrls": [
+        "https://api.sejm.gov.pl/eli/acts/DU/2025/1691",
+        "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
+        "https://eli.gov.pl/eli/DU/2025/1691/ogl"
+      ],
+      "contentHash": "2dcf626e02ba5832092ffb57730aa4d0af9b56c1792a708b59e327bde3069f3b",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:principle-participation",
+      "path": "app/data/legal-map/editorial/topics/principle-participation.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "principle-participation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "fcef7053f130161afa7e203bbe600b88f6bd3edd20e2ce26e14d573566ccb773",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:principle-trust",
+      "path": "app/data/legal-map/editorial/topics/principle-trust.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "principle-trust",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "051b604a855fa83f7b74f04190224f041bfebc3e5fd37274bbdcdbb453172b14",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:principle-two-instance",
+      "path": "app/data/legal-map/editorial/topics/principle-two-instance.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "principle-two-instance",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "d45ad09ebfd2f6eb37bc0e4f89c1eee2a3c726291f0e0dc222140abb5d12a8fb",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:reopening",
+      "path": "app/data/legal-map/editorial/topics/reopening.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "reopening",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "e6f2c2e722a8a12319eca43dee95360e170f6ecd8e5fade558f8c5c75ad18772",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:seasonal",
+      "path": "app/data/legal-map/editorial/topics/seasonal.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "seasonal",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9f1e2764f5ee01b1c994fe1cc3ea9209b63ddc49a3fe24d3b1a258dd3de81c46",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:source-check",
+      "path": "app/data/legal-map/editorial/topics/source-check.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "source-check",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "8294e554ff1e4078aebba91588d6180eada2e166a511a677271e173fd143a35c",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:special-vs-kpa",
+      "path": "app/data/legal-map/editorial/topics/special-vs-kpa.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "special-vs-kpa",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "87dd8360f355e62cd82b259459350fd195e421ab9892435ebafa48dc16967fc9",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:start-case",
+      "path": "app/data/legal-map/editorial/topics/start-case.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "start-case",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "20af637edcfae9efba959760c5a090f2397528132a65a44e97275fbdaaf91f8a",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:stay-work",
+      "path": "app/data/legal-map/editorial/topics/stay-work.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "stay-work",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "46d74b72fcd37de1a85542a7b30abffb0df3895c46a4c6ce811de7d93d5f2219",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:study-loop",
+      "path": "app/data/legal-map/editorial/topics/study-loop.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "study-loop",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "997f1389412a00f54119e9cc231fce04ce16ce301c6dabae77ff032685af9364",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:study-research",
+      "path": "app/data/legal-map/editorial/topics/study-research.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "study-research",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "a30e5a00c6b2398c78786899918923eaef570e5dc7978c0eaec6a4baf945ac54",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:temporary-common",
+      "path": "app/data/legal-map/editorial/topics/temporary-common.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "temporary-common",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b306f3c00dcfc7a0011cd2bb19ae0d12e8acd1680315245776449a801521675d",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:temporary-goals",
+      "path": "app/data/legal-map/editorial/topics/temporary-goals.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "temporary-goals",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c2a0f99ed25aa38b66e0d86cc471b7d364f9b2b61a32f6415da8e16a830cb2e5",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:temporary-work",
+      "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "temporary-work",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4bae121b6740dba732b0550a9d12d7b65a60ff43dc5178c7608b7d8eb46bce14",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:two-keys",
+      "path": "app/data/legal-map/editorial/topics/two-keys.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "two-keys",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "a0208f1fc30c355238bb917e032900059e72365be2039e69d5ce9b05b1cfa899",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:ukr-baseline-2026",
+      "path": "app/data/legal-map/editorial/topics/ukr-baseline-2026.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "ukr-baseline-2026",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4278925f906f03943ad6195751aa24e265819e4049fd8c7a69a556964325dc66",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:ukraine-ordinary-2026",
+      "path": "app/data/legal-map/editorial/topics/ukraine-ordinary-2026.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "ukraine-ordinary-2026",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "d881bb18b3185f8701e26ef2645fd85b35d031eafe982e1d4d7b6601acff54be",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:ukraine-routes-2026",
+      "path": "app/data/legal-map/editorial/topics/ukraine-routes-2026.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "ukraine-routes-2026",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c4255b57794eb9f977d8b9f7fc2842204c9b39b32ee50bc7c3cf5bb2d97a8a97",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:visa-free",
+      "path": "app/data/legal-map/editorial/topics/visa-free.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "visa-free",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "2cb40331d1df824505b7065df15310f91db9f1bb753a359fab7eb7b981573577",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:visa",
+      "path": "app/data/legal-map/editorial/topics/visa.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "visa",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "d909ef5f7520ea29412755de3da82c19a37058a3606a2483a88fdbf830e59a81",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:wezwanie-workflow",
+      "path": "app/data/legal-map/editorial/topics/wezwanie-workflow.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "wezwanie-workflow",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "dd961d58dcede037d37a86a4fd246204c36b3d86798a5e998c02eccd716183a0",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:wezwanie",
+      "path": "app/data/legal-map/editorial/topics/wezwanie.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "wezwanie",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "1b17f1d28857c87e7386c42103467d6a863f0eb18be1a018d78ec6781f9ebfd9",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:work-entry",
+      "path": "app/data/legal-map/editorial/topics/work-entry.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "work-entry",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "5967623f77245c3ffd65805ae7d44b69142c17b71354d6032ce2f14dbb8186e6",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:work-instruments",
+      "path": "app/data/legal-map/editorial/topics/work-instruments.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "work-instruments",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "740dcdbeebf8706c73750eeecd3fe0e869f8a6b57dd4a2fc9659a7b28fee5207",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:work-permit",
+      "path": "app/data/legal-map/editorial/topics/work-permit.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "work-permit",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c7fc63df45754ce12c9fb8986515d59500aed6b8346ffdf9501768fc07e2472e",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "map-topic:wsa",
+      "path": "app/data/legal-map/editorial/topics/wsa.ts",
+      "family": "map-topic",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "wsa",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "df2b94d4d93d961896838606dff40b631a90bc4273cd58ac92a152ba005e2f1a",
+      "sourceReviewStatus": "draft",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:case",
+      "path": "app/routes/case.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "case",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "ff9e5550b06215be848ec0d77b4bc63a479928e701ff274c1975875823798de3",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:documents",
+      "path": "app/routes/documents.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "documents",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "a9126f9d5c5aac0cbc0d817443f7fb321a77e6867540da53a28695a5100b9333",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:home",
+      "path": "app/routes/home.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "home",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "3ce930a76b80a4f9d938a93d12cf9d98c5fed028499ceaef20dd3080be22a35d",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:kpa",
+      "path": "app/routes/kpa.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "kpa",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "568335dc112e159a896e7e1763e7f81aa8ea834cbc1f5614f48bd6d67cb839c3",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:law-document-index",
+      "path": "app/routes/law-document-index.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-document-index",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "2e0eff2a588059c3c6b7a6b9c4a7a2478e3ee29984642097103e8619a7b57813",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:law-document-practice",
+      "path": "app/routes/law-document-practice.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-document-practice",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c086daac5301b1c697d59927a4849849102ea892950ff33836b69410a3c09716",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:law-document",
+      "path": "app/routes/law-document.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-document",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "6e5c43f07d76b652d144742d327fe0b56bd834978de75f3d056643c722ca0693",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:law-kpa-compat",
+      "path": "app/routes/law-kpa-compat.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-kpa-compat",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9118a42d3ae3c59b0255d879d9badc5fe6706352756463dd9af0318841275fb0",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:law-kpa-practice-compat",
+      "path": "app/routes/law-kpa-practice-compat.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-kpa-practice-compat",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9118a42d3ae3c59b0255d879d9badc5fe6706352756463dd9af0318841275fb0",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:law-provision",
+      "path": "app/routes/law-provision.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-provision",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "ee8a2727644d4e2f12f6ca2a1e94dad6aad4930e3c6b9bce82b13abfe03f6dee",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:law",
+      "path": "app/routes/law.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "810cb5e39a2f215e7301a96e9e72624b098a32cd61bafa06a4decfabb1e35385",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:legacy-case",
+      "path": "app/routes/legacy-case.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legacy-case",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "70b629a7e913693199455e42fb34113cecc649489ae5b3af1086b4d8682526b2",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:map",
+      "path": "app/routes/map.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "map",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b0b420315bb8d0c1dbd68480e4a6083de94c0627aca5e4ab81ffdda24bc09f46",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:shell",
+      "path": "app/routes/shell.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "shell",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "32b585bd6f2fc2d47aaed5b89d558186e41266743ad531a72299a56cd52b8a56",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "route-copy:study",
+      "path": "app/routes/study.tsx",
+      "family": "route-copy",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "study",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "2a2dd046e29f64432b6e1389accfd19ca1446be10b29ee924fb8961085b7e01f",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:docs-layout",
+      "path": "app/components/layout/docs-layout.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "docs-layout",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "a3beb252af94847b36680160d09e0a108eeb2bf6ece082925229d10d42eb66a2",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:site-header",
+      "path": "app/components/layout/site-header.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "site-header",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "dc4dbf2e0b866662080b9cba07bb7f89303f499a539d77729191d9542f6c9f50",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-reference-preview",
+      "path": "app/components/references/legal-reference-preview.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-reference-preview",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "64981f0824659b783038d55c99c6eef1736eb60f514290f4c43d061c9d851855",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-reference-text",
+      "path": "app/components/references/legal-reference-text.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-reference-text",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "935b4403c1cc2cf726c698e46bee1594878cc1f284e0ee1d3c0a41c4fa9081b7",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:official-source",
+      "path": "app/components/references/official-source.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "official-source",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "1882744fca7e5572b53da9e2d6048cc6d3e2f5be93ff61fe61904b7ce5d4f1f5",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:dialog",
+      "path": "app/components/ui/dialog.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "dialog",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "0474bb6550e9aae6ecd16d9eed1a8abaeaa7ded3633256d7e40a8c3052322820",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:catalog",
+      "path": "app/data/documents/catalog.ts",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "catalog",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "362e1565d3d90cd06b9be00a093ae7e12d11e6f8bb36268dd4ef6a4d7a86eb0c",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:case-study-navigation",
+      "path": "app/features/case-guides/model/case-study-navigation.ts",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "case-study-navigation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "d222214e7bf96aadedf3c371ba91fb77198a84023a5d1d49eb4d1663f674f507",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:case-guide-shared",
+      "path": "app/features/case-guides/ui/case-guide-shared.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "case-guide-shared",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "923e3ddbc5c7627ef8161b992fde9389f9ade25ddf6d0a2678f5deb91de9c0de",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:case-registers",
+      "path": "app/features/case-guides/ui/case-registers.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "case-registers",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "e613b5e25e4ad5dfb17ac7617b3037a7373339970a3c11b96f3186886063e7ae",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:case-stages",
+      "path": "app/features/case-guides/ui/case-stages.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "case-stages",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "3f70e979d2ee6ad07197b7bed2c103c963927a845d36156b74dbf4fa5dd25028",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:case-study-content",
+      "path": "app/features/case-guides/ui/case-study-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "case-study-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "74aae0b2ef5385bc2077901afaa95845213fee6ce8d0bc7667b43b4a51a4b3b3",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:conditions-matrix",
+      "path": "app/features/case-guides/ui/conditions-matrix.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "conditions-matrix",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "ea0ed80d25d84d294cde3ffbded427873370fcc743426574fff6568df9af63f1",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:document-catalog-model",
+      "path": "app/features/documents/model/document-catalog-model.ts",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "document-catalog-model",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "34dbf622d6618f9616db6acaa125d4450085a733604550477a5589d6f71e94f9",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:document-catalog-navigation",
+      "path": "app/features/documents/ui/document-catalog-navigation.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "document-catalog-navigation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "eeb13afd5bfce5e39e3c52c09913ccdfe0d440929a69ec809c93bfeabf4fb1c1",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:document-catalog-overview",
+      "path": "app/features/documents/ui/document-catalog-overview.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "document-catalog-overview",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "49874545645c11fdb682078188b41b4140a0312590e96e3c59e979688655341c",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:document-detail-content",
+      "path": "app/features/documents/ui/document-detail-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "document-detail-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4811ae34176f0e045d3582ad291a4e4b12f2e7ce446f2da9738640ae158509b8",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:kpa-route",
+      "path": "app/features/law-library/model/kpa/kpa-route.ts",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "kpa-route",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "591dfcdca6e52c2762d5df47202045db2924c02b802d0d7cd9e43c764a0bc34e",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-learning-view",
+      "path": "app/features/law-library/model/learning/legal-learning-view.ts",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-learning-view",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "03017b9ae3550ba3d920e82404d0f4f1512f270fdf902a75b775a4fc65a0ce52",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:kpa-articles-content",
+      "path": "app/features/law-library/ui/kpa/kpa-articles-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "kpa-articles-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "ab73d4c5dc933f4e69afa8c778b322e41869f6e415681e6a0027f589a8f18a87",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:kpa-learning-content",
+      "path": "app/features/law-library/ui/kpa/kpa-learning-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "kpa-learning-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "a40168dde1ba42db4e9e36180c8285a74277c3fbb4c947065a638931fcfbb1c2",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:kpa-practice-content",
+      "path": "app/features/law-library/ui/kpa/kpa-practice-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "kpa-practice-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "30c9de46f20e0ed6255aa078ce58c5aaf1c1483d04533a40fa1ac423649dcb26",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:kpa-route-navigation",
+      "path": "app/features/law-library/ui/kpa/kpa-route-navigation.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "kpa-route-navigation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "270020d8cc5ae611b7f7a2db24afd25fb1ef190b2dff5c7265a76a63ce64033b",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-learning-example",
+      "path": "app/features/law-library/ui/learning/legal-learning-example.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-learning-example",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "8de0b2ad9a3c3d0f0475de8a5ebb9f83814fdf0678406304bbee5f567ca70e6b",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-learning-mechanism",
+      "path": "app/features/law-library/ui/learning/legal-learning-mechanism.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-learning-mechanism",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "35ae07f678e8e5aa47ceffd4888386d981aa8c4d3d664ca5a5e61d0846b7b0ed",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-learning-module-content",
+      "path": "app/features/law-library/ui/learning/legal-learning-module-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-learning-module-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "5c8219a216181518be893c5623218cf0b8eab03caff16748963ff92ed5f76788",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-learning-nuances",
+      "path": "app/features/law-library/ui/learning/legal-learning-nuances.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-learning-nuances",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "72826e34ad233b4aada318901681757f6cfbb81a8d381fffbf142f52ee25be83",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-learning-overview",
+      "path": "app/features/law-library/ui/learning/legal-learning-overview.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-learning-overview",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "955d8ad47eb7049443962e8f4373cb157472ee1d36c0650f1fcc2ae57f64e089",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-learning-provisions",
+      "path": "app/features/law-library/ui/learning/legal-learning-provisions.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-learning-provisions",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "234885876b92f7b325fb91bd7ab11aa3b298f581f5ad0524d12da6b55cecb597",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:law-document-navigation",
+      "path": "app/features/law-library/ui/navigation/law-document-navigation.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-document-navigation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "6bf68d3f3df34f4c919b95f893c3001cb1ed7555a654e8c775f016ce1018f46b",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:law-library-navigation",
+      "path": "app/features/law-library/ui/navigation/law-library-navigation.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "law-library-navigation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c28336702aaa09eb25420109d0ba45c94b8c3c493cfcd671b9f3fc1eb915469b",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-provision-selector",
+      "path": "app/features/law-library/ui/provision/legal-provision-selector.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-provision-selector",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "3858e9f6b6a9996677a76bb54baf15e3b7eafd72ee01ae8f50fb3b571cfff13a",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-provision-source",
+      "path": "app/features/law-library/ui/provision/legal-provision-source.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-provision-source",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "0e5fc7bc14e552f16e3eee1d1a00fcdbab3609422b413b9182fccb9703d42d7a",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-map-model",
+      "path": "app/features/legal-map/model/legal-map-model.ts",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-map-model",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "be66dd1315042ed342e22b3b57c55ae8f7b140f3acedb292dd8bc2c8612d042c",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-map-navigation",
+      "path": "app/features/legal-map/ui/legal-map-navigation.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-map-navigation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "3e9fbe4e024fa126b1d63287a96c66f3fcd83702654b6c0a3cfc5af921b6ea7f",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-map-overview",
+      "path": "app/features/legal-map/ui/legal-map-overview.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-map-overview",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "ad252de7bfe738c331dc2d50133830040e24eea2734d7556109aff43de0227f0",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:legal-node-content",
+      "path": "app/features/legal-map/ui/legal-node-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "legal-node-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "bc1f700b0f72728c81491aca89a553480b2af25f7335ff3c467440ca1e920ded",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "shared-renderer:study-plan-content",
+      "path": "app/features/study/ui/study-plan-content.tsx",
+      "family": "shared-renderer",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "study-plan-content",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "43299c93aef46134f385331033b7e71bdb40ae9a2dc3ba6f0fd05075b4a0a4b7",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "study-plan:study-plan",
+      "path": "app/data/study/plan-data.ts",
+      "family": "study-plan",
+      "lane": "teaching-pages",
+      "documentId": null,
+      "contentId": "study-plan",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c38b48f43c5eeef41fd1c5029b2c2cb3aee4b62a2d3d2c6355cc1cdf510a908f",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    }
+  ]
+}

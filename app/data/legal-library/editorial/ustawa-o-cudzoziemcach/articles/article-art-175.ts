@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-175",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Форма заświadczenie визначається підзаконним актом, але його призначення та ідентифікаційні дані мають бути враховані.",
+        "Форма zaświadczenie визначається підзаконним актом, але його призначення та ідентифікаційні дані мають бути враховані.",
       rules: [
         {
           locator: "весь припис",
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття є делегацією щодо форми документа і не змінює умови domniemanie, legalny pobyt або permit, встановлені іншими статтями.",
+        "Стаття є делегацією щодо форми документа і не змінює умови domniemanie, legalny pobyt або zezwolenie, встановлені іншими статтями.",
       foreignersCase:
         "Використовуйте актуальний wzór для дати видачі, перевірте правильність ідентифікаційних даних та не вважайте форму доказом, що автоматично підтверджує всі умови жертви.",
     },

@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-78",
@@ -13,33 +13,33 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 78 дозволяє minister właściwy do spraw pracy створити resortowy program aktywizacyjny для legalно перебуваючих cudzoziemiec, фінансований із Fundusz Pracy і реалізований після konkurs ofert.",
+          text: "Art. 78 дозволяє міністрові, компетентному у справах праці, створити відомчу програму професійної активізації для іноземців, які законно перебувають у Польщі. Програму фінансують із Fundusz Pracy, а виконавців обирають через конкурс пропозицій.",
           sourceLocator: "Art. 78 ust. 1–7",
         },
       ],
       summary:
-        "Програма може підтримувати професійну активізацію, інтеграцію і соціальну активність. Виконавців обирають через конкурс серед перелічених установ, а оголошення і результат публікуються в BIP.",
+        "Програма може підтримувати професійну активізацію, інтеграцію і соціальну активність. Виконавців обирають через конкурс серед прямо перелічених законом категорій установ, а оголошення і результат публікують у Biuletyn Informacji Publicznej.",
       rules: [
         {
           locator: "ust. 1–4",
           explanation:
-            "Minister може розробити програму для cudzoziemiec з legalny pobyt; програма й обслуговування фінансуються з Fundusz Pracy, а завдання передаються після konkurs ofert.",
+            "Міністр може розробити програму для іноземців, які законно перебувають у Польщі. Програму і витрати на її обслуговування фінансують із Fundusz Pracy, а завдання передають виконавцям після конкурсу пропозицій.",
         },
         {
           locator: "ust. 5–6",
           explanation:
-            "До конкурсу допускаються названі podmioty ekonomii społecznej, publiczne służby zatrudnienia, OHP, agencje, instytucje szkoleniowe та JST; інформацію публікують у BIP.",
+            "До конкурсу допускаються названі в законі суб'єкти соціальної економіки, державні служби зайнятості, Ochotnicze Hufce Pracy, агенції зайнятості, навчальні установи та одиниці місцевого самоврядування. Інформацію публікують у BIP.",
         },
         {
           locator: "ust. 7",
           explanation:
-            "Для вибору realizator не застосовуються положення про доручення публічних завдань з ustawy про działalność pożytku publicznego.",
+            "До вибору виконавців не застосовуються положення про доручення публічних завдань із закону про діяльність суспільної користі та волонтерство.",
         },
       ],
       legalEffect:
-        "Програма є можливим інструментом підтримки, а не індивідуальним правом на роботу чи фінансування для кожного cudzoziemiec.",
+        "Програма є можливим інструментом підтримки, а не індивідуальним правом кожного іноземця на роботу, навчання або фінансування.",
       foreignersCase:
-        "Шукайте конкретний конкурс і його умови в BIP ministerstwa. Не називайте загальну можливість програми підтвердженням права на конкретне szkolenie або роботу.",
+        "Шукайте конкретний конкурс і його умови в BIP відповідного міністерства. Сама законодавча можливість створення програми не підтверджує права на конкретне навчання або роботу.",
     },
   ]),
 })

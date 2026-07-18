@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const SIS_2018_1860_URL = "https://eur-lex.europa.eu/eli/reg/2018/1860/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-347f",
@@ -30,12 +30,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 2",
-          explanation: foreignersLaw.text`Якщо після wpis виявлено чинний документ іншої держави, польський орган звертається про консультації за ${foreignersLaw.article("11", "Art. 11")} і повідомляє державу, що виконує рішення, про результат.`,
+          explanation: foreignersLaw.text`Якщо після wpis виявлено чинний документ іншої держави, польський орган звертається про консультації за ${foreignersLaw.external("Art. 11 rozporządzenia nr 2018/1860", SIS_2018_1860_URL)} і повідомляє орган państwa wykonującego про результат консультацій, передбачених ${foreignersLaw.external("Art. 12 цього ж розпорядження", SIS_2018_1860_URL)}. Це відсилання до права UE, а не до однойменного numeru artykułu ustawy o cudzoziemcach.`,
         },
         {
           locator: "ust. 3",
-          explanation:
-            "Дані видаляються у визначених випадках: коли інша держава видає, має намір видати або продовжити документ чи візу, коли після консультацій повідомлено, що документ або віза не будуть відкликані, або коли особа набула громадянство держави ЄС, EFTA–ЄЕП чи Швейцарії.",
+          explanation: foreignersLaw.text`Дані видаляються у визначених випадках: коли інша держава видає, має намір видати або продовжити документ чи візу, коли після консультацій за ${foreignersLaw.external("Art. 11 rozporządzenia nr 2018/1860", SIS_2018_1860_URL)} повідомлено, що документ або віза не будуть відкликані, або коли особа набула громадянство держави ЄС, EFTA–ЄЕП чи Швейцарії.`,
         },
       ],
       legalEffect:

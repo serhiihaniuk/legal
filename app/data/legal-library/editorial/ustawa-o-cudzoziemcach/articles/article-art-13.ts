@@ -1,80 +1,46 @@
-import {
-  authorLegalTextCitationsTree,
-  createLegalTextAuthor,
-  type LegalTextValue,
-} from "../../../legal-text"
-
-import type { LegalProvisionId } from "../../../contracts"
-
-const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type EditorialEntry = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  claims: readonly {
-    kind: "statute-text" | "practical-inference"
-    text: LegalTextValue
-    sourceLocator: string
-  }[]
-  summary: LegalTextValue
-  rules: readonly { locator: string; explanation: LegalTextValue }[]
-  legalEffect: LegalTextValue
-  foreignersCase: LegalTextValue
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (
-  article: string,
-  claims: EditorialEntry["claims"],
-  summary: LegalTextValue,
-  rules: EditorialEntry["rules"],
-  legalEffect: LegalTextValue,
-  foreignersCase: LegalTextValue
-): EditorialEntry => ({
-  provisionId: provisionId(article),
-  reviewStatus: "reviewed",
-  claims,
-  summary,
-  rules,
-  legalEffect,
-  foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle(
-      "13",
-      [
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
+      provisionId: "ustawa-o-cudzoziemcach-art-13",
+      reviewStatus: "reviewed",
+      claims: [
         {
           kind: "statute-text",
-          text: "У rejestry та ewidencja, що ведуться на підставі ustawa, можуть оброблятися перелічені дані cudzoziemca: ідентифікаційні та біографічні дані, документ podróży, відбитки, громадянство, місце pobyt, контакти, karalność і провадження, PESEL, wizerunek та дані про роботу, навчання, волонтерство й запрошуючого.",
-          sourceLocator: "Art. 13 pkt 1–26",
+          text: foreignersLaw.text`${foreignersLaw.article("13", "Art. 13")} встановлює каталог даних, які можуть оброблятися у rejestrach, ewidencji та wykazie за ustawie: від ідентифікації, документів і біометрії до адрес, контактів, даних про роботу, навчання, провадження, підпис і членів сім’ї.`,
+          sourceLocator: "Art. 13 pkt 1–30",
         },
       ],
-      foreignersLaw.text`${foreignersLaw.article("13", "Art. 13")} визначає каталог даних та інформації, які можуть оброблятися в реєстрах і обліку за ustawa; формулювання «можуть» не означає, що кожен реєстр містить усі дані.`,
-      [
+      summary:
+        "Це межі можливого набору даних, а не готова картка кожної особи. Конкретний реєстр і конкретне провадження використовують лише релевантну частину каталогу.",
+      rules: [
         {
-          locator: "Art. 13 pkt 1–17",
+          locator: "Art. 13 pkt 1–17b",
           explanation:
-            "Перевірте ідентифікаційні, біометричні, громадянські та документальні дані лише в обсязі, потрібному конкретному реєстру.",
+            "Каталог розрізняє персональні й біометричні дані, громадянства, документ подорожі, документ тотожності та документ, що дає право pobytu. Після змін не зводьте pkt 17 лише до номера паспорта.",
         },
         {
-          locator: "Art. 13 pkt 18–26",
+          locator: "Art. 13 pkt 18–18d",
           explanation:
-            "Для роботи, стажу, волонтерства, навчання, карності, PESEL, wizerunek та zapraszający встановіть, який пункт і який реєстр є релевантними.",
+            "Для роботи, стажу, волонтерства, досліджень і навчання закон окремо описує суб’єктів та їхні реєстраційні й контактні дані, включно з pracodawcą użytkownikiem там, де він існує.",
+        },
+        {
+          locator: "Art. 13 pkt 19–30",
+          explanation:
+            "До каталогу входять адреси фактичного, запланованого, попереднього проживання й адреса в kraju pochodzenia, контакти, дані про провадження, PESEL, wizerunek, wzór podpisu та структуровані дані членів сім’ї.",
         },
       ],
-      foreignersLaw.text`${foreignersLaw.article("13", "Art. 13")} визначає можливий обсяг даних у реєстрах, але не встановлює висновок про legalność pobytu, право на працю чи достовірність конкретного запису.`,
-      foreignersLaw.text`Порівняйте спірний запис із документом-джерелом і точним pkt ${foreignersLaw.article("13", "Art. 13")}. Не робіть висновку про статус особи лише з наявності або відсутності одного поля в реєстрі.`
-    ),
-  ]),
+      legalEffect: foreignersLaw.text`${foreignersLaw.article("13", "Art. 13")} дозволяє обробляти названі категорії в межах відповідного реєстру, але запис або його відсутність самі по собі не доводять legalności pobytu, права на роботу чи істинності факту.`,
+      foreignersCase: foreignersLaw.text`Зіставте спірне поле з точним пунктом ${foreignersLaw.article("13", "Art. 13")}, правовою підставою конкретного реєстру й документом-джерелом. Якщо дані змінилися, відокремте помилку в реєстрі від матеріального статусу особи.`,
+    },
+  ],
 })

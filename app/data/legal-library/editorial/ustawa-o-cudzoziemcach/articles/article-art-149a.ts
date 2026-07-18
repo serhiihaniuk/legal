@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-149a",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("149a", "Art. 149a")} регулює намір скористатися mobilność studenta в іншій державі UE особою з польською student-візою або дозволом для studia: визначені jednostka або cudzoziemiec повідомляють орган цієї держави та Szef Urzędu, якщо право тієї держави вимагає такого повідомлення.`,
+          text: foreignersLaw.text`${foreignersLaw.article("149a", "Art. 149a")} регулює намір скористатися mobilność studenta в іншій державі UE особою з польською wiza з adnotacją „student” або дозволом для studia: визначені jednostka або cudzoziemiec повідомляють орган цієї держави та Szef Urzędu, якщо право тієї держави вимагає такого повідомлення.`,
           sourceLocator: "Art. 149a",
         },
       ],

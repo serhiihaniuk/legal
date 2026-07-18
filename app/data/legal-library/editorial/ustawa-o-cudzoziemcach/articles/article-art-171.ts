@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-171",
@@ -24,7 +24,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       rules: [
         {
           locator: "ust. 1",
-          explanation: foreignersLaw.text`Побyt вважається legalny протягом строку чинності документа з ${foreignersLaw.article("170", "art. 170")}; вирішальним є строк самого zaświadczenie.`,
+          explanation: foreignersLaw.text`Перебування вважається legalny протягом строку чинності документа з ${foreignersLaw.article("170", "art. 170")}; вирішальним є строк самого zaświadczenie.`,
         },
         {
           locator: "ust. 2",
@@ -38,7 +38,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "До строку чинності та за відсутності передбаченого запису pobyt має спеціальний legalny статус; це не тотожне наданню карти побytu.",
+        "До строку чинності та за відсутності передбаченого запису pobyt має спеціальний legalny статус; це не тотожне наданню карти pobytu.",
       foreignersCase:
         "Зберігайте zaświadczenie та підтвердження його строку; якщо орган посилається на припинення legalny pobyt, вимагайте дату і правову підставу запису в реєстрі.",
     },

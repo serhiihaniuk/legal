@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-152",
@@ -48,7 +48,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття визначає обов’язки та документи jednostka, але не перетворює угоду на автоматичне право на побyt.",
+        "Стаття визначає обов’язки та документи jednostka, але не перетворює угоду на автоматичне право на pobyt.",
       foreignersCase:
         "Перевірте протокол/рішення внутрішнього затвердження, кваліфікації, текст угоди, письмове зобов’язання та факт в’їзду/рішення про дозвіл.",
     },

@@ -63,6 +63,7 @@ import articleArt47 from "./articles/article-art-47"
 import articleArt48 from "./articles/article-art-48"
 import articleArt49 from "./articles/article-art-49"
 import articleArt5 from "./articles/article-art-5"
+import articleArt5a from "./articles/article-art-5a"
 import articleArt50 from "./articles/article-art-50"
 import articleArt51 from "./articles/article-art-51"
 import articleArt52 from "./articles/article-art-52"
@@ -179,6 +180,7 @@ export const powierzaniePracyExplanations = mergeEditorialParts([
   articleArt48,
   articleArt49,
   articleArt5,
+  articleArt5a,
   articleArt50,
   articleArt51,
   articleArt52,

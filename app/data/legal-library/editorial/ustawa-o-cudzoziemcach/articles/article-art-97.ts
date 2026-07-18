@@ -44,18 +44,18 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("97", {
       provisionId: "ustawa-o-cudzoziemcach-art-97",
       reviewStatus: "reviewed",
       statuteText:
-        "Minister właściwy do spraw wewnętrznych у porozumieniu з міністром закордонних справ визначає w drodze rozporządzenia спосіб відмітки рішення про unieważnienie або cofnięcie візи в travel document/blankiet, formularz рішення щодо national visa та formularz рішення з Art. 93 ust. 4. Розпорядження має враховувати політику віз і протидію нелегальній міграції та забезпечити контроль дій.",
+        "Minister właściwy do spraw wewnętrznych у porozumieniu з міністром закордонних справ визначає w drodze rozporządzenia спосіб відмітки рішення про unieważnienie або cofnięcie візи в dokument podróży/blankiet, форму рішення щодо wiza krajowa та форму рішення з Art. 93 ust. 4. Розпорядження має враховувати політику віз і протидію нелегальній міграції та забезпечити контроль дій.",
       statuteLocator: "Art. 97 ust. 1–2 pkt 1–3",
       practicalText:
-        "Art. 97 — технічна delegacja, а не підстава відкликання візи. У справі використовуйте чинні formularze та порядок відмітки з відповідного rozporządzenie; форма не замінює матеріальну підставу рішення.",
+        "Art. 97 — технічна delegacja, а не підстава відкликання візи. У справі використовуйте чинні форми та порядок відмітки з відповідного rozporządzenie; форма не замінює матеріальну підставу рішення.",
       practicalLocator: "Art. 97 ust. 1–2",
       summary:
         "Art. 97 делегує міністрам технічне оформлення рішень щодо скасування або відкликання віз та контроль відповідних дій.",
@@ -63,7 +63,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 97 ust. 1 pkt 1–3",
           explanation:
-            "Розпорядження визначає спосіб відмітки у документах і два типи formularz: для рішення щодо national visa та для рішення з Art. 93 ust. 4.",
+            "Розпорядження визначає спосіб відмітки у документах і два типи форм: для рішення щодо wiza krajowa та для рішення з Art. 93 ust. 4.",
         },
         {
           locator: "Art. 97 ust. 2",
@@ -74,7 +74,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       legalEffect:
         "Норма визначає майбутні технічні форми й запис, але сама не скасовує візу, не легалізує pobyt і не надає права працювати.",
       foreignersCase:
-        "Перевірте форму рішення та відмітку за чинним rozporządzenie, збережіть копію travel document/blankiet і зіставте орган та підставу рішення з Art. 90–94.",
+        "Перевірте форму рішення та відмітку за чинним rozporządzenie, збережіть копію dokument podróży/blankiet і зіставте орган та підставу рішення з Art. 90–94.",
     }),
   ]),
 })

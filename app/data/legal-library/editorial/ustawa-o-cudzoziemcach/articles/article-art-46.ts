@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-46",
@@ -33,7 +33,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "status przepisu",
-          explanation: foreignersLaw.text`${foreignersLaw.article("46", "Art. 46")} має status active у локальному corpus; конкретні зразки та вимоги треба брати з чинного розporządzenie, прийнятого на виконання цієї делегації.`,
+          explanation: foreignersLaw.text`${foreignersLaw.article("46", "Art. 46")} позначена як чинна в локальному корпусі; конкретні зразки та вимоги треба брати з чинного rozporządzenie, прийнятого на виконання цієї делегації.`,
         },
       ],
       legalEffect:

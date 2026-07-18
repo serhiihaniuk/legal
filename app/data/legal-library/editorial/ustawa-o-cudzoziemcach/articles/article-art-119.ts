@@ -44,31 +44,31 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("119", {
       provisionId: "ustawa-o-cudzoziemcach-art-119",
       reviewStatus: "reviewed",
       statuteText:
-        "Зміна або нове permit i pracę не потрібні при зміні siedziba/місця проживання, назви або форми правної podmiot чи pracodawca użytkownik; переході zakład; збільшенні wymiar часу з пропорційною зарплатою; зміні назви stanowisko без зміни обов’язків; або заміні civil contract на umowa o pracę. Podmiot повідомляє письмово wojewoda протягом 15 dni roboczych; після рішення Szef Urzędu — wojewoda першої інстанції.",
+        "Зміна або нове zezwolenie na pobyt czasowy i pracę не потрібні при зміні siedziba або місця проживання, назви чи форми правної podmiot або pracodawca użytkownik; переході zakład; збільшенні wymiar czasu pracy з пропорційною зарплатою; зміні назви stanowisko без зміни обов’язків; або заміні umowa cywilnoprawna на umowa o pracę. Podmiot письмово повідомляє wojewoda протягом 15 dni roboczych; після рішення Szef Urzędu повідомлення отримує wojewoda першої інстанції.",
       statuteLocator: "Art. 119 ust. 1–3",
       practicalText:
         "Виняток від нової/зміненої decyzja діє лише за точною відповідністю одному з pkt ust. 1. Він не скасовує письмове повідомлення і не охоплює зміну роботодавця, посади по суті, зарплати всупереч умові або іншого фактичного роботодавця.",
       practicalLocator: "Art. 119 ust. 1–3",
       summary:
-        "Art. 119 називає вичерпні зміни, для яких не потрібне нове або змінене permit i pracę, але вимагає повідомлення wojewoda.",
+        "Art. 119 називає вичерпні зміни, для яких не потрібне нове або змінене zezwolenie i pracę, але вимагає повідомлення wojewoda.",
       rules: [
         {
           locator: "Art. 119 ust. 1 pkt 1–2",
           explanation:
-            "Без зміни permit допускаються організаційні зміни podmiot/user та transfer zakład або його частини до іншого роботодавця.",
+            "Без зміни zezwolenie допускаються організаційні зміни podmiot powierzający pracę / pracodawca użytkownik та przejście zakładu pracy або його частини до іншого роботодавця.",
         },
         {
           locator: "Art. 119 ust. 1 pkt 3–5",
           explanation:
-            "Допускаються лише збільшення часу з пропорційною оплатою, зміна назви без зміни обов’язків або заміна civil contract на umowa o pracę.",
+            "Допускаються лише збільшення часу з пропорційною оплатою, зміна назви stanowisko без зміни обов’язків або заміна umowa cywilnoprawna на umowa o pracę.",
         },
         {
           locator: "Art. 119 ust. 2–3",
@@ -77,9 +77,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "За умов Art. 119 чинне permit зберігає свої параметри без нової decyzja, але повідомлення є окремим обов’язком. Стаття не робить будь-яку зміну роботи законною поза переліченими випадками.",
+        "За умов Art. 119 чинне zezwolenie зберігає свої параметри без нової decyzja, але повідомлення є окремим обов’язком. Стаття не робить будь-яку зміну роботи законною поза переліченими випадками.",
       foreignersCase:
-        "Порівняйте старі й нові реєстраційні дані, документи transfer, години й оплату, обов’язки та тип договору. Подайте письмове повідомлення до правильного wojewoda в 15 dni roboczych і збережіть доказ.",
+        "Порівняйте старі й нові реєстраційні дані, документи про перехід підприємства, години й оплату, обов’язки та тип договору. Подайте письмове повідомлення до правильного wojewoda в 15 dni roboczych і збережіть доказ.",
     }),
   ]),
 })

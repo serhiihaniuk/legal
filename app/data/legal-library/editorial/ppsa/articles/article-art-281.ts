@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-281",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 281 передбачає, що на rozprawa суд насамперед вирішує dopuszczalność wznowienia; якщо немає ustawowa podstawa або строк wniesienia skarga не дотримано, суд odrzuci skargę. Після оцінки стану справи суд може поєднати перевірку допустимості з розглядом справи.",
+          text: "На засіданні суд насамперед вирішує допустимість поновлення й відхиляє скаргу за відсутності законної підстави або дотриманого строку. З огляду на стан справи суд може поєднати цю перевірку з розглядом самої справи.",
           sourceLocator: "Art. 281",
         },
       ],
       summary:
-        "Норма розставляє порядок перевірки skarga o wznowienie на rozprawa і допускає поєднання допустимості з розглядом за станом справи.",
+        "Стаття показує, що допустимість залишається окремим питанням навіть після попереднього фільтра.",
       rules: [
         {
           locator: "Art. 281",
           explanation:
-            "Спочатку встановіть наявність ustawowa podstawa і дотримання строку; лише після цього питання переходить до подальшого розгляду, якщо суд не поєднає етапи.",
+            "Будьте готові одночасно доводити підставу поновлення (wznowienie) та, якщо суд об’єднає етапи, аргументувати наслідок для первісного рішення.",
         },
       ],
       legalEffect:
-        "Odrzucenie за цією статтею стосується допустимості skarga, а не оцінки того, чи справді попереднє orzeczenie було неправильним по суті.",
+        "Призначення відкритого засідання (rozprawa) не гарантує поновлення: суд може відхилити скаргу саме на етапі допустимості.",
       foreignersCase:
-        "У справі про pobyt не плутайте rozprawa за Art. 281 із повторним розглядом усієї адміністративної історії. Зосередьтеся на конкретній підставі wznowienie та строку.",
+        "У справі про перебування підготуйте два логічні блоки виступу — чому поновлення допустиме і як дефект змінив результат.",
     },
-  ]),
+  ],
 })

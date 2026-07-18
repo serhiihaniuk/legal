@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "documentId": "powierzanie-pracy",
+  "editionId": "powierzanie-pracy-2025-621-u-2026-07-18",
+  "shortName": "Powierzanie pracy",
+  "title": "Ustawa o warunkach dopuszczalności powierzania pracy cudzoziemcom na terytorium Rzeczypospolitej Polskiej",
+  "citation": "Dz.U. 2025 poz. 621",
+  "publisher": "DU",
+  "year": 2025,
+  "position": 621,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
+    "expectedPdfSha256": "62cb831058c5d3e3efe99669b1115b53007b34af8ad6f79fbaad5b7410d12002"
+  },
+  "checkedAt": "2026-07-18",
+  "legalStateDate": "2026-07-18",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStateDate": "2026-07-18",
+    "consolidatedTextIdentifier": "DU/2025/621",
+    "checkedAt": "2026-07-18",
+    "sourceUrls": [
+      "https://eli.gov.pl/eli/DU/2025/621/ogl",
+      "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf"
+    ],
+    "amendmentsCheckedThrough": "2026-07-18",
+    "entryIntoForce": [
+      {
+        "locator": "ELI metadata DU/2025/621",
+        "result": "The act is marked obowiązujący and IN_FORCE in the official ELI metadata."
+      }
+    ],
+    "transitionalRules": [
+      {
+        "locator": "ELI current unified text DU/2025/621 text/U",
+        "result": "The corpus edition uses the official current unified PDF available from ELI on 2026-07-18; no separate transition rule is inferred in this source-edition step."
+      }
+    ],
+    "unresolved": []
+  },
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 115,
+    "expectedTextCoverage": 1,
+    "expectedPageCount": 100,
+    "ignoredArticleOccurrences": [
+      {
+        "locator": "Art. 50",
+        "pdfPage": 47,
+        "matchIndex": 1794,
+        "reason": "Lower-case intra-article reference in Art. 58 is not a provision boundary."
+      }
+    ]
+  }
+}

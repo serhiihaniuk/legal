@@ -47,9 +47,9 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "22",
@@ -104,7 +104,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       foreignersLaw.text`${foreignersLaw.article("22", "Art. 22")} розподіляє завдання та апеляційну роль Szef Urzędu, але не надає cudzoziemcowi дозволу на pobyt, wjazd або wykonywanie pracy. Інформаційні та реєстрові дії мають своє процесуальне призначення й не замінюють оцінку матеріальних умов.`,
-      foreignersLaw.text`Візьміть рішення або postanowienie і встановіть орган першої інстанції, вид засобу оскарження та відповідний акт. Якщо орган посилається на обмін даними або krajowy punkt kontaktowy, перевірте мету й джерело конкретної інформації, не трактуючи реєстр як самостійний доказ legal stay чи права на працю.`
+      foreignersLaw.text`Візьміть рішення або postanowienie і встановіть орган першої інстанції, вид засобу оскарження та відповідний акт. Якщо орган посилається на обмін даними або krajowy punkt kontaktowy, перевірте мету й джерело конкретної інформації, не трактуючи реєстр як самостійний доказ legalność pobytu чи права на працю.`
     ),
   ]),
 })

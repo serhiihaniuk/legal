@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-77",
@@ -41,7 +41,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 77 ust. 2, 4, 10–12",
           explanation:
-            "Ці положення мають статус „uchylony” у corpus і не створюють чинних додаткових вимог.",
+            "Ці положення мають статус „uchylony” у тексті джерела і не створюють чинних додаткових вимог.",
         },
         {
           locator: "Art. 77 ust. 5–8",
@@ -54,7 +54,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect: foreignersLaw.text`Належна заява і документи запускають оцінку wiza, але не доводять автоматично виконання ${foreignersLaw.article("65", "Art. 65")} і не гарантують видачу. Uchylony ust. не можна використовувати як чинну вимогу.`,
-      foreignersCase: foreignersLaw.text`Зробіть checklist за ${foreignersLaw.article("77", "Art. 77")}: формуляр, фото, паспорт, cel, кошти, страховка, повернення, робочі документи, представництво та дати; відмічайте окремо, які вимоги прямо не застосовуються через uchylony ust.`,
+      foreignersCase: foreignersLaw.text`Зробіть схему перевірки за ${foreignersLaw.article("77", "Art. 77")}: формуляр, фото, паспорт, cel, кошти, страховка, повернення, робочі документи, представництво та дати; відмічайте окремо, які вимоги прямо не застосовуються через uchylony ust.`,
     },
   ],
 })

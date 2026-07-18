@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-213",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Do wydatków zalicza się w szczególności należności tłumaczy i kuratorów ustanowionych w sprawie oraz koszty ogłoszeń, a także diety i koszty podróży sędziów i pracowników sądowych związane z czynnościami poza budynkiem sądu, określone w odrębnych przepisach.",
-          sourceLocator: "Art. 213 pkt 1–2",
+          text: "До судових видатків належать, зокрема, виплати перекладачам і призначеним у справі кураторам, витрати на оголошення, а також добові й проїзд суддів або працівників суду для дій поза будівлею суду.",
+          sourceLocator: "Art. 213",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("213", "Art. 213")} podaje przykładowe wydatki sądowe, w tym należności sądowego tłumacza lub kuratora i koszty czynności poza sądem.`,
+      summary:
+        "Стаття показує, які зовнішні витрати судового провадження можуть утворити видатки (wydatki).",
       rules: [
         {
-          locator: "Art. 213 pkt 1–2",
+          locator: "Art. 213",
           explanation:
-            "Należność tłumacza lub kuratora musi dotyczyć osoby ustanowionej w danej sprawie; pozostałe wskazane wydatki podlegają odrębnym zasadom.",
+            "Перевірте, хто замовив або спричинив дію, яким документом визначено суму та чи вона належить до наведеного або іншого законного виду видатків.",
         },
       ],
       legalEffect:
-        "Przepis klasyfikuje przykładowe wydatki, nie ustanawia automatycznego zwrotu prywatnych kosztów tłumaczenia ani nie określa ich stawek.",
+        "Перелік є прикладовим, але кожна сума все одно потребує правової підстави й розрахунку.",
       foreignersCase:
-        "Jeżeli sąd ustanowił tłumacza w sprawie pobytowej, odróżnij jego należność jako wydatek sądowy od prywatnego tłumaczenia dokumentów przez stronę.",
+        "У справі іноземця потреба в перекладачі може створити судовий видаток; зберігайте ухвалу та розрахунок, а не припускайте суму наперед.",
     },
   ],
 })

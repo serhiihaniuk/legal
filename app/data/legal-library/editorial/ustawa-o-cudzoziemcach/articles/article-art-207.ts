@@ -1,9 +1,9 @@
 import { defineEditorialPart } from "../../define-editorial-part"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-207",
@@ -11,7 +11,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: "Перед decyzja про pobyt stały wojewoda запитує інформацію, чи в’їзд і pobyt cudzoziemca загрожують обороні, безпеці держави або безпеці й porządek publiczny, звертаючись до комendanta oddziału Straży Granicznej, komendanta wojewódzkiego Policji та Szefa ABW.",
+          text: "Перед decyzja про pobyt stały wojewoda запитує інформацію, чи в’їзд і pobyt cudzoziemca загрожують обороні, безпеці держави або безпеці й porządek publiczny, звертаючись до komendanta oddziału Straży Granicznej, komendanta wojewódzkiego Policji та Szefa ABW.",
           sourceLocator: "Art. 207 ust. 1–3",
         },
         {
@@ -26,7 +26,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1–3",
           explanation:
-            "Запит до органів безпеки є етапом перевірки; у särskólnie uzasadniony przypadek його можна направити також іншим органам.",
+            "Запит до органів безпеки є етапом перевірки; у szczególnie uzasadniony przypadek його можна направити також іншим органам.",
         },
         {
           locator: "ust. 4–7",

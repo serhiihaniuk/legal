@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-177a",
@@ -15,21 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Jeżeli skarga kasacyjna nie spełnia wymagań ${ppsaLaw.article("176", "art. 176")} innych niż przytoczenie podstaw kasacyjnych i ich uzasadnienie, przewodniczący wzywa stronę do usunięcia braków w terminie siedmiu dni pod rygorem odrzucenia skargi.`,
+          text: "Якщо касаційна скарга має усувний формальний недолік щодо вимог до її змісту, головуючий викликає сторону виправити його протягом семи днів під загрозою відхилення. Відсутність самих касаційних підстав або їх обґрунтування не належить до цього механізму виправлення.",
           sourceLocator: "Art. 177a",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("177a", "Art. 177a")} pozwala uzupełnić wskazane wymagania formalne skargi kasacyjnej, ale wyłącza z tego wezwania same podstawy kasacyjne i ich uzasadnienie.`,
+      summary:
+        "Стаття відділяє усувні формальні недоліки від ключового змісту касаційної скарги.",
       rules: [
         {
           locator: "Art. 177a",
-          explanation: ppsaLaw.text`Wezwanie dotyczy wymagań ${ppsaLaw.article("176", "art. 176")} innych niż podstawy kasacyjne i ich uzasadnienie; termin na reakcję wynosi siedem dni i ma określony rygor.`,
+          explanation:
+            "Прочитайте виклик (wezwanie), визначте кожний названий недолік і подайте повне виправлення в семиденний строк. Не розраховуйте, що суд дозволить дописати відсутні підстави касації.",
         },
       ],
       legalEffect:
-        "Niewykonanie prawidłowego wezwania w terminie może doprowadzić do odrzucenia skargi kasacyjnej; przepis nie otwiera drogi do późniejszego uzupełniania podstaw kasacyjnych.",
+        "Невиконання виклику щодо усувного недоліку веде до відхилення скарги; змістові дефекти підстав мають суворіший режим.",
       foreignersCase:
-        "Po doręczeniu wezwania w sprawie pobytowej zapisz jego zakres i datę doręczenia. Uzupełniaj tylko wskazane braki, nie przedstawiając nowych podstaw kasacyjnych jako poprawy formy.",
+        "У справі про перебування перед поданням перевірте підстави й їх обґрунтування окремо від підпису, копій та інших формальних елементів.",
     },
   ],
 })

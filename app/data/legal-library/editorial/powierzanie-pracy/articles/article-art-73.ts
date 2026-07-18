@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-73",
@@ -13,28 +13,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 73 вимагає вести teleinformatyczne rejestry справ про zezwolenie na pracę, zezwolenie sezonowe та oświadczenie; визначає ewidencje і компетентні органи.",
+          text: "Art. 73 вимагає вести електронні реєстри справ про дозволи на роботу, дозволи на сезонну роботу та заяви про доручення роботи. Він визначає спеціальні обліки всередині цих реєстрів і розподіляє компетенцію між органами.",
           sourceLocator: "Art. 73 ust. 1–6",
         },
       ],
       summary:
-        "Wojewoda веде реєстр permit на роботу, starosta — seasonal і oświadczenie, а minister — частину, пов'язану з засобами оскарження. Реєстри містять дані, документи, wpis, decyzja та судові рішення для провадження й доступу уповноважених органів.",
+        "Воєвода веде реєстр справ про дозволи на роботу, староста — реєстри справ про дозволи на сезонну роботу та заяви про доручення роботи, а міністр — відповідні реєстрові дані в частині розгляду засобів оскарження. У реєстрах опрацьовують заяви, документи, записи, рішення та судові акти, потрібні для провадження і законного доступу уповноважених органів.",
       rules: [
         {
           locator: "ust. 1–3",
           explanation:
-            "Окремі rejestry охоплюють три види справ; у seasonal є ewidencja wniosków, в oświadczenie — ewidencja oświadczeń. Компетенція розподілена між wojewoda, starosta і minister.",
+            "Окремі реєстри охоплюють три види справ. Для дозволів на сезонну роботу ведеться реєстр заяв (ewidencja wniosków), а для заяв про доручення роботи — реєстр таких заяв (ewidencja oświadczeń). Компетенція розподілена між воєводою, старостою і міністром.",
         },
         {
           locator: "ust. 4–6",
           explanation:
-            "До rejestr потрапляють дані заяв, документи, postanowienia, wpis, zaświadczenia, decyzje та orzeczenia sądu відповідно до виду справи.",
+            "Залежно від виду справи в реєстрі опрацьовують дані заяв, додані документи, ухвали, записи, довідки, адміністративні рішення та судові акти.",
         },
       ],
       legalEffect:
-        "Реєстр є інфраструктурою провадження і обміну даними, а не окремим дозволом; наявність запису треба відрізняти від змісту decyzja.",
+        "Реєстр є інфраструктурою провадження і обміну даними, а не окремим дозволом. Наявність запису треба відрізняти від змісту адміністративного рішення.",
       foreignersCase:
-        "Уточніть, який орган веде саме вашу ewidencja, і звіряйте номер та статус wpis або рішення. Для спору визначте, чи йдеться про реєстр wojewoda, starosta або minister.",
+        "Уточніть, який орган веде саме ваш реєстр, і звіряйте номер та статус запису або рішення. Для спору визначте, чи йдеться про реєстр воєводи, старости або міністра.",
     },
   ]),
 })

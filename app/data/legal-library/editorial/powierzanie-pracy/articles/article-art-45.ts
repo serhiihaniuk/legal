@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-45",
@@ -15,16 +15,16 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("45", "Art. 45")} ust. 1 визначає умови zezwolenie na pracę sezonową: podmiot має бути polski podmiot, wynagrodzenie — не нижче оплати порівнюваних працівників у тому самому wymiar часу, діяльність — із переліку rozporządzenie, а робота — не довше 9 місяців у календарному році. Ust. 2 доручає Radzie Ministrów визначити такі діяльності за класифікацією та сезонним попитом.`,
+          text: workLaw.text`${workLaw.article("45", "Art. 45")} визначає умови видачі сезонного дозволу на роботу (zezwolenie na pracę sezonową). Роботу має доручати польський суб’єкт. Оплата в договорі не може бути нижчою за оплату працівників, які за такого самого робочого часу виконують порівнювану роботу або працюють на порівнюваній посаді. Вид діяльності має бути включений до урядового переліку, а робота не може тривати більш як дев’ять місяців у календарному році.`,
           sourceLocator: "Art. 45 ust. 1 pkt 1–4 і ust. 2",
         },
       ],
-      summary: workLaw.text`Sezonowa praca має окремі матеріальні умови та річний ліміт. Конкретні види діяльності не випливають із самого ${workLaw.article("45", "art. 45")} — їх треба брати з чинного rozporządzenie Rady Ministrów.`,
+      summary: workLaw.text`Сезонна робота має окремі умови та річну часову межу. Конкретні види діяльності не випливають із самого ${workLaw.article("45", "art. 45")} — їх визначає розпорядження Ради Міністрів (rozporządzenie Rady Ministrów), чинне на дату, важливу для справи.`,
       rules: [
         {
           locator: "ust. 1 pkt 1–2",
           explanation:
-            "Заяву подає polski podmiot, а wynagrodzenie у umowa не може бути нижчим за оплату працівників порівнюваного виду або stanowisko при тому самому wymiar часу.",
+            "Роботу доручає польський суб’єкт, а оплата, зазначена в договорі, має відповідати щонайменше оплаті за порівнювану роботу або на порівнюваній посаді за такого самого робочого часу.",
         },
         {
           locator: "ust. 1 pkt 3–4",
@@ -34,12 +34,12 @@ export default defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "ust. 2",
           explanation:
-            "Rada Ministrów визначає діяльності за класифікацією, враховуючи значно вищий сезонний попит у повторювані періоди.",
+            "Рада Міністрів визначає перелік за класифікацією видів діяльності, беручи до уваги значно вищий попит на працівників у повторювані сезонні періоди.",
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("45", "Art. 45")} визначає підстави для сезонного дозволу на роботу, але не легалізує pobyt і не замінює visa або інший документ перебування.`,
+      legalEffect: workLaw.text`${workLaw.article("45", "Art. 45")} визначає підстави видачі сезонного дозволу на роботу, але не легалізує перебування й не замінює візу (wiza) або інший документ перебування.`,
       foreignersCase:
-        "Перевірте статус polski podmiot, оплату порівнюваних працівників, конкретний код діяльності в rozporządzenie та сумарні місяці роботи в році. Окремо встановіть legalny pobyt і його строк.",
+        "Перевірте статус польського суб’єкта, оплату порівнюваних працівників, конкретний код діяльності в чинному розпорядженні та всі періоди сезонної роботи в цьому році. Окремо встановіть підставу й строк законного перебування.",
     },
   ],
 })

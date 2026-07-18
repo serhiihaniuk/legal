@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-234",
@@ -15,32 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("234", "Art. 234 § 1–4")} передбачає opłatę kancelaryjną за stwierdzenie prawomocności та видачу документів на підставі akt; за odpis orzeczenia z uzasadnieniem, витребуваний протягом семи днів від ogłoszenia, opłatę сплачують під час wniosku, а за її відсутності przewodniczący після wezwania наказує стягнення без застосування ${ppsaLaw.article("220", "art. 220")}; відпис, який вручається з urzędu, не оплачується, а дії з ${ppsaLaw.article("234", "§ 2")} може виконувати referendarz sądowy.`,
+          text: "Канцелярський збір стягують за підтвердження законної сили та видачу копій, довідок, витягів й інших документів із матеріалів справи. За копію рішення з обґрунтуванням, запитану протягом семи днів від оголошення, платять під час подання заяви; після виклику несплачену суму стягують, але заяву не залишають без розгляду за загальним правилом про несплачений документ.",
           sourceLocator: "Art. 234 § 1–4",
         },
       ],
       summary:
-        "Стаття визначає, коли за документи з akt стягується opłata kancelaryjna і як відрізняється відпис рішення, надісланий на прохання або з urzędu.",
+        "Стаття регулює плату за судові документи та спеціально захищає доступ до обґрунтування.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 234 § 1–4",
           explanation:
-            "Для stwierdzenie prawomocności, odpis, zaświadczenie або інший документ перевірте, чи його видають на підставі akt.",
-        },
-        {
-          locator: "§ 2–3",
-          explanation:
-            "Запит на odpis orzeczenia z uzasadnieniem у семиденний строк має окреме правило оплати, тоді як відпис, що вручається з urzędu, не оплачується.",
-        },
-        {
-          locator: "§ 4",
-          explanation: ppsaLaw.text`Дії, описані в ${ppsaLaw.article("234", "§ 2")}, може виконувати referendarz sądowy.`,
+            "Перевірте, чи копію суд вручає з власної ініціативи — тоді збору немає. В інших випадках визначте документ, кількість сторін і оплату; технічні дії може виконувати судовий референдар (referendarz sądowy).",
         },
       ],
       legalEffect:
-        "Норма розмежовує вид документа та спосіб його вручення; право отримати відпис не означає, що кожен запит є безкоштовним.",
+        "Несплата за своєчасно запитане обґрунтування створює борг, але не запускає звичайний наслідок залишення заяви без розгляду.",
       foreignersCase:
-        "Для оскарження рішення про pobyt перевірте дату ogłoszenia, дату запиту на uzasadnienie і те, чи відпис надіслано з urzędu, перш ніж оцінювати opłatę kancelaryjną.",
+        "У справі про перебування подайте заяву про обґрунтування в належний строк незалежно від технічної оплати й збережіть виклик до оплати (wezwanie), якщо суд вимагатиме суму.",
     },
   ],
 })

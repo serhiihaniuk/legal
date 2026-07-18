@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("114a", {
       provisionId: "ustawa-o-cudzoziemcach-art-114a",
       reviewStatus: "reviewed",
       statuteText:
-        "Minister właściwy do spraw wewnętrznych у porозумінні з міністрами праці та економіки може встановити на календарний рік ліміт permit i pracę за Art. 114 і Art. 126, охопивши окремі województwa, zawody, види umów або види діяльності podmiot. Враховуються потреби ринку, безпека, porządek publiczny та complementarity праці cudzoziemiec до праці громадян Польщі; досягнення ліміту оголошується в Monitor Polski.",
+        "Minister właściwy do spraw wewnętrznych у погодженні з міністрами праці та економіки може встановити на календарний рік ліміт zezwolenie i pracę за Art. 114 і Art. 126, охопивши окремі województwa, zawody, види umów або види діяльності podmiot. Враховуються потреби ринку, безпека, porządek publiczny та доповнювальний характер праці іноземців щодо праці громадян Польщі; досягнення ліміту оголошується в Monitor Polski.",
       statuteLocator: "Art. 114a ust. 1–3",
       practicalText:
         "Ліміт можливий лише через відповідне rozporządzenie та оголошення, тому не можна виводити його наявність із самої статті. Для справи перевіряйте рік, województwo, zawód, umowa і діяльність podmiot за чинним актом.",
       practicalLocator: "Art. 114a ust. 1–3",
       summary:
-        "Art. 114a створює можливість щорічного категоріального ліміту для permit i pracę та порядок оголошення його досягнення.",
+        "Art. 114a створює можливість щорічного категоріального ліміту для zezwolenie i pracę та порядок оголошення його досягнення.",
       rules: [
         {
           locator: "Art. 114a ust. 1",
@@ -68,7 +68,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 114a ust. 2",
           explanation:
-            "Під час встановлення враховуються labor market, security, public order і принцип complementarity зайнятості cudzoziemiec.",
+            "Під час встановлення враховуються стан ринку праці, безпеку держави, porządek publiczny та принцип доповнюваності зайнятості іноземців.",
         },
         {
           locator: "Art. 114a ust. 3",
@@ -77,9 +77,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття допускає нормативне кількісне обмеження permit i pracę, але сама не встановлює конкретної квоти й не дає дозволу на pobyt або роботу.",
+        "Стаття допускає нормативне кількісне обмеження zezwolenie i pracę, але сама не встановлює конкретної квоти й не дає дозволу на pobyt або роботу.",
       foreignersCase:
-        "Перевірте чинне rozporządzenie, обwieszczenie Monitor Polski, календарний рік і всі категорії справи. Не змішуйте quota-screening з доказуванням мети, legal stay та умов конкретної роботи.",
+        "Перевірте чинне rozporządzenie, obwieszczenie Monitor Polski, календарний рік і всі категорії справи. Не змішуйте перевірку ліміту з доказуванням мети, legalność pobytu та умов конкретної роботи.",
     }),
   ]),
 })

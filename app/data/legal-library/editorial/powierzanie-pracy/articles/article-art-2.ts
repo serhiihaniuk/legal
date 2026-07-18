@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-2",
@@ -15,33 +15,33 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("2", "Art. 2")} pkt 1–9 визначає для ustawy поняття cudzoziemiec, nielegalne powierzenie роботи, nielegalne wykonywanie роботи, podmiot powierzający pracę cudzoziemcowi, podmiot zagraniczny, polski podmiot powierzający pracę cudzoziemcowi, pracodawca użytkownik, pracownik tymczasowy та саме powierzanie pracy cudzoziemcowi.`,
+          text: workLaw.text`${workLaw.article("2", "Art. 2")} у пунктах 1–9 визначає ключові поняття закону: іноземець («cudzoziemiec»), незаконне доручення та незаконне виконання роботи, суб’єкт, який доручає роботу, іноземний і польський суб’єкти, роботодавець-користувач, тимчасовий працівник та саме доручення роботи іноземцеві.`,
           sourceLocator: "Art. 2 pkt 1–9",
         },
       ],
       summary:
-        "Дефініції показують, що незаконність може стосуватися різних ланок: pobyt, підстави pobytu, zezwolenie або oświadczenie, умов чи stanowisko роботи та письмової umowa. Окремо визначено, хто є podmiot і які форми роботи входять до powierzenie pracy.",
+        "Визначення показують, що незаконність може виникнути на різних ланках: перебування, право працювати за відповідною підставою перебування, потрібний дозвіл або декларація, відповідність фактичних умов документу та письмова форма договору. Стаття також пояснює, кого закон вважає суб’єктом, який доручає роботу, і які форми діяльності охоплює це поняття.",
       rules: [
         {
           locator: "pkt 1–3",
           explanation:
-            "Cudzoziemiec — кожен, хто не має польського громадянства. Nielegalne powierzenie та nielegalne wykonywanie роботи охоплюють, зокрема, незаконний pobyt, відсутність uprawnienia з підстави pobytu та відсутність потрібного zezwolenia або oświadczenia; для powierzenie також важливі умови, stanowisko й письмова umowa.",
+            "Іноземець — кожен, хто не має польського громадянства. Незаконне доручення роботи та незаконне виконання роботи охоплюють, зокрема, незаконне перебування, підставу перебування без права працювати та відсутність потрібного дозволу або декларації. Для кваліфікації дій суб’єкта додатково важливі фактичні умови, посада й письмовий договір; виняток щодо письмової форми стосується корпоративних функцій із частини 1 пункту 2 статті 6.",
         },
         {
           locator: "pkt 4–8",
           explanation:
-            "Podmiot powierzający може бути організаційною одиницею або фізичною особою; закон розрізняє podmiot zagraniczny, polski podmiot, pracodawca użytkownik та pracownik tymczasowy.",
+            "Суб’єктом, який доручає роботу, може бути організаційна одиниця або фізична особа. Закон окремо визначає іноземного суб’єкта, польського суб’єкта, роботодавця-користувача («pracodawca użytkownik») та тимчасового працівника («pracownik tymczasowy»).",
         },
         {
           locator: "pkt 9 lit. a–f",
           explanation:
-            "Powierzenie охоплює роботу за stosunek pracy, stosunek służbowy, umowę o pracę nakładczą, цивільні договори, окремі функції в органах і spółkach, prokurę та роботу в межах delegowanie.",
+            "Доручення роботи охоплює трудові й службові відносини, надомну працю, цивільно-правові договори, визначені функції в органах юридичних осіб і товариствах, виконання функції прокуриста та роботу в межах відрядження.",
         },
       ],
       legalEffect:
-        "Ці визначення є кваліфікаційною рамкою для перевірки порушення, але не створюють самостійного дозволу на роботу чи право перебування. Наявність legalnego pobytu не усуває можливого браку zezwolenia або невідповідності його умовам.",
+        "Ці визначення є рамкою для кваліфікації порушення, але не створюють самостійного права на роботу чи перебування. Законне перебування не усуває можливої відсутності потрібного дозволу або невідповідності його умовам.",
       foreignersCase:
-        "Складіть окремі колонки: legalny pobyt, підстава pobytu, zezwolenie/oświadczenie, умови й stanowisko, письмова umowa. Лише після цього кваліфікуйте, чи є powierzenie або wykonywanie роботи nielegalne.",
+        "Перевірте окремо: законність перебування, право працювати за цією підставою, наявність потрібного дозволу або декларації, відповідність умов і посади, письмовий договір. Лише після цього визначайте, чи є доручення або виконання роботи незаконним.",
     },
   ],
 })

@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-91",
@@ -13,28 +13,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 91 змінює Kodeks postępowania w sprawach o wykroczenia: у postępowaniu mandatowym за art. 84 цієї ustawa та визначені справи cudzoziemiec можна накласти grzywna до 10000 zł за умов, названих у нормі.",
+          text: "Art. 91 є виконаною нормою про зміну Kodeksu postępowania w sprawach o wykroczenia. У провадженні про накладення штрафу постановою (postępowanie mandatowe) за art. 84 цього закону та у визначених справах за art. 465 ust. 1a закону «ustawa o cudzoziemcach» можна накласти штраф до 10 000 zł, якщо публічним обвинувачем є названий у нормі орган.",
           sourceLocator: "Art. 91 pkt 1–2; art. 96 § 1af KPW",
         },
       ],
       summary:
-        "Поправка визначає спеціальну межу для mandat у справах, де publiczny oskarżyciel — właściwy organ PIP або Straż Graniczna, а для art. 465 ust. 1a ustawy o cudzoziemcach — Straż Graniczna.",
+        "Поправка визначає спеціальну верхню межу штрафу в провадженні за постановою. У справах за art. 84 публічним обвинувачем має бути компетентний орган PIP або Straż Graniczna, а у справах за art. 465 ust. 1a закону про іноземців — компетентний орган Straż Graniczna.",
       rules: [
         {
           locator: "pkt 1",
           explanation:
-            "У art. 96 § 1a KPW скасовується pkt 3 у названій частині.",
+            "В art. 96 § 1a KPW змінено кінець pkt 2 і скасовано pkt 3.",
         },
         {
           locator: "pkt 2; § 1af pkt 1–2",
           explanation:
-            "У mandatowym postępowaniu за діяння art. 84 або art. 465 ust. 1a, за визначеного oskarżyciel, grzywna може бути до 10000 zł.",
+            "У провадженні про накладення штрафу постановою за діяння з art. 84 або art. 465 ust. 1a, коли публічним обвинувачем є визначений орган, штраф може становити до 10 000 zł.",
         },
       ],
       legalEffect:
-        "Верхня межа стосується накладення mandat у визначеній процедурі, а не автоматичного розміру кожного штрафу чи доведеності порушення.",
+        "Верхня межа стосується штрафу, накладеного постановою у визначеній процедурі. Вона не визначає автоматично розміру кожного штрафу і не доводить самого порушення.",
       foreignersCase:
-        "У разі mandat перевірте статтю, орган-публічний обвинувач і вид процедури. Не змішуйте максимум 10000 zł для mandat із мінімумами art. 84.",
+        "У разі отримання штрафної постанови перевірте статтю, орган-публічного обвинувача і вид процедури. Не змішуйте верхню межу 10 000 zł для такої постанови з мінімальними штрафами, встановленими art. 84.",
     },
   ]),
 })

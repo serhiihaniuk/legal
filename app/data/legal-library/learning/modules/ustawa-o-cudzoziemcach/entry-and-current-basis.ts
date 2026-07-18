@@ -11,65 +11,60 @@ const moduleContent: LegalLearningModule = {
   id: "entry-and-current-basis",
   order: 1,
   title: "В’їзд не дорівнює поточній підставі перебування",
-  polish: "wjazd, tytuł pobytowy, podstawa pobytu, cel pobytu",
-  provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("6", "16", { start: "art. 6" })} та ${foreignersLaw.articleRange("98", "109", { start: "art. 98" })}`,
+  polish: "wjazd, wiza, ruch bezwizowy, tytuł pobytowy, legalny pobyt",
+  provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("23", "36", { start: "art. 23" })}, ${foreignersLaw.articleRange("59", "97", { start: "art. 59" })}, ${foreignersLaw.articleRange("105", "108", { start: "art. 105" })} та ${foreignersLaw.article("299", "art. 299")}`,
   outcome:
-    "Уміти розкласти справу на спосіб wjazd, чинний документ, правову підставу і фактичний cel pobytu.",
+    "Уміти відновити правову хронологію від wjazd до дня аналізу й не підміняти поточний tytuł pobytowy документом, який колись дозволив перетнути кордон.",
   caseQuestion:
-    "На якій підставі osoba wjechała, на якій перебуває тепер і чи відповідає фактичний cel pobytu заявленому?",
+    "Яка норма дозволила wjazd, яка підстава легалізує pobyt сьогодні, до якої дати вона діє і що підтверджує кожну ланку?",
   placeInWork:
-    "Перший етап консультації: побудуй часову лінію до вибору виду zezwolenie.",
+    "Початок кожної консультації: до вибору заяви, оцінки права на роботу або ризику powrót.",
   sections: [
     {
-      id: "separate-events",
-      title: "Розділи події в часі",
+      id: "entry-stay-chain",
+      title: "Побудуй ланцюг від кордону до сьогодні",
       paragraphs: [
-        "Статутна рамка: закон окремо регулює wjazd і окремо zezwolenie na pobyt. Документ для wjazd не стає автоматично підставою для довгого pobytu.",
-        "Практична перевірка: запиши дату і спосіб wjazd, візу або інший документ, попередній статус, подану заяву та фактичні обставини після wjazd.",
+        foreignersLaw.text`Закон прямо розділяє wjazd і подальший pobyt. Умови в’їзду та контроль на кордоні містяться, зокрема, у ${foreignersLaw.articleRange("23", "36", { start: "art. 23" })}. Віза регулюється окремим блоком ${foreignersLaw.articleRange("59", "97", { start: "art. 59" })}; її вид, строк, кількість в’їздів і cel wydania треба читати разом. Ruch bezwizowy випливає також із безпосередньо застосовного права UE або міжнародної угоди, тому він не є «візою без наклейки».`,
+        foreignersLaw.text`Поточна підстава може змінитися після wjazd: особа отримує zezwolenie, користується спеціальним статусом або своєчасно подає wniosek. За ${foreignersLaw.article("108", "art. 108")} pobyt у Польщі вважається legalny від дня подання wniosku про pobyt czasowy за умови дотримання строку та відсутності braków formalnych або їх своєчасного усунення. Це законний pobyt у межах цієї норми, а не нова wiza і не гарантія повторного wjazd після виїзду. Останнє речення є практичним висновком із різних функцій цих інструментів.`,
       ],
       questions: [
-        "Який документ був пред’явлений на granica?",
-        "Який документ або статус діє на дату аналізу?",
-      ],
-      steps: [
-        "Скласти chronologia.",
-        "Назвати кожну підставу окремо.",
-        "Порівняти заявлений і фактичний cel pobytu.",
-      ],
-      evidence: [
-        "Копія паспорта зі штампами.",
-        "Віза, karta pobytu або інший документ.",
-        "Підтвердження фактичного pobytu і celu.",
+        "Який документ і яка норма діяли в кожен день між wjazd та сьогодні?",
+        "Чи не закінчився строк wizy або ruch bezwizowy до виникнення наступної підстави?",
       ],
       warning:
-        "Сам wjazd або подання заяви не доводить автоматичного права на будь-який інший вид pobytu чи pracę.",
+        "Штамп, zaświadczenie про подання wniosku або сама справа в urzędzie не є універсальним документом для подорожі чи роботи.",
     },
     {
-      id: "status-matrix",
-      title: "Зроби матрицю статусу",
+      id: "facts-provision-proof",
+      title: "Зв’яжи факт, норму й доказ",
       paragraphs: [
-        "Статутна рамка: наслідки залежать від конкретної правової підстави та її умов, а не лише від назви документа.",
-        "Практична перевірка: у чотирьох колонках зафіксуй факт, норму, доказ і невідоме питання. Не підміняй припущення встановленим статусом.",
-      ],
-      questions: [
-        "Що підтверджено документом, а що лише повідомлено особою?",
-        "Чи змінився cel pobytu після wjazd?",
+        foreignersLaw.text`Спочатку встанови Fakt: дати wjazd і wyjazd, держави перебування, номер і строк документа, дату подання заяви та дату усунення braków formalnych. Потім назви Pojęcie prawne: wiza Schengen, wiza krajowa, ruch bezwizowy, zezwolenie або pobyt uznawany za legalny. Лише після цього підбирай Przepis і перевіряй його warunki. Обов’язок виїзду та окремі періоди legalnego pobytu після рішення або завершення ochrony czasowej перевіряй за ${foreignersLaw.article("299", "art. 299")}.`,
+        "Dowód має підтверджувати конкретну дату і конкретну підставу: сторінка паспорта, запис про перетин кордону, віза, decyzja, karta pobytu, підтвердження подання та усунення braków formalnych. Якщо документи суперечать один одному, не обирай зручніший: познач прогалину й отримай офіційне підтвердження.",
       ],
       steps: [
-        "Відокремити факт від висновку.",
-        "Знайти норму для кожного періоду.",
-        "Позначити ризики та потрібні докази.",
+        "Записати всі wjazdy, wyjazdy та періоди перебування без пропусків.",
+        "Для кожного періоду назвати tytuł pobytowy й останній день його дії.",
+        "До кожної підстави прикріпити доказ і окремо визначити наслідок її завершення.",
       ],
       evidence: [
-        "Хронологія документів.",
-        "Договори, навчання, сімейні та інші факти, що пояснюють cel pobytu.",
+        "Повні копії використаних паспортів, віз і kart pobytu.",
+        "Decyzje, zaświadczenia та підтвердження подання або усунення braków formalnych.",
+        "Офіційні дані про wjazd/wyjazd, якщо штампи або розповідь неповні.",
+      ],
+    },
+    {
+      id: "worked-example",
+      title: "Анонімізований приклад: подання в останній день",
+      paragraphs: [
+        foreignersLaw.text`Громадянка A в’їхала в ruch bezwizowy, а в останній допустимий день подала wniosek про pobyt czasowy. Fakt подання доведено urzędowe poświadczenie, але в заяві бракувало підпису; wezwanie було вручено через тиждень, і підпис подано в межах указаного строку. За ${foreignersLaw.article("108", "art. 108")} ключове питання не «чи є штамп», а чи заяву подано вчасно й чи brak formalny усунуто в строк. За підтвердження цих умов pobyt може вважатися legalny від дня подання до моменту, визначеного нормою.`,
+        "Наступний висновок треба сформулювати окремо: це не доводить права виїхати та повернутися на підставі тієї самої заяви і не відповідає на питання про pracę. Для них потрібні інші норми й докази. Якщо organ stwierdzi, що brak не усунуто вчасно, наслідок та środek zaskarżenia оцінюють за отриманим процесуальним актом і KPA.",
       ],
       warning:
-        "Для висновку потрібні повні факти, дата події та редакція закону, застосовна саме до цього періоду.",
+        "Приклад показує спосіб аналізу, а не прогноз рішення; результат залежить від повного akt sprawy та застосовної редакції права.",
     },
   ],
   exercise:
-    "Для анонімного кейсу склади chronologia з п’яти дат і підпиши для кожної події dokument, podstawa pobytu, cel pobytu та доказ.",
+    "Побудуй для анонімної справи часову шкалу з колонками Fakt → Pojęcie prawne → Przepis i warunki → Dowód → Czynność i termin → Skutek → Środek zaskarżenia. Познач кожен день без установленої підстави окремим ризиком.",
 }
 
 export const entryAndCurrentBasisLearningModuleTopic: KnowledgeUnit<LegalLearningModule> =
@@ -100,12 +95,35 @@ export const entryAndCurrentBasisLearningModuleTopic: KnowledgeUnit<LegalLearnin
         ],
       },
     ],
-    relationships: [],
+    relationships: [
+      {
+        kind: "next",
+        target: {
+          family: "learning-module",
+          reference: {
+            kind: "learning-module",
+            documentId: "ustawa-o-cudzoziemcach",
+            moduleId: "temporary-residence-purposes",
+          },
+        },
+      },
+      {
+        kind: "related",
+        target: {
+          family: "learning-module",
+          reference: {
+            kind: "learning-module",
+            documentId: "ustawa-o-cudzoziemcach",
+            moduleId: "stay-and-work-right",
+          },
+        },
+      },
+    ],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: moduleContent,
   })

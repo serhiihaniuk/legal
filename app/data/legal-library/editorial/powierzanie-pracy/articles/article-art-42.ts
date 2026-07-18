@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-42",
@@ -15,32 +15,32 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("42", "Art. 42")} визначає зміст zezwolenie при delegowanie: дані podmiot zagraniczny і cudzoziemiec, stanowisko або rodzaj pracy, wymiar часу або кількість годин на тиждень чи місяць, найнижче wynagrodzenie та okres ważności. Для моделей ${workLaw.article("40", "art. 40")} ust. 1 pkt 1–2 зазначають podmiot, до якого delegowany cudzoziemiec, або odbiorca usługi.`,
+          text: workLaw.text`${workLaw.article("42", "Art. 42")} визначає зміст дозволу на роботу у зв’язку з направленням. У ньому зазначають дані закордонного суб’єкта (podmiot zagraniczny) та іноземця, посаду або вид роботи, робочий час чи кількість годин, найнижчу оплату й строк чинності. У випадках із ${workLaw.article("40", "art. 40")} ust. 1 pkt 1–2 документ також називає суб’єкта, до якого направлено працівника, або одержувача послуги (odbiorca usługi).`,
           sourceLocator: "Art. 42 ust. 1 pkt 1–6 і ust. 2",
         },
       ],
       summary:
-        "Дозвіл при delegowanie фіксує трудову модель, години, мінімальну оплату та одержувача або приймаючий podmiot, коли це потрібно. Фактична робота має відповідати цим межам.",
+        "Дозвіл фіксує конкретні межі направлення: хто направляє працівника, яку роботу він виконує, скільки працює, яку мінімальну оплату отримує та як довго діє документ. Фактичні умови треба зіставляти з кожним із цих елементів.",
       rules: [
         {
           locator: "ust. 1 pkt 1–2",
           explanation:
-            "Зіставте дані podmiot zagraniczny і cudzoziemiec з wniosek та документами.",
+            "Зіставте дані закордонного суб’єкта та іноземця із заявою (wniosek) і підтвердними документами.",
         },
         {
           locator: "ust. 1 pkt 3–6",
           explanation:
-            "Перевірте stanowisko, rodzaj pracy, wymiar або години, мінімальне wynagrodzenie та строк чинності дозволу.",
+            "Перевірте посаду або вид роботи, робочий час чи кількість годин, найнижчу оплату та строк чинності дозволу.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "У випадках delegowanie до пов'язаного podmiot або для exportowa usługa документ також називає приймаючий podmiot або odbiorca usługi.",
+            "При направленні до підрозділу чи пов’язаного суб’єкта або для виконання експортної послуги документ також називає приймаючого суб’єкта чи одержувача послуги.",
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("42", "Art. 42")} окреслює uprawnienie do pracy при delegowanie, але не підтверджує legalny pobyt. Інший одержувач, stanowisko чи строк можуть вимагати окремої правової оцінки.`,
+      legalEffect: workLaw.text`${workLaw.article("42", "Art. 42")} окреслює право на роботу в межах направлення, але не підтверджує законного перебування (legalny pobyt). Зміна одержувача, посади, часу роботи чи строку може вимагати окремої правової оцінки.`,
       foreignersCase:
-        "Порівняйте zezwolenie з договором іноземного роботодавця, фактичними годинами, оплатою та місцем роботи. Перевірте документ pobyt незалежно від польського одержувача послуги.",
+        "Порівняйте дозвіл (zezwolenie) з договором закордонного роботодавця, фактичними годинами, оплатою та місцем роботи. Незалежно від польського одержувача послуги перевірте документ, що є підставою перебування.",
     },
   ],
 })

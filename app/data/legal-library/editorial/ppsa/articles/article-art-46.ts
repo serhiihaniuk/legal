@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-46",
@@ -18,7 +18,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Кожне pismo strony має містити визначені реквізити: суд, сторони та їхніх представників, вид письма, зміст wniosek або oświadczenie, підпис і перелік додатків. Для першого та електронного письма стаття додає окремі дані; на legalStateDate електронні реквізити треба читати в чинній редакції, а не в майбутньому варіанті з adresem do doręczeń elektronicznych.",
+        "Кожне pismo strony має містити визначені реквізити: суд, сторони та їхніх представників, вид письма, зміст wniosek або oświadczenie, підпис і перелік додатків. Для першого та електронного письма стаття додає окремі дані; станом на 18.07.2026 електронні реквізити треба читати в чинній редакції, а не в майбутньому варіанті з adresem do doręczeń elektronicznych.",
       rules: [
         {
           locator: "Art. 46 § 1 pkt 1–5",
@@ -33,7 +33,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "Art. 46 § 2a–2d",
           explanation:
-            "На legalStateDate pismo у formie dokumentu elektronicznego має містити adres elektroniczny і бути підписане kwalifikowanym podpisem elektronicznym, podpisem zaufanym або podpisem osobistym; ці правила поширюються на електронні załączniki. Для неелектронного pismo з вимогою електронного doręczenia діє правило про адрес elektroniczny. Варіант із adresem do doręczeń elektronicznych є майбутньою редакцією до 1.10.2029.",
+            "Станом на 18.07.2026 pismo у formie dokumentu elektronicznego має містити adres elektroniczny і бути підписане kwalifikowanym podpisem elektronicznym, podpisem zaufanym або podpisem osobistym; ці правила поширюються на електронні załączniki. Для неелектронного pismo з вимогою електронного doręczenia діє правило про adres elektroniczny. Варіант із adresem do doręczeń elektronicznych є майбутньою редакцією до 1.10.2029.",
         },
         {
           locator: "Art. 46 § 3–4",

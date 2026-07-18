@@ -1,39 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-285i",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285i встановлює, що NSA розглядає skargę o stwierdzenie niezgodności z prawem prawomocnego orzeczenia у складі трьох sędziów; sędzia, який брав участь у видачі оскарженого orzeczenie, виключений від розгляду цієї skarga.",
+          text: "NSA розглядає скаргу про незаконність складом трьох суддів. Суддя, який брав участь у виданні оскарженого рішення, виключений із цього розгляду.",
           sourceLocator: "Art. 285i § 1–2",
         },
       ],
       summary:
-        "Стаття визначає склад NSA для цього засобу та виключає з нього sędziego, який уже брав участь у оскарженому orzeczenie.",
+        "Стаття визначає склад і запобігає перевірці суддею власного рішення.",
       rules: [
         {
-          locator: "§ 1",
-          explanation: "Типовий склад для розгляду skarga — три sędziowie NSA.",
-        },
-        {
-          locator: "§ 2",
+          locator: "Art. 285i § 1–2",
           explanation:
-            "Зіставте склад суду з особами, які брали участь у видачі orzeczenie, що оскаржується.",
+            "Зіставте прізвища в оскарженому рішенні зі складом NSA у новому провадженні.",
         },
       ],
       legalEffect:
-        "Норма регулює склад і неупередженість суду, але сама не визначає результат skarga.",
+        "Незалежність контролю забезпечує новий трьохсуддівський склад без автора оскарженого рішення.",
       foreignersCase:
-        "Якщо іноземець оскаржує prawomocne orzeczenie у справі про pobyt, перевірте склад NSA та участь sędziów у попередньому orzeczenie лише як конкретне процесуальне питання.",
+        "У справі іноземця перевірте склад після отримання повідомлення суду й своєчасно заявіть конкретну проблему, якщо бачите збіг.",
     },
-  ]),
+  ],
 })

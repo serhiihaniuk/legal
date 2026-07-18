@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-236",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("236", "Art. 236")} уповноважує Rada Ministrów визначити розporządzenie розмір opłat kancelaryjnych; воно має врахувати оплату за кожну сторінку, межу 200 zł для відпису orzeczenia z uzasadnieniem на прохання, фактичну вартість wydruki документів електронних та підвищення за документ іноземною мовою або з таблицею.`,
+          text: "Рада Міністрів визначає канцелярські ставки в розпорядженні. Закон вимагає плату за кожну сторінку, обмежує збір за запитану копію рішення з обґрунтуванням сумою 200 zł і збір за друк електронних документів фактичною вартістю, а також передбачає підвищення за іноземну мову чи таблиці.",
           sourceLocator: "Art. 236",
         },
       ],
       summary:
-        "Розмір opłat kancelaryjnych визначає розporządzenie з урахуванням сторінок, виду документа, фактичної вартості та особливих форматів.",
+        "Стаття задає рамки, за якими уряд установлює конкретний канцелярський збір (opłata kancelaryjna).",
       rules: [
         {
           locator: "Art. 236",
           explanation:
-            "Для конкретної суми перевірте чинне розporządzenie та кількість сторінок або вид послуги, а не лише загальне уповноваження статті.",
-        },
-        {
-          locator: "Art. 236",
-          explanation:
-            "Окремо врахуйте межу 200 zł для odpis orzeczenia z uzasadnieniem на прохання і правило фактичної вартості для електронних wydruki.",
+            "Фактичний платіж обчислюйте за чинним розпорядженням, кількістю сторінок і видом документа. Законні межі не замінюють тарифу.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("236", "Art. 236")} задає межі та критерії для підзаконного тарифу, але не замінює перевірки чинної ставки на дату запиту.`,
+      legalEffect:
+        "Суд не може вимагати за названі документи більше встановлених законом меж, але конкретна ставка може бути нижчою.",
       foreignersCase:
-        "Якщо документ для справи про pobyt іноземною мовою або містить таблицю, перевірте можливе підвищення opłata за чинним розporządzenie.",
+        "У справі про перебування порахуйте сторінки запитуваного документа й перевірте, чи іноземна мова або таблиця впливає на ставку.",
     },
   ],
 })

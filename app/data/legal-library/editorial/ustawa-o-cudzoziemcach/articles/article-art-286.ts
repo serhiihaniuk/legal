@@ -1,9 +1,9 @@
 import { defineEditorialPart } from "../../define-editorial-part"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-286",
@@ -31,7 +31,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 2–3",
           explanation:
-            "Звертається директор школи, а підтвердження надає wojewoda за місцем її сiedziby на встановленому formularzu.",
+            "Звертається директор школи, а підтвердження надає wojewoda за місцем її siedziby на встановленому formularzu.",
         },
       ],
       legalEffect:

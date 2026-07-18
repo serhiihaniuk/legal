@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-48",
@@ -23,7 +23,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "§ 1",
           explanation:
-            "Strona, яка посилається на документ, на żądanie sądu подає оригінал ще перед rozprawa.",
+            "Strona, яка посилається на документ, на żądanie sądu подає оригінал ще перед rozprawą.",
         },
         {
           locator: "§ 2",

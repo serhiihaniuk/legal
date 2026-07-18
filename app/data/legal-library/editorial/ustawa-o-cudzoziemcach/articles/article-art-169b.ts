@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-169b",
@@ -28,16 +28,16 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 2",
-          explanation: foreignersLaw.text`Wojewoda передає Szef Urzędu копію рішення про cofnięcie дозволу з ${foreignersLaw.article("159", "art. 159")} ust. 1 pkt 1 lit. f, якщо його власник користується short-term або long-term mobility члена сім'ї в іншій державі UE.`,
+          explanation: foreignersLaw.text`Wojewoda передає Szef Urzędu копію рішення про cofnięcie дозволу з ${foreignersLaw.article("159", "art. 159")} ust. 1 pkt 1 lit. f, якщо його власник користується mobilność krótkoterminowa або mobilność długoterminowa члена сім'ї в іншій державі UE.`,
         },
         {
           locator: "ust. 3",
           explanation:
-            "Szef Urzędu неzwłocznie передає органам держав UE, де cudzoziemiec користується мобільністю, інформацію про cofnięcie цього дозволу.",
+            "Szef Urzędu невідкладно передає органам держав UE, де cudzoziemiec користується мобільністю, інформацію про cofnięcie цього дозволу.",
         },
       ],
       legalEffect:
-        "Обмін даними не є новим udzielenie чи cofnięcie permit; він повідомляє компетентні органи про вже надану або відкликану правову підставу.",
+        "Обмін даними не є новим udzielenie чи cofnięcie zezwolenie; він повідомляє компетентні органи про вже надану або відкликану правову підставу.",
       foreignersCase:
         "У разі різних повідомлень звірте копію decyzja wojewoda, дані Szef Urzędu та державу фактичної мобільності; не вважайте передачу інформації самостійною підставою для відмови.",
     },

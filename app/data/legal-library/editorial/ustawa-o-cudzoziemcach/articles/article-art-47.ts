@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-47",
@@ -39,7 +39,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       ],
       legalEffect: foreignersLaw.text`Затримання вилучає документ з обігу під час контролю, але ${foreignersLaw.article("47", "Art. 47")} не є самостійною підставою cofnięcie чи unieważnienie дозволу: він передбачає дію після того, як такий статус уже встановлено.`,
       foreignersCase:
-        "Зіставте запис про cofnięcie або unieważnienie з моментом прикордонного контролю, попросіть заświadczenie o zatrzymaniu zezwolenia і перевірте, який organ та яке рішення є первинними.",
+        "Зіставте запис про cofnięcie або unieważnienie з моментом прикордонного контролю, попросіть zaświadczenie o zatrzymaniu zezwolenia і перевірте, який organ та яке рішення є первинними.",
     },
   ],
 })

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-231",
@@ -15,23 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("231", "Art. 231")} встановлює, що wpis stosunkowy сплачується у справах, де предметом оскарження є należności pieniężne, а в інших справах стягується wpis stały.`,
+          text: "Пропорційний збір за подання (wpis stosunkowy) стягують у справах, де предметом оскарження є грошові вимоги; в інших справах застосовують фіксований збір (wpis stały).",
           sourceLocator: "Art. 231",
         },
       ],
-      summary:
-        "Вид wpis залежить від предмета оскарження: грошові należności ведуть до wpis stosunkowy, інші справи — до wpis stały.",
+      summary: "Стаття обирає модель збору за характером предмета спору.",
       rules: [
         {
           locator: "Art. 231",
           explanation:
-            "Визначте, чи предметом оскарження є саме należność pieniężna, а не лише те, що справа має фінансові наслідки.",
+            "Встановіть, чи суд перевіряє саме грошову вимогу (należność pieniężna). Наявність фінансових наслідків у немайновій справі не перетворює її на грошовий спір.",
         },
       ],
       legalEffect:
-        "Стаття дає критерій виду wpis, але не встановлює саму суму; для розрахунку потрібні інші приписи та факти справи.",
+        "Грошовий предмет веде до пропорційного збору (wpis stosunkowy), а інший — до фіксованого збору (wpis stały) у розмірі з розпорядження.",
       foreignersCase:
-        "У спорі іноземця про pobyt не називайте wpis stosunkowy лише через можливий економічний інтерес: перевірте фактичний предмет оскарження.",
+        "Скарга на відмову в дозволі на перебування зазвичай не стає грошовою лише через втрачений заробіток; перевіряйте предмет адміністративного акта.",
     },
   ],
 })

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-144",
@@ -35,7 +35,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1 pkt 1–2",
           explanation:
-            "Потрібні zaświadczenie jednostka про прийняття або продовження studia, доказ оплати за платне навчання, health insurance або покриття лікування та кошти на утримання, повернення/транзит і studia.",
+            "Потрібні zaświadczenie jednostka про прийняття або продовження studia, доказ оплати за платне навчання, ubezpieczenie zdrowotne або покриття лікування та кошти на утримання, повернення/транзит і studia.",
         },
         {
           locator: "ust. 1a–1c",
@@ -54,7 +54,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 5 pkt 2, ust. 10–12",
           explanation:
-            "Ці положення мають позначку «(uchylony)» у локальному corpus; їх не слід використовувати як чинні умови.",
+            "Ці положення мають позначку «(uchylony)» у локальному тексті джерела; їх не слід використовувати як чинні умови.",
         },
       ],
       legalEffect:

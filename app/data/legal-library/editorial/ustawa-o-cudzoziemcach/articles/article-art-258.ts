@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-258",
@@ -36,7 +36,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect: foreignersLaw.text`Обов’язок zwrotu виникає з конкретної події ${foreignersLaw.article("258", "Art. 258")}, а не просто зі спливу строку дії документа; невиконання може впливати на його unieważnienie за ${foreignersLaw.article("259", "Art. 259")}.`,
-      foreignersCase: foreignersLaw.text`Після отримання паспорта або остаточного рішення зафіксуйте дату й поверніть документ органу-видавцю. За потреби попросіть заświadczenie за правилами ${foreignersLaw.article("249", "Art. 249")} ust. 4.`,
+      foreignersCase: foreignersLaw.text`Після отримання паспорта або остаточного рішення зафіксуйте дату й поверніть документ органу-видавцю. За потреби попросіть zaświadczenie за правилами ${foreignersLaw.article("249", "Art. 249")} ust. 4.`,
     },
   ],
 })

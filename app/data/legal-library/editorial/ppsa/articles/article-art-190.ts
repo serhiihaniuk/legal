@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-190",
@@ -11,23 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd, któremu przekazano sprawę, jest związany wykładnią prawa dokonaną w tej sprawie przez NSA. Nie można oprzeć kolejnej skargi kasacyjnej od orzeczenia po ponownym rozpoznaniu na podstawach sprzecznych z tą wykładnią.",
+          text: "Після передання справи на повторний розгляд суд зв’язаний тлумаченням права, яке NSA дав у цій справі. Нову касаційну скаргу не можна будувати на підставах, що суперечать цьому тлумаченню.",
           sourceLocator: "Art. 190",
         },
       ],
-      summary:
-        "Po przekazaniu sprawy wykładnia prawa NSA wiąże sąd ponownie rozpoznający i ogranicza sprzeczne podstawy kolejnej kasacji.",
+      summary: "Стаття стабілізує правову рамку після касаційного повернення.",
       rules: [
         {
           locator: "Art. 190",
           explanation:
-            "Związanie dotyczy sprawy przekazanej i wykładni ustalonej w tej sprawie; nie zastępuje sądu w ocenie faktów w granicach ponownego rozpoznania.",
+            "Випишіть правове тлумачення NSA окремо від оцінки фактів. Новий розгляд може вимагати додаткових доказів, але не може заперечити вже обов’язково витлумачену норму.",
         },
       ],
       legalEffect:
-        "Przepis wyznacza prawne ramy ponownego rozpoznania, ale nie rozstrzyga samodzielnie wszystkich dowodów ani końcowego wyniku sprawy.",
+        "Порушення обов’язкової правової рамки є іншою проблемою, ніж незгода сторони з оцінкою нових доказів.",
       foreignersCase:
-        "Po uchyleniu wyroku w sprawie pobytowej porównaj nowe orzeczenie WSA z wykładnią NSA. Kolejną kasację buduj bez tezy sprzecznej z tą wykładnią.",
+        "У повторній справі про перебування будуйте аргументацію навколо тлумачення NSA й показуйте, як нові факти підпадають під цю рамку.",
     },
   ],
 })

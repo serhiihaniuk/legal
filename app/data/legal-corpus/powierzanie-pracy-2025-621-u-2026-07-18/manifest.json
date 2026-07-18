@@ -1,0 +1,106 @@
+{
+  "id": "powierzanie-pracy-2025-621-u-2026-07-18",
+  "schemaVersion": 2,
+  "documentId": "powierzanie-pracy",
+  "editionId": "powierzanie-pracy-2025-621-u-2026-07-18",
+  "shortName": "Powierzanie pracy",
+  "title": "Ustawa o warunkach dopuszczalności powierzania pracy cudzoziemcom na terytorium Rzeczypospolitej Polskiej",
+  "citation": "Dz.U. 2025 poz. 621",
+  "publisher": "DU",
+  "year": 2025,
+  "position": 621,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
+    "expectedPdfSha256": "62cb831058c5d3e3efe99669b1115b53007b34af8ad6f79fbaad5b7410d12002"
+  },
+  "sourceMaterials": [
+    {
+      "id": "base",
+      "role": "base",
+      "citation": "Dz.U. 2025 poz. 621",
+      "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
+      "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+      "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
+      "localPdfUrl": "/legal-sources/powierzanie-pracy-2025-621-u-2026-07-18/source.pdf",
+      "pdfSha256": "62cb831058c5d3e3efe99669b1115b53007b34af8ad6f79fbaad5b7410d12002",
+      "expectedPdfSha256": "62cb831058c5d3e3efe99669b1115b53007b34af8ad6f79fbaad5b7410d12002"
+    }
+  ],
+  "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl",
+  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
+  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
+  "checkedAt": "2026-07-18",
+  "legalStateDate": "2026-07-18",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 115,
+    "expectedTextCoverage": 1,
+    "expectedPageCount": 100,
+    "ignoredArticleOccurrences": [
+      {
+        "locator": "Art. 50",
+        "pdfPage": 47,
+        "matchIndex": 1794,
+        "reason": "Lower-case intra-article reference in Art. 58 is not a provision boundary."
+      }
+    ],
+    "observedProvisionCount": 115,
+    "observedPageCount": 100,
+    "observedTextCoverage": 1,
+    "textLayerPageCount": 100
+  },
+  "extractionProfile": "polish-statute-art-v1",
+  "localPdfUrl": "/legal-sources/powierzanie-pracy-2025-621-u-2026-07-18/source.pdf",
+  "pageCount": 100,
+  "textLayerPageCount": 100,
+  "textCoverage": 1,
+  "detectedArticleCount": 115,
+  "detectedProvisionCount": 115,
+  "provisionCount": 115,
+  "promotedProvisionCount": 115,
+  "pdfSha256": "62cb831058c5d3e3efe99669b1115b53007b34af8ad6f79fbaad5b7410d12002",
+  "sourcePdfSha256": "62cb831058c5d3e3efe99669b1115b53007b34af8ad6f79fbaad5b7410d12002",
+  "builtAt": "2026-07-18T09:17:17Z",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStateDate": "2026-07-18",
+    "consolidatedTextIdentifier": "DU/2025/621",
+    "checkedAt": "2026-07-18",
+    "sourceUrls": [
+      "https://eli.gov.pl/eli/DU/2025/621/ogl",
+      "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf"
+    ],
+    "amendmentsCheckedThrough": "2026-07-18",
+    "entryIntoForce": [
+      {
+        "locator": "ELI metadata DU/2025/621",
+        "result": "The act is marked obowiązujący and IN_FORCE in the official ELI metadata."
+      }
+    ],
+    "transitionalRules": [
+      {
+        "locator": "ELI current unified text DU/2025/621 text/U",
+        "result": "The corpus edition uses the official current unified PDF available from ELI on 2026-07-18; no separate transition rule is inferred in this source-edition step."
+      }
+    ],
+    "unresolved": [],
+    "legalStatusDate": null,
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2025/621/ogl"
+  },
+  "diagnostics": {
+    "fatalCount": 0,
+    "warningCount": 0
+  },
+  "eli": {
+    "identifier": "DU/2025/621",
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": null,
+    "textHTML": false,
+    "textPDF": true
+  }
+}

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-160",
@@ -29,12 +29,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "pkt 2",
           explanation:
-            "Małoletnie dziecko іноземця має народитися під час чинності його national visa або pobyt czasowy; іноземець повинен виконати вимоги щодо ubezpieczenie, dochód і житло, перелічені у відповідній відсилці.",
+            "Małoletnie dziecko іноземця має народитися під час чинності його wiza krajowa або pobyt czasowy; іноземець повинен виконати вимоги щодо ubezpieczenie, dochód і житло, перелічені у відповідній відсилці.",
         },
         {
           locator: "pkt 3",
           explanation:
-            "Потрібне prowadzenie życia rodzinnego у розумінні ECHR з громадянином Польщі, UE, EFTA або Швейцарії, який мешкає в Польщі, спільне перебування та вимоги доходу й страхування з відповідної відсилки.",
+            "Потрібне prowadzenie życia rodzinnego у розумінні Europejska konwencja praw człowieka (EKPC) з громадянином Польщі, UE, EFTA або Швейцарії, який мешкає в Польщі, спільне перебування та вимоги доходу й страхування з відповідної відсилки.",
         },
         {
           locator: "pkt 4–6",
@@ -42,7 +42,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Формула «można udzielić» означає можливість після перевірки конкретного складу; статус родича та спільне проживання без інших умов не створюють автоматичного permit.",
+        "Формула «można udzielić» означає можливість після перевірки конкретного складу; статус родича та спільне проживання без інших умов не створюють автоматичного zezwolenie.",
       foreignersCase: foreignersLaw.text`Для ${foreignersLaw.article("160", "art. 160")} визначте точний pkt, статус і місце проживання osoby referencyjnej, залежність або реальне життя rodzinne, дати документів та умови Umowa Wystąpienia; не змішуйте pkt 4–6.`,
     },
   ],

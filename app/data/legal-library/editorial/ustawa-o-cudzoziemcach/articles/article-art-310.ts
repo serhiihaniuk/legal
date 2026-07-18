@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-310",
@@ -13,7 +13,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 310 визначає, що decyzja o zobowiązaniu cudzoziemca do powrotu видається z urzędu komendant oddziału або placówki Straży Granicznej, який встановив підставу; на wniosek wojewody, Ministra Obrony Narodowej, Szefa ABW, Szefa AW, органу Krajowej Administracji Skarbowej або комendanta Policji — компетентним komendant за siedziba органу-заявника або місцем pobytu cudzoziemca. Орган, який встановив підставу, може postanowienie передати подальше ведення справи компетентному komendant за місцем pobytu.",
+          text: "Art. 310 визначає, що decyzja o zobowiązaniu cudzoziemca do powrotu видається z urzędu komendant oddziału або placówki Straży Granicznej, який встановив підставу; на wniosek wojewody, Ministra Obrony Narodowej, Szefa ABW, Szefa AW, органу Krajowej Administracji Skarbowej або komendanta Policji — компетентним komendant за siedziba органу-заявника або місцем pobytu cudzoziemca. Орган, який встановив підставу, може postanowienie передати подальше ведення справи компетентному komendant за місцем pobytu.",
           sourceLocator: "Art. 310 ust. 1–2",
         },
       ],

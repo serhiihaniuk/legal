@@ -1,4 +1,4 @@
-import { createLegalTextAuthor, type LegalTextValue } from "../../../legal-text"
+﻿import { createLegalTextAuthor, type LegalTextValue } from "../../../legal-text"
 
 import {
   defineEditorialPart,
@@ -12,8 +12,8 @@ type Rule = { locator: string; explanation: LegalTextValue }
 type ProvisionId = EditorialEntry<"ppsa">["provisionId"]
 
 /**
- * This part was checked against the promoted local PPSA corpus
- * `ppsa-2026-143` (Dz.U. 2026 poz. 143), whose articles 85–129 are active.
+ * This part was checked against the prepared current PPSA corpus
+ * `ppsa-2026-143-with-2026-846` (Dz.U. 2026 poz. 143), whose articles 85–129 are active.
  * The claim is a compact Ukrainian rendering of the statutory rule; Polish
  * procedural terms are retained so that the learner can match the source.
  */
@@ -43,9 +43,9 @@ function reviewed(
 }
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     reviewed(
       "ppsa-art-106",
@@ -68,7 +68,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       ppsaLaw.text`${ppsaLaw.article("106", "Art. 106")} не перетворює судове провадження на повне повторення адміністративного доказування: додаткові dowody мають відповідати умовам ${ppsaLaw.article("106", "§ 3")}.`,
-      "У skarga на decyzja про pobyt підготуйте zarzuty, факти й документи до rozprawa. Не розраховуйте, що sąd автоматично збере всі докази замість сторони."
+      "У skarga на decyzja про pobyt підготуйте zarzuty, факти й документи до rozprawy. Не розраховуйте, що sąd автоматично збере всі докази замість сторони."
     ),
   ],
 })

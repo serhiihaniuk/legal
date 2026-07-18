@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-172",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "NSA unieważnia prawomocne orzeczenie суду адміністративного, винесене у справі, яка на момент рішення не підлягала юрисдикції суду через особу або предмет, і odrzuca skarga, якщо рішення не може бути усунуте іншим передбаченим законом способом; NSA діє за wniosek Prezesa NSA, із відповідним застосуванням правил про skarga kasacyjna.",
+          text: "NSA на заяву свого голови визнає недійсним остаточне рішення адміністративного суду, якщо справа через особу або предмет узагалі не належала до юрисдикції адміністративних судів на момент вирішення і рішення не можна усунути іншим передбаченим законом способом; тоді скаргу відхиляють.",
           sourceLocator: "Art. 172",
         },
       ],
       summary:
-        "Стаття передбачає вузький надзвичайний механізм для prawomocne orzeczenie поза юрисдикцією sąd administracyjny.",
+        "Це винятковий механізм усунення рішення, виданого поза межами судової юрисдикції.",
       rules: [
         {
-          locator: "Art. 172 zdanie pierwsze",
+          locator: "Art. 172",
           explanation:
-            "Потрібно встановити відсутність юрисдикції через особу або предмет саме на момент orzekanie та неможливість іншого способу wzruszenie.",
-        },
-        {
-          locator: "Art. 172 zdanie drugie",
-          explanation:
-            "Wniosek подає Prezes NSA; до розгляду відповідно застосовуються правила про skarga kasacyjna.",
+            "Потрібні одночасно відсутність юрисдикції на момент рішення, неможливість іншого законного перегляду та заява Голови NSA (Prezes NSA). Застосовують відповідні правила касаційного розгляду.",
         },
       ],
       legalEffect:
-        "Це спеціальний механізм контролю юрисдикції, а не звичайна апеляція сторони на несприятливий wyrok.",
-      foreignersCase: ppsaLaw.text`У справі про pobyt не розглядайте ${ppsaLaw.article("172", "art. 172")} як звичайний шлях для незгоди з оцінкою органу чи суду. Перевірка можлива лише в межах умов і wniosek, прямо названих статтею.`,
+        "Норма не створює звичайного засобу для сторони, незадоволеної остаточним рішенням.",
+      foreignersCase:
+        "У справі іноземця відрізняйте помилкове застосування права від повної відсутності юрисдикції. Лише друга категорія належить до цього вузького механізму.",
     },
   ],
 })

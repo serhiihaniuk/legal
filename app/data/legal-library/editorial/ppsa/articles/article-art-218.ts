@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-218",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Przewodniczący może sprawdzić wartość przedmiotu zaskarżenia oznaczoną w piśmie i zarządzić w tym celu dochodzenie.",
+          text: "Головуючий може перевірити вказану в документі вартість предмета оскарження й для цього розпорядитися провести перевірочні дії.",
           sourceLocator: "Art. 218",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("218", "Art. 218")} pozwala przewodniczącemu zweryfikować oznaczoną w piśmie wartość przedmiotu zaskarżenia.`,
+      summary:
+        "Стаття не дозволяє стороні остаточно визначити базу збору лише власною заявою.",
       rules: [
         {
           locator: "Art. 218",
           explanation:
-            "Podana przez stronę wartość nie wiąże sądu bez kontroli; przewodniczący może zarządzić dochodzenie dla jej sprawdzenia.",
+            "Підготуйте документи, що пояснюють суму: рішення органу, розрахунок основної вимоги та відокремлення відсотків і витрат.",
         },
       ],
       legalEffect:
-        "Przepis daje narzędzie weryfikacji wartości, ale sam nie ustala jej prawidłowej kwoty ani automatycznego skutku błędnego oznaczenia.",
+        "Після перевірки суд може виходити з іншої вартості, що вплине на належний збір за подання (wpis).",
       foreignersCase:
-        "Jeżeli w piśmie dotyczącym pobytu podano wartość przedmiotu zaskarżenia, zachowaj dokumenty uzasadniające wyliczenie i reaguj na zarządzenie przewodniczącego.",
+        "Якщо у справі іноземця вартість спірна, не ігноруйте розпорядження про перевірку (zarządzenie): надайте розрахунок і джерела кожної цифри.",
     },
   ],
 })

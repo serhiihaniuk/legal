@@ -29,7 +29,7 @@ export const evidenceMatrixTopic: KnowledgeUnit<EvidenceMatrixBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

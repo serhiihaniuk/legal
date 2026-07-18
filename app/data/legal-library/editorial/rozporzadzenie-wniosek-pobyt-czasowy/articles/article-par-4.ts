@@ -10,8 +10,8 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-4",
@@ -19,7 +19,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
       claims: [
         {
           kind: "statute-text",
-          text: regulationLaw.text`${regulationLaw.paragraph("4", "§ 4")} для wniosku, що подається способом з ${foreignersLaw.external("art. 106c", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ust. 1 ustawy, вимагає файл фотографії у форматі JPG, який відповідає ${regulationLaw.paragraph("3", "§ 3")}, має щонайменше 684 × 883 piksele, розмір не більше 2,5 MB і зберігає пропорції 35 × 45 mm.`,
+          text: regulationLaw.text`${regulationLaw.paragraph("4", "§ 4")} для wniosku, що подається способом з ${foreignersLaw.article("106c", "art. 106c")} ust. 1 ustawy, вимагає файл фотографії у форматі JPG, який відповідає ${regulationLaw.paragraph("3", "§ 3")}, має щонайменше 684 × 883 piksele, розмір не більше 2,5 MB і зберігає пропорції 35 × 45 mm.`,
           sourceLocator: "§ 4",
         },
       ],

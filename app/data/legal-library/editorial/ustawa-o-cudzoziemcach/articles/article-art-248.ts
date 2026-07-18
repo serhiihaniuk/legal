@@ -1,9 +1,13 @@
+import { createLegalTextAuthor } from "../../../legal-text"
+
 import { defineEditorialPart } from "../../define-editorial-part"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-248",
@@ -11,13 +15,13 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: "Kartę pobytu іноземець отримує особисто; якщо на день отримання йому ще не виповнилося 13 років, картку отримує przedstawiciel ustawowy або kurator.",
+          text: foreignersLaw.text`Kartę pobytu іноземець отримує особисто, крім випадку, коли орган odstąpił від wezwania do osobistego stawiennictwa за ${foreignersLaw.article("106h", "art. 106h")} ust. 1, ${foreignersLaw.article("203h", "art. 203h")} ust. 1 або ${foreignersLaw.article("219h", "art. 219h")} ust. 1. Картку дитини до 13 років на день odbioru або особи, повністю ubezwłasnowolniona, отримує відповідно rodzic, opiekun чи kurator після пред’явлення чинного документа особи.`,
           sourceLocator: "Art. 248 ust. 1–2",
         },
         {
           kind: "statute-text",
-          text: "Під час odbioru надається електронний czytnik, щоб перевірити відповідність персональних даних на картці фактичному стану.",
-          sourceLocator: "Art. 248 ust. 3",
+          text: "Якщо дитині виповнилося 6 років до визначеної законом дати заяви або особа є повністю ubezwłasnowolniona, її присутність під час odbioru обов’язкова. Під час odbioru орган надає електронний czytnik для перевірки даних; іноземець показує чинний dokument podróży, а у szczególnie uzasadniony przypadek без можливості його отримати — інший dokument potwierdzający tożsamość.",
+          sourceLocator: "Art. 248 ust. 2a–5",
         },
       ],
       summary:
@@ -26,18 +30,18 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1–2",
           explanation:
-            "Заздалегідь з’ясуйте, хто має право на особистий odbiór: сам іноземець або законний представник чи kurator для дитини до 13 років.",
+            "Заздалегідь з’ясуйте, чи діє виняток від особистого odbioru, і хто отримує документ за дитину до 13 років або повністю ubezwłasnowolniona особу. Представник має підтвердити власну особу чинним документом.",
         },
         {
-          locator: "ust. 3",
+          locator: "ust. 2a–5",
           explanation:
-            "Порівняйте дані в електронному записі картки з фактичними даними до того, як забрати документ.",
+            "Присутність дитини від 6 років і повністю ubezwłasnowolniona особи є обов’язковою. Порівняйте електронні дані картки та підготуйте dokument podróży; інший документ особи допускається лише у szczególnie uzasadniony przypadek.",
         },
       ],
       legalEffect:
-        "Правило про odbiór допомагає встановити належного отримувача й момент фактичної перевірки даних, але не змінює строку чинності картки.",
+        "Стаття визначає належного отримувача, обов’язкову присутність окремих осіб, перевірку даних і документи для підтвердження особи під час odbioru.",
       foreignersCase:
-        "На odbiór візьміть документ подорожі та перевірте написання ідентифікаційних даних, фото, adnotacje й дати. Виявлену помилку одразу повідомте органу.",
+        "До odbioru перевірте вік дитини на належну дату, необхідність її присутності та повноваження rodzic, opiekun або kurator. Візьміть dokument podróży і одразу звірте дані, фото, adnotacje та дати.",
     },
   ],
 })

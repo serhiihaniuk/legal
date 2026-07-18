@@ -5,6 +5,9 @@ import {
 import type { DocumentGuide } from "~/data/document-library/contracts"
 import { documentSources } from "../authoring"
 
+const CRBR_INFORMATION_URL =
+  "https://www.gov.pl/web/finanse/centralny-rejestr-beneficjentow-rzeczywistych"
+
 const guide: DocumentGuide = {
   id: "crbr-information",
   title: "Informacja z CRBR i схема powiązań",
@@ -34,8 +37,8 @@ const guide: DocumentGuide = {
     "Не замінює umowy між компаніями, протоколів, рахунків і доказів фактичної організації роботи.",
   ],
   legalBasis: [
-    "CRBR регулюється законодавством про przeciwdziałanie praniu pieniędzy; у справі cudzoziemca використовується як джерело фактичних даних.",
-    "Юридичне значення powiązań завжди оцінюють разом із матеріальною нормою конкретної справи.",
+    "CRBR є публічним реєстром даних про beneficjentów rzeczywistych, створеним на підставі ustawy o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu.",
+    "Практичний висновок: у справі cudzoziemca дані CRBR і KRS можуть бути джерелом фактів для схеми powiązań, але юридичне значення зв’язків оцінюють за матеріальною нормою конкретної справи.",
   ],
   keyChecks: [
     "NIP/KRS суб’єкта, дата перевірки та особи, показані в CRBR.",
@@ -43,8 +46,15 @@ const guide: DocumentGuide = {
     "Чи відділено власність від фактичного kierownictwa і відповідальності за процес.",
   ],
   relatedDocuments: ["business-register-information"],
-  sources: [documentSources.crbr, documentSources.krs],
-  verifiedAt: "2026-07-14",
+  sources: [
+    {
+      label: "Ministerstwo Finansów — CRBR",
+      url: CRBR_INFORMATION_URL,
+      note: "Офіційна інформація про призначення, правову підставу, публічність і зміст CRBR.",
+    },
+    documentSources.krs,
+  ],
+  verifiedAt: "2026-07-18",
 }
 
 export const crbrInformationTopic: KnowledgeUnit<DocumentGuide> =
@@ -57,23 +67,40 @@ export const crbrInformationTopic: KnowledgeUnit<DocumentGuide> =
     summary: guide.description,
     claims: [
       {
-        id: "document-purpose",
-        kind: "requires-verification",
-        text: guide.description,
+        id: "crbr-scope",
+        kind: "official-guidance",
+        text: "CRBR є публічним реєстром заявлених даних про beneficjentów rzeczywistych визначених суб’єктів.",
         basis: [
           {
+            reference: { kind: "external", url: CRBR_INFORMATION_URL },
+            locator:
+              "sekcje „Czym jest CRBR” i „Dane czyich beneficjentów rzeczywistych są gromadzone w CRBR”",
+          },
+        ],
+      },
+      {
+        id: "relationship-diagram-use",
+        kind: "practical-inference",
+        text: "Схема powiązań є аналітичним, а не реєстровим документом: кожен показаний зв’язок треба підтвердити актуальними даними CRBR, KRS або CEIDG, а фактичне kierownictwo та організацію праці — окремими доказами.",
+        basis: [
+          {
+            reference: { kind: "external", url: CRBR_INFORMATION_URL },
+            locator:
+              "sekcje „Organ właściwy w sprawach CRBR” i „Dane czyich beneficjentów rzeczywistych zawiera CRBR”",
+          },
+          {
             reference: {
-              kind: "official-source",
-              sourceId: "eli-ustawa-o-cudzoziemcach",
+              kind: "external",
+              url: documentSources.krs.url,
             },
-            locator: "document-specific requirements",
+            locator: "sekcja „Jakie informacje uzyskasz”",
           },
         ],
       },
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: guide.verifiedAt,

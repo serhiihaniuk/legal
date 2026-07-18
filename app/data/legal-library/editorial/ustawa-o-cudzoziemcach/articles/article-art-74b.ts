@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-74b",
@@ -27,11 +27,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           sourceLocator: "Art. 74b",
         },
       ],
-      summary: foreignersLaw.text`${foreignersLaw.article("74b", "Art. 74b")} врегульовує, хто може провести співбесіду у спеціальній справі MFA, коли Visa Code вимагає rozmowa з cudzoziemiec.`,
+      summary: foreignersLaw.text`${foreignersLaw.article("74b", "Art. 74b")} врегульовує, хто може провести співбесіду у спеціальній справі MFA, коли kodeks wizowy вимагає rozmowa з cudzoziemiec.`,
       rules: [
         {
           locator: "Art. 74b",
-          explanation: foreignersLaw.text`MFA може polecić відповідному konsul провести rozmowa у справі wydanie wiza або ponowne rozpatrzenie; підстава необхідності — ${foreignersLaw.external("Art. 21", VISA_CODE_URL)} ust. 8 Visa Code.`,
+          explanation: foreignersLaw.text`MFA може polecić відповідному konsul провести rozmowa у справі wydanie wiza або ponowne rozpatrzenie; підстава необхідності — ${foreignersLaw.external("Art. 21 kodeksu wizowego", VISA_CODE_URL)} ust. 8.`,
         },
       ],
       legalEffect:

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-195",
@@ -15,26 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "WSA przedstawia NSA akta wraz z zażaleniem po doręczeniu go pozostałym stronom; odpowiedź można wnieść bezpośrednio do NSA w siedem dni od doręczenia zażalenia. Przed przekazaniem akt WSA może na posiedzeniu niejawnym uchylić postanowienie przy nieważności lub oczywistym uzasadnieniu zażalenia, a gdy postępowanie zażaleniowe stało się bezprzedmiotowe — umorzyć je; na wskazane postanowienia przysługuje zażalenie.",
+          text: "Після вручення окремого оскарження (zażalenie) іншим сторонам WSA передає його з матеріалами до NSA; відповідь можна подати безпосередньо до NSA протягом семи днів. Якщо документ указує на недійсність або є очевидно обґрунтованим, WSA може сам скасувати ухвалу й повторно розглянути питання. Безпредметне провадження до передання матеріалів WSA припиняє.",
           sourceLocator: "Art. 195 § 1–3",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("195", "Art. 195")} reguluje doręczenie i przekazanie zażalenia, samokontrolę WSA oraz umorzenie bezprzedmiotowego postępowania zażaleniowego przed przekazaniem akt.`,
+      summary:
+        "Стаття описує рух окремого оскарження (zażalenie) та два способи завершити питання ще у WSA.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 195 § 1–3",
           explanation:
-            "Akta idą do NSA po doręczeniu zażalenia pozostałym stronom, a odpowiedź ma siedmiodniowy termin i może trafić wprost do NSA.",
-        },
-        {
-          locator: "§ 2–3",
-          explanation:
-            "Sprawdź, czy przed przedstawieniem akt zachodzi nieważność, oczywiste uzasadnienie albo bezprzedmiotowość postępowania zażaleniowego.",
+            "Зафіксуйте дату вручення окремого оскарження (zażalenie) для відповіді. Окремо перевірте, чи WSA застосував самоконтроль, чи передав матеріали; від нової ухвали доступні загальні засоби оскарження, а ухвала про припинення також оскаржується.",
         },
       ],
-      legalEffect: ppsaLaw.text`Zażalenie może zostać rozstrzygnięte jeszcze przez WSA, lecz tylko przy przesłankach z ${ppsaLaw.article("195", "§ 2–3")}; sama odpowiedź strony nie przesądza dalszego wyniku.`,
+      legalEffect:
+        "Суд першої інстанції може швидко виправити очевидну помилку, але за звичайного перебігу справу вирішує NSA.",
       foreignersCase:
-        "W sprawie pobytowej pilnuj doręczenia zażalenia wszystkim stronom i siedmiodniowego terminu odpowiedzi. Sprawdź także, czy WSA nie skorzystał z samokontroli przed przekazaniem akt.",
+        "Отримавши окреме оскарження органу (zażalenie) у справі іноземця, не надсилайте відповідь до помилкового суду: ця стаття прямо дозволяє подати її до NSA.",
     },
   ],
 })

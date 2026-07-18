@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-49",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("49", "Art. 49")} ust. 1 дозволяє подати zaproszenie як документ, що підтверджує кошти на планований pobyt, zakwaterowanie, wyżywienie та повернення або transit. Ust. 2 визначає допустимі категорії zapraszający, а ust. 3 відсилає для неperервності pobytu cudzoziemca до ${foreignersLaw.article("195", "Art. 195")} ust. 4.`,
+          text: foreignersLaw.text`${foreignersLaw.article("49", "Art. 49")} ust. 1 дозволяє подати zaproszenie як документ, що підтверджує кошти на планований pobyt, zakwaterowanie, wyżywienie та повернення або przejazd tranzytowy. Ust. 2 визначає допустимі категорії zapraszający, а ust. 3 відсилає для безперервності pobytu cudzoziemca до ${foreignersLaw.article("195", "Art. 195")} ust. 4.`,
           sourceLocator: "Art. 49 ust. 1–3",
         },
         {
@@ -38,7 +38,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "Art. 49 ust. 3",
-          explanation: foreignersLaw.text`Неperервність п’ятирічного pobyt для категорії з ust. 2 pkt 2 визначається за ${foreignersLaw.article("195", "Art. 195")} ust. 4, а не за довільним підрахунком днів.`,
+          explanation: foreignersLaw.text`Безперервність п’ятирічного pobyt для категорії з ust. 2 pkt 2 визначається за ${foreignersLaw.article("195", "Art. 195")} ust. 4, а не за довільним підрахунком днів.`,
         },
       ],
       legalEffect:

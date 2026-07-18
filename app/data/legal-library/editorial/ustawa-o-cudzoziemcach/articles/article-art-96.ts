@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("96", {
       provisionId: "ustawa-o-cudzoziemcach-art-96",
       reviewStatus: "reviewed",
       statuteText:
-        "Орган, який unieważnił або cofnął Schengen visa, видану іншою державою Schengen за art. 34 ust. 1–3 Wspólnotowego Kodeksu Wizowego, повідомляє орган держави-видавця. Komendant Główny Straży Granicznej збирає інформацію про польські Schengen visa, скасовані або відкликані органами інших держав, а орган, що скасував чи відкликав візу, імпортує дані art. 19 ust. 1 rozporządzenia nr 2017/2226 до останнього запису EES.",
+        "Орган, який unieważnił або cofnął wiza Schengen, видану іншою державою Schengen за art. 34 ust. 1–3 Wspólnotowego Kodeksu Wizowego, повідомляє орган держави-видавця. Komendant Główny Straży Granicznej збирає інформацію про польські wizy Schengen, скасовані або відкликані органами інших держав, а орган, що скасував чи відкликав візу, імпортує дані art. 19 ust. 1 rozporządzenia nr 2017/2226 до останнього запису EES.",
       statuteLocator: "Art. 96 ust. 1–3",
       practicalText:
-        "Art. 96 розподіляє інформаційні ролі між державами Schengen і польськими службами. Повідомлення та EES-запис не є окремим рішенням про legal stay, zezwolenie на pobyt чи право на працю.",
+        "Art. 96 розподіляє інформаційні ролі між державами Schengen і польськими службами. Повідомлення та EES-запис не є окремим рішенням про legalność pobytu, zezwolenie на pobyt чи право на працю.",
       practicalLocator: "Art. 96 ust. 1–3",
       summary:
-        "Art. 96 регулює повідомлення держави-видавця, централізований збір даних і оновлення EES після дій щодо Schengen visa.",
+        "Art. 96 регулює повідомлення держави-видавця, централізований збір даних і оновлення EES після дій щодо wiza Schengen.",
       rules: [
         {
           locator: "Art. 96 ust. 1",
@@ -68,18 +68,18 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 96 ust. 2",
           explanation:
-            "Komendant Główny Straży Granicznej є органом збору відомостей про польські Schengen visa, щодо яких інші держави прийняли таке рішення.",
+            "Komendant Główny Straży Granicznej є органом збору відомостей про польські wizy Schengen, щодо яких інші держави прийняли таке рішення.",
         },
         {
           locator: "Art. 96 ust. 3",
           explanation:
-            "Орган, який скасував або відкликав Schengen visa, неzwłocznie бере дані з VIS і імпортує їх до останнього EES-запису за art. 13 rozporządzenia nr 767/2008.",
+            "Орган, який скасував або відкликав wiza Schengen, невідкладно бере дані з VIS і імпортує їх до останнього EES-запису за art. 13 rozporządzenia nr 767/2008.",
         },
       ],
       legalEffect:
         "Стаття створює обов’язки міждержавного обміну та актуалізації даних, але не встановлює нової підстави для відмови у pobyt і не підтверджує право на працю.",
       foreignersCase:
-        "Установіть державу-видавця, орган, який прийняв рішення, вид Schengen visa та відповідну норму Wspólnotowego Kodeksu Wizowego. Зіставте рішення, повідомлення й EES/VIS-відомості, не роблячи з інформаційної операції висновок про інший статус.",
+        "Установіть державу-видавця, орган, який прийняв рішення, вид wiza Schengen та відповідну норму Wspólnotowego Kodeksu Wizowego. Зіставте рішення, повідомлення й EES/VIS-відомості, не роблячи з інформаційної операції висновок про інший статус.",
     }),
   ]),
 })

@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-62",
@@ -13,7 +13,7 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Przewodniczący wydziału або призначений sędzia організовує комплектування akt і, за потреби, інших доказів, визначає склад суду та призначає posiedzenie niejawne або rozprawa.",
+          text: "Przewodniczący wydziału або призначений sędzia організовує комплектування akt і, за потреби, інших доказів, визначає склад суду та призначає posiedzenie niejawne або rozprawę.",
           sourceLocator: "Art. 62 pkt 1–3",
         },
       ],
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "pkt 2–3",
           explanation:
-            "Визначаються склад sędziowski і дата posiedzenie або rozprawa.",
+            "Визначаються skład sędziowski і дата posiedzenia або rozprawy.",
         },
       ],
       legalEffect:

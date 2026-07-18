@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-250",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 250 встановлює, що призначений adwokat, radca prawny, doradca podatkowy або rzecznik patentowy отримує wynagrodzenie за правилами про оплати за czynności відповідної професії у сфері не оплаченої правової допомоги та zwrot необхідних і документально підтверджених wydatki; у uzasadnione przypadki суд може це wynagrodzenie зменшити.",
+          text: "Призначений у межах права допомоги професійний представник отримує винагороду за правилами відповідної професії та повернення необхідних документально підтверджених видатків. У виправданому випадку суд може зменшити винагороду.",
           sourceLocator: "Art. 250 § 1–2",
         },
       ],
       summary:
-        "Стаття регулює винагороду представника, призначеного в рамках prawa pomocy, і відшкодування необхідних документованих витрат.",
+        "Стаття регулює оплату фахівця з публічних коштів, а не рахунок клієнтові.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 250 § 1–2",
           explanation:
-            "Для розрахунку перевірте вид професійного представника та правила про opłaty за nieopłacona pomoc prawna; окремо підтверджуйте необхідні wydatki документами.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Зменшення wynagrodzenie можливе в uzasadnione przypadki; стаття не робить повну заявлену суму гарантованою.",
+            "Представник повинен показати виконану роботу й необхідні видатки у формі, передбаченій професійними правилами. Суд окремо оцінює підстави для зменшення.",
         },
       ],
       legalEffect:
-        "Art. 250 визначає рамку розрахунку wynagrodzenie і wydatki представника, але не гарантує конкретної суми та не змінює обсяг наданого стороні права допомоги.",
+        "Призначення не означає довільної ставки: розмір визначають нормативні правила та оцінка суду.",
       foreignersCase:
-        "У справі іноземця перевірте, чи представника справді ustanowiono за zasadach prawa pomocy, які czynności та wydatki заявлено і якими документами вони підтверджені. Не ототожнюйте prawo pomocy клієнта з автоматично погодженою сумою винагороди представника.",
+        "Іноземець із призначеним представником повинен знати, що винагороду вирішує суд; приватна додаткова оплата потребує окремої правової перевірки.",
     },
-  ]),
+  ],
 })

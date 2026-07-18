@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-48",
@@ -15,22 +15,22 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("48", "Art. 48")} вимагає надавати пріоритет wnioskom про sezonowe zezwolenie для cudzoziemiec, який хоча б один раз протягом 5 років до wniosku працював на користь того самого polski podmiot на підставі сезонного дозволу, якщо нова робота буде за umowa o pracę.`,
+          text: workLaw.text`${workLaw.article("48", "Art. 48")} надає пріоритет під час розгляду заяві про сезонний дозвіл, якщо іноземець хоча б один раз протягом п’яти років до нового подання працював для того самого польського суб’єкта на підставі сезонного дозволу, а нова робота виконуватиметься за трудовим договором (umowa o pracę).`,
           sourceLocator: "Art. 48",
         },
       ],
       summary:
-        "Попередня сезонна робота для того самого podmiot може дати пріоритет новому wniosek. Потрібні і попередній сезонний дозвіл, і нова umowa o pracę.",
+        "Попередня сезонна робота для того самого суб’єкта може вплинути на черговість розгляду нової заяви. Для цього потрібні обидві умови: робота за сезонним дозволом у межах п’ятирічного періоду та майбутній трудовий договір.",
       rules: [
         {
           locator: "Art. 48",
           explanation:
-            "Перевірте хоча б один попередній період роботи за сезонним дозволом протягом п'яти років та те, що нова робота буде на підставі umowa o pracę.",
+            "Перевірте хоча б один попередній період роботи за сезонним дозволом для того самого суб’єкта протягом п’яти років і підтвердьте, що нова робота буде на підставі трудового договору.",
         },
       ],
       legalEffect:
-        "Пріоритет впливає на порядок розгляду, але не гарантує видачу sezonowe zezwolenie, legalny pobyt або продовження роботи після визначеного строку.",
-      foreignersCase: workLaw.text`Зберіть попереднє zezwolenie та докази роботи у того самого podmiot, а також проєкт нової umowa o pracę. Паралельно перевірте актуальний документ pobyt і сезонні умови ${workLaw.article("45", "art. 45")}.`,
+        "Пріоритет впливає лише на черговість розгляду. Він не гарантує видачі сезонного дозволу, законності перебування чи права працювати після встановленого строку.",
+      foreignersCase: workLaw.text`Зберіть попередній сезонний дозвіл і докази роботи для того самого суб’єкта, а також проєкт нового трудового договору. Паралельно перевірте актуальний документ перебування та умови з ${workLaw.article("45", "art. 45")}.`,
     },
   ],
 })

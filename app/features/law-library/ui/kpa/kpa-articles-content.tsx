@@ -179,7 +179,7 @@ export function KpaArticlesContent({
       >
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="default">Art. {entry.article} KPA</Badge>
-          <Badge variant="outline">PDF s. {entry.pdfPage}</Badge>
+          <Badge variant="outline">PDF, с. {entry.pdfPage}</Badge>
           {entry.status === "repealed" ? (
             <Badge variant="destructive">uchylony</Badge>
           ) : (
@@ -204,7 +204,7 @@ export function KpaArticlesContent({
             <DialogContent className="h-[calc(100dvh-1rem)] w-[calc(100vw-1rem)] !max-w-none grid-rows-[auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-lg p-0 sm:h-[calc(100dvh-2rem)] sm:w-[calc(100vw-2rem)]">
               <DialogHeader className="min-w-0 border-b px-4 py-3 pr-14">
                 <DialogTitle className="truncate pr-2">
-                  KPA · art. {entry.article} · PDF s. {sourcePage}
+                  KPA · art. {entry.article} · PDF, с. {sourcePage}
                 </DialogTitle>
                 <DialogDescription className="sr-only">
                   Локальна копія офіційного PDF, відкрита на сторінці{" "}

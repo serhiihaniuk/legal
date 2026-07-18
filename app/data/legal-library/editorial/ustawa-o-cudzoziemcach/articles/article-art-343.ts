@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-343",
@@ -25,7 +25,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1–3",
           explanation:
-            "Potrącenie можливе, якщо витрати не перевищують суму, яку реально можна отримати. Протягом 14 днів від прийняття до ośrodek або areszt орган встановлює приблизний ryczałt.",
+            "Potrącenie допускається, якщо самі koszty potrącenia не перевищували б суму, яку завдяки ньому буде отримано. Це порівняння вартості операції зі стягнутою сумою, а не порівняння належних витрат повернення з депозитом. Протягом 14 днів від прийняття до ośrodek або areszt орган встановлює приблизний ryczałt.",
         },
         {
           locator: "ust. 4–5",

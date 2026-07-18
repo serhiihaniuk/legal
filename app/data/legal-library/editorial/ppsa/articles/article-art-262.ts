@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-262",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 262 передбачає відповідне застосування положень про przyznanie prawa pomocy щодо zastępstwo prawne на zasadach prawa pomocy до сторін, які мають ustawowe zwolnienie від обов’язку сплати kosztów sądowych.",
+          text: "Правила про призначення професійного представника в межах права допомоги відповідно застосовують також до сторін, які мають законне звільнення від судових витрат.",
           sourceLocator: "Art. 262",
         },
       ],
       summary:
-        "Сторона, звільнена від судових витрат без окремого рішення про prawo pomocy, може відповідно користуватися правилами про правове представництво за zasadach prawa pomocy.",
+        "Стаття дозволяє особі з автоматичним звільненням від витрат (zwolnienie od kosztów) скористатися процедурою представництва.",
       rules: [
         {
           locator: "Art. 262",
           explanation:
-            "Спочатку встановіть ustawowe zwolnienie від обов’язку сплати kosztów sądowych, а потім застосовуйте правила лише в частині zastępstwo prawne на zasadach prawa pomocy.",
-        },
-        {
-          locator: "Art. 262",
-          explanation:
-            "Не розширюйте відсилання на автоматичне звільнення від усіх витрат або на будь-яку іншу форму допомоги: стаття говорить саме про zastępstwo prawne.",
+            "Відділіть уже наявне законне звільнення від окремої потреби в представникові. До другого елемента застосовуйте відповідні правила права допомоги (prawo pomocy).",
         },
       ],
       legalEffect:
-        "Норма координує ustawowe zwolnienie від витрат із механізмом призначення представника, але сама не встановлює, що кожна звільнена сторона автоматично отримує adwokat чи radca prawny.",
+        "Автоматичне звільнення від платежів не означає автоматичного призначення адвоката; потрібен належний процесуальний шлях.",
       foreignersCase:
-        "У справі іноземця перевірте джерело звільнення: ustawowe zwolnienie не тотожне postanowienie про prawo pomocy. Для призначення представника застосовуйте Art. 262 лише в його вузькій частині про zastępstwo prawne.",
+        "Особа у справі про міжнародний захист може бути звільнена від витрат законом, але для призначення представника все одно подає відповідну заяву.",
     },
-  ]),
+  ],
 })

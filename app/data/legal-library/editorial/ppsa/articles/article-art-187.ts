@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-187",
@@ -15,26 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Gdy przy rozpoznawaniu kasacji powstanie zagadnienie prawne budzące poważne wątpliwości, NSA może odroczyć sprawę i przedstawić je składowi siedmiu sędziów. Uchwała tego składu wiąże w danej sprawie, a skład siedmiu sędziów może przejąć sprawę do rozpoznania.",
+          text: "Коли під час касаційного розгляду виникає правове питання із серйозними сумнівами, NSA може відкласти справу й передати питання складу семи суддів. Його ухвала є обов’язковою в цій справі, а склад семи суддів може перебрати всю справу для розгляду.",
           sourceLocator: "Art. 187 § 1–3",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("187", "Art. 187")} ustanawia mechanizm przekazania poważnie wątpliwego zagadnienia prawnego składowi siedmiu sędziów NSA.`,
+      summary:
+        "Стаття створює внутрішній механізм NSA для вирішення складного правового питання.",
       rules: [
         {
-          locator: "§ 1–2",
+          locator: "Art. 187 § 1–3",
           explanation:
-            "To NSA ocenia, czy zagadnienie budzi poważne wątpliwości; przyjęta uchwała wiąże sąd w tej konkretnej sprawie.",
-        },
-        {
-          locator: "§ 3",
-          explanation:
-            "Skład siedmiu sędziów może przejąć całą sprawę do rozpoznania, co nie oznacza z góry określonego wyniku.",
+            "Відділіть загальне правове питання від спору про факти. Після передачі слід простежити, чи склад семи суддів лише відповів на питання, чи прийняв до розгляду всю справу.",
         },
       ],
-      legalEffect: ppsaLaw.text`Uchwała porządkuje rozstrzygnięcie zagadnienia w danej sprawie, ale ${ppsaLaw.article("187", "art. 187")} nie przesądza o prawie do pobytu ani o wyniku kasacji.`,
+      legalEffect:
+        "Відповідь семи суддів зв’язує склад у конкретній справі та формує рамку її подальшого вирішення.",
       foreignersCase:
-        "W powtarzalnym sporze pobytowym sprawdź, czy NSA przekazał konkretne zagadnienie składowi siedmiu sędziów i jaki zakres ma uchwała w tej sprawie.",
+        "У справі про перебування така передача може пояснювати довший розгляд; сторона повинна прив’язати свої аргументи до сформульованого правового питання.",
     },
   ],
 })

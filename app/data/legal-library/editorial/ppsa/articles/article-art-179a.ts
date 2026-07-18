@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-179a",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Jeżeli przed przedstawieniem skargi kasacyjnej NSA WSA stwierdzi nieważność postępowania albo oczywiste usprawiedliwienie podstaw kasacyjnych, uchyla zaskarżony wyrok lub postanowienie, na wniosek strony rozstrzyga także o zwrocie kosztów postępowania kasacyjnego i na tym samym posiedzeniu ponownie rozpoznaje sprawę. Od tego orzeczenia przysługuje skarga kasacyjna.",
+          text: "До передання касаційної скарги в NSA WSA може сам скасувати своє рішення, якщо бачить недійсність провадження або очевидну обґрунтованість касаційних підстав, і на тому самому засіданні повторно розглянути справу. Нове рішення знову можна оскаржити касаційно.",
           sourceLocator: "Art. 179a",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("179a", "Art. 179a")} pozwala WSA na samokontrolę przed przekazaniem kasacji NSA w razie nieważności albo oczywiście usprawiedliwionych podstaw kasacyjnych.`,
+      summary:
+        "Це механізм самоконтролю WSA, який дозволяє швидко усунути очевидну помилку.",
       rules: [
         {
           locator: "Art. 179a",
           explanation:
-            "Warunkiem jest chwila przed przedstawieniem kasacji NSA oraz jedna z dwóch przesłanek. WSA uchyla orzeczenie i od razu ponownie rozpoznaje sprawę.",
+            "Суд діє лише до передання касації й за однієї з двох вузьких підстав. На заяву сторони він також вирішує питання повернення касаційних витрат.",
         },
       ],
       legalEffect:
-        "Mechanizm może zmienić zaskarżone orzeczenie jeszcze w WSA, ale nie oznacza automatycznego uwzględnienia skargi administracyjnej ani przyznania pobytu.",
+        "Скасування старого рішення не завершує спір автоматично: WSA одразу проводить новий розгляд і видає нове рішення.",
       foreignersCase:
-        "W kasacji dotyczącej pobytu sprawdź, czy akta nie zostały jeszcze przedstawione NSA. Jeżeli WSA wyda nowe orzeczenie, oceniaj je jako nowe rozstrzygnięcie z własnym środkiem zaskarżenia.",
+        "У справі про перебування після такого самоконтролю рахуйте подальші строки від нового рішення, а не продовжуйте працювати зі скасованим.",
     },
   ],
 })

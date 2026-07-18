@@ -1,40 +1,33 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-284",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 284 встановлює, що wniesienie skarga o wznowienie не зупиняє виконання оскарженого orzeczenie; якщо заявник uprawdopodobni загрозу niepowetowana szkoda, суд може wstrzymać виконання, а postanowienie може бути видане на posiedzenie niejawnym і оскаржене zażalenie.",
+          text: "Подання скарги про поновлення не зупиняє виконання оскарженого рішення. Якщо заявник зробить правдоподібною загрозу невідворотної шкоди, суд може зупинити виконання; ухвалу можна видати на закритому засіданні й оскаржити окремо (zażalenie).",
           sourceLocator: "Art. 284",
         },
       ],
-      summary:
-        "Подання skarga o wznowienie саме по собі не зупиняє виконання orzeczenie, але суд може зробити це за умовою ймовірної непоправної шкоди.",
+      summary: "Стаття відділяє надзвичайний перегляд від тимчасового захисту.",
       rules: [
         {
-          locator: "Art. 284 zdanie pierwsze",
+          locator: "Art. 284",
           explanation:
-            "До окремого рішення суду виконання оскарженого orzeczenie не зупиняється лише через подання skarga.",
-        },
-        {
-          locator: "Art. 284 zdanie drugie–czwarte",
-          explanation:
-            "Заявник має uprawdopodobnić niepowetowana szkoda; суд може вирішити wstrzymanie на posiedzenie niejawnym, а postanowienie можна оскаржити zażalenie.",
+            "Подавайте окрему вимогу про зупинення виконання (wstrzymanie) й конкретні докази шкоди. Сам факт скарги або серйозності підстав не створює зупинення.",
         },
       ],
       legalEffect:
-        "Захист від виконання є окремою дискреційною реакцією суду і не є наслідком самого wznowienie; його надання не вирішує скаргу по суті.",
+        "До окремої ухвали рішення виконується; зупинення є можливістю суду, а не автоматичним наслідком.",
       foreignersCase:
-        "Якщо виконання рішення може вплинути на перебування іноземця, окремо обґрунтуйте конкретну niepowetowana szkoda і перевірте postanowienie суду. Не вважайте подання skarga дозволом залишатися в Польщі.",
+        "У справі про перебування покажіть, яка саме незворотна подія станеться до рішення про поновлення (wznowienie), та додайте документи про її реальність.",
     },
-  ]),
+  ],
 })

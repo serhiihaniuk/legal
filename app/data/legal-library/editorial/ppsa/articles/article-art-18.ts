@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-18",
@@ -18,7 +18,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Стаття перелічує випадки, коли суддя виключений з мocy samej ustawy: особистий правовий зв’язок зі стороною, родинні, опікунські та представницькі зв’язки, надання правових чи інших пов’язаних зі справою послуг, участь в ухваленні оскарженого orzeczenie або розгляді справи в organ administracji publicznej, а також спеціальну підставу для надзвичайного адміністративного провадження.",
+        "Стаття перелічує випадки, коли суддя виключений z mocy samej ustawy: особистий правовий зв’язок зі стороною, родинні, опікунські та представницькі зв’язки, надання правових чи інших пов’язаних зі справою послуг, участь в ухваленні оскарженого orzeczenie або розгляді справи в organ administracji publicznej, а також спеціальну підставу для надзвичайного адміністративного провадження.",
       rules: [
         {
           locator: "Art. 18 § 1 pkt 1–7",

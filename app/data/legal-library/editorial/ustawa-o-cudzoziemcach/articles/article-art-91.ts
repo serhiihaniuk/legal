@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("91", {
       provisionId: "ustawa-o-cudzoziemcach-art-91",
@@ -58,7 +58,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         "Ключова дата — момент видачі, а не подія, що виникла пізніше. Не змішуйте unieważnienie з cofnięcie за Art. 90; для конкретного рішення треба встановити первинний факт і відповідну підставу відмови.",
       practicalLocator: "Art. 91",
       summary:
-        "Art. 91 встановлює materialну підставу unieważnienie national visa через обставини, що існували під час її видачі.",
+        "Art. 91 встановлює матеріальну підставу unieważnienie wiza krajowa через обставини, що існували під час її видачі.",
       rules: [
         {
           locator: "Art. 91",
@@ -67,7 +67,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Unieważnienie усуває візу як документ, виданий за наявності первинної перешкоди. Стаття не створює нового права на legal stay, pobyt або роботу.",
+        "Unieważnienie усуває візу як документ, виданий за наявності первинної перешкоди. Стаття не створює нового права на legalność pobytu, pobyt або роботу.",
       foreignersCase:
         "Порівняйте дані та документи, які існували на дату видачі, з підставою, названою у decyzja. Окремо встановіть дату вручення рішення та можливий засіб оскарження за Art. 92–94.",
     }),

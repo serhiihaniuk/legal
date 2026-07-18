@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const kpaLaw = createLegalTextAuthor("kpa")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-133a",
@@ -22,7 +22,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Стаття встановлює часові межі для певного cofnięcie Blue Card та правило очікування інформації при mobilność długoterminowa.",
+        "Стаття встановлює часові межі для певного cofnięcie Niebieskiej Karty UE та правило очікування інформації при mobilność długoterminowa.",
       rules: [
         {
           locator: "ust. 1",

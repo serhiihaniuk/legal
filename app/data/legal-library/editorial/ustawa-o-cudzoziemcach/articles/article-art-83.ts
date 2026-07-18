@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const SIS_2018_1861_URL = "https://eur-lex.europa.eu/eli/reg/2018/1861/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-83",
@@ -39,7 +39,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect: foreignersLaw.text`Стаття забезпечує SIS-узгодження у процедурі продовження і не вирішує самостійно, чи візу буде продовжено. Матеріальні умови залишаються в ${foreignersLaw.article("82", "Art. 82")}.`,
-      foreignersCase: foreignersLaw.text`Перевірте SIS-запис, державу-ініціатора, запит через Policja, дату консультації та рішення/заміr wojewoda або Szef Urzędu; окремо доведіть усі умови ${foreignersLaw.article("82", "Art. 82")}.`,
+      foreignersCase: foreignersLaw.text`Перевірте SIS-запис, державу-ініціатора, запит через Policja, дату консультації та рішення/zamiar wojewoda або Szef Urzędu; окремо доведіть усі умови ${foreignersLaw.article("82", "Art. 82")}.`,
     },
   ],
 })

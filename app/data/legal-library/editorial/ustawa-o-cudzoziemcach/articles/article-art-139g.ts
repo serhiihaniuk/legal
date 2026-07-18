@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139g",
@@ -24,7 +24,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "pkt 1",
           explanation:
-            "Zezwolenie cofається, якщо обставини показують використання його для іншої мети, ніж та, для якої його надали.",
+            "Zezwolenie відкликається, якщо обставини показують використання його для іншої мети, ніж та, для якої його надали.",
         },
         {
           locator: "pkt 2–3",

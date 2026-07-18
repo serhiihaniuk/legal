@@ -18,7 +18,7 @@ export default defineKpaEditorialPart({
             "Protokół складається стисло з кожної czynności postępowania, що має істотне значення для rozstrzygnięcia, якщо її не utrwalono inaczej na piśmie.",
         },
         {
-          locator: "§ 2 pkt 1–6",
+          locator: "§ 2 pkt 1–5",
           explanation:
             "Обов’язково протоколюються, зокрема, усне podanie, допит сторони, свідка й biegłego, огляд, rozprawa та усне оголошення decyzji або postanowienia.",
         },

@@ -1,11 +1,16 @@
 import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import {
+  authorLegalTextCitationsTree,
+  createLegalTextAuthor,
+} from "../../../legal-text"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-406",
@@ -13,7 +18,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: "Орган Straż Graniczna, якому підпорядкований strzeżony ośrodek або areszt, невідкладно з urzędu або на wniosek іноземця видає postanowienie про zwolnienie, якщо припинилися причини заходу, наявні обставини art. 400, інші правові або фактичні перешкоди, cudzoziemiec отримав zaświadczenie art. 170 чи щодо нього триває провадження про zezwolenie art. 176, застосовано tymczasowe aresztowanie або інший захід, що позбавляє свободи, чи виконання powrót має znikome prawdopodobieństwo.",
+          text: foreignersLaw.text`Орган Straż Graniczna, якому підпорядкований strzeżony ośrodek або areszt, невідкладно з urzędu або на wniosek іноземця видає postanowienie про zwolnienie, якщо припинилися причини заходу, наявні обставини ${foreignersLaw.article("400", "art. 400")}, інші правові або фактичні перешкоди, cudzoziemiec отримав zaświadczenie ${foreignersLaw.article("170", "art. 170")} чи щодо нього триває провадження про zezwolenie ${foreignersLaw.article("176", "art. 176")}, застосовано tymczasowe aresztowanie або інший захід, що позбавляє свободи, чи виконання powrót має znikome prawdopodobieństwo.`,
           sourceLocator: "Art. 406 ust. 1–1b",
         },
         {
@@ -27,13 +32,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       rules: [
         {
           locator: "ust. 1 pkt 1–6",
-          explanation:
-            "Звільнення за ust. 1 охоплює припинення причин, обставини art. 400, інші правові або фактичні перешкоди, zaświadczenie art. 170 чи провадження про zezwolenie art. 176, позбавлення свободи в іншій справі та znikome prawdopodobieństwo виконання powrót.",
+          explanation: foreignersLaw.text`Звільнення за ust. 1 охоплює припинення причин, обставини ${foreignersLaw.article("400", "art. 400")}, інші правові або фактичні перешкоди, zaświadczenie ${foreignersLaw.article("170", "art. 170")} чи провадження про zezwolenie ${foreignersLaw.article("176", "art. 176")}, позбавлення свободи в іншій справі та znikome prawdopodobieństwo виконання powrót.`,
         },
         {
           locator: "ust. 1a–1c",
-          explanation:
-            "Перед z urzędu zwolnienie у випадках ust. 1 pkt 2, 3 і 6, а також під час розгляду будь-якого wniosek про zwolnienie, орган оцінює необхідність art. 398 ust. 2. Він видає відповідне postanowienie; zażalenie протягом 7 днів подається до sąd rejonowy за місцезнаходженням органу.",
+          explanation: foreignersLaw.text`Перед zwolnienie z urzędu зі strzeżony ośrodek або areszt у випадках ust. 1 pkt 2, 3 і 6 орган оцінює необхідність заходів ${foreignersLaw.article("398", "art. 398")} ust. 2. При розгляді wniosku такий обов’язок стосується лише wniosku o zwolnienie ze strzeżonego ośrodka, а не wniosku про звільнення з areszt. На postanowienie про альтернативні заходи є 7-денне zażalenie до właściwy sąd rejonowy.`,
         },
         {
           locator: "ust. 2–4",

@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-297",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 297 встановлює, що після postępowanie за Art. 295 і 296 суд postanowieniem визначає, у який спосіб і в якому обсязі відновити зниклі akta, або встановлює, що odtworzenie akt неможливе; на це postanowienie доступне zażalenie.",
+          text: "Після доказового провадження суд ухвалою визначає спосіб і обсяг відновлення втрачених матеріалів або констатує, що відновлення неможливе. На ухвалу можна подати окреме оскарження (zażalenie).",
           sourceLocator: "Art. 297",
         },
       ],
       summary:
-        "Після збирання відомостей суд окремим postanowienie визначає обсяг відновлення або його неможливість, із можливістю zażalenie.",
+        "Стаття завершує етап реконструкції формальним рішенням, яке можна перевірити.",
       rules: [
         {
-          locator: "Art. 297 zdanie pierwsze",
+          locator: "Art. 297",
           explanation:
-            "Читайте в postanowienie не лише висновок про можливість, а й спосіб та обсяг, у якому akta мають бути відновлені.",
-        },
-        {
-          locator: "Art. 297 zdanie drugie",
-          explanation:
-            "Перевірте pouczenie про zażalenie та строк за загальними процесуальними правилами, якщо рішення оскаржується.",
+            "Прочитайте не лише висновок, а й точний перелік відновлених частин. Якщо ключовий документ пропущено або відновлення помилково визнано неможливим, прив’яжіть окреме оскарження (zażalenie) до конкретного доказу.",
         },
       ],
       legalEffect:
-        "Postanowienie визначає межі відновленого матеріалу або неможливість відновлення; воно саме не вирішує предмет первісної адміністративної справи.",
+        "Ухвала визначає, з яким масивом матеріалів справа рухатиметься далі.",
       foreignersCase:
-        "У справі іноземця перевірте, чи postanowienie про odtworzenie охоплює потрібний wyrok, decyzja або доказ, і не плутайте zażalenie на нього з odwołanieм у справі про pobyt.",
+        "У справі про перебування порівняйте ухвалу з мінімальним набором, потрібним для перевірки рішення органу та вручень.",
     },
-  ]),
+  ],
 })

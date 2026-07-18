@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-50",
@@ -41,7 +41,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
             "Оцінюється, чи не буде фактичний cel wjazdu і pobytu іншим за заявлений; невиконання попередніх зобов’язань за pkt 6 враховується, коли нову заяву подано протягом 3 років після завершення попередньої чинності.",
         },
       ],
-      legalEffect: foreignersLaw.text`За наявності встановленої підстави запис не вносять або його unieważniaють у процедурі, передбаченій ${foreignersLaw.article("52", "Art. 52")}. Наслідком є втрата доказової сили запрошення, а не автоматичне рішення щодо візи самого cudzoziemca.`,
+      legalEffect: foreignersLaw.text`За наявності встановленої підстави запис не вносять або його скасовують у процедурі, передбаченій ${foreignersLaw.article("52", "Art. 52")}. Наслідком є втрата доказової сили запрошення, а не автоматичне рішення щодо візи самого cudzoziemca.`,
       foreignersCase:
         "Розкладіть матеріали за pkt 1–8: статус запрошуючого, кошти, житло, попереднє zaproszenie, достовірність документів і реальний cel pobytu; окремо перевірте трирічний строк з ust. 2.",
     },

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-241",
@@ -34,7 +34,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       ],
       legalEffect: foreignersLaw.text`Наявність однієї з обставин ${foreignersLaw.article("241", "Art. 241")} створює підставу для wymiany документа, але не змінює сама по собі рішення про zezwolenie; орган і процедуру визначають, зокрема, ${foreignersLaw.article("245", "Art. 245")} та наступні норми.`,
       foreignersCase:
-        "Порівняйте актуальні дані та wizerunek twarzy з kartą pobytu. Якщо відповідальність за ochronę międzynarodową перейшла між державами або змінилася підстава Blue Card, перевірте pkt 5–7 і подайте wniosek o wymianę до właściwego organu; при utrata одразу зробіть zgłoszenie.",
+        "Порівняйте актуальні дані та wizerunek twarzy з kartą pobytu. Для pkt 5–7 встановіть, яка держава перебрала відповідальність за ochronę międzynarodową і яку adnotację містить картка; ці пункти не описують зміну самої підстави Niebieska Karta UE. При utrata одразу зробіть zgłoszenie.",
     },
   ],
 })

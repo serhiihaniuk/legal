@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-188",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "NSA, uwzględniając skargę kasacyjną i uchylając zaskarżone orzeczenie, rozpoznaje skargę, jeżeli uzna, że istota sprawy jest dostatecznie wyjaśniona.",
+          text: "Задовольняючи касаційну скаргу й скасовуючи рішення, NSA сам розглядає первісну скаргу, якщо вважає суть справи достатньо з’ясованою.",
           sourceLocator: "Art. 188",
         },
       ],
       summary:
-        "Jeżeli po uchyleniu orzeczenia istota sprawy jest dostatecznie wyjaśniona, NSA może sam rozpoznać skargę zamiast przekazywać ją do WSA.",
+        "Стаття дозволяє уникнути повернення до WSA, коли матеріал уже достатній для рішення.",
       rules: [
         {
           locator: "Art. 188",
           explanation:
-            "Najpierw musi dojść do uwzględnienia kasacji i uchylenia orzeczenia; dopiero potem NSA ocenia dostateczne wyjaśnienie istoty sprawy.",
+            "Ключове питання — чи з’ясовано саме суть спору настільки, щоб NSA міг розглянути скаргу без нового провадження в першій інстанції.",
         },
       ],
       legalEffect:
-        "Przepis daje NSA możliwość bezpośredniego rozpoznania skargi, lecz nie nakazuje tego w każdej sprawie i nie gwarantuje korzystnego rozstrzygnięcia administracyjnego.",
+        "NSA вирішує судову скаргу, а не перебирає компетенцію адміністративного органу видавати дозвіл.",
       foreignersCase:
-        "W kasacji dotyczącej odmowy pobytu nie zakładaj automatycznego przyznania statusu. Sprawdź, czy z akt wynika dostatecznie wyjaśniona istota sprawy.",
+        "У справі про перебування навіть прямий розгляд NSA може завершитися скасуванням акта або іншим судовим наслідком, але не обов’язково позитивним адміністративним рішенням.",
     },
   ],
 })

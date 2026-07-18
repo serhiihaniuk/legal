@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-181",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Це короткостроковий, дискреційний permit для особи, чия присутність у Польщі потрібна з однієї з трьох спеціальних причин.",
+        "Це короткостроковий, дискреційний zezwolenie для особи, чия присутність у Польщі потрібна з однієї з трьох спеціальних причин.",
       rules: [
         {
           locator: "ust. 1 pkt 1",
@@ -40,11 +40,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 3",
           explanation:
-            "Permit можна надати також у справі, де обставини не виправдовують перебування довше 3 місяців; це не скасовує вимогу довести одну з підстав ust. 1.",
+            "zezwolenie можна надати також у справі, де обставини не виправдовують перебування довше 3 місяців; це не скасовує вимогу довести одну з підстав ust. 1.",
         },
       ],
       legalEffect:
-        "Формула «można udzielić» залишає оцінку органу в межах доведеної короткострокової мети; permit не є загальною альтернативою іншим підставам pobyt.",
+        "Формула «można udzielić» залишає оцінку органу в межах доведеної короткострокової мети; zezwolenie не є загальною альтернативою іншим підставам pobyt.",
       foreignersCase:
         "Додайте виклик або офіційний документ про дату явки, докази виняткової ситуації чи інтересу Польщі та обґрунтуйте потрібну тривалість; не просіть 6 місяців без пояснення мети.",
     },

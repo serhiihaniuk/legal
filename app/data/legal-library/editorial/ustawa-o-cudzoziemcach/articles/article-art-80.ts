@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-80",
@@ -15,12 +15,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("80", "Art. 80")} ust. 1 делегує міністру внутрішніх справ у погодженні з MFA визначити в rozporządzenie oznaczenia celów wiza, blankiet, formularz і фотографію заяви, відмітку прийняття, передавання даних, формуляри odmowa і ${foreignersLaw.article("76", "Art. 76")} ust. 4, спосіб наклеювання та unieważnienie; ust. 2 визначає критерії.`,
+          text: foreignersLaw.text`${foreignersLaw.article("80", "Art. 80")} ust. 1 делегує міністру внутрішніх справ у погодженні з MFA визначити в rozporządzenie oznaczenia celów wiza, blankiet, форму й фотографію заяви, відмітку прийняття, передавання даних, формуляри odmowa і ${foreignersLaw.article("76", "Art. 76")} ust. 4, спосіб наклеювання та unieważnienie; ust. 2 визначає критерії.`,
           sourceLocator: "Art. 80 ust. 1 pkt 1–8; ust. 2 pkt 1–5",
         },
         {
           kind: "practical-inference",
-          text: foreignersLaw.text`${foreignersLaw.article("80", "Art. 80")} регулює технічні wzory і процедури виконання, тому конкретний формуляр або oznaczenie треба перевіряти в розporządzenie, а не реконструювати з номера статті.`,
+          text: foreignersLaw.text`${foreignersLaw.article("80", "Art. 80")} регулює технічні wzory і процедури виконання, тому конкретний формуляр або oznaczenie треба перевіряти в rozporządzenie, а не реконструювати з номера статті.`,
           sourceLocator: "Art. 80 ust. 1–2",
         },
       ],
@@ -44,7 +44,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       legalEffect:
         "Стаття сама не встановлює конкретний зразок чи строк wiza. Її ефект — межі підзаконного регулювання, необхідного для однакового оформлення і контролю документів.",
       foreignersCase:
-        "Використовуйте актуальні formularz, blankiet і правила naklejka з відповідного rozporządzenie; звірте, що рішення, заява й віза мають узгоджені oznaczenia celów.",
+        "Використовуйте актуальну форму, blankiet і правила naklejka з відповідного rozporządzenie; звірте, що рішення, заява й віза мають узгоджені oznaczenia celów.",
     },
   ],
 })

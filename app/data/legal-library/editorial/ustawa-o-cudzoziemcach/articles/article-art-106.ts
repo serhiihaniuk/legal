@@ -1,95 +1,47 @@
-import type { LegalProvisionId } from "../../../contracts"
-
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type ReviewedArticleData = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  statuteText: string
-  statuteLocator: string
-  practicalText: string
-  practicalLocator: string
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
-  provisionId: data.provisionId ?? provisionId(article),
-  reviewStatus: data.reviewStatus,
-  claims: [
-    {
-      kind: "statute-text" as const,
-      text: data.statuteText,
-      sourceLocator: data.statuteLocator,
-    },
-    {
-      kind: "practical-inference" as const,
-      text: data.practicalText,
-      sourceLocator: data.practicalLocator,
-    },
-  ],
-  summary: data.summary,
-  rules: data.rules,
-  legalEffect: data.legalEffect,
-  foreignersCase: data.foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle("106", {
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
       provisionId: "ustawa-o-cudzoziemcach-art-106",
       reviewStatus: "reviewed",
-      statuteText:
-        "Wniosek про temporary residence permit подається на formularz із даними cudzoziemiec, сім’ї в Польщі, попередніх і теперішнього pobyt, поїздок, коштів, ubezpieczenie, declarowany cel, обмежень свободи, зобов’язань, wzór podpisu та oświadczenie про правдивість під кримінальною відповідальністю; pkt 2–5 і 9 ust. 1 позначені як uchylony. Для permit i pracę, high qualifications, окремих функцій у spółka та інших спеціальних цілей додаються annexes з даними podmiot, роботи, кваліфікацій, організатора або jednostka naukowa. Потрібні travel document, фотографії, підтвердні документи, odciski linii papilarnych та виконання wezwanie.",
-      statuteLocator: "Art. 106 ust. 1 pkt 1–16; ust. 1a–1e; ust. 2–5",
-      practicalText:
-        "Art. 106 — доказова та ідентифікаційна основа провадження: кожен факт у formularz має відповідати паспорту, annex, договору та підтвердному документу. Неподання документів може вести до wezwanie, а fingerprints мають окремий процесуальний режим; сама повна форма не гарантує permit або work authorization.",
-      practicalLocator: "Art. 106 ust. 1–5",
-      summary:
-        "Art. 106 визначає зміст wniosek і спеціальних annexes, документи, wezwanie для їх подання, travel document та fingerprints у справі про temporary residence permit.",
-      rules: [
+      claims: [
         {
-          locator: "Art. 106 ust. 1 pkt 1, 6–8, 10–16",
-          explanation:
-            "Основна форма містить ідентифікаційні та сімейні дані, історію pobyt і поїздок, кошти, страховку, мету, обмеження свободи, зобов’язання, підпис та oświadczenie про правдивість; pkt 2–5 і 9 — uchylony.",
-        },
-        {
-          locator: "Art. 106 ust. 1a–1b",
-          explanation:
-            "Для permit i pracę, high qualifications та визначеної роботи через spółka annex подає podmiot powierzający; він охоплює суб’єктів, stanowisko/rodzaj pracy, zawód, місце, підставу, час, оплату, обов’язки, період і oświadczenie про неkaralność.",
-        },
-        {
-          locator: "Art. 106 ust. 1c–1e",
-          explanation:
-            "Окремі annexes стосуються high qualifications і Blue Card mobility, стажера/волонтера та дослідника: кваліфікацій і попередньої EU mobility, даних організатора або jednostka naukowa та програм мобільності.",
-        },
-        {
-          locator: "Art. 106 ust. 2–2b",
-          explanation:
-            "Подаються чинний travel document, фотографії та докази обставин; за відсутності доказів wojewoda дає щонайменше 14 днів, а суміщений виклик має строк не коротший за найдовший з пов’язаних строків.",
-        },
-        {
-          locator: "Art. 106 ust. 3–5",
-          explanation:
-            "Інший документ особи допускається лише у спеціально обґрунтованому випадку неможливості отримати travel document; fingerprints є обов’язковими, а коли їх не можна взяти з вини wojewoda, він призначає строк не менше 7 днів.",
+          kind: "statute-text",
+          text: foreignersLaw.text`${foreignersLaw.article("106", "Art. 106")} визначає зміст форми wniosku для zezwolenia na pobyt czasowy та додаткові załączniki залежно від заявленої мети: роботи, Niebieskiej Karty UE, господарської діяльності, стажування, волонтерства, досліджень або навчання.`,
+          sourceLocator: "Art. 106 ust. 1–8",
         },
       ],
-      legalEffect:
-        "Стаття визначає, які відомості та докази орган може перевіряти, і як усуваються неповні матеріали. Вона не є рішенням про legal stay, eligibility permit або work authorization.",
+      summary:
+        "Загальна форма описує особу, її pobyt і заявлену мету, а спеціальний załącznik показує, хто та якими фактами підтверджує конкретний маршрут. Правильна назва мети без правильного додатка не утворює повної заяви.",
+      rules: [
+        {
+          locator: "Art. 106 ust. 1 i 8",
+          explanation:
+            "Форма wniosku охоплює персональні й сімейні дані, попередній та поточний pobyt, закордонні поїздки за 5 років, фінансові засоби, ubezpieczenie zdrowotne, мету, затримання, юридичні зобов’язання й обґрунтування. Oświadczenie про правдивість даних подається під загрозою кримінальної відповідальності з установленою klauzulą.",
+        },
+        {
+          locator: "Art. 106 ust. 2–4",
+          explanation:
+            "Для робочих маршрутів załącznik роботодавця описує суб’єкт, pracodawcę użytkownika та фактичні умови праці; окремий załącznik заявника підтверджує кваліфікації й попередню мобільність для Niebieskiej Karty UE. Підписи й oświadczenia мають походити від уповноважених осіб.",
+        },
+        {
+          locator: "Art. 106 ust. 5–7",
+          explanation:
+            "Для стажування або волонтерства свій załącznik заповнює відповідний організатор, для досліджень заявник подає дані наукової одиниці та програми мобільності, а для навчання за навчальний маршрут відповідає załącznik закладу освіти.",
+        },
+      ],
+      legalEffect: foreignersLaw.text`${foreignersLaw.article("106", "Art. 106")} визначає інформаційну архітектуру заяви. Він не замінює матеріальних умов відповідного дозволу, але дозволяє organowi встановити, які саме умови й докази треба перевіряти.`,
       foreignersCase:
-        "Зробіть копію всього formularz і annexes; звірте ПІБ, сім’ю, адреси, 5-річні поїздки, кошти, insurance, cel, паспорт, фото, договори, kwalifikacje та дані podmiot. Ведіть календар wezwanie, подання документів і fingerprints.",
-    }),
-  ]),
+        "Не починайте з готової форми. Спершу встановіть реальну мету pobytu й роль кожного суб’єкта, потім виберіть потрібний załącznik, звірте його підпис і пов’яжіть кожне поле з доказом.",
+    },
+  ],
 })

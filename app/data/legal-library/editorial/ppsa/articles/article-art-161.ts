@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-161",
@@ -11,33 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Sąd видає postanowienie про umorzenie postępowania, якщо skarżący ефективно відкликав skarga, після смерті сторони за умов, коли предмет стосується лише особисто пов’язаних прав та обов’язків, або коли справа з інших причин стала bezprzedmiotowa; postanowienie може бути на posiedzenie niejawnym.",
+          text: "Суд припиняє провадження ухвалою, якщо скаргу ефективно відкликано, після смерті сторони у справі про суто особисті права за відсутності іншої заінтересованої особи або коли провадження стало безпредметним з іншої причини.",
           sourceLocator: "Art. 161 § 1–2",
         },
       ],
       summary:
-        "Норма перелічує підстави umorzenie судового провадження, зокрема skuteczne cofnięcie skargi і bezprzedmiotowość.",
+        "Стаття називає процесуальні підстави завершення справи без оцінки законності по суті.",
       rules: [
         {
-          locator: "§ 1 pkt 1",
+          locator: "Art. 161 § 1–2",
           explanation:
-            "Cofnięcie skargi має бути skuteczne; сама заява про відкликання не замінює перевірки цієї умови.",
-        },
-        {
-          locator: "§ 1 pkt 2–3",
-          explanation:
-            "Після смерті сторони перевірте особистий характер прав і можливість участі особи з interes prawny; окремо встановіть, чи справа стала bezprzedmiotowa.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Про umorzenie суд може постановити на posiedzenie niejawnym.",
+            "Для кожної підстави встановіть факт, який її запускає: ефективність відкликання, особистий характер права і відсутність наступника або втрату предмета спору. Ухвала може бути видана на закритому засіданні.",
         },
       ],
       legalEffect:
-        "Umorzenie завершує судове postępowanie з процесуальної підстави, названої в нормі, і не є вирішенням законності рішення по суті.",
+        "Припинення (umorzenie postępowania) завершує судову справу, але саме по собі не підтверджує правильність адміністративного рішення.",
       foreignersCase:
-        "У справі про pobyt обережно оцініть наслідки cofnięcie skargi або втрати предмета спору: umorzenie не означає, що decyzja стала законною по суті на користь іноземця.",
+        "Перед відкликанням скарги у справі про перебування перевірте, який адміністративний акт залишиться чинним і чи справді спір утратив практичний предмет.",
     },
   ],
 })

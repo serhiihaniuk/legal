@@ -1,15 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const kpaLaw = createLegalTextAuthor("kpa")
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-151a",
@@ -17,29 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Задовольняючи sprzeciw від decyzja, суд uchyla decyzja повністю, якщо встановлює порушення ${kpaLaw.article("138", "art. 138 § 2")} KPA, і може з urzędu або за wniosek накласти органу grzywna; якщо sprzeciw не задоволено, суд його oddala. На wyrok за ${ppsaLaw.article("151a", "§ 1")} środka odwoławczego немає, але на postanowienie про grzywna належить zażalenie; правила застосовуються відповідно і до sprzeciw від postanowienie.`,
+          text: "У спеціальній процедурі заперечення (sprzeciw) суд скасовує адміністративне рішення повністю, якщо орган порушив правило KPA про повернення справи на повторний розгляд. Суд може також накласти на орган штраф (grzywna). Якщо підстав немає, заперечення відхиляється.",
           sourceLocator: "Art. 151a § 1–4",
         },
       ],
-      summary: ppsaLaw.text`Стаття встановлює окремий режим sprzeciw від decyzja або postanowienie у випадках, пов’язаних з ${kpaLaw.article("138", "art. 138 § 2")} KPA, включно з відсутністю звичайного środka odwoławczego від визначеного wyrok.`,
+      summary:
+        "Це вузький судовий контроль касаційного рішення адміністративного органу, а не звичайна скарга на будь-яке рішення.",
       rules: [
         {
-          locator: "§ 1–2",
-          explanation: ppsaLaw.text`Для sprzeciw спочатку перевірте названу підставу ${kpaLaw.article("138", "art. 138 § 2")} KPA; наслідком є uchylenie decyzja або oddalenie sprzeciw залежно від оцінки суду.`,
-        },
-        {
-          locator: "§ 3",
-          explanation: ppsaLaw.text`Wyrok за ${ppsaLaw.article("151a", "§ 1")} не має środka odwoławczego, але postanowienie у частині grzywna може бути оскаржене zażalenie.`,
-        },
-        {
-          locator: "§ 4",
+          locator: "Art. 151a § 1–4",
           explanation:
-            "Ті самі правила відповідно застосовуються до sprzeciw від postanowienie.",
+            "Визначте, чи документ справді повертає справу на повторний розгляд за правилом KPA, прямо названим у цій статті. Рішення суду про скасування не має звичайного засобу оскарження; окреме оскарження (zażalenie) можливе щодо штрафу. Ті самі правила відповідно діють для заперечення проти ухвали (postanowienie).",
         },
       ],
       legalEffect:
-        "Це спеціальний контроль sprzeciw, а не загальна заміна odwołanie; наслідок і можливість оскарження залежать від виду розглянутого рішення.",
-      foreignersCase: ppsaLaw.text`У справі іноземця спочатку встановіть, чи decyzja або postanowienie справді належить до режиму sprzeciw за ${kpaLaw.article("138", "art. 138 § 2")} KPA. Не називайте цей шлях звичайною апеляцією на будь-яку decyzja про pobyt.`,
+        "За наявності порушення суд скасовує все рішення про повернення справи. Стаття не дає суду вирішити основну адміністративну справу замість органу.",
+      foreignersCase:
+        "У справі про перебування перевірте не лише негативний результат, а й процесуальну форму: шлях заперечення (sprzeciw) відкривається саме проти касаційного рішення другої інстанції, а не проти кожної відмови.",
     },
   ],
 })

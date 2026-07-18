@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-177",
@@ -25,12 +25,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "весь припис",
           explanation:
-            "Орган визначає строк у межах закону, але не може надати цей вид permit менше ніж на 6 місяців; строк не слід плутати зі строком zaświadczenie.",
+            "Орган визначає строк у межах закону, але не може надати цей вид zezwolenie менше ніж на 6 місяців; строк не слід плутати зі строком zaświadczenie.",
         },
       ],
       legalEffect:
-        "Норма гарантує мінімальну тривалість наданого permit, але не продовжує автоматично його після закінчення і не скасовує можливого cofnięcie.",
-      foreignersCase: foreignersLaw.text`Перевірте строк у decyzja: якщо permit видано менше ніж на 6 місяців, порівняйте його з ${foreignersLaw.article("177", "Art. 177")} і вчасно використайте доступний засіб оскарження.`,
+        "Норма гарантує мінімальну тривалість наданого zezwolenie, але не продовжує автоматично його після закінчення і не скасовує можливого cofnięcie.",
+      foreignersCase: foreignersLaw.text`Перевірте строк у decyzja: якщо zezwolenie видано менше ніж на 6 місяців, порівняйте його з ${foreignersLaw.article("177", "Art. 177")} і вчасно використайте доступний засіб оскарження.`,
     },
   ],
 })

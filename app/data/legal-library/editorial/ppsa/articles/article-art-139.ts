@@ -1,9 +1,9 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-139",
@@ -31,7 +31,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "§ 4–5",
           explanation:
-            "Для wyrok на posiedzenie niejawnym перевірте, чи uzasadnienie складається з urzędu: якщо ні, odpis sentencji doręczaється сторонам; сам wyrok має бути публічно доступний у sekretariat протягом чотирнадцяти днів.",
+            "Для wyrok на posiedzenie niejawne перевірте, чи uzasadnienie складається z urzędu: якщо ні, odpis sentencji вручається сторонам; сам wyrok має бути публічно доступний у sekretariat протягом чотирнадцяти днів.",
         },
       ],
       legalEffect:

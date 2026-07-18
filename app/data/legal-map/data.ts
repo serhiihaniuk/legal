@@ -349,7 +349,7 @@ export const legalData = {
             level: "external",
             owner: "Роботодавець · до 7 днів від початку роботи",
             proves: "Законність поточної роботи до отримання CUKR",
-            law: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            law: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
           },
           {
             item: "Підтвердження odbioru карти",
@@ -367,7 +367,7 @@ export const legalData = {
             action: "Роботодавець подає powiadomienie PUP",
             consequence:
               "Прострочення ставить під ризик законність поточної роботи; CUKR цього не виправляє заднім числом.",
-            law: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            law: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
           },
           {
             period: "до 04.03.2027",
@@ -700,7 +700,7 @@ export const legalData = {
             level: "external",
             owner: "Роботодавець · поточна робота і визначені зміни",
             proves: "Законність праці на підставі правил для громадян України",
-            law: "Art. 5a + przepisy przejściowe",
+            law: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom; art. 41 ustawy z 23.01.2026 — zakres przejściowy",
           },
           {
             item: "Oryginał паспорта + odciski + wzór podpisu",
@@ -718,7 +718,7 @@ export const legalData = {
             action: "Роботодавець подає powiadomienie PUP",
             consequence:
               "Подання pobytowego wniosku не легалізує попередню або поточну роботу саме по собі.",
-            law: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            law: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom; art. 41 ustawy z 23.01.2026 — zakres przejściowy",
           },
           {
             period: "мін. 7 днів",
@@ -781,7 +781,7 @@ export const legalData = {
             action: "Нове powiadomienie PUP за потреби",
             consequence:
               "Тригери: вид договору, посада/вид роботи, зменшення часу або винагороди.",
-            law: "Art. 5a + przepisy przejściowe",
+            law: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom; art. 41 ustawy z 23.01.2026 — zakres przejściowy",
           },
         ],
         exclusions: [

@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-23",
@@ -22,11 +22,11 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "Art. 23",
           explanation:
-            "У цій редакції текст статті — «uchylony», тому вона не містить operative rule для нового процесуального кроку.",
+            "У цій редакції текст статті — «uchylony», тому вона не містить чинного правила для нового процесуального кроку.",
         },
       ],
       legalEffect:
-        "Для Art. 23 немає чинного operative rule, на якому можна будувати висновок у справі.",
+        "Art. 23 не містить чинної норми, на якій можна будувати висновок у справі.",
       foreignersCase:
         "У справі іноземця не посилайтеся на Art. 23 як на діючу підставу; якщо старий документ містить це посилання, перевірте його контекст і актуальну норму окремо.",
     },

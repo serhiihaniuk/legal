@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-272",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 272 допускає wznowienie, якщо Trybunał Konstytucyjny визнав акт normatywny, на підставі якого видано orzeczenie, несумісним із Конституцією, міжнародним договором або законом; § 2 встановлює тримісячний строк, § 2a охоплює orzeczenie Trybunału Sprawiedliwości Unii Europejskiej, що впливає на зміст orzeczenie, а § 3 — рішення міжнародного органу за ратифікованим договором.",
+          text: "Поновлення можливе, якщо рішення ґрунтувалося на нормі, яку Конституційний трибунал (Trybunał Konstytucyjny) визнав несумісною з вищим правом, якщо рішення TSUE впливає на зміст судового рішення або якщо потреба випливає з рішення міжнародного органу за ратифікованим договором.",
           sourceLocator: "Art. 272 § 1–3",
         },
       ],
       summary:
-        "Стаття пов’язує окремі міжнародні та конституційні рішення з можливістю wznowienie і визначає спеціальний момент для тримісячного строку.",
+        "Стаття пов’язує надзвичайний перегляд із пізнішим авторитетним рішенням конституційного, союзного або міжнародного органу.",
       rules: [
         {
-          locator: "§ 1–2",
+          locator: "Art. 272 § 1–3",
           explanation:
-            "Для підстави, пов’язаної з orzeczenie Trybunału Konstytucyjnego, строк становить три місяці від wejścia w życie цього orzeczenia; якщо на момент його ухвалення судове orzeczenie ще не було prawomocne через wniesiony środek odwoławczy, який потім відхилено, строк рахується від doręczenia postanowienia o odrzuceniu.",
-        },
-        {
-          locator: "§ 2a–3",
-          explanation:
-            "Для рішення TSUE строк рахується від публікації sentencja в Dziennik Urzędowy Unii Europejskiej, а для рішення міжнародного органу — від doręczenie стороні або її pełnomocnikowi; § 2 застосовується відповідно.",
+            "Зазвичай діє тримісячний строк, але початок різний: набрання чинності рішенням TK, публікація резолютивної частини рішення TSUE в Офіційному віснику ЄС (Dziennik Urzędowy UE) або вручення рішення міжнародного органу стороні чи представникові. Спеціально враховано й пізніше відхилений засіб оскарження.",
         },
       ],
       legalEffect:
-        "Стаття не робить кожне рішення TK, TSUE або міжнародного органу автоматичною підставою: треба показати його зв’язок із оскарженим orzeczenie та дотримати строк.",
+        "Потрібен реальний вплив зовнішнього рішення на правову основу конкретної справи, а не тематична подібність.",
       foreignersCase:
-        "Якщо у справі про pobyt посилаються на рішення TK, TSUE чи міжнародного органу, зафіксуйте точний акт, його публікацію або doręczenie та тримісячний розрахунок. Не починайте строк лише від дати, коли про рішення стало відомо неформально.",
+        "У справі іноземця зіставте норму, застосовану судом, із точним обсягом рішення TK, TSUE чи міжнародного органу й задокументуйте дату початку тримісячного строку.",
     },
-  ]),
+  ],
 })

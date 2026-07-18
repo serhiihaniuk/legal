@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-285",
@@ -43,7 +43,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
             "Критерії розпорядження мають забезпечувати повноту, потрібний обсяг даних і можливість усунути wadliwy dokument.",
         },
       ],
-      legalEffect: foreignersLaw.text`${foreignersLaw.article("285", "Art. 285")} не встановлює всі деталі бланка безпосередньо; для подання треба перевірити актуальне розporządzenie та його перехідні правила.`,
+      legalEffect: foreignersLaw.text`${foreignersLaw.article("285", "Art. 285")} не встановлює всі деталі бланка безпосередньо; для подання треба перевірити актуальне rozporządzenie та його перехідні правила.`,
       foreignersCase:
         "Перед заявою завантажте чинний офіційний formularz, перевірте кількість і технічні вимоги до фото та не використовуйте стару версію без перевірки.",
     },

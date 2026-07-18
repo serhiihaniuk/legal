@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-78",
@@ -35,7 +35,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "Art. 78 ust. 3–4",
-          explanation: foreignersLaw.text`Для визначених віз MFA naklejka та дані оформлює konsul ${foreignersLaw.article("66", "Art. 66")} ust. 1b; у випадку ${foreignersLaw.article("66", "Art. 66")} ust. 1a він також виконує дії за ${foreignersLaw.external("Art. 27", VISA_CODE_URL)} і ${foreignersLaw.external("29 Visa Code", VISA_CODE_URL)}.`,
+          explanation: foreignersLaw.text`Для визначених віз MFA naklejka та дані оформлює konsul ${foreignersLaw.article("66", "Art. 66")} ust. 1b; у випадку ${foreignersLaw.article("66", "Art. 66")} ust. 1a він також виконує дії за ${foreignersLaw.external("Art. 27 kodeksu wizowego", VISA_CODE_URL)} і ${foreignersLaw.external("Art. 29 kodeksu wizowego", VISA_CODE_URL)}.`,
         },
       ],
       legalEffect:

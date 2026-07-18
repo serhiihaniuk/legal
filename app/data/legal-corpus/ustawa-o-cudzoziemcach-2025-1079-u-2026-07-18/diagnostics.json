@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "documentId": "ustawa-o-cudzoziemcach",
+  "editionId": "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  "profile": "polish-statute-art-v1",
+  "expected": {
+    "provisionCount": 693,
+    "pageCount": 495,
+    "textCoverage": 1
+  },
+  "observed": {
+    "pageCount": 495,
+    "textLayerPageCount": 495,
+    "textCoverage": 1,
+    "provisionCount": 693,
+    "articleCount": 693,
+    "promotedProvisionCount": 693,
+    "promotedPageCount": 489
+  },
+  "entries": [],
+  "fatal": [],
+  "warnings": []
+}

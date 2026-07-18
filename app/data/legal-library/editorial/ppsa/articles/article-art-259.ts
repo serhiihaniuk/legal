@@ -1,45 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-259",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 259 дозволяє стороні або adwokat, radca prawny, doradca podatkowy чи rzecznik patentowy подати до właściwy wojewódzki sąd administracyjny sprzeciw від zarządzenia або postanowienia, названих в Art. 258 § 2 pkt 6–8, у строк семи днів від doręczenie. Sprzeciw професійного представника має містити uzasadnienie. Прострочений sprzeciw, sprzeciw з неусуненими braki або sprzeciw представника без uzasadnienie суд odrzuca на posiedzenie niejawnym; без sprzeciw або після його prawomocne odrzucenie відповідний акт має skutki prawomocnego orzeczenia sądu.",
+          text: "Сторона або професійний представник може протягом семи днів від вручення подати до WSA заперечення (sprzeciw) проти визначених рішень референдаря у справі права допомоги. Заперечення фахівця повинно мати обґрунтування; прострочене, формально невиправлене або необґрунтоване професійне заперечення суд відхиляє.",
           sourceLocator: "Art. 259 § 1–3",
         },
       ],
       summary:
-        "Sprzeciw є спеціальним шляхом перевірки окремих актів referendarz у справі про prawo pomocy і має короткий семиденний строк.",
+        "Стаття визначає строк, форму й наслідок відсутності належного заперечення (sprzeciw).",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 259 § 1–3",
           explanation:
-            "Перевірте, чи оскаржуваний акт належить саме до Art. 258 § 2 pkt 6–8, кому його вручено і коли почався семиденний строк. Для sprzeciw, поданого професійним представником, додайте uzasadnienie.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Суд odrzuca на posiedzenie niejawnym sprzeciw після строку, з неусуненими braki або без обов’язкового uzasadnienie, якщо його подав професійний представник.",
-        },
-        {
-          locator: "§ 3",
-          explanation:
-            "Якщо sprzeciw не подано або його odrzucenie стало prawomocne, акт referendarz отримує skutki prawomocnego orzeczenia sądu; це вузький процесуальний наслідок для названих актів.",
+            "Зафіксуйте дату вручення, автора рішення та предмет із законного переліку. Професійний представник має одразу викласти обґрунтування (uzasadnienie). Якщо заперечення (sprzeciw) не подано або його остаточно відхилено, рішення референдаря має силу остаточного рішення суду.",
         },
       ],
       legalEffect:
-        "Пропуск семиденного строку або невиконання формальних вимог може закрити sprzeciw. Подання sprzeciw не є odwołanie від рішення органу у справі про pobyt і не відкриває повторний розгляд усієї справи.",
+        "Своєчасне й належне заперечення (sprzeciw) є єдиним способом не допустити остаточності названого рішення референдаря.",
       foreignersCase:
-        "Після doręczenie акта referendarz у справі іноземця запишіть точну дату і відразу визначте, чи потрібен sprzeciw протягом 7 днів. Не замінюйте sprzeciw загальною skarga або zażalenie та перевірте uzasadnienie, якщо його подає професійний представник.",
+        "У справі про перебування сім днів рахуйте від вручення документа, а не від моменту, коли сторона знайшла нового представника.",
     },
-  ]),
+  ],
 })

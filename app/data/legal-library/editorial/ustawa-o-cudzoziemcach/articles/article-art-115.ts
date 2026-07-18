@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("115", {
       provisionId: "ustawa-o-cudzoziemcach-art-115",
@@ -55,19 +55,19 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         "Отримання zezwolenia na pobyt czasowy i pracę не звільняє від вимог, встановлених окремими правилами для wykonywanie zawodów regulowanych або діяльності.",
       statuteLocator: "Art. 115",
       practicalText:
-        "Permit i pracę та дозвіл/кваліфікація для regulated profession — різні питання. Потрібно назвати конкретну професію або діяльність і знайти окрему вимогу; сам residence permit не підтверджує професійне допущення.",
+        "zezwolenie i pracę та дозвіл/кваліфікація для zawód regulowany — різні питання. Потрібно назвати конкретну професію або діяльність і знайти окрему вимогу; сам zezwolenie na pobyt не підтверджує професійне допущення.",
       practicalLocator: "Art. 115",
       summary:
-        "Art. 115 прямо розділяє temporary residence and work permit та вимоги до регульованої професії або діяльності.",
+        "Art. 115 прямо розділяє zezwolenie na pobyt czasowy i pracę та вимоги до регульованої професії або діяльності.",
       rules: [
         {
           locator: "Art. 115",
           explanation:
-            "Окремі przepisy продовжують діяти навіть після отримання permit i pracę; їхні вимоги треба виконати самостійно.",
+            "Окремі przepisy продовжують діяти навіть після отримання zezwolenie i pracę; їхні вимоги треба виконати самостійно.",
         },
       ],
       legalEffect:
-        "Permit встановлює pobyt і, у межах рішення, робочий режим, але не скасовує ліцензію, професійне визнання чи інше обов’язкове допущення.",
+        "zezwolenie встановлює pobyt і, у межах рішення, робочий режим, але не скасовує ліцензію, професійне визнання чи інше обов’язкове допущення.",
       foreignersCase:
         "Визначте, чи є stanowisko zawód regulowany або діяльність зі спеціальним допуском, зберіть підтвердження kwalifikacje/licence/registration та порівняйте їх із Art. 118 рішення.",
     }),

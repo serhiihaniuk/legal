@@ -54,7 +54,7 @@ export const sourceCheckTopic: KnowledgeUnit<SourceCheckBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -89,7 +89,7 @@ export const sourceCheckTopic: KnowledgeUnit<SourceCheckBody> =
           "Використання нечинної або майбутньої редакції змінює перелік передумов, орган, строк чи наслідок і може зробити весь правовий висновок хибним.",
         ],
         procedure: [
-          "Перевірка охоплює офіційний запис ELI, status aktu, tekst jednolity, перелік новел, daty wejścia w życie, przepisy przejściowe, а після цього — точний artykuł, ustęp, punkt і відсилання.",
+          "Перевірка охоплює офіційний запис ELI, статус акта, tekst jednolity, перелік новел, daty wejścia w życie, przepisy przejściowe, а після цього — точний artykuł, ustęp, punkt і відсилання.",
         ],
         foreignersContext: [
           "Право cudzoziemców часто змінюється й містить спеціальні та перехідні режими. Офіційна сторінка urzędu пояснює практичний канал, але не замінює ustawy o cudzoziemcach, закону про працю cudzoziemców і KPA.",
@@ -103,7 +103,7 @@ export const sourceCheckTopic: KnowledgeUnit<SourceCheckBody> =
       ],
       steps: [
         "Відкрий ELI.",
-        "Перевір status aktu та akty zmieniające.",
+        "Перевір статус акта та akty zmieniające.",
         "Прочитай дату wejścia w życie.",
         "Знайди przepisy przejściowe.",
         "Лише потім дивись urzędowe FAQ та orzecznictwo.",

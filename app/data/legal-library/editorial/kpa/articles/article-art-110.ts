@@ -20,7 +20,7 @@ export default defineKpaEditorialPart({
         {
           locator: "§ 2",
           explanation:
-            "Для milczącego заłatwienia пов’язаність виникає наступного дня після спливу строку на акт або sprzeciw.",
+            "У разі мовчазного вирішення справи (milczące załatwienie sprawy) орган стає пов’язаним результатом наступного дня після спливу строку на видання акта або внесення sprzeciw.",
         },
       ],
       legalEffect:

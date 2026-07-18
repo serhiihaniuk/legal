@@ -1,0 +1,1387 @@
+{
+  "documentId": "powierzanie-pracy",
+  "oldEditionId": "powierzanie-pracy-2025-621",
+  "newEditionId": "powierzanie-pracy-2025-621-u-2026-07-18",
+  "provisions": {
+    "added": [
+      "powierzanie-pracy-art-5a"
+    ],
+    "changed": [
+      "powierzanie-pracy-art-1",
+      "powierzanie-pracy-art-10",
+      "powierzanie-pracy-art-100",
+      "powierzanie-pracy-art-101",
+      "powierzanie-pracy-art-102",
+      "powierzanie-pracy-art-103",
+      "powierzanie-pracy-art-104",
+      "powierzanie-pracy-art-105",
+      "powierzanie-pracy-art-106",
+      "powierzanie-pracy-art-107",
+      "powierzanie-pracy-art-108",
+      "powierzanie-pracy-art-109",
+      "powierzanie-pracy-art-11",
+      "powierzanie-pracy-art-110",
+      "powierzanie-pracy-art-111",
+      "powierzanie-pracy-art-112",
+      "powierzanie-pracy-art-113",
+      "powierzanie-pracy-art-114",
+      "powierzanie-pracy-art-12",
+      "powierzanie-pracy-art-13",
+      "powierzanie-pracy-art-14",
+      "powierzanie-pracy-art-16",
+      "powierzanie-pracy-art-17",
+      "powierzanie-pracy-art-18",
+      "powierzanie-pracy-art-19",
+      "powierzanie-pracy-art-2",
+      "powierzanie-pracy-art-20",
+      "powierzanie-pracy-art-21",
+      "powierzanie-pracy-art-22",
+      "powierzanie-pracy-art-23",
+      "powierzanie-pracy-art-24",
+      "powierzanie-pracy-art-25",
+      "powierzanie-pracy-art-26",
+      "powierzanie-pracy-art-27",
+      "powierzanie-pracy-art-28",
+      "powierzanie-pracy-art-29",
+      "powierzanie-pracy-art-3",
+      "powierzanie-pracy-art-30",
+      "powierzanie-pracy-art-31",
+      "powierzanie-pracy-art-32",
+      "powierzanie-pracy-art-33",
+      "powierzanie-pracy-art-34",
+      "powierzanie-pracy-art-35",
+      "powierzanie-pracy-art-36",
+      "powierzanie-pracy-art-37",
+      "powierzanie-pracy-art-38",
+      "powierzanie-pracy-art-39",
+      "powierzanie-pracy-art-4",
+      "powierzanie-pracy-art-40",
+      "powierzanie-pracy-art-41",
+      "powierzanie-pracy-art-42",
+      "powierzanie-pracy-art-43",
+      "powierzanie-pracy-art-44",
+      "powierzanie-pracy-art-45",
+      "powierzanie-pracy-art-46",
+      "powierzanie-pracy-art-47",
+      "powierzanie-pracy-art-48",
+      "powierzanie-pracy-art-49",
+      "powierzanie-pracy-art-5",
+      "powierzanie-pracy-art-50",
+      "powierzanie-pracy-art-51",
+      "powierzanie-pracy-art-52",
+      "powierzanie-pracy-art-53",
+      "powierzanie-pracy-art-54",
+      "powierzanie-pracy-art-55",
+      "powierzanie-pracy-art-56",
+      "powierzanie-pracy-art-58",
+      "powierzanie-pracy-art-59",
+      "powierzanie-pracy-art-6",
+      "powierzanie-pracy-art-60",
+      "powierzanie-pracy-art-61",
+      "powierzanie-pracy-art-62",
+      "powierzanie-pracy-art-63",
+      "powierzanie-pracy-art-64",
+      "powierzanie-pracy-art-65",
+      "powierzanie-pracy-art-66",
+      "powierzanie-pracy-art-67",
+      "powierzanie-pracy-art-68",
+      "powierzanie-pracy-art-69",
+      "powierzanie-pracy-art-7",
+      "powierzanie-pracy-art-70",
+      "powierzanie-pracy-art-71",
+      "powierzanie-pracy-art-72",
+      "powierzanie-pracy-art-73",
+      "powierzanie-pracy-art-74",
+      "powierzanie-pracy-art-75",
+      "powierzanie-pracy-art-76",
+      "powierzanie-pracy-art-77",
+      "powierzanie-pracy-art-78",
+      "powierzanie-pracy-art-79",
+      "powierzanie-pracy-art-8",
+      "powierzanie-pracy-art-80",
+      "powierzanie-pracy-art-81",
+      "powierzanie-pracy-art-82",
+      "powierzanie-pracy-art-83",
+      "powierzanie-pracy-art-84",
+      "powierzanie-pracy-art-85",
+      "powierzanie-pracy-art-86",
+      "powierzanie-pracy-art-87",
+      "powierzanie-pracy-art-88",
+      "powierzanie-pracy-art-89",
+      "powierzanie-pracy-art-9",
+      "powierzanie-pracy-art-90",
+      "powierzanie-pracy-art-91",
+      "powierzanie-pracy-art-92",
+      "powierzanie-pracy-art-93",
+      "powierzanie-pracy-art-94",
+      "powierzanie-pracy-art-95",
+      "powierzanie-pracy-art-96",
+      "powierzanie-pracy-art-97",
+      "powierzanie-pracy-art-98",
+      "powierzanie-pracy-art-99"
+    ],
+    "removed": [],
+    "unchanged": [
+      "powierzanie-pracy-art-15",
+      "powierzanie-pracy-art-57"
+    ]
+  },
+  "reviewDependants": [
+    {
+      "provisionId": "powierzanie-pracy-art-1",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-1.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-1.ts",
+          "line": 41
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-1.ts",
+          "line": 42
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-36.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/learning/document-reading-guides.ts",
+          "line": 294
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-10",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+          "line": 31
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-11.ts",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-100",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-101",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-102",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-103",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-104",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-105",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-106",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-107",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-108",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-109",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-11",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-11.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-11.ts",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-110",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-111",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-112",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-113",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-114",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-12",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-12.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-12.ts",
+          "line": 28
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-12.ts",
+          "line": 35
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-12.ts",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-13",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+          "line": 31
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-13.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-13.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-13.ts",
+          "line": 28
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-13.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-13.ts",
+          "line": 51
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-13.ts",
+          "line": 54
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-14.ts",
+          "line": 22
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-31.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 47
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-9.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-9.ts",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-14",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-14.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-14.ts",
+          "line": 30
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-16",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-16.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-16.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-17",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-17.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-17.ts",
+          "line": 44
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 31
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-41.ts",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-18",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-18.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-18.ts",
+          "line": 41
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+          "line": 35
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-19",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-19.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-19.ts",
+          "line": 36
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 35
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-2",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-2.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-26.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-26.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-40.ts",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-20",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-19.ts",
+          "line": 36
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-20.ts",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-21",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-22",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-19.ts",
+          "line": 36
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-23",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-23.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-23.ts",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-24",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-24.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-24.ts",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-25",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-25.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-25.ts",
+          "line": 34
+        },
+        {
+          "file": "app/data/legal-library/learning/document-reading-guides.ts",
+          "line": 294
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-26",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-26.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-26.ts",
+          "line": 35
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-27",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-27.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-27.ts",
+          "line": 40
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-28.ts",
+          "line": 22
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-28.ts",
+          "line": 40
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-29.ts",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-28",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-27.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-27.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-28.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-77.ts",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-29",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-27.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-29.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-29.ts",
+          "line": 36
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-77.ts",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-3",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-17.ts",
+          "line": 41
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-25.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-25.ts",
+          "line": 22
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-25.ts",
+          "line": 26
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-25.ts",
+          "line": 35
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-3.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-3.ts",
+          "line": 47
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-36.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-4.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-4.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-4.ts",
+          "line": 42
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-5a.ts",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-30",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-30.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-30.ts",
+          "line": 41
+        },
+        {
+          "file": "app/data/legal-library/learning/legal-text.fixture.ts",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-31",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-31.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-31.ts",
+          "line": 41
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-114.ts",
+          "line": 29
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-127.ts",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-32",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-32.ts",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-33",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-33.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-33.ts",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-34",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-34.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-34.ts",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-35",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-35.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-35.ts",
+          "line": 31
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-36",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-36.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-36.ts",
+          "line": 40
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-38.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-38.ts",
+          "line": 22
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-38.ts",
+          "line": 26
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-38.ts",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-37",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-37.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-37.ts",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-38",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-38.ts",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-39",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-39.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-39.ts",
+          "line": 31
+        },
+        {
+          "file": "app/data/legal-library/learning/legal-text.fixture.ts",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-4",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-4.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-4.ts",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-40",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-40.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-40.ts",
+          "line": 40
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-42.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-41",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-41.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-41.ts",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-42",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-42.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-42.ts",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-43",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-43.ts",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-44",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-44.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-44.ts",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-45",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-26.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-26.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-40.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-45.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-45.ts",
+          "line": 22
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-45.ts",
+          "line": 40
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-48.ts",
+          "line": 33
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 29
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 47
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-46",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-46.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-46.ts",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-47",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-47.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-47.ts",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-48",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-48.ts",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-49",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-49.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-49.ts",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-5",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-5.ts",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-50",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-51",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-52",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-53",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-54",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-55",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-56",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-58",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-59",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-6",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-10.ts",
+          "line": 35
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-17.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-5.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-5.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-6.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-6.ts",
+          "line": 41
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-9.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/learning/legal-text.fixture.ts",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-60",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-50.ts",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-61",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-62",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-63",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-64",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-65",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-66",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-67",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-68",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-69",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-7",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 20
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-7.ts",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-70",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-71",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-72",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-73",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-74",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-75",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-76",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-77",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-78",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-79",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-8",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-8.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-8.ts",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-80",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-81",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-82",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-83",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-84",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-1.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-5a.ts",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-85",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-86",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-87",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-88",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-89",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-9",
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-47.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-9.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-9.ts",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-90",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-91",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-92",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-93",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-94",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-95",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-96",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-97",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-98",
+      "references": []
+    },
+    {
+      "provisionId": "powierzanie-pracy-art-99",
+      "references": []
+    }
+  ]
+}

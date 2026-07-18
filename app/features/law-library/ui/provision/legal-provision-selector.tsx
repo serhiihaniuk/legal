@@ -10,6 +10,7 @@ import {
   ComboboxList,
 } from "~/components/ui/combobox"
 import type { LegalDocumentId, LegalProvision } from "~/data/legal-library"
+import { formatProvisionEffectiveDate } from "./legal-provision-source"
 
 export function LegalProvisionSelector({
   documentId,
@@ -27,7 +28,13 @@ export function LegalProvisionSelector({
   const options = provisions.map((provision) => ({
     id: provision.id,
     label: `${provision.locator}${
-      provision.status === "repealed" ? " — uchylony" : ""
+      provision.status === "repealed"
+        ? " — uchylony"
+        : provision.status === "future" && provision.effectiveDate
+          ? ` — майбутня норма від ${formatProvisionEffectiveDate(
+              provision.effectiveDate
+            )}`
+          : ""
     }`,
     kind: provision.kind,
     page: provision.startPdfPage,
@@ -54,7 +61,7 @@ export function LegalProvisionSelector({
         <div ref={anchorRef}>
           <ComboboxInput
             className="w-full"
-            placeholder="Введіть locator або номер…"
+            placeholder="Введіть локатор або номер…"
             aria-label={`Знайти норму в ${documentLabel}`}
           />
         </div>
@@ -73,7 +80,7 @@ export function LegalProvisionSelector({
                 <span className="grid min-w-0 gap-0.5">
                   <span className="font-medium">{option.label}</span>
                   <span className="text-xs text-muted-foreground">
-                    {option.kind} · PDF s. {option.page}
+                    {option.kind} · PDF, с. {option.page}
                   </span>
                 </span>
               </ComboboxItem>

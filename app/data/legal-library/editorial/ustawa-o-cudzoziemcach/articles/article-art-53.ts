@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-53",
@@ -29,7 +29,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 53 ust. 1 pkt 1–2",
           explanation:
-            "Потрібні заява і документи, що підтверджують можливість покрити витрати pobyt, zakwaterowanie, wyżywienie та повернення або transit.",
+            "Потрібні заява і документи, що підтверджують можливість покрити витрати pobyt, zakwaterowanie, wyżywienie та повернення або przejazd tranzytowy.",
         },
         {
           locator: "Art. 53 ust. 1 pkt 3",

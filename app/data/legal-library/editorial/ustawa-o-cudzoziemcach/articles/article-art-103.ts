@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("103", {
       provisionId: "ustawa-o-cudzoziemcach-art-103",
       reviewStatus: "reviewed",
       statuteText:
-        "У провадженні про надання або cofnięcie temporary residence permit під час дій, спрямованих на встановлення обставин Art. 100 ust. 1 pkt 5, не застосовується Art. 79 Kodeks postępowania administracyjnego.",
+        "У провадженні про надання або cofnięcie zezwolenie na pobyt czasowy під час дій, спрямованих на встановлення обставин Art. 100 ust. 1 pkt 5, не застосовується Art. 79 Kodeks postępowania administracyjnego.",
       statuteLocator: "Art. 103",
       practicalText:
         "Це спеціальне процесуальне правило для перевірки неправдивих даних, інформації чи документів; воно не доводить саме по собі, що підроблення було, і не замінює доказування органом.",
       practicalLocator: "Art. 103 w związku z Art. 100 ust. 1 pkt 5",
       summary:
-        "Art. 103 встановлює виняток із застосування Art. 79 KPA у вузькій доказовій частині справ про temporary residence permit.",
+        "Art. 103 встановлює виняток із застосування Art. 79 KPA у вузькій доказовій частині справ про zezwolenie na pobyt czasowy.",
       rules: [
         {
           locator: "Art. 103",
@@ -67,7 +67,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття змінює процесуальний спосіб проведення визначених перевірок, але не є самостійною materialною підставою відмови чи cofnięcie і не визначає prawa do pracy.",
+        "Стаття змінює процесуальний спосіб проведення визначених перевірок, але не є самостійною матеріально-правовою підставою відмови чи cofnięcie і не визначає prawa do pracy.",
       foreignersCase:
         "Збережіть копії поданих документів, запити та протоколи органу, встановіть, який факт Art. 100 ust. 1 pkt 5 перевіряється, і дайте адресні пояснення щодо автентичності та походження документа.",
     }),

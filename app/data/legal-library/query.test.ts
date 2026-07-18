@@ -20,6 +20,7 @@ import {
   listEditions,
   listProvisions,
   parseLegalDocumentReference,
+  parseCorpusProvision,
   parseLegalProvisionReference,
   parseLegalReference,
   resolveLegalReference,
@@ -27,8 +28,64 @@ import {
 
 const KPA_EDITION = "kpa-2025-1691"
 const KPA_PROVISION = "kpa-art-64"
+const PPSA_OVERLAY_EDITION = "ppsa-2026-143-with-2026-846"
 
 describe("legal-library queries", () => {
+  it("accepts future provisions only with a valid effective date", () => {
+    const raw = {
+      id: "ppsa-art-65a",
+      documentId: "ppsa",
+      editionId: PPSA_OVERLAY_EDITION,
+      kind: "article",
+      locator: "Art. 65a",
+      parentId: null,
+      childIds: [],
+      order: 74,
+      startPdfPage: 18,
+      endPdfPage: 19,
+      status: "future",
+      effectiveDate: "2029-10-01",
+      sourcePdfSha256: "a".repeat(64),
+      sourceTextHash: "b".repeat(64),
+      text: "Art. 65a. Przyszły tekst.",
+    }
+
+    expect(
+      parseCorpusProvision(raw, "ppsa", PPSA_OVERLAY_EDITION)?.effectiveDate
+    ).toBe("2029-10-01")
+    expect(
+      parseCorpusProvision(
+        { ...raw, effectiveDate: undefined },
+        "ppsa",
+        PPSA_OVERLAY_EDITION
+      )
+    ).toBeUndefined()
+    expect(
+      parseCorpusProvision(
+        { ...raw, effectiveDate: "2029-02-31" },
+        "ppsa",
+        PPSA_OVERLAY_EDITION
+      )
+    ).toBeUndefined()
+    expect(
+      parseCorpusProvision(
+        { ...raw, status: "active" },
+        "ppsa",
+        PPSA_OVERLAY_EDITION
+      )
+    ).toBeUndefined()
+  })
+
+  it("loads future-only PPSA provisions from the pending generated edition", () => {
+    const futureIds = ["ppsa-art-65a", "ppsa-art-65b"] as const
+
+    for (const provisionId of futureIds) {
+      const provision = getProvision("ppsa", provisionId, PPSA_OVERLAY_EDITION)
+      expect(provision?.status).toBe("future")
+      expect(provision?.effectiveDate).toBe("2029-10-01")
+    }
+  })
+
   it("lists registered documents, current editions, and provisions", () => {
     const documents = listDocuments()
     expect(documents.length).toBeGreaterThan(1)
@@ -84,6 +141,35 @@ describe("legal-library queries", () => {
     expect(
       buildCanonicalPdfLocator("kpa", "unknown-edition", KPA_PROVISION)
     ).toBeUndefined()
+  })
+
+  it("resolves amendment-overlay source spans only on affected PPSA provisions", () => {
+    const art53 = getProvision("ppsa", "ppsa-art-53", PPSA_OVERLAY_EDITION)
+    const art264 = getProvision("ppsa", "ppsa-art-264", PPSA_OVERLAY_EDITION)
+    const art54 = getProvision("ppsa", "ppsa-art-54", PPSA_OVERLAY_EDITION)
+    const edition = getEdition("ppsa", PPSA_OVERLAY_EDITION)
+
+    expect(
+      edition?.manifest.sourceMaterials?.map((source) => source.id)
+    ).toContain("du-2026-846")
+    expect(
+      edition?.manifest.legalStatusEvidence?.entryIntoForce?.some((entry) =>
+        entry.locator.includes("Art. 35 pkt 1")
+      )
+    ).toBe(true)
+    expect(art53?.text).toContain("art. 3 § 2 pkt 4a i 4b")
+    expect(art264?.text).toContain(
+      "ministra właściwego do spraw finansów\npublicznych"
+    )
+    expect(art53?.sourceSpans?.some((span) => span.role === "amendment")).toBe(
+      true
+    )
+    expect(art264?.sourceSpans?.some((span) => span.role === "amendment")).toBe(
+      true
+    )
+    expect(art54?.sourceSpans?.some((span) => span.role === "amendment")).toBe(
+      false
+    )
   })
 
   it("guards IDs and references, including cross-document mismatches", () => {

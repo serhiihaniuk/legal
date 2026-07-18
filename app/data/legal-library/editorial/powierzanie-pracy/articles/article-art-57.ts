@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-57",
@@ -13,23 +13,23 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 57 прямо встановлює, що до zezwolenia na pracę sezonową не застосовується art. 19.",
+          text: "Art. 57 прямо встановлює, що до сезонного дозволу на роботу (zezwolenie na pracę sezonową) не застосовується art. 19.",
           sourceLocator: "Art. 57",
         },
       ],
       summary:
-        "Стаття є спеціальним застереженням про незастосування art. 19 до сезонного zezwolenie. Вона не пояснює зміст art. 19 і не замінює перевірку інших умов розділу.",
+        "Art. 19 зобов’язує повідомляти воєводу про визначені зміни у виконанні роботи за звичайним дозволом. Art. 57 виключає саме це правило із сезонної процедури, яку веде староста.",
       rules: [
         {
           locator: "Art. 57",
           explanation:
-            "У сезонному провадженні не можна автоматично застосовувати art. 19 лише тому, що його застосовують до іншого виду zezwolenie.",
+            "До сезонного дозволу не переносять обов’язки повідомлення з art. 19. Водночас залишаються чинними власні обов’язки сезонної процедури, зокрема подання документів після прибуття іноземця.",
         },
       ],
       legalEffect:
-        "Наслідок обмежений виключенням однієї норми; з тексту art. 57 не випливає скасування інших вимог до сезонної роботи.",
+        "Наслідок обмежений виключенням однієї статті. З art. 57 не випливає скасування інших вимог до сезонної роботи.",
       foreignersCase:
-        "Якщо у заяві або поясненні посилаються на art. 19, окремо перевірте, чи не є це помилковим перенесенням правила: для zezwolenie na pracę sezonową діє art. 57.",
+        "Якщо орган або сторона посилається на art. 19, спочатку перевірте вид дозволу. Для сезонного дозволу діє спеціальне виключення з art. 57, але інші повідомлення треба шукати у правилах сезонної процедури.",
     },
   ]),
 })

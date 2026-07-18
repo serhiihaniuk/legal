@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "documentId": "powierzanie-pracy",
+  "editionId": "powierzanie-pracy-2025-621-u-2026-07-18",
+  "profile": "polish-statute-art-v1",
+  "expected": {
+    "provisionCount": 115,
+    "pageCount": 100,
+    "textCoverage": 1
+  },
+  "observed": {
+    "pageCount": 100,
+    "textLayerPageCount": 100,
+    "textCoverage": 1,
+    "provisionCount": 115,
+    "articleCount": 115,
+    "promotedProvisionCount": 115,
+    "promotedPageCount": 100
+  },
+  "entries": [],
+  "fatal": [],
+  "warnings": []
+}

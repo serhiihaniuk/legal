@@ -1,85 +1,42 @@
-import type { LegalProvisionId } from "../../../contracts"
-
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type ReviewedArticleData = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  statuteText: string
-  statuteLocator: string
-  practicalText: string
-  practicalLocator: string
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
-  provisionId: data.provisionId ?? provisionId(article),
-  reviewStatus: data.reviewStatus,
-  claims: [
-    {
-      kind: "statute-text" as const,
-      text: data.statuteText,
-      sourceLocator: data.statuteLocator,
-    },
-    {
-      kind: "practical-inference" as const,
-      text: data.practicalText,
-      sourceLocator: data.practicalLocator,
-    },
-  ],
-  summary: data.summary,
-  rules: data.rules,
-  legalEffect: data.legalEffect,
-  foreignersCase: data.foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle("105", {
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
       provisionId: "ustawa-o-cudzoziemcach-art-105",
       reviewStatus: "reviewed",
-      statuteText:
-        "Cudzoziemiec подає wniosek про temporary residence permit особисто не пізніше останнього дня legal stay, крім Art. 139l ust. 1 та Art. 139t ust. 1. Якщо особистого подання немає, wojewoda викликає до osobiste stawiennictwo не менш як на 7 днів під rygor залишення wniosek без розгляду. За неповнолітнього, повністю недієздатного або неповнолітнього без опіки подають відповідно батьки/опікуни або kurator; дитина від 6 років має бути присутня.",
-      statuteLocator: "Art. 105 ust. 1–5",
-      practicalText:
-        "Дата останнього legal stay, особиста явка та вік заявника — окремі умови. Пропуск виклику має наслідок `pozostawienie wniosku bez rozpoznania`; винятки Art. 168/168a треба перевіряти за їхніми власними фактами.",
-      practicalLocator: "Art. 105 ust. 1–5",
+      claims: [
+        {
+          kind: "statute-text",
+          text: foreignersLaw.text`${foreignersLaw.article("105", "Art. 105")} вимагає подати wniosek o zezwolenie na pobyt czasowy не пізніше останнього дня legalnego pobytu в Польщі. За малолітню особу заяву подають батьки чи опікуни або один із них, за повністю недієздатну — opiekun, а за малолітню без опіки — kurator.`,
+          sourceLocator: "Art. 105 ust. 1–2",
+        },
+      ],
       summary:
-        "Art. 105 регулює особисте подання, виклик до wojewoda та представництво дітей і недієздатних у справі про temporary residence permit.",
+        "Стаття відповідає на два питання: до якого дня треба подати заяву і хто робить це від імені особи, яка не може діяти самостійно. Вона більше не встановлює особисте паперове подання як загальне правило.",
       rules: [
         {
-          locator: "Art. 105 ust. 1–2",
-          explanation:
-            "Заява подається особисто до останнього дня legal stay; за відсутності особистого подання орган призначає stawiennictwo щонайменше на 7 днів із процесуальним попередженням.",
+          locator: "Art. 105 ust. 1",
+          explanation: foreignersLaw.text`Граничний день визначають за фактичною підставою legalnego pobytu, а не за строком дії роботи, договору чи паспорта. Далі треба встановити юридичний момент електронного подання за ${foreignersLaw.article("106d", "Art. 106d")}.`,
         },
         {
-          locator: "Art. 105 ust. 3–4",
+          locator: "Art. 105 ust. 2",
           explanation:
-            "Закон визначає, хто подає за дитину, особу з повною недієздатністю чи дитину без опіки; присутність дитини потрібна, якщо на день wniosek їй виповнилося 6 років.",
-        },
-        {
-          locator: "Art. 105 ust. 5",
-          explanation:
-            "Для випадків Art. 168 ust. 1 або Art. 168a ust. 1 вимога osobiste stawiennictwo не застосовується, і Art. 106 ust. 4–5 не діють.",
+            "Статус заявника підтверджують окремо: батьківство або опіку над дитиною, opiekę над повністю недієздатною особою чи ustanowienie kuratora для малолітньої особи без опіки.",
         },
       ],
       legalEffect:
-        "Дотримання форми подання зберігає можливість розгляду wniosek, але не означає надання permit. Особиста явка не є сама по собі доказом legal stay або права працювати.",
+        "Своєчасність заяви залежить від того, чи вона юридично подана до кінця останнього дня legalnego pobytu. Для представницьких випадків так само важливо, щоб діяв належний заявник.",
       foreignersCase:
-        "Порахуйтесь з датою закінчення legal stay, збережіть підтвердження особистого подання/явки та doręczenie wezwanie. Для дитини додайте документи про вік, батьківство, опіку або kurator і перевірте виняток Art. 168/168a.",
-    }),
-  ]),
+        "Побудуйте календар усіх підстав pobytu до дня подання, а потім перевірте UPO та належний електронний підпис. Для дитини або недієздатної особи додайте документ, що підтверджує роль заявника.",
+    },
+  ],
 })

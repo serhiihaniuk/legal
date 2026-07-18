@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-294",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 294 передбачає, що якщо urzędowo poświadczone odpisy подано, przewodniczący розпоряджається долучити їх до akt; odpis zarządzenie вручається сторонам.",
+          text: "Коли офіційно засвідчені копії подано, головуючий розпоряджається долучити їх до матеріалів і вручає сторонам копію цього розпорядження.",
           sourceLocator: "Art. 294",
         },
       ],
       summary:
-        "Подані офіційно засвідчені копії включаються до akt за розпорядженням przewodniczący, а сторони отримують копію цього zarządzenie.",
+        "Стаття робить знайдені копії офіційною частиною відновлених матеріалів і повідомляє сторони.",
       rules: [
         {
-          locator: "Art. 294 zdanie pierwsze",
+          locator: "Art. 294",
           explanation:
-            "Перевірте, що подана копія є urzędowo poświadczona і що існує zarządzenie про її долучення до akt.",
-        },
-        {
-          locator: "Art. 294 zdanie drugie",
-          explanation:
-            "Сторонам має бути doręczony odpis zarządzenie, а не обов’язково сам оригінал документа.",
+            "Після вручення розпорядження (doręczenie zarządzenia) перевірте перелік долучених документів та чи відповідають вони поданим копіям.",
         },
       ],
       legalEffect:
-        "Норма регулює долучення копій і повідомлення сторін; вона не встановлює, що долучений документ повністю відновлює зміст утрачених akt.",
+        "Долучення створює документальну основу наступного етапу, але ще не завершує оцінку повноти відновлення.",
       foreignersCase:
-        "У справі іноземця перевірте в матеріалах odtworzenie, чи копію документа про pobyt долучено zarządzenieм і чи його odpis вручено сторонам.",
+        "У справі іноземця порівняйте перелік із власним архівом і швидко повідомте про очевидно пропущений ключовий документ.",
     },
-  ]),
+  ],
 })

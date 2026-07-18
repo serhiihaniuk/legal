@@ -10,8 +10,8 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-8",
@@ -19,32 +19,35 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
       claims: [
         {
           kind: "statute-text",
-          text: regulationLaw.text`${regulationLaw.annex("8", "Załącznik nr 8")} є WZÓR wniosku для cudzoziemca, який перебуває поза межами Польщі, про zezwolenie на pobyt czasowy у celu połączenia się z rodziną або за ${foreignersLaw.article("160", "art. 160")} pkt 1, 3, 4 чи 6 ustawy; форма показує дані rozdzielona rodzina, її місце, podstawę pobytu, сімейні дані та додаткові питання про кошти, ubezpieczenie й окремі обставини.`,
-          sourceLocator:
-            "Załącznik nr 8, nagłówek, części A–C та dodatkowe informacje",
+          text: regulationLaw.text`${regulationLaw.annex("8", "Załącznik nr 8")} є WZÓR wniosku, який członek rodziny rozdzielonej подає щодо cudzoziemca, який перебуває поза межами Польщі, про zezwolenie на pobyt czasowy у celu połączenia się z rodziną або за ${foreignersLaw.article("160", "art. 160")} pkt 1, 3, 4 чи 6 ustawy; форма окремо показує дані члена сім’ї та іноземця, а також обставини заяви.`,
+          sourceLocator: "Załącznik nr 8, nagłówek та części A–K",
         },
       ],
       summary:
-        "Це спеціальний формуляр для заяви з-за меж Польщі у названих сімейних процедурах. Він містить поля про члена розділеної сім’ї та обставини, потрібні самим formularz.",
+        "Це спеціальний формуляр, який członek rodziny rozdzielonej подає щодо іноземця, який перебуває за межами Польщі, у названих сімейних процедурах.",
       rules: [
         {
-          locator: "nagłówek та części A–B",
-          explanation: regulationLaw.text`У формі обирається cel połączenia się z rodziną або один із пунктів ${foreignersLaw.article("160", "art. 160")}, а також вносяться personal data і місце aktualnego pobytu rozdzielonego członka rodziny.`,
+          locator: "nagłówek та wybór celu",
+          explanation: regulationLaw.text`Członek rodziny rozdzielonej обирає заяву про połączenie się z rodziną або один із випадків ${foreignersLaw.article("160", "art. 160")} pkt 1, 3, 4 чи 6 щодо cudzoziemca, який перебуває поза Польщею.`,
         },
         {
-          locator: "część C I",
+          locator: "części A–D",
           explanation:
-            "Поля запитують, чи перебуває особа в Польщі, дату останнього в’їзду, мету та правову підставу pobytu, включно з позначенням руху безвізового або візи та її реквізитами.",
+            "Ці частини містять dane osobowe і місце aktualnego pobytu członka rodziny rozdzielonej, інформацію про його podstawę pobytu та zobowiązania alimentacyjne, а також дані членів його сім’ї, які живуть або планують жити в Польщі.",
         },
         {
-          locator: "dodatkowe informacje",
+          locator: "części E–H",
           explanation:
-            "Форма містить поля про членів сім’ї, місце актуального й запланованого pobytu, кошти, ubezpieczenie zdrowotne, судимість, провадження та зобов’язання, прямо перелічені у витягнутому тексті.",
+            "Ці частини охоплюють dane osobowe cudzoziemca, його адреси й документ подорожі, а також актуальне та заплановане місце pobytu.",
+        },
+        {
+          locator: "części I–K",
+          explanation:
+            "Наприкінці форма запитує про кошти, ubezpieczenie zdrowotne, судимість, провадження та зобов’язання cudzoziemca, а також містить uzasadnienie wniosku й oświadczenie про правдивість даних.",
         },
       ],
-      legalEffect:
-        "Заłącznik nr 8 структурує заяву з-за кордону, але самі позначки та поля не доводять родинний зв’язок, законність pobytu чи інші матеріальні умови zezwolenia.",
-      foreignersCase: regulationLaw.text`Перевірте факт перебування заявника поза Польщею та виберіть лише відповідний cel і пункт ${foreignersLaw.article("160", "art. 160")}. Дані про родину, кошти, ubezpieczenie та podstawę pobytu підтверджуйте окремими документами.`,
+      legalEffect: regulationLaw.text`${regulationLaw.annex("8", "Załącznik nr 8")} структурує заяву, яку członek rodziny rozdzielonej подає щодо іноземця з-за кордону, але самі позначки та поля не доводять родинний зв’язок, законність pobytu чи інші матеріальні умови zezwolenia.`,
+      foreignersCase: regulationLaw.text`Перевірте, чи cudzoziemiec справді перебуває поза Польщею, хто є członek rodziny rozdzielonej, і виберіть лише відповідний cel та пункт ${foreignersLaw.article("160", "art. 160")}. Дані про родину, кошти, ubezpieczenie та podstawę pobytu підтверджуйте окремими документами.`,
     },
   ],
 })

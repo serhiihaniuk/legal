@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-172",
@@ -29,11 +29,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 2",
           explanation:
-            "Строк чинності — 3 місяці від дня видачі, а для małoletni cudzoziemiec — 4 місяці від дня видачі; це строк документа, а не загальний строк розгляду permit.",
+            "Строк чинності — 3 місяці від дня видачі, а для małoletni cudzoziemiec — 4 місяці від дня видачі; це строк документа, а не загальний строк розгляду zezwolenie.",
         },
       ],
       legalEffect:
-        "Після спливу визначеного строку заświadczenie більше не забезпечує наслідок legalny pobyt за статтею 171, якщо не існує іншої підстави.",
+        "Після спливу визначеного строку zaświadczenie більше не забезпечує наслідок legalny pobyt за статтею 171, якщо не існує іншої підстави.",
       foreignersCase:
         "На копії документа позначте день видачі та останній день 3- або 4-місячного строку; завчасно перевірте іншу підставу перебування, якщо провадження триває.",
     },

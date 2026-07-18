@@ -8,8 +8,8 @@ const regulationLaw = createLegalTextAuthor(
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-6",
@@ -17,7 +17,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
       claims: [
         {
           kind: "statute-text",
-          text: regulationLaw.text`${regulationLaw.annex("6", "Załącznik nr 6")} є WZÓR заłącznika nr 5 до wniosku для pobyt у celu kształcenia się na studiach; його заповнює jednostka prowadząca studia, а поля охоплюють заклад, строки й напрям навчання, рівень і оплату, мову та потрібний рівень знання, мобільність і — для продовження — виконання програми.`,
+          text: regulationLaw.text`${regulationLaw.annex("6", "Załącznik nr 6")} є WZÓR п’ятого додатка до wniosku для pobyt у celu kształcenia się na studiach; його заповнює jednostka prowadząca studia, а поля охоплюють заклад, строки й напрям навчання, рівень і оплату, мову та потрібний рівень знання, мобільність і — для продовження — виконання програми.`,
           sourceLocator:
             "Załącznik nr 6, nagłówek, Uwaga та części I–II pkt 1–11",
         },
@@ -32,7 +32,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
         },
         {
           locator: "część I",
-          explanation: "Вказуються personal data cudzoziemca.",
+          explanation: "Вказуються dane osobowe cudzoziemca.",
         },
         {
           locator: "część II pkt 1–9",
@@ -45,8 +45,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
             "Запитується участь у програмі або угоді мобільності та, якщо це продовження навчання, інформація про попереднє виконання програми й зарахування обов’язкових занять.",
         },
       ],
-      legalEffect:
-        "Заłącznik nr 6 організовує відомості про навчання для справи, але сам wzór не доводить автоматичного виконання умов zezwolenia чи фактичного зарахування.",
+      legalEffect: regulationLaw.text`${regulationLaw.annex("6", "Załącznik nr 6")} організовує відомості про навчання для справи, але сам wzór не доводить автоматичного виконання умов zezwolenia чи фактичного зарахування.`,
       foreignersCase:
         "Попросіть заклад узгодити строки, напрям, рівень, оплату, мову та інформацію про продовження навчання з документами з університету. Не вважайте цей додаток заміною іншим доказам у справі.",
     },

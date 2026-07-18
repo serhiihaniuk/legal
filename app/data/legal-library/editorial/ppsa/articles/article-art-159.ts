@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-159",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Wniosek про sprostowanie, uzupełnienie або wykładnię wyroku не впливає на перебіг строку для wniesienia środka zaskarżenia.",
+          text: "Заява про виправлення, доповнення або тлумачення рішення не впливає на перебіг строку для подання засобу оскарження.",
           sourceLocator: "Art. 159",
         },
       ],
       summary:
-        "Подання заяви про виправлення, доповнення чи тлумачення не зупиняє строк оскарження wyrok.",
+        "Стаття розділяє допоміжні заяви щодо рішення та строк його оскарження.",
       rules: [
         {
           locator: "Art. 159",
           explanation:
-            "Не очікуйте результату wniosek, перш ніж перевірити і, за потреби, дотриматися окремого строку środka zaskarżenia.",
+            "Паралельно рахуйте строк оскарження від належної початкової події. Очікування відповіді на заяву не зупиняє й не поновлює цей строк.",
         },
       ],
       legalEffect:
-        "Стаття прямо відділяє ці три wnioski від перебігу строку оскарження.",
+        "Пропуск строку не можна виправдати самим фактом подання заяви про виправлення, доповнення чи тлумачення (sprostowanie, uzupełnienie, wykładnia).",
       foreignersCase:
-        "У справі про pobyt не покладайтеся на wniosek про wykładnię чи uzupełnienie як на спосіб зберегти строк skarga kasacyjna або іншого środka zaskarżenia.",
+        "У справі про перебування ведіть дві окремі дати: строк допоміжної заяви та строк касаційного чи іншого засобу оскарження.",
     },
   ],
 })

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-208",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Niezależnie od wyników spraw wskazanych w ${ppsaLaw.article("200", "art. 200")}, ${ppsaLaw.article("203", "203")}, ${ppsaLaw.article("204", "204")} i ${ppsaLaw.article("207", "207")} sąd może nałożyć na stronę obowiązek zwrotu w całości lub części kosztów wywołanych jej niesumiennym lub oczywiście niewłaściwym postępowaniem.`,
+          text: "Незалежно від результату справи суд може покласти на сторону повністю або частково витрати, спричинені її недобросовісною чи очевидно неправильною процесуальною поведінкою.",
           sourceLocator: "Art. 208",
         },
       ],
       summary:
-        "Niesumienne albo oczywiście niewłaściwe zachowanie strony może uzasadnić osobne obciążenie wywołanymi przez nie kosztami, niezależnie od wyniku sprawy.",
+        "Стаття коригує розподіл витрат через поведінку, а не через виграш або програш.",
       rules: [
         {
           locator: "Art. 208",
           explanation:
-            "Trzeba wskazać konkretne zachowanie strony i koszty przez nie wywołane; sam przegrany lub wygrany wynik nie wystarcza.",
+            "Потрібно встановити конкретну дію сторони та причинний зв’язок із зайвими витратами. Самої різкої оцінки позиції недостатньо.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("208", "Art. 208")} może zmienić rozliczenie kosztów w całości lub części, ale wymaga oceny zachowania jako niesumiennego albo oczywiście niewłaściwego.`,
+      legalEffect:
+        "Недобросовісна поведінка може зробити платником навіть сторону, яка виграла основний спір.",
       foreignersCase:
-        "W sprawie pobytowej dokumentuj terminowe i rzetelne działania. Nie zakładaj, że wynik skargi sam rozstrzyga o kosztach wywołanych konkretnym zachowaniem strony.",
+        "У справі про перебування своєчасно подавайте правдиві документи й не створюйте зайвих засідань або перекладів; суд може окремо покласти спричинені цим витрати.",
     },
   ],
 })

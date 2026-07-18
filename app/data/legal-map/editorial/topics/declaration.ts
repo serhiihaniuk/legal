@@ -2,7 +2,7 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { foreignersLaw, mapTopicSources, workLaw } from "../authoring"
+import { mapTopicSources, workLaw } from "../authoring"
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
 import type { LegalMapTopicBody } from "./principle-legality"
@@ -32,7 +32,7 @@ export const declarationTopic: KnowledgeUnit<DeclarationBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -74,7 +74,7 @@ export const declarationTopic: KnowledgeUnit<DeclarationBody> =
           "Про фактичний початок повідомляється протягом 7 днів, про непочаток — протягом 14 днів від заявленої дати; дострокове завершення або остаточний непочаток повідомляються окремо.",
         ],
         foreignersContext: [
-          foreignersLaw.text`Для громадянина України oświadczenie залишається можливим інструментом, але при ochronie czasowej зазвичай працює окреме powiadomienie ${foreignersLaw.external("art. 5a", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}; це два різні правові режими.`,
+          workLaw.text`Для громадянина України oświadczenie залишається можливим інструментом, але при ochronie czasowej зазвичай працює окреме powiadomienie за ${workLaw.article("5a", "art. 5a")}; це два різні правові режими.`,
           "Oświadczenie не продовжує саме по собі legalnego pobytu й не дозволяє працювати після втрати допустимого tytułu pobytowego.",
         ],
       } satisfies LegalNodeGuide,

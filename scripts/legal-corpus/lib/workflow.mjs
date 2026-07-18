@@ -1,5 +1,12 @@
 import { spawn } from "node:child_process"
-import { lstat, mkdir, readFile, realpath, rename, writeFile } from "node:fs/promises"
+import {
+  lstat,
+  mkdir,
+  readFile,
+  realpath,
+  rename,
+  writeFile,
+} from "node:fs/promises"
 import path from "node:path"
 
 import { buildObservedFacts } from "./artifacts.mjs"
@@ -9,6 +16,10 @@ import { CorpusValidationError } from "./errors.mjs"
 import { sha256 } from "./extraction.mjs"
 import { validateCorpusFacts } from "./validation.mjs"
 import { generateRegistry } from "../generate-registry.mjs"
+import {
+  formatValidationResult,
+  validateEditorial,
+} from "../../legal-editorial/validate.mjs"
 import {
   findReviewDependants,
   scanTypedReferences,
@@ -80,13 +91,17 @@ export function normalizeRepositoryPath(value) {
     normalized.startsWith("../") ||
     normalized.endsWith("/")
   ) {
-    throw new Error(`Approved path cannot traverse or name a directory: ${value}`)
+    throw new Error(
+      `Approved path cannot traverse or name a directory: ${value}`
+    )
   }
   if (
     FORBIDDEN_SCOPE_FILES.has(normalized) ||
     FORBIDDEN_SCOPE_PREFIXES.some((prefix) => normalized.startsWith(prefix))
   ) {
-    throw new Error(`Approved path is generated, internal, or promotion-owned: ${normalized}`)
+    throw new Error(
+      `Approved path is generated, internal, or promotion-owned: ${normalized}`
+    )
   }
   return normalized
 }
@@ -125,7 +140,9 @@ async function assertNoSymlink(projectRoot, repositoryPath) {
  */
 export async function validateApprovedWriteScope(paths, projectRoot) {
   if (!Array.isArray(paths) || paths.length === 0) {
-    throw new Error("approvedWriteScope must contain exact editorial file paths")
+    throw new Error(
+      "approvedWriteScope must contain exact editorial file paths"
+    )
   }
   const normalized = [...new Set(paths.map(normalizeRepositoryPath))]
   for (const repositoryPath of normalized) {
@@ -160,6 +177,7 @@ export function diffProvisionLists(oldProvisions, newProvisions) {
     const structuralChange =
       previous.locator !== current.locator ||
       previous.status !== current.status ||
+      previous.effectiveDate !== current.effectiveDate ||
       previous.parentId !== current.parentId ||
       JSON.stringify(previous.childIds) !== JSON.stringify(current.childIds)
     if (
@@ -199,12 +217,19 @@ export async function runCapture(projectRoot, command, args = []) {
     })
     let stdout = ""
     let stderr = ""
-    child.stdout?.on("data", (chunk) => { stdout += chunk })
-    child.stderr?.on("data", (chunk) => { stderr += chunk })
+    child.stdout?.on("data", (chunk) => {
+      stdout += chunk
+    })
+    child.stderr?.on("data", (chunk) => {
+      stderr += chunk
+    })
     child.once("error", reject)
     child.once("exit", (code) => {
       if (code === 0) resolve(stdout.trim())
-      else reject(new Error(`${command} exited with code ${code}: ${stderr.trim()}`))
+      else
+        reject(
+          new Error(`${command} exited with code ${code}: ${stderr.trim()}`)
+        )
     })
   })
 }
@@ -250,13 +275,18 @@ export function makeLegalStatusEvidence(manifest) {
     inForce: sourceEvidence.inForce ?? manifest.eli?.inForce ?? null,
     legalStatusDate:
       sourceEvidence.legalStatusDate ?? manifest.eli?.legalStatusDate ?? null,
-    legalStateDate: sourceEvidence.legalStateDate ?? manifest.legalStateDate ?? null,
+    legalStateDate:
+      sourceEvidence.legalStateDate ?? manifest.legalStateDate ?? null,
     consolidatedTextIdentifier:
-      sourceEvidence.consolidatedTextIdentifier ?? manifest.eli?.identifier ?? null,
+      sourceEvidence.consolidatedTextIdentifier ??
+      manifest.eli?.identifier ??
+      null,
     checkedAt: sourceEvidence.checkedAt ?? manifest.checkedAt,
     sourceUrls:
       sourceEvidence.sourceUrls ??
-      (sourceEvidence.sourceUrl ? [sourceEvidence.sourceUrl] : [manifest.officialPageUrl]),
+      (sourceEvidence.sourceUrl
+        ? [sourceEvidence.sourceUrl]
+        : [manifest.officialPageUrl]),
     sourceUrl: sourceEvidence.sourceUrl ?? manifest.officialPageUrl,
     amendmentsCheckedThrough: null,
     entryIntoForce: [],
@@ -267,9 +297,15 @@ export function makeLegalStatusEvidence(manifest) {
 
 /**
  * @param {string} editionId
+ * @param {Array<{ localFilename?: unknown }>} [supplementalSources]
  * @returns {string[]}
  */
-export function generatedEditionPaths(editionId) {
+export function generatedEditionPaths(editionId, supplementalSources = []) {
+  const supplementalPdfPaths = supplementalSources
+    .map((source) => source?.localFilename)
+    .filter((filename) => typeof filename === "string" && filename.length > 0)
+    .map((filename) => `public/legal-sources/${editionId}/${filename}`)
+
   return [
     `app/data/legal-corpus/${editionId}/articles.json`,
     `app/data/legal-corpus/${editionId}/diagnostics.json`,
@@ -280,7 +316,9 @@ export function generatedEditionPaths(editionId) {
     `app/data/legal-corpus/${editionId}/provisions.json`,
     `app/data/legal-corpus/${editionId}/structure.json`,
     `public/legal-sources/${editionId}/manifest.json`,
+    `public/legal-sources/${editionId}/amendment-source.pdf`,
     `public/legal-sources/${editionId}/source.pdf`,
+    ...supplementalPdfPaths,
   ]
 }
 
@@ -304,12 +342,16 @@ function fillTemplate(template, values) {
  */
 export function renderReviewDependants(dependants) {
   if (!dependants.length) return "none"
-  return dependants.map(({ provisionId, references }) => {
-    const locations = references.length
-      ? references.map(({ file, line }) => "  - `" + file + ":" + line + "`").join("\n")
-      : "  - no typed references found"
-    return "- `" + provisionId + "`\n" + locations
-  }).join("\n")
+  return dependants
+    .map(({ provisionId, references }) => {
+      const locations = references.length
+        ? references
+            .map(({ file, line }) => "  - `" + file + ":" + line + "`")
+            .join("\n")
+        : "  - no typed references found"
+      return "- `" + provisionId + "`\n" + locations
+    })
+    .join("\n")
 }
 
 /**
@@ -366,7 +408,12 @@ export async function prepareWorkOrder({
     // pointed at the wrong document silently produces a mass add/remove diff
     // instead of stopping on the identity mismatch.
     const oldManifest = await readJson(
-      path.join(projectRoot, "app/data/legal-corpus", /** @type {string} */ (oldEditionId), "manifest.json")
+      path.join(
+        projectRoot,
+        "app/data/legal-corpus",
+        /** @type {string} */ (oldEditionId),
+        "manifest.json"
+      )
     )
     if (oldManifest.documentId !== config.documentId) {
       throw new Error(
@@ -404,20 +451,34 @@ export async function prepareWorkOrder({
       oldEditionId: mode === "update" ? oldEditionId : null,
       newEditionId: config.editionId,
       wouldBuild: {
-        configPath: path.relative(projectRoot, absoluteConfig).replaceAll("\\", "/"),
+        configPath: path
+          .relative(projectRoot, absoluteConfig)
+          .replaceAll("\\", "/"),
         forceRebuild,
-        artifactPaths: generatedEditionPaths(config.editionId),
+        artifactPaths: generatedEditionPaths(
+          config.editionId,
+          config.supplementalSources
+        ),
       },
       wouldWrite: {
-        workOrderPath: path.relative(projectRoot, workOrderPath).replaceAll("\\", "/"),
-        promptPath: path.relative(projectRoot, promptPath).replaceAll("\\", "/"),
-        editionDiffPath: path.relative(projectRoot, editionDiffPath).replaceAll("\\", "/"),
+        workOrderPath: path
+          .relative(projectRoot, workOrderPath)
+          .replaceAll("\\", "/"),
+        promptPath: path
+          .relative(projectRoot, promptPath)
+          .replaceAll("\\", "/"),
+        editionDiffPath: path
+          .relative(projectRoot, editionDiffPath)
+          .replaceAll("\\", "/"),
       },
       note: "Dry run: nothing was built or written. A provision-level diff summary requires an actual build; rerun without --dry-run.",
     }
   }
 
-  const scope = await validateApprovedWriteScope(approvedWriteScope, projectRoot)
+  const scope = await validateApprovedWriteScope(
+    approvedWriteScope,
+    projectRoot
+  )
   const baseCommit = await runCapture(projectRoot, "git", ["rev-parse", "HEAD"])
 
   await buildDocument({
@@ -483,7 +544,9 @@ export async function prepareWorkOrder({
     legalStateDate: config.legalStateDate,
     checkedAt: config.checkedAt,
     source: manifest.source,
-    configPath: path.relative(projectRoot, absoluteConfig).replaceAll("\\", "/"),
+    configPath: path
+      .relative(projectRoot, absoluteConfig)
+      .replaceAll("\\", "/"),
     artifacts: {
       manifest: `app/data/legal-corpus/${config.editionId}/manifest.json`,
       provisions: `app/data/legal-corpus/${config.editionId}/provisions.json`,
@@ -493,7 +556,10 @@ export async function prepareWorkOrder({
     },
     legalStatusEvidence,
     approvedWriteScope: scope,
-    generatedPaths: generatedEditionPaths(config.editionId),
+    generatedPaths: generatedEditionPaths(
+      config.editionId,
+      config.supplementalSources
+    ),
     review: {
       completedAt: null,
       status: "HOLD",
@@ -505,21 +571,22 @@ export async function prepareWorkOrder({
   await writeJson(workOrderPath, workOrder)
 
   const template = await readFile(
-    path.join(
-      projectRoot,
-      "legal-corpus/prompts/add-or-update-document.md"
-    ),
+    path.join(projectRoot, "legal-corpus/prompts/add-or-update-document.md"),
     "utf8"
   )
   const prompt = `${fillTemplate(template, {
     MODE: mode,
-    WORK_ORDER_PATH: path.relative(projectRoot, workOrderPath).replaceAll("\\", "/"),
+    WORK_ORDER_PATH: path
+      .relative(projectRoot, workOrderPath)
+      .replaceAll("\\", "/"),
     DOCUMENT_ID: workOrder.documentId,
     OLD_EDITION_ID_OR_NONE: workOrder.oldEditionId ?? "none",
     NEW_EDITION_ID: workOrder.newEditionId,
     LEGAL_STATE_DATE: workOrder.legalStateDate,
     CHECKED_AT: workOrder.checkedAt,
-    LEGAL_STATUS_EVIDENCE_PATH: path.relative(projectRoot, workOrderPath).replaceAll("\\", "/"),
+    LEGAL_STATUS_EVIDENCE_PATH: path
+      .relative(projectRoot, workOrderPath)
+      .replaceAll("\\", "/"),
     SOURCE_PROVIDER: manifest.source.provider,
     OFFICIAL_PAGE_URL: manifest.source.officialPageUrl,
     METADATA_URL: manifest.source.metadataUrl,
@@ -582,28 +649,53 @@ export function validateLegalStatusEvidence(evidence) {
       errors.push(`legalStatusEvidence.${field} is required`)
     }
   }
-  validateDate(evidence?.checkedAt, "legalStatusEvidence.checkedAt", diagnostics)
+  validateDate(
+    evidence?.checkedAt,
+    "legalStatusEvidence.checkedAt",
+    diagnostics
+  )
   validateDate(
     evidence?.amendmentsCheckedThrough,
     "legalStatusEvidence.amendmentsCheckedThrough",
     diagnostics
   )
   if (evidence?.legalStateDate !== undefined) {
-    validateDate(evidence.legalStateDate, "legalStatusEvidence.legalStateDate", diagnostics)
+    validateDate(
+      evidence.legalStateDate,
+      "legalStatusEvidence.legalStateDate",
+      diagnostics
+    )
   }
-  if (evidence?.legalStatusDate !== undefined && evidence.legalStatusDate !== null) {
-    validateDate(evidence.legalStatusDate, "legalStatusEvidence.legalStatusDate", diagnostics)
+  if (
+    evidence?.legalStatusDate !== undefined &&
+    evidence.legalStatusDate !== null
+  ) {
+    validateDate(
+      evidence.legalStatusDate,
+      "legalStatusEvidence.legalStatusDate",
+      diagnostics
+    )
   }
-  if (typeof evidence?.consolidatedTextIdentifier !== "string" || !evidence.consolidatedTextIdentifier.trim()) {
+  if (
+    typeof evidence?.consolidatedTextIdentifier !== "string" ||
+    !evidence.consolidatedTextIdentifier.trim()
+  ) {
     errors.push("legalStatusEvidence.consolidatedTextIdentifier is required")
   }
 
-  const sourceUrls = evidence?.sourceUrls ?? (evidence?.sourceUrl ? [evidence.sourceUrl] : [])
+  const sourceUrls =
+    evidence?.sourceUrls ?? (evidence?.sourceUrl ? [evidence.sourceUrl] : [])
   if (!Array.isArray(sourceUrls) || sourceUrls.length === 0) {
-    errors.push("legalStatusEvidence.sourceUrls requires an explicit official URL")
+    errors.push(
+      "legalStatusEvidence.sourceUrls requires an explicit official URL"
+    )
   } else {
     sourceUrls.forEach((value, index) =>
-      validateHttpsUrl(value, `legalStatusEvidence.sourceUrls[${index}]`, diagnostics)
+      validateHttpsUrl(
+        value,
+        `legalStatusEvidence.sourceUrls[${index}]`,
+        diagnostics
+      )
     )
   }
   errors.push(...diagnostics.map((entry) => String(entry.message)))
@@ -710,7 +802,9 @@ export async function verifyPromotionArtifacts({ projectRoot, workOrder }) {
   const errors = []
   let config
   try {
-    config = validateConfig(await readJson(path.join(projectRoot, workOrder.configPath)))
+    config = validateConfig(
+      await readJson(path.join(projectRoot, workOrder.configPath))
+    )
   } catch (error) {
     errors.push(`Edition config re-validation failed: ${errorMessage(error)}`)
     return errors
@@ -730,18 +824,61 @@ export async function verifyPromotionArtifacts({ projectRoot, workOrder }) {
   let pages
   let provisions
   let structure
+  let manifest
   let pdfBytes
   try {
-    ;[metadata, pages, provisions, structure, pdfBytes] = await Promise.all([
-      readJson(path.join(editionDirectory, "metadata.json")),
-      readJson(path.join(editionDirectory, "pages.json")),
-      readJson(path.join(editionDirectory, "provisions.json")),
-      readJson(path.join(editionDirectory, "structure.json")),
-      readFile(path.join(publicDirectory, "source.pdf")),
-    ])
+    ;[manifest, metadata, pages, provisions, structure, pdfBytes] =
+      await Promise.all([
+        readJson(path.join(editionDirectory, "manifest.json")),
+        readJson(path.join(editionDirectory, "metadata.json")),
+        readJson(path.join(editionDirectory, "pages.json")),
+        readJson(path.join(editionDirectory, "provisions.json")),
+        readJson(path.join(editionDirectory, "structure.json")),
+        readFile(path.join(publicDirectory, "source.pdf")),
+      ])
   } catch (error) {
-    errors.push(`Cannot read edition artifacts on disk for re-verification: ${errorMessage(error)}`)
+    errors.push(
+      `Cannot read edition artifacts on disk for re-verification: ${errorMessage(error)}`
+    )
     return errors
+  }
+
+  if (Array.isArray(manifest.sourceMaterials)) {
+    const publicRoot = path.resolve(projectRoot, "public")
+    for (const material of manifest.sourceMaterials) {
+      if (
+        typeof material?.localPdfUrl !== "string" ||
+        !material.localPdfUrl.startsWith("/legal-sources/")
+      ) {
+        errors.push(
+          `Source material ${material?.id ?? "<unknown>"} has no safe localPdfUrl`
+        )
+        continue
+      }
+      const localPath = path.resolve(
+        publicRoot,
+        material.localPdfUrl.replace(/^\//u, "")
+      )
+      if (!localPath.startsWith(`${publicRoot}${path.sep}`)) {
+        errors.push(
+          `Source material ${material.id ?? "<unknown>"} localPdfUrl escapes public/`
+        )
+        continue
+      }
+      try {
+        const localBytes = await readFile(localPath)
+        const actualChecksum = sha256(localBytes)
+        if (actualChecksum !== material.pdfSha256) {
+          errors.push(
+            `Source material ${material.id ?? "<unknown>"} local PDF checksum differs from manifest`
+          )
+        }
+      } catch (error) {
+        errors.push(
+          `Cannot read source material ${material.id ?? "<unknown>"} local PDF: ${errorMessage(error)}`
+        )
+      }
+    }
   }
 
   const pdfSha256 = sha256(pdfBytes)
@@ -755,31 +892,46 @@ export async function verifyPromotionArtifacts({ projectRoot, workOrder }) {
     provisions,
     structure,
     observed,
+    manifest,
   })
   for (const entry of result.fatal) {
     const location = entry.path ? ` (${entry.path})` : ""
-    errors.push(`Corpus fact re-verification failed at promotion: [${entry.code}] ${entry.message}${location}`)
+    errors.push(
+      `Corpus fact re-verification failed at promotion: [${entry.code}] ${entry.message}${location}`
+    )
   }
   return errors
 }
 
 /**
- * Run the editorial validator (`scripts/legal-editorial/validate.mjs`) in
- * `--incomplete` mode as a child process, mechanically connecting promotion
- * to editorial validation instead of trusting a self-attested work-order
- * review state. `--incomplete` still treats missing/non-reviewed coverage as
- * warnings; only structural errors (unknown provisions, bad IDs, duplicate
- * entries, invalid status vocabulary, and similar) fail promotion here.
+ * Run the editorial validator in incomplete mode against either the persisted
+ * current-editions pointer or an in-memory candidate pointer. Missing and
+ * non-reviewed coverage remains warning-only; structural errors still block.
  * @param {string} projectRoot
+ * @param {Record<string, string | { currentEditionId?: string, editionId?: string }>} [currentEditions]
+ * @param {string} [documentId]
  * @returns {Promise<string[]>}
  */
-export async function runEditorialValidator(projectRoot) {
+export async function runEditorialValidator(
+  projectRoot,
+  currentEditions,
+  documentId
+) {
   try {
-    await runCapture(projectRoot, process.execPath, [
-      "scripts/legal-editorial/validate.mjs",
-      "--incomplete",
-    ])
-    return []
+    const result = validateEditorial({
+      editorialRoot: path.join(projectRoot, "app/data/legal-library/editorial"),
+      corpusRoot: path.join(projectRoot, "app/data/legal-corpus"),
+      currentEditionsPath: path.join(
+        projectRoot,
+        "app/data/legal-library/current-editions.json"
+      ),
+      currentEditions,
+      documentId,
+      allowIncomplete: true,
+    })
+    return result.ok
+      ? []
+      : [`Editorial validation failed: ${formatValidationResult(result)}`]
   } catch (error) {
     return [`Editorial validation failed: ${errorMessage(error)}`]
   }
@@ -812,7 +964,12 @@ export async function writeJsonAtomically(filePath, value) {
  *   currentPointers: Record<string, string>,
  * }} options
  */
-export function previewPromotion({ workOrder, approval, validation, currentPointers }) {
+export function previewPromotion({
+  workOrder,
+  approval,
+  validation,
+  currentPointers,
+}) {
   const expectedApproval = `${workOrder.documentId}@${workOrder.newEditionId}`
   const approvalMatches = approval === expectedApproval
   return {
@@ -831,7 +988,8 @@ export function previewPromotion({ workOrder, approval, validation, currentPoint
     wouldWrite: {
       pointerPath: "app/data/legal-library/current-editions.json",
       registryPath: "app/data/legal-corpus/registry.generated.ts",
-      referenceRegistryPath: "app/data/legal-corpus/reference-registry.generated.ts",
+      referenceRegistryPath:
+        "app/data/legal-corpus/reference-registry.generated.ts",
       promotionRecordPath: `legal-corpus/promotions/${workOrder.documentId}-${workOrder.newEditionId}.json`,
     },
   }
@@ -863,11 +1021,19 @@ export function previewPromotion({ workOrder, approval, validation, currentPoint
  * }} options
  * @returns {Promise<Record<string, unknown>>}
  */
-export async function promoteEdition({ projectRoot, workOrder, workOrderPath, approvedBy, verifyArtifacts = false }) {
+export async function promoteEdition({
+  projectRoot,
+  workOrder,
+  workOrderPath,
+  approvedBy,
+  verifyArtifacts = false,
+}) {
   if (verifyArtifacts) {
     const errors = await verifyPromotionArtifacts({ projectRoot, workOrder })
     if (errors.length > 0) {
-      throw new Error(`Promotion blocked by corpus re-verification: ${errors.join("; ")}`)
+      throw new Error(
+        `Promotion blocked by corpus re-verification: ${errors.join("; ")}`
+      )
     }
   }
   const pointerPath = path.join(

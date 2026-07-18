@@ -34,14 +34,21 @@ export const twoKeysTopic: KnowledgeUnit<TwoKeysBody> = defineKnowledgeUnit({
       kind: "requires-verification",
       text: "Законний pobyt і право до конкретної праці — окремі питання, які потрібно перевіряти разом у часі та за фактичними умовами.",
       basis: [
-        { reference: aliensSourceReference, locator: "legal stay" },
-        { reference: workSourceReference, locator: "access to work" },
+        {
+          reference: aliensSourceReference,
+          locator:
+            "Art. 1; приклад законності pobytu під час провадження — art. 108 ust. 1 pkt 2",
+        },
+        {
+          reference: workSourceReference,
+          locator: "Art. 1 ust. 1–2 i art. 2 pkt 2–3",
+        },
       ],
     },
   ],
   relationships: [],
   review: {
-    reviewStatus: "draft",
+      reviewStatus: "reviewed",
     language: "uk",
     legalStateDate: "2026-07-14",
     verifiedAt: "2026-07-14",

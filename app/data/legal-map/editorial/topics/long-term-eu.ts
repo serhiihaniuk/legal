@@ -32,21 +32,21 @@ export const longTermEuTopic: KnowledgeUnit<LongTermEuBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
     },
     body: {
       title: "Rezydent długoterminowy UE",
-      polish: foreignersLaw.text`${foreignersLaw.article("211", "art. 211")}–${foreignersLaw.external("222a", "https://eli.gov.pl/eli/DU/2026/203/ogl")}`,
+      polish: foreignersLaw.text`${foreignersLaw.article("211", "art. 211")}–${foreignersLaw.article("222a", "222a")}`,
       sources: [mapTopicSources.aliens, mapTopicSources.udscResident],
       guide: {
         introduction: [
           "Zezwolenie na pobyt rezydenta długoterminowego UE є безстроковим статусом для osoby, яка накопичила належний legalny i nieprzerwany pobyt та стабільно виконує умови інтеграції й утримання.",
         ],
         regulated: [
-          foreignersLaw.text`${foreignersLaw.article("211", "Art. 211")} визначає основні умови, ${foreignersLaw.article("212", "art. 212")} — спосіб зарахування періодів і допустимі перерви, а ${foreignersLaw.article("213", "art. 213")}–${foreignersLaw.external("222a", "https://eli.gov.pl/eli/DU/2026/203/ogl")} — виключення, процедуру, відмову та cofnięcie.`,
+          foreignersLaw.text`${foreignersLaw.article("211", "Art. 211")} визначає основні умови, ${foreignersLaw.article("212", "art. 212")} — спосіб зарахування періодів і допустимі перерви, а ${foreignersLaw.article("213", "art. 213")}–${foreignersLaw.article("222a", "222a")} — виключення, процедуру, відмову та cofnięcie.`,
         ],
         appliesWhen: [
           "Загальне правило вимагає щонайменше п’ять років legalnego i nieprzerwanego pobytu безпосередньо перед поданням.",
@@ -64,7 +64,7 @@ export const longTermEuTopic: KnowledgeUnit<LongTermEuBody> =
           "Заява подається через MOS; organ ретроспективно обчислює кожен період pobytu, доходи за потрібні роки, страхування, мову й tytuł do lokalu.",
         ],
         foreignersContext: [
-          foreignersLaw.text`Період studiów зазвичай зараховується наполовину, CUKR за офіційною інформацією — повністю, а періоди ochrony або очікування оцінюються за точним текстом ${foreignersLaw.external("art. 212", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}.`,
+          foreignersLaw.text`Період studiów зазвичай зараховується наполовину, CUKR за офіційною інформацією — повністю, а періоди ochrony або очікування оцінюються за точним текстом ${foreignersLaw.article("212", "art. 212")}.`,
         ],
       } satisfies LegalNodeGuide,
     },

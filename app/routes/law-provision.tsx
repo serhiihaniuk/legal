@@ -5,6 +5,7 @@ import { DocsLayout } from "~/components/layout"
 import {
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
+  formatProvisionEffectiveDate,
   LegalProvisionSelector,
   LegalProvisionSource,
 } from "~/features/law-library"
@@ -48,6 +49,15 @@ const claimKindLabels = {
   "official-guidance": "Офіційне роз’яснення",
   "case-law": "Orzecznictwo",
   "practical-inference": "Практичний висновок",
+} as const
+
+const provisionStatusLabels = {
+  active: "чинна",
+  future: "майбутня норма",
+  repealed: "uchylony — скасована",
+  reserved: "зарезервована",
+  removed: "вилучена",
+  unknown: "статус не визначено",
 } as const
 
 export function meta() {
@@ -106,6 +116,20 @@ export default function LawProvisionRoute() {
     : undefined
   const sourceLimitations =
     edition.manifest.legalStatusEvidence?.unresolved ?? []
+  const amendmentSourceSpans =
+    provision.sourceSpans?.filter((span) => span.role === "amendment") ?? []
+  const amendmentSourceIds = new Set(
+    amendmentSourceSpans.map((span) => span.sourceId)
+  )
+  const amendmentSourceMaterials = (
+    edition.manifest.sourceMaterials ?? []
+  ).filter((source) => amendmentSourceIds.has(source.id))
+  const provisionStatusLabel =
+    provision.status === "future" && provision.effectiveDate
+      ? `${provisionStatusLabels.future} · від ${formatProvisionEffectiveDate(
+          provision.effectiveDate
+        )}`
+      : provisionStatusLabels[provision.status]
 
   return (
     <DocsLayout
@@ -185,17 +209,29 @@ export default function LawProvisionRoute() {
               provision.locator
             )}
           </Badge>
-          <Badge variant="outline">PDF s. {provision.startPdfPage}</Badge>
-          {provision.status === "repealed" ? (
-            <Badge variant="destructive">uchylony</Badge>
-          ) : (
-            <Badge variant="secondary">{provision.status}</Badge>
-          )}
+          <Badge variant="outline">
+            {amendmentSourceSpans.length > 0
+              ? "базовий PDF + акт про зміни"
+              : `PDF, с. ${provision.startPdfPage}`}
+          </Badge>
+          <Badge
+            variant={
+              provision.status === "repealed"
+                ? "destructive"
+                : provision.status === "future"
+                  ? "outline"
+                  : "secondary"
+            }
+          >
+            {provisionStatusLabel}
+          </Badge>
           <Badge variant="outline">
             {reviewedExplanation ? "перевірене пояснення" : "режим джерела"}
           </Badge>
           {sourceLimitations.length > 0 ? (
-            <Badge variant="destructive">неповні metadata статусу</Badge>
+            <Badge variant="destructive">
+              статус потребує ручної перевірки
+            </Badge>
           ) : null}
         </div>
         <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
@@ -218,18 +254,26 @@ export default function LawProvisionRoute() {
           <Dialog>
             <DialogTrigger render={<Button variant="outline" />}>
               <FileText data-icon="inline-start" aria-hidden="true" />
-              Переглянути PDF · s. {provision.startPdfPage}
+              {amendmentSourceSpans.length > 0
+                ? `Базовий PDF · с. ${provision.startPdfPage}`
+                : `Переглянути PDF · с. ${provision.startPdfPage}`}
             </DialogTrigger>
             <DialogContent className="h-[calc(100dvh-1rem)] w-[calc(100vw-1rem)] !max-w-none grid-rows-[auto_minmax(0,1fr)] gap-0 overflow-hidden rounded-lg p-0 sm:h-[calc(100dvh-2rem)] sm:w-[calc(100vw-2rem)]">
               <DialogHeader className="min-w-0 border-b px-4 py-3 pr-14">
                 <DialogTitle className="truncate pr-2">
-                  {document.shortName} · {provision.locator} · PDF s.{" "}
+                  {document.shortName} · {provision.locator} · PDF, с.{" "}
                   {provision.startPdfPage}
                 </DialogTitle>
                 <DialogDescription className="sr-only">
                   Локальна копія офіційного PDF на сторінці{" "}
                   {provision.startPdfPage}.
                 </DialogDescription>
+                {amendmentSourceMaterials.length > 0 ? (
+                  <p className="text-xs text-muted-foreground">
+                    Це PDF базового тексту. Робочий текст нижче враховує також
+                    PDF акта про зміни.
+                  </p>
+                ) : null}
               </DialogHeader>
               <iframe
                 key={provision.canonicalPdfLocator}
@@ -243,6 +287,18 @@ export default function LawProvisionRoute() {
             sourceId={officialSourceIdByLegalDocument[document.id]}
             label="Офіційна сторінка ELI"
           />
+          {amendmentSourceMaterials.map((source) => (
+            <Button
+              key={source.id}
+              variant="outline"
+              size="sm"
+              nativeButton={false}
+              render={<a href={source.localPdfUrl} />}
+            >
+              <FileText data-icon="inline-start" aria-hidden="true" />
+              PDF акта про зміни · {source.citation}
+            </Button>
+          ))}
         </div>
       </header>
 
@@ -370,6 +426,9 @@ export default function LawProvisionRoute() {
             locator={provision.locator}
             startPdfPage={provision.startPdfPage}
             text={provision.text}
+            sourceSpans={provision.sourceSpans}
+            status={provision.status}
+            effectiveDate={provision.effectiveDate}
           />
         </section>
 
@@ -380,7 +439,7 @@ export default function LawProvisionRoute() {
               { id: "document", term: "Акт", description: document.title },
               {
                 id: "locator",
-                term: "Locator",
+                term: "Позначення норми",
                 description: provisionReference ? (
                   <LegalLink
                     context="provision-page"
@@ -398,9 +457,11 @@ export default function LawProvisionRoute() {
                 id: "pages",
                 term: "Сторінки PDF",
                 description:
-                  provision.startPdfPage === provision.endPdfPage
-                    ? provision.startPdfPage
-                    : `${provision.startPdfPage}–${provision.endPdfPage}`,
+                  amendmentSourceSpans.length > 0
+                    ? `базовий PDF ${provision.startPdfPage === provision.endPdfPage ? provision.startPdfPage : `${provision.startPdfPage}–${provision.endPdfPage}`} + PDF акта про зміни`
+                    : provision.startPdfPage === provision.endPdfPage
+                      ? provision.startPdfPage
+                      : `${provision.startPdfPage}–${provision.endPdfPage}`,
               },
               {
                 id: "previous",
@@ -448,7 +509,7 @@ export default function LawProvisionRoute() {
             норму, orzecznictwo або przepis przejściowy. Для конкретної справи
             зіставте джерело з датою факту.
             {sourceLimitations.length > 0
-              ? ` Автоматичні metadata не підтвердили: ${sourceLimitations.join(", ")}.`
+              ? ` Автоматична перевірка не підтвердила такі відомості про правовий статус: ${sourceLimitations.join(", ")}.`
               : ""}
           </blockquote>
         </section>

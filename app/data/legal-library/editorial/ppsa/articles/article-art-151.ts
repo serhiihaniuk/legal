@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-151",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Якщо skarga не задовольняється повністю або частково, суд oddala її відповідно повністю або частково.",
+          text: "Коли суд не задовольняє скаргу (skarga) повністю або частково, він відхиляє її (oddala skargę) у відповідному обсязі.",
           sourceLocator: "Art. 151",
         },
       ],
       summary:
-        "Норма називає результат, коли суд не приймає skarga в повному або частковому обсязі.",
+        "Стаття пов’язує результат розгляду з тією частиною вимог, яку суд не визнав обґрунтованою.",
       rules: [
         {
           locator: "Art. 151",
           explanation:
-            "Відрізняйте повне oddalenie від часткового: формула sentencja має показати обсяг відхилення.",
+            "Читайте резолютивну частину (sentencja), щоб відрізнити повне від часткового відхилення скарги.",
         },
       ],
       legalEffect:
-        "Oddalenie означає незадоволення skarga у відповідному обсязі; стаття сама не визначає подальший засіб оскарження.",
+        "Відхилення означає, що вимога не задоволена у зазначеній частині; подальший засіб оскарження визначають інші норми.",
       foreignersCase:
-        "Після oddalenie skarga на decyzja про pobyt перевірте, чи відхилено всю скаргу або лише частину, і окремо з’ясуйте правила щодо uzasadnienie та skarga kasacyjna.",
+        "Після рішення у справі про перебування перевірте, які саме вимоги відхилено. Від цього залежить обсяг можливого подальшого оскарження.",
     },
   ],
 })

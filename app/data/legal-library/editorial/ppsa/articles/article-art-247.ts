@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-247",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 247 встановлює, що prawo pomocy не przysługuje стороні у разі очевидної bez zasadności її skarga.",
+          text: "Право допомоги не надають, якщо скарга є очевидно необґрунтованою.",
           sourceLocator: "Art. 247",
         },
       ],
       summary:
-        "Очевидна bezzasadność skarga є окремою законною межею для przyznanie prawa pomocy.",
+        "Стаття не дозволяє фінансувати з публічних коштів справу, безперспективність якої очевидна вже на цьому етапі.",
       rules: [
         {
           locator: "Art. 247",
           explanation:
-            "Перевіряйте не просто слабкість аргументу чи несприятливий прогноз, а саме очевидну bezzasadność skarga, про яку говорить стаття.",
+            "Критерій має бути саме «очевидна» безпідставність, а не звичайна невизначеність результату. Відділіть попередню оцінку від повного розгляду скарги.",
         },
       ],
       legalEffect:
-        "За наявності цієї обставини сторона не отримує prawo pomocy; сама вимога про допомогу не усуває можливості оцінити допустимість і очевидну безпідставність skarga.",
+        "Відмова за цією підставою стосується допомоги й не є автоматично рішенням по суті основної справи.",
       foreignersCase:
-        "У спорі іноземця про legalizacja pobytu не називайте skarga очевидно безпідставною лише через відмову органу. Потрібно відокремити оцінку Art. 247 від фінансової ситуації та від питання, чи є інший доступний środek prawny.",
+        "У справі про перебування сформулюйте конкретну правову помилку органу й докази, щоб заява про допомогу не виглядала відірваною від реального спору.",
     },
-  ]),
+  ],
 })

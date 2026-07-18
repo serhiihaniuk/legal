@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-15",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("15", "Art. 15")} встановлює, що zezwolenie na pracę видається на визначений строк, який не може перевищувати 3 років.`,
+          text: workLaw.text`${workLaw.article("15", "Art. 15")} встановлює, що дозвіл на роботу видають на визначений строк, який не може перевищувати трьох років.`,
           sourceLocator: "Art. 15",
         },
       ],
@@ -25,13 +25,13 @@ export default defineEditorialPart<"powierzanie-pracy">({
         {
           locator: "Art. 15",
           explanation:
-            "Потрібно прочитати конкретний okres ważności у decyzja; максимальні три роки є межею, а не гарантованою тривалістю.",
+            "Потрібно прочитати конкретний строк чинності («okres ważności») в адміністративному рішенні: три роки є верхньою межею, а не гарантованою тривалістю.",
         },
       ],
       legalEffect:
-        "Закінчення строку zezwolenie припиняє саме дозвіл на роботу в його межах. Воно не відповідає автоматично на питання про legalny pobyt, який має власну підставу та строк.",
+        "Закінчення строку дозволу припиняє право працювати на його підставі. Це не відповідає автоматично на питання про законність перебування, яке має власну підставу та строк.",
       foreignersCase:
-        "Занесіть у календар дату початку й кінця zezwolenie та перевірте, чи охоплює воно фактичну роботу. Окремо контролюйте строк візи або документа pobyt і не продовжуйте роботу лише через чинний pobyt.",
+        "Занесіть у календар початок і кінець строку чинності дозволу та перевірте, чи охоплює документ фактичну роботу. Окремо контролюйте строк візи або документа про перебування: саме по собі законне перебування не продовжує дозволу на роботу.",
     },
   ],
 })

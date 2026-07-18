@@ -47,9 +47,9 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "25",
@@ -66,7 +66,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Для визначених видів short-term mobility з іншою державою UE, що не є державою Schengen, потрібно додатково показати копію wysłane zawiadomienie або передбачений законом лист jednostka przyjmująca; для short-term mobility posiadacza Niebieskiej Karty UE потрібно довести, що wjazd і pobyt мають на меті wykonywanie działalności zawodowej.`,
+          text: foreignersLaw.text`Для визначених видів mobilność krótkoterminowa з іншою державою UE, що не є державою Schengen, потрібно додатково показати копію wysłane zawiadomienie або передбачений законом лист jednostka przyjmująca; для mobilność krótkoterminowa posiadacza Niebieskiej Karty UE потрібно довести, що wjazd і pobyt мають на меті wykonywanie działalności zawodowej.`,
           sourceLocator: "Art. 25 ust. 1a pkt 1–4 i ust. 1aa",
         },
         {
@@ -119,7 +119,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       foreignersLaw.text`${foreignersLaw.article("25", "Art. 25")} встановлює обов’язки та документи для контролю під час wjazd. Їх виконання є лише елементом прикордонної оцінки: стаття сама не гарантує в’їзд, legalnego pobytu на весь строк або prawa do pracy.`,
-      foreignersLaw.text`Для конкретного wjazd зафіксуйте мету, маршрут, підставу візи або mobilność, страхування, фінансові документи та всі заявлені винятки. Перевірте актуальність доказів на дату контролю і не робіть висновок про legal stay чи prawo do pracy лише з наявності одного документа або запису в реєстрі.`
+      foreignersLaw.text`Для конкретного wjazd зафіксуйте мету, маршрут, підставу візи або mobilność, страхування, фінансові документи та всі заявлені винятки. Перевірте актуальність доказів на дату контролю і не робіть висновок про legalność pobytu чи prawo do pracy лише з наявності одного документа або запису в реєстрі.`
     ),
   ]),
 })

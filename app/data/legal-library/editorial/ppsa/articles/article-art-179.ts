@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-179",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Strona, która nie wniosła skargi kasacyjnej, może wnieść do WSA odpowiedź na skargę w terminie czternastu dni od jej doręczenia. Po upływie tego terminu albo po zarządzeniu doręczenia odpowiedzi wnoszącemu skargę WSA niezwłocznie przedstawia skargę, odpowiedź i akta NSA.",
+          text: "Сторона, яка сама не подала касаційної скарги, може протягом чотирнадцяти днів від отримання чужої касації подати відповідь до WSA. Після спливу цього строку або направлення відповіді іншій стороні WSA невідкладно передає касацію, відповідь і матеріали до NSA.",
           sourceLocator: "Art. 179",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("179", "Art. 179")} daje stronie niekasującej czternaście dni na odpowiedź i określa moment przekazania materiałów do NSA.`,
+      summary:
+        "Стаття дає іншій стороні короткий етап для письмової реакції перед переданням справи до NSA.",
       rules: [
         {
           locator: "Art. 179",
           explanation:
-            "Termin odpowiedzi biegnie od jej doręczenia stronie, która nie wniosła skargi kasacyjnej; potem WSA przekazuje skargę wraz z odpowiedzią i aktami.",
+            "Відлік починається від вручення касаційної скарги. У відповіді реагуйте на конкретні підстави й збережіть доказ своєчасного подання до WSA.",
         },
       ],
       legalEffect:
-        "Odpowiedź jest możliwością przedstawienia stanowiska przed przekazaniem sprawy NSA, a nie odrębną skargą kasacyjną. Brak odpowiedzi nie zatrzymuje przewidzianego przekazania.",
+        "Відповідь стає частиною матеріалів касаційного розгляду; пропуск строку позбавляє гарантованого етапу, передбаченого цією статтею.",
       foreignersCase:
-        "W sporze o decyzję pobytową ustal datę doręczenia kasacji każdej stronie i czternastodniowy termin na odpowiedź. Treść odpowiedzi powinna odnosić się do konkretnych podstaw kasacyjnych.",
+        "Отримавши касацію органу у справі про перебування, одразу передайте її представникові й зафіксуйте дату вручення — чотирнадцять днів минають незалежно від обсягу документа.",
     },
   ],
 })

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-169a",
@@ -25,12 +25,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Short-term mobility family scientist дозволена лише після повного повідомлення та перевірки документів; мовчання Szef Urzędu протягом 30 днів має значення тільки за виконання всіх умов.",
+        "mobilność krótkoterminowa члена сім’ї naukowca дозволена лише після повного повідомлення та перевірки документів; мовчання Szef Urzędu протягом 30 днів має значення тільки за виконання всіх умов.",
       rules: [
         {
           locator: "ust. 1 pkt 1–3",
           explanation:
-            "Член сім'ї має їхати для проживання разом із naukowiec, який користується або планує short-term mobility; мати сімейний pobyt і пов'язаний документ, видані іншою державою UE, що видала документ або візу naukowiec; а Szef Urzędu має отримати повідомлення від затвердженої польської jednostka naukowa і не видати sprzeciw протягом 30 днів.",
+            "Член сім'ї має їхати для проживання разом із naukowiec, який користується або планує mobilność krótkoterminowa; мати сімейний pobyt і пов'язаний документ, видані іншою державою UE, що видала документ або візу naukowiec; а Szef Urzędu має отримати повідомлення від затвердженої польської jednostka naukowa і не видати sprzeciw протягом 30 днів.",
         },
         {
           locator: "ust. 2",
@@ -44,7 +44,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 6",
           explanation:
-            "Szef Urzędu видає decyzja o sprzeciw, якщо сімейний документ не охоплює планований період, немає страховки або достатніх коштів, подані неправдиві чи фальшиві дані або документи, є запис у wykazie pobyt niepożądany чи SIS для відмови у в'їзді й pobyt, або цього вимагають оборона, безпека держави чи publiczny porządek.",
+            "Szef Urzędu видає decyzja o sprzeciw, якщо сімейний документ не охоплює планований період, немає страховки або достатніх коштів, подані неправдиві чи фальшиві дані або документи, є запис у wykazie pobyt niepożądany чи SIS для відмови у в'їзді й pobyt, або цього вимагають оборона, безпека держави чи porządek publiczny.",
         },
         {
           locator: "ust. 7–10",

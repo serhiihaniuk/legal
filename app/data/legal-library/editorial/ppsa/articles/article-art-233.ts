@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-233",
@@ -15,25 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("233", "Art. 233")} уповноважує Rada Ministrów визначити розporządzenie висоту й детальні правила pobierania wpis; wpis не може бути нижчим за сто złotych, stosunkowy не може перевищувати 4% wartości przedmiotu zaskarżenia і 100 000 zł, а stały — 10 000 zł.`,
+          text: "Рада Міністрів визначає розміри й правила стягнення збору за подання (wpis) у розпорядженні. Закон задає межі: не менше 100 zł, пропорційний збір — не більше 4% вартості та 100 000 zł, фіксований — не більше 10 000 zł; фіксовані ставки мають враховувати вид і характер справи.",
           sourceLocator: "Art. 233",
         },
       ],
       summary:
-        "Конкретні ставки та правила pobierania wpis визначає розporządzenie, а стаття встановлює законодавчі межі для його розміру.",
+        "Стаття делегує конкретні ставки уряду, одночасно обмежуючи їх законом.",
       rules: [
         {
           locator: "Art. 233",
-          explanation: ppsaLaw.text`Зверніться до чинного розporządzenie Rady Ministrów для конкретної ставки, але зіставте її з мінімумом і граничними значеннями ${ppsaLaw.article("233", "Art. 233")}.`,
-        },
-        {
-          locator: "Art. 233",
           explanation:
-            "Для wpis stosunkowy перевіряйте і 4% wartości przedmiotu zaskarżenia, і граничні 100 000 zł; для wpis stały — межу 10 000 zł.",
+            "Для фактичної суми перевіряйте чинне розпорядження та категорію справи, а не обчислюйте платіж лише за максимальними межами зі статті.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("233", "Art. 233")} встановлює рамку для підзаконного регулювання, а не остаточну суму для конкретного письма.`,
-      foreignersCase: ppsaLaw.text`У справі про pobyt перевірте актуальну ставку за чинним rozporządzenie і не підміняйте її лише загальними межами, наведеними в ${ppsaLaw.article("233", "Art. 233")}.`,
+      legalEffect:
+        "Названі суми є межами для нормотворця, а не автоматичними ставками конкретної скарги.",
+      foreignersCase:
+        "У справі про перебування знайдіть чинну фіксовану ставку для відповідної категорії; верхня межа 10 000 zł не є сумою до сплати.",
     },
   ],
 })

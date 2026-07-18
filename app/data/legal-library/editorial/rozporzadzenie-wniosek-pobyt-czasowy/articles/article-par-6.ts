@@ -10,8 +10,8 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
   documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
   editionId: "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-par-6",
@@ -19,7 +19,7 @@ export default defineEditorialPart<"rozporzadzenie-wniosek-pobyt-czasowy">({
       claims: [
         {
           kind: "statute-text",
-          text: regulationLaw.text`${regulationLaw.paragraph("6", "§ 6")} для wniosku, поданого способом з ${foreignersLaw.external("art. 106c", "https://eli.gov.pl/eli/DU/2025/1794/ogl")} ust. 1 ustawy, обмежує один електронний файл 10 MB, суму всіх файлів — 50 MB, а цифрові копії паперових документів належної якості вимагає подавати у форматі PDF.`,
+          text: regulationLaw.text`${regulationLaw.paragraph("6", "§ 6")} для wniosku, поданого способом з ${foreignersLaw.article("106c", "art. 106c")} ust. 1 ustawy, обмежує один електронний файл 10 MB, суму всіх файлів — 50 MB, а цифрові копії паперових документів належної якості вимагає подавати у форматі PDF.`,
           sourceLocator: "§ 6",
         },
       ],

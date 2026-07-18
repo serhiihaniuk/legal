@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-170",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Zaświadczenie фіксує юридичне domniemanie статусу потенційної жертви handlu ludźmi; воно не є обвинувальним вироком і не встановлює всі умови permit.",
+        "Zaświadczenie фіксує юридичне domniemanie статусу потенційної жертви handlu ludźmi; воно не є обвинувальним вироком і не встановлює всі умови zezwolenie.",
       rules: [
         {
           locator: "весь припис",
@@ -31,7 +31,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       legalEffect:
         "Видане zaświadczenie запускає спеціальні наслідки щодо legalny pobyt та строку документа за наступними статтями, але саме по собі не є zezwolenie na pobyt czasowy.",
       foreignersCase:
-        "Перевірте, хто і на якій фактичній підставі видав zaświadczenie, його дату та строк; не замінюйте ним заяву на permit і не розкривайте чутливі дані потерпілої особи.",
+        "Перевірте, хто і на якій фактичній підставі видав zaświadczenie, його дату та строк; не замінюйте ним заяву на zezwolenie і не розкривайте чутливі дані потерпілої особи.",
     },
   ],
 })

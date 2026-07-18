@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-205",
@@ -15,25 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Do niezbędnych kosztów strony działającej osobiście lub przez pełnomocnika innego niż adwokat lub radca prawny zalicza się koszty sądowe, przejazdy do sądu oraz równowartość utraconego zarobku lub dochodu. Przy adwokacie lub radcy prawnym dochodzą ich wynagrodzenie w ustawowych granicach, wydatki jednego pełnomocnika, koszty sądowe i nakazane osobiste stawiennictwo; ${ppsaLaw.article("205", "§ 3–4")} określają dalsze zasady i odpowiednie zastosowanie dla doradcy podatkowego, rzecznika patentowego i Prokuratorii Generalnej.`,
+          text: "Необхідні витрати залежать від способу представництва. Для сторони без адвоката або юридичного радника (adwokat albo radca prawny) це, зокрема, судові витрати, проїзд і втрачений заробіток у законних межах; для професійно представленої сторони — винагорода й витрати одного представника, судові витрати та витрати обов’язкової особистої явки.",
           sourceLocator: "Art. 205 § 1–4",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("205", "Art. 205")} wylicza kategorie niezbędnych kosztów i odrębnie traktuje osobisty udział, adwokata lub radcę prawnego oraz pozostałych profesjonalnych pełnomocników.`,
+      summary:
+        "Стаття визначає склад необхідних витрат, які можуть бути повернені.",
       rules: [
         {
-          locator: "§ 1–2",
+          locator: "Art. 205 § 1–4",
           explanation:
-            "Rodzaj reprezentacji wpływa na katalog kosztów i limit wynagrodzenia; przy pełnomocniku zawodowym przepis wymienia także wydatki jednego adwokata lub radcy.",
-        },
-        {
-          locator: "§ 3–4",
-          explanation: ppsaLaw.text`Przejazdy i utracony zarobek rozlicza się według wskazanych przepisów o kosztach cywilnych, a ${ppsaLaw.article("205", "§ 2–3")} stosuje się odpowiednio do trzech wymienionych podmiotów.`,
+            "Для кожної суми встановіть категорію, документ і законну межу. Правила про професійне представництво відповідно охоплюють також податкового радника (doradca podatkowy), патентного повіреного (rzecznik patentowy) та Генеральну прокураторію Республіки Польща (Prokuratoria Generalna RP).",
         },
       ],
       legalEffect:
-        "Zwrot obejmuje tylko kategorie niezbędnych kosztów i granice ustawy; nie każda faktura, konsultacja lub tłumaczenie staje się automatycznie kosztem podlegającym zwrotowi.",
-      foreignersCase: ppsaLaw.text`W sprawie pobytowej zbieraj osobno opłaty sądowe, przejazdy, utracony dochód i wynagrodzenie pełnomocnika. Oceń możliwość zwrotu według kategorii ${ppsaLaw.article("205", "art. 205")}, nie według samej sumy wydatków.`,
+        "Фактична оплата не завжди дорівнює сумі, яку суд визнає необхідною та присудить.",
+      foreignersCase:
+        "У справі про перебування зберігайте доказ сплати (dowód opłaty), договір і рахунок представника, квитки та ухвалу про обов’язкову явку; без зв’язку з законною категорією витрата може не ввійти до відшкодування.",
     },
   ],
 })

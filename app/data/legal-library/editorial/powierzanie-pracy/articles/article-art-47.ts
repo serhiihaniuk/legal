@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-47",
@@ -15,32 +15,32 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("47", "Art. 47")} вимагає, щоб wniosek про sezonowe zezwolenie, крім даних ${workLaw.external("art. 9¹", "https://eli.gov.pl/eli/DU/2025/277/ogl")}, містив дату в'їзду до państw obszaru Schengen і дані про pobyt у Польщі, включно з правовою підставою; також подається oświadczenie про zakwaterowanie або власне забезпечення житла та відомості про передбачену оплачувану відпустку.`,
+          text: workLaw.text`${workLaw.article("47", "Art. 47")} доповнює загальні вимоги з ${workLaw.article("9", "art. 9")} до заяви про сезонний дозвіл. У заяві треба вказати дату в’їзду до держав Шенгенської зони, дані про перебування іноземця в Польщі на день подання та правову підставу цього перебування. Польський суб’єкт також заявляє, хто забезпечує житло, а до заяви вносять відомості про передбачувану оплачувану відпустку.`,
           sourceLocator: "Art. 47 pkt 1–3",
         },
       ],
       summary:
-        "Сезонний wniosek вимагає більше, ніж загальний wniosek: орган має бачити історію в'їзду, актуальну підставу pobyt, житло та оплачувану відпустку.",
+        "Сезонна заява (wniosek) потребує додаткових даних, бо орган має оцінити не лише майбутню роботу, а й спосіб в’їзду, актуальну підставу перебування, житло та передбачувану відпустку.",
       rules: [
         {
           locator: "pkt 1",
           explanation:
-            "Зазначте дату в'їзду до Schengen і стан побуту cudzoziemiec у Польщі на день wniosek разом із правовою підставою.",
+            "Зазначте дату в’їзду до держав Шенгенської зони, статус іноземця в Польщі на день подання заяви та точну правову підставу перебування.",
         },
         {
           locator: "pkt 2",
           explanation:
-            "Polski podmiot подає oświadczenie, що забезпечує zakwaterowanie, або що, за його знанням, cudzoziemiec забезпечує його сам.",
+            "Польський суб’єкт подає заяву (oświadczenie), що забезпечує іноземцеві житло або, за наявними в нього відомостями, іноземець забезпечує його самостійно.",
         },
         {
           locator: "pkt 3",
           explanation:
-            "Wniosek також містить інформацію про очікувану оплачувану відпустку cudzoziemiec.",
+            "Заява також містить інформацію про передбачувану оплачувану відпустку іноземця.",
         },
       ],
-      legalEffect: workLaw.text`${workLaw.article("47", "Art. 47")} визначає зміст доказів для сезонного дозволу, але подання wniosek не створює legalny pobyt і не замінює дозвіл на роботу.`,
+      legalEffect: workLaw.text`${workLaw.article("47", "Art. 47")} визначає зміст заяви й потрібних відомостей, але її подання не створює законного перебування (legalny pobyt) і саме по собі не замінює дозволу на роботу.`,
       foreignersCase:
-        "Звірте дату перетину кордону, документ і підставу pobyt, дані про житло та відпустку з фактичними обставинами. Зберігайте підтвердження, але не вважайте wniosek самостійним документом перебування.",
+        "Звірте дату перетину кордону, документ і підставу перебування, дані про житло та відпустку з фактичними обставинами. Зберігайте підтвердження, але не вважайте заяву самостійним документом перебування.",
     },
   ],
 })

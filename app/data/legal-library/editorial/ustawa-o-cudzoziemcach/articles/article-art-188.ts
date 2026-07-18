@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-188",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("188", "Art. 188")} встановлює різні фінансові, страхові, житлові та документальні умови для permit за ${foreignersLaw.article("186", "art. 186")} і ${foreignersLaw.article("187", "art. 187")}; умови залежать від конкретного pkt та ustęp.`,
+          text: foreignersLaw.text`${foreignersLaw.article("188", "Art. 188")} встановлює різні фінансові, страхові, житлові та документальні умови для zezwolenie за ${foreignersLaw.article("186", "art. 186")} і ${foreignersLaw.article("187", "art. 187")}; умови залежать від конкретного pkt та ustęp.`,
           sourceLocator: "Art. 188 ust. 1–6",
         },
         {
@@ -24,7 +24,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           sourceLocator: "Art. 188 ust. 4–6",
         },
       ],
-      summary: foreignersLaw.text`Одна назва permit ze względu na inne okoliczności приховує різні набори умов; спочатку визначте pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")}, потім перевіряйте ust. 1–6.`,
+      summary: foreignersLaw.text`Одна назва zezwolenie ze względu na inne okoliczności приховує різні набори умов; спочатку визначте pkt ${foreignersLaw.article("186", "art. 186")} або ${foreignersLaw.article("187", "art. 187")}, потім перевіряйте ust. 1–6.`,
       rules: [
         {
           locator: "ust. 1–2b",

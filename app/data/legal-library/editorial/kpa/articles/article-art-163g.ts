@@ -20,7 +20,7 @@ export default defineKpaEditorialPart({
         {
           locator: "винятки",
           explanation:
-            "Окремий контроль зберігається для postanowień, виданих після рішення, щодо zawieszenia або odmowy podjęcia postępowania, а також коли спеціальний закон прямо допускає заżalenie.",
+            "Окремий контроль зберігається для postanowień, виданих після рішення, щодо zawieszenia або odmowy podjęcia postępowania, а також коли спеціальний закон прямо допускає оскарження (zażalenie).",
         },
       ],
       legalEffect:

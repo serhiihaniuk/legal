@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-285",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 285 забороняє подальше wznowienie postępowania, завершеного prawomocne orzeczenie, виданим унаслідок skarga o wznowienie; виняток стосується skarga, заснованої на Art. 272 § 1, § 2a або § 3.",
+          text: "Не можна вдруге поновлювати провадження, завершене остаточним рішенням, яке вже було видане після скарги про поновлення. Виняток діє, коли нова скарга ґрунтується на передбаченому законом рішенні TK, TSUE або міжнародного органу.",
           sourceLocator: "Art. 285 § 1–2",
         },
       ],
       summary:
-        "Норма обмежує подальше wznowienie вже завершеного провадження у справі про wznowienie та називає вузький виняток.",
+        "Стаття запобігає нескінченному повторенню надзвичайного перегляду, зберігаючи реакцію на зовнішнє авторитетне рішення.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 285 § 1–2",
           explanation:
-            "Спочатку перевірте, чи попереднє провадження справді завершене prawomocne orzeczenie, виданим після skarga o wznowienie.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Заборона не застосовується до підстав, прямо перелічених у Art. 272 § 1, § 2a і § 3; інші підстави не можна додавати до цього винятку.",
+            "Перевірте, чи попереднє остаточне рішення вже було наслідком поновлення (wznowienie). Якщо так, новий перегляд можливий лише за однією з прямо збережених зовнішніх підстав.",
         },
       ],
       legalEffect:
-        "Стаття запобігає безмежному ланцюгу wznowienie, але не замінює перевірку, чи конкретна нова skarga дійсно підпадає під виняток.",
+        "Нова внутрішня доказова або процесуальна підстава не відкриває другого поновлення після остаточного рішення в першому провадженні про поновлення (wznowienie).",
       foreignersCase:
-        "У повторній справі іноземця про pobyt встановіть, чи попереднє orzeczenie було результатом wznowienie та яка нова підстава заявлена. Не називайте будь-яку нову обставину винятком Art. 285 § 2.",
+        "У справі про перебування відновіть повну історію надзвичайних скарг; без неї легко помилково подати недопустиму повторну скаргу про поновлення (wznowienie).",
     },
-  ]),
+  ],
 })

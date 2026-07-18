@@ -1,4 +1,4 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
@@ -7,9 +7,9 @@ import { authorLegalTextCitationsTree } from "../../../legal-text"
 const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-3",
@@ -46,7 +46,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Норма відкриває предметну рамку судового контролю, але сама не встановлює всіх умов wniesienia skargi, строку чи способу розгляду.",
+        "Норма відкриває предметну рамку судового контролю, але сама не встановлює всіх умов подання скарги (wniesienie skargi), строку чи способу розгляду.",
       foreignersCase:
         "Після адміністративної справи про pobyt спочатку визначте, що саме оскаржується: decyzja, postanowienie, bezczynność чи przewlekłość. Потім перевірте остаточність, належний шлях, строк і вимоги до skargi.",
     },

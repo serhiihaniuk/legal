@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-120b",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("120b", "Art. 120b")} уповноважує ministra właściwego do spraw wewnętrznych визначити, w drodze rozporządzenia, wzór formularza wniosku про зміну zezwolenia na pobyt czasowy i pracę, про яке йдеться в ${foreignersLaw.article("120a", "art. 120a")} ust. 1.`,
+          text: foreignersLaw.text`${foreignersLaw.article("120b", "Art. 120b")} уповноважує ministra właściwego do spraw wewnętrznych визначити, w drodze rozporządzenia, зразок форми wniosku про зміну zezwolenia na pobyt czasowy i pracę, про яке йдеться в ${foreignersLaw.article("120a", "art. 120a")} ust. 1.`,
           sourceLocator: "Art. 120b",
         },
       ],
@@ -29,9 +29,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Норма визначає підставу для окремої форми formularza, але сама не встановлює її граф чи інших вимог до заяви.",
+        "Норма визначає підставу для окремої форми wniosku, але сама не встановлює її граф чи інших вимог до заяви.",
       foreignersCase:
-        "Для зміни zezwolenia перевірте чинний wzór formularza та заповніть його за фактичними обставинами справи; ця стаття сама не підтверджує, що зміна буде надана.",
+        "Для зміни zezwolenia перевірте чинний wzór wniosku та заповніть його за фактичними обставинами справи; ця стаття сама не підтверджує, що зміна буде надана.",
     },
   ],
 })

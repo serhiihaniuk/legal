@@ -8,7 +8,10 @@ import { isCompleteLegalStatusEvidence } from "./config.mjs"
  * @param {{ schemaVersion?: number, documentId?: string, editionId?: string, profile?: string }} [options]
  * @returns {any}
  */
-export function buildStructure(provisions, { schemaVersion, documentId, editionId, profile } = {}) {
+export function buildStructure(
+  provisions,
+  { schemaVersion, documentId, editionId, profile } = {}
+) {
   const ordered = [...provisions].sort((left, right) => {
     const orderDifference = left.order - right.order
     return orderDifference || left.id.localeCompare(right.id)
@@ -39,6 +42,9 @@ export function buildStructure(provisions, { schemaVersion, documentId, editionI
     startPdfPage: provision.startPdfPage,
     endPdfPage: provision.endPdfPage,
     status: provision.status,
+    ...(provision.effectiveDate
+      ? { effectiveDate: provision.effectiveDate }
+      : {}),
   }))
 
   return {
@@ -59,7 +65,7 @@ export function buildStructure(provisions, { schemaVersion, documentId, editionI
 
 /**
  * @param {Provision[]} provisions
- * @returns {Array<{ article: string, pdfPage: number, endPdfPage: number, status: string, text: string }>}
+ * @returns {Array<{ article: string, pdfPage: number, endPdfPage: number, status: string, effectiveDate?: string, text: string }>}
  */
 export function projectArticles(provisions) {
   return provisions
@@ -69,7 +75,11 @@ export function projectArticles(provisions) {
       pdfPage: provision.startPdfPage,
       endPdfPage: provision.endPdfPage,
       status: provision.status,
+      ...(provision.effectiveDate
+        ? { effectiveDate: provision.effectiveDate }
+        : {}),
       text: provision.text,
+      ...(provision.sourceSpans ? { sourceSpans: provision.sourceSpans } : {}),
     }))
 }
 
@@ -86,7 +96,11 @@ export function buildObservedFacts(pages, provisions) {
     provisions.flatMap((provision) => {
       /** @type {number[]} */
       const pagesInRange = []
-      for (let page = provision.startPdfPage; page <= provision.endPdfPage; page += 1) {
+      for (
+        let page = provision.startPdfPage;
+        page <= provision.endPdfPage;
+        page += 1
+      ) {
         pagesInRange.push(page)
       }
       return pagesInRange
@@ -98,7 +112,8 @@ export function buildObservedFacts(pages, provisions) {
     textLayerPageCount,
     textCoverage: Number(textCoverage.toFixed(6)),
     provisionCount: provisions.length,
-    articleCount: provisions.filter((provision) => provision.kind === "article").length,
+    articleCount: provisions.filter((provision) => provision.kind === "article")
+      .length,
     promotedProvisionCount: provisions.length,
     promotedPageCount: coveredPdfPages.size,
   }
@@ -117,6 +132,43 @@ export function buildManifest({
   builtAt,
 }) {
   const source = { ...config.source }
+  const sourceMaterials = [
+    {
+      id: "base",
+      role: "base",
+      citation: config.citation,
+      officialPageUrl: source.officialPageUrl,
+      metadataUrl: source.metadataUrl,
+      pdfUrl: source.pdfUrl,
+      localPdfUrl: `/legal-sources/${config.editionId}/source.pdf`,
+      pdfSha256,
+      ...(source.expectedPdfSha256
+        ? { expectedPdfSha256: source.expectedPdfSha256 }
+        : {}),
+    },
+    ...(config.amendmentOverlay?.amendmentSource
+      ? [
+          {
+            ...config.amendmentOverlay.amendmentSource,
+            localPdfUrl: `/legal-sources/${config.editionId}/amendment-source.pdf`,
+            pdfSha256:
+              config.amendmentOverlay.amendmentSource.pdfSha256 ??
+              config.amendmentOverlay.amendmentSource.expectedPdfSha256,
+            effectiveDate: config.amendmentOverlay.effectiveDate,
+          },
+        ]
+      : []),
+    ...(config.supplementalSources ?? []).map(
+      (/** @type {any} */ sourceMaterial) => {
+        const { localFilename, ...source } = sourceMaterial
+        return {
+          ...source,
+          localPdfUrl: `/legal-sources/${config.editionId}/${localFilename}`,
+          pdfSha256: source.pdfSha256 ?? source.expectedPdfSha256,
+        }
+      }
+    ),
+  ]
   const manualEvidence = config.legalStatusEvidence ?? {}
   const completeManualEvidence = isCompleteLegalStatusEvidence(manualEvidence)
   const eli = {
@@ -136,14 +188,18 @@ export function buildManifest({
     // ELI status facts always win; validation separately rejects contradictions.
     status: metadata.status ?? manualEvidence.status ?? null,
     inForce: metadata.inForce ?? manualEvidence.inForce ?? null,
-    legalStatusDate: metadata.legalStatusDate ?? manualEvidence.legalStatusDate ?? null,
-    legalStateDate: manualEvidence.legalStateDate ?? config.legalStateDate ?? null,
+    legalStatusDate:
+      metadata.legalStatusDate ?? manualEvidence.legalStatusDate ?? null,
+    legalStateDate:
+      manualEvidence.legalStateDate ?? config.legalStateDate ?? null,
     consolidatedTextIdentifier:
       manualEvidence.consolidatedTextIdentifier ?? metadata.ELI ?? null,
     checkedAt: manualEvidence.checkedAt ?? config.checkedAt,
     sourceUrls:
       manualEvidence.sourceUrls ??
-      (manualEvidence.sourceUrl ? [manualEvidence.sourceUrl] : [source.officialPageUrl]),
+      (manualEvidence.sourceUrl
+        ? [manualEvidence.sourceUrl]
+        : [source.officialPageUrl]),
     sourceUrl:
       manualEvidence.sourceUrl ??
       manualEvidence.sourceUrls?.[0] ??
@@ -174,6 +230,13 @@ export function buildManifest({
     ...(config.year ? { year: config.year } : {}),
     ...(config.position ? { position: config.position } : {}),
     source,
+    sourceMaterials,
+    ...(config.amendmentOverlay
+      ? { amendmentOverlay: structuredClone(config.amendmentOverlay) }
+      : {}),
+    ...(config.temporalTextSelection
+      ? { temporalTextSelection: structuredClone(config.temporalTextSelection) }
+      : {}),
     officialPageUrl: source.officialPageUrl,
     metadataUrl: source.metadataUrl,
     pdfUrl: source.pdfUrl,

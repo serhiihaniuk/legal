@@ -3,11 +3,12 @@ import { createLegalTextAuthor } from "../../../legal-text"
 import { defineEditorialPart } from "../../define-editorial-part"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-206",
@@ -15,32 +16,33 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: "Якщо wniosek про pobyt stały подано під час legalny pobyt і він не має braków formalnych або їх вчасно усунуто, wojewoda ставить у dokument podróży odcisk stempla, а pobyt вважається legalny від подання до остаточності рішення.",
-          sourceLocator: "Art. 206 ust. 1 pkt 1–2",
-        },
-        {
-          kind: "statute-text",
-          text: "Правило про legalny pobyt за ust. 1 pkt 2 не застосовується, якщо провадження про pobyt stały зупинено на wniosek strony.",
-          sourceLocator: "Art. 206 ust. 2",
+          text: foreignersLaw.text`Якщо wniosek o pobyt stały подано під час legalnego pobytu й він не має braków formalnych або їх усунуто у строк, ${foreignersLaw.article("206", "Art. 206")} зобов’язує wojewodę видати zaświadczenie та визнає pobyt легальним від дня подання до ostatecznej decyzji.`,
+          sourceLocator: "Art. 206 ust. 1–9",
         },
       ],
       summary:
-        "Стаття встановлює наслідок своєчасного й формально повного подання для legalny pobyt під час розгляду pobyt stały.",
+        "Zaświadczenie підтверджує подання й описує тимчасовий процесуальний ефект. Воно замінило stempel у паспорті, але не є дозволом на постійне проживання.",
       rules: [
         {
-          locator: "ust. 1",
+          locator: "Art. 206 ust. 1–2",
           explanation:
-            "Потрібні одночасно legalny pobyt на момент подання та відсутність або своєчасне усунення braków formalnych; stamp підтверджує подання, а не позитивне рішення.",
+            "Потрібні одночасно legalny pobyt на момент подання та формальна повнота. Тоді pobyt вважається легальним до остаточного рішення; під час zawieszenia postępowania на заяву сторони цей ефект не діє.",
         },
         {
-          locator: "ust. 2",
+          locator: "Art. 206 ust. 3–7",
           explanation:
-            "За добровільного zawieszenie postępowania спеціальне продовження legalny pobyt не діє.",
+            "Zaświadczenie містить дані особи й документа, дату подання, правовий ефект, дані organu, номер, підпис і kod QR. Воно має kwalifikowaną pieczęć elektroniczną Szefa Urzędu, видається без opłaty skarbowej та вручається через MOS або під час особистої явки.",
+        },
+        {
+          locator: "Art. 206 ust. 8–9",
+          explanation:
+            "До zaświadczenia не застосовують dział VII KPA, а його wzór визначає rozporządzenie.",
         },
       ],
-      legalEffect: foreignersLaw.text`${foreignersLaw.article("206", "Art. 206")} стосується легальності перебування під час конкретного провадження і не замінює рішення про udzielenie zezwolenia та документ подорожі.`,
+      legalEffect:
+        "Стаття тимчасово легалізує pobyt у межах названих умов. Zaświadczenie не є zezwoleniem, документом для перетину кордону чи автоматичним підтвердженням права на роботу.",
       foreignersCase:
-        "Збережіть підтвердження дати подання, stamp і виконання wezwanie про braki; окремо перевірте, чи не було zawieszenie на wniosek strony.",
+        "Збережіть UPO, zaświadczenie з QR, докази усунення braków і рішення про можливе zawieszenie. Для подорожі та роботи перевірте окремі правові підстави.",
     },
   ],
 })

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-420",
@@ -25,12 +25,12 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Стаття встановлює заборони для strzeżony ośrodek і areszt: порушення порядку, небезпечні предмети, алкоголь і наркотичні речовини, куріння поза визначеними місцями, самоушкодження та азартні ігри; для ośrodek є додаткові обмеження руху й зміни кімнати.",
+        "Стаття встановлює заборони для strzeżony ośrodek і areszt: порушення порядку, тримання поза depozyt пристроїв для запису зображення та небезпечних предметів, алкоголь і наркотичні речовини, куріння поза визначеними місцями, самоушкодження та азартні ігри; для ośrodek є додаткові обмеження руху й зміни кімнати.",
       rules: [
         {
           locator: "ust. 1 pkt 1–7",
           explanation:
-            "Заборонені порушення spokój i porządek, небезпечні або надмірні предмети, alkohol, środki odurzające і substancje psychotropowe, куріння поза визначеними місцями, самоушкодження та gry hazardowe.",
+            "Заборонені порушення spokój i porządek, посідання поза depozyt urządzenia techniczne do rejestrowania obrazu, небезпечні або надмірні предмети, alkohol, środki odurzające і substancje psychotropowe, куріння поза визначеними місцями, самоушкодження та gry hazardowe.",
         },
         {
           locator: "ust. 2 pkt 1–2",

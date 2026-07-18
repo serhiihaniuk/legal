@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-216",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Для udzielenia kolejnego zezwolenia na pobyt rezydenta długoterminowego UE особі, якій попереднє zezwolenie cofałoся через ${foreignersLaw.article("215", "Art. 215")} ust. 1 pkt 3–5, не застосовуються ${foreignersLaw.article("219", "Art. 219")} ust. 1 pkt 4 і 9.`,
+          text: foreignersLaw.text`Для udzielenia kolejnego zezwolenia na pobyt rezydenta długoterminowego UE особі, якій попереднє zezwolenie cofnięto через ${foreignersLaw.article("215", "Art. 215")} ust. 1 pkt 3–5, не застосовуються ${foreignersLaw.article("219", "Art. 219")} ust. 1 pkt 4 і 9.`,
           sourceLocator: "Art. 216",
         },
       ],

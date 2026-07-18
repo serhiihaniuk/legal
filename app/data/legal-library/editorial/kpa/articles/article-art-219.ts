@@ -10,7 +10,7 @@ export default defineKpaEditorialPart({
       provisionId: "kpa-art-219",
       reviewStatus: "reviewed",
       summary:
-        "Норма визначає форму відмови у видачі zaświadczenia або довідки саме того змісту, якого просить заявник. Відмова оформлюється postanowieniem і підлягає заżaleniu.",
+        "Норма визначає форму відмови як у видачі довідки (zaświadczenie), так і у видачі довідки саме того змісту, якого просить заявник. Відмову оформлюють як postanowienie, на яке можна подати zażalenie.",
       rules: [
         {
           locator: "одне речення",

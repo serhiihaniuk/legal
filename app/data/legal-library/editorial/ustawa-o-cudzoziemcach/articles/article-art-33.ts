@@ -46,9 +46,9 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "33",
@@ -60,7 +60,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("33", "Art. 33")} ust. 4–6 регулює відмітку рішення у dokument podróży та delegує міністру спосіб її внесення.`,
+          text: foreignersLaw.text`${foreignersLaw.article("33", "Art. 33")} ust. 4–6 регулює відмітку рішення у dokument podróży та делегує міністру спосіб її внесення.`,
           sourceLocator: "Art. 33 ust. 4–6",
         },
       ],

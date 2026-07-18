@@ -248,7 +248,8 @@ const route: CaseGuideRoute = {
     {
       condition: "Належна винагорода",
       modelFact: "сума з договору й додатка",
-      evidence: "umowa, załącznik, payroll",
+      evidence:
+        "umowa, załącznik, розрахункові листи та дані про нарахування і виплату зарплати",
       status: "verify",
       risk: "нижча фактична виплата",
       law: {
@@ -1580,17 +1581,24 @@ const route: CaseGuideRoute = {
           proves: "Законність праці на підставі правил для громадян України",
           law: {
             kind: "authored-legal-text",
-            plainText: "Art. 5a + przepisy przejściowe",
+            plainText: "Art. 5a; art. 41 ustawy z 23.01.2026",
             parts: [
               {
                 text: "Art. 5a",
                 target: {
                   kind: "external",
-                  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
                 },
               },
               {
-                text: " + przepisy przejściowe",
+                text: "; ",
+              },
+              {
+                text: "art. 41 ustawy z 23.01.2026",
+                target: {
+                  kind: "external",
+                  url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
+                },
               },
             ],
           },
@@ -1916,7 +1924,7 @@ const route: CaseGuideRoute = {
       actions: [
         "Зіставити rozstrzygnięcie з заявленою підставою й установленими фактами.",
         "Зафіксувати момент виникнення статусу та окремо строк ważności карти.",
-        "Виписати post-decision duties, тригери зміни та строк оскарження.",
+        "Виписати обов’язки після decyzji, тригери зміни та строк оскарження.",
       ],
       outcome:
         "Картка наслідків рішення: статус, praca, зміни, оскарження й наступний маршрут.",
@@ -1948,17 +1956,24 @@ const route: CaseGuideRoute = {
           proves: "Законність праці на підставі правил для громадян України",
           law: {
             kind: "authored-legal-text",
-            plainText: "Art. 5a + przepisy przejściowe",
+            plainText: "Art. 5a; art. 41 ustawy z 23.01.2026",
             parts: [
               {
                 text: "Art. 5a",
                 target: {
                   kind: "external",
-                  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
                 },
               },
               {
-                text: " + przepisy przejściowe",
+                text: "; ",
+              },
+              {
+                text: "art. 41 ustawy z 23.01.2026",
+                target: {
+                  kind: "external",
+                  url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
+                },
               },
             ],
           },
@@ -2010,7 +2025,7 @@ const route: CaseGuideRoute = {
         {
           title: "Пропущено odwołanie або обов’язок повідомлення",
           explanation:
-            "Строк захисту й post-decision duties запускаються різними подіями та не контролюються автоматично після закриття справи.",
+            "Строк захисту й обов’язки після decyzji запускаються різними подіями та не контролюються автоматично після закриття справи.",
           check:
             "Створіть картку строків із тригером, адресатом, дією, доказом виконання та відповідальною особою.",
         },
@@ -2416,17 +2431,24 @@ const route: CaseGuideRoute = {
       proves: "Законність праці на підставі правил для громадян України",
       law: {
         kind: "authored-legal-text",
-        plainText: "Art. 5a + przepisy przejściowe",
+        plainText: "Art. 5a; art. 41 ustawy z 23.01.2026",
         parts: [
           {
             text: "Art. 5a",
             target: {
               kind: "external",
-              url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+              url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
             },
           },
           {
-            text: " + przepisy przejściowe",
+            text: "; ",
+          },
+          {
+            text: "art. 41 ustawy z 23.01.2026",
+            target: {
+              kind: "external",
+              url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
+            },
           },
         ],
       },
@@ -2482,13 +2504,14 @@ const route: CaseGuideRoute = {
         "Подання pobytowego wniosku не легалізує попередню або поточну роботу саме по собі.",
       law: {
         kind: "authored-legal-text",
-        plainText: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+        plainText:
+          "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
         parts: [
           {
-            text: "Art. 5a ustawy o zatrudnianiu cudzoziemców",
+            text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
             target: {
               kind: "external",
-              url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+              url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
             },
           },
         ],
@@ -2692,17 +2715,24 @@ const route: CaseGuideRoute = {
         "Тригери: вид договору, посада/вид роботи, зменшення часу або винагороди.",
       law: {
         kind: "authored-legal-text",
-        plainText: "Art. 5a + przepisy przejściowe",
+        plainText: "Art. 5a; art. 41 ustawy z 23.01.2026",
         parts: [
           {
             text: "Art. 5a",
             target: {
               kind: "external",
-              url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
+              url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
             },
           },
           {
-            text: " + przepisy przejściowe",
+            text: "; ",
+          },
+          {
+            text: "art. 41 ustawy z 23.01.2026",
+            target: {
+              kind: "external",
+              url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
+            },
           },
         ],
       },
@@ -2833,7 +2863,7 @@ export const workCaseGuide: KnowledgeUnit<CaseGuideRoute> = defineKnowledgeUnit(
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

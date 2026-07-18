@@ -130,7 +130,7 @@ export const foreignersCaseAlgorithm = [
     title: "1. Заморозьте факти й дати",
     detail:
       "Хто заявник, громадянство, підстава перебування, дата подання, місце проживання, робота, зміни після подання, усі doręczenia.",
-    output: "Timeline + реєстр вручень",
+    output: "Хронологія + реєстр вручень",
   },
   {
     title: "2. Назвіть предмет і lex specialis",
@@ -640,7 +640,7 @@ export const kpaArticleSections: KpaArticleSection[] = [
     learnerFocus:
       "Коли орган підтверджує факт або правовий стан zaświadczeniem і як оскаржити відмову.",
     practicalUse:
-      "Назвіть факт, правову підставу або interes prawny; не вимагайте заświadczenia там, де орган уже має дані.",
+      "Назвіть факт, правову підставу або interes prawny; не вимагайте zaświadczenia там, де орган уже має дані.",
     keywords: ["zaświadczenie", "odmowa", "oświadczenie"],
   },
   {

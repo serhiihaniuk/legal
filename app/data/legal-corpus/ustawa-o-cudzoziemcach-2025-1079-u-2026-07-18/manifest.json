@@ -1,0 +1,176 @@
+{
+  "id": "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  "schemaVersion": 2,
+  "documentId": "ustawa-o-cudzoziemcach",
+  "editionId": "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  "shortName": "Ustawa o cudzoziemcach",
+  "title": "Ustawa o cudzoziemcach",
+  "citation": "Dz.U. 2025 poz. 1079",
+  "publisher": "DU",
+  "year": 2025,
+  "position": 1079,
+  "source": {
+    "provider": "eli",
+    "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+    "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+    "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf",
+    "expectedPdfSha256": "0726d315fd15c4557be076bd4ba5f16ab7d41062e70f0cf6a5bec3f504942e76"
+  },
+  "sourceMaterials": [
+    {
+      "id": "base",
+      "role": "base",
+      "citation": "Dz.U. 2025 poz. 1079",
+      "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+      "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+      "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf",
+      "localPdfUrl": "/legal-sources/ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18/source.pdf",
+      "pdfSha256": "0726d315fd15c4557be076bd4ba5f16ab7d41062e70f0cf6a5bec3f504942e76",
+      "expectedPdfSha256": "0726d315fd15c4557be076bd4ba5f16ab7d41062e70f0cf6a5bec3f504942e76"
+    },
+    {
+      "id": "mp-2026-370",
+      "role": "effective-date",
+      "citation": "M.P. 2026 poz. 370",
+      "officialPageUrl": "https://eli.gov.pl/eli/MP/2026/370/ogl",
+      "metadataUrl": "https://api.sejm.gov.pl/eli/acts/MP/2026/370",
+      "pdfUrl": "https://eli.gov.pl/api/acts/MP/2026/370/text/O/M20260370.pdf",
+      "expectedPdfSha256": "f4b7223353479968b7083516cf62ad9414e4c032803b6cb56d9400193448b85e",
+      "effectiveDate": "2026-04-27",
+      "pdfSha256": "f4b7223353479968b7083516cf62ad9414e4c032803b6cb56d9400193448b85e",
+      "localPdfUrl": "/legal-sources/ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18/effective-date-mp-2026-370.pdf"
+    },
+    {
+      "id": "eu-2025-1544",
+      "role": "effective-date",
+      "citation": "Commission Implementing Decision (EU) 2025/1544",
+      "officialPageUrl": "https://eur-lex.europa.eu/eli/dec_impl/2025/1544/oj/eng",
+      "metadataUrl": "https://eur-lex.europa.eu/eli/dec_impl/2025/1544/oj/eng",
+      "pdfUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32025D1544",
+      "expectedPdfSha256": "cff162ed5d2b624e6154632120f811eb137bbd91b704d9af1489a482817aa3a6",
+      "effectiveDate": "2025-10-12",
+      "pdfSha256": "cff162ed5d2b624e6154632120f811eb137bbd91b704d9af1489a482817aa3a6",
+      "localPdfUrl": "/legal-sources/ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18/effective-date-eu-2025-1544.pdf"
+    }
+  ],
+  "temporalTextSelection": {
+    "kind": "bracket-angle-v1",
+    "expectedOldBlockCount": 52,
+    "expectedCurrentBlockCount": 65,
+    "sources": [
+      {
+        "sourceId": "mp-2026-370",
+        "effectiveDate": "2026-04-27",
+        "locator": "M.P. 2026 poz. 370, pkt 1",
+        "oldBlockRange": {
+          "first": 1,
+          "last": 47
+        },
+        "currentBlockRange": {
+          "first": 1,
+          "last": 60
+        },
+        "expectedProvisionCount": 88
+      },
+      {
+        "sourceId": "eu-2025-1544",
+        "effectiveDate": "2025-10-12",
+        "locator": "Commission Implementing Decision (EU) 2025/1544, art. 1",
+        "oldBlockRange": {
+          "first": 48,
+          "last": 52
+        },
+        "currentBlockRange": {
+          "first": 61,
+          "last": 65
+        },
+        "textMarkers": [
+          "12 )"
+        ],
+        "expectedProvisionCount": 14
+      }
+    ]
+  },
+  "officialPageUrl": "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+  "metadataUrl": "https://api.sejm.gov.pl/eli/acts/DU/2025/1079",
+  "pdfUrl": "https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf",
+  "checkedAt": "2026-07-18",
+  "legalStateDate": "2026-07-18",
+  "extraction": {
+    "profile": "polish-statute-art-v1",
+    "expectedProvisionCount": 693,
+    "expectedTextCoverage": 1,
+    "expectedPageCount": 495,
+    "rejectEmbeddedArticleHeadings": true,
+    "rejectTemporalMarkers": true,
+    "observedProvisionCount": 693,
+    "observedPageCount": 495,
+    "observedTextCoverage": 1,
+    "textLayerPageCount": 495
+  },
+  "extractionProfile": "polish-statute-art-v1",
+  "localPdfUrl": "/legal-sources/ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18/source.pdf",
+  "pageCount": 495,
+  "textLayerPageCount": 495,
+  "textCoverage": 1,
+  "detectedArticleCount": 693,
+  "detectedProvisionCount": 693,
+  "provisionCount": 693,
+  "promotedProvisionCount": 693,
+  "pdfSha256": "0726d315fd15c4557be076bd4ba5f16ab7d41062e70f0cf6a5bec3f504942e76",
+  "sourcePdfSha256": "0726d315fd15c4557be076bd4ba5f16ab7d41062e70f0cf6a5bec3f504942e76",
+  "builtAt": "2026-07-18T09:17:18Z",
+  "legalStatusEvidence": {
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2025-07-23",
+    "legalStateDate": "2026-07-18",
+    "consolidatedTextIdentifier": "DU/2025/1079",
+    "checkedAt": "2026-07-18",
+    "sourceUrls": [
+      "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+      "https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf",
+      "https://eli.gov.pl/eli/MP/2026/370/ogl",
+      "https://eur-lex.europa.eu/eli/dec_impl/2025/1544/oj/eng"
+    ],
+    "amendmentsCheckedThrough": "2026-07-18",
+    "entryIntoForce": [
+      {
+        "locator": "ELI metadata DU/2025/1079",
+        "result": "The act is marked obowiązujący and IN_FORCE in the official ELI metadata."
+      },
+      {
+        "locator": "M.P. 2026 poz. 370, pkt 1",
+        "result": "The technical implementation date for the listed provisions of the Act on Foreigners is 2026-04-27."
+      },
+      {
+        "locator": "Commission Implementing Decision (EU) 2025/1544, art. 1",
+        "result": "The Entry/Exit System started operations on 2025-10-12."
+      }
+    ],
+    "transitionalRules": [
+      {
+        "locator": "ELI current unified text DU/2025/1079 text/U",
+        "result": "The unified PDF has changeDate 2026-04-07 and retains bracketed old and angle-bracketed replacement variants whose effective dates require separate official evidence."
+      },
+      {
+        "locator": "M.P. 2026 poz. 370 and Dz.U. 2025 poz. 1794, art. 17 and 19",
+        "result": "For the legal state 2026-07-18, superseded square-bracket variants tied to the communication are omitted and effective angle-bracket variants are selected."
+      }
+    ],
+    "unresolved": [],
+    "sourceUrl": "https://eli.gov.pl/eli/DU/2025/1079/ogl"
+  },
+  "diagnostics": {
+    "fatalCount": 0,
+    "warningCount": 0
+  },
+  "eli": {
+    "identifier": "DU/2025/1079",
+    "status": "obowiązujący",
+    "inForce": "IN_FORCE",
+    "legalStatusDate": "2025-07-23",
+    "textHTML": false,
+    "textPDF": true
+  }
+}

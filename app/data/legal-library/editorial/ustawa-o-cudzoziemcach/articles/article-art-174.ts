@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-174",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Стаття встановлює міжорганізаційне повідомлення про видачу заświadczenie.",
+        "Стаття встановлює міжорганізаційне повідомлення про видачу zaświadczenie.",
       rules: [
         {
           locator: "весь припис",
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Повідомлення забезпечує облік і не є окремим рішенням про legalny pobyt, permit або відповідальність cudzoziemiec.",
+        "Повідомлення забезпечує облік і не є окремим рішенням про legalny pobyt, zezwolenie або відповідальність cudzoziemiec.",
       foreignersCase:
         "У разі розбіжностей у даних встановіть, який орган видав zaświadczenie і чи саме він повідомив міністра; не вимагайте від cudzoziemiec замінити це міжорганізаційне повідомлення.",
     },

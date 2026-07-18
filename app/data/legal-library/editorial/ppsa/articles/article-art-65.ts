@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-65",
@@ -13,12 +13,12 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "У редакції, чинній на 14.07.2026, Art. 65 § 1 дозволяє sąd вручати pismo через operator pocztowy, своїх працівників, інших уповноважених осіб або органи чи за допомогою засобів електронної комунікації на умовах Art. 74a; для поштового doręczenia діє цивільний режим. Варіант із пріоритетом adres do doręczeń elektronicznych за Art. 65a набирає чинності 1.10.2029.",
+          text: "У редакції, чинній на 18.07.2026, Art. 65 § 1 дозволяє sąd вручати pismo через operator pocztowy, своїх працівників, інших уповноважених осіб або органи чи за допомогою засобів електронної комунікації на умовах Art. 74a; для поштового doręczenia діє цивільний режим. Варіант із пріоритетом adres do doręczeń elektronicznych за Art. 65a набирає чинності 1.10.2029.",
           sourceLocator: "Art. 65 § 1–3",
         },
       ],
       summary:
-        "На legalStateDate Art. 65 зберігає перелічені поштові, особисті та електронні способи вручення; нова модель із Art. 65a є майбутньою до 1.10.2029.",
+        "Станом на 18.07.2026 Art. 65 зберігає перелічені поштові, особисті та електронні способи вручення; нова модель із Art. 65a є майбутньою до 1.10.2029.",
       rules: [
         {
           locator: "§ 1",
@@ -37,7 +37,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Спосіб doręczenia впливає на skuteczność і строки, але на legalStateDate треба спершу визначити поточний канал за Art. 65 та Art. 74a, а не підміняти його майбутньою Art. 65a.",
+        "Спосіб doręczenia впливає на skuteczność і строки, але станом на 18.07.2026 треба спершу визначити поточний канал за Art. 65 та Art. 74a, а не підміняти його майбутньою Art. 65a.",
       foreignersCase:
         "У справі pobyt перевіряйте, чи sąd використав поточний канал Art. 65 або Art. 74a, адресу, awizo чи UPO; зберігайте підтвердження вручення й не відраховуйте строк лише за майбутньою моделлю Art. 65a.",
     },

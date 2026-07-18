@@ -71,7 +71,7 @@ export const passportTopic: KnowledgeUnit<DocumentGuide> = defineKnowledgeUnit({
   ],
   relationships: [],
   review: {
-    reviewStatus: "draft",
+      reviewStatus: "reviewed",
     language: "uk",
     legalStateDate: "2026-07-14",
     verifiedAt: guide.verifiedAt,

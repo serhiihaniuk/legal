@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-175",
@@ -15,32 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Skarga kasacyjna за загальним правилом має бути складена adwokat або radca prawny; ${ppsaLaw.article("175", "§ 2–3")} встановлюють винятки для окремих професій і суб’єктів, зокрема sędzia, prokurator, notariusz, radca Prokuratorii Generalnej, profesor або doktor habilitowany nauk prawnych, а також визначені справи для doradca podatkowy чи rzecznik patentowy. Corpus окремо зазначає перехід між двома редакціями ${ppsaLaw.article("175", "§ 3")} pkt 1 та дату майбутньої зміни 1.10.2029.`,
-          sourceLocator: "Art. 175 § 1–3, przypisy 56–57",
+          text: "Касаційну скаргу, як правило, повинен скласти адвокат або правовий радник (radca prawny). Закон передбачає винятки для визначених фахових осіб і публічних суб’єктів, а також обмежені предметні повноваження податкового радника та патентного повіреного.",
+          sourceLocator: "Art. 175 § 1–3",
         },
       ],
       summary:
-        "Стаття встановлює професійне представництво при складанні skarga kasacyjna та вузькі винятки, частина яких має перехідну редакцію в corpus.",
+        "Це примус професійного складання касаційної скарги (przymus adwokacko-radcowski), покликаний забезпечити належне формулювання підстав.",
       rules: [
         {
-          locator: "§ 1–2a",
+          locator: "Art. 175 § 1–3",
           explanation:
-            "Спочатку застосовується правило про adwokat або radca prawny; далі перевірте точно названий статус сторони, представника чи органу.",
-        },
-        {
-          locator: "§ 3 pkt 1, przypisy 56–57",
-          explanation:
-            "Виняток для doradca podatkowy має предметні межі, а corpus розрізняє чинне формулювання та редакцію, що набуде чинності 1.10.2029.",
-        },
-        {
-          locator: "§ 3 pkt 2",
-          explanation:
-            "Rzecznik patentowy названий лише у справах власності промислової, не як загальний виняток.",
+            "Перевірте не тільки підписанта, а й його статус та предмет справи. Станом на 18.07.2026 для податкового радника (doradca podatkowy) застосовується редакція, чинна з 1.03.2026; стару перехідну редакцію не слід використовувати.",
         },
       ],
       legalEffect:
-        "Недодержання вимоги про професійне складання може мати процесуальне значення, але конкретний наслідок і виняток треба перевіряти за всіма приписами та статусом учасника.",
-      foreignersCase: ppsaLaw.text`Для типової skarga kasacyjna у справі про pobyt не припускайте, що її може скласти будь-хто: перевірте правило про adwokat або radca prawny і чи справді застосовний виняток. Не переносіть майбутню редакцію ${ppsaLaw.article("175", "§ 3")} на дату 2026 року.`,
+        "Документ, складений особою без належного повноваження, не відповідає спеціальній вимозі касаційного провадження.",
+      foreignersCase:
+        "У типовій справі про перебування домовтеся з адвокатом або юридичним радником (adwokat albo radca prawny) завчасно: самостійно написаний текст сторони не виконує професійної вимоги лише тому, що містить юридичні аргументи.",
     },
   ],
 })

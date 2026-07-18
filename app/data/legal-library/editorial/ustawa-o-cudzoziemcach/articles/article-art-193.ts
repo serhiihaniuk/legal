@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-193",
@@ -15,20 +15,20 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("193", "Art. 193")} зобов'язує wojewoda повідомляти Szef Urzędu про udzielenie, cofnięcie або odmowa kolejnego permit для cudzoziemiec з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3, а для pkt 4 — про cofnięcie або odmowa kolejnego permit.`,
+          text: foreignersLaw.text`${foreignersLaw.article("193", "Art. 193")} зобов'язує wojewoda повідомляти Szef Urzędu про udzielenie, cofnięcie або odmowa kolejnego zezwolenie для cudzoziemiec з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3, а для pkt 4 — про cofnięcie або odmowa kolejnego zezwolenie.`,
           sourceLocator: "Art. 193 pkt 1–2",
         },
       ],
       summary:
-        "Стаття встановлює повідомлення між wojewoda та Szef Urzędu про рішення у двох спеціальних категоріях long-term resident і його сім'ї.",
+        "Стаття встановлює повідомлення між wojewoda та Szef Urzędu про рішення у двох спеціальних категоріях rezydenta długoterminowego UE і його сім'ї.",
       rules: [
         {
           locator: "pkt 1",
-          explanation: foreignersLaw.text`Щодо cudzoziemiec з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 wojewoda повідомляє про udzielenie permit, його cofnięcie або odmowa udzielenia kolejnego permit.`,
+          explanation: foreignersLaw.text`Щодо cudzoziemiec з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 3 wojewoda повідомляє про udzielenie zezwolenie, його cofnięcie або odmowa udzielenia kolejnego zezwolenie.`,
         },
         {
           locator: "pkt 2",
-          explanation: foreignersLaw.text`Щодо cudzoziemiec з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 4 wojewoda повідомляє про cofnięcie permit або odmowa udzielenia kolejnego; обов'язку повідомляти про первинне udzielenie у цьому пункті текст не містить.`,
+          explanation: foreignersLaw.text`Щодо cudzoziemiec з ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 4 wojewoda повідомляє про cofnięcie zezwolenie або odmowa udzielenia kolejnego; обов'язку повідомляти про первинне udzielenie у цьому пункті текст не містить.`,
         },
       ],
       legalEffect:

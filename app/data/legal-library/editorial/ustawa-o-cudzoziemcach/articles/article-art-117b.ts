@@ -44,32 +44,32 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("117b", {
       provisionId: "ustawa-o-cudzoziemcach-art-117b",
       reviewStatus: "reviewed",
       statuteText:
-        "У провадженні про permit i pracę відповідно застосовується Art. 27 ustawy z 20 marca 2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom. За цим cross-reference wojewoda враховує у черговості wnioski для визначених у переліку підприємців, повторне zezwolenie тому самому podmiot і cudzoziemiec без нижчих часу/зарплати, професії з переліку та інші заяви.",
+        "У провадженні про zezwolenie i pracę відповідно застосовується Art. 27 ustawy z 20 marca 2025 r. o warunkach dopuszczalności powierzania pracy cudzoziemcom. За цим відсиланням wojewoda враховує у черговості wnioski для визначених у переліку підприємців, повторне zezwolenie тому самому podmiot і cudzoziemiec без нижчих часу/зарплати, професії з переліку та інші заяви.",
       statuteLocator: "Art. 117b; art. 27 ustawy z 20 marca 2025 r.",
       practicalText:
-        "Art. 117b не створює окремої materialної умови permit і не гарантує швидшого рішення; він імпортує порядок пріоритетності Art. 27 іншої ustawa. Перевіряйте чинний текст Art. 27, відповідний wykaz і факти повторної заяви.",
+        "Art. 117b не створює окремої матеріально-правової умови zezwolenie і не гарантує швидшого рішення; він імпортує порядок пріоритетності Art. 27 іншої ustawa. Перевіряйте чинний текст Art. 27, відповідний wykaz і факти повторної заяви.",
       practicalLocator: "Art. 117b",
       summary:
-        "Art. 117b відсилає до Art. 27 нової ustawa про powierzanie pracy і робить його порядок черговості відповідним у провадженні про permit i pracę.",
+        "Art. 117b відсилає до Art. 27 нової ustawa про powierzanie pracy і робить його порядок черговості відповідним у провадженні про zezwolenie i pracę.",
       rules: [
         {
           locator: "Art. 117b",
           explanation:
-            "Застосовується відповідно Art. 27 work-act, який розставляє черговість між переліченими підприємцями, повторним permit, zawodami з wykaz і рештою заяв.",
+            "Застосовується відповідно Art. 27 ustawy z 20 marca 2025 r., який розставляє черговість між переліченими підприємцями, повторним zezwolenie, zawodami з wykaz і рештою заяв.",
         },
       ],
       legalEffect:
-        "Норма впливає на порядок розгляду wnioski, але не надає residence permit, legal stay або work authorization і не скасовує матеріальні умови Art. 114, 117 та 117a.",
+        "Норма впливає на порядок розгляду wnioski, але не надає zezwolenie na pobyt, legalność pobytu або правова підстава виконання роботи і не скасовує матеріальні умови Art. 114, 117 та 117a.",
       foreignersCase:
-        "Визначте категорію заяви за Art. 27, відповідний wykaz, попередній permit, podmiot, cudzoziemiec, wymiar czasu pracy та wynagrodzenie. Не називайте пріоритет доказом позитивного рішення.",
+        "Визначте категорію заяви за Art. 27, відповідний wykaz, попередній zezwolenie, podmiot, cudzoziemiec, wymiar czasu pracy та wynagrodzenie. Не називайте пріоритет доказом позитивного рішення.",
     }),
   ]),
 })

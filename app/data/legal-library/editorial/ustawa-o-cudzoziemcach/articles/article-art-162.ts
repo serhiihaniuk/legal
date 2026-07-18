@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-162",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("162", "Art. 162")} встановлює строк дії сімейних та mobility-дозволів: до 1 року для випадку ${foreignersLaw.article("158a", "art. 158a")}, до строку документа osoby referencyjnej або максимум 3 років за ${foreignersLaw.article("159", "art. 159")}, до строку документа представника дитини, одноразово до 3 років у ${foreignersLaw.article("161", "art. 161")} ust. 2 і до строку дозволу дослідника за ${foreignersLaw.article("161b", "art. 161b")} ust. 1.`,
+          text: foreignersLaw.text`${foreignersLaw.article("162", "Art. 162")} встановлює строк дії сімейних та mobilność-дозволів: до 1 року для випадку ${foreignersLaw.article("158a", "art. 158a")}, до строку документа osoby referencyjnej або максимум 3 років за ${foreignersLaw.article("159", "art. 159")}, до строку документа представника дитини, одноразово до 3 років у ${foreignersLaw.article("161", "art. 161")} ust. 2 і до строку дозволу дослідника за ${foreignersLaw.article("161b", "art. 161b")} ust. 1.`,
           sourceLocator: "Art. 162 ust. 1–4",
         },
       ],
@@ -28,11 +28,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 2",
-          explanation: foreignersLaw.text`Дозвіл за ${foreignersLaw.article("160", "art. 160")} pkt 2 діє до закінчення national visa або pobyt czasowy, наданих przedstawiciel ustawowy дитини.`,
+          explanation: foreignersLaw.text`Дозвіл за ${foreignersLaw.article("160", "art. 160")} pkt 2 діє до закінчення wiza krajowa або zezwolenie na pobyt czasowy, наданих przedstawicielowi ustawowemu дитини.`,
         },
         {
           locator: "ust. 3–4",
-          explanation: foreignersLaw.text`У випадку ${foreignersLaw.article("161", "art. 161")} ust. 2 дозвіл надається одноразово до 3 років. Дозвіл за ${foreignersLaw.article("161b", "art. 161b")} ust. 1 діє до закінчення дозволу на mobility długoterminowa відповідного naukowiec.`,
+          explanation: foreignersLaw.text`У випадку ${foreignersLaw.article("161", "art. 161")} ust. 2 дозвіл надається одноразово до 3 років. Дозвіл за ${foreignersLaw.article("161b", "art. 161b")} ust. 1 діє до закінчення дозволу на mobilność długoterminowa відповідного naukowiec.`,
         },
       ],
       legalEffect:

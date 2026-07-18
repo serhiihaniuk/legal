@@ -2,7 +2,7 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { foreignersLaw, mapTopicSources, workLaw } from "../authoring"
+import { mapTopicSources, workLaw } from "../authoring"
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
 import type { LegalMapTopicBody } from "./principle-legality"
@@ -32,7 +32,7 @@ export const employerDutiesTopic: KnowledgeUnit<EmployerDutiesBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -49,7 +49,7 @@ export const employerDutiesTopic: KnowledgeUnit<EmployerDutiesBody> =
         regulated: [
           workLaw.text`${workLaw.article("4", "Art. 4")} регулює отримання і зберігання даних та копій dokumentów pobytowych, а ${workLaw.article("5", "art. 5")} — письмову форму договору, зрозумілу cudzoziemcowi мовну версію і переклад договору, складеного іноземною мовою.`,
           workLaw.text`${workLaw.article("17", "Art. 17")} визначає обов'язки після wydania zezwolenia: відповідність договору рішенню, передання польської umowy або її копії через відповідну систему, актуалізацію wynagrodzenia, інформування cudzoziemca та надання документів контролюючим органам.`,
-          workLaw.text`${workLaw.articleRange("19", "20", { start: "Art. 19", end: "20" })} встановлюють електронні powiadomienia щодо непочатку, тривалої перерви або раннього завершення роботи; для oświadczenia окремі повідомлення регулює ${workLaw.article("70", "art. 70")}, а для ochrony czasowej — ${foreignersLaw.external("art. 5a", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}.`,
+          workLaw.text`${workLaw.articleRange("19", "20", { start: "Art. 19", end: "20" })} встановлюють електронні powiadomienia щодо непочатку, тривалої перерви або раннього завершення роботи; для oświadczenia окремі повідомлення регулює ${workLaw.article("70", "art. 70")}, а для ochrony czasowej — ${workLaw.article("5a", "art. 5a")}.`,
         ],
         appliesWhen: [
           "Загальні обов'язки щодо tytułu pobytowego та письмової umowy застосовуються незалежно від того, чи праця виконується на підставі zezwolenia, oświadczenia, powiadomienia або swobodnego dostępu.",

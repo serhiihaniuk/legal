@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-163",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       summary:
-        "Дохід у family reunification рахується за спеціальним cross-reference, а джерелом може бути зобов'язаний утримувати родич у Польщі.",
+        "Дохід при połączeniu z rodziną рахується за спеціальним відсиланням, а джерелом може бути зобов'язаний утримувати родич у Польщі.",
       rules: [
         {
           locator: "ust. 1",
@@ -33,8 +33,8 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття визначає спосіб виконання фінансової умови, але не скасовує саму вимогу доходу, документування та інших умов permit.",
-      foreignersCase: foreignersLaw.text`Покажіть правову підставу обов'язку утримання, проживання sponsor у Польщі та стабільне джерело коштів; розрахунок зробіть за відповідним правилом ${foreignersLaw.article("140", "art. 140")} ust. 2.`,
+        "Стаття визначає спосіб виконання фінансової умови, але не скасовує саму вимогу доходу, документування та інших умов zezwolenie.",
+      foreignersCase: foreignersLaw.text`Покажіть правову підставу обов'язку утримання, проживання зобов’язаної утримувати особи в Польщі та стабільне джерело коштів; розрахунок зробіть за відповідним правилом ${foreignersLaw.article("140", "art. 140")} ust. 2.`,
     },
   ],
 })

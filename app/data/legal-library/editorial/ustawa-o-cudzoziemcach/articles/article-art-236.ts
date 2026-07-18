@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-236",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Opłaty за ${foreignersLaw.article("235", "Art. 235")} ust. 1 не стягують за: видачу першої karty pobytu особі, яка в Польщі отримала status uchodźcy, ochronę uzupełniającą або zgodę na pobyt ze względów humanitarnych; першу kartę pobytu члену najbliższej rodziny repatrianta з zezwolenie na pobyt stały; kartę pobytu при zezwolenie na pobyt czasowy за ${foreignersLaw.article("186", "Art. 186")} ust. 1 pkt 8 або 9; першу kartę pobytu за ${foreignersLaw.article("195", "Art. 195")} ust. 1 pkt 10; документ із технічними вадами; urzędu виданий polski dokument tożsamości cudzoziemca неповнолітньому; tymczasowy polski dokument podróży для cudzoziemca relokowanego або przesiedlanego чи для przymusowe wykonanie decyzji про zobowiązanie do powrotu; wymianę karty pobytu за ${foreignersLaw.article("241", "Art. 241")} pkt 5 або 6; а також polski dokument podróży для cudzoziemця з громадянством, визначеним у rozporządzenie.`,
+          text: foreignersLaw.text`Opłaty за ${foreignersLaw.article("235", "Art. 235")} ust. 1 не стягують за: видачу першої karty pobytu особі, яка в Польщі отримала status uchodźcy, ochronę uzupełniającą або zgodę na pobyt ze względów humanitarnych; першу kartę pobytu члену najbliższej rodziny repatrianta з zezwolenie na pobyt stały; kartę pobytu при zezwolenie na pobyt czasowy за ${foreignersLaw.article("186", "Art. 186")} ust. 1 pkt 8 або 9; першу kartę pobytu за ${foreignersLaw.article("195", "Art. 195")} ust. 1 pkt 10; документ із технічними вадами; urzędu виданий polski dokument tożsamości cudzoziemca неповнолітньому; tymczasowy polski dokument podróży для cudzoziemca relokowanego або przesiedlanego чи для przymusowe wykonanie decyzji про zobowiązanie do powrotu; wymianę karty pobytu за ${foreignersLaw.article("241", "Art. 241")} pkt 5 або 6; а також polski dokument podróży для cudzoziemca з громадянством, визначеним у rozporządzenie.`,
           sourceLocator: "Art. 236 ust. 1 pkt 1, 1a–1c, 3–7",
         },
         {

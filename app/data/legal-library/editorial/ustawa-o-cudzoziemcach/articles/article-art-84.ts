@@ -44,9 +44,9 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("84", {
       provisionId: "ustawa-o-cudzoziemcach-art-84",
@@ -58,7 +58,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         "Подання на продовження стосується строку та чинності візи, а не udzielenie zezwolenia na pobyt. Госпітальна підстава потребує доказу, що саме стан здоров’я перешкоджає виїзду; wojewoda може призначити biegły lekarz.",
       practicalLocator: "Art. 84 ust. 3–5",
       summary:
-        "Art. 84 визначає компетенцію wojewoda та межі продовження Schengen або national visa, включно зі спеціальним правилом для госпіталізованого cudzoziemiec.",
+        "Art. 84 визначає компетенцію wojewoda та межі продовження Schengen або wiza krajowa, включно зі спеціальним правилом для госпіталізованого cudzoziemiec.",
       rules: [
         {
           locator: "Art. 84 ust. 1",
@@ -73,7 +73,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 84 ust. 3–5",
           explanation:
-            "Для особи в szpital, яка через стан здоров’я не може виїхати, строк ważności або pobytu за national visa продовжується до можливості виїзду. Wojewoda може залучити лікаря-експерта.",
+            "Для особи в szpital, яка через стан здоров’я не може виїхати, строк ważności або pobytu за wiza krajowa продовжується до можливості виїзду. Wojewoda може залучити лікаря-експерта.",
         },
       ],
       legalEffect:

@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-454",
@@ -28,7 +28,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 1a–1b",
-          explanation: foreignersLaw.text`Якщо wniosek подано за ${foreignersLaw.article("453", "Art. 453")} ust. 2, про zgoda повідомляють podmiot składający wniosek із переліком усіх суб’єктів, яким надаються дані; decyzja про odmowa doręczaється цьому заявнику.`,
+          explanation: foreignersLaw.text`Якщо wniosek подано за ${foreignersLaw.article("453", "Art. 453")} ust. 2, про zgoda повідомляють podmiot składający wniosek із переліком усіх суб’єктів, яким надаються дані; decyzja про odmowa doręcza się цьому заявнику.`,
         },
         {
           locator: "ust. 1c–2",

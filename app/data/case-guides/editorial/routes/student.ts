@@ -96,7 +96,7 @@ const route: CaseGuideRoute = {
   conditions: [
     {
       condition: "Належний вид навчання",
-      modelFact: "staціонарна магістратура",
+      modelFact: "стаціонарна магістратура",
       evidence: "zaświadczenie uczelni",
       status: "confirmed",
       risk: "інший правовий режим програми",
@@ -802,7 +802,7 @@ const route: CaseGuideRoute = {
       actions: [
         "Зіставити rozstrzygnięcie з заявленою підставою й установленими фактами.",
         "Зафіксувати момент виникнення статусу та окремо строк ważności карти.",
-        "Виписати post-decision duties, тригери зміни та строк оскарження.",
+        "Виписати обов’язки після decyzji, тригери зміни та строк оскарження.",
       ],
       outcome:
         "Картка наслідків рішення: статус, praca, зміни, оскарження й наступний маршрут.",
@@ -854,7 +854,7 @@ const route: CaseGuideRoute = {
         {
           title: "Пропущено odwołanie або обов’язок повідомлення",
           explanation:
-            "Строк захисту й post-decision duties запускаються різними подіями та не контролюються автоматично після закриття справи.",
+            "Строк захисту й обов’язки після decyzji запускаються різними подіями та не контролюються автоматично після закриття справи.",
           check:
             "Створіть картку строків із тригером, адресатом, дією, доказом виконання та відповідальною особою.",
         },
@@ -1091,7 +1091,7 @@ export const studentCaseGuide: KnowledgeUnit<CaseGuideRoute> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

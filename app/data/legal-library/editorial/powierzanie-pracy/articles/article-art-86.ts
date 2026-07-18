@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-86",
@@ -13,28 +13,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 86 спрямовує стягнені grzywny за art. 84 до Fundusz Pracy, визначає передачу судами на рахунок powiatowy urząd pracy і встановлює розгляд за Kodeks postępowania w sprawach o wykroczenia.",
+          text: "Art. 86 спрямовує призначені та стягнені штрафи за art. 84 до Fundusz Pracy. Він визначає передання коштів судами на окремий рахунок повітового управління праці або самоврядування повіту і встановлює розгляд справ за Kodeks postępowania w sprawach o wykroczenia.",
           sourceLocator: "Art. 86 ust. 1–3",
         },
       ],
       summary:
-        "Стаття регулює фінансовий маршрут штрафу та процедуру розгляду справ, а не нові склади wykroczenie. Суд передає стягнену і виконану grzywna відповідному powiatowy urząd pracy.",
+        "Стаття регулює надходження штрафів і процедуру розгляду справ, а не створює нові склади проступків. Суд передає призначені та фактично стягнені суми відповідному повітовому управлінню праці або самоврядуванню повіту.",
       rules: [
         {
           locator: "ust. 1–2",
           explanation:
-            "Orzeczone і wyegzekwowane grzywny є доходом Fundusz Pracy і передаються судом безпосередньо до відповідного powiatowy urząd pracy або samorząd powiatu.",
+            "Призначені та стягнені штрафи є надходженням Fundusz Pracy. Суд переказує їх безпосередньо на окремий банківський рахунок повітового управління праці або самоврядування повіту, визначеного за місцезнаходженням чи місцем проживання покараної особи.",
         },
         {
           locator: "ust. 3",
           explanation:
-            "Orzekanie за діяння art. 84 відбувається за Kodeks postępowania w sprawach o wykroczenia.",
+            "Справи про діяння з art. 84 розглядають за правилами Kodeks postępowania w sprawach o wykroczenia.",
         },
       ],
       legalEffect:
-        "Процедурний режим не означає, що кожне повідомлення органу є вже orzeczenie; факт і розмір grzywna встановлюються у відповідній процедурі.",
+        "Саме повідомлення органу ще не є постановою про покарання. Факт порушення і розмір штрафу встановлюють у відповідній процедурі.",
       foreignersCase:
-        "Якщо отримано wezwanie у справі art. 84, перевірте стадію провадження і процесуальні строки за Kodeks. Не плутайте призначення коштів зі способом доведення порушення.",
+        "Якщо отримано виклик у справі за art. 84, перевірте стадію провадження і процесуальні строки за Kodeks postępowania w sprawach o wykroczenia. Не плутайте напрям надходження штрафу зі способом доведення порушення.",
     },
   ]),
 })

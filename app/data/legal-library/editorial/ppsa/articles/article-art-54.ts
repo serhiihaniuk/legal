@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-54",
@@ -13,7 +13,7 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Skargę подають за посередництвом органу, дії, бездіяльність або przewlekłe prowadzenie postępowania якого оскаржуються; у чинній на 14.07.2026 редакції електронну skarga подають до elektroniczna skrzynka podawcza органу, а орган передає матеріали в установлені строки й за умовами § 3 може повністю її врахувати. Перехід на adres do doręczeń elektronicznych є майбутньою зміною з 1.10.2029.",
+          text: "Skargę подають за посередництвом органу, дії, бездіяльність або przewlekłe prowadzenie postępowania якого оскаржуються; у чинній на 18.07.2026 редакції електронну skarga подають до elektroniczna skrzynka podawcza органу, а орган передає матеріали в установлені строки й за умовами § 3 може повністю її врахувати. Перехід на adres do doręczeń elektronicznych є майбутньою зміною з 1.10.2029.",
           sourceLocator: "Art. 54 § 1–6",
         },
       ],
@@ -23,7 +23,7 @@ export default defineEditorialPart<"ppsa">({
         {
           locator: "§ 1–1a",
           explanation:
-            "Skarga подається через оскаржений орган. На legalStateDate електронна skarga у formie dokumentu elektronicznego надсилається до elektroniczna skrzynka podawcza цього органу; варіант подання на adres do doręczeń elektronicznych набирає чинності 1.10.2029, а art. 49a застосовується відповідно.",
+            "Skarga подається через оскаржений орган. Станом на 18.07.2026 електронна skarga у formie dokumentu elektronicznego надсилається до elektroniczna skrzynka podawcza цього органу; варіант подання на adres do doręczeń elektronicznych набирає чинності 1.10.2029, а art. 49a застосовується відповідно.",
         },
         {
           locator: "§ 2–2a",

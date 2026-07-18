@@ -44,15 +44,15 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("93", {
       provisionId: "ustawa-o-cudzoziemcach-art-93",
       reviewStatus: "reviewed",
       statuteText:
-        "На decyzja про cofnięcie або unieważnienie візи, видану konsul або minister właściwy do spraw zagranicznych, подається wniosek o ponowne rozpatrzenie sprawy цим самим органом; на рішення komendant oddziału або placówki Straży Granicznej — odwołanie до Komendant Główny Straży Granicznej. Wniosek про повторний розгляд подається протягом 14 днів від doręczenie і розглядається протягом 14 днів; Art. 93 ust. 4–5 визначає форму, реквізити та додаткові відомості для рішення щодо Schengen visa.",
+        "На decyzja про cofnięcie або unieważnienie візи, видану konsul або minister właściwy do spraw zagranicznych, подається wniosek o ponowne rozpatrzenie sprawy цим самим органом; на рішення komendant oddziału або placówki Straży Granicznej — odwołanie до Komendant Główny Straży Granicznej. Wniosek про повторний розгляд подається протягом 14 днів від doręczenie і розглядається протягом 14 днів; Art. 93 ust. 4–5 визначає форму, реквізити та додаткові відомості для рішення щодо wiza Schengen.",
       statuteLocator: "Art. 93 ust. 1–5",
       practicalText:
         "Спочатку встановіть орган, що видав оскаржуване рішення, і тому оберіть wniosek або odwołanie. 14-денний строк у ust. 2 прямо стосується wniosek o ponowne rozpatrzenie; не підміняйте ним строк odwołanie, якого цей пункт не називає.",
@@ -73,18 +73,18 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 93 ust. 4",
           explanation:
-            "Formularz рішення про залишення попереднього рішення в силі містить орган, сторону, розпорядчу частину, дані візи, правову підставу, причини, дату, підпис і печатку.",
+            "Форма рішення про залишення попереднього рішення в силі містить орган, сторону, розпорядчу частину, дані візи, правову підставу, причини, дату, підпис і печатку.",
         },
         {
           locator: "Art. 93 ust. 5",
           explanation:
-            "Для utrzymanie в силі рішення щодо Schengen visa додаються істотні факти та pouczenie про skarga до адміністративного суду, wpis і pomoc prawna.",
+            "Для utrzymanie в силі рішення щодо wiza Schengen додаються істотні факти та pouczenie про skarga до адміністративного суду, wpis і pomoc prawna.",
         },
       ],
       legalEffect:
         "Стаття відкриває визначений засіб перегляду, але не повертає автоматично візу, не надає zezwolenie na pobyt і не створює права працювати.",
       foreignersCase:
-        "Збережіть decyzja та підтвердження doręczenie, визначте орган-видавець, порахуйте 14 днів для wniosek (якщо він застосовується) і викладіть окремо факти, документи та прохання. Перевірте також pouczenie про судову скаргу у рішенні щодо Schengen visa.",
+        "Збережіть decyzja та підтвердження doręczenie, визначте орган-видавець, порахуйте 14 днів для wniosek (якщо він застосовується) і викладіть окремо факти, документи та прохання. Перевірте також pouczenie про судову скаргу у рішенні щодо wiza Schengen.",
     }),
   ]),
 })

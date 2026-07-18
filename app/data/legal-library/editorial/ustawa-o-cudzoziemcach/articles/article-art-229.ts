@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-229",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Документи з ${foreignersLaw.article("226", "Art. 226")} видають і обмінюють на wniosek cudzoziemca, але першу kartę pobytu видають z urzędu. Polski dokument tożsamości cudzoziemca для małoletni cudzoziemiec, народженого в Польщі та такого, що перебуває там без опіки батьків, також можна видати z urzędu. Для названих у ust. 4 випадків перша karta pobytu видається на wniosek cudzoziemca.`,
+          text: foreignersLaw.text`Документи з ${foreignersLaw.article("226", "Art. 226")} pkt 1–5 видають і обмінюють на wniosek cudzoziemca. Виняток: першу kartę pobytu та europejski dokument podróży do celów powrotu видають z urzędu. Polski dokument tożsamości cudzoziemca для małoletni cudzoziemiec, народженого в Польщі й такого, що перебуває без опіки батьків, також можна видати z urzędu. У спеціальних випадках ust. 4 перша karta pobytu знову видається на wniosek cudzoziemca.`,
           sourceLocator: "Art. 229 ust. 1–4",
         },
         {
@@ -29,8 +29,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       rules: [
         {
           locator: "ust. 1–4",
-          explanation:
-            "Загальне правило — wniosek cudzoziemca для видачі або обміну, але перша karta pobytu зазвичай видається z urzędu. Перевірте спеціальні випадки ust. 4, у яких перша картка знову потребує wniosku.",
+          explanation: foreignersLaw.text`Загальне правило wniosku стосується лише документів ${foreignersLaw.article("226", "Art. 226")} pkt 1–5. Перша karta pobytu і europejski dokument podróży do celów powrotu видаються z urzędu; для першої картки перевірте спеціальні випадки ust. 4, у яких потрібен wniosek.`,
         },
         {
           locator: "ust. 5",
@@ -41,8 +40,8 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           explanation: foreignersLaw.text`Перед першою карткою в описаних ситуаціях міжнародного захисту орган має виконати передбачену комунікацію з іншою державою-членом UE. Для ${foreignersLaw.article("195", "Art. 195")} ust. 1 pkt 9 потрібне повернення Karty Polaka.`,
         },
       ],
-      legalEffect: foreignersLaw.text`${foreignersLaw.article("229", "Art. 229")} визначає процесуальний спосіб ініціювання видачі документа та спеціальні передумови окремих документів; сама стаття не замінює перевірку підстави перебування або іншої умови їх видачі.`,
-      foreignersCase: foreignersLaw.text`Спочатку визначте конкретний документ із ${foreignersLaw.article("226", "Art. 226")} і перевірте, хто має подати wniosek або чи діє видання z urzędu. Для першої karty pobytu перевірте спеціальний пункт ust. 4, для tymczasowy dokument — підставу relokacji, przesiedlenia або ${foreignersLaw.article("268", "Art. 268")} pkt 2, а для ${foreignersLaw.article("195", "Art. 195")} ust. 1 pkt 9 — повернення Karty Polaka.`,
+      legalEffect: foreignersLaw.text`${foreignersLaw.article("229", "Art. 229")} визначає процесуальний спосіб ініціювання видачі документа та спеціальні передумови окремих документів; europejski dokument podróży do celów powrotu не потребує wniosku cudzoziemca.`,
+      foreignersCase: foreignersLaw.text`Спочатку визначте конкретний документ із ${foreignersLaw.article("226", "Art. 226")} і перевірте, хто має подати wniosek або чи діє wydanie z urzędu. Для europejski dokument podróży do celów powrotu зафіксуйте саме режим z urzędu; для першої karty pobytu перевірте ust. 4, а для ${foreignersLaw.article("195", "Art. 195")} ust. 1 pkt 9 — повернення Karty Polaka.`,
     },
   ],
 })

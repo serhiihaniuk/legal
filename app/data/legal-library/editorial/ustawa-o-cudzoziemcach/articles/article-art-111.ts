@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("111", {
       provisionId: "ustawa-o-cudzoziemcach-art-111",
       reviewStatus: "reviewed",
       statuteText:
-        "Якщо інша держава Schengen просить консультацію за art. 28 або 29 rozporządzenia nr 2018/1861, wojewoda, який надав temporary residence permit, або wojewoda першої інстанції, коли дозвіл надав Szef Urzędu у другій інстанції, визначає, чи є підстави його cofnięcie з урахуванням причин SIS-рішення та загроз art. 28 lit. d або art. 29 lit. d. Wojewoda передає KGP інформацію про cofnięcie або відсутність підстав у 10 днів; можливе мотивоване продовження до 12 днів, а KGP передає її іншій державі протягом 14 днів або продовженого строку.",
+        "Якщо інша держава Schengen просить консультацію за art. 28 або 29 rozporządzenia nr 2018/1861, wojewoda, який надав zezwolenie na pobyt czasowy, або wojewoda першої інстанції, коли дозвіл надав Szef Urzędu у другій інстанції, визначає, чи є підстави його cofnięcie з урахуванням причин SIS-рішення та загроз art. 28 lit. d або art. 29 lit. d. Wojewoda передає KGP інформацію про cofnięcie або відсутність підстав у 10 днів; можливе мотивоване продовження до 12 днів, а KGP передає її іншій державі протягом 14 днів або продовженого строку.",
       statuteLocator: "Art. 111 ust. 1–4",
       practicalText:
-        "Консультація не є автоматичним cofnięcie permit: organ оцінює причини та повідомляє результат. Важливо встановити, який wojewoda є компетентним, коли надійшов запит і чи було подано мотивовану заяву про продовження строку.",
+        "Консультація не є автоматичним cofnięcie zezwolenie: organ оцінює причини та повідомляє результат. Важливо встановити, який wojewoda є компетентним, коли надійшов запит і чи було подано мотивовану заяву про продовження строку.",
       practicalLocator: "Art. 111 ust. 1–4",
       summary:
-        "Art. 111 встановлює SIS-консультацію щодо можливого cofnięcie temporary residence permit і строки обміну відповіддю.",
+        "Art. 111 встановлює SIS-консультацію щодо можливого cofnięcie zezwolenie na pobyt czasowy і строки обміну відповіддю.",
       rules: [
         {
           locator: "Art. 111 ust. 1",
@@ -82,7 +82,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Норма визначає консультаційний та інформаційний механізм навколо можливого cofnięcie permit. Вона сама не скасовує permit, не змінює legal stay і не вирішує право на працю.",
+        "Норма визначає консультаційний та інформаційний механізм навколо можливого cofnięcie zezwolenie. Вона сама не скасовує zezwolenie, не змінює legalność pobytu і не вирішує право на працю.",
       foreignersCase:
         "Збережіть запит іншої держави, SIS-причини, рішення wojewoda, дату отримання, докази передачі KGP та строки 10/12/14 днів. Перевірте, чи рішення приймав wojewoda першої інстанції або орган-видавець.",
     }),

@@ -47,9 +47,9 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "16",
@@ -78,7 +78,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
             "Розрізняйте нагляд міністра над Szef Urzędu від процесуальної компетенції органу, який видає рішення у вашій конкретній справі.",
         },
       ],
-      foreignersLaw.text`${foreignersLaw.article("16", "Art. 16")} закріплює організаційну компетенцію Szef Urzędu і ministerialny нагляд. Він сам по собі не створює права на legal stay, wjazd або wykonywanie pracy.`,
+      foreignersLaw.text`${foreignersLaw.article("16", "Art. 16")} закріплює організаційну компетенцію Szef Urzędu і ministerialny нагляд. Він сам по собі не створює права на legalność pobytu, wjazd або wykonywanie pracy.`,
       foreignersLaw.text`У процесуальному документі встановіть, який орган фактично видав decyzja або prowadzi postępowanie, і зіставте його роль із конкретною нормою про właściwość. Не робіть висновок про статус cudzoziemca лише з назви Szef Urzędu.`
     ),
   ]),

@@ -15,7 +15,7 @@ export default defineKpaEditorialPart({
         {
           locator: "§ 1",
           explanation:
-            "Коли після доказування залишаються niedające się usunąć wątpliwości co do stanu faktycznego, їх розstrzyga się na korzyść strony у справах про obowiązek або odebranie bądź ograniczenie uprawnienia.",
+            "Коли після доказування залишаються неусувні сумніви щодо фактів (niedające się usunąć wątpliwości co do stanu faktycznego), їх вирішують на користь сторони (rozstrzyga się na korzyść strony) у справах про покладення обов’язку або обмеження чи позбавлення права.",
         },
         {
           locator: "§ 2 pkt 1–2",

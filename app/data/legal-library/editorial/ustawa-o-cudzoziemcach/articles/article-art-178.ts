@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-178",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`У провадженні про permit для ofiary handlu ludźmi ${foreignersLaw.article("178", "Art. 178")} виключає застосування окремих перешкод wszczęcia з ${foreignersLaw.article("99", "art. 99")} ust. 1 pkt 2, 4–6 та підстав відмови з ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 2, 3, 6–9.`,
+          text: foreignersLaw.text`У провадженні про zezwolenie для ofiary handlu ludźmi ${foreignersLaw.article("178", "Art. 178")} виключає застосування окремих перешкод wszczęcia з ${foreignersLaw.article("99", "art. 99")} ust. 1 pkt 2, 4–6 та підстав відмови з ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 2, 3, 6–9.`,
           sourceLocator: "Art. 178",
         },
       ],

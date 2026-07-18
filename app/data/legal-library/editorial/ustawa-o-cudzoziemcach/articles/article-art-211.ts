@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-211",
@@ -15,36 +15,43 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("211", "Art. 211")} передбачає udzielenie zezwolenia na pobyt rezydenta długoterminowego UE на czas nieoznaczony особі, яка легально й безперервно перебувала в Польщі щонайменше 5 років і має стабільний та регулярний dochód, ubezpieczenie zdrowotne та підтверджене знання польської мови.`,
+          text: "Zezwolenie na pobyt rezydenta długoterminowego UE надається на невизначений строк на заяву іноземця, який безпосередньо перед поданням заяви щонайменше 5 років легально й безперервно перебував у Польщі та одночасно має стабільний регулярний дохід, медичне страхування і підтверджене знання польської мови.",
           sourceLocator: "Art. 211 ust. 1",
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Доходи оцінюють за ${foreignersLaw.article("140", "art. 140")} ust. 2 за 2 роки у випадку ${foreignersLaw.article("212", "art. 212")} ust. 1 pkt 1 і за 3 роки в інших випадках; знання мови підтверджується, зокрема, рівнем B1 або документом про навчання польською, а вимога мови не застосовується до особи, молодшої 16 років.`,
-          sourceLocator: "Art. 211 ust. 2–5",
+          text: foreignersLaw.text`Вимоги до доходу з ${foreignersLaw.article("140", "Art. 140")} ust. 2 мають виконуватися протягом 2 років перед заявою у випадку з ${foreignersLaw.article("212", "Art. 212")} ust. 1 pkt 1, а в інших випадках — протягом 3 років.`,
+          sourceLocator: "Art. 211 ust. 2",
+        },
+        {
+          kind: "statute-text",
+          text: "Знання польської мови підтверджується документом щонайменше рівня B1 або визначеним у статті польським чи закордонним свідоцтвом або дипломом з польською мовою навчання. Вимога не стосується особи, якій на день подання заяви не виповнилося 16 років.",
+          sourceLocator: "Art. 211 ust. 3–5",
         },
       ],
       summary:
-        "Стаття визначає сукупні умови статусу rezydent długoterminowy UE: 5 років, кошти, страхування та польська мова.",
+        "Стаття встановлює сукупні матеріальні умови для zezwolenia na pobyt rezydenta długoterminowego UE: потрібні належний період легального безперервного перебування, дохід, страхування та, за загальним правилом, підтверджена польська мова.",
       rules: [
         {
           locator: "ust. 1",
           explanation:
-            "П’ятирічний pobyt має бути legalny і nieprzerwany безпосередньо перед wniosek; усі три матеріальні умови мають виконуватися разом.",
+            "П’ятирічний період сам по собі недостатній. На дату оцінки мають бути виконані всі три додаткові умови, а спосіб зарахування періодів перебування потрібно перевіряти разом із наступними статтями цього розділу.",
         },
         {
           locator: "ust. 2",
-          explanation: foreignersLaw.text`Розрахунок dochód залежить від того, чи використовується спеціальне зарахування з ${foreignersLaw.article("212", "art. 212")} ust. 1 pkt 1; не застосовуйте один період до всіх справ.`,
+          explanation:
+            "Дохід перевіряють не лише на день подання заяви. Треба показати виконання встановленого рівня в усьому відповідному дворічному або трирічному періоді.",
         },
         {
           locator: "ust. 3–5",
           explanation:
-            "Прийнятний документ мови та перелік poświadczeń треба перевіряти за нормою і чинним rozporządzenie; для неповнолітнього до 16 років діє виняток.",
+            "Не кожний документ про навчання підтверджує мовну умову: стаття виключає świadectwo ukończenia szkoły policealnej та відсилає до урядового переліку прийнятних poświadczeń. Для заявника до 16 років мовної умови немає.",
         },
       ],
       legalEffect:
-        "Статус не випливає лише з п’ятирічного проживання: орган перевіряє дохід, страхування, мову, безперервність і правила зарахування періодів.",
-      foreignersCase: foreignersLaw.text`Побудуйте розрахунок 5 років за ${foreignersLaw.article("212", "Art. 212")}, окремо підтвердьте dochód, ubezpieczenie та мову прийнятним документом і звірте періоди безпосередньо перед wniosek.`,
+        "Після доведення всіх умов дозвіл надається на невизначений строк. Це не означає, що сама karta pobytu також не має строку дії: статус і документ потрібно аналізувати окремо.",
+      foreignersCase:
+        "Складіть хронологію п’яти років, окремо позначте періоди, що можуть не зараховуватися, і підготуйте докази доходу за належні 2 або 3 роки, страхування та прийнятний мовний документ або віковий виняток.",
     },
   ],
 })

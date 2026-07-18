@@ -12,65 +12,54 @@ const moduleContent: LegalLearningModule = {
   order: 5,
   title: "Сім’я, навчання, дослідження та бізнес",
   polish: "pobyt rodzinny, studia, naukowiec, działalność gospodarcza",
-  provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("114", "189", { start: "art. 114" })}`,
+  provisionScope: foreignersLaw.text`${foreignersLaw.article("142", "art. 142")}, ${foreignersLaw.articleRange("144", "157l", { start: "art. 144" })} та ${foreignersLaw.articleRange("158", "169", { start: "art. 158" })}`,
   outcome:
-    "Уміти розрізняти спеціальні категорії pobyt czasowy за їхньою реальною функцією та умовами.",
+    "Уміти розрізнити близькі спеціальні категорії за sponsor, його статусом, видом навчання або mobilność та реальними показниками działalność gospodarcza.",
   caseQuestion:
-    "Яка категорія відповідає головній обставині: rodzina, studia, badania чи działalność gospodarcza?",
+    "Хто або що є юридичним центром справи, який статус має sponsor чи установа і які факти відрізняють цю категорію від сусідньої?",
   placeInWork:
-    "Порівняльний етап, коли факти можуть підходити до кількох категорій.",
+    "Поглиблена кваліфікація після вибору загальної мети pobytu czasowego.",
   sections: [
     {
-      id: "category-map",
-      title: "Побудуй карту категорії",
+      id: "family-sponsor",
+      title: "У сімейній справі спочатку визнач sponsor",
       paragraphs: [
-        "Статутна рамка: спеціальні види zezwolenie мають власні умови, обсяг доказування та наслідки для pobytu.",
-        "Практична перевірка: для кожної категорії запиши головну особу або установу, мету, період, фінансування та документ, що підтверджує зв’язок.",
+        foreignersLaw.text`Слово «rodzina» не називає правову підставу. ${foreignersLaw.article("158", "Art. 158")} стосується визначеного члена сім’ї obywatela polskiego. ${foreignersLaw.article("159", "Art. 159")} регулює połączenie z rodziną з cudzoziemiec, але право залежить від його конкретного status: pobyt stały, rezydent długoterminowy UE, ochrona, певні pobyty czasowe, Niebieska Karta UE, ICT, badania та інші прямо перелічені підстави. ${foreignersLaw.articleRange("160", "161", { start: "Art. 160" })} охоплюють інші сімейні ситуації й окремі випадки після тривалого pobytu, розлучення, separacja, owdowienie або смерті близької особи.`,
+        foreignersLaw.text`Після status sponsor перевіряють, чи заявник є «członek rodziny» у значенні конкретної норми, коли оцінюється вік дитини, чи потрібні ubezpieczenie, dochód і miejsce zamieszkania та чи діє спеціальний виняток. Наприклад, ${foreignersLaw.article("159", "art. 159")} ust. 2 звільняє від частини вимог окрему сім’ю особи зі status uchodźcy або ochrona uzupełniająca лише за своєчасного wniosku. Це не універсальне звільнення для всіх сімейних справ.`,
       ],
       questions: [
-        "Хто є центром обставини — член rodzina, uczelnia, jednostka badawcza чи бізнес?",
-        "Який факт відрізняє цю категорію від сусідньої?",
+        "Хто є sponsor і на якій точній підставі він перебуває?",
+        "Чи відповідає заявник визначенню członek rodziny та часовим умовам обраної статті?",
       ],
-      steps: [
-        "Назвати головну обставину.",
-        "Зіставити її з вимогами категорії.",
-        "Перевірити спеціальні та загальні умови.",
-      ],
-      evidence: [
-        "Документи про родинний зв’язок.",
-        "Підтвердження studia або badań.",
-        "Документи działalność gospodarcza та її фактичності.",
-      ],
-      warning:
-        "Одна обставина може виглядати подібно до кількох категорій, але результат залежить від усіх умов і реального celu pobytu.",
     },
     {
-      id: "family-and-economic-reality",
-      title: "Перевір реальність зв’язку",
+      id: "study-research-business",
+      title: "Розділи studia, mobilność і бізнес",
       paragraphs: [
-        "Статутна рамка: документ про зв’язок із сім’єю, навчанням, дослідженням або бізнесом є частиною доказування, але не замінює перевірку інших умов.",
-        "Практична перевірка: порівняй заявлену діяльність із фактичними платежами, місцем, графіком, контактами й іншими доступними доказами.",
-      ],
-      questions: [
-        "Чи існує зв’язок не лише на папері?",
-        "Чи пояснені перерви, зміни та суперечності?",
-      ],
-      steps: [
-        "Зібрати первинні документи.",
-        "Перевірити їхню узгодженість.",
-        "Підготувати пояснення нестандартних фактів.",
+        foreignersLaw.text`Для studia за ${foreignersLaw.article("144", "art. 144")} перевіряють вид і реальність навчання, статус jednostka prowadząca studia, оплату за платне навчання, ubezpieczenie та достатні кошти. Mobilność студента в межах UE має окремий механізм у наступних статтях і не зводиться до звичайного вступу до польської uczelnia. Для badania ${foreignersLaw.article("151", "art. 151")} вимагає статус naukowiec, належну jednostka naukowa та umowa o przyjęciu; mobilność długoterminowa naukowca за ${foreignersLaw.article("151b", "art. 151b")} додатково виходить із документа або wiza з adnotacją «naukowiec», виданих іншою державою UE.`,
+        foreignersLaw.text`Для działalność gospodarcza ${foreignersLaw.article("142", "art. 142")} не задовольняється самим wpis do CEIDG або володінням spółka. Особа має довести ubezpieczenie, stabilny i regularny dochód, miejsce zamieszkania та, за потреби, згоду на stanowisko чи zawód. Підприємство повинно показати встановлений дохід або зайнятість щонайменше двох відповідних працівників протягом визначеного періоду, або реальні zasoby й działania, що дозволять виконати ці критерії в майбутньому, зокрема інвестиції, transfer technologii, innowacje чи miejsca pracy.`,
       ],
       evidence: [
-        "Офіційні довідки та договори.",
-        "Підтвердження фактичного виконання діяльності.",
-        "Пояснення змін обставин.",
+        "Документ родинного зв’язку, status sponsor та докази спільного життя, якщо вони юридично релевантні.",
+        "Zaświadczenie або umowa з uczelnia/jednostka, програма, оплата, finansowanie й документи mobilność.",
+        "Sprawozdania, декларації, зайнятість, inwestycje, umowy та фактичні операції підприємства.",
       ],
       warning:
-        "Формальна реєстрація шлюбу, навчання або бізнесу сама по собі не гарантує позитивного рішення.",
+        "Формальний шлюб, зарахування або реєстрація spółka є доказом одного факту, а не всіх умов zezwolenia.",
+    },
+    {
+      id: "worked-example",
+      title: "Анонімізований приклад: науковиця і чоловік",
+      paragraphs: [
+        foreignersLaw.text`Науковиця E має dokument pobytowy іншої держави UE з adnotacją «naukowiec» та планує рік досліджень у затвердженій польській jednostka. Її власну справу перевіряють за ${foreignersLaw.article("151b", "art. 151b")}: документ іншої держави, umowa o przyjęciu, тема і строк badań, wynagrodzenie, ubezpieczenie, житло та кошти. Чоловік не отримує той самий статус автоматично. Для нього окремо визначають сімейну гілку за ${foreignersLaw.article("159", "art. 159")}, status sponsor та всі застосовні умови й винятки.`,
+        foreignersLaw.text`Якщо замість badań E фактично керує власною spółka, назва договору з jednostka не вирішує cel pobytu. Треба знову встановити Fakt і перевірити ${foreignersLaw.article("142", "art. 142")}: фінансові показники чи зайнятість або конкретні ресурси й дії для майбутнього виконання критеріїв. Різні факти ведуть до різних доказів, рішень і можливих підстав odmowa.`,
+      ],
+      warning:
+        "Приклад не дозволяє переносити статус одного члена сім’ї на іншого або замінювати перевірку реальної діяльності назвою umowa.",
     },
   ],
   exercise:
-    "Склади порівняльну таблицю для чотирьох категорій: головна мета, ключова особа/установа, три докази, типова прогалина.",
+    "Розбери три анонімні справи: małżonek obywatela polskiego, student у програмі mobilność та засновник spółka. Для кожної назви точну статтю, юридично значущий статус особи або установи, умови, докази, строк і можливий мотив odmowa.",
 }
 
 export const familyStudyResearchBusinessLearningModuleTopic: KnowledgeUnit<LegalLearningModule> =
@@ -96,17 +85,51 @@ export const familyStudyResearchBusinessLearningModuleTopic: KnowledgeUnit<Legal
               kind: "official-source",
               sourceId: "eli-ustawa-o-cudzoziemcach",
             },
-            locator: "module provision scope",
+            locator: "business, study, research and family categories",
           },
         ],
       },
     ],
-    relationships: [],
+    relationships: [
+      {
+        kind: "prerequisite",
+        target: {
+          family: "learning-module",
+          reference: {
+            kind: "learning-module",
+            documentId: "ustawa-o-cudzoziemcach",
+            moduleId: "temporary-residence-purposes",
+          },
+        },
+      },
+      {
+        kind: "related",
+        target: {
+          family: "learning-module",
+          reference: {
+            kind: "learning-module",
+            documentId: "ustawa-o-cudzoziemcach",
+            moduleId: "application-evidence-procedure",
+          },
+        },
+      },
+      {
+        kind: "next",
+        target: {
+          family: "learning-module",
+          reference: {
+            kind: "learning-module",
+            documentId: "ustawa-o-cudzoziemcach",
+            moduleId: "permanent-and-eu-long-term-resident",
+          },
+        },
+      },
+    ],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: moduleContent,
   })

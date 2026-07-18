@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-217",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Do wartości przedmiotu zaskarżenia nie wlicza się odsetek i kosztów związanych z należnością główną.",
+          text: "До вартості предмета оскарження не включають відсотки та витрати, пов’язані з основною грошовою вимогою.",
           sourceLocator: "Art. 217",
         },
       ],
       summary:
-        "Przy obliczaniu wartości przedmiotu zaskarżenia pomija się odsetki i koszty związane z należnością główną.",
+        "Стаття відокремлює основну суму від побічних нарахувань для розрахунку вартості спору.",
       rules: [
         {
           locator: "Art. 217",
           explanation:
-            "Oddziel należność główną od odsetek i kosztów ubocznych; tylko ta pierwsza wchodzi do wartości według tego przepisu.",
+            "У розрахунку покажіть основну грошову вимогу (należność) окремо від процентів (odsetki) та витрат (koszty). До процесуальної вартості входить лише перша.",
         },
       ],
-      legalEffect: ppsaLaw.text`${ppsaLaw.article("217", "Art. 217")} ogranicza składniki wartości, ale nie podaje stawki wpisu ani nie rozstrzyga dopuszczalności samej skargi.`,
+      legalEffect:
+        "Виключення побічних сум впливає на базу збору, але не обов’язково усуває самі вимоги з матеріального спору.",
       foreignersCase:
-        "Jeśli sprawa cudzoziemca dotyczy należności pieniężnej, przy oznaczaniu wartości nie dodawaj odsetek ani kosztów związanych z należnością główną.",
+        "У грошовій справі іноземця додайте прозорий розрахунок, щоб суд бачив, яку суму ви взяли за основну.",
     },
   ],
 })

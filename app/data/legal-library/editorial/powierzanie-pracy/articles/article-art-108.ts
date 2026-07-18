@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-108",
@@ -13,12 +13,12 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 108 ust. 1 прирівнює, для перелічених положень ustawy o cudzoziemcach у редакції art. 96, prawomocne ukaranie за wykroczenie з art. 120 ust. 1 старої ustawy до prawomocne ukaranie за wykroczenie з art. 84 ust. 1 нової ustawy.",
+          text: "Art. 108 ust. 1 для прямо перелічених положень прирівнює остаточне покарання за проступок з art. 120 ust. 1 старого закону до остаточного покарання за проступок з art. 84 ust. 1 нового закону.",
           sourceLocator: "Art. 108 ust. 1",
         },
         {
           kind: "statute-text",
-          text: "Art. 108 ust. 2 робить таке саме прирівнювання для prawomocne ukaranie за wykroczenia з art. 120 ust. 3–5 старої ustawy та art. 84 ust. 3–5 нової ustawy.",
+          text: "Art. 108 ust. 2 встановлює таке саме прирівнювання між остаточними покараннями за проступки з art. 120 ust. 3–5 старого закону та art. 84 ust. 3–5 нового закону.",
           sourceLocator: "Art. 108 ust. 2",
         },
         {
@@ -28,28 +28,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
         },
       ],
       summary:
-        "Стаття зберігає значення остаточних покарань за старими трудовими wykroczenia для конкретних перевірок, що тепер посилаються на art. 84 нової ustawy.",
+        "Стаття зберігає значення остаточних покарань за проступки зі старого закону для конкретних правових оцінок, які тепер посилаються на art. 84 нового закону.",
       rules: [
         {
           locator: "ust. 1",
           explanation:
-            "Для названих у ust. 1 положень покарання за art. 120 ust. 1 читається як покарання за art. 84 ust. 1.",
+            "Для положень, перелічених у ust. 1, остаточне покарання за art. 120 ust. 1 враховують як остаточне покарання за art. 84 ust. 1.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Для названих у ust. 2 положень покарання за art. 120 ust. 3–5 читається як покарання за art. 84 ust. 3–5.",
+            "Для положень, перелічених у ust. 2, остаточне покарання за art. 120 ust. 3–5 враховують як остаточне покарання за art. 84 ust. 3–5.",
         },
         {
           locator: "ust. 1–2",
           explanation:
-            "Потрібне саме prawomocne ukaranie. Застосування залежить також від того, чи входить конкретна перевірка до переліку, наведеного в статті.",
+            "Потрібне саме остаточне покарання (prawomocne ukaranie). Прирівнювання діє лише під час застосування положень, прямо перелічених у статті.",
         },
       ],
       legalEffect:
-        "Норма забезпечує перехідну еквівалентність правопорушень для окремих оцінок у справах іноземців. Вона сама не встановлює окремої санкції, а визначає, як prawomocne ukaranie за старими нормами враховується при застосуванні прямо перелічених положень; право на роботу поза відповідною перевіркою вона не визначає.",
+        "Норма забезпечує перехідне прирівнювання остаточних покарань для окремих оцінок у справах іноземців. Вона не встановлює нової санкції і не визначає права на роботу поза застосуванням прямо перелічених положень.",
       foreignersCase:
-        "Отримайте prawomocne рішення, визначте точний пункт старого art. 120 і перевірте конкретне положення ustawy o cudzoziemcach, яке його враховує. Не робіть висновок лише з номера статті або з самого факту незавершеного провадження.",
+        "Отримайте рішення, яким остаточно накладено покарання, визначте точний пункт старого art. 120 і перевірте конкретне положення, яке його враховує. Не робіть висновку лише з номера статті або з самого факту незавершеного провадження.",
     },
   ]),
 })

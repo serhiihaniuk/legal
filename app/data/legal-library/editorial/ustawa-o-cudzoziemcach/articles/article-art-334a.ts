@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-334a",
@@ -29,13 +29,13 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 2–3",
-          explanation: foreignersLaw.text`Для doręczanie застосовується ${foreignersLaw.article("322", "Art. 322")}, а Szef Urzędu інформується не пізніше 48 годин про postanowienie або залишення wniosek без розгляду.`,
+          explanation: foreignersLaw.text`Для doręczanie застосовується ${foreignersLaw.article("322", "Art. 322")}. Лист можна також надіслати на електронну адресу, вказану заявником; тоді датою doręczenia закон вважає день, коли орган відправив email. Szef Urzędu інформується не пізніше 48 годин про postanowienie або залишення wniosek без розгляду.`,
         },
       ],
       legalEffect:
-        "Норма встановлює процесуальний строк і спосіб повідомлення; відсутність zażalenie за цією статтею не означає, що будь-яке інше рішення не має окремого засобу оскарження.",
+        "Норма встановлює строк, спеціальне електронне doręczenie та відсутність zażalenie на це postanowienie. Для email юридичною датою є день відправлення органом, а не день відкриття повідомлення.",
       foreignersCase:
-        "Відлічуйте 5 днів від подання wniosek і перевірте спосіб doręczenie; якщо заяву залишили без розгляду, з’ясуйте фактичну причину та окремий доступний правовий засіб.",
+        "Відлічуйте 5 днів від подання wniosek. Якщо в заяві вказано email, щоденно контролюйте цю скриньку й дату відправлення органом; саме вона запускає подальші строки, пов’язані з doręczenie.",
     },
   ],
 })

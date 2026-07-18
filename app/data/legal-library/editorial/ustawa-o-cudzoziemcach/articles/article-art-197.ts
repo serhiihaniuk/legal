@@ -7,9 +7,9 @@ const kpaLaw = createLegalTextAuthor("kpa")
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-197",
@@ -22,7 +22,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: "Окремими підставами є шлюб для обходу міграційних правил, неправдиві дані чи документи, неправдиві свідчення або підроблення, податкові arrears без передбаченого звільнення чи відстрочки та неповернення витрат на рішення про повернення; для окремих категорій стаття звужує перелік підстав.",
+          text: "Окремими підставами є шлюб для обходу міграційних правил, неправдиві дані чи документи, неправдиві свідчення або підроблення, податкова заборгованість без передбаченого звільнення чи відстрочки та неповернення витрат на рішення про повернення; для окремих категорій стаття звужує перелік підстав.",
           sourceLocator: "Art. 197 ust. 1 pkt 6–9, ust. 2–4",
         },
       ],

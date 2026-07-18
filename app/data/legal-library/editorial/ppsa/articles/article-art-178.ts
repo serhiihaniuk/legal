@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-178",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Wojewódzki sąd administracyjny na posiedzeniu niejawnym odrzuca skargę kasacyjną wniesioną po terminie lub z innych przyczyn niedopuszczalną, a także skargę, której braków strona nie uzupełniła w wyznaczonym terminie.",
+          text: "WSA на закритому засіданні відхиляє касаційну скаргу, подану після строку, недопустиму з іншої причини або таку, чиї усувні недоліки не виправлено в наданий строк.",
           sourceLocator: "Art. 178",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("178", "Art. 178")} reguluje odrzucenie skargi kasacyjnej przez WSA z powodu spóźnienia, niedopuszczalności albo nieusunięcia braków.`,
+      summary:
+        "Це попередній контроль допустимості касації ще в суді першої інстанції.",
       rules: [
         {
           locator: "Art. 178",
           explanation:
-            "Sąd bada przesłanki formalne przed przekazaniem skargi kasacyjnej; przepis wskazuje trzy grupy przyczyn odrzucenia.",
+            "Перевірка складається з трьох блоків: строк, право на касацію та виконання викликів про недоліки. Для кожного блоку потрібні окремі документи й дати.",
         },
       ],
       legalEffect:
-        "Odrzucenie kończy bieg tej skargi kasacyjnej bez rozpoznania jej podstaw; przed oceną skutku trzeba sprawdzić doręczenia, dopuszczalność i wykonanie wezwania.",
+        "Відхилення (odrzucenie) припиняє рух касаційної скарги без розгляду її підстав по суті.",
       foreignersCase:
-        "W sprawie o pobyt odróżnij odrzucenie kasacji przez WSA od oddalenia jej przez NSA co do podstaw. Zabezpiecz dowody doręczenia i uzupełnienia braków.",
+        "Якщо WSA відхилив касацію у справі про перебування, прочитайте, який саме блок не виконано; від цього залежить можлива реакція.",
     },
   ],
 })

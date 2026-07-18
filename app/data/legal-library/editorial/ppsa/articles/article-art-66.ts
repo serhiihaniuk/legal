@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-66",
@@ -13,12 +13,12 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "У чинній на 14.07.2026 редакції Art. 66 професійні представники — adwokat, radca prawny, doradca podatkowy, rzecznik patentowy та Prokuratoria Generalna RP — надсилають pismo один одному безпосередньо з potwierdzenie odbioru і датою або przesyłka polecona та додають oświadczenie; електронні pismo мають виняток. Електронна модель на адреси do doręczeń elektronicznych набирає чинності 1.10.2029.",
+          text: "У чинній на 18.07.2026 редакції Art. 66 професійні представники — adwokat, radca prawny, doradca podatkowy, rzecznik patentowy та Prokuratoria Generalna RP — надсилають pismo один одному безпосередньо з potwierdzenie odbioru і датою або przesyłka polecona та додають oświadczenie; для документа в електронній формі, адресованого професійному представникові, діє виняток § 1a. Електронна модель на адреси do doręczeń elektronicznych набирає чинності 1.10.2029.",
           sourceLocator: "Art. 66 § 1–3",
         },
       ],
       summary:
-        "На legalStateDate для визначених професійних представників діє переважно безпосереднє або рекомендоване вручення; електронна модель із адресами do doręczeń elektronicznych є майбутньою та має окремі винятки.",
+        "Станом на 18.07.2026 для визначених професійних представників діє переважно безпосереднє або рекомендоване вручення; електронна модель із адресами do doręczeń elektronicznych є майбутньою та має окремі винятки.",
       rules: [
         {
           locator: "§ 1–1a",
@@ -37,7 +37,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       legalEffect:
-        "Наслідок zwrot стосується чинних умов § 1; не можна механічно застосовувати майбутню електронну модель або її перелік винятків до дій на 14.07.2026.",
+        "Наслідок zwrot стосується чинних умов § 1; не можна механічно застосовувати майбутню електронну модель або її перелік винятків до дій на 18.07.2026.",
       foreignersCase:
         "Якщо cudzoziemca представляє adwokat або radca prawny, за поточною редакцією перевірте вид pismo, спосіб безпосереднього doręczenie та oświadczenie; не застосовуйте майбутній § 1 до 1.10.2029.",
     },

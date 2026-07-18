@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-200",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "W razie uwzględnienia skargi przez sąd pierwszej instancji skarżącemu przysługuje od organu, który wydał zaskarżony akt, podjął czynność, dopuścił się bezczynności lub przewlekłego prowadzenia postępowania, zwrot niezbędnych kosztów do celowego dochodzenia praw.",
+          text: "Коли суд першої інстанції задовольняє скаргу, заявник має право вимагати від органу повернення необхідних витрат, понесених для доцільного захисту своїх прав.",
           sourceLocator: "Art. 200",
         },
       ],
       summary:
-        "Uwzględnienie skargi przez sąd pierwszej instancji może dać skarżącemu prawo do zwrotu niezbędnych kosztów od właściwego organu.",
+        "Стаття пов’язує відшкодування витрат з успішною скаргою та необхідністю конкретної витрати.",
       rules: [
         {
           locator: "Art. 200",
           explanation:
-            "Przepis obejmuje zaskarżony akt, czynność, bezczynność i przewlekłe prowadzenie postępowania; zakres zwrotu dotyczy kosztów niezbędnych do celowego dochodzenia praw.",
+            "Потрібні сприятливий результат, зв’язок витрати з провадженням і її необхідність для цілеспрямованого захисту. Визначте орган, чий акт, дія, бездіяльність або затягування були предметом скарги.",
         },
       ],
       legalEffect:
-        "Uwzględnienie skargi tworzy ustawową podstawę zwrotu, ale nie oznacza automatycznej refundacji każdej faktycznie poniesionej kwoty.",
+        "Поверненню підлягають не будь-які витрати заявника, а необхідні витрати провадження (koszty postępowania) у законному обсязі.",
       foreignersCase:
-        "Po wygraniu skargi dotyczącej pobytu zachowaj dowody niezbędnych kosztów i sprawdź, czy wniosek o ich zwrot został zgłoszony w wymaganym czasie.",
+        "Після виграшу справи про перебування зіставте оплату суду й представника з процесуальними діями та своєчасно заявіть вимогу про повернення.",
     },
   ],
 })

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-173",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Від wyrok WSA або postanowienie, що завершує postępowanie у справі, з названими в тексті винятками, належить skarga kasacyjna до NSA; її можуть подати сторона, prokurator, Rzecznik Praw Obywatelskich, Rzecznik Małych i Średnich Przedsiębiorców або Rzecznik Praw Dziecka після doręczenie odpisu orzeczenie з uzasadnieniem.",
+          text: "Від судового рішення WSA (wyrok) або ухвали, що завершує провадження, як правило, можна подати касаційну скаргу (skarga kasacyjna) до NSA, крім прямо перелічених винятків. Право мають сторона та названі законом публічні суб’єкти після отримання копії рішення з обґрунтуванням.",
           sourceLocator: "Art. 173 § 1–2",
         },
       ],
       summary:
-        "Стаття відкриває skarga kasacyjna до NSA проти визначених wyrok або завершальних postanowienie WSA і називає коло уповноважених суб’єктів.",
+        "Стаття відкриває касаційний шлях і визначає рішення та осіб, яких він охоплює.",
       rules: [
         {
-          locator: "§ 1",
-          explanation: ppsaLaw.text`Перевірте, що документ видав WSA, завершує postępowanie або є wyrok, і зіставте справу з винятками ${ppsaLaw.article("58", "art. 58 § 1")} pkt 2–4, ${ppsaLaw.article("161", "art. 161 § 1")} та ${ppsaLaw.article("220", "art. 220 § 3")}.`,
-        },
-        {
-          locator: "§ 2",
+          locator: "Art. 173 § 1–2",
           explanation:
-            "Для skarga kasacyjna важливі статус особи з переліку та doręczenie odpisu orzeczenie з uzasadnieniem.",
+            "Перевірте суд, форму документа, чи завершує він справу та чи не потрапляє до винятку. Окремо підтвердьте вручення копії з обґрунтуванням уповноваженій особі.",
         },
       ],
       legalEffect:
-        "Норма визначає види orzeczenie і суб’єктів, для яких можливий касаційний шлях; інші умови допустимості та строку треба шукати в інших приписах p.p.s.a.",
+        "Касаційний шлях не виникає від кожного процесуального документа WSA; допустимість залежить від виду рішення.",
       foreignersCase:
-        "Після wyrok WSA у справі про pobyt перевірте, чи це оскаржуваний вид orzeczenie, чи немає винятку, та чи отримано odpis з uzasadnieniem. Сам факт програшу не замінює перевірки підстав і строків.",
+        "Після рішення WSA у справі про перебування не обмежуйтеся словом «відмова». Визначте форму рішення, виняток і дату отримання обґрунтування.",
     },
   ],
 })

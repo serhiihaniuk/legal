@@ -47,9 +47,9 @@ const reviewedArticle = (
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle(
       "18",
@@ -74,7 +74,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       foreignersLaw.text`${foreignersLaw.article("18", "Art. 18")} регулює доступ до конкретної державної посади, а не матеріальні умови wjazdu, pobytu чи pracy cudzoziemca.`,
-      foreignersLaw.text`Якщо аналізуєте повноваження органу, відокремте вимоги до кандидата за ${foreignersLaw.article("18", "Art. 18")} від питання, чи має конкретний працівник upoważnienie та чи належно видано рішення. Ця стаття не підтверджує і не спростовує legal stay.`
+      foreignersLaw.text`Якщо аналізуєте повноваження органу, відокремте вимоги до кандидата за ${foreignersLaw.article("18", "Art. 18")} від питання, чи має конкретний працівник upoważnienie та чи належно видано рішення. Ця стаття не підтверджує і не спростовує legalność pobytu.`
     ),
   ]),
 })

@@ -1,6 +1,13 @@
 import test from "node:test"
 import assert from "node:assert/strict"
-import { mkdtemp, mkdir, readFile, rm, symlink, writeFile } from "node:fs/promises"
+import {
+  mkdtemp,
+  mkdir,
+  readFile,
+  rm,
+  symlink,
+  writeFile,
+} from "node:fs/promises"
 import os from "node:os"
 import path from "node:path"
 
@@ -16,6 +23,7 @@ import {
   previewPromotion,
   promoteEdition,
   readJson,
+  runEditorialValidator,
   validateApprovedWriteScope,
   validateChangedFileSet,
   validateLegalStatusEvidence,
@@ -36,6 +44,32 @@ async function withTempCorpus(callback) {
 }
 
 /**
+ * @param {string} root
+ * @param {{ documentId: string, editionId: string, provisionId: string }} options
+ */
+async function writeEditorialFixture(
+  root,
+  { documentId, editionId, provisionId }
+) {
+  const editorialPath = path.join(
+    root,
+    "app/data/legal-library/editorial",
+    documentId,
+    "articles/article-art-1.ts"
+  )
+  await mkdir(path.dirname(editorialPath), { recursive: true })
+  await writeFile(
+    editorialPath,
+    `export const part = {
+  documentId: "${documentId}",
+  editionId: "${editionId}",
+  entries: [{ provisionId: "${provisionId}", reviewStatus: "reviewed" }],
+}\n`,
+    "utf8"
+  )
+}
+
+/**
  * Write a complete, internally consistent edition (config, manifest,
  * metadata, pages, provisions, structure, local PDF) under a temp project
  * root, mirroring what build-document.mjs would have staged. Returns the
@@ -44,10 +78,22 @@ async function withTempCorpus(callback) {
  * @param {string} root
  * @param {{ documentId?: string, editionId?: string }} [options]
  */
-async function writeCorpusFixture(root, { documentId = "alpha", editionId = "alpha-2026-1" } = {}) {
-  const pdfBytes = new TextEncoder().encode(`%PDF-1.4 fixture bytes for ${editionId}`)
+async function writeCorpusFixture(
+  root,
+  { documentId = "alpha", editionId = "alpha-2026-1" } = {}
+) {
+  const pdfBytes = new TextEncoder().encode(
+    `%PDF-1.4 fixture bytes for ${editionId}`
+  )
   const pdfSha256 = sha256(pdfBytes)
-  const pages = [{ pdfPage: 1, text: "Art. 1. Tekst przepisu.", characterCount: 24, hasTextLayer: true }]
+  const pages = [
+    {
+      pdfPage: 1,
+      text: "Art. 1. Tekst przepisu.",
+      characterCount: 24,
+      hasTextLayer: true,
+    },
+  ]
   const locator = "Art. 1"
   const text = `${locator}. Tekst przepisu.`
   const provisions = [
@@ -115,7 +161,11 @@ async function writeCorpusFixture(root, { documentId = "alpha", editionId = "alp
     pdfSha256,
   }
 
-  const configPath = path.join(root, "legal-corpus/documents", `${editionId}.json`)
+  const configPath = path.join(
+    root,
+    "legal-corpus/documents",
+    `${editionId}.json`
+  )
   await writeJson(configPath, config)
 
   const editionDirectory = path.join(root, "app/data/legal-corpus", editionId)
@@ -136,6 +186,7 @@ async function writeCorpusFixture(root, { documentId = "alpha", editionId = "alp
     provisions,
     structure,
     editionDirectory,
+    publicDirectory,
     workOrder: {
       documentId,
       newEditionId: editionId,
@@ -147,14 +198,56 @@ async function writeCorpusFixture(root, { documentId = "alpha", editionId = "alp
 test("classifies edition changes by stable provision id and source hash", () => {
   const result = diffProvisionLists(
     [
-      { id: "act-art-1", sourceTextHash: "a", locator: "Art. 1", status: "active", parentId: null, childIds: [] },
-      { id: "act-art-2", sourceTextHash: "b", locator: "Art. 2", status: "active", parentId: null, childIds: [] },
-      { id: "act-art-3", sourceTextHash: "c", locator: "Art. 3", status: "active", parentId: null, childIds: [] },
+      {
+        id: "act-art-1",
+        sourceTextHash: "a",
+        locator: "Art. 1",
+        status: "active",
+        parentId: null,
+        childIds: [],
+      },
+      {
+        id: "act-art-2",
+        sourceTextHash: "b",
+        locator: "Art. 2",
+        status: "active",
+        parentId: null,
+        childIds: [],
+      },
+      {
+        id: "act-art-3",
+        sourceTextHash: "c",
+        locator: "Art. 3",
+        status: "active",
+        parentId: null,
+        childIds: [],
+      },
     ],
     [
-      { id: "act-art-1", sourceTextHash: "a", locator: "Art. 1", status: "active", parentId: null, childIds: [] },
-      { id: "act-art-2", sourceTextHash: "changed", locator: "Art. 2", status: "active", parentId: null, childIds: [] },
-      { id: "act-art-4", sourceTextHash: "d", locator: "Art. 4", status: "active", parentId: null, childIds: [] },
+      {
+        id: "act-art-1",
+        sourceTextHash: "a",
+        locator: "Art. 1",
+        status: "active",
+        parentId: null,
+        childIds: [],
+      },
+      {
+        id: "act-art-2",
+        sourceTextHash: "changed",
+        locator: "Art. 2",
+        status: "active",
+        parentId: null,
+        childIds: [],
+      },
+      {
+        id: "act-art-4",
+        sourceTextHash: "d",
+        locator: "Art. 4",
+        status: "active",
+        parentId: null,
+        childIds: [],
+      },
     ]
   )
   assert.deepEqual(result, {
@@ -165,24 +258,55 @@ test("classifies edition changes by stable provision id and source hash", () => 
   })
 })
 
+test("classifies a future provision effective-date change as structural", () => {
+  const base = {
+    id: "act-art-1a",
+    sourceTextHash: "a",
+    locator: "Art. 1a",
+    status: "future",
+    effectiveDate: "2029-10-01",
+    parentId: null,
+    childIds: [],
+  }
+
+  assert.deepEqual(
+    diffProvisionLists([base], [{ ...base, effectiveDate: "2030-01-01" }]),
+    {
+      added: [],
+      changed: ["act-art-1a"],
+      removed: [],
+      unchanged: [],
+    }
+  )
+})
+
 test("prepare and standalone diff dependant discovery share typed file/line references", async () => {
   await withTempCorpus(async (root) => {
     const sourcePath = path.join(root, "app/data/legal-data.ts")
     await mkdir(path.dirname(sourcePath), { recursive: true })
-    await writeFile(sourcePath, [
-      'const alphaLaw = createLegalTextAuthor("alpha")',
-      'alphaLaw.text`${alphaLaw.article("1")}`',
-    ].join("\n"))
+    await writeFile(
+      sourcePath,
+      [
+        'const alphaLaw = createLegalTextAuthor("alpha")',
+        'alphaLaw.text`${alphaLaw.article("1")}`',
+      ].join("\n")
+    )
     const dependants = await discoverReviewDependants({
       projectRoot: root,
       provisionIds: ["alpha-art-1", "alpha-art-removed"],
     })
     assert.deepEqual(dependants, [
-      { provisionId: "alpha-art-1", references: [{ file: "app/data/legal-data.ts", line: 2 }] },
+      {
+        provisionId: "alpha-art-1",
+        references: [{ file: "app/data/legal-data.ts", line: 2 }],
+      },
       { provisionId: "alpha-art-removed", references: [] },
     ])
     assert.match(renderReviewDependants(dependants), /alpha-art-1/u)
-    assert.match(renderReviewDependants(dependants), /app\/data\/legal-data\.ts:2/u)
+    assert.match(
+      renderReviewDependants(dependants),
+      /app\/data\/legal-data\.ts:2/u
+    )
     assert.match(renderReviewDependants(dependants), /alpha-art-removed/u)
   })
 })
@@ -190,12 +314,21 @@ test("prepare and standalone diff dependant discovery share typed file/line refe
 test("prepare's identity check rejects an --old-edition manifest whose documentId differs from the new config, before any build runs", async () => {
   await withTempCorpus(async (root) => {
     const oldEditionId = "beta-2025-1"
-    await writeJson(path.join(root, "app/data/legal-corpus", oldEditionId, "manifest.json"), {
-      documentId: "beta",
-      editionId: oldEditionId,
+    await writeJson(
+      path.join(root, "app/data/legal-corpus", oldEditionId, "manifest.json"),
+      {
+        documentId: "beta",
+        editionId: oldEditionId,
+      }
+    )
+    const configPath = path.join(
+      root,
+      "legal-corpus/documents/alpha-2026-1.json"
+    )
+    await writeJson(configPath, {
+      documentId: "alpha",
+      editionId: "alpha-2026-1",
     })
-    const configPath = path.join(root, "legal-corpus/documents/alpha-2026-1.json")
-    await writeJson(configPath, { documentId: "alpha", editionId: "alpha-2026-1" })
 
     await assert.rejects(
       () =>
@@ -204,7 +337,9 @@ test("prepare's identity check rejects an --old-edition manifest whose documentI
           mode: "update",
           configPath: path.relative(root, configPath),
           oldEditionId,
-          approvedWriteScope: ["app/data/legal-library/editorial/alpha/art-1.ts"],
+          approvedWriteScope: [
+            "app/data/legal-library/editorial/alpha/art-1.ts",
+          ],
         }),
       (/** @type {any} */ error) => {
         assert.match(error.message, /beta/)
@@ -215,7 +350,9 @@ test("prepare's identity check rejects an --old-edition manifest whose documentI
     // The mismatch is caught before the (expensive, networked) build step, so
     // no edition directory was ever created for the misconfigured update.
     await assert.rejects(() =>
-      readJson(path.join(root, "app/data/legal-corpus/alpha-2026-1/manifest.json"))
+      readJson(
+        path.join(root, "app/data/legal-corpus/alpha-2026-1/manifest.json")
+      )
     )
   })
 })
@@ -223,12 +360,24 @@ test("prepare's identity check rejects an --old-edition manifest whose documentI
 test("prepare --dry-run reports planned build/write paths and touches nothing", async () => {
   await withTempCorpus(async (root) => {
     const oldEditionId = "alpha-2025-0"
-    await writeJson(path.join(root, "app/data/legal-corpus", oldEditionId, "manifest.json"), {
+    await writeJson(
+      path.join(root, "app/data/legal-corpus", oldEditionId, "manifest.json"),
+      {
+        documentId: "alpha",
+        editionId: oldEditionId,
+      }
+    )
+    const configPath = path.join(
+      root,
+      "legal-corpus/documents/alpha-2026-1.json"
+    )
+    await writeJson(configPath, {
       documentId: "alpha",
-      editionId: oldEditionId,
+      editionId: "alpha-2026-1",
+      supplementalSources: [
+        { localFilename: "effective-date-mp-2026-370.pdf" },
+      ],
     })
-    const configPath = path.join(root, "legal-corpus/documents/alpha-2026-1.json")
-    await writeJson(configPath, { documentId: "alpha", editionId: "alpha-2026-1" })
 
     const preview = await prepareWorkOrder({
       projectRoot: root,
@@ -248,13 +397,24 @@ test("prepare --dry-run reports planned build/write paths and touches nothing", 
         "app/data/legal-corpus/alpha-2026-1/provisions.json"
       )
     )
-    assert.ok(preview.wouldWrite.workOrderPath.endsWith("alpha-alpha-2026-1.json"))
+    assert.ok(
+      preview.wouldBuild.artifactPaths.includes(
+        "public/legal-sources/alpha-2026-1/effective-date-mp-2026-370.pdf"
+      )
+    )
+    assert.ok(
+      preview.wouldWrite.workOrderPath.endsWith("alpha-alpha-2026-1.json")
+    )
 
     // A dry run never builds or writes: no edition directory, no work order.
     await assert.rejects(() =>
-      readJson(path.join(root, "app/data/legal-corpus/alpha-2026-1/manifest.json"))
+      readJson(
+        path.join(root, "app/data/legal-corpus/alpha-2026-1/manifest.json")
+      )
     )
-    await assert.rejects(() => readJson(path.join(root, preview.wouldWrite.workOrderPath)))
+    await assert.rejects(() =>
+      readJson(path.join(root, preview.wouldWrite.workOrderPath))
+    )
   })
 })
 
@@ -272,11 +432,91 @@ test("previews a promotion's pointer transition and target files without writing
     from: "alpha-2025-0",
     to: "alpha-2026-1",
   })
-  assert.equal(preview.wouldWrite.pointerPath, "app/data/legal-library/current-editions.json")
+  assert.equal(
+    preview.wouldWrite.pointerPath,
+    "app/data/legal-library/current-editions.json"
+  )
   assert.equal(
     preview.wouldWrite.promotionRecordPath,
     "legal-corpus/promotions/alpha-alpha-2026-1.json"
   )
+})
+
+test("validates only the promotion target when other candidate editorials are co-staged", async () => {
+  await withTempCorpus(async (root) => {
+    const fixtures = []
+    for (const documentId of ["alpha", "beta", "gamma"]) {
+      fixtures.push({
+        documentId,
+        old: await writeCorpusFixture(root, {
+          documentId,
+          editionId: `${documentId}-2025-0`,
+        }),
+        candidate: await writeCorpusFixture(root, {
+          documentId,
+          editionId: `${documentId}-2026-1`,
+        }),
+      })
+    }
+    const [alpha, beta, gamma] = fixtures
+    const pointerPath = path.join(
+      root,
+      "app/data/legal-library/current-editions.json"
+    )
+    await mkdir(path.dirname(pointerPath), { recursive: true })
+    const pointerBytes = `${JSON.stringify(
+      Object.fromEntries(
+        fixtures.map(({ documentId, old }) => [documentId, old.editionId])
+      ),
+      null,
+      2
+    ).replaceAll("\n", "\r\n")}\r\n`
+    await writeFile(pointerPath, pointerBytes, "utf8")
+    for (const { documentId, candidate } of fixtures) {
+      await writeEditorialFixture(root, {
+        documentId,
+        editionId: candidate.editionId,
+        provisionId: `${documentId}-art-1`,
+      })
+    }
+
+    const candidateCurrentEditions = {
+      ...(await readJson(pointerPath)),
+      alpha: alpha.candidate.editionId,
+    }
+    const globalErrors = await runEditorialValidator(
+      root,
+      candidateCurrentEditions
+    )
+    assert.match(
+      globalErrors.join("\n"),
+      new RegExp(`\\[wrong-edition\\] beta-art-1.*${beta.candidate.editionId}`)
+    )
+    assert.match(
+      globalErrors.join("\n"),
+      new RegExp(
+        `\\[wrong-edition\\] gamma-art-1.*${gamma.candidate.editionId}`
+      )
+    )
+    assert.deepEqual(
+      await runEditorialValidator(root, candidateCurrentEditions, "alpha"),
+      []
+    )
+    assert.equal(await readFile(pointerPath, "utf8"), pointerBytes)
+
+    await writeEditorialFixture(root, {
+      documentId: "alpha",
+      editionId: alpha.candidate.editionId,
+      provisionId: "alpha-art-missing",
+    })
+    const invalidCandidateErrors = await runEditorialValidator(
+      root,
+      candidateCurrentEditions,
+      "alpha"
+    )
+    assert.match(invalidCandidateErrors.join("\n"), /\[unknown-provision\]/u)
+    assert.equal(await readFile(pointerPath, "utf8"), pointerBytes)
+  })
 })
 
 test("flags a promotion preview as blocked when the approval token or validation does not pass", () => {
@@ -293,7 +533,10 @@ test("flags a promotion preview as blocked when the approval token or validation
   const blockedByValidation = previewPromotion({
     workOrder: { documentId: "alpha", newEditionId: "alpha-2026-1" },
     approval: "alpha@alpha-2026-1",
-    validation: { passed: false, errors: ["corpus fact re-verification failed"] },
+    validation: {
+      passed: false,
+      errors: ["corpus fact re-verification failed"],
+    },
     currentPointers: {},
   })
   assert.equal(blockedByValidation.wouldPromote, false)
@@ -387,8 +630,15 @@ test("rejects work-order evidence dates that are not real calendar dates", () =>
   }
   assert.deepEqual(validateLegalStatusEvidence(complete), [])
 
-  const yesterday = validateLegalStatusEvidence({ ...complete, checkedAt: "yesterday" })
-  assert.ok(yesterday.some((message) => message.includes("legalStatusEvidence.checkedAt")))
+  const yesterday = validateLegalStatusEvidence({
+    ...complete,
+    checkedAt: "yesterday",
+  })
+  assert.ok(
+    yesterday.some((message) =>
+      message.includes("legalStatusEvidence.checkedAt")
+    )
+  )
 
   const impossibleDate = validateLegalStatusEvidence({
     ...complete,
@@ -405,7 +655,9 @@ test("rejects work-order evidence dates that are not real calendar dates", () =>
     legalStateDate: "2026-99-99",
   })
   assert.ok(
-    badOptionalDate.some((message) => message.includes("legalStatusEvidence.legalStateDate"))
+    badOptionalDate.some((message) =>
+      message.includes("legalStatusEvidence.legalStateDate")
+    )
   )
 })
 
@@ -418,8 +670,12 @@ test("preserves complete manifest legal-status evidence for the next work order"
     checkedAt: "2026-07-15",
     sourceUrls: ["https://eli.gov.pl/eli/DU/2026/553/ogl"],
     amendmentsCheckedThrough: "2026-07-15",
-    entryIntoForce: [{ locator: "ELI official page", result: "entered into force" }],
-    transitionalRules: [{ locator: "final provisions", result: "express result recorded" }],
+    entryIntoForce: [
+      { locator: "ELI official page", result: "entered into force" },
+    ],
+    transitionalRules: [
+      { locator: "final provisions", result: "express result recorded" },
+    ],
     unresolved: [],
     amendmentReview: { result: "none listed" },
   }
@@ -428,7 +684,10 @@ test("preserves complete manifest legal-status evidence for the next work order"
     complete
   )
   assert.ok(
-    validateLegalStatusEvidence({ ...complete, sourceUrls: ["http://eli.gov.pl"] }).length > 0
+    validateLegalStatusEvidence({
+      ...complete,
+      sourceUrls: ["http://eli.gov.pl"],
+    }).length > 0
   )
 })
 
@@ -436,13 +695,22 @@ test("re-verifies corpus facts on disk and rejects a tampered provisions.json or
   await withTempCorpus(async (root) => {
     const fixture = await writeCorpusFixture(root)
     assert.deepEqual(
-      await verifyPromotionArtifacts({ projectRoot: root, workOrder: fixture.workOrder }),
+      await verifyPromotionArtifacts({
+        projectRoot: root,
+        workOrder: fixture.workOrder,
+      }),
       []
     )
 
-    const provisionsPath = path.join(fixture.editionDirectory, "provisions.json")
-    const tamperedProvisions = fixture.provisions.map((provision) => ({ ...provision }))
-    tamperedProvisions[0].text = "Art. 1. Hand-edited text that no longer matches the stored hash."
+    const provisionsPath = path.join(
+      fixture.editionDirectory,
+      "provisions.json"
+    )
+    const tamperedProvisions = fixture.provisions.map((provision) => ({
+      ...provision,
+    }))
+    tamperedProvisions[0].text =
+      "Art. 1. Hand-edited text that no longer matches the stored hash."
     await writeJson(provisionsPath, tamperedProvisions)
     const provisionErrors = await verifyPromotionArtifacts({
       projectRoot: root,
@@ -450,7 +718,9 @@ test("re-verifies corpus facts on disk and rejects a tampered provisions.json or
     })
     assert.ok(provisionErrors.length > 0)
     assert.ok(
-      provisionErrors.some((message) => message.includes("provisions.source-text-checksum-mismatch"))
+      provisionErrors.some((message) =>
+        message.includes("provisions.source-text-checksum-mismatch")
+      )
     )
 
     // Restore provisions.json, then tamper structure.json instead.
@@ -462,19 +732,120 @@ test("re-verifies corpus facts on disk and rejects a tampered provisions.json or
       workOrder: fixture.workOrder,
     })
     assert.ok(structureErrors.length > 0)
-    assert.ok(structureErrors.some((message) => message.includes("structure.roots-mismatch")))
+    assert.ok(
+      structureErrors.some((message) =>
+        message.includes("structure.roots-mismatch")
+      )
+    )
+  })
+})
+
+test("re-verifies each local supplemental source PDF checksum at promotion", async () => {
+  await withTempCorpus(async (root) => {
+    const fixture = await writeCorpusFixture(root)
+    const manifestPath = path.join(fixture.editionDirectory, "manifest.json")
+    const manifest = await readJson(manifestPath)
+    const supplementalBytes = new TextEncoder().encode(
+      "%PDF-1.4 supplemental effective-date evidence"
+    )
+    const supplementalPdfSha256 = sha256(supplementalBytes)
+    const supplementalFilename = "effective-date-evidence.pdf"
+    const supplementalLocalPdfUrl = `/legal-sources/${fixture.editionId}/${supplementalFilename}`
+
+    manifest.sourceMaterials = [
+      {
+        id: "base",
+        role: "base",
+        pdfSha256: manifest.pdfSha256,
+        localPdfUrl: `/legal-sources/${fixture.editionId}/source.pdf`,
+      },
+      {
+        id: "effective-date",
+        role: "effective-date",
+        pdfSha256: supplementalPdfSha256,
+        effectiveDate: "2026-07-15",
+        localPdfUrl: supplementalLocalPdfUrl,
+      },
+    ]
+    const [provision] = fixture.provisions
+    const provisions = [
+      {
+        ...provision,
+        sourceSpans: [
+          {
+            sourceId: "base",
+            role: "base",
+            locator: provision.locator,
+            startPdfPage: provision.startPdfPage,
+            endPdfPage: provision.endPdfPage,
+            sourcePdfSha256: provision.sourcePdfSha256,
+          },
+          {
+            sourceId: "effective-date",
+            role: "effective-date",
+            locator: "official effective-date evidence",
+            effectiveDate: "2026-07-15",
+            sourcePdfSha256: supplementalPdfSha256,
+          },
+        ],
+      },
+    ]
+    await writeJson(manifestPath, manifest)
+    await writeJson(
+      path.join(fixture.editionDirectory, "provisions.json"),
+      provisions
+    )
+    const supplementalPath = path.join(
+      fixture.publicDirectory,
+      supplementalFilename
+    )
+    await writeFile(supplementalPath, supplementalBytes)
+
+    assert.deepEqual(
+      await verifyPromotionArtifacts({
+        projectRoot: root,
+        workOrder: fixture.workOrder,
+      }),
+      []
+    )
+
+    await writeFile(
+      supplementalPath,
+      new TextEncoder().encode("%PDF-1.4 tampered evidence")
+    )
+    const errors = await verifyPromotionArtifacts({
+      projectRoot: root,
+      workOrder: fixture.workOrder,
+    })
+    assert.ok(
+      errors.some((message) =>
+        message.includes(
+          "Source material effective-date local PDF checksum differs from manifest"
+        )
+      )
+    )
   })
 })
 
 test("promotes registries before the pointer, so a registry failure never advances the pointer", async () => {
   await withTempCorpus(async (root) => {
-    const old = await writeCorpusFixture(root, { documentId: "alpha", editionId: "alpha-2025-0" })
-    const pointerPath = path.join(root, "app/data/legal-library/current-editions.json")
+    const old = await writeCorpusFixture(root, {
+      documentId: "alpha",
+      editionId: "alpha-2025-0",
+    })
+    const pointerPath = path.join(
+      root,
+      "app/data/legal-library/current-editions.json"
+    )
     await writeJson(pointerPath, { alpha: old.editionId })
 
     // The edition named by newEditionId was never built onto disk, so
     // registry generation fails before any durable write happens.
-    const workOrder = { documentId: "alpha", newEditionId: "alpha-2026-1", baseCommit: "deadbeef" }
+    const workOrder = {
+      documentId: "alpha",
+      newEditionId: "alpha-2026-1",
+      baseCommit: "deadbeef",
+    }
     await assert.rejects(
       () =>
         promoteEdition({
@@ -488,16 +859,27 @@ test("promotes registries before the pointer, so a registry failure never advanc
 
     assert.deepEqual(await readJson(pointerPath), { alpha: old.editionId })
     await assert.rejects(() =>
-      readFile(path.join(root, "legal-corpus/promotions", "alpha-alpha-2026-1.json"))
+      readFile(
+        path.join(root, "legal-corpus/promotions", "alpha-alpha-2026-1.json")
+      )
     )
   })
 })
 
 test("rolls registries back to the original pointer state if the pointer write fails", async () => {
   await withTempCorpus(async (root) => {
-    const oldFixture = await writeCorpusFixture(root, { documentId: "alpha", editionId: "alpha-2025-0" })
-    const newFixture = await writeCorpusFixture(root, { documentId: "alpha", editionId: "alpha-2026-1" })
-    const pointerPath = path.join(root, "app/data/legal-library/current-editions.json")
+    const oldFixture = await writeCorpusFixture(root, {
+      documentId: "alpha",
+      editionId: "alpha-2025-0",
+    })
+    const newFixture = await writeCorpusFixture(root, {
+      documentId: "alpha",
+      editionId: "alpha-2026-1",
+    })
+    const pointerPath = path.join(
+      root,
+      "app/data/legal-library/current-editions.json"
+    )
     await writeJson(pointerPath, { alpha: oldFixture.editionId })
 
     // Pre-occupy the pointer's atomic-write temp path with a directory so the
@@ -519,15 +901,32 @@ test("rolls registries back to the original pointer state if the pointer write f
         })
       )
 
-      assert.deepEqual(await readJson(pointerPath), { alpha: oldFixture.editionId })
+      assert.deepEqual(await readJson(pointerPath), {
+        alpha: oldFixture.editionId,
+      })
       const referenceRegistry = await readFile(
-        path.join(root, "app/data/legal-corpus/reference-registry.generated.ts"),
+        path.join(
+          root,
+          "app/data/legal-corpus/reference-registry.generated.ts"
+        ),
         "utf8"
       )
-      assert.match(referenceRegistry, new RegExp(`currentEditionId: "${oldFixture.editionId}"`))
-      assert.doesNotMatch(referenceRegistry, new RegExp(`currentEditionId: "${newFixture.editionId}"`))
+      assert.match(
+        referenceRegistry,
+        new RegExp(`currentEditionId: "${oldFixture.editionId}"`)
+      )
+      assert.doesNotMatch(
+        referenceRegistry,
+        new RegExp(`currentEditionId: "${newFixture.editionId}"`)
+      )
       await assert.rejects(() =>
-        readFile(path.join(root, "legal-corpus/promotions", `alpha-${newFixture.editionId}.json`))
+        readFile(
+          path.join(
+            root,
+            "legal-corpus/promotions",
+            `alpha-${newFixture.editionId}.json`
+          )
+        )
       )
     } finally {
       await rm(blockedTempPath, { recursive: true, force: true })
@@ -537,9 +936,18 @@ test("rolls registries back to the original pointer state if the pointer write f
 
 test("promotes an edition by regenerating registries, then the pointer, then the record", async () => {
   await withTempCorpus(async (root) => {
-    const oldFixture = await writeCorpusFixture(root, { documentId: "alpha", editionId: "alpha-2025-0" })
-    const newFixture = await writeCorpusFixture(root, { documentId: "alpha", editionId: "alpha-2026-1" })
-    const pointerPath = path.join(root, "app/data/legal-library/current-editions.json")
+    const oldFixture = await writeCorpusFixture(root, {
+      documentId: "alpha",
+      editionId: "alpha-2025-0",
+    })
+    const newFixture = await writeCorpusFixture(root, {
+      documentId: "alpha",
+      editionId: "alpha-2026-1",
+    })
+    const pointerPath = path.join(
+      root,
+      "app/data/legal-library/current-editions.json"
+    )
     await writeJson(pointerPath, { alpha: oldFixture.editionId })
 
     const workOrder = {
@@ -558,14 +966,23 @@ test("promotes an edition by regenerating registries, then the pointer, then the
     assert.equal(record.editionId, newFixture.editionId)
     assert.equal(record.approvedBy, "reviewer")
 
-    assert.deepEqual(await readJson(pointerPath), { alpha: newFixture.editionId })
+    assert.deepEqual(await readJson(pointerPath), {
+      alpha: newFixture.editionId,
+    })
     const referenceRegistry = await readFile(
       path.join(root, "app/data/legal-corpus/reference-registry.generated.ts"),
       "utf8"
     )
-    assert.match(referenceRegistry, new RegExp(`currentEditionId: "${newFixture.editionId}"`))
+    assert.match(
+      referenceRegistry,
+      new RegExp(`currentEditionId: "${newFixture.editionId}"`)
+    )
 
-    const recordPath = path.join(root, "legal-corpus/promotions", `alpha-${newFixture.editionId}.json`)
+    const recordPath = path.join(
+      root,
+      "legal-corpus/promotions",
+      `alpha-${newFixture.editionId}.json`
+    )
     assert.deepEqual(await readJson(recordPath), record)
   })
 })

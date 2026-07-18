@@ -7,9 +7,9 @@ const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const VISA_CODE_URL = "https://eur-lex.europa.eu/eli/reg/2009/810/oj"
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-79",
@@ -26,7 +26,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
           sourceLocator: "Art. 79 ust. 1–4",
         },
       ],
-      summary: foreignersLaw.text`${foreignersLaw.article("79", "Art. 79")} встановлює порядок виправлення помилки у візовій наклейці: її unieważniaють і наносять нову, а при заміні паспорта нову наклейку wiza krajowa розміщує właściwy wojewoda на заяву cudzoziemiec.`,
+      summary: foreignersLaw.text`${foreignersLaw.article("79", "Art. 79")} встановлює порядок виправлення помилки у візовій наклейці: її скасовують і наносять нову, а при заміні паспорта нову наклейку wiza krajowa розміщує właściwy wojewoda на заяву cudzoziemiec.`,
       rules: [
         {
           locator: "Art. 79 ust. 1–2",
@@ -36,11 +36,11 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 79 ust. 3–4",
           explanation:
-            "При заміні документа подорожі wojewoda за місцем pobyt, на wniosek, ставить нову наклейку wiza krajowa; помилку wiza Schengen на кордоні виправляє комendant placówki Straży Granicznej.",
+            "При заміні документа подорожі wojewoda за місцем pobyt, на wniosek, ставить нову наклейку wiza krajowa; помилку wiza Schengen на кордоні виправляє komendant placówki Straży Granicznej.",
         },
         {
           locator: "Art. 79 ust. 5–6",
-          explanation: foreignersLaw.text`Для віз MFA діє спеціальна компетенція konsul ${foreignersLaw.article("66", "Art. 66")} ust. 1b, а дії за ${foreignersLaw.external("Art. 28", VISA_CODE_URL)} Visa Code у випадку ${foreignersLaw.article("66", "Art. 66")} ust. 1a виконує цей konsul.`,
+          explanation: foreignersLaw.text`Для віз MFA діє спеціальна компетенція konsul ${foreignersLaw.article("66", "Art. 66")} ust. 1b, а дії за ${foreignersLaw.external("Art. 28 kodeksu wizowego", VISA_CODE_URL)} у випадку ${foreignersLaw.article("66", "Art. 66")} ust. 1a виконує цей konsul.`,
         },
       ],
       legalEffect:

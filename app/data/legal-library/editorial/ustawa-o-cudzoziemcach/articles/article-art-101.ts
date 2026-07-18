@@ -44,21 +44,21 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("101", {
       provisionId: "ustawa-o-cudzoziemcach-art-101",
       reviewStatus: "reviewed",
       statuteText:
-        "Zezwolenie na pobyt czasowy cofaється, якщо припинилася мета, заради якої його надано, cudzoziemiec перестав виконувати вимоги заявленої мети або виникла хоча б одна обставина Art. 100 ust. 1 pkt 2 чи 4–8.",
+        "Zezwolenie na pobyt czasowy відкликають, якщо припинилася мета, заради якої його надано, cudzoziemiec перестав виконувати вимоги заявленої мети або виникла хоча б одна обставина Art. 100 ust. 1 pkt 2 чи 4–8.",
       statuteLocator: "Art. 101 pkt 1–3",
       practicalText:
-        "Cofnięcie потребує встановлення зміни після надання дозволу та відповідного пункту, а не лише припущення, що мета змінилася. Припинення permit не дорівнює автоматичній легалізації іншою підставою; legal stay і work authorization треба перевірити за датами та новими документами.",
+        "Cofnięcie потребує встановлення зміни після надання дозволу та відповідного пункту, а не лише припущення, що мета змінилася. Припинення zezwolenie не дорівнює автоматичній легалізації іншою підставою; legalność pobytu і правова підстава виконання роботи треба перевірити за датами та новими документами.",
       practicalLocator: "Art. 101 pkt 1–3",
       summary:
-        "Art. 101 визначає три групи підстав для cofnięcie temporary residence permit: припинення мети, втрату умов або окремі перешкоди з Art. 100.",
+        "Art. 101 визначає три групи підстав для cofnięcie zezwolenie na pobyt czasowy: припинення мети, втрату умов або окремі перешкоди з Art. 100.",
       rules: [
         {
           locator: "Art. 101 pkt 1",
@@ -77,9 +77,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття є materialною підставою для cofnięcie уже наданого zezwolenie. Вона не визначає, що іноземець автоматично отримує інший pobyt або дозвіл на працю після припинення.",
+        "Стаття є матеріально-правовою підставою для cofnięcie уже наданого zezwolenie. Вона не визначає, що іноземець автоматично отримує інший pobyt або дозвіл на працю після припинення.",
       foreignersCase:
-        "Зафіксуйте дату припинення мети або умови, фактичну діяльність і документи, на які спирається organ. Порівняйте рішення про cofnięcie з паспортом, картою pobytu, legal stay та окремою підставою work authorization.",
+        "Зафіксуйте дату припинення мети або умови, фактичну діяльність і документи, на які спирається organ. Порівняйте рішення про cofnięcie з паспортом, картою pobytu, legalność pobytu та окремою підставою правова підстава виконання роботи.",
     }),
   ]),
 })

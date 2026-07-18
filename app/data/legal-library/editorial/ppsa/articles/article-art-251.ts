@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-251",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 251 передбачає, що przyznanie prawa pomocy wygasa зі смертю сторони, яка його отримала.",
+          text: "Право допомоги припиняється зі смертю сторони, якій його було надано.",
           sourceLocator: "Art. 251",
         },
       ],
       summary:
-        "Право допомоги має особистий процесуальний зв’язок зі стороною, яка його отримала, і wygasa з її смертю.",
+        "Стаття підкреслює особистий характер фінансової та професійної підтримки.",
       rules: [
         {
           locator: "Art. 251",
           explanation:
-            "Встановіть факт смерті саме strony, якій przyznano prawo pomocy; стаття регулює припинення цього права, а не всі можливі наслідки смерті для основного postępowanie.",
+            "Не переносіть ухвалу про право допомоги (prawo pomocy) автоматично на спадкоємця або іншу особу, яка може вступити у справу.",
         },
       ],
       legalEffect:
-        "Зі смертю отримувача prawo pomocy wygasa за прямим правилом Art. 251; це не є рішенням по суті адміністративного спору.",
+        "Після смерті одержувача звільнення й призначення представника не продовжуються на користь іншої сторони.",
       foreignersCase:
-        "Якщо сторона-іноземець померла під час судової справи, окремо зафіксуйте наслідок для prawa pomocy і не робіть з Art. 251 висновку про автоматичне завершення всієї справи чи перехід права до іншої особи.",
+        "Якщо результат справи іноземця стосується прав близьких, вони окремо встановлюють свій процесуальний статус і за потреби подають власну заяву.",
     },
-  ]),
+  ],
 })

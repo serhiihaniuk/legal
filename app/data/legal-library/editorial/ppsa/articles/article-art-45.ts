@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-45",
@@ -18,7 +18,7 @@ export default defineEditorialPart<"ppsa">({
         },
       ],
       summary:
-        "Pismo strony у судовому провадженні — це wnioski та oświadczenia сторін, подані поза rozprawa.",
+        "Pismo strony у судовому провадженні — це wnioski та oświadczenia сторін, подані поза судовим засіданням (poza rozprawą).",
       rules: [
         {
           locator: "Art. 45",
@@ -29,7 +29,7 @@ export default defineEditorialPart<"ppsa">({
       legalEffect:
         "Стаття дає визначення pismo strony для подальших процесуальних правил, але сама не встановлює його повних формальних реквізитів.",
       foreignersCase:
-        "У справі про pobyt відрізніть pismo, подане поза rozprawa, від усної заяви під час засідання; для письмового документа окремо перевірте його реквізити.",
+        "У справі про pobyt відрізніть pismo, подане поза судовим засіданням (poza rozprawą), від усної заяви під час засідання; для письмового документа окремо перевірте його реквізити.",
     },
   ]),
 })

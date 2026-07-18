@@ -1,40 +1,33 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-280",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 280 § 1 зобов’язує суд на posiedzenie niejawnym перевірити, чи skarga o wznowienie подана в строк і чи спирається на ustawowa podstawa wznowienia; за відсутності вимоги суд odrzuci скаргу, інакше призначить rozprawa. За вимогою суду заявник має uprawdopodobnić обставини дотримання строку або dopuszczalność wznowienia.",
+          text: "На закритому засіданні суд попередньо перевіряє строк і законну підставу поновлення. За відсутності будь-якої з них скаргу відхиляють; за наявності призначають засідання. На вимогу суду заявник має зробити правдоподібними обставини строку або допустимості.",
           sourceLocator: "Art. 280 § 1–2",
         },
       ],
-      summary:
-        "Стаття встановлює попередню перевірку строку й законної підстави та можливість вимагати від заявника підтвердити допустимість.",
+      summary: "Стаття встановлює вхідний фільтр перед повторним розглядом.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 280 § 1–2",
           explanation:
-            "На першому етапі суд перевіряє не весь спір по суті, а строк і ustawowa podstawa; відсутність одного з них веде до odrzucenie, а не до призначення rozprawa.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "На wezwanie суду заявник має uprawdopodobnić факти, що стосуються строку або dopuszczalność wznowienia.",
+            "Уже до подання підготуйте документи про дату отримання відомостей, законну силу рішення (prawomocność) і факти законної підстави. Відповідаючи на виклик суду (wezwanie), покажіть правдоподібність, а не лише повторіть висновок.",
         },
       ],
       legalEffect:
-        "Проходження попередньої перевірки означає лише призначення rozprawa, а не визнання підстави доведеною і не позитивний результат wznowienie.",
+        "Проходження попередньої перевірки ще не означає, що вимогу про поновлення (wznowienie) буде задоволено.",
       foreignersCase:
-        "Якщо skarga іноземця подана до суду, відокремте posiedzenie niejawne щодо строку й ustawowa podstawa від подальшої rozprawa. На żądanie суду заявник має uprawdopodobnić обставини, що підтверджують строк або dopuszczalność wznowienia.",
+        "У справі іноземця доказ отримання нового документа часто важить не менше за сам документ, бо підтверджує строк.",
     },
-  ]),
+  ],
 })

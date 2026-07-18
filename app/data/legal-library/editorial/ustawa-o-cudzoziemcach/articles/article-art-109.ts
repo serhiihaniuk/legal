@@ -44,26 +44,26 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("109", {
       provisionId: "ustawa-o-cudzoziemcach-art-109",
       reviewStatus: "reviewed",
       statuteText:
-        "Перед наданням temporary residence permit wojewoda запитує Straż Graniczna, Policja, ABW, за потреби konsul та інші органи, чи можуть в’їзд і pobyt cudzoziemiec загрожувати обороні, безпеці держави, безпеці та porządek publiczny. Звичайний строк відповіді — 30 днів, у особливо обґрунтованій справі 60; для Art. 137a — 10/30 днів, а для family reunification з довгостроковою Blue Card mobility — 7/30 dni roboczych. Якщо відповідь не надано в строк, вимога вважається виконаною.",
+        "Перед наданням zezwolenie na pobyt czasowy wojewoda запитує Straż Graniczna, Policja, ABW, за потреби konsul та інші органи, чи можуть в’їзд і pobyt cudzoziemiec загрожувати обороні, безпеці держави, безпеці та porządek publiczny. Звичайний строк відповіді — 30 днів, у особливо обґрунтованій справі 60; для Art. 137a — 10/30 днів, а для połączenie z rodziną при mobilność długoterminowa posiadacza Niebieskiej Karty UE — 7/30 dni roboczych. Якщо відповідь не надано в строк, вимога вважається виконаною.",
       statuteLocator: "Art. 109 ust. 1–5",
       practicalText:
-        "Це міжвідомча перевірка ризиків, а не самостійний доказ небезпеки й не автоматична відмова. У справі важливі дата запиту, спеціальний вид permit, повідомлення про продовження та те, чи сплив строк без відповіді.",
+        "Це міжвідомча перевірка ризиків, а не самостійний доказ небезпеки й не автоматична відмова. У справі важливі дата запиту, спеціальний вид zezwolenie, повідомлення про продовження та те, чи сплив строк без відповіді.",
       practicalLocator: "Art. 109 ust. 1–5",
       summary:
-        "Art. 109 встановлює security screening перед temporary residence permit, компетентні органи, строки відповіді, електронний обмін і наслідок мовчання.",
+        "Art. 109 встановлює перевірку безпекових обставин перед zezwolenie na pobyt czasowy, компетентні органи, строки відповіді, електронний обмін і наслідок мовчання.",
       rules: [
         {
           locator: "Art. 109 ust. 1",
           explanation:
-            "Wojewoda запитує визначені органи про ризик для оборони, безпеки держави або publiczny porządek; консул та інші органи залучаються за потреби.",
+            "Wojewoda запитує визначені органи про ризик для оборони, безпеки держави або porządek publiczny; консул та інші органи залучаються за потреби.",
         },
         {
           locator: "Art. 109 ust. 2–3; ust. 3a",
@@ -73,7 +73,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 109 ust. 3b–3e",
           explanation:
-            "Для Art. 137a діють 10 днів і до 30 днів, а для family reunification з довгостроковою Blue Card mobility — 7 dni roboczych і до 30 dni roboczych.",
+            "Для Art. 137a діють 10 днів і до 30 днів, а для połączenie z rodziną при mobilność długoterminowa posiadacza Niebieskiej Karty UE — 7 dni roboczych і до 30 dni roboczych.",
         },
         {
           locator: "Art. 109 ust. 4–5",
@@ -82,7 +82,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Art. 109 організує перевірку перед рішенням і визначає процесуальний наслідок пропуску строку органом. Він не дає legal stay, не надає permit і не визначає work authorization.",
+        "Art. 109 організує перевірку перед рішенням і визначає процесуальний наслідок пропуску строку органом. Він не дає legalność pobytu, не надає zezwolenie і не визначає правова підстава виконання роботи.",
       foreignersCase:
         "Ведіть календар: дата wniosek, запити wojewoda, 30/60-, 10/30- або 7/30-денні строки, повідомлення про продовження та отримана відповідь. Для дитини зафіксуйте вік на день подання.",
     }),

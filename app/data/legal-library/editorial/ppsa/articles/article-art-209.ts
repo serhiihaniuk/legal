@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-209",
@@ -15,20 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Wniosek strony o zwrot kosztów sąd rozstrzyga w każdym orzeczeniu uwzględniającym skargę oraz w orzeczeniu, o którym mowa w ${ppsaLaw.article("201", "art. 201")}, ${ppsaLaw.article("203", "203")} i ${ppsaLaw.article("204", "204")}.`,
+          text: "Суд вирішує заяву сторони про повернення витрат у кожному рішенні, яке задовольняє скаргу, а також у спеціальних рішеннях про витрати, прямо названих законом.",
           sourceLocator: "Art. 209",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("209", "Art. 209")} wskazuje orzeczenia, w których sąd rozstrzyga zgłoszony wniosek o zwrot kosztów.`,
+      summary:
+        "Стаття прив’язує розгляд вимоги про витрати до рішення, що завершує відповідний процесуальний етап.",
       rules: [
         {
           locator: "Art. 209",
-          explanation: ppsaLaw.text`Sprawdź sentencję orzeczenia uwzględniającego skargę oraz orzeczenia objęte ${ppsaLaw.article("201", "art. 201")}, ${ppsaLaw.article("203", "203")} lub ${ppsaLaw.article("204", "204")}; sam wniosek nie zastępuje wykazania należnych kosztów.`,
+          explanation:
+            "Подайте чітку вимогу із сумою та підставою, щоб суд міг включити її до належного рішення.",
         },
       ],
       legalEffect:
-        "Przepis określa moment rozstrzygnięcia wniosku i nie tworzy samodzielnie prawa do zwrotu bez spełnienia warunków właściwej podstawy.",
-      foreignersCase: ppsaLaw.text`Po wyroku w sprawie pobytowej sprawdź rozstrzygnięcie o kosztach w sentencji, zwłaszcza gdy sprawa zakończyła się na podstawie ${ppsaLaw.article("201", "art. 201")}, ${ppsaLaw.article("203", "203")} albo 204.`,
+        "Витрати вирішуються разом із процесуальним результатом, але лише в межах заявленого та передбаченого законом механізму.",
+      foreignersCase:
+        "У справі про перебування перевірте резолютивну частину відразу після отримання рішення: відсутність вирішення заявлених витрат може вимагати окремої своєчасної реакції.",
     },
   ],
 })

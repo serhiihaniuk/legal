@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-12b",
@@ -13,33 +13,38 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "На legalStateDate 2026-07-14 чинна редакція Art. 12b § 1–2 передбачає електронний документ, підписаний способом з Art. 46 § 2a, його подання через elektroniczną skrzynkę podawczą та doręczanie засобами електронної комунікації на умовах Art. 74a; редакція з «adresem do doręczeń elektronicznych» позначена corpus як така, що набуде чинності 1 жовтня 2029 року.",
+          text: "Станом на 18.07.2026 Art. 12b § 1–2 зберігає встановлену законом вимогу письмової форми (warunek formy pisemnej), якщо dokument elektroniczny підписано способом з Art. 46 § 2a. Електронні документи подають до sąd administracyjny через elektroniczna skrzynka podawcza, а суд вручає їх сторонам засобами електронної комунікації за умовами Art. 74a. Редакція про postać elektroniczna, adres do doręczeń elektronicznych та Art. 65a набере чинності лише 1.10.2029.",
           sourceLocator: "Art. 12b § 1–5, przypisy 8–9",
         },
       ],
       summary:
-        "На legalStateDate 2026-07-14 чинна редакція Art. 12b регулює zachowanie formy pisemnej для dokument elektroniczny, подання через elektroniczną skrzynkę podawczą та doręczanie засобами комунікації електронної на умовах Art. 74a. Corpus також показує майбутню редакцію з adres do doręczeń elektronicznych, чинність якої починається 1.10.2029.",
+        "Стаття визначає, коли dokument elektroniczny відповідає письмовій формі, як його подати через elektroniczna skrzynka podawcza та як суд обробляє паперові й електронні документи для вручення.",
       rules: [
         {
-          locator: "Art. 12b § 1, przypis 8–9",
+          locator: "§ 1",
           explanation:
-            "На legalStateDate чинне правило говорить про dokument elektroniczny, підписаний способом з Art. 46 § 2a; текст із pismo utrwalone w postaci elektronicznej є майбутньою редакцією з датою набрання чинності 1.10.2029.",
+            "Встановлену законом вимогу письмової форми (warunek formy pisemnej) вважають дотриманою, якщо dokument elektroniczny підписано способом, передбаченим Art. 46 § 2a.",
         },
         {
-          locator: "Art. 12b § 2–3, przypis 8–9",
+          locator: "§ 2",
           explanation:
-            "Чинна редакція вимагає подавати dokumenty elektroniczne через elektroniczną skrzynkę podawczą, а doręчення здійснює через środki komunikacji elektronicznej за Art. 74a. Суд перетворює отриманий dokument elektroniczny на uwierzytelniony wydruk для сторони, яка не користується електронними засобами, або паперовий документ на електронну копію, якщо сторона користується ними; майбутня редакція містить інші терміни адрес і doręczeń.",
+            "Dokumenty elektroniczne подають до sąd administracyjny через elektroniczna skrzynka podawcza. Суд вручає такі документи сторонам засобами електронної комунікації за умовами Art. 74a.",
         },
         {
-          locator: "Art. 12b § 4–5, przypis 8–9",
+          locator: "§ 3",
           explanation:
-            "Чинні правила про zastosowanie środków komunikacji elektronicznej застосовуються відповідно до органів, а при першому письмі не в електронній формі суд інформує про умови електронного подання та doręczania. Перехідна примітка не дозволяє застосовувати майбутню редакцію до legalStateDate.",
+            "Для вручення суд перетворює отриманий від сторони документ: із pismo w formie dokumentu elektronicznego робить uwierzytelniony wydruk для сторони, яка не отримує документи електронно; із паперового pismo робить uwierzytelniona kopia w formie dokumentu elektronicznego для сторони, яка користується електронним отриманням.",
+        },
+        {
+          locator: "§ 4–5 / Przypisy 8–9",
+          explanation:
+            "Правила використання електронної комунікації відповідно застосовують до organów, до яких або через які подають pismo w formie dokumentu elektronicznego. У першому неелектронному листі суд інформує сторону про умови електронного подання та вручення. Формулювання про postać elektroniczna, adres do doręczeń elektronicznych і Art. 65a є майбутньою редакцією з 1.10.2029.",
         },
       ],
       legalEffect:
-        "Стаття створює процесуальну рамку електронних pism і doręczeń, але не робить майбутню редакцію чинною раніше 1.10.2029; придатність конкретного файлу, підпису, каналу подання та доказу doręczenia треба перевірити за чинною редакцією.",
+        "Стаття створює чинну процесуальну рамку електронних документів і вручення через Art. 74a, але не доводить автоматично, що конкретний файл, підпис або підтвердження подання є правильним.",
       foreignersCase:
-        "Перед електронним поданням у справі іноземця на legalStateDate перевірте вимоги до dokument elektroniczny, elektroniczna skrzynka podawcza, способу підпису та електронного doręczenia за чинними Art. 12b і Art. 74a; збережіть підтвердження подання й не підміняйте їх майбутнім adresem do doręczeń elektronicznych.",
+        "Перед електронним поданням у справі іноземця перевірте dokument elektroniczny, підпис за Art. 46 § 2a, подання через elektroniczna skrzynka podawcza та підтвердження подання; для вручення судом застосовуйте чинний Art. 74a.",
     },
   ]),
 })

@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-196",
@@ -11,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "WSA może wstrzymać wykonanie zaskarżonego postanowienia do czasu rozstrzygnięcia zażalenia; takie postanowienie może zapaść na posiedzeniu niejawnym.",
+          text: "WSA може зупинити виконання оскарженої ухвали до вирішення окремого оскарження (zażalenie); таке рішення може бути прийняте на закритому засіданні.",
           sourceLocator: "Art. 196",
         },
       ],
       summary:
-        "Złożenie zażalenia nie wstrzymuje samo przez się wykonania postanowienia; WSA może zrobić to osobnym postanowieniem.",
+        "Стаття дозволяє тимчасово зберегти становище, поки NSA перевіряє ухвалу.",
       rules: [
         {
           locator: "Art. 196",
           explanation:
-            "Wstrzymanie jest kompetencją WSA do czasu rozpoznania zażalenia i może być rozstrzygnięte bez rozprawy.",
+            "Покажіть, яка ухвала оскаржена та чому її виконання до рішення NSA матиме значення. Подання окремого оскарження (zażalenie) саме по собі не дорівнює зупиненню.",
         },
       ],
       legalEffect:
-        "Dopóki WSA nie wstrzyma wykonania, zaskarżone postanowienie nie jest automatycznie zawieszone przez samo wniesienie zażalenia.",
+        "Зупинення є тимчасовим і діє до вирішення окремого оскарження (zażalenie); воно не визначає, чи оскарження буде успішним.",
       foreignersCase:
-        "Jeżeli wykonanie postanowienia może wpłynąć na dokumenty lub status cudzoziemca, rozważ osobny wniosek o wstrzymanie i nie zakładaj skutku automatycznego.",
+        "У справі про перебування перевірте окрему ухвалу про зупинення виконання (wstrzymanie), перш ніж вважати, що процесуальний наслідок оскарженого документа не діє.",
     },
   ],
 })

@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-289",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 289 встановлює, що sąd wszczyna postępowanie щодо odtworzenie akt z urzędu або на wniosek strony; якщо zaginięcie чи zniszczenie akt сталося внаслідок siły wyższej, суд розпочинає його лише на wniosek strony.",
+          text: "Суд починає провадження з відновлення матеріалів з власної ініціативи або на заяву сторони. Якщо втрата чи знищення сталися через непереборну силу, суд діє лише на заяву сторони.",
           sourceLocator: "Art. 289 § 1–2",
         },
       ],
       summary:
-        "Спосіб початку провадження про відновлення залежить від того, чи пов’язана втрата або знищення akt із siła wyższa.",
+        "Стаття визначає, хто може запустити відновлення, і виняток для непереборної сили (siła wyższa).",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 289 § 1–2",
           explanation:
-            "За загальним правилом постępowanie може початися z urzędu або на wniosek strony.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "За siła wyższa потрібен wniosek strony; не підміняйте це питання простим припущенням про причину втрати.",
+            "У заяві опишіть подію втрати та додайте відомі докази. Якщо причиною була непереборна сила, ініціатива сторони є необхідною.",
         },
       ],
       legalEffect:
-        "Стаття визначає спосіб wszczęcie, але не доводить, що відновлення буде успішним або що всі akta можна відтворити.",
+        "Після припинення дії непереборної сили (siła wyższa) суд без заяви не почне провадження самостійно.",
       foreignersCase:
-        "У справі іноземця перевірте документовану причину зникнення akt і те, чи потрібно подавати wniosek, особливо коли посилаються на siła wyższa.",
+        "Іноземець не повинен чекати на службову ініціативу, якщо матеріали знищено пожежею чи іншою непереборною подією; треба подати формальну заяву.",
     },
-  ]),
+  ],
 })

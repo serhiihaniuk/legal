@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-55",
@@ -13,28 +13,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 55 визначає обов'язкові елементи zezwolenie na pracę sezonową: сторони, час роботи або години, мінімальне wynagrodzenie, правову підставу та строк чинності; для pracownik tymczasowy також pracodawca użytkownik.",
+          text: "Art. 55 визначає обов’язкові елементи сезонного дозволу (zezwolenie na pracę sezonową): дані польського суб’єкта та іноземця, робочий час або кількість годин, найнижчу оплату, правову підставу роботи й строк чинності. Якщо йдеться про тимчасового працівника (pracownik tymczasowy), документ також називає роботодавця-користувача (pracodawca użytkownik).",
           sourceLocator: "Art. 55 ust. 1–2",
         },
       ],
       summary:
-        "У zezwolenie мають бути зафіксовані не лише ім'я працівника і podmiot, а й вимір часу, мінімальна ставка, підстава роботи та строк. Для тимчасової роботи окремо називається pracodawca użytkownik.",
+        "Сезонний дозвіл описує конкретну дозволену модель роботи, а не лише ідентифікує сторони. Тому договір і фактична робота мають відповідати записаним годинам, оплаті, правовій підставі та строку.",
       rules: [
         {
           locator: "ust. 1 pkt 1–6",
           explanation:
-            "Перелік охоплює дані polski podmiot і cudzoziemiec, wymiar czasu pracy або години, найнижче wynagrodzenie, правову підставу та okres ważności.",
+            "Перелік охоплює дані польського суб’єкта та іноземця, робочий час (wymiar czasu pracy) або кількість годин, найнижчу оплату, правову підставу роботи й строк чинності.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Якщо робота є pracą tymczasową, zezwolenie визначає також pracodawca użytkownik.",
+            "Якщо іноземець працюватиме як тимчасовий працівник, у дозволі треба також вказати роботодавця-користувача.",
         },
       ],
       legalEffect:
-        "Умови в zezwolenie утворюють рамку дозволеної роботи; назва документа сама по собі не змінює зазначених обмежень.",
+        "Умови в дозволі утворюють рамку законної сезонної роботи. Сама наявність документа не дозволяє працювати поза цією рамкою.",
       foreignersCase:
-        "Порівняйте zezwolenie з umowa: години, мінімальне wynagrodzenie, підставу та pracodawca użytkownik мають бути узгоджені до початку роботи.",
+        "До початку роботи порівняйте дозвіл із договором: години, найнижча оплата, правова підстава та, за потреби, роботодавець-користувач мають збігатися.",
     },
   ]),
 })

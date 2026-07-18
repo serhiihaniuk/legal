@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-278",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 278 забороняє вимагати wznowienie після спливу п’яти років від uprawomocnienie orzeczenie, крім випадку, коли сторона була pozbawiona możność działania або не була należycie reprezentowana.",
+          text: "Після п’яти років від набрання рішенням законної сили поновлення, як правило, неможливе. Виняток стосується сторони, яка була позбавлена можливості діяти або не мала належного представництва.",
           sourceLocator: "Art. 278",
         },
       ],
       summary:
-        "Стаття встановлює п’ятирічну межу для żądanie wznowienia та вузький виняток для позбавлення можливості діяти або неналежного представництва.",
+        "Стаття додає об’єктивну кінцеву межу до тримісячного суб’єктивного строку.",
       rules: [
         {
           locator: "Art. 278",
           explanation:
-            "Відраховуйте п’ять років від uprawomocnienie саме оскарженого orzeczenie; виняток треба пов’язати з фактичним pozbawienie możność działania або brak należytej reprezentacji.",
+            "Перевірте обидва строки одночасно. Навіть швидка реакція після пізнього відкриття підстави не допомагає після п’яти років, якщо не діє виняток.",
         },
       ],
       legalEffect:
-        "Після цієї межі skarga зазвичай недопустима, але виняток не скасовує обов’язку довести конкретні обставини та дотримати інші правила.",
+        "П’ятирічна межа стабілізує остаточні рішення, зберігаючи захист для найтяжчих дефектів участі.",
       foreignersCase:
-        "У старій справі іноземця перевірте дату uprawomocnienie і документи про представництво та можливість участі. Сам факт пізнього виявлення документа не є названим Art. 278 винятком.",
+        "У старій справі іноземця спершу перевірте дату набрання рішенням законної сили (prawomocność) і лише потім витрачайте ресурси на аналіз нових доказів.",
     },
-  ]),
+  ],
 })

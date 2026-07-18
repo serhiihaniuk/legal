@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-159",
@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("159", "Art. 159")} містить спеціальні винятки: для окремих сімей uchodźca або особи з ochroną uzupełniającą діє 6-місячний строк, для визначеної сім'ї в ust. 5 не застосовуються вимоги про дохід і житло, а для сім'ї власника Blue Card діє виняток щодо доходу та житла.`,
+          text: foreignersLaw.text`${foreignersLaw.article("159", "Art. 159")} містить спеціальні винятки: для окремих сімей uchodźca або особи з ochroną uzupełniającą діє 6-місячний строк, для визначеної сім'ї в ust. 5 не застосовуються вимоги про дохід і житло, а для сім'ї власника Niebieskiej Karty UE діє виняток щодо доходу та житла.`,
           sourceLocator: "Art. 159 ust. 2–2b, ust. 5",
         },
       ],
@@ -29,7 +29,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       rules: [
         {
           locator: "ust. 1 pkt 1 lit. a–i",
-          explanation: foreignersLaw.text`Osoba referencyjna повинна мешкати в Польщі на одній із прямо перелічених підстав: pobyt stały, pobyt rezydenta długoterminowego UE, status uchodźca, ochrona uzupełniająca, визначений 2-річний ланцюг дозволів, дозволи з ${foreignersLaw.article("151", "art. 151")}, ${foreignersLaw.article("151b", "art. 151b")}, high-skilled work, ICT, mobility ICT, ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 7, права за Umowa Wystąpienia, long-term mobility Blue Card або zgoda na pobyt ze względów humanitarnych.`,
+          explanation: foreignersLaw.text`Osoba referencyjna повинна мешкати в Польщі на одній із прямо перелічених підстав: pobyt stały, pobyt rezydenta długoterminowego UE, status uchodźca, ochrona uzupełniająca, визначений 2-річний ланцюг дозволів, дозволи з ${foreignersLaw.article("151", "art. 151")}, ${foreignersLaw.article("151b", "art. 151b")}, praca w zawodzie wymagającym wysokich kwalifikacji, ICT, mobilność ICT, ${foreignersLaw.article("186", "art. 186")} ust. 1 pkt 7, права за Umowa Wystąpienia, mobilność długoterminowa posiadacza Niebieskiej Karty UE або zgoda na pobyt ze względów humanitarnych.`,
         },
         {
           locator: "ust. 1 pkt 2–3",
@@ -38,7 +38,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 2–2b",
-          explanation: foreignersLaw.text`Вимоги про дохід і житло не застосовуються до сім'ї osoby зі status uchodźca або ochroną uzupełniającą, якщо заява подана протягом 6 місяців; також вони не застосовуються до сім'ї з ust. 5. Для сім'ї власника дозволу на mobility długoterminowa posiadacza Niebieskiej Karty UE виняток щодо dochód і житла діє лише коли сім'ю створено в державі, що видала Blue Card-документ.`,
+          explanation: foreignersLaw.text`Вимоги про дохід і житло не застосовуються до сім'ї osoby зі status uchodźca або ochroną uzupełniającą, якщо заява подана протягом 6 місяців; також вони не застосовуються до сім'ї з ust. 5. Для сім'ї власника дозволу на mobilność długoterminowa posiadacza Niebieskiej Karty UE виняток щодо dochód і житла діє лише коли сім'ю створено в державі, що видала документ „Niebieska Karta UE”.`,
         },
         {
           locator: "ust. 3–3b",
@@ -48,18 +48,18 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 4",
           explanation:
-            "Для unaccompanied minor зі статусом uchodźca або ochroną uzupełniającą членом сім'ї може бути wstępny w linii prostej або повнолітня відповідальна особа за польським правом; потрібні умови щодо відсутності опіки та подання протягом 6 місяців, названі в нормі.",
+            "Для małoletni bez opieki зі статусом uchodźca або ochroną uzupełniającą членом сім'ї може бути wstępny w linii prostej або повнолітня відповідальна особа за польським правом; потрібні умови щодо відсутності опіки та подання протягом 6 місяців, названі в нормі.",
         },
         {
           locator: "ust. 5",
           explanation:
-            "Спеціально охоплено батька, якщо особа referencyjna була unaccompanied minor у день подання заяви на сімейний дозвіл, і брата або сестру, повністю та постійно залежних від батьків через тяжку хворобу, коли ці батьки вже належать до визначеної категорії та отримали дозволи.",
+            "Спеціально охоплено батька, якщо osoba referencyjna була małoletni bez opieki у день подання заяви на сімейний дозвіл, і брата або сестру, повністю та постійно залежних від батьків через тяжку хворобу, коли ці батьки вже належать до визначеної категорії та отримали дозволи.",
         },
       ],
       legalEffect:
         "Родинний зв'язок не гарантує zezwolenia: орган має перевірити статус osoby referencyjnej, усі сукупні умови, застосовний виняток і підстави відмови.",
       foreignersCase:
-        "Складіть доказову схему: статус osoby referencyjnej, дата й мета połączenie, родинний зв'язок, страховка, dochód, житло та строковий виняток для захисту або Blue Card; окремо зафіксуйте, чи дитина була małoletnia у потрібний день.",
+        "Складіть доказову схему: статус osoby referencyjnej, дата й мета połączenie, родинний зв'язок, страховка, dochód, житло та строковий виняток для захисту або Niebieskiej Karty UE; окремо зафіксуйте, чи дитина була małoletnia у потрібний день.",
     },
   ],
 })

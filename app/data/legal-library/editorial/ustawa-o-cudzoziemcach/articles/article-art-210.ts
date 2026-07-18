@@ -3,11 +3,12 @@ import { createLegalTextAuthor } from "../../../legal-text"
 import { defineEditorialPart } from "../../define-editorial-part"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-210",
@@ -15,32 +16,26 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Decyzję про udzielenie zezwolenia na pobyt stały видають протягом 6 місяців; цей строк рахується від останньої з подій: особистого подання або stawiennictwo, формально повного wniosku чи усунення braków, подання документів за ${foreignersLaw.article("203", "art. 203")} ust. 2 pkt 2 або безрезультатного спливу строку на їх подання.`,
-          sourceLocator: "Art. 210 ust. 1–2",
-        },
-        {
-          kind: "statute-text",
-          text: "Postępowanie odwoławcze у справі про pobyt stały закінчується протягом 90 днів; якщо odwołanie має braki, строк рахується від їх усунення.",
-          sourceLocator: "Art. 210 ust. 3–4",
+          text: foreignersLaw.text`${foreignersLaw.article("210", "Art. 210")} встановлює 6 місяців для decyzji у справі про pobyt stały та 90 днів для postępowania odwoławczego. Початок першого строку залежить від формальної повноти й доказів за ${foreignersLaw.article("203f", "Art. 203f")}.`,
+          sourceLocator: "Art. 210 ust. 1–4",
         },
       ],
       summary:
-        "Стаття встановлює спеціальний 6-місячний строк першої інстанції та 90-денний строк odwoławcze postępowanie.",
+        "Відлік не обов’язково починається в день подання в MOS. Закон бере пізнішу з подій, коли wniosek став формально повним і коли завершився визначений доказовий етап.",
       rules: [
         {
-          locator: "ust. 1–2",
-          explanation:
-            "Початковою датою є не завжди дата подання: визначте останню з прямо перелічених подій і перевірте формальну повноту матеріалів.",
+          locator: "Art. 210 ust. 1–2",
+          explanation: foreignersLaw.text`Шестимісячний строк рахується від пізнішої події: wniosek не має braków formalnych або їх усунуто; документи за ${foreignersLaw.article("203f", "Art. 203f")} подано або строк wezwania сплив безрезультатно. Особиста явка більше не є окремою подією запуску цього строку.`,
         },
         {
-          locator: "ust. 3–4",
+          locator: "Art. 210 ust. 3–4",
           explanation:
-            "Для odwołanie з braki строк не починається до їх усунення; сам строк не означає автоматичного надання zezwolenia.",
+            "Апеляційне провадження має завершитися за 90 днів. Якщо odwołanie не відповідає правовим вимогам, строк починається після усунення braków.",
         },
       ],
-      legalEffect: foreignersLaw.text`${foreignersLaw.article("210", "Art. 210")} визначає строки розгляду, але пропуск строку не перетворює заяву автоматично на позитивне рішення; наслідки бездіяльності треба оцінювати окремо.`,
-      foreignersCase:
-        "Зберігайте підтвердження кожної події, що запускає строк, wezwanie про braki та дату їх усунення; окремо рахуйте першу й апеляційну інстанції.",
+      legalEffect:
+        "Це строки для organu, а не автоматичне надання zezwolenia. Їх пропуск оцінюють через засоби проти bezczynności або przewlekłości, а не як позитивну decyzję.",
+      foreignersCase: foreignersLaw.text`Побудуйте хронологію UPO, braków formalnych, wezwania з ${foreignersLaw.article("203f", "Art. 203f")}, подання доказів і відліку апеляції. Лише після цього оцінюйте, чи строк справді минув.`,
     },
   ],
 })

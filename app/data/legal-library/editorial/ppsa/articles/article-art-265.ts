@@ -1,40 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-265",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 265 робить обов’язковою участь Prokurator Generalny або його заступника у засіданні повного складу NSA або Izba. У засіданні складу семи sędziów бере участь прокурор Prokuratura Krajowa або прокурор іншої jednostka organizacyjna prokuratury, делегований до виконання дій у Prokuratura Krajowa та призначений Prokurator Generalny або його заступником.",
+          text: "У засіданні повного складу NSA або палати обов’язково бере участь Генеральний прокурор (Prokurator Generalny) чи його заступник. У засіданні семи суддів бере участь визначений прокурор Національної прокуратури (Prokuratura Krajowa) або прокурор, делегований до неї й призначений для засідань NSA.",
           sourceLocator: "Art. 265",
         },
       ],
       summary:
-        "Стаття встановлює обов’язкову участь визначених представників прокуратури в засіданнях NSA, де приймаються uchwały у передбачених складах.",
+        "Стаття забезпечує участь прокуратури в процедурі прийняття правової постанови (uchwała).",
       rules: [
         {
-          locator: "Art. 265 zdanie pierwsze",
+          locator: "Art. 265",
           explanation:
-            "Для повного складу NSA або Izba перевірте участь Prokurator Generalny чи його zastępca — закон називає її обов’язковою.",
-        },
-        {
-          locator: "Art. 265 zdanie drugie",
-          explanation:
-            "Для складу семи sędziów встановіть статус і спосіб призначення прокурора: потрібні названі в статті делегування та призначення до участі.",
+            "Перевірте вид складу: від нього залежить рівень прокурора, чия участь є обов’язковою.",
         },
       ],
       legalEffect:
-        "Норма визначає склад учасників засідання для uchwała NSA, але сама участь прокурора не передбачає змісту або результату uchwała.",
+        "Відсутність належного учасника стосується законності спеціального засідання, але не перетворює прокурора на представника сторони.",
       foreignersCase:
-        "Якщо у справі іноземця цитують uchwała, відокремте обов’язкову участь представника прокуратури за Art. 265 від правової сили та змісту конкретного висновку. Не робіть висновку про результат pobyt лише з присутності цього учасника.",
+        "У справі іноземця не ототожнюйте участь прокурора в процедурі правової постанови (uchwała) з підтримкою позиції конкретного заявника.",
     },
-  ]),
+  ],
 })

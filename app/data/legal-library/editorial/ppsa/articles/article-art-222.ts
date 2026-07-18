@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-222",
@@ -15,23 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`${ppsaLaw.article("222", "Art. 222")} stanowi, że nie żąda się opłat od pisma, jeżeli już z jego treści wynika, że podlega ono odrzuceniu.`,
+          text: "Суд не вимагає збору за документ, з якого вже видно, що він підлягає відхиленню.",
           sourceLocator: "Art. 222",
         },
       ],
       summary:
-        "Якщо з самого письма вже видно, що воно підлягає odrzuceniu, суд не вимагає сплати opłaty.",
+        "Стаття не змушує сторону платити за документ, який суд не може допустити до розгляду.",
       rules: [
         {
           locator: "Art. 222",
           explanation:
-            "Спочатку перевірте, чи недопустимість письма очевидна з його змісту; сама наявність сумніву не означає автоматичного застосування цієї норми.",
+            "Підстава повинна випливати вже з самого документа. Це правило про відсутність вимоги оплати, а не спосіб виправити недопустимість.",
         },
       ],
       legalEffect:
-        "Норма стосується вимоги про opłata для письма, яке вже підлягає odrzuceniu; вона не визначає, чи конкретне письмо справді має бути відхилене.",
+        "Документ однаково буде відхилений; стаття лише усуває зайвий платіж.",
       foreignersCase:
-        "У судовій справі іноземця про pobyt не робіть висновок про відсутність opłata лише через назву письма: перевірте його зміст і окрему підставу можливого odrzucenie.",
+        "Якщо скарга у справі про перебування очевидно недопустима, відсутність виклику до оплати (wezwanie) не означає, що суд прийняв її по суті.",
     },
   ],
 })

@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-170",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Prawomocne orzeczenie пов’язує не лише сторони та суд, який його видав, а й інші суди та державні органи, а у випадках, передбачених законом, також інших осіб.",
+          text: "Рішення, що набрало законної сили, пов’язує сторони, суд, який його видав, інші суди та державні органи, а у прямо передбачених законом випадках — також інших осіб.",
           sourceLocator: "Art. 170",
         },
       ],
       summary:
-        "Стаття окреслює коло адресатів, яких пов’язує prawomocne orzeczenie.",
+        "Стаття визначає, хто повинен поважати остаточне судове рішення.",
       rules: [
         {
           locator: "Art. 170",
           explanation:
-            "Відрізняйте загальне коло — сторони, суд і державні органи — від випадків, коли закон окремо поширює дію на інших осіб.",
+            "Завжди поєднуйте посилання на законну силу з конкретною резолютивною частиною та межами вирішеного спору.",
         },
       ],
       legalEffect:
-        "Пов’язаність виникає для prawomocne orzeczenie; стаття сама не розшифровує межі кожного конкретного предмета рішення.",
-      foreignersCase: ppsaLaw.text`У справі іноземця посилайтеся на ${ppsaLaw.article("170", "art. 170")} лише разом із конкретним prawomocne orzeczenie та його предметом. Це не означає, що будь-який орган має виконати вимогу, якої в sentencja немає.`,
+        "Обов’язковість не розширює рішення: адресат зв’язаний тим, що суд справді постановив, а не бажаним для сторони результатом.",
+      foreignersCase:
+        "Подаючи остаточне рішення органу у справах іноземців, виділіть конкретний обов’язок або оцінку, яку воно встановлює, і не приписуйте йому відсутніх наслідків.",
     },
   ],
 })

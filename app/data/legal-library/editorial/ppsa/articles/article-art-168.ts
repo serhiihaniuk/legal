@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-168",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Orzeczenie стає prawomocne, якщо щодо нього немає środka odwoławczego; postanowienie, які не можна окремо оскаржити, але які підлягають розгляду NSA разом з основною справою, не стають prawomocne до такого розгляду, а при оскарженні лише частини інша частина стає prawomocna після спливу строку з названим у статті застереженням.",
+          text: "Судове рішення набирає законної сили, коли щодо нього немає засобу оскарження. Неоскаржувані окремо проміжні ухвали, які NSA розгляне разом зі справою, до того часу не стають остаточними; при частковому оскарженні інша частина може набути законної сили окремо.",
           sourceLocator: "Art. 168 § 1–3",
         },
       ],
       summary:
-        "Стаття визначає prawomocność через доступність засобу оскарження та регулює часткове оскарження й postanowienie, що розглядаються NSA разом зі справою.",
+        "Стаття пояснює остаточність через доступність перегляду та обсяг поданого оскарження.",
       rules: [
         {
-          locator: "§ 1–2",
+          locator: "Art. 168 § 1–3",
           explanation:
-            "Перевіряйте, чи взагалі існує środek odwoławczy і чи postanowienie не підлягає розгляду NSA разом з основною справою.",
-        },
-        {
-          locator: "§ 3",
-          explanation:
-            "Якщо оскаржено частину orzeczenie, визначте, яка частина залишилася і чи може NSA з urzędu розглянути її також.",
+            "Визначте, який засіб доступний, яку частину рішення ним охоплено та чи може NSA перевірити іншу частину з власної ініціативи.",
         },
       ],
-      legalEffect: ppsaLaw.text`Prawomocność може настати для частини orzeczenie окремо; її не слід змішувати з моментом пов’язаності суду за ${ppsaLaw.article("144", "art. 144")} або ${ppsaLaw.article("164", "164")}.`,
+      legalEffect:
+        "Законна сила (prawomocność) може охопити лише частину рішення; її не можна визначати лише за датою оголошення.",
       foreignersCase:
-        "Після wyrok у справі про pobyt перевірте, що саме оскаржено і чи не залишилася інша частина prawomocna. Не визначайте остаточність лише за датою оголошення.",
+        "Після рішення WSA у справі про перебування позначте кожний пункт резолютивної частини та обсяг касаційної скарги. Це покаже, що вже стало остаточним.",
     },
   ],
 })

@@ -3,11 +3,12 @@ import { createLegalTextAuthor } from "../../../legal-text"
 import { defineEditorialPart } from "../../define-editorial-part"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-139l",
@@ -15,26 +16,27 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("139l", "Art. 139l")} зобов’язує jednostka przyjmująca подати заяву на kolejnego zezwolenia за ${foreignersLaw.article("139a", "art. 139a")} не пізніше останнього дня легального pobyt cudzoziemca та відсилає до ${foreignersLaw.article("108", "art. 108")}.`,
+          text: foreignersLaw.text`${foreignersLaw.article("139l", "Art. 139l")} вимагає, щоб jednostka przyjmująca подала wniosek про наступне zezwolenie з ${foreignersLaw.article("139a", "Art. 139a")} ust. 1 не пізніше останнього дня legalnego pobytu іноземця. Відповідно застосовуються лише ${foreignersLaw.article("108", "Art. 108")} ust. 1 pkt 2 і ust. 2.`,
           sourceLocator: "Art. 139l ust. 1–2",
         },
       ],
-      summary:
-        "Стаття встановлює крайній момент подання kolejny wniosek для ICT-pobyt.",
+      summary: foreignersLaw.text`Для наступного ICT-дозволу строк контролює приймаюча одиниця. Відсилання дає ефект для legalności pobytu, але не охоплює zaświadczenia з ${foreignersLaw.article("108", "Art. 108")} ust. 1 pkt 1.`,
       rules: [
         {
-          locator: "ust. 1",
+          locator: "Art. 139l ust. 1",
           explanation:
-            "Wniosek подає jednostka przyjmująca не пізніше останнього дня legalny pobyt cudzoziemca в Польщі.",
+            "Останній день встановлюють за реальною підставою legalnego pobytu іноземця; саме до цієї дати jednostka przyjmująca має належно подати wniosek.",
         },
         {
-          locator: "ust. 2",
-          explanation: foreignersLaw.text`У цій ситуації ${foreignersLaw.article("108", "art. 108")} застосовується відповідно.`,
+          locator: "Art. 139l ust. 2",
+          explanation:
+            "Відповідне застосування обмежене правилом про legalność pobytu до ostatecznej decyzji та винятком під час zawieszenia на заяву сторони. Норма не відсилає до видачі zaświadczenia.",
         },
       ],
-      legalEffect: foreignersLaw.text`Норма визначає строк дії для podania kolejnego zezwolenia, але зміст наслідків відсилання потрібно читати разом із ${foreignersLaw.article("108", "art. 108")}.`,
+      legalEffect:
+        "Своєчасна й належна справа може підтримувати legalność pobytu в межах відсилання, але не доводить умов наступного ICT-дозволу й не створює окремого документа для подорожі.",
       foreignersCase:
-        "Визначте останній день legalny pobyt і подбайте, щоб jednostka подала kolejny wniosek не пізніше цієї дати.",
+        "Збережіть доказ legalnego pobytu на день подання та підтвердження, що wniosek подала jednostka przyjmująca. Не очікуйте zaświadczenia лише на підставі цього відсилання.",
     },
   ],
 })

@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-103",
@@ -13,12 +13,12 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 103 ust. 1 передбачає, що до zezwoleń na pracę, виданих за старою ustawa o promocji zatrudnienia, застосовуються przepisy нової ustawy.",
+          text: "Art. 103 ust. 1 передбачає, що до дозволів на роботу, виданих за попереднім законом «ustawa o promocji zatrudnienia i instytucjach rynku pracy», застосовуються норми нового закону.",
           sourceLocator: "Art. 103 ust. 1",
         },
         {
           kind: "statute-text",
-          text: "Art. 103 ust. 2 застосовує art. 50 ust. 1 нової ustawy до zaświadczenia про wpis wniosku щодо pracy sezonowej, виданих за старою ustawy, а ust. 3 застосовує przepisy нової ustawy до oświadczenia, внесених до ewidencji за старою ustawy.",
+          text: "Art. 103 ust. 2 поширює art. 50 ust. 1 нового закону на довідки про внесення заяви щодо сезонної роботи до реєстру, видані за попереднім законом. Ust. 3 поширює правила нового закону на заяви про доручення роботи, внесені до реєстру за попереднім законом.",
           sourceLocator: "Art. 103 ust. 2–3",
         },
         {
@@ -28,28 +28,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
         },
       ],
       summary:
-        "Стаття визначає, які правила діють для вже виданих дозволів і вже внесених записів, що походять зі старої системи працевлаштування.",
+        "Стаття переводить уже видані дозволи та вже внесені записи зі старої системи працевлаштування під прямо названі правила нового закону.",
       rules: [
         {
           locator: "ust. 1",
           explanation:
-            "Видане zezwolenie na pracę не ігнорується через зміну ustawy: до нього застосовуються przepisy нової ustawy.",
+            "Раніше виданий дозвіл на роботу не втрачає значення лише через зміну закону: до нього застосовуються норми нового закону.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Zaświadczenie про wpis wniosku щодо pracy sezonowej, видане за art. 88p ust. 1 pkt 2 старої ustawy, оцінюється за art. 50 нової ustawy.",
+            "До довідки про внесення заяви щодо сезонної роботи до реєстру, виданої за art. 88p ust. 1 pkt 2 попереднього закону, застосовують art. 50 ust. 1 нового закону.",
         },
         {
           locator: "ust. 3",
           explanation:
-            "Oświadczenie, внесене до ewidencji за старою ustawy, також охоплюється новою ustawy. Треба зберегти доказ самого wpis до ewidencji.",
+            "До заяви про доручення роботи, внесеної до реєстру за попереднім законом, також застосовують новий закон. Треба зберегти доказ самого внесення до реєстру.",
         },
       ],
       legalEffect:
-        "Стаття переводить названі документи та записи під новий нормативний режим, але не відповідає сама по собі на питання про строк документа, legalny pobyt чи фактичне право на конкретну роботу.",
+        "Стаття переводить названі документи та записи під новий нормативний режим, але сама не відповідає на питання про строк документа, законність перебування чи право на конкретну роботу.",
       foreignersCase:
-        "Встановіть вид документа, дату його wydania або wpis до ewidencji та зазначені в ньому умови. Під час перевірки застосовуйте нову ustawy лише в межах art. 103, а статус перебування і можливість роботи перевіряйте окремо.",
+        "Встановіть вид документа, дату його видачі або внесення до реєстру та зазначені в ньому умови. Застосовуйте новий закон у межах, визначених art. 103, а статус перебування і можливість виконувати конкретну роботу перевіряйте окремо.",
     },
   ]),
 })

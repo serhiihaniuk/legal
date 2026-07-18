@@ -11,64 +11,56 @@ const moduleContent: LegalLearningModule = {
   id: "temporary-residence-purposes",
   order: 2,
   title: "Визнач мету pobyt czasowy",
-  polish: "zezwolenie na pobyt czasowy, cel pobytu",
-  provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("98", "113", { start: "art. 98" })} та ${foreignersLaw.articleRange("114", "189", { start: "art. 114" })}`,
+  polish: "zezwolenie na pobyt czasowy, deklarowany cel pobytu",
+  provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("98", "109", { start: "art. 98" })} та ${foreignersLaw.articleRange("114", "189", { start: "art. 114" })}`,
   outcome:
-    "Уміти обрати напрям аналізу за реальною метою pobytu, а не за назвою бланка чи порадою роботодавця.",
+    "Уміти перейти від фактичної мети перебування до правильної категорії pobyt czasowy, її умов, доказів і наслідків зміни обставин.",
   caseQuestion:
-    "Яка конкретна обставина робить pobyt czasowy потрібним і як вона буде доведена?",
+    "Яка конкретна обставина потребує перебування понад 3 місяці, яка стаття її регулює і чи доведено всі умови саме цієї категорії?",
   placeInWork:
-    "Етап кваліфікації справи: від фактів до відповідного виду zezwolenie.",
+    "Кваліфікація справи після встановлення поточної підстави pobytu й до збирання пакета доказів.",
   sections: [
     {
-      id: "purpose-test",
-      title: "Перевір cel pobytu",
+      id: "category-map",
+      title: "Карта категорій, а не одна заява",
       paragraphs: [
-        "Статутна рамка: zezwolenie na pobyt czasowy пов’язане з визначеною обставиною pobytu та її умовами.",
-        "Практична перевірка: сформулюй одну головну мету простим реченням, потім покажи, які факти й документи підтверджують її реальність.",
+        foreignersLaw.text`${foreignersLaw.article("98", "Art. 98")} дає загальний механізм: zezwolenie надається, а для категорій з ${foreignersLaw.article("160", "art. 160")}, ${foreignersLaw.article("181", "art. 181")} і ${foreignersLaw.article("187", "art. 187")} може бути надане, коли виконано вимоги заявленої мети, а обставини обґрунтовують pobyt понад 3 місяці. Далі закон розгалужується. Praca охоплює, зокрема, pobyt i praca (${foreignersLaw.article("114", "art. 114")}), Niebieska Karta UE (${foreignersLaw.article("127", "art. 127")}), ICT (${foreignersLaw.article("139a", "art. 139a")}) і mobile ICT (${foreignersLaw.article("139o", "art. 139o")}). Działalność gospodarcza має власні критерії в ${foreignersLaw.article("142", "art. 142")}.`,
+        foreignersLaw.text`Освітньо-наукові маршрути теж різні: studia (${foreignersLaw.article("144", "art. 144")}), badania naukowe (${foreignersLaw.article("151", "art. 151")}), mobilność długoterminowa naukowca (${foreignersLaw.article("151b", "art. 151b")}), stażysta (${foreignersLaw.article("157a", "art. 157a")}) і wolontariusz (${foreignersLaw.article("157g", "art. 157g")}). Сімейні маршрути залежать від того, ким є sponsor і який має статус: członek rodziny obywatela polskiego (${foreignersLaw.article("158", "art. 158")}), połączenie z rodziną (${foreignersLaw.article("159", "art. 159")}) та інші ситуації з ${foreignersLaw.articleRange("160", "161", { start: "art. 160" })}.`,
+        foreignersLaw.text`Окремими гілками є ofiara handlu ludźmi (${foreignersLaw.article("176", "art. 176")}), короткотривалі необхідні обставини (${foreignersLaw.article("181", "art. 181")}), praca sezonowa (${foreignersLaw.article("185a", "art. 185a")}) та inne okoliczności з ${foreignersLaw.articleRange("186", "187", { start: "art. 186" })}. Це карта для вибору норми, а не твердження, що один набір фактів автоматично відповідає будь-якій сусідній категорії.`,
       ],
       questions: [
-        "Що особа реально робить у Польщі?",
-        "Чи є мета стабільною та підтвердженою на дату заяви?",
+        "Який факт є головною причиною pobytu понад 3 місяці?",
+        "Чи передбачає обрана норма обов’язкове «udziela się» або дискреційне «można udzielić»?",
       ],
-      steps: [
-        "Назвати фактичну мету.",
-        "Зіставити її з категорією закону.",
-        "Перевірити всі умови саме цієї категорії.",
-      ],
-      evidence: [
-        "Документи про роботу, навчання, сім’ю, дослідження або działalność.",
-        "Документи про проживання та засоби utrzymanie, якщо вони належать до умов категорії.",
-      ],
-      warning:
-        "Одна назва заяви або один документ не гарантує, що орган визнає заявлений cel pobytu.",
     },
     {
-      id: "one-main-route",
-      title: "Не змішуй підстави",
+      id: "qualification-mechanism",
+      title: "Від факту до наслідку",
       paragraphs: [
-        "Статутна рамка: різні види pobyt czasowy мають різні умови та наслідки; норми не можна механічно переносити з однієї категорії до іншої.",
-        "Практична перевірка: обери основну ścieżka, а альтернативи запиши окремо з їхніми власними умовами й ризиками.",
-      ],
-      questions: [
-        "Яка умова є визначальною для обраної ścieżka?",
-        "Чи змінюється результат, якщо фактична мета інша?",
+        "Fakt формулюють без юридичної назви: «працює за конкретним договором», «навчається на денній програмі», «живе з чоловіком, який має визначений статус». Pojęcie prawne з’являється після цього: praca, studia, połączenie z rodziną. Далі читають Przepis і всі його warunki, до кожної умови добирають Dowód, визначають Czynność і termin, а наприкінці фіксують Skutek та можливий Środek zaskarżenia.",
+        foreignersLaw.text`Загальні підстави odmowa з ${foreignersLaw.article("100", "art. 100")} не замінюють спеціальних умов категорії, а спеціальні норми можуть додавати власні відмови, cofnięcie чи obowiązki informacyjne. Зміна фактичної мети після рішення може вести до cofnięcie за ${foreignersLaw.article("101", "art. 101")} або до іншого спеціального наслідку. Тому «чинна karta» не закриває аналіз, якщо головна обставина вже припинилася.`,
       ],
       steps: [
-        "Виділити основну категорію.",
-        "Відкинути несумісні припущення.",
-        "Порівняти лише релевантні альтернативи.",
-      ],
-      evidence: [
-        "Підтвердження головної обставини.",
-        "Пояснення змін мети, якщо вони відбувалися.",
+        "Сформулювати одну головну фактичну мету й окремо записати другорядні обставини.",
+        "Знайти спеціальну статтю та виписати кожну кумулятивну умову.",
+        "Прив’язати доказ до умови, перевірити строки й передбачити наслідок зміни мети.",
       ],
       warning:
-        "Альтернативний варіант слід перевіряти окремо; його наявність не скасовує умов основного варіанту.",
+        "Назва бланка, порада pracodawca або один договір не визначають категорію без перевірки реальної мети й повного складу умов.",
+    },
+    {
+      id: "worked-example",
+      title: "Анонімізований приклад: контракт і навчання",
+      paragraphs: [
+        foreignersLaw.text`Особа B навчається заочно й одночасно має річний контракт на повний робочий час. Fakt навчання підтверджує zaświadczenie uczelni, але фактична причина залишатися понад 3 місяці, за її поясненням і бюджетом, — робота. Кваліфікацію починають з ${foreignersLaw.article("114", "art. 114")}, а ${foreignersLaw.article("144", "art. 144")} перевіряють як окрему альтернативу лише якщо вид studiów і решта умов справді відповідають цій нормі. Не можна скласти половину умов двох статей в одну «змішану» підставу.`,
+        "До робочої гілки додають ubezpieczenie, договір, wynagrodzenie та дані pracodawca, а також окремо перевіряють законність доступу до цієї роботи. Якщо organ відмовляє через невиконану спеціальну умову, відповідь має спростовувати саме цей мотив доказом, а не повторювати загальну фразу про бажання залишитися в Польщі.",
+      ],
+      warning:
+        "Приклад не вирішує справу без повного договору, виду навчання, історії pobytu та актуального права на pracę.",
     },
   ],
   exercise:
-    "Візьми три набори фактів — робота, навчання, сім’я — і для кожного сформулюй cel pobytu, категорію та по два докази без прогнозу результату.",
+    "Для чотирьох анонімних фактів обери окремі гілки: praca, rodzina, studia/badania та działalność gospodarcza. Для кожної запиши спеціальну статтю, три ключові умови, докази, строк дії й наслідок припинення головної обставини.",
 }
 
 export const temporaryResidencePurposesLearningModuleTopic: KnowledgeUnit<LegalLearningModule> =
@@ -99,12 +91,35 @@ export const temporaryResidencePurposesLearningModuleTopic: KnowledgeUnit<LegalL
         ],
       },
     ],
-    relationships: [],
+    relationships: [
+      {
+        kind: "prerequisite",
+        target: {
+          family: "learning-module",
+          reference: {
+            kind: "learning-module",
+            documentId: "ustawa-o-cudzoziemcach",
+            moduleId: "entry-and-current-basis",
+          },
+        },
+      },
+      {
+        kind: "next",
+        target: {
+          family: "learning-module",
+          reference: {
+            kind: "learning-module",
+            documentId: "ustawa-o-cudzoziemcach",
+            moduleId: "application-evidence-procedure",
+          },
+        },
+      },
+    ],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: moduleContent,
   })

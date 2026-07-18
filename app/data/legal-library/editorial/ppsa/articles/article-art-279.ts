@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-279",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 279 вимагає, щоб skarga o wznowienie додатково містила oznaczenie оскарженого orzeczenie, підставу wznowienie та її uzasadnienie, обставини, що підтверджують дотримання строку, і żądanie uchylenie або zmiana оскарженого orzeczenie.",
+          text: "Крім загальних вимог, скарга про поновлення повинна вказувати оскаржене рішення, законну підставу та її обґрунтування, факти, що підтверджують дотримання строку, і вимогу скасувати або змінити рішення.",
           sourceLocator: "Art. 279",
         },
       ],
       summary:
-        "Норма визначає спеціальні елементи змісту skarga o wznowienie: оскаржене orzeczenie, підстава, строк і конкретне żądanie.",
+        "Стаття вимагає, щоб допустимість і бажаний результат були зрозумілі вже з документа.",
       rules: [
         {
           locator: "Art. 279",
           explanation:
-            "У тексті скарги окремо покажіть, яке orzeczenie оскаржується, яку саме підставу wznowienie заявлено, чому строк дотримано та чого просить сторона.",
+            "Побудуйте текст у чотирьох зв’язаних блоках: рішення, підстава з доказами, хронологія строку та точна вимога.",
         },
       ],
       legalEffect:
-        "Невідповідність вимогам може перешкодити подальшому розгляду, але Art. 279 не означає, що правильно оформлена skarga автоматично має матеріальну підставу.",
+        "Відсутність законної підстави або пояснення строку може завершити справу до повторного розгляду по суті.",
       foreignersCase:
-        "У справі іноземця звірте назву і дату orzeczenie, конкретну підставу wznowienie, доказ початку строку та прохання про uchylenie або zmiana. Не замінюйте це загальною незгодою з рішенням.",
+        "У справі про перебування додайте окремий доказ до кожної дати й не змішуйте підставу поновлення (wznowienie) з аргументами первісної скарги.",
     },
-  ]),
+  ],
 })

@@ -1,13 +1,13 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
 const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-134",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: ppsaLaw.text`Sąd розглядає справу в її межах, але не пов’язаний zarzutami, wnioskami skargi або названою підставою правовою, з застереженням ${ppsaLaw.article("57a", "art. 57a")}; суд не може постановити на шкоду skarżący, крім виявлення порушення, що веде до stwierdzenie nieważności.`,
+          text: ppsaLaw.text`Sąd розглядає справу в її межах, але не пов’язаний zarzutami, wnioskami skargi або зазначеною правовою підставою, із застереженням ${ppsaLaw.article("57a", "art. 57a")}; суд не може постановити на шкоду skarżący, крім виявлення порушення, що веде до stwierdzenie nieważności.`,
           sourceLocator: "Art. 134 § 1–2",
         },
       ],

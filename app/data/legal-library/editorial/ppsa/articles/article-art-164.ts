@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-164",
@@ -15,22 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Postanowienie, видане на posiedzenie niejawnym, є пов’язуючим від моменту підписання разом з uzasadnienie, а якщо суд його не мотивує — від підписання sentencja.",
+          text: "Ухвала із закритого засідання пов’язує суд від моменту підписання разом з обґрунтуванням, а якщо обґрунтування не складають — від підписання резолютивної частини.",
           sourceLocator: "Art. 164",
         },
       ],
       summary:
-        "Норма встановлює момент пов’язаності суду postanowienie з posiedzenie niejawnym залежно від наявності uzasadnienie.",
+        "Стаття визначає момент, коли суд уже зв’язаний власною ухвалою.",
       rules: [
         {
           locator: "Art. 164",
           explanation:
-            "Для мотивованого postanowienie перевірте підпис разом з uzasadnienie; для немотивованого — підпис sentencja.",
+            "Перевірте, чи закон вимагає обґрунтування: від цього залежить, який підпис завершує винесення ухвали.",
         },
       ],
       legalEffect:
-        "Правило стосується моменту, з якого postanowienie пов’язує суд; це не тотожне автоматичній prawomocność.",
-      foreignersCase: ppsaLaw.text`У процесуальному питанні у справі про pobyt розрізняйте пов’язаність postanowienie за ${ppsaLaw.article("164", "art. 164")} і його можливу оскаржуваність.`,
+        "Зв’язаність суду ухвалою не тотожна набранню нею законної сили або початку строку оскарження.",
+      foreignersCase:
+        "У процесуальному календарі справи про перебування не змішуйте дату підписання, дату вручення та дату набрання законної сили — вони виконують різні функції.",
     },
   ],
 })

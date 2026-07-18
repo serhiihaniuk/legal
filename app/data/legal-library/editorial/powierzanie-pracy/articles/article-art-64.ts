@@ -3,9 +3,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("powierzanie-pracy", [
     {
       provisionId: "powierzanie-pracy-art-64",
@@ -13,28 +13,28 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 64 визначає територіально компетентного starosta для wpis oświadczenie і дозволяє йому встановити пізнішу дату початку роботи, не раніше дня після wpis.",
+          text: "Art. 64 визначає територіально компетентного старосту для внесення заяви про доручення роботи до реєстру. Староста може встановити пізнішу дату початку роботи, але не раніше дня, що настає після внесення запису.",
           sourceLocator: "Art. 64 ust. 1–2",
         },
       ],
       summary:
-        "Компетентність прив'язана до siedziba або stałe miejsce pobytu polski podmiot, а у спеціальному випадку — до сталого місця діяльності в Польщі. Starosta може відсунути початок роботи після дати, вказаної подавачем.",
+        "Компетентність прив'язана до місцезнаходження або постійного місця проживання польського суб'єкта, а у спеціальному випадку — до постійного місця ведення господарської діяльності в Польщі. Староста може перенести початок роботи на пізнішу дату, ніж зазначив подавач.",
       rules: [
         {
           locator: "ust. 1",
           explanation:
-            "Oświadczenie wpisує starosta за siedziba або місцем постійного pobyt podmiot; для art. 62 ust. 2 — за stałe miejsce wykonywania działalności gospodarczej.",
+            "Заяву вносить до реєстру староста, визначений за місцезнаходженням або постійним місцем проживання суб'єкта. У випадку з art. 62 ust. 2 компетенцію визначають за постійним місцем ведення господарської діяльності в Польщі.",
         },
         {
           locator: "ust. 2",
           explanation:
-            "Пізніша дата початку може бути не ранішою за день, що настає після wpis до ewidencji oświadczeń.",
+            "Пізніша дата початку може бути не ранішою за день, що настає після внесення заяви до реєстру заяв (ewidencja oświadczeń).",
         },
       ],
       legalEffect:
-        "Дата в реєстрі може відрізнятися від запропонованої дати, тому початок роботи треба перевіряти саме у wpis, а не лише в заяві.",
+        "Дата в реєстрі може відрізнятися від запропонованої, тому дозволений початок роботи треба перевіряти саме у записі, а не лише в поданій заяві.",
       foreignersCase:
-        "Визначте właściwy starosta за адресою podmiot і після wpis перевірте фактичну дату початку. Не плануйте роботу на дату, яку орган замінив пізнішою.",
+        "Визначте компетентного старосту за адресою суб'єкта і після внесення заяви перевірте фактичну дату початку. Не починайте роботу в дату, яку орган замінив пізнішою.",
     },
   ]),
 })

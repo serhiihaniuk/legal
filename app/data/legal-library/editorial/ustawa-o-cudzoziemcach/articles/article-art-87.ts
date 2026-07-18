@@ -44,26 +44,26 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("87", {
       provisionId: "ustawa-o-cudzoziemcach-art-87",
       reviewStatus: "reviewed",
       statuteText:
-        "Якщо строк подання збережено і wniosek про продовження візи не має braków formalnych або їх своєчасно усунуто, wojewoda ставить у travel document stamp про подання, а pobyt cudzoziemiec вважається legal від дня подання до дня, коли рішення про продовження стане ostateczna. Цей ефект не застосовується, якщо провадження зупинено на заяву сторони.",
+        "Якщо строк подання збережено і wniosek про продовження візи не має braków formalnych або їх своєчасно усунуто, wojewoda ставить у dokument podróży stempel про подання, а pobyt cudzoziemiec вважається legal від дня подання до дня, коли рішення про продовження стане ostateczna. Цей ефект не застосовується, якщо провадження зупинено на заяву сторони.",
       statuteLocator: "Art. 87 ust. 1–2",
       practicalText:
-        "Art. 87 охоплює лише legal stay на час конкретного провадження про продовження візи. Stamp або очікування decyzja не є zezwolenie na pobyt і не доводять окремо prawa do pracy.",
+        "Art. 87 охоплює лише legalność pobytu на час конкретного провадження про продовження візи. stempel або очікування decyzja не є zezwolenie na pobyt і не доводять окремо prawa do pracy.",
       practicalLocator: "Art. 87 ust. 1 pkt 1–2; ust. 2",
       summary:
-        "Art. 87 встановлює stamp та тимчасовий legal-stay ефект для своєчасного й формально належного wniosek про продовження візи.",
+        "Art. 87 встановлює stempel та тимчасовий legalność pobytu ефект для своєчасного й формально належного wniosek про продовження візи.",
       rules: [
         {
           locator: "Art. 87 ust. 1 pkt 1",
           explanation:
-            "За виконання умов wojewoda розміщує в travel document odcisk stempla, що підтверджує подання wniosek.",
+            "За виконання умов wojewoda розміщує в dokument podróży odcisk stempla, що підтверджує подання wniosek.",
         },
         {
           locator: "Art. 87 ust. 1 pkt 2",
@@ -77,9 +77,9 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Стаття тимчасово визначає legal stay у межах візового провадження. Вона не гарантує продовження візи, не визначає eligibility для zezwolenie na pobyt і не замінює перевірку prawa do pracy.",
+        "Стаття тимчасово визначає legalność pobytu у межах візового провадження. Вона не гарантує продовження візи, не визначає умови надання для zezwolenie na pobyt і не замінює перевірку prawa do pracy.",
       foreignersCase:
-        "Зберігайте wniosek, підтвердження дати, stamp, документи про усунення braków formalnych та всі повідомлення про zawieszenie. Для роботодавця окремо підтвердьте правову підставу конкретної роботи.",
+        "Зберігайте wniosek, підтвердження дати, stempel, документи про усунення braków formalnych та всі повідомлення про zawieszenie. Для роботодавця окремо підтвердьте правову підставу конкретної роботи.",
     }),
   ]),
 })

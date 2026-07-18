@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-157e",
@@ -38,7 +38,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       ],
       legalEffect:
         "Cofnięcie потребує рішення органу і доказу відповідної обставини; конфлікт із organizator сам по собі не встановлює підставу.",
-      foreignersCase: foreignersLaw.text`Порівняйте рішення, umowa і реальну діяльність, встановіть дату події та перевірте точний cross-reference до ${foreignersLaw.article("100", "art. 100")} і ${foreignersLaw.article("157d", "157d")}.`,
+      foreignersCase: foreignersLaw.text`Порівняйте рішення, umowa і реальну діяльність, встановіть дату події та перевірте точне відсилання до ${foreignersLaw.article("100", "art. 100")} і ${foreignersLaw.article("157d", "157d")}.`,
     },
   ],
 })

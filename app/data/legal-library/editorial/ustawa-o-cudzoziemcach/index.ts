@@ -77,7 +77,6 @@ import articleArt139e from "./articles/article-art-139e"
 import articleArt139f from "./articles/article-art-139f"
 import articleArt139g from "./articles/article-art-139g"
 import articleArt139h from "./articles/article-art-139h"
-import articleArt139i from "./articles/article-art-139i"
 import articleArt139j from "./articles/article-art-139j"
 import articleArt139k from "./articles/article-art-139k"
 import articleArt139l from "./articles/article-art-139l"
@@ -107,7 +106,6 @@ import articleArt145a from "./articles/article-art-145a"
 import articleArt146 from "./articles/article-art-146"
 import articleArt147 from "./articles/article-art-147"
 import articleArt148 from "./articles/article-art-148"
-import articleArt148a from "./articles/article-art-148a"
 import articleArt148b from "./articles/article-art-148b"
 import articleArt149 from "./articles/article-art-149"
 import articleArt149a from "./articles/article-art-149a"
@@ -235,7 +233,6 @@ import articleArt22 from "./articles/article-art-22"
 import articleArt220 from "./articles/article-art-220"
 import articleArt221 from "./articles/article-art-221"
 import articleArt222 from "./articles/article-art-222"
-import articleArt223 from "./articles/article-art-223"
 import articleArt224 from "./articles/article-art-224"
 import articleArt225 from "./articles/article-art-225"
 import articleArt226 from "./articles/article-art-226"
@@ -640,8 +637,126 @@ import articleArt97 from "./articles/article-art-97"
 import articleArt98 from "./articles/article-art-98"
 import articleArt99 from "./articles/article-art-99"
 import articleArt9a from "./articles/article-art-9a"
+import articleArt25a from "./articles/article-art-25a"
+import articleArt58a from "./articles/article-art-58a"
+import articleArt58b from "./articles/article-art-58b"
+import articleArt77d from "./articles/article-art-77d"
+import articleArt87a from "./articles/article-art-87a"
+import articleArt106b from "./articles/article-art-106b"
+import articleArt106c from "./articles/article-art-106c"
+import articleArt106d from "./articles/article-art-106d"
+import articleArt106e from "./articles/article-art-106e"
+import articleArt106f from "./articles/article-art-106f"
+import articleArt106g from "./articles/article-art-106g"
+import articleArt106h from "./articles/article-art-106h"
+import articleArt106i from "./articles/article-art-106i"
+import articleArt106j from "./articles/article-art-106j"
+import articleArt106k from "./articles/article-art-106k"
+import articleArt106l from "./articles/article-art-106l"
+import articleArt113c from "./articles/article-art-113c"
+import articleArt120c from "./articles/article-art-120c"
+import articleArt203a from "./articles/article-art-203a"
+import articleArt203b from "./articles/article-art-203b"
+import articleArt203c from "./articles/article-art-203c"
+import articleArt203d from "./articles/article-art-203d"
+import articleArt203e from "./articles/article-art-203e"
+import articleArt203f from "./articles/article-art-203f"
+import articleArt203g from "./articles/article-art-203g"
+import articleArt203h from "./articles/article-art-203h"
+import articleArt203i from "./articles/article-art-203i"
+import articleArt207b from "./articles/article-art-207b"
+import articleArt218a from "./articles/article-art-218a"
+import articleArt219a from "./articles/article-art-219a"
+import articleArt219b from "./articles/article-art-219b"
+import articleArt219c from "./articles/article-art-219c"
+import articleArt219d from "./articles/article-art-219d"
+import articleArt219e from "./articles/article-art-219e"
+import articleArt219f from "./articles/article-art-219f"
+import articleArt219g from "./articles/article-art-219g"
+import articleArt219h from "./articles/article-art-219h"
+import articleArt219i from "./articles/article-art-219i"
+import articleArt222a from "./articles/article-art-222a"
+import articleArt222b from "./articles/article-art-222b"
+import articleArt222c from "./articles/article-art-222c"
+import articleArt222d from "./articles/article-art-222d"
+import articleArt222e from "./articles/article-art-222e"
+import articleArt222f from "./articles/article-art-222f"
+import articleArt222g from "./articles/article-art-222g"
+import articleArt223a from "./articles/article-art-223a"
+import articleArt225a from "./articles/article-art-225a"
+import articleArt225b from "./articles/article-art-225b"
+import articleArt225c from "./articles/article-art-225c"
+import articleArt225d from "./articles/article-art-225d"
+import articleArt225e from "./articles/article-art-225e"
+import articleArt225f from "./articles/article-art-225f"
+import articleArt225g from "./articles/article-art-225g"
+import articleArt225h from "./articles/article-art-225h"
+import articleArt225i from "./articles/article-art-225i"
+import articleArt281a from "./articles/article-art-281a"
+import articleArt281b from "./articles/article-art-281b"
+import articleArt281c from "./articles/article-art-281c"
+import articleArt314a from "./articles/article-art-314a"
 
 export const foreignersActExplanations = mergeEditorialParts([
+  articleArt25a,
+  articleArt58a,
+  articleArt58b,
+  articleArt77d,
+  articleArt87a,
+  articleArt106b,
+  articleArt106c,
+  articleArt106d,
+  articleArt106e,
+  articleArt106f,
+  articleArt106g,
+  articleArt106h,
+  articleArt106i,
+  articleArt106j,
+  articleArt106k,
+  articleArt106l,
+  articleArt113c,
+  articleArt120c,
+  articleArt203a,
+  articleArt203b,
+  articleArt203c,
+  articleArt203d,
+  articleArt203e,
+  articleArt203f,
+  articleArt203g,
+  articleArt203h,
+  articleArt203i,
+  articleArt207b,
+  articleArt218a,
+  articleArt219a,
+  articleArt219b,
+  articleArt219c,
+  articleArt219d,
+  articleArt219e,
+  articleArt219f,
+  articleArt219g,
+  articleArt219h,
+  articleArt219i,
+  articleArt222a,
+  articleArt222b,
+  articleArt222c,
+  articleArt222d,
+  articleArt222e,
+  articleArt222f,
+  articleArt222g,
+  articleArt223a,
+  articleArt225a,
+  articleArt225b,
+  articleArt225c,
+  articleArt225d,
+  articleArt225e,
+  articleArt225f,
+  articleArt225g,
+  articleArt225h,
+  articleArt225i,
+  articleArt281a,
+  articleArt281b,
+  articleArt281c,
+  articleArt314a,
   articleArt1,
   articleArt10,
   articleArt100,
@@ -716,7 +831,6 @@ export const foreignersActExplanations = mergeEditorialParts([
   articleArt139f,
   articleArt139g,
   articleArt139h,
-  articleArt139i,
   articleArt139j,
   articleArt139k,
   articleArt139l,
@@ -746,7 +860,6 @@ export const foreignersActExplanations = mergeEditorialParts([
   articleArt146,
   articleArt147,
   articleArt148,
-  articleArt148a,
   articleArt148b,
   articleArt149,
   articleArt149a,
@@ -874,7 +987,6 @@ export const foreignersActExplanations = mergeEditorialParts([
   articleArt220,
   articleArt221,
   articleArt222,
-  articleArt223,
   articleArt224,
   articleArt225,
   articleArt226,

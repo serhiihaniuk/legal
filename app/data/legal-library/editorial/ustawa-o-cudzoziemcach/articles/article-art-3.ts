@@ -1,90 +1,47 @@
-import {
-  authorLegalTextCitationsTree,
-  createLegalTextAuthor,
-  type LegalTextValue,
-} from "../../../legal-text"
-
-import type { LegalProvisionId } from "../../../contracts"
-
-const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type EditorialEntry = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  claims: readonly {
-    kind: "statute-text" | "practical-inference"
-    text: LegalTextValue
-    sourceLocator: string
-  }[]
-  summary: LegalTextValue
-  rules: readonly { locator: string; explanation: LegalTextValue }[]
-  legalEffect: LegalTextValue
-  foreignersCase: LegalTextValue
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (
-  article: string,
-  claims: EditorialEntry["claims"],
-  summary: LegalTextValue,
-  rules: EditorialEntry["rules"],
-  legalEffect: LegalTextValue,
-  foreignersCase: LegalTextValue
-): EditorialEntry => ({
-  provisionId: provisionId(article),
-  reviewStatus: "reviewed",
-  claims,
-  summary,
-  rules,
-  legalEffect,
-  foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle(
-      "3",
-      [
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
+      provisionId: "ustawa-o-cudzoziemcach-art-3",
+      reviewStatus: "reviewed",
+      claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("3", "Art. 3")} містить легальні визначення, зокрема azyl, cudzoziemiec, dokument podróży, doświadczenie zawodowe, działalność zawodowa, granica, mały ruch graniczny, mobilność, wiza, powrót, status uchodźcy та wykonywanie pracy.`,
-          sourceLocator: "Art. 3 pkt 1–25",
-        },
-        {
-          kind: "statute-text",
-          text: foreignersLaw.text`У чинному тексті ${foreignersLaw.article("3", "Art. 3")} pkt 7b і pkt 7c позначені як (uchylony); інші визначення містять спеціальні пороги та умови, зокрема 90/180, 180 або 360 днів там, де це прямо зазначено.`,
-          sourceLocator: "Art. 3 pkt 7b–7c, 7d–7j",
+          text: foreignersLaw.text`${foreignersLaw.article("3", "Art. 3")} є словником ustawy. Серед іншого він визначає cudzoziemca, dokument podróży, різні види mobilności, wykonywanie pracy, а також чинні з 27 квітня 2026 року поняття członka rodziny rozdzielonej і kraju pochodzenia.`,
+          sourceLocator: "Art. 3 pkt 1–25, у тому числі pkt 2a і 5d",
         },
       ],
-      foreignersLaw.text`${foreignersLaw.article("3", "Art. 3")} задає словник ustawa. Перед аналізом справи треба встановити, яке саме законне визначення відповідає фактам, а не покладатися на побутове значення слова.`,
-      [
+      summary:
+        "Юридичне визначення перетворює побутове слово на набір умов. Перш ніж застосовувати іншу статтю, треба перевірити, чи факти справи відповідають усім складовим потрібного поняття.",
+      rules: [
         {
-          locator: "Art. 3 pkt 2–3",
+          locator: "Art. 3 pkt 2–5d",
           explanation:
-            "Cudzoziemiec — кожен, хто не має польського громадянства; dokument podróży має бути визнаний Польщею і давати право перетинати кордон.",
+            "Cudzoziemiec — особа без польського громадянства. Członek rodziny rozdzielonej — не будь-який родич, а названа законом особа в Польщі, яка подає заяву для іноземця за її межами; kraj pochodzenia визначають через громадянство, а за його відсутності або неможливості встановити — через постійне проживання.",
         },
         {
-          locator: "Art. 3 pkt 7, 7a, 7d–7j",
+          locator: "Art. 3 pkt 7–7j",
           explanation:
-            "Mały ruch graniczny та різні види mobilność мають окремі умови й періоди; не переносіть поріг одного визначення на інше.",
+            "Кожен вид mobilności має власну ціль і часовий поріг: 90/180, 180/360 або понад 90 чи 180 днів залежно від категорії. Пункти 7b і 7c скасовані й не є чинними визначеннями.",
         },
         {
           locator: "Art. 3 pkt 20–25",
           explanation:
-            "Розрізняйте wiza, wiza krajowa, wiza Schengen, wykonywanie pracy та wykonywanie pracy w zawodzie wymagającym wysokich kwalifikacji.",
+            "Wiza, wiza krajowa, wiza Schengen, wykonywanie pracy та praca w zawodzie wymagającym wysokich kwalifikacji — різні поняття. Право pobytu не слід виводити лише з права виконувати роботу, і навпаки.",
         },
       ],
-      foreignersLaw.text`Визначення ${foreignersLaw.article("3", "Art. 3")} керують тлумаченням інших статей, але самі зазвичай не створюють дозволу на pobyt або pracy. Позначені uchylony пункти не є чинними визначеннями.`,
-      foreignersLaw.text`Випишіть точний термін із документа або рішення, знайдіть його pkt у ${foreignersLaw.article("3", "Art. 3")} і перевірте всі складові визначення окремими фактами та доказами.`
-    ),
-  ]),
+      legalEffect:
+        "Визначення керують значенням термінів у всій ustawie, але самі зазвичай не надають дозволу, права на роботу чи іншого статусу.",
+      foreignersCase: foreignersLaw.text`Випишіть точний термін із рішення або wniosku, знайдіть його пункт у ${foreignersLaw.article("3", "Art. 3")} і розкладіть визначення на факти. Для сімейної заяви з-за кордону особливо перевірте, чи заявник справді є członkiem rodziny rozdzielonej.`,
+    },
+  ],
 })

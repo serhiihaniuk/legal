@@ -1,13 +1,10 @@
-import { createLegalTextAuthor } from "../../../legal-text"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { defineEditorialPart } from "../../define-editorial-part"
-
-const ppsaLaw = createLegalTextAuthor("ppsa")
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-202",
@@ -15,27 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Jeżeli po stronie skarżącej występuje kilku uprawnionych, zwrot kosztów przysługuje każdemu odpowiednio do udziału w sprawie. Jeżeli ich uprawnienia lub obowiązki związane z przedmiotem zaskarżenia są wspólne, zwrot następuje na ich rzecz solidarnie.",
+          text: "Коли на боці заявника є кілька уповноважених осіб, кожна отримує витрати відповідно до своєї участі. Якщо їхні права чи обов’язки щодо предмета оскарження спільні, витрати присуджують їм солідарно.",
           sourceLocator: "Art. 202 § 1–2",
         },
       ],
-      summary: ppsaLaw.text`${ppsaLaw.article("202", "Art. 202")} rozróżnia podział zwrotu według udziału od solidarnego zwrotu przy wspólnych uprawnieniach lub obowiązkach skarżących.`,
+      summary:
+        "Стаття визначає, як розподілити повернення витрат між кількома заявниками.",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 202 § 1–2",
           explanation:
-            "Przy kilku niezależnych uprawnionych ustal udział każdego w sprawie przed określeniem zwrotu.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Wspólny związek uprawnień lub obowiązków z przedmiotem zaskarżenia prowadzi do zwrotu na rzecz skarżących solidarnie.",
+            "З’ясуйте, чи кожний захищає окреме право, чи вони мають спільне право або обов’язок. Документуйте частку участі та витрати кожного.",
         },
       ],
       legalEffect:
-        "Sposób rozdzielenia kosztów zależy od charakteru uprawnień procesowych, a nie od samej liczby osób podpisanych pod skargą.",
+        "Окремий або солідарний характер присудження залежить від правового зв’язку заявників із предметом спору.",
       foreignersCase:
-        "Gdy członkowie rodziny wspólnie skarżą decyzje pobytowe, porównaj ich uprawnienia i obowiązki z przedmiotem zaskarżenia przed przyjęciem solidarnego zwrotu.",
+        "У спільній справі членів сім’ї про перебування не припускайте солідарність лише через родинний зв’язок; перевірте, чи предмет і права справді спільні.",
     },
   ],
 })

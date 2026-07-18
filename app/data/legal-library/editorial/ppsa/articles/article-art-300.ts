@@ -1,35 +1,34 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-300",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 300 встановлює, що в питаннях, не врегульованих PPSA, до postępowania у сфері obrotu zagranicznego відповідно застосовуються положення про ustrój sądów powszechnych та положення Kodeks postępowania cywilnego про międzynarodowe postępowanie cywilne.",
+          text: "У питаннях міжнародного процесуального обігу, не врегульованих p.p.s.a., відповідно застосовують правила про устрій загальних судів та норми KPC щодо міжнародного цивільного провадження.",
           sourceLocator: "Art. 300",
         },
       ],
       summary:
-        "Для неврегульованих питань міжнародного судового обігу PPSA відсилає до двох названих груп цивільно-процесуальних правил.",
+        "Стаття дає допоміжні джерела для прогалин у транскордонній процедурі.",
       rules: [
         {
           locator: "Art. 300",
           explanation:
-            "Спершу встановіть, що питання не врегульоване PPSA, і лише потім визначайте відповідне правило про ustrój sądów powszechnych або międzynarodowe postępowanie cywilne.",
+            "Спершу шукайте спеціальне правило p.p.s.a. або міжнародного договору. Лише реальну прогалину заповнюйте сумісною нормою KPC чи правилом устрою судів.",
         },
       ],
       legalEffect:
-        "Відсилання є відповідним, а не необмеженим: Art. 300 не скасовує спеціальні правила PPSA і не дає готової відповіді для кожної міжнародної ситуації.",
+        "Відповідне застосування не переносить цивільну процедуру цілком на адміністративну справу.",
       foreignersCase:
-        "У міжнародній справі іноземця про pobyt спочатку перевірте спеціальні правила PPSA про doręczenia та участь сторін; Art. 300 застосовуйте лише до неврегульованого питання.",
+        "У справі іноземця про міжнародне вручення або доказ спочатку визначте спеціальний адміністративний режим, а вже потім звертайтеся до KPC.",
     },
-  ]),
+  ],
 })

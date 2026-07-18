@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-163",
@@ -11,33 +12,23 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Postanowienie, оголошене на rozprawa, суд мотивує, якщо воно підлягає оскарженню, і doręcza сторонам; postanowienie з posiedzenie niejawnym doręczaється з urzędu, а за наявності środka zaskarżenia — з uzasadnieniem та pouczeniem для сторони без професійного представника. Uzasadnienie складається протягом семи днів.",
+          text: "Оскаржувану ухвалу, оголошену на засіданні, суд обґрунтовує й вручає сторонам. Ухвали із закритого засідання вручають з власної ініціативи суду, а коли доступний засіб оскарження — разом з обґрунтуванням і належним роз’ясненням для сторони без професійного представника.",
           sourceLocator: "Art. 163 § 1–3",
         },
       ],
       summary:
-        "Норма регулює мотивування, doręczenie і pouczenie щодо postanowienie залежно від способу його винесення та оскаржуваності.",
+        "Стаття поєднує спосіб винесення ухвали з обов’язками щодо обґрунтування, вручення та роз’яснення про оскарження (pouczenie).",
       rules: [
         {
-          locator: "§ 1",
+          locator: "Art. 163 § 1–3",
           explanation:
-            "Для postanowienie на rozprawa з’ясуйте, чи воно підлягає оскарженню: саме це запускає правило про uzasadnienie і doręczenie.",
-        },
-        {
-          locator: "§ 2",
-          explanation:
-            "Для posiedzenie niejawne очікуйте doręczenie з urzędu; якщо є środek zaskarżenia, має бути uzasadnienie та pouczenie для особи без представника.",
-        },
-        {
-          locator: "§ 3",
-          explanation:
-            "Строк складання uzasadnienie — сім днів від wydania postanowienie.",
+            "Зафіксуйте, чи ухвалу оголошено на відкритому засіданні (rozprawa) або видано на закритому засіданні (posiedzenie niejawne), а також чи вона оскаржувана. Обґрунтування складають протягом семи днів від винесення ухвали.",
         },
       ],
       legalEffect:
-        "Стаття визначає оформлення та інформування сторони, але не встановлює сама повного режиму строку конкретного засобу оскарження.",
+        "Належне вручення дає стороні текст і, за відповідних умов, інформацію про засіб оскарження; сам строк конкретного засобу визначає його спеціальна норма.",
       foreignersCase:
-        "Отримавши postanowienie у справі про pobyt, збережіть дату і спосіб doręczenie, текст uzasadnienie та pouczenie. Відсутність представника має значення лише за умов, названих статтею.",
+        "Збережіть конверт або електронне підтвердження вручення ухвали у справі про перебування. Без цієї дати не можна безпечно порахувати наступний строк.",
     },
   ],
 })

@@ -64,7 +64,7 @@ const moduleContent: KpaGuideModule = {
   ],
   lesson: {
     paragraphs: [
-      "У процедурі працюють різні строки: organ має строк заłatwienia sprawy, а сторона — строк на відповідь, odwołanie чи іншу дію. Обидва можуть залежати від подій, які не видно з дати на документі. Doręczenie — окремий юридичний інститут, тому спочатку встановлюють його адресата, спосіб і дату, а лише потім рахують.",
+      "У процедурі працюють різні строки: орган має строк для вирішення справи (termin załatwienia sprawy), а сторона — строк на відповідь, odwołanie чи іншу дію. Обидва можуть залежати від подій, які не видно з дати на документі. Doręczenie — окремий юридичний інститут, тому спочатку встановлюють його адресата, спосіб і дату, а лише потім рахують.",
       {
         kind: "authored-legal-text",
         plainText:
@@ -319,7 +319,7 @@ export const kpaTimeServiceLearningModuleTopic: KnowledgeUnit<KpaGuideModule> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",

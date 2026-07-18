@@ -1,11 +1,11 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
 import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ppsa", [
     {
       provisionId: "ppsa-art-49a",
@@ -13,23 +13,28 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Підтвердженням doręczenia електронного pismo до sąd є dowód otrzymania за art. 41 ustawy o doręczeniach elektronicznych.",
-          sourceLocator: "Art. 49a",
+          text: "Станом на 18.07.2026 sąd підтверджує подання pismo w formie dokumentu elektronicznego до своєї електронної скриньки подання (elektroniczna skrzynka podawcza), надсилаючи urzędowe poświadczenie odbioru на вказаний заявником adres elektroniczny. Правило про dowód otrzymania набере чинності лише 1.10.2029.",
+          sourceLocator: "Art. 49a, przypisy 25–26",
         },
       ],
       summary:
-        "Електронне відправлення до sąd підтверджується відповідним dowód otrzymania.",
+        "Чинним підтвердженням електронного подання до sąd є urzędowe poświadczenie odbioru, яке суд надсилає на вказаний adres elektroniczny.",
       rules: [
         {
-          locator: "Art. 49a",
+          locator: "Art. 49a / Przypis 25",
           explanation:
-            "Для електронного pismo зберігайте dowód otrzymania, пов’язаний із поданням до sąd.",
+            "Після подання через електронну скриньку подання суду (elektroniczna skrzynka podawcza) збережіть urzędowe poświadczenie odbioru, надіслане судом на adres elektroniczny, який указав заявник.",
+        },
+        {
+          locator: "Przypis 26",
+          explanation:
+            "Dowód otrzymania за art. 41 ustawy o doręczeniach elektronicznych належить до майбутньої редакції Art. 49a, що набере чинності 1.10.2029.",
         },
       ],
       legalEffect:
-        "Норма визначає доказ doręczenia електронного pismo; питання своєчасності й інших вимог регулюють також інші приписи.",
+        "Норма визначає чинний спосіб підтвердження подання електронного pismo; своєчасність та інші вимоги треба оцінювати також за іншими приписами.",
       foreignersCase:
-        "При електронній skarga у справі cudzoziemca збережіть dowód otrzymania разом із pismo та зафіксуйте його дату.",
+        "При електронній skarga у справі cudzoziemca збережіть pismo та urzędowe poświadczenie odbioru, надіслане на вказаний adres elektroniczny, і зафіксуйте дату підтвердження.",
     },
   ]),
 })

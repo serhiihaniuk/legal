@@ -70,7 +70,7 @@ export const documentSources = {
   payments: {
     label: "UdSC — інформація про opłaty",
     url: "https://www.gov.pl/web/udsc/informacje-o-oplatach",
-    note: "Офіційна таблиця opłaty skarbowej у справах cudzoziemців; суму звіряйте з видом заяви.",
+    note: "Офіційна таблиця opłaty skarbowej у справах іноземців; суму звіряйте з видом заяви.",
   },
   stampFee: {
     label: "Ustawa o opłacie skarbowej — ELI",

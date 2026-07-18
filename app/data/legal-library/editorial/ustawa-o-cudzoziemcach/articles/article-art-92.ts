@@ -44,15 +44,15 @@ const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
 })
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
     reviewedArticle("92", {
       provisionId: "ustawa-o-cudzoziemcach-art-92",
       reviewStatus: "reviewed",
       statuteText:
-        "Wizę Schengen або national visa cofа або unieważnia у формі decyzja konsul, komendant oddziału Straży Granicznej або komendant placówki Straży Granicznej. Візу, видану minister właściwy do spraw zagranicznych, може cofати або unieważniaти цей міністр або органи з ust. 1. Для члена дипломатичної місії, консульства, прирівняної особи та їх сім’ї рішення приймає minister, направляючи notę відповідному міністерству або місії.",
+        "Wizę Schengen або wiza krajowa відкликає або скасовує у формі decyzja konsul, komendant oddziału Straży Granicznej або komendant placówki Straży Granicznej. Візу, видану minister właściwy do spraw zagranicznych, може відкликати або скасовувати цей міністр або органи з ust. 1. Для члена дипломатичної місії, консульства, прирівняної особи та їх сім’ї рішення приймає minister, направляючи notę відповідному міністерству або місії.",
       statuteLocator: "Art. 92 ust. 1–2",
       practicalText:
         "Компетенцію треба перевірити за тим, хто видав візу, статусом особи та типом органу. Art. 92 визначає орган і форму рішення, але не є самостійною підставою cofnięcie або unieważnienie.",
@@ -68,7 +68,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "Art. 92 ust. 1a",
           explanation:
-            "Якщо visa видана міністром закордонних справ, її може відкликати або скасувати minister чи орган з ust. 1.",
+            "Якщо wiza видана міністром закордонних справ, її може відкликати або скасувати minister чи орган з ust. 1.",
         },
         {
           locator: "Art. 92 ust. 2",
@@ -77,7 +77,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
       ],
       legalEffect:
-        "Рішення належного органу запускає передбачені законом наслідки для візи; сама стаття не продовжує legal stay і не визначає prawa do pracy.",
+        "Рішення належного органу запускає передбачені законом наслідки для візи; сама стаття не продовжує legalność pobytu і не визначає prawa do pracy.",
       foreignersCase:
         "Зіставте орган, що видав візу, орган, що прийняв рішення, тип візи та спеціальний статус особи. Збережіть decyzja, доказ вручення, відмітку у паспорті/blankiet і документи, що підтверджують підставу.",
     }),

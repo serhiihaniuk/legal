@@ -1,9 +1,10 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
+
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ppsa-art-160",
@@ -11,23 +12,22 @@ export default defineEditorialPart<"ppsa">({
       claims: [
         {
           kind: "statute-text",
-          text: "Якщо ця ustawa не передбачає видачу wyrok, суд видає orzeczenie у формі postanowienia.",
+          text: "Коли p.p.s.a. не передбачає судового рішення (wyrok), суд постановляє ухвалу (postanowienie).",
           sourceLocator: "Art. 160",
         },
       ],
-      summary:
-        "Стаття встановлює резервну форму postanowienie для випадків, де закон не передбачає wyrok.",
+      summary: "Це загальне правило вибору форми судового рішення.",
       rules: [
         {
           locator: "Art. 160",
           explanation:
-            "Визначаючи документ, спершу перевірте, чи закон вимагає wyrok; за відсутності такого припису застосовується форма postanowienie.",
+            "Спершу знайдіть спеціальну норму про форму. Лише за її відсутності застосовується резервна форма ухвали (postanowienie).",
         },
       ],
       legalEffect:
-        "Форма orzeczenie залежить від прямого припису ustawa; з назви postanowienie ще не випливає його оскаржуваність.",
+        "Назва форми не відповідає автоматично на питання, чи можна її оскаржити; для цього потрібна окрема норма.",
       foreignersCase:
-        "У судовій справі про pobyt спочатку ідентифікуйте, чи документ є wyrok або postanowienie, а потім шукайте спеціальне правило про засіб оскарження.",
+        "Отримавши процесуальний документ у справі іноземця, класифікуйте його як рішення (wyrok), ухвалу (postanowienie) або розпорядження (zarządzenie) і лише потім визначайте засіб оскарження.",
     },
   ],
 })

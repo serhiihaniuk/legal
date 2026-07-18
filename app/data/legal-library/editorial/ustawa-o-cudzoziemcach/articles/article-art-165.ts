@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-165",
@@ -15,16 +15,16 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: foreignersLaw.text`${foreignersLaw.article("165", "Art. 165")} встановлює спеціальні правила odmowa для сімейних permit: фіктивний шлюб, сплив документа naukowiec у mobility-справі та окремі винятки щодо нелегального pobyt і наступної заяви.`,
+          text: foreignersLaw.text`${foreignersLaw.article("165", "Art. 165")} встановлює спеціальні правила odmowa для сімейних zezwolenie: фіктивний шлюб, сплив документа naukowiec у mobilność-справі та окремі винятки щодо нелегального pobyt і наступної заяви.`,
           sourceLocator: "Art. 165 ust. 1–4",
         },
       ],
       summary:
-        "Стаття розмежовує фіктивний шлюб, відмову в long-term mobility family permit та захисні винятки для окремих сімейних заявників.",
+        "Стаття розмежовує фіктивний шлюб, відмову в дозволі для члена сім’ї при mobilność długoterminowa та захисні винятки для окремих сімейних заявників.",
       rules: [
         {
           locator: "ust. 1",
-          explanation: foreignersLaw.text`Поза випадками ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 1–5 відмовляють у сімейному дозволі польського громадянина або reunification permit подружжю, якщо шлюб укладено для обходу правил в'їзду, переїзду, pobyt або виїзду cudzoziemiec.`,
+          explanation: foreignersLaw.text`Поза випадками ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 1–5 відмовляють у дозволі для члена сім’ї польського громадянина або zezwolenie w celu połączenia się z rodziną для подружжя, якщо шлюб укладено для обходу правил в'їзду, переїзду, pobyt або виїзду cudzoziemiec.`,
         },
         {
           locator: "ust. 1a",
@@ -40,7 +40,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           locator: "ust. 4",
-          explanation: foreignersLaw.text`Для члена сім'ї особи зі status uchodźca або ochroną uzupełniającą не застосовується ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 9, якщо сім'я вже існувала в країні походження, а родич був у Польщі в день подання заяви на міжнародний захист sponsor.`,
+          explanation: foreignersLaw.text`Для члена сім'ї особи зі statusem uchodźcy або ochroną uzupełniającą не застосовується ${foreignersLaw.article("100", "art. 100")} ust. 1 pkt 9, якщо сім'я вже існувала в країні походження, а цей член сім'ї перебував у Польщі в день, коли osoba referencyjna подала wniosek o udzielenie ochrony międzynarodowej.`,
         },
       ],
       legalEffect:

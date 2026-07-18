@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-10",
@@ -15,30 +15,30 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("10", "Art. 10")} зобов'язує podmiot powierzający працю сплатити opłata за кожен wniosek про zezwolenie. Для ${workLaw.article("6", "art. 6")} ust. 1 pkt 1–3 вона є доходом budżet państwa, для ${workLaw.article("6", "art. 6")} ust. 1 pkt 4 — порівну доходом państwa і powiat; opłata не повертається, крім відмови за ${workLaw.article("13", "art. 13")} ust. 1 pkt 4 або 5, а її максимальний розмір визначається через мінімальну оплату праці.`,
+          text: workLaw.text`${workLaw.article("10", "Art. 10")} зобов’язує суб’єкта, який доручає роботу, сплачувати збір за кожну заяву про дозвіл. У справах із частини 1 пунктів 1–3 ${workLaw.article("6", "ст. 6")} збір є доходом державного бюджету, а в сезонних справах із пункту 4 — порівну доходом держави й повіту. Загалом збір не повертають; виняток стосується відмови на підставі частини 1 пункту 4 або 5 ${workLaw.article("13", "ст. 13")}. Верхню межу збору закон пов’язує з мінімальною заробітною платою.`,
           sourceLocator: "Art. 10 ust. 1–5",
         },
       ],
       summary:
-        "Opłata супроводжує кожен wniosek, а для сезонного zezwolenie — також wniosek про його przedłużenie. Закон визначає, куди надходять кошти, коли вони повертаються та які верхні межі може встановити minister.",
+        "Збір («opłata») сплачують за кожну заяву, а в сезонній процедурі — також за заяву про продовження дозволу. Закон визначає, куди надходять кошти, коли їх повертають і в яких межах міністр може встановити суму збору.",
       rules: [
         {
           locator: "ust. 1–3",
-          explanation: workLaw.text`Opłata сплачується за кожен wniosek. У справах ${workLaw.article("6", "art. 6")} ust. 1 pkt 1–3 кошти належать budżet państwa; у сезонній справі дохід порівну розподіляється між państwo і powiat.`,
+          explanation: workLaw.text`Збір сплачують за кожну заяву. У справах із частини 1 пунктів 1–3 ${workLaw.article("6", "ст. 6")} кошти надходять до державного бюджету; у сезонній справі дохід порівну розподіляється між державою і повітом.`,
         },
         {
           locator: "ust. 4",
-          explanation: workLaw.text`Загальне правило — невідшкодування opłata. Виняток у тексті ${workLaw.article("10", "art. 10")} стосується відмови на підставі ${workLaw.article("13", "art. 13")} ust. 1 pkt 4 або 5.`,
+          explanation: workLaw.text`Загальне правило — збір не повертають. Виняток у ${workLaw.article("10", "ст. 10")} стосується відмови на підставі частини 1 пункту 4 або 5 ${workLaw.article("13", "ст. 13")}.`,
         },
         {
           locator: "ust. 5 pkt 1–2",
-          explanation: workLaw.text`Rozporządzenie може встановити суму не вище мінімального wynagrodzenie для ${workLaw.article("6", "art. 6")} ust. 1 pkt 1–3 і не вище 10% мінімального wynagrodzenie для ${workLaw.article("6", "art. 6")} ust. 1 pkt 4, з урахуванням періоду роботи та вартості провадження.`,
+          explanation: workLaw.text`Виконавчий припис може встановити суму не вище мінімальної заробітної плати для випадків із частини 1 пунктів 1–3 ${workLaw.article("6", "ст. 6")} і не вище 10% мінімальної заробітної плати для сезонної роботи з пункту 4. Під час визначення суми враховують період роботи та вартість провадження.`,
         },
       ],
       legalEffect:
-        "Сплата opłata є процесуальною вимогою, але не гарантує видачу zezwolenie, legalny pobyt або початок роботи. Її повернення можливе лише в межах прямо названого винятку.",
+        "Сплата збору є процесуальною вимогою, але не гарантує видачі дозволу, законності перебування або права почати роботу. Повернення можливе лише в межах прямо названого винятку.",
       foreignersCase:
-        "Визначте тип wniosek і перевірте суму за чинним rozporządzenie, зберігши доказ платежу. Не сприймайте платіж як підтвердження права працювати чи перебувати в Польщі.",
+        "Визначте вид заяви та перевірте суму за виконавчим приписом, чинним на дату подання. Збережіть доказ платежу, але не сприймайте його як підтвердження права працювати чи перебувати в Польщі.",
     },
   ],
 })

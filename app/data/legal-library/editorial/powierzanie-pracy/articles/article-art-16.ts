@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const workLaw = createLegalTextAuthor("powierzanie-pracy")
 export default defineEditorialPart<"powierzanie-pracy">({
   documentId: "powierzanie-pracy",
-  editionId: "powierzanie-pracy-2025-621",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "powierzanie-pracy-2025-621-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "powierzanie-pracy-art-16",
@@ -15,7 +15,7 @@ export default defineEditorialPart<"powierzanie-pracy">({
       claims: [
         {
           kind: "statute-text",
-          text: workLaw.text`${workLaw.article("16", "Art. 16")} встановлює, що отримання zezwolenie na pracę не звільняє від вимог окремих законів, від виконання яких залежить можливість працювати у zawód regulowany або вести діяльність regulowana.`,
+          text: workLaw.text`${workLaw.article("16", "Art. 16")} встановлює, що отримання дозволу на роботу не звільняє від вимог окремих законів, виконання яких є умовою праці в регульованій професії («zawód regulowany») або ведення регульованої діяльності («działalność regulowana»).`,
           sourceLocator: "Art. 16",
         },
       ],
@@ -24,13 +24,13 @@ export default defineEditorialPart<"powierzanie-pracy">({
       rules: [
         {
           locator: "Art. 16",
-          explanation: workLaw.text`Після отримання zezwolenie перевірте вимоги спеціального закону до zawód regulowany або działalność regulowana; ${workLaw.article("16", "art. 16")} їх не перелічує і не скасовує.`,
+          explanation: workLaw.text`Після отримання дозволу перевірте вимоги спеціального закону до регульованої професії або діяльності. ${workLaw.article("16", "Ст. 16")} не перелічує і не скасовує цих вимог.`,
         },
       ],
       legalEffect:
-        "Zezwolenie на роботу не гарантує права виконувати регульовану професію та не вирішує питання legalnego pobytu. Воно не замінює окремих професійних або галузевих передумов.",
+        "Дозвіл на роботу не гарантує права виконувати регульовану професію та не вирішує питання законності перебування. Він не замінює окремих професійних або галузевих передумов.",
       foreignersCase:
-        "Визначте, чи є посада або діяльність регульованою, і складіть окремий список вимог за відповідним актом. Перевірте zezwolenie, документ pobyt та кваліфікаційні підтвердження, не ототожнюючи їх.",
+        "Визначте, чи є професія або діяльність регульованою, і встановіть вимоги відповідного акта. Потім окремо перевірте дозвіл на роботу, документ про перебування і підтвердження кваліфікації: кожен із цих елементів відповідає на інше питання.",
     },
   ],
 })

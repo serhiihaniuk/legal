@@ -42,7 +42,7 @@ export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
     ],
     relationships: [],
     review: {
-      reviewStatus: "draft",
+      reviewStatus: "reviewed",
       language: "uk",
       legalStateDate: "2026-07-14",
       verifiedAt: "2026-07-14",
@@ -59,7 +59,7 @@ export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
       ],
       guide: {
         introduction: [
-          foreignersLaw.text`У 2026 році osoba зі status UKR може залишатися в режимі ochrony czasowej, перейти на спеціальний CUKR або, у межах дозволених ${foreignersLaw.external("art. 45", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")} ustawy z 23.01.2026 категорій, подати звичайну заяву pobytową.`,
+          foreignersLaw.text`У 2026 році osoba зі status UKR може залишатися в режимі ochrony czasowej, перейти на спеціальний CUKR або, у межах дозволених ${foreignersLaw.external("art. 45", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy z 23.01.2026 категорій, подати звичайну заяву pobytową.`,
         ],
         regulated: [
           foreignersLaw.text`Маршрути визначають specustawa ukraińska, ustawa Dz.U. 2026 poz. 203, ${foreignersLaw.external("art. 42c", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}–${foreignersLaw.external("42u", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")} та загальні норми ustawy o cudzoziemcach.`,

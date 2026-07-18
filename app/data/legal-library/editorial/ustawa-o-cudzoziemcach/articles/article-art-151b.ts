@@ -5,9 +5,9 @@ import { defineEditorialPart } from "../../define-editorial-part"
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-151b",
@@ -30,7 +30,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         {
           locator: "ust. 1 pkt 1",
           explanation:
-            "Cudzoziemiec має мати документ pobyt або довгострокову візу іншої держави UE з adnotacja «naukowiec», health insurance, місце проживання в Польщі та кошти на утримання й повернення до держави, що видала документ.",
+            "Cudzoziemiec має мати документ pobyt або довгострокову візу іншої держави UE з adnotacja «naukowiec», ubezpieczenie zdrowotne, місце проживання в Польщі та кошти на утримання й повернення до держави, що видала документ.",
         },
         {
           locator: "ust. 1 pkt 2 lit. a–e",

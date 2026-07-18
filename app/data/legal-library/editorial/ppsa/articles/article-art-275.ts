@@ -1,35 +1,33 @@
-import { defineEditorialPart } from "../../define-editorial-part"
+﻿import { defineEditorialPart } from "../../define-editorial-part"
 
-import { authorLegalTextCitationsTree } from "../../../legal-text"
 export default defineEditorialPart<"ppsa">({
   documentId: "ppsa",
-  editionId: "ppsa-2026-143",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ppsa", [
+  editionId: "ppsa-2026-143-with-2026-846",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
     {
       provisionId: "ppsa-art-275",
       reviewStatus: "reviewed",
       claims: [
         {
           kind: "statute-text",
-          text: "Art. 275 визначає, що для wznowienie з причини nieważność właściwy є суд, який видав оскаржене orzeczenie, а якщо оскаржено orzeczenia обох інстанцій — Naczelny Sąd Administracyjny; за іншою підставою właściwy є суд, який останнім вирішував справу.",
+          text: "Поновлення через недійсність розглядає суд, який видав оскаржене рішення; якщо оскаржуються рішення обох інстанцій — NSA. За іншою підставою компетентний суд, який останнім вирішував справу.",
           sourceLocator: "Art. 275",
         },
       ],
-      summary:
-        "Стаття розподіляє właściwość суду для skarga o wznowienie залежно від підстави та кількості оскаржених інстанцій.",
+      summary: "Стаття визначає суд за видом підстави та історією рішень.",
       rules: [
         {
           locator: "Art. 275",
           explanation:
-            "Спершу визначте, чи йдеться про nieważność, і чи оскаржуються рішення обох інстанцій; в інших випадках орієнтиром є суд, який останнім розглядав справу.",
+            "Намалюйте послідовність WSA–NSA, вкажіть, які рішення оскаржуються, і класифікуйте підставу як недійсність провадження (nieważność postępowania) або іншу законну підставу.",
         },
       ],
       legalEffect:
-        "Норма спрямовує скаргу до компетентного суду, але сама не оцінює наявність підстави wznowienie або дотримання строку.",
+        "Подання до неналежного суду ускладнює рух надзвичайної скарги й може поставити під ризик строк.",
       foreignersCase:
-        "У справі про pobyt не надсилайте skarga o wznowienie автоматично до NSA: спочатку класифікуйте підставу і визначте, який суд видав останнє orzeczenie.",
+        "У справі про перебування не обирайте NSA лише тому, що це вищий суд; застосуйте точне правило компетенції.",
     },
-  ]),
+  ],
 })

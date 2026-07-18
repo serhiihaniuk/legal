@@ -1,9 +1,14 @@
+import { createLegalTextAuthor } from "../../../legal-text"
+
 import { defineEditorialPart } from "../../define-editorial-part"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       provisionId: "ustawa-o-cudzoziemcach-art-202",
@@ -11,38 +16,27 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
       claims: [
         {
           kind: "statute-text",
-          text: "Cudzoziemiec подає wniosek про pobyt stały особисто не пізніше останнього дня legalny pobyt; якщо особистого подання не було, wojewoda викликає його щонайменше на 7 днів під rygor залишення wniosku без розгляду.",
-          sourceLocator: "Art. 202 ust. 1–2",
-        },
-        {
-          kind: "statute-text",
-          text: "Для małoletni, osoby całkowicie ubezwłasnowolnionej та małoletni bez opieki стаття визначає відповідно батьків або opiekun, судового opiekun та kurator; дитина від 6 років має бути присутня. Вимога строку не застосовується до названих у статті дітей, народжених у Польщі.",
-          sourceLocator: "Art. 202 ust. 3–5",
+          text: foreignersLaw.text`${foreignersLaw.article("202", "Art. 202")} вимагає подати wniosek o pobyt stały не пізніше останнього дня legalnego pobytu. За малолітню особу заяву подають батьки чи опікуни або один із них, за повністю недієздатну — opiekun, а за малолітню без опіки — kurator.`,
+          sourceLocator: "Art. 202 ust. 1–3",
         },
       ],
       summary:
-        "Стаття встановлює особисте подання, наслідок неявки та правила представництва дітей і недієздатних осіб.",
+        "Стаття визначає строк і належного заявника. Вона також захищає дві категорії дітей, народжених у Польщі, від загального правила про подання до останнього дня legalnego pobytu.",
       rules: [
         {
-          locator: "ust. 1–2",
-          explanation:
-            "Збережіть доказ особистого подання або stawiennictwo; 7-денний строк у wezwanie є мінімальним для виконання вимоги.",
+          locator: "Art. 202 ust. 1–2",
+          explanation: foreignersLaw.text`Граничний день визначають за фактичною підставою legalnego pobytu, а юридичний момент електронного подання — за ${foreignersLaw.article("203d", "Art. 203d")}. Для представника потрібен доказ батьківства, opieki або ustanowienia kuratora.`,
         },
         {
-          locator: "ust. 3–4",
+          locator: "Art. 202 ust. 3",
           explanation:
-            "Спосіб подання залежить від віку та правового статусу заявника; присутність дитини від 6 років є окремою умовою.",
-        },
-        {
-          locator: "ust. 5",
-          explanation:
-            "Виняток із строку стосується лише дітей, прямо названих у нормі, а не всіх дітей іноземців.",
+            "Строк з ust. 1 не застосовують до народженої в Польщі малолітньої дитини іноземця з pobytem stałym або statusem rezydenta długoterminowego UE, а також до дитини громадянина Польщі під його władzą rodzicielską.",
         },
       ],
       legalEffect:
-        "Невиконання wezwanie про особисту явку може призвести до залишення wniosku без розгляду, але це процесуальний наслідок, а не автоматична відмова у дозволі.",
+        "Для загального випадку своєчасність заяви залежить від завершеного подання до кінця legalnego pobytu; для прямо названих дітей ця конкретна строкова вимога не діє.",
       foreignersCase:
-        "Визначте, хто має підписати й подати wniosek, зафіксуйте legalny pobyt і дату явки, а на wezwanie відповідайте в межах строку та з доказом отримання.",
+        "Побудуйте календар pobytu та перевірте UPO. Якщо йдеться про дитину, окремо встановіть місце народження, статус батька чи матері й władzą rodzicielską — сама спорідненість не доводить винятку.",
     },
   ],
 })

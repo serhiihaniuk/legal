@@ -1,85 +1,47 @@
-import type { LegalProvisionId } from "../../../contracts"
-
-import { authorLegalTextCitationsTree } from "../../../legal-text"
+import { createLegalTextAuthor } from "../../../legal-text"
 
 import { defineEditorialPart } from "../../define-editorial-part"
 
-type ForeignersActProvisionId = LegalProvisionId<"ustawa-o-cudzoziemcach">
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
-type ReviewedArticleData = {
-  provisionId: ForeignersActProvisionId
-  reviewStatus: "reviewed"
-  statuteText: string
-  statuteLocator: string
-  practicalText: string
-  practicalLocator: string
-  summary: string
-  rules: readonly { locator: string; explanation: string }[]
-  legalEffect: string
-  foreignersCase: string
-}
-
-const provisionId = (article: string) =>
-  `ustawa-o-cudzoziemcach-art-${article}` as ForeignersActProvisionId
-
-const reviewedArticle = (article: string, data: ReviewedArticleData) => ({
-  provisionId: data.provisionId ?? provisionId(article),
-  reviewStatus: data.reviewStatus,
-  claims: [
-    {
-      kind: "statute-text" as const,
-      text: data.statuteText,
-      sourceLocator: data.statuteLocator,
-    },
-    {
-      kind: "practical-inference" as const,
-      text: data.practicalText,
-      sourceLocator: data.practicalLocator,
-    },
-  ],
-  summary: data.summary,
-  rules: data.rules,
-  legalEffect: data.legalEffect,
-  foreignersCase: data.foreignersCase,
-})
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
-  editionId: "ustawa-o-cudzoziemcach-2025-1079",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-15",
-  entries: authorLegalTextCitationsTree("ustawa-o-cudzoziemcach", [
-    reviewedArticle("108", {
+  editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
+  entries: [
+    {
       provisionId: "ustawa-o-cudzoziemcach-art-108",
       reviewStatus: "reviewed",
-      statuteText:
-        "Якщо строк подання wniosek про temporary residence permit дотримано і wniosek не має braków formalnych або їх своєчасно усунуто, wojewoda ставить stamp, а pobyt cudzoziemiec у Польщі вважається legal від подання до дня, коли рішення стане ostateczna. Правило про legal stay не діє під час zawieszenie провадження на заяву сторони.",
-      statuteLocator: "Art. 108 ust. 1–2",
-      practicalText:
-        "Art. 108 створює лише тимчасовий legal-stay ефект за визначених формальних умов. Stamp не є permit, не підтверджує позитивну eligibility і не дає автоматичного prawa do pracy; роботу треба перевіряти за окремою нормою.",
-      practicalLocator: "Art. 108 ust. 1 pkt 1–2; ust. 2",
+      claims: [
+        {
+          kind: "statute-text",
+          text: foreignersLaw.text`Якщо wniosek подано вчасно й він не має braków formalnych або їх усунуто у строк, ${foreignersLaw.article("108", "Art. 108")} зобов’язує wojewodę видати zaświadczenie про подання та визнає pobyt легальним від дня подання до дня, коли decyzja стане ostateczna.`,
+          sourceLocator: "Art. 108 ust. 1–10",
+        },
+      ],
       summary:
-        "Art. 108 визначає stamp і legal stay на час розгляду своєчасної та формально належної заяви про temporary residence permit.",
+        "Zaświadczenie підтверджує процесуальний факт подання й пояснює тимчасовий ефект для pobytu. Воно замінило попередній stempel у паспорті, але не є рішенням про дозвіл.",
       rules: [
         {
-          locator: "Art. 108 ust. 1 pkt 1",
+          locator: "Art. 108 ust. 1–2",
           explanation:
-            "Wojewoda ставить у travel document stamp про подання wniosek, якщо строки й formalne вимоги виконані.",
+            "Потрібні разом своєчасність і формальна повнота. Тоді pobyt вважається легальним до остаточного рішення; під час zawieszenia postępowania на заяву сторони цей ефект не діє.",
         },
         {
-          locator: "Art. 108 ust. 1 pkt 2",
+          locator: "Art. 108 ust. 3–7",
           explanation:
-            "Legal stay триває від дня подання до набрання рішенням про permit ostateczna.",
+            "Zaświadczenie містить дані особи й документа, дату подання, пояснення правового ефекту, дані organu, номер, підпис і kod QR. Воно має kwalifikowaną pieczęć elektroniczną Szefa Urzędu, видається без opłaty skarbowej та вручається через MOS або під час особистої явки.",
         },
         {
-          locator: "Art. 108 ust. 2",
-          explanation:
-            "За zawieszenie провадження на заяву сторони legal-stay правило з ust. 1 pkt 2 не застосовується.",
+          locator: "Art. 108 ust. 8–10",
+          explanation: foreignersLaw.text`Zaświadczenia не видають у випадках ${foreignersLaw.article("168", "Art. 168")} ust. 1 і ${foreignersLaw.article("168a", "Art. 168a")} ust. 1; до нього не застосовують dział VII KPA, а його wzór визначає rozporządzenie.`,
         },
       ],
       legalEffect:
-        "Стаття легалізує pobyt лише на період і за умовами, прямо названими в ній. Вона не є рішенням про permit і не замінює правову підставу wykonywania pracy.",
+        "Стаття легалізує лише pobyt у межах прямо названого періоду й умов. Zaświadczenie не є zezwoleniem, документом для перетину кордону чи самостійною підставою роботи.",
       foreignersCase:
-        "Збережіть доказ дати подання, stamp, документи про усунення braków та всі рішення про zawieszenie/відновлення. Для роботи окремо перевірте дозвіл, zwolnienie або параметри чинної decyzja.",
-    }),
-  ]),
+        "Збережіть UPO, zaświadczenie з QR, докази усунення braków і всі рішення про zawieszenie. Для роботи та повторного в’їзду завжди перевіряйте окрему правову підставу.",
+    },
+  ],
 })

@@ -2,6 +2,7 @@ import test from "node:test"
 import assert from "node:assert/strict"
 
 import {
+  assertOverlayBaseSource,
   assertRebuildAllowed,
   fetchBytes,
   parseArguments,
@@ -36,7 +37,10 @@ test("parseArguments accepts a config path with an optional --force-rebuild flag
     parseArguments(["--force-rebuild", "legal-corpus/documents/alpha.json"]),
     { configPath: "legal-corpus/documents/alpha.json", forceRebuild: true }
   )
-  assert.deepEqual(parseArguments([]), { configPath: undefined, forceRebuild: false })
+  assert.deepEqual(parseArguments([]), {
+    configPath: undefined,
+    forceRebuild: false,
+  })
   assert.throws(
     () => parseArguments(["a.json", "b.json"]),
     /Unexpected argument/
@@ -45,7 +49,11 @@ test("parseArguments accepts a config path with an optional --force-rebuild flag
 
 test("assertRebuildAllowed permits a first build but rejects rebuilding existing artifacts without --force-rebuild", () => {
   assert.doesNotThrow(() =>
-    assertRebuildAllowed({ editionId: "alpha-2026-1", existingManifests: [], forceRebuild: false })
+    assertRebuildAllowed({
+      editionId: "alpha-2026-1",
+      existingManifests: [],
+      forceRebuild: false,
+    })
   )
   assert.throws(
     () =>
@@ -57,7 +65,10 @@ test("assertRebuildAllowed permits a first build but rejects rebuilding existing
     (/** @type {any} */ error) => {
       assert.equal(error.name, "CorpusValidationError")
       assert.match(error.message, /--force-rebuild/)
-      assert.equal(error.diagnostics.fatal[0].code, "identity.edition-already-built")
+      assert.equal(
+        error.diagnostics.fatal[0].code,
+        "identity.edition-already-built"
+      )
       return true
     }
   )
@@ -70,25 +81,74 @@ test("assertRebuildAllowed permits a first build but rejects rebuilding existing
   )
 })
 
+test("assertOverlayBaseSource accepts only the declared base edition and checksum", () => {
+  const options = {
+    baseEditionId: "ppsa-2026-143",
+    documentId: "ppsa",
+    pdfSha256: "a".repeat(64),
+  }
+  assert.doesNotThrow(() =>
+    assertOverlayBaseSource({
+      ...options,
+      manifest: {
+        editionId: options.baseEditionId,
+        documentId: options.documentId,
+        pdfSha256: options.pdfSha256,
+      },
+    })
+  )
+  assert.throws(
+    () =>
+      assertOverlayBaseSource({
+        ...options,
+        manifest: {
+          editionId: options.baseEditionId,
+          documentId: options.documentId,
+          pdfSha256: "b".repeat(64),
+        },
+      }),
+    (/** @type {any} */ error) => {
+      assert.equal(
+        error.diagnostics.fatal[0].code,
+        "overlay.base-source-mismatch"
+      )
+      assert.deepEqual(error.diagnostics.fatal[0].details.mismatches, [
+        "pdfSha256",
+      ])
+      return true
+    }
+  )
+})
+
 test("resolveBuiltAt preserves the original builtAt when the rebuilt PDF checksum is unchanged", () => {
   const existingManifests = [
     { pdfSha256: "a".repeat(64), builtAt: "2026-01-01T00:00:00Z" },
     { pdfSha256: "a".repeat(64), builtAt: "2026-01-01T00:00:00Z" },
   ]
   assert.equal(
-    resolveBuiltAt({ existingManifests, pdfSha256: "a".repeat(64), now: "2026-07-16T00:00:00Z" }),
+    resolveBuiltAt({
+      existingManifests,
+      pdfSha256: "a".repeat(64),
+      now: "2026-07-16T00:00:00Z",
+    }),
     "2026-01-01T00:00:00Z"
   )
 })
 
 test("resolveBuiltAt uses the fresh timestamp for a first build or a genuinely changed checksum", () => {
   assert.equal(
-    resolveBuiltAt({ existingManifests: [], pdfSha256: "a".repeat(64), now: "2026-07-16T00:00:00Z" }),
+    resolveBuiltAt({
+      existingManifests: [],
+      pdfSha256: "a".repeat(64),
+      now: "2026-07-16T00:00:00Z",
+    }),
     "2026-07-16T00:00:00Z"
   )
   assert.equal(
     resolveBuiltAt({
-      existingManifests: [{ pdfSha256: "b".repeat(64), builtAt: "2026-01-01T00:00:00Z" }],
+      existingManifests: [
+        { pdfSha256: "b".repeat(64), builtAt: "2026-01-01T00:00:00Z" },
+      ],
       pdfSha256: "a".repeat(64),
       now: "2026-07-16T00:00:00Z",
     }),
@@ -98,9 +158,18 @@ test("resolveBuiltAt uses the fresh timestamp for a first build or a genuinely c
 
 test("resolveFetchTimeoutMs falls back to the default for a missing or invalid override", () => {
   assert.equal(resolveFetchTimeoutMs({}), 60_000)
-  assert.equal(resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "not-a-number" }), 60_000)
-  assert.equal(resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "-5" }), 60_000)
-  assert.equal(resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "15000" }), 15_000)
+  assert.equal(
+    resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "not-a-number" }),
+    60_000
+  )
+  assert.equal(
+    resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "-5" }),
+    60_000
+  )
+  assert.equal(
+    resolveFetchTimeoutMs({ LEGAL_CORPUS_FETCH_TIMEOUT_MS: "15000" }),
+    15_000
+  )
 })
 
 test("fetchBytes aborts a hung request with a clear timeout error instead of stalling indefinitely", async () => {
