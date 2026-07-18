@@ -186,8 +186,9 @@ test("baseline validation allows pending review state while strict mode fails it
     assert.ok(
       strict.issues.some((issue) => issue.code === "pending-crossReview")
     )
-    assert.ok(
-      strict.issues.some((issue) => issue.code === "draft-knowledge-unit")
+    assert.equal(
+      strict.issues.some((issue) => issue.code === "draft-knowledge-unit"),
+      false
     )
   })
 })

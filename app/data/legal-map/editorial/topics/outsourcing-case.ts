@@ -44,8 +44,8 @@ export const outsourcingCaseTopic: KnowledgeUnit<OutsourcingBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: {
       title: "Кейс: outsourcing procesowy чи працівники",

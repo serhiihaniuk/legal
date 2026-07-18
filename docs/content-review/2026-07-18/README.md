@@ -1,10 +1,11 @@
 # 2026-07-18 All-Pages Content Review
 
-Status: inventory generated, review not declared complete.
+Status: complete — all 1,667 entries have accepted, hash-bound author and
+independent cross-review records.
 
 Machine-readable lane ledgers live in `lanes/`. The date-root `index.json`
-contains the completion gate; keep `"declaredComplete": false` until every entry
-has accepted author and cross-review records or an explicit blocker.
+contains the completion gate. It is `true` only because every entry has
+accepted author and cross-review records and no unresolved blocker.
 Generated lane boundaries, including the current `ustawa o cudzoziemcach`
 midpoint split, are recorded in `index.json` and must not be hardcoded in
 review instructions.

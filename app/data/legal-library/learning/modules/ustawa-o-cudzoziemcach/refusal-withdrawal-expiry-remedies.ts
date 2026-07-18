@@ -165,17 +165,6 @@ export const refusalWithdrawalExpiryRemediesLearningModuleTopic: KnowledgeUnit<L
           },
         },
       },
-      {
-        kind: "next",
-        target: {
-          family: "learning-module",
-          reference: {
-            kind: "learning-module",
-            documentId: "ustawa-o-cudzoziemcach",
-            moduleId: "return-and-date-sensitive-analysis",
-          },
-        },
-      },
     ],
     review: {
       reviewStatus: "reviewed",

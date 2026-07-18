@@ -41,7 +41,7 @@ const guide: DocumentGuide = {
   ],
   relatedDocuments: ["mos-application", "residence-card-fee-proof"],
   sources: [documentSources.stampFee, documentSources.payments],
-  verifiedAt: "2026-07-14",
+  verifiedAt: "2026-07-18",
 }
 
 export const stampDutyProofTopic: KnowledgeUnit<DocumentGuide> =
@@ -72,7 +72,7 @@ export const stampDutyProofTopic: KnowledgeUnit<DocumentGuide> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
+      legalStateDate: "2026-07-18",
       verifiedAt: guide.verifiedAt,
     },
     body: guide,

@@ -1,8 +1,5 @@
-import { createLegalTextAuthor } from "../../../legal-text"
-
 import { defineEditorialPart } from "../../define-editorial-part"
 
-const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
   documentId: "ustawa-o-cudzoziemcach",
   editionId: "ustawa-o-cudzoziemcach-2025-1079-u-2026-07-18",

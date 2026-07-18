@@ -98,7 +98,7 @@ export async function validateReferencePreviewFixture() {
     officialSources: 0,
   }
 
-  const provisionPreviews: LegalReferencePreview[] = []
+  const currentProvisionPreviews: LegalReferencePreview[] = []
   for (const document of listDocuments()) {
     counts.legalDocuments += 1
     await assertStablePreview(
@@ -126,7 +126,9 @@ export async function validateReferencePreviewFixture() {
           `Preview edition mismatch: ${document.id}:${provisionId}`
         )
         assert(preview.sourceUrl, `Missing official source: ${document.id}`)
-        provisionPreviews.push(preview)
+        if (edition.editionId === document.currentEditionId) {
+          currentProvisionPreviews.push(preview)
+        }
       }
     }
   }
@@ -208,7 +210,7 @@ export async function validateReferencePreviewFixture() {
     "Known amendment preview must expose its useful canonical source note"
   )
 
-  const reviewed = provisionPreviews.find(
+  const reviewed = currentProvisionPreviews.find(
     (preview) => preview.status === "reviewed"
   )
   assert(reviewed, "No reviewed provision preview was found")
@@ -216,13 +218,15 @@ export async function validateReferencePreviewFixture() {
     !reviewed.sourceOnly && !reviewed.sourceTextExcerpt,
     "Reviewed preview incorrectly uses source-only fallback"
   )
-  const draft = provisionPreviews.find((preview) => preview.status === "draft")
+  const draft = currentProvisionPreviews.find(
+    (preview) => preview.status === "draft"
+  )
   assert(
     !draft,
     "Current editorial coverage must not expose an unreviewed draft preview"
   )
 
-  const sourceOnly = provisionPreviews.find(
+  const sourceOnly = currentProvisionPreviews.find(
     (preview) => preview.status === "source-only"
   )
   assert(

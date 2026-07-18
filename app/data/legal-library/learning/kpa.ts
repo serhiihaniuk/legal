@@ -232,7 +232,7 @@ export const kpaGuideSources: KpaGuideSource[] = [
   },
 ]
 
-export const kpaGuideLegalState = "14.07.2026"
+export const kpaGuideLegalState = "18.07.2026"
 
 export const KPA_ELI_URL = "https://eli.gov.pl/eli/DU/2025/1691/ogl"
 export const KPA_PDF_URL =
@@ -1179,7 +1179,7 @@ export const kpaArticleIndexStats = {
   active: kpaArticleIndex.filter((entry) => entry.status === "active").length,
   repealed: kpaArticleIndex.filter((entry) => entry.status === "repealed")
     .length,
-  verifiedLegalState: "14.07.2026",
+  verifiedLegalState: "18.07.2026",
   sourceEdition: "Dz.U. 2025 poz. 1691",
 }
 

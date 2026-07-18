@@ -293,7 +293,12 @@ export default function LawProvisionRoute() {
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<a href={source.localPdfUrl} />}
+              render={
+                <a
+                  href={source.localPdfUrl}
+                  aria-label={`Відкрити ${source.citation} у PDF`}
+                />
+              }
             >
               <FileText data-icon="inline-start" aria-hidden="true" />
               PDF акта про зміни · {source.citation}

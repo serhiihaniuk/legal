@@ -112,17 +112,6 @@ export const permanentAndEuLongTermResidentLearningModuleTopic: KnowledgeUnit<Le
           },
         },
       },
-      {
-        kind: "next",
-        target: {
-          family: "learning-module",
-          reference: {
-            kind: "learning-module",
-            documentId: "ustawa-o-cudzoziemcach",
-            moduleId: "cards-and-documents",
-          },
-        },
-      },
     ],
     review: {
       reviewStatus: "reviewed",

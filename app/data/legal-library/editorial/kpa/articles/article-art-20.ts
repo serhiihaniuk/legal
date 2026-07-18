@@ -2,8 +2,8 @@ import { defineKpaEditorialPart } from "../define-kpa-part"
 export default defineKpaEditorialPart({
   documentId: "kpa",
   editionId: "kpa-2025-1691",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-14",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       article: "20",

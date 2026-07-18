@@ -47,8 +47,8 @@ export const employmentAnnex1Topic: KnowledgeUnit<DocumentGuide> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: {
       id: "employment-annex-1",
@@ -96,7 +96,7 @@ export const employmentAnnex1Topic: KnowledgeUnit<DocumentGuide> =
           note: "Офіційне пояснення ролі роботодавця та електронного підпису.",
         },
       ],
-      verifiedAt: "2026-07-14",
+      verifiedAt: "2026-07-18",
     },
   })
 

@@ -66,9 +66,9 @@ export const upoTopic: KnowledgeUnit<DocumentGuide> = defineKnowledgeUnit({
   ],
   relationships: [],
   review: {
-      reviewStatus: "reviewed",
+    reviewStatus: "reviewed",
     language: "uk",
-    legalStateDate: "2026-07-14",
+    legalStateDate: "2026-07-18",
     verifiedAt: guide.verifiedAt,
   },
   body: guide,

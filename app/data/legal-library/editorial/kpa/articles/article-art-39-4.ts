@@ -8,8 +8,8 @@ const ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2024/1045/ogl"
 export default defineKpaEditorialPart({
   documentId: "kpa",
   editionId: "kpa-2025-1691",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-14",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       article: "39⁴",

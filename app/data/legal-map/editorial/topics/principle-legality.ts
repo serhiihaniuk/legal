@@ -67,8 +67,8 @@ export const principleLegalityTopic: KnowledgeUnit<LegalMapTopicBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
       sourceEditionId: "kpa-2025-1691",
     },
     body: {

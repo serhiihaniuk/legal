@@ -43,7 +43,7 @@ const guide: DocumentGuide = {
     documentSources.regulation553,
     documentSources.mosQa,
   ],
-  verifiedAt: "2026-07-14",
+  verifiedAt: "2026-07-18",
 }
 
 export const passportTopic: KnowledgeUnit<DocumentGuide> = defineKnowledgeUnit({
@@ -71,9 +71,9 @@ export const passportTopic: KnowledgeUnit<DocumentGuide> = defineKnowledgeUnit({
   ],
   relationships: [],
   review: {
-      reviewStatus: "reviewed",
+    reviewStatus: "reviewed",
     language: "uk",
-    legalStateDate: "2026-07-14",
+    legalStateDate: "2026-07-18",
     verifiedAt: guide.verifiedAt,
   },
   body: guide,

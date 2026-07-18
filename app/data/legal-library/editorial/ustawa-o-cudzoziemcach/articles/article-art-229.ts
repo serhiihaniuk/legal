@@ -20,7 +20,7 @@ export default defineEditorialPart<"ustawa-o-cudzoziemcach">({
         },
         {
           kind: "statute-text",
-          text: foreignersLaw.text`Tymczasowy polski dokument podróży dla cudzoziemca для особи, яка підлягає relokacji або przesiedleniu, видають на wniosek Szefa Urzędu; для особи з ${foreignersLaw.article("268", "Art. 268")} pkt 2 його також можна видати z urzędu. Перед першою kartą pobytu у названих випадках міжнародного захисту wojewoda діє через Szefa Urzędu щодо іншої держави-члена UE: перевіряє, чи особу не позбавили захисту, а в окремому випадку особи з ${foreignersLaw.article("127", "Art. 127")} або ${foreignersLaw.article("137a", "137a")} також повідомляє іншу державу та перевіряє це питання. Для karty pobytu особи з ${foreignersLaw.article("195", "Art. 195")} ust. 1 pkt 9 картку видають після повернення Karty Polaka.`,
+          text: foreignersLaw.text`Tymczasowy polski dokument podróży dla cudzoziemca для особи, яка підлягає relokacji або przesiedleniu, видають на wniosek Szefa Urzędu; для особи з ${foreignersLaw.article("268", "Art. 268")} pkt 2 його також можна видати z urzędu. Перед першою kartą pobytu у названих випадках міжнародного захисту wojewoda діє через Szefa Urzędu щодо іншої держави-члена UE: перевіряє, чи особу не позбавили захисту, а в окремому випадку особи з ${foreignersLaw.article("127", "Art. 127")} або ${foreignersLaw.article("137a", "Art. 137a")} також повідомляє іншу державу та перевіряє це питання. Для karty pobytu особи з ${foreignersLaw.article("195", "Art. 195")} ust. 1 pkt 9 картку видають після повернення Karty Polaka.`,
           sourceLocator: "Art. 229 ust. 5–7",
         },
       ],

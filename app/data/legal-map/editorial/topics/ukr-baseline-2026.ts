@@ -47,8 +47,8 @@ export const ukrBaselineTopic: KnowledgeUnit<UkrBaselineBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: {
       title: "Залишитися на status UKR",
@@ -77,7 +77,7 @@ export const ukrBaselineTopic: KnowledgeUnit<UkrBaselineBody> =
           "Перевіряються aktualny zapis PESEL, історія statusu, виїзди, dokument podróży та виконання роботодавцем obowiązków pracy.",
         ],
         foreignersContext: [
-          "Офіційна інформація UdSC станом на 14.07.2026 визначає поточний горизонт statusu UKR до 04.03.2027.",
+          "Офіційна інформація UdSC станом на 18.07.2026 визначає поточний горизонт statusu UKR до 04.03.2027.",
         ],
       } satisfies LegalNodeGuide,
       checkpoints: [

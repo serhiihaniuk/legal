@@ -113,17 +113,6 @@ export const familyStudyResearchBusinessLearningModuleTopic: KnowledgeUnit<Legal
           },
         },
       },
-      {
-        kind: "next",
-        target: {
-          family: "learning-module",
-          reference: {
-            kind: "learning-module",
-            documentId: "ustawa-o-cudzoziemcach",
-            moduleId: "permanent-and-eu-long-term-resident",
-          },
-        },
-      },
     ],
     review: {
       reviewStatus: "reviewed",

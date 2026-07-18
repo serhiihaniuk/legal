@@ -44,8 +44,8 @@ export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: {
       title: "Україна 2026: UKR → CUKR чи звичайний pobyt",
@@ -80,7 +80,7 @@ export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
           "Перед поданням порівнюються поточний status, історія UKR, відкриті справи, строки, матеріальні умови та момент переходу для кожного режиму.",
         ],
         foreignersContext: [
-          "Станом на 14.07.2026 офіційна інформація вказує на ochronę czasową до 04.03.2027, а заяву CUKR можна подати через MOS до цієї самої дати.",
+          "Станом на 18.07.2026 офіційна інформація вказує на ochronę czasową до 04.03.2027, а заяву CUKR можна подати через MOS до цієї самої дати.",
         ],
       } satisfies LegalNodeGuide,
       why: "Помилка в цій розвилці змінює умови, документи, момент виникнення дозволу, право до праці та долю status UKR. Подання CUKR також припиняє незавершену стандартну справу.",

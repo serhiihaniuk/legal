@@ -13,7 +13,7 @@ const moduleContent: LegalLearningModule = {
   title: "Karta pobytu та інші документи іноземця",
   polish:
     "karta pobytu, polski dokument podróży, dokument tożsamości, dokument powrotowy",
-  provisionScope: foreignersLaw.text`${foreignersLaw.articleRange("226", "285", { start: "art. 226" })}`,
+  provisionScope: foreignersLaw.text`${foreignersLaw.article("219c", "art. 219c")}, ${foreignersLaw.article("222", "art. 222")} та ${foreignersLaw.articleRange("226", "285", { start: "art. 226" })}`,
   outcome:
     "Уміти визначити функцію кожного документа, спосіб його видачі, правила біометрії й отримання та обов’язки після втрати, заміни або припинення статусу.",
   caseQuestion:
@@ -39,8 +39,9 @@ const moduleContent: LegalLearningModule = {
       id: "issuance-biometrics-pickup",
       title: "Від заяви до отримання: форма, біометрія, особиста присутність",
       paragraphs: [
-        foreignersLaw.text`${foreignersLaw.article("222", "Art. 222")} визначає актуальний електронний склад заяви про wydanie або wymianę karty pobytu: дані й wzór podpisu, fotografia, документи, odciski linii papilarnych, дані для personalizacji, інформацію про фізичну неможливість відбитків та форму podpisu. Старий чекліст із паперовими фотографіями чи „stempel” не можна переносити на чинну редакцію без перевірки. За ${foreignersLaw.article("228", "art. 228")} підпис не розміщують лише в документах з ${foreignersLaw.article("226", "Art. 226")} pkt 1–5 для дитини до 13 років у визначений момент або особи, яка не може підписатися через choroba чи niepełnosprawność, підтверджену довідкою właściwego lekarza specjalisty не старшою за три місяці.`,
-        foreignersLaw.text`У біометричному ланцюгу кожна норма відповідає на інше питання. ${foreignersLaw.article("244", "Art. 244")} охоплює, зокрема, дитину, яка не досягла 6 років на релевантний день, та ситуацію, коли особисту присутність було скасовано. ${foreignersLaw.article("246", "Art. 246")} регулює фізичну неможливість pobrania odcisków. ${foreignersLaw.article("248", "Art. 248")} встановлює правила odbioru, включно зі скасованою особистою присутністю, особою повністю ubezwłasnowolnioną, обов’язковою присутністю у випадках ust. 2a та перевіркою tożsamości. За ${foreignersLaw.article("282", "art. 282")} правила ${foreignersLaw.article("248", "Art. 248")} ust. 1–2a застосовують також до отримання трьох названих документів з наступних розділів.`,
+        foreignersLaw.text`${foreignersLaw.article("219c", "Art. 219c")} встановлює вузьке правило: wniosek o zezwolenie na pobyt rezydenta długoterminowego UE подають електронно через MOS, а поданий іншим способом залишають bez rozpoznania. ${foreignersLaw.article("222", "Art. 222")} не є загальною нормою про wniosek o wydanie або wymianę karty pobytu. Він уповноважує міністра визначити форму й технічні вимоги саме для заяви про цей дозвіл, а також окремі технічні елементи, потрібні для виготовлення картки: fotografię, odciski linii papilarnych, personalizację, інформацію про відбитки та wzór podpisu. Тому електронний маршрут із ${foreignersLaw.article("219c", "art. 219c")} не можна переносити на кожен документ із ${foreignersLaw.article("226", "art. 226")}.`,
+        foreignersLaw.text`Для wydania або wymiany karty pobytu спочатку визнач конкретний режим за ${foreignersLaw.article("229", "art. 229")} і właściwy organ за ${foreignersLaw.article("245", "art. 245")}; відбитки перевіряй окремо за ${foreignersLaw.article("246", "art. 246")}, а odbiór — за ${foreignersLaw.article("248", "art. 248")}. За ${foreignersLaw.article("228", "art. 228")} підпис не розміщують у документах з ${foreignersLaw.article("226", "art. 226")} pkt 1–5 для дитини до 13 років у визначений нормою момент або особи, яка не може підписатися через choroba чи niepełnosprawność, підтверджену довідкою właściwego lekarza specjalisty не старшою за три місяці.`,
+        foreignersLaw.text`У біометричному ланцюгу кожна норма відповідає на інше питання. ${foreignersLaw.article("244", "Art. 244")} ust. 3 визначає, коли відбитки не поміщають у kartę pobytu, зокрема для дитини, яка не досягла 6 років на релевантний день, або коли від особистої присутності відступили на названій законом підставі. ${foreignersLaw.article("246", "Art. 246")} регулює pobranie odcisków для окремих заяв про картку та фізичну неможливість їх зняття. ${foreignersLaw.article("248", "Art. 248")} встановлює правила odbioru, включно з відступом від особистої присутності, особою повністю ubezwłasnowolnioną, обов’язковою присутністю у випадках ust. 2a та перевіркою tożsamości. За ${foreignersLaw.article("282", "art. 282")} правила ${foreignersLaw.article("248", "Art. 248")} ust. 1–2a застосовують також до отримання трьох названих документів з наступних розділів.`,
       ],
       steps: [
         "Визначити конкретний документ і актуальну форму дії: wydanie, wymiana або odbiór.",
@@ -49,7 +50,7 @@ const moduleContent: LegalLearningModule = {
       ],
       evidence: [
         "Decyzja або інший документ, з якого випливає статус.",
-        "Електронний wniosek і підтвердження його подання.",
+        foreignersLaw.text`Wniosek у формі, передбаченій для конкретної процедури, і підтвердження його подання; для ${foreignersLaw.article("219c", "art. 219c")} — електронний wniosek через MOS.`,
         "Zaświadczenie lekarza specjalisty чи документи представництва, якщо застосовується виняток.",
       ],
     },
@@ -126,17 +127,6 @@ export const cardsAndDocumentsLearningModuleTopic: KnowledgeUnit<LegalLearningMo
             kind: "learning-module",
             documentId: "ustawa-o-cudzoziemcach",
             moduleId: "entry-and-current-basis",
-          },
-        },
-      },
-      {
-        kind: "next",
-        target: {
-          family: "learning-module",
-          reference: {
-            kind: "learning-module",
-            documentId: "ustawa-o-cudzoziemcach",
-            moduleId: "refusal-withdrawal-expiry-remedies",
           },
         },
       },

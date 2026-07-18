@@ -45,7 +45,7 @@ const guide: DocumentGuide = {
   ],
   relatedDocuments: ["passport"],
   sources: [documentSources.pesel, documentSources.cukrQa],
-  verifiedAt: "2026-07-14",
+  verifiedAt: "2026-07-18",
 }
 
 export const peselUkrConfirmationTopic: KnowledgeUnit<DocumentGuide> =
@@ -79,7 +79,7 @@ export const peselUkrConfirmationTopic: KnowledgeUnit<DocumentGuide> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
+      legalStateDate: "2026-07-18",
       verifiedAt: guide.verifiedAt,
     },
     body: guide,

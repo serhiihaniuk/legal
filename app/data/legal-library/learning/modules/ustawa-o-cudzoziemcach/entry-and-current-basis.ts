@@ -95,30 +95,7 @@ export const entryAndCurrentBasisLearningModuleTopic: KnowledgeUnit<LegalLearnin
         ],
       },
     ],
-    relationships: [
-      {
-        kind: "next",
-        target: {
-          family: "learning-module",
-          reference: {
-            kind: "learning-module",
-            documentId: "ustawa-o-cudzoziemcach",
-            moduleId: "temporary-residence-purposes",
-          },
-        },
-      },
-      {
-        kind: "related",
-        target: {
-          family: "learning-module",
-          reference: {
-            kind: "learning-module",
-            documentId: "ustawa-o-cudzoziemcach",
-            moduleId: "stay-and-work-right",
-          },
-        },
-      },
-    ],
+    relationships: [],
     review: {
       reviewStatus: "reviewed",
       language: "uk",

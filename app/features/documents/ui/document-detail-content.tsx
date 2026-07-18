@@ -263,19 +263,20 @@ export function DocumentDetailContent({
       <nav
         data-not-typeset
         aria-label="Попередній і наступний документ"
-        className="not-typeset mt-10 flex items-center justify-between gap-3 border-t pt-6"
+        className="not-typeset mt-10 grid grid-cols-2 gap-3 border-t pt-6"
       >
         {previous ? (
           <Button
             variant="ghost"
             nativeButton={false}
+            className="min-w-0 justify-start"
             render={<Link to={getEvidenceDocumentPath(previous.id)!} />}
           >
             <ArrowLeft data-icon="inline-start" aria-hidden="true" />
-            <span className="line-clamp-1">{previous.title}</span>
+            <span className="min-w-0 truncate">{previous.title}</span>
           </Button>
         ) : (
-          <Button variant="ghost" disabled>
+          <Button variant="ghost" className="min-w-0 justify-start" disabled>
             <ArrowLeft data-icon="inline-start" aria-hidden="true" />
             Початок
           </Button>
@@ -284,13 +285,14 @@ export function DocumentDetailContent({
           <Button
             variant="ghost"
             nativeButton={false}
+            className="min-w-0 justify-end"
             render={<Link to={getEvidenceDocumentPath(next.id)!} />}
           >
-            <span className="line-clamp-1">{next.title}</span>
+            <span className="min-w-0 truncate">{next.title}</span>
             <ArrowRight data-icon="inline-end" aria-hidden="true" />
           </Button>
         ) : (
-          <Button variant="ghost" disabled>
+          <Button variant="ghost" className="min-w-0 justify-end" disabled>
             Кінець
             <ArrowRight data-icon="inline-end" aria-hidden="true" />
           </Button>

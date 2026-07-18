@@ -44,8 +44,8 @@ export const goalOfStayTopic: KnowledgeUnit<GoalOfStayBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
-      verifiedAt: "2026-07-14",
+      legalStateDate: "2026-07-18",
+      verifiedAt: "2026-07-18",
     },
     body: {
       title: "Як визначати ціль перебування",

@@ -133,17 +133,6 @@ export const stayAndWorkRightLearningModuleTopic: KnowledgeUnit<LegalLearningMod
           },
         },
       },
-      {
-        kind: "next",
-        target: {
-          family: "learning-module",
-          reference: {
-            kind: "learning-module",
-            documentId: "ustawa-o-cudzoziemcach",
-            moduleId: "application-evidence-procedure",
-          },
-        },
-      },
     ],
     review: {
       reviewStatus: "reviewed",

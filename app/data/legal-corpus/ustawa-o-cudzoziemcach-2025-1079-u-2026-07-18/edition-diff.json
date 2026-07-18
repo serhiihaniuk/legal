@@ -1160,6 +1160,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-104.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-104.ts",
+          "line": 41
         }
       ]
     },
@@ -1173,6 +1177,14 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106j.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106j.ts",
+          "line": 31
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225c.ts",
+          "line": 18
         }
       ]
     },
@@ -1196,12 +1208,44 @@
           "line": 19
         },
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106.ts",
+          "line": 42
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106c.ts",
-          "line": 19
+          "line": 20
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106j.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106j.ts",
+          "line": 31
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-107.ts",
+          "line": 28
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-114.ts",
+          "line": 29
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-120a.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225d.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225f.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225f.ts",
+          "line": 37
         }
       ]
     },
@@ -1220,6 +1264,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-107.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-107.ts",
+          "line": 41
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-168.ts",
@@ -1241,6 +1289,18 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139l.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139l.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139t.ts",
+          "line": 28
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139t.ts",
+          "line": 28
         }
       ]
     },
@@ -1312,10 +1372,6 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-169.ts",
           "line": 40
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-347f.ts",
-          "line": 33
         }
       ]
     },
@@ -1329,6 +1385,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-112a.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-120a.ts",
+          "line": 36
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-137d.ts",
@@ -1414,7 +1474,7 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-114.ts",
-          "line": 19
+          "line": 20
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-123.ts",
@@ -1512,6 +1572,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-121.ts",
           "line": 42
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 39
         }
       ]
     },
@@ -1724,15 +1788,15 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-137.ts",
-          "line": 26
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-137.ts",
-          "line": 29
+          "line": 27
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-137.ts",
           "line": 30
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-137.ts",
+          "line": 31
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-138.ts",
@@ -1839,8 +1903,24 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-13",
       "references": [
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-120a.ts",
+          "line": 28
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-13.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-13.ts",
+          "line": 42
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-13.ts",
+          "line": 43
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225d.ts",
+          "line": 23
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-231.ts",
@@ -2145,7 +2225,7 @@
       "references": [
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-138a.ts",
-          "line": 21
+          "line": 23
         }
       ]
     },
@@ -2188,6 +2268,10 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-104.ts",
+          "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106j.ts",
           "line": 19
         },
         {
@@ -2237,10 +2321,6 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139h.ts",
           "line": 26
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139i.ts",
-          "line": 18
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139j.ts",
@@ -2397,20 +2477,7 @@
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-139i",
-      "references": [
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139i.ts",
-          "line": 18
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139u.ts",
-          "line": 18
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-139u.ts",
-          "line": 26
-        }
-      ]
+      "references": []
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-139j",
@@ -2511,6 +2578,10 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-104.ts",
+          "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106j.ts",
           "line": 19
         },
         {
@@ -2861,14 +2932,6 @@
           "line": 18
         },
         {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-148a.ts",
-          "line": 18
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-148a.ts",
-          "line": 46
-        },
-        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-148b.ts",
           "line": 23
         },
@@ -2891,6 +2954,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-150.ts",
           "line": 36
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-64a.ts",
+          "line": 28
         }
       ]
     },
@@ -2978,12 +3045,7 @@
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-148a",
-      "references": [
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-148a.ts",
-          "line": 18
-        }
-      ]
+      "references": []
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-148b",
@@ -3154,6 +3216,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-169a.ts",
           "line": 42
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-64a.ts",
+          "line": 32
         }
       ]
     },
@@ -3416,6 +3482,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-465.ts",
           "line": 37
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-64a.ts",
+          "line": 32
         }
       ]
     },
@@ -3513,6 +3583,10 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-157l.ts",
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-64a.ts",
           "line": 32
         }
       ]
@@ -3632,8 +3706,16 @@
           "line": 22
         },
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-104.ts",
+          "line": 33
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106l.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106l.ts",
+          "line": 44
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-159.ts",
@@ -3813,8 +3895,16 @@
           "line": 22
         },
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-104.ts",
+          "line": 33
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106l.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-106l.ts",
+          "line": 44
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-160.ts",
@@ -3835,6 +3925,18 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-168a.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-168a.ts",
+          "line": 28
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-168a.ts",
+          "line": 36
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-168a.ts",
+          "line": 37
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-169.ts",
@@ -3989,6 +4091,10 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-168",
       "references": [
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-108.ts",
+          "line": 38
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-168.ts",
           "line": 19
         }
@@ -3997,6 +4103,10 @@
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-168a",
       "references": [
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-108.ts",
+          "line": 38
+        },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-168a.ts",
           "line": 19
@@ -4128,8 +4238,20 @@
           "line": 18
         },
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 35
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-334.ts",
           "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-406.ts",
+          "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-406.ts",
+          "line": 35
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-428.ts",
@@ -4226,8 +4348,20 @@
           "line": 30
         },
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 31
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-334.ts",
           "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-406.ts",
+          "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-406.ts",
+          "line": 35
         }
       ]
     },
@@ -4346,6 +4480,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-185.ts",
           "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 31
         }
       ]
     },
@@ -4518,6 +4656,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-189.ts",
           "line": 34
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-190.ts",
+          "line": 18
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-190.ts",
@@ -4715,6 +4857,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-194.ts",
           "line": 37
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 31
         }
       ]
     },
@@ -4888,11 +5034,11 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-229.ts",
-          "line": 41
+          "line": 40
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-229.ts",
-          "line": 45
+          "line": 44
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-236.ts",
@@ -5056,12 +5202,12 @@
           "line": 19
         },
         {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 18
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-203d.ts",
+          "line": 33
         },
         {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 37
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225c.ts",
+          "line": 18
         }
       ]
     },
@@ -5078,15 +5224,15 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-203c.ts",
-          "line": 19
+          "line": 20
         },
         {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 18
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225d.ts",
+          "line": 28
         },
         {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 37
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225f.ts",
+          "line": 23
         }
       ]
     },
@@ -5096,6 +5242,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-204.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-204.ts",
+          "line": 42
         }
       ]
     },
@@ -5109,14 +5259,6 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-206.ts",
           "line": 19
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 18
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 37
         }
       ]
     },
@@ -5178,24 +5320,12 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-210.ts",
           "line": 19
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 18
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 37
         }
       ]
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-211",
       "references": [
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-211.ts",
-          "line": 18
-        },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-214.ts",
           "line": 18
@@ -5211,6 +5341,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-214a.ts",
           "line": 43
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-222c.ts",
+          "line": 18
         }
       ]
     },
@@ -5226,14 +5360,6 @@
           "line": 23
         },
         {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-211.ts",
-          "line": 37
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-211.ts",
-          "line": 47
-        },
-        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-212.ts",
           "line": 18
         },
@@ -5243,7 +5369,7 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-219.ts",
-          "line": 37
+          "line": 32
         }
       ]
     },
@@ -5256,7 +5382,7 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-213.ts",
-          "line": 45
+          "line": 41
         }
       ]
     },
@@ -5265,7 +5391,7 @@
       "references": [
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-213.ts",
-          "line": 45
+          "line": 41
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-214a.ts",
@@ -5320,6 +5446,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-216.ts",
           "line": 35
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-222c.ts",
+          "line": 18
         }
       ]
     },
@@ -5353,14 +5483,6 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-219",
       "references": [
         {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-213.ts",
-          "line": 23
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-213.ts",
-          "line": 42
-        },
-        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-216.ts",
           "line": 18
         },
@@ -5378,7 +5500,19 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-219.ts",
-          "line": 50
+          "line": 40
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-219c.ts",
+          "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225d.ts",
+          "line": 28
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225f.ts",
+          "line": 28
         }
       ]
     },
@@ -5439,6 +5573,10 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-222",
       "references": [
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-219b.ts",
+          "line": 28
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-222.ts",
           "line": 18
         },
@@ -5454,16 +5592,7 @@
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-223",
-      "references": [
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 36
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-223.ts",
-          "line": 37
-        }
-      ]
+      "references": []
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-224",
@@ -5514,7 +5643,11 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-229.ts",
-          "line": 45
+          "line": 32
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-229.ts",
+          "line": 44
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-230.ts",
@@ -5578,6 +5711,10 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-235.ts",
+          "line": 34
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-235.ts",
           "line": 35
         },
         {
@@ -5587,6 +5724,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-237.ts",
           "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-237.ts",
+          "line": 22
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-238.ts",
@@ -5633,7 +5774,7 @@
       "references": [
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-229.ts",
-          "line": 44
+          "line": 43
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-246.ts",
@@ -5699,10 +5840,6 @@
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-235",
       "references": [
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-235.ts",
-          "line": 34
-        },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-236.ts",
           "line": 18
@@ -5785,11 +5922,11 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-237.ts",
-          "line": 37
+          "line": 36
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-237.ts",
-          "line": 42
+          "line": 41
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-238.ts",
@@ -5939,15 +6076,19 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-282.ts",
-          "line": 27
+          "line": 22
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-282.ts",
+          "line": 26
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-282.ts",
+          "line": 29
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-282.ts",
           "line": 30
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-282.ts",
-          "line": 31
         }
       ]
     },
@@ -6303,11 +6444,7 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-229.ts",
-          "line": 37
-        },
-        {
-          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-229.ts",
-          "line": 45
+          "line": 36
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-269.ts",
@@ -6530,6 +6667,14 @@
           "line": 23
         },
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-299.ts",
+          "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-299.ts",
+          "line": 21
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-334.ts",
           "line": 31
         }
@@ -6541,6 +6686,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-3.ts",
           "line": 19
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-3.ts",
+          "line": 44
         }
       ]
     },
@@ -6573,6 +6722,34 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-302",
       "references": [
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 39
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 47
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-314a.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-314a.ts",
+          "line": 37
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-314a.ts",
+          "line": 47
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-337.ts",
           "line": 32
         },
@@ -6594,6 +6771,26 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-303",
       "references": [
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 46
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 47
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-314a.ts",
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-314a.ts",
+          "line": 37
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-40.ts",
           "line": 58
         },
@@ -6605,7 +6802,12 @@
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-303a",
-      "references": []
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-303.ts",
+          "line": 43
+        }
+      ]
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-303b",
@@ -6660,6 +6862,14 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-31",
       "references": [
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-299.ts",
+          "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-299.ts",
+          "line": 40
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-31.ts",
           "line": 58
         }
@@ -6683,7 +6893,16 @@
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-315",
-      "references": []
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 35
+        }
+      ]
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-316",
@@ -7844,12 +8063,41 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-345.ts",
           "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 26
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 26
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 39
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 44
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-406.ts",
+          "line": 39
         }
       ]
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-398a",
-      "references": []
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-398a.ts",
+          "line": 44
+        }
+      ]
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-399",
@@ -7891,7 +8139,16 @@
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-400",
-      "references": []
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-406.ts",
+          "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-406.ts",
+          "line": 35
+        }
+      ]
     },
     {
       "provisionId": "ustawa-o-cudzoziemcach-art-400a",
@@ -8218,6 +8475,18 @@
       "provisionId": "ustawa-o-cudzoziemcach-art-428",
       "references": [
         {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225g.ts",
+          "line": 28
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-281b.ts",
+          "line": 23
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-314a.ts",
+          "line": 23
+        },
+        {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-35.ts",
           "line": 63
         },
@@ -8227,7 +8496,19 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-429.ts",
-          "line": 32
+          "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-429.ts",
+          "line": 27
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-429.ts",
+          "line": 37
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-430.ts",
+          "line": 47
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-433.ts",
@@ -8248,7 +8529,7 @@
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-429.ts",
-          "line": 47
+          "line": 37
         }
       ]
     },
@@ -8271,6 +8552,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-430.ts",
           "line": 18
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-430.ts",
+          "line": 47
         }
       ]
     },
@@ -8672,6 +8957,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-15c.ts",
           "line": 21
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-225e.ts",
+          "line": 18
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-449.ts",
@@ -9712,6 +10001,10 @@
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-64.ts",
           "line": 44
+        },
+        {
+          "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-64a.ts",
+          "line": 42
         },
         {
           "file": "app/data/legal-library/editorial/ustawa-o-cudzoziemcach/articles/article-art-66.ts",

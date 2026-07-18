@@ -35,7 +35,7 @@ const guide: DocumentGuide = {
       note: "Офіційне пояснення представництва в справах cudzoziemców.",
     },
   ],
-  verifiedAt: "2026-07-14",
+  verifiedAt: "2026-07-18",
 }
 
 export const powerOfAttorneyTopic: KnowledgeUnit<DocumentGuide> =
@@ -63,7 +63,7 @@ export const powerOfAttorneyTopic: KnowledgeUnit<DocumentGuide> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
+      legalStateDate: "2026-07-18",
       verifiedAt: guide.verifiedAt,
     },
     body: guide,

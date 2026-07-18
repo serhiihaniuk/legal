@@ -48,7 +48,7 @@ const guide: DocumentGuide = {
   ],
   relatedDocuments: ["employment-contract", "employment-annex-1"],
   sources: [documentSources.zus, documentSources.aliens],
-  verifiedAt: "2026-07-14",
+  verifiedAt: "2026-07-18",
 }
 
 export const zusConfirmationTopic: KnowledgeUnit<DocumentGuide> =
@@ -79,7 +79,7 @@ export const zusConfirmationTopic: KnowledgeUnit<DocumentGuide> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-14",
+      legalStateDate: "2026-07-18",
       verifiedAt: guide.verifiedAt,
     },
     body: guide,

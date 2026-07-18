@@ -8,8 +8,8 @@ const RODO_URL = "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
 export default defineKpaEditorialPart({
   documentId: "kpa",
   editionId: "kpa-2025-1691",
-  legalStateDate: "2026-07-14",
-  verifiedAt: "2026-07-14",
+  legalStateDate: "2026-07-18",
+  verifiedAt: "2026-07-18",
   entries: [
     {
       article: "74a",
