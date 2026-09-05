@@ -11,7 +11,7 @@ export function CaseDocumentReview({
 }) {
   const review = caseDocumentReviews[reviewId]
   return (
-    <dl className="mt-3 flex flex-col gap-2 border-l pl-3 text-sm leading-6">
+    <dl className="mt-3 flex flex-col gap-2 text-sm leading-6">
       <div>
         <dt className="font-medium">Що звірити</dt>
         <dd>

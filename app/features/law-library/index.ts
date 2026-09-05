@@ -44,8 +44,5 @@ export { LegalProvisionSelector } from "./ui/provision/legal-provision-selector"
 export {
   formatProvisionEffectiveDate,
   LegalProvisionSource,
-  normalizeLegalProvisionSourceText,
-  splitLegalProvisionSourceText,
   type LegalProvisionSourceProps,
-  type LegalProvisionSourceRow,
 } from "./ui/provision/legal-provision-source"

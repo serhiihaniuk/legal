@@ -186,6 +186,10 @@ Editorial preview modules are lazy-loaded when a card opens and cached by stable
 
 ## Law library reading and navigation
 
+- Original provisions use body typography, visible paragraph and point markers, and separate passages. Keep the reviewed Ukrainian explanation above the source text in the same document. Do not repeat it in a popup or add action toolbars to every passage. Preserve passage anchors for existing deep links.
+- Forms and other annexes open in their original PDF layout by default, using the wider content column. Extracted text remains a secondary tab because it cannot preserve form fields, tables, or signature areas. Ordinary provisions also offer the original PDF tab and a separate-window link.
+- Smaller PDF text is grouped by source page in a collapsed disclosure. It may contain footnotes, marginal notes, or fragments continued elsewhere. Never discard it or claim that text extraction fully reconstructs the document. Generated layout ranges apply only to the exact source-text hash. Rebuild with `npm run corpus:reader` after corpus changes; `npm run corpus:reader:check` checks that metadata against the pinned PDFs.
+
 - The law catalog leads with the Polish act name and citation. Ukrainian topic descriptions provide context underneath. Sidebar links and the primary catalog action open the act reader; Ukrainian explanations remain a secondary action. Direct act URLs also open the reader.
 - All documentation pages share a centered shell capped at 100rem. The sidebar, reading area, and on-page contents stay together on wide screens. Page content may use a wider catalog or a narrower reading column, but modules do not override the shell width.
 - Provision selection opens a Sheet organized by the act's sections. Use the existing shadcn combobox for section navigation, with a visible label, title filtering, and one scrolling list of provisions. Mark the current provision and return focus when the Sheet closes. The section combobox supports typing to narrow its options; it does not search provision text.

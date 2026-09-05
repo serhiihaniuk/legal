@@ -1,5 +1,24 @@
 # Editorial improvement log
 
+## 2026-09-05 document guidance alignment
+
+- Removed the vertical border and extra indentation from the shared document-review block in case guides. "Що звірити" and missing-document guidance now align with the document details above. Content and spacing between sections remain unchanged.
+
+## 2026-09-05 source reader cleanup
+
+- Removed the repeated link, copy, and explanation icon stacks from source passages. Short points now take only the space their text needs. Existing passage anchors still work.
+- Removed the duplicate explanation Sheet. Kept the original Ukrainian explanation above the Polish source, including the explanation of individual points, legal consequence, and case context.
+- Validation: `npm run verify` passed with 88 application tests and the production build. Checked Art. 23 in the browser: one explanation, compact source points, and no horizontal overflow. Legal wording and source files are unchanged.
+
+## 2026-09-05 original law reader
+
+- Committed all earlier work as `c605786` before this implementation.
+- Replaced the dense source-text column with readable paragraphs, original numbering, and nested points. Added passage links, copying, and a Sheet containing the selected passage with the existing reviewed Ukrainian explanation of its article.
+- Separated smaller PDF text from the reading body in 443 provisions across the five current editions. Page-labelled disclosures retain that text. The generated ranges require the exact source-text hash; the original corpus, editions, and PDF files remain unchanged.
+- Annexes open in a wider original-PDF view. Forms keep their fields, tables, and signature areas; their raw text extraction is a secondary tab. Every provision retains access to its source PDF and official ELI page.
+- Checked the [official foreigners act PDF](https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf) for the Art. 1 body and title-note layout. This is a presentation change, not a new legal review. The legal baseline remains 18.07.2026. Source notes may be fragments continued on adjacent pages; the PDF retains their full context.
+- Validation: `npm run verify` passed, including 88 application tests, 69 corpus tests, 15 content-review tests, deterministic reader-metadata validation, typechecks, lint, formatting, editorial checks, and production build. Browser checks covered mobile reading, explanation focus, passage deep links, and the form's default PDF tab without horizontal overflow. Existing build warnings and the separate independent-review-ledger gap remain.
+
 ## 2026-09-05 shared frame regression fix
 
 - Restored the shared positioning and column-divider rules accidentally removed during the homepage CSS update. Removed unintended borders on the inner reading body and restored document-header rules. Crosses again sit on the shared frame intersections.

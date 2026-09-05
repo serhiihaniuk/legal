@@ -1,3 +1,5 @@
+import { sourceNoteRanges } from "~/data/legal-library/source-layout"
+import { ProvisionSourceReader } from "~/features/law-library/ui/provision/provision-source-reader"
 import { ProvisionRuleBreakdown } from "~/features/law-library/ui/provision/provision-rule-breakdown"
 import { ProvisionDocumentGuide } from "~/features/law-library/ui/provision/provision-document-guide"
 import { ArrowLeft, ArrowRight, FileText } from "lucide-react"
@@ -9,7 +11,6 @@ import {
   LawDocumentNavigation,
   formatProvisionEffectiveDate,
   LegalProvisionSelector,
-  LegalProvisionSource,
 } from "~/features/law-library"
 import {
   LegalLink,
@@ -86,14 +87,22 @@ export async function loader({ params }: LoaderFunctionArgs) {
     edition,
     provision,
     explanation,
+    noteRanges: sourceNoteRanges(provision),
     previous,
     next,
   }
 }
 
 export default function LawProvisionRoute() {
-  const { document, edition, provision, explanation, previous, next } =
-    useLoaderData<typeof loader>()
+  const {
+    document,
+    edition,
+    provision,
+    explanation,
+    previous,
+    next,
+    noteRanges,
+  } = useLoaderData<typeof loader>()
   const provisions = listProvisions(document.id)
   const reviewedExplanation =
     explanation.status === "reviewed" ? explanation.explanation : undefined
@@ -135,6 +144,7 @@ export default function LawProvisionRoute() {
 
   return (
     <DocsLayout
+      contentWidth={provision.kind === "annex" ? "wide" : "reading"}
       navigation={
         <LawDocumentNavigation
           document={document}
@@ -382,12 +392,22 @@ export default function LawProvisionRoute() {
         ) : null}
 
         <section id="legal-provision-source">
-          <h2>Текст норми польською</h2>
+          <h2>
+            {provision.kind === "annex"
+              ? "Оригінал додатка"
+              : "Текст норми польською"}
+          </h2>
           <p>
-            Робочий витяг із PDF. Для дослівного цитування відкрийте сторінку
-            джерела вище.
+            {provision.kind === "annex"
+              ? "Читайте додаток у макеті офіційного документа. Текстовий витяг доступний в окремій вкладці."
+              : "Робочий витяг із PDF. Для дослівного цитування відкрийте оригінал джерела."}
           </p>
-          <LegalProvisionSource
+          <ProvisionSourceReader
+            key={provision.id}
+            pdfUrl={provision.canonicalPdfLocator}
+            preferPdf={provision.kind === "annex"}
+            idPrefix={provision.id}
+            noteRanges={noteRanges}
             locator={provision.locator}
             startPdfPage={provision.startPdfPage}
             text={provision.text}

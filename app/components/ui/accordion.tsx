@@ -31,7 +31,13 @@ function AccordionTrigger({
 }: AccordionPrimitive.Trigger.Props & { headingLevel?: 2 | 3 }) {
   return (
     <AccordionPrimitive.Header
-      render={headingLevel === 2 ? <h2 /> : <h3 />}
+      render={(headerProps) =>
+        headingLevel === 2 ? (
+          <h2 {...headerProps}>{headerProps.children}</h2>
+        ) : (
+          <h3 {...headerProps}>{headerProps.children}</h3>
+        )
+      }
       className="flex"
     >
       <AccordionPrimitive.Trigger

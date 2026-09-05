@@ -246,3 +246,5 @@ export type CanonicalPdfLocator = {
   provisionId: string
   sourcePdfSha256: string
 }
+
+export type SourceNoteRange = { start: number; end: number; page: number }

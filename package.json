@@ -31,8 +31,10 @@
     "lint": "oxlint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx}\"",
-    "verify": "npm run typecheck && npm run typecheck:scripts && npm run knowledge:check && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:content-review && npm run test:editorial && npm run build",
-    "verify:content": "npm run content-review:validate -- --if-complete && npm run test:editorial:strict && npm run test:previews"
+    "verify": "npm run typecheck && npm run typecheck:scripts && npm run knowledge:check && npm run corpus:reader:check && npm run lint && npm run format:check && npm run test && npm run test:corpus && npm run test:content-review && npm run test:editorial && npm run build",
+    "verify:content": "npm run content-review:validate -- --if-complete && npm run test:editorial:strict && npm run test:previews",
+    "corpus:reader": "node scripts/legal-corpus/build-source-layout.mjs",
+    "corpus:reader:check": "node scripts/legal-corpus/build-source-layout.mjs --check"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
