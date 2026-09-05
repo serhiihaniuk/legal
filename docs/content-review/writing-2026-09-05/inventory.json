@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 25,
+    "reviewed": 29,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -170,9 +170,9 @@
     {
       "path": "app/data/document-library/editorial/guides/authority-summons.ts",
       "family": "evidence-document",
-      "contentHash": "a89611b98fd6147c0d1245cdb12f73417d6d9d6644900536b6ec15cbfceb7e75",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "6f2300343602bbe5596bc8bd2e31afcc8fdfd49266399bac47df3546971f1cf1",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/blue-card-annex.ts",
@@ -240,9 +240,9 @@
     {
       "path": "app/data/document-library/editorial/guides/delivery-proof.ts",
       "family": "evidence-document",
-      "contentHash": "4ddd42431283aa4971a0463a7be19c9dcac974b8c6f0684be6d4e5f344045f9e",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "30759a934311c60777cd886b35fd7c0faf92763ae11aa5c05b897bc3f8c6c3c6",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/digital-photo.ts",
@@ -254,9 +254,9 @@
     {
       "path": "app/data/document-library/editorial/guides/dispatch-proof.ts",
       "family": "evidence-document",
-      "contentHash": "6dc1f90c6d1fc3dc6423c12c505d981f4abc6024ff91b49561a2e5572901534a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "f8606a995757b3dae8139fe3a9dfb4d4a58f4c9dd8b3ce98b32ba2893c5d2769",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/employment-annex-1.ts",
@@ -527,9 +527,9 @@
     {
       "path": "app/data/document-library/editorial/guides/upo.ts",
       "family": "evidence-document",
-      "contentHash": "bca34b3f0e2523a2f4a1919456c2cadc1a838f5251c52087204f4d6b2e2b18c0",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "eb2e5407884c5ff8d7dcf74b5350665db7562b05fe3f3d75915f619195755041",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/visa.ts",

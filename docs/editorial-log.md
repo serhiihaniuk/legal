@@ -166,3 +166,9 @@
 - Reworked the employer annex, employment contract, health-insurance and ZUS guides around the actual data and periods they establish. Added four filled Polish fragments with completed explanations. Clarified annex numbering, electronic signing, amendment dates and insurance arising from proposed employment.
 - Recorded the official ELI, UdSC and ZUS checks in `content-review/writing-2026-09-05/batches/03-employment-and-insurance.md`. The atlas baseline remains 18.07.2026 and independent legal review is still pending.
 - Full verification passed with 91 application tests and a production build. All four mobile routes fit without horizontal overflow. Desktop section navigation, the official form layout and the document-to-case backlink were checked without browser console errors.
+
+## 2026-09-05 correspondence examples
+
+- Reworked wezwanie, delivery proof, dispatch proof and UPO around the event or submitted version each record establishes. Added four visible examples with completed findings. Kept formal defects, substantive evidence, personal actions and deadline restoration distinct.
+- Recorded focused KPA, foreigners-act, UdSC and e-Doręczenia checks in `content-review/writing-2026-09-05/batches/04-correspondence.md`. The atlas baseline remains 18.07.2026. Independent legal review and a faithful official UPO visual specimen remain pending.
+- Full verification passed with 91 application tests and a production build. Checked mobile fit, keyboard table scrolling, section anchors, related-document navigation and a typed provision link. A fresh browser session recorded no console errors.

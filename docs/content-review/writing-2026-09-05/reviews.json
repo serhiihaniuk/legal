@@ -128,5 +128,25 @@
     "path": "app/features/documents/ui/document-detail-content.tsx",
     "contentHash": "d64efcb92f6aa22d8db0474f3b37df574809c5c86f561470709e3907e946f5e3",
     "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/authority-summons.ts",
+    "contentHash": "6f2300343602bbe5596bc8bd2e31afcc8fdfd49266399bac47df3546971f1cf1",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/delivery-proof.ts",
+    "contentHash": "30759a934311c60777cd886b35fd7c0faf92763ae11aa5c05b897bc3f8c6c3c6",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/dispatch-proof.ts",
+    "contentHash": "f8606a995757b3dae8139fe3a9dfb4d4a58f4c9dd8b3ce98b32ba2893c5d2769",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/upo.ts",
+    "contentHash": "eb2e5407884c5ff8d7dcf74b5350665db7562b05fe3f3d75915f619195755041",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
   }
 ]

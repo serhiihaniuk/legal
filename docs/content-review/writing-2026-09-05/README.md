@@ -23,7 +23,7 @@ The user requested completion of the outstanding writing, document coverage, wor
 
 ## Next work
 
-User clarifications to preserve: show what complex documents and working records actually look like, with filled illustrative specimens rather than only prose scenarios. Five specimens are complete in batch 01 and four employment/insurance specimens in batch 03; remaining complex documents still need review. Batch 02 replaces the eight reading-guide introductions with complete answers and worked examples. Neither request is satisfied by adding more generic introductions.
+User clarifications to preserve: show what complex documents and working records actually look like, with filled illustrative specimens rather than only prose scenarios. Five specimens are complete in batch 01, four employment/insurance specimens in batch 03 and four correspondence examples in batch 04; remaining complex documents still need review. The UPO example is a working comparison, not a faithful official-form reproduction. Batch 02 replaces the eight reading-guide introductions with complete answers and worked examples. Neither request is satisfied by adding more generic introductions.
 
 1. Work-route document journey: employer annex, contract, insurance, ZUS, representation, filing, and procedural correspondence.
 2. Remaining eight case routes and their document guides.
