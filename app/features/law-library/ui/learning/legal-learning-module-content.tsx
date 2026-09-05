@@ -64,12 +64,13 @@ function ModuleNavigationControls({
   return (
     <nav
       data-not-typeset
-      className="not-typeset flex items-center justify-between gap-4 border-t pt-6"
+      className="not-typeset grid grid-cols-2 items-start gap-4 border-t pt-6"
       aria-label="Навігація між модулями"
     >
       {navigation.previousControl ?? (
         <Button
           type="button"
+          className="h-auto min-h-11 min-w-0 text-left whitespace-normal"
           variant="ghost"
           disabled={!navigation.onPrevious}
           onClick={navigation.onPrevious}
@@ -81,6 +82,7 @@ function ModuleNavigationControls({
       {navigation.nextControl ?? (
         <Button
           type="button"
+          className="h-auto min-h-11 min-w-0 text-left whitespace-normal"
           variant="ghost"
           disabled={!navigation.onNext}
           onClick={navigation.onNext}

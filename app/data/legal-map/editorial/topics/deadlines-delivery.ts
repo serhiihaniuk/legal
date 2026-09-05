@@ -94,10 +94,55 @@ export const deadlinesDeliveryTopic: KnowledgeUnit<DeadlinesDeliveryBody> =
         kpaLaw.text`Якщо пропущено без вини — перевір ${kpaLaw.articleRange("58", "60", { start: "art. 58", end: "60" })}.`,
       ],
       documents: [
-        "конверт і awizo",
-        "UPO/UPP",
-        "підтвердження e-Doręczenia",
-        "доказ перешкоди при przywróceniu terminu",
+        {
+          kind: "authored-legal-text",
+          plainText: "конверт і awizo",
+          parts: [
+            {
+              text: "конверт і awizo",
+              target: {
+                kind: "evidence-document",
+                documentId: "delivery-proof",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "UPO/UPP",
+          parts: [
+            {
+              text: "UPO/UPP",
+              target: { kind: "evidence-document", documentId: "upo" },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "підтвердження e-Doręczenia",
+          parts: [
+            {
+              text: "підтвердження e-Doręczenia",
+              target: {
+                kind: "evidence-document",
+                documentId: "delivery-proof",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "доказ перешкоди при przywróceniu terminu",
+          parts: [
+            {
+              text: "доказ перешкоди при przywróceniu terminu",
+              target: {
+                kind: "evidence-document",
+                documentId: "deadline-obstacle",
+              },
+            },
+          ],
+        },
       ],
     },
   })

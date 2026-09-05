@@ -1,5 +1,4 @@
-import { Clock3 } from "lucide-react"
-
+import { CasePreparationActions } from "./case-preparation-actions"
 import { LegalText } from "~/components/references"
 import {
   Table,
@@ -9,19 +8,17 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table"
-import type {
-  CaseGuideDeadline,
-  CaseGuideDocument,
-} from "~/data/case-guides/types"
+import type { CaseGuideDocument } from "~/data/case-guides/types"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 
 import { DocumentStatus } from "./case-guide-shared"
 
 export function DocumentRegister({
-  documents,
+  documents: entries,
 }: {
   documents: CaseGuideDocument[]
 }) {
+  const documents = entries.filter((document) => document.kind !== "action")
   if (documents.length === 0) {
     return (
       <p className="mt-5 border-y py-4 text-sm text-muted-foreground">
@@ -33,6 +30,7 @@ export function DocumentRegister({
 
   return (
     <div data-not-typeset className="mt-6">
+      <CasePreparationActions documents={entries} />
       <div className="hidden border-y xl:block">
         <Table>
           <TableHeader>
@@ -105,62 +103,6 @@ export function DocumentRegister({
           </article>
         ))}
       </div>
-    </div>
-  )
-}
-
-export function DeadlineRegister({
-  deadlines,
-}: {
-  deadlines: CaseGuideDeadline[]
-}) {
-  if (deadlines.length === 0) {
-    return (
-      <p className="mt-5 border-y py-4 text-sm text-muted-foreground">
-        Точний строк з’явиться лише після вибору конкретної підстави і події,
-        яка запускає відлік.
-      </p>
-    )
-  }
-
-  return (
-    <div data-not-typeset className="mt-6 divide-y border-y">
-      {deadlines.map((deadline) => (
-        <article
-          key={`${legalTextPlainText(deadline.period)}-${legalTextPlainText(deadline.trigger)}`}
-          className="grid gap-4 py-5 lg:grid-cols-[9rem_minmax(0,1fr)_minmax(0,1fr)]"
-        >
-          <div className="py-2 sm:px-3">
-            <Clock3
-              aria-hidden="true"
-              className="size-5 text-muted-foreground"
-            />
-            <h3 className="mt-2 text-base font-semibold">
-              <LegalText text={deadline.period} />
-            </h3>
-          </div>
-          <div className="grid gap-3 text-sm leading-6">
-            <p>
-              <strong>Початок відліку:</strong>{" "}
-              <span className="text-muted-foreground">
-                <LegalText text={deadline.trigger} />
-              </span>
-            </p>
-            <p>
-              <LegalText text={deadline.action} />
-            </p>
-          </div>
-          <div className="grid gap-2 text-sm leading-6">
-            <p className="border-l-2 border-primary pl-3">
-              <strong>Якщо пропустити:</strong>{" "}
-              <LegalText text={deadline.consequence} />
-            </p>
-            <p className="text-xs text-muted-foreground">
-              <LegalText text={deadline.law} context="reference-section" />
-            </p>
-          </div>
-        </article>
-      ))}
     </div>
   )
 }

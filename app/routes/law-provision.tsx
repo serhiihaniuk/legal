@@ -1,3 +1,5 @@
+import { ProvisionRuleBreakdown } from "~/features/law-library/ui/provision/provision-rule-breakdown"
+import { ProvisionDocumentGuide } from "~/features/law-library/ui/provision/provision-document-guide"
 import { ArrowLeft, ArrowRight, FileText } from "lucide-react"
 import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router"
 
@@ -140,7 +142,11 @@ export default function LawProvisionRoute() {
           currentProvisionId={provision.id}
         />
       }
-      toc={toc}
+      toc={
+        reviewedExplanation
+          ? toc
+          : toc.filter((item) => item.href !== "#legal-provision-claims")
+      }
     >
       <LawDocumentMobileNavigation
         document={document}
@@ -234,15 +240,8 @@ export default function LawProvisionRoute() {
             </Badge>
           ) : null}
         </div>
-        <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-          {provisionReference ? (
-            <LegalLink context="provision-page" reference={provisionReference}>
-              {provision.locator}
-            </LegalLink>
-          ) : (
-            provision.locator
-          )}{" "}
-          · {document.shortName}
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          {provision.locator}
         </h1>
         <p className="text-sm leading-6 text-muted-foreground">
           {document.title} · {edition.manifest.citation}
@@ -308,6 +307,9 @@ export default function LawProvisionRoute() {
       </header>
 
       <DocumentArticle>
+        {provisionReference ? (
+          <ProvisionDocumentGuide reference={provisionReference} />
+        ) : null}
         <section id="legal-provision-explanation">
           <h2>Як читати цю норму</h2>
           {reviewedExplanation ? (
@@ -318,49 +320,7 @@ export default function LawProvisionRoute() {
                   text={reviewedExplanation.summary}
                 />
               </p>
-              {reviewedExplanation.rules.length > 0 ? (
-                <>
-                  <h3>Структура норми</h3>
-                  <p>
-                    Читайте кожен paragraf, ustęp або punkt як окрему частину
-                    механізму. Виняток чи наслідок може бути не в першому
-                    реченні.
-                  </p>
-                  <div
-                    data-not-typeset
-                    className="not-typeset mt-6 divide-y border-y"
-                  >
-                    {reviewedExplanation.rules.map((rule, index) => (
-                      <div
-                        key={`${rule.locator}-${legalTextPlainText(rule.explanation)}`}
-                        className="grid gap-2 py-4 sm:grid-cols-[3rem_7rem_minmax(0,1fr)] sm:gap-5"
-                      >
-                        <span className="font-mono text-xs text-muted-foreground">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <strong className="text-sm">
-                          {provisionReference ? (
-                            <LegalLink
-                              context="provision-page"
-                              reference={provisionReference}
-                            >
-                              {rule.locator}
-                            </LegalLink>
-                          ) : (
-                            rule.locator
-                          )}
-                        </strong>
-                        <p className="text-sm leading-6 text-muted-foreground">
-                          <LegalText
-                            context="provision-page"
-                            text={rule.explanation}
-                          />
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              ) : null}
+              <ProvisionRuleBreakdown rules={reviewedExplanation.rules} />
               <h3>Правовий наслідок</h3>
               <p>
                 <LegalText
@@ -379,7 +339,7 @@ export default function LawProvisionRoute() {
           ) : (
             <blockquote>
               Для цієї норми ще немає пояснення, перевіреного для редакції{" "}
-              {edition.editionId}. Нижче доступний витягнутий польський текст і
+              {edition.manifest.citation}. Нижче доступний польський текст і
               точна сторінка офіційного PDF. Неперевірена чернетка не
               показується як навчальний матеріал.
             </blockquote>
@@ -457,7 +417,16 @@ export default function LawProvisionRoute() {
                 ),
                 descriptionProps: { lang: "pl" },
               },
-              { id: "kind", term: "Тип", description: provision.kind },
+              {
+                id: "kind",
+                term: "Тип",
+                description:
+                  provision.kind === "annex"
+                    ? "Додаток"
+                    : provision.kind === "paragraph"
+                      ? "Параграф"
+                      : "Стаття",
+              },
               {
                 id: "pages",
                 term: "Сторінки PDF",

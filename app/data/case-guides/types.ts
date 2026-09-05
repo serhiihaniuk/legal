@@ -1,4 +1,6 @@
+import type { EvidenceDocumentId } from "~/data/document-library/contracts"
 import type { LegalTextValue } from "~/data/legal-library/legal-text"
+import type { CaseDocumentReviewId } from "./document-reviews"
 import type {
   CaseDeadline,
   CaseDocument,
@@ -13,12 +15,16 @@ export type CaseGuideDocument = Omit<
   owner: LegalTextValue
   proves: LegalTextValue
   law: LegalTextValue
+  kind?: "action"
+  guidance?: EvidenceDocumentId
+  reviewId?: CaseDocumentReviewId
 }
 
 export type CaseGuideDeadline = Omit<
   CaseDeadline,
   "period" | "trigger" | "action" | "consequence" | "law"
 > & {
+  stageId: CaseGuideStageId
   period: LegalTextValue
   trigger: LegalTextValue
   action: LegalTextValue
@@ -58,8 +64,11 @@ export type CaseGuideMaterial = {
   href: string
 }
 
+export type CaseGuideStageId =
+  "status" | "qualification" | "filing" | "evidence" | "procedure" | "decision"
+
 export type CaseGuideStage = {
-  id: string
+  id: CaseGuideStageId
   title: string
   question: LegalTextValue
   explanation: LegalTextValue[]
@@ -79,9 +88,8 @@ export type CaseGuideStageRisk = {
 
 export type CaseGuideCondition = {
   condition: LegalTextValue
-  modelFact: LegalTextValue
+  factToEstablish: LegalTextValue
   evidence: LegalTextValue
-  status: "confirmed" | "verify" | "conditional"
   risk: LegalTextValue
   law: LegalTextValue
 }
@@ -107,7 +115,11 @@ export type CaseGuideRoute = {
   profile: {
     name: string
     description: LegalTextValue
-    facts: Array<{ label: string; value: LegalTextValue }>
+    facts: Array<{
+      label: string
+      value: LegalTextValue
+      explanation?: LegalTextValue
+    }>
     assumption: LegalTextValue
   }
   choice: {

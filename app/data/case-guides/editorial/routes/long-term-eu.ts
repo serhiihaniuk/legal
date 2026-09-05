@@ -115,9 +115,10 @@ const route: CaseGuideRoute = {
   conditions: [
     {
       condition: "Належно пораховані 5 років",
-      modelFact: "понад 5 календарних років",
+      factToEstablish:
+        "Які періоди зараховуються до потрібного строку та в якому обсязі?",
       evidence: "таблиця підстав, рішень і meldunków",
-      status: "verify",
+
       risk: "частина періодів не входить або рахується частково",
       law: {
         kind: "authored-legal-text",
@@ -147,9 +148,10 @@ const route: CaseGuideRoute = {
     },
     {
       condition: "Безперервність і виїзди",
-      modelFact: "кілька поїздок",
+      factToEstablish:
+        "Які виїзди були в розрахунковому періоді та як вони впливають на безперервність?",
       evidence: "паспорт, квитки, реєстри",
-      status: "verify",
+
       risk: "перевищення допустимих перерв",
       law: {
         kind: "authored-legal-text",
@@ -168,9 +170,10 @@ const route: CaseGuideRoute = {
     },
     {
       condition: "Стабільний дохід",
-      modelFact: "робота з кількох джерел",
+      factToEstablish:
+        "Які джерела й історія доходу підтверджуються за потрібний період?",
       evidence: "PIT, umowy, bank, ZUS",
-      status: "verify",
+
       risk: "дохід не виконує тест у потрібні роки",
       law: {
         kind: "authored-legal-text",
@@ -189,9 +192,10 @@ const route: CaseGuideRoute = {
     },
     {
       condition: "Страхування й мова",
-      modelFact: "покриття та документ польської",
+      factToEstablish:
+        "Чим підтверджено медичне покриття та виконання мовної умови або виняток?",
       evidence: "ZUS/polis + допустимий документ",
-      status: "verify",
+
       risk: "неприйнятна форма або виняток не діє",
       law: {
         kind: "authored-legal-text",
@@ -239,7 +243,32 @@ const route: CaseGuideRoute = {
         "Картка особи й хронологія, на яких можна безпечно будувати правову кваліфікацію.",
       documents: [
         {
-          item: "Дійсний паспорт, фото й особиста дія",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний паспорт, фото й особиста дія",
+            parts: [
+              {
+                text: "Дійсний паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: ", ",
+              },
+              {
+                text: "фото",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "digital-photo",
+                },
+              },
+              {
+                text: " й особиста дія",
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Заявник · подання та wezwanie органу",
@@ -247,7 +276,19 @@ const route: CaseGuideRoute = {
           law: "Спеціальна процедура pobytowa",
         },
         {
-          item: "Таблиця всіх підстав pobytu",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця всіх підстав pobytu",
+            parts: [
+              {
+                text: "Таблиця всіх підстав pobytu",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -279,7 +320,29 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Паспорт і історія виїздів",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Паспорт і історія виїздів",
+            parts: [
+              {
+                text: "Паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: " і ",
+              },
+              {
+                text: "історія виїздів",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -300,7 +363,20 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Хронологія перебування, виїздів і попередніх справ",
+          reviewId: "chronology",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Хронологія перебування, виїздів і попередніх справ",
+            parts: [
+              {
+                text: "Хронологія перебування, виїздів і попередніх справ",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -365,7 +441,19 @@ const route: CaseGuideRoute = {
         "Письмовий висновок: маршрут доступний, умовно доступний або його треба змінити.",
       documents: [
         {
-          item: "Матриця умов обраного маршруту",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Матриця умов обраного маршруту",
+            parts: [
+              {
+                text: "Матриця умов обраного маршруту",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "evidence-matrix",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Працівник легалізації · до заповнення заяви",
@@ -374,7 +462,19 @@ const route: CaseGuideRoute = {
           law: "Ustawa o cudzoziemcach або інший lex specialis маршруту",
         },
         {
-          item: "Письмовий висновок про вибір підстави",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Письмовий висновок про вибір підстави",
+            parts: [
+              {
+                text: "Письмовий висновок про вибір підстави",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-assessment",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -384,7 +484,19 @@ const route: CaseGuideRoute = {
           law: "Правова кваліфікація cel pobytu",
         },
         {
-          item: "Таблиця всіх підстав pobytu",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця всіх підстав pobytu",
+            parts: [
+              {
+                text: "Таблиця всіх підстав pobytu",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -416,7 +528,29 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Паспорт і історія виїздів",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Паспорт і історія виїздів",
+            parts: [
+              {
+                text: "Паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: " і ",
+              },
+              {
+                text: "історія виїздів",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -437,7 +571,29 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "PIT, umowy, bank, ZUS",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "PIT, umowy, bank, ZUS",
+            parts: [
+              {
+                text: "PIT, umowy, bank",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "income-evidence",
+                },
+              },
+              {
+                text: ", ",
+              },
+              {
+                text: "ZUS",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "zus-confirmation",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -458,7 +614,19 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Документ польської мови",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Документ польської мови",
+            parts: [
+              {
+                text: "Документ польської мови",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "polish-language-proof",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -492,11 +660,11 @@ const route: CaseGuideRoute = {
       ],
       risks: [
         {
-          title: "Вибір за назвою документа",
+          title: "П’ять календарних років не дорівнюють п’яти зарахованим",
           explanation:
-            "Назва карти або форми не визначає матеріальну підставу. Вирішальними є реальна головна мета і факти, передбачені конкретною нормою.",
+            "Частина перебування припадає на навчання, але весь час пораховано однаково. Періоди на студентській візі або дозволі для навчання зараховуються наполовину. Розрахунок за датою першого в’їзду може дати хибний результат.",
           check:
-            "Запишіть одним реченням очікуваний статус і норму, яка його створює, а потім перевірте кожну її умову.",
+            "Розбийте історію за правовими підставами та застосуйте спосіб зарахування до кожного періоду. Окремо перевірте виїзди й безперервність.",
         },
         {
           title: "Ігнорування lex specialis",
@@ -546,7 +714,25 @@ const route: CaseGuideRoute = {
         "Відтворюваний контрольний пакет подання з доказом дати й змісту.",
       documents: [
         {
-          item: "Wniosek MOS + UPO",
+          reviewId: "application",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Wniosek MOS + UPO",
+            parts: [
+              {
+                text: "Wniosek MOS",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "resident-application",
+                },
+              },
+              { text: " + " },
+              {
+                text: "UPO",
+                target: { kind: "evidence-document", documentId: "upo" },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Заявник / представник · у момент подання",
@@ -554,7 +740,32 @@ const route: CaseGuideRoute = {
           law: "Ustawa o cudzoziemcach + процедура MOS",
         },
         {
-          item: "Дійсний паспорт, фото й особиста дія",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний паспорт, фото й особиста дія",
+            parts: [
+              {
+                text: "Дійсний паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: ", ",
+              },
+              {
+                text: "фото",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "digital-photo",
+                },
+              },
+              {
+                text: " й особиста дія",
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Заявник · подання та wezwanie органу",
@@ -562,7 +773,19 @@ const route: CaseGuideRoute = {
           law: "Спеціальна процедура pobytowa",
         },
         {
-          item: "Таблиця всіх підстав pobytu",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця всіх підстав pobytu",
+            parts: [
+              {
+                text: "Таблиця всіх підстав pobytu",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -594,7 +817,29 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Паспорт і історія виїздів",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Паспорт і історія виїздів",
+            parts: [
+              {
+                text: "Паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: " і ",
+              },
+              {
+                text: "історія виїздів",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -615,7 +860,29 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "PIT, umowy, bank, ZUS",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "PIT, umowy, bank, ZUS",
+            parts: [
+              {
+                text: "PIT, umowy, bank",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "income-evidence",
+                },
+              },
+              {
+                text: ", ",
+              },
+              {
+                text: "ZUS",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "zus-confirmation",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -636,7 +903,19 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Документ польської мови",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Документ польської мови",
+            parts: [
+              {
+                text: "Документ польської мови",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "polish-language-proof",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -668,13 +947,93 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Індекс вкладень і контрольна копія подання",
+          reviewId: "submission",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Індекс вкладень і контрольна копія подання",
+            parts: [
+              {
+                text: "Індекс вкладень і контрольна копія подання",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Особа, яка комплектує пакет · безпосередньо перед wysłaniem",
           proves:
             "Точний склад поданого пакета, назви файлів, версії документів і можливість відтворити заяву",
           law: "Контроль treści podania та майбутніх akt sprawy",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Правова підстава користування житлом",
+            parts: [
+              {
+                text: "Правова підстава користування житлом",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "housing-evidence",
+                },
+              },
+            ],
+          },
+          owner: "Заявник · до заяви",
+          proves:
+            "Tytuł prawny do lokalu, де перебуває або планує перебувати заявник",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 219a ust. 2",
+            parts: [
+              {
+                text: "Art. 219a ust. 2",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "ustawa-o-cudzoziemcach",
+                  provisionId: "ustawa-o-cudzoziemcach-art-219a",
+                },
+              },
+            ],
+          },
+          level: "required",
+          status: "обов’язково",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Підтвердження медичного страхування",
+            parts: [
+              {
+                text: "Підтвердження медичного страхування",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "health-insurance",
+                },
+              },
+            ],
+          },
+          owner: "Заявник · до заяви",
+          proves: "Виконання умови страхування",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 211",
+            parts: [
+              {
+                text: "Art. 211",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "ustawa-o-cudzoziemcach",
+                  provisionId: "ustawa-o-cudzoziemcach-art-211",
+                },
+              },
+            ],
+          },
+          level: "required",
+          status: "обов’язково",
         },
       ],
       risks: [
@@ -749,7 +1108,7 @@ const route: CaseGuideRoute = {
       title: "Будуємо доказову матрицю, а не список файлів",
       question: "Який факт і який доказ виконують кожну умову?",
       explanation: [
-        "Кожна матеріальна умова отримує окремий рядок: норма, факт, який треба встановити, доказ, період і можливе протиріччя. Документ, який не доводить жодної умови, не робить пакет сильнішим; натомість один слабкий ключовий факт може визначити всю справу.",
+        "Основний документ для аналізу цієї справи є хронологією з джерелами дат. Розділіть підстави перебування, виїзди та періоди доходу. Підсумок має дозволяти іншій людині відтворити розрахунок, а не лише побачити готове число років.",
         "Доказова матриця охоплює pobyt, виїзди, дохід за потрібні періоди, страхування, мову й tytuł do lokalu, якщо вимагається.",
       ],
       actor: "Працівник легалізації, заявник і автори зовнішніх документів",
@@ -762,7 +1121,25 @@ const route: CaseGuideRoute = {
         "Матриця умова → факт → доказ із видимими прогалинами й суперечностями.",
       documents: [
         {
-          item: "Wniosek MOS + UPO",
+          reviewId: "application",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Wniosek MOS + UPO",
+            parts: [
+              {
+                text: "Wniosek MOS",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "resident-application",
+                },
+              },
+              { text: " + " },
+              {
+                text: "UPO",
+                target: { kind: "evidence-document", documentId: "upo" },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Заявник / представник · у момент подання",
@@ -770,7 +1147,32 @@ const route: CaseGuideRoute = {
           law: "Ustawa o cudzoziemcach + процедура MOS",
         },
         {
-          item: "Дійсний паспорт, фото й особиста дія",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний паспорт, фото й особиста дія",
+            parts: [
+              {
+                text: "Дійсний паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: ", ",
+              },
+              {
+                text: "фото",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "digital-photo",
+                },
+              },
+              {
+                text: " й особиста дія",
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Заявник · подання та wezwanie органу",
@@ -778,7 +1180,19 @@ const route: CaseGuideRoute = {
           law: "Спеціальна процедура pobytowa",
         },
         {
-          item: "Таблиця всіх підстав pobytu",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця всіх підстав pobytu",
+            parts: [
+              {
+                text: "Таблиця всіх підстав pobytu",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -810,7 +1224,29 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Паспорт і історія виїздів",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Паспорт і історія виїздів",
+            parts: [
+              {
+                text: "Паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: " і ",
+              },
+              {
+                text: "історія виїздів",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -831,7 +1267,29 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "PIT, umowy, bank, ZUS",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "PIT, umowy, bank, ZUS",
+            parts: [
+              {
+                text: "PIT, umowy, bank",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "income-evidence",
+                },
+              },
+              {
+                text: ", ",
+              },
+              {
+                text: "ZUS",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "zus-confirmation",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -852,7 +1310,19 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Документ польської мови",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Документ польської мови",
+            parts: [
+              {
+                text: "Документ польської мови",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "polish-language-proof",
+                },
+              },
+            ],
+          },
           status: "основний доказ",
           level: "required",
           owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -884,7 +1354,19 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Доказова матриця: умова → факт → доказ",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказова матриця: умова → факт → доказ",
+            parts: [
+              {
+                text: "Доказова матриця: умова → факт → доказ",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "evidence-matrix",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Працівник легалізації · до подання та після кожного wezwania",
@@ -892,14 +1374,253 @@ const route: CaseGuideRoute = {
             "Який документ доводить кожну умову, за який період і де залишається прогалина або суперечність",
           law: "KPA — ustalenie stanu faktycznego та ocena dowodów",
         },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Правова підстава користування житлом",
+            parts: [
+              {
+                text: "Правова підстава користування житлом",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "housing-evidence",
+                },
+              },
+            ],
+          },
+          owner: "Заявник · до заяви",
+          proves:
+            "Tytuł prawny do lokalu, де перебуває або планує перебувати заявник",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 219a ust. 2",
+            parts: [
+              {
+                text: "Art. 219a ust. 2",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "ustawa-o-cudzoziemcach",
+                  provisionId: "ustawa-o-cudzoziemcach-art-219a",
+                },
+              },
+            ],
+          },
+          level: "required",
+          status: "обов’язково",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Підтвердження медичного страхування",
+            parts: [
+              {
+                text: "Підтвердження медичного страхування",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "health-insurance",
+                },
+              },
+            ],
+          },
+          owner: "Заявник · до заяви",
+          proves: "Виконання умови страхування",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 211",
+            parts: [
+              {
+                text: "Art. 211",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "ustawa-o-cudzoziemcach",
+                  provisionId: "ustawa-o-cudzoziemcach-art-211",
+                },
+              },
+            ],
+          },
+          level: "required",
+          status: "обов’язково",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Wezwanie органу",
+            parts: [
+              {
+                text: "Wezwanie органу",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "authority-summons",
+                },
+              },
+            ],
+          },
+          owner: "Орган · якщо надсилає вимогу",
+          proves: "Зміст окремих вимог до сторони",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 54 KPA",
+            parts: [
+              {
+                text: "Art. 54 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-54",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "якщо отримано",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Підтвердження doręczenia",
+            parts: [
+              {
+                text: "Підтвердження doręczenia",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "delivery-proof",
+                },
+              },
+            ],
+          },
+          owner: "Одержувач · після вручення",
+          proves: "Канал, адресата і дату вручення",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 39 KPA",
+            parts: [
+              {
+                text: "Art. 39 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-39",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "якщо отримано",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця вимог із wezwania",
+            parts: [
+              {
+                text: "Таблиця вимог із wezwania",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "requirements-table",
+                },
+              },
+            ],
+          },
+          owner: "Працівник справи · перед відповіддю",
+          proves: "Робочий зв’язок вимоги, доказу й відповіді",
+          law: "Робоча організація відповіді",
+          level: "control",
+          status: "робочий запис",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Відповідь на wezwanie",
+            parts: [
+              {
+                text: "Відповідь на wezwanie",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "response-letter",
+                },
+              },
+            ],
+          },
+          owner: "Заявник або представник · у строк вимоги",
+          proves: "Позицію сторони та подані докази",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 63 KPA",
+            parts: [
+              {
+                text: "Art. 63 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-63",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "за wezwania",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Перелік додатків до відповіді",
+            parts: [
+              {
+                text: "Перелік додатків до відповіді",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+            ],
+          },
+          owner: "Автор відповіді · перед поданням",
+          proves: "Зв’язок пунктів відповіді з матеріалами пакета",
+          law: "Робочий опис складу пакета",
+          level: "control",
+          status: "робочий запис",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказ подання відповіді",
+            parts: [
+              {
+                text: "Доказ подання відповіді",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "dispatch-proof",
+                },
+              },
+            ],
+          },
+          owner: "Оператор, сервіс або канцелярія · під час подання",
+          proves: "Дату, канал та ідентифікатор подання",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 57 KPA",
+            parts: [
+              {
+                text: "Art. 57 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-57",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "після відповіді",
+        },
       ],
       risks: [
         {
-          title: "Формальна повнота без матеріального доказу",
+          title: "Паспорт не пояснює підставу кожного періоду",
           explanation:
-            "У пакеті можуть бути всі названі файли, але жоден із них не встановлює ключовий факт у потрібний період.",
+            "Штампи показують переміщення, але не всю історію дозволів і заяв.",
           check:
-            "Для кожної умови вкажіть один головний доказ, дату або період, джерело і те, чого він не підтверджує.",
+            "Зіставте паспорт із рішеннями та підтвердженнями подань. Для кожного проміжку вкажіть джерело дати й спосіб зарахування.",
         },
         {
           title: "Застарілий або суперечливий документ",
@@ -952,7 +1673,25 @@ const route: CaseGuideRoute = {
         "Журнал справи з активними строками, відповідями й доказами doręczenia.",
       documents: [
         {
-          item: "Wniosek MOS + UPO",
+          reviewId: "application",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Wniosek MOS + UPO",
+            parts: [
+              {
+                text: "Wniosek MOS",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "resident-application",
+                },
+              },
+              { text: " + " },
+              {
+                text: "UPO",
+                target: { kind: "evidence-document", documentId: "upo" },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Заявник / представник · у момент подання",
@@ -960,7 +1699,32 @@ const route: CaseGuideRoute = {
           law: "Ustawa o cudzoziemcach + процедура MOS",
         },
         {
-          item: "Дійсний паспорт, фото й особиста дія",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний паспорт, фото й особиста дія",
+            parts: [
+              {
+                text: "Дійсний паспорт",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "passport",
+                },
+              },
+              {
+                text: ", ",
+              },
+              {
+                text: "фото",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "digital-photo",
+                },
+              },
+              {
+                text: " й особиста дія",
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Заявник · подання та wezwanie органу",
@@ -968,7 +1732,30 @@ const route: CaseGuideRoute = {
           law: "Спеціальна процедура pobytowa",
         },
         {
-          item: "Журнал doręczeń, строків і процесуальних дій",
+          reviewId: "delivery",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Журнал doręczeń, строків і процесуальних дій",
+            parts: [
+              {
+                text: "Журнал ",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+              {
+                text: "doręczeń",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "delivery-proof",
+                },
+              },
+              {
+                text: ", строків і процесуальних дій",
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -978,7 +1765,21 @@ const route: CaseGuideRoute = {
           law: "KPA + спеціальні строки процедури pobytowej",
         },
         {
-          item: "Wezwania та відповіді з індексом додатків",
+          reviewId: "summons",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Wezwania та відповіді з індексом додатків",
+            parts: [
+              {
+                text: "Wezwania",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "authority-summons",
+                },
+              },
+              { text: " та відповіді з індексом додатків" },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Адресат wezwania · окремий комплект для кожної вимоги",
@@ -986,7 +1787,19 @@ const route: CaseGuideRoute = {
           law: "KPA та спеціальна процедура dowodowa",
         },
         {
-          item: "Копія або нотатка з akt sprawy",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Копія або нотатка з akt sprawy",
+            parts: [
+              {
+                text: "Копія або нотатка з akt sprawy",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -994,6 +1807,92 @@ const route: CaseGuideRoute = {
           proves:
             "Які докази має organ, які факти вважає спірними та чи є матеріал, на який треба відреагувати",
           law: "KPA — czynny udział strony та dostęp do akt",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця вимог із wezwania",
+            parts: [
+              {
+                text: "Таблиця вимог із wezwania",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "requirements-table",
+                },
+              },
+            ],
+          },
+          owner: "Працівник справи · перед відповіддю",
+          proves: "Робочий зв’язок вимоги, доказу й відповіді",
+          law: "Робоча організація відповіді",
+          level: "control",
+          status: "робочий запис",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Відповідь на wezwanie",
+            parts: [
+              {
+                text: "Відповідь на wezwanie",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "response-letter",
+                },
+              },
+            ],
+          },
+          owner: "Заявник або представник · у строк вимоги",
+          proves: "Позицію сторони та подані докази",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 63 KPA",
+            parts: [
+              {
+                text: "Art. 63 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-63",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "за wezwania",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказ подання відповіді",
+            parts: [
+              {
+                text: "Доказ подання відповіді",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "dispatch-proof",
+                },
+              },
+            ],
+          },
+          owner: "Оператор, сервіс або канцелярія · під час подання",
+          proves: "Дату, канал та ідентифікатор подання",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 57 KPA",
+            parts: [
+              {
+                text: "Art. 57 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-57",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "після відповіді",
         },
       ],
       risks: [
@@ -1056,7 +1955,21 @@ const route: CaseGuideRoute = {
         "Картка наслідків рішення: статус, praca, зміни, оскарження й наступний маршрут.",
       documents: [
         {
-          item: "Decyzja або інший акт, що завершує маршрут",
+          reviewId: "decision",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Decyzja або інший акт, що завершує маршрут",
+            parts: [
+              {
+                text: "Decyzja",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "administrative-decision",
+                },
+              },
+              { text: " або інший акт, що завершує маршрут" },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Заявник / представник · одразу після doręczenia",
@@ -1065,7 +1978,28 @@ const route: CaseGuideRoute = {
           law: "KPA + матеріальна норма обраного маршруту",
         },
         {
-          item: "Доказ doręczenia рішення та отримання карти",
+          reviewId: "delivery",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказ doręczenia рішення та отримання карти",
+            parts: [
+              {
+                text: "Доказ doręczenia рішення",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "delivery-proof",
+                },
+              },
+              { text: " та отримання " },
+              {
+                text: "карти",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Заявник / представник · у день кожної окремої події",
@@ -1074,7 +2008,19 @@ const route: CaseGuideRoute = {
           law: "Pouczenie, KPA та спеціальні правила видачі документа",
         },
         {
-          item: "План обов’язків після рішення",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "План обов’язків після рішення",
+            parts: [
+              {
+                text: "План обов’язків після рішення",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-assessment",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -1130,7 +2076,25 @@ const route: CaseGuideRoute = {
   ],
   documents: [
     {
-      item: "Wniosek MOS + UPO",
+      reviewId: "application",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Wniosek MOS + UPO",
+        parts: [
+          {
+            text: "Wniosek MOS",
+            target: {
+              kind: "evidence-document",
+              documentId: "resident-application",
+            },
+          },
+          { text: " + " },
+          {
+            text: "UPO",
+            target: { kind: "evidence-document", documentId: "upo" },
+          },
+        ],
+      },
       status: "обов’язково",
       level: "required",
       owner: "Заявник / представник · у момент подання",
@@ -1138,7 +2102,32 @@ const route: CaseGuideRoute = {
       law: "Ustawa o cudzoziemcach + процедура MOS",
     },
     {
-      item: "Дійсний паспорт, фото й особиста дія",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Дійсний паспорт, фото й особиста дія",
+        parts: [
+          {
+            text: "Дійсний паспорт",
+            target: {
+              kind: "evidence-document",
+              documentId: "passport",
+            },
+          },
+          {
+            text: ", ",
+          },
+          {
+            text: "фото",
+            target: {
+              kind: "evidence-document",
+              documentId: "digital-photo",
+            },
+          },
+          {
+            text: " й особиста дія",
+          },
+        ],
+      },
       status: "обов’язково",
       level: "required",
       owner: "Заявник · подання та wezwanie органу",
@@ -1146,7 +2135,19 @@ const route: CaseGuideRoute = {
       law: "Спеціальна процедура pobytowa",
     },
     {
-      item: "Таблиця всіх підстав pobytu",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Таблиця всіх підстав pobytu",
+        parts: [
+          {
+            text: "Таблиця всіх підстав pobytu",
+            target: {
+              kind: "evidence-document",
+              documentId: "stay-history",
+            },
+          },
+        ],
+      },
       status: "основний доказ",
       level: "required",
       owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -1178,7 +2179,29 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "Паспорт і історія виїздів",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Паспорт і історія виїздів",
+        parts: [
+          {
+            text: "Паспорт",
+            target: {
+              kind: "evidence-document",
+              documentId: "passport",
+            },
+          },
+          {
+            text: " і ",
+          },
+          {
+            text: "історія виїздів",
+            target: {
+              kind: "evidence-document",
+              documentId: "stay-history",
+            },
+          },
+        ],
+      },
       status: "основний доказ",
       level: "required",
       owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -1199,7 +2222,29 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "PIT, umowy, bank, ZUS",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "PIT, umowy, bank, ZUS",
+        parts: [
+          {
+            text: "PIT, umowy, bank",
+            target: {
+              kind: "evidence-document",
+              documentId: "income-evidence",
+            },
+          },
+          {
+            text: ", ",
+          },
+          {
+            text: "ZUS",
+            target: {
+              kind: "evidence-document",
+              documentId: "zus-confirmation",
+            },
+          },
+        ],
+      },
       status: "основний доказ",
       level: "required",
       owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -1220,7 +2265,19 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "Документ польської мови",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Документ польської мови",
+        parts: [
+          {
+            text: "Документ польської мови",
+            target: {
+              kind: "evidence-document",
+              documentId: "polish-language-proof",
+            },
+          },
+        ],
+      },
       status: "основний доказ",
       level: "required",
       owner: "Заявник або автор документа · актуально на дату перевірки",
@@ -1251,9 +2308,243 @@ const route: CaseGuideRoute = {
         ],
       },
     },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Правова підстава користування житлом",
+        parts: [
+          {
+            text: "Правова підстава користування житлом",
+            target: {
+              kind: "evidence-document",
+              documentId: "housing-evidence",
+            },
+          },
+        ],
+      },
+      owner: "Заявник · до заяви",
+      proves:
+        "Tytuł prawny do lokalu, де перебуває або планує перебувати заявник",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 219a ust. 2",
+        parts: [
+          {
+            text: "Art. 219a ust. 2",
+            target: {
+              kind: "legal-provision",
+              documentId: "ustawa-o-cudzoziemcach",
+              provisionId: "ustawa-o-cudzoziemcach-art-219a",
+            },
+          },
+        ],
+      },
+      level: "required",
+      status: "обов’язково",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Підтвердження медичного страхування",
+        parts: [
+          {
+            text: "Підтвердження медичного страхування",
+            target: {
+              kind: "evidence-document",
+              documentId: "health-insurance",
+            },
+          },
+        ],
+      },
+      owner: "Заявник · до заяви",
+      proves: "Виконання умови страхування",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 211",
+        parts: [
+          {
+            text: "Art. 211",
+            target: {
+              kind: "legal-provision",
+              documentId: "ustawa-o-cudzoziemcach",
+              provisionId: "ustawa-o-cudzoziemcach-art-211",
+            },
+          },
+        ],
+      },
+      level: "required",
+      status: "обов’язково",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Wezwanie органу",
+        parts: [
+          {
+            text: "Wezwanie органу",
+            target: {
+              kind: "evidence-document",
+              documentId: "authority-summons",
+            },
+          },
+        ],
+      },
+      owner: "Орган · якщо надсилає вимогу",
+      proves: "Зміст окремих вимог до сторони",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 54 KPA",
+        parts: [
+          {
+            text: "Art. 54 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-54",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "якщо отримано",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Підтвердження doręczenia",
+        parts: [
+          {
+            text: "Підтвердження doręczenia",
+            target: { kind: "evidence-document", documentId: "delivery-proof" },
+          },
+        ],
+      },
+      owner: "Одержувач · після вручення",
+      proves: "Канал, адресата і дату вручення",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 39 KPA",
+        parts: [
+          {
+            text: "Art. 39 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-39",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "якщо отримано",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Таблиця вимог із wezwania",
+        parts: [
+          {
+            text: "Таблиця вимог із wezwania",
+            target: {
+              kind: "evidence-document",
+              documentId: "requirements-table",
+            },
+          },
+        ],
+      },
+      owner: "Працівник справи · перед відповіддю",
+      proves: "Робочий зв’язок вимоги, доказу й відповіді",
+      law: "Робоча організація відповіді",
+      level: "control",
+      status: "робочий запис",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Відповідь на wezwanie",
+        parts: [
+          {
+            text: "Відповідь на wezwanie",
+            target: {
+              kind: "evidence-document",
+              documentId: "response-letter",
+            },
+          },
+        ],
+      },
+      owner: "Заявник або представник · у строк вимоги",
+      proves: "Позицію сторони та подані докази",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 63 KPA",
+        parts: [
+          {
+            text: "Art. 63 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-63",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "за wezwania",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Перелік додатків до відповіді",
+        parts: [
+          {
+            text: "Перелік додатків до відповіді",
+            target: {
+              kind: "evidence-document",
+              documentId: "case-file-index",
+            },
+          },
+        ],
+      },
+      owner: "Автор відповіді · перед поданням",
+      proves: "Зв’язок пунктів відповіді з матеріалами пакета",
+      law: "Робочий опис складу пакета",
+      level: "control",
+      status: "робочий запис",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Доказ подання відповіді",
+        parts: [
+          {
+            text: "Доказ подання відповіді",
+            target: { kind: "evidence-document", documentId: "dispatch-proof" },
+          },
+        ],
+      },
+      owner: "Оператор, сервіс або канцелярія · під час подання",
+      proves: "Дату, канал та ідентифікатор подання",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 57 KPA",
+        parts: [
+          {
+            text: "Art. 57 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-57",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "після відповіді",
+    },
   ],
   deadlines: [
     {
+      stageId: "procedure",
       period: "строк із wezwania",
       trigger: "належне doręczenie вимоги органу",
       action: "Виконати кожен пункт і зберегти доказ подання відповіді.",
@@ -1278,6 +2569,7 @@ const route: CaseGuideRoute = {
       },
     },
     {
+      stageId: "decision",
       period: "строк із pouczenia",
       trigger: "doręczenie decyzji або postanowienia",
       action: "Звірити засіб захисту, адресата й початок відліку з KPA.",
@@ -1286,6 +2578,7 @@ const route: CaseGuideRoute = {
       law: "KPA — odwołanie / zażalenie залежно від виду акта",
     },
     {
+      stageId: "decision",
       period: "після зміни факту",
       trigger: "зміна мети, сімейного зв’язку, навчання, роботи або діяльності",
       action:
@@ -1297,13 +2590,13 @@ const route: CaseGuideRoute = {
   ],
   negativeBranches: [
     {
-      title: "Маршрут не відповідає фактам",
+      title: "П’ять календарних років не дорівнюють п’яти зарахованим",
       trigger:
-        "Не виконується вирішальний критерій: П’ять років пораховані за спеціальними правилами, а дохід, страхування й польська мова виконані в потрібному обсязі.",
+        "Частина перебування припадає на навчання, але весь час пораховано однаково.",
       consequence:
-        "Документи не виправлять неправильну правову кваліфікацію; справа ризикує odmową wszczęcia або odmową по суті.",
+        "Періоди на студентській візі або дозволі для навчання зараховуються наполовину. Розрахунок за датою першого в’їзду може дати хибний результат.",
       response:
-        "Повернутися до карти цілей, вибрати точну підставу й перебудувати матрицю умов до подання.",
+        "Розбийте історію за правовими підставами та застосуйте спосіб зарахування до кожного періоду. Окремо перевірте виїзди й безперервність.",
       material: {
         label: "Перевірити мету перебування",
         description: "Порівняти сусідні маршрути до нового подання.",

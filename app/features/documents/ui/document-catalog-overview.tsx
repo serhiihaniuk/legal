@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react"
-
+import { Link } from "react-router"
 import {
   DocumentArticle,
   DocumentHeader,
@@ -7,76 +7,90 @@ import {
 import { Badge } from "~/components/ui/badge"
 import {
   documentCategoryLabels,
+  documentCategoryOrder,
+  getEvidenceDocumentPath,
   type EvidenceDocumentCategory,
 } from "~/data/document-library"
+import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import { documentCatalog, documentsForCategory } from "~/data/documents/catalog"
-import { pluralizeUkrainian } from "../model/document-catalog-model"
+import {
+  documentKindLabel,
+  pluralizeUkrainian,
+} from "../model/document-catalog-model"
 
 export function DocumentCatalogOverview({
   category,
-  onDocumentSelect,
 }: {
   category: EvidenceDocumentCategory | "all"
-  onDocumentSelect: (documentId: string) => void
 }) {
-  const documents = documentsForCategory(category)
-
+  const groups = documentCategoryOrder.filter(
+    (id) => category === "all" || category === id
+  )
   return (
     <DocumentArticle>
       <DocumentHeader
         id="documents-overview"
         badges={
-          <>
-            <Badge variant="secondary">Документи</Badge>
-            <Badge variant="outline">
-              {pluralizeUkrainian(documentCatalog.length, [
-                "сторінка",
-                "сторінки",
-                "сторінок",
-              ])}
-            </Badge>
-          </>
+          <Badge variant="outline">
+            {pluralizeUkrainian(documentCatalog.length, [
+              "матеріал",
+              "матеріали",
+              "матеріалів",
+            ])}
+          </Badge>
         }
       >
-        <h1>Каталог документів і доказів</h1>
+        <h1>Документи і докази</h1>
         <p className="lead">
-          Тут зібрані редакційно підготовлені сторінки документів: хто готує
-          документ, що він доводить, чого не доводить, як його перевіряти та з
-          якою нормою зіставляти.
+          Що підтверджує документ, як його прочитати і з чим зіставити. Від
+          паспорта й заяви до історії поїздок, доходів і матеріалів навчання.
+        </p>
+        <p>
+          Для простих документів є коротка довідка. Складні питання розібрано на
+          прикладах. Робочі записи допомагають поєднати кілька джерел і побачити
+          прогалини.
         </p>
       </DocumentHeader>
-
-      <section id="documents-list">
-        <h2>Документи в цій категорії</h2>
-        <p>
-          Категорію змінюйте в лівій навігації. На мобільному екрані
-          використовуйте компактні списки над матеріалом.
-        </p>
-        <ol data-not-typeset className="not-typeset mt-6 divide-y border-y">
-          {documents.map((document, index) => (
-            <li key={document.id}>
-              <button
-                type="button"
-                onClick={() => onDocumentSelect(document.id)}
-                className="group grid w-full grid-cols-[2rem_minmax(0,1fr)_auto] gap-3 py-5 text-left"
-              >
-                <span className="text-xs text-muted-foreground">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="min-w-0">
-                  <strong className="block text-sm font-medium wrap-break-word">
-                    {document.title}
-                  </strong>
-                  <span className="mt-1 block text-xs text-muted-foreground">
-                    {documentCategoryLabels[document.category]}
-                  </span>
-                </span>
-                <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
-              </button>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <div id="documents-list">
+        {groups.map((id) => (
+          <section key={id} aria-labelledby={`documents-category-${id}`}>
+            <h2 id={`documents-category-${id}`}>
+              {documentCategoryLabels[id]}
+            </h2>
+            <ul data-not-typeset className="not-typeset mt-5 divide-y border-y">
+              {documentsForCategory(id).map((document) => (
+                <li key={document.id}>
+                  <Link
+                    to={getEvidenceDocumentPath(document.id)!}
+                    className="group grid grid-cols-[minmax(0,1fr)_auto] gap-4 py-5 text-foreground no-underline hover:bg-muted/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+                  >
+                    <span className="min-w-0">
+                      <span className="block text-base font-medium group-hover:underline">
+                        {document.title}
+                      </span>
+                      <span className="mt-1 block text-xs text-muted-foreground">
+                        {documentKindLabel(document.guide)}
+                        {document.guide.explanation?.some(
+                          (section) => section.example
+                        )
+                          ? " · З розібраним прикладом"
+                          : ""}
+                      </span>
+                      <span className="mt-2 block text-sm leading-6 text-muted-foreground">
+                        {legalTextPlainText(document.guide.description)}
+                      </span>
+                    </span>
+                    <ArrowRight
+                      aria-hidden="true"
+                      className="mt-1 size-4 text-muted-foreground"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
     </DocumentArticle>
   )
 }

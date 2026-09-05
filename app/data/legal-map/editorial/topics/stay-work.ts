@@ -52,7 +52,7 @@ export const stayWorkTopic: KnowledgeUnit<StayWorkBody> = defineKnowledgeUnit({
         "Праця має бути реальною метою pobytu понад три місяці, а ситуація не повинна належати до іншої спеціальної процедури або виключення.",
       ],
       conditions: [
-        foreignersLaw.text`Organ перевіряє, зокрема, umowę/${residenceLaw.annex("1", "Załącznik nr 1")}, винагороду, страхування за ${foreignersLaw.article("114", "art. 114")} ust. 1 pkt 1, реальність podmiotu та відповідність фактичної організації праці заявленій моделі.`,
+        foreignersLaw.text`Organ перевіряє, зокрема, umowę/${residenceLaw.annex("2", "Załącznik nr 1")}, винагороду, страхування за ${foreignersLaw.article("114", "art. 114")} ust. 1 pkt 1, реальність podmiotu та відповідність фактичної організації праці заявленій моделі.`,
       ],
       exceptions: [
         foreignersLaw.text`Для osoby zwolnionej z obowiązku posiadania zezwolenia na pracę treść decyzji за ${foreignersLaw.article("118", "art. 118")} може не містити всіх умов прив’язки; вирішальним є конкретне rozstrzygnięcie.`,
@@ -84,14 +84,134 @@ export const stayWorkTopic: KnowledgeUnit<StayWorkBody> = defineKnowledgeUnit({
       "Після decyzji окремо випиши її межі, obowiązki і тригери зміни.",
     ],
     documents: [
-      "wniosek MOS",
-      "Załącznik nr 1",
-      "umowa o pracę",
-      "паспорт і фото",
-      "страхування/ZUS за потреби",
-      "оплати",
-      "докази реальної діяльності або представництва — якщо це спірна умова",
-      "UPO та akta sprawy",
+      {
+        kind: "authored-legal-text",
+        plainText: "wniosek MOS",
+        parts: [
+          {
+            text: "wniosek MOS",
+            target: {
+              kind: "evidence-document",
+              documentId: "mos-application",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "Załącznik nr 1",
+        parts: [
+          {
+            text: "Załącznik nr 1",
+            target: {
+              kind: "evidence-document",
+              documentId: "employment-annex-1",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "umowa o pracę",
+        parts: [
+          {
+            text: "umowa o pracę",
+            target: {
+              kind: "evidence-document",
+              documentId: "employment-contract",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "паспорт / фото",
+        parts: [
+          {
+            text: "паспорт",
+            target: { kind: "evidence-document", documentId: "passport" },
+          },
+          { text: " / " },
+          {
+            text: "фото",
+            target: { kind: "evidence-document", documentId: "digital-photo" },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "страхування / ZUS за потреби",
+        parts: [
+          {
+            text: "страхування",
+            target: {
+              kind: "evidence-document",
+              documentId: "health-insurance",
+            },
+          },
+          { text: " / " },
+          {
+            text: "ZUS за потреби",
+            target: {
+              kind: "evidence-document",
+              documentId: "zus-confirmation",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "opłata skarbowa / opłata za kartę",
+        parts: [
+          {
+            text: "opłata skarbowa",
+            target: {
+              kind: "evidence-document",
+              documentId: "stamp-duty-proof",
+            },
+          },
+          { text: " / " },
+          {
+            text: "opłata za kartę",
+            target: {
+              kind: "evidence-document",
+              documentId: "residence-card-fee-proof",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText:
+          "докази реальної діяльності або представництва — якщо це спірна умова",
+        parts: [
+          {
+            text: "докази реальної діяльності або представництва — якщо це спірна умова",
+            target: {
+              kind: "evidence-document",
+              documentId: "work-organisation-evidence",
+            },
+          },
+        ],
+      },
+      {
+        kind: "authored-legal-text",
+        plainText: "UPO / індекс akt sprawy",
+        parts: [
+          {
+            text: "UPO",
+            target: { kind: "evidence-document", documentId: "upo" },
+          },
+          { text: " / " },
+          {
+            text: "індекс akt sprawy",
+            target: {
+              kind: "evidence-document",
+              documentId: "case-file-index",
+            },
+          },
+        ],
+      },
     ],
   },
 })

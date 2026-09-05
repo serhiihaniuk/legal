@@ -14,16 +14,3 @@ export function DocumentStatus({ document }: { document: CaseGuideDocument }) {
     </Badge>
   )
 }
-
-export function documentChecklistHint(document: CaseGuideDocument) {
-  if (document.level === "conditional") {
-    return "Спочатку зафіксуйте, яка обставина робить документ потрібним. Якщо вона є — перевірте актуальність, форму та зв’язок із конкретною умовою."
-  }
-  if (document.level === "control") {
-    return "Збережіть фінальну версію, дату створення або подання та місце в актах. Це контрольний слід, а не заміна основного доказу."
-  }
-  if (document.level === "external") {
-    return "Перевірте цей обов’язок окремо від pobytowego пакета: відповідальну особу, строк, канал виконання та підтвердження."
-  }
-  return "Перевірте повноту, чинність на потрібну дату, усі сторінки, підписи та узгодженість даних з рештою пакета."
-}

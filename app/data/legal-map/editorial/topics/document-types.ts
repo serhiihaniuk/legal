@@ -76,14 +76,144 @@ export const documentTypesTopic: KnowledgeUnit<DocumentTypesBody> =
         ],
       } satisfies LegalNodeGuide,
       documents: [
-        "паспорт і документи pobytowe",
-        "umowy та aneksy",
-        "KRS, CEIDG, CRBR",
-        "ZUS і podatki",
-        "bank statements і wynagrodzenie",
-        "акти цивільного стану",
-        "докази навчання/страхування/житла",
-        "електронні poświadczenia",
+        {
+          kind: "authored-legal-text",
+          plainText: "паспорт / документи pobytowe",
+          parts: [
+            {
+              text: "паспорт",
+              target: { kind: "evidence-document", documentId: "passport" },
+            },
+            { text: " / " },
+            {
+              text: "документи pobytowe",
+              target: {
+                kind: "evidence-document",
+                documentId: "residence-card",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "umowy та aneksy",
+          parts: [
+            {
+              text: "umowy та aneksy",
+              target: {
+                kind: "evidence-document",
+                documentId: "employment-contract",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "KRS / CEIDG / CRBR",
+          parts: [
+            {
+              text: "KRS / CEIDG",
+              target: {
+                kind: "evidence-document",
+                documentId: "business-register-information",
+              },
+            },
+            { text: " / " },
+            {
+              text: "CRBR",
+              target: {
+                kind: "evidence-document",
+                documentId: "crbr-information",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "ZUS / податкові матеріали",
+          parts: [
+            {
+              text: "ZUS",
+              target: {
+                kind: "evidence-document",
+                documentId: "zus-confirmation",
+              },
+            },
+            { text: " / " },
+            {
+              text: "податкові матеріали",
+              target: {
+                kind: "evidence-document",
+                documentId: "income-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "bank statements і wynagrodzenie",
+          parts: [
+            {
+              text: "bank statements і wynagrodzenie",
+              target: {
+                kind: "evidence-document",
+                documentId: "income-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "акти цивільного стану",
+          parts: [
+            {
+              text: "акти цивільного стану",
+              target: {
+                kind: "evidence-document",
+                documentId: "civil-status-record",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "навчання / страхування / житло",
+          parts: [
+            {
+              text: "навчання",
+              target: {
+                kind: "evidence-document",
+                documentId: "study-confirmation",
+              },
+            },
+            { text: " / " },
+            {
+              text: "страхування",
+              target: {
+                kind: "evidence-document",
+                documentId: "health-insurance",
+              },
+            },
+            { text: " / " },
+            {
+              text: "житло",
+              target: {
+                kind: "evidence-document",
+                documentId: "housing-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "електронні poświadczenia",
+          parts: [
+            {
+              text: "електронні poświadczenia",
+              target: { kind: "evidence-document", documentId: "upo" },
+            },
+          ],
+        },
       ],
     },
   })

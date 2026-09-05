@@ -1,46 +1,33 @@
-import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Link } from "react-router"
-
+import { DocumentFormLink } from "./document-form-link"
 import {
   DocumentArticle,
   DocumentHeader,
 } from "~/components/patterns/document-content"
-import {
-  LegalReferenceArrow,
-  LegalText,
-  OfficialSourceEntry,
-} from "~/components/references"
+import { LegalText } from "~/components/references"
 import { Badge } from "~/components/ui/badge"
-import { Button } from "~/components/ui/button"
-import {
-  documentCategoryLabels,
-  getEvidenceDocument,
-  getEvidenceDocumentNavigation,
-  getEvidenceDocumentPath,
-} from "~/data/document-library"
+import { documentCategoryLabels } from "~/data/document-library"
 import type { DocumentCatalogEntry } from "~/data/documents/catalog"
-import { legalTextPlainText } from "~/data/legal-library/legal-text"
+import { documentKindLabel } from "../model/document-catalog-model"
+import { DocumentAdjacentNavigation } from "./document-adjacent-navigation"
+import { DocumentChecks } from "./document-checks"
+import { DocumentContexts } from "./document-contexts"
+import { DocumentExplanation } from "./document-explanation"
+import { DocumentSources } from "./document-sources"
+import { DocumentTextList } from "./document-text-list"
 
 export function DocumentDetailContent({
   document,
-  onDocumentSelect: _onDocumentSelect,
 }: {
   document: DocumentCatalogEntry
-  onDocumentSelect: (documentId: string) => void
 }) {
-  const relatedDocuments = document.relatedDocuments.flatMap((documentId) => {
-    const related = getEvidenceDocument(documentId)
-    return related ? [{ entry: related }] : []
-  })
-  const { previous, next } = getEvidenceDocumentNavigation(document.id)
-
+  const guide = document.guide
   return (
     <DocumentArticle>
       <DocumentHeader
         id="document-overview"
         badges={
           <>
-            <Badge variant="secondary">Документ</Badge>
+            <Badge variant="secondary">{documentKindLabel(guide)}</Badge>
             <Badge variant="outline">
               {documentCategoryLabels[document.category]}
             </Badge>
@@ -49,255 +36,44 @@ export function DocumentDetailContent({
       >
         <h1>{document.title}</h1>
         <p className="lead">
-          <LegalText
-            text={
-              document.guide?.description ??
-              "Окрема довідка про роль документа в матеріалах атласу та його зв’язок із правовими умовами конкретної справи."
-            }
-          />
+          <LegalText text={guide.description} />
         </p>
-        {document.guide?.documentType ? (
-          <p>
-            <strong>Тип документа:</strong>{" "}
-            <LegalText text={document.guide.documentType} />
-          </p>
-        ) : null}
-        {document.guide ? (
-          <p>
-            <strong>Хто готує або видає:</strong>{" "}
-            <LegalText text={document.guide.preparedBy} />
+        <p className="text-sm text-muted-foreground">
+          <LegalText text={guide.preparedBy} />
+        </p>
+        {guide.documentType ? (
+          <p className="text-sm">
+            <LegalText text={guide.documentType} />
           </p>
         ) : null}
       </DocumentHeader>
-
-      {document.guide?.howToObtain?.length ? (
+      <DocumentFormLink documentId={document.id} />
+      <section id="document-purpose">
+        <h2>Що цей матеріал пояснює у справі</h2>
+        <DocumentTextList items={guide.purpose} />
+        <div className="border-l pl-4">
+          <p className="text-sm font-medium">Межа доказу</p>
+          <DocumentTextList items={guide.doesNotProve} />
+        </div>
+      </section>
+      {guide.explanation?.map((section) => (
+        <DocumentExplanation key={section.id} section={section} />
+      ))}
+      {guide.howToObtain?.length || guide.formAndValidity?.length ? (
         <section id="document-obtain">
-          <h2>Як отримати або підготувати</h2>
-          <ol>
-            {document.guide.howToObtain.map((item) => (
-              <li key={legalTextPlainText(item)}>
-                <LegalText text={item} />
-              </li>
-            ))}
-          </ol>
-          {document.guide.formAndValidity?.length ? (
-            <>
-              <h3>Форма, актуальність і строк</h3>
-              <ul>
-                {document.guide.formAndValidity.map((item) => (
-                  <li key={legalTextPlainText(item)}>
-                    <LegalText text={item} />
-                  </li>
-                ))}
-              </ul>
-            </>
+          <h2>Підготовка і форма</h2>
+          {guide.howToObtain?.length ? (
+            <DocumentTextList items={guide.howToObtain} ordered />
+          ) : null}
+          {guide.formAndValidity?.length ? (
+            <DocumentTextList items={guide.formAndValidity} />
           ) : null}
         </section>
       ) : null}
-
-      <section id="document-purpose">
-        <h2>Роль документа і межі доказу</h2>
-        {document.guide ? (
-          <>
-            <h3>Що підтверджує або для чого потрібний</h3>
-            <ul>
-              {document.guide.purpose.map((item) => (
-                <li key={legalTextPlainText(item)}>
-                  <LegalText text={item} />
-                </li>
-              ))}
-            </ul>
-            <h3>Чого сам по собі не доводить</h3>
-            <ul>
-              {document.guide.doesNotProve.map((item) => (
-                <li key={legalTextPlainText(item)}>
-                  <LegalText text={item} />
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : document.caseContexts.length ? (
-          <ul>
-            {document.caseContexts.map((context) => (
-              <li key={`${context.routeId}-${context.proves}`}>
-                <strong>{context.routeTitle}:</strong>{" "}
-                <LegalText text={context.proves} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>
-            Значення залежить від правової умови. Нижче перелічені теми, у яких
-            документ використовується, та норми, з якими його треба зіставити.
-          </p>
-        )}
-      </section>
-
-      <section id="document-elements">
-        <h2>Як перевіряти цей документ</h2>
-        <ol>
-          {(document.guide?.keyChecks ?? []).map((item) => (
-            <li key={legalTextPlainText(item)}>
-              <LegalText text={item} />
-            </li>
-          ))}
-        </ol>
-        {relatedDocuments.length ? (
-          <>
-            <h3>З чим звірити</h3>
-            <p>
-              Ці документи перевіряють разом: дані, дати, сторони й заявлені
-              умови не повинні суперечити одне одному.
-            </p>
-            <ul data-not-typeset className="not-typeset mt-5 divide-y border-y">
-              {relatedDocuments.map(({ entry }) => (
-                <li key={entry.id} className="py-3">
-                  <span className="group flex items-start justify-between gap-4 text-left text-sm font-medium">
-                    {entry.title}
-                    <LegalReferenceArrow
-                      reference={{
-                        kind: "evidence-document",
-                        documentId: entry.id,
-                      }}
-                      label={`Відкрити документ: ${entry.title}`}
-                    />
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : null}
-      </section>
-
-      {document.contexts.length || document.caseContexts.length ? (
-        <section id="document-contexts">
-          <h2>Де цей документ використовується</h2>
-          <p>
-            У цих темах пояснено, коли потрібен документ і яке значення він має
-            для конкретної справи.
-          </p>
-          <ul data-not-typeset className="not-typeset mt-5 divide-y border-y">
-            {document.contexts.map((context) => (
-              <li
-                key={`map-${context.node.id}`}
-                className="flex items-start justify-between gap-4 py-3 text-sm"
-              >
-                <span>
-                  <span className="block font-medium">
-                    {context.node.title}
-                  </span>
-                  <span className="mt-1 block text-xs text-muted-foreground">
-                    Карта права
-                  </span>
-                </span>
-                <LegalReferenceArrow
-                  reference={{ kind: "map-node", nodeId: context.node.id }}
-                  label={`Відкрити тему карти: ${context.node.title}`}
-                />
-              </li>
-            ))}
-            {document.caseContexts.map((context) => (
-              <li
-                key={`case-${context.routeId}-${legalTextPlainText(context.item)}`}
-                className="flex items-start justify-between gap-4 py-3 text-sm"
-              >
-                <span>
-                  <span className="block font-medium">
-                    {context.routeTitle}
-                  </span>
-                  <span className="mt-1 block text-xs text-muted-foreground">
-                    Тип справи
-                  </span>
-                </span>
-                <LegalReferenceArrow
-                  reference={{ kind: "case-route", routeId: context.routeId }}
-                  label={`Відкрити тип справи: ${context.routeTitle}`}
-                />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
-      <section id="document-regulation">
-        <h2>Правове регулювання</h2>
-        <p>
-          Назва документа сама по собі не створює вимогу. Спочатку визначте
-          умову або процесуальну дію, а потім перевірте точну правову основу.
-        </p>
-        {document.guide ? (
-          <ul>
-            {document.guide.legalBasis.map((item) => (
-              <li key={legalTextPlainText(item)}>
-                <LegalText text={item} context="reference-section" />
-              </li>
-            ))}
-          </ul>
-        ) : null}
-        {document.guide ? (
-          <p className="text-sm text-muted-foreground">
-            Редакційна перевірка правової основи: {document.guide.verifiedAt}.
-          </p>
-        ) : null}
-      </section>
-
-      <section id="document-sources">
-        <h2>Офіційні джерела</h2>
-        {document.sources.length ? (
-          <ul data-not-typeset className="not-typeset mt-5 grid gap-3">
-            {document.sources.map((source) => (
-              <li key={source.url} className="min-w-0 border-l pl-4">
-                <OfficialSourceEntry source={source} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>
-            Для цієї позиції ще не додано окремого офіційного джерела.
-            Використовуйте пов’язані теми карти, але не трактуйте приклад справи
-            як правову підставу.
-          </p>
-        )}
-      </section>
-
-      <nav
-        data-not-typeset
-        aria-label="Попередній і наступний документ"
-        className="not-typeset mt-10 grid grid-cols-2 gap-3 border-t pt-6"
-      >
-        {previous ? (
-          <Button
-            variant="ghost"
-            nativeButton={false}
-            className="min-w-0 justify-start"
-            render={<Link to={getEvidenceDocumentPath(previous.id)!} />}
-          >
-            <ArrowLeft data-icon="inline-start" aria-hidden="true" />
-            <span className="min-w-0 truncate">{previous.title}</span>
-          </Button>
-        ) : (
-          <Button variant="ghost" className="min-w-0 justify-start" disabled>
-            <ArrowLeft data-icon="inline-start" aria-hidden="true" />
-            Початок
-          </Button>
-        )}
-        {next ? (
-          <Button
-            variant="ghost"
-            nativeButton={false}
-            className="min-w-0 justify-end"
-            render={<Link to={getEvidenceDocumentPath(next.id)!} />}
-          >
-            <span className="min-w-0 truncate">{next.title}</span>
-            <ArrowRight data-icon="inline-end" aria-hidden="true" />
-          </Button>
-        ) : (
-          <Button variant="ghost" className="min-w-0 justify-end" disabled>
-            Кінець
-            <ArrowRight data-icon="inline-end" aria-hidden="true" />
-          </Button>
-        )}
-      </nav>
+      <DocumentChecks document={document} />
+      <DocumentContexts document={document} />
+      <DocumentSources document={document} />
+      <DocumentAdjacentNavigation documentId={document.id} />
     </DocumentArticle>
   )
 }

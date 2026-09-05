@@ -1,3 +1,4 @@
+import { provisionCountLabel } from "~/data/legal-library/catalog-guide"
 import { useMemo, type ComponentProps } from "react"
 import { useNavigate } from "react-router"
 
@@ -37,15 +38,6 @@ type SectionLink = {
   href: string
 }
 
-function articleCountLabel(count: number) {
-  const lastTwoDigits = count % 100
-  const lastDigit = count % 10
-  if (lastTwoDigits >= 11 && lastTwoDigits <= 14) return `${count} статей`
-  if (lastDigit === 1) return `${count} стаття`
-  if (lastDigit >= 2 && lastDigit <= 4) return `${count} статті`
-  return `${count} статей`
-}
-
 function ProvisionNavigation({
   document,
   groups,
@@ -60,7 +52,12 @@ function ProvisionNavigation({
   return (
     <DocsSidebarSection
       title={document.id === "kpa" ? "Розділи кодексу" : "Структура акта"}
-      meta={articleCountLabel(document.provisionIds.length)}
+      meta={provisionCountLabel(
+        document.provisionIds.length,
+        document.id === "rozporzadzenie-wniosek-pobyt-czasowy"
+          ? "mixed"
+          : "article"
+      )}
     >
       <DocsSidebarList>
         {groups.map((group) => {
@@ -92,7 +89,10 @@ function ProvisionNavigation({
                     variant="outline"
                     className="h-5 px-1.5 text-micro font-normal text-muted-foreground"
                   >
-                    {articleCountLabel(group.provisions.length)}
+                    {provisionCountLabel(
+                      group.provisions.length,
+                      group.kind ?? "article"
+                    )}
                   </Badge>
                 </span>
               </span>
@@ -136,12 +136,15 @@ export function LawDocumentNavigation({
   const sectionLinks: SectionLink[] = [
     {
       id: "learning",
-      label: "Навчання",
+      label: "Пояснення",
       href: getDocumentHomePath(document.id),
     },
     {
       id: "provisions",
-      label: "Статті",
+      label:
+        document.id === "rozporzadzenie-wniosek-pobyt-czasowy"
+          ? "Параграфи й форми"
+          : "Статті",
       href: firstProvision
         ? getDocumentProvisionPath(
             document.id,
@@ -151,10 +154,13 @@ export function LawDocumentNavigation({
     },
     {
       id: "practice",
-      label: "Практикум",
+      label: "Розбір справи",
       href: getDocumentPracticePath(document.id, genericPracticeModules[0].id),
     },
   ]
+  const visibleSections = sectionLinks.filter(
+    (item) => item.id !== "practice" || document.id === "kpa"
+  )
 
   function goToSection(section: LawDocumentSection) {
     const link = sectionLinks.find((item) => item.id === section)
@@ -162,12 +168,15 @@ export function LawDocumentNavigation({
   }
 
   const sectionOptions: readonly SectionNavigationOption<LawDocumentSection>[] =
-    sectionLinks.map((item) => ({ value: item.id, label: item.label }))
+    visibleSections.map((item) => ({ value: item.id, label: item.label }))
   const outlineOptions: readonly SectionNavigationOption[] = outline.map(
     (group) => ({
       value: group.firstProvisionId,
       label: group.title,
-      selectLabel: `${group.title} · ${group.start}–${group.end}`,
+      selectLabel:
+        group.start === group.end
+          ? group.title
+          : `${group.title} · ${group.start}–${group.end}`,
     })
   )
   const learningOptions: readonly SectionNavigationOption[] =
@@ -190,7 +199,7 @@ export function LawDocumentNavigation({
       <DocsSidebarBackLink to="/law">До бібліотеки права</DocsSidebarBackLink>
       <DocsSidebarSection title="Розділи" className="mt-0">
         <DocsSidebarList>
-          {sectionLinks.map((item) => (
+          {visibleSections.map((item) => (
             <DocsSidebarItem
               key={item.id}
               href={item.href}
@@ -232,7 +241,7 @@ export function LawDocumentNavigation({
       ) : null}
 
       {activeSection === "practice" ? (
-        <DocsSidebarSection title={`Практикум ${document.shortName}`}>
+        <DocsSidebarSection title={`Розбір справи ${document.shortName}`}>
           <DocsSidebarList>
             {genericPracticeModules.map((practice) => (
               <DocsSidebarItem
@@ -289,7 +298,7 @@ export function LawDocumentNavigation({
 
       {activeSection === "practice" ? (
         <MobileSectionSelect
-          label="Практикум документа"
+          label="Розбір справи"
           value={activePracticeId ?? genericPracticeModules[0].id}
           options={practiceOptions}
           onValueChange={(practiceId) =>

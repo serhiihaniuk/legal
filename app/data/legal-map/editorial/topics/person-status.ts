@@ -77,10 +77,55 @@ export const personStatusTopic: KnowledgeUnit<PersonStatusBody> =
         "Який документ це підтверджує?",
       ],
       documents: [
-        "паспорт або документ подорожі",
-        "карта/документ перебування",
-        "документ члена сім’ї UE",
-        "підтвердження спеціального статусу",
+        {
+          kind: "authored-legal-text",
+          plainText: "паспорт або документ подорожі",
+          parts: [
+            {
+              text: "паспорт або документ подорожі",
+              target: { kind: "evidence-document", documentId: "passport" },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "карта/документ перебування",
+          parts: [
+            {
+              text: "карта/документ перебування",
+              target: {
+                kind: "evidence-document",
+                documentId: "residence-card",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "документ члена сім’ї UE",
+          parts: [
+            {
+              text: "документ члена сім’ї UE",
+              target: {
+                kind: "evidence-document",
+                documentId: "status-documents",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "підтвердження спеціального статусу",
+          parts: [
+            {
+              text: "підтвердження спеціального статусу",
+              target: {
+                kind: "evidence-document",
+                documentId: "status-documents",
+              },
+            },
+          ],
+        },
       ],
     },
   })

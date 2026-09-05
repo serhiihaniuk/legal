@@ -1,5 +1,81 @@
 # Editorial improvement log
 
+## 2026-09-05 case summary grids
+
+- Removed paired applicability cells and boxed metric grids across all nine guides. Applicability now reads as prose. Moved the compact filing and legal-reference details beside the choice of basis, where readers use them.
+- Replaced the choice-of-basis columns with a continuous comparison and made stage document metadata read in one column. Preserved every authored value, typed reference, guide anchor, and document control. Removed the unused case grid adapter.
+- Typecheck, eight case-guide tests, and production build passed. Checked the business guide on desktop and all nine routes at 360 px; each retained four reference details and had no horizontal overflow. This pass changes presentation, not legal rules.
+
+## 2026-09-05 case starting situation
+
+- Replaced the shared profile grid and blue callout with a continuous explanation and quiet fact rows. Preserved the existing case sections and anchors.
+- Expanded the work example to explain purpose of stay, contract conditions, employer representation, and the unresolved right to work. Added explicit document references. Kept other routes' authored facts intact; detailed explanations are optional per fact.
+- Checked [the ELI codified act](https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf) and [Podlaski Urząd Wojewódzki guidance](https://www.gov.pl/web/uw-podlaski/pobyt-czasowy-i-praca) on 05.09.2026 for the introductory distinctions concerning purpose, pay, insurance, and application evidence. The MOS FAQ could not be opened directly; no new rule depends on that page. The atlas-wide legal-state date remains 18.07.2026 and independent attestations were not renewed.
+- Typecheck, 12 focused tests, editorial validation, reference-preview validation, and production build passed. Checked desktop and 360 px rendering, document navigation, and browser errors. No horizontal overflow or browser errors found.
+
+## 2026-09-05 header grid and closing rule
+
+- Aligned the header to the shared documentation shell: logo above the left sidebar, global navigation above the reading area, and matching vertical dividers. Kept a visible logo and menu button on mobile.
+- Added shared decorative crosses at every visible top and bottom intersection. Final crosses are 13 px with a 1 px stroke. Added a matching bottom rule across the documentation grid.
+- Checked desktop alignment, bottom intersections, mobile menu navigation, and overflow at 360, 1024, 1280, and 2200 px. Fixed the mobile menu's link/button semantics. Typecheck and production build passed. No content changes or commit.
+
+
+## 2026-09-05 act-first library catalog
+
+- Put Polish act names and citations first in the catalog and sidebar, with Ukrainian descriptions below. Made the act reader the primary action and explanations secondary. Updated direct act URLs to open the first provision in source order.
+- Revised the introduction and navigation labels around reading legal documents. Legal explanations and source text remain unchanged.
+- Validation: typecheck and build passed. Checked the catalog at desktop and 360 px, sidebar navigation, and all five direct act routes. No overflow or console errors observed. No commit.
+
+
+## 2026-09-05 shared shell and section combobox
+
+- Made the centered 100rem documentation shell the shared default for law, documents, cases, the map, and the topic guide. Removed the law-only variant; each page still chooses its reading width.
+- Replaced the provision index's native section selector with the existing shadcn combobox. Supports title filtering, wrapped options, keyboard selection, and an empty state while keeping the selected section's provision list below it.
+- Validation: typecheck, production build, and the updated navigation test passed. Confirmed identical 1600 px shells across five modules at a 2200 px viewport and no overflow at 360 px. Checked combobox filtering, keyboard selection, and provision navigation inside the Sheet. No legal content changes or commit.
+
+
+## 2026-09-05 law library navigation and reading
+
+- Reworked the five-act catalog around workplace questions. Each entry explains the act's role and limits, with separate routes to Ukrainian explanations and Polish provisions. Added a completed example connecting a wezwanie, the permit condition, and employment evidence.
+- Constrained the law-library layout on wide screens. Replaced the searchable provision dropdown with a section-based Sheet, kept the current provision marked, and distinguished paragraphs and annexes from articles. Shortened provision headings and gave rule explanations the full reading width.
+- Kept the authored KPA case breakdown. Replaced generic practice worksheets with redirects to completed examples, preserved bookmarked URLs, and added topic names to previous/next navigation.
+- Checked the five official ELI act records on 05.09.2026 and the example's [KPA art. 54](https://eli.gov.pl/api/acts/DU/2025/1691/text/O/D20251691.pdf#page=13) and [foreigners act art. 114](https://eli.gov.pl/api/acts/DU/2025/1079/text/O/D20251079.pdf#page=65). This was an interface and orientation pass, not a fresh legal review of every provision. The atlas baseline remains 18.07.2026; independent-review attestations remain unchanged.
+- Validation: full verify passed with 80 application tests, followed by a final production build and reference-preview checks. Browser checks covered catalog, act explanation, provision, annex, KPA case breakdown, and legacy example redirect at desktop and 360 px. Checked index selection, keyboard open/Escape and restored focus. No horizontal overflow or browser errors observed. No commit.
+
+
+## 2026-09-05 document coverage across modules
+
+- Expanded the document catalog from 34 to 57 entries. Added missing official attachments, separate CUKR/permanent/resident applications, response letters, dispatch evidence, working records, and explanations of status and work-organisation materials.
+- Linked every named document in the map explicitly. Map backlinks now use authored IDs instead of title matching. Connected all eleven forms in regulation 553 to document guides in both directions and corrected employer-attachment references to regulation annex 2.
+- Added the appropriate forms and response materials to case stages and registers. Kept conditional use explicit, including family applications from abroad and ICT. Moved CUKR account setup and registry updates into preparation actions.
+- Checked official [regulation 553](https://eli.gov.pl/eli/DU/2026/553/ogl), [permanent form 488](https://eli.gov.pl/eli/DU/2026/488/ogl), [resident form 487](https://eli.gov.pl/eli/DU/2026/487/ogl), [foreigners act](https://eli.gov.pl/eli/DU/2025/1079/ogl), [KPA](https://eli.gov.pl/eli/DU/2025/1691/ogl), and [UdSC CUKR guidance](https://www.gov.pl/web/udsc/cukr-QA) on 05.09.2026. Page-level dates record this scoped check; the atlas baseline remains 18.07.2026.
+- Validation: full verify passed with 76 application tests; final build and reference previews passed for 57 documents. Production browser checks covered all 57 document pages and nine case routes at 360 px without overflow, plus form/guide navigation and the linked map list. No console errors. Fixed review-inventory extraction so cited acts cannot replace document IDs. Independent-review attestations remain unchanged. No commit.
+
+
+## 2026-09-05 documents and deadline timeline
+
+- Expanded the document catalog from 18 to 34 entries. Added travel history, evidence records, study materials, income, housing, insurance, qualifications, language proof, and other missing topics. Simple entries remain short; complex topics have completed examples.
+- Split document-page rendering into focused components. Grouped catalog links by subject, saved category selection in the URL, and replaced legacy case-title matching with backlinks from explicit references in the current guides.
+- Rebuilt the deadline register as an SVG timeline grouped by case stage. Actions and periods appear together, with triggers, consequences, and sources underneath. Stage disclosures reuse the same entry component. Legal deadline text was preserved.
+- Checked the [official foreigners act](https://eli.gov.pl/eli/DU/2025/1079/ogl), [KPA](https://eli.gov.pl/eli/DU/2025/1691/ogl), [UdSC resident guidance](https://www.gov.pl/web/udsc/zezwolenie-na-pobyt-rezydenta-dlugoterminowego-ue2), relevant Podlaski UW guidance for study, family, business and Karta Polaka, and MSZ apostille guidance on 05.09.2026. The new pages record this scoped check; the atlas-wide baseline remains 18.07.2026.
+- Validation: full npm verify passed with 72 application tests and a production build; reference previews resolve all 34 entries. Production browser checks covered all document pages and nine case timelines at 360 px, plus the desktop timeline. No overflow or console errors. Keyboard disclosure and category navigation passed. Changes remain uncommitted; independent-review attestations were not renewed.
+
+## 2026-09-05 case documents and stage layout
+
+- Linked document names in all nine guides to the existing document pages, including separate destinations within grouped rows. Kept provision links in the legal-basis fields. Added shared checks and explanations for missing or inconsistent documents.
+- Replaced assumed condition statuses with questions about facts to establish. Associated deadlines with stages and added permit-specific evidence problems and alternative paths. Corrected the Blue Card contract requirement, the family filing exception, and the work guide's processing-deadline suspension.
+- After visual feedback, replaced the stack of tables, bordered steps, deadline callouts, and filled controls with a consistent stage layout. Explanations and ordered steps remain visible; documents, deadlines, and complications use matching independent disclosures. Related reading is quieter. Preserved document families, tabs, guide order, anchors, and checkboxes.
+- Checked official sources on 05.09.2026: [foreigners act](https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf), [KPA](https://eli.gov.pl/api/acts/DU/2025/1691/text/O/D20251691.pdf), [special act, including the processing suspension](https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf), [MOS filing](https://www.gov.pl/web/udsc/info-mos), [CUKR questions](https://www.gov.pl/web/udsc/cukr-QA), [family filing](https://www.gov.pl/web/uw-podlaski/polaczenie-z-rodzina), [student status changes](https://www.gov.pl/web/udsc/zezwolenie-na-pobyt-czasowy--przekwalifikowanie-wniosku), and [resident-period calculation](https://www.gov.pl/web/udsc/zezwolenie-na-pobyt-rezydenta-dlugoterminowego-ue2). This scoped check leaves the atlas baseline at 18.07.2026 and does not renew independent review attestations.
+- Validation: `npm run verify` passed, including 65 application tests and the production build. All nine production routes rendered six stages at 360 px without horizontal overflow. Checked the revised desktop layout, a document-page transition, and independent keyboard disclosure of deadlines. The fresh production browser recorded no console errors.
+
+## 2026-09-05 case-guide refinement
+
+- Preserved the original document families, subtype tabs, section order, document controls, and detailed guide flow. Added direct jumps to the stages and document/deadline registers.
+- Split the large page and stage components into focused components for the overview, preparation, registers, alternatives, official sources, stage documents, risks, and related materials. Authored case data and stable URLs remain the source of content and navigation.
+- Rewrote the introduction and six stage explanations, actions, and outcomes in `Pobyt + praca`. Added a completed salary-discrepancy example and clearer distinctions between current stay/work rights, formal defects, substantive evidence, the decision, and the card. The other eight guides retain their authored content in this retry.
+- Checked the [official foreigners act](https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf), including the work-permit conditions, and [KPA](https://eli.gov.pl/api/acts/DU/2025/1691/text/O/D20251691.pdf), including formal defects, evidence collection, and appeals, on 2026-09-05. The salary example is a practical illustration, not a statutory rule. This is a focused explanation edit, not a new legal baseline; the displayed date remains 18.07.2026. Added the KPA source to the work guide.
+- Validation: `npm run verify` passed with 60 application tests and a production build. New tests preserve document families, guide anchors and reading order, and independent document/risk disclosures. All nine production routes rendered six stages at 360 px without page overflow or console errors. Document-family switching, jump links, and keyboard opening of stage documents worked. Existing build warnings and the separate independent-review-ledger gap remain.
+
 ## 2026-09-05 shared line styling
 
 - Extended the homepage's fine lines into the shared header and reading layout across the library, map, documents, case guides, and reading guide. Added page edges, continuous column dividers, and plain rules below shared page introductions.

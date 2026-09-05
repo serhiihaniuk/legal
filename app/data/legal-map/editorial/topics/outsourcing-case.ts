@@ -109,13 +109,105 @@ export const outsourcingCaseTopic: KnowledgeUnit<OutsourcingBody> =
         "Відповідай на wezwanie узгодженим пакетом доказів, а не одним пунктом договору.",
       ],
       documents: [
-        "umowa між компаніями й додатки",
-        "SLA/KPI та protokoły odbioru",
-        "рахунки за результат",
-        "регламенти й polecenia координатора виконавця",
-        "графіки",
-        "KRS/CRBR і схема powiązań",
-        "докази фактичної відповідальності за якість",
+        {
+          kind: "authored-legal-text",
+          plainText: "umowa між компаніями й додатки",
+          parts: [
+            {
+              text: "umowa між компаніями й додатки",
+              target: {
+                kind: "evidence-document",
+                documentId: "work-organisation-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "SLA/KPI та protokoły odbioru",
+          parts: [
+            {
+              text: "SLA/KPI та protokoły odbioru",
+              target: {
+                kind: "evidence-document",
+                documentId: "work-organisation-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "рахунки за результат",
+          parts: [
+            {
+              text: "рахунки за результат",
+              target: {
+                kind: "evidence-document",
+                documentId: "work-organisation-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "регламенти й polecenia координатора виконавця",
+          parts: [
+            {
+              text: "регламенти й polecenia координатора виконавця",
+              target: {
+                kind: "evidence-document",
+                documentId: "work-organisation-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "графіки",
+          parts: [
+            {
+              text: "графіки",
+              target: {
+                kind: "evidence-document",
+                documentId: "work-organisation-evidence",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "KRS / CRBR і powiązania",
+          parts: [
+            {
+              text: "KRS",
+              target: {
+                kind: "evidence-document",
+                documentId: "business-register-information",
+              },
+            },
+            { text: " / " },
+            {
+              text: "CRBR і powiązania",
+              target: {
+                kind: "evidence-document",
+                documentId: "crbr-information",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "докази фактичної відповідальності за якість",
+          parts: [
+            {
+              text: "докази фактичної відповідальності за якість",
+              target: {
+                kind: "evidence-document",
+                documentId: "work-organisation-evidence",
+              },
+            },
+          ],
+        },
       ],
       related: ["wezwanie", "evidence", "temporary-work"],
     },

@@ -24,7 +24,7 @@ const guide: DocumentGuide = {
   ],
   keyChecks: [
     "Правильний вид дозволу та дані, тотожні паспорту.",
-    regulationLaw.text`Відповідність договору, ${regulationLaw.annex("1", "Załącznika nr 1")} та інших додатків.`,
+    regulationLaw.text`Відповідність договору, ${regulationLaw.annex("2", "Załącznika nr 1 до заяви")} та інших додатків.`,
     "Збережені PDF, XML і UPO саме надісланої версії.",
   ],
   sources: [

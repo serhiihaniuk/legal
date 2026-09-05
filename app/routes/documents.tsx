@@ -1,5 +1,9 @@
-import { useEffect, useMemo, useState } from "react"
-import { useNavigate, useParams, type LoaderFunctionArgs } from "react-router"
+import {
+  useNavigate,
+  useParams,
+  useSearchParams,
+  type LoaderFunctionArgs,
+} from "react-router"
 
 import {
   DocumentCatalogNavigation,
@@ -13,6 +17,7 @@ import { DocsLayout } from "~/components/layout"
 import {
   getEvidenceDocument,
   getEvidenceDocumentPath,
+  listEvidenceDocumentCategories,
   type EvidenceDocumentCategory,
 } from "~/data/document-library"
 import { documentById } from "~/data/documents/catalog"
@@ -37,6 +42,7 @@ function scrollToTop() {
 
 export default function DocumentsPage() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const { documentId } = useParams<{ documentId?: string }>()
   const canonicalDocument = documentId
     ? getEvidenceDocument(documentId)
@@ -44,25 +50,19 @@ export default function DocumentsPage() {
   const selectedDocument = canonicalDocument
     ? documentById.get(canonicalDocument.id)
     : undefined
-  const [selectedCategory, setSelectedCategory] = useState<
-    EvidenceDocumentCategory | "all"
-  >(selectedDocument?.category ?? "all")
-
-  useEffect(() => {
-    if (selectedDocument) setSelectedCategory(selectedDocument.category)
-  }, [selectedDocument])
-
-  const toc = useMemo(
-    () =>
-      selectedDocument
-        ? documentDetailToc(selectedDocument)
-        : documentCatalogToc,
-    [selectedDocument]
-  )
+  const categoryParam = searchParams.get("category")
+  const selectedCategory: EvidenceDocumentCategory | "all" =
+    selectedDocument?.category ??
+    listEvidenceDocumentCategories().find((id) => id === categoryParam) ??
+    "all"
+  const toc = selectedDocument
+    ? documentDetailToc(selectedDocument)
+    : documentCatalogToc
 
   function selectCategory(category: EvidenceDocumentCategory | "all") {
-    setSelectedCategory(category)
-    navigate("/documents")
+    navigate(
+      category === "all" ? "/documents" : `/documents?category=${category}`
+    )
     scrollToTop()
   }
 
@@ -72,7 +72,6 @@ export default function DocumentsPage() {
       ? getEvidenceDocumentPath(nextDocument.id)
       : undefined
     if (!nextDocument || !nextPath) return
-    setSelectedCategory(nextDocument.category)
     navigate(nextPath)
     scrollToTop()
   }
@@ -84,7 +83,6 @@ export default function DocumentsPage() {
           selectedCategory={selectedCategory}
           selectedDocumentId={selectedDocument?.id}
           onCategorySelect={selectCategory}
-          onDocumentSelect={selectDocument}
         />
       }
       toc={toc}
@@ -98,15 +96,9 @@ export default function DocumentsPage() {
       />
 
       {selectedDocument ? (
-        <DocumentDetailContent
-          document={selectedDocument}
-          onDocumentSelect={selectDocument}
-        />
+        <DocumentDetailContent document={selectedDocument} />
       ) : (
-        <DocumentCatalogOverview
-          category={selectedCategory}
-          onDocumentSelect={selectDocument}
-        />
+        <DocumentCatalogOverview category={selectedCategory} />
       )}
     </DocsLayout>
   )

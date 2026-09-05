@@ -15,6 +15,7 @@ export const documentCategoryLabels: Record<EvidenceDocumentCategory, string> =
     financial: "Оплати й фінанси",
     evidence: "Докази й кореспонденція",
     other: "Інші документи",
+    education: "Навчання, мова і кваліфікації",
   }
 
 export const documentCategoryOrder: readonly EvidenceDocumentCategory[] = [
@@ -23,6 +24,7 @@ export const documentCategoryOrder: readonly EvidenceDocumentCategory[] = [
   "work",
   "company",
   "financial",
+  "education",
   "evidence",
   "other",
 ]

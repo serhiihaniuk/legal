@@ -85,12 +85,75 @@ export const entryCurrentBasisTopic: KnowledgeUnit<EntryCurrentBasisBody> =
         "Чи виїзд під час процедури дозволить повернутися?",
       ],
       documents: [
-        "паспорт",
-        "віза",
-        "штампи/дані перетину",
-        "карта pobytu",
-        "рішення",
-        "довідка про trwającą procedurę",
+        {
+          kind: "authored-legal-text",
+          plainText: "паспорт",
+          parts: [
+            {
+              text: "паспорт",
+              target: { kind: "evidence-document", documentId: "passport" },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "віза",
+          parts: [
+            {
+              text: "віза",
+              target: { kind: "evidence-document", documentId: "visa" },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "штампи/дані перетину",
+          parts: [
+            {
+              text: "штампи/дані перетину",
+              target: { kind: "evidence-document", documentId: "stay-history" },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "карта pobytu",
+          parts: [
+            {
+              text: "карта pobytu",
+              target: {
+                kind: "evidence-document",
+                documentId: "residence-card",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "рішення",
+          parts: [
+            {
+              text: "рішення",
+              target: {
+                kind: "evidence-document",
+                documentId: "administrative-decision",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "довідка про trwającą procedurę",
+          parts: [
+            {
+              text: "довідка про trwającą procedurę",
+              target: {
+                kind: "evidence-document",
+                documentId: "proceeding-certificate",
+              },
+            },
+          ],
+        },
       ],
     },
   })

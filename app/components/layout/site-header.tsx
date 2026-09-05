@@ -1,3 +1,4 @@
+import { ShellIntersections } from "./shell-intersections"
 import { Menu } from "lucide-react"
 import { Link, useLocation } from "react-router"
 
@@ -37,13 +38,23 @@ export function SiteHeader() {
 
   return (
     <header className="atlas-site-header sticky top-0 z-50 w-full bg-background">
-      <div className="container-wrapper px-6">
-        <div className="flex h-(--header-height) items-center">
+      <div className="atlas-shell container-wrapper px-2">
+        <div className="atlas-header-grid relative grid h-(--header-height) grid-cols-[1fr_auto] items-center border-x border-[var(--atlas-line)] lg:grid-cols-[var(--atlas-sidebar-width)_minmax(0,1fr)] xl:grid-cols-[var(--atlas-sidebar-width)_minmax(0,1fr)_var(--atlas-sidebar-width)]">
+          <div className="atlas-header-brand flex h-full items-center px-2.5">
+            <Button
+              variant="ghost"
+              nativeButton={false}
+              render={<Link to="/" />}
+              className="px-2.5"
+            >
+              Legalizacja
+            </Button>
+          </div>
           <nav
-            className="hidden items-center gap-0 lg:flex"
+            className="atlas-header-navigation hidden h-full items-center gap-0 px-6 lg:flex"
             aria-label="Головна навігація"
           >
-            {routes.map((item) => (
+            {routes.slice(1).map((item) => (
               <Button
                 key={item.href}
                 variant="ghost"
@@ -71,7 +82,7 @@ export function SiteHeader() {
                 <Button
                   variant="ghost"
                   size="icon-sm"
-                  className="lg:hidden"
+                  className="mr-4 lg:hidden"
                   aria-label="Відкрити меню"
                 />
               }
@@ -87,6 +98,7 @@ export function SiteHeader() {
                 {routes.map((item) => (
                   <SheetClose
                     key={item.href}
+                    nativeButton={false}
                     render={
                       <Link
                         to={item.href}
@@ -100,6 +112,7 @@ export function SiteHeader() {
               </nav>
             </SheetContent>
           </Sheet>
+          <ShellIntersections />
         </div>
       </div>
     </header>

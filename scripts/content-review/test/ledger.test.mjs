@@ -115,7 +115,7 @@ test("generates deterministic inventory counts and lane assignment", () => {
     assert.equal(first.summary.byFamily.provision, 1478)
     assert.equal(first.summary.byFamily["learning-module"], 43)
     assert.equal(first.summary.byFamily["map-topic"], 63)
-    assert.equal(first.summary.byFamily["evidence-document"], 18)
+    assert.equal(first.summary.byFamily["evidence-document"], 57)
     assert.equal(first.summary.byFamily["case-guide"], 9)
     assert.ok(first.summary.byFamily["shared-renderer"] >= 28)
 
@@ -133,6 +133,19 @@ test("generates deterministic inventory counts and lane assignment", () => {
     assert.equal(foreignersB.length, 346)
 
     const entries = generateInventory()
+    for (const id of [
+      "study-annex",
+      "response-letter",
+      "resident-application",
+    ]) {
+      const entry = entries.find(
+        (entry) =>
+          entry.path === `app/data/document-library/editorial/guides/${id}.ts`
+      )
+      assert.ok(entry)
+      assert.equal(entry.documentId, id)
+      assert.equal(entry.id, `evidence-document:${id}`)
+    }
     const court = entries.find(
       (entry) =>
         entry.path === "app/data/legal-library/learning/modules/kpa/court.ts"

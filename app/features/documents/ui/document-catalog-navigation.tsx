@@ -23,12 +23,10 @@ export function DocumentCatalogNavigation({
   selectedCategory,
   selectedDocumentId,
   onCategorySelect,
-  onDocumentSelect: _onDocumentSelect,
 }: {
   selectedCategory: EvidenceDocumentCategory | "all"
   selectedDocumentId?: string
   onCategorySelect: (category: EvidenceDocumentCategory | "all") => void
-  onDocumentSelect: (documentId: string) => void
 }) {
   return (
     <DocsSidebar ariaLabel="Навігація каталогу документів">

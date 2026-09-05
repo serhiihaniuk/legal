@@ -1,3 +1,5 @@
+import { ShellIntersections } from "./shell-intersections"
+import { cn } from "~/lib/utils"
 import { useEffect, useMemo, useState, type ReactNode } from "react"
 
 import { ScrollArea } from "~/components/ui/scroll-area"
@@ -60,14 +62,17 @@ export function DocsLayout({
   navigation,
   children,
   toc,
+  contentWidth = "reading",
 }: {
+  contentWidth?: "reading" | "wide"
   navigation: ReactNode
   children: ReactNode
   toc: readonly TocItem[]
 }) {
   return (
-    <div className="atlas-docs container-wrapper flex flex-1 flex-col px-2">
-      <div className="atlas-docs-grid min-h-min flex-1 items-start px-0 [--sidebar-width:calc(var(--spacing)*72)] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-menu-width:calc(var(--spacing)*64)] lg:[--top-spacing:calc(var(--spacing)*4)]">
+    <div className="atlas-docs atlas-shell container-wrapper mx-auto flex w-full flex-1 flex-col px-2 pb-6">
+      <div className="atlas-docs-grid min-h-min flex-1 items-start px-0 [--sidebar-width:var(--atlas-sidebar-width)] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-menu-width:calc(var(--spacing)*64)] lg:[--top-spacing:calc(var(--spacing)*4)]">
+        <ShellIntersections />
         <aside className="sticky top-[calc(var(--header-height)+0.6rem)] z-30 hidden h-[calc(100svh-10rem)] overflow-hidden overscroll-none bg-transparent lg:flex">
           <ScrollArea
             showScrollbar={false}
@@ -83,7 +88,12 @@ export function DocsLayout({
         >
           <div className="flex min-w-0 flex-1 flex-col">
             <div className="h-(--top-spacing) shrink-0" />
-            <div className="mx-auto flex w-full max-w-160 min-w-0 flex-1 flex-col gap-6 px-4 py-6 text-foreground md:px-0 lg:py-8">
+            <div
+              className={cn(
+                "mx-auto flex w-full min-w-0 flex-1 flex-col gap-6 px-4 py-6 text-foreground md:px-6 lg:py-8",
+                contentWidth === "wide" ? "max-w-240" : "max-w-160"
+              )}
+            >
               {children}
             </div>
           </div>
@@ -95,6 +105,7 @@ export function DocsLayout({
             </div>
           </aside>
         </div>
+        <ShellIntersections bottom />
       </div>
     </div>
   )

@@ -15,9 +15,9 @@ import {
 export type KpaMode = "learning" | "articles" | "practice"
 
 export const modes: readonly { id: KpaMode; label: string }[] = [
-  { id: "learning", label: "Навчання" },
+  { id: "learning", label: "Пояснення" },
   { id: "articles", label: "Статті" },
-  { id: "practice", label: "Практикум" },
+  { id: "practice", label: "Розбір справи" },
 ]
 
 export const modeNavigationOptions = modes.map((mode) => ({
@@ -34,7 +34,7 @@ export const moduleNavigationOptions = kpaGuideModules.map((module) => ({
 export const practiceNavigation = [
   { id: "case-algorithm", label: "Алгоритм справи" },
   { id: "wezwanie-anatomy", label: "Анатомія wezwania" },
-  { id: "practice-check", label: "Самоперевірка" },
+  { id: "practice-check", label: "Зміст відповіді" },
 ] as const
 
 export type KpaRouteParams = {

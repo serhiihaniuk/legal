@@ -86,11 +86,71 @@ export const employerDutiesTopic: KnowledgeUnit<EmployerDutiesBody> =
         "Чи повідомлено про початок/перерву/закінчення?",
       ],
       documents: [
-        "документ pobytowy",
-        "письмова umowa",
-        "зрозумілий переклад/версія",
-        "електронні підтвердження повідомлень",
-        "доказ виплат і ZUS",
+        {
+          kind: "authored-legal-text",
+          plainText: "документ pobytowy",
+          parts: [
+            {
+              text: "документ pobytowy",
+              target: {
+                kind: "evidence-document",
+                documentId: "residence-card",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "письмова umowa",
+          parts: [
+            {
+              text: "письмова umowa",
+              target: {
+                kind: "evidence-document",
+                documentId: "employment-contract",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "зрозумілий переклад/версія",
+          parts: [
+            {
+              text: "зрозумілий переклад/версія",
+              target: {
+                kind: "evidence-document",
+                documentId: "sworn-translation",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "електронні підтвердження повідомлень",
+          parts: [
+            {
+              text: "електронні підтвердження повідомлень",
+              target: {
+                kind: "evidence-document",
+                documentId: "dispatch-proof",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "доказ виплат і ZUS",
+          parts: [
+            {
+              text: "доказ виплат і ZUS",
+              target: {
+                kind: "evidence-document",
+                documentId: "zus-confirmation",
+              },
+            },
+          ],
+        },
       ],
     },
   })

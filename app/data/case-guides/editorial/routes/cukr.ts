@@ -60,7 +60,7 @@ const route: CaseGuideRoute = {
           target: {
             kind: "legal-provision",
             documentId: "rozporzadzenie-wniosek-pobyt-czasowy",
-            provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-1",
+            provisionId: "rozporzadzenie-wniosek-pobyt-czasowy-annex-2",
           },
         },
         {
@@ -93,9 +93,10 @@ const route: CaseGuideRoute = {
   conditions: [
     {
       condition: "Належний status UKR",
-      modelFact: "PESEL UKR активний",
+      factToEstablish:
+        "Чи є status UKR активним і чи підтверджено потрібну безперервність?",
       evidence: "дані реєстру + документ особи",
-      status: "verify",
+
       risk: "реєстр або історія виїздів не підтвердять безперервність",
       law: {
         kind: "authored-legal-text",
@@ -126,25 +127,28 @@ const route: CaseGuideRoute = {
     },
     {
       condition: "Status на критичну дату",
-      modelFact: "status UKR заявника на 04.06.2025",
+      factToEstablish:
+        "Чи підтверджено status UKR на 04.06.2025 для цієї категорії заявника?",
       evidence: "історичні дані реєстру",
-      status: "verify",
+
       risk: "інший статус на критичну дату",
       law: "спеціальні умови CUKR",
     },
     {
       condition: "Повні дані особи",
-      modelFact: "паспорт, фото, підпис і біометрія мають бути повні",
+      factToEstablish:
+        "Чи узгоджені й повні паспортні та біометричні дані в реєстрі?",
       evidence: "PESEL/MOS + паспорт",
-      status: "verify",
+
       risk: "неповні або неузгоджені дані",
       law: "процедура CUKR",
     },
     {
       condition: "Правильне подання й odbiór",
-      modelFact: "подання через MOS і особиста дія заявника",
+      factToEstablish:
+        "Чи є підтвердження подання та чи виконано вимоги до особистих дій і отримання карти?",
       evidence: "UPO, повідомлення, підтвердження odbioru",
-      status: "conditional",
+
       risk: "невиконана особиста дія або строк",
       law: "specustawa + процедура CUKR",
     },
@@ -168,7 +172,17 @@ const route: CaseGuideRoute = {
         "Картка особи й хронологія, на яких можна безпечно будувати правову кваліфікацію.",
       documents: [
         {
-          item: "Дійсний закордонний паспорт",
+          reviewId: "passport",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний закордонний паспорт",
+            parts: [
+              {
+                text: "Дійсний закордонний паспорт",
+                target: { kind: "evidence-document", documentId: "passport" },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -219,7 +233,19 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Активний PESEL UKR та історія status UKR",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Активний PESEL UKR та історія status UKR",
+            parts: [
+              {
+                text: "Активний PESEL UKR та історія status UKR",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "pesel-ukr-confirmation",
+                },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Працівник легалізації · до подання; organ перевіряє реєстр",
@@ -247,9 +273,7 @@ const route: CaseGuideRoute = {
             plainText:
               "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
             parts: [
-              {
-                text: "Заявник",
-              },
+              { text: "Заявник" },
               {
                 text: " · перед MOS, якщо бракує паспорта, підпису або відбитків",
               },
@@ -257,9 +281,24 @@ const route: CaseGuideRoute = {
           },
           proves: "Повноту даних, без яких MOS не прийме CUKR",
           law: "Перевірка реєстру PESEL / FAQ CUKR",
+          kind: "action",
+          guidance: "cukr-application",
         },
         {
-          item: "Хронологія перебування, виїздів і попередніх справ",
+          reviewId: "chronology",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Хронологія перебування, виїздів і попередніх справ",
+            parts: [
+              {
+                text: "Хронологія перебування, виїздів і попередніх справ",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stay-history",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -324,7 +363,19 @@ const route: CaseGuideRoute = {
         "Письмовий висновок: маршрут доступний, умовно доступний або його треба змінити.",
       documents: [
         {
-          item: "Матриця умов обраного маршруту",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Матриця умов обраного маршруту",
+            parts: [
+              {
+                text: "Матриця умов обраного маршруту",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "evidence-matrix",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Працівник легалізації · до заповнення заяви",
@@ -333,7 +384,19 @@ const route: CaseGuideRoute = {
           law: "Ustawa o cudzoziemcach або інший lex specialis маршруту",
         },
         {
-          item: "Письмовий висновок про вибір підстави",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Письмовий висновок про вибір підстави",
+            parts: [
+              {
+                text: "Письмовий висновок про вибір підстави",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-assessment",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -345,11 +408,11 @@ const route: CaseGuideRoute = {
       ],
       risks: [
         {
-          title: "Вибір за назвою документа",
+          title: "Поточний UKR є, а історія статусу неповна",
           explanation:
-            "Назва карти або форми не визначає матеріальну підставу. Вирішальними є реальна головна мета і факти, передбачені конкретною нормою.",
+            "Заявник показує поточний status UKR, але документи не пояснюють його статус на потрібні дати. Поточний запис не замінює перевірку історії та безперервності. Потрібно також визначити категорію заявника, зокрема для дитини.",
           check:
-            "Запишіть одним реченням очікуваний статус і норму, яка його створює, а потім перевірте кожну її умову.",
+            "Зіставте історію реєстру з паспортом і виїздами. Якщо запис помилковий або даних бракує, з’ясуйте порядок уточнення в органі, який веде реєстр.",
         },
         {
           title: "Ігнорування lex specialis",
@@ -399,7 +462,17 @@ const route: CaseGuideRoute = {
         "Відтворюваний контрольний пакет подання з доказом дати й змісту.",
       documents: [
         {
-          item: "Дійсний закордонний паспорт",
+          reviewId: "passport",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний закордонний паспорт",
+            parts: [
+              {
+                text: "Дійсний закордонний паспорт",
+                target: { kind: "evidence-document", documentId: "passport" },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -458,9 +531,7 @@ const route: CaseGuideRoute = {
             plainText:
               "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
             parts: [
-              {
-                text: "Заявник",
-              },
+              { text: "Заявник" },
               {
                 text: " · перед MOS, якщо бракує паспорта, підпису або відбитків",
               },
@@ -468,6 +539,8 @@ const route: CaseGuideRoute = {
           },
           proves: "Повноту даних, без яких MOS не прийме CUKR",
           law: "Перевірка реєстру PESEL / FAQ CUKR",
+          kind: "action",
+          guidance: "cukr-application",
         },
         {
           item: "Особистий профіль MOS + login.gov.pl",
@@ -476,14 +549,7 @@ const route: CaseGuideRoute = {
           owner: {
             kind: "authored-legal-text",
             plainText: "Заявник · до заповнення заяви",
-            parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · до заповнення заяви",
-              },
-            ],
+            parts: [{ text: "Заявник" }, { text: " · до заповнення заяви" }],
           },
           proves: "Особисте подання й можливість електронного підпису",
           law: {
@@ -497,14 +563,27 @@ const route: CaseGuideRoute = {
                   url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
                 },
               },
+              { text: "; процедура MOS" },
+            ],
+          },
+          kind: "action",
+          guidance: "cukr-application",
+        },
+        {
+          reviewId: "photograph",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Цифрове фото",
+            parts: [
               {
-                text: "; процедура MOS",
+                text: "Цифрове фото",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "digital-photo",
+                },
               },
             ],
           },
-        },
-        {
-          item: "Цифрове фото",
           status: "обов’язково",
           level: "required",
           owner: {
@@ -538,7 +617,20 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Opłata skarbowa 340 zł",
+          reviewId: "payment",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Opłata skarbowa 340 zł",
+            parts: [
+              {
+                text: "Opłata skarbowa 340 zł",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stamp-duty-proof",
+                },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -579,7 +671,20 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Opłata za kartę 100 zł",
+          reviewId: "payment",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Opłata za kartę 100 zł",
+            parts: [
+              {
+                text: "Opłata za kartę 100 zł",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card-fee-proof",
+                },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -610,7 +715,18 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "UPO + PDF/XML заяви",
+          reviewId: "submission",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "UPO + PDF/XML заяви",
+            parts: [
+              {
+                text: "UPO",
+                target: { kind: "evidence-document", documentId: "upo" },
+              },
+              { text: " + PDF/XML заяви" },
+            ],
+          },
           status: "контроль",
           level: "control",
           owner: {
@@ -629,22 +745,31 @@ const route: CaseGuideRoute = {
           law: "MOS; контроль akt sprawy",
         },
         {
-          item: "Підтвердження odbioru карти",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Отримана карта і запис про odbiór",
+            parts: [
+              {
+                text: "Отримана карта і запис про odbiór",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card",
+                },
+              },
+            ],
+          },
           status: "критично",
           level: "required",
           owner: {
             kind: "authored-legal-text",
             plainText: "Заявник · особисто до 60 днів від інформації",
             parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · особисто до 60 днів від інформації",
-              },
+              { text: "Заявник" },
+              { text: " · особисто до 60 днів від інформації" },
             ],
           },
-          proves: "Момент виникнення дозволу CUKR",
+          proves:
+            "Отриманий документ та зафіксовану дату його особистого одержання",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42r",
@@ -660,13 +785,46 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Індекс вкладень і контрольна копія подання",
+          reviewId: "submission",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Індекс вкладень і контрольна копія подання",
+            parts: [
+              {
+                text: "Індекс вкладень і контрольна копія подання",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Особа, яка комплектує пакет · безпосередньо перед wysłaniem",
           proves:
             "Точний склад поданого пакета, назви файлів, версії документів і можливість відтворити заяву",
           law: "Контроль treści podania та майбутніх akt sprawy",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Електронна заява на карту CUKR",
+            parts: [
+              {
+                text: "Електронна заява на карту CUKR",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "cukr-application",
+                },
+              },
+            ],
+          },
+          owner: "Заявник · підписує і надсилає у власному MOS",
+          proves: "Звернення саме за CUKR",
+          law: "Процедура CUKR UdSC",
+          level: "required",
+          status: "обов’язково",
         },
       ],
       risks: [
@@ -741,7 +899,7 @@ const route: CaseGuideRoute = {
       title: "Будуємо доказову матрицю, а не список файлів",
       question: "Який факт і який доказ виконують кожну умову?",
       explanation: [
-        "Кожна матеріальна умова отримує окремий рядок: норма, факт, який треба встановити, доказ, період і можливе протиріччя. Документ, який не доводить жодної умови, не робить пакет сильнішим; натомість один слабкий ключовий факт може визначити всю справу.",
+        "Тут ключові докази стосуються особи та історії status UKR. Зіставляйте записи реєстру, паспортні дані й виїзди за датами. Договір про роботу не замінює доказу статусу на потрібну дату.",
         "Доказова матриця концентрується на історії UKR, реєстрових даних, паспорті, виїздах та виконанні технічних умов CUKR.",
       ],
       actor: "Працівник легалізації, заявник і автори зовнішніх документів",
@@ -754,7 +912,17 @@ const route: CaseGuideRoute = {
         "Матриця умова → факт → доказ із видимими прогалинами й суперечностями.",
       documents: [
         {
-          item: "Дійсний закордонний паспорт",
+          reviewId: "passport",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний закордонний паспорт",
+            parts: [
+              {
+                text: "Дійсний закордонний паспорт",
+                target: { kind: "evidence-document", documentId: "passport" },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -805,7 +973,19 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Активний PESEL UKR та історія status UKR",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Активний PESEL UKR та історія status UKR",
+            parts: [
+              {
+                text: "Активний PESEL UKR та історія status UKR",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "pesel-ukr-confirmation",
+                },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: "Працівник легалізації · до подання; organ перевіряє реєстр",
@@ -833,9 +1013,7 @@ const route: CaseGuideRoute = {
             plainText:
               "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
             parts: [
-              {
-                text: "Заявник",
-              },
+              { text: "Заявник" },
               {
                 text: " · перед MOS, якщо бракує паспорта, підпису або відбитків",
               },
@@ -843,6 +1021,8 @@ const route: CaseGuideRoute = {
           },
           proves: "Повноту даних, без яких MOS не прийме CUKR",
           law: "Перевірка реєстру PESEL / FAQ CUKR",
+          kind: "action",
+          guidance: "cukr-application",
         },
         {
           item: "Особистий профіль MOS + login.gov.pl",
@@ -851,14 +1031,7 @@ const route: CaseGuideRoute = {
           owner: {
             kind: "authored-legal-text",
             plainText: "Заявник · до заповнення заяви",
-            parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · до заповнення заяви",
-              },
-            ],
+            parts: [{ text: "Заявник" }, { text: " · до заповнення заяви" }],
           },
           proves: "Особисте подання й можливість електронного підпису",
           law: {
@@ -872,14 +1045,27 @@ const route: CaseGuideRoute = {
                   url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
                 },
               },
+              { text: "; процедура MOS" },
+            ],
+          },
+          kind: "action",
+          guidance: "cukr-application",
+        },
+        {
+          reviewId: "photograph",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Цифрове фото",
+            parts: [
               {
-                text: "; процедура MOS",
+                text: "Цифрове фото",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "digital-photo",
+                },
               },
             ],
           },
-        },
-        {
-          item: "Цифрове фото",
           status: "обов’язково",
           level: "required",
           owner: {
@@ -913,7 +1099,20 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Opłata skarbowa 340 zł",
+          reviewId: "payment",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Opłata skarbowa 340 zł",
+            parts: [
+              {
+                text: "Opłata skarbowa 340 zł",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "stamp-duty-proof",
+                },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -954,7 +1153,20 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Opłata za kartę 100 zł",
+          reviewId: "payment",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Opłata za kartę 100 zł",
+            parts: [
+              {
+                text: "Opłata za kartę 100 zł",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card-fee-proof",
+                },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -985,7 +1197,18 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "UPO + PDF/XML заяви",
+          reviewId: "submission",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "UPO + PDF/XML заяви",
+            parts: [
+              {
+                text: "UPO",
+                target: { kind: "evidence-document", documentId: "upo" },
+              },
+              { text: " + PDF/XML заяви" },
+            ],
+          },
           status: "контроль",
           level: "control",
           owner: {
@@ -1004,7 +1227,20 @@ const route: CaseGuideRoute = {
           law: "MOS; контроль akt sprawy",
         },
         {
-          item: "Powiadomienie PUP про роботу",
+          reviewId: "notification",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Powiadomienie PUP про роботу",
+            parts: [
+              {
+                text: "Powiadomienie PUP про роботу",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "ukraine-work-notification",
+                },
+              },
+            ],
+          },
           status: "окремий обов’язок",
           level: "external",
           owner: "Роботодавець · до 7 днів від початку роботи",
@@ -1025,22 +1261,31 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Підтвердження odbioru карти",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Отримана карта і запис про odbiór",
+            parts: [
+              {
+                text: "Отримана карта і запис про odbiór",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card",
+                },
+              },
+            ],
+          },
           status: "критично",
           level: "required",
           owner: {
             kind: "authored-legal-text",
             plainText: "Заявник · особисто до 60 днів від інформації",
             parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · особисто до 60 днів від інформації",
-              },
+              { text: "Заявник" },
+              { text: " · особисто до 60 днів від інформації" },
             ],
           },
-          proves: "Момент виникнення дозволу CUKR",
+          proves:
+            "Отриманий документ та зафіксовану дату його особистого одержання",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42r",
@@ -1056,7 +1301,19 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Доказова матриця: умова → факт → доказ",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказова матриця: умова → факт → доказ",
+            parts: [
+              {
+                text: "Доказова матриця: умова → факт → доказ",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "evidence-matrix",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Працівник легалізації · до подання та після кожного wezwania",
@@ -1064,14 +1321,206 @@ const route: CaseGuideRoute = {
             "Який документ доводить кожну умову, за який період і де залишається прогалина або суперечність",
           law: "KPA — ustalenie stanu faktycznego та ocena dowodów",
         },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Електронна заява на карту CUKR",
+            parts: [
+              {
+                text: "Електронна заява на карту CUKR",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "cukr-application",
+                },
+              },
+            ],
+          },
+          owner: "Заявник · підписує і надсилає у власному MOS",
+          proves: "Звернення саме за CUKR",
+          law: "Процедура CUKR UdSC",
+          level: "required",
+          status: "обов’язково",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Wezwanie органу",
+            parts: [
+              {
+                text: "Wezwanie органу",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "authority-summons",
+                },
+              },
+            ],
+          },
+          owner: "Орган · якщо надсилає вимогу",
+          proves: "Зміст окремих вимог до сторони",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 54 KPA",
+            parts: [
+              {
+                text: "Art. 54 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-54",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "якщо отримано",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Підтвердження doręczenia",
+            parts: [
+              {
+                text: "Підтвердження doręczenia",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "delivery-proof",
+                },
+              },
+            ],
+          },
+          owner: "Одержувач · після вручення",
+          proves: "Канал, адресата і дату вручення",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 39 KPA",
+            parts: [
+              {
+                text: "Art. 39 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-39",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "якщо отримано",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця вимог із wezwania",
+            parts: [
+              {
+                text: "Таблиця вимог із wezwania",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "requirements-table",
+                },
+              },
+            ],
+          },
+          owner: "Працівник справи · перед відповіддю",
+          proves: "Робочий зв’язок вимоги, доказу й відповіді",
+          law: "Робоча організація відповіді",
+          level: "control",
+          status: "робочий запис",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Відповідь на wezwanie",
+            parts: [
+              {
+                text: "Відповідь на wezwanie",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "response-letter",
+                },
+              },
+            ],
+          },
+          owner: "Заявник або представник · у строк вимоги",
+          proves: "Позицію сторони та подані докази",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 63 KPA",
+            parts: [
+              {
+                text: "Art. 63 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-63",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "за wezwania",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Перелік додатків до відповіді",
+            parts: [
+              {
+                text: "Перелік додатків до відповіді",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+            ],
+          },
+          owner: "Автор відповіді · перед поданням",
+          proves: "Зв’язок пунктів відповіді з матеріалами пакета",
+          law: "Робочий опис складу пакета",
+          level: "control",
+          status: "робочий запис",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказ подання відповіді",
+            parts: [
+              {
+                text: "Доказ подання відповіді",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "dispatch-proof",
+                },
+              },
+            ],
+          },
+          owner: "Оператор, сервіс або канцелярія · під час подання",
+          proves: "Дату, канал та ідентифікатор подання",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 57 KPA",
+            parts: [
+              {
+                text: "Art. 57 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-57",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "після відповіді",
+        },
       ],
       risks: [
         {
-          title: "Формальна повнота без матеріального доказу",
+          title: "Паспорт і реєстр містять різні дані",
           explanation:
-            "У пакеті можуть бути всі названі файли, але жоден із них не встановлює ключовий факт у потрібний період.",
+            "Паспорт замінено або ім’я записано інакше, а реєстр PESEL містить попередні дані.",
           check:
-            "Для кожної умови вкажіть один головний доказ, дату або період, джерело і те, чого він не підтверджує.",
+            "Встановіть причину розбіжності й документ, що пов’язує записи. Уточніть дані в urząd gminy перед використанням їх у заяві.",
         },
         {
           title: "Застарілий або суперечливий документ",
@@ -1124,7 +1573,17 @@ const route: CaseGuideRoute = {
         "Журнал справи з активними строками, відповідями й доказами doręczenia.",
       documents: [
         {
-          item: "Дійсний закордонний паспорт",
+          reviewId: "passport",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Дійсний закордонний паспорт",
+            parts: [
+              {
+                text: "Дійсний закордонний паспорт",
+                target: { kind: "evidence-document", documentId: "passport" },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -1181,14 +1640,7 @@ const route: CaseGuideRoute = {
           owner: {
             kind: "authored-legal-text",
             plainText: "Заявник · до заповнення заяви",
-            parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · до заповнення заяви",
-              },
-            ],
+            parts: [{ text: "Заявник" }, { text: " · до заповнення заяви" }],
           },
           proves: "Особисте подання й можливість електронного підпису",
           law: {
@@ -1202,14 +1654,25 @@ const route: CaseGuideRoute = {
                   url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
                 },
               },
-              {
-                text: "; процедура MOS",
-              },
+              { text: "; процедура MOS" },
             ],
           },
+          kind: "action",
+          guidance: "cukr-application",
         },
         {
-          item: "UPO + PDF/XML заяви",
+          reviewId: "submission",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "UPO + PDF/XML заяви",
+            parts: [
+              {
+                text: "UPO",
+                target: { kind: "evidence-document", documentId: "upo" },
+              },
+              { text: " + PDF/XML заяви" },
+            ],
+          },
           status: "контроль",
           level: "control",
           owner: {
@@ -1228,22 +1691,31 @@ const route: CaseGuideRoute = {
           law: "MOS; контроль akt sprawy",
         },
         {
-          item: "Підтвердження odbioru карти",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Отримана карта і запис про odbiór",
+            parts: [
+              {
+                text: "Отримана карта і запис про odbiór",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card",
+                },
+              },
+            ],
+          },
           status: "критично",
           level: "required",
           owner: {
             kind: "authored-legal-text",
             plainText: "Заявник · особисто до 60 днів від інформації",
             parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · особисто до 60 днів від інформації",
-              },
+              { text: "Заявник" },
+              { text: " · особисто до 60 днів від інформації" },
             ],
           },
-          proves: "Момент виникнення дозволу CUKR",
+          proves:
+            "Отриманий документ та зафіксовану дату його особистого одержання",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42r",
@@ -1259,7 +1731,30 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Журнал doręczeń, строків і процесуальних дій",
+          reviewId: "delivery",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Журнал doręczeń, строків і процесуальних дій",
+            parts: [
+              {
+                text: "Журнал ",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+              {
+                text: "doręczeń",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "delivery-proof",
+                },
+              },
+              {
+                text: ", строків і процесуальних дій",
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -1269,7 +1764,21 @@ const route: CaseGuideRoute = {
           law: "KPA + спеціальні строки процедури pobytowej",
         },
         {
-          item: "Wezwania та відповіді з індексом додатків",
+          reviewId: "summons",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Wezwania та відповіді з індексом додатків",
+            parts: [
+              {
+                text: "Wezwania",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "authority-summons",
+                },
+              },
+              { text: " та відповіді з індексом додатків" },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Адресат wezwania · окремий комплект для кожної вимоги",
@@ -1277,7 +1786,19 @@ const route: CaseGuideRoute = {
           law: "KPA та спеціальна процедура dowodowa",
         },
         {
-          item: "Копія або нотатка з akt sprawy",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Копія або нотатка з akt sprawy",
+            parts: [
+              {
+                text: "Копія або нотатка з akt sprawy",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-file-index",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -1285,6 +1806,92 @@ const route: CaseGuideRoute = {
           proves:
             "Які докази має organ, які факти вважає спірними та чи є матеріал, на який треба відреагувати",
           law: "KPA — czynny udział strony та dostęp do akt",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Таблиця вимог із wezwania",
+            parts: [
+              {
+                text: "Таблиця вимог із wezwania",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "requirements-table",
+                },
+              },
+            ],
+          },
+          owner: "Працівник справи · перед відповіддю",
+          proves: "Робочий зв’язок вимоги, доказу й відповіді",
+          law: "Робоча організація відповіді",
+          level: "control",
+          status: "робочий запис",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Відповідь на wezwanie",
+            parts: [
+              {
+                text: "Відповідь на wezwanie",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "response-letter",
+                },
+              },
+            ],
+          },
+          owner: "Заявник або представник · у строк вимоги",
+          proves: "Позицію сторони та подані докази",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 63 KPA",
+            parts: [
+              {
+                text: "Art. 63 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-63",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "за wezwania",
+        },
+        {
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказ подання відповіді",
+            parts: [
+              {
+                text: "Доказ подання відповіді",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "dispatch-proof",
+                },
+              },
+            ],
+          },
+          owner: "Оператор, сервіс або канцелярія · під час подання",
+          proves: "Дату, канал та ідентифікатор подання",
+          law: {
+            kind: "authored-legal-text",
+            plainText: "Art. 57 KPA",
+            parts: [
+              {
+                text: "Art. 57 KPA",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-57",
+                },
+              },
+            ],
+          },
+          level: "conditional",
+          status: "після відповіді",
         },
       ],
       risks: [
@@ -1347,7 +1954,20 @@ const route: CaseGuideRoute = {
         "Картка наслідків рішення: статус, praca, зміни, оскарження й наступний маршрут.",
       documents: [
         {
-          item: "Цифрове фото",
+          reviewId: "photograph",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Цифрове фото",
+            parts: [
+              {
+                text: "Цифрове фото",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "digital-photo",
+                },
+              },
+            ],
+          },
           status: "обов’язково",
           level: "required",
           owner: {
@@ -1381,7 +2001,20 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Powiadomienie PUP про роботу",
+          reviewId: "notification",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Powiadomienie PUP про роботу",
+            parts: [
+              {
+                text: "Powiadomienie PUP про роботу",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "ukraine-work-notification",
+                },
+              },
+            ],
+          },
           status: "окремий обов’язок",
           level: "external",
           owner: "Роботодавець · до 7 днів від початку роботи",
@@ -1402,22 +2035,31 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Підтвердження odbioru карти",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Отримана карта і запис про odbiór",
+            parts: [
+              {
+                text: "Отримана карта і запис про odbiór",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card",
+                },
+              },
+            ],
+          },
           status: "критично",
           level: "required",
           owner: {
             kind: "authored-legal-text",
             plainText: "Заявник · особисто до 60 днів від інформації",
             parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · особисто до 60 днів від інформації",
-              },
+              { text: "Заявник" },
+              { text: " · особисто до 60 днів від інформації" },
             ],
           },
-          proves: "Момент виникнення дозволу CUKR",
+          proves:
+            "Отриманий документ та зафіксовану дату його особистого одержання",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42r",
@@ -1433,7 +2075,21 @@ const route: CaseGuideRoute = {
           },
         },
         {
-          item: "Decyzja або інший акт, що завершує маршрут",
+          reviewId: "decision",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Decyzja або інший акт, що завершує маршрут",
+            parts: [
+              {
+                text: "Decyzja",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "administrative-decision",
+                },
+              },
+              { text: " або інший акт, що завершує маршрут" },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Заявник / представник · одразу після doręczenia",
@@ -1442,7 +2098,28 @@ const route: CaseGuideRoute = {
           law: "KPA + матеріальна норма обраного маршруту",
         },
         {
-          item: "Доказ doręczenia рішення та отримання карти",
+          reviewId: "delivery",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "Доказ doręczenia рішення та отримання карти",
+            parts: [
+              {
+                text: "Доказ doręczenia рішення",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "delivery-proof",
+                },
+              },
+              { text: " та отримання " },
+              {
+                text: "карти",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "residence-card",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner: "Заявник / представник · у день кожної окремої події",
@@ -1451,7 +2128,19 @@ const route: CaseGuideRoute = {
           law: "Pouczenie, KPA та спеціальні правила видачі документа",
         },
         {
-          item: "План обов’язків після рішення",
+          item: {
+            kind: "authored-legal-text",
+            plainText: "План обов’язків після рішення",
+            parts: [
+              {
+                text: "План обов’язків після рішення",
+                target: {
+                  kind: "evidence-document",
+                  documentId: "case-assessment",
+                },
+              },
+            ],
+          },
           status: "робочий документ",
           level: "control",
           owner:
@@ -1507,7 +2196,17 @@ const route: CaseGuideRoute = {
   ],
   documents: [
     {
-      item: "Дійсний закордонний паспорт",
+      reviewId: "passport",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Дійсний закордонний паспорт",
+        parts: [
+          {
+            text: "Дійсний закордонний паспорт",
+            target: { kind: "evidence-document", documentId: "passport" },
+          },
+        ],
+      },
       status: "обов’язково",
       level: "required",
       owner: {
@@ -1558,7 +2257,19 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "Активний PESEL UKR та історія status UKR",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Активний PESEL UKR та історія status UKR",
+        parts: [
+          {
+            text: "Активний PESEL UKR та історія status UKR",
+            target: {
+              kind: "evidence-document",
+              documentId: "pesel-ukr-confirmation",
+            },
+          },
+        ],
+      },
       status: "обов’язково",
       level: "required",
       owner: "Працівник легалізації · до подання; organ перевіряє реєстр",
@@ -1586,16 +2297,14 @@ const route: CaseGuideRoute = {
         plainText:
           "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
         parts: [
-          {
-            text: "Заявник",
-          },
-          {
-            text: " · перед MOS, якщо бракує паспорта, підпису або відбитків",
-          },
+          { text: "Заявник" },
+          { text: " · перед MOS, якщо бракує паспорта, підпису або відбитків" },
         ],
       },
       proves: "Повноту даних, без яких MOS не прийме CUKR",
       law: "Перевірка реєстру PESEL / FAQ CUKR",
+      kind: "action",
+      guidance: "cukr-application",
     },
     {
       item: "Особистий профіль MOS + login.gov.pl",
@@ -1604,14 +2313,7 @@ const route: CaseGuideRoute = {
       owner: {
         kind: "authored-legal-text",
         plainText: "Заявник · до заповнення заяви",
-        parts: [
-          {
-            text: "Заявник",
-          },
-          {
-            text: " · до заповнення заяви",
-          },
-        ],
+        parts: [{ text: "Заявник" }, { text: " · до заповнення заяви" }],
       },
       proves: "Особисте подання й можливість електронного підпису",
       law: {
@@ -1625,14 +2327,27 @@ const route: CaseGuideRoute = {
               url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
             },
           },
+          { text: "; процедура MOS" },
+        ],
+      },
+      kind: "action",
+      guidance: "cukr-application",
+    },
+    {
+      reviewId: "photograph",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Цифрове фото",
+        parts: [
           {
-            text: "; процедура MOS",
+            text: "Цифрове фото",
+            target: {
+              kind: "evidence-document",
+              documentId: "digital-photo",
+            },
           },
         ],
       },
-    },
-    {
-      item: "Цифрове фото",
       status: "обов’язково",
       level: "required",
       owner: {
@@ -1666,7 +2381,20 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "Opłata skarbowa 340 zł",
+      reviewId: "payment",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Opłata skarbowa 340 zł",
+        parts: [
+          {
+            text: "Opłata skarbowa 340 zł",
+            target: {
+              kind: "evidence-document",
+              documentId: "stamp-duty-proof",
+            },
+          },
+        ],
+      },
       status: "обов’язково",
       level: "required",
       owner: {
@@ -1707,7 +2435,20 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "Opłata za kartę 100 zł",
+      reviewId: "payment",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Opłata za kartę 100 zł",
+        parts: [
+          {
+            text: "Opłata za kartę 100 zł",
+            target: {
+              kind: "evidence-document",
+              documentId: "residence-card-fee-proof",
+            },
+          },
+        ],
+      },
       status: "обов’язково",
       level: "required",
       owner: {
@@ -1738,7 +2479,18 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "UPO + PDF/XML заяви",
+      reviewId: "submission",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "UPO + PDF/XML заяви",
+        parts: [
+          {
+            text: "UPO",
+            target: { kind: "evidence-document", documentId: "upo" },
+          },
+          { text: " + PDF/XML заяви" },
+        ],
+      },
       status: "контроль",
       level: "control",
       owner: {
@@ -1757,7 +2509,20 @@ const route: CaseGuideRoute = {
       law: "MOS; контроль akt sprawy",
     },
     {
-      item: "Powiadomienie PUP про роботу",
+      reviewId: "notification",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Powiadomienie PUP про роботу",
+        parts: [
+          {
+            text: "Powiadomienie PUP про роботу",
+            target: {
+              kind: "evidence-document",
+              documentId: "ukraine-work-notification",
+            },
+          },
+        ],
+      },
       status: "окремий обов’язок",
       level: "external",
       owner: "Роботодавець · до 7 днів від початку роботи",
@@ -1778,22 +2543,28 @@ const route: CaseGuideRoute = {
       },
     },
     {
-      item: "Підтвердження odbioru карти",
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Отримана карта і запис про odbiór",
+        parts: [
+          {
+            text: "Отримана карта і запис про odbiór",
+            target: { kind: "evidence-document", documentId: "residence-card" },
+          },
+        ],
+      },
       status: "критично",
       level: "required",
       owner: {
         kind: "authored-legal-text",
         plainText: "Заявник · особисто до 60 днів від інформації",
         parts: [
-          {
-            text: "Заявник",
-          },
-          {
-            text: " · особисто до 60 днів від інформації",
-          },
+          { text: "Заявник" },
+          { text: " · особисто до 60 днів від інформації" },
         ],
       },
-      proves: "Момент виникнення дозволу CUKR",
+      proves:
+        "Отриманий документ та зафіксовану дату його особистого одержання",
       law: {
         kind: "authored-legal-text",
         plainText: "Art. 42r",
@@ -1808,9 +2579,196 @@ const route: CaseGuideRoute = {
         ],
       },
     },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Електронна заява на карту CUKR",
+        parts: [
+          {
+            text: "Електронна заява на карту CUKR",
+            target: {
+              kind: "evidence-document",
+              documentId: "cukr-application",
+            },
+          },
+        ],
+      },
+      owner: "Заявник · підписує і надсилає у власному MOS",
+      proves: "Звернення саме за CUKR",
+      law: "Процедура CUKR UdSC",
+      level: "required",
+      status: "обов’язково",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Wezwanie органу",
+        parts: [
+          {
+            text: "Wezwanie органу",
+            target: {
+              kind: "evidence-document",
+              documentId: "authority-summons",
+            },
+          },
+        ],
+      },
+      owner: "Орган · якщо надсилає вимогу",
+      proves: "Зміст окремих вимог до сторони",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 54 KPA",
+        parts: [
+          {
+            text: "Art. 54 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-54",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "якщо отримано",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Підтвердження doręczenia",
+        parts: [
+          {
+            text: "Підтвердження doręczenia",
+            target: { kind: "evidence-document", documentId: "delivery-proof" },
+          },
+        ],
+      },
+      owner: "Одержувач · після вручення",
+      proves: "Канал, адресата і дату вручення",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 39 KPA",
+        parts: [
+          {
+            text: "Art. 39 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-39",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "якщо отримано",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Таблиця вимог із wezwania",
+        parts: [
+          {
+            text: "Таблиця вимог із wezwania",
+            target: {
+              kind: "evidence-document",
+              documentId: "requirements-table",
+            },
+          },
+        ],
+      },
+      owner: "Працівник справи · перед відповіддю",
+      proves: "Робочий зв’язок вимоги, доказу й відповіді",
+      law: "Робоча організація відповіді",
+      level: "control",
+      status: "робочий запис",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Відповідь на wezwanie",
+        parts: [
+          {
+            text: "Відповідь на wezwanie",
+            target: {
+              kind: "evidence-document",
+              documentId: "response-letter",
+            },
+          },
+        ],
+      },
+      owner: "Заявник або представник · у строк вимоги",
+      proves: "Позицію сторони та подані докази",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 63 KPA",
+        parts: [
+          {
+            text: "Art. 63 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-63",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "за wezwania",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Перелік додатків до відповіді",
+        parts: [
+          {
+            text: "Перелік додатків до відповіді",
+            target: {
+              kind: "evidence-document",
+              documentId: "case-file-index",
+            },
+          },
+        ],
+      },
+      owner: "Автор відповіді · перед поданням",
+      proves: "Зв’язок пунктів відповіді з матеріалами пакета",
+      law: "Робочий опис складу пакета",
+      level: "control",
+      status: "робочий запис",
+    },
+    {
+      item: {
+        kind: "authored-legal-text",
+        plainText: "Доказ подання відповіді",
+        parts: [
+          {
+            text: "Доказ подання відповіді",
+            target: { kind: "evidence-document", documentId: "dispatch-proof" },
+          },
+        ],
+      },
+      owner: "Оператор, сервіс або канцелярія · під час подання",
+      proves: "Дату, канал та ідентифікатор подання",
+      law: {
+        kind: "authored-legal-text",
+        plainText: "Art. 57 KPA",
+        parts: [
+          {
+            text: "Art. 57 KPA",
+            target: {
+              kind: "legal-provision",
+              documentId: "kpa",
+              provisionId: "kpa-art-57",
+            },
+          },
+        ],
+      },
+      level: "conditional",
+      status: "після відповіді",
+    },
   ],
   deadlines: [
     {
+      stageId: "status",
       period: "до 7 днів",
       trigger: "від фактичного початку роботи",
       action: "Роботодавець подає powiadomienie PUP",
@@ -1832,6 +2790,7 @@ const route: CaseGuideRoute = {
       },
     },
     {
+      stageId: "filing",
       period: "до 04.03.2027",
       trigger: "кінцева дата приймання заяв",
       action: "Надіслати CUKR через MOS",
@@ -1840,6 +2799,7 @@ const route: CaseGuideRoute = {
       law: "Procedura CUKR UdSC",
     },
     {
+      stageId: "procedure",
       period: "180 днів",
       trigger: {
         kind: "authored-legal-text",
@@ -1875,6 +2835,7 @@ const route: CaseGuideRoute = {
       },
     },
     {
+      stageId: "status",
       period: "понад 30 днів",
       trigger: "одноразовий виїзд до отримання CUKR",
       action: "Не допустити втрати UKR під час очікування",
@@ -1897,6 +2858,7 @@ const route: CaseGuideRoute = {
       },
     },
     {
+      stageId: "decision",
       period: "14 днів",
       trigger: "від doręczenia odmowy",
       action: "Подати odwołanie через wojewodę",
@@ -1929,6 +2891,7 @@ const route: CaseGuideRoute = {
       },
     },
     {
+      stageId: "decision",
       period: "60 днів",
       trigger: "від інформації про можливість odbioru",
       action: "Особисто отримати карту",
@@ -1949,6 +2912,7 @@ const route: CaseGuideRoute = {
       },
     },
     {
+      stageId: "decision",
       period: "15 робочих днів",
       trigger: "від зміни місця проживання після CUKR",
       action: "Повідомити właściwego wojewodę",
@@ -1968,6 +2932,7 @@ const route: CaseGuideRoute = {
       },
     },
     {
+      stageId: "decision",
       period: "≥ 6 місяців",
       trigger: "безперервна відсутність у Польщі після CUKR",
       action: "Контролювати тривалість виїзду",
@@ -1989,13 +2954,13 @@ const route: CaseGuideRoute = {
   ],
   negativeBranches: [
     {
-      title: "Маршрут не відповідає фактам",
+      title: "Поточний UKR є, а історія статусу неповна",
       trigger:
-        "Не виконується вирішальний критерій: Безперервна й належна історія status UKR та виконання всіх спеціальних умов CUKR.",
+        "Заявник показує поточний status UKR, але документи не пояснюють його статус на потрібні дати.",
       consequence:
-        "Документи не виправлять неправильну правову кваліфікацію; справа ризикує odmową wszczęcia або odmową по суті.",
+        "Поточний запис не замінює перевірку історії та безперервності. Потрібно також визначити категорію заявника, зокрема для дитини.",
       response:
-        "Повернутися до карти цілей, вибрати точну підставу й перебудувати матрицю умов до подання.",
+        "Зіставте історію реєстру з паспортом і виїздами. Якщо запис помилковий або даних бракує, з’ясуйте порядок уточнення в органі, який веде реєстр.",
       material: {
         label: "Перевірити мету перебування",
         description: "Порівняти сусідні маршрути до нового подання.",

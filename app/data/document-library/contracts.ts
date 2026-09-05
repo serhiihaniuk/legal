@@ -20,7 +20,45 @@ export type EvidenceDocumentId =
   | "pesel-ukr-confirmation"
   | "residence-card"
   | "sworn-translation"
-
+  | "stay-history"
+  | "evidence-matrix"
+  | "case-file-index"
+  | "civil-status-record"
+  | "health-insurance"
+  | "income-evidence"
+  | "housing-evidence"
+  | "study-confirmation"
+  | "tuition-payment"
+  | "study-progress"
+  | "qualification-evidence"
+  | "polish-language-proof"
+  | "business-evidence"
+  | "settlement-intention"
+  | "digital-photo"
+  | "apostille-legalisation"
+  | "blue-card-annex"
+  | "trainee-volunteer-annex"
+  | "research-annex"
+  | "study-annex"
+  | "ict-application"
+  | "family-abroad-application"
+  | "family-application-consent"
+  | "fingerprint-record"
+  | "signature-specimen"
+  | "cukr-application"
+  | "permanent-application"
+  | "resident-application"
+  | "response-letter"
+  | "dispatch-proof"
+  | "requirements-table"
+  | "case-assessment"
+  | "job-description"
+  | "family-evidence"
+  | "visa"
+  | "deadline-obstacle"
+  | "proceeding-certificate"
+  | "work-organisation-evidence"
+  | "status-documents"
 export type EvidenceDocumentCategory =
   | "identity"
   | "procedure"
@@ -29,12 +67,30 @@ export type EvidenceDocumentCategory =
   | "financial"
   | "evidence"
   | "other"
+  | "education"
+
+export type DocumentWorkedExample = {
+  title: string
+  facts: LegalTextValue[]
+  rows?: { label: string; evidence: LegalTextValue; meaning: LegalTextValue }[]
+  reasoning: LegalTextValue[]
+  conclusion: LegalTextValue
+}
+
+export type DocumentExplanation = {
+  id: string
+  title: string
+  paragraphs: LegalTextValue[]
+  example?: DocumentWorkedExample
+}
 
 export type DocumentGuide = {
   id: EvidenceDocumentId
   title: string
   category: EvidenceDocumentCategory
   aliases: readonly string[]
+  kind?: "document" | "evidence-set" | "working-record"
+  explanation?: DocumentExplanation[]
   documentType?: LegalTextValue
   description: LegalTextValue
   preparedBy: LegalTextValue
@@ -98,4 +154,43 @@ export const evidenceDocumentIds = [
   "pesel-ukr-confirmation",
   "residence-card",
   "sworn-translation",
+  "stay-history",
+  "evidence-matrix",
+  "case-file-index",
+  "civil-status-record",
+  "health-insurance",
+  "income-evidence",
+  "housing-evidence",
+  "study-confirmation",
+  "tuition-payment",
+  "study-progress",
+  "qualification-evidence",
+  "polish-language-proof",
+  "business-evidence",
+  "settlement-intention",
+  "digital-photo",
+  "apostille-legalisation",
+  "blue-card-annex",
+  "trainee-volunteer-annex",
+  "research-annex",
+  "study-annex",
+  "ict-application",
+  "family-abroad-application",
+  "family-application-consent",
+  "fingerprint-record",
+  "signature-specimen",
+  "cukr-application",
+  "permanent-application",
+  "resident-application",
+  "response-letter",
+  "dispatch-proof",
+  "requirements-table",
+  "case-assessment",
+  "job-description",
+  "family-evidence",
+  "visa",
+  "deadline-obstacle",
+  "proceeding-certificate",
+  "work-organisation-evidence",
+  "status-documents",
 ] as const satisfies readonly EvidenceDocumentId[]

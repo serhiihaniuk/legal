@@ -6,10 +6,10 @@ import { LegalText } from "~/components/references"
 import { DocumentArticle } from "~/components/patterns/document-content"
 
 export const kpaPracticeToc = [
-  { href: "#practice-overview", label: "Мета практикуму" },
+  { href: "#practice-overview", label: "Розбір справи" },
   { href: "#case-algorithm", label: "Алгоритм справи" },
   { href: "#wezwanie-anatomy", label: "Анатомія wezwania" },
-  { href: "#practice-check", label: "Самоперевірка" },
+  { href: "#practice-check", label: "Зміст відповіді" },
 ]
 
 export function KpaPracticeContent() {
@@ -19,7 +19,9 @@ export function KpaPracticeContent() {
         id="practice-overview"
         className="flex scroll-mt-24 flex-col gap-2"
       >
-        <h1 className="text-3xl font-semibold tracking-tight">Практикум KPA</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">
+          KPA у справі: як читати wezwanie
+        </h1>
         <p className="text-[1.05rem] text-muted-foreground sm:text-base sm:text-balance md:max-w-[80%]">
           Один робочий алгоритм для справи про легалізацію: від фіксації фактів
           до відповіді на wezwanie та контролю рішення.
@@ -78,15 +80,15 @@ export function KpaPracticeContent() {
         </section>
 
         <section id="practice-check">
-          <h2>Самоперевірка перед відповіддю</h2>
+          <h2>Що має бути зрозуміло з відповіді</h2>
           <ul>
             <li>
               для кожного пункту wezwania визначено факт, який орган хоче
               встановити;
             </li>
             <li>
-              матеріальна вимога знайдена в lex specialis, а процесуальна дія —
-              у KPA;
+              матеріальна вимога знайдена в lex specialis, а процесуальна дія
+              визначена у KPA;
             </li>
             <li>строк пораховано від юридичної дати doręczenia;</li>
             <li>

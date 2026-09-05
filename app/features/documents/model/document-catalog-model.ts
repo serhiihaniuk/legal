@@ -2,6 +2,7 @@ import {
   documentCategoryLabels,
   listEvidenceDocumentCategories,
   type EvidenceDocumentCategory,
+  type DocumentGuide,
 } from "~/data/document-library"
 import type { DocumentCatalogEntry } from "~/data/documents/catalog"
 
@@ -13,10 +14,15 @@ export const documentCatalogToc = [
 export function documentDetailToc(document: DocumentCatalogEntry) {
   return [
     { href: "#document-overview", label: "Що це за документ" },
-    ...(document.guide?.howToObtain?.length
-      ? [{ href: "#document-obtain", label: "Як отримати або підготувати" }]
-      : []),
     { href: "#document-purpose", label: "Роль і межі доказу" },
+    ...(document.guide.explanation ?? []).map((section) => ({
+      href: `#document-${section.id}`,
+      label: section.title,
+    })),
+    ...(document.guide.howToObtain?.length ||
+    document.guide.formAndValidity?.length
+      ? [{ href: "#document-obtain", label: "Підготовка і форма" }]
+      : []),
     { href: "#document-elements", label: "Як перевіряти" },
     ...(document.contexts.length || document.caseContexts.length
       ? [{ href: "#document-contexts", label: "Де використовується" }]
@@ -24,6 +30,17 @@ export function documentDetailToc(document: DocumentCatalogEntry) {
     { href: "#document-regulation", label: "Правове регулювання" },
     { href: "#document-sources", label: "Офіційні джерела" },
   ]
+}
+
+export function documentKindLabel(guide: DocumentGuide) {
+  switch (guide.kind) {
+    case "working-record":
+      return "Робочий запис"
+    case "evidence-set":
+      return "Набір доказів"
+    default:
+      return "Документ"
+  }
 }
 
 export const categories = listEvidenceDocumentCategories().map(

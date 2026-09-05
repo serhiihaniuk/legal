@@ -99,12 +99,86 @@ export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
         "Обери маршрут лише після письмової матриці наслідків.",
       ],
       documents: [
-        "паспорт і дані PESEL",
-        "історія status UKR",
-        "дати виїздів",
-        "powiadomienie PUP",
-        "інформація про поточні справи",
-        "umowa o pracę — для звичайного маршруту, не для CUKR",
+        {
+          kind: "authored-legal-text",
+          plainText: "паспорт / дані PESEL UKR",
+          parts: [
+            {
+              text: "паспорт",
+              target: { kind: "evidence-document", documentId: "passport" },
+            },
+            { text: " / " },
+            {
+              text: "дані PESEL UKR",
+              target: {
+                kind: "evidence-document",
+                documentId: "pesel-ukr-confirmation",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "історія status UKR",
+          parts: [
+            {
+              text: "історія status UKR",
+              target: {
+                kind: "evidence-document",
+                documentId: "pesel-ukr-confirmation",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "дати виїздів",
+          parts: [
+            {
+              text: "дати виїздів",
+              target: { kind: "evidence-document", documentId: "stay-history" },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "powiadomienie PUP",
+          parts: [
+            {
+              text: "powiadomienie PUP",
+              target: {
+                kind: "evidence-document",
+                documentId: "ukraine-work-notification",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "інформація про поточні справи",
+          parts: [
+            {
+              text: "інформація про поточні справи",
+              target: {
+                kind: "evidence-document",
+                documentId: "proceeding-certificate",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "umowa o pracę — для звичайного маршруту, не для CUKR",
+          parts: [
+            {
+              text: "umowa o pracę — для звичайного маршруту, не для CUKR",
+              target: {
+                kind: "evidence-document",
+                documentId: "employment-contract",
+              },
+            },
+          ],
+        },
       ],
     },
   })

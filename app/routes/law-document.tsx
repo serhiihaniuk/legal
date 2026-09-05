@@ -137,6 +137,7 @@ export default function LawDocumentLearningRoute() {
             <Button
               variant="ghost"
               nativeButton={false}
+              className="h-auto min-h-11 min-w-0 text-left whitespace-normal"
               render={
                 <Link
                   to={getDocumentLearningPath(document.id, previousModule.id)}
@@ -144,7 +145,7 @@ export default function LawDocumentLearningRoute() {
               }
             >
               <ArrowLeft data-icon="inline-start" aria-hidden="true" />
-              Модуль {previousModule.order}
+              {previousModule.title}
             </Button>
           ) : (
             <Button variant="ghost" disabled>
@@ -156,13 +157,14 @@ export default function LawDocumentLearningRoute() {
             <Button
               variant="ghost"
               nativeButton={false}
+              className="h-auto min-h-11 min-w-0 text-left whitespace-normal"
               render={
                 <Link
                   to={getDocumentLearningPath(document.id, nextModule.id)}
                 />
               }
             >
-              Модуль {nextModule.order}
+              {nextModule.title}
               <ArrowRight data-icon="inline-end" aria-hidden="true" />
             </Button>
           ) : (

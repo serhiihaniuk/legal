@@ -1,5 +1,4 @@
 import { LegalText } from "~/components/references"
-import { Badge } from "~/components/ui/badge"
 import {
   Table,
   TableBody,
@@ -10,12 +9,6 @@ import {
 } from "~/components/ui/table"
 import type { CaseGuideCondition } from "~/data/case-guides/types"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
-
-function conditionStatusLabel(status: CaseGuideCondition["status"]) {
-  if (status === "confirmed") return "підтверджено"
-  if (status === "conditional") return "залежить від підстави"
-  return "перевірити"
-}
 
 export function ConditionsMatrix({
   conditions,
@@ -38,9 +31,8 @@ export function ConditionsMatrix({
           <TableHeader>
             <TableRow>
               <TableHead className="w-[22%]">Умова</TableHead>
-              <TableHead className="w-[22%]">Факт у справі</TableHead>
+              <TableHead className="w-[28%]">Що встановити</TableHead>
               <TableHead className="w-[22%]">Доказ</TableHead>
-              <TableHead className="w-[14%]">Стан</TableHead>
               <TableHead>Ризик / норма</TableHead>
             </TableRow>
           </TableHeader>
@@ -53,22 +45,13 @@ export function ConditionsMatrix({
                   <LegalText text={condition.condition} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal">
-                  <LegalText text={condition.modelFact} />
+                  <LegalText text={condition.factToEstablish} />
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
                   <LegalText
                     text={condition.evidence}
                     context="reference-section"
                   />
-                </TableCell>
-                <TableCell className="align-top whitespace-normal">
-                  <Badge
-                    variant={
-                      condition.status === "confirmed" ? "secondary" : "outline"
-                    }
-                  >
-                    {conditionStatusLabel(condition.status)}
-                  </Badge>
                 </TableCell>
                 <TableCell className="align-top whitespace-normal text-muted-foreground">
                   <p>
@@ -97,19 +80,12 @@ export function ConditionsMatrix({
               <h3 className="text-base font-semibold">
                 <LegalText text={condition.condition} />
               </h3>
-              <Badge
-                variant={
-                  condition.status === "confirmed" ? "secondary" : "outline"
-                }
-              >
-                {conditionStatusLabel(condition.status)}
-              </Badge>
             </div>
             <dl className="mt-3 grid gap-2 text-sm leading-6">
               <div>
-                <dt className="inline font-medium">Факт:</dt>{" "}
+                <dt className="inline font-medium">Що встановити:</dt>{" "}
                 <dd className="inline">
-                  <LegalText text={condition.modelFact} />
+                  <LegalText text={condition.factToEstablish} />
                 </dd>
               </div>
               <div>

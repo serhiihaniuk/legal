@@ -162,10 +162,8 @@ export function KpaLearningContent({
     <LegalLearningModuleContent
       module={moduleView}
       navigation={{
-        previousLabel: previousModule
-          ? `Модуль ${previousModule.order}`
-          : "Початок",
-        nextLabel: nextModule ? `Модуль ${nextModule.order}` : "Кінець",
+        previousLabel: previousModule ? previousModule.title : "Початок",
+        nextLabel: nextModule ? nextModule.title : "Кінець",
         onPrevious: previousModule
           ? () => onSelectModule(previousModule.id)
           : undefined,

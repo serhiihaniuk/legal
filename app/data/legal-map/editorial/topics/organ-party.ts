@@ -87,9 +87,45 @@ export const organPartyTopic: KnowledgeUnit<OrganPartyBody> =
         "Чи повноваження охоплює цю дію?",
       ],
       documents: [
-        "pełnomocnictwo",
-        "доказ сплати opłaty skarbowej, якщо потрібна",
-        "документи статусу сторони",
+        {
+          kind: "authored-legal-text",
+          plainText: "pełnomocnictwo",
+          parts: [
+            {
+              text: "pełnomocnictwo",
+              target: {
+                kind: "evidence-document",
+                documentId: "power-of-attorney",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "доказ сплати opłaty skarbowej, якщо потрібна",
+          parts: [
+            {
+              text: "доказ сплати opłaty skarbowej, якщо потрібна",
+              target: {
+                kind: "evidence-document",
+                documentId: "stamp-duty-proof",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "документи статусу сторони",
+          parts: [
+            {
+              text: "документи статусу сторони",
+              target: {
+                kind: "evidence-document",
+                documentId: "status-documents",
+              },
+            },
+          ],
+        },
       ],
     },
   })

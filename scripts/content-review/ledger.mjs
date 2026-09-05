@@ -175,7 +175,7 @@ const FAMILY_COUNTS = {
   provision: 1478,
   "learning-module": 43,
   "map-topic": 63,
-  "evidence-document": 18,
+  "evidence-document": 57,
   "case-guide": 9,
 }
 
@@ -637,7 +637,9 @@ function collectTypedUnitEntries(
         folderDocumentId ??
         subject?.documentId ??
         subject?.evidenceDocumentId ??
-        findLiteral(source, "documentId")
+        (family === "evidence-document"
+          ? findLiteral(source, "id")
+          : findLiteral(source, "documentId"))
       const contentId =
         subject?.moduleId ??
         subject?.nodeId ??

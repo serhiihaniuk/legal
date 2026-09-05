@@ -80,12 +80,84 @@ export const wezwanieWorkflowTopic: KnowledgeUnit<WezwanieWorkflowBody> =
         "Збережи доказ подання.",
       ],
       documents: [
-        "wezwanie",
-        "підтвердження doręczenia",
-        "таблиця вимог",
-        "лист-відповідь",
-        "перелік додатків",
-        "доказ відправлення",
+        {
+          kind: "authored-legal-text",
+          plainText: "wezwanie",
+          parts: [
+            {
+              text: "wezwanie",
+              target: {
+                kind: "evidence-document",
+                documentId: "authority-summons",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "підтвердження doręczenia",
+          parts: [
+            {
+              text: "підтвердження doręczenia",
+              target: {
+                kind: "evidence-document",
+                documentId: "delivery-proof",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "таблиця вимог",
+          parts: [
+            {
+              text: "таблиця вимог",
+              target: {
+                kind: "evidence-document",
+                documentId: "requirements-table",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "лист-відповідь",
+          parts: [
+            {
+              text: "лист-відповідь",
+              target: {
+                kind: "evidence-document",
+                documentId: "response-letter",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "перелік додатків",
+          parts: [
+            {
+              text: "перелік додатків",
+              target: {
+                kind: "evidence-document",
+                documentId: "case-file-index",
+              },
+            },
+          ],
+        },
+        {
+          kind: "authored-legal-text",
+          plainText: "доказ відправлення",
+          parts: [
+            {
+              text: "доказ відправлення",
+              target: {
+                kind: "evidence-document",
+                documentId: "dispatch-proof",
+              },
+            },
+          ],
+        },
       ],
     },
   })
