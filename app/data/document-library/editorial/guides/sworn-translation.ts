@@ -1,93 +1,135 @@
-import {
-  defineKnowledgeUnit,
-  type KnowledgeUnit,
-} from "~/data/legal-knowledge/contracts"
-import type { DocumentGuide } from "~/data/document-library/contracts"
-import { documentSources, workLaw } from "../authoring"
+import type { DocumentGuide } from "../../contracts"
+import { externalLegalText } from "~/data/legal-library/legal-text"
+import { defineDocumentTopic } from "../define-document-topic"
+import { documentSources, foreignersLaw, workLaw } from "../authoring"
+
+const TRANSLATOR_ACT_URL = "https://eli.gov.pl/eli/DU/2019/1326/ogl"
 
 const guide: DocumentGuide = {
   id: "sworn-translation",
-  title: "Tłumaczenie przysięgłe і документи іноземною мовою",
+  title: "Tłumaczenie przysięgłe іноземного документа",
   category: "evidence",
+  kind: "document",
   aliases: [
     "tłumaczenie przysięgłe",
+    "засвідчений переклад",
     "зрозумілий переклад/версія",
-    "tłumaczenie, apostille, legalizacja",
   ],
-  documentType:
-    "Переклад, виконаний особою, уповноваженою відповідно до польських правил, або інша допустима мовна версія — залежно від вимоги.",
   description:
-    "Не кожна ситуація вимагає tego samego виду перекладу. Для доказу іноземною мовою organ може вимагати tłumaczenie na język polski; для договору з cudzoziemcem окремо діє обов’язок надати зрозумілу мовну версію. Apostille або legalizacja підтверджують походження документа, а не правильність перекладу.",
+    "Tłumaczenie przysięgłe є перекладом, правильність якого засвідчує уповноважений перекладач. Для документальних доказів іноземною мовою у провадженні за ustawą o cudzoziemcach переклад польською через tłumacza przysięgłego є звичайним законним обов'язком.",
   preparedBy:
-    "Tłumaczenie przysięgłe виконує tłumacz przysięgły; зрозумілу версію договору забезпечує podmiot powierzający pracę.",
-  howToObtain: [
-    "Встановити, чи потрібний переклад звичайний, przysięgły, чи лише зрозуміла версія договору.",
-    "Перевірити перекладача в офіційному списку Ministerstwa Sprawiedliwości.",
-    "Передати повний документ із печатками, додатками й зворотними сторонами; зберегти зв’язок перекладу з оригіналом.",
-  ],
-  formAndValidity: [
-    "Переклад повинен охоплювати саме той документ і всі елементи, які мають доказове значення.",
-    "Apostille або legalizacja застосовуються лише тоді, коли цього вимагають правила щодо походження документа.",
-  ],
+    "Tłumacz przysięgły відповідної мови. Наявність бюро перекладів або печатки фірми сама по собі не підтверджує цих повноважень.",
   purpose: [
-    "Дозволяє organowi прочитати зміст іноземного документа та пов’язати його з оригіналом.",
+    "Передає польською зміст конкретного документа і вказує, з якого примірника зроблено переклад.",
   ],
   doesNotProve: [
-    "Не робить недостовірний або нечинний оригінал правильним.",
-    "Не замінює apostille/legalizacji, якщо вони окремо потрібні.",
+    "Засвідчення перекладу не підтверджує справжності оригіналу і не перетворює копію, з якої перекладали, на оригінал.",
   ],
-  legalBasis: [
-    "Мовна форма доказу залежить від процедури та вимог organu.",
-    workLaw.text`Для договору з cudzoziemcem — ${workLaw.article("5", "art. 5 ustawy z 20.03.2025 o warunkach dopuszczalności powierzania pracy cudzoziemcom")}.`,
+  explanation: [
+    {
+      id: "when-required",
+      title: "Переклад для органу і зрозумілий текст договору",
+      paragraphs: [
+        "У звичайній справі про дозвіл на перебування не потрібно чекати окремого wezwania, щоб передбачити засвідчений переклад іноземного доказу. Спеціальний виняток має випливати з правила конкретної процедури. Зокрема, перед міністром закордонних справ або консулом закон допускає польську або вказану ними мову; цей виняток не переноситься автоматично на справу у wojewody.",
+        "Інше питання виникає, коли роботодавець укладає договір польською з іноземцем, який не володіє цією мовою. До підписання працівник має отримати письмовий текст зрозумілою йому мовою. Саме ця вимога не означає, що кожний такий переклад має бути присяжним. Водночас для договору, укладеного іноземною мовою, закон окремо вимагає зберігати присяжний переклад польською. Мета цих правил різна: людина розуміє договір, а контролюючий орган може прочитати його польською.",
+      ],
+    },
+    {
+      id: "read-certification",
+      title: "Що означає засвідчення наприкінці перекладу",
+      paragraphs: [
+        "Після перекладеного змісту ви побачите відомості про засвідчення. Repertorium є реєстром виконаних перекладачем дій. Його номер дозволяє встановити конкретний переклад, а номер у списку Ministerstwa Sprawiedliwości ідентифікує самого перекладача. Це різні номери.",
+        "Відмітка про оригінал, копію або вже засвідчений відпис показує, що саме отримав перекладач. Якщо йому надіслали скан, переклад не є доказом того, що він оглянув паперовий оригінал. Для паперового засвідчення передбачена печатка перекладача; електронне засвідчення можливе з kwalifikowanym podpisem elektronicznym. Картинка підпису в PDF не є таким електронним підписом.",
+      ],
+    },
+    {
+      id: "complete-document",
+      title: "Зворотний бік теж може змінювати зміст",
+      paragraphs: [
+        "Порівнюють не кількість сторінок перекладу з кількістю сторінок джерела, а охоплений зміст. Штамп, примітка про зміну прізвища, додаток або посвідчення на звороті можуть пояснювати факт, який у перекладі лицьового боку залишився незрозумілим.",
+      ],
+      example: {
+        title: "Переклад не охопив відмітку на звороті",
+        facts: [
+          "Умовний приклад. У повному іноземному документі є два боки. Перекладач спочатку отримав лише скан лицьового боку. На звороті міститься пізніша відмітка, яка пояснює різні прізвища в документах.",
+        ],
+        sample: {
+          kind: "table",
+          title: "Зіставлення джерела і перекладу",
+          note: "Заповнений робочий запис. Це не форма засвідчення і не справжній переклад.",
+          columns: ["Що читаємо", "Що встановлено", "Що зроблено"],
+          rows: [
+            {
+              id: "source",
+              cells: [
+                "Документ",
+                "Лицьовий бік і зворот з відміткою про зміну даних.",
+                "Збережено скани обох боків.",
+              ],
+            },
+            {
+              id: "first",
+              cells: [
+                "Початковий переклад",
+                "Засвідчено переклад з наданої копії. Відмітки зі звороту немає.",
+                "Виявлено неповний матеріал, переданий перекладачу.",
+              ],
+            },
+            {
+              id: "complete",
+              cells: [
+                "Доповнений переклад",
+                "Описано і перекладено обидва боки. Підставою залишається копія.",
+                "Перекладач видав повний засвідчений переклад. Його долучено разом із джерелом.",
+              ],
+            },
+          ],
+        },
+        reasoning: [
+          "Працівник передав перекладачу відсутній бік, а не дописував відмітку самостійно. Новий переклад дозволив прочитати зміну прізвища. Позначення джерела як копії залишилося правдивим.",
+        ],
+        conclusion:
+          "Прогалину в перекладі усунуто. Питання подання оригіналу або належної копії вирішується окремо.",
+      },
+    },
+    {
+      id: "translation-and-authentication",
+      title: "Переклад і apostille виконують різні завдання",
+      paragraphs: [
+        "Перекладач засвідчує переклад змісту. Apostille або legalizacja стосуються підпису, повноважень підписанта та печатки документа. Якщо потрібне таке посвідчення, перекладачу передають і його. Якщо міжнародна угода звільняє документ від посвідчення, це саме по собі не скасовує вимоги перекласти його.",
+      ],
+    },
   ],
   keyChecks: [
-    "Повнота оригіналу, особа перекладача, мова, номери сторінок, печатки, додатки та потреба apostille/legalizacji.",
+    "Перекладач є в офіційному списку для відповідної мови.",
+    "Засвідчення називає джерело перекладу і запис у repertorium.",
+    "Переклад охоплює зміст усіх наданих боків, додатків і посвідчень.",
+    "Прізвища та дати зіставлено з джерелом; розбіжність пояснено, а не виправлено вручну.",
   ],
-  relatedDocuments: ["employment-contract"],
+  legalBasis: [
+    foreignersLaw.text`${foreignersLaw.article("8", "Art. 8 ust. 2–3 ustawy o cudzoziemcach: мова документальних доказів")}`,
+    externalLegalText(
+      "Art. 17–18 ustawy o zawodzie tłumacza przysięgłego: repertorium і засвідчення",
+      TRANSLATOR_ACT_URL
+    ),
+    workLaw.text`${workLaw.article("5", "Art. 5 ustawy o powierzaniu pracy cudzoziemcom: мовні версії договору")}`,
+  ],
+  relatedDocuments: [
+    "apostille-legalisation",
+    "civil-status-record",
+    "employment-contract",
+  ],
   sources: [
+    documentSources.aliens,
     documentSources.translatorList,
-    documentSources.work,
     {
-      label: "PIP — мовна версія umowy z cudzoziemcem",
-      url: "https://www.pip.gov.pl/dla-pracodawcow/pytania-i-odpowiedzi/w-jaki-sposob-podmiot-powierzajacy-prace-moze-potwierdzic-ze-cudzoziemiec-posluguje-sie-jezykiem-polskim-i-w-zwiazku-z-tym-nie-ma-obowiazku-przedstawiac-mu-umowy-w-innym-jezyku",
-      note: "Офіційне пояснення обов’язку надати зрозумілий текст договору.",
+      label: "Ustawa o zawodzie tłumacza przysięgłego",
+      url: TRANSLATOR_ACT_URL,
+      note: "Repertorium, відомості про джерело, паперове й електронне засвідчення.",
     },
+    documentSources.work,
   ],
-  verifiedAt: "2026-07-18",
+  verifiedAt: "2026-09-06",
 }
-
-export const swornTranslationTopic: KnowledgeUnit<DocumentGuide> =
-  defineKnowledgeUnit({
-    id: "evidence-document:sworn-translation",
-    subject: {
-      family: "evidence-document",
-      reference: { kind: "evidence-document", documentId: "sworn-translation" },
-    },
-    summary: guide.description,
-    claims: [
-      {
-        id: "document-purpose",
-        kind: "requires-verification",
-        text: guide.description,
-        basis: [
-          {
-            reference: {
-              kind: "official-source",
-              sourceId: "eli-ustawa-o-cudzoziemcach",
-            },
-            locator: "document-specific requirements",
-          },
-        ],
-      },
-    ],
-    relationships: [],
-    review: {
-      reviewStatus: "reviewed",
-      language: "uk",
-      legalStateDate: "2026-07-18",
-      verifiedAt: guide.verifiedAt,
-    },
-    body: guide,
-  })
-
+export const swornTranslationTopic = defineDocumentTopic(guide)
 export default swornTranslationTopic

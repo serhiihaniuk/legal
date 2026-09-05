@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 44,
+    "reviewed": 50,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -128,7 +128,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/student.ts",
       "family": "case-guide",
-      "contentHash": "81f5e91dc9cd9cbcb6fc27b433c66ff9121a08c9274a3467a0ee17571f00b477",
+      "contentHash": "531ba46f4c515d93a149cba60bfbfd564fe0c192e612efc1b65365749766f486",
       "writing": "pending",
       "evidence": null
     },
@@ -163,9 +163,9 @@
     {
       "path": "app/data/document-library/editorial/guides/apostille-legalisation.ts",
       "family": "evidence-document",
-      "contentHash": "09e2f603b9a00687db3e5b1ae7c324906677bd77f037e1b88d0c31f09d5b8a5b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d012c3b979a01c1dedd9dfbb9ce26b4ca4038c0df1aa2950d9e8e2fed476012a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/authority-summons.ts",
@@ -478,30 +478,30 @@
     {
       "path": "app/data/document-library/editorial/guides/study-annex.ts",
       "family": "evidence-document",
-      "contentHash": "8f2f7bff0da1d7ee61fe0fdb31ed64379f7a56009063350154ef3cbd06888a5e",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "b6e5d75cba9da0fc926d034489e9315f530e72dc65cb39d553b12b5657fc5a64",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/study-confirmation.ts",
       "family": "evidence-document",
-      "contentHash": "5234a8cdfbe7c07bc057aefa83f980e3e4924c96cd3a1da9799e63bf1c8d1879",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "82da9bdeeff3797f8a00ddd7a7c6e25303a0effc99bdad36ca17af9474c7fff8",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/study-progress.ts",
       "family": "evidence-document",
-      "contentHash": "c93b40c2bf7e9f0fa4fdec8946e560ae6b6b2667ec28fd398b3dbfe2e4d341f7",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "97eee7d9d1182f1771ae3281685b92920194322ed44922afef4d1c7df38bffe4",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/sworn-translation.ts",
       "family": "evidence-document",
-      "contentHash": "33f95935ec0c56c13867fd8edfd61e4746ed8a6565e6a01ef56df9f364f98df4",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ddaad13ec867310a12e65abccf16b9d7a7871c8f64dcf5961926d855000af5b2",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/trainee-volunteer-annex.ts",
@@ -513,9 +513,9 @@
     {
       "path": "app/data/document-library/editorial/guides/tuition-payment.ts",
       "family": "evidence-document",
-      "contentHash": "7e0fedc7a4c084d8e4f642569e6f5444cf72d2966f2aee2897e8d69b32c84818",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "3b8573d745492dc886dc35f5e5ac0da4fe2f7a1750a190595019cbb94216484b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/ukraine-work-notification.ts",

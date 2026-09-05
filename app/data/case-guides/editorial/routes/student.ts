@@ -2,7 +2,93 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+
+import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
+const studentCertificate: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Довідка про прийняття або продовження навчання",
+    parts: [
+      {
+        text: "Довідка про прийняття або продовження навчання",
+        target: { kind: "evidence-document", documentId: "study-confirmation" },
+      },
+    ],
+  },
+  status: "за потреби або за попередніми правилами",
+  level: "conditional",
+  owner:
+    "Навчальний заклад · для підтвердження чи уточнення конкретних відомостей",
+  proves:
+    "Статус, форма, програма і період. У новій заяві через MOS не замінює електронного додатка закладу",
+  law: foreignersLaw.text`${foreignersLaw.article("106", "Art. 106 ust. 7: додаток у новій заяві")}. ${foreignersLaw.external("Art. 12 ustawy zmieniającej z 21.11.2025: попередні правила для раніше розпочатих проваджень", "https://eli.gov.pl/eli/DU/2025/1794/ogl")}`,
+}
+
+const studentPayment: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Оплата навчання або підтвердження безоплатності",
+    parts: [
+      {
+        text: "Оплата навчання або підтвердження безоплатності",
+        target: { kind: "evidence-document", documentId: "tuition-payment" },
+      },
+    ],
+  },
+  status: "оплата, якщо навчання платне",
+  level: "conditional",
+  owner:
+    "Банк і навчальний заклад · підтвердження переказу та зарахування за студента",
+  proves:
+    "Оплату за конкретний семестр або рік. Часткову оплату не прирівнюють до повної; безоплатність чи звільнення підтверджує заклад",
+  law: foreignersLaw.text`${foreignersLaw.article("144", "Art. 144 ust. 1 pkt 1 lit. b: доказ оплати платного навчання")}`,
+}
+
+const studentProgress: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Виписка результатів і пояснення перебігу навчання",
+    parts: [
+      {
+        text: "Виписка результатів і пояснення перебігу навчання",
+        target: { kind: "evidence-document", documentId: "study-progress" },
+      },
+    ],
+  },
+  status: "при уточненні прогресу або за попередніми правилами",
+  level: "conditional",
+  owner:
+    "Навчальний заклад · відповідний семестр, незараховані предмети та зміни статусу",
+  proves:
+    "Що завершено і чого бракує. При продовженні навчання ці відомості входять до додатка MOS; окрема виписка не є автоматичним додатком до нього",
+  law: foreignersLaw.text`${foreignersLaw.article("106", "Art. 106 ust. 7 pkt 9: відомості про вже виконану програму при продовженні навчання")}`,
+}
+
+const studentAnnex: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Електронний додаток навчального закладу",
+    parts: [
+      {
+        text: "Електронний додаток навчального закладу",
+        target: { kind: "evidence-document", documentId: "study-annex" },
+      },
+    ],
+  },
+  status: "обов’язково для нової заяви MOS",
+  level: "required",
+  owner: "Уповноважена особа закладу · заповнює і підписує через посилання MOS",
+  proves:
+    "Дані студента, установи, програми, платності та прогресу при продовженні. Заявник окремо підписує і подає власну заяву",
+  law: foreignersLaw.text`${foreignersLaw.article("106", "Art. 106 ust. 7: зміст додатка навчального закладу")}`,
+}
 
 const route: CaseGuideRoute = {
   id: "student",
@@ -371,70 +457,8 @@ const route: CaseGuideRoute = {
             "Чому факти відповідають саме цій підставі та чому сусідня підстава не є точнішою",
           law: "Правова кваліфікація cel pobytu",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Zaświadczenie про прийняття/навчання",
-            parts: [
-              {
-                text: "Zaświadczenie про прийняття/навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-confirmation",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Статус і вид навчання",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 144–157f",
-            parts: [
-              {
-                text: "art. 144",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-144",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "157f",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-157f",
-                },
-              },
-            ],
-          },
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Доказ оплати навчання",
-            parts: [
-              {
-                text: "Доказ оплати навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "tuition-payment",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Виконання фінансової умови",
-          law: "спеціальна підстава",
-        },
+        studentCertificate,
+        studentPayment,
         {
           item: {
             kind: "authored-legal-text",
@@ -465,26 +489,7 @@ const route: CaseGuideRoute = {
           proves: "Забезпечення періоду pobytu",
           law: "спеціальна підстава",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Документи про прогрес навчання",
-            parts: [
-              {
-                text: "Документи про прогрес навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-progress",
-                },
-              },
-            ],
-          },
-          status: "контроль",
-          level: "control",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Реальність мети",
-          law: "контроль процедури",
-        },
+        studentProgress,
       ],
       risks: [
         {
@@ -600,70 +605,8 @@ const route: CaseGuideRoute = {
           proves: "Особу й виконання формальних вимог",
           law: "Спеціальна процедура pobytowa",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Zaświadczenie про прийняття/навчання",
-            parts: [
-              {
-                text: "Zaświadczenie про прийняття/навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-confirmation",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Статус і вид навчання",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 144–157f",
-            parts: [
-              {
-                text: "art. 144",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-144",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "157f",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-157f",
-                },
-              },
-            ],
-          },
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Доказ оплати навчання",
-            parts: [
-              {
-                text: "Доказ оплати навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "tuition-payment",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Виконання фінансової умови",
-          law: "спеціальна підстава",
-        },
+        studentCertificate,
+        studentPayment,
         {
           item: {
             kind: "authored-legal-text",
@@ -694,26 +637,7 @@ const route: CaseGuideRoute = {
           proves: "Забезпечення періоду pobytu",
           law: "спеціальна підстава",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Документи про прогрес навчання",
-            parts: [
-              {
-                text: "Документи про прогрес навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-progress",
-                },
-              },
-            ],
-          },
-          status: "контроль",
-          level: "control",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Реальність мети",
-          law: "контроль процедури",
-        },
+        studentProgress,
         {
           reviewId: "submission",
           item: {
@@ -736,39 +660,7 @@ const route: CaseGuideRoute = {
             "Точний склад поданого пакета, назви файлів, версії документів і можливість відтворити заяву",
           law: "Контроль treści podania та майбутніх akt sprawy",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Електронний додаток навчального закладу",
-            parts: [
-              {
-                text: "Електронний додаток навчального закладу",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-annex",
-                },
-              },
-            ],
-          },
-          owner: "Заклад · заповнює і підписує через посилання MOS",
-          proves: "Дані студента, установи та навчання",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 7",
-            parts: [
-              {
-                text: "Art. 106 ust. 7",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "required",
-          status: "обов’язково",
-        },
+        studentAnnex,
       ],
       risks: [
         {
@@ -913,70 +805,8 @@ const route: CaseGuideRoute = {
           proves: "Особу й виконання формальних вимог",
           law: "Спеціальна процедура pobytowa",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Zaświadczenie про прийняття/навчання",
-            parts: [
-              {
-                text: "Zaświadczenie про прийняття/навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-confirmation",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Статус і вид навчання",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 144–157f",
-            parts: [
-              {
-                text: "art. 144",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-144",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "157f",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-157f",
-                },
-              },
-            ],
-          },
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Доказ оплати навчання",
-            parts: [
-              {
-                text: "Доказ оплати навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "tuition-payment",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Виконання фінансової умови",
-          law: "спеціальна підстава",
-        },
+        studentCertificate,
+        studentPayment,
         {
           item: {
             kind: "authored-legal-text",
@@ -1007,26 +837,7 @@ const route: CaseGuideRoute = {
           proves: "Забезпечення періоду pobytu",
           law: "спеціальна підстава",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Документи про прогрес навчання",
-            parts: [
-              {
-                text: "Документи про прогрес навчання",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-progress",
-                },
-              },
-            ],
-          },
-          status: "контроль",
-          level: "control",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Реальність мети",
-          law: "контроль процедури",
-        },
+        studentProgress,
         {
           item: {
             kind: "authored-legal-text",
@@ -1048,39 +859,7 @@ const route: CaseGuideRoute = {
             "Який документ доводить кожну умову, за який період і де залишається прогалина або суперечність",
           law: "KPA — ustalenie stanu faktycznego та ocena dowodów",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Електронний додаток навчального закладу",
-            parts: [
-              {
-                text: "Електронний додаток навчального закладу",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "study-annex",
-                },
-              },
-            ],
-          },
-          owner: "Заклад · заповнює і підписує через посилання MOS",
-          proves: "Дані студента, установи та навчання",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 7",
-            parts: [
-              {
-                text: "Art. 106 ust. 7",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "required",
-          status: "обов’язково",
-        },
+        studentAnnex,
         {
           item: {
             kind: "authored-legal-text",
@@ -1840,70 +1619,8 @@ const route: CaseGuideRoute = {
       proves: "Особу й виконання формальних вимог",
       law: "Спеціальна процедура pobytowa",
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Zaświadczenie про прийняття/навчання",
-        parts: [
-          {
-            text: "Zaświadczenie про прийняття/навчання",
-            target: {
-              kind: "evidence-document",
-              documentId: "study-confirmation",
-            },
-          },
-        ],
-      },
-      status: "основний доказ",
-      level: "required",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Статус і вид навчання",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "art. 144–157f",
-        parts: [
-          {
-            text: "art. 144",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-144",
-            },
-          },
-          {
-            text: "–",
-          },
-          {
-            text: "157f",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-157f",
-            },
-          },
-        ],
-      },
-    },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Доказ оплати навчання",
-        parts: [
-          {
-            text: "Доказ оплати навчання",
-            target: {
-              kind: "evidence-document",
-              documentId: "tuition-payment",
-            },
-          },
-        ],
-      },
-      status: "основний доказ",
-      level: "required",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Виконання фінансової умови",
-      law: "спеціальна підстава",
-    },
+    studentCertificate,
+    studentPayment,
     {
       item: {
         kind: "authored-legal-text",
@@ -1934,56 +1651,8 @@ const route: CaseGuideRoute = {
       proves: "Забезпечення періоду pobytu",
       law: "спеціальна підстава",
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Документи про прогрес навчання",
-        parts: [
-          {
-            text: "Документи про прогрес навчання",
-            target: {
-              kind: "evidence-document",
-              documentId: "study-progress",
-            },
-          },
-        ],
-      },
-      status: "контроль",
-      level: "control",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Реальність мети",
-      law: "контроль процедури",
-    },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Електронний додаток навчального закладу",
-        parts: [
-          {
-            text: "Електронний додаток навчального закладу",
-            target: { kind: "evidence-document", documentId: "study-annex" },
-          },
-        ],
-      },
-      owner: "Заклад · заповнює і підписує через посилання MOS",
-      proves: "Дані студента, установи та навчання",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 106 ust. 7",
-        parts: [
-          {
-            text: "Art. 106 ust. 7",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-106",
-            },
-          },
-        ],
-      },
-      level: "required",
-      status: "обов’язково",
-    },
+    studentProgress,
+    studentAnnex,
     {
       item: {
         kind: "authored-legal-text",
@@ -2308,6 +1977,16 @@ const route: CaseGuideRoute = {
     },
   ],
   sources: [
+    {
+      label: "UdSC: додаток навчального закладу в MOS",
+      url: "https://www.gov.pl/web/udsc/qa-dla-uczelni",
+      note: "Додаток, додаткова довідка, прогрес і дані про оплату.",
+    },
+    {
+      label: "Запуск MOS 27.04.2026",
+      url: "https://eli.gov.pl/eli/MP/2026/370/ogl",
+      note: "Дата переходу для нових заяв; старі провадження зберігають попередні правила.",
+    },
     {
       label: "Ustawa o cudzoziemcach — ELI",
       url: "https://eli.gov.pl/eli/DU/2025/1079/ogl",

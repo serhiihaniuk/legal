@@ -223,5 +223,35 @@
     "path": "app/data/document-library/editorial/guides/civil-status-record.ts",
     "contentHash": "15e0d87441f757009187cf121c2484ad53ed0ca3cc9a54974852a317a9b0539b",
     "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/study-annex.ts",
+    "contentHash": "b6e5d75cba9da0fc926d034489e9315f530e72dc65cb39d553b12b5657fc5a64",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/study-confirmation.ts",
+    "contentHash": "82da9bdeeff3797f8a00ddd7a7c6e25303a0effc99bdad36ca17af9474c7fff8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/study-progress.ts",
+    "contentHash": "97eee7d9d1182f1771ae3281685b92920194322ed44922afef4d1c7df38bffe4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/tuition-payment.ts",
+    "contentHash": "3b8573d745492dc886dc35f5e5ac0da4fe2f7a1750a190595019cbb94216484b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/sworn-translation.ts",
+    "contentHash": "ddaad13ec867310a12e65abccf16b9d7a7871c8f64dcf5961926d855000af5b2",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/apostille-legalisation.ts",
+    "contentHash": "d012c3b979a01c1dedd9dfbb9ce26b4ca4038c0df1aa2950d9e8e2fed476012a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
   }
 ]
