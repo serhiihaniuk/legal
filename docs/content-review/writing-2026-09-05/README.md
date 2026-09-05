@@ -29,7 +29,11 @@ Batch 10 adds four filled qualification and language examples. It also corrects 
 
 Batch 11 adds four identity and residence-status explanations with filled working comparisons. The CUKR guide now distinguishes registry checks from certificate uploads and explains the September identity-confirmation issue.
 
-After batch 11, 58 of 1,763 inventoried files have current writing acceptance. Of the 57 document guides, 42 are reviewed and 15 remain. Focused document-integration fixes do not constitute complete case-route acceptance. The corpus audit still needs to resolve the university annex's reported end page, recorded in batch 09.
+Batch 12 rewrites the permanent-residence, resident and CUKR applications together with photo, fingerprint and signature records. Six filled comparisons explain the selected form fields, residence accounting, registry corrections and the different biometric rules. The original form layouts remain available through explicit source links.
+
+After batch 12, 64 of 1,763 inventoried files have current writing acceptance. Of the 57 document guides, 48 are reviewed and nine remain. Focused document-integration fixes do not constitute complete case-route acceptance. The corpus audit still needs to resolve the university annex's reported end page, recorded in batch 09.
+
+The nine remaining document guides are case assessment, deadline obstacles, family applications for relatives abroad, family-application consent, ICT application, researcher annex, settlement intention, trainee/volunteer annex and Ukraine work notification.
 
 1. Work-route document journey: employer annex, contract, insurance, ZUS, representation, filing, and procedural correspondence.
 2. Remaining eight case routes and their document guides.

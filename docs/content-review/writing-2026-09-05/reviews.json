@@ -293,5 +293,35 @@
     "path": "app/data/document-library/editorial/guides/pesel-ukr-confirmation.ts",
     "contentHash": "a744d49eb472c9bdefa7d5d218eb6b23781b463bf6beda3d706b8c10c83fffb5",
     "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/cukr-application.ts",
+    "contentHash": "f825bccd7b43d7dc397aa08c1083d80a9aecd7e00445ba5afb347f6c68261fe4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/permanent-application.ts",
+    "contentHash": "20f055ee64b03217b217beba6d30e1c777903be2b9cd68853716eace5a587fea",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/resident-application.ts",
+    "contentHash": "dbc6fa145cb7cbaecae0f14274128c4dee88a246fcd876348ba8f898ad58584a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/digital-photo.ts",
+    "contentHash": "58a8db6bca276b549d3061d1f180fcdcf6fda4c48efe4af5a22897431c470090",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/fingerprint-record.ts",
+    "contentHash": "871f0b143e4fc9817b6c301f031078c1cebf90d7cf47952a40ffca39c318dd7c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/signature-specimen.ts",
+    "contentHash": "310376a4d2ad6b2d80ee0096afcbd4fc88a3a35d3418e1966a778465a0745a6f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
   }
 ]

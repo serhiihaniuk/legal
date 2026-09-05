@@ -220,3 +220,10 @@
 - Reused shared CUKR document definitions for PESEL checks and gmina corrections. Distinguished required status verification from a universal certificate upload and the passport's data from PESEL records.
 - Recorded exact official checks and the identity-confirmation transition in `content-review/writing-2026-09-05/batches/11-identity-and-status.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged.
 - Full verification passed with 92 application tests and a production build. Desktop/mobile examples, keyboard table scrolling and document/case/provision navigation passed without browser console errors.
+
+## 2026-09-06 residence applications and biometric records
+
+- Reworked permanent-residence, resident and CUKR applications, digital photos, fingerprint records and signature specimens. Added six filled comparisons and direct links to original form layouts. Explained application fields, residence accounting, registry corrections, filing effects and separate biometric age thresholds.
+- Recorded the official ELI and UdSC checks in `content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged.
+- The rendered photo page now explains ordinary requirements before the example and exceptions. The CUKR heading correctly identifies submission as the event affecting an existing case. An optional-form rendering test now supplies its own prose fixture.
+- Full verification passed with 92 application tests and a production build. Final content adjustments passed the five document-rendering tests, editorial validation and another build. All six desktop/mobile pages fit, all six mobile tables scroll by keyboard, and document/case/provision links worked without browser console errors.

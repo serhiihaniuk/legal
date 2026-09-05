@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 58,
+    "reviewed": 64,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -226,9 +226,9 @@
     {
       "path": "app/data/document-library/editorial/guides/cukr-application.ts",
       "family": "evidence-document",
-      "contentHash": "9f1e7320c789d07601449e756e3a1bd63006b65c1de1ef09a735a2d1e10524e9",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "f825bccd7b43d7dc397aa08c1083d80a9aecd7e00445ba5afb347f6c68261fe4",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/deadline-obstacle.ts",
@@ -247,9 +247,9 @@
     {
       "path": "app/data/document-library/editorial/guides/digital-photo.ts",
       "family": "evidence-document",
-      "contentHash": "29290fcd6a264869e97707f730f687c3e5231ffec21a7c847df392758821786b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "58a8db6bca276b549d3061d1f180fcdcf6fda4c48efe4af5a22897431c470090",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/dispatch-proof.ts",
@@ -303,9 +303,9 @@
     {
       "path": "app/data/document-library/editorial/guides/fingerprint-record.ts",
       "family": "evidence-document",
-      "contentHash": "7bfc1fd9a1dd72a3c6074a3cdfd8d6c26dbe90b646dab8fd9ddbd232b8e0ea4d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "871f0b143e4fc9817b6c301f031078c1cebf90d7cf47952a40ffca39c318dd7c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/health-insurance.ts",
@@ -359,9 +359,9 @@
     {
       "path": "app/data/document-library/editorial/guides/permanent-application.ts",
       "family": "evidence-document",
-      "contentHash": "7896084d6c8ec5ca129ba401352f3c09ef5378f3f0161de7eb622e1bef3f792e",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "20f055ee64b03217b217beba6d30e1c777903be2b9cd68853716eace5a587fea",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/pesel-ukr-confirmation.ts",
@@ -429,9 +429,9 @@
     {
       "path": "app/data/document-library/editorial/guides/resident-application.ts",
       "family": "evidence-document",
-      "contentHash": "f714a7566e6f387cb0e4e1169a5df83a6a3bd19f5d36b26764ab0382c18dfdc3",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "dbc6fa145cb7cbaecae0f14274128c4dee88a246fcd876348ba8f898ad58584a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/response-letter.ts",
@@ -450,9 +450,9 @@
     {
       "path": "app/data/document-library/editorial/guides/signature-specimen.ts",
       "family": "evidence-document",
-      "contentHash": "96e053711b259aa7998dacc378c760447d33a67040ca14dcab46e61332312140",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "310376a4d2ad6b2d80ee0096afcbd4fc88a3a35d3418e1966a778465a0745a6f",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/stamp-duty-proof.ts",

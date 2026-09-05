@@ -52,7 +52,16 @@ describe("document explanations", () => {
   })
 
   it("shows form requirements even when no obtain instructions are authored", () => {
-    const photo = documentById.get("digital-photo")!
+    const source = documentById.get("digital-photo")!
+    const formRequirement = "Контрольні вимоги до форми."
+    const photo = {
+      ...source,
+      guide: {
+        ...source.guide,
+        howToObtain: undefined,
+        formAndValidity: [formRequirement],
+      },
+    }
     expect(photo.guide.howToObtain).toBeUndefined()
     const { container } = render(
       <MemoryRouter>
@@ -60,7 +69,7 @@ describe("document explanations", () => {
       </MemoryRouter>
     )
     expect(container.querySelector("#document-obtain")?.textContent).toContain(
-      "Параметри фотографії"
+      formRequirement
     )
     expect(
       documentDetailToc(photo).some(

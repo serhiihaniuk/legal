@@ -1,0 +1,44 @@
+# Residence applications and biometric records
+
+Reviewed on 2026-09-06 against `legal-explanatory-writing`. Read all six complete guide files and their rendered pages. Writing acceptance covers these guides only.
+
+## Questions and filled examples
+
+| Guide | Question answered | Example |
+| --- | --- | --- |
+| Permanent application | Where does the applicant explain the specific ground for permanent residence? | Selected Polish fields connect a valid Karta Polaka, the intention to settle and supporting housing and employment facts. The example does not turn those contracts into universal mandatory attachments. |
+| Resident application | Why can five calendar years still be insufficient? | Two years under the study ground in art. 144 and three years under an ordinary work permit produce four credited years. The actual dates remain in the application; the half-credit calculation is a separate working assessment. |
+| CUKR application | What happens when the passport and PESEL record disagree? | A filled comparison identifies an expired passport in the registry, records the correction at the gmina and checks the replacement against part B of the application. Filing effects and collection remain separate events. |
+| Digital photo | Why can an accepted file still require replacement? | A technically compliant JPG contains an eight-month-old image. The completed record replaces the image and separately checks the file, date and appearance. Ordinary requirements precede the example and exceptions. |
+| Fingerprint record | Does an unreadable index finger mean no fingerprints were taken? | Selected Polish fields record successful collection from both middle fingers and explain the unreadable index fingers. The service record is distinct from the electronic biometric images. |
+| Signature specimen | Whose signature belongs on the card and whose signature submits the application? | A comparison for a child aged 12 years and two months separates the ordinary under-13 exemption, the CUKR registry rule from age 12 and the representative's application signature. |
+
+All examples are labelled fictional working comparisons or selected fields. They do not reproduce a secure document, official MOS interface, genuine signature or client record. Original form links show the actual layouts. No original client material was added.
+
+## Official sources checked
+
+- [Foreigners act, Dz.U. 2025 poz. 1079](https://eli.gov.pl/eli/DU/2025/1079/ogl) and [current Sejm reading text](https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf): checked active metadata and listed amendments. Read art. 15, 106b, 195, the relevant art. 203 series, 211, 212 and the art. 219 series. These establish image exceptions, separate biometric exemptions, permanent-residence grounds, residence accounting, income periods, the housing-title requirement, attachments, signing, UPO and personal actions. The reading text contains old and replacement MOS wording; the guides use the activated replacement provisions.
+- [MOS amendment, Dz.U. 2025 poz. 1794](https://eli.gov.pl/api/acts/DU/2025/1794/text.pdf): art. 12 on PDF page 40 preserves the prior rules for the specified earlier proceedings. Art. 17 and 19 govern activation. Read with [M.P. 2026 poz. 370](https://eli.gov.pl/eli/MP/2026/370/ogl) and [UdSC's MOS notice](https://www.gov.pl/web/udsc/info-mos), which establish the 27.04.2026 start for these new electronic applications. A previously opened paper case is not automatically filed again.
+- [Permanent-residence forms, Dz.U. 2026 poz. 488](https://eli.gov.pl/eli/DU/2026/488/ogl) and [official PDF](https://eli.gov.pl/api/acts/DU/2026/488/text/O/D20260488.pdf): active, effective 27.04.2026. Read the regulation and application instructions, sections A–F, the fingerprint form and signature form. The application occupies PDF pages 3–14, the fingerprint record page 15 and the signature form page 16. Sections 3–4 address photographs; section 5 addresses PDF copies and the 10 MB per-file / 50 MB total limits.
+- [Resident forms, Dz.U. 2026 poz. 487](https://eli.gov.pl/eli/DU/2026/487/ogl) and [official PDF](https://eli.gov.pl/api/acts/DU/2026/487/text/O/D20260487.pdf): active, effective 27.04.2026. Read the regulation, instructions and selected history, income, insurance and justification fields. The application occupies PDF pages 3–15, fingerprint record page 16 and signature form page 17. The specimen explicitly distinguishes its working calculation from the official fields.
+- [Temporary-residence forms, Dz.U. 2026 poz. 553](https://eli.gov.pl/eli/DU/2026/553/ogl): active, effective 27.04.2026. Read photograph sections 3–4 and fingerprint section 7. Visually inspected the official local PDF's annex 10 on page 71 and annex 11 on page 72. Their hand diagrams, result fields, official's details and signature rectangle are described from the forms. They are not converted into ordinary applicant-prepared uploads.
+- [Ukraine special act, current Sejm text](https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf): read art. 42c–42i and 42r in the 61-page text dated 22.05.2026. Relevant PDF locators are 42c on page 21, 42d on 22, signing under 42f on 25, registry completeness under 42g from 26, prior-case effects under 42i on 29 and collection under 42r on 32. The form uses the CUKR registry signature threshold, not the ordinary under-13 exemption. The prior temporary-case consequence is tied specifically to filing under art. 42c.
+- Checked that act's ELI amendment references, including [Dz.U. 2026 poz. 635](https://eli.gov.pl/api/acts/DU/2026/635/text.pdf). Its art. 18 changes financial-fund provisions in art. 14 and 21b, not the CUKR provisions used here. The identity-confirmation transition under Dz.U. 2026 poz. 203 was reviewed separately in batch 11; this batch does not repeat that acceptance for unrelated provisions.
+- [CUKR form, Dz.U. 2026 poz. 530](https://eli.gov.pl/eli/DU/2026/530/ogl) and [official PDF](https://eli.gov.pl/api/acts/DU/2026/530/text/O/D20260530.pdf): active, effective 04.05.2026. Read instructions on pages 3–5 and fields on pages 6–10, including passport part B and attachments part E. [M.P. 2026 poz. 371](https://eli.gov.pl/api/acts/MP/2026/371/text.pdf) expressly sets the launch date.
+- [UdSC CUKR FAQ](https://www.gov.pl/web/udsc/cukr-QA): checked the stated filing cutoff, fees, registry completeness, age thresholds, attempted fingerprint collection, representation, effect on an earlier application and card collection. Guidance is identified as UdSC information where used. The statutory signing distinction is retained rather than broadening personal-signature access to every adult applicant.
+
+The current Sejm PDF and relevant original forms were read and the selected layouts inspected. The direct PDF URLs for 487, 488 and 530 returned HTTP 200 with PDF content type. The separate MOS fee page could not be retrieved during this pass; the CUKR amounts were checked in the UdSC FAQ. No unverified fee amount was added for the other applications.
+
+These are scoped checks as of 06.09.2026. The atlas baseline remains 18.07.2026, no corpus edition was promoted, and no independent legal attestation was renewed.
+
+## Verification
+
+- All six guides render meaningful complete content. Checked page fit at 1280 px and 360 px with no page-wide horizontal overflow. Inspected representative desktop and mobile examples.
+- Each of the six mobile comparison regions supports keyboard horizontal scrolling without moving the page horizontally.
+- Followed the CUKR-to-photo and fingerprint-to-signature document links. Followed the signature guide's typed art. 106b reference and read the activated Polish text, including the distinct age thresholds.
+- Followed the permanent application's case backlink, opened the full document disclosure and returned through its application link. The destination remained `/documents/permanent-application`.
+- Checked section navigation and original-form destinations. The browser console error log was empty.
+- `npm run verify` passed: both typechecks, generated-data checks, lint, formatting, 92 application tests, 69 corpus tests (68 passed and one skipped), 15 review-tool tests, editorial validation and production build. Existing parser and bundle warnings remain.
+- Replaced one test's dependence on old photo prose with an explicit optional-form fixture. Final edits clarify photo-section ordering, the CUKR filing event, the limited Blue Card income exception, the listed relatives for free use of housing and the passport-substitution condition. The five document-rendering tests, editorial validation and production build passed again after those edits.
+
+Complete case-route review, the full source-text/layout audit and independent legal review remain open. These six document pages do not establish acceptance of their entire related case guides.
