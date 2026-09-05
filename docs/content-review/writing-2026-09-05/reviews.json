@@ -1,0 +1,32 @@
+[
+  {
+    "path": "app/data/document-library/editorial/guides/evidence-matrix.ts",
+    "contentHash": "d4012b1e61923b5da6f93face898612927a848db93db3a212aba05b5fe543a8b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/requirements-table.ts",
+    "contentHash": "fcbccd261f02bf313462fcca301cc0a239e108f2e2c1387767a900ad328600f5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/response-letter.ts",
+    "contentHash": "18c401a900dff716a1bb51ab92b8a33741cd27b7d0c8a269c0a87ff20249ae72",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/stay-history.ts",
+    "contentHash": "c24a364bd39ea4eb9525ec9fbfafc3399dc4b8e95f22e0e9bab3f3a9baf5c317",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/case-file-index.ts",
+    "contentHash": "ca796c6b6d24cb5837ec5904e0465900255aabed6efd5317c3a50a86ab701b60",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+  },
+  {
+    "path": "app/features/documents/ui/document-explanation.tsx",
+    "contentHash": "f86799ccab84dfe643658dd47e37f816e408d90a5a50473619140daca6c8080b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+  }
+]

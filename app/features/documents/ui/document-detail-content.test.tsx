@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest"
-import { cleanup, render, screen } from "@testing-library/react"
+import { cleanup, render, screen, within } from "@testing-library/react"
 import { MemoryRouter } from "react-router"
 import { documentById, documentCatalog } from "~/data/documents/catalog"
 import { documentDetailToc } from "../model/document-catalog-model"
@@ -69,6 +69,50 @@ describe("document explanations", () => {
         (entry) => entry.href === "#document-obtain"
       )
     ).toBe(true)
+  })
+
+  it("renders complete, labelled specimens without dropping table cells or letter paragraphs", () => {
+    for (const document of documentCatalog) {
+      const samples = (document.guide.explanation ?? []).flatMap((section) =>
+        section.example?.sample ? [section.example.sample] : []
+      )
+      if (!samples.length) continue
+      const { container, unmount } = render(
+        <MemoryRouter>
+          <DocumentDetailContent document={document} />
+        </MemoryRouter>
+      )
+      for (const sample of samples) {
+        if (sample.kind === "table") {
+          const table = screen.getByRole("table", { name: sample.title })
+          expect(within(table).getAllByRole("columnheader")).toHaveLength(
+            sample.columns.length
+          )
+          expect(within(table).getAllByRole("row")).toHaveLength(
+            sample.rows.length + 1
+          )
+          for (const row of sample.rows)
+            expect(row.cells, `${document.id}: ${row.id}`).toHaveLength(
+              sample.columns.length
+            )
+          expect(within(table).getAllByRole("cell")).toHaveLength(
+            sample.columns.length * sample.rows.length
+          )
+          expect(
+            screen.getByRole("region", { name: sample.title }).tabIndex
+          ).toBe(0)
+        } else {
+          const letter = container.querySelector(
+            `figure [lang="${sample.language}"]`
+          )
+          expect(letter).not.toBeNull()
+          for (const paragraph of sample.paragraphs)
+            expect(letter?.textContent).toContain(paragraph)
+        }
+        expect(screen.getByText(sample.note)).toBeTruthy()
+      }
+      unmount()
+    }
   })
 
   it("offers native links in each catalog category", () => {

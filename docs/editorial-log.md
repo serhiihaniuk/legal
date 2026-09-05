@@ -149,3 +149,8 @@
 - Validation: `npm run verify` passed, including 57 application tests and the corpus/editorial checks. Reference-preview validation passed. Final typecheck and production build passed after the presentation adjustments. Browser checks confirmed the revised KPA text, reading-guide navigation, a new provision link, and no horizontal overflow on checked pages at 360 px and desktop widths.
 - Pending: the separate strict content-review ledger reports 11 stale file hashes, including one untouched navigation file. Its previous independent attestations were not renewed. Installation also reported 19 dependency vulnerabilities (10 moderate, 9 high); dependency remediation is outside this editorial pass. Existing build warnings concern large bundles and the deprecated `envFile` option.
 - Next editorial pass: replace inferred definitions and generic examples in non-KPA explanations, preserve their authored section headings, and deepen the form-versus-evidence explanation.
+# 2026-09-05 filled document examples
+
+- Added filled specimens to the evidence matrix, requirements table, travel chronology, file index and response letter. The examples distinguish missing evidence, unconfirmed dates, received files and actual submission. The Polish letter is a labelled fictional fragment.
+- Recorded the official KPA, foreigners-act and UdSC checks, writing review and remaining legal-review limits in `content-review/writing-2026-09-05/batches/01-working-records.md`. The atlas baseline remains 18.07.2026.
+- Full verification passed with 89 application tests; final typecheck, focused tests and build passed after the last adjustment. Browser checks covered desktop fit, all five routes at 360 px, keyboard table scrolling and console errors.

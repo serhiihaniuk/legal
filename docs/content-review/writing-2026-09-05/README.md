@@ -1,0 +1,32 @@
+# Complete writing and content review
+
+The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
+
+## Acceptance evidence
+
+| Requirement | Evidence needed | Current state |
+| --- | --- | --- |
+| Every authored page meets `legal-explanatory-writing` | Read each complete file and rendered page. Record the learner question, definitions, mechanism, distinctions, completed examples where useful, and qualifications. Preserve exact Polish source wording. | In progress; `inventory.json` lists every known authored file. |
+| Every case has appropriate document coverage | For all nine guides, compare each stage and register with official requirements. Record mandatory, conditional, and working documents; verify typed links in both directions. | Pending route-by-route review. |
+| Complex documents have useful explanations and examples | Read all 57 guides. Explain fields, what the document proves, what it leaves open, and a completed discrepancy example where needed. Simple documents need no artificial expansion. | In progress, beginning with work-related evidence. |
+| Original laws remain readable and faithful | Audit every current provision and PDF page for structure, notes, tables, forms, and lost text. Retain original layout where flowing text is unsuitable. Record anomalies and visual checks. | Reader implemented; corpus-wide visual audit pending. |
+| Legal statements and independent review are current for their stated edition | Record exact official sources, status, amendments, timing, and transitions for each reviewed topic. Obtain a distinct review, with current hashes, before marking independent review accepted. | Existing 2026-07-18 ledger fails strict validation with 95 issues as of this pass. No independent attestations renewed. |
+| Changes are verified and delivered | Run relevant content and application checks, inspect desktop/mobile rendering and navigation, and push completed batches to main. | Reader checkpoint `3fea511` pushed. |
+
+## How progress is recorded
+
+- `node scripts/content-review/writing-inventory.mjs` inventories current content and interface copy. It combines the existing inventory with authored Cyrillic prose outside the old fixed file lists. `--check` detects drift.
+- `reviews.json` contains only files actually reviewed against the writing skill, their exact SHA-256, and the batch evidence path. A changed file returns to pending. Writing acceptance does not mean independent legal acceptance.
+- Keep source checks and concrete findings in `batches/`. A green build, a matching hash, or a keyword scan cannot establish writing or legal quality.
+- The atlas legal baseline remains 18.07.2026 until a complete source review supports changing it. Page-specific checks must state their narrower scope.
+- Generated Polish legal text is not rewritten to satisfy prose preferences. Extraction and source-layout verification have a separate acceptance requirement.
+
+## Next work
+
+User clarifications to preserve: show what complex documents and working records actually look like, with filled illustrative specimens rather than only prose scenarios. Review the purpose of the entire reading-guide module; its current overview pages repeat orientation and defer the useful material to another page. Neither request is satisfied by adding more generic introductions.
+
+1. Work-route document journey: employer annex, contract, insurance, ZUS, representation, filing, and procedural correspondence.
+2. Remaining eight case routes and their document guides.
+3. All map topics, reading-guide modules, and law explanations, provision by provision.
+4. Remaining interface copy, full extraction audit, and independent legal review.
+5. Final completeness audit against every row above, then final verification and push.

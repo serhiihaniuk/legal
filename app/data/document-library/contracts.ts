@@ -75,7 +75,20 @@ export type DocumentWorkedExample = {
   rows?: { label: string; evidence: LegalTextValue; meaning: LegalTextValue }[]
   reasoning: LegalTextValue[]
   conclusion: LegalTextValue
+  sample?: DocumentSample
 }
+
+export type DocumentSample = {
+  title: string
+  note: string
+} & (
+  | {
+      kind: "table"
+      columns: string[]
+      rows: { id: string; cells: LegalTextValue[] }[]
+    }
+  | { kind: "letter"; language: "pl" | "uk"; paragraphs: string[] }
+)
 
 export type DocumentExplanation = {
   id: string

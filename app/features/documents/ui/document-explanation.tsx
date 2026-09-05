@@ -4,10 +4,11 @@ import type {
   DocumentWorkedExample,
 } from "~/data/document-library"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
+import { DocumentSample } from "./document-sample"
 
 function WorkedExample({ example }: { example: DocumentWorkedExample }) {
   return (
-    <div className="mt-8 border-l-2 pl-4 sm:pl-6">
+    <div className="mt-8 min-w-0">
       <p className="text-xs font-medium tracking-wide text-muted-foreground">
         Розібраний приклад
       </p>
@@ -17,6 +18,7 @@ function WorkedExample({ example }: { example: DocumentWorkedExample }) {
           <LegalText text={text} />
         </p>
       ))}
+      {example.sample ? <DocumentSample sample={example.sample} /> : null}
       {example.rows?.length ? (
         <ol data-not-typeset className="not-typeset my-6 divide-y border-y">
           {example.rows.map((row) => (
