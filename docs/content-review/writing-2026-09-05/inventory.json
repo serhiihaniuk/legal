@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 36,
+    "reviewed": 40,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -86,7 +86,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/business.ts",
       "family": "case-guide",
-      "contentHash": "ea3b10b968eca9fbc23170838b8939b874eab8c089fc9e8cea224ee460c6b461",
+      "contentHash": "56be3eb51a6752df8ea696fafc66428778096b81b0b9c4b5fb2e4790f9aca9b1",
       "writing": "pending",
       "evidence": null
     },
@@ -184,16 +184,16 @@
     {
       "path": "app/data/document-library/editorial/guides/business-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "adef5d930c8ab30746df7c3b5e0420c586a9665f1f3db68afcbd6dc29e4b4d78",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1531957777778931d0afb149b1abcf59e9e9fc248c44a9882fb8efda1d0cf83c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/business-register-information.ts",
       "family": "evidence-document",
-      "contentHash": "0073add90df1fc87173c481ae85c17c2c80dfc50d98d8ca20a5bcc1fc01b33da",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "b6c08e085a09df89e11ee6e51b26a628f25df04ee974605c943acc6b96d80731",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/case-assessment.ts",
@@ -219,9 +219,9 @@
     {
       "path": "app/data/document-library/editorial/guides/crbr-information.ts",
       "family": "evidence-document",
-      "contentHash": "228bc3cfbce181d77dc45c14b6cccd3a35c5902faec58805d30c77455d1b2e5a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "259c9cad9ad704493e27651c8cd0a6a6ee6c873eda0b2208a99337c60cd20113",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/cukr-application.ts",
@@ -541,9 +541,9 @@
     {
       "path": "app/data/document-library/editorial/guides/work-organisation-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "9aa4e829925d5e649fe6e34419fb2fe4501c3b9b96072fd6f03035f83fb21f71",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "e650b15ab5e60d9e32c3c93a7a04eec1c631c9e95ef2af417e3a4fd2c55358ea",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",

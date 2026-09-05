@@ -183,5 +183,25 @@
     "path": "app/data/document-library/editorial/guides/residence-card-fee-proof.ts",
     "contentHash": "eb23c14a38ee5d7bac2ff4218750605bab66c12773be29a00d04d7310c8356d8",
     "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/business-register-information.ts",
+    "contentHash": "b6c08e085a09df89e11ee6e51b26a628f25df04ee974605c943acc6b96d80731",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/crbr-information.ts",
+    "contentHash": "259c9cad9ad704493e27651c8cd0a6a6ee6c873eda0b2208a99337c60cd20113",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/business-evidence.ts",
+    "contentHash": "1531957777778931d0afb149b1abcf59e9e9fc248c44a9882fb8efda1d0cf83c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/work-organisation-evidence.ts",
+    "contentHash": "e650b15ab5e60d9e32c3c93a7a04eec1c631c9e95ef2af417e3a4fd2c55358ea",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
   }
 ]

@@ -111,7 +111,7 @@ describe("case guide continuity", () => {
     )
   })
 
-  it("gives each document in a combined row its own destination", () => {
+  it("keeps distinct document destinations in the business register", () => {
     render(
       <MemoryRouter>
         <DocumentRegister documents={getCaseGuideRoute("business").documents} />
@@ -121,7 +121,7 @@ describe("case guide continuity", () => {
       ["Wniosek MOS", "mos-application"],
       ["UPO", "upo"],
       ["KRS/CEIDG", "business-register-information"],
-      ["CRBR", "crbr-information"],
+      ["CRBR і зв’язки між компаніями", "crbr-information"],
     ]) {
       expect(
         screen

@@ -2,7 +2,58 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
+const businessRegistryRecords: CaseGuideDocument[] = [
+  {
+    item: {
+      kind: "authored-legal-text",
+      plainText: "KRS/CEIDG і документи про роль у бізнесі",
+      parts: [
+        {
+          text: "KRS/CEIDG",
+          target: {
+            kind: "evidence-document",
+            documentId: "business-register-information",
+          },
+        },
+        { text: " і документи про роль у бізнесі" },
+      ],
+    },
+    status: "доказ ролі",
+    level: "required",
+    owner:
+      "Заявник · реєстр відповідно до правової форми; за потреби рішення про призначення або повноваження",
+    proves:
+      "Особу суб’єкта, роль заявника та представництво на потрібну дату. Склад документів залежить від форми бізнесу й заявленої ролі",
+    law: foreignersLaw.text`${foreignersLaw.article("142", "Art. 142")}: роль заявника та діяльність підприємства; реєстрація не замінює економічних доказів.`,
+  },
+  {
+    item: {
+      kind: "authored-legal-text",
+      plainText: "CRBR і зв’язки між компаніями",
+      parts: [
+        {
+          text: "CRBR і зв’язки між компаніями",
+          target: { kind: "evidence-document", documentId: "crbr-information" },
+        },
+      ],
+    },
+    status: "якщо зв’язки мають значення",
+    level: "conditional",
+    owner:
+      "Працівник або заявник · коли потрібно пояснити контроль чи зв’язки і суб’єкт охоплений CRBR",
+    proves:
+      "Заявленого бенефіціара та джерело зв’язку між суб’єктами. Не встановлює саме по собі право підпису або керівництво працею",
+    law: "Допоміжне джерело фактів про контроль. Не є універсальним обов’язковим додатком до кожної бізнес-справи",
+  },
+]
 
 const route: CaseGuideRoute = {
   id: "business",
@@ -417,59 +468,7 @@ const route: CaseGuideRoute = {
             "Чому факти відповідають саме цій підставі та чому сусідня підстава не є точнішою",
           law: "Правова кваліфікація cel pobytu",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "KRS/CEIDG, CRBR, uchwały",
-            parts: [
-              {
-                text: "KRS/CEIDG",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "business-register-information",
-                },
-              },
-              { text: ", " },
-              {
-                text: "CRBR",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "crbr-information",
-                },
-              },
-              { text: ", uchwały" },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Роль і структуру бізнесу",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 142–143",
-            parts: [
-              {
-                text: "art. 142",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-142",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "143",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-143",
-                },
-              },
-            ],
-          },
-        },
+        ...businessRegistryRecords,
         {
           item: {
             kind: "authored-legal-text",
@@ -645,59 +644,7 @@ const route: CaseGuideRoute = {
           proves: "Особу й виконання формальних вимог",
           law: "Спеціальна процедура pobytowa",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "KRS/CEIDG, CRBR, uchwały",
-            parts: [
-              {
-                text: "KRS/CEIDG",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "business-register-information",
-                },
-              },
-              { text: ", " },
-              {
-                text: "CRBR",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "crbr-information",
-                },
-              },
-              { text: ", uchwały" },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Роль і структуру бізнесу",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 142–143",
-            parts: [
-              {
-                text: "art. 142",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-142",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "143",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-143",
-                },
-              },
-            ],
-          },
-        },
+        ...businessRegistryRecords,
         {
           item: {
             kind: "authored-legal-text",
@@ -958,59 +905,7 @@ const route: CaseGuideRoute = {
           proves: "Особу й виконання формальних вимог",
           law: "Спеціальна процедура pobytowa",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "KRS/CEIDG, CRBR, uchwały",
-            parts: [
-              {
-                text: "KRS/CEIDG",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "business-register-information",
-                },
-              },
-              { text: ", " },
-              {
-                text: "CRBR",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "crbr-information",
-                },
-              },
-              { text: ", uchwały" },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Роль і структуру бізнесу",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 142–143",
-            parts: [
-              {
-                text: "art. 142",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-142",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "143",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-143",
-                },
-              },
-            ],
-          },
-        },
+        ...businessRegistryRecords,
         {
           item: {
             kind: "authored-legal-text",
@@ -1886,59 +1781,7 @@ const route: CaseGuideRoute = {
       proves: "Особу й виконання формальних вимог",
       law: "Спеціальна процедура pobytowa",
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "KRS/CEIDG, CRBR, uchwały",
-        parts: [
-          {
-            text: "KRS/CEIDG",
-            target: {
-              kind: "evidence-document",
-              documentId: "business-register-information",
-            },
-          },
-          { text: ", " },
-          {
-            text: "CRBR",
-            target: {
-              kind: "evidence-document",
-              documentId: "crbr-information",
-            },
-          },
-          { text: ", uchwały" },
-        ],
-      },
-      status: "основний доказ",
-      level: "required",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Роль і структуру бізнесу",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "art. 142–143",
-        parts: [
-          {
-            text: "art. 142",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-142",
-            },
-          },
-          {
-            text: "–",
-          },
-          {
-            text: "143",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-143",
-            },
-          },
-        ],
-      },
-    },
+    ...businessRegistryRecords,
     {
       item: {
         kind: "authored-legal-text",

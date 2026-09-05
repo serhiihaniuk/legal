@@ -186,3 +186,10 @@
 - Replaced four repeated work-case payment rows with one conditional definition. The standard 100 zł amount now retains reductions and exemptions; collection instructions first check the existing payment.
 - Recorded the official KPA, foreigners-act, fee-regulation and UdSC checks in `content-review/writing-2026-09-05/batches/06-decisions-and-cards.md`. The atlas baseline remains 18.07.2026. Full case-route, card-design specimen and independent-review work remain open.
 - Full verification passed with 91 application tests and a production build. Desktop/mobile specimens, keyboard table scrolling, case/document/provision navigation and conditional stage labels passed browser checks without console errors.
+
+## 2026-09-05 company records and activity
+
+- Reworked all four company-category document guides. Added a fictional KRS fragment and filled ownership, business-plan and work-organisation records. The explanations separate control, representation, actual management, financial results and future plans.
+- Split four repeated business-case document rows into shared registry/role and conditional CRBR definitions. Updated the link-label test and preserved the document destinations.
+- Recorded official KRS, CEIDG, KSH, AML, foreigners-act, PIP, KPA and voivodeship checks in `content-review/writing-2026-09-05/batches/07-company-records.md`. The atlas baseline remains 18.07.2026. Complete case and independent legal reviews remain open.
+- Full verification passed with 91 application tests and a production build. All four desktop/mobile pages fit, table keyboard scrolling worked, and case/document navigation and conditional labels passed without browser console errors.
