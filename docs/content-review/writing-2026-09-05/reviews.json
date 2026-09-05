@@ -103,5 +103,30 @@
     "path": "app/routes/study.tsx",
     "contentHash": "ab1127d905bae284db331f685c43feba3a7fa640cd6bafb89384d2906874ed9e",
     "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/employment-annex-1.ts",
+    "contentHash": "b1ff381a9396e17b42bd44329ea3f9bb2c57afeb393c66181624d4965643c37b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/employment-contract.ts",
+    "contentHash": "fa60988d73b1607be0b782c357f550645dd566a475a1b4d988a7b0966cf5e9d0",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/health-insurance.ts",
+    "contentHash": "51e1685394a3cdf546f6694f70a47a10a5c2f07f87d27a804750e019abb2c73c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",
+    "contentHash": "0f055e0abb3a02200891c4ff8b615355e1cd9fb968e9c1ccce90e2b4517a638b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
+  },
+  {
+    "path": "app/features/documents/ui/document-detail-content.tsx",
+    "contentHash": "d64efcb92f6aa22d8db0474f3b37df574809c5c86f561470709e3907e946f5e3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
   }
 ]

@@ -160,3 +160,9 @@
 - Rewrote all eight reading-guide topics around work questions, definitions and completed examples. Preserved direct URLs and replaced generic section labels with topic headings. Small shared components render the examples and related reading.
 - Recorded focused official-source checks, the unchanged 18.07.2026 atlas baseline and the remaining independent-review gap in `content-review/writing-2026-09-05/batches/02-reading-guide.md`.
 - Full verification passed with 91 application tests and a production build. Browser checks covered all eight mobile routes, fallback selection, desktop section jumps, topic switching, typed law links and related reading without page overflow or console errors.
+
+## 2026-09-05 employment and insurance specimens
+
+- Reworked the employer annex, employment contract, health-insurance and ZUS guides around the actual data and periods they establish. Added four filled Polish fragments with completed explanations. Clarified annex numbering, electronic signing, amendment dates and insurance arising from proposed employment.
+- Recorded the official ELI, UdSC and ZUS checks in `content-review/writing-2026-09-05/batches/03-employment-and-insurance.md`. The atlas baseline remains 18.07.2026 and independent legal review is still pending.
+- Full verification passed with 91 application tests and a production build. All four mobile routes fit without horizontal overflow. Desktop section navigation, the official form layout and the document-to-case backlink were checked without browser console errors.

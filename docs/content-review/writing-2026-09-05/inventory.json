@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 20,
+    "reviewed": 25,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -261,16 +261,16 @@
     {
       "path": "app/data/document-library/editorial/guides/employment-annex-1.ts",
       "family": "evidence-document",
-      "contentHash": "eb2b70e1e16b1590be31d12949717f2bedf074a004fca7f41ca8ec7b9e191b55",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "b1ff381a9396e17b42bd44329ea3f9bb2c57afeb393c66181624d4965643c37b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/employment-contract.ts",
       "family": "evidence-document",
-      "contentHash": "01330522ff3af9e90a5fe95aad63def53eb4229e480951ecbf22707a525f826c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "fa60988d73b1607be0b782c357f550645dd566a475a1b4d988a7b0966cf5e9d0",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/evidence-matrix.ts",
@@ -310,9 +310,9 @@
     {
       "path": "app/data/document-library/editorial/guides/health-insurance.ts",
       "family": "evidence-document",
-      "contentHash": "56130c97b986b0a5b40762ee07432b3beaf63e35ba46c3eec22814347bd70a3e",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "51e1685394a3cdf546f6694f70a47a10a5c2f07f87d27a804750e019abb2c73c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/housing-evidence.ts",
@@ -548,9 +548,9 @@
     {
       "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",
       "family": "evidence-document",
-      "contentHash": "c9b0bef6ed8a57fbc1b3568aa1b4ee8ee15b9656d51587385f43b740bcd997e0",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "0f055e0abb3a02200891c4ff8b615355e1cd9fb968e9c1ccce90e2b4517a638b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
     },
     {
       "path": "app/data/document-library/fixtures.ts",
@@ -12021,9 +12021,9 @@
     {
       "path": "app/features/documents/ui/document-detail-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "e05c9f32e10aa8ba1f4f106747fa97ace32371abcd77f06718fcafdc4af0fd6c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d64efcb92f6aa22d8db0474f3b37df574809c5c86f561470709e3907e946f5e3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
     },
     {
       "path": "app/features/documents/ui/document-explanation.tsx",

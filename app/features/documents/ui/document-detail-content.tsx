@@ -51,7 +51,7 @@ export function DocumentDetailContent({
       <section id="document-purpose">
         <h2>Що цей матеріал пояснює у справі</h2>
         <DocumentTextList items={guide.purpose} />
-        <div className="border-l pl-4">
+        <div>
           <p className="text-sm font-medium">Межа доказу</p>
           <DocumentTextList items={guide.doesNotProve} />
         </div>
