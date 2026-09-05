@@ -22,8 +22,8 @@
   position: relative;
 }
 
-/* Rules sit in the gutters; they never cover the reading column. */
-.atlas-docs-grid {
+.atlas-docs-grid,
+.home-atlas {
   border-inline: 1px solid var(--atlas-line);
   border-bottom: 1px solid var(--atlas-line);
 }
@@ -47,11 +47,6 @@
 
 .home-atlas {
   --atlas-gutter: 1.5rem;
-  background:
-    linear-gradient(var(--atlas-line), var(--atlas-line)) 6px top / 1px 100%
-      no-repeat,
-    linear-gradient(var(--atlas-line), var(--atlas-line)) calc(100% - 6px) top /
-      1px 100% no-repeat;
 }
 
 .home-directory,
@@ -63,22 +58,18 @@
 .home-footer::before {
   content: "";
   position: absolute;
-  top: -7px;
+  top: -0.5px;
   left: calc(-1 * var(--atlas-gutter));
   right: calc(-1 * var(--atlas-gutter));
-  height: var(--atlas-cross-size);
-  background:
-    linear-gradient(var(--atlas-line), var(--atlas-line)) center / 100% 1px
-      no-repeat,
-    linear-gradient(var(--atlas-mark), var(--atlas-mark)) left center /
-      var(--atlas-cross-size) var(--atlas-cross-weight) no-repeat,
-    linear-gradient(var(--atlas-mark), var(--atlas-mark)) 6px center /
-      var(--atlas-cross-weight) var(--atlas-cross-size) no-repeat,
-    linear-gradient(var(--atlas-mark), var(--atlas-mark)) right center /
-      var(--atlas-cross-size) var(--atlas-cross-weight) no-repeat,
-    linear-gradient(var(--atlas-mark), var(--atlas-mark)) calc(100% - 6px)
-      center / var(--atlas-cross-weight) var(--atlas-cross-size) no-repeat;
+  height: 1px;
+  background: var(--atlas-line);
   pointer-events: none;
+}
+
+.home-directory > .atlas-junctions,
+.home-footer > .atlas-junctions {
+  top: 0;
+  inset-inline: calc(-1 * var(--atlas-gutter) - 1px);
 }
 
 .home-colophon,
@@ -89,22 +80,6 @@
 @media (min-width: 640px) {
   .home-atlas {
     --atlas-gutter: 2.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .home-directory > nav {
-    position: relative;
-  }
-  .home-directory > nav::before {
-    content: "";
-    position: absolute;
-    top: -5.5rem;
-    bottom: -6rem;
-    left: -1.25rem;
-    width: 1px;
-    background: var(--atlas-line);
-    pointer-events: none;
   }
 }
 
@@ -124,9 +99,6 @@
   .home-atlas {
     --atlas-gutter: 4rem;
   }
-  .home-directory > nav::before {
-    left: -2.5rem;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -138,6 +110,7 @@
 
 @media print {
   .atlas-site-header,
+  .home-atlas,
   .atlas-docs-grid,
   [data-slot="document-header"] {
     border-color: transparent;

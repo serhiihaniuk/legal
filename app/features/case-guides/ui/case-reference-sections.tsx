@@ -1,3 +1,4 @@
+import { CaseReferenceDisclosure } from "./case-reference-disclosure"
 import type { CaseGuideRoute } from "~/data/case-guides/types"
 import { caseStudySectionIds } from "../model/case-study-navigation"
 import { ConditionsMatrix } from "./conditions-matrix"
@@ -7,22 +8,22 @@ import { DeadlineRegister } from "./case-deadline-register"
 export function CaseReferenceSections({ route }: { route: CaseGuideRoute }) {
   return (
     <>
-      <section
+      <CaseReferenceDisclosure
+        key={`${route.id}-conditions`}
         id={caseStudySectionIds.conditions}
-        aria-labelledby="case-conditions-heading"
+        title="Матриця умов маршруту"
       >
-        <h2 id="case-conditions-heading">Матриця умов маршруту</h2>
         <p>
           Тут правова умова з’єднана з фактом, який треба встановити, доказом і
           ризиком. Саме така матриця показує, чого справді бракує до рішення.
         </p>
         <ConditionsMatrix conditions={route.conditions} />
-      </section>
-      <section
+      </CaseReferenceDisclosure>
+      <CaseReferenceDisclosure
+        key={`${route.id}-registers`}
         id={caseStudySectionIds.registers}
-        aria-labelledby="case-registers-heading"
+        title="Документи й строки"
       >
-        <h2 id="case-registers-heading">Документи й строки</h2>
         <p>
           Реєстри нижче збирають деталі з етапів в одному місці. Документ
           читається через факт, який він доводить; строк — через подію, яка
@@ -32,7 +33,7 @@ export function CaseReferenceSections({ route }: { route: CaseGuideRoute }) {
         <DocumentRegister documents={route.documents} />
         <h3 id="case-deadlines">Строки за ходом справи</h3>
         <DeadlineRegister deadlines={route.deadlines} stages={route.stages} />
-      </section>
+      </CaseReferenceDisclosure>
     </>
   )
 }

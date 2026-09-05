@@ -1,3 +1,4 @@
+import { CaseReferenceDisclosure } from "./case-reference-disclosure"
 import type { CaseGuideRoute } from "~/data/case-guides/types"
 import { caseStudySectionIds } from "../model/case-study-navigation"
 import { ArrowRight } from "lucide-react"
@@ -8,11 +9,11 @@ import { Button } from "~/components/ui/button"
 export function CaseAlternatives({ route }: { route: CaseGuideRoute }) {
   return (
     <>
-      <section
+      <CaseReferenceDisclosure
+        key={`${route.id}-branches`}
         id={caseStudySectionIds.branches}
-        aria-labelledby="case-branches-heading"
+        title="Негативні й альтернативні гілки"
       >
-        <h2 id="case-branches-heading">Негативні й альтернативні гілки</h2>
         <p>
           Негативна гілка починається не лише з відмови. Нею може бути
           неправильна підстава, формальний недолік, невиконана особиста дія або
@@ -58,7 +59,7 @@ export function CaseAlternatives({ route }: { route: CaseGuideRoute }) {
             </article>
           ))}
         </div>
-      </section>
+      </CaseReferenceDisclosure>
     </>
   )
 }

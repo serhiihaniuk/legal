@@ -33,9 +33,11 @@ export function CaseStudyContent({
         </p>
         <CaseStages stages={route.stages} deadlines={route.deadlines} />
       </section>
-      <CaseReferenceSections route={route} />
-      <CaseAlternatives route={route} />
-      <CaseOfficialSources route={route} />
+      <div className="mt-12 border-b">
+        <CaseReferenceSections route={route} />
+        <CaseAlternatives route={route} />
+        <CaseOfficialSources route={route} />
+      </div>
     </DocumentArticle>
   )
 }

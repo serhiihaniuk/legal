@@ -1,3 +1,4 @@
+import { CaseReferenceDisclosure } from "./case-reference-disclosure"
 import type { CaseGuideRoute } from "~/data/case-guides/types"
 import { caseStudySectionIds } from "../model/case-study-navigation"
 import { OfficialSourceEntry } from "~/components/references"
@@ -5,11 +6,11 @@ import { OfficialSourceEntry } from "~/components/references"
 export function CaseOfficialSources({ route }: { route: CaseGuideRoute }) {
   return (
     <>
-      <section
+      <CaseReferenceDisclosure
+        key={`${route.id}-sources`}
         id={caseStudySectionIds.sources}
-        aria-labelledby="case-sources-heading"
+        title="Офіційні джерела"
       >
-        <h2 id="case-sources-heading">Офіційні джерела</h2>
         <p>
           Внутрішні матеріали пояснюють механізм, але юридичне твердження завжди
           звіряємо з актуальним офіційним текстом і датою факту.
@@ -21,7 +22,7 @@ export function CaseOfficialSources({ route }: { route: CaseGuideRoute }) {
             </li>
           ))}
         </ul>
-      </section>
+      </CaseReferenceDisclosure>
     </>
   )
 }

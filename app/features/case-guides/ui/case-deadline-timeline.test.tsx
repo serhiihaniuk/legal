@@ -8,7 +8,7 @@ import { CaseDeadlineTimeline } from "./case-deadline-timeline"
 afterEach(cleanup)
 
 describe("deadline timeline", () => {
-  it("groups every deadline by its case stage without losing any field", () => {
+  it("names stages without skipped numbering and preserves every deadline across all guides", () => {
     for (const route of caseGuideRoutes) {
       const { unmount } = render(
         <MemoryRouter>
@@ -30,7 +30,7 @@ describe("deadline timeline", () => {
         const group = groups[index] as HTMLElement
         expect(
           within(group).getByRole("heading", { level: 4 }).textContent
-        ).toContain(stage.title)
+        ).toBe(stage.title)
         const rows = [...group.querySelectorAll("ul > li")]
         const deadlines = route.deadlines.filter(
           (deadline) => deadline.stageId === stage.id

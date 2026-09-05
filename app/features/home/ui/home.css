@@ -35,6 +35,9 @@
 }
 .home-figure {
   min-width: 0;
+  width: 100%;
+  max-width: 32rem;
+  justify-self: center;
   padding-top: 0.5rem;
 }
 .home-diagram {

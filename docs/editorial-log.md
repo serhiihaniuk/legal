@@ -1,5 +1,33 @@
 # Editorial improvement log
 
+## 2026-09-05 shared frame regression fix
+
+- Restored the shared positioning and column-divider rules accidentally removed during the homepage CSS update. Removed unintended borders on the inner reading body and restored document-header rules. Crosses again sit on the shared frame intersections.
+- Checked the law reader at desktop and 360 px, and verified that the homepage still matches the header edges. No page overflow or browser errors. Typecheck and production build passed.
+
+## 2026-09-05 folded case references
+
+- Made the conditions matrix and all following sections separate shadcn accordions, collapsed by default across all nine case guides. Kept every section anchor and the authored content. Contents links open their destination, including the deadline heading inside the document register.
+- Checked independent expansion, default states across all guides, direct deadline navigation, and keyboard collapse. Typecheck, ten case-content tests, and the production build passed. Mobile deadline navigation opens and scrolls to the heading without page overflow. No legal content changed.
+
+## 2026-09-05 deadline timeline numbering
+
+- Removed stage numbers from the shared deadline timeline. It includes only stages with listed deadlines, so full-guide numbers created confusing jumps such as 01 to 05. Stage titles and chronological grouping remain.
+- The regression test checks exact stage headings and every deadline field across all nine guides. Typecheck, the focused test, and production build passed. The work guide rendered without horizontal overflow or browser errors. No legal content changed.
+
+## 2026-09-05 homepage frame and law section tabs
+
+- Aligned the homepage outer frame with the shared header width and inset. Reused the shared thin crosses at section and footer intersections, added a closing bottom rule, removed the isolated directory divider, and limited illustration growth.
+- Replaced the two-option law section Select with visible shadcn tabs. Longer module indexes remain comboboxes, and KPA retains its three-option section Select.
+- Checked exact desktop edge alignment, the homepage section jump, mobile wrapping, and tab navigation between explanations and the act reader. No legal content changes.
+- Typecheck, all 82 application tests, and production build passed. Browser checks found no console errors or horizontal overflow at the checked 360, 1280, and 2200 px widths.
+
+## 2026-09-05 shared navigation selects
+
+- Replaced the shared native select with shadcn Select for short lists and a filterable Combobox for longer indexes. This covers the law library, KPA guide, document catalog, map, and reading guide. Long selected labels and options wrap; popups fit the viewport.
+- Added the official Select primitive, adapted its utility import to the project, and retained the existing dependency set. Preserved controlled route values, disabled options, and visible labels.
+- Full verification passed, including 82 application tests and the production build. Added tests for filtering, empty results, selection callbacks, disabled options, Escape, and externally changed route values. Browser checks covered module selection by keyboard, section selection, and all affected modules at 360 px. No remaining authored native selects or horizontal overflow found.
+
 ## 2026-09-05 case summary grids
 
 - Removed paired applicability cells and boxed metric grids across all nine guides. Applicability now reads as prose. Moved the compact filing and legal-reference details beside the choice of basis, where readers use them.

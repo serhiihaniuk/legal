@@ -49,9 +49,8 @@ export function CaseDeadlineTimeline({
   stages: Pick<CaseGuideStage, "id" | "title">[]
 }) {
   const groups = stages
-    .map((stage, index) => ({
+    .map((stage) => ({
       stage,
-      number: String(index + 1).padStart(2, "0"),
       deadlines: deadlines.filter((deadline) => deadline.stageId === stage.id),
     }))
     .filter((group) => group.deadlines.length)
@@ -69,7 +68,6 @@ export function CaseDeadlineTimeline({
         >
           <StageMarker continues={index < groups.length - 1} />
           <h4 className="pb-3 text-sm leading-6 font-medium text-muted-foreground">
-            <span className="mr-2 tabular-nums">{group.number}</span>
             {group.stage.title}
           </h4>
           <div className="border-t">

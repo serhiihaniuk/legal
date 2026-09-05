@@ -72,6 +72,11 @@
 
 ### Page contracts
 
+- Homepage frame (2026-09-05): share the header's outer width and inset. Use the shared 13 px, 1 px crosses at the outer section and footer intersections. Keep the hero as a two-column composition without documentation sidebars, and cap the illustration width so the wider frame does not enlarge it excessively.
+- Two-option law section navigation (2026-09-05): show explanations and provisions as shadcn tabs in compact navigation. Keep longer module indexes as comboboxes and the KPA three-section control as a Select.
+
+- Compact navigation (2026-09-05): use shadcn Select for up to seven options and a button-triggered Combobox with title filtering for longer indexes. Keep selected labels and options fully readable with wrapping, visible field labels, and touch targets of at least 44 px. Popups stay within the viewport. Route values remain controlled by the page; typing and dismissing a list must not navigate.
+
 - Case summaries (2026-09-05): explain applicability and nearby alternatives in continuous prose. Keep filing metadata as compact definition lines beside the choice of legal basis. Do not use paired cells or boxed metric grids in case guides. Stage document metadata follows one reading order; retain typed references and document controls.
 
 - Document coverage (2026-09-05): every named map document uses an explicit evidence-document reference. Derive backlinks from those references. Keep official form mappings in one typed table so regulation annexes and application attachments retain their distinct numbers. Document guides and source forms link in both directions. Case rows distinguish preparation actions from collected documents, and special forms state when they apply.

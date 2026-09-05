@@ -198,11 +198,65 @@ describe("case guide continuity", () => {
     const conditions = screen.getByRole("region", {
       name: "Матриця умов маршруту",
     })
+    fireEvent.click(
+      within(conditions).getByRole("button", { name: "Матриця умов маршруту" })
+    )
     expect(within(conditions).queryByText("підтверджено")).toBeNull()
     expect(
       within(conditions).getAllByText(
         legalTextPlainText(route.conditions[0].factToEstablish)
       )
     ).toHaveLength(2)
+  })
+
+  it("folds all reference sections by default and opens them independently in every guide", () => {
+    for (const route of caseGuideRoutes) {
+      const { unmount } = render(
+        <MemoryRouter>
+          <CaseStudyContent route={route} updatedAt="2026-07-18" />
+        </MemoryRouter>
+      )
+      const triggers = [
+        "Матриця умов маршруту",
+        "Документи й строки",
+        "Негативні й альтернативні гілки",
+        "Офіційні джерела",
+      ].map((name) => screen.getByRole("button", { name }))
+      for (const trigger of triggers)
+        expect(trigger.getAttribute("aria-expanded")).toBe("false")
+      fireEvent.click(triggers[0])
+      fireEvent.click(triggers[1])
+      expect(triggers[0].getAttribute("aria-expanded")).toBe("true")
+      expect(triggers[1].getAttribute("aria-expanded")).toBe("true")
+      expect(triggers[2].getAttribute("aria-expanded")).toBe("false")
+      fireEvent.click(triggers[0])
+      expect(triggers[0].getAttribute("aria-expanded")).toBe("false")
+      expect(triggers[1].getAttribute("aria-expanded")).toBe("true")
+      unmount()
+    }
+  })
+
+  it("opens the document register for a direct deadline link", () => {
+    render(
+      <MemoryRouter initialEntries={["/cases/work#case-deadlines"]}>
+        <CaseStudyContent
+          route={getCaseGuideRoute("work")}
+          updatedAt="2026-07-18"
+        />
+      </MemoryRouter>
+    )
+    expect(
+      screen
+        .getByRole("button", { name: "Документи й строки" })
+        .getAttribute("aria-expanded")
+    ).toBe("true")
+    expect(
+      screen.getByRole("heading", { name: "Строки за ходом справи" })
+    ).toBeTruthy()
+    expect(
+      screen
+        .getByRole("button", { name: "Матриця умов маршруту" })
+        .getAttribute("aria-expanded")
+    ).toBe("false")
   })
 })

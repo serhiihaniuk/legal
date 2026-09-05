@@ -1,4 +1,10 @@
-export function ShellIntersections({ bottom = false }: { bottom?: boolean }) {
+export function ShellIntersections({
+  bottom = false,
+  edgesOnly = false,
+}: {
+  bottom?: boolean
+  edgesOnly?: boolean
+}) {
   return (
     <div
       className="atlas-junctions"
@@ -6,8 +12,8 @@ export function ShellIntersections({ bottom = false }: { bottom?: boolean }) {
       aria-hidden="true"
     >
       <span className="atlas-junction-edge-start" />
-      <span className="atlas-junction-sidebar" />
-      <span className="atlas-junction-contents" />
+      {!edgesOnly && <span className="atlas-junction-sidebar" />}
+      {!edgesOnly && <span className="atlas-junction-contents" />}
       <span className="atlas-junction-edge-end" />
     </div>
   )

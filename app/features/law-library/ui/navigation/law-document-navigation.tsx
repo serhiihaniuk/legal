@@ -14,6 +14,7 @@ import {
   type SectionNavigationOption,
 } from "~/components/patterns/section-navigation"
 import { Badge } from "~/components/ui/badge"
+import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
 import {
   genericPracticeModules,
   getDocumentHomePath,
@@ -263,12 +264,34 @@ export function LawDocumentNavigation({
   return (
     <div className="grid min-w-0 gap-3 pb-2 lg:hidden">
       <DocsSidebarBackLink to="/law">До бібліотеки права</DocsSidebarBackLink>
-      <MobileSectionSelect
-        label="Розділ документа"
-        value={activeSection}
-        options={sectionOptions}
-        onValueChange={goToSection}
-      />
+      {visibleSections.length === 2 ? (
+        <Tabs
+          value={activeSection}
+          onValueChange={(value) => {
+            const section = visibleSections.find((item) => item.id === value)
+            if (section) goToSection(section.id)
+          }}
+        >
+          <TabsList aria-label="Розділ документа" className="min-h-12 w-full">
+            {visibleSections.map((item) => (
+              <TabsTrigger
+                key={item.id}
+                value={item.id}
+                className="min-h-11 whitespace-normal"
+              >
+                {item.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
+      ) : (
+        <MobileSectionSelect
+          label="Розділ документа"
+          value={activeSection}
+          options={sectionOptions}
+          onValueChange={goToSection}
+        />
+      )}
 
       {activeSection === "provisions" ? (
         <MobileSectionSelect

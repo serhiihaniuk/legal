@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { describe, expect, it, vi } from "vitest"
 
 import {
@@ -50,7 +50,7 @@ describe("shared document patterns", () => {
     expect(screen.getAllByRole("definition")).toHaveLength(3)
   })
 
-  it("uses one option model for sidebar and mobile selection", () => {
+  it("uses one option model for sidebar and mobile selection", async () => {
     const onValueChange = vi.fn()
     const options = [
       { value: "first", label: "Перший" },
@@ -74,14 +74,13 @@ describe("shared document patterns", () => {
     )
 
     fireEvent.click(screen.getByRole("button", { name: "Другий" }))
-    fireEvent.change(screen.getByLabelText("Розділ"), {
-      target: { value: "second" },
-    })
+    fireEvent.click(screen.getByLabelText("Розділ"))
+    expect(await screen.findAllByRole("option")).toHaveLength(2)
+    const option = screen.getByRole("option", { name: "Другий" })
+    fireEvent.pointerDown(option, { pointerType: "mouse" })
+    fireEvent.click(option)
 
     expect(onValueChange).toHaveBeenNthCalledWith(1, "second")
     expect(onValueChange).toHaveBeenNthCalledWith(2, "second")
-    expect(
-      within(screen.getByLabelText("Розділ")).getAllByRole("option")
-    ).toHaveLength(2)
   })
 })
