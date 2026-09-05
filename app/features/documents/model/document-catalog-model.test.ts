@@ -21,7 +21,12 @@ describe("document catalog model", () => {
     const document = documentById.get("passport")
     expect(document).toBeDefined()
 
-    expect(documentDetailToc(document!)).toEqual([
+    expect(
+      documentDetailToc({
+        ...document!,
+        guide: { ...document!.guide, explanation: undefined },
+      })
+    ).toEqual([
       { href: "#document-overview", label: "Що це за документ" },
       { href: "#document-purpose", label: "Роль і межі доказу" },
       { href: "#document-elements", label: "Як перевіряти" },

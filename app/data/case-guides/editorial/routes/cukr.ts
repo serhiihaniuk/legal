@@ -2,7 +2,47 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+const peselStatus: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Дані PESEL та історія статусу UKR",
+    parts: [
+      {
+        text: "Дані PESEL та історія статусу UKR",
+        target: {
+          kind: "evidence-document",
+          documentId: "pesel-ukr-confirmation",
+        },
+      },
+    ],
+  },
+  status: "реєстрова перевірка",
+  level: "control",
+  owner: "Заявник перевіряє власні дані; MOS і орган звіряють реєстри",
+  proves:
+    "Для цього маршруту: UKR на 04.06.2025, при поданні та видачі карти, потрібна безперервність. Окрема довідка не є універсальним обов'язковим файлом для завантаження",
+  law: foreignersLaw.text`${foreignersLaw.external("Art. 42c: умови CUKR", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}; ${foreignersLaw.external("art. 25 і 26 закону Dz.U. 2026 poz. 203: підтвердження особи", "https://eli.gov.pl/eli/DU/2026/203/ogl")}`,
+}
+
+const registerCorrection: CaseGuideDocument = {
+  item: "Доповнення або виправлення даних у gminie",
+  status: "якщо є прогалина чи розбіжність",
+  level: "conditional",
+  owner:
+    "Заявник · перед поданням, якщо дані паспорта, підпису, відбитків або статусу потребують перевірки",
+  proves:
+    "Усуває встановлену проблему реєстрових даних. Доповнення реквізитів паспорта не гарантує відновлення втраченого UKR",
+  law: foreignersLaw.text`${foreignersLaw.external("Art. 25 і 26 закону Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}; FAQ CUKR`,
+  kind: "action",
+  guidance: "pesel-ukr-confirmation",
+}
 
 const route: CaseGuideRoute = {
   id: "cukr",
@@ -161,6 +201,7 @@ const route: CaseGuideRoute = {
       explanation: [
         "Справа починається не з форми MOS, а з хронології. Громадянство, документ, чинна підстава перебування, виїзди та попередні заяви визначають, чи маршрут узагалі доступний і які правила діятимуть під час розгляду.",
         "Для CUKR особливо важлива безперервність UKR, статус на критичну дату, виїзди та повнота даних у PESEL.",
+        foreignersLaw.text`Після 31.08.2026 з'ясуйте також підставу первісного встановлення особи. Для PESEL, наданого на підставі oświadczenia, непідтвердження особи чинним документом подорожі у встановлений строк тягне зміну UKR на NUE з 01.09.2026 за ${foreignersLaw.external("art. 25 закону Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}. Для інших документальних підстав діє окреме правило ${foreignersLaw.external("art. 26", "https://eli.gov.pl/eli/DU/2026/203/ogl")}. Старий папір про надання PESEL не замінює актуальних даних.`,
       ],
       actor: "Працівник легалізації разом із заявником",
       actions: [
@@ -197,7 +238,8 @@ const route: CaseGuideRoute = {
               },
             ],
           },
-          proves: "Особа та дані документа в реєстрі PESEL",
+          proves:
+            "Особу та реквізити чинного документа; відповідність запису PESEL перевіряють окремо",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42c, 42g і 42r",
@@ -232,58 +274,8 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Активний PESEL UKR та історія status UKR",
-            parts: [
-              {
-                text: "Активний PESEL UKR та історія status UKR",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "pesel-ukr-confirmation",
-                },
-              },
-            ],
-          },
-          status: "обов’язково",
-          level: "required",
-          owner: "Працівник легалізації · до подання; organ перевіряє реєстр",
-          proves: "UKR зараз, 04.06.2025 і безперервність ≥365 днів",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 42c",
-            parts: [
-              {
-                text: "Art. 42c",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
-                },
-              },
-            ],
-          },
-        },
-        {
-          item: "Доповнення даних у urząd gminy",
-          status: "умовно",
-          level: "conditional",
-          owner: {
-            kind: "authored-legal-text",
-            plainText:
-              "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
-            parts: [
-              { text: "Заявник" },
-              {
-                text: " · перед MOS, якщо бракує паспорта, підпису або відбитків",
-              },
-            ],
-          },
-          proves: "Повноту даних, без яких MOS не прийме CUKR",
-          law: "Перевірка реєстру PESEL / FAQ CUKR",
-          kind: "action",
-          guidance: "cukr-application",
-        },
+        peselStatus,
+        registerCorrection,
         {
           reviewId: "chronology",
           item: {
@@ -487,7 +479,8 @@ const route: CaseGuideRoute = {
               },
             ],
           },
-          proves: "Особа та дані документа в реєстрі PESEL",
+          proves:
+            "Особу та реквізити чинного документа; відповідність запису PESEL перевіряють окремо",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42c, 42g і 42r",
@@ -522,26 +515,7 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: "Доповнення даних у urząd gminy",
-          status: "умовно",
-          level: "conditional",
-          owner: {
-            kind: "authored-legal-text",
-            plainText:
-              "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
-            parts: [
-              { text: "Заявник" },
-              {
-                text: " · перед MOS, якщо бракує паспорта, підпису або відбитків",
-              },
-            ],
-          },
-          proves: "Повноту даних, без яких MOS не прийме CUKR",
-          law: "Перевірка реєстру PESEL / FAQ CUKR",
-          kind: "action",
-          guidance: "cukr-application",
-        },
+        registerCorrection,
         {
           item: "Особистий профіль MOS + login.gov.pl",
           status: "обов’язково",
@@ -937,7 +911,8 @@ const route: CaseGuideRoute = {
               },
             ],
           },
-          proves: "Особа та дані документа в реєстрі PESEL",
+          proves:
+            "Особу та реквізити чинного документа; відповідність запису PESEL перевіряють окремо",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42c, 42g і 42r",
@@ -972,58 +947,8 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Активний PESEL UKR та історія status UKR",
-            parts: [
-              {
-                text: "Активний PESEL UKR та історія status UKR",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "pesel-ukr-confirmation",
-                },
-              },
-            ],
-          },
-          status: "обов’язково",
-          level: "required",
-          owner: "Працівник легалізації · до подання; organ перевіряє реєстр",
-          proves: "UKR зараз, 04.06.2025 і безперервність ≥365 днів",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 42c",
-            parts: [
-              {
-                text: "Art. 42c",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
-                },
-              },
-            ],
-          },
-        },
-        {
-          item: "Доповнення даних у urząd gminy",
-          status: "умовно",
-          level: "conditional",
-          owner: {
-            kind: "authored-legal-text",
-            plainText:
-              "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
-            parts: [
-              { text: "Заявник" },
-              {
-                text: " · перед MOS, якщо бракує паспорта, підпису або відбитків",
-              },
-            ],
-          },
-          proves: "Повноту даних, без яких MOS не прийме CUKR",
-          law: "Перевірка реєстру PESEL / FAQ CUKR",
-          kind: "action",
-          guidance: "cukr-application",
-        },
+        peselStatus,
+        registerCorrection,
         {
           item: "Особистий профіль MOS + login.gov.pl",
           status: "обов’язково",
@@ -1598,7 +1523,8 @@ const route: CaseGuideRoute = {
               },
             ],
           },
-          proves: "Особа та дані документа в реєстрі PESEL",
+          proves:
+            "Особу та реквізити чинного документа; відповідність запису PESEL перевіряють окремо",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 42c, 42g і 42r",
@@ -2221,7 +2147,8 @@ const route: CaseGuideRoute = {
           },
         ],
       },
-      proves: "Особа та дані документа в реєстрі PESEL",
+      proves:
+        "Особу та реквізити чинного документа; відповідність запису PESEL перевіряють окремо",
       law: {
         kind: "authored-legal-text",
         plainText: "Art. 42c, 42g і 42r",
@@ -2256,56 +2183,8 @@ const route: CaseGuideRoute = {
         ],
       },
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Активний PESEL UKR та історія status UKR",
-        parts: [
-          {
-            text: "Активний PESEL UKR та історія status UKR",
-            target: {
-              kind: "evidence-document",
-              documentId: "pesel-ukr-confirmation",
-            },
-          },
-        ],
-      },
-      status: "обов’язково",
-      level: "required",
-      owner: "Працівник легалізації · до подання; organ перевіряє реєстр",
-      proves: "UKR зараз, 04.06.2025 і безперервність ≥365 днів",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 42c",
-        parts: [
-          {
-            text: "Art. 42c",
-            target: {
-              kind: "external",
-              url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
-            },
-          },
-        ],
-      },
-    },
-    {
-      item: "Доповнення даних у urząd gminy",
-      status: "умовно",
-      level: "conditional",
-      owner: {
-        kind: "authored-legal-text",
-        plainText:
-          "Заявник · перед MOS, якщо бракує паспорта, підпису або відбитків",
-        parts: [
-          { text: "Заявник" },
-          { text: " · перед MOS, якщо бракує паспорта, підпису або відбитків" },
-        ],
-      },
-      proves: "Повноту даних, без яких MOS не прийме CUKR",
-      law: "Перевірка реєстру PESEL / FAQ CUKR",
-      kind: "action",
-      guidance: "cukr-application",
-    },
+    peselStatus,
+    registerCorrection,
     {
       item: "Особистий профіль MOS + login.gov.pl",
       status: "обов’язково",

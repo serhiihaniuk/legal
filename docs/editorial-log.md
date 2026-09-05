@@ -213,3 +213,10 @@
 - Separated stage document titles from checkbox labels and made wrapped title links one click target. Checkboxes retain their document names for assistive technology. Added a navigation-and-selection regression test.
 - Recorded official ELI, professions-list, NAWA, UdSC and voivodeship checks in `content-review/writing-2026-09-05/batches/10-qualifications-and-language.md`. Scoped checks are dated 06.09.2026; the atlas baseline remains 18.07.2026 and independent review is not renewed.
 - Full verification passed with 92 application tests and a production build. Desktop/mobile examples, table keyboard scrolling, case/document navigation, checkbox selection and the original annex destination passed browser checks without console errors.
+
+## 2026-09-06 identity and residence-status evidence
+
+- Reworked passport, visa, residence-status and PESEL UKR guides. Added filled passport-replacement, visa-day, card-expiry and registry-discrepancy comparisons.
+- Reused shared CUKR document definitions for PESEL checks and gmina corrections. Distinguished required status verification from a universal certificate upload and the passport's data from PESEL records.
+- Recorded exact official checks and the identity-confirmation transition in `content-review/writing-2026-09-05/batches/11-identity-and-status.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged.
+- Full verification passed with 92 application tests and a production build. Desktop/mobile examples, keyboard table scrolling and document/case/provision navigation passed without browser console errors.

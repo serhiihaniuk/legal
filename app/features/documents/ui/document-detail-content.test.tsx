@@ -35,9 +35,7 @@ describe("document explanations", () => {
     }
   })
 
-  it("keeps the passport concise and gives travel history completed reasoning", () => {
-    const passport = documentById.get("passport")!
-    expect(passport.guide.explanation).toBeUndefined()
+  it("gives travel history completed reasoning", () => {
     const history = documentById.get("stay-history")!
     render(
       <MemoryRouter>

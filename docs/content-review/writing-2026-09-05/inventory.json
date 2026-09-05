@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 54,
+    "reviewed": 58,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -93,7 +93,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/cukr.ts",
       "family": "case-guide",
-      "contentHash": "98571d893a2b2cbc91a0c2d23b9c8dea5522e5c19bc32c0405d78ea3bf448429",
+      "contentHash": "f126b2c7f1d1c0813eed3b9ed7432506a40aa70cdecb6faca2bedaeb4d02ec37",
       "writing": "pending",
       "evidence": null
     },
@@ -352,9 +352,9 @@
     {
       "path": "app/data/document-library/editorial/guides/passport.ts",
       "family": "evidence-document",
-      "contentHash": "1e2c7f26cadebafbb82f12c6d8968e0e306a36fa32106c4e2df11dfb22cb4455",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "bed6a116ef00387c51f3e038339ff90b4b2e31796d276985c2d7e7f5f71eb5eb",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/permanent-application.ts",
@@ -366,9 +366,9 @@
     {
       "path": "app/data/document-library/editorial/guides/pesel-ukr-confirmation.ts",
       "family": "evidence-document",
-      "contentHash": "43325537cffc0ce4a4ab68ae1cefcfba902f77408c0c32792e215eb9c6a8ea0b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "a744d49eb472c9bdefa7d5d218eb6b23781b463bf6beda3d706b8c10c83fffb5",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/polish-language-proof.ts",
@@ -464,9 +464,9 @@
     {
       "path": "app/data/document-library/editorial/guides/status-documents.ts",
       "family": "evidence-document",
-      "contentHash": "1abba221ec5eb2a9d2d569a3ffe9b38eecf0735090c3ab8f335b355375b061de",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "13c2537e669076b8fed6b4e13c36b250e22c4878e21e0ad8f839c0d4deecf2d4",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/stay-history.ts",
@@ -534,9 +534,9 @@
     {
       "path": "app/data/document-library/editorial/guides/visa.ts",
       "family": "evidence-document",
-      "contentHash": "c08e710b461f6ae5227fab1aab37585845e9d38d2457d056d217b1c5d27fa84f",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "3f278fcf5f8c9801321ec5d27b044363edad3fed3ffaf506ad8e7d5c72ade804",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/work-organisation-evidence.ts",

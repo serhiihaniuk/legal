@@ -96,9 +96,10 @@ describe("document coverage across learning modules", () => {
         ...route.documents,
         ...route.stages.flatMap((stage) => stage.documents),
       ]) {
-        if (document.kind === "action")
-          expect(document.guidance).toBe("cukr-application")
-        else
+        if (document.kind === "action") {
+          expect(document.guidance).toBeDefined()
+          expect(documentById.has(document.guidance!)).toBe(true)
+        } else
           expect(
             ids(document.item).length,
             `${route.id}: ${legalTextPlainText(document.item)}`

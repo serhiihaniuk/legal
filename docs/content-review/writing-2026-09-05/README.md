@@ -27,7 +27,9 @@ User clarifications to preserve: show what complex documents and working records
 
 Batch 10 adds four filled qualification and language examples. It also corrects the relevant Blue Card and resident-case document rows and separates document-title navigation from checklist selection.
 
-After batch 10, 54 of 1,763 inventoried files have current writing acceptance. Of the 57 document guides, 38 are reviewed and 19 remain. Focused document-integration fixes do not constitute complete case-route acceptance. The corpus audit still needs to resolve the university annex's reported end page, recorded in batch 09.
+Batch 11 adds four identity and residence-status explanations with filled working comparisons. The CUKR guide now distinguishes registry checks from certificate uploads and explains the September identity-confirmation issue.
+
+After batch 11, 58 of 1,763 inventoried files have current writing acceptance. Of the 57 document guides, 42 are reviewed and 15 remain. Focused document-integration fixes do not constitute complete case-route acceptance. The corpus audit still needs to resolve the university annex's reported end page, recorded in batch 09.
 
 1. Work-route document journey: employer annex, contract, insurance, ZUS, representation, filing, and procedural correspondence.
 2. Remaining eight case routes and their document guides.

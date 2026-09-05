@@ -273,5 +273,25 @@
     "path": "app/data/document-library/editorial/guides/polish-language-proof.ts",
     "contentHash": "5f4719738b227c4f581e321276e89c13e0b81a3326d6832ef40bf4f5f8f54bfa",
     "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/passport.ts",
+    "contentHash": "bed6a116ef00387c51f3e038339ff90b4b2e31796d276985c2d7e7f5f71eb5eb",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/visa.ts",
+    "contentHash": "3f278fcf5f8c9801321ec5d27b044363edad3fed3ffaf506ad8e7d5c72ade804",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/status-documents.ts",
+    "contentHash": "13c2537e669076b8fed6b4e13c36b250e22c4878e21e0ad8f839c0d4deecf2d4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/pesel-ukr-confirmation.ts",
+    "contentHash": "a744d49eb472c9bdefa7d5d218eb6b23781b463bf6beda3d706b8c10c83fffb5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
   }
 ]
