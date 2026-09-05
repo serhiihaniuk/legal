@@ -179,3 +179,10 @@
 - Added the certificate to later work-case document checks and the register. It is absent from the initial filing attachments. Corrected representation and fee descriptions in the affected work-case rows.
 - Recorded official KPA, foreigners-act, fee, form and UdSC checks in `content-review/writing-2026-09-05/batches/05-representation-and-filing.md`. The atlas baseline remains 18.07.2026; full work-route and independent legal reviews remain pending.
 - Full verification passed with 91 application tests and a production build. All four mobile pages fit, the comparison scrolls by keyboard, and document/case/provision links work without browser console errors.
+
+## 2026-09-05 decisions and card examples
+
+- Reworked the decision, residence-card and card-payment guides with filled examples. Explained evidence assessment, appeal and finality, the card's relationship to the decision, fee reductions and payment recipients.
+- Replaced four repeated work-case payment rows with one conditional definition. The standard 100 zł amount now retains reductions and exemptions; collection instructions first check the existing payment.
+- Recorded the official KPA, foreigners-act, fee-regulation and UdSC checks in `content-review/writing-2026-09-05/batches/06-decisions-and-cards.md`. The atlas baseline remains 18.07.2026. Full case-route, card-design specimen and independent-review work remain open.
+- Full verification passed with 91 application tests and a production build. Desktop/mobile specimens, keyboard table scrolling, case/document/provision navigation and conditional stage labels passed browser checks without console errors.

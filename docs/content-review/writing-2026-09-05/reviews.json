@@ -168,5 +168,20 @@
     "path": "app/data/document-library/editorial/guides/stamp-duty-proof.ts",
     "contentHash": "ad1fc7ce06040e2061e4856a02937c709af7bac06d5f750d2174813a67d97fad",
     "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/administrative-decision.ts",
+    "contentHash": "50306ea625a9364a2e7ede8b754a0a0c68f5d802c9cd42380f3353ab8c673ef0",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/residence-card.ts",
+    "contentHash": "0235e002173460eb179226e0665ec429e8a298158084b8d54f5a9c4fad7d1690",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/residence-card-fee-proof.ts",
+    "contentHash": "eb23c14a38ee5d7bac2ff4218750605bab66c12773be29a00d04d7310c8356d8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
   }
 ]

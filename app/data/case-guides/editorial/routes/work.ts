@@ -10,6 +10,30 @@ import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
+const workCardFeeProof: CaseGuideDocument = {
+  reviewId: "payment",
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Підтвердження плати за карту",
+    parts: [
+      {
+        text: "Підтвердження плати за карту",
+        target: {
+          kind: "evidence-document",
+          documentId: "residence-card-fee-proof",
+        },
+      },
+    ],
+  },
+  status: "якщо плата належить",
+  level: "conditional",
+  owner:
+    "Заявник долучає до MOS; при отриманні карти звіряє вже здійснений платіж",
+  proves:
+    "Плату за видачу карти. Стандартно 100 zł; пільгу або звільнення підтверджують окремою підставою",
+  law: foreignersLaw.text`${foreignersLaw.articleRange("235", "239", { start: "Art. 235", end: "239" })}: плата та винятки; ставки визначає розпорядження про плату за документи.`,
+}
+
 const workFilingCertificate: CaseGuideDocument = {
   item: {
     kind: "authored-legal-text",
@@ -1393,38 +1417,7 @@ const route: CaseGuideRoute = {
           proves: "Сплату збору за надання дозволу",
           law: "Офіційна tabela opłat UdSC",
         },
-        {
-          reviewId: "payment",
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Opłata za kartę 100 zł",
-            parts: [
-              {
-                text: "Opłata za kartę 100 zł",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "residence-card-fee-proof",
-                },
-              },
-            ],
-          },
-          status: "обов’язково",
-          level: "required",
-          owner: {
-            kind: "authored-legal-text",
-            plainText: "Заявник · доказ у пакеті MOS",
-            parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · доказ у пакеті MOS",
-              },
-            ],
-          },
-          proves: "Оплату виготовлення карти",
-          law: "Офіційна tabela opłat UdSC",
-        },
+        workCardFeeProof,
         {
           reviewId: "submission",
           item: {
@@ -2084,38 +2077,7 @@ const route: CaseGuideRoute = {
           proves: "Сплату збору за надання дозволу",
           law: "Офіційна tabela opłat UdSC",
         },
-        {
-          reviewId: "payment",
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Opłata za kartę 100 zł",
-            parts: [
-              {
-                text: "Opłata za kartę 100 zł",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "residence-card-fee-proof",
-                },
-              },
-            ],
-          },
-          status: "обов’язково",
-          level: "required",
-          owner: {
-            kind: "authored-legal-text",
-            plainText: "Заявник · доказ у пакеті MOS",
-            parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · доказ у пакеті MOS",
-              },
-            ],
-          },
-          proves: "Оплату виготовлення карти",
-          law: "Офіційна tabela opłat UdSC",
-        },
+        workCardFeeProof,
         {
           reviewId: "submission",
           item: {
@@ -2960,38 +2922,7 @@ const route: CaseGuideRoute = {
       outcome:
         "Відомі умови дозволу, строки та дії при зміні роботи. Рішення й дані карти перевірені.",
       documents: [
-        {
-          reviewId: "payment",
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Opłata za kartę 100 zł",
-            parts: [
-              {
-                text: "Opłata za kartę 100 zł",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "residence-card-fee-proof",
-                },
-              },
-            ],
-          },
-          status: "обов’язково",
-          level: "required",
-          owner: {
-            kind: "authored-legal-text",
-            plainText: "Заявник · доказ у пакеті MOS",
-            parts: [
-              {
-                text: "Заявник",
-              },
-              {
-                text: " · доказ у пакеті MOS",
-              },
-            ],
-          },
-          proves: "Оплату виготовлення карти",
-          law: "Офіційна tabela opłat UdSC",
-        },
+        workCardFeeProof,
         {
           reviewId: "notification",
           item: {
@@ -3626,38 +3557,7 @@ const route: CaseGuideRoute = {
       proves: "Сплату збору за надання дозволу",
       law: "Офіційна tabela opłat UdSC",
     },
-    {
-      reviewId: "payment",
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Opłata za kartę 100 zł",
-        parts: [
-          {
-            text: "Opłata za kartę 100 zł",
-            target: {
-              kind: "evidence-document",
-              documentId: "residence-card-fee-proof",
-            },
-          },
-        ],
-      },
-      status: "обов’язково",
-      level: "required",
-      owner: {
-        kind: "authored-legal-text",
-        plainText: "Заявник · доказ у пакеті MOS",
-        parts: [
-          {
-            text: "Заявник",
-          },
-          {
-            text: " · доказ у пакеті MOS",
-          },
-        ],
-      },
-      proves: "Оплату виготовлення карти",
-      law: "Офіційна tabela opłat UdSC",
-    },
+    workCardFeeProof,
     {
       reviewId: "submission",
       item: {

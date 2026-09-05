@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 33,
+    "reviewed": 36,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -135,7 +135,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/work.ts",
       "family": "case-guide",
-      "contentHash": "420e977d4a75344f3e82ba23dc2c6b5f758fd3e5e9c51eb40b40f7829ba989dd",
+      "contentHash": "d6dc83963fb2c2eff103e8757212b4cc906a4ac1a395cbdeb8e9f33d805aad38",
       "writing": "pending",
       "evidence": null
     },
@@ -156,9 +156,9 @@
     {
       "path": "app/data/document-library/editorial/guides/administrative-decision.ts",
       "family": "evidence-document",
-      "contentHash": "ced64c958a1a7c16b34885254a7f82c4b29bcb7a8611f4ca2394a3a12cdd1dd5",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "50306ea625a9364a2e7ede8b754a0a0c68f5d802c9cd42380f3353ab8c673ef0",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/apostille-legalisation.ts",
@@ -415,16 +415,16 @@
     {
       "path": "app/data/document-library/editorial/guides/residence-card-fee-proof.ts",
       "family": "evidence-document",
-      "contentHash": "61c25b7ea9b6196a1fc28df896e8157d49778fde91f61253cd264f9f809d633c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "eb23c14a38ee5d7bac2ff4218750605bab66c12773be29a00d04d7310c8356d8",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/residence-card.ts",
       "family": "evidence-document",
-      "contentHash": "6012fc083803a5480664e9c81a20e82705901d0dbc40ea5fdca2acf3e60e69f3",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "0235e002173460eb179226e0665ec429e8a298158084b8d54f5a9c4fad7d1690",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/resident-application.ts",
