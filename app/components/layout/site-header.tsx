@@ -23,7 +23,7 @@ const routes = [
     href: "/cases/cukr",
     activePrefix: "/cases/",
   },
-  { label: "План навчання", href: "/study" },
+  { label: "Путівник по темах", href: "/study" },
 ]
 
 function isActive(pathname: string, href: string, activePrefix?: string) {

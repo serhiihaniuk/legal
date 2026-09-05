@@ -2,6 +2,12 @@
 
 ## Project context
 
+### Editorial audience
+
+The atlas explains Polish law to people who already work with legalization cases. Practice happens at work. Write self-contained explanations with clear definitions, mechanisms, and completed illustrative examples. Do not add assignments, quizzes, repetition schedules, or mandatory course progression. The `/study` route is an optional reading guide.
+
+Use the installed `$legal-explanatory-writing` skill for reader-facing writing and editorial reviews. Its local entrypoint is `C:/Users/Serge/.codex/skills/legal-explanatory-writing/SKILL.md`. Keep a short record of completed editorial changes and verification in `docs/editorial-log.md`.
+
 This repository contains a multi-page educational React application for a person working with the legalization of foreigners in Poland.
 
 The product teaches the user how to:

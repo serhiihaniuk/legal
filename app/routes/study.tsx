@@ -11,7 +11,7 @@ import { studyModules } from "~/data/study/plan-data"
 import { useUrlSelection } from "~/hooks/use-url-selection"
 
 export function meta() {
-  return [{ title: "План навчання — Legalizacja" }]
+  return [{ title: "Путівник по темах — Legalizacja" }]
 }
 
 const studyNavigationOptions: readonly SectionNavigationOption[] =
@@ -29,7 +29,7 @@ function StudyNavigation({
   onSelect: (id: string) => void
 }) {
   return (
-    <DocsSidebar ariaLabel="Навігація плану навчання" label="Вісім модулів">
+    <DocsSidebar ariaLabel="Навігація путівника" label="Теми для читання">
       <SectionNavigationList
         options={studyNavigationOptions}
         value={selectedId}
@@ -57,7 +57,7 @@ function MobileStudyNavigation({
   return (
     <div className="lg:hidden">
       <MobileSectionSelect
-        label="Модуль курсу"
+        label="Тема для читання"
         value={selectedId}
         options={studyNavigationOptions}
         onValueChange={onSelect}

@@ -99,7 +99,7 @@ export function KpaLearningContent({
     outcome: guideModule.outcome,
     stage: moduleContext.stage,
     positionIntro: layers.beginner.practice,
-    question: guideModule.outcome,
+    question: guideModule.questions[0]?.prompt ?? guideModule.title,
     neededWhen: layers.practical.practice,
     boundary: layers.beginner.pitfall,
     courseTitle:

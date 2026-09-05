@@ -173,8 +173,8 @@ export function DocumentDetailContent({
         <section id="document-contexts">
           <h2>Де цей документ використовується</h2>
           <p>
-            Це контекстні переходи до тем і типів справ. Вони не змінюють
-            канонічну назву або правову роль документа.
+            У цих темах пояснено, коли потрібен документ і яке значення він має
+            для конкретної справи.
           </p>
           <ul data-not-typeset className="not-typeset mt-5 divide-y border-y">
             {document.contexts.map((context) => (

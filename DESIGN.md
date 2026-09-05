@@ -144,6 +144,8 @@ Editorial preview modules are lazy-loaded when a card opens and cached by stable
 
 ## Content voice
 
+- Audience clarification (2026-09-05): the atlas is an explanatory reference for working legalization staff. Readers may enter at any topic. Examples explain completed reasoning; practice happens at work. The `/study` route provides optional reading directions without assignments, recall schedules, assessment criteria, or completion gates. This replaces the earlier course and study-plan requirements.
+
 - Tone: spokojny, konkretny, edukacyjny
 - Terminology: polski termin + proste ukraińskie objaśnienie
 - Microcopy rules: krótkie zdania; czasowniki działania; jawne odróżnianie „przepis mówi” od „w praktyce sprawdź”

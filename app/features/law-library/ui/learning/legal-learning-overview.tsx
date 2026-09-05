@@ -24,11 +24,13 @@ export function LegalLearningOverview({
         badges={
           <>
             <Badge variant="secondary">Модуль {module.order}</Badge>
-            <Badge variant="outline">
-              <LearningText
-                text={module.provisionScope}
-                context="reference-section"
-              />
+            <Badge variant="outline" className="h-auto max-w-full">
+              <span className="min-w-0 whitespace-normal">
+                <LearningText
+                  text={module.provisionScope}
+                  context="reference-section"
+                />
+              </span>
             </Badge>
             <span className="text-xs text-muted-foreground">
               Стан права: {module.legalState}
@@ -41,7 +43,7 @@ export function LegalLearningOverview({
           <LearningText text={module.polish} />
         </p>
         <p className="text-lg leading-8">
-          <strong>Після цього модуля:</strong>{" "}
+          <strong>Про що це пояснення:</strong>{" "}
           <LearningText text={module.outcome} />
         </p>
       </DocumentHeader>
@@ -57,7 +59,7 @@ export function LegalLearningOverview({
 
         <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
           <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Питання модуля</p>
+            <p className="text-sm font-medium">Головне питання</p>
             <p className="text-sm leading-6 text-muted-foreground">
               <LearningText text={module.question} />
             </p>
@@ -69,7 +71,7 @@ export function LegalLearningOverview({
             </p>
           </div>
           <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Чого тема не вирішує</p>
+            <p className="text-sm font-medium">Важливе застереження</p>
             <p className="text-sm leading-6 text-muted-foreground">
               <LearningText text={module.boundary} />
             </p>
