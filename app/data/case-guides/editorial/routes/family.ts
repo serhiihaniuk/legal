@@ -2,7 +2,73 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
+const familySupportDocuments: CaseGuideDocument[] = [
+  {
+    item: {
+      kind: "authored-legal-text",
+      plainText: "Дохід для утримання сім'ї",
+      parts: [
+        {
+          text: "Дохід для утримання сім'ї",
+          target: { kind: "evidence-document", documentId: "income-evidence" },
+        },
+      ],
+    },
+    status: "якщо ця підстава вимагає доходу",
+    level: "conditional",
+    owner:
+      "Заявник або член сім'ї, який його утримує · період і джерело відповідно до підстави",
+    proves:
+      "Джерело стабільного й регулярного доходу для потрібних осіб. Утримання членом сім'ї враховують за правилами цієї підстави",
+    law: foreignersLaw.text`${foreignersLaw.article("159", "Art. 159 ust. 1 pkt 2 lit. b, ust. 2–2b")}: умова доходу і винятки; ${foreignersLaw.article("163")}: уточнення фінансових умов. Не переноситься автоматично на подружжя громадянина Польщі.`,
+  },
+  {
+    item: {
+      kind: "authored-legal-text",
+      plainText: "Медичне страхування члена сім'ї",
+      parts: [
+        {
+          text: "Медичне страхування члена сім'ї",
+          target: { kind: "evidence-document", documentId: "health-insurance" },
+        },
+      ],
+    },
+    status: "якщо ця підстава вимагає страхування",
+    level: "conditional",
+    owner:
+      "Заявник · підтвердження власного покриття або покриття як члена сім'ї",
+    proves:
+      "Покриття саме заявника на потрібний період. Страхування іншого з подружжя не означає автоматичного включення заявника",
+    law: foreignersLaw.text`${foreignersLaw.article("159", "Art. 159 ust. 1 pkt 2 lit. a, ust. 2 i ust. 2a")}: страхування та винятки. Виняток щодо доходу і житла в ust. 2b не скасовує цієї страхової умови.`,
+  },
+  {
+    item: {
+      kind: "authored-legal-text",
+      plainText: "Забезпечене місце проживання",
+      parts: [
+        {
+          text: "Забезпечене місце проживання",
+          target: { kind: "evidence-document", documentId: "housing-evidence" },
+        },
+      ],
+    },
+    status: "якщо ця підстава вимагає житла",
+    level: "conditional",
+    owner:
+      "Заявник і особа, яка надає житло · документ охоплює потрібних членів сім'ї",
+    proves:
+      "Наявність місця проживання. Вид підтвердження відповідає сімейній підставі, а не автоматично правилам для rezydenta UE",
+    law: foreignersLaw.text`${foreignersLaw.article("159", "Art. 159 ust. 1 pkt 3 i ust. 2–2b")}: місце проживання та винятки.`,
+  },
+]
 
 const route: CaseGuideRoute = {
   id: "family",
@@ -329,6 +395,7 @@ const route: CaseGuideRoute = {
       outcome:
         "Письмовий висновок: маршрут доступний, умовно доступний або його треба змінити.",
       documents: [
+        ...familySupportDocuments,
         {
           item: {
             kind: "authored-legal-text",
@@ -541,6 +608,7 @@ const route: CaseGuideRoute = {
       outcome:
         "Відтворюваний контрольний пакет подання з доказом дати й змісту.",
       documents: [
+        ...familySupportDocuments,
         {
           reviewId: "application",
           item: {
@@ -887,6 +955,7 @@ const route: CaseGuideRoute = {
       outcome:
         "Матриця умова → факт → доказ із видимими прогалинами й суперечностями.",
       documents: [
+        ...familySupportDocuments,
         {
           reviewId: "application",
           item: {
@@ -1849,6 +1918,7 @@ const route: CaseGuideRoute = {
     },
   ],
   documents: [
+    ...familySupportDocuments,
     {
       reviewId: "application",
       item: {

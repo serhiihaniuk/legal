@@ -193,3 +193,10 @@
 - Split four repeated business-case document rows into shared registry/role and conditional CRBR definitions. Updated the link-label test and preserved the document destinations.
 - Recorded official KRS, CEIDG, KSH, AML, foreigners-act, PIP, KPA and voivodeship checks in `content-review/writing-2026-09-05/batches/07-company-records.md`. The atlas baseline remains 18.07.2026. Complete case and independent legal reviews remain open.
 - Full verification passed with 91 application tests and a production build. All four desktop/mobile pages fit, table keyboard scrolling worked, and case/document navigation and conditional labels passed without browser console errors.
+
+## 2026-09-05 income, housing and family records
+
+- Reworked four complete guides with filled payroll/bank comparisons, selected lease clauses, a family-evidence record and selected marriage-extract fields. Explained financial periods, housing rights, family exceptions and surname changes.
+- Added shared conditional income, insurance and housing rows to the family case stages and register, with typed document and provision links. The complete case review remains pending.
+- Recorded official ELI, KAS, UdSC, USC and voivodeship source checks in `content-review/writing-2026-09-05/batches/08-family-and-finances.md`. The atlas baseline remains 18.07.2026; independent review is not renewed.
+- Full verification passed with 91 application tests and a production build. All four desktop/mobile examples fit. Table keyboard scrolling, case/document navigation and conditional labels passed without browser console errors.

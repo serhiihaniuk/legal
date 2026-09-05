@@ -203,5 +203,25 @@
     "path": "app/data/document-library/editorial/guides/work-organisation-evidence.ts",
     "contentHash": "e650b15ab5e60d9e32c3c93a7a04eec1c631c9e95ef2af417e3a4fd2c55358ea",
     "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/income-evidence.ts",
+    "contentHash": "c5a45b7cdd99d24142236ca91cefc9592c9dd9d6603b67b31601c5ddc1229b61",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/housing-evidence.ts",
+    "contentHash": "62d4bcc2029c3ce950ede1320299ddb4f8425ba5352062d3fba89c667f1a3ed2",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/family-evidence.ts",
+    "contentHash": "daf32692a4668d17914ce7b711ad62b72cdb626faf65acdcc6ad01fff85872c5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/civil-status-record.ts",
+    "contentHash": "15e0d87441f757009187cf121c2484ad53ed0ca3cc9a54974852a317a9b0539b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
   }
 ]

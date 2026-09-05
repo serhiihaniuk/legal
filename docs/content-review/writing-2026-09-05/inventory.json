@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 40,
+    "reviewed": 44,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -100,7 +100,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/family.ts",
       "family": "case-guide",
-      "contentHash": "a12cc8e2897ab3fead7155a5b94971fb056526d638258f7217b5282660ea6a7e",
+      "contentHash": "3e238dc56ed5cdd68fc9627d45e71c8dd5ada6d3c4b89abca503ae776fd4593a",
       "writing": "pending",
       "evidence": null
     },
@@ -212,9 +212,9 @@
     {
       "path": "app/data/document-library/editorial/guides/civil-status-record.ts",
       "family": "evidence-document",
-      "contentHash": "6947f12303351d9cd1b2a5a7e38d55b11cf13f304948109199b450c352a9eb38",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "15e0d87441f757009187cf121c2484ad53ed0ca3cc9a54974852a317a9b0539b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/crbr-information.ts",
@@ -296,9 +296,9 @@
     {
       "path": "app/data/document-library/editorial/guides/family-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "ec8b9888b189d71540e4b20a8555ba990d8383984fe1272a4517f7a50a2f6151",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "daf32692a4668d17914ce7b711ad62b72cdb626faf65acdcc6ad01fff85872c5",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/fingerprint-record.ts",
@@ -317,9 +317,9 @@
     {
       "path": "app/data/document-library/editorial/guides/housing-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "4c855eb734b80ddf81d0af3af02eeaec56809812e6f710a4735e37d31912ce56",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "62d4bcc2029c3ce950ede1320299ddb4f8425ba5352062d3fba89c667f1a3ed2",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/ict-application.ts",
@@ -331,9 +331,9 @@
     {
       "path": "app/data/document-library/editorial/guides/income-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "e5aec9bc2f601f23111ceaf484de4c2195695f005a8868aada9e5067e0bdf16d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "c5a45b7cdd99d24142236ca91cefc9592c9dd9d6603b67b31601c5ddc1229b61",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/job-description.ts",
