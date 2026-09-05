@@ -172,3 +172,10 @@
 - Reworked wezwanie, delivery proof, dispatch proof and UPO around the event or submitted version each record establishes. Added four visible examples with completed findings. Kept formal defects, substantive evidence, personal actions and deadline restoration distinct.
 - Recorded focused KPA, foreigners-act, UdSC and e-Doręczenia checks in `content-review/writing-2026-09-05/batches/04-correspondence.md`. The atlas baseline remains 18.07.2026. Independent legal review and a faithful official UPO visual specimen remain pending.
 - Full verification passed with 91 application tests and a production build. Checked mobile fit, keyboard table scrolling, section anchors, related-document navigation and a typed provision link. A fresh browser session recorded no console errors.
+
+## 2026-09-05 representation and filing examples
+
+- Reworked pełnomocnictwo, the MOS application, the filing certificate and stamp-duty proof with four filled examples. Clarified personal signing, paper-procedure exceptions, draft versus submission, certificate issue rules and payment allocation.
+- Added the certificate to later work-case document checks and the register. It is absent from the initial filing attachments. Corrected representation and fee descriptions in the affected work-case rows.
+- Recorded official KPA, foreigners-act, fee, form and UdSC checks in `content-review/writing-2026-09-05/batches/05-representation-and-filing.md`. The atlas baseline remains 18.07.2026; full work-route and independent legal reviews remain pending.
+- Full verification passed with 91 application tests and a production build. All four mobile pages fit, the comparison scrolls by keyboard, and document/case/provision links work without browser console errors.

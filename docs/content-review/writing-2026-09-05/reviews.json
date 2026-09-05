@@ -148,5 +148,25 @@
     "path": "app/data/document-library/editorial/guides/upo.ts",
     "contentHash": "eb2e5407884c5ff8d7dcf74b5350665db7562b05fe3f3d75915f619195755041",
     "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
+    "contentHash": "780687b32f3f084f10982c872078db37e239bcc8ddae8f9cbf6866d7b991c662",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/mos-application.ts",
+    "contentHash": "5dbbee7ebb1c0a3cb6e1f3a0fd69b4d869d8a0f55e393ab00f1aba52977877d1",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/proceeding-certificate.ts",
+    "contentHash": "e42320002f75417900ba6df8ac35c5649c00e7193d5714b41776a4cb0e2febed",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/stamp-duty-proof.ts",
+    "contentHash": "ad1fc7ce06040e2061e4856a02937c709af7bac06d5f750d2174813a67d97fad",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
   }
 ]

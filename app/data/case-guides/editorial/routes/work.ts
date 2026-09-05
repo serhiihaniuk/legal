@@ -2,7 +2,36 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
+const workFilingCertificate: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Zaświadczenie про подання заяви",
+    parts: [
+      {
+        text: "Zaświadczenie про подання заяви",
+        target: {
+          kind: "evidence-document",
+          documentId: "proceeding-certificate",
+        },
+      },
+    ],
+  },
+  status: "після перевірки заяви",
+  level: "control",
+  owner:
+    "Видає wojewoda; заявник отримує після перевірки заяви, не готує як вкладення до неї",
+  proves:
+    "Подання за умовами, зазначеними в довідці; дата видачі відрізняється від дати подання",
+  law: foreignersLaw.text`${foreignersLaw.article("108", "Art. 108")}: своєчасність, формальні вимоги та перебування під час розгляду; окремі правила видачі довідки.`,
+}
 
 const route: CaseGuideRoute = {
   id: "work",
@@ -869,7 +898,7 @@ const route: CaseGuideRoute = {
         {
           kind: "authored-legal-text",
           plainText:
-            "Załącznik nr 1 заповнює належний podmiot, а всі дані мають збігатися з договором і MOS.",
+            "Załącznik nr 1 заповнює та підписує роботодавець або уповноважена ним особа. Умови роботи мають збігатися з договором і заявою в MOS.",
           parts: [
             {
               text: "Załącznik nr 1",
@@ -880,12 +909,13 @@ const route: CaseGuideRoute = {
               },
             },
             {
-              text: " заповнює належний podmiot, а всі дані мають збігатися з договором і MOS.",
+              text: " заповнює та підписує роботодавець або уповноважена ним особа. Умови роботи мають збігатися з договором і заявою в MOS.",
             },
           ],
         },
       ],
-      actor: "Заявник, представник і — коли потрібно — інша сторона додатка",
+      actor:
+        "Заявник і уповноважений підписант роботодавця; представник допомагає в межах повноваження",
       actions: [
         "Перевірте компетентний орган, застосовний спосіб подання, підпис, оплати та потрібні додатки.",
         "Перед поданням зіставте дані заявника і роботодавця, посаду, оплату та робочий час у заяві й доказах.",
@@ -1241,7 +1271,8 @@ const route: CaseGuideRoute = {
           status: "умовно",
           level: "conditional",
           owner: "Той, хто діє через представника",
-          proves: "Право представника підписати або вести справу",
+          proves:
+            "Повноваження діяти у визначеному обсязі; підпис заявника в MOS не замінює",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 32–33 KPA + правила MOS",
@@ -1359,7 +1390,7 @@ const route: CaseGuideRoute = {
               },
             ],
           },
-          proves: "Оплату розгляду заяви",
+          proves: "Сплату збору за надання дозволу",
           law: "Офіційна tabela opłat UdSC",
         },
         {
@@ -1583,6 +1614,7 @@ const route: CaseGuideRoute = {
       outcome:
         "До кожної умови є доказ або названа прогалина. Документи описують узгоджені умови роботи та їхні зміни.",
       documents: [
+        workFilingCertificate,
         {
           reviewId: "application",
           item: {
@@ -1930,7 +1962,8 @@ const route: CaseGuideRoute = {
           status: "умовно",
           level: "conditional",
           owner: "Той, хто діє через представника",
-          proves: "Право представника підписати або вести справу",
+          proves:
+            "Повноваження діяти у визначеному обсязі; підпис заявника в MOS не замінює",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 32–33 KPA + правила MOS",
@@ -2048,7 +2081,7 @@ const route: CaseGuideRoute = {
               },
             ],
           },
-          proves: "Оплату розгляду заяви",
+          proves: "Сплату збору за надання дозволу",
           law: "Офіційна tabela opłat UdSC",
         },
         {
@@ -2448,6 +2481,7 @@ const route: CaseGuideRoute = {
       title: "Контролюємо провадження і відповіді на wezwania",
       question: "Що орган перевіряє зараз і який процесуальний крок наступний?",
       explanation: [
+        foreignersLaw.text`UPO підтверджує отримання заяви системою. Після перевірки з’являється окреме zaświadczenie, довідка про подання за ${foreignersLaw.article("108", "Art. 108")}. Її звіряють із датою подання та формальними вимогами. Це не вкладення, яке потрібно підготувати до заяви, і не рішення про надання дозволу.`,
         "Після подання орган може вимагати виправлення заяви, особистої явки або додаткових доказів. Wezwanie потрібно прочитати повністю: що саме вимагається, від якої події рахується строк і який наслідок зазначено за невиконання.",
         "Brak formalny стосується вимог до самої заяви, наприклад підпису. Вимога підтвердити зарплату стосується умов дозволу. Надіслати відсутній підпис і довести розмір оплати є різними діями, навіть якщо обидві вимоги містяться в одному листі.",
       ],
@@ -2460,6 +2494,7 @@ const route: CaseGuideRoute = {
       outcome:
         "На кожну вимогу є відповідь і підтвердження подання. У справі містяться актуальні умови роботи.",
       documents: [
+        workFilingCertificate,
         {
           reviewId: "passport",
           item: {
@@ -2522,7 +2557,8 @@ const route: CaseGuideRoute = {
           status: "умовно",
           level: "conditional",
           owner: "Той, хто діє через представника",
-          proves: "Право представника підписати або вести справу",
+          proves:
+            "Повноваження діяти у визначеному обсязі; підпис заявника в MOS не замінює",
           law: {
             kind: "authored-legal-text",
             plainText: "Art. 32–33 KPA + правила MOS",
@@ -3120,6 +3156,7 @@ const route: CaseGuideRoute = {
     },
   ],
   documents: [
+    workFilingCertificate,
     {
       reviewId: "application",
       item: {
@@ -3467,7 +3504,8 @@ const route: CaseGuideRoute = {
       status: "умовно",
       level: "conditional",
       owner: "Той, хто діє через представника",
-      proves: "Право представника підписати або вести справу",
+      proves:
+        "Повноваження діяти у визначеному обсязі; підпис заявника в MOS не замінює",
       law: {
         kind: "authored-legal-text",
         plainText: "Art. 32–33 KPA + правила MOS",
@@ -3585,7 +3623,7 @@ const route: CaseGuideRoute = {
           },
         ],
       },
-      proves: "Оплату розгляду заяви",
+      proves: "Сплату збору за надання дозволу",
       law: "Офіційна tabela opłat UdSC",
     },
     {
@@ -4301,6 +4339,11 @@ const route: CaseGuideRoute = {
     },
   ],
   sources: [
+    {
+      label: "Довідка про подання заяви. Офіційна форма",
+      url: "https://eli.gov.pl/eli/DU/2026/386/ogl",
+      note: foreignersLaw.text`Перевірено 05.09.2026 разом з ${foreignersLaw.article("108", "Art. 108")}: дата подання, реквізити й спеціальні правила довідки. Підпис заяви та винятки перевірено за ${foreignersLaw.articleRange("106c", "106l", { start: "Art. 106c", end: "106l" })}. Це перевірка зазначених документів, не всіх умов маршруту.`,
+    },
     {
       label:
         "Pobyt czasowy i praca. Пояснення Podlaskiego Urzędu Wojewódzkiego",

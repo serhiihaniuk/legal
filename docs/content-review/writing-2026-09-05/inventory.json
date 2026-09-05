@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 29,
+    "reviewed": 33,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -135,7 +135,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/work.ts",
       "family": "case-guide",
-      "contentHash": "5439f1ae7a1498ccf9b52d6d5dad43c118c8dd3f92104856af0314b8ae27383a",
+      "contentHash": "420e977d4a75344f3e82ba23dc2c6b5f758fd3e5e9c51eb40b40f7829ba989dd",
       "writing": "pending",
       "evidence": null
     },
@@ -149,7 +149,7 @@
     {
       "path": "app/data/document-library/editorial/authoring.ts",
       "family": "supporting-copy",
-      "contentHash": "fd4a7837cf4d479cc66088028fca08f1eaf0746671bf4693af7fac1d1fac53f4",
+      "contentHash": "894ff93de3f6d917bd47acdf83142e16a0516a354110220e28c149e6b18f3229",
       "writing": "pending",
       "evidence": null
     },
@@ -345,9 +345,9 @@
     {
       "path": "app/data/document-library/editorial/guides/mos-application.ts",
       "family": "evidence-document",
-      "contentHash": "edada27010a932ccfff7660ca656066c4a18cbec6ab49cc8abf867a9dd7e3bb1",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "5dbbee7ebb1c0a3cb6e1f3a0fd69b4d869d8a0f55e393ab00f1aba52977877d1",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/passport.ts",
@@ -380,16 +380,16 @@
     {
       "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
       "family": "evidence-document",
-      "contentHash": "abb8350a22a0f07c76de48ec5026ecd1abbb77b70ea0b7be2605556175c8d016",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "780687b32f3f084f10982c872078db37e239bcc8ddae8f9cbf6866d7b991c662",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/proceeding-certificate.ts",
       "family": "evidence-document",
-      "contentHash": "cc22c9f91edfe937208f269650bf2fccd83e3d2208b92055d8f27e510f54ab8b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "e42320002f75417900ba6df8ac35c5649c00e7193d5714b41776a4cb0e2febed",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/qualification-evidence.ts",
@@ -457,9 +457,9 @@
     {
       "path": "app/data/document-library/editorial/guides/stamp-duty-proof.ts",
       "family": "evidence-document",
-      "contentHash": "6880f9246661e48eb2189f8d94e51e71e57dc1569028de107f303c3f82329ec1",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ad1fc7ce06040e2061e4856a02937c709af7bac06d5f750d2174813a67d97fad",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/status-documents.ts",

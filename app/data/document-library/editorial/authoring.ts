@@ -74,7 +74,7 @@ export const documentSources = {
   },
   stampFee: {
     label: "Ustawa o opłacie skarbowej — ELI",
-    url: "https://eli.gov.pl/eli/DU/2023/2111/ogl",
+    url: "https://eli.gov.pl/eli/DU/2025/1154/ogl",
     note: "Офіційний текст закону про opłatę skarbową та додаток зі ставками і звільненнями.",
   },
   cardFee: {
