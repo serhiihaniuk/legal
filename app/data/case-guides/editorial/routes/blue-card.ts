@@ -2,7 +2,74 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+
+import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
+const qualificationEvidence: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Освіта або відповідний досвід; професійний допуск за потреби",
+    parts: [
+      {
+        text: "Освіта або відповідний досвід; професійний допуск за потреби",
+        target: {
+          kind: "evidence-document",
+          documentId: "qualification-evidence",
+        },
+      },
+    ],
+  },
+  status: "основний доказ",
+  level: "required",
+  owner:
+    "Заявник, навчальний заклад або попередній роботодавець · до подання та при уточненні",
+  proves:
+    "Кваліфікації для роботи за договором. Диплом і досвід є різними способами підтвердження; для регульованої професії потрібні відповідні формальні кваліфікації",
+  law: foreignersLaw.text`${foreignersLaw.article("3", "Art. 3 pkt 6, 6a і 25")}; ${foreignersLaw.article("127", "art. 127 pkt 1 lit. b і c")}`,
+}
+
+const jobDescription: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Опис посади та обов'язків",
+    parts: [
+      {
+        text: "Опис посади та обов'язків",
+        target: { kind: "evidence-document", documentId: "job-description" },
+      },
+    ],
+  },
+  status: "окремий документ за потреби",
+  level: "conditional",
+  owner: "Роботодавець · якщо договір і додаток не пояснюють зміст роботи",
+  proves:
+    "Завдання і потрібні для них знання. Власні кваліфікації заявника підтверджують окремі документи",
+  law: foreignersLaw.text`${foreignersLaw.article("127", "Art. 127: кваліфікації для конкретної роботи")}`,
+}
+
+const blueCardAnnex: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Додаток заявника про кваліфікації Blue Card",
+    parts: [
+      {
+        text: "Додаток заявника про кваліфікації Blue Card",
+        target: { kind: "evidence-document", documentId: "blue-card-annex" },
+      },
+    ],
+  },
+  status: "обов'язково",
+  level: "required",
+  owner: "Заявник · заповнює і підписує в MOS для нової заяви",
+  proves:
+    "Заявлені кваліфікації та історію мобільності, якщо вона застосовується. Не замінює докази кваліфікації або окремий додаток роботодавця",
+  law: foreignersLaw.text`${foreignersLaw.article("106", "Art. 106 ust. 4: відомості додатка заявника")}`,
+}
 
 const route: CaseGuideRoute = {
   id: "blue-card",
@@ -23,7 +90,7 @@ const route: CaseGuideRoute = {
   profile: {
     name: "Працівник високої кваліфікації",
     description:
-      "Для цього маршруту перевіряємо укладений договір про роботу, релевантний диплом і досвід. Потрібно довести, що саме ця посада вимагає високих кваліфікацій.",
+      "Для цього маршруту перевіряємо укладений договір про роботу та відповідні кваліфікації. Для нерегульованої професії їх підтверджують освітою або належним досвідом. Потрібно довести, що саме ця посада вимагає високих кваліфікацій.",
     facts: [
       {
         label: "Посада",
@@ -31,7 +98,7 @@ const route: CaseGuideRoute = {
       },
       {
         label: "Кваліфікації",
-        value: "диплом + підтверджений досвід",
+        value: "освіта або відповідний досвід; професійний допуск за потреби",
       },
       {
         label: "Договір",
@@ -423,46 +490,8 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Диплом і докази досвіду",
-            parts: [
-              {
-                text: "Диплом і докази досвіду",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "qualification-evidence",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Високі кваліфікації",
-          law: "Blue Card",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Опис посади",
-            parts: [
-              {
-                text: "Опис посади",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "job-description",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Потребу у високих кваліфікаціях",
-          law: "матеріальна умова",
-        },
+        qualificationEvidence,
+        jobDescription,
         {
           item: {
             kind: "authored-legal-text",
@@ -652,46 +681,8 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Диплом і докази досвіду",
-            parts: [
-              {
-                text: "Диплом і докази досвіду",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "qualification-evidence",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Високі кваліфікації",
-          law: "Blue Card",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Опис посади",
-            parts: [
-              {
-                text: "Опис посади",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "job-description",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Потребу у високих кваліфікаціях",
-          law: "матеріальна умова",
-        },
+        qualificationEvidence,
+        jobDescription,
         {
           item: {
             kind: "authored-legal-text",
@@ -767,40 +758,7 @@ const route: CaseGuideRoute = {
           level: "required",
           status: "обов’язково",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Додаток про кваліфікації Blue Card",
-            parts: [
-              {
-                text: "Додаток про кваліфікації Blue Card",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "blue-card-annex",
-                },
-              },
-            ],
-          },
-          owner: "Заявник · додає до заяви через MOS",
-          proves:
-            "Кваліфікації та обставини мобільності, якщо вона застосовується",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 4",
-            parts: [
-              {
-                text: "Art. 106 ust. 4",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "required",
-          status: "обов’язково",
-        },
+        blueCardAnnex,
       ],
       risks: [
         {
@@ -980,46 +938,8 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Диплом і докази досвіду",
-            parts: [
-              {
-                text: "Диплом і докази досвіду",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "qualification-evidence",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Високі кваліфікації",
-          law: "Blue Card",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Опис посади",
-            parts: [
-              {
-                text: "Опис посади",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "job-description",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Потребу у високих кваліфікаціях",
-          law: "матеріальна умова",
-        },
+        qualificationEvidence,
+        jobDescription,
         {
           item: {
             kind: "authored-legal-text",
@@ -1094,40 +1014,7 @@ const route: CaseGuideRoute = {
           level: "required",
           status: "обов’язково",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Додаток про кваліфікації Blue Card",
-            parts: [
-              {
-                text: "Додаток про кваліфікації Blue Card",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "blue-card-annex",
-                },
-              },
-            ],
-          },
-          owner: "Заявник · додає до заяви через MOS",
-          proves:
-            "Кваліфікації та обставини мобільності, якщо вона застосовується",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 4",
-            parts: [
-              {
-                text: "Art. 106 ust. 4",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "required",
-          status: "обов’язково",
-        },
+        blueCardAnnex,
         {
           item: {
             kind: "authored-legal-text",
@@ -1923,46 +1810,8 @@ const route: CaseGuideRoute = {
         ],
       },
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Диплом і докази досвіду",
-        parts: [
-          {
-            text: "Диплом і докази досвіду",
-            target: {
-              kind: "evidence-document",
-              documentId: "qualification-evidence",
-            },
-          },
-        ],
-      },
-      status: "основний доказ",
-      level: "required",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Високі кваліфікації",
-      law: "Blue Card",
-    },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Опис посади",
-        parts: [
-          {
-            text: "Опис посади",
-            target: {
-              kind: "evidence-document",
-              documentId: "job-description",
-            },
-          },
-        ],
-      },
-      status: "основний доказ",
-      level: "required",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Потребу у високих кваліфікаціях",
-      law: "матеріальна умова",
-    },
+    qualificationEvidence,
+    jobDescription,
     {
       item: {
         kind: "authored-legal-text",
@@ -2016,39 +1865,7 @@ const route: CaseGuideRoute = {
       level: "required",
       status: "обов’язково",
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Додаток про кваліфікації Blue Card",
-        parts: [
-          {
-            text: "Додаток про кваліфікації Blue Card",
-            target: {
-              kind: "evidence-document",
-              documentId: "blue-card-annex",
-            },
-          },
-        ],
-      },
-      owner: "Заявник · додає до заяви через MOS",
-      proves: "Кваліфікації та обставини мобільності, якщо вона застосовується",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 106 ust. 4",
-        parts: [
-          {
-            text: "Art. 106 ust. 4",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-106",
-            },
-          },
-        ],
-      },
-      level: "required",
-      status: "обов’язково",
-    },
+    blueCardAnnex,
     {
       item: {
         kind: "authored-legal-text",

@@ -8,9 +8,9 @@ import {
   FieldContent,
   FieldDescription,
   FieldGroup,
-  FieldLabel,
   FieldLegend,
   FieldSet,
+  FieldTitle,
 } from "~/components/ui/field"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import { DocumentStatus } from "./case-guide-shared"
@@ -38,6 +38,7 @@ export function CaseStageDocuments({ stage }: { stage: CaseGuideStage }) {
             <FieldGroup className="gap-0 divide-y">
               {documents.map((document, documentIndex) => {
                 const checkboxId = `${stage.id}-document-${documentIndex}`
+                const titleId = `${checkboxId}-title`
 
                 return (
                   <Field
@@ -45,15 +46,22 @@ export function CaseStageDocuments({ stage }: { stage: CaseGuideStage }) {
                     orientation="horizontal"
                     className="items-start py-4"
                   >
-                    <Checkbox id={checkboxId} className="mt-1" />
+                    <Checkbox
+                      id={checkboxId}
+                      aria-labelledby={titleId}
+                      className="mt-1"
+                    />
                     <FieldContent>
                       <div className="flex flex-wrap items-center gap-2">
-                        <FieldLabel htmlFor={checkboxId} className="text-base">
+                        <FieldTitle
+                          id={titleId}
+                          className="text-base [&_a]:inline-block"
+                        >
                           <LegalText
                             text={document.item}
                             context="reference-section"
                           />
-                        </FieldLabel>
+                        </FieldTitle>
                         <DocumentStatus document={document} />
                       </div>
                       <FieldDescription>

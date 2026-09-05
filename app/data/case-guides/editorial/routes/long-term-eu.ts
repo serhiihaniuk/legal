@@ -2,7 +2,36 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+
+import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
+
+const polishLanguageProof: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Документ про знання польської мови",
+    parts: [
+      {
+        text: "Документ про знання польської мови",
+        target: {
+          kind: "evidence-document",
+          documentId: "polish-language-proof",
+        },
+      },
+    ],
+  },
+  status: "якщо на день подання виповнилося 16 років",
+  level: "conditional",
+  owner:
+    "Заявник і належний видавець документа · до подання або у відповідь на вимогу",
+  proves:
+    "Мовну умову через допустиме посвідчення чи документ про завершену освіту польською. Для szkoły policealnej враховують дату завершення та початок провадження; дитині до 16 років мовний документ не потрібен",
+  law: foreignersLaw.text`${foreignersLaw.article("211", "Art. 211 ust. 3 і 4")}; ${foreignersLaw.external("art. 30 ustawy zmieniającej z 04.04.2025", "https://eli.gov.pl/eli/DU/2025/622/ogl")}`,
+}
 
 const route: CaseGuideRoute = {
   id: "long-term-eu",
@@ -613,50 +642,7 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Документ польської мови",
-            parts: [
-              {
-                text: "Документ польської мови",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "polish-language-proof",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Виконання мовної умови або винятку",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 211–212",
-            parts: [
-              {
-                text: "art. 211",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-211",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "212",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-212",
-                },
-              },
-            ],
-          },
-        },
+        polishLanguageProof,
       ],
       risks: [
         {
@@ -902,50 +888,7 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Документ польської мови",
-            parts: [
-              {
-                text: "Документ польської мови",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "polish-language-proof",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Виконання мовної умови або винятку",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 211–212",
-            parts: [
-              {
-                text: "art. 211",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-211",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "212",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-212",
-                },
-              },
-            ],
-          },
-        },
+        polishLanguageProof,
         {
           reviewId: "submission",
           item: {
@@ -1309,50 +1252,7 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Документ польської мови",
-            parts: [
-              {
-                text: "Документ польської мови",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "polish-language-proof",
-                },
-              },
-            ],
-          },
-          status: "основний доказ",
-          level: "required",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Виконання мовної умови або винятку",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "art. 211–212",
-            parts: [
-              {
-                text: "art. 211",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-211",
-                },
-              },
-              {
-                text: "–",
-              },
-              {
-                text: "212",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-212",
-                },
-              },
-            ],
-          },
-        },
+        polishLanguageProof,
         {
           item: {
             kind: "authored-legal-text",
@@ -2264,50 +2164,7 @@ const route: CaseGuideRoute = {
         ],
       },
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Документ польської мови",
-        parts: [
-          {
-            text: "Документ польської мови",
-            target: {
-              kind: "evidence-document",
-              documentId: "polish-language-proof",
-            },
-          },
-        ],
-      },
-      status: "основний доказ",
-      level: "required",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Виконання мовної умови або винятку",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "art. 211–212",
-        parts: [
-          {
-            text: "art. 211",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-211",
-            },
-          },
-          {
-            text: "–",
-          },
-          {
-            text: "212",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-212",
-            },
-          },
-        ],
-      },
-    },
+    polishLanguageProof,
     {
       item: {
         kind: "authored-legal-text",

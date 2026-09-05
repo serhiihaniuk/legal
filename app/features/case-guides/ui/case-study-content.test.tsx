@@ -6,7 +6,7 @@ import {
   screen,
   within,
 } from "@testing-library/react"
-import { MemoryRouter } from "react-router"
+import { MemoryRouter, useLocation } from "react-router"
 import { caseGuideCases, getCaseGuideCase } from "~/data/case-guides/navigation"
 import { caseGuideRoutes, getCaseGuideRoute } from "~/data/case-guides/routes"
 import { getEvidenceDocumentPath } from "~/data/document-library/navigation"
@@ -17,6 +17,10 @@ import { caseStudyTableOfContents } from "../model/case-study-navigation"
 import { CaseStudyContent } from "./case-study-content"
 
 afterEach(cleanup)
+
+function CurrentPath() {
+  return <output aria-label="Current path">{useLocation().pathname}</output>
+}
 
 describe("case guide continuity", () => {
   it("keeps document families above their case subtypes", () => {
@@ -109,6 +113,31 @@ describe("case guide continuity", () => {
     ).toBe(
       "/law/ustawa-o-cudzoziemcach/provisions/ustawa-o-cudzoziemcach-art-114"
     )
+  })
+
+  it("keeps document navigation separate from checklist selection", async () => {
+    render(
+      <MemoryRouter initialEntries={["/cases/work"]}>
+        <CaseStageDocuments stage={getCaseGuideRoute("work").stages[0]} />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    fireEvent.click(screen.getByRole("button", { name: /^Документи/ }))
+    const link = await screen.findByRole("link", {
+      name: "Скани всіх сторінок дійсного паспорта",
+    })
+    const checkbox = screen.getByRole("checkbox", { name: link.textContent! })
+    expect(link.closest("label")).toBeNull()
+    fireEvent.click(link)
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/passport")
+    expect(checkbox.getAttribute("aria-checked")).toBe("false")
+    fireEvent.click(checkbox)
+    expect(checkbox.getAttribute("aria-checked")).toBe("true")
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/passport")
   })
 
   it("keeps distinct document destinations in the business register", () => {

@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 50,
+    "reviewed": 54,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -79,7 +79,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
       "family": "case-guide",
-      "contentHash": "fb887d996d485736d1bccde41fdcc5ebea7d3a6560cc280e80a5d5b0437c04c5",
+      "contentHash": "f6328d4350415092a128c197ff4e0c6aa26b7f7467905eb63130f837a1267bf6",
       "writing": "pending",
       "evidence": null
     },
@@ -107,7 +107,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
       "family": "case-guide",
-      "contentHash": "68236b6b6974048b7230bf8486b6ba6a523c8ce861a1dd39cc46774fb52ef3b8",
+      "contentHash": "9993234d8078f43f6ca09ebc850a319cd357a515dc35a037949f96435a96cc4a",
       "writing": "pending",
       "evidence": null
     },
@@ -177,9 +177,9 @@
     {
       "path": "app/data/document-library/editorial/guides/blue-card-annex.ts",
       "family": "evidence-document",
-      "contentHash": "24ff37f2fe34a43621ac8233aed818d4cffd5f220189aa6fe821291212efeb9c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "f603de275b3e41ada9fd816644de06f6cbf98fb3cd04df9d8d6c3250334b1ffc",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/business-evidence.ts",
@@ -338,9 +338,9 @@
     {
       "path": "app/data/document-library/editorial/guides/job-description.ts",
       "family": "evidence-document",
-      "contentHash": "fe06ca0030e3e4ff04043c1d5d9bba9837e0661862dff8ed92128c369f7358e4",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d697da69051e06c9d2a5e5a6dca325925f2c3f293a60a95d9297ddff6446f77f",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/mos-application.ts",
@@ -373,9 +373,9 @@
     {
       "path": "app/data/document-library/editorial/guides/polish-language-proof.ts",
       "family": "evidence-document",
-      "contentHash": "8bec6240fb135020e48e4d592cd90bafbcff8a0e3b18d65aacd0cafe43c061b0",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "5f4719738b227c4f581e321276e89c13e0b81a3326d6832ef40bf4f5f8f54bfa",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
@@ -394,9 +394,9 @@
     {
       "path": "app/data/document-library/editorial/guides/qualification-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "7dcb20dfdb8f5016e43bb24361a87fc933e3f4825adc8dbb68ad13a5ec37202b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "74c518bd1a4de93e020bd8ae43f1e69b14405c056d1bb1ac677df2fa61ebb163",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/requirements-table.ts",
@@ -11930,7 +11930,7 @@
     {
       "path": "app/features/case-guides/ui/case-stage-documents.tsx",
       "family": "supporting-copy",
-      "contentHash": "78cd9e9d4b7e8c0a864ee97a8c50fddfe70fc4c935b1751406c3060559f1adbb",
+      "contentHash": "7e6f9c6468b49cb557882cc0cf400ed6925783fe813d71b827d4d04ffe2a2ed1",
       "writing": "pending",
       "evidence": null
     },

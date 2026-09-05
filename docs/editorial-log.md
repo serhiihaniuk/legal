@@ -200,3 +200,16 @@
 - Added shared conditional income, insurance and housing rows to the family case stages and register, with typed document and provision links. The complete case review remains pending.
 - Recorded official ELI, KAS, UdSC, USC and voivodeship source checks in `content-review/writing-2026-09-05/batches/08-family-and-finances.md`. The atlas baseline remains 18.07.2026; independent review is not renewed.
 - Full verification passed with 91 application tests and a production build. All four desktop/mobile examples fit. Table keyboard scrolling, case/document navigation and conditional labels passed without browser console errors.
+
+## 2026-09-06 study documents, translation and apostille
+
+- Reworked six complete guides with filled university-annex, certificate, progress, tuition, translation and apostille examples. Updated the student case's shared document definitions, conditional evidence and earlier-procedure references.
+- Recorded official ELI, UdSC, higher-education, translator, HCCH and treaty checks in `content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md`. The atlas baseline remains 18.07.2026. Full case and independent legal reviews remain pending.
+- Full verification passed with 91 application tests and a production build. All six desktop/mobile examples fit. Keyboard scrolling, case/document navigation and the official university form were checked without browser console errors. The university annex's reported end-page discrepancy remains recorded for the corpus audit.
+
+## 2026-09-06 qualifications and language evidence
+
+- Reworked qualification evidence, job descriptions, the Blue Card applicant annex and Polish-language proof. Added three fictional Polish document fragments and a filled language-document comparison. Corrected the affected Blue Card and resident-case document definitions, including alternative qualification methods and conditional language evidence.
+- Separated stage document titles from checkbox labels and made wrapped title links one click target. Checkboxes retain their document names for assistive technology. Added a navigation-and-selection regression test.
+- Recorded official ELI, professions-list, NAWA, UdSC and voivodeship checks in `content-review/writing-2026-09-05/batches/10-qualifications-and-language.md`. Scoped checks are dated 06.09.2026; the atlas baseline remains 18.07.2026 and independent review is not renewed.
+- Full verification passed with 92 application tests and a production build. Desktop/mobile examples, table keyboard scrolling, case/document navigation, checkbox selection and the original annex destination passed browser checks without console errors.
