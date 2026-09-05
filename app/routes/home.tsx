@@ -1,265 +1,219 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react"
 import { Link, useLoaderData } from "react-router"
 
-import { LegalText } from "~/components/references"
 import { buttonVariants } from "~/components/ui/button"
 import { caseGuideRouteById } from "~/data/case-guides/routes"
 import { listEvidenceDocuments } from "~/data/document-library"
 import { legalReferenceRegistry } from "~/data/legal-corpus/reference-registry.generated"
+import { AtlasIllustration } from "~/features/home"
+import "~/features/home/ui/home.css"
 
-const journeySteps = [
-  "Факт",
-  "Поняття",
-  "Норма",
-  "Доказ",
-  "Строк",
-  "Дія",
-  "Наслідок",
-] as const
-
-const atlasSections = [
+const sections = [
   {
-    number: "01",
-    title: "KPA — процесуальна основа",
-    description:
-      "Тут вивчаємо, хто веде справу, як вона починається, як орган збирає докази, вручає письма, рахує строки та видає decyzję. Матеріальні умови конкретного pobytu шукаємо у спеціальному законі.",
-    action: "Зрозуміти роль KPA",
-    href: "/guide/kpa?module=system",
-    start: true,
-  },
-  {
-    number: "02",
-    title: "Бібліотека права",
-    description:
-      "Повні тексти актів в актуальних редакціях: кожен przepis поруч із поясненням і офіційним джерелом PDF.",
-    action: "Відкрити бібліотеку",
-    href: "/law",
-  },
-  {
-    number: "03",
     title: "Карта права",
-    description:
-      "Карта показує місце поняття у зв’язках pobyt, praca, KPA, dokumenty та praktyka. Використовуйте її, коли потрібно зрозуміти, до якої правової гілки належить питання.",
-    action: "Відкрити карту",
+    polish: "Mapa pojęć",
+    description: "Побачити, як пов’язані перебування, праця та процедура.",
     href: "/map",
   },
   {
-    number: "04",
+    title: "Бібліотека права",
+    polish: "Przepisy i objaśnienia",
+    description: "Прочитати норму, її пояснення та офіційний текст.",
+    href: "/law",
+  },
+  {
+    title: "Адміністративна процедура",
+    polish: "Kodeks postępowania administracyjnego",
+    description: "Зрозуміти роль KPA у розгляді справи.",
+    href: "/guide/kpa?module=system",
+  },
+  {
     title: "Документи",
-    description:
-      "Каталог пояснює, хто видає або готує документ, коли він потрібний, що підтверджує, чого не доводить і з чим його потрібно звірити.",
-    action: "Відкрити документи",
+    polish: "Dokumenty i dowody",
+    description: "Розібратися, що документ підтверджує і чого не доводить.",
     href: "/documents",
   },
   {
-    number: "05",
     title: "Гайди по справах",
-    description:
-      "Кожен гайд поєднує кваліфікацію маршруту, умови, докази, хронологію, wezwanie, строки, рішення та негативні гілки.",
-    action: "Відкрити гайди",
+    polish: "Pobyt i praca",
+    description: "Розглянути умови, документи й хід конкретного типу справи.",
     href: "/cases/cukr",
   },
   {
-    number: "06",
     title: "Путівник по темах",
-    description:
-      "Теми для читання ведуть від перевірки актуального тексту права до самостійного аналізу повного комплекту матеріалів справи. Кожен модуль має завдання, результат і критерії перевірки.",
-    action: "Відкрити план",
+    polish: "Od czego zacząć",
+    description: "Знайти пояснення питання, яке виникло у вашій роботі.",
     href: "/study",
   },
 ] as const
 
-const exampleFlow = [
-  {
-    label: "Факт",
-    text: "Громадянка України перебуває у Польщі та працює на umowie o pracę.",
-  },
-  {
-    label: "Два правові питання",
-    text: "Окремо встановлюємо підставу pobytu і право виконувати конкретну роботу.",
-  },
-  {
-    label: "Норма й умови",
-    text: "Знаходимо матеріальну підставу, актуальну редакцію та процесуальні правила KPA.",
-  },
-  {
-    label: "Докази",
-    text: "До кожної істотної умови додаємо факт, документ, період і ризик суперечності.",
-  },
-  {
-    label: "Дія",
-    text: "Фіксуємо строк, комплект документів і наступну процесуальну дію.",
-  },
-] as const
-
 export function loader() {
-  const acts = Object.values(legalReferenceRegistry)
   return {
-    documents: acts.length,
-    provisions: acts.reduce((total, act) => total + act.provisionIds.length, 0),
-    evidence: listEvidenceDocuments().length,
-    routes: caseGuideRouteById.size,
+    acts: Object.keys(legalReferenceRegistry).length,
+    documents: listEvidenceDocuments().length,
+    cases: caseGuideRouteById.size,
   }
 }
 
 export function meta() {
   return [
-    { title: "Legalizacja — навчальний атлас права" },
+    { title: "Legalizacja · Польське право українською" },
     {
       name: "description",
       content:
-        "Атлас пояснює польські правові терміни простою українською і вчить переходити від юридичного тексту до контрольованого аналізу справи.",
+        "Пояснення польського права українською для тих, хто працює з легалізацією іноземців. Правові поняття, документи та хід справи.",
     },
   ]
 }
 
 export default function Home() {
   const stats = useLoaderData<typeof loader>()
-  const statItems = [
-    { value: stats.documents, label: "актів права" },
-    { value: stats.provisions, label: "приписів" },
-    { value: stats.evidence, label: "доказових документів" },
-    { value: stats.routes, label: "маршрутів справ" },
-  ]
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 pt-14 pb-24 sm:pt-24 lg:px-6">
-      <p className="text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
-        Навчальний атлас · Legalizacja cudzoziemców
-      </p>
-      <h1 className="mt-6 max-w-4xl font-display text-[2.6rem] leading-[1.05] font-medium tracking-tight text-balance sm:text-6xl lg:text-7xl">
-        Від юридичного тексту — до контрольованого аналізу справи
-      </h1>
-      <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
-        Атлас пояснює польські правові терміни простою українською і вчить
-        працювати в одному незмінному порядку.
-      </p>
-      <div className="mt-9 flex flex-wrap items-center gap-3">
-        <Link
-          to="/guide/kpa?module=system"
-          className={buttonVariants({ size: "lg" })}
-        >
-          Розпочати з модуля 1 KPA
-          <ArrowRight data-icon="inline-end" />
-        </Link>
-        <Link
-          to="/law"
-          className={buttonVariants({ variant: "outline", size: "lg" })}
-        >
-          Відкрити бібліотеку права
-        </Link>
-      </div>
+    <main className="home-atlas mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+      <section aria-labelledby="home-title" className="home-hero">
+        <div className="home-eyebrow flex items-center gap-3">
+          <span className="home-mark" aria-hidden="true" />
+          <p>Правовий атлас</p>
+          <span aria-hidden="true" className="text-border">
+            /
+          </span>
+          <p lang="pl">Legalizacja cudzoziemców</p>
+        </div>
 
-      <ol
-        aria-label="Порядок аналізу справи"
-        className="mt-16 flex flex-wrap items-baseline gap-y-2 border-y py-5 sm:mt-20"
-      >
-        {journeySteps.map((step, index) => (
-          <li key={step} className="flex items-baseline">
-            {index > 0 ? (
-              <span aria-hidden className="mx-3 text-muted-foreground/50">
-                →
-              </span>
-            ) : null}
-            <span className="text-sm font-medium">
-              <span className="mr-1.5 text-xs text-muted-foreground/60 tabular-nums">
-                {index + 1}
-              </span>
-              {step}
-            </span>
-          </li>
-        ))}
-      </ol>
-
-      <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 sm:flex sm:gap-14">
-        {statItems.map((item) => (
-          <div key={item.label}>
-            <dd className="font-display text-4xl tracking-tight tabular-nums">
-              {item.value.toLocaleString("uk-UA")}
-            </dd>
-            <dt className="mt-1 text-xs tracking-[0.14em] text-muted-foreground uppercase">
-              {item.label}
-            </dt>
+        <div className="home-hero-grid">
+          <div className="home-intro">
+            <h1 id="home-title" className="home-title font-display">
+              Польське право.
+              <br />
+              <span className="text-muted-foreground">Зрозуміле</span>
+              <br />
+              українською.
+            </h1>
+            <p className="mt-7 max-w-md text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+              Поняття, документи та хід справи. Пояснення для тих, хто працює з
+              легалізацією іноземців у Польщі.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-5">
+              <Link to="/map" className={buttonVariants({ size: "lg" })}>
+                Відкрити карту права
+                <ArrowRight data-icon="inline-end" />
+              </Link>
+              <Link to="/law" className="home-text-link group">
+                До бібліотеки
+                <ArrowUpRight
+                  aria-hidden="true"
+                  className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </div>
           </div>
-        ))}
-      </dl>
 
-      <section aria-labelledby="atlas-structure-title" className="mt-24">
-        <p className="text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
-          Як влаштований атлас
-        </p>
-        <h2
-          id="atlas-structure-title"
-          className="mt-4 max-w-2xl font-display text-3xl tracking-tight sm:text-4xl"
-        >
-          Шість розділів виконують різні завдання
-        </h2>
-        <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-          Не потрібно читати все одночасно. KPA дає процесуальну основу,
-          бібліотека тримає актуальний текст, карта орієнтує у системі,
-          документи пояснюють докази, справа показує повний маршрут, а план
-          навчання задає послідовність.
-        </p>
+          <figure className="home-figure">
+            <AtlasIllustration />
+            <figcaption className="flex items-center justify-between gap-4 border-t pt-4 text-xs text-muted-foreground">
+              <span>Від окремого факту до розуміння справи</span>
+            </figcaption>
+          </figure>
+        </div>
 
-        <div className="mt-10 grid gap-px border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {atlasSections.map((section) => (
-            <Link
-              key={section.number}
-              to={section.href}
-              className="group flex flex-col bg-background p-6 transition-colors hover:bg-muted/50 sm:p-8"
-            >
-              <div className="flex items-baseline justify-between">
-                <span className="text-xs text-muted-foreground tabular-nums">
-                  {section.number}
-                </span>
-                {"start" in section ? (
-                  <span className="border px-1.5 py-0.5 text-micro tracking-[0.14em] text-muted-foreground uppercase">
-                    Старт тут
-                  </span>
-                ) : null}
-              </div>
-              <h3 className="mt-6 font-display text-2xl tracking-tight">
-                {section.title}
-              </h3>
-              <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
-                <LegalText text={section.description} />
-              </p>
-              <span className="mt-8 flex items-center gap-1.5 text-sm font-medium text-primary">
-                {section.action}
-                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
-          ))}
+        <div className="home-colophon flex flex-wrap items-center justify-between gap-x-8 gap-y-5 border-b pb-7">
+          <a href="#atlas-sections" className="home-text-link group text-xs">
+            Знайдіть своє питання
+            <ArrowDown
+              aria-hidden="true"
+              className="size-3.5 transition-transform group-hover:translate-y-0.5"
+            />
+          </a>
+          <dl className="flex flex-wrap gap-x-7 gap-y-3 text-xs text-muted-foreground">
+            <div className="flex gap-2">
+              <dd className="font-mono text-foreground">
+                {stats.acts.toString().padStart(2, "0")}
+              </dd>
+              <dt>актів права</dt>
+            </div>
+            <div className="flex gap-2">
+              <dd className="font-mono text-foreground">{stats.documents}</dd>
+              <dt>документів</dt>
+            </div>
+            <div className="flex gap-2">
+              <dd className="font-mono text-foreground">
+                {stats.cases.toString().padStart(2, "0")}
+              </dd>
+              <dt>типів справ</dt>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section aria-labelledby="example-flow-title" className="mt-24">
-        <p className="text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
-          Як виглядає робочий аналіз
-        </p>
-        <h2
-          id="example-flow-title"
-          className="mt-4 max-w-2xl font-display text-3xl tracking-tight sm:text-4xl"
-        >
-          Один факт проходить через п’ять кроків
-        </h2>
-        <ol className="mt-10 divide-y border-y">
-          {exampleFlow.map((step, index) => (
-            <li
-              key={step.label}
-              className="grid gap-2 py-6 sm:grid-cols-[4rem_12rem_minmax(0,1fr)] sm:gap-6"
-            >
-              <span className="font-display text-2xl text-muted-foreground/40 tabular-nums">
-                0{index + 1}
-              </span>
-              <p className="font-medium sm:pt-1">{step.label}</p>
-              <p className="max-w-3xl text-sm leading-6 text-muted-foreground sm:pt-1.5">
-                <LegalText text={step.text} />
-              </p>
-            </li>
-          ))}
-        </ol>
+      <section
+        id="atlas-sections"
+        aria-labelledby="atlas-sections-title"
+        className="home-directory"
+      >
+        <div className="home-directory-intro">
+          <p className="home-eyebrow">Навігація атласом</p>
+          <h2
+            id="atlas-sections-title"
+            className="mt-5 font-display text-4xl leading-tight tracking-tight sm:text-5xl"
+          >
+            Оберіть розділ
+            <br />
+            для свого питання.
+          </h2>
+          <p className="mt-5 max-w-xs text-sm leading-7 text-muted-foreground">
+            Почніть із потрібної теми. Кожен розділ можна читати окремо та
+            повертатися до нього під час роботи.
+          </p>
+        </div>
+        <nav aria-label="Розділи атласу">
+          <ol className="border-t">
+            {sections.map((section, index) => (
+              <li key={section.href} className="border-b">
+                <Link to={section.href} className="home-index-link group">
+                  <span
+                    aria-hidden="true"
+                    className="pt-1.5 font-mono text-xs text-muted-foreground"
+                  >
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-medium tracking-tight sm:text-2xl">
+                      {section.title}
+                    </h3>
+                    <p lang="pl" className="mt-1 text-xs text-muted-foreground">
+                      {section.polish}
+                    </p>
+                    <p className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground">
+                      {section.description}
+                    </p>
+                  </div>
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="mt-1 size-5 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </nav>
       </section>
+
+      <footer className="home-footer flex flex-wrap items-end justify-between gap-6 border-t py-8">
+        <div>
+          <p className="font-display text-2xl tracking-tight">
+            Legalizacja<span className="text-muted-foreground">.</span>
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Польські терміни. Українські пояснення.
+          </p>
+        </div>
+        <p className="max-w-xs text-xs leading-6 text-muted-foreground">
+          Освітній довідник для роботи з правом.
+          <br />
+          Офіційні джерела наведено поруч із поясненнями.
+        </p>
+      </footer>
     </main>
   )
 }

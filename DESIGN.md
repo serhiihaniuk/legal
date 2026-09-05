@@ -34,6 +34,8 @@
 
 ## Design principles
 
+- Homepage direction (2026-09-05): use the existing monochrome palette, a large serif headline, generous spacing, and six numbered navigation rows with fine dividers. The homepage introduces an explanatory reference for working staff. Its decorative SVG connects facts, norms, evidence, and actions; it draws once on arrival and remains static with reduced motion. Keep this illustration out of reading pages. Stack the hero and section index on narrow screens.
+
 - Najpierw orientacja, potem szczegół.
 - Mapa domyślnie pokazuje poziom orientacyjny; pełna głębokość jest świadomą akcją użytkownika.
 - Główną osią mapy jest jedna chronologia sprawy cudzoziemca: orientacja -> status -> wybór trasy -> praca -> złożenie -> dowody -> postępowanie -> decyzja -> ochrona. KPA, praca i dokumenty są warstwami przekrojowymi obecnymi na właściwych etapach, a nie równorzędnymi „gałęziami mapy”.

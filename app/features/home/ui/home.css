@@ -1,0 +1,201 @@
+.home-atlas {
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+}
+
+.home-hero {
+  padding-top: clamp(2.75rem, 7vw, 6.5rem);
+}
+.home-eyebrow {
+  font-size: 0.625rem;
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+.home-mark {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--foreground);
+  flex-shrink: 0;
+}
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 0 4.5rem;
+}
+.home-title {
+  font-size: clamp(3rem, 5.7vw, 5rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+.home-figure {
+  min-width: 0;
+  padding-top: 0.5rem;
+}
+.home-diagram {
+  width: 100%;
+  height: auto;
+  display: block;
+  color: var(--foreground);
+}
+.home-diagram-grid {
+  opacity: 0.14;
+}
+.home-diagram-connections {
+  opacity: 0.45;
+}
+.home-diagram-pages rect {
+  fill: var(--background);
+  stroke: var(--foreground);
+  stroke-opacity: 0.3;
+  stroke-width: 0.8;
+}
+.home-diagram-section {
+  fill: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 85px;
+}
+.home-diagram-labels {
+  font-size: 13px;
+  letter-spacing: 0.025em;
+}
+.home-diagram-nodes {
+  opacity: 0.65;
+}
+.home-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: fit-content;
+  min-height: 2.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-underline-offset: 0.3em;
+}
+.home-text-link:hover {
+  text-decoration: underline;
+}
+.home-atlas a:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+.home-directory {
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr;
+  gap: 5rem;
+  padding: 5.5rem 0 6rem;
+  scroll-margin-top: 2rem;
+}
+.home-directory-intro {
+  align-self: start;
+}
+.home-index-link {
+  display: grid;
+  grid-template-columns: 2rem 1fr 1.25rem;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+  transition: background-color 180ms ease;
+}
+.home-index-link:hover {
+  background-color: var(--muted);
+}
+.home-index-link:focus-visible {
+  outline-offset: 2px;
+}
+
+@keyframes home-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes home-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-draw {
+    stroke-dasharray: 1;
+    animation: home-draw 1.8s ease-out both;
+  }
+  .home-draw-later {
+    animation-delay: 160ms;
+  }
+  .home-diagram-pages {
+    animation: home-arrive 900ms ease-out both;
+  }
+}
+
+@media (max-width: 1023px) {
+  .home-hero-grid {
+    gap: 1.5rem;
+  }
+  .home-title {
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+  }
+  .home-directory {
+    gap: 2.5rem;
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-eyebrow {
+    font-size: 0.5625rem;
+    letter-spacing: 0.08em;
+  }
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 2rem 0 2rem;
+  }
+  .home-title {
+    font-size: clamp(2.25rem, 10.5vw, 4rem);
+  }
+  .home-figure {
+    width: 100%;
+    max-width: 23rem;
+    margin: 0 auto;
+  }
+  .home-diagram {
+    max-height: 275px;
+  }
+  .home-directory {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3.5rem 0;
+  }
+  .home-directory-intro p {
+    max-width: 24rem;
+  }
+  .home-index-link {
+    gap: 0.75rem;
+    grid-template-columns: 1.5rem 1fr 1rem;
+    padding: 1.5rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-atlas *,
+  .home-atlas *::before,
+  .home-atlas *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

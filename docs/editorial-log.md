@@ -1,5 +1,13 @@
 # Editorial improvement log
 
+## 2026-09-05 homepage redesign
+
+- Committed the earlier editorial work as `703e8dd` before starting the redesign.
+- Replaced the homepage with a serif headline, a restrained monochrome layout, and six numbered section links. Descriptions address working staff and explain what each section contains.
+- Added a small SVG illustration with a single arrival animation and a static reduced-motion version. Adjusted the heading and stacked layout for phones; kept the existing navigation and design tokens.
+- Validation: `npm run verify` passed, including typechecks, lint, formatting, 57 application tests, corpus/editorial checks, and the production build. Checked desktop, tablet, and 360 px layouts without horizontal overflow. All six section destinations rendered in the production browser with no console errors. The section jump, mobile menu, keyboard focus, and Enter activation worked.
+- The earlier dependency, build-warning, and independent-review-ledger notes below still apply. This pass changes homepage presentation and navigation copy, not legal rules.
+
 ## 2026-09-05
 
 - Created the installed `legal-explanatory-writing` skill for Ukrainian explanations of Polish law aimed at working legalization staff. It prioritizes definitions, mechanisms, concrete explanations, and optional reading over exercises or course completion.
