@@ -1,0 +1,170 @@
+:root {
+  --atlas-line: color-mix(in oklab, var(--border) 75%, transparent);
+  --atlas-mark: color-mix(in oklab, var(--muted-foreground) 45%, transparent);
+  --atlas-cross:
+    linear-gradient(var(--atlas-mark), var(--atlas-mark)) center / 11px 1px
+      no-repeat,
+    linear-gradient(var(--atlas-mark), var(--atlas-mark)) center / 1px 11px
+      no-repeat;
+}
+
+.atlas-site-header {
+  border-bottom: 1px solid var(--atlas-line);
+}
+
+.atlas-docs-grid,
+.atlas-docs-body,
+.home-atlas {
+  position: relative;
+}
+
+/* Rules sit in the gutters; they never cover the reading column. */
+.atlas-docs-grid {
+  border-inline: 1px solid var(--atlas-line);
+}
+
+.atlas-docs-grid::before,
+.atlas-docs-body::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 1px;
+  background: var(--atlas-line);
+  pointer-events: none;
+  display: none;
+}
+
+[data-slot="document-header"] {
+  position: relative;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--atlas-line);
+}
+
+.atlas-docs-grid::after,
+.atlas-docs-body::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  width: 11px;
+  height: 11px;
+  background: var(--atlas-cross);
+  pointer-events: none;
+  display: none;
+}
+
+.home-atlas {
+  --atlas-gutter: 1.5rem;
+  background:
+    linear-gradient(var(--atlas-line), var(--atlas-line)) 5px top / 1px 100%
+      no-repeat,
+    linear-gradient(var(--atlas-line), var(--atlas-line)) calc(100% - 5px) top /
+      1px 100% no-repeat;
+}
+
+.home-directory,
+.home-footer {
+  position: relative;
+}
+
+.home-directory::before,
+.home-footer::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: calc(-1 * var(--atlas-gutter));
+  right: calc(-1 * var(--atlas-gutter));
+  height: 11px;
+  background:
+    linear-gradient(var(--atlas-line), var(--atlas-line)) center / 100% 1px
+      no-repeat,
+    linear-gradient(var(--atlas-mark), var(--atlas-mark)) left center / 11px 1px
+      no-repeat,
+    linear-gradient(var(--atlas-mark), var(--atlas-mark)) 5px center / 1px 11px
+      no-repeat,
+    linear-gradient(var(--atlas-mark), var(--atlas-mark)) right center / 11px
+      1px no-repeat,
+    linear-gradient(var(--atlas-mark), var(--atlas-mark)) calc(100% - 5px)
+      center / 1px 11px no-repeat;
+  pointer-events: none;
+}
+
+.home-colophon,
+.home-footer {
+  border-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .home-atlas {
+    --atlas-gutter: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-directory > nav {
+    position: relative;
+  }
+  .home-directory > nav::before {
+    content: "";
+    position: absolute;
+    top: -5.5rem;
+    bottom: -6rem;
+    left: -1.25rem;
+    width: 1px;
+    background: var(--atlas-line);
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .atlas-docs-grid {
+    background: linear-gradient(var(--atlas-line), var(--atlas-line)) left
+      21px / 100% 1px no-repeat;
+  }
+  .atlas-docs-grid::before {
+    display: block;
+    left: var(--sidebar-width);
+  }
+  .atlas-docs-grid::after {
+    display: block;
+    left: calc(var(--sidebar-width) - 5px);
+  }
+  .atlas-docs-body > div {
+    padding-inline: 1.5rem;
+  }
+  .home-atlas {
+    --atlas-gutter: 4rem;
+  }
+  .home-directory > nav::before {
+    left: -2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .atlas-docs-body::before {
+    display: block;
+    right: var(--sidebar-width);
+  }
+  .atlas-docs-body::after {
+    display: block;
+    right: calc(var(--sidebar-width) - 5px);
+  }
+}
+
+@media print {
+  .atlas-site-header,
+  .atlas-docs-grid,
+  [data-slot="document-header"] {
+    border-color: transparent;
+  }
+  .home-atlas,
+  .atlas-docs-grid,
+  .atlas-docs-grid::before,
+  .atlas-docs-grid::after,
+  .atlas-docs-body::before,
+  .atlas-docs-body::after,
+  .home-directory::before,
+  .home-footer::before,
+  .home-directory > nav::before {
+    background: none;
+  }
+}

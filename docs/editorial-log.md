@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-05 shared line styling
+
+- Extended the homepage's fine lines into the shared header and reading layout across the library, map, documents, case guides, and reading guide. Added page edges, continuous column dividers, and plain rules below shared page introductions.
+- Centered cross marks at real line intersections after visual feedback. Removed standalone crosses beside introductions. Decorative rules use theme colors, stay outside the text, and disappear in print.
+- Fixed a reading-guide button that overflowed at 360 px by allowing its label to wrap.
+- Validation: the full `npm run verify` passed, followed by a final typecheck and build after the alignment and wrapping fixes. Browser checks covered the homepage and six main destinations at desktop and 360 px widths with no horizontal overflow; the fresh browser session recorded no console errors. Existing build warnings and the independent-review-ledger gap remain as noted below.
+
 ## 2026-09-05 homepage redesign
 
 - Committed the earlier editorial work as `703e8dd` before starting the redesign.

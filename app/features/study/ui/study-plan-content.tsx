@@ -93,6 +93,7 @@ export function StudyPlanContent({
         <Button
           type="button"
           variant="outline"
+          className="h-auto min-h-9 max-w-full py-2 text-left whitespace-normal"
           onClick={() => navigate(module.materialNavigation.href)}
         >
           {module.materialNavigation.label}

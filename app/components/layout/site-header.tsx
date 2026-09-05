@@ -36,7 +36,7 @@ export function SiteHeader() {
   const { pathname } = useLocation()
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background">
+    <header className="atlas-site-header sticky top-0 z-50 w-full bg-background">
       <div className="container-wrapper px-6">
         <div className="flex h-(--header-height) items-center">
           <nav

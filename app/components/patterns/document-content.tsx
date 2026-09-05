@@ -53,7 +53,7 @@ export function DocumentHeader({
   badgeAlign?: VariantProps<typeof documentBadgeRowVariants>["align"]
 }) {
   return (
-    <header {...props}>
+    <header data-slot="document-header" {...props}>
       {badges ? (
         <div
           data-not-typeset

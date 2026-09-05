@@ -34,6 +34,8 @@
 
 ## Design principles
 
+- Shared line treatment (2026-09-05): use quiet one-pixel rules for page edges, column boundaries, and section divisions. Cross marks belong at actual horizontal/vertical intersections. Reading pages use continuous rules in the navigation gutters and a plain divider below the introduction. Keep text backgrounds clear, hide unused column rules on smaller screens, and omit decorative lines in print. Shared styling lives in `app/atlas-lines.css`; it uses theme tokens and adds no motion or pointer targets.
+
 - Homepage direction (2026-09-05): use the existing monochrome palette, a large serif headline, generous spacing, and six numbered navigation rows with fine dividers. The homepage introduces an explanatory reference for working staff. Its decorative SVG connects facts, norms, evidence, and actions; it draws once on arrival and remains static with reduced motion. Keep this illustration out of reading pages. Stack the hero and section index on narrow screens.
 
 - Najpierw orientacja, potem szczegół.
