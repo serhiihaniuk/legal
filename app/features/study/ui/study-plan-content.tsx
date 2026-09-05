@@ -1,132 +1,91 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { useNavigate } from "react-router"
-
-import { LegalText } from "~/components/references"
-import { Badge } from "~/components/ui/badge"
-import { Button } from "~/components/ui/button"
-import { Separator } from "~/components/ui/separator"
-import { legalData } from "~/data/legal-map/data"
-import { studyModules } from "~/data/study/plan-data"
+import { Link } from "react-router"
 import {
-  defineDocumentHeadings,
   DocumentArticle,
-  tableOfContentsFromHeadings,
+  DocumentHeader,
 } from "~/components/patterns/document-content"
+import { LegalText, OfficialSourceEntry } from "~/components/references"
+import { legalTextPlainText } from "~/data/legal-library/legal-text"
+import { legalData } from "~/data/legal-map/data"
+import { studyModules, type StudyModule } from "~/data/study/plan-data"
+import { StudyExample } from "./study-example"
+import { StudyReadingLinks } from "./study-reading-links"
 
-const studyPlanHeadings = defineDocumentHeadings({
-  overview: { id: "study-overview", title: "Про тему" },
-  material: { id: "study-material", title: "Основні поняття та зв’язки" },
-  reading: { id: "study-reading", title: "Докладне пояснення" },
-})
-
-export const studyPlanToc = tableOfContentsFromHeadings(studyPlanHeadings)
-
-function formatLegalState(value: string) {
-  const [year, month, day] = value.split("-")
-  return year && month && day ? `${day}.${month}.${year}` : value
-}
-
-export function StudyPlanContent({
-  selectedId,
-  onSelectModule,
-}: {
-  selectedId: string
-  onSelectModule: (id: string) => void
-}) {
-  const navigate = useNavigate()
-  const selectedIndex = Math.max(
-    0,
-    studyModules.findIndex((module) => module.id === selectedId)
-  )
-  const module = studyModules[selectedIndex]
-  const previousModule = studyModules[selectedIndex - 1]
-  const nextModule = studyModules[selectedIndex + 1]
+export function StudyPlanContent({ module }: { module: StudyModule }) {
+  const index = studyModules.findIndex((item) => item.id === module.id)
+  const previous = studyModules[index - 1]
+  const next = studyModules[index + 1]
+  const legalState = legalData.updatedAt.split("-").reverse().join(".")
 
   return (
     <DocumentArticle>
-      <header id={studyPlanHeadings.overview.id}>
-        <div
-          data-not-typeset
-          className="mb-4 flex flex-wrap items-center gap-2"
-        >
-          <Badge variant="secondary">{module.label}</Badge>
-          <span className="text-xs text-muted-foreground">
-            Стан права: {formatLegalState(legalData.updatedAt)}
-          </span>
-        </div>
+      <DocumentHeader id="study-overview">
+        <p className="text-sm text-muted-foreground">Путівник по темах</p>
         <h1>{module.title}</h1>
-        <p className="text-muted-foreground">
-          <LegalText text={module.outcome} />
+        <p className="lead">
+          <LegalText text={module.summary} />
         </p>
-        <p>
-          Почніть із питання, яке виникло у вашій роботі. Цей огляд пояснює
-          основні зв’язки; докладний матеріал доступний нижче. Теми можна читати
-          в будь-якому порядку.
-        </p>
-      </header>
-
-      <Separator data-not-typeset className="my-8" />
-
-      <section id={studyPlanHeadings.material.id}>
-        <h2>{studyPlanHeadings.material.title}</h2>
-        {module.introduction.map((paragraph) => (
-          <p key={paragraph}>
-            <LegalText text={paragraph} />
-          </p>
-        ))}
-        {module.lessons.map((lesson) => (
-          <section key={lesson.title}>
-            <h3>{lesson.title}</h3>
-            <p>
-              <LegalText text={lesson.explanation} />
-            </p>
+      </DocumentHeader>
+      <div id="study-material">
+        {module.sections.map((section) => (
+          <section key={section.id} id={`study-${section.id}`}>
+            <h2>{section.title}</h2>
+            {section.paragraphs.map((text) => (
+              <p key={legalTextPlainText(text)}>
+                <LegalText text={text} />
+              </p>
+            ))}
           </section>
         ))}
-      </section>
-
-      <section id={studyPlanHeadings.reading.id}>
-        <h2>{studyPlanHeadings.reading.title}</h2>
-        <p>
-          У матеріалі за цим оглядом пояснено правові поняття та їх значення для
-          справи. До огляду можна повернутися, щоб обрати іншу тему.
+      </div>
+      <StudyExample example={module.example} />
+      <StudyReadingLinks items={module.reading} />
+      <section id="study-sources">
+        <h2>Офіційні джерела</h2>
+        <ul data-not-typeset className="not-typeset flex flex-col gap-4">
+          {module.sources.map((source) => (
+            <li key={source.url}>
+              <OfficialSourceEntry source={source} />
+            </li>
+          ))}
+        </ul>
+        <p className="text-xs text-muted-foreground">
+          Стан права в атласі: {legalState}. Для події в іншу дату потрібна
+          перевірка відповідної редакції.
         </p>
-        <Button
-          type="button"
-          variant="outline"
-          className="h-auto min-h-9 max-w-full py-2 text-left whitespace-normal"
-          onClick={() => navigate(module.materialNavigation.href)}
-        >
-          {module.materialNavigation.label}
-          <ArrowRight data-icon="inline-end" />
-        </Button>
       </section>
-
       <nav
         data-not-typeset
-        aria-label="Перехід між темами путівника"
-        className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t pt-6"
+        aria-label="Інші питання путівника"
+        className="not-typeset mt-8 flex flex-col gap-6 border-t pt-6 text-sm sm:flex-row sm:justify-between"
       >
-        {previousModule ? (
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => onSelectModule(previousModule.id)}
+        {previous ? (
+          <Link
+            to={`/study?module=${previous.id}`}
+            className="flex min-w-0 flex-1 items-start gap-2 no-underline hover:underline"
           >
-            <ArrowLeft data-icon="inline-start" />
-            Попередня тема
-          </Button>
-        ) : (
-          <span />
-        )}
-        {nextModule ? (
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => onSelectModule(nextModule.id)}
+            <ArrowLeft aria-hidden className="mt-0.5 size-4 shrink-0" />
+            <span>
+              <span className="mb-1 block text-xs text-muted-foreground">
+                Попередня тема
+              </span>
+              {previous.title}
+            </span>
+          </Link>
+        ) : null}
+        {next ? (
+          <Link
+            to={`/study?module=${next.id}`}
+            className="flex min-w-0 flex-1 items-start justify-end gap-2 text-right no-underline hover:underline"
           >
-            Наступна тема
-            <ArrowRight data-icon="inline-end" />
-          </Button>
+            <span>
+              <span className="mb-1 block text-xs text-muted-foreground">
+                Наступна тема
+              </span>
+              {next.title}
+            </span>
+            <ArrowRight aria-hidden className="mt-0.5 size-4 shrink-0" />
+          </Link>
         ) : null}
       </nav>
     </DocumentArticle>

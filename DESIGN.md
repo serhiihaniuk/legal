@@ -101,7 +101,7 @@
 - **Case — powiązane materiały:** jeden górny separator, mały nagłówek i pionowa lista zwykłych tekstowych linków w kolorze `primary` z ikoną `ArrowUpRight`. Bez opisów, kart, przycisków, osobnych wierszy i dolnych separatorów. Linki prowadzą tylko do istniejących głębokich adresów mapy, modułów KPA, artykułów KPA albo katalogu dokumentów; nie wplatamy ich w środek akapitów.
 - **Case — rytm etapów:** listy działań używają krótkich wierszy (`py-2`), metadane mają zwarte paddingi, a odstępy między listą, accordionem i linkami nie przekraczają 3–4 jednostek Tailwind. Accordion etapu wygląda jak kompaktowa kontrolka `secondary` (`bg-secondary`, mały padding, rounded przez bazowy trigger), bez poziomych linii wokół zamkniętego stanu.
 - **Case — zakładki:** używamy jednego poziomego `TabsList` pod nagłówkiem strony. Na małym ekranie lista przewija się poziomo bez zawijania; nie powtarzamy tych samych tras w lewym panelu ani w drugim selekcie.
-- **Plan nauki:** mierzalny wynik; wskazany pełny materiał; konkretne zadanie na dokumencie; wzorcowa odpowiedź lub kryteria oceny; powtórka. Sam link do węzła nie jest lekcją.
+- **Przewodnik po tematach:** każda strona odpowiada na konkretne pytanie z pracy, wyjaśnia użyte pojęcia i pokazuje rozumowanie na przykładzie. Materiał znajduje się na stronie; odnośniki prowadzą do powiązanych aktów i dokumentów. Tematy można czytać w dowolnej kolejności, bez zadań, ocen i śledzenia postępów.
 
 ### Dense legal data
 

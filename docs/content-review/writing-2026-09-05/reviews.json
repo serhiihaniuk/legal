@@ -28,5 +28,80 @@
     "path": "app/features/documents/ui/document-explanation.tsx",
     "contentHash": "f86799ccab84dfe643658dd47e37f816e408d90a5a50473619140daca6c8080b",
     "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+  },
+  {
+    "path": "app/data/study/topics/capstone.ts",
+    "contentHash": "c163ac6ac0045a65e5dde25a77ffe770cd2c3ea8b5bdef3e00c12b8c27710523",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/topics/evidence.ts",
+    "contentHash": "94b12d5e8f8b376609471938df02c8f554599878e9cf30fda2f0af9dddcad86e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/topics/kpa.ts",
+    "contentHash": "083989ea3aa01b1fff8b1522df3000f808f37f6b887a7e2265825094531ef844",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/topics/norm.ts",
+    "contentHash": "7da2c9843866a50230b936034e823e271a47ad075d2b063e10e5646f21c6dd25",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/topics/remedies.ts",
+    "contentHash": "6c89196de4067eb3009b4ef530e3eeddea09f2aad6cd991429c0ba6bf549dc11",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/topics/sources.ts",
+    "contentHash": "cb18cdebd8f54d8e4e239ba681e534a9a7a40cea971e2b2c597bd531391087db",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/topics/stay.ts",
+    "contentHash": "b7c9d95dc8163b3d8ce3d1eecd3d5ec0d9ee8109bfb0bf3b35f1aa1a3bab9b0c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/topics/work.ts",
+    "contentHash": "ba58b4347493945233460c58ad7cf80b709ec27623e433ead91017ca10288427",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/authoring.ts",
+    "contentHash": "9fee46bdae88a8870c8df60b12912ed0a1a192808b0cc1c208e7e86f3c006125",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/data/study/plan-data.ts",
+    "contentHash": "5c52c52b751c130451f1090960b353b108cdf67378e5862b4e87d3f6521b14a7",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/features/study/model/study-toc.ts",
+    "contentHash": "fd914c1ede4b0605f2c52ffb8d10e447af2dac8a06ed5442248d2fb8ae6184bf",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/features/study/ui/study-example.tsx",
+    "contentHash": "4dd1f5fe06ee8695d6e50263b5f9455d2e02e964814c58a741bb4b59901f3a06",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/features/study/ui/study-reading-links.tsx",
+    "contentHash": "b4941209cef7330b7311b664b496e79773fa0850ae5259372804365b3c4b1a65",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/features/study/ui/study-plan-content.tsx",
+    "contentHash": "009a8037d6f039374d12b49d0a4959becf4138b77fd3b159195b58fbaa4ad2b8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
+  },
+  {
+    "path": "app/routes/study.tsx",
+    "contentHash": "ab1127d905bae284db331f685c43feba3a7fa640cd6bafb89384d2906874ed9e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
   }
 ]

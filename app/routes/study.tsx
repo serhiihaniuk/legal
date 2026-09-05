@@ -15,10 +15,9 @@ export function meta() {
 }
 
 const studyNavigationOptions: readonly SectionNavigationOption[] =
-  studyModules.map((module, index) => ({
+  studyModules.map((module) => ({
     value: module.id,
     label: module.title,
-    selectLabel: `${index + 1}. ${module.title}`,
   }))
 
 function StudyNavigation({
@@ -29,19 +28,11 @@ function StudyNavigation({
   onSelect: (id: string) => void
 }) {
   return (
-    <DocsSidebar ariaLabel="Навігація путівника" label="Теми для читання">
+    <DocsSidebar ariaLabel="Навігація путівника" label="Робочі питання">
       <SectionNavigationList
         options={studyNavigationOptions}
         value={selectedId}
         onValueChange={onSelect}
-        ordered
-        variant="numbered"
-        renderOption={(option, index) => (
-          <>
-            <span className="text-muted-foreground">{index + 1}</span>
-            <span>{option.label}</span>
-          </>
-        )}
       />
     </DocsSidebar>
   )
@@ -85,16 +76,13 @@ export default function StudyPage() {
           onSelect={selection.select}
         />
       }
-      toc={studyPlanToc}
+      toc={studyPlanToc(selectedModule)}
     >
       <MobileStudyNavigation
         selectedId={selection.value}
         onSelect={selection.select}
       />
-      <StudyPlanContent
-        selectedId={selection.value}
-        onSelectModule={selection.select}
-      />
+      <StudyPlanContent module={selectedModule} />
     </DocsLayout>
   )
 }

@@ -34,7 +34,12 @@ for (const file of fs.readdirSync(path.join(root, "app"), {
     ) &&
     !files.has(relative)
   )
-    files.set(relative, "supporting-copy")
+    files.set(
+      relative,
+      relative.startsWith("app/data/study/topics/")
+        ? "study-topic"
+        : "supporting-copy"
+    )
 }
 const records = [...files]
   .sort(([a], [b]) => a.localeCompare(b))

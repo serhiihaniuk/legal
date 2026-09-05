@@ -154,3 +154,9 @@
 - Added filled specimens to the evidence matrix, requirements table, travel chronology, file index and response letter. The examples distinguish missing evidence, unconfirmed dates, received files and actual submission. The Polish letter is a labelled fictional fragment.
 - Recorded the official KPA, foreigners-act and UdSC checks, writing review and remaining legal-review limits in `content-review/writing-2026-09-05/batches/01-working-records.md`. The atlas baseline remains 18.07.2026.
 - Full verification passed with 89 application tests; final typecheck, focused tests and build passed after the last adjustment. Browser checks covered desktop fit, all five routes at 360 px, keyboard table scrolling and console errors.
+
+## 2026-09-05 reading guide with complete answers
+
+- Rewrote all eight reading-guide topics around work questions, definitions and completed examples. Preserved direct URLs and replaced generic section labels with topic headings. Small shared components render the examples and related reading.
+- Recorded focused official-source checks, the unchanged 18.07.2026 atlas baseline and the remaining independent-review gap in `content-review/writing-2026-09-05/batches/02-reading-guide.md`.
+- Full verification passed with 91 application tests and a production build. Browser checks covered all eight mobile routes, fallback selection, desktop section jumps, topic switching, typed law links and related reading without page overflow or console errors.

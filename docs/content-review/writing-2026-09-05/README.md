@@ -11,7 +11,7 @@ The user requested completion of the outstanding writing, document coverage, wor
 | Complex documents have useful explanations and examples | Read all 57 guides. Explain fields, what the document proves, what it leaves open, and a completed discrepancy example where needed. Simple documents need no artificial expansion. | In progress, beginning with work-related evidence. |
 | Original laws remain readable and faithful | Audit every current provision and PDF page for structure, notes, tables, forms, and lost text. Retain original layout where flowing text is unsuitable. Record anomalies and visual checks. | Reader implemented; corpus-wide visual audit pending. |
 | Legal statements and independent review are current for their stated edition | Record exact official sources, status, amendments, timing, and transitions for each reviewed topic. Obtain a distinct review, with current hashes, before marking independent review accepted. | Existing 2026-07-18 ledger fails strict validation with 95 issues as of this pass. No independent attestations renewed. |
-| Changes are verified and delivered | Run relevant content and application checks, inspect desktop/mobile rendering and navigation, and push completed batches to main. | Reader checkpoint `3fea511` pushed. |
+| Changes are verified and delivered | Run relevant content and application checks, inspect desktop/mobile rendering and navigation, and push completed batches to main. | Reader checkpoint `3fea511` and specimen batch `5c501e3` pushed. Reading-guide verification is recorded in batch 02. |
 
 ## How progress is recorded
 
@@ -23,7 +23,7 @@ The user requested completion of the outstanding writing, document coverage, wor
 
 ## Next work
 
-User clarifications to preserve: show what complex documents and working records actually look like, with filled illustrative specimens rather than only prose scenarios. Review the purpose of the entire reading-guide module; its current overview pages repeat orientation and defer the useful material to another page. Neither request is satisfied by adding more generic introductions.
+User clarifications to preserve: show what complex documents and working records actually look like, with filled illustrative specimens rather than only prose scenarios. Five specimens are complete in batch 01; remaining complex documents still need review. Batch 02 replaces the eight reading-guide introductions with complete answers and worked examples. Neither request is satisfied by adding more generic introductions.
 
 1. Work-route document journey: employer annex, contract, insurance, ZUS, representation, filing, and procedural correspondence.
 2. Remaining eight case routes and their document guides.
