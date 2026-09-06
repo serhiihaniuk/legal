@@ -241,3 +241,10 @@
 - Added shared conditional deadline evidence to the procedure and decision stages and registers of all nine case guides. Work and CUKR now reuse a conditional notification entry. Complete case-route review remains pending.
 - Recorded official ELI and Warsaw PUP checks in `content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged.
 - Full verification passed with 93 application tests and a production build. Final wording passed ten focused tests and editorial validation. Desktop/mobile pages, keyboard table scrolling and case/document/provision navigation passed without browser console errors. Rechecked the revised reading-guide page and its direct act-reader link.
+
+## 2026-09-06 complete work case guide
+
+- Reworked the six-stage work guide around one fictional case, including a dated salary change, a two-part request, a timely response and comparison of granted conditions. Distinguished continued stay from continued work, application defects from missing evidence, and the applicant's notification deadline from the employer's.
+- Split the authored route into overview, stages, document definitions and references. The six stages and register reuse 34 document definitions with mandatory, conditional and working-record roles. The guide now displays its scoped verification date.
+- Recorded official ELI and UdSC checks in `content-review/writing-2026-09-05/batches/15-work-case-guide.md`. This guide's review is dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Eight complete case routes remain pending.
+- Full verification passed with 94 application tests. Final wording and the additional date-isolation test passed 18 focused tests, type checking, editorial validation and another production build. Desktop/mobile rendering, disclosures and document/case/provision navigation passed without browser console errors.

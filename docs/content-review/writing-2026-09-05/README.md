@@ -7,7 +7,7 @@ The user requested completion of the outstanding writing, document coverage, wor
 | Requirement | Evidence needed | Current state |
 | --- | --- | --- |
 | Every authored page meets `legal-explanatory-writing` | Read each complete file and rendered page. Record the learner question, definitions, mechanism, distinctions, completed examples where useful, and qualifications. Preserve exact Polish source wording. | In progress; `inventory.json` lists every known authored file. |
-| Every case has appropriate document coverage | For all nine guides, compare each stage and register with official requirements. Record mandatory, conditional, and working documents; verify typed links in both directions. | Pending route-by-route review. |
+| Every case has appropriate document coverage | For all nine guides, compare each stage and register with official requirements. Record mandatory, conditional, and working documents; verify typed links in both directions. | Work guide reviewed in batch 15; eight complete routes remain pending. |
 | Complex documents have useful explanations and examples | Read all 57 guides. Explain fields, what the document proves, what it leaves open, and a completed discrepancy example where needed. Simple documents need no artificial expansion. | All 57 guides have current writing acceptance after batch 14. Examples include filled working records and selected fictional fragments; original-form and interface fidelity limits remain recorded in the batches. |
 | Original laws remain readable and faithful | Audit every current provision and PDF page for structure, notes, tables, forms, and lost text. Retain original layout where flowing text is unsuitable. Record anomalies and visual checks. | Reader implemented; corpus-wide visual audit pending. |
 | Legal statements and independent review are current for their stated edition | Record exact official sources, status, amendments, timing, and transitions for each reviewed topic. Obtain a distinct review, with current hashes, before marking independent review accepted. | Existing 2026-07-18 ledger fails strict validation with 95 issues as of this pass. No independent attestations renewed. |
@@ -35,10 +35,11 @@ Batch 13 adds six complete explanations and filled examples for family applicati
 
 Batch 14 adds a filled internal case note, a missed-deadline chronology and a work-notification comparison. Conditional deadline evidence now appears at the relevant stages of all nine case guides. Work and CUKR share a corrected notification entry.
 
-After batch 14, 74 of 1,764 inventoried files have current writing acceptance, including all 57 document guides. Focused document-integration fixes do not constitute complete case-route acceptance. The corpus audit must address the university and family annex page ranges, the family form's sponsor-status choices and the split words in extracted Polish text recorded in batches 09 and 13.
+Batch 15 rewrites the complete work guide around one dated fictional case. Its six stages reuse a register of 34 documents, with conditional requirements and separate filing, evidence, correspondence and decision records. The guide has its own 06.09.2026 verification date. Its four authored files receive writing acceptance; eight other complete cases remain pending.
 
-1. Work-route document journey: employer annex, contract, insurance, ZUS, representation, filing, and procedural correspondence.
-2. Remaining eight case routes and their document guides.
-3. All map topics, reading-guide modules, and law explanations, provision by provision.
-4. Remaining interface copy, full extraction audit, and independent legal review.
-5. Final completeness audit against every row above, then final verification and push.
+After batch 15, 78 of 1,767 inventoried files have current writing acceptance, including all 57 document guides and the complete work guide. The corpus audit must address the university and family annex page ranges, the family form's sponsor-status choices and the split words in extracted Polish text recorded in batches 09 and 13.
+
+1. Remaining eight case routes, beginning with Blue Card and its distinct qualifications, salary and work-change rules.
+2. All map topics, remaining reading-guide modules, and law explanations, provision by provision.
+3. Remaining interface copy, full extraction audit, and independent legal review.
+4. Final completeness audit against every row above, then final verification and push.

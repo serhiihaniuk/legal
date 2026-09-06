@@ -373,5 +373,25 @@
     "path": "app/data/case-guides/shared-document-requirements.ts",
     "contentHash": "e3af165c73add6e94d5b670f033b4924c4650e859ebd9bd79abb2c8f1767bfc6",
     "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/work.ts",
+    "contentHash": "35cc476a22a7a323c3056f617dacf293686226aec8bee7d4b117c11718a08938",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/work/documents.ts",
+    "contentHash": "898634db11aa2085b268685cb2c69b8f485654055fe4ed27e7e4fd1f8d0c6073",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/work/stages.ts",
+    "contentHash": "a9593883559b17a4e445fef6d7ef291e0a9b3c9d9aaf68d047d14b7024551315",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/work/reference.ts",
+    "contentHash": "12b08f38597b128ac69fb185d1bc36c070ade85c4c90011381ed77e31e2a9a21",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
   }
 ]

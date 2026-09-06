@@ -15,6 +15,7 @@ import { DocumentRegister } from "./case-registers"
 import { CaseStageDocuments } from "./case-stage-documents"
 import { caseStudyTableOfContents } from "../model/case-study-navigation"
 import { CaseStudyContent } from "./case-study-content"
+import { CaseOverview } from "./case-overview"
 
 afterEach(cleanup)
 
@@ -23,6 +24,29 @@ function CurrentPath() {
 }
 
 describe("case guide continuity", () => {
+  it("shows a guide's own verification date without changing other guides' baseline", () => {
+    const { rerender } = render(
+      <MemoryRouter>
+        <CaseOverview
+          route={getCaseGuideRoute("work")}
+          updatedAt="2026-07-18"
+        />
+      </MemoryRouter>
+    )
+    expect(screen.getByText("Гайд перевірено: 06.09.2026")).toBeTruthy()
+    expect(screen.queryByText("Стан права: 18.07.2026")).toBeNull()
+    rerender(
+      <MemoryRouter>
+        <CaseOverview
+          route={getCaseGuideRoute("business")}
+          updatedAt="2026-07-18"
+        />
+      </MemoryRouter>
+    )
+    expect(screen.getByText("Стан права: 18.07.2026")).toBeTruthy()
+    expect(screen.queryByText("Гайд перевірено: 06.09.2026")).toBeNull()
+  })
+
   it("keeps document families above their case subtypes", () => {
     expect(caseGuideCases.map((group) => group.label)).toEqual([
       "Karta pobytu",
@@ -221,8 +245,8 @@ describe("case guide continuity", () => {
     )
     expect(within(procedure).getByText("мін. 14 днів")).toBeTruthy()
     expect(
-      within(procedure).getByText(/До 04.03.2027 перебіг строку/)
-    ).toBeTruthy()
+      within(procedure).getAllByText(/До 04.03.2027 перебіг строку/).length
+    ).toBeGreaterThan(0)
     expect(within(procedure).queryByText("15 робочих днів")).toBeNull()
     const conditions = screen.getByRole("region", {
       name: "Матриця умов маршруту",

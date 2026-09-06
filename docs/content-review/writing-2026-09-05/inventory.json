@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1764,
-    "reviewed": 74,
+    "totalFiles": 1767,
+    "reviewed": 78,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 50,
+      "supporting-copy": 53,
       "case-guide": 9,
       "evidence-document": 57,
       "provision": 1478,
@@ -135,9 +135,30 @@
     {
       "path": "app/data/case-guides/editorial/routes/work.ts",
       "family": "case-guide",
-      "contentHash": "5ce3cf34545a4befb95b78253139b14f2499d29ffa53afd9e0cb76c634baac8b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "35cc476a22a7a323c3056f617dacf293686226aec8bee7d4b117c11718a08938",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/work/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "898634db11aa2085b268685cb2c69b8f485654055fe4ed27e7e4fd1f8d0c6073",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/work/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "12b08f38597b128ac69fb185d1bc36c070ade85c4c90011381ed77e31e2a9a21",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/work/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "a9593883559b17a4e445fef6d7ef291e0a9b3c9d9aaf68d047d14b7024551315",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
     },
     {
       "path": "app/data/case-guides/navigation.ts",
@@ -11888,7 +11909,7 @@
     {
       "path": "app/features/case-guides/ui/case-overview.tsx",
       "family": "supporting-copy",
-      "contentHash": "f1e9f60a8a9e8cff4d6fdd1e42a9ff1f78132d8192b8b719cc998745263ed743",
+      "contentHash": "88971ecb36ede80f443453e4540f3ca8812883e46b6bc97542ce52a076e2baaf",
       "writing": "pending",
       "evidence": null
     },

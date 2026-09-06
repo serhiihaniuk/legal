@@ -25,7 +25,9 @@ export function CaseOverview({
           <Badge variant="secondary">Повний гайд по справі</Badge>
           <Badge variant="outline">{route.tab}</Badge>
           <span className="text-xs text-muted-foreground">
-            Стан права: {displayDate(updatedAt)}
+            {route.verifiedAt
+              ? `Гайд перевірено: ${displayDate(route.verifiedAt)}`
+              : `Стан права: ${displayDate(updatedAt)}`}
           </span>
         </div>
 

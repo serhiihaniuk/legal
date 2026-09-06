@@ -104,6 +104,7 @@ export type CaseGuideNegativeBranch = {
 
 export type CaseGuideRoute = {
   id: CaseGuideRouteId
+  verifiedAt?: string
   tab: string
   eyebrow: string
   title: string

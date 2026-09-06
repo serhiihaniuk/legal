@@ -16,6 +16,57 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
+  it("keeps the work register complete and places each document at the relevant stage", () => {
+    const route = caseGuideRoutes.find((route) => route.id === "work")!
+    const registerIds = route.documents.flatMap((document) =>
+      ids(document.item)
+    )
+    expect(new Set(registerIds).size).toBe(registerIds.length)
+    for (const stage of route.stages) {
+      const stageIds = stage.documents.flatMap((document) => ids(document.item))
+      expect(new Set(stageIds).size, stage.id).toBe(stageIds.length)
+      for (const document of stage.documents) {
+        const id = ids(document.item)[0]
+        expect(
+          route.documents.find((entry) => ids(entry.item).includes(id))
+        ).toEqual(document)
+        expect(
+          documentById
+            .get(id)
+            ?.caseContexts.some((context) => context.routeId === "work")
+        ).toBe(true)
+      }
+    }
+    const at = (stageId: string) =>
+      route.stages
+        .find((stage) => stage.id === stageId)!
+        .documents.flatMap((document) => ids(document.item))
+    expect(at("status")).toContain("status-documents")
+    expect(at("filing")).toEqual(
+      expect.arrayContaining(["mos-application", "employment-annex-1", "upo"])
+    )
+    expect(at("filing")).not.toContain("proceeding-certificate")
+    expect(at("filing")).not.toContain("fingerprint-record")
+    expect(at("evidence")).toEqual(
+      expect.arrayContaining([
+        "health-insurance",
+        "zus-confirmation",
+        "qualification-evidence",
+        "sworn-translation",
+      ])
+    )
+    expect(at("procedure")).toEqual(
+      expect.arrayContaining([
+        "authority-summons",
+        "delivery-proof",
+        "proceeding-certificate",
+        "fingerprint-record",
+      ])
+    )
+    expect(at("decision")).toEqual(
+      expect.arrayContaining(["administrative-decision", "residence-card"])
+    )
+  })
   it("gives every named map document an explicit guide and a reverse map context", () => {
     for (const node of allNodes)
       for (const mention of node.documents ?? []) {
