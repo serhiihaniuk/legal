@@ -1,5 +1,7 @@
 # Map contents review
 
+Latest implementation note, batch 29: `study-research` now provides the parent comparison with separate sections for studies, university documents, student mobility, research, internships and European volunteering. Its URL and primary chapter are unchanged. Detailed child explanations and the other dispositions below remain pending; this rewrite does not complete the full branch.
+
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 
 ## Findings

@@ -633,5 +633,10 @@
     "path": "app/data/legal-map/editorial/topics/other-stay.ts",
     "contentHash": "c40fa15cd4988b07a505072d4e2d5624c9ee9d9e6e930263f1a3163bc8cf21be",
     "evidence": "docs/content-review/writing-2026-09-05/batches/28-map-article-contract-and-other-stay.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/study-research.ts",
+    "contentHash": "02e1adeea94c05933b45b242778276e9ddd327dd1f1dfc9d8d05eb7635c6353c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/29-study-research-comparison.md"
   }
 ]

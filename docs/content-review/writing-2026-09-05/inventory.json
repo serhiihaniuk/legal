@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1800,
-    "reviewed": 126,
+    "reviewed": 127,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11874,9 +11874,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/study-research.ts",
       "family": "map-topic",
-      "contentHash": "51ca0a36dac78ab6585e78bbefb1bd7905a93046e0393517c72fd901292d916e",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "02e1adeea94c05933b45b242778276e9ddd327dd1f1dfc9d8d05eb7635c6353c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/29-study-research-comparison.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/temporary-common.ts",

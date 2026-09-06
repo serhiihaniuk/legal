@@ -350,3 +350,10 @@
 - Rewrote `other-stay` with named grounds, the residual provision, graduate conditions, temporary-protection limits and a completed accommodation example. Checked the Sejm text, amending acts and bounded UdSC guidance on 06.09.2026. Corrected the misplaced article 114 reference in `goal-of-stay` without accepting the rest of that article.
 - Full verification passed with 186 application tests and a production build. Desktop/mobile review confirmed the new headings, contents navigation and absence of overflow or browser errors. An additional preview check exposed conflicting amendment metadata; an explicit shared source entry now supplies its title and commencement note.
 - Writing acceptance covers one article, bringing the inventory to 126 of 1,800. Sources, final checks and remaining scope are recorded in `content-review/writing-2026-09-05/batches/28-map-article-contract-and-other-stay.md`. The global legal baseline and independent-review status remain unchanged.
+
+## 2026-09-06 Study and research comparison
+
+- Replaced the generic study/research page with seven named sections covering distinct residence grounds, university documents, student mobility, research, internships and European volunteering. Linked four existing document guides and added completed fictional mobility and internship examples.
+- Checked the relevant Sejm provisions, amendment metadata and UdSC explanations on 06.09.2026. The source record distinguishes statutory conditions from administrative guidance. The global baseline and independent-review status remain unchanged.
+- Full verification and reference previews passed, including 186 application tests and production build. Browser checks covered 360 px and 1440 px, contents scrolling and document navigation, with no overflow or browser errors.
+- Writing acceptance covers the parent comparison only, bringing the inventory to 127 of 1,800. Detailed route pages, other map rewrites and the full remaining scope are tracked in `content-review/writing-2026-09-05/batches/29-study-research-comparison.md`.
