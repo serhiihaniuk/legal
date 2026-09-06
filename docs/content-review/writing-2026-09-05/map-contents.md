@@ -182,6 +182,8 @@ Coverage verification compared the disposition table with authored `map-topic` I
 - The misplaced `goal-of-stay` article 114 link now points to the foreigners act. The rest of that topic still awaits its rewrite.
 - Study/research and family classifications, deeper parent articles, missing coverage and the decision-analysis merge remain next in the audit order. Batch 28 does not represent legal acceptance of all map topics.
 
-## Progress through batch 36
+## Progress through batch 37
 
 The later batches recorded in the writing-review README address study/research and family classifications, delivery and deadlines, demands and responses, the decision-analysis merge and authority-document classification. The missing postanowienie catalog entry is now illustrated and linked from the classification article and all nine case routes. Each batch records its source and verification scope. These changes do not close the remaining topic dispositions or grant independent legal acceptance.
+
+Batch 37 rewrites `appeal` and `complaint` as distinct articles about ordinary decision review and separately appealable orders. Their completed examples explain filing, proof and limits of the selected remedy. Dedicated outgoing appeal and complaint document guides remain a catalog gap; the map examples do not count as those guides.

@@ -1,85 +1,161 @@
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
-
 import { kpaLaw, mapTopicSources } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
-const kpaSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-kpa",
-} as const
+const documents = createEvidenceDocumentTextAuthor()
 
-type ComplaintBody = LegalMapTopicBody
-
-export const complaintTopic: KnowledgeUnit<ComplaintBody> = defineKnowledgeUnit(
-  {
+export const complaintTopic: KnowledgeUnit<LegalMapTopicBody> =
+  defineKnowledgeUnit({
     id: "map-topic:complaint",
     subject: {
       family: "map-topic",
       reference: { kind: "map-node", nodeId: "complaint" },
     },
     summary:
-      "Окреме zażalenie можливе лише за прямою нормою. Загальний строк — 7 днів; саме подання зазвичай не зупиняє виконання.",
+      "Zażalenie дозволяє окремо оскаржити процесуальну ухвалу, якщо для неї передбачено такий засіб. Відмова в доступі до матеріалів і відмова провести доказ мають різні шляхи захисту. Загальний семиденний строк не означає автоматичного зупинення виконання.",
     claims: [
       {
         id: "complaint-limited",
-        kind: "requires-verification",
-        text: "Zażalenie на postanowienie доступне лише у прямо передбачених законом випадках і має окремий строк та наслідок для виконання.",
-        basis: [{ reference: kpaSourceReference, locator: "Art. 141–144" }],
+        kind: "statute-text",
+        text: "KPA передбачає окреме zażalenie лише у визначених випадках. Кодекс розрізняє окрему скаргу, оскарження ухвали разом із рішенням та можливість органу змінити власну доказову ухвалу. Подання скарги не зупиняє виконання автоматично.",
+        basis: [
+          {
+            reference: { kind: "official-source", sourceId: "eli-kpa" },
+            locator:
+              "Art. 57, 61a, 63, 74, 77–78, 101, 112, 123–126, 129, 134, 141–144 KPA",
+          },
+        ],
       },
     ],
     relationships: [],
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-18",
-      verifiedAt: "2026-07-18",
+      legalStateDate: "2026-09-06",
+      verifiedAt: "2026-09-06",
     },
     body: {
-      title: "Zażalenie",
-      polish: kpaLaw.text`${kpaLaw.articleRange("141", "144", { start: "art. 141", end: "144" })} KPA`,
-      sources: [mapTopicSources.kpa],
-      guide: {
+      title: "Zażalenie: коли ухвалу можна оскаржити окремо",
+      polish: "Zażalenie na postanowienie",
+      sources: [
+        {
+          ...mapTopicSources.kpa,
+          note: "Перевірено 06.09.2026: окреме оскарження ухвал, доступ до матеріалів, доказові ухвали, строк і виконання за KPA.",
+        },
+      ],
+      guide: defineLegalMapArticle({
+        kind: "article",
         introduction: [
-          kpaLaw.text`${kpaLaw.articleRange("141", "144", { start: "Art. 141", end: "144" })} KPA регулюють zażalenie на postanowienie. Це окремий засіб контролю процесуального акту, доступний лише у прямо передбачених законом випадках.`,
+          documents.text`Zażalenie є скаргою на ${documents.document("procedural-order", "postanowienie")}, процесуальну ухвалу органу. Її предметом може бути конкретне обмеження доступу до матеріалів або відмова відкрити провадження. Це інше питання, ніж перегляд кінцевого рішення про дозвіл через odwołanie.`,
+          "Назва листа, слово «відмова» й незручний для сторони наслідок ще не визначають способу захисту. Потрібні предмет ухвали та норма, яка дозволяє оскаржити її окремо. Нижче порівняно дві відмови, які зовні схожі, але потребують різних дій.",
         ],
-        regulated: [
-          "Допустимість zażalenia, семиденний строк, вплив на виконання postanowienia та відповідне застосування правил про odwołanie.",
+        sections: [
+          {
+            id: "express-right",
+            title: "Де виникає право на окрему скаргу",
+            paragraphs: [
+              kpaLaw.text`${kpaLaw.article("141", "Art. 141 § 1 KPA")} дозволяє zażalenie, коли кодекс прямо його передбачає. Наприклад, ${kpaLaw.article("74", "art. 74 § 2")} встановлює скаргу на відмову в доступі до матеріалів, а ${kpaLaw.article("61a", "art. 61a § 2")} на відмову відкрити провадження. Спеціальний закон може встановлювати власні правила.`,
+              kpaLaw.text`Точне формулювання має значення. ${kpaLaw.article("101", "Art. 101 § 3 KPA")} називає ухвалу у справі зупинення провадження та відмову поновити зупинене провадження. З цього не слід робити загального висновку, що будь-яка ухвала, пов'язана з подальшим рухом справи, має окреме zażalenie.`,
+              kpaLaw.text`Pouczenie, інформація про засіб захисту, допомагає прочитати порядок. Його зіставляють із правовою підставою ухвали. ${kpaLaw.article("124", "Art. 124 KPA")} визначає зміст цієї інформації й вимоги до обґрунтування. Правила захисту сторони, яка виконала помилкове pouczenie, випливають із ${kpaLaw.article("112", "art. 112")} у зв'язку з ${kpaLaw.article("126", "art. 126")}; помилку не слід замовчувати або вважати, що вона сама змінює законний вид оскарження.`,
+            ],
+          },
+          {
+            id: "two-refusals",
+            title: "Дві відмови, різні способи реагування",
+            paragraphs: [
+              kpaLaw.text`Відмова дати прочитати документ обмежує доступ до вже наявних матеріалів. Відмова провести запропонований доказ стосується того, як установлюватимуть факт. Для другого питання ${kpaLaw.article("77", "art. 77 § 2 KPA")} дозволяє органу змінити, доповнити або скасувати власну доказову ухвалу; ${kpaLaw.article("78", "art. 78 § 1")} пов'язує вимогу сторони з обставиною, яка має значення для справи.`,
+            ],
+            example: {
+              title:
+                "Як працівник розрізнив доступ до матеріалів і допит свідка",
+              facts: [
+                "Два вигадані незалежні випадки за загальними правилами KPA, без спеціальної норми про інший засіб захисту. В обох ухвалу належно вручено стороні без представника 24.08.2026. У випадку A відмовлено в доступі до одного документа. У випадку B для справи має значення фактичне місце роботи заявника. Орган відмовився допитати його колегу, бо вважає це місце встановленим за адресою компанії в реєстрі.",
+              ],
+              sample: {
+                kind: "table",
+                title: "Заповнений запис про спосіб захисту",
+                note: "Навчальний робочий запис. Це не офіційний формуляр і не висновок про законність кожної відмови.",
+                columns: [
+                  "Ухвала",
+                  "Правова підстава реагування",
+                  "Що зроблено",
+                ],
+                rows: [
+                  {
+                    id: "access",
+                    cells: [
+                      "A. Відмова в доступі до документа",
+                      kpaLaw.text`${kpaLaw.article("74", "Art. 74 § 2")} і ${kpaLaw.article("141", "art. 141 KPA")}: окреме zażalenie, сім днів.`,
+                      "Скаргу подано через орган, який видав ухвалу, 28.08. Копію з підтвердженням канцелярії збережено.",
+                    ],
+                  },
+                  {
+                    id: "witness",
+                    cells: [
+                      "B. Відмова допитати свідка",
+                      kpaLaw.text`${kpaLaw.article("77", "Art. 77 § 2")} дозволяє змінити доказову ухвалу. Окремого zażalenia на цій підставі немає; ${kpaLaw.article("142", "art. 142")} передбачає оскарження разом із рішенням.`,
+                      "27.08 подано пояснення: колега працював із заявником в іншому відділенні й може назвати фактичне місце роботи. Заперечення та відповідь органу збережено для подальшого аналізу рішення.",
+                    ],
+                  },
+                ],
+              },
+              reasoning: [
+                kpaLaw.text`У випадку A строк почався 25.08 і завершився в понеділок 31.08 за ${kpaLaw.article("57", "art. 57 § 1 і 4")}. Подання 28.08 було своєчасним. Предмет скарги є обмеження доступу, а не вимога негайно надати дозвіл.`,
+                "У випадку B працівник не переносив семиденний строк скарги на звернення про зміну доказової ухвали. Він показав прогалину: адреса компанії в реєстрі не встановлює автоматично місце щоденної роботи заявника. Колега може мати відомості саме про цей факт. Подане пояснення не гарантує допиту; воно дозволяє простежити, яку вимогу розглядав орган і що залишилося невстановленим.",
+                kpaLaw.text`Якщо згодом буде подано odwołanie від рішення, у випадку B можна оскаржити цю ухвалу в ньому за ${kpaLaw.article("142", "art. 142 KPA")} і пояснити вплив відмови провести доказ на результат. Відсутність окремого zażalenia не означає, що процесуальне заперечення взагалі не може бути оцінене.`,
+              ],
+              conclusion:
+                "Для A збережено своєчасну окрему скаргу. Для B збережено конкретне доказове заперечення та прохання змінити ухвалу. Однакове слово «відмова» не зробило ці документи взаємозамінними.",
+            },
+          },
+          {
+            id: "filing-and-execution",
+            title: "Подання, строк і виконання ухвали",
+            paragraphs: [
+              kpaLaw.text`За ${kpaLaw.article("141", "art. 141 § 2 KPA")} строк становить сім днів від вручення стороні, а за допустимого усного оголошення від дня оголошення. День події не включають; суботу або законний неробочий останній день ураховують за ${kpaLaw.article("57", "art. 57")}. Належний адресат вручення та доказ його дати важливіші за дату видання на першій сторінці.`,
+              kpaLaw.text`${kpaLaw.article("144", "Art. 144 KPA")} передбачає відповідне застосування правил про odwołania до питань, не врегульованих у главі про zażalenia. Звідси випливає подання до належного органу через орган, який видав ухвалу, за ${kpaLaw.article("129", "art. 129 § 1")}. Загальні вимоги до особи, адреси, вимоги, підпису й каналу звернення визначає ${kpaLaw.article("63", "art. 63")}. Відповідне застосування не замінює власний семиденний строк чотирнадцятиденним.`,
+              kpaLaw.text`${kpaLaw.article("143", "Art. 143 KPA")} не зупиняє виконання ухвали автоматично через скаргу. Орган, який видав ухвалу, може зупинити виконання, якщо визнає це обґрунтованим. Отже, «скаргу прийнято» й «виконання зупинено» потребують різних підтверджень.`,
+              documents.text`У матеріалах разом зберігають повне ${documents.document("procedural-order", "postanowienie")}, ${documents.document("delivery-proof", "доказ вручення")}, копію поданої скарги та ${documents.document("dispatch-proof", "доказ її подання")}. Так можна відновити предмет, строк і фактично виконану дію. Позначки «оскаржено» без цих зв'язків недостатньо для розуміння стану справи.`,
+            ],
+          },
+          {
+            id: "limits-of-review",
+            title: "Чого не означає відсутність окремого zażalenia",
+            paragraphs: [
+              kpaLaw.text`${kpaLaw.article("142", "Art. 142 KPA")} установлює загальний шлях оскарження ухвали без окремого zażalenia разом із рішенням. Проте його не можна механічно застосувати до кожного остаточного акта або спеціальної процедури. Наприклад, ${kpaLaw.article("134", "art. 134")} прямо називає остаточною ухвалу про недопустимість або пропуск строку odwołania. Це не ще одна звичайна ухвала, після якої автоматично з'явиться нове адміністративне odwołanie.`,
+              "За відсутності окремої скарги наступне питання стосується точного виду акта: чи буде рішення, разом з яким можна заявити заперечення, чи йдеться про остаточний акт з іншим способом захисту. Skarga до адміністративного суду є окремим провадженням. Її не замінює повторне подання того самого недопустимого zażalenia.",
+            ],
+          },
         ],
-        appliesWhen: [
-          "Після doręczenia або оголошення postanowienia, для якого KPA чи lex specialis прямо передбачає zażalenie.",
-        ],
-        conditions: [
-          "Строк становить сім днів від doręczenia postanowienia або його усного оголошення стороні.",
-          kpaLaw.text`На postanowienie без окремого zażalenia заперечення за ${kpaLaw.article("142", "art. 142")} KPA заявляються лише в odwołaniu від decyzji.`,
-        ],
-        exceptions: [
-          "Подання zażalenia не зупиняє виконання postanowienia; organ, який його видав, може зупинити виконання, якщо визнає це обґрунтованим.",
-        ],
-        consequences: [
-          "Недопустиме zażalenie не створює окремої інстанційної перевірки, але процесуальна вада може бути оцінена разом із odwołaniem від кінцевої decyzji.",
-        ],
-        procedure: [
-          "Спочатку встановлюється точна правова підстава postanowienia й норма про zażalenie, потім дата doręczenia, строк, organ właściwy та вплив акту на подальший перебіг справи.",
-        ],
-        foreignersContext: [
-          "У справах cudzoziemców zażalenie може стосуватися, зокрема, odmowy wszczęcia або zawieszenia, якщо конкретна норма надає такий засіб. Звичайне wezwanie не стає postanowieniem лише через обов’язковий характер.",
-        ],
-      } satisfies LegalNodeGuide,
+      }),
+      documents: [
+        documents.text`${documents.document("procedural-order", "Оскаржуване postanowienie")}`,
+        documents.text`${documents.document("delivery-proof", "Доказ вручення")}`,
+        documents.text`${documents.document("dispatch-proof", "Доказ подання zażalenia")}`,
+      ],
+      related: [
+        "appeal",
+        "decision-appeal",
+        "case-file",
+        "evidence",
+        "deadlines-delivery",
+        "wsa",
+      ],
     },
-  }
-)
-
+  })
 export default complaintTopic
-
 export const complaintMapNode: LegalNode = {
   id: "complaint",
   title: complaintTopic.body.title,
   polish: complaintTopic.body.polish,
   summary: complaintTopic.summary,
   sources: [...complaintTopic.body.sources],
+  documents: [...(complaintTopic.body.documents ?? [])],
+  related: [...(complaintTopic.body.related ?? [])],
 }

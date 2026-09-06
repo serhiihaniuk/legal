@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1800,
-    "reviewed": 136,
+    "reviewed": 138,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11559,9 +11559,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/appeal.ts",
       "family": "map-topic",
-      "contentHash": "8bf43c815b2c72467a6160f262335a173b3a6baa3bf61572b0a2fb284b26e883",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "c9915094c0721dff6989eefe8b76b8d653a4b723e3fe24a0a17285e5dc4e46af",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/37-appeal-and-complaint.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/blue-card.ts",
@@ -11587,9 +11587,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/complaint.ts",
       "family": "map-topic",
-      "contentHash": "3afeb15740fc51ab63cff766b07058d98ab41a76d1ebadc2e7959989496d61e4",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "4b01ed211e8d450998e6aa9385303faa4cd8b65e6664e81576a98679dcd83c56",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/37-appeal-and-complaint.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/cukr-route-2026.ts",

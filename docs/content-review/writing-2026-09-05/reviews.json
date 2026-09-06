@@ -693,5 +693,15 @@
     "path": "app/data/document-library/editorial/guides/procedural-order.ts",
     "contentHash": "21b1ead3f4cef1ee8e7a89c15cec8d48f16ca22a6f32dca02645833768f296bc",
     "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/appeal.ts",
+    "contentHash": "c9915094c0721dff6989eefe8b76b8d653a4b723e3fe24a0a17285e5dc4e46af",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/37-appeal-and-complaint.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/complaint.ts",
+    "contentHash": "4b01ed211e8d450998e6aa9385303faa4cd8b65e6664e81576a98679dcd83c56",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/37-appeal-and-complaint.md"
   }
 ]

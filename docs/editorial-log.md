@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-06 Appeals and complaints with completed examples
+
+- Rewrote the odwołanie and zażalenie map articles. Corrected the claim that detailed appeal objections are generally mandatory. Added a fictional Polish appeal, dated evidence clarification and a filled comparison of file-access refusal with refusal to hear a witness.
+- Scoped KPA and transition checks are recorded in `content-review/writing-2026-09-05/batches/37-appeal-and-complaint.md`. Writing acceptance is 138 of 1,800 files. Dedicated outgoing appeal and complaint guides remain missing; independent legal acceptance is unchanged.
+- Full verification, production build and reference previews passed. Desktop/mobile examples, contents navigation and keyboard document navigation passed without page overflow or browser errors.
+
 ## 2026-09-06 Procedural orders in the document catalog
 
 - Added a postanowienie guide with an annotated fictional Polish order, a completed deadline calculation and a timely complaint. It distinguishes the stated basis for restricted file access from a verified lawful restriction.
