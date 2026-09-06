@@ -598,5 +598,15 @@
     "path": "app/data/legal-library/learning/modules/kpa/delay.ts",
     "contentHash": "9f1df569fe251bc48bebbda9d066557b9c5c5216f1744a05c773a984c9909b07",
     "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
+  },
+  {
+    "path": "app/routes/case.tsx",
+    "contentHash": "735a2372ec7a3da92b8fc2584041ff418d224a6b30612e477b767fea0e63d201",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/26-case-navigation.md"
+  },
+  {
+    "path": "app/features/case-guides/ui/case-route-navigation.tsx",
+    "contentHash": "e03055f454327927cae5bfef1f8bffd85c4182a436b4ed5b3bc3532c2eb323bc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/26-case-navigation.md"
   }
 ]

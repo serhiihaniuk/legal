@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1798,
-    "reviewed": 119,
+    "totalFiles": 1799,
+    "reviewed": 121,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 79,
+      "supporting-copy": 80,
       "case-guide": 9,
       "evidence-document": 62,
       "provision": 1478,
@@ -12159,6 +12159,13 @@
       "evidence": null
     },
     {
+      "path": "app/features/case-guides/ui/case-route-navigation.tsx",
+      "family": "supporting-copy",
+      "contentHash": "e03055f454327927cae5bfef1f8bffd85c4182a436b4ed5b3bc3532c2eb323bc",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/26-case-navigation.md"
+    },
+    {
       "path": "app/features/case-guides/ui/case-stage-actions.tsx",
       "family": "supporting-copy",
       "contentHash": "bc10146a90922873a7a2de5013d7d57a2090d77bf7d290dad3824587371e0ded",
@@ -12504,9 +12511,9 @@
     {
       "path": "app/routes/case.tsx",
       "family": "route-copy",
-      "contentHash": "ff9e5550b06215be848ec0d77b4bc63a479928e701ff274c1975875823798de3",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "735a2372ec7a3da92b8fc2584041ff418d224a6b30612e477b767fea0e63d201",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/26-case-navigation.md"
     },
     {
       "path": "app/routes/documents.tsx",

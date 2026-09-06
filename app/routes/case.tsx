@@ -2,31 +2,24 @@ import { Link, useParams } from "react-router"
 
 import {
   CaseStudyContent,
+  CaseRouteNavigation,
   caseStudyTableOfContents,
 } from "~/features/case-guides"
 import { DocsLayout } from "~/components/layout"
 import { LegalText } from "~/components/references"
 import { Button } from "~/components/ui/button"
-import { cn } from "~/lib/utils"
 import { caseGuideCases, getCaseGuideCase } from "~/data/case-guides/navigation"
-import { caseGuideRoutes, getCaseGuideRoute } from "~/data/case-guides/routes"
+import { getCaseGuideRoute } from "~/data/case-guides/routes"
 import { legalData } from "~/data/legal-map/data"
 
 export function meta() {
   return [{ title: "Гайди по справах — Legalizacja" }]
 }
 
-function scrollToTop() {
-  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))
-}
-
 export default function CasePage() {
   const { routeId } = useParams()
   const route = getCaseGuideRoute(routeId)
   const activeCase = getCaseGuideCase(route.id)
-  const caseRoutes = caseGuideRoutes.filter((item) =>
-    activeCase.routeIds.includes(item.id)
-  )
   const toc = caseStudyTableOfContents(route)
 
   const navigation = (
@@ -63,54 +56,7 @@ export default function CasePage() {
 
   return (
     <DocsLayout navigation={navigation} toc={toc}>
-      <div data-not-typeset className="border-b pb-4">
-        <nav
-          aria-label="Види справ на малому екрані"
-          className="-mx-4 mb-4 flex gap-1 overflow-x-auto overflow-y-hidden px-4 lg:hidden"
-        >
-          {caseGuideCases.map((item) => (
-            <Button
-              key={item.id}
-              nativeButton={false}
-              variant={item.id === activeCase.id ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-none"
-              render={<Link to={`/cases/${item.defaultRouteId}`} />}
-            >
-              {item.label}
-            </Button>
-          ))}
-        </nav>
-        <p className="mb-2 text-xs font-medium text-muted-foreground">
-          {activeCase.label} · оберіть підставу
-        </p>
-        <nav
-          aria-label="Підстави перебування"
-          className="-mx-4 overflow-x-auto overflow-y-hidden px-4"
-        >
-          <div className="flex min-w-max border-b">
-            {caseRoutes.map((item) => {
-              const isActive = item.id === route.id
-
-              return (
-                <Link
-                  key={item.id}
-                  to={`/cases/${item.id}`}
-                  aria-current={isActive ? "page" : undefined}
-                  onClick={isActive ? undefined : scrollToTop}
-                  className={cn(
-                    "relative inline-flex h-10 flex-none items-center justify-center px-3 text-sm font-medium whitespace-nowrap text-foreground/60 transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none",
-                    "after:absolute after:inset-x-0 after:bottom-[-1px] after:h-0.5 after:bg-foreground after:opacity-0 after:transition-opacity",
-                    isActive && "text-foreground after:opacity-100"
-                  )}
-                >
-                  {item.tab}
-                </Link>
-              )
-            })}
-          </div>
-        </nav>
-      </div>
+      <CaseRouteNavigation routeId={route.id} />
 
       <CaseStudyContent
         key={route.id}

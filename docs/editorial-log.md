@@ -323,3 +323,9 @@
 - Checked ELI texts, MOS commencement and the MSWiA reply published by RPO. Sources, amendment scope and verification are recorded in `content-review/writing-2026-09-05/batches/25-case-office-deadlines.md`. The global baseline and independent-review status remain unchanged.
 - Full verification passed with 174 application tests and a successful production build. Business desktop/mobile and EU resident mobile checks confirmed the revised paragraphs, disclosure controls and absence of page overflow or browser errors.
 - Renewed 17 writing hashes against their previously accepted versions and the bounded amendments. Inventory remains 119 accepted files out of 1,798. Remaining authored topics, interface work, original-source layout and independent legal review remain open.
+
+## 2026-09-06 Case navigation visibility
+
+- The selected case subtype is now revealed on direct mobile loading, route changes, browser Back and resizing. Only the navigation container scrolls horizontally; the document keeps its vertical position.
+- Both case navigation strips hide their scrollbar with the existing utility and retain horizontal scrolling. Full verification passed with 176 application tests and the production build. Browser checks covered 360 px and 1440 px without page overflow or errors.
+- Evidence is recorded in `content-review/writing-2026-09-05/batches/26-case-navigation.md`. The writing inventory records 121 accepted files out of 1,799. No legal content or legal-state date changed.
