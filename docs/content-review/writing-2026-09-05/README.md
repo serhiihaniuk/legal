@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 33 separates reading a wezwanie from completing its response. The map now includes an annotated Polish demand, two response fragments and two filled records using the document guides' shared example presentation. Writing acceptance is now 133 of 1,800 files. The remaining map dispositions, deeper route pages, corpus layout audit and independent legal review remain pending; see `batches/33-wezwanie-and-response.md`.
+Batch 34 merges the duplicated decision workflow into one decision-reading article with a completed refusal analysis. The old URL opens that example, and the chapter lists the primary article once. Writing acceptance is now 134 of 1,799 files; the total decreased because the duplicate authored unit was removed. The remaining map dispositions, deeper route pages, corpus layout audit and independent legal review remain pending; see `batches/34-decision-reading-merge.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 

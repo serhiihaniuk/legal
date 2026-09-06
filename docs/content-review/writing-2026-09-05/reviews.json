@@ -605,11 +605,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/26-case-navigation.md"
   },
   {
-    "path": "app/data/legal-map/journey.ts",
-    "contentHash": "189649a7fbc0142d9e5a3e32e88afb76fe7b9b68911c96e96f8649c1099eee96",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
-  },
-  {
     "path": "app/features/legal-map/ui/legal-map-overview.tsx",
     "contentHash": "b771799003b33ef107a9fccec8d0264c2c2050bf56c49c6a599f3a5fbf70a566",
     "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
@@ -678,5 +673,15 @@
     "path": "app/features/legal-map/ui/legal-node-content.tsx",
     "contentHash": "4d64d5a90760ec6a76ca8e250b02d0ddd74c17ee38adade4aca8dee39131dd1e",
     "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/decision-reading.ts",
+    "contentHash": "408d5d498f7e4da7efe1c0eea2d315724f7dc9314fef2e6a807e041e504bcb73",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/34-decision-reading-merge.md"
+  },
+  {
+    "path": "app/data/legal-map/journey.ts",
+    "contentHash": "dd59127a0f6a28ebb84c8b27ecb95d347c28726454c066c610aabe0ade4a6100",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/34-decision-reading-merge.md"
   }
 ]

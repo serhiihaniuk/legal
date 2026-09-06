@@ -2,8 +2,8 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1800,
-    "reviewed": 133,
+    "totalFiles": 1799,
+    "reviewed": 134,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -12,7 +12,7 @@
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
-      "map-topic": 63,
+      "map-topic": 62,
       "map-journey": 1,
       "study-plan": 1,
       "study-topic": 8,
@@ -11538,7 +11538,7 @@
     {
       "path": "app/data/legal-map/data.ts",
       "family": "map-group-copy",
-      "contentHash": "7496459e19fc7a75e839858df4e5fa6e280f26c2890986f6f6cd338a7ce56ef9",
+      "contentHash": "d79728e8ac95b55cbb7556a1a0e19dc6181ecc5387168fc7289a369d3eaabe61",
       "writing": "pending",
       "evidence": null
     },
@@ -11608,16 +11608,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/decision-reading.ts",
       "family": "map-topic",
-      "contentHash": "be19cade84abc44a0659cc17086d7e25ffb176b353ffa31f53c6bc18f52cfad3",
-      "writing": "pending",
-      "evidence": null
-    },
-    {
-      "path": "app/data/legal-map/editorial/topics/decision-workflow.ts",
-      "family": "map-topic",
-      "contentHash": "6e3906a27cb57cb2b03efa107905e31576115f0a46cb6b2e133b608923c220ae",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "408d5d498f7e4da7efe1c0eea2d315724f7dc9314fef2e6a807e041e504bcb73",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/34-decision-reading-merge.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/declaration.ts",
@@ -11993,9 +11986,9 @@
     {
       "path": "app/data/legal-map/journey.ts",
       "family": "map-journey",
-      "contentHash": "189649a7fbc0142d9e5a3e32e88afb76fe7b9b68911c96e96f8649c1099eee96",
+      "contentHash": "dd59127a0f6a28ebb84c8b27ecb95d347c28726454c066c610aabe0ade4a6100",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/34-decision-reading-merge.md"
     },
     {
       "path": "app/data/references/reference-previews.ts",

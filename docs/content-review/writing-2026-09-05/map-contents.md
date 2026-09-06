@@ -108,8 +108,8 @@ Numbers refer to the target chapters above. "Retain" means retain a distinct top
 | `wezwanie-workflow` | 7 | Completed in batch 33: initial reply, supplement, two filled records and separate personal attendance. Stable URL retained. |
 | `inactivity` | 7 | Retain the recently reviewed topic. Court references must remain reachable here, not only after a decision. |
 | `decision-appeal` | 8 | Narrow to classifying decisions, procedural orders and other correspondence. Appeal details belong in chapter 9. |
-| `decision-reading` | 8 | Make this the primary article for interpreting the operative part, reasons, evidence assessment and instructions. |
-| `decision-workflow` | 8 | Merge its repeated analysis into the primary decision article as a completed example. Preserve the old URL with a defined compatibility destination when implemented. |
+| `decision-reading` | 8 | Completed in batch 34: primary decision article with a fictional refusal, omitted evidence, timely appeal, correction and finality distinctions. |
+| `decision-workflow` | 8 | Merged in batch 34. Old URL redirects to the primary article's completed example. Duplicate authored unit removed; reference ID retained. |
 | `appeal` | 9 | Retain. Explain ordinary administrative appeal, its subject and possible outcomes. |
 | `complaint` | 9 | Retain the zażalenie topic with a clear visible title. Its ID must not make readers confuse it with a court complaint. |
 | `extraordinary-wsa` | 9 | Rewrite as a comparison of remedies. Remove the assumption that all court review starts after a final decision. |

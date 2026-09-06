@@ -23,10 +23,6 @@ export {
   foreignDocumentsMapNode,
   foreignDocumentsTopic,
 } from "./foreign-documents"
-export {
-  decisionWorkflowMapNode,
-  decisionWorkflowTopic,
-} from "./decision-workflow"
 export { documentMatrixMapNode, documentMatrixTopic } from "./document-matrix"
 export { documentTypesMapNode, documentTypesTopic } from "./document-types"
 export {

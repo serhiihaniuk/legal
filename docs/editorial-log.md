@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Decision article consolidation
+
+- Merged the repeated decision workflow into the primary reading article. A fictional refusal is compared with evidence already received by the authority, followed by a completed deadline calculation and timely appeal. Added the distinctions between correction, supplementation, substantive disagreement, finality and enforceability.
+- Removed the duplicate authored unit. The old node ID remains available for references, and its URL redirects to the completed example. Chapter eight now lists two distinct topics. Writing acceptance is 134 of 1,799 files.
+- Official KPA checks and the scoped 06.09.2026 legal state are recorded in `content-review/writing-2026-09-05/batches/34-decision-reading-merge.md`. The global baseline and independent legal acceptance remain unchanged.
+- Full verification passed with 191 application tests, 68 corpus tests and one existing skip, 15 content-review tests and the production build. Reference previews, old-URL redirection, the example anchor, mobile reading, chapter count and keyboard document navigation were checked. No page overflow or browser console errors were found.
+
 ## 2026-09-06 Wezwanie and completed response
 
 - Rewrote the demand-reading article around an annotated fictional Polish letter and the separate consequences of formal defects, insufficient evidence and missed personal actions. The response article follows the same letter through an initial reply, insurance supplement and recorded personal attendance.

@@ -136,7 +136,7 @@ export const legalMapChapters = [
     title: "Рішення та його наслідки",
     description:
       "Резолютивна частина повідомляє, що вирішив орган, а обґрунтування пояснює факти, докази й застосоване право. Наявні теми допомагають розрізняти види актів і читати рішення разом з інструкцією про оскарження.",
-    nodeIds: ["decision-appeal", "decision-reading", "decision-workflow"],
+    nodeIds: ["decision-appeal", "decision-reading"],
   },
   {
     id: "protection",
@@ -157,7 +157,13 @@ export const legalMapChapters = [
 ] satisfies readonly LegalMapChapter[]
 
 export const legalMapCompatibilityDestinations: ReadonlyMap<string, string> =
-  new Map([["study-loop", "/study"]])
+  new Map([
+    ["study-loop", "/study"],
+    [
+      "decision-workflow",
+      "/map/decision-reading#node-section-completed-analysis",
+    ],
+  ])
 
 export function legalMapChapterForNode(nodeId?: string) {
   return legalMapChapters.find((chapter) =>

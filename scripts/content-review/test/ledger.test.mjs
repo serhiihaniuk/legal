@@ -114,7 +114,7 @@ test("generates deterministic inventory counts and lane assignment", () => {
     assert.deepEqual(first.summary, second.summary)
     assert.equal(first.summary.byFamily.provision, 1478)
     assert.equal(first.summary.byFamily["learning-module"], 43)
-    assert.equal(first.summary.byFamily["map-topic"], 63)
+    assert.equal(first.summary.byFamily["map-topic"], 62)
     assert.equal(first.summary.byFamily["evidence-document"], 62)
     assert.equal(first.summary.byFamily["case-guide"], 9)
     assert.ok(first.summary.byFamily["shared-renderer"] >= 28)
@@ -133,6 +133,8 @@ test("generates deterministic inventory counts and lane assignment", () => {
     assert.equal(foreignersB.length, 346)
 
     const entries = generateInventory()
+    assert.ok(entries.some(entry => entry.path === "app/data/legal-map/editorial/topics/decision-reading.ts"))
+    assert.equal(entries.some(entry => entry.path === "app/data/legal-map/editorial/topics/decision-workflow.ts"), false)
     for (const id of [
       "study-annex",
       "response-letter",

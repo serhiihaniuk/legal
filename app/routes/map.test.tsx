@@ -137,4 +137,17 @@ describe("map chapter navigation", () => {
     await screen.findByRole("heading", { name: "Optional reading guide" })
     expect(router.state.location.pathname).toBe("/study")
   })
+
+  it("redirects the merged decision workflow to the completed analysis", async () => {
+    const router = renderMap("/map/decision-workflow")
+    await screen.findByRole("heading", {
+      level: 1,
+      name: "Як читати рішення і знаходити помилку в його обґрунтуванні",
+    })
+    expect(router.state.location.pathname).toBe("/map/decision-reading")
+    expect(router.state.location.hash).toBe("#node-section-completed-analysis")
+    expect(
+      document.getElementById("node-section-completed-analysis")
+    ).not.toBeNull()
+  })
 })

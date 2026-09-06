@@ -27,4 +27,15 @@ describe("map-topic publication resolution", () => {
     expect(resolveMapTopicPublication("praca")).toBeUndefined()
     expect(resolveMapTopicPublication("missing-node")).toBeUndefined()
   })
+
+  it("keeps the merged decision article as the only authored publication", () => {
+    expect(resolveMapTopicPublication("decision-workflow")).toBeUndefined()
+    const article = resolveMapTopicPublication("decision-reading")?.guide
+    expect(article?.kind).toBe("article")
+    if (article?.kind !== "article") throw new Error("Missing merged article")
+    expect(
+      article.sections.find((section) => section.id === "completed-analysis")
+        ?.example?.sample?.kind
+    ).toBe("letter")
+  })
 })

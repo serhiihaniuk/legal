@@ -14,6 +14,7 @@ const TEMPORARY_WORK_URL = "https://eli.gov.pl/eli/DU/2025/236/ogl"
 const UKRAINE_SPECIAL_ACT_URL =
   "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
 import { LEGAL_STATE_DATE } from "~/data/shared/legal-meta"
+import { decisionWorkflowMapNode } from "./compatibility-nodes"
 import {
   appealMapNode,
   blueCardMapNode,
@@ -24,7 +25,6 @@ import {
   deadlinesDeliveryMapNode,
   decisionAppealMapNode,
   decisionReadingMapNode,
-  decisionWorkflowMapNode,
   documentMatrixMapNode,
   documentTypesMapNode,
   employerDutiesMapNode,
@@ -1155,7 +1155,6 @@ export const legalData = {
           },
           {
             ...decisionWorkflowMapNode,
-            related: ["decision-reading", "appeal", "case-file"],
           },
           {
             ...inactivityMapNode,
