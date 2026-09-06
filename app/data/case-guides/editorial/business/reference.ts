@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -124,8 +125,8 @@ export const businessDeadlines: CaseGuideDeadline[] = [
     action:
       "Виконати особисті дії або встановити конкретний законний виняток. Для UKR застосовується окремий порядок.",
     consequence:
-      "Невиконання звичайного виклику може спричинити залишення заяви без розгляду; додані фінансові докази не замінюють явки.",
-    law: law.text`${law.article("106e")}; ${law.external("art. 45 закону Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
+      "Неявка після належного виклику за відсутності винятку веде до umorzenia, припинення провадження, якщо немає підстав залишити заяву без розгляду, повернути її або відмовити у відкритті провадження. Фінансові докази не замінюють явки.",
+    law: law.text`${law.article("106e")}, ${law.article("106i")}; ${law.external("art. 45 закону Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
   },
   {
     stageId: "procedure",
@@ -139,13 +140,13 @@ export const businessDeadlines: CaseGuideDeadline[] = [
   },
   {
     stageId: "procedure",
-    period: "до 04.03.2027",
-    trigger: "спеціальне зупинення визначених строків wojewody",
+    period: "60 днів за звичайним правилом органу",
+    trigger:
+      "остання визначена законом подія: формальна повнота заяви та подання доказів або сплив строку на них",
     action:
       "Контролювати справу й окремо виконувати строки заявника. Не обіцяти рішення за загальним 60-денним періодом.",
-    consequence:
-      "Спеціальне правило обмежує звичайні наслідки затримки органу. Воно не переносить строку відповіді на wezwanie.",
-    law: law.text`${law.external("Art. 100d спецзакону, зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
+    consequence: residenceOfficeDeadlines.caseConsequence,
+    law: law.text`${law.article("112a")}; ${law.external("Art. 100d спецзакону, зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
   },
   {
     stageId: "decision",

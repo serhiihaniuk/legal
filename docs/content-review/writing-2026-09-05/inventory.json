@@ -86,16 +86,16 @@
     {
       "path": "app/data/case-guides/editorial/blue-card/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "991564754ccca6b13cc8e19d30d001f53b52487af2ec6c45624bcb1fdbb9646f",
+      "contentHash": "a563c25ebb73da3db875987aac1fd48c894d216e384d859f8aa96744fb7625e6",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/blue-card/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "a7bfaa38f933ac4f58d3f8885f9585aa20b805082768f1cfd377719afd930186",
+      "contentHash": "f2f577b9844664958071e853893751f0c447852228b23a0bb297b8ba7f5a9775",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/documents.ts",
@@ -107,16 +107,16 @@
     {
       "path": "app/data/case-guides/editorial/business/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "f0d467699ce7197406a02d799f3d39264c3240de60c8cf68d0e2d47671fc3a25",
+      "contentHash": "26258ae1794b1b40ccc4e5359901e620518c338af3b342f2ed53a4a9bd2f1519",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "9250626ccc45aa9e97af4f4f822c999d3f36076cbc0da93e0c127ac1956ea986",
+      "contentHash": "d34d655e3689fac03fdd4138d8fb466a8e705183b6e2c91ba0f5ddc189a481a7",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/cukr/documents.ts",
@@ -149,16 +149,16 @@
     {
       "path": "app/data/case-guides/editorial/family/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "ef903918854288e5d1442874f4cf63d445b0d466ef50040d900d5960ff2ebbd6",
+      "contentHash": "f9aaeb0f06f8a7de628f5ea5f3d7bdf9f8e9dc2b73c76d10889b5c251896a319",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/family/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "e1d8b643531d1add76335513945621194a3d7e923bb5a8f89ec3554ce50f35be",
+      "contentHash": "d00727e7073444afbb757c3086d0d543a0a0ff04fdf1388a47de65e4a1ca668d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/documents.ts",
@@ -170,16 +170,16 @@
     {
       "path": "app/data/case-guides/editorial/other/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "68900ec0ab25c0b25b68f3b5bcabe4f27644879c84ab9938d8c92302871fa376",
+      "contentHash": "4bc6ab211d6616887cf6c4305c41c9c8c7c44f640b7e54dad7f4fc75a58017dc",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "4799cda135ee7f26d6cdec672b1e665755f1799873f3d544181763c88c837c76",
+      "contentHash": "2faa6cc432a00f872716726e41698f39ee4700dfdf352871cf6c5891f30636ef",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/documents.ts",
@@ -191,16 +191,16 @@
     {
       "path": "app/data/case-guides/editorial/permanent/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "ac5d84297e62fd321282b99a3830f97fe98381a4b2dd65929828c51863082c3a",
+      "contentHash": "7464a9016e2fd2e593d65edb43a597aef7202167a92b6c2f035329f804ff093c",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "2888aa7b7620df69142d892a89a8c2b6563e95734476883451c11cce3815f747",
+      "contentHash": "db569499bc1a7936ce8ec6f370cd3b2c3d8afb0c7fb53e21f3f20335a7fa8000",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/resident/documents.ts",
@@ -212,16 +212,16 @@
     {
       "path": "app/data/case-guides/editorial/resident/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "4b16595f5eee7f02f3657f4a4a55dc054515b369ebceb7bdab73efd9b21bf539",
+      "contentHash": "f80793e28b56cca8ed939178f815dc306747b8d185fee66caa4e555909f77fdc",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/resident/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "87e643286d93140048d0e5ce13e9da02a95b3577cbe8197ea1bfdf47b1055c18",
+      "contentHash": "b775b41922bd08d96118c0576122febaa36d8555879b2e1a11113975edea2cdd",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
@@ -303,16 +303,16 @@
     {
       "path": "app/data/case-guides/editorial/student/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "d2b88f1d3183801df1f1b636dd97fd09c08f5a847b3674881bbcf9489adcd51e",
+      "contentHash": "59aa2257844fd5de161ea43cd2ae7c4d6506fea4a995f17f67a6c4d964c5cb75",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/student/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "fb284b6c099d3777bf538540b658127d573037770cf7f8562f08ed703a7903d8",
+      "contentHash": "2b884c40cc051095caa1bf8028f057028d3451efcec46ca1ddfbfb3bbfc5ce36",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/documents.ts",
@@ -324,16 +324,16 @@
     {
       "path": "app/data/case-guides/editorial/work/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "12b08f38597b128ac69fb185d1bc36c070ade85c4c90011381ed77e31e2a9a21",
+      "contentHash": "e9b84ff71562cb706a631163d54e9c3ea9d8967e8aa627278b2f48851c9c9600",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "a9593883559b17a4e445fef6d7ef291e0a9b3c9d9aaf68d047d14b7024551315",
+      "contentHash": "a6a582ca13ddbf0a7daeabca13b8aaece1daae28076953dfa6d62f55f7041ef5",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/case-guides/navigation.ts",
@@ -11993,9 +11993,9 @@
     {
       "path": "app/data/shared/residence-office-deadlines.ts",
       "family": "supporting-copy",
-      "contentHash": "41389f83962b10c321e4476a764f62d84aab82be67cc167c7ecc9170db6e14f3",
+      "contentHash": "f09955e80509857b39f6395425be15fdd83ba54bc4b1b002cf2d82aad2e925ab",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
     },
     {
       "path": "app/data/study/authoring.ts",

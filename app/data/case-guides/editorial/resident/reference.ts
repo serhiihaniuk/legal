@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -102,8 +103,8 @@ export const residentDeadlines: CaseGuideDeadline[] = [
     trigger: law.text`Остання з подій за ${law.article("222d", "art. 222d")}: належна формальна заява та подання витребуваних доказів або сплив строку їх подання.`,
     action:
       "Встановити початок строку та застосування спеціальних правил; не обіцяти дату рішення від першого входу до MOS.",
-    consequence: law.text`${law.external("Art. 100d", "https://eli.gov.pl/eli/DU/2026/203/ogl")} передбачає спеціальне зупинення визначених строків wojewody до 04.03.2027. Адміністративне застосування та судову оцінку цього правила розрізняють; строки заявника не зупиняються автоматично.`,
-    law: law.text`${law.article("222d")}; ${law.external("зміни спецзакону", "https://eli.gov.pl/eli/DU/2026/203/ogl")}; ${law.external("позиція, опублікована RPO", delayUrl)}.`,
+    consequence: residenceOfficeDeadlines.caseConsequence,
+    law: law.text`${law.article("222d")}; ${law.external("art. 100d спецзакону зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}; ${law.external("позиція, опублікована RPO", delayUrl)}.`,
   },
   {
     stageId: "decision",

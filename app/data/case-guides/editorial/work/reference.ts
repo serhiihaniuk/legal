@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -139,8 +140,7 @@ export const workDeadlines: CaseGuideDeadline[] = [
     trigger:
       "за загальним правилом від останньої події: формальна повнота або подання доказів чи закінчення строку на них",
     action: "Відстежувати розгляд і вимоги органу",
-    consequence:
-      "До 04.03.2027 перебіг строку розгляду цієї справи wojewodą не починається або зупиняється. Орган може діяти; строки заявника залишаються чинними. Спеціальна норма обмежує також засоби проти бездіяльності.",
+    consequence: residenceOfficeDeadlines.caseConsequence,
     law: law.text`${law.article("112a")} ust. 1–2; ${law.external("art. 100d спеціального закону", "https://eli.gov.pl/eli/DU/2025/337/ogl")}.`,
   },
   {

@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -124,13 +125,13 @@ export const familyDeadlines: CaseGuideDeadline[] = [
   },
   {
     stageId: "procedure",
-    period: "до 04.03.2027",
-    trigger: "спеціальне зупинення визначених строків wojewody",
+    period: "60 днів за звичайним правилом органу",
+    trigger:
+      "остання визначена законом подія: формальна повнота заяви та подання доказів або сплив строку на них",
     action:
       "Контролювати кореспонденцію й строки заявника окремо. Не обіцяти рішення за загальним періодом роботи органу.",
-    consequence:
-      "Це правило не переносить дату відповіді на wezwanie і має спеціальні наслідки для оцінки затримки органу.",
-    law: law.text`${law.external("Art. 100d спецзакону зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
+    consequence: residenceOfficeDeadlines.caseConsequence,
+    law: law.text`${law.article("112a")}; ${law.external("Art. 100d спецзакону зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
   },
   {
     stageId: "decision",

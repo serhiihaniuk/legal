@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -147,8 +148,7 @@ export const studentDeadlines: CaseGuideDeadline[] = [
       "закон визначає початок від останньої з потрібних процесуальних подій",
     action:
       "Контролювати стан справи й власні строки; початок навчального року не гарантує готового рішення.",
-    consequence:
-      "Зупинення визначених строків органу не звільняє заявника від відповіді на wezwanie чи особистої явки.",
+    consequence: residenceOfficeDeadlines.caseConsequence,
     law: law.text`${law.article("112a")}, ${law.article("149")}; ${law.external("art. 100d спецзакону зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
   },
   {

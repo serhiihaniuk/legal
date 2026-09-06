@@ -251,9 +251,12 @@ describe("case guide continuity", () => {
       within(procedure).getByRole("button", { name: /^Строки та наслідки/ })
     )
     expect(within(procedure).getByText("мін. 14 днів")).toBeTruthy()
+    expect(procedure.textContent).toContain(
+      "04.03.2027 не починається або зупиняється"
+    )
     expect(
-      within(procedure).getAllByText(/До 04.03.2027 перебіг строку/).length
-    ).toBeGreaterThan(0)
+      within(procedure).getAllByRole("link", { name: /листі MSWiA/ })
+    ).toHaveLength(2)
     expect(within(procedure).queryByText("15 робочих днів")).toBeNull()
     const conditions = screen.getByRole("region", {
       name: "Матриця умов маршруту",

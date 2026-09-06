@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -145,8 +146,7 @@ export const blueCardDeadlines: CaseGuideDeadline[] = [
     period: "60 днів за загальним правилом",
     trigger: "виконання останньої з передумов початку строку органу",
     action: "Встановити належну дату початку строку для звичайної Blue Card.",
-    consequence:
-      "До 04.03.2027 перебіг охоплених строків перед wojewodą зупинено спеціальним законом. Це не обіцянка рішення за 60 днів від подання і не зупинення строку відповіді заявника.",
+    consequence: residenceOfficeDeadlines.caseConsequence,
     law: law.text`${law.article("112a")}; ${law.external("art. 100d спеціального закону", "https://eli.gov.pl/eli/DU/2025/337/ogl")}.`,
   },
   {

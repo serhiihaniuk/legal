@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -105,8 +106,8 @@ export const otherDeadlines: CaseGuideDeadline[] = [
     trigger: "належний виклик для паспорта, відбитків і взірця підпису",
     action: "Виконати особисті дії або підтвердити застосовний виняток.",
     consequence:
-      "Невиконання може спричинити залишення заяви без розгляду. Відповідь про страховку не виконує окремого виклику.",
-    law: law.text`${law.article("106e")}.`,
+      "Неявка після належного виклику за відсутності винятку веде до umorzenia, припинення провадження, якщо немає підстав залишити заяву без розгляду, повернути її або відмовити у відкритті провадження. Відповідь про страховку не виконує окремого виклику.",
+    law: law.text`${law.article("106e")}, ${law.article("106i")}.`,
   },
   {
     stageId: "procedure",
@@ -125,8 +126,7 @@ export const otherDeadlines: CaseGuideDeadline[] = [
       "початок за останньою з необхідних процесуальних подій, із застосуванням спеціальних правил",
     action:
       "Контролювати власні строки та актуальність матеріалів; не обіцяти рішення через 60 днів від UPO.",
-    consequence:
-      "Законодавче зупинення не звільняє від відповіді чи явки. Судовий захист від затримки оцінюють окремо з урахуванням судової практики.",
+    consequence: residenceOfficeDeadlines.caseConsequence,
     law: law.text`${law.article("112a")}; ${law.external("art. 100d спецзакону зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}.`,
   },
   {

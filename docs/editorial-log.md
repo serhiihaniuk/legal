@@ -315,3 +315,11 @@
 - Removed duplicated legal-model output and the paired label/content grid from the shared map renderer. The reviewed KPA module displays its own 06.09.2026 date without advancing the atlas baseline.
 - Full delivery verification and desktop/mobile browser checks passed. Source checks and limits are recorded in `content-review/writing-2026-09-05/batches/24-delay-and-court-review.md`.
 - The inventory records 119 accepted files out of 1,798. Corresponding case-guide deadline passages, remaining authored topics, original-source layout and independent legal review remain open.
+
+## 2026-09-06 Case-office deadline reconciliation
+
+- All eight ordinary residence guides now share the suspension and court-review qualification in their procedure stages and deadline registers. Their ordinary periods and fictional response dates remain specific to each case. CUKR keeps its separate issuance rules.
+- Family and business now state the ordinary 60-day period and starting conditions. Business and graduate personal-appearance rows now explain termination under art. 106i with its conditions, instead of naming the wrong procedural outcome.
+- Checked ELI texts, MOS commencement and the MSWiA reply published by RPO. Sources, amendment scope and verification are recorded in `content-review/writing-2026-09-05/batches/25-case-office-deadlines.md`. The global baseline and independent-review status remain unchanged.
+- Full verification passed with 174 application tests and a successful production build. Business desktop/mobile and EU resident mobile checks confirmed the revised paragraphs, disclosure controls and absence of page overflow or browser errors.
+- Renewed 17 writing hashes against their previously accepted versions and the bounded amendments. Inventory remains 119 accepted files out of 1,798. Remaining authored topics, interface work, original-source layout and independent legal review remain open.

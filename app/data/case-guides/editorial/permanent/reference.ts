@@ -1,3 +1,4 @@
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type {
   CaseGuideCondition,
   CaseGuideDeadline,
@@ -107,8 +108,7 @@ export const permanentDeadlines: CaseGuideDeadline[] = [
       "остання з подій, названих чинною редакцією норми про строк органу",
     action:
       "Окремо встановити формальну повноту, подання матеріальних доказів або сплив строку на них. Перевірити зупинення визначених строків wojewody до 04.03.2027.",
-    consequence:
-      "Це не обіцянка рішення через шість місяців після MOS. Строк заявника триває; судова оцінка затримки потребує окремого аналізу.",
+    consequence: residenceOfficeDeadlines.caseConsequence,
     law: law.text`${law.article("210")}; ${law.external("art. 100d спецзакону зі змінами Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}; ${law.external("опублікована RPO відповідь MSWiA про спори щодо затримок", delayUrl)}.`,
   },
   {
