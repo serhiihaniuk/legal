@@ -683,5 +683,10 @@
     "path": "app/data/legal-map/journey.ts",
     "contentHash": "dd59127a0f6a28ebb84c8b27ecb95d347c28726454c066c610aabe0ade4a6100",
     "evidence": "docs/content-review/writing-2026-09-05/batches/34-decision-reading-merge.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/decision-appeal.ts",
+    "contentHash": "946ffb8b28adaea63aa2a82ee3ff5807273065ac54e35e34de1238e077d4351f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/35-act-classification.md"
   }
 ]

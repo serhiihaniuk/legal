@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Authority document classification
+
+- Rewrote the decision classification page as an article distinguishing decisions, procedural orders, demands, notices and certificates. Three fictional Polish fragments show completed responses, their separate subjects and dated deadlines. Removed the misleading claim that the heading determines the available remedy.
+- Scoped official KPA checks are recorded in `content-review/writing-2026-09-05/batches/35-act-classification.md`. The global legal baseline and independent review remain unchanged. Writing acceptance is 135 of 1,799 files.
+- Full verification passed with 191 application tests, 68 corpus tests and one existing skip, 15 content-review tests and the production build. Reference previews, desktop/mobile reading, the contents anchor and keyboard document navigation passed without page overflow or console errors.
+- Recorded the missing standalone postanowienie document guide for the next coverage work. The article example does not satisfy that separate catalog requirement.
+
 ## 2026-09-06 Decision article consolidation
 
 - Merged the repeated decision workflow into the primary reading article. A fictional refusal is compared with evidence already received by the authority, followed by a completed deadline calculation and timely appeal. Added the distinctions between correction, supplementation, substantive disagreement, finality and enforceability.

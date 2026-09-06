@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1799,
-    "reviewed": 134,
+    "reviewed": 135,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11601,9 +11601,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/decision-appeal.ts",
       "family": "map-topic",
-      "contentHash": "f29119d28de2ef14e23fb61e6c8ea677c70fc4d2f3bc4b39807b1918238193a1",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "946ffb8b28adaea63aa2a82ee3ff5807273065ac54e35e34de1238e077d4351f",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/35-act-classification.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/decision-reading.ts",

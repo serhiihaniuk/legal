@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 34 merges the duplicated decision workflow into one decision-reading article with a completed refusal analysis. The old URL opens that example, and the chapter lists the primary article once. Writing acceptance is now 134 of 1,799 files; the total decreased because the duplicate authored unit was removed. The remaining map dispositions, deeper route pages, corpus layout audit and independent legal review remain pending; see `batches/34-decision-reading-merge.md`.
+Batch 35 replaces the generic decision classification page with an article distinguishing decisions, procedural orders, demands, notices and certificates. Three fictional letters show completed responses and different deadlines. Writing acceptance is 135 of 1,799 files. A dedicated procedural-order document guide remains missing and is recorded for the next coverage work. The remaining map dispositions, law modules, corpus layout audit and independent legal review remain pending; see `batches/35-act-classification.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 

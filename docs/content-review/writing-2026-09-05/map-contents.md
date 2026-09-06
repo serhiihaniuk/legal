@@ -107,7 +107,7 @@ Numbers refer to the target chapters above. "Retain" means retain a distinct top
 | `wezwanie` | 7 | Completed in batch 33: annotated fictional demand, distinct actions and consequences, exact legal references. |
 | `wezwanie-workflow` | 7 | Completed in batch 33: initial reply, supplement, two filled records and separate personal attendance. Stable URL retained. |
 | `inactivity` | 7 | Retain the recently reviewed topic. Court references must remain reachable here, not only after a decision. |
-| `decision-appeal` | 8 | Narrow to classifying decisions, procedural orders and other correspondence. Appeal details belong in chapter 9. |
+| `decision-appeal` | 8 | Done in batch 35: classifies decisions, procedural orders, demands, notices and certificates with three completed letter examples. Detailed appeal work remains in chapter 9. |
 | `decision-reading` | 8 | Completed in batch 34: primary decision article with a fictional refusal, omitted evidence, timely appeal, correction and finality distinctions. |
 | `decision-workflow` | 8 | Merged in batch 34. Old URL redirects to the primary article's completed example. Duplicate authored unit removed; reference ID retained. |
 | `appeal` | 9 | Retain. Explain ordinary administrative appeal, its subject and possible outcomes. |
