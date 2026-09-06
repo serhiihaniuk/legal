@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Wezwanie and completed response
+
+- Rewrote the demand-reading article around an annotated fictional Polish letter and the separate consequences of formal defects, insufficient evidence and missed personal actions. The response article follows the same letter through an initial reply, insurance supplement and recorded personal attendance.
+- Reused the existing document examples in map articles. Two filled tables and two response fragments show the actual materials. Removed related-topic overrides that kept old destinations after the rewrite.
+- Official checks and the scoped 06.09.2026 legal state are recorded in `content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md`. Writing acceptance is 133 of 1,800 files. The atlas baseline and independent legal acceptance remain unchanged.
+- Full verification passed with 189 application tests. Reference resolution, desktop/mobile reading, keyboard table scrolling, contents anchors and document navigation were checked. No page overflow or browser console errors were found.
+
 ## 2026-09-06 Delivery and deadlines
 
 - Replaced the map's generic deadline fields with six explanations of the recipient, paper service, electronic service, calculation, timely filing and restoration. Completed dated examples show how the conclusion follows from the delivery evidence and calendar.

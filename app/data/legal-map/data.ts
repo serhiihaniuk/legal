@@ -1018,7 +1018,6 @@ export const legalData = {
           },
           {
             ...wezwanieMapNode,
-            related: ["evidence", "wezwanie-workflow", "outsourcing-case"],
           },
           {
             ...evidenceMapNode,
@@ -1153,7 +1152,6 @@ export const legalData = {
         nodes: [
           {
             ...wezwanieWorkflowMapNode,
-            related: ["wezwanie", "deadlines-delivery", "document-matrix"],
           },
           {
             ...decisionWorkflowMapNode,

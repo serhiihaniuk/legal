@@ -1,4 +1,5 @@
 import { ArrowRight, FileCheck2, Map } from "lucide-react"
+import { DocumentWorkedExample } from "~/components/patterns/document-worked-example"
 
 import {
   DocumentArticle,
@@ -195,6 +196,9 @@ export function LegalNodeContent({
                 <LegalText text={paragraph} />
               </p>
             ))}
+            {section.example ? (
+              <DocumentWorkedExample example={section.example} />
+            ) : null}
           </section>
         ))
       ) : (

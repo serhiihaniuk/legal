@@ -2,6 +2,7 @@ import {
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
+import type { DocumentWorkedExample } from "~/data/document-library/contracts"
 
 export type LegacyLegalNodeGuide = {
   kind?: undefined
@@ -19,6 +20,7 @@ export type LegalMapArticleSection = {
   id: string
   title: string
   paragraphs: LegalTextValue[]
+  example?: DocumentWorkedExample
 }
 
 export type LegalMapArticle = {
@@ -43,6 +45,45 @@ export function defineLegalMapArticle(
     ids.add(section.id)
     if (!section.title.trim() || !section.paragraphs.length) {
       throw new Error(`Empty map article section: ${section.id}`)
+    }
+    const example = section.example
+    if (example) {
+      if (
+        !example.title.trim() ||
+        !example.facts.length ||
+        !example.reasoning.length ||
+        [...example.facts, ...example.reasoning, example.conclusion].some(
+          (text) => !legalTextPlainText(text).trim()
+        )
+      ) {
+        throw new Error(`Incomplete map worked example: ${section.id}`)
+      }
+      const sample = example.sample
+      if (sample) {
+        if (!sample.title.trim() || !sample.note.trim()) {
+          throw new Error(`Unlabelled map sample: ${section.id}`)
+        }
+        if (sample.kind === "table") {
+          const rowIds = new Set(sample.rows.map((row) => row.id))
+          if (
+            !sample.columns.length ||
+            !sample.rows.length ||
+            rowIds.size !== sample.rows.length ||
+            sample.columns.some((column) => !column.trim()) ||
+            sample.rows.some(
+              (row) =>
+                !row.id.trim() || row.cells.length !== sample.columns.length
+            )
+          ) {
+            throw new Error(`Invalid map sample table: ${section.id}`)
+          }
+        } else if (
+          !sample.paragraphs.length ||
+          sample.paragraphs.some((paragraph) => !paragraph.trim())
+        ) {
+          throw new Error(`Empty map sample letter: ${section.id}`)
+        }
+      }
     }
   }
   for (const paragraph of [

@@ -104,8 +104,8 @@ Numbers refer to the target chapters above. "Retain" means retain a distinct top
 | `principle-participation` | 7 | Retain. Explain participation and the opportunity to address material before a decision. |
 | `principle-two-instance` | 9 | Move beside appeals. Distinguish two-instance review and finality without duplicating appeal instructions. |
 | `deadlines-delivery` | 7 | Completed in batch 32 as a connecting article. Six named sections distinguish the recipient, paper and electronic service, calculation, timely filing and restoration, with dated examples. |
-| `wezwanie` | 7 | Retain. Explain the legal role of each demand and its stated consequence through an annotated fragment. |
-| `wezwanie-workflow` | 7 | Retain only as the completed response example. Reuse definitions from the reading article and document guides. |
+| `wezwanie` | 7 | Completed in batch 33: annotated fictional demand, distinct actions and consequences, exact legal references. |
+| `wezwanie-workflow` | 7 | Completed in batch 33: initial reply, supplement, two filled records and separate personal attendance. Stable URL retained. |
 | `inactivity` | 7 | Retain the recently reviewed topic. Court references must remain reachable here, not only after a decision. |
 | `decision-appeal` | 8 | Narrow to classifying decisions, procedural orders and other correspondence. Appeal details belong in chapter 9. |
 | `decision-reading` | 8 | Make this the primary article for interpreting the operative part, reasons, evidence assessment and instructions. |

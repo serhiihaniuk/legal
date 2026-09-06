@@ -25,11 +25,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
   },
   {
-    "path": "app/features/documents/ui/document-explanation.tsx",
-    "contentHash": "f86799ccab84dfe643658dd47e37f816e408d90a5a50473619140daca6c8080b",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
-  },
-  {
     "path": "app/data/study/topics/capstone.ts",
     "contentHash": "c163ac6ac0045a65e5dde25a77ffe770cd2c3ea8b5bdef3e00c12b8c27710523",
     "evidence": "docs/content-review/writing-2026-09-05/batches/02-reading-guide.md"
@@ -653,5 +648,35 @@
     "path": "app/data/legal-map/editorial/topics/deadlines-delivery.ts",
     "contentHash": "89d64600c803d4d3f4141d44b2a33f5b668294bb450e725455a257cc14a48b4c",
     "evidence": "docs/content-review/writing-2026-09-05/batches/32-delivery-and-deadlines.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/wezwanie.ts",
+    "contentHash": "5120764d37e5dc109674a810e98b1bd1b130bae0d36cf8b090fbdb187a7e9ef6",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/wezwanie-workflow.ts",
+    "contentHash": "89c207b024a401d0ad2f4cdf726f141aeea02df3ba4dd67582bb7372a1827ea5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
+  },
+  {
+    "path": "app/components/patterns/document-worked-example.tsx",
+    "contentHash": "0f27d77faabb14e0284f8b36774fceb72649cc2579cd752eb48321905d1a321c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
+  },
+  {
+    "path": "app/components/patterns/document-sample.tsx",
+    "contentHash": "c7536623204ebab3fa8f0baceaaca6b29d9be57c5f04b8dafd44fe689808e187",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
+  },
+  {
+    "path": "app/features/documents/ui/document-explanation.tsx",
+    "contentHash": "c4ff3ecf6963baa0a2bbb08ed430ef385d6851413f52521518add4f359b91cba",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
+  },
+  {
+    "path": "app/features/legal-map/ui/legal-node-content.tsx",
+    "contentHash": "4d64d5a90760ec6a76ca8e250b02d0ddd74c17ee38adade4aca8dee39131dd1e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
   }
 ]

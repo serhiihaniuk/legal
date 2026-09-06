@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1800,
-    "reviewed": 130,
+    "reviewed": 133,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -33,6 +33,13 @@
       "contentHash": "20b799e8b31edcb0ec05bb7550d8fb29381b29f5c2e3c64a189c3b3a34616014",
       "writing": "pending",
       "evidence": null
+    },
+    {
+      "path": "app/components/patterns/document-worked-example.tsx",
+      "family": "supporting-copy",
+      "contentHash": "0f27d77faabb14e0284f8b36774fceb72649cc2579cd752eb48321905d1a321c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
     },
     {
       "path": "app/components/patterns/section-navigation-select.tsx",
@@ -11531,7 +11538,7 @@
     {
       "path": "app/data/legal-map/data.ts",
       "family": "map-group-copy",
-      "contentHash": "5b1e14aaff99e9d9cec41786ff31400d7b7cc7a50d3e6000a804c1592554427d",
+      "contentHash": "7496459e19fc7a75e839858df4e5fa6e280f26c2890986f6f6cd338a7ce56ef9",
       "writing": "pending",
       "evidence": null
     },
@@ -11944,16 +11951,16 @@
     {
       "path": "app/data/legal-map/editorial/topics/wezwanie-workflow.ts",
       "family": "map-topic",
-      "contentHash": "a1d708352802b4bc3a42afcfa0237ca1f18f1aaa1d99b8389638ef8063bcbcc0",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "89c207b024a401d0ad2f4cdf726f141aeea02df3ba4dd67582bb7372a1827ea5",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/wezwanie.ts",
       "family": "map-topic",
-      "contentHash": "6aba67cb61c1dc47e330df6c06425219ef0a2ec06b371363679f300b211bf06b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "5120764d37e5dc109674a810e98b1bd1b130bae0d36cf8b090fbdb187a7e9ef6",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/work-entry.ts",
@@ -12285,13 +12292,6 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
     },
     {
-      "path": "app/features/documents/ui/document-explanation.tsx",
-      "family": "supporting-copy",
-      "contentHash": "f86799ccab84dfe643658dd47e37f816e408d90a5a50473619140daca6c8080b",
-      "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
-    },
-    {
       "path": "app/features/documents/ui/document-form-link.tsx",
       "family": "supporting-copy",
       "contentHash": "c0e7ec5940035f6e910f38f4db54c26f988159d15edd2c56d154676e904186e7",
@@ -12483,9 +12483,9 @@
     {
       "path": "app/features/legal-map/ui/legal-node-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "c1f2850f5aa6845864b51ce7004582624d6b12511e8301ae0f93b3db1f1586a3",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "4d64d5a90760ec6a76ca8e250b02d0ddd74c17ee38adade4aca8dee39131dd1e",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/33-wezwanie-and-response.md"
     },
     {
       "path": "app/features/study/model/study-toc.ts",

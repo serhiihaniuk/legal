@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest"
 
-import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+import {
+  createLegalTextAuthor,
+  defineLegalTextContent,
+} from "~/data/legal-library/legal-text"
 
 import {
   defineKnowledgeUnit,
@@ -25,6 +28,25 @@ const review = {
 } as const
 
 describe("source-first knowledge unit contract", () => {
+  it("preserves literal letter samples without exempting their surrounding explanation", () => {
+    const sample = {
+      kind: "letter",
+      title: "Фрагмент відповіді",
+      note: "Вигаданий навчальний уривок",
+      language: "pl",
+      paragraphs: ["Przedkładam załączniki nr 1 i 2."],
+    }
+    expect(defineLegalTextContent({ sample })).toEqual({ sample })
+    expect(() =>
+      defineLegalTextContent({ sample, explanation: "Art. 64 KPA" })
+    ).toThrow("Bare legal citation")
+    expect(() =>
+      defineLegalTextContent({ ...sample, note: "Art. 64 KPA" })
+    ).toThrow("Bare legal citation")
+    expect(() => defineLegalTextContent({ ...sample, note: "" })).toThrow(
+      "Bare legal citation"
+    )
+  })
   it("keeps one provision subject and its source edition together", () => {
     const unit = defineKnowledgeUnit({
       id: "provision:kpa-art-6",

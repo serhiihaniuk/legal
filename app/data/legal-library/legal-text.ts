@@ -74,7 +74,27 @@ function assertNoBareLegalCitations(value: unknown, path: string): void {
     )
     return
   }
+  const isLetterSample =
+    "kind" in value &&
+    value.kind === "letter" &&
+    "language" in value &&
+    (value.language === "pl" || value.language === "uk") &&
+    "title" in value &&
+    typeof value.title === "string" &&
+    value.title.trim().length > 0 &&
+    "note" in value &&
+    typeof value.note === "string" &&
+    value.note.trim().length > 0 &&
+    "paragraphs" in value &&
+    Array.isArray(value.paragraphs) &&
+    value.paragraphs.length > 0 &&
+    value.paragraphs.every(
+      (paragraph) =>
+        typeof paragraph === "string" && paragraph.trim().length > 0
+    )
   Object.entries(value).forEach(([key, item]) => {
+    // Letter specimens preserve literal wording, including their own attachment numbers.
+    if (isLetterSample && key === "paragraphs") return
     if (key === "locator" || key === "sourceLocator" || key === "article") {
       return
     }

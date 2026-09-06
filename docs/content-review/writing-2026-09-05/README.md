@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 32 rewrites delivery and deadlines as a connecting article with six named explanations and dated examples. Restoration now has a direct contents entry and a link to the filled obstacle chronology. Writing acceptance is now 130 of 1,800 files. The remaining map dispositions, deeper route pages, corpus layout audit and independent legal review remain pending; see `batches/32-delivery-and-deadlines.md`.
+Batch 33 separates reading a wezwanie from completing its response. The map now includes an annotated Polish demand, two response fragments and two filled records using the document guides' shared example presentation. Writing acceptance is now 133 of 1,800 files. The remaining map dispositions, deeper route pages, corpus layout audit and independent legal review remain pending; see `batches/33-wezwanie-and-response.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
