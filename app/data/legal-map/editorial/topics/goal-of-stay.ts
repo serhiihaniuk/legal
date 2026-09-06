@@ -13,9 +13,6 @@ const aliensSourceReference = {
   sourceId: "eli-ustawa-o-cudzoziemcach",
 } as const
 
-const UKRAINE_SPECIAL_ACT_URL =
-  "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
-
 type GoalOfStayBody = LegalMapTopicBody
 
 export const goalOfStayTopic: KnowledgeUnit<GoalOfStayBody> =
@@ -74,7 +71,7 @@ export const goalOfStayTopic: KnowledgeUnit<GoalOfStayBody> =
           "Порівнюються факти, позитивні умови, odmowa wszczęcia, odmowa, документи та наслідки кожної реально доступної підстави.",
         ],
         foreignersContext: [
-          foreignersLaw.text`Umowa o pracę може бути головною метою для ${foreignersLaw.external("art. 114", UKRAINE_SPECIAL_ACT_URL)}, але не є умовою CUKR; сімейний або навчальний дозвіл може окремо впливати на доступ до праці.`,
+          foreignersLaw.text`Umowa o pracę може бути головною метою для ${foreignersLaw.article("114", "art. 114")}, але не є умовою CUKR; сімейний або навчальний дозвіл може окремо впливати на доступ до праці.`,
         ],
       } satisfies LegalNodeGuide,
       why: "Одна людина може одночасно працювати, навчатися й мати сім’ю. Треба зіставити факти з умовами кожної можливої підстави, її стабільністю, правом до праці й обов’язками після рішення.",

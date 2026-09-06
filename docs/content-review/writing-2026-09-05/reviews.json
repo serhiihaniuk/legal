@@ -628,5 +628,10 @@
     "path": "app/routes/map.tsx",
     "contentHash": "d3b0dccd8de34d893d2eb29b723ea52cc19e9b606cc7aed15094e058a1b916b0",
     "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/other-stay.ts",
+    "contentHash": "c40fa15cd4988b07a505072d4e2d5624c9ee9d9e6e930263f1a3163bc8cf21be",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/28-map-article-contract-and-other-stay.md"
   }
 ]

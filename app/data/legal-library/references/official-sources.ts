@@ -1,6 +1,11 @@
 import type { LegalDocumentId } from "../contracts"
 
 export const officialSourceRegistry = {
+  "eli-aliens-amendment-2025-1794": {
+    label: "Zmiana ustawy o cudzoziemcach, Dz.U. 2025 poz. 1794",
+    url: "https://eli.gov.pl/eli/DU/2025/1794/ogl",
+    note: "Нові правила подання через MOS діють з 27.04.2026. Закон має кілька дат набрання чинності; для раніше розпочатих справ застосовують його перехідні положення.",
+  },
   "eli-kpa": {
     label: "Kodeks postępowania administracyjnego — ELI",
     url: "https://eli.gov.pl/eli/DU/2025/1691/ogl",

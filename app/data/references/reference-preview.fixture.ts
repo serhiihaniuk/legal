@@ -2,11 +2,10 @@ import { createElement } from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 import { MemoryRouter } from "react-router"
 
-import { ModelExplanation } from "~/features/legal-map"
+import { LegalNodeContent } from "~/features/legal-map"
 import { listEvidenceDocuments } from "~/data/document-library"
 import { caseGuideRoutes } from "~/data/case-guides/routes"
 import { allNodes } from "~/data/legal-map/index"
-import { legalNodeGuides } from "~/data/legal-map/node-guides"
 import {
   getEdition,
   listDocuments,
@@ -153,9 +152,10 @@ export async function validateReferencePreviewFixture() {
       createElement(
         MemoryRouter,
         { initialEntries: [`/map/${node.id}`] },
-        createElement(ModelExplanation, {
+        createElement(LegalNodeContent, {
           node,
-          guide: legalNodeGuides[node.id],
+          onNodeSelect: () => {},
+          onOverviewSelect: () => {},
         })
       )
     )
@@ -208,6 +208,14 @@ export async function validateReferencePreviewFixture() {
   assert(
     knownAmendment.summary.includes("27.04.2026"),
     "Known amendment preview must expose its useful canonical source note"
+  )
+  const registeredAmendment = await assertStablePreview(
+    { kind: "official-source", sourceId: "eli-aliens-amendment-2025-1794" },
+    "source:aliens-amendment"
+  )
+  assert(
+    registeredAmendment.summary === knownAmendment.summary,
+    "Registered and external amendment references must share source context"
   )
 
   const reviewed = currentProvisionPreviews.find(

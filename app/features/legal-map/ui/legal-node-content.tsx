@@ -17,7 +17,7 @@ import {
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import type { LegacyLegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import { legalNodeGuides } from "~/data/legal-map/node-guides"
 import { resolveMapTopicPublication } from "~/data/legal-knowledge"
 import { nodeById, type IndexedNode } from "~/data/legal-map/index"
@@ -84,7 +84,7 @@ export function ModelExplanation({
   guide,
 }: {
   node: IndexedNode
-  guide?: LegalNodeGuide
+  guide?: LegacyLegalNodeGuide
 }) {
   return (
     <div data-not-typeset className="not-typeset mt-6 border-y">
@@ -142,10 +142,12 @@ export function LegalNodeContent({
     .map((id) => nodeById.get(id))
     .filter((item): item is IndexedNode => Boolean(item))
   const guide = publication?.guide ?? legalNodeGuides[node.id]
+  const article = guide?.kind === "article" ? guide : undefined
+  const legacyGuide = guide?.kind === "article" ? undefined : guide
   const introduction = guide?.introduction ?? [contentNode.summary]
-  const procedure = uniqueStatements(guide?.procedure, contentNode.steps)
+  const procedure = uniqueStatements(legacyGuide?.procedure, contentNode.steps)
   const practicalContext = uniqueStatements(
-    guide?.foreignersContext,
+    legacyGuide?.foreignersContext,
     contentNode.why ? [contentNode.why] : undefined
   )
 
@@ -184,59 +186,78 @@ export function LegalNodeContent({
         </div>
       </DocumentHeader>
 
-      <section id="node-model">
-        <h2>Правова модель</h2>
-        <ModelExplanation node={contentNode} guide={guide} />
-      </section>
+      {article ? (
+        article.sections.map((section) => (
+          <section key={section.id} id={`node-section-${section.id}`}>
+            <h2>{section.title}</h2>
+            {section.paragraphs.map((paragraph, index) => (
+              <p key={index}>
+                <LegalText text={paragraph} />
+              </p>
+            ))}
+          </section>
+        ))
+      ) : (
+        <>
+          <section id="node-model">
+            <h2>Правова модель</h2>
+            <ModelExplanation node={contentNode} guide={legacyGuide} />
+          </section>
 
-      <section id="node-workflow">
-        <h2>Як це працює у справі іноземця</h2>
-        <StatementBlock title="Практичне значення" items={practicalContext} />
-        <StatementBlock title="Послідовність роботи" items={procedure} />
-      </section>
+          <section id="node-workflow">
+            <h2>Як це працює у справі іноземця</h2>
+            <StatementBlock
+              title="Практичне значення"
+              items={practicalContext}
+            />
+            <StatementBlock title="Послідовність роботи" items={procedure} />
+          </section>
 
-      {contentNode.documents?.length || contentNode.checkpoints?.length ? (
-        <section id="node-materials">
-          <h2>Документи і контроль</h2>
-          <p>
-            Назва документа сама по собі не доводить виконання умови. У справі
-            перевіряйте його зміст, період, автора, форму та зв’язок із фактом.
-          </p>
-          {contentNode.documents?.length ? (
-            <div data-not-typeset className="not-typeset mt-6 border-y">
-              {contentNode.documents.map((item) => (
-                <div
-                  key={legalTextPlainText(item)}
-                  className="flex gap-3 border-b py-4 last:border-b-0"
-                >
-                  <FileCheck2 className="mt-0.5 shrink-0 text-muted-foreground" />
-                  <p className="text-sm leading-6">
-                    <LegalText text={item} />
-                  </p>
+          {contentNode.documents?.length || contentNode.checkpoints?.length ? (
+            <section id="node-materials">
+              <h2>Документи і контроль</h2>
+              <p>
+                Назва документа сама по собі не доводить виконання умови. У
+                справі перевіряйте його зміст, період, автора, форму та зв’язок
+                із фактом.
+              </p>
+              {contentNode.documents?.length ? (
+                <div data-not-typeset className="not-typeset mt-6 border-y">
+                  {contentNode.documents.map((item) => (
+                    <div
+                      key={legalTextPlainText(item)}
+                      className="flex gap-3 border-b py-4 last:border-b-0"
+                    >
+                      <FileCheck2 className="mt-0.5 shrink-0 text-muted-foreground" />
+                      <p className="text-sm leading-6">
+                        <LegalText text={item} />
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              ) : null}
+              {contentNode.checkpoints?.length ? (
+                <>
+                  <h3>Що перевірити у матеріалах справи</h3>
+                  <ul data-not-typeset className="not-typeset mt-4 grid gap-3">
+                    {contentNode.checkpoints.map((item) => (
+                      <li
+                        key={legalTextPlainText(item)}
+                        className="flex gap-3 text-sm leading-6"
+                      >
+                        <CheckCircle2 className="mt-1 shrink-0 text-muted-foreground" />
+                        <span>
+                          <LegalText text={item} />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+            </section>
           ) : null}
-          {contentNode.checkpoints?.length ? (
-            <>
-              <h3>Що перевірити у матеріалах справи</h3>
-              <ul data-not-typeset className="not-typeset mt-4 grid gap-3">
-                {contentNode.checkpoints.map((item) => (
-                  <li
-                    key={legalTextPlainText(item)}
-                    className="flex gap-3 text-sm leading-6"
-                  >
-                    <CheckCircle2 className="mt-1 shrink-0 text-muted-foreground" />
-                    <span>
-                      <LegalText text={item} />
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : null}
-        </section>
-      ) : null}
+        </>
+      )}
 
       {related.length ? (
         <section id="node-relations">

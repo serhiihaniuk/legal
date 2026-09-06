@@ -172,3 +172,10 @@ Coverage verification compared the disposition table with authored `map-topic` I
 - Preserved for migration: the older data tree still stores canonical nodes and relationships, but its paths and subject groups no longer create competing visible hierarchy. Related topics remain accessible as flat navigation.
 - Pending: flexible authored article sections, deeper chapter and parent articles, category splits, decision-analysis merge, missing map coverage, the recorded source-link correction and full topic-by-topic legal review.
 - The decisions chapter currently remains titled "Рішення та його наслідки". Add the card/post-decision wording only when those articles exist. No empty pages were created to satisfy the target contents.
+
+## Implementation status after batch 28
+
+- The flexible article contract is live. Authored headings supply the on-page contents, and invalid or empty sections fail during authoring. Unconverted articles retain their content until reviewed separately.
+- `other-stay` now explains distinct grounds and a completed graduate accommodation example. The residual circumstance provision is distinguished from named grounds. Detailed branch splits remain open.
+- The misplaced `goal-of-stay` article 114 link now points to the foreigners act. The rest of that topic still awaits its rewrite.
+- Study/research and family classifications, deeper parent articles, missing coverage and the decision-analysis merge remain next in the audit order. Batch 28 does not represent legal acceptance of all map topics.

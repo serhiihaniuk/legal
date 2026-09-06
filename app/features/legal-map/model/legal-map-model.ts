@@ -11,6 +11,7 @@ import {
 } from "~/data/legal-library/legal-text"
 import { nodeById, type IndexedNode } from "~/data/legal-map/index"
 import type { LegalNode } from "~/data/shared/legal-types"
+import { resolveMapTopicPublication } from "~/data/legal-knowledge"
 
 export const legalMapOverviewToc: TocItem[] = [
   { href: "#map-overview", label: "Що пояснює карта" },
@@ -23,13 +24,21 @@ export const legalMapOverviewToc: TocItem[] = [
 ]
 
 export function legalMapNodeToc(node: IndexedNode): TocItem[] {
+  const guide = resolveMapTopicPublication(node.id)?.guide
   return [
     { href: "#node-overview", label: "Що це і де в справі" },
-    { href: "#node-model", label: "Правова модель" },
-    { href: "#node-workflow", label: "Робота зі справою" },
-    ...(node.documents?.length || node.checkpoints?.length
-      ? [{ href: "#node-materials", label: "Документи і контроль" }]
-      : []),
+    ...(guide?.kind === "article"
+      ? guide.sections.map((section) => ({
+          href: `#node-section-${section.id}`,
+          label: section.title,
+        }))
+      : [
+          { href: "#node-model", label: "Правова модель" },
+          { href: "#node-workflow", label: "Робота зі справою" },
+          ...(node.documents?.length || node.checkpoints?.length
+            ? [{ href: "#node-materials", label: "Документи і контроль" }]
+            : []),
+        ]),
     ...(node.children?.length || node.related?.length
       ? [{ href: "#node-relations", label: "Пов’язані теми" }]
       : []),

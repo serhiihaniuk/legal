@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1799,
-    "reviewed": 125,
+    "totalFiles": 1800,
+    "reviewed": 126,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 80,
+      "supporting-copy": 81,
       "case-guide": 9,
       "evidence-document": 62,
       "provision": 1478,
@@ -11522,6 +11522,13 @@
       "evidence": null
     },
     {
+      "path": "app/data/legal-library/references/official-sources.ts",
+      "family": "supporting-copy",
+      "contentHash": "5da7e69d62b46e0516f767002bf9507779cbc00d93b3df6478e25292277ee9e3",
+      "writing": "pending",
+      "evidence": null
+    },
+    {
       "path": "app/data/legal-map/data.ts",
       "family": "map-group-copy",
       "contentHash": "5b1e14aaff99e9d9cec41786ff31400d7b7cc7a50d3e6000a804c1592554427d",
@@ -11685,7 +11692,7 @@
     {
       "path": "app/data/legal-map/editorial/topics/goal-of-stay.ts",
       "family": "map-topic",
-      "contentHash": "9d542be303e360ebba42fe2253be3b90bd6dd3bd4427781d718b558cb6e28b5c",
+      "contentHash": "6e1c585fe4b67a1739608080b39ccfc9778a66d03559ef3eea8e9e8efd60123d",
       "writing": "pending",
       "evidence": null
     },
@@ -11748,9 +11755,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/other-stay.ts",
       "family": "map-topic",
-      "contentHash": "93161dd9079977522c4fe49998113cc5af1752c215112a597b7094a3f800be5a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "c40fa15cd4988b07a505072d4e2d5624c9ee9d9e6e930263f1a3163bc8cf21be",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/28-map-article-contract-and-other-stay.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
@@ -11986,7 +11993,7 @@
     {
       "path": "app/data/references/reference-previews.ts",
       "family": "supporting-copy",
-      "contentHash": "136f1fe1eabaaeadc00d96d10bc2bed2ab8cf8d7ade93ef85ccb32f021d0d4e7",
+      "contentHash": "14197b82485bcb5ddc99b2a7c98fa2fa29fc160f5c6df2e891191606dae3c1f3",
       "writing": "pending",
       "evidence": null
     },
@@ -12455,7 +12462,7 @@
     {
       "path": "app/features/legal-map/model/legal-map-model.ts",
       "family": "shared-renderer",
-      "contentHash": "f1bb4d1c3bd7385ca453adb3d9481d06dfb3058515a509fe61f132b91a5ea764",
+      "contentHash": "8caedacd306407078a7bfdae5c0013d90262c6f0f7f7c789dcfa65c1a7c49ec0",
       "writing": "pending",
       "evidence": null
     },
@@ -12476,7 +12483,7 @@
     {
       "path": "app/features/legal-map/ui/legal-node-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "7f476ba04759c5d9f0fff1b9ef01251716974bfaedf3f2552942f5ed1777be8e",
+      "contentHash": "4bc0f9df93a4ad84b836ff013c7acbf8226a294d0cd9e8b460e3ec99fc88804e",
       "writing": "pending",
       "evidence": null
     },

@@ -356,15 +356,17 @@ function officialSourcePreview(
 ): LegalReferencePreview | undefined {
   const source = getOfficialSource(sourceId)
   if (!source) return undefined
+  const note = "note" in source ? source.note : undefined
   return {
     ...basePreview(
       identity,
       reference,
       "official-source",
       source.label,
-      "Офіційне джерело для перевірки правового тексту та його статусу.",
+      note ??
+        "Офіційне джерело для перевірки правового тексту та його статусу.",
       "source-only",
-      { sourceUrl: source.url, sourceLabel: source.label }
+      { sourceUrl: source.url, sourceLabel: source.label, sourceNote: note }
     ),
     label: source.label,
   }
@@ -379,7 +381,11 @@ function canonicalSourceForUrl(url: string):
   const registered = Object.values(officialSourceRegistry).find(
     (source) => source.url === url
   )
-  if (registered) return { label: registered.label }
+  if (registered)
+    return {
+      label: registered.label,
+      note: "note" in registered ? registered.note : undefined,
+    }
 
   const authoredSources = [
     ...allNodes.flatMap((node) => node.sources ?? []),
