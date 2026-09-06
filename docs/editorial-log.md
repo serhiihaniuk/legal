@@ -227,3 +227,10 @@
 - Recorded the official ELI and UdSC checks in `content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged.
 - The rendered photo page now explains ordinary requirements before the example and exceptions. The CUKR heading correctly identifies submission as the event affecting an existing case. An optional-form rendering test now supplies its own prose fixture.
 - Full verification passed with 92 application tests and a production build. Final content adjustments passed the five document-rendering tests, editorial validation and another build. All six desktop/mobile pages fit, all six mobile tables scroll by keyboard, and document/case/provision links worked without browser console errors.
+
+## 2026-09-06 special applications and annexes
+
+- Reworked family applications and consent, ICT applications, researcher and trainee/volunteer annexes, and settlement intention. Added five selected-field comparisons and a Polish letter fragment. Corrected the consent's representation effect, signing roles, programme distinctions and conditional settlement evidence.
+- Reused six document definitions across the family, other-purposes and permanent case stages and registers. Complete case-route review remains pending.
+- Recorded official ELI, original-form, UdSC and voivodeship checks in `content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Form-boundary, sponsor-status and extraction discrepancies remain open for the corpus audit.
+- Full verification passed with 92 application tests and a production build. All six desktop/mobile pages fit, all five mobile comparison regions scroll by keyboard, and case/document/provision links worked without browser console errors. A final term explanation passed focused rendering, editorial and formatting checks.

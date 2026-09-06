@@ -10,6 +10,122 @@ import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 
 const foreignersLaw = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 
+const familyAbroadApplication: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Паперова сімейна заява щодо особи за кордоном",
+    parts: [
+      {
+        text: "Паперова сімейна заява щодо особи за кордоном",
+        target: {
+          kind: "evidence-document",
+          documentId: "family-abroad-application",
+        },
+      },
+    ],
+  },
+  status: "для визначених сімейних підстав поза Польщею",
+  level: "conditional",
+  owner:
+    "Член сім'ї, який живе в Польщі та подає заяву від імені особи за кордоном",
+  proves: foreignersLaw.text`Прохання за ${foreignersLaw.article("159", "art. 159 ust. 1")} або ${foreignersLaw.article("160", "art. 160 pkt 1, 3, 4 чи 6")}. Саме перебування за кордоном не визначає належної форми`,
+  law: {
+    kind: "authored-legal-text",
+    plainText:
+      "Art. 106l: паперова заява і додатки; art. 168; art. 168a: хто подає заяву",
+    parts: [
+      {
+        text: "Art. 106l: паперова заява і додатки",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-106l",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 168",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-168",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 168a: хто подає заяву",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-168a",
+        },
+      },
+    ],
+  },
+}
+
+const familyApplicationConsent: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Згода на подання сімейної заяви",
+    parts: [
+      {
+        text: "Згода на подання сімейної заяви",
+        target: {
+          kind: "evidence-document",
+          documentId: "family-application-consent",
+        },
+      },
+    ],
+  },
+  status: "якщо заявник не є законним представником",
+  level: "conditional",
+  owner:
+    "Особа, для якої просять дозвіл, або її законний представник; до паперової сімейної заяви",
+  proves:
+    "Згоду на подання і повноваження названого члена сім'ї діяти в цьому провадженні. Окремої згоди не потрібно, якщо заявник уже є законним представником",
+  law: {
+    kind: "authored-legal-text",
+    plainText: "Art. 106l ust. 3; art. 168 ust. 2–3; art. 168a ust. 2–3",
+    parts: [
+      {
+        text: "Art. 106l ust. 3",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-106l",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 168 ust. 2–3",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-168",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 168a ust. 2–3",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-168a",
+        },
+      },
+    ],
+  },
+}
+
 const familySupportDocuments: CaseGuideDocument[] = [
   {
     item: {
@@ -804,72 +920,8 @@ const route: CaseGuideRoute = {
             "Точний склад поданого пакета, назви файлів, версії документів і можливість відтворити заяву",
           law: "Контроль treści podania та майбутніх akt sprawy",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Паперова сімейна заява щодо особи за кордоном",
-            parts: [
-              {
-                text: "Паперова сімейна заява щодо особи за кордоном",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "family-abroad-application",
-                },
-              },
-            ],
-          },
-          owner: "Członek rodziny rozdzielonej · за спеціальним порядком",
-          proves: "Прохання надати дозвіл особі за межами Польщі",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106l",
-            parts: [
-              {
-                text: "Art. 106l",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106l",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "якщо особа за кордоном",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Згода на подання сімейної заяви",
-            parts: [
-              {
-                text: "Згода на подання сімейної заяви",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "family-application-consent",
-                },
-              },
-            ],
-          },
-          owner: "Особа, щодо якої подають заяву · до подання",
-          proves: "Згоду на подання через члена розділеної сім’ї",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106l ust. 3",
-            parts: [
-              {
-                text: "Art. 106l ust. 3",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106l",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "до паперової сімейної заяви",
-        },
+        familyAbroadApplication,
+        familyApplicationConsent,
       ],
       risks: [
         {
@@ -1150,72 +1202,8 @@ const route: CaseGuideRoute = {
             "Який документ доводить кожну умову, за який період і де залишається прогалина або суперечність",
           law: "KPA — ustalenie stanu faktycznego та ocena dowodów",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Паперова сімейна заява щодо особи за кордоном",
-            parts: [
-              {
-                text: "Паперова сімейна заява щодо особи за кордоном",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "family-abroad-application",
-                },
-              },
-            ],
-          },
-          owner: "Członek rodziny rozdzielonej · за спеціальним порядком",
-          proves: "Прохання надати дозвіл особі за межами Польщі",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106l",
-            parts: [
-              {
-                text: "Art. 106l",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106l",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "якщо особа за кордоном",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Згода на подання сімейної заяви",
-            parts: [
-              {
-                text: "Згода на подання сімейної заяви",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "family-application-consent",
-                },
-              },
-            ],
-          },
-          owner: "Особа, щодо якої подають заяву · до подання",
-          proves: "Згоду на подання через члена розділеної сім’ї",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106l ust. 3",
-            parts: [
-              {
-                text: "Art. 106l ust. 3",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106l",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "до паперової сімейної заяви",
-        },
+        familyAbroadApplication,
+        familyApplicationConsent,
         {
           item: {
             kind: "authored-legal-text",
@@ -2092,72 +2080,8 @@ const route: CaseGuideRoute = {
       proves: "Непозірний характер зв’язку",
       law: "докази KPA",
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Паперова сімейна заява щодо особи за кордоном",
-        parts: [
-          {
-            text: "Паперова сімейна заява щодо особи за кордоном",
-            target: {
-              kind: "evidence-document",
-              documentId: "family-abroad-application",
-            },
-          },
-        ],
-      },
-      owner: "Członek rodziny rozdzielonej · за спеціальним порядком",
-      proves: "Прохання надати дозвіл особі за межами Польщі",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 106l",
-        parts: [
-          {
-            text: "Art. 106l",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-106l",
-            },
-          },
-        ],
-      },
-      level: "conditional",
-      status: "якщо особа за кордоном",
-    },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Згода на подання сімейної заяви",
-        parts: [
-          {
-            text: "Згода на подання сімейної заяви",
-            target: {
-              kind: "evidence-document",
-              documentId: "family-application-consent",
-            },
-          },
-        ],
-      },
-      owner: "Особа, щодо якої подають заяву · до подання",
-      proves: "Згоду на подання через члена розділеної сім’ї",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 106l ust. 3",
-        parts: [
-          {
-            text: "Art. 106l ust. 3",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-106l",
-            },
-          },
-        ],
-      },
-      level: "conditional",
-      status: "до паперової сімейної заяви",
-    },
+    familyAbroadApplication,
+    familyApplicationConsent,
     {
       item: {
         kind: "authored-legal-text",

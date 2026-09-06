@@ -31,9 +31,9 @@ Batch 11 adds four identity and residence-status explanations with filled workin
 
 Batch 12 rewrites the permanent-residence, resident and CUKR applications together with photo, fingerprint and signature records. Six filled comparisons explain the selected form fields, residence accounting, registry corrections and the different biometric rules. The original form layouts remain available through explicit source links.
 
-After batch 12, 64 of 1,763 inventoried files have current writing acceptance. Of the 57 document guides, 48 are reviewed and nine remain. Focused document-integration fixes do not constitute complete case-route acceptance. The corpus audit still needs to resolve the university annex's reported end page, recorded in batch 09.
+Batch 13 adds six complete explanations and filled examples for family applications and consent, ICT, researcher and trainee/volunteer annexes, and settlement intention. Their repeated case entries now share the corrected conditional requirements. Original-form and extraction discrepancies are recorded in the batch evidence.
 
-The nine remaining document guides are case assessment, deadline obstacles, family applications for relatives abroad, family-application consent, ICT application, researcher annex, settlement intention, trainee/volunteer annex and Ukraine work notification.
+After batch 13, 70 of 1,763 inventoried files have current writing acceptance. Of the 57 document guides, 54 are reviewed and three remain: case assessment, deadline obstacles and Ukraine work notification. Focused document-integration fixes do not constitute complete case-route acceptance. The corpus audit must address the university and family annex page ranges, the family form's sponsor-status choices and the split words in extracted Polish text recorded in batches 09 and 13.
 
 1. Work-route document journey: employer annex, contract, insurance, ZUS, representation, filing, and procedural correspondence.
 2. Remaining eight case routes and their document guides.

@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1763,
-    "reviewed": 64,
+    "reviewed": 70,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 49,
@@ -100,7 +100,7 @@
     {
       "path": "app/data/case-guides/editorial/routes/family.ts",
       "family": "case-guide",
-      "contentHash": "3e238dc56ed5cdd68fc9627d45e71c8dd5ada6d3c4b89abca503ae776fd4593a",
+      "contentHash": "faca9811c5ff1ad4ac123057c843da8b431ffdcf7004564ae948de08e857dd88",
       "writing": "pending",
       "evidence": null
     },
@@ -114,14 +114,14 @@
     {
       "path": "app/data/case-guides/editorial/routes/other.ts",
       "family": "case-guide",
-      "contentHash": "c3ec82e3d4ca52b63f77ddc3d2b03a81657eb369c3b39214ef6db2c96c10cb1a",
+      "contentHash": "cbd88a704d633e46b9558c55238ec06921f151a096a057b2c3ccb09f0867bdb4",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/permanent.ts",
       "family": "case-guide",
-      "contentHash": "c70c2890bb7fdcfd1c1e7ee9107eb8265093ca518d42684b8a3438c808cb5a19",
+      "contentHash": "ac7f97cdaf31f58251b7e42ae60c40519798ab17d2bbc6c22ce2cf034e19a827",
       "writing": "pending",
       "evidence": null
     },
@@ -282,16 +282,16 @@
     {
       "path": "app/data/document-library/editorial/guides/family-abroad-application.ts",
       "family": "evidence-document",
-      "contentHash": "37a0b87211e77311c337f7ed5dbc4188d5f4340964e3f406487ae4ad5867e474",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "eae8dcce199f5e42015feca598508a0fe153f3126627fd4aae85cbc09d82cb7d",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/family-application-consent.ts",
       "family": "evidence-document",
-      "contentHash": "1a21ad890de8eca9f0534b81fe42fa8a3ad2725ba486719d22b2c3a212324098",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "a5dbd8892a18f54f3242857b2709a95b02847177e65e7c1a5ab98dd2c795d474",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/family-evidence.ts",
@@ -324,9 +324,9 @@
     {
       "path": "app/data/document-library/editorial/guides/ict-application.ts",
       "family": "evidence-document",
-      "contentHash": "13a4e8491b40ee146706732115a605af193e43d688b51b32476df16cca03b0c9",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "fadb152ac99019d780eab922b3e049be56daceb8c0070b0a599b5a0ee24d5e43",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/income-evidence.ts",
@@ -408,9 +408,9 @@
     {
       "path": "app/data/document-library/editorial/guides/research-annex.ts",
       "family": "evidence-document",
-      "contentHash": "4c7ad4f94306f003c8f5308546143919335fd6d70e4792fe50b95d586a0a5bd3",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "007e8c23734c77b2b1e637f4ea0e94c422c313d05d69c02044cc53d72d555607",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/residence-card-fee-proof.ts",
@@ -443,9 +443,9 @@
     {
       "path": "app/data/document-library/editorial/guides/settlement-intention.ts",
       "family": "evidence-document",
-      "contentHash": "e6e434f2f00844fe5c0662affe33e74f0b89387b22d2e1c407dcb1832fb48176",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "633e0825c64827351d1cd5b717a16627f4ef3b32f9121d5b9c92de33f1888063",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/signature-specimen.ts",
@@ -506,9 +506,9 @@
     {
       "path": "app/data/document-library/editorial/guides/trainee-volunteer-annex.ts",
       "family": "evidence-document",
-      "contentHash": "af2311cfb82def5d361bb016f394230f6c74a53c9e60fda9bdbf36311439b00a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "f7456446bcc94bbab0eeb2cb347497233b8fcace40335e503590b7dfb5372d96",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/tuition-payment.ts",

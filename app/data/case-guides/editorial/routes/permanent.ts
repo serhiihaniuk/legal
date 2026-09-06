@@ -2,7 +2,46 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+
+const settlementIntention: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Докази наміру оселитися",
+    parts: [
+      {
+        text: "Докази наміру оселитися",
+        target: {
+          kind: "evidence-document",
+          documentId: "settlement-intention",
+        },
+      },
+    ],
+  },
+  status: "для підстав, які вимагають наміру постійного оселення",
+  level: "conditional",
+  owner:
+    "Заявник; пояснення життєвого плану й матеріали про конкретні обставини",
+  proves:
+    "Намір постійно оселитися поряд із польським походженням або дійсною Kartą Polaka. Набір матеріалів залежить від фактів",
+  law: {
+    kind: "authored-legal-text",
+    plainText: "Art. 195 ust. 1 pkt 3 і 9",
+    parts: [
+      {
+        text: "Art. 195 ust. 1 pkt 3 і 9",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-195",
+        },
+      },
+    ],
+  },
+}
 
 const route: CaseGuideRoute = {
   id: "permanent",
@@ -703,26 +742,7 @@ const route: CaseGuideRoute = {
           proves: "Походження/зв’язок, якщо це підстава",
           law: "спеціальна категорія",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Докази наміру оселитися",
-            parts: [
-              {
-                text: "Докази наміру оселитися",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "settlement-intention",
-                },
-              },
-            ],
-          },
-          status: "контроль",
-          level: "control",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Реальний характер підстави",
-          law: "конкретна норма",
-        },
+        settlementIntention,
       ],
       risks: [
         {
@@ -952,26 +972,7 @@ const route: CaseGuideRoute = {
           proves: "Походження/зв’язок, якщо це підстава",
           law: "спеціальна категорія",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Докази наміру оселитися",
-            parts: [
-              {
-                text: "Докази наміру оселитися",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "settlement-intention",
-                },
-              },
-            ],
-          },
-          status: "контроль",
-          level: "control",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Реальний характер підстави",
-          law: "конкретна норма",
-        },
+        settlementIntention,
         {
           reviewId: "submission",
           item: {
@@ -1252,26 +1253,7 @@ const route: CaseGuideRoute = {
           proves: "Походження/зв’язок, якщо це підстава",
           law: "спеціальна категорія",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Докази наміру оселитися",
-            parts: [
-              {
-                text: "Докази наміру оселитися",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "settlement-intention",
-                },
-              },
-            ],
-          },
-          status: "контроль",
-          level: "control",
-          owner: "Заявник або автор документа · актуально на дату перевірки",
-          proves: "Реальний характер підстави",
-          law: "конкретна норма",
-        },
+        settlementIntention,
         {
           item: {
             kind: "authored-legal-text",
@@ -2117,26 +2099,7 @@ const route: CaseGuideRoute = {
       proves: "Походження/зв’язок, якщо це підстава",
       law: "спеціальна категорія",
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Докази наміру оселитися",
-        parts: [
-          {
-            text: "Докази наміру оселитися",
-            target: {
-              kind: "evidence-document",
-              documentId: "settlement-intention",
-            },
-          },
-        ],
-      },
-      status: "контроль",
-      level: "control",
-      owner: "Заявник або автор документа · актуально на дату перевірки",
-      proves: "Реальний характер підстави",
-      law: "конкретна норма",
-    },
+    settlementIntention,
     {
       item: {
         kind: "authored-legal-text",

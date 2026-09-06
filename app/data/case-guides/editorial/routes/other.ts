@@ -2,7 +2,205 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { CaseGuideRoute } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideRoute,
+} from "~/data/case-guides/types"
+
+const traineeVolunteerAnnex: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Додаток організатора стажування або волонтерства",
+    parts: [
+      {
+        text: "Додаток організатора стажування або волонтерства",
+        target: {
+          kind: "evidence-document",
+          documentId: "trainee-volunteer-annex",
+        },
+      },
+    ],
+  },
+  status: "для спеціального стажування або європейського волонтерства",
+  level: "conditional",
+  owner:
+    "Організатор або волонтерська установа; у MOS підписує належний представник організації",
+  proves:
+    "Дані заявника та приймаючої організації. Окремо перевіряють її затвердження, договір, програму та інші умови",
+  law: {
+    kind: "authored-legal-text",
+    plainText: "Art. 106 ust. 5; art. 106d ust. 4; art. 157a; art. 157g",
+    parts: [
+      {
+        text: "Art. 106 ust. 5",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-106",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 106d ust. 4",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-106d",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 157a",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-157a",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 157g",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-157g",
+        },
+      },
+    ],
+  },
+}
+
+const researchAnnex: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Додаток науковця",
+    parts: [
+      {
+        text: "Додаток науковця",
+        target: {
+          kind: "evidence-document",
+          documentId: "research-annex",
+        },
+      },
+    ],
+  },
+  status: "для досліджень або довгострокової мобільності науковця",
+  level: "conditional",
+  owner: "Заявник; заповнює і підписує разом із заявою в MOS",
+  proves:
+    "Дані науковця, польської установи та програми мобільності, якщо заявник нею охоплений. Договір про прийняття та інші умови підтверджують окремо",
+  law: {
+    kind: "authored-legal-text",
+    plainText: "Art. 106 ust. 6; art. 106d ust. 3; art. 151; art. 151b",
+    parts: [
+      {
+        text: "Art. 106 ust. 6",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-106",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 106d ust. 3",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-106d",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 151",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-151",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 151b",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-151b",
+        },
+      },
+    ],
+  },
+}
+
+const ictApplication: CaseGuideDocument = {
+  item: {
+    kind: "authored-legal-text",
+    plainText: "Окрема паперова заява ICT",
+    parts: [
+      {
+        text: "Окрема паперова заява ICT",
+        target: {
+          kind: "evidence-document",
+          documentId: "ict-application",
+        },
+      },
+    ],
+  },
+  status: "для переведення або довгострокової мобільності ICT",
+  level: "conditional",
+  owner:
+    "Jednostka przyjmująca, приймаюча організація в Польщі; паперове подання",
+  proves:
+    "Заявлене переведення, його учасників і умови. Корпоративний зв’язок, попередню роботу та інші умови доводять додатками",
+  law: {
+    kind: "authored-legal-text",
+    plainText: "Art. 106k; art. 139a; art. 139o",
+    parts: [
+      {
+        text: "Art. 106k",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-106k",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 139a",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-139a",
+        },
+      },
+      {
+        text: "; ",
+      },
+      {
+        text: "art. 139o",
+        target: {
+          kind: "legal-provision",
+          documentId: "ustawa-o-cudzoziemcach",
+          provisionId: "ustawa-o-cudzoziemcach-art-139o",
+        },
+      },
+    ],
+  },
+}
 
 const route: CaseGuideRoute = {
   id: "other",
@@ -408,105 +606,9 @@ const route: CaseGuideRoute = {
             "Точний склад поданого пакета, назви файлів, версії документів і можливість відтворити заяву",
           law: "Контроль treści podania та майбутніх akt sprawy",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Додаток організатора stażu або wolontariatu",
-            parts: [
-              {
-                text: "Додаток організатора stażu або wolontariatu",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "trainee-volunteer-annex",
-                },
-              },
-            ],
-          },
-          owner: "Організатор · для відповідної підстави",
-          proves: "Дані приймаючої установи",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 5",
-            parts: [
-              {
-                text: "Art. 106 ust. 5",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "лише staż / wolontariat",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Додаток науковця",
-            parts: [
-              {
-                text: "Додаток науковця",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "research-annex",
-                },
-              },
-            ],
-          },
-          owner: "Заявник · для досліджень або мобільності науковця",
-          proves: "Установу й програму досліджень або мобільності",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 6",
-            parts: [
-              {
-                text: "Art. 106 ust. 6",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "лише дослідження / мобільність",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Окрема паперова заява ICT",
-            parts: [
-              {
-                text: "Окрема паперова заява ICT",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "ict-application",
-                },
-              },
-            ],
-          },
-          owner: "Jednostka przyjmująca · для ICT",
-          proves: "Заявлене переведення всередині підприємства",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106k",
-            parts: [
-              {
-                text: "Art. 106k",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106k",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "лише ICT",
-        },
+        traineeVolunteerAnnex,
+        researchAnnex,
+        ictApplication,
       ],
       risks: [
         {
@@ -673,105 +775,9 @@ const route: CaseGuideRoute = {
             "Який документ доводить кожну умову, за який період і де залишається прогалина або суперечність",
           law: "KPA — ustalenie stanu faktycznego та ocena dowodów",
         },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Додаток організатора stażu або wolontariatu",
-            parts: [
-              {
-                text: "Додаток організатора stażu або wolontariatu",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "trainee-volunteer-annex",
-                },
-              },
-            ],
-          },
-          owner: "Організатор · для відповідної підстави",
-          proves: "Дані приймаючої установи",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 5",
-            parts: [
-              {
-                text: "Art. 106 ust. 5",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "лише staż / wolontariat",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Додаток науковця",
-            parts: [
-              {
-                text: "Додаток науковця",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "research-annex",
-                },
-              },
-            ],
-          },
-          owner: "Заявник · для досліджень або мобільності науковця",
-          proves: "Установу й програму досліджень або мобільності",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106 ust. 6",
-            parts: [
-              {
-                text: "Art. 106 ust. 6",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "лише дослідження / мобільність",
-        },
-        {
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Окрема паперова заява ICT",
-            parts: [
-              {
-                text: "Окрема паперова заява ICT",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "ict-application",
-                },
-              },
-            ],
-          },
-          owner: "Jednostka przyjmująca · для ICT",
-          proves: "Заявлене переведення всередині підприємства",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 106k",
-            parts: [
-              {
-                text: "Art. 106k",
-                target: {
-                  kind: "legal-provision",
-                  documentId: "ustawa-o-cudzoziemcach",
-                  provisionId: "ustawa-o-cudzoziemcach-art-106k",
-                },
-              },
-            ],
-          },
-          level: "conditional",
-          status: "лише ICT",
-        },
+        traineeVolunteerAnnex,
+        researchAnnex,
+        ictApplication,
         {
           item: {
             kind: "authored-legal-text",
@@ -1534,102 +1540,9 @@ const route: CaseGuideRoute = {
       proves: "Особу й виконання формальних вимог",
       law: "Спеціальна процедура pobytowa",
     },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Додаток організатора stażu або wolontariatu",
-        parts: [
-          {
-            text: "Додаток організатора stażu або wolontariatu",
-            target: {
-              kind: "evidence-document",
-              documentId: "trainee-volunteer-annex",
-            },
-          },
-        ],
-      },
-      owner: "Організатор · для відповідної підстави",
-      proves: "Дані приймаючої установи",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 106 ust. 5",
-        parts: [
-          {
-            text: "Art. 106 ust. 5",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-106",
-            },
-          },
-        ],
-      },
-      level: "conditional",
-      status: "лише staż / wolontariat",
-    },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Додаток науковця",
-        parts: [
-          {
-            text: "Додаток науковця",
-            target: { kind: "evidence-document", documentId: "research-annex" },
-          },
-        ],
-      },
-      owner: "Заявник · для досліджень або мобільності науковця",
-      proves: "Установу й програму досліджень або мобільності",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 106 ust. 6",
-        parts: [
-          {
-            text: "Art. 106 ust. 6",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-106",
-            },
-          },
-        ],
-      },
-      level: "conditional",
-      status: "лише дослідження / мобільність",
-    },
-    {
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Окрема паперова заява ICT",
-        parts: [
-          {
-            text: "Окрема паперова заява ICT",
-            target: {
-              kind: "evidence-document",
-              documentId: "ict-application",
-            },
-          },
-        ],
-      },
-      owner: "Jednostka przyjmująca · для ICT",
-      proves: "Заявлене переведення всередині підприємства",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 106k",
-        parts: [
-          {
-            text: "Art. 106k",
-            target: {
-              kind: "legal-provision",
-              documentId: "ustawa-o-cudzoziemcach",
-              provisionId: "ustawa-o-cudzoziemcach-art-106k",
-            },
-          },
-        ],
-      },
-      level: "conditional",
-      status: "лише ICT",
-    },
+    traineeVolunteerAnnex,
+    researchAnnex,
+    ictApplication,
     {
       item: {
         kind: "authored-legal-text",

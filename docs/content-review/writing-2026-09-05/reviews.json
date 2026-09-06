@@ -323,5 +323,35 @@
     "path": "app/data/document-library/editorial/guides/signature-specimen.ts",
     "contentHash": "310376a4d2ad6b2d80ee0096afcbd4fc88a3a35d3418e1966a778465a0745a6f",
     "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/family-abroad-application.ts",
+    "contentHash": "eae8dcce199f5e42015feca598508a0fe153f3126627fd4aae85cbc09d82cb7d",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/family-application-consent.ts",
+    "contentHash": "a5dbd8892a18f54f3242857b2709a95b02847177e65e7c1a5ab98dd2c795d474",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/ict-application.ts",
+    "contentHash": "fadb152ac99019d780eab922b3e049be56daceb8c0070b0a599b5a0ee24d5e43",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/research-annex.ts",
+    "contentHash": "007e8c23734c77b2b1e637f4ea0e94c422c313d05d69c02044cc53d72d555607",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/trainee-volunteer-annex.ts",
+    "contentHash": "f7456446bcc94bbab0eeb2cb347497233b8fcace40335e503590b7dfb5372d96",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/settlement-intention.ts",
+    "contentHash": "633e0825c64827351d1cd5b717a16627f4ef3b32f9121d5b9c92de33f1888063",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
   }
 ]
