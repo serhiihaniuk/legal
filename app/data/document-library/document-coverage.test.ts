@@ -16,6 +16,66 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
+  it("uses the graduate package without making special-purpose forms universal", () => {
+    const route = caseGuideRoutes.find((route) => route.id === "other")!
+    const registerIds = route.documents.flatMap((entry) => ids(entry.item))
+    const filing = route.stages.find(
+      (stage) => stage.id === "filing"
+    )!.documents
+    const filingIds = filing.flatMap((entry) => ids(entry.item))
+    expect(new Set(registerIds).size).toBe(registerIds.length)
+    expect(
+      new Set(
+        route.stages.flatMap((stage) =>
+          stage.documents.flatMap((entry) => ids(entry.item))
+        )
+      )
+    ).toEqual(new Set(registerIds))
+    expect(filingIds).toEqual(
+      expect.arrayContaining([
+        "mos-application",
+        "qualification-evidence",
+        "job-search-evidence",
+        "health-insurance",
+        "housing-evidence",
+        "income-evidence",
+        "upo",
+      ])
+    )
+    for (const id of [
+      "qualification-evidence",
+      "health-insurance",
+      "housing-evidence",
+      "income-evidence",
+    ] as const)
+      expect(filing.find((entry) => ids(entry.item).includes(id))?.level).toBe(
+        "required"
+      )
+    for (const id of [
+      "research-annex",
+      "trainee-volunteer-annex",
+      "ict-application",
+    ] as const) {
+      expect(
+        route.documents.find((entry) => ids(entry.item).includes(id))?.level
+      ).toBe("conditional")
+      expect(filingIds).not.toContain(id)
+    }
+    for (const id of [
+      "study-annex",
+      "employment-annex-1",
+      "proceeding-certificate",
+      "fingerprint-record",
+    ])
+      expect(filingIds).not.toContain(id)
+    expect(
+      legalTextPlainText(
+        filing.find((entry) => ids(entry.item).includes("stamp-duty-proof"))!
+          .item
+      )
+    ).toContain("340 zł")
+    for (const id of registerIds) expect(documentById.has(id)).toBe(true)
+  })
   it("keeps CUKR registry checks separate from filing attachments and collection", () => {
     const route = caseGuideRoutes.find((route) => route.id === "cukr")!
     const at = (stageId: string) =>

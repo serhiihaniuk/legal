@@ -256,8 +256,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/qualification-evidence.ts",
-    "contentHash": "74c518bd1a4de93e020bd8ae43f1e69b14405c056d1bb1ac677df2fa61ebb163",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
+    "contentHash": "9cf1a8cb7715ce21bf0bf2f51dac825b270c39c648125b448d1179d909e225d3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/job-description.ts",
@@ -558,5 +558,30 @@
     "path": "app/data/case-guides/editorial/cukr/reference.ts",
     "contentHash": "7b8125979140dc7fee6dc40810216538a0bd082d91f233bdd2c5a679a1c65c3a",
     "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/other.ts",
+    "contentHash": "cf03fd9813d0fe52ee458f61290ab797fb85535cafbf091d18190fe742392ae4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/other/documents.ts",
+    "contentHash": "6f0d0667d260c92f7ea92a97b3baaa75829103704d99a4100245b59388bf0759",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/other/stages.ts",
+    "contentHash": "4799cda135ee7f26d6cdec672b1e665755f1799873f3d544181763c88c837c76",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/other/reference.ts",
+    "contentHash": "68900ec0ab25c0b25b68f3b5bcabe4f27644879c84ab9938d8c92302871fa376",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/job-search-evidence.ts",
+    "contentHash": "27200c52d3aa09d4f57385dd66fbd35046d1b81d0723a086807912dc82803e7e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
   }
 ]

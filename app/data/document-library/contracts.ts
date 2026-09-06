@@ -2,6 +2,7 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
+  | "job-search-evidence"
   | "karta-polaka"
   | "corporate-work-permit"
   | "employment-annex-1"
@@ -184,6 +185,7 @@ export const evidenceDocumentIds = [
   "tuition-payment",
   "study-progress",
   "qualification-evidence",
+  "job-search-evidence",
   "polish-language-proof",
   "business-evidence",
   "settlement-intention",

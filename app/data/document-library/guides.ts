@@ -36,6 +36,7 @@ import { studyConfirmationDocumentTopic } from "./editorial/guides/study-confirm
 import { tuitionPaymentDocumentTopic } from "./editorial/guides/tuition-payment"
 import { studyProgressDocumentTopic } from "./editorial/guides/study-progress"
 import { qualificationEvidenceDocumentTopic } from "./editorial/guides/qualification-evidence"
+import jobSearchEvidenceDocumentTopic from "./editorial/guides/job-search-evidence"
 import { polishLanguageProofDocumentTopic } from "./editorial/guides/polish-language-proof"
 import { businessEvidenceDocumentTopic } from "./editorial/guides/business-evidence"
 import { settlementIntentionDocumentTopic } from "./editorial/guides/settlement-intention"
@@ -143,6 +144,7 @@ export const documentGuides: readonly DocumentGuide[] =
     tuitionPaymentDocumentTopic.body,
     studyProgressDocumentTopic.body,
     qualificationEvidenceDocumentTopic.body,
+    jobSearchEvidenceDocumentTopic.body,
     polishLanguageProofDocumentTopic.body,
     businessEvidenceDocumentTopic.body,
     settlementIntentionDocumentTopic.body,

@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1793,
-    "reviewed": 111,
+    "totalFiles": 1797,
+    "reviewed": 116,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 75,
+      "supporting-copy": 78,
       "case-guide": 9,
-      "evidence-document": 61,
+      "evidence-document": 62,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -161,6 +161,27 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
     },
     {
+      "path": "app/data/case-guides/editorial/other/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "6f0d0667d260c92f7ea92a97b3baaa75829103704d99a4100245b59388bf0759",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/other/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "68900ec0ab25c0b25b68f3b5bcabe4f27644879c84ab9938d8c92302871fa376",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/other/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "4799cda135ee7f26d6cdec672b1e665755f1799873f3d544181763c88c837c76",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+    },
+    {
       "path": "app/data/case-guides/editorial/permanent/documents.ts",
       "family": "supporting-copy",
       "contentHash": "0dfe8de620be509baa8e3a3b0f658251a5c09a3fe4c5f003c5fe4ca3cd516fdb",
@@ -240,9 +261,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/other.ts",
       "family": "case-guide",
-      "contentHash": "f207462481ae3b42fe0664606c020c79eac46c65b63783dacd879df283ffabd1",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "cf03fd9813d0fe52ee458f61290ab797fb85535cafbf091d18190fe742392ae4",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/permanent.ts",
@@ -539,6 +560,13 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
     },
     {
+      "path": "app/data/document-library/editorial/guides/job-search-evidence.ts",
+      "family": "evidence-document",
+      "contentHash": "27200c52d3aa09d4f57385dd66fbd35046d1b81d0723a086807912dc82803e7e",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+    },
+    {
       "path": "app/data/document-library/editorial/guides/karta-polaka.ts",
       "family": "evidence-document",
       "contentHash": "0689a501453856a7d510a9ed5997a706248d604a2fdae8ba805adcf035edb16a",
@@ -597,9 +625,9 @@
     {
       "path": "app/data/document-library/editorial/guides/qualification-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "74c518bd1a4de93e020bd8ae43f1e69b14405c056d1bb1ac677df2fa61ebb163",
+      "contentHash": "9cf1a8cb7715ce21bf0bf2f51dac825b270c39c648125b448d1179d909e225d3",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/requirements-table.ts",

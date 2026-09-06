@@ -299,3 +299,11 @@
 - Recorded official ELI and UdSC checks in `content-review/writing-2026-09-05/batches/22-cukr-case-guide.md`. Scoped checks are dated 06.09.2026. The atlas baseline and independent-review status remain unchanged.
 - Fixed mobile register title/status wrapping and scoped specimen tests to each labelled letter. Full verification passed with 170 application tests, 68 corpus tests, 15 review-tool tests and the production build. Layout checks passed at 360 and 1440 px; a separate browser run verified case/document navigation in both directions without browser errors.
 - Inventory validation records 111 accepted files out of 1,793. Other purposes is the last complete case-guide review. Map and law writing, remaining interface copy, source-layout fidelity and independent legal review remain open.
+
+## 2026-09-06 Graduate and other-purpose case guide
+
+- Replaced the undefined other-purpose profile with a six-stage graduate job-search case. A dated insurance correction reaches a completed response without inventing a positive decision. Other statutory categories and conditional forms remain distinct.
+- Reused the temporary-residence document records with a 340 zł fee override. Added typed job-search evidence with a filled correspondence table and extended the diploma guide with a Polish completion-date example and the current graduate work exemption.
+- Recorded ELI, MOS and RPO/MSWiA checks in `content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md`. Scoped legal checks are dated 06.09.2026; the global baseline and independent-review status remain unchanged.
+- Full delivery verification passed with 172 application tests, 68 corpus tests, 15 review-tool tests and the production build. Desktop/mobile pages have no page overflow, the example table supports keyboard scrolling, and case/document navigation works in both directions without browser errors.
+- Inventory validation records 116 accepted files out of 1,797, including all nine case guides and 62 document guides. Map and law writing, shared interface work, source-layout fidelity and independent legal review remain open. The later selected case subtype is not automatically visible in the mobile bar on direct loading; this is recorded for the interface pass.
