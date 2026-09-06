@@ -357,3 +357,15 @@
 - Checked the relevant Sejm provisions, amendment metadata and UdSC explanations on 06.09.2026. The source record distinguishes statutory conditions from administrative guidance. The global baseline and independent-review status remain unchanged.
 - Full verification and reference previews passed, including 186 application tests and production build. Browser checks covered 360 px and 1440 px, contents scrolling and document navigation, with no overflow or browser errors.
 - Writing acceptance covers the parent comparison only, bringing the inventory to 127 of 1,800. Detailed route pages, other map rewrites and the full remaining scope are tracked in `content-review/writing-2026-09-05/batches/29-study-research-comparison.md`.
+
+### 2026-09-06: map checkpoint list presentation
+
+Replaced the shared map checkpoint checkmark icons with ordinary typographic bullets. Questions no longer look like completed checks, and wrapped lines use the same indentation as other article lists. Legal wording is unchanged.
+
+Verification: typecheck, production build and component formatting passed. Checked /map/goal-of-stay at 1440 px and 360 px: no horizontal overflow, no checkpoint SVG icons and no browser errors.
+
+### 2026-09-06: family-residence comparison article
+
+Rewrote the map parent article around sponsor status, relationship, children's dates and events after the permit. Added completed comparisons and six typed document references. Checked the relevant foreigners-act provisions and the newer EU-family consolidation, Dz.U. 2026 poz. 1065. The page-specific source check is dated 06.09.2026; the global baseline is unchanged.
+
+Desktop/mobile rendering, contents navigation, the family-evidence document link, reference previews and full project verification passed. Writing acceptance is 128 of 1,800 files. Detailed procedures and independent legal review remain open. Evidence: `docs/content-review/writing-2026-09-05/batches/30-family-residence-comparison.md`.

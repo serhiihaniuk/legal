@@ -72,7 +72,7 @@ Numbers refer to the target chapters above. "Retain" means retain a distinct top
 | `blue-card` | 3 | Retain. Explain the differences that matter compared with the ordinary employment route. |
 | `business-stay` | 3 | Retain. Separate the person's role from the business evidence and the applicable economic test. |
 | `study-research` | 3 | Split the explanation into named studies, research, internship/volunteer and mobility subjects after source review. Keep this URL as their comparison article. |
-| `family-stay` | 3 | Retain a comparison organized by sponsor status and relationship. Give distinct treatment to regimes now hidden in qualifications. |
+| `family-stay` | 3 | Parent comparison rewritten in batch 30 by sponsor status, relationship and child-related dates. Includes completed comparisons and typed document references; detailed regimes remain separate work. |
 | `other-stay` | 3 | Replace the catch-all paragraph with named categories, starting with graduates, short-term circumstances and seasonal residence. Other special grounds need explicit scope, not an unexplained range. |
 | `permanent-resident` | 3 | Retain as a comparison of permanent residence and long-term EU resident status, distinct from their detailed conditions. |
 | `permanent` | 3 | Retain. Explain the categories and evidence that distinguish them; reuse the complete case guide for the full process. |

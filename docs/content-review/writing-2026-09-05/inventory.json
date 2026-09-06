@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1800,
-    "reviewed": 127,
+    "reviewed": 128,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11678,9 +11678,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/family-stay.ts",
       "family": "map-topic",
-      "contentHash": "57f20b36f4b4d62df7990eaefd37be516fb66dbcad16624be4461d4c9782c5c3",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "9be54b2a22132f04c3216935e35308030e33f3921a3f9fe6e748e99ee20af434",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/30-family-residence-comparison.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/foreign-documents.ts",
@@ -12483,7 +12483,7 @@
     {
       "path": "app/features/legal-map/ui/legal-node-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "4bc0f9df93a4ad84b836ff013c7acbf8226a294d0cd9e8b460e3ec99fc88804e",
+      "contentHash": "c1f2850f5aa6845864b51ce7004582624d6b12511e8301ae0f93b3db1f1586a3",
       "writing": "pending",
       "evidence": null
     },

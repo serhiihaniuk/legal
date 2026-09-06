@@ -638,5 +638,10 @@
     "path": "app/data/legal-map/editorial/topics/study-research.ts",
     "contentHash": "02e1adeea94c05933b45b242778276e9ddd327dd1f1dfc9d8d05eb7635c6353c",
     "evidence": "docs/content-review/writing-2026-09-05/batches/29-study-research-comparison.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/family-stay.ts",
+    "contentHash": "9be54b2a22132f04c3216935e35308030e33f3921a3f9fe6e748e99ee20af434",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/30-family-residence-comparison.md"
   }
 ]

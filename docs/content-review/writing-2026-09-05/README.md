@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 29 rewrites the study/research parent page as a comparison of distinct residence grounds, university documents and mobility procedures. Its completed examples and typed document references passed browser and full project verification. Writing acceptance is now 127 of 1,800 files. Detailed route pages and the other map dispositions remain pending; see `batches/29-study-research-comparison.md`.
+Batch 30 rewrites the family parent page by sponsor status, relationship and child-related dates. Completed examples explain permit history and the role of birth records and decisions. Writing acceptance is now 128 of 1,800 files. Detailed route pages and the other map dispositions remain pending; see `batches/30-family-residence-comparison.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 

@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, FileCheck2, Map } from "lucide-react"
+import { ArrowRight, FileCheck2, Map } from "lucide-react"
 
 import {
   DocumentArticle,
@@ -239,16 +239,10 @@ export function LegalNodeContent({
               {contentNode.checkpoints?.length ? (
                 <>
                   <h3>Що перевірити у матеріалах справи</h3>
-                  <ul data-not-typeset className="not-typeset mt-4 grid gap-3">
+                  <ul>
                     {contentNode.checkpoints.map((item) => (
-                      <li
-                        key={legalTextPlainText(item)}
-                        className="flex gap-3 text-sm leading-6"
-                      >
-                        <CheckCircle2 className="mt-1 shrink-0 text-muted-foreground" />
-                        <span>
-                          <LegalText text={item} />
-                        </span>
+                      <li key={legalTextPlainText(item)}>
+                        <LegalText text={item} />
                       </li>
                     ))}
                   </ul>
