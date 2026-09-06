@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 38 adds the missing outgoing appeal and zażalenie document guides with Polish specimens and conditional links from all nine cases. Writing acceptance is 140 of 1,802 files. The remaining map dispositions, law modules, corpus layout audit and independent legal review remain pending; see `batches/38-outgoing-remedies.md`.
+Batch 39 rewrites reopening, invalidity and the comparison of administrative and court review, with filled examples and scoped official-source checks. Writing acceptance is 143 of 1,802 files. The user requested a stop for today after this batch. Resume with the detailed WSA article; the remaining map dispositions, law modules, corpus layout audit and independent legal review remain pending. See `batches/39-special-review.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 

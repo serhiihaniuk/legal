@@ -189,3 +189,5 @@ The later batches recorded in the writing-review README address study/research a
 Batch 37 rewrites `appeal` and `complaint` as distinct articles about ordinary decision review and separately appealable orders. Their completed examples explain filing, proof and limits of the selected remedy. Dedicated outgoing appeal and complaint document guides remain a catalog gap; the map examples do not count as those guides.
 
 Batch 38 closes that catalog gap with two illustrated document guides and typed references from these map articles. All nine case registers and relevant stages now include the outgoing documents conditionally. The remaining map dispositions are unchanged.
+
+Batch 39 completes the writing dispositions for `extraordinary-wsa`, `reopening` and `invalidity`. The comparison no longer puts all court review after a final decision; the two detailed articles have distinct grounds, procedure, limits and filled examples. The detailed `wsa` page remains next. The user requested a stop for today after this batch; full legal acceptance and the other recorded dispositions remain pending.

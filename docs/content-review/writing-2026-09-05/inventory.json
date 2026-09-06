@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1802,
-    "reviewed": 140,
+    "reviewed": 143,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11692,9 +11692,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/extraordinary-wsa.ts",
       "family": "map-topic",
-      "contentHash": "4c544d67b311fc3e161180d715ae75af4f797d6582dc2e00f5241b1a6479dc39",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "e695b07d9fe294289046ba37be6fd641dfb3dbb81e9dcd1207b202875c80faa9",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/39-special-review.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/family-stay.ts",
@@ -11734,9 +11734,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/invalidity.ts",
       "family": "map-topic",
-      "contentHash": "38b0fa0a2843aaadd3abebcb9133577d8d594e89d509647ac95c5f7ca3c2ed5a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "7b8d7412a28e878f02302ea282ccbdfba0aba20971fa388f2e5bfbf53def78a0",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/39-special-review.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/kpa-principles.ts",
@@ -11846,9 +11846,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/reopening.ts",
       "family": "map-topic",
-      "contentHash": "7b9c2767388b399da633f4e89f952ff5f9e3a65d32bc75647ed3af58b05d7e13",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "2677ab857ec3524a20b29c31c2bb1ddc366b944461e6b645907b05732bbe7910",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/39-special-review.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/seasonal.ts",

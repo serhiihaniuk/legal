@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-06 Reopening, invalidity and court-review comparison
+
+Rewrote three complete map articles with distinct explanations and filled fictional comparisons. Corrected the final-decision framing of court review, the difference between opening reopening and repealing a decision, and the conditional duty to suspend execution under KPA. Checked KPA, the 2021 invalidity transition and PPSA including the June 2026 amendment. The global baseline and independent acceptance remain unchanged.
+
+Full project verification and reference previews passed. All three examples were inspected at desktop and mobile widths; table keyboard scrolling and typed document navigation were checked. Writing acceptance is 143 of 1,802. Evidence and next-session handoff: `docs/content-review/writing-2026-09-05/batches/39-special-review.md`. Stopping after this batch at the user's request.
+
 ## 2026-09-06 Outgoing appeal and complaint guides
 
 - Added two document guides with fictional Polish letters, attachment explanations and completed filing examples. All nine cases include the shared references conditionally at their relevant stages; neither is a filing requirement.
