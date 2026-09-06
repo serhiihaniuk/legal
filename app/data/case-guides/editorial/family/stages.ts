@@ -248,6 +248,7 @@ export const familyStages: CaseGuideStage[] = [
     documents: [
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -305,6 +306,7 @@ export const familyStages: CaseGuideStage[] = [
     outcome:
       "Приклад доводить, як пояснено дві адреси та підтримано заяву документами. Він не містить вигаданого рішення органу. Після реального рішення підставу, строк, роботу та можливе оскарження читають окремо.",
     documents: [
+      d.appeal,
       d.decision,
       d.delivery,
       d.card,

@@ -16,6 +16,43 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
+  it("places outgoing remedies in their conditional stages with illustrated guides and reverse references", () => {
+    for (const [id, stageId, nodeId] of [
+      ["administrative-appeal", "decision", "appeal"],
+      ["procedural-complaint", "procedure", "complaint"],
+    ] as const) {
+      const document = documentById.get(id)
+      expect(document).toBeDefined()
+      expect(
+        document?.guide.explanation?.some(
+          (section) => section.example?.sample?.kind === "letter"
+        )
+      ).toBe(true)
+      expect(
+        document?.contexts.some((context) => context.node.id === nodeId)
+      ).toBe(true)
+      for (const route of caseGuideRoutes) {
+        const stage = route.stages.find((candidate) => candidate.id === stageId)
+        expect(stage, route.id).toBeDefined()
+        for (const entries of [route.documents, stage?.documents ?? []]) {
+          const matches = entries.filter((entry) =>
+            ids(entry.item).includes(id)
+          )
+          expect(matches, `${route.id}: ${id}`).toHaveLength(1)
+          expect(matches[0]?.level).toBe("conditional")
+        }
+        const filing = route.stages.find(
+          (candidate) => candidate.id === "filing"
+        )
+        expect(
+          filing?.documents.flatMap((entry) => ids(entry.item))
+        ).not.toContain(id)
+        expect(
+          document?.caseContexts.some((context) => context.routeId === route.id)
+        ).toBe(true)
+      }
+    }
+  })
   it("connects received procedural orders to every case without making them filing attachments", () => {
     const order = documentById.get("procedural-order")!
     expect(

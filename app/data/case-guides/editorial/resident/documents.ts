@@ -3,6 +3,8 @@ import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import {
   deadlineObstacleEvidence,
   proceduralOrderEvidence,
+  administrativeAppealEvidence,
+  proceduralComplaintEvidence,
 } from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
@@ -201,6 +203,8 @@ export const residentDocuments = {
   },
   obstacle: deadlineObstacleEvidence,
   order: proceduralOrderEvidence,
+  appeal: administrativeAppealEvidence,
+  complaint: proceduralComplaintEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const residentDocumentRegister: CaseGuideDocument[] = [
@@ -227,6 +231,8 @@ export const residentDocumentRegister: CaseGuideDocument[] = [
   residentDocuments.certificate,
   residentDocuments.summons,
   residentDocuments.order,
+  residentDocuments.appeal,
+  residentDocuments.complaint,
   residentDocuments.delivery,
   residentDocuments.requirements,
   residentDocuments.response,

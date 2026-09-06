@@ -6,6 +6,26 @@ const kpa = createLegalTextAuthor("kpa")
 const work = createLegalTextAuthor("powierzanie-pracy")
 const documents = createEvidenceDocumentTextAuthor()
 
+export const administrativeAppealEvidence: CaseGuideDocument = {
+  item: documents.text`${documents.document("administrative-appeal", "Подане odwołanie з додатками")}`,
+  status: "якщо доступне звичайне оскарження рішення й сторона його подає",
+  level: "conditional",
+  owner: "Сторона або належний представник; через орган, який видав рішення",
+  proves:
+    "Яке рішення оскаржено, яку вимогу й докази подано. Своєчасність підтверджують разом із доказами вручення рішення та подання звернення",
+  law: kpa.text`${kpa.articleRange("127", "130", { start: "Art. 127", end: "130 KPA" })}: доступність, зміст, строк і виконання; спеціальні правила визначають за конкретним рішенням.`,
+}
+
+export const proceduralComplaintEvidence: CaseGuideDocument = {
+  item: documents.text`${documents.document("procedural-complaint", "Подане zażalenie з додатками")}`,
+  status: "якщо ухвала допускає окрему скаргу й сторона її подає",
+  level: "conditional",
+  owner: "Сторона або належний представник; через орган, який видав ухвалу",
+  proves:
+    "Предмет окремої скарги й передані заперечення. Не доводить автоматичного зупинення виконання; зберігають також ухвалу, доказ вручення й подання",
+  law: kpa.text`${kpa.articleRange("141", "144", { start: "Art. 141", end: "144 KPA" })}: окрема скарга, строк і виконання. Перед поданням установлюють норму, що дозволяє саме цей засіб.`,
+}
+
 export const proceduralOrderEvidence: CaseGuideDocument = {
   item: documents.text`${documents.document("procedural-order", "Postanowienie органу")}`,
   status: "якщо орган видав процесуальну ухвалу",

@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Outgoing appeal and complaint guides
+
+- Added two document guides with fictional Polish letters, attachment explanations and completed filing examples. All nine cases include the shared references conditionally at their relevant stages; neither is a filing requirement.
+- Repaired a circular import exposed by links between document guides. ID validation now uses the contracts list without loading the catalog.
+- Source checks and review limits are recorded in `content-review/writing-2026-09-05/batches/38-outgoing-remedies.md`. Writing acceptance is 140 of 1,802 files. The global legal baseline and independent review remain unchanged.
+- Application tests passed 196, corpus tests 68 with one existing skip, and content-review tests 15 after updating the expected document count. Type checks, lint, formatting, editorial validation, previews and build passed. Desktop/mobile examples and keyboard document navigation passed without page overflow or browser errors.
+
 ## 2026-09-06 Appeals and complaints with completed examples
 
 - Rewrote the odwołanie and zażalenie map articles. Corrected the claim that detailed appeal objections are generally mandatory. Added a fictional Polish appeal, dated evidence clarification and a filled comparison of file-access refusal with refusal to hear a witness.

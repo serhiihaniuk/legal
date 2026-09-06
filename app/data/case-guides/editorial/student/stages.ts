@@ -232,6 +232,7 @@ export const studentStages: CaseGuideStage[] = [
     documents: [
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -297,6 +298,7 @@ export const studentStages: CaseGuideStage[] = [
     outcome:
       "Працівник може пояснити строк і межі наданого дозволу або предмет оскарження. Внутрішня справа містить дату наступної перевірки та обов'язок реагувати на припинення навчання.",
     documents: [
+      d.appeal,
       d.decision,
       d.card,
       d.delivery,

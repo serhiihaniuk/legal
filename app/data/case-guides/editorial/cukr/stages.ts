@@ -168,6 +168,7 @@ export const cukrStages: CaseGuideStage[] = [
       d.upo,
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -212,6 +213,7 @@ export const cukrStages: CaseGuideStage[] = [
     outcome:
       "У завершеному прикладі від 28.08.2026 діє дозвіл CUKR до кінця строку карти, а переїзд повідомлено вчасно. Цей результат описує лише вигадану справу з підтвердженими умовами.",
     documents: [
+      d.appeal,
       d.passport,
       d.card,
       d.address,

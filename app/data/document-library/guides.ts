@@ -1,5 +1,7 @@
 import deadlineObstacleDocumentTopic from "./editorial/guides/deadline-obstacle"
 import proceduralOrderTopic from "./editorial/guides/procedural-order"
+import administrativeAppealTopic from "./editorial/guides/administrative-appeal"
+import proceduralComplaintTopic from "./editorial/guides/procedural-complaint"
 import kartaPolakaDocumentTopic from "./editorial/guides/karta-polaka"
 import corporateWorkPermitDocumentTopic from "./editorial/guides/corporate-work-permit"
 import proceedingCertificateDocumentTopic from "./editorial/guides/proceeding-certificate"
@@ -127,6 +129,8 @@ export const documentGuides: readonly DocumentGuide[] =
     powerOfAttorneyTopic.body,
     administrativeDecisionTopic.body,
     proceduralOrderTopic.body,
+    administrativeAppealTopic.body,
+    proceduralComplaintTopic.body,
     zusConfirmationTopic.body,
     businessRegisterInformationTopic.body,
     crbrInformationTopic.body,

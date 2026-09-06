@@ -256,6 +256,7 @@ export const blueCardStages: CaseGuideStage[] = [
     documents: [
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -318,6 +319,7 @@ export const blueCardStages: CaseGuideStage[] = [
     outcome:
       "Є прочитаний результат справи та запис конкретних обов'язків. Власник нового дозволу розуміє, що зміна роботи потребує перевірки нових умов і повідомлення, а давній дозвіл може вимагати іншої процедури.",
     documents: [
+      d.appeal,
       d.decision,
       d.delivery,
       d.card,

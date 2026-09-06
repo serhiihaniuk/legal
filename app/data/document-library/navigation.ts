@@ -1,12 +1,6 @@
-import type { EvidenceDocument, EvidenceDocumentId } from "./contracts"
+import type { EvidenceDocument } from "./contracts"
 import { documentCategoryOrder, evidenceDocumentRegistry } from "./registry"
-
-function isEvidenceDocumentId(value: unknown): value is EvidenceDocumentId {
-  return (
-    typeof value === "string" &&
-    evidenceDocumentRegistry.has(value as EvidenceDocumentId)
-  )
-}
+import { isEvidenceDocumentId } from "./contracts"
 
 export function getEvidenceDocumentPath(
   documentId: unknown

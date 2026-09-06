@@ -244,6 +244,7 @@ export const businessStages: CaseGuideStage[] = [
     documents: [
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -308,6 +309,7 @@ export const businessStages: CaseGuideStage[] = [
     outcome:
       "Межі рішення та наступні обов'язки зрозумілі. Доведена зайнятість компанії не підміняє читання самого результату справи.",
     documents: [
+      d.appeal,
       d.decision,
       d.card,
       d.delivery,

@@ -5,6 +5,8 @@ import { temporaryResidenceDocuments as common } from "../shared/temporary-resid
 import {
   deadlineObstacleEvidence,
   proceduralOrderEvidence,
+  administrativeAppealEvidence,
+  proceduralComplaintEvidence,
   workNotificationEvidence,
 } from "../../shared-document-requirements"
 
@@ -169,6 +171,8 @@ export const cukrDocuments = {
   },
   obstacle: deadlineObstacleEvidence,
   order: proceduralOrderEvidence,
+  appeal: administrativeAppealEvidence,
+  complaint: proceduralComplaintEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const cukrDocumentRegister: CaseGuideDocument[] =

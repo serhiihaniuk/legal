@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1800,
-    "reviewed": 138,
+    "totalFiles": 1802,
+    "reviewed": 140,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
       "case-guide": 9,
-      "evidence-document": 63,
+      "evidence-document": 65,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -86,9 +86,9 @@
     {
       "path": "app/data/case-guides/editorial/blue-card/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "b7febe050d91e9c43d560750d0bb5107fc4592a09fa83630ece48032c15fbc6f",
+      "contentHash": "d21c49a295fbf984850e0b640af75b59d3f75d3156d570babe7360b5b0e4cc05",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/blue-card/reference.ts",
@@ -100,16 +100,16 @@
     {
       "path": "app/data/case-guides/editorial/blue-card/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "ecd844ef5fb3b228f3d0a00770c1539881cd3ab136e940ef71ba88f2164d535d",
+      "contentHash": "95c444a2c6bdacd970e342b25234c682233ec8aed950d21052f1fd7e144fa275",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "1bdd66b18452167e31ee27a558fc133774bb6886490dc2bed09d0ad328c3a150",
+      "contentHash": "3ecb174b30ade976c050efcff72b41c6777b4c6ae0b2f17c8508b75fcb31685c",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/reference.ts",
@@ -121,16 +121,16 @@
     {
       "path": "app/data/case-guides/editorial/business/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "859582383a1a1b1b03c1adb84ae83618c9479f4a476699332556be290ca9e5f5",
+      "contentHash": "0b6c7a624728268319731646935f97cd6f4c906d2d74c613fe8baada165f5bed",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/cukr/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "c05f4da10a99301ab6f358ac7feb449a195d723e2893826be012e582e46b9b09",
+      "contentHash": "52285371d74aae4cd8b2f4488d1e808693e312dc723c255009e2d4af7f8d9613",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/cukr/reference.ts",
@@ -142,16 +142,16 @@
     {
       "path": "app/data/case-guides/editorial/cukr/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "0b7f464e7d31c36a305440febdcb859a117b324e2d512b734753e0e1dfe09d89",
+      "contentHash": "a546cbb7924b7e9883550b4ad534d57086f68f888900d36f1374a019a6aec69f",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/family/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "5e6a3b5a2c8098efb9f9661083a13db57cf2901d01baf7c948cca088aafe0cd1",
+      "contentHash": "9ba6c07f9f8d853da4b5fc193bce6f4e71a4fc774a4ec13f8ea724a691e55a02",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/family/reference.ts",
@@ -163,16 +163,16 @@
     {
       "path": "app/data/case-guides/editorial/family/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "b1d03b46df000699bb7a2bad70842909e31a846518004b3026300feef66da81d",
+      "contentHash": "ac71eb3af0c0b579cd4129c703208c7bdceb41f24a1368b7e8d96310aaa676db",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "09cde59d27bb30907e4fb9ac2f2a44f9b9b1a742479d0628e7c754913d9cb8d8",
+      "contentHash": "57556602c9c418be3dbd609fba87dfe115aef3743bad744e7bc4365c33dee192",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/reference.ts",
@@ -184,16 +184,16 @@
     {
       "path": "app/data/case-guides/editorial/other/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "8833f84be8dfc5601ef1c04986d7424611097d3319cc20595aa9b11acd71f6a8",
+      "contentHash": "7c7becd79c75c772faa4a729828f5a5a5ad8f395f2d7d54a336d79f7a12317c7",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "e6dcb43959a2b8318553dcb46fde21470bfa784ce713838d4d8bc7ba121f4fea",
+      "contentHash": "1fa0196a327b7772fed0914d2f7c16a8b9d951f048ec090e70c38068fdaf4a24",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/reference.ts",
@@ -205,16 +205,16 @@
     {
       "path": "app/data/case-guides/editorial/permanent/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "6629cc5f360251725f0558725377b4c6eee4bc6b1c3b2378ec810dca5c5082e1",
+      "contentHash": "5043f03ab3722877bede7b58a7e1c644efb03019996642d96fb1aa6ea7429ef6",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/resident/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "4c6f0df69e19d353f7f9a03ec44141ecab0c8b1a1fc251d46c43e8c342f65c5d",
+      "contentHash": "6928f70fb7f98210982ff277f16f477b29017c6d55be215249a4b6371e16c7ef",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/resident/reference.ts",
@@ -226,9 +226,9 @@
     {
       "path": "app/data/case-guides/editorial/resident/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "0a0fa3f4449cbee455891235b02f0b7bb899adfc02b4f08f7d7fa30b24d2cbed",
+      "contentHash": "bc0c2cbb8b480fb46e67f5a8f32df9e1809edb802e20df218c06b5d19a0326d3",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
@@ -303,9 +303,9 @@
     {
       "path": "app/data/case-guides/editorial/student/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "2a016f26847e063634a8081e29c47e9f419da738bec731625fa14202778006eb",
+      "contentHash": "d071ba558964894ebc7276514d988fa29c2bf0701d966ac9a3937e36f777fc3a",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/student/reference.ts",
@@ -317,16 +317,16 @@
     {
       "path": "app/data/case-guides/editorial/student/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "d864518a0c33b7a391597a35b4446e4fbb2b9e6f65abe75bde2489a47c46fa0a",
+      "contentHash": "30ccb73fca08b22441ad0cfc21d33f2011c735dff348e991c607fc4717a39609",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "45a3bac36e91a82b47950b507206f7d6e8f270a605de38d0225efa370939ff67",
+      "contentHash": "8ec287f0714231dd1d49abf4992f341f3d6e04bbb28dd48e86dc1b94e9e653fa",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/reference.ts",
@@ -338,9 +338,9 @@
     {
       "path": "app/data/case-guides/editorial/work/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "5dbc945609162f8f8feef767cbd532039e55120538b8c8db888e8b7c746b901a",
+      "contentHash": "f061a195c0476fb2399b55b9e90deaadd9adb5e9f104d049e2331cdda360fbf2",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/case-guides/navigation.ts",
@@ -352,9 +352,9 @@
     {
       "path": "app/data/case-guides/shared-document-requirements.ts",
       "family": "supporting-copy",
-      "contentHash": "00b5ca7e598a28c33fd161afd71ab37cb50f416b13502a2f325cb15f95ffb26a",
+      "contentHash": "2ea54f8f81deab16f932b3fe1eb921ee148241b7b5c194d61b2ebed818fae6bf",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/document-library/editorial/authoring.ts",
@@ -362,6 +362,13 @@
       "contentHash": "894ff93de3f6d917bd47acdf83142e16a0516a354110220e28c149e6b18f3229",
       "writing": "pending",
       "evidence": null
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/administrative-appeal.ts",
+      "family": "evidence-document",
+      "contentHash": "830df56b23557837e413013825b81015a1ebabe3b267dd2dd726a37dc7ffd74a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/administrative-decision.ts",
@@ -621,6 +628,13 @@
       "contentHash": "780687b32f3f084f10982c872078db37e239bcc8ddae8f9cbf6866d7b991c662",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/procedural-complaint.ts",
+      "family": "evidence-document",
+      "contentHash": "e91de0e584902f89b93f4ae8d33a72645814b2007e6f1ddca2bfb4556f0f71e0",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/procedural-order.ts",
@@ -11559,9 +11573,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/appeal.ts",
       "family": "map-topic",
-      "contentHash": "c9915094c0721dff6989eefe8b76b8d653a4b723e3fe24a0a17285e5dc4e46af",
+      "contentHash": "46100faa724a805b1f9a9296f9bc6f8b553fce4453d8c7fbdd6141f6e365075d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/37-appeal-and-complaint.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/blue-card.ts",
@@ -11587,9 +11601,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/complaint.ts",
       "family": "map-topic",
-      "contentHash": "4b01ed211e8d450998e6aa9385303faa4cd8b65e6664e81576a98679dcd83c56",
+      "contentHash": "fbb4902396bbfe253f00dfdd66afe7ac4f7bcd219281d16f213aaeb0a9386c91",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/37-appeal-and-complaint.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/cukr-route-2026.ts",

@@ -16,6 +16,8 @@ export type EvidenceDocumentId =
   | "power-of-attorney"
   | "administrative-decision"
   | "procedural-order"
+  | "administrative-appeal"
+  | "procedural-complaint"
   | "zus-confirmation"
   | "business-register-information"
   | "crbr-information"
@@ -168,6 +170,8 @@ export const evidenceDocumentIds = [
   "power-of-attorney",
   "administrative-decision",
   "procedural-order",
+  "administrative-appeal",
+  "procedural-complaint",
   "zus-confirmation",
   "business-register-information",
   "crbr-information",
@@ -219,3 +223,11 @@ export const evidenceDocumentIds = [
   "work-organisation-evidence",
   "status-documents",
 ] as const satisfies readonly EvidenceDocumentId[]
+
+export function isEvidenceDocumentId(
+  value: unknown
+): value is EvidenceDocumentId {
+  return (
+    typeof value === "string" && evidenceDocumentIds.some((id) => id === value)
+  )
+}

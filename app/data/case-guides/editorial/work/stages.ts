@@ -249,6 +249,7 @@ export const workStages: CaseGuideStage[] = [
       d.certificate,
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -309,6 +310,7 @@ export const workStages: CaseGuideStage[] = [
     outcome:
       "Умови наданого дозволу зіставлено з роботою в компанії A. Заявник і роботодавець знають власні обов'язки, а перед новою роботою потрібно окремо встановити її правову підставу.",
     documents: [
+      d.appeal,
       d.decision,
       d.delivery,
       d.card,

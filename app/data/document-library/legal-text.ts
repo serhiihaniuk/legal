@@ -3,7 +3,7 @@ import type {
   LegalTextPart,
 } from "~/data/legal-library/legal-text"
 
-import { isEvidenceDocumentId } from "./query"
+import { isEvidenceDocumentId } from "./contracts"
 import type { EvidenceDocumentId, EvidenceDocumentReference } from "./contracts"
 
 type EvidenceDocumentCitation = {

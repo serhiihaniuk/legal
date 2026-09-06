@@ -1,7 +1,6 @@
 import type {
   EvidenceDocument,
   EvidenceDocumentCategory,
-  EvidenceDocumentId,
   EvidenceDocumentReference,
   EvidenceDocumentReferenceResolution,
 } from "./contracts"
@@ -12,15 +11,8 @@ import {
   normalizeEvidenceDocumentAlias,
 } from "./registry"
 import { getEvidenceDocumentPath } from "./navigation"
-
-export function isEvidenceDocumentId(
-  value: unknown
-): value is EvidenceDocumentId {
-  return (
-    typeof value === "string" &&
-    evidenceDocumentRegistry.has(value as EvidenceDocumentId)
-  )
-}
+import { isEvidenceDocumentId } from "./contracts"
+export { isEvidenceDocumentId } from "./contracts"
 
 export function getEvidenceDocument(
   documentId: unknown

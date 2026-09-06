@@ -237,6 +237,7 @@ export const otherStages: CaseGuideStage[] = [
     documents: [
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -291,6 +292,7 @@ export const otherStages: CaseGuideStage[] = [
     outcome:
       "Подання відповіді, надання дозволу, видача карти та право працювати залишаються окремими висновками з окремими доказами.",
     documents: [
+      d.appeal,
       d.decision,
       d.delivery,
       d.card,

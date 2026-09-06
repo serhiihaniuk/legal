@@ -135,6 +135,7 @@ export const complaintTopic: KnowledgeUnit<LegalMapTopicBody> =
         ],
       }),
       documents: [
+        documents.text`${documents.document("procedural-complaint", "Подане zażalenie")}`,
         documents.text`${documents.document("procedural-order", "Оскаржуване postanowienie")}`,
         documents.text`${documents.document("delivery-proof", "Доказ вручення")}`,
         documents.text`${documents.document("dispatch-proof", "Доказ подання zażalenia")}`,

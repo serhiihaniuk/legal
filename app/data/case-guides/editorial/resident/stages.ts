@@ -201,6 +201,7 @@ export const residentStages: CaseGuideStage[] = [
     documents: [
       d.summons,
       d.order,
+      d.complaint,
       d.delivery,
       d.requirements,
       d.response,
@@ -255,6 +256,7 @@ export const residentStages: CaseGuideStage[] = [
     outcome:
       "Подальший план розрізняє оскарження, видачу карти, її наступне оформлення та можливе відкликання статусу. У прикладі заявник ще очікує рішення.",
     documents: [
+      d.appeal,
       d.decision,
       d.delivery,
       d.card,

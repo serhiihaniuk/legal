@@ -152,6 +152,7 @@ export const appealTopic: KnowledgeUnit<LegalMapTopicBody> =
         ],
       }),
       documents: [
+        documents.text`${documents.document("administrative-appeal", "Подане odwołanie")}`,
         documents.text`${documents.document("administrative-decision", "Оскаржуване рішення")}`,
         documents.text`${documents.document("delivery-proof", "Доказ вручення")}`,
         documents.text`${documents.document("dispatch-proof", "Доказ подання odwołania")}`,

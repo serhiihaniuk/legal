@@ -3,6 +3,8 @@ import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import {
   deadlineObstacleEvidence,
   proceduralOrderEvidence,
+  administrativeAppealEvidence,
+  proceduralComplaintEvidence,
 } from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
@@ -147,6 +149,8 @@ export const studentDocuments = {
   },
   obstacle: deadlineObstacleEvidence,
   order: proceduralOrderEvidence,
+  appeal: administrativeAppealEvidence,
+  complaint: proceduralComplaintEvidence,
   notification: {
     item: document(
       "temporary-residence-notification",
