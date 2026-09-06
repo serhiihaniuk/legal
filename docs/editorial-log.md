@@ -276,3 +276,10 @@
 - Split the route into overview, stages, 33 reusable document entries and references. Added a filled maintenance comparison to the family-evidence guide and aligned its address example. Conditional paper forms remain distinct from MOS requirements.
 - Recorded official ELI, UdSC and Podlaski UW checks in `content-review/writing-2026-09-05/batches/19-family-case-guide.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Four complete case routes remain pending.
 - Full verification passed with 99 application tests and a production build. Desktop/mobile pages, filled examples, keyboard table scrolling, checklist selection and case/document/provision navigation passed without browser console errors.
+
+## 2026-09-06 permanent residence and Karta Polaka
+
+- Reworked the six-stage permanent-residence guide around a Karta Polaka holder, one-year lease, permanent settlement plan and dated response. Distinguishes the exact statutory category, visa, evidence, filing and post-decision document duties.
+- Split the route into overview, stages, 29 reusable document entries and references. Selected shared evidence records explicitly and supplied permanent-residence filing rules. Added a Karta Polaka guide with a filled working comparison; the catalogue now contains 61 document guides.
+- Recorded official ELI, UdSC and RPO/MSWiA checks in `content-review/writing-2026-09-05/batches/20-permanent-case-guide.md`. Added a cross-module follow-up about judicial treatment of the office-deadline suspension. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged.
+- Full verification passed with 100 application tests, 68 corpus tests, 15 review-tool tests and a production build. Desktop/mobile reading, disclosures, keyboard table scrolling, checklist independence and case/document/provision navigation passed without browser console errors. Inventory validation confirms 103 reviewed files out of 1,787; three complete case guides remain pending.

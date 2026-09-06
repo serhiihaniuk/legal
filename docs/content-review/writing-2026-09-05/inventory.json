@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1783,
-    "reviewed": 98,
+    "totalFiles": 1787,
+    "reviewed": 103,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 66,
+      "supporting-copy": 69,
       "case-guide": 9,
-      "evidence-document": 60,
+      "evidence-document": 61,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -140,6 +140,27 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
     },
     {
+      "path": "app/data/case-guides/editorial/permanent/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "0dfe8de620be509baa8e3a3b0f658251a5c09a3fe4c5f003c5fe4ca3cd516fdb",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/permanent/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "ac5d84297e62fd321282b99a3830f97fe98381a4b2dd65929828c51863082c3a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/permanent/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "2888aa7b7620df69142d892a89a8c2b6563e95734476883451c11cce3815f747",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+    },
+    {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
       "family": "case-guide",
       "contentHash": "5dcdffcaaf09f001a6af50ac22a8fed99b714de2b48c366bd3336080a3a2f990",
@@ -184,9 +205,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/permanent.ts",
       "family": "case-guide",
-      "contentHash": "367997be6a48d4cfb7213f0fe1f60146821e6513a1a3483e75e89d2fba1d4867",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "41e94670dbfa422d9a4857204b369c3c2a671b5c3c5b588022f545f6e3832226",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/student.ts",
@@ -474,6 +495,13 @@
       "contentHash": "d697da69051e06c9d2a5e5a6dca325925f2c3f293a60a95d9297ddff6446f77f",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/karta-polaka.ts",
+      "family": "evidence-document",
+      "contentHash": "0689a501453856a7d510a9ed5997a706248d604a2fdae8ba805adcf035edb16a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/mos-application.ts",

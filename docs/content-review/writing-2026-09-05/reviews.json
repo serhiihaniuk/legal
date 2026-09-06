@@ -493,5 +493,30 @@
     "path": "app/data/case-guides/editorial/family/reference.ts",
     "contentHash": "ef903918854288e5d1442874f4cf63d445b0d466ef50040d900d5960ff2ebbd6",
     "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/permanent.ts",
+    "contentHash": "41e94670dbfa422d9a4857204b369c3c2a671b5c3c5b588022f545f6e3832226",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/permanent/documents.ts",
+    "contentHash": "0dfe8de620be509baa8e3a3b0f658251a5c09a3fe4c5f003c5fe4ca3cd516fdb",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/permanent/stages.ts",
+    "contentHash": "2888aa7b7620df69142d892a89a8c2b6563e95734476883451c11cce3815f747",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/permanent/reference.ts",
+    "contentHash": "ac5d84297e62fd321282b99a3830f97fe98381a4b2dd65929828c51863082c3a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/karta-polaka.ts",
+    "contentHash": "0689a501453856a7d510a9ed5997a706248d604a2fdae8ba805adcf035edb16a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
   }
 ]

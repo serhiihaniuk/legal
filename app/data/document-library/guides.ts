@@ -1,4 +1,5 @@
 import deadlineObstacleDocumentTopic from "./editorial/guides/deadline-obstacle"
+import kartaPolakaDocumentTopic from "./editorial/guides/karta-polaka"
 import corporateWorkPermitDocumentTopic from "./editorial/guides/corporate-work-permit"
 import proceedingCertificateDocumentTopic from "./editorial/guides/proceeding-certificate"
 import workOrganisationEvidenceDocumentTopic from "./editorial/guides/work-organisation-evidence"
@@ -145,6 +146,7 @@ export const documentGuides: readonly DocumentGuide[] =
     polishLanguageProofDocumentTopic.body,
     businessEvidenceDocumentTopic.body,
     settlementIntentionDocumentTopic.body,
+    kartaPolakaDocumentTopic.body,
     digitalPhotoDocumentTopic.body,
     apostilleLegalisationDocumentTopic.body,
   ])

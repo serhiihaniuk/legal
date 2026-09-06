@@ -2,6 +2,7 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
+  | "karta-polaka"
   | "corporate-work-permit"
   | "employment-annex-1"
   | "employment-contract"
@@ -153,6 +154,7 @@ export type EvidenceDocumentReferenceResolution =
 
 export const evidenceDocumentIds = [
   "corporate-work-permit",
+  "karta-polaka",
   "employment-annex-1",
   "employment-contract",
   "mos-application",
