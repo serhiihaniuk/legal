@@ -38,7 +38,7 @@ describe("case guide continuity", () => {
     rerender(
       <MemoryRouter>
         <CaseOverview
-          route={getCaseGuideRoute("business")}
+          route={{ ...getCaseGuideRoute("work"), verifiedAt: undefined }}
           updatedAt="2026-07-18"
         />
       </MemoryRouter>
@@ -171,10 +171,17 @@ describe("case guide continuity", () => {
       </MemoryRouter>
     )
     for (const [name, id] of [
-      ["Wniosek MOS", "mos-application"],
-      ["UPO", "upo"],
-      ["KRS/CEIDG", "business-register-information"],
-      ["CRBR і зв’язки між компаніями", "crbr-information"],
+      ["Електронна заява MOS", "mos-application"],
+      ["UPO та збережена заява", "upo"],
+      [
+        "KRS/CEIDG і документи про роль у бізнесі",
+        "business-register-information",
+      ],
+      ["CRBR і зв'язки між компаніями", "crbr-information"],
+      [
+        "Дозвіл на працю у зв'язку з корпоративною функцією",
+        "corporate-work-permit",
+      ],
     ]) {
       expect(
         screen

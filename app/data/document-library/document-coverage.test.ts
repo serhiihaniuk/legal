@@ -16,7 +16,7 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
-  it.each(["work", "blue-card", "student"])(
+  it.each(["work", "blue-card", "student", "business"])(
     "keeps the %s register complete and places each document at the relevant stage",
     (routeId) => {
       const route = caseGuideRoutes.find((route) => route.id === routeId)!
@@ -67,7 +67,16 @@ describe("document coverage across learning modules", () => {
           "health-insurance",
           ...(routeId === "student"
             ? ["income-evidence", "housing-evidence", "tuition-payment"]
-            : ["zus-confirmation", "qualification-evidence"]),
+            : routeId === "business"
+              ? [
+                  "business-evidence",
+                  "employment-contract",
+                  "income-evidence",
+                  "housing-evidence",
+                  "zus-confirmation",
+                  "qualification-evidence",
+                ]
+              : ["zus-confirmation", "qualification-evidence"]),
           "sworn-translation",
         ])
       )
@@ -98,6 +107,21 @@ describe("document coverage across learning modules", () => {
             ids(document.item).includes("blue-card-notification")
           )?.level
         ).toBe("conditional")
+      }
+      if (routeId === "business") {
+        expect(at("status")).toContain("corporate-work-permit")
+        expect(at("decision")).toContain("temporary-residence-notification")
+        expect(at("filing")).not.toContain("temporary-residence-notification")
+        for (const id of [
+          "employment-annex-1",
+          "crbr-information",
+          "corporate-work-permit",
+          "employment-contract",
+          "qualification-evidence",
+        ] as const)
+          expect(
+            route.documents.find((entry) => ids(entry.item).includes(id))?.level
+          ).toBe("conditional")
       }
       if (routeId === "student") {
         expect(at("filing")).not.toContain("study-progress")

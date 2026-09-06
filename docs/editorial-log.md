@@ -262,3 +262,10 @@
 - Split the authored route into overview, stages, document definitions and references. The six stages and register reuse 34 document definitions with mandatory, conditional and working-record roles. The guide now displays its scoped verification date.
 - Recorded official ELI and UdSC checks in `content-review/writing-2026-09-05/batches/15-work-case-guide.md`. This guide's review is dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Eight complete case routes remain pending.
 - Full verification passed with 94 application tests. Final wording and the additional date-isolation test passed 18 focused tests, type checking, editorial validation and another production build. Desktop/mobile rendering, disclosures and document/case/provision navigation passed without browser console errors.
+
+## 2026-09-06 complete business case guide
+
+- Reworked the six-stage business guide around two qualifying employees, an excluded contractor and a missing year of submitted records. The dated response closes an evidence gap. It does not invent historical employment. Personal income, insurance and housing remain separate from the company's evidence.
+- Split the route into overview, stages, 36 reusable document entries and references. Added a corporate work-permit guide with a fictional Polish fragment, plus a filled employment comparison in the business-evidence guide. The catalogue now contains 60 document guides.
+- Recorded official ELI and Podlaski UW checks in `content-review/writing-2026-09-05/batches/18-business-case-guide.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Five complete case routes remain pending.
+- Full verification passed with 98 application tests and a production build. Desktop/mobile examples, keyboard table scrolling, checklist selection and case/document/provision navigation passed. Fresh loads had no browser console errors after an earlier development hot-reload mismatch.

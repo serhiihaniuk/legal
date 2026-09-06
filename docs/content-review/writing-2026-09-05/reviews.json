@@ -196,8 +196,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/business-evidence.ts",
-    "contentHash": "1531957777778931d0afb149b1abcf59e9e9fc248c44a9882fb8efda1d0cf83c",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
+    "contentHash": "f5fa5ed697ae464f28710e69d057f8da59077fae5ef8c75157d8b874b2348069",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/work-organisation-evidence.ts",
@@ -448,5 +448,30 @@
     "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
     "contentHash": "8394087c48aa3b2c5b5207a32db9c3eb56260c45a5c83368e4f1b2948e38e526",
     "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/business.ts",
+    "contentHash": "93c5d057bc7d3a2a34c19b39b40feef35153d653b99dff4835021bd04a534063",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/documents.ts",
+    "contentHash": "86aa3d0e5ded33a18f89c9d765459426f2a757f5f3d137acff97f8d8890966e1",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/stages.ts",
+    "contentHash": "9250626ccc45aa9e97af4f4f822c999d3f36076cbc0da93e0c127ac1956ea986",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/reference.ts",
+    "contentHash": "f0d467699ce7197406a02d799f3d39264c3240de60c8cf68d0e2d47671fc3a25",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/corporate-work-permit.ts",
+    "contentHash": "bdbed3d34ba7ad2180de430ecfc58521f70a0a2c15a5b0439c083e05b6b01465",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
   }
 ]

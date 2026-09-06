@@ -1,4 +1,5 @@
 import deadlineObstacleDocumentTopic from "./editorial/guides/deadline-obstacle"
+import corporateWorkPermitDocumentTopic from "./editorial/guides/corporate-work-permit"
 import proceedingCertificateDocumentTopic from "./editorial/guides/proceeding-certificate"
 import workOrganisationEvidenceDocumentTopic from "./editorial/guides/work-organisation-evidence"
 import statusDocumentsDocumentTopic from "./editorial/guides/status-documents"
@@ -88,6 +89,7 @@ export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
     blueCardNotificationDocumentTopic.body,
     temporaryResidenceNotificationDocumentTopic.body,
+    corporateWorkPermitDocumentTopic.body,
     deadlineObstacleDocumentTopic.body,
     proceedingCertificateDocumentTopic.body,
     workOrganisationEvidenceDocumentTopic.body,

@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1776,
-    "reviewed": 89,
+    "totalFiles": 1780,
+    "reviewed": 94,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 60,
+      "supporting-copy": 63,
       "case-guide": 9,
-      "evidence-document": 59,
+      "evidence-document": 60,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -98,6 +98,27 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
     },
     {
+      "path": "app/data/case-guides/editorial/business/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "86aa3d0e5ded33a18f89c9d765459426f2a757f5f3d137acff97f8d8890966e1",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/business/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "f0d467699ce7197406a02d799f3d39264c3240de60c8cf68d0e2d47671fc3a25",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/business/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "9250626ccc45aa9e97af4f4f822c999d3f36076cbc0da93e0c127ac1956ea986",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+    },
+    {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
       "family": "case-guide",
       "contentHash": "5dcdffcaaf09f001a6af50ac22a8fed99b714de2b48c366bd3336080a3a2f990",
@@ -107,9 +128,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/business.ts",
       "family": "case-guide",
-      "contentHash": "69e8f35cc08f9109e9b4e82d28cf770710e1977d5ffb4e8e3981b195ec40f35a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "93c5d057bc7d3a2a34c19b39b40feef35153d653b99dff4835021bd04a534063",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/cukr.ts",
@@ -268,9 +289,9 @@
     {
       "path": "app/data/document-library/editorial/guides/business-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "1531957777778931d0afb149b1abcf59e9e9fc248c44a9882fb8efda1d0cf83c",
+      "contentHash": "f5fa5ed697ae464f28710e69d057f8da59077fae5ef8c75157d8b874b2348069",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/business-register-information.ts",
@@ -299,6 +320,13 @@
       "contentHash": "15e0d87441f757009187cf121c2484ad53ed0ca3cc9a54974852a317a9b0539b",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/corporate-work-permit.ts",
+      "family": "evidence-document",
+      "contentHash": "bdbed3d34ba7ad2180de430ecfc58521f70a0a2c15a5b0439c083e05b6b01465",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/crbr-information.ts",
