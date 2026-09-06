@@ -353,5 +353,25 @@
     "path": "app/data/document-library/editorial/guides/settlement-intention.ts",
     "contentHash": "633e0825c64827351d1cd5b717a16627f4ef3b32f9121d5b9c92de33f1888063",
     "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/case-assessment.ts",
+    "contentHash": "569456a8ff792014889b47aafdc1fdfc0071008ddb82f5bc6cfb4c4da0bfeeb3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/deadline-obstacle.ts",
+    "contentHash": "ab0c0ac2e664e62db02ae2998817f8208d60542f3c57a45c3605910991bc1dd3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/ukraine-work-notification.ts",
+    "contentHash": "ec56e924758ccd0bf8476dfd17f850296815c591b40136303ec541717a542662",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
+  },
+  {
+    "path": "app/data/case-guides/shared-document-requirements.ts",
+    "contentHash": "e3af165c73add6e94d5b670f033b4924c4650e859ebd9bd79abb2c8f1767bfc6",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
   }
 ]

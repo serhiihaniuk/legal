@@ -3,7 +3,7 @@ import {
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
 import type { DocumentGuide } from "~/data/document-library/contracts"
-import { documentSources, workLaw } from "../authoring"
+import { documentSources, workLaw as law } from "../authoring"
 
 const UKRAINE_WORK_AMENDMENT_URL = "https://eli.gov.pl/eli/DU/2026/203/ogl"
 const UKRAINE_WORK_GUIDANCE_URL =
@@ -11,40 +11,143 @@ const UKRAINE_WORK_GUIDANCE_URL =
 
 const guide: DocumentGuide = {
   id: "ukraine-work-notification",
-  title: "Powiadomienie o pracy obywatela Ukrainy",
+  title: "Powiadomienie про доручення праці",
   category: "work",
   aliases: ["powiadomienie pup"],
-  description: workLaw.text`Тут є два правові шляхи, які не можна змішувати. Коли polski podmiot powierzający pracę cudzoziemcowi доручає працю іноземцю, який користується ochroną czasową, він повідомляє właściwy PUP через praca.gov.pl протягом 7 днів від початку праці. Окремо, протягом трьох років від 05.03.2026, ${workLaw.external("art. 41 ustawy z 23 stycznia 2026 r.", UKRAINE_WORK_AMENDMENT_URL)} поширює правила ${workLaw.article("3", "art. 3")} ust. 1 pkt 12 та ${workLaw.article("5a", "art. 5a")} ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom на визначених громадян України, які перебувають у Польщі легально і не користуються ochroną czasową w Rzeczypospolitej Polskiej. Компетентний PUP визначають за siedzibą роботодавця або його місцем постійного проживання. Нове powiadomienie протягом 7 днів потрібне, якщо змінюється вид договору чи посада або вид роботи, або якщо зменшується робочий час чи ставка. Перед іншою зміною умов треба окремо перевірити, чи не почалася нова праця, чи не змінився роботодавець або правова підстава.`,
+  description:
+    "Powiadomienie повідомляє повітовий центр зайнятості, PUP, що конкретний роботодавець доручив працю конкретній особі. Його подають через praca.gov.pl. У справі треба звірити фактичну роботу, відправлене повідомлення і правову підставу, яка дозволяє користуватися цим порядком.",
   preparedBy:
-    "Подає polski podmiot powierzający pracę cudzoziemcowi або його представник через praca.gov.pl.",
+    "Польський суб'єкт, який доручає працю, або його уповноважений представник. Це окрема дія роботодавця, а не частина особистого подання працівника в MOS.",
   purpose: [
-    "Фіксує дані роботодавця, працівника і заявлені умови роботи у визначений момент.",
+    "Фіксує повідомлені дані працівника, роботодавця, договору та умов роботи. Разом із підтвердженням подання дозволяє перевірити, що й коли надіслали до PUP.",
   ],
   doesNotProve: [
-    "Не підтверджує законність перебування або фактичну відповідність роботи заявленим умовам.",
+    "Не надає права перебувати в Польщі та не доводить, що фактична робота відповідає заявленій. Заповнена чернетка не є відправленим повідомленням.",
   ],
-  legalBasis: [
-    workLaw.text`${workLaw.article("5a", "Art. 5a ust. 1–6")} ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom — адресат, строк, канал, właściwy PUP і зміни, що вимагають нового powiadomienia.`,
-    workLaw.text`${workLaw.external("Art. 41 ustawy z 23 stycznia 2026 r.", UKRAINE_WORK_AMENDMENT_URL)} — протягом трьох років від 05.03.2026 поширює ці правила на визначених громадян України, які перебувають легально і не користуються ochroną czasową w Rzeczypospolitej Polskiej.`,
+  explanation: [
+    {
+      id: "who-is-covered",
+      title: "Чий статус перевіряють перед повідомленням",
+      paragraphs: [
+        law.text`${law.article("5a", "Art. 5a ust. 1")} стосується праці іноземця, який користується ochroną czasową в Польщі, тобто тимчасовим захистом. Це охоплює також осіб іншого громадянства з таким захистом. Сам номер PESEL без перевірки статусу не відповідає на це питання.`,
+        law.text`Окремий ${law.external("art. 41 закону Dz.U. 2026 poz. 203", UKRAINE_WORK_AMENDMENT_URL)} протягом трьох років від 05.03.2026 поширює правила ${law.article("3", "art. 3 ust. 1 pkt 12")} і ${law.article("5a", "art. 5a")} на громадян України, які перебувають у Польщі легально та не користуються тут тимчасовим захистом. Для них спочатку встановлюють чинну підставу легального перебування. Повідомлення не виправляє відсутності такої підстави.`,
+        law.text`Для повідомлень, належно поданих до 05.03.2026, ${law.external("art. 40 цього закону", UKRAINE_WORK_AMENDMENT_URL)} зберігає застосування попереднього правила. Не вимагайте нового повідомлення лише через зміну закону. Нову роботу або зміну умов перевіряють окремо.`,
+      ],
+    },
+    {
+      id: "read-notification",
+      title: "Що звірити у відправленому повідомленні",
+      paragraphs: [
+        law.text`${law.article("5a", "Art. 5a ust. 1–2 і 6")} визначає електронне подання протягом семи днів від фактичного початку роботи. PUP обирають за місцезнаходженням або місцем постійного перебування суб'єкта, який доручає працю. Адреса працівника чи місце виконання роботи можуть бути в іншому повіті.`,
+        law.text`Перелік даних у ${law.article("5a", "art. 5a ust. 4")} охоплює роботодавця та його реєстрові відомості, особу і документ працівника, підставу перебування, вид договору, посаду або роботу, її місце, місячну чи погодинну ставку та робочий час. Також подають кількість осіб, які працюють за трудовими й цивільними договорами, на день повідомлення. Для агенції тимчасової праці потрібні відповідні реєстрові відомості.`,
+        "Збережіть відправлений документ і системне підтвердження його подання. Їх звіряють із договором, фактичним початком роботи та подальшими змінами. Реєстрація повідомлення в PUP не є індивідуальною перевіркою всіх умов роботи або дозволом на побут.",
+      ],
+      example: {
+        title: "Дата договору не дорівнює початку роботи",
+        facts: [
+          "Умовний приклад. Громадянин України з перевіреним тимчасовим захистом підписав договір 28.08.2026, а фактично почав роботу 01.09.2026. Компанія А має місцезнаходження у Варшаві; місце роботи розташоване в іншому повіті. У чернетці працівник фірми помилково взяв дату підписання договору за початок роботи.",
+        ],
+        sample: {
+          kind: "table",
+          title: "Зіставлення повідомлення з договором і початком роботи",
+          note: "Вигаданий робочий фрагмент за переліком даних закону. Це не копія інтерфейсу praca.gov.pl. Ідентифікатори, адреси й особисті дані опущено.",
+          columns: ["Відомість", "Звірений запис"],
+          rows: [
+            {
+              id: "employer",
+              cells: [
+                "Podmiot powierzający pracę",
+                "Компанія А, місцезнаходження у Варшаві. Вибрано відповідний PUP за роботодавцем.",
+              ],
+            },
+            {
+              id: "status",
+              cells: [
+                "Особа і підстава перебування",
+                "Дані звірено з паспортом; тимчасовий захист перевірено окремо.",
+              ],
+            },
+            {
+              id: "dates",
+              cells: [
+                "Підписання / фактичний початок",
+                "Договір підписано 28.08.2026. Роботу розпочато 01.09.2026; саме цю подію взято для строку.",
+              ],
+            },
+            {
+              id: "terms",
+              cells: [
+                "Rodzaj umowy, stanowisko",
+                "Umowa o pracę; magazynier. Зміст роботи звірено з договором.",
+              ],
+            },
+            {
+              id: "pay",
+              cells: [
+                "Wynagrodzenie і wymiar czasu pracy",
+                "6 000 zł brutto miesięcznie; pełny etat. Дані повідомлення збігаються з договором.",
+              ],
+            },
+            {
+              id: "sent",
+              cells: [
+                "Надісланий документ",
+                "03.09.2026. Збережено саме відправлену версію та системне підтвердження; початкову чернетку не використано як доказ подання.",
+              ],
+            },
+          ],
+        },
+        reasoning: [
+          "Повідомлення подано в межах семи днів від фактичного початку. Дата підписання договору залишилася фактом про договір, а не стала іншою датою початку праці. Компетенцію PUP визначено за роботодавцем.",
+          "Зіставлення показує узгоджені дані. Воно не замінює перевірку реальних годин, виплат і чинного статусу. Якщо роботу доручає інша компанія, запис про компанію А не підтверджує повідомлення від нового роботодавця.",
+        ],
+        conclusion:
+          "У справі є своєчасне повідомлення з перевіреними умовами та доказом подання. Його читають разом із матеріалами про перебування і фактичну працю.",
+      },
+    },
+    {
+      id: "changes-and-failure",
+      title: "Зміна роботи, запізнення або збій системи",
+      paragraphs: [
+        law.text`За ${law.article("5a", "art. 5a ust. 5")} нове повідомлення протягом семи днів потрібне після зміни виду договору, посади чи виду роботи, зменшення робочого часу або кількості годин, а також зниження місячної чи погодинної ставки. Наприклад, перехід з umowy zlecenia на umowę o pracę є зміною виду договору. Правила інших дозволів не скасовують цієї вимоги для повідомлення.`,
+        "Urząd Pracy у Варшаві пояснює, що відправлене повідомлення не коригують і не анулюють у звичайному порядку. Тому виправлення чернетки до відправлення, нове повідомлення через зміну умов і помилка у вже поданих даних є різними ситуаціями. У разі помилки уточніть належну дію у компетентному PUP; не вважайте зміну свого локального файла виправленням запису в системі.",
+        law.text`Якщо своєчасне подання стало неможливим через неправильну роботу системи, ${law.article("5a", "art. 5a ust. 3")} вимагає повідомити не пізніше першого робочого дня після усунення несправності. Збережіть повідомлення сервісу, час невдалих спроб і відновлення роботи. Забутий пароль або несвоєчасна підготовка самі собою не підтверджують збій системи.`,
+        "Звичайне запізнення не виправляється перенесенням фактичної дати початку на пізнішу. Офіційна інструкція PUP відрізняє прострочене повідомлення від нового реального доручення праці. Новий документ не робить минулий період автоматично законним. Окремо з'ясуйте наслідки за попередній період і підставу подальшої роботи.",
+      ],
+    },
   ],
   keyChecks: [
-    "Фактична дата початку, właściwy PUP, строк 7 днів, дані тотожні umowie та збережене підтвердження wysłania.",
-    "Кожна зміна роботодавця, підстави або умов роботи окремо перевірена за актуальною нормою.",
+    "Встановлено статус працівника, правову підставу повідомлення та фактичну дату початку праці.",
+    "Правильний PUP, роботодавець, договір, посада, оплата й години; є відправлена версія та підтвердження.",
+    "Зміни умов і можливі пропуски строку перевірено окремо; збій системи підтверджено конкретними матеріалами.",
+  ],
+  legalBasis: [
+    law.text`${law.article("5a", "Art. 5a ust. 1–6")}: строк, система, її несправність, дані, повторне повідомлення і компетентний PUP.`,
+    law.text`${law.external("Art. 40–41 закону Dz.U. 2026 poz. 203", UKRAINE_WORK_AMENDMENT_URL)}: попередні повідомлення та трирічне застосування для громадян України без тимчасового захисту.`,
   ],
   sources: [
     documentSources.work,
     {
-      label: "Ustawa z 23 stycznia 2026 r. — Dz.U. 2026 poz. 203",
+      label: "Ustawa z 23 stycznia 2026 r., Dz.U. 2026 poz. 203",
       url: UKRAINE_WORK_AMENDMENT_URL,
-      note: "Офіційний акт, який запровадив механізм powiadomienia і містить правило перехідного застосування.",
+      note: "Правила повідомлення, попередніх подань і перехідного застосування.",
     },
     {
-      label: "Praca.gov.pl — powiadomienie o podjęciu pracy",
+      label: "Urząd Pracy m.st. Warszawy: повідомлення про працю",
       url: UKRAINE_WORK_GUIDANCE_URL,
-      note: "Поточна офіційна інструкція щодо praca.gov.pl, właściwego PUP, строку та повторного повідомлення.",
+      note: "Офіційна інструкція про електронне подання, зміни та запізнення.",
     },
   ],
-  verifiedAt: "2026-07-18",
+  verifiedAt: "2026-09-06",
+  relatedDocuments: [
+    "employment-contract",
+    "passport",
+    "pesel-ukr-confirmation",
+    "status-documents",
+    "upo",
+    "dispatch-proof",
+    "deadline-obstacle",
+  ],
 }
 
 export const ukraineWorkNotificationTopic: KnowledgeUnit<DocumentGuide> =
@@ -62,7 +165,7 @@ export const ukraineWorkNotificationTopic: KnowledgeUnit<DocumentGuide> =
       {
         id: "notification-mechanism",
         kind: "statute-text",
-        text: "Polski podmiot powierzający pracę cudzoziemcowi подає powiadomienie через praca.gov.pl до PUP, компетентного за його siedzibą або місцем постійного проживання, протягом 7 днів від початку праці.",
+        text: "Польський суб'єкт повідомляє PUP про працю особи з тимчасовим захистом протягом семи днів від її початку. Компетенцію визначають за суб'єктом, який доручає працю.",
         basis: [
           {
             reference: {
@@ -76,7 +179,7 @@ export const ukraineWorkNotificationTopic: KnowledgeUnit<DocumentGuide> =
       {
         id: "changed-work-conditions",
         kind: "statute-text",
-        text: "Нове powiadomienie протягом 7 днів потрібне після зміни виду договору або посади чи виду роботи, а також після зменшення робочого часу або ставки.",
+        text: "Повторне повідомлення протягом семи днів потрібне після зміни виду договору, посади або роботи, зменшення робочого часу чи годин або зниження ставки.",
         basis: [
           {
             reference: {
@@ -90,30 +193,30 @@ export const ukraineWorkNotificationTopic: KnowledgeUnit<DocumentGuide> =
       {
         id: "current-electronic-workflow",
         kind: "official-guidance",
-        text: "Офіційна інструкція praca.gov.pl підтверджує електронний канал, właściwy PUP, семиденний строк і практичні випадки повторного повідомлення.",
+        text: "Офіційна інструкція Urzędu Pracy m.st. Warszawy пояснює електронне подання, повторні повідомлення та відсутність звичайної корекції поданого запису.",
         basis: [
           {
             reference: { kind: "external", url: UKRAINE_WORK_GUIDANCE_URL },
             locator:
-              "sekcja „Zasady powierzenia pracy cudzoziemcowi na podstawie powiadomienia” — akapity o właściwym PUP, terminie i nowym powiadomieniu",
+              "Zasady powierzenia pracy cudzoziemcowi na podstawie powiadomienia",
           },
         ],
       },
       {
         id: "transitional-scope",
         kind: "statute-text",
-        text: workLaw.text`${workLaw.external("Art. 41 ustawy z 23 stycznia 2026 r.", UKRAINE_WORK_AMENDMENT_URL)} протягом трьох років від 05.03.2026 поширює правила ${workLaw.article("3", "art. 3")} ust. 1 pkt 12 та ${workLaw.article("5a", "art. 5a")} на визначених громадян України, які перебувають легально і не користуються ochroną czasową w Rzeczypospolitej Polskiej.`,
+        text: law.text`${law.external("Art. 41 закону Dz.U. 2026 poz. 203", UKRAINE_WORK_AMENDMENT_URL)} протягом трьох років від 05.03.2026 поширює відповідні правила на громадян України, які перебувають легально та не користуються тимчасовим захистом у Польщі.`,
         basis: [
           {
             reference: { kind: "external", url: UKRAINE_WORK_AMENDMENT_URL },
-            locator: "Art. 41",
+            locator: "Art. 41 i 54",
           },
         ],
       },
       {
         id: "change-requires-fresh-check",
         kind: "practical-inference",
-        text: "Перед зміною роботодавця, правової підстави або інших умов треба заново перевірити, чи достатнє чинне powiadomienie і чи не виник новий обов’язок.",
+        text: "Зміна роботодавця, підстави або умов потребує окремої перевірки. Локальне виправлення файла не змінює вже подане повідомлення.",
         basis: [
           {
             reference: {
@@ -125,7 +228,21 @@ export const ukraineWorkNotificationTopic: KnowledgeUnit<DocumentGuide> =
           {
             reference: { kind: "external", url: UKRAINE_WORK_GUIDANCE_URL },
             locator:
-              "sekcja „Zasady powierzenia pracy cudzoziemcowi na podstawie powiadomienia” — akapity o zmianie pracodawcy, warunków i kolejnych umowach",
+              "Zasady powierzenia pracy; korekta i ponowne powiadomienie",
+          },
+        ],
+      },
+      {
+        id: "system-failure",
+        kind: "statute-text",
+        text: "Якщо неправильна робота системи унеможливила своєчасне подання, повідомлення подають не пізніше першого робочого дня після усунення несправності.",
+        basis: [
+          {
+            reference: {
+              kind: "official-source",
+              sourceId: "eli-powierzanie-pracy",
+            },
+            locator: "Art. 5a ust. 3",
           },
         ],
       },
@@ -134,10 +251,9 @@ export const ukraineWorkNotificationTopic: KnowledgeUnit<DocumentGuide> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-18",
+      legalStateDate: guide.verifiedAt,
       verifiedAt: guide.verifiedAt,
     },
     body: guide,
   })
-
 export default ukraineWorkNotificationTopic

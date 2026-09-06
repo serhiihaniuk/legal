@@ -107,4 +107,23 @@ describe("document coverage across learning modules", () => {
       }
     }
   })
+  it("connects missed-deadline evidence to the relevant case stages without making it universally required", () => {
+    const evidence = documentById.get("deadline-obstacle")!
+    for (const route of caseGuideRoutes) {
+      for (const documents of [
+        route.documents,
+        ...route.stages
+          .filter((stage) => ["procedure", "decision"].includes(stage.id))
+          .map((stage) => stage.documents),
+      ]) {
+        const requirement = documents.find((doc) =>
+          ids(doc.item).includes("deadline-obstacle")
+        )
+        expect(requirement?.level, route.id).toBe("conditional")
+      }
+      expect(
+        evidence.caseContexts.some((context) => context.routeId === route.id)
+      ).toBe(true)
+    }
+  })
 })

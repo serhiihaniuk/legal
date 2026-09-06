@@ -234,3 +234,10 @@
 - Reused six document definitions across the family, other-purposes and permanent case stages and registers. Complete case-route review remains pending.
 - Recorded official ELI, original-form, UdSC and voivodeship checks in `content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Form-boundary, sponsor-status and extraction discrepancies remain open for the corpus audit.
 - Full verification passed with 92 application tests and a production build. All six desktop/mobile pages fit, all five mobile comparison regions scroll by keyboard, and case/document/provision links worked without browser console errors. A final term explanation passed focused rendering, editorial and formatting checks.
+
+## 2026-09-06 working notes, missed deadlines and notifications
+
+- Reworked the three remaining document guides: internal case assessment, evidence about a deadline obstacle and work notification. Added a filled internal note and two working comparisons. Distinguished internal reminders from legal deadlines, the end of an obstacle from a certificate date, and submitted notification data from proof of all work conditions.
+- Added shared conditional deadline evidence to the procedure and decision stages and registers of all nine case guides. Work and CUKR now reuse a conditional notification entry. Complete case-route review remains pending.
+- Recorded official ELI and Warsaw PUP checks in `content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged.
+- Full verification passed with 93 application tests and a production build. Final wording passed ten focused tests and editorial validation. Desktop/mobile pages, keyboard table scrolling and case/document/provision navigation passed without browser console errors. Rechecked the revised reading-guide page and its direct act-reader link.

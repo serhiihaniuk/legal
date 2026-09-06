@@ -1,3 +1,4 @@
+import { deadlineObstacleEvidence } from "~/data/case-guides/shared-document-requirements"
 import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
@@ -1794,6 +1795,7 @@ const route: CaseGuideRoute = {
           level: "conditional",
           status: "після відповіді",
         },
+        deadlineObstacleEvidence,
       ],
       risks: [
         {
@@ -1929,6 +1931,7 @@ const route: CaseGuideRoute = {
             "Строки повідомлень, допустимі зміни, обов’язки щодо праці, адреси, навчання або діяльності",
           law: "Post-decision duties конкретного маршруту",
         },
+        deadlineObstacleEvidence,
       ],
       risks: [
         {
@@ -2398,6 +2401,7 @@ const route: CaseGuideRoute = {
       level: "conditional",
       status: "після відповіді",
     },
+    deadlineObstacleEvidence,
   ],
   deadlines: [
     {

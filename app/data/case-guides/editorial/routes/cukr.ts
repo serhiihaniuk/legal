@@ -1,4 +1,8 @@
 import {
+  deadlineObstacleEvidence,
+  workNotificationEvidence,
+} from "~/data/case-guides/shared-document-requirements"
+import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
@@ -1151,40 +1155,7 @@ const route: CaseGuideRoute = {
           proves: "Факт, дату й зміст електронного подання",
           law: "MOS; контроль akt sprawy",
         },
-        {
-          reviewId: "notification",
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Powiadomienie PUP про роботу",
-            parts: [
-              {
-                text: "Powiadomienie PUP про роботу",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "ukraine-work-notification",
-                },
-              },
-            ],
-          },
-          status: "окремий обов’язок",
-          level: "external",
-          owner: "Роботодавець · до 7 днів від початку роботи",
-          proves: "Законність поточної роботи до отримання CUKR",
-          law: {
-            kind: "authored-legal-text",
-            plainText:
-              "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
-            parts: [
-              {
-                text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
-                },
-              },
-            ],
-          },
-        },
+        workNotificationEvidence,
         {
           item: {
             kind: "authored-legal-text",
@@ -1819,6 +1790,7 @@ const route: CaseGuideRoute = {
           level: "conditional",
           status: "після відповіді",
         },
+        deadlineObstacleEvidence,
       ],
       risks: [
         {
@@ -1926,40 +1898,7 @@ const route: CaseGuideRoute = {
             ],
           },
         },
-        {
-          reviewId: "notification",
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Powiadomienie PUP про роботу",
-            parts: [
-              {
-                text: "Powiadomienie PUP про роботу",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "ukraine-work-notification",
-                },
-              },
-            ],
-          },
-          status: "окремий обов’язок",
-          level: "external",
-          owner: "Роботодавець · до 7 днів від початку роботи",
-          proves: "Законність поточної роботи до отримання CUKR",
-          law: {
-            kind: "authored-legal-text",
-            plainText:
-              "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
-            parts: [
-              {
-                text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
-                },
-              },
-            ],
-          },
-        },
+        workNotificationEvidence,
         {
           item: {
             kind: "authored-legal-text",
@@ -2075,6 +2014,7 @@ const route: CaseGuideRoute = {
             "Строки повідомлень, допустимі зміни, обов’язки щодо праці, адреси, навчання або діяльності",
           law: "Post-decision duties конкретного маршруту",
         },
+        deadlineObstacleEvidence,
       ],
       risks: [
         {
@@ -2387,40 +2327,7 @@ const route: CaseGuideRoute = {
       proves: "Факт, дату й зміст електронного подання",
       law: "MOS; контроль akt sprawy",
     },
-    {
-      reviewId: "notification",
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Powiadomienie PUP про роботу",
-        parts: [
-          {
-            text: "Powiadomienie PUP про роботу",
-            target: {
-              kind: "evidence-document",
-              documentId: "ukraine-work-notification",
-            },
-          },
-        ],
-      },
-      status: "окремий обов’язок",
-      level: "external",
-      owner: "Роботодавець · до 7 днів від початку роботи",
-      proves: "Законність поточної роботи до отримання CUKR",
-      law: {
-        kind: "authored-legal-text",
-        plainText:
-          "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
-        parts: [
-          {
-            text: "Art. 5a ustawy o warunkach dopuszczalności powierzania pracy cudzoziemcom",
-            target: {
-              kind: "external",
-              url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
-            },
-          },
-        ],
-      },
-    },
+    workNotificationEvidence,
     {
       item: {
         kind: "authored-legal-text",
@@ -2644,6 +2551,7 @@ const route: CaseGuideRoute = {
       level: "conditional",
       status: "після відповіді",
     },
+    deadlineObstacleEvidence,
   ],
   deadlines: [
     {

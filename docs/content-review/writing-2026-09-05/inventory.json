@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1763,
-    "reviewed": 70,
+    "totalFiles": 1764,
+    "reviewed": 74,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 49,
+      "supporting-copy": 50,
       "case-guide": 9,
       "evidence-document": 57,
       "provision": 1478,
@@ -79,63 +79,63 @@
     {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
       "family": "case-guide",
-      "contentHash": "f6328d4350415092a128c197ff4e0c6aa26b7f7467905eb63130f837a1267bf6",
+      "contentHash": "b80c85253d170fa2a8ed4dc4bf1b0d56e25610a98bcd65346b80377fd5674581",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/business.ts",
       "family": "case-guide",
-      "contentHash": "56be3eb51a6752df8ea696fafc66428778096b81b0b9c4b5fb2e4790f9aca9b1",
+      "contentHash": "69e8f35cc08f9109e9b4e82d28cf770710e1977d5ffb4e8e3981b195ec40f35a",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/cukr.ts",
       "family": "case-guide",
-      "contentHash": "f126b2c7f1d1c0813eed3b9ed7432506a40aa70cdecb6faca2bedaeb4d02ec37",
+      "contentHash": "c60876de19a8496981bcf5613ab28bda7c0a7ed5226a5ca3e10124ac4f4ce6f7",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/family.ts",
       "family": "case-guide",
-      "contentHash": "faca9811c5ff1ad4ac123057c843da8b431ffdcf7004564ae948de08e857dd88",
+      "contentHash": "78592d8c50608d578d17c0edbb9468cc4a65a82d72ea3c346be1067f4bd42d2c",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
       "family": "case-guide",
-      "contentHash": "9993234d8078f43f6ca09ebc850a319cd357a515dc35a037949f96435a96cc4a",
+      "contentHash": "3516a291676424970b1d5bf11ae1cd659aa3a962a213ae8822d049190c7e29d1",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/other.ts",
       "family": "case-guide",
-      "contentHash": "cbd88a704d633e46b9558c55238ec06921f151a096a057b2c3ccb09f0867bdb4",
+      "contentHash": "f207462481ae3b42fe0664606c020c79eac46c65b63783dacd879df283ffabd1",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/permanent.ts",
       "family": "case-guide",
-      "contentHash": "ac7f97cdaf31f58251b7e42ae60c40519798ab17d2bbc6c22ce2cf034e19a827",
+      "contentHash": "367997be6a48d4cfb7213f0fe1f60146821e6513a1a3483e75e89d2fba1d4867",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/student.ts",
       "family": "case-guide",
-      "contentHash": "531ba46f4c515d93a149cba60bfbfd564fe0c192e612efc1b65365749766f486",
+      "contentHash": "c7b9302f60b50ffd892a0bfbc1d52bc11f2818e14139276b63526ae6c777e103",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/case-guides/editorial/routes/work.ts",
       "family": "case-guide",
-      "contentHash": "d6dc83963fb2c2eff103e8757212b4cc906a4ac1a395cbdeb8e9f33d805aad38",
+      "contentHash": "5ce3cf34545a4befb95b78253139b14f2499d29ffa53afd9e0cb76c634baac8b",
       "writing": "pending",
       "evidence": null
     },
@@ -145,6 +145,13 @@
       "contentHash": "882beb32f6de16c2cb8608449428495d79726c1dbe77f9e7e6dbb476bdd9213d",
       "writing": "pending",
       "evidence": null
+    },
+    {
+      "path": "app/data/case-guides/shared-document-requirements.ts",
+      "family": "supporting-copy",
+      "contentHash": "e3af165c73add6e94d5b670f033b4924c4650e859ebd9bd79abb2c8f1767bfc6",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
     },
     {
       "path": "app/data/document-library/editorial/authoring.ts",
@@ -198,9 +205,9 @@
     {
       "path": "app/data/document-library/editorial/guides/case-assessment.ts",
       "family": "evidence-document",
-      "contentHash": "d53b2e9e13bd7eee531d3b36a1aef784500e8c763ab6a74ee85262130c014b3b",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "569456a8ff792014889b47aafdc1fdfc0071008ddb82f5bc6cfb4c4da0bfeeb3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/case-file-index.ts",
@@ -233,9 +240,9 @@
     {
       "path": "app/data/document-library/editorial/guides/deadline-obstacle.ts",
       "family": "evidence-document",
-      "contentHash": "49c8e1e4c00e12cc008effe9dd378f966c67e4fecf0447d08425a8866105dc42",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ab0c0ac2e664e62db02ae2998817f8208d60542f3c57a45c3605910991bc1dd3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/delivery-proof.ts",
@@ -520,9 +527,9 @@
     {
       "path": "app/data/document-library/editorial/guides/ukraine-work-notification.ts",
       "family": "evidence-document",
-      "contentHash": "7212f55bfc188b893d14d97f89b960628ada2cdf590bb29574a70fcc7ea72f2f",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ec56e924758ccd0bf8476dfd17f850296815c591b40136303ec541717a542662",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/upo.ts",

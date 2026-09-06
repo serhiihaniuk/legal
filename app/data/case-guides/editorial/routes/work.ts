@@ -1,4 +1,8 @@
 import {
+  deadlineObstacleEvidence,
+  workNotificationEvidence,
+} from "~/data/case-guides/shared-document-requirements"
+import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
@@ -2108,49 +2112,7 @@ const route: CaseGuideRoute = {
           proves: "Дату, зміст і комплект електронного подання",
           law: "MOS; контроль akt sprawy",
         },
-        {
-          reviewId: "notification",
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Powiadomienie PUP",
-            parts: [
-              {
-                text: "Powiadomienie PUP",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "ukraine-work-notification",
-                },
-              },
-            ],
-          },
-          status: "окремий обов’язок",
-          level: "external",
-          owner: "Роботодавець · поточна робота і визначені зміни",
-          proves: "Законність праці на підставі правил для громадян України",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 5a; art. 41 ustawy z 23.01.2026",
-            parts: [
-              {
-                text: "Art. 5a",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
-                },
-              },
-              {
-                text: "; ",
-              },
-              {
-                text: "art. 41 ustawy z 23.01.2026",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
-                },
-              },
-            ],
-          },
-        },
+        workNotificationEvidence,
         {
           reviewId: "passport",
           item: {
@@ -2862,6 +2824,7 @@ const route: CaseGuideRoute = {
           level: "conditional",
           status: "під час особистої дії",
         },
+        deadlineObstacleEvidence,
       ],
       risks: [
         {
@@ -2923,49 +2886,7 @@ const route: CaseGuideRoute = {
         "Відомі умови дозволу, строки та дії при зміні роботи. Рішення й дані карти перевірені.",
       documents: [
         workCardFeeProof,
-        {
-          reviewId: "notification",
-          item: {
-            kind: "authored-legal-text",
-            plainText: "Powiadomienie PUP",
-            parts: [
-              {
-                text: "Powiadomienie PUP",
-                target: {
-                  kind: "evidence-document",
-                  documentId: "ukraine-work-notification",
-                },
-              },
-            ],
-          },
-          status: "окремий обов’язок",
-          level: "external",
-          owner: "Роботодавець · поточна робота і визначені зміни",
-          proves: "Законність праці на підставі правил для громадян України",
-          law: {
-            kind: "authored-legal-text",
-            plainText: "Art. 5a; art. 41 ustawy z 23.01.2026",
-            parts: [
-              {
-                text: "Art. 5a",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
-                },
-              },
-              {
-                text: "; ",
-              },
-              {
-                text: "art. 41 ustawy z 23.01.2026",
-                target: {
-                  kind: "external",
-                  url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
-                },
-              },
-            ],
-          },
-        },
+        workNotificationEvidence,
         {
           reviewId: "decision",
           item: {
@@ -3041,6 +2962,7 @@ const route: CaseGuideRoute = {
             "Строки повідомлень, допустимі зміни, обов’язки щодо праці, адреси, навчання або діяльності",
           law: "Post-decision duties конкретного маршруту",
         },
+        deadlineObstacleEvidence,
       ],
       risks: [
         {
@@ -3588,49 +3510,7 @@ const route: CaseGuideRoute = {
       proves: "Дату, зміст і комплект електронного подання",
       law: "MOS; контроль akt sprawy",
     },
-    {
-      reviewId: "notification",
-      item: {
-        kind: "authored-legal-text",
-        plainText: "Powiadomienie PUP",
-        parts: [
-          {
-            text: "Powiadomienie PUP",
-            target: {
-              kind: "evidence-document",
-              documentId: "ukraine-work-notification",
-            },
-          },
-        ],
-      },
-      status: "окремий обов’язок",
-      level: "external",
-      owner: "Роботодавець · поточна робота і визначені зміни",
-      proves: "Законність праці на підставі правил для громадян України",
-      law: {
-        kind: "authored-legal-text",
-        plainText: "Art. 5a; art. 41 ustawy z 23.01.2026",
-        parts: [
-          {
-            text: "Art. 5a",
-            target: {
-              kind: "external",
-              url: "https://eli.gov.pl/eli/DU/2025/621/ogl",
-            },
-          },
-          {
-            text: "; ",
-          },
-          {
-            text: "art. 41 ustawy z 23.01.2026",
-            target: {
-              kind: "external",
-              url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
-            },
-          },
-        ],
-      },
-    },
+    workNotificationEvidence,
     {
       reviewId: "passport",
       item: {
@@ -3915,6 +3795,7 @@ const route: CaseGuideRoute = {
       level: "conditional",
       status: "під час особистої дії",
     },
+    deadlineObstacleEvidence,
   ],
   deadlines: [
     {
