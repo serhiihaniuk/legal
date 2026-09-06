@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1800,
-    "reviewed": 128,
+    "reviewed": 129,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11748,9 +11748,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/organ-party.ts",
       "family": "map-topic",
-      "contentHash": "e9c188e13ca6f6016e498d3b69e3f6321bdabdf3f583b825104d728a5bd97017",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "40ac96aea6f1556f8216498bd30cc0f2dddb8a61a83cb374ed6718ec229965f0",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/31-authority-party-representation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/other-stay.ts",

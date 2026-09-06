@@ -369,3 +369,9 @@ Verification: typecheck, production build and component formatting passed. Check
 Rewrote the map parent article around sponsor status, relationship, children's dates and events after the permit. Added completed comparisons and six typed document references. Checked the relevant foreigners-act provisions and the newer EU-family consolidation, Dz.U. 2026 poz. 1065. The page-specific source check is dated 06.09.2026; the global baseline is unchanged.
 
 Desktop/mobile rendering, contents navigation, the family-evidence document link, reference previews and full project verification passed. Writing acceptance is 128 of 1,800 files. Detailed procedures and independent legal review remain open. Evidence: `docs/content-review/writing-2026-09-05/batches/30-family-residence-comparison.md`.
+
+### 2026-09-06: authority, party and representation
+
+Rewrote the map parent article with definitions of the organ, office, competence, party, appointed representative and statutory representative. Completed examples explain conflicting addresses, employer participation, forwarded service and a related caseworker. Existing document specimens remain linked through typed references.
+
+Checked KPA, the relevant foreigners-act provisions and the UdSC MOS signature notice on 06.09.2026. The page distinguishes ordinary temporary-residence proceedings from the ICT party exception and special filing procedures. Desktop/mobile rendering, contents navigation, document navigation, reference previews and full verification passed. Writing acceptance is 129 of 1,800 files; independent review remains pending. Evidence: `docs/content-review/writing-2026-09-05/batches/31-authority-party-representation.md`.

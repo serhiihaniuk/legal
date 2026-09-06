@@ -643,5 +643,10 @@
     "path": "app/data/legal-map/editorial/topics/family-stay.ts",
     "contentHash": "9be54b2a22132f04c3216935e35308030e33f3921a3f9fe6e748e99ee20af434",
     "evidence": "docs/content-review/writing-2026-09-05/batches/30-family-residence-comparison.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/organ-party.ts",
+    "contentHash": "40ac96aea6f1556f8216498bd30cc0f2dddb8a61a83cb374ed6718ec229965f0",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/31-authority-party-representation.md"
   }
 ]

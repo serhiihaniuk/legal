@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 30 rewrites the family parent page by sponsor status, relationship and child-related dates. Completed examples explain permit history and the role of birth records and decisions. Writing acceptance is now 128 of 1,800 files. Detailed route pages and the other map dispositions remain pending; see `batches/30-family-residence-comparison.md`.
+Batch 31 rewrites the authority-and-party parent page with definitions, named distinctions and completed examples of competence, representation, service and disqualification. Writing acceptance is now 129 of 1,800 files. The deadlines/delivery split, deeper route pages and other map dispositions remain pending; see `batches/31-authority-party-representation.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 

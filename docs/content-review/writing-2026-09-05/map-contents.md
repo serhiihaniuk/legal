@@ -94,7 +94,7 @@ Numbers refer to the target chapters above. "Retain" means retain a distinct top
 | `foreign-documents` | 5 | Retain. Give translation, authentication and evidentiary content distinct explanations. |
 | `case-file` | 5 | Retain. Separate the authority's file, access to it and the worker's own chronology. |
 | `evidence` | 5 | Retain. Explain submission, assessment and contradictions through a completed evidence comparison. |
-| `organ-party` | 6 | Retain as a parent article; give authority, party, representative and disqualification named treatment. Link to the power-of-attorney guide. |
+| `organ-party` | 6 | Parent article rewritten in batch 31 with named authority, party, representation, signature/service and disqualification sections. Completed examples and the existing power-of-attorney specimen explain the distinctions. |
 | `initiation` | 6 | Retain. Explain filing, initiation and possible formal consequences as distinct events. |
 | `mos-procedure` | 6 | Retain. Explain the filing channel, signature, receipt and applicable exceptions using existing source forms. |
 | `evidence-matrix` | 6 | Move and rename visibly around formal versus substantive completeness. Its stable ID is misleading but does not require a broken URL. Cross-link from evidence and wezwanie. |
