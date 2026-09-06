@@ -3,6 +3,7 @@ import proceedingCertificateDocumentTopic from "./editorial/guides/proceeding-ce
 import workOrganisationEvidenceDocumentTopic from "./editorial/guides/work-organisation-evidence"
 import statusDocumentsDocumentTopic from "./editorial/guides/status-documents"
 import blueCardAnnexDocumentTopic from "./editorial/guides/blue-card-annex"
+import blueCardNotificationDocumentTopic from "./editorial/guides/blue-card-notification"
 import traineeVolunteerAnnexDocumentTopic from "./editorial/guides/trainee-volunteer-annex"
 import researchAnnexDocumentTopic from "./editorial/guides/research-annex"
 import studyAnnexDocumentTopic from "./editorial/guides/study-annex"
@@ -84,6 +85,7 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    blueCardNotificationDocumentTopic.body,
     deadlineObstacleDocumentTopic.body,
     proceedingCertificateDocumentTopic.body,
     workOrganisationEvidenceDocumentTopic.body,

@@ -37,6 +37,7 @@ export type EvidenceDocumentId =
   | "digital-photo"
   | "apostille-legalisation"
   | "blue-card-annex"
+  | "blue-card-notification"
   | "trainee-volunteer-annex"
   | "research-annex"
   | "study-annex"
@@ -184,6 +185,7 @@ export const evidenceDocumentIds = [
   "digital-photo",
   "apostille-legalisation",
   "blue-card-annex",
+  "blue-card-notification",
   "trainee-volunteer-annex",
   "research-annex",
   "study-annex",

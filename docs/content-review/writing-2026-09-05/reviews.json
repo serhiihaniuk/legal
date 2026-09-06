@@ -381,8 +381,8 @@
   },
   {
     "path": "app/data/case-guides/editorial/work/documents.ts",
-    "contentHash": "898634db11aa2085b268685cb2c69b8f485654055fe4ed27e7e4fd1f8d0c6073",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+    "contentHash": "e0c2a2851167a27c00184c37dc50b14a38e03c3f44df6da8aef9ed995e15b661",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
   },
   {
     "path": "app/data/case-guides/editorial/work/stages.ts",
@@ -393,5 +393,35 @@
     "path": "app/data/case-guides/editorial/work/reference.ts",
     "contentHash": "12b08f38597b128ac69fb185d1bc36c070ade85c4c90011381ed77e31e2a9a21",
     "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/blue-card.ts",
+    "contentHash": "5dcdffcaaf09f001a6af50ac22a8fed99b714de2b48c366bd3336080a3a2f990",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/blue-card/documents.ts",
+    "contentHash": "cf07e0b1aeb235046e9b9754a13ebc54ad4be76a88e7acea7f6284bf8c7fbb3c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/blue-card/stages.ts",
+    "contentHash": "a7bfaa38f933ac4f58d3f8885f9585aa20b805082768f1cfd377719afd930186",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/blue-card/reference.ts",
+    "contentHash": "991564754ccca6b13cc8e19d30d001f53b52487af2ec6c45624bcb1fdbb9646f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/shared/temporary-residence-documents.ts",
+    "contentHash": "997e9a4d5e141ff4e73e5b5f284f074318b421a0fcd5e87da55765030361cecb",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/blue-card-notification.ts",
+    "contentHash": "9e07291a77206c71e8df51519f877a24461691d76f4ebfa65a114c7ad689da4a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
   }
 ]

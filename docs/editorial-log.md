@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Blue Card case and notification
+
+- Reworked the complete Blue Card case around a fictional programmer proving qualifications through experience. The six stages connect the contract, salary calculation, two annexes, evidence correction, response deadline and decision. UKR, mobility and permits granted before 1 June 2025 have explicit distinctions.
+- Added a notification document guide with a filled fictional Polish fragment. The 35 case documents resolve to canonical guides and reverse case references. Twenty unchanged filing and procedure definitions are shared with the work guide.
+- Recorded the official checks in `content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md`. The guide and new document are checked on 06.09.2026; the atlas baseline and independent-review status remain separate. Seven complete case guides remain pending.
+- Full verification passed with 96 application tests and the production build. Desktop/mobile reading, folded references, stage anchors, checkboxes, document/case links and the art. 134 destination were checked. No page overflow or browser console errors were found. Rechecked that the source-selection lesson directly answers the question raised in the screenshot.
+
 ## 2026-09-05 document guidance alignment
 
 - Removed the vertical border and extra indentation from the shared document-review block in case guides. "Що звірити" and missing-document guidance now align with the document details above. Content and spacing between sections remain unchanged.
