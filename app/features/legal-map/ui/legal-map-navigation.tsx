@@ -10,39 +10,39 @@ import {
   type SectionNavigationOption,
 } from "~/components/patterns/section-navigation"
 import {
-  legalMapJourney,
-  type LegalMapJourneyStage,
+  legalMapChapters,
+  type LegalMapChapter,
 } from "~/data/legal-map/journey"
 
-import { journeyNodes } from "../model/legal-map-model"
+import { chapterNodes } from "../model/legal-map-model"
 
 export function LegalMapNavigation({
-  selectedStageId,
+  selectedChapterId,
   selectedNodeId,
-  onStageSelect,
+  onChapterSelect,
   onNodeSelect,
 }: {
-  selectedStageId: LegalMapJourneyStage["id"]
+  selectedChapterId: LegalMapChapter["id"]
   selectedNodeId?: string
-  onStageSelect: (stageId: LegalMapJourneyStage["id"]) => void
+  onChapterSelect: (stageId: LegalMapChapter["id"]) => void
   onNodeSelect: (nodeId: string) => void
 }) {
   return (
-    <DocsSidebar ariaLabel="Шлях адміністративної справи">
+    <DocsSidebar ariaLabel="Зміст карти права">
       <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
       <div className="px-2">
-        <p className="text-xs font-medium text-muted-foreground">Шлях справи</p>
+        <p className="text-xs font-medium text-muted-foreground">Карта права</p>
         <p className="mt-1 text-xs leading-5 text-muted-foreground">
-          Від першої орієнтації до захисту після рішення.
+          Поняття, правила та їхні зв'язки у справі іноземця.
         </p>
       </div>
-      <DocsSidebarSection title="Етапи справи" className="mt-4">
+      <DocsSidebarSection title="Розділи карти" className="mt-4">
         <DocsSidebarList ordered>
-          {legalMapJourney.map((stage) => {
+          {legalMapChapters.map((stage) => {
             const nestedTopics =
-              stage.id === selectedStageId ? (
+              stage.id === selectedChapterId ? (
                 <ul className="ml-4 border-l pl-2">
-                  {journeyNodes(stage).map((node) => (
+                  {chapterNodes(stage).map((node) => (
                     <DocsSidebarItem
                       key={node.id}
                       active={node.id === selectedNodeId}
@@ -58,9 +58,9 @@ export function LegalMapNavigation({
             return (
               <DocsSidebarItem
                 key={stage.id}
-                active={stage.id === selectedStageId}
-                onClick={() => onStageSelect(stage.id)}
-                ariaPressed={stage.id === selectedStageId}
+                active={stage.id === selectedChapterId}
+                onClick={() => onChapterSelect(stage.id)}
+                ariaPressed={stage.id === selectedChapterId}
                 className="min-h-11 items-start px-2 py-2"
                 nested={nestedTopics}
               >
@@ -87,29 +87,29 @@ export function LegalMapNavigation({
 }
 
 export function MobileLegalMapNavigation({
-  selectedStageId,
+  selectedChapterId,
   selectedNodeId,
-  onStageSelect,
+  onChapterSelect,
   onNodeSelect,
   onOverviewSelect,
 }: {
-  selectedStageId: LegalMapJourneyStage["id"]
+  selectedChapterId: LegalMapChapter["id"]
   selectedNodeId?: string
-  onStageSelect: (stageId: LegalMapJourneyStage["id"]) => void
+  onChapterSelect: (stageId: LegalMapChapter["id"]) => void
   onNodeSelect: (nodeId: string) => void
   onOverviewSelect: () => void
 }) {
-  const stage = legalMapJourney.find((item) => item.id === selectedStageId)
-  const nodes = stage ? journeyNodes(stage) : []
+  const stage = legalMapChapters.find((item) => item.id === selectedChapterId)
+  const nodes = stage ? chapterNodes(stage) : []
   const stageNavigationOptions: readonly SectionNavigationOption<
-    LegalMapJourneyStage["id"]
-  >[] = legalMapJourney.map((item) => ({
+    LegalMapChapter["id"]
+  >[] = legalMapChapters.map((item) => ({
     value: item.id,
     label: item.title,
     selectLabel: `${item.order}. ${item.title} · ${item.nodeIds.length} тем`,
   }))
   const nodeNavigationOptions: readonly SectionNavigationOption[] = [
-    { value: "", label: "Огляд маршруту" },
+    { value: "map-overview", label: "Зміст карти" },
     ...nodes.map((node) => ({ value: node.id, label: node.title })),
   ]
 
@@ -117,18 +117,18 @@ export function MobileLegalMapNavigation({
     <div className="grid min-w-0 gap-3 lg:hidden">
       <DocsSidebarBackLink to="/">На головну</DocsSidebarBackLink>
       <MobileSectionSelect
-        label="Етап справи"
-        value={selectedStageId}
+        label="Розділ карти"
+        value={selectedChapterId}
         options={stageNavigationOptions}
-        onValueChange={onStageSelect}
+        onValueChange={onChapterSelect}
       />
 
       <MobileSectionSelect
         label="Тема"
-        value={selectedNodeId ?? ""}
+        value={selectedNodeId ?? "map-overview"}
         options={nodeNavigationOptions}
         onValueChange={(nodeId) => {
-          if (nodeId) onNodeSelect(nodeId)
+          if (nodeId !== "map-overview") onNodeSelect(nodeId)
           else onOverviewSelect()
         }}
       />

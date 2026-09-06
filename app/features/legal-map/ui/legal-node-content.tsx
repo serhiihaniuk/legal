@@ -8,11 +8,10 @@ import { LegalText, OfficialSourceEntry } from "~/components/references"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import { Separator } from "~/components/ui/separator"
-import { legalData } from "~/data/legal-map/data"
 import {
-  legalMapJourney,
-  legalMapJourneyStageForNode,
-  type LegalMapJourneyStage,
+  legalMapChapters,
+  legalMapChapterForNode,
+  type LegalMapChapter,
 } from "~/data/legal-map/journey"
 import {
   legalTextPlainText,
@@ -24,17 +23,13 @@ import { resolveMapTopicPublication } from "~/data/legal-knowledge"
 import { nodeById, type IndexedNode } from "~/data/legal-map/index"
 import type { LegalNode } from "~/data/shared/legal-types"
 
-import {
-  descendantNodes,
-  nodePath,
-  uniqueStatements,
-} from "../model/legal-map-model"
+import { descendantNodes, uniqueStatements } from "../model/legal-map-model"
 
 function LinkedNodeRows({
   nodes,
   onSelect,
 }: {
-  nodes: Array<LegalNode & { depth?: number }>
+  nodes: LegalNode[]
   onSelect: (nodeId: string) => void
 }) {
   return (
@@ -46,14 +41,13 @@ function LinkedNodeRows({
             variant="ghost"
             onClick={() => onSelect(node.id)}
             className="group h-auto w-full justify-start rounded-none px-0 py-4 text-left whitespace-normal hover:bg-transparent"
-            style={{ paddingInlineStart: `${(node.depth ?? 0) * 1.25}rem` }}
           >
             <span className="min-w-0 flex-1">
               <strong className="block text-sm leading-5 font-medium">
                 {node.title}
               </strong>
               <span className="mt-1 block text-xs leading-5 text-muted-foreground">
-                <LegalText text={node.polish} />
+                {legalTextPlainText(node.polish)}
               </span>
             </span>
             <ArrowRight data-icon="inline-end" />
@@ -127,7 +121,7 @@ export function LegalNodeContent({
 }: {
   node: IndexedNode
   onNodeSelect: (nodeId: string) => void
-  onOverviewSelect: (stageId: LegalMapJourneyStage["id"]) => void
+  onOverviewSelect: (stageId: LegalMapChapter["id"]) => void
 }) {
   const publication = resolveMapTopicPublication(node.id)
   const contentNode: IndexedNode = publication
@@ -139,11 +133,12 @@ export function LegalNodeContent({
         sources: [...publication.sources],
       }
     : node
-  const group = legalData.groups.find((item) => item.id === node.groupId)
-  const stage = legalMapJourneyStageForNode(node.id) ?? legalMapJourney[0]
-  const path = nodePath(node)
-  const children = descendantNodes(node.children ?? [])
-  const related = (node.related ?? [])
+  const stage = legalMapChapterForNode(node.id) ?? legalMapChapters[0]
+  const relatedIds = new Set([
+    ...descendantNodes(node.children ?? []).map((item) => item.id),
+    ...(node.related ?? []),
+  ])
+  const related = [...relatedIds]
     .map((id) => nodeById.get(id))
     .filter((item): item is IndexedNode => Boolean(item))
   const guide = publication?.guide ?? legalNodeGuides[node.id]
@@ -162,30 +157,12 @@ export function LegalNodeContent({
         badges={
           <>
             <Badge variant="secondary">
-              Етап {stage.order} з {legalMapJourney.length}
+              Розділ {stage.order} з {legalMapChapters.length}
             </Badge>
             <Badge variant="outline">{stage.title}</Badge>
-            <Badge variant="outline">
-              {group?.shortTitle ?? node.groupTitle}
-            </Badge>
           </>
         }
       >
-        <p
-          data-not-typeset
-          className="not-typeset mb-3 flex flex-wrap gap-x-2 gap-y-1 text-xs text-muted-foreground"
-        >
-          {path.map((item, index) => (
-            <span key={item.id}>
-              {index > 0 ? (
-                <span aria-hidden="true" className="mr-2">
-                  /
-                </span>
-              ) : null}
-              {item.title}
-            </span>
-          ))}
-        </p>
         <h1>{contentNode.title}</h1>
         <p className="lead">
           <LegalText text={contentNode.polish} />
@@ -195,20 +172,6 @@ export function LegalNodeContent({
             <LegalText text={paragraph} />
           </p>
         ))}
-        <div data-not-typeset className="not-typeset mt-6 border-y py-5">
-          <p className="text-xs font-medium text-muted-foreground">
-            Питання етапу
-          </p>
-          <p className="mt-2 text-sm leading-6">
-            <LegalText text={stage.question} />
-          </p>
-          <p className="mt-4 text-xs font-medium text-muted-foreground">
-            Результат етапу
-          </p>
-          <p className="mt-2 text-sm leading-6">
-            <LegalText text={stage.outcome} />
-          </p>
-        </div>
         <div data-not-typeset className="not-typeset mt-5">
           <Button
             variant="outline"
@@ -216,7 +179,7 @@ export function LegalNodeContent({
             onClick={() => onOverviewSelect(stage.id)}
           >
             <Map data-icon="inline-start" />
-            Показати етап на карті
+            До розділу карти
           </Button>
         </div>
       </DocumentHeader>
@@ -275,25 +238,10 @@ export function LegalNodeContent({
         </section>
       ) : null}
 
-      {children.length || related.length ? (
+      {related.length ? (
         <section id="node-relations">
           <h2>Пов’язані теми</h2>
-          <p>
-            Ці переходи продовжують або уточнюють тему. Вони є навігацією по
-            карті, а не окремими посиланнями всередині навчального тексту.
-          </p>
-          {children.length ? (
-            <>
-              <h3>Деталізація цього інституту</h3>
-              <LinkedNodeRows nodes={children} onSelect={onNodeSelect} />
-            </>
-          ) : null}
-          {related.length ? (
-            <>
-              <h3>Суміжні інститути</h3>
-              <LinkedNodeRows nodes={related} onSelect={onNodeSelect} />
-            </>
-          ) : null}
+          <LinkedNodeRows nodes={related} onSelect={onNodeSelect} />
         </section>
       ) : null}
 

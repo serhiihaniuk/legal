@@ -1,8 +1,9 @@
 import type { TocItem } from "~/components/layout"
 import {
-  legalMapJourney,
-  legalMapJourneyStageForNode,
-  type LegalMapJourneyStage,
+  legalMapChapters,
+  legalMapChapterForNode,
+  legalMapChapterNodes,
+  type LegalMapChapter,
 } from "~/data/legal-map/journey"
 import {
   legalTextPlainText,
@@ -12,8 +13,10 @@ import { nodeById, type IndexedNode } from "~/data/legal-map/index"
 import type { LegalNode } from "~/data/shared/legal-types"
 
 export const legalMapOverviewToc: TocItem[] = [
-  { href: "#map-overview", label: "Як влаштована карта" },
-  ...legalMapJourney.map((stage) => ({
+  { href: "#map-overview", label: "Що пояснює карта" },
+  { href: "#map-connections", label: "Як пов'язані розділи" },
+  { href: "#map-example", label: "Приклад із двома документами" },
+  ...legalMapChapters.map((stage) => ({
     href: `#stage-${stage.id}`,
     label: `${stage.order}. ${stage.title}`,
   })),
@@ -34,10 +37,8 @@ export function legalMapNodeToc(node: IndexedNode): TocItem[] {
   ]
 }
 
-export function journeyNodes(stage: LegalMapJourneyStage) {
-  return stage.nodeIds
-    .map((nodeId) => nodeById.get(nodeId))
-    .filter((node): node is IndexedNode => Boolean(node))
+export function chapterNodes(stage: LegalMapChapter) {
+  return legalMapChapterNodes(stage)
 }
 
 export function descendantNodes(
@@ -48,20 +49,6 @@ export function descendantNodes(
     { ...node, depth },
     ...descendantNodes(node.children ?? [], depth + 1),
   ])
-}
-
-export function nodePath(node: IndexedNode) {
-  const path: IndexedNode[] = [node]
-  let parentId = node.parentId
-
-  while (parentId) {
-    const parent = nodeById.get(parentId)
-    if (!parent) break
-    path.unshift(parent)
-    parentId = parent.parentId
-  }
-
-  return path
 }
 
 export function uniqueStatements(
@@ -78,6 +65,6 @@ export function resolveLegalMapNode(nodeId?: string) {
   return nodeId ? nodeById.get(nodeId) : undefined
 }
 
-export function stageForNode(node?: IndexedNode) {
-  return legalMapJourneyStageForNode(node?.id)?.id ?? legalMapJourney[0].id
+export function chapterForNode(node?: IndexedNode) {
+  return legalMapChapterForNode(node?.id)?.id ?? legalMapChapters[0].id
 }

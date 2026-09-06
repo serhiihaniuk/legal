@@ -1,6 +1,6 @@
 import { nodeById } from "./index"
 
-export type LegalMapJourneyStageId =
+export type LegalMapChapterId =
   | "orientation"
   | "status"
   | "route"
@@ -10,28 +10,22 @@ export type LegalMapJourneyStageId =
   | "procedure"
   | "decision"
   | "protection"
-
-export type LegalMapJourneyStage = {
-  id: LegalMapJourneyStageId
+export type LegalMapChapter = {
+  id: LegalMapChapterId
   order: number
   title: string
   description: string
-  question: string
-  outcome: string
   nodeIds: readonly string[]
 }
 
-export const legalMapJourney = [
+// Existing chapter IDs retain the published #stage-* anchor destinations.
+export const legalMapChapters = [
   {
     id: "orientation",
     order: 1,
-    title: "Орієнтація у справі",
+    title: "Як пов'язані факти, норми та докази",
     description:
-      "Відокремлюємо факти від юридичних понять і визначаємо, які закони регулюють результат та процедуру.",
-    question:
-      "Що сталося, якого результату просить особа і які норми треба перевірити?",
-    outcome:
-      "Хронологія фактів, сформульоване юридичне питання і перелік законів для перевірки.",
+      "Фактична історія, юридичне питання і текст норми виконують різні ролі. Тут пояснено, як виділити умови з норми, знайти відповідну редакцію закону та поєднати спеціальні правила з KPA.",
     nodeIds: [
       "start-case",
       "legal-anatomy",
@@ -43,32 +37,24 @@ export const legalMapJourney = [
   {
     id: "status",
     order: 2,
-    title: "Особа і поточна підстава",
+    title: "Особа, в'їзд і поточне перебування",
     description:
-      "Фіксуємо громадянство, документи, законність перебування та спеціальний статус на дату кожної події.",
-    question: "Хто ця особа і на якій підставі вона зараз перебуває в Польщі?",
-    outcome:
-      "Картка особи з чинним статусом, документами та критичними датами.",
+      "Паспорт описує особу, а віза, безвізовий в'їзд, status UKR і перебування під час процедури порушують різні питання. Розділ пояснює поточне становище людини та значення дат у її історії перебування.",
     nodeIds: [
       "person-status",
       "entry-current-basis",
       "visa",
       "visa-free",
-      "ukraine-routes-2026",
       "ukr-baseline-2026",
-      "cukr-route-2026",
-      "ukraine-ordinary-2026",
+      "pending-stay",
     ],
   },
   {
     id: "route",
     order: 3,
-    title: "Мета і правовий маршрут",
+    title: "Підстави та види дозволів на перебування",
     description:
-      "Зіставляємо реальну головну мету перебування з конкретним видом дозволу та його умовами.",
-    question: "Який статус відповідає фактичній меті й обставинам цієї особи?",
-    outcome:
-      "Обраний маршрут легалізації та відхилені альтернативи з поясненням причин.",
+      "Робота, навчання, сім'я та інші обставини ведуть до різних питань про дозвіл. Тут зібрано порівняння цілей тимчасового перебування, pobyt stały, статусу rezydenta UE та окремих маршрутів для громадян України.",
     nodeIds: [
       "goal-of-stay",
       "temporary-common",
@@ -82,53 +68,37 @@ export const legalMapJourney = [
       "permanent-resident",
       "permanent",
       "long-term-eu",
+      "ukraine-routes-2026",
+      "cukr-route-2026",
+      "ukraine-ordinary-2026",
     ],
   },
   {
     id: "work",
     order: 4,
-    title: "Доступ до праці",
+    title: "Право працювати та обов'язки роботодавця",
     description:
-      "Окремо перевіряємо право працювати, інструмент легалізації праці та фактичну організацію роботи.",
-    question:
-      "Чи може особа виконувати саме цю роботу, для цього суб’єкта і на цих умовах?",
-    outcome:
-      "Визначена підстава доступу до праці, обов’язки роботодавця і ризики моделі роботи.",
+      "Розділ розрізняє доступ людини до праці, документи роботодавця та фактичну організацію роботи. Поруч із дозволами й oświadczeniem пояснено сезонну працю, delegowanie, роботу через агенцію та outsourcing.",
     nodeIds: [
       "work-entry",
-      "employer-duties",
       "work-instruments",
       "work-permit",
       "declaration",
       "seasonal",
       "delegation",
+      "employer-duties",
       "temporary-work",
       "outsourcing-case",
     ],
   },
   {
-    id: "filing",
-    order: 5,
-    title: "Підготовка і подання",
-    description:
-      "Визначаємо компетентний organ, спосіб подання, формальні вимоги та процесуальний момент початку справи.",
-    question: "Куди, коли, ким і в якій формі треба подати заяву?",
-    outcome:
-      "План подання: właściwy organ, канал, строк, формальні вимоги та відповідальні особи.",
-    nodeIds: ["organ-party", "initiation", "mos-procedure", "pending-stay"],
-  },
-  {
     id: "evidence",
-    order: 6,
-    title: "Умови і докази",
+    order: 5,
+    title: "Документи, умови та оцінка доказів",
     description:
-      "Для кожної законної умови фіксуємо факт, доказ, період, джерело та можливу суперечність.",
-    question: "Який доказ підтверджує кожну умову дозволу і чого ще бракує?",
-    outcome:
-      "Матриця умова → факт → доказ і реєстр прогалин або суперечностей.",
+      "Матриця умов показує, який факт має підтвердити кожен матеріал. Теми цього розділу пояснюють види доказів, документи з-за кордону, матеріали провадження та оцінку суперечностей між ними.",
     nodeIds: [
       "document-matrix",
-      "evidence-matrix",
       "document-types",
       "foreign-documents",
       "case-file",
@@ -136,21 +106,24 @@ export const legalMapJourney = [
     ],
   },
   {
+    id: "filing",
+    order: 6,
+    title: "Учасники справи та подання заяви",
+    description:
+      "Хто є стороною, як діє представник і як визначається компетентний орган? Після цих понять розділ пояснює початок провадження, подання через MOS і відмінність між формальною повнотою заяви та доведеністю умови.",
+    nodeIds: ["organ-party", "initiation", "mos-procedure", "evidence-matrix"],
+  },
+  {
     id: "procedure",
     order: 7,
-    title: "Перебіг провадження",
+    title: "Листування, строки та перебіг провадження",
     description:
-      "Контролюємо doręczenia, строки, wezwania, участь сторони та реакцію на бездіяльність органу.",
-    question:
-      "Що відбувається у справі зараз і яку процесуальну дію треба виконати наступною?",
-    outcome:
-      "Журнал подій, активні строки, невиконані дії та наступний процесуальний крок.",
+      "Doręczenie визначає значення отриманого листа для строків, а зміст wezwania пояснює, якої відповіді очікує орган. Тут також розглянуто участь сторони, обов'язки органу та бездіяльність. До цих тем повертаються протягом усієї справи.",
     nodeIds: [
       "kpa-principles",
       "principle-legality",
       "principle-trust",
       "principle-participation",
-      "principle-two-instance",
       "deadlines-delivery",
       "wezwanie",
       "wezwanie-workflow",
@@ -160,25 +133,19 @@ export const legalMapJourney = [
   {
     id: "decision",
     order: 8,
-    title: "Рішення і його наслідки",
+    title: "Рішення та його наслідки",
     description:
-      "Читаємо rozstrzygnięcie разом з обґрунтуванням, перевіряємо встановлені факти, право, строки та pouczenie.",
-    question: "Що саме вирішив organ, чому і з яким практичним наслідком?",
-    outcome:
-      "Розкладене рішення: встановлені факти, норми, rozstrzygnięcie, мотиви та строки.",
+      "Резолютивна частина повідомляє, що вирішив орган, а обґрунтування пояснює факти, докази й застосоване право. Наявні теми допомагають розрізняти види актів і читати рішення разом з інструкцією про оскарження.",
     nodeIds: ["decision-appeal", "decision-reading", "decision-workflow"],
   },
   {
     id: "protection",
     order: 9,
-    title: "Оскарження і судовий захист",
+    title: "Оскарження та інші засоби захисту",
     description:
-      "Добираємо звичайний, надзвичайний або судовий засіб захисту до виду акта, вади та строку.",
-    question:
-      "Який засіб захисту доступний, у який строк і якого результату можна вимагати?",
-    outcome:
-      "План оскарження або виконання рішення з адресатом, строком і żądaniem.",
+      "Odwołanie, zażalenie, надзвичайний перегляд і звернення до WSA мають різні предмети. Розділ порівнює ці механізми, пояснює дві інстанції та остаточність рішення. Судова тема пов'язана також із бездіяльністю під час провадження.",
     nodeIds: [
+      "principle-two-instance",
       "appeal",
       "complaint",
       "extraordinary-wsa",
@@ -187,15 +154,31 @@ export const legalMapJourney = [
       "wsa",
     ],
   },
-] satisfies readonly LegalMapJourneyStage[]
+] satisfies readonly LegalMapChapter[]
 
-export const unknownLegalMapJourneyNodeIds = legalMapJourney.flatMap((stage) =>
-  stage.nodeIds
-    .filter((nodeId) => !nodeById.has(nodeId))
-    .map((nodeId) => ({ stageId: stage.id, nodeId }))
+export const legalMapCompatibilityDestinations: ReadonlyMap<string, string> =
+  new Map([["study-loop", "/study"]])
+
+export function legalMapChapterForNode(nodeId?: string) {
+  return legalMapChapters.find((chapter) =>
+    chapter.nodeIds.includes(nodeId ?? "")
+  )
+}
+
+export function legalMapChapterForHash(hash: string) {
+  return legalMapChapters.find((chapter) => hash === `#stage-${chapter.id}`)
+}
+
+export const legalMapTopicCount = legalMapChapters.reduce(
+  (total, chapter) => total + chapter.nodeIds.length,
+  0
 )
 
-export function legalMapJourneyStageForNode(nodeId?: string) {
-  if (!nodeId) return undefined
-  return legalMapJourney.find((stage) => stage.nodeIds.includes(nodeId))
+export function legalMapChapterNodes(chapter: LegalMapChapter) {
+  return chapter.nodeIds.map((id) => {
+    const node = nodeById.get(id)
+    if (!node)
+      throw new Error(`Unknown map topic in chapter ${chapter.id}: ${id}`)
+    return node
+  })
 }

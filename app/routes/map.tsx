@@ -1,6 +1,11 @@
-import { useMemo, useState } from "react"
-import { useNavigate, useParams } from "react-router"
-
+import { useEffect, useMemo, useState } from "react"
+import {
+  redirect,
+  useLocation,
+  useNavigate,
+  useParams,
+  type LoaderFunctionArgs,
+} from "react-router"
 import { DocsLayout } from "~/components/layout"
 import {
   LegalMapNavigation,
@@ -10,91 +15,107 @@ import {
   legalMapOverviewToc,
   MobileLegalMapNavigation,
   resolveLegalMapNode,
-  stageForNode,
+  chapterForNode,
 } from "~/features/legal-map"
-import type { LegalMapJourneyStage } from "~/data/legal-map/journey"
+import {
+  legalMapChapterForHash,
+  legalMapChapters,
+  legalMapCompatibilityDestinations,
+  type LegalMapChapterId,
+} from "~/data/legal-map/journey"
 
 export function meta() {
   return [{ title: "Карта права — Legalizacja" }]
 }
 
-function scrollToTop() {
-  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))
+export function loader({ params }: LoaderFunctionArgs) {
+  const destination = legalMapCompatibilityDestinations.get(params.nodeId ?? "")
+  if (destination) return redirect(destination)
+  return null
 }
 
-function scrollToStage(stageId: LegalMapJourneyStage["id"]) {
-  requestAnimationFrame(() => {
+function scrollToChapter(chapterId: LegalMapChapterId) {
+  return requestAnimationFrame(() => {
     document
-      .getElementById(`stage-${stageId}`)
-      ?.scrollIntoView({ behavior: "smooth", block: "start" })
+      .getElementById(`stage-${chapterId}`)
+      ?.scrollIntoView({ behavior: "auto", block: "start" })
   })
 }
 
 export default function MapPage() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { nodeId } = useParams<{ nodeId?: string }>()
   const selectedNode = resolveLegalMapNode(nodeId)
-  const [selectedStageId, setSelectedStageId] = useState<
-    LegalMapJourneyStage["id"]
-  >(() => stageForNode(selectedNode))
-
-  const currentStageId = selectedNode
-    ? stageForNode(selectedNode)
-    : selectedStageId
+  const [hydrated, setHydrated] = useState(false)
+  // URL fragments are absent from the server request. Match its first render.
+  const hashChapter = legalMapChapterForHash(hydrated ? location.hash : "")
+  const currentChapterId = selectedNode
+    ? chapterForNode(selectedNode)
+    : (hashChapter?.id ?? legalMapChapters[0].id)
+  const [openChapterIds, setOpenChapterIds] = useState<string[]>([
+    currentChapterId,
+  ])
   const toc = useMemo(
     () => (selectedNode ? legalMapNodeToc(selectedNode) : legalMapOverviewToc),
     [selectedNode]
   )
 
-  function selectStage(stageId: LegalMapJourneyStage["id"]) {
-    setSelectedStageId(stageId)
-    if (selectedNode) {
-      navigate("/map")
-    }
-    scrollToStage(stageId)
+  useEffect(() => setHydrated(true), [])
+
+  useEffect(() => {
+    if (selectedNode || !hashChapter) return
+    setOpenChapterIds((ids) =>
+      ids.includes(hashChapter.id) ? ids : [...ids, hashChapter.id]
+    )
+    const frame = scrollToChapter(hashChapter.id)
+    return () => cancelAnimationFrame(frame)
+  }, [selectedNode, hashChapter])
+
+  function selectChapter(chapterId: LegalMapChapterId) {
+    setOpenChapterIds((ids) =>
+      ids.includes(chapterId) ? ids : [...ids, chapterId]
+    )
+    navigate(`/map#stage-${chapterId}`)
+    scrollToChapter(chapterId)
   }
 
   function selectNode(nextNodeId: string) {
-    const nextNode = resolveLegalMapNode(nextNodeId)
-    if (nextNode) setSelectedStageId(stageForNode(nextNode))
     navigate(`/map/${nextNodeId}`)
-    scrollToTop()
-  }
-
-  function showOverview(stageId = currentStageId) {
-    setSelectedStageId(stageId)
-    navigate("/map")
-    scrollToStage(stageId)
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }))
   }
 
   return (
     <DocsLayout
       navigation={
         <LegalMapNavigation
-          selectedStageId={currentStageId}
+          selectedChapterId={currentChapterId}
           selectedNodeId={selectedNode?.id}
-          onStageSelect={selectStage}
+          onChapterSelect={selectChapter}
           onNodeSelect={selectNode}
         />
       }
       toc={toc}
     >
       <MobileLegalMapNavigation
-        selectedStageId={currentStageId}
+        selectedChapterId={currentChapterId}
         selectedNodeId={selectedNode?.id}
-        onStageSelect={selectStage}
+        onChapterSelect={selectChapter}
         onNodeSelect={selectNode}
-        onOverviewSelect={() => showOverview()}
+        onOverviewSelect={() => selectChapter(currentChapterId)}
       />
-
       {selectedNode ? (
         <LegalNodeContent
           node={selectedNode}
           onNodeSelect={selectNode}
-          onOverviewSelect={showOverview}
+          onOverviewSelect={selectChapter}
         />
       ) : (
-        <LegalMapOverview onNodeSelect={selectNode} />
+        <LegalMapOverview
+          onNodeSelect={selectNode}
+          openChapterIds={openChapterIds}
+          onOpenChaptersChange={setOpenChapterIds}
+        />
       )}
     </DocsLayout>
   )

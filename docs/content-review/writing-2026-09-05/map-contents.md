@@ -161,6 +161,14 @@ Inspected the full journey registry, the canonical map tree and indexes, all aut
 
 Primary implementation files: `app/data/legal-map/journey.ts`, `app/data/legal-map/data.ts`, `app/data/legal-map/editorial/topics/`, `app/data/legal-map/node-guide-types.ts`, `app/features/legal-map/model/legal-map-model.ts`, and the map feature's navigation, overview and node-content components.
 
-This audit changes the rewrite order and gives it an explicit coverage record. The target structure and migrations above are not yet live. Existing legal-state dates and writing-acceptance hashes remain unchanged.
+This audit changes the rewrite order and gives it an explicit coverage record. At the time of the audit, the target structure and migrations above were not live. Implementation status is recorded below; the audit itself grants no writing acceptance.
 
 Coverage verification compared the disposition table with authored `map-topic` IDs and journey assignments: 63 unique dispositions match all 63 authored topics; the 62 journey entries have no duplicate or unknown IDs; only `study-loop` is outside the journey. Chapter counts in the table describe current-topic assignments before the planned merges and additions, not final published page counts.
+
+## Implementation status after batch 27
+
+- Live: primary chapter assignments, evidence-before-filing order, chapter labels and descriptions, derived counts, one chapter location in article headers, compatible URL anchors and Back behavior.
+- Live: the rewritten map overview with a completed example and a source-linked evidence explanation; the old weekly schedule redirects to the optional reading guide.
+- Preserved for migration: the older data tree still stores canonical nodes and relationships, but its paths and subject groups no longer create competing visible hierarchy. Related topics remain accessible as flat navigation.
+- Pending: flexible authored article sections, deeper chapter and parent articles, category splits, decision-analysis merge, missing map coverage, the recorded source-link correction and full topic-by-topic legal review.
+- The decisions chapter currently remains titled "Рішення та його наслідки". Add the card/post-decision wording only when those articles exist. No empty pages were created to satisfy the target contents.

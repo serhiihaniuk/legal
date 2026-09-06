@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1799,
-    "reviewed": 121,
+    "reviewed": 125,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 80,
@@ -11979,9 +11979,9 @@
     {
       "path": "app/data/legal-map/journey.ts",
       "family": "map-journey",
-      "contentHash": "966910e461cfd06b6652edb73bd2a8c3d793481a8a987c0724493e0c8788d3de",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "189649a7fbc0142d9e5a3e32e88afb76fe7b9b68911c96e96f8649c1099eee96",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
     },
     {
       "path": "app/data/references/reference-previews.ts",
@@ -12455,28 +12455,28 @@
     {
       "path": "app/features/legal-map/model/legal-map-model.ts",
       "family": "shared-renderer",
-      "contentHash": "be66dd1315042ed342e22b3b57c55ae8f7b140f3acedb292dd8bc2c8612d042c",
+      "contentHash": "f1bb4d1c3bd7385ca453adb3d9481d06dfb3058515a509fe61f132b91a5ea764",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/features/legal-map/ui/legal-map-navigation.tsx",
       "family": "shared-renderer",
-      "contentHash": "3e9fbe4e024fa126b1d63287a96c66f3fcd83702654b6c0a3cfc5af921b6ea7f",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "6ac9d1bd0f9531a8e27f5ad3ba4348364c94336ce07dd0cdc8c96a2ddb005e96",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
     },
     {
       "path": "app/features/legal-map/ui/legal-map-overview.tsx",
       "family": "shared-renderer",
-      "contentHash": "ad252de7bfe738c331dc2d50133830040e24eea2734d7556109aff43de0227f0",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "b771799003b33ef107a9fccec8d0264c2c2050bf56c49c6a599f3a5fbf70a566",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
     },
     {
       "path": "app/features/legal-map/ui/legal-node-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "91e643ef624bde4545edbfc05f3140532ff0ce83a0c3ef831834a2238ef038b1",
+      "contentHash": "7f476ba04759c5d9f0fff1b9ef01251716974bfaedf3f2552942f5ed1777be8e",
       "writing": "pending",
       "evidence": null
     },
@@ -12595,9 +12595,9 @@
     {
       "path": "app/routes/map.tsx",
       "family": "route-copy",
-      "contentHash": "b0b420315bb8d0c1dbd68480e4a6083de94c0627aca5e4ab81ffdda24bc09f46",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d3b0dccd8de34d893d2eb29b723ea52cc19e9b606cc7aed15094e058a1b916b0",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/27-map-contents-implementation.md"
     },
     {
       "path": "app/routes/shell.tsx",

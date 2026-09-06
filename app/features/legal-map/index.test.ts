@@ -1,19 +1,19 @@
 import { describe, expect, it } from "vitest"
 
-import { legalMapJourney } from "~/data/legal-map/journey"
+import { legalMapChapters } from "~/data/legal-map/journey"
 
 import {
   legalMapNodeToc,
   legalMapOverviewToc,
   resolveLegalMapNode,
-  stageForNode,
+  chapterForNode,
 } from "."
 
 describe("legal-map public API", () => {
   it("resolves canonical nodes, stages, and conditional node sections", () => {
     const node = resolveLegalMapNode("start-case")
     expect(node?.id).toBe("start-case")
-    expect(stageForNode(node)).toBe("orientation")
+    expect(chapterForNode(node)).toBe("orientation")
     expect(resolveLegalMapNode("missing-node")).toBeUndefined()
 
     if (!node) return
@@ -32,10 +32,10 @@ describe("legal-map public API", () => {
   })
 
   it("derives overview navigation from the journey registry", () => {
-    expect(legalMapOverviewToc).toHaveLength(legalMapJourney.length + 1)
+    expect(legalMapOverviewToc).toHaveLength(legalMapChapters.length + 3)
     expect(legalMapOverviewToc.at(-1)).toEqual({
-      href: `#stage-${legalMapJourney.at(-1)?.id}`,
-      label: `${legalMapJourney.at(-1)?.order}. ${legalMapJourney.at(-1)?.title}`,
+      href: `#stage-${legalMapChapters.at(-1)?.id}`,
+      label: `${legalMapChapters.at(-1)?.order}. ${legalMapChapters.at(-1)?.title}`,
     })
   })
 })

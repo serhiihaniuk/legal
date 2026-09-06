@@ -2,7 +2,7 @@ export {
   legalMapNodeToc,
   legalMapOverviewToc,
   resolveLegalMapNode,
-  stageForNode,
+  chapterForNode,
 } from "./model/legal-map-model"
 export {
   LegalMapNavigation,
