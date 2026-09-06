@@ -16,7 +16,7 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
-  it.each(["work", "blue-card"])(
+  it.each(["work", "blue-card", "student"])(
     "keeps the %s register complete and places each document at the relevant stage",
     (routeId) => {
       const route = caseGuideRoutes.find((route) => route.id === routeId)!
@@ -25,6 +25,13 @@ describe("document coverage across learning modules", () => {
       )
       expect(new Set(registerIds).size).toBe(registerIds.length)
       for (const stage of route.stages) {
+        for (const material of stage.materials) {
+          if (material.href.startsWith("/map/"))
+            expect(
+              allNodes.some((node) => node.id === material.href.slice(5)),
+              material.href
+            ).toBe(true)
+        }
         const stageIds = stage.documents.flatMap((document) =>
           ids(document.item)
         )
@@ -47,15 +54,20 @@ describe("document coverage across learning modules", () => {
           .documents.flatMap((document) => ids(document.item))
       expect(at("status")).toContain("status-documents")
       expect(at("filing")).toEqual(
-        expect.arrayContaining(["mos-application", "employment-annex-1", "upo"])
+        expect.arrayContaining([
+          "mos-application",
+          routeId === "student" ? "study-annex" : "employment-annex-1",
+          "upo",
+        ])
       )
       expect(at("filing")).not.toContain("proceeding-certificate")
       expect(at("filing")).not.toContain("fingerprint-record")
       expect(at("evidence")).toEqual(
         expect.arrayContaining([
           "health-insurance",
-          "zus-confirmation",
-          "qualification-evidence",
+          ...(routeId === "student"
+            ? ["income-evidence", "housing-evidence", "tuition-payment"]
+            : ["zus-confirmation", "qualification-evidence"]),
           "sworn-translation",
         ])
       )
@@ -86,6 +98,20 @@ describe("document coverage across learning modules", () => {
             ids(document.item).includes("blue-card-notification")
           )?.level
         ).toBe("conditional")
+      }
+      if (routeId === "student") {
+        expect(at("filing")).not.toContain("study-progress")
+        expect(at("filing")).not.toContain("temporary-residence-notification")
+        expect(at("decision")).toContain("temporary-residence-notification")
+        for (const id of [
+          "study-confirmation",
+          "study-progress",
+          "tuition-payment",
+          "temporary-residence-notification",
+        ] as const)
+          expect(
+            route.documents.find((entry) => ids(entry.item).includes(id))?.level
+          ).toBe("conditional")
       }
     }
   )

@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1772,
-    "reviewed": 84,
+    "totalFiles": 1776,
+    "reviewed": 89,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 57,
+      "supporting-copy": 60,
       "case-guide": 9,
-      "evidence-document": 58,
+      "evidence-document": 59,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -149,9 +149,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/student.ts",
       "family": "case-guide",
-      "contentHash": "c7b9302f60b50ffd892a0bfbc1d52bc11f2818e14139276b63526ae6c777e103",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ee436a8613035957012d6035a83d99f8408ee26000756af5e3e0a9f346b15312",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/work.ts",
@@ -166,6 +166,27 @@
       "contentHash": "997e9a4d5e141ff4e73e5b5f284f074318b421a0fcd5e87da55765030361cecb",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/student/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "84567f5c7880ee95ed47ff0027c322d98167327d13bbfae60e7c8b2f7fce9322",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/student/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "d2b88f1d3183801df1f1b636dd97fd09c08f5a847b3674881bbcf9489adcd51e",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/student/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "fb284b6c099d3777bf538540b658127d573037770cf7f8562f08ed703a7903d8",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/documents.ts",
@@ -394,9 +415,9 @@
     {
       "path": "app/data/document-library/editorial/guides/income-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "c5a45b7cdd99d24142236ca91cefc9592c9dd9d6603b67b31601c5ddc1229b61",
+      "contentHash": "f85f37b55a8530646715ae859b8ea8d5a6b7a63a2e50077161f418ec41754eb4",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/job-description.ts",
@@ -565,6 +586,13 @@
       "contentHash": "ddaad13ec867310a12e65abccf16b9d7a7871c8f64dcf5961926d855000af5b2",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/09-study-and-foreign-documents.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
+      "family": "evidence-document",
+      "contentHash": "8394087c48aa3b2c5b5207a32db9c3eb56260c45a5c83368e4f1b2948e38e526",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/trainee-volunteer-annex.ts",

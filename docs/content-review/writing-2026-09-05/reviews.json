@@ -206,8 +206,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/income-evidence.ts",
-    "contentHash": "c5a45b7cdd99d24142236ca91cefc9592c9dd9d6603b67b31601c5ddc1229b61",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+    "contentHash": "f85f37b55a8530646715ae859b8ea8d5a6b7a63a2e50077161f418ec41754eb4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/housing-evidence.ts",
@@ -423,5 +423,30 @@
     "path": "app/data/document-library/editorial/guides/blue-card-notification.ts",
     "contentHash": "9e07291a77206c71e8df51519f877a24461691d76f4ebfa65a114c7ad689da4a",
     "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/student.ts",
+    "contentHash": "ee436a8613035957012d6035a83d99f8408ee26000756af5e3e0a9f346b15312",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/student/documents.ts",
+    "contentHash": "84567f5c7880ee95ed47ff0027c322d98167327d13bbfae60e7c8b2f7fce9322",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/student/stages.ts",
+    "contentHash": "fb284b6c099d3777bf538540b658127d573037770cf7f8562f08ed703a7903d8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/student/reference.ts",
+    "contentHash": "d2b88f1d3183801df1f1b636dd97fd09c08f5a847b3674881bbcf9489adcd51e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
+    "contentHash": "8394087c48aa3b2c5b5207a32db9c3eb56260c45a5c83368e4f1b2948e38e526",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
   }
 ]

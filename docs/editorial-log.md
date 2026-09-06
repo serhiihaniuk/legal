@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Student case, funds and ended-study notice
+
+- Reworked the student case around one fictional master's application. Its six stages connect admissibility, the university annex, two tuition receipts, a completed budget, an evidence response and the decision. The route distinguishes full-time study, other educational purposes, mobility, work rights and changed study status.
+- Reused 32 document definitions across the stages and register. Added a guide for the art. 113 notice with a fictional Polish fragment, and a filled bank-document comparison to the income-evidence guide. Corrected a broken map destination and extended coverage checks to the student case.
+- Source checks and limits are recorded in `content-review/writing-2026-09-05/batches/17-student-case-guide.md`. The affected pages have a scoped 06.09.2026 check date; the atlas baseline and independent-review status remain separate. Six complete cases remain pending.
+- Full verification passed with 97 application tests and the production build. Desktop/mobile controls, the bank table's keyboard scrolling, document and case links, and the exact art. 113 destination were checked. No page-level horizontal overflow or browser console errors were found.
+
 ## 2026-09-06 Blue Card case and notification
 
 - Reworked the complete Blue Card case around a fictional programmer proving qualifications through experience. The six stages connect the contract, salary calculation, two annexes, evidence correction, response deadline and decision. UKR, mobility and permits granted before 1 June 2025 have explicit distinctions.
