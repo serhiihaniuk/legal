@@ -1,6 +1,9 @@
 import type { CaseGuideDocument } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
-import { deadlineObstacleEvidence } from "../../shared-document-requirements"
+import {
+  deadlineObstacleEvidence,
+  proceduralOrderEvidence,
+} from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
 
@@ -172,6 +175,7 @@ export const blueCardDocuments = {
     law: law.text`${law.article("134")} і ${law.article("134a")}; для рішень, виданих до 01.06.2025, діють зазначені в перехідній нормі попередні правила.`,
   },
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const blueCardDocumentRegister: CaseGuideDocument[] = [
@@ -199,6 +203,7 @@ export const blueCardDocumentRegister: CaseGuideDocument[] = [
   blueCardDocuments.upo,
   blueCardDocuments.index,
   blueCardDocuments.summons,
+  blueCardDocuments.order,
   blueCardDocuments.delivery,
   blueCardDocuments.requirements,
   blueCardDocuments.response,

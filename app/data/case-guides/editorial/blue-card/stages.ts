@@ -255,6 +255,7 @@ export const blueCardStages: CaseGuideStage[] = [
       "У прикладі обидві вимоги виконано до 03.09.2026. Є копія відповіді та доказ подання 01.09.2026; подальший розгляд і достатність доказів залишаються за органом.",
     documents: [
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

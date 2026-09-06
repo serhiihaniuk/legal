@@ -15,6 +15,7 @@ export type EvidenceDocumentId =
   | "delivery-proof"
   | "power-of-attorney"
   | "administrative-decision"
+  | "procedural-order"
   | "zus-confirmation"
   | "business-register-information"
   | "crbr-information"
@@ -166,6 +167,7 @@ export const evidenceDocumentIds = [
   "delivery-proof",
   "power-of-attorney",
   "administrative-decision",
+  "procedural-order",
   "zus-confirmation",
   "business-register-information",
   "crbr-information",

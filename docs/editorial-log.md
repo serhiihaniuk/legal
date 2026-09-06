@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Procedural orders in the document catalog
+
+- Added a postanowienie guide with an annotated fictional Polish order, a completed deadline calculation and a timely complaint. It distinguishes the stated basis for restricted file access from a verified lawful restriction.
+- All nine case registers and procedure stages use one conditional document definition. It is absent from filing requirements. Coverage tests caught and resolved three missing register entries.
+- Scoped official KPA and CUKR integration checks are recorded in `content-review/writing-2026-09-05/batches/36-procedural-order.md`. Writing acceptance is 136 of 1,800 files; the global baseline and independent legal review remain unchanged.
+- Full verification passed with 193 application tests, 68 corpus tests and one existing skip, 15 content-review tests and the production build. Preview validation covered 63 document guides. Desktop/mobile reading, the contents anchor, the conditional case row and keyboard navigation passed without page overflow or browser errors.
+
 ## 2026-09-06 Authority document classification
 
 - Rewrote the decision classification page as an article distinguishing decisions, procedural orders, demands, notices and certificates. Three fictional Polish fragments show completed responses, their separate subjects and dated deadlines. Removed the misleading claim that the heading determines the available remedy.

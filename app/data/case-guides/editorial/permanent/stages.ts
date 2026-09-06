@@ -182,6 +182,7 @@ export const permanentStages: CaseGuideStage[] = [
       "Пояснення з матеріалами подано до 03.09.2026. Явка, формальні недоліки й оцінка наміру мають власні записи та наслідки.",
     documents: [
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

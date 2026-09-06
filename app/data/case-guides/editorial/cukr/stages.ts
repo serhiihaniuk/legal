@@ -167,6 +167,7 @@ export const cukrStages: CaseGuideStage[] = [
     documents: [
       d.upo,
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

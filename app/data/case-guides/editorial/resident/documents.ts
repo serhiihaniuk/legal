@@ -1,6 +1,9 @@
 import type { CaseGuideDocument } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
-import { deadlineObstacleEvidence } from "../../shared-document-requirements"
+import {
+  deadlineObstacleEvidence,
+  proceduralOrderEvidence,
+} from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
 
@@ -197,6 +200,7 @@ export const residentDocuments = {
     law: law.text`${law.article("229")} ust. 2; ${law.article("230")} ust. 2; ${law.article("243")} ust. 1 pkt 3.`,
   },
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const residentDocumentRegister: CaseGuideDocument[] = [
@@ -222,6 +226,7 @@ export const residentDocumentRegister: CaseGuideDocument[] = [
   residentDocuments.index,
   residentDocuments.certificate,
   residentDocuments.summons,
+  residentDocuments.order,
   residentDocuments.delivery,
   residentDocuments.requirements,
   residentDocuments.response,

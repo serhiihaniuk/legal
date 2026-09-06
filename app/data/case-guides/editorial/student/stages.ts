@@ -231,6 +231,7 @@ export const studentStages: CaseGuideStage[] = [
       "Обидва пункти вигаданої вимоги виконано до 03.09.2026, зміст і дату відповіді зафіксовано. Це усуває названу доказову прогалину, але не підміняє рішення органу.",
     documents: [
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

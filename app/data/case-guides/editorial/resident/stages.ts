@@ -200,6 +200,7 @@ export const residentStages: CaseGuideStage[] = [
       "Відповідь від 28.08.2026 подана до 31.08.2026. Дати особистої явки й інших дій ведуть окремо; невиконані пункти не зникають через цей лист.",
     documents: [
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

@@ -63,7 +63,7 @@ export const decisionAppealTopic: KnowledgeUnit<LegalMapTopicBody> =
               kpaLaw.text`Decyzja є адміністративним рішенням. За ${kpaLaw.article("104", "art. 104 KPA")} вона вирішує справу по суті повністю чи частково або іншим чином завершує її в цій інстанції. Наприклад, надання дозволу й відмова в дозволі відповідають на основну вимогу заявника. Umorzenie postępowania, припинення провадження, має інший зміст: за ${kpaLaw.article("105", "art. 105 § 1")} так оформлюють повну або часткову безпредметність провадження. Припинення не слід читати як висновок, що особа не довела умови дозволу.`,
               kpaLaw.text`Postanowienie є процесуальною ухвалою. За ${kpaLaw.article("123", "art. 123 KPA")} вона стосується окремого питання в провадженні й не вирішує суті справи, якщо кодекс не встановлює іншого. Відмова дозволити стороні прочитати матеріали визначає доступ до доказів. Вона сама по собі не відмовляє в запитуваному дозволі.`,
               kpaLaw.text`Водночас postanowienie не завжди означає лише проміжний крок у справі, яка далі рухатиметься. За ${kpaLaw.article("61a", "art. 61a KPA")} відмову відкрити провадження оформлюють саме так, якщо вимогу подала особа, яка не є стороною, або відкриттю перешкоджають інші обґрунтовані причини. Це перевірка можливості розпочати розгляд, а не оцінка всіх умов дозволу. На цю ухвалу передбачено zażalenie.`,
-              documents.text`У ${documents.document("administrative-decision", "повному рішенні")} результат відділено від обґрунтування та pouczenia, інформації про засіб захисту. Для postanowienia також потрібно встановити конкретний результат: доступ заборонено, провадження зупинено чи вирішено інше назване питання. Із заголовка без цієї частини не видно обсягу акта.`,
+              documents.text`У ${documents.document("administrative-decision", "повному рішенні")} результат відділено від обґрунтування та pouczenia, інформації про засіб захисту. Для ${documents.document("procedural-order", "postanowienia")} також потрібно встановити конкретний результат: доступ заборонено, провадження зупинено чи вирішено інше назване питання. Із заголовка без цієї частини не видно обсягу акта.`,
             ],
           },
           {
@@ -153,6 +153,9 @@ export const decisionAppealTopic: KnowledgeUnit<LegalMapTopicBody> =
           },
         ],
       }),
+      documents: [
+        documents.text`${documents.document("procedural-order", "Postanowienie органу")}`,
+      ],
       related: [
         "decision-reading",
         "appeal",
@@ -170,5 +173,6 @@ export const decisionAppealMapNode: LegalNode = {
   polish: decisionAppealTopic.body.polish,
   summary: decisionAppealTopic.summary,
   sources: [...decisionAppealTopic.body.sources],
+  documents: [...(decisionAppealTopic.body.documents ?? [])],
   related: [...(decisionAppealTopic.body.related ?? [])],
 }

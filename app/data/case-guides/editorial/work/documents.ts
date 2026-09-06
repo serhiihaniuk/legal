@@ -4,6 +4,7 @@ import type { CaseGuideDocument } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import {
   deadlineObstacleEvidence,
+  proceduralOrderEvidence,
   workNotificationEvidence,
 } from "../../shared-document-requirements"
 
@@ -173,6 +174,7 @@ export const workDocuments = {
   },
   notification: workNotificationEvidence,
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 // One definition per document; the register includes every stage's material.

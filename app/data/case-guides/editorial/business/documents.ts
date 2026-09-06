@@ -1,6 +1,9 @@
 import type { CaseGuideDocument } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
-import { deadlineObstacleEvidence } from "../../shared-document-requirements"
+import {
+  deadlineObstacleEvidence,
+  proceduralOrderEvidence,
+} from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
 
@@ -185,6 +188,7 @@ export const businessDocuments = {
     law: law.text`${law.article("242")}, ${law.article("244")} і ${law.article("143a")}.`,
   },
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
   notification: {
     item: document(
       "temporary-residence-notification",

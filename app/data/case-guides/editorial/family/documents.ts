@@ -1,6 +1,9 @@
 import type { CaseGuideDocument } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
-import { deadlineObstacleEvidence } from "../../shared-document-requirements"
+import {
+  deadlineObstacleEvidence,
+  proceduralOrderEvidence,
+} from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
 
@@ -154,6 +157,7 @@ export const familyDocuments = {
     law: law.text`${law.article("113")}; окремі випадки наступного дозволу за ${law.article("161")} ust. 2.`,
   },
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const familyDocumentRegister: CaseGuideDocument[] =

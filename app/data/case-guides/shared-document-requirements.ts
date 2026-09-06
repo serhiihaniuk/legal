@@ -1,8 +1,21 @@
 import type { CaseGuideDocument } from "./types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 
 const kpa = createLegalTextAuthor("kpa")
 const work = createLegalTextAuthor("powierzanie-pracy")
+const documents = createEvidenceDocumentTextAuthor()
+
+export const proceduralOrderEvidence: CaseGuideDocument = {
+  item: documents.text`${documents.document("procedural-order", "Postanowienie органу")}`,
+  status: "якщо орган видав процесуальну ухвалу",
+  level: "conditional",
+  owner:
+    "Орган видає; заявник або представник зберігає весь документ і доказ вручення",
+  proves:
+    "Яке процесуальне питання вирішено та в якому обсязі. Не є початковим додатком до заяви; окреме оскарження залежить від предмета й норми",
+  law: kpa.text`${kpa.article("123", "Art. 123 KPA")} і ${kpa.article("124", "art. 124 KPA")}: предмет і зміст; ${kpa.articleRange("141", "144", { start: "art. 141", end: "144 KPA" })}: оскарження та виконання. Для конкретного питання враховують також спеціальні норми.`,
+}
 
 export const deadlineObstacleEvidence: CaseGuideDocument = {
   item: {

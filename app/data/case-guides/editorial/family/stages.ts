@@ -247,6 +247,7 @@ export const familyStages: CaseGuideStage[] = [
       "Відповідь від 31.08 передує кінцевій даті 03.09. Пояснення й додатки пов'язані з кожною вимогою; особисті дії та актуальність інших умов контролюються окремо.",
     documents: [
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

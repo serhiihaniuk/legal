@@ -248,6 +248,7 @@ export const workStages: CaseGuideStage[] = [
     documents: [
       d.certificate,
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

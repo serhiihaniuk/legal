@@ -243,6 +243,7 @@ export const businessStages: CaseGuideStage[] = [
       "Вимогу щодо періоду B виконано 28.08, до строку 01.09. Склад і дату відповіді можна відновити з матеріалів справи.",
     documents: [
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

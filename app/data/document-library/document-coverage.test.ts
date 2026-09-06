@@ -16,6 +16,37 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
+  it("connects received procedural orders to every case without making them filing attachments", () => {
+    const order = documentById.get("procedural-order")!
+    expect(
+      order.guide.explanation?.some(
+        (section) => section.example?.sample?.kind === "letter"
+      )
+    ).toBe(true)
+    expect(
+      order.contexts.some((context) => context.node.id === "decision-appeal")
+    ).toBe(true)
+    for (const route of caseGuideRoutes) {
+      const procedure = route.stages.find((stage) => stage.id === "procedure")!
+      for (const entries of [route.documents, procedure.documents]) {
+        const matches = entries.filter((entry) =>
+          ids(entry.item).includes("procedural-order")
+        )
+        expect(matches, route.id).toHaveLength(1)
+        expect(matches[0].level, route.id).toBe("conditional")
+      }
+      expect(
+        route.stages
+          .find((stage) => stage.id === "filing")!
+          .documents.flatMap((entry) => ids(entry.item)),
+        route.id
+      ).not.toContain("procedural-order")
+      expect(
+        order.caseContexts.some((context) => context.routeId === route.id),
+        route.id
+      ).toBe(true)
+    }
+  })
   it("uses the graduate package without making special-purpose forms universal", () => {
     const route = caseGuideRoutes.find((route) => route.id === "other")!
     const registerIds = route.documents.flatMap((entry) => ids(entry.item))

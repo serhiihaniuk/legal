@@ -1,6 +1,9 @@
 import type { CaseGuideDocument } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
-import { deadlineObstacleEvidence } from "../../shared-document-requirements"
+import {
+  deadlineObstacleEvidence,
+  proceduralOrderEvidence,
+} from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
 
@@ -123,6 +126,7 @@ export const otherDocuments = {
     law: law.text`${law.article("113")}.`,
   },
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
   traineeVolunteerAnnex: {
     item: document(
       "trainee-volunteer-annex",

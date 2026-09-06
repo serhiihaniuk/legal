@@ -1,6 +1,9 @@
 import type { CaseGuideDocument } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
-import { deadlineObstacleEvidence } from "../../shared-document-requirements"
+import {
+  deadlineObstacleEvidence,
+  proceduralOrderEvidence,
+} from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
 
@@ -143,6 +146,7 @@ export const studentDocuments = {
     law: law.text`${law.article("242")}, ${law.article("244")}; ${law.external("art. 3 ust. 1 pkt 14 закону Dz.U. 2025 poz. 621", "https://eli.gov.pl/eli/DU/2025/621/ogl")}.`,
   },
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
   notification: {
     item: document(
       "temporary-residence-notification",

@@ -236,6 +236,7 @@ export const otherStages: CaseGuideStage[] = [
       "Відповідь 20.08 подано до 24.08 і підтверджено доказом подання. Орган отримав матеріали про продовжене покриття; позитивне рішення з цього факту не випливає автоматично.",
     documents: [
       d.summons,
+      d.order,
       d.delivery,
       d.requirements,
       d.response,

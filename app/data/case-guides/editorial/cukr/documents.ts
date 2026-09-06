@@ -4,6 +4,7 @@ import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
 import {
   deadlineObstacleEvidence,
+  proceduralOrderEvidence,
   workNotificationEvidence,
 } from "../../shared-document-requirements"
 
@@ -167,6 +168,7 @@ export const cukrDocuments = {
     law: law.text`${law.external("Art. 42u", cukrSource + "#page=33")}: 15 робочих днів і наслідок неналежного повідомлення.`,
   },
   obstacle: deadlineObstacleEvidence,
+  order: proceduralOrderEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const cukrDocumentRegister: CaseGuideDocument[] =

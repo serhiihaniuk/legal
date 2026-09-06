@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1799,
-    "reviewed": 135,
+    "totalFiles": 1800,
+    "reviewed": 136,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
       "case-guide": 9,
-      "evidence-document": 62,
+      "evidence-document": 63,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -86,9 +86,9 @@
     {
       "path": "app/data/case-guides/editorial/blue-card/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "cf07e0b1aeb235046e9b9754a13ebc54ad4be76a88e7acea7f6284bf8c7fbb3c",
+      "contentHash": "b7febe050d91e9c43d560750d0bb5107fc4592a09fa83630ece48032c15fbc6f",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/blue-card/reference.ts",
@@ -100,16 +100,16 @@
     {
       "path": "app/data/case-guides/editorial/blue-card/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "f2f577b9844664958071e853893751f0c447852228b23a0bb297b8ba7f5a9775",
+      "contentHash": "ecd844ef5fb3b228f3d0a00770c1539881cd3ab136e940ef71ba88f2164d535d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "86aa3d0e5ded33a18f89c9d765459426f2a757f5f3d137acff97f8d8890966e1",
+      "contentHash": "1bdd66b18452167e31ee27a558fc133774bb6886490dc2bed09d0ad328c3a150",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/reference.ts",
@@ -121,16 +121,16 @@
     {
       "path": "app/data/case-guides/editorial/business/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "d34d655e3689fac03fdd4138d8fb466a8e705183b6e2c91ba0f5ddc189a481a7",
+      "contentHash": "859582383a1a1b1b03c1adb84ae83618c9479f4a476699332556be290ca9e5f5",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/cukr/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "6a605a4e63714571a9eda9ef7de42160d1cf41062d4a2d98cc04dd77f7cc69ab",
+      "contentHash": "c05f4da10a99301ab6f358ac7feb449a195d723e2893826be012e582e46b9b09",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/cukr/reference.ts",
@@ -142,16 +142,16 @@
     {
       "path": "app/data/case-guides/editorial/cukr/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "cc09988cce4b893e2c91e2bc609882d6f0305fdc8c5bc079e83c30f76f8e7f39",
+      "contentHash": "0b7f464e7d31c36a305440febdcb859a117b324e2d512b734753e0e1dfe09d89",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/family/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "6eede18f32e928ca59616f870c7abd1bdabee9d2d6daf7ce68841309905cffae",
+      "contentHash": "5e6a3b5a2c8098efb9f9661083a13db57cf2901d01baf7c948cca088aafe0cd1",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/family/reference.ts",
@@ -163,16 +163,16 @@
     {
       "path": "app/data/case-guides/editorial/family/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "d00727e7073444afbb757c3086d0d543a0a0ff04fdf1388a47de65e4a1ca668d",
+      "contentHash": "b1d03b46df000699bb7a2bad70842909e31a846518004b3026300feef66da81d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "6f0d0667d260c92f7ea92a97b3baaa75829103704d99a4100245b59388bf0759",
+      "contentHash": "09cde59d27bb30907e4fb9ac2f2a44f9b9b1a742479d0628e7c754913d9cb8d8",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/reference.ts",
@@ -184,16 +184,16 @@
     {
       "path": "app/data/case-guides/editorial/other/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "2faa6cc432a00f872716726e41698f39ee4700dfdf352871cf6c5891f30636ef",
+      "contentHash": "8833f84be8dfc5601ef1c04986d7424611097d3319cc20595aa9b11acd71f6a8",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "0dfe8de620be509baa8e3a3b0f658251a5c09a3fe4c5f003c5fe4ca3cd516fdb",
+      "contentHash": "e6dcb43959a2b8318553dcb46fde21470bfa784ce713838d4d8bc7ba121f4fea",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/reference.ts",
@@ -205,16 +205,16 @@
     {
       "path": "app/data/case-guides/editorial/permanent/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "db569499bc1a7936ce8ec6f370cd3b2c3d8afb0c7fb53e21f3f20335a7fa8000",
+      "contentHash": "6629cc5f360251725f0558725377b4c6eee4bc6b1c3b2378ec810dca5c5082e1",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/resident/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "ab019efca844d5bce448bd4e7c78aee85f7657da435610069b522fcaefedf68a",
+      "contentHash": "4c6f0df69e19d353f7f9a03ec44141ecab0c8b1a1fc251d46c43e8c342f65c5d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/resident/reference.ts",
@@ -226,9 +226,9 @@
     {
       "path": "app/data/case-guides/editorial/resident/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "b775b41922bd08d96118c0576122febaa36d8555879b2e1a11113975edea2cdd",
+      "contentHash": "0a0fa3f4449cbee455891235b02f0b7bb899adfc02b4f08f7d7fa30b24d2cbed",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
@@ -303,9 +303,9 @@
     {
       "path": "app/data/case-guides/editorial/student/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "84567f5c7880ee95ed47ff0027c322d98167327d13bbfae60e7c8b2f7fce9322",
+      "contentHash": "2a016f26847e063634a8081e29c47e9f419da738bec731625fa14202778006eb",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/student/reference.ts",
@@ -317,16 +317,16 @@
     {
       "path": "app/data/case-guides/editorial/student/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "2b884c40cc051095caa1bf8028f057028d3451efcec46ca1ddfbfb3bbfc5ce36",
+      "contentHash": "d864518a0c33b7a391597a35b4446e4fbb2b9e6f65abe75bde2489a47c46fa0a",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "e0c2a2851167a27c00184c37dc50b14a38e03c3f44df6da8aef9ed995e15b661",
+      "contentHash": "45a3bac36e91a82b47950b507206f7d6e8f270a605de38d0225efa370939ff67",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/reference.ts",
@@ -338,9 +338,9 @@
     {
       "path": "app/data/case-guides/editorial/work/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "a6a582ca13ddbf0a7daeabca13b8aaece1daae28076953dfa6d62f55f7041ef5",
+      "contentHash": "5dbc945609162f8f8feef767cbd532039e55120538b8c8db888e8b7c746b901a",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/case-guides/navigation.ts",
@@ -352,9 +352,9 @@
     {
       "path": "app/data/case-guides/shared-document-requirements.ts",
       "family": "supporting-copy",
-      "contentHash": "e3af165c73add6e94d5b670f033b4924c4650e859ebd9bd79abb2c8f1767bfc6",
+      "contentHash": "00b5ca7e598a28c33fd161afd71ab37cb50f416b13502a2f325cb15f95ffb26a",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/document-library/editorial/authoring.ts",
@@ -621,6 +621,13 @@
       "contentHash": "780687b32f3f084f10982c872078db37e239bcc8ddae8f9cbf6866d7b991c662",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/procedural-order.ts",
+      "family": "evidence-document",
+      "contentHash": "21b1ead3f4cef1ee8e7a89c15cec8d48f16ca22a6f32dca02645833768f296bc",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/proceeding-certificate.ts",
@@ -11601,9 +11608,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/decision-appeal.ts",
       "family": "map-topic",
-      "contentHash": "946ffb8b28adaea63aa2a82ee3ff5807273065ac54e35e34de1238e077d4351f",
+      "contentHash": "ec5da5c906acb131ba0bff140789768fa3f23c7affa2381b7aca008fe5995706",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/35-act-classification.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/36-procedural-order.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/decision-reading.ts",

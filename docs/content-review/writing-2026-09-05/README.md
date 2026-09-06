@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 35 replaces the generic decision classification page with an article distinguishing decisions, procedural orders, demands, notices and certificates. Three fictional letters show completed responses and different deadlines. Writing acceptance is 135 of 1,799 files. A dedicated procedural-order document guide remains missing and is recorded for the next coverage work. The remaining map dispositions, law modules, corpus layout audit and independent legal review remain pending; see `batches/35-act-classification.md`.
+Batch 36 adds the missing procedural-order document guide with an annotated Polish specimen and a completed complaint example. All nine case registers and procedure stages now include the same conditional reference. Writing acceptance is 136 of 1,800 files. The remaining map dispositions, law modules, corpus layout audit and independent legal review remain pending; see `batches/36-procedural-order.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
