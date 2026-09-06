@@ -95,7 +95,7 @@ export function KpaLearningContent({
     title: guideModule.title,
     polish: guideModule.polish,
     provisionScope: guideModule.articles,
-    legalState: kpaGuideLegalState,
+    legalState: guideModule.legalState ?? kpaGuideLegalState,
     outcome: guideModule.outcome,
     stage: moduleContext.stage,
     positionIntro: layers.beginner.practice,

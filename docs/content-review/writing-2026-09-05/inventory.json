@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1797,
-    "reviewed": 116,
+    "totalFiles": 1798,
+    "reviewed": 119,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 78,
+      "supporting-copy": 79,
       "case-guide": 9,
       "evidence-document": 62,
       "provision": 1478,
@@ -11181,7 +11181,7 @@
     {
       "path": "app/data/legal-library/learning/kpa.ts",
       "family": "supporting-copy",
-      "contentHash": "4869c70a73a0fc72e167e5f16c8c94b82e45a59427f502248559d0960015633e",
+      "contentHash": "a0f5c4923e3a0a99c57619e85523cd9ea958a2745aef37e0ee2ccf97dbaca562",
       "writing": "pending",
       "evidence": null
     },
@@ -11223,9 +11223,9 @@
     {
       "path": "app/data/legal-library/learning/modules/kpa/delay.ts",
       "family": "learning-module",
-      "contentHash": "fa52c596a997c7d57953cf600a52426201be3e2234caee03160c4a6aa7e8f5bf",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "9f1df569fe251bc48bebbda9d066557b9c5c5216f1744a05c773a984c9909b07",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/kpa/extraordinary.ts",
@@ -11692,9 +11692,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/inactivity.ts",
       "family": "map-topic",
-      "contentHash": "44ff7c388ac864ff18d7ec2684524198ca95ab08b365c6e2f1ff276b25252299",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ffae776400055272275b21c80f373f474ee79b181ad77d089f504e997a76b64d",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/initiation.ts",
@@ -11989,6 +11989,13 @@
       "contentHash": "136f1fe1eabaaeadc00d96d10bc2bed2ab8cf8d7ade93ef85ccb32f021d0d4e7",
       "writing": "pending",
       "evidence": null
+    },
+    {
+      "path": "app/data/shared/residence-office-deadlines.ts",
+      "family": "supporting-copy",
+      "contentHash": "41389f83962b10c321e4476a764f62d84aab82be67cc167c7ecc9170db6e14f3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
     },
     {
       "path": "app/data/study/authoring.ts",
@@ -12329,7 +12336,7 @@
     {
       "path": "app/features/law-library/ui/kpa/kpa-learning-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "d852e788a31786bc5511d1ccc9e00b221d882063fc2e9bff850529de58cb1b6f",
+      "contentHash": "5416088dde00bcbfc78e378cdf47aa891e7a81b494c4dde764485caf39fdafbf",
       "writing": "pending",
       "evidence": null
     },
@@ -12462,7 +12469,7 @@
     {
       "path": "app/features/legal-map/ui/legal-node-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "bc1f700b0f72728c81491aca89a553480b2af25f7335ff3c467440ca1e920ded",
+      "contentHash": "91e643ef624bde4545edbfc05f3140532ff0ce83a0c3ef831834a2238ef038b1",
       "writing": "pending",
       "evidence": null
     },

@@ -63,3 +63,5 @@ After batch 23, 116 of 1,797 inventoried files have current writing acceptance, 
 2. Remaining interface copy and behavior. The mobile case subtype bar does not bring a later selected subtype into view on direct loading.
 3. Full extraction and original-layout audit, including the recorded annex and split-word discrepancies, then distinct independent legal review.
 4. Final completeness audit against every row above, final verification and delivery.
+
+Batch 24 rewrites the inactivity map topic and KPA delay module with a shared explanation of the special residence-office suspension and a completed nonfinal court example. The map renderer now presents each model field once in paragraphs. Official-source checks distinguish statutory text, administrative guidance and court reasoning. The current inventory has 119 accepted files out of 1,798. Case-guide deadline reconciliation remains the immediate next task; no case-file acceptance was renewed by this batch.

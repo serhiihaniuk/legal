@@ -583,5 +583,20 @@
     "path": "app/data/document-library/editorial/guides/job-search-evidence.ts",
     "contentHash": "27200c52d3aa09d4f57385dd66fbd35046d1b81d0723a086807912dc82803e7e",
     "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+  },
+  {
+    "path": "app/data/shared/residence-office-deadlines.ts",
+    "contentHash": "41389f83962b10c321e4476a764f62d84aab82be67cc167c7ecc9170db6e14f3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/inactivity.ts",
+    "contentHash": "ffae776400055272275b21c80f373f474ee79b181ad77d089f504e997a76b64d",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/delay.ts",
+    "contentHash": "9f1df569fe251bc48bebbda9d066557b9c5c5216f1744a05c773a984c9909b07",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
   }
 ]

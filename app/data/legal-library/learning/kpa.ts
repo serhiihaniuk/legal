@@ -44,6 +44,7 @@ export type KpaGuideQuestion = {
 
 export type KpaGuideModule = {
   id: string
+  legalState?: string
   order: number
   title: string
   polish: string

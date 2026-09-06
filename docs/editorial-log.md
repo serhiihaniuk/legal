@@ -307,3 +307,11 @@
 - Recorded ELI, MOS and RPO/MSWiA checks in `content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md`. Scoped legal checks are dated 06.09.2026; the global baseline and independent-review status remain unchanged.
 - Full delivery verification passed with 172 application tests, 68 corpus tests, 15 review-tool tests and the production build. Desktop/mobile pages have no page overflow, the example table supports keyboard scrolling, and case/document navigation works in both directions without browser errors.
 - Inventory validation records 116 accepted files out of 1,797, including all nine case guides and 62 document guides. Map and law writing, shared interface work, source-layout fidelity and independent legal review remain open. The later selected case subtype is not automatically visible in the mobile bar on direct loading; this is recorded for the interface pass.
+
+## 2026-09-06 Delay and court review
+
+- Rewrote the inactivity map topic and KPA delay module. They explain ordinary deadlines, premature ponaglenie, the two seven-day processing periods, special residence-office suspension and the separate court assessment.
+- Both pages reuse typed statutory, official-guidance and case-law content. The completed judicial example preserves the nonfinal status, the starting event for the court's order and the distinction between finding inactivity and granting a permit.
+- Removed duplicated legal-model output and the paired label/content grid from the shared map renderer. The reviewed KPA module displays its own 06.09.2026 date without advancing the atlas baseline.
+- Full delivery verification and desktop/mobile browser checks passed. Source checks and limits are recorded in `content-review/writing-2026-09-05/batches/24-delay-and-court-review.md`.
+- The inventory records 119 accepted files out of 1,798. Corresponding case-guide deadline passages, remaining authored topics, original-source layout and independent legal review remain open.

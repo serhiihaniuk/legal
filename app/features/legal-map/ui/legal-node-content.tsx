@@ -15,7 +15,6 @@ import {
   type LegalMapJourneyStage,
 } from "~/data/legal-map/journey"
 import {
-  joinLegalText,
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
@@ -75,21 +74,13 @@ function StatementBlock({
   if (!items.length) return null
 
   return (
-    <div className="grid gap-3 border-b py-5 last:border-b-0 md:grid-cols-[11rem_minmax(0,1fr)] md:gap-6">
-      <h3 className="m-0 text-sm font-medium">{title}</h3>
-      {items.length === 1 ? (
-        <p className="m-0">
-          <LegalText text={items[0]} />
+    <div className="flex flex-col gap-4 py-5">
+      <h3 className="m-0 text-base font-medium">{title}</h3>
+      {items.map((item) => (
+        <p key={legalTextPlainText(item)} className="m-0">
+          <LegalText text={item} />
         </p>
-      ) : (
-        <ul className="m-0">
-          {items.map((item) => (
-            <li key={legalTextPlainText(item)}>
-              <LegalText text={item} />
-            </li>
-          ))}
-        </ul>
-      )}
+      ))}
     </div>
   )
 }
@@ -101,30 +92,30 @@ export function ModelExplanation({
   node: IndexedNode
   guide?: LegalNodeGuide
 }) {
-  const subject = uniqueStatements(guide?.regulated ?? [node.summary])
-  const activation = uniqueStatements(guide?.appliesWhen, guide?.conditions)
-  const boundaryAndEffect = uniqueStatements(
-    guide?.exceptions,
-    guide?.consequences ?? [node.why ?? node.summary]
-  )
-
   return (
-    <div>
-      {subject.length ? (
-        <p>
-          <LegalText text={joinLegalText(subject, " ")} />
-        </p>
-      ) : null}
-      {activation.length ? (
-        <p>
-          <LegalText text={joinLegalText(activation, " ")} />
-        </p>
-      ) : null}
-      {boundaryAndEffect.length ? (
-        <p>
-          <LegalText text={joinLegalText(boundaryAndEffect, " ")} />
-        </p>
-      ) : null}
+    <div data-not-typeset className="not-typeset mt-6 border-y">
+      <StatementBlock
+        title="Що регулює"
+        items={uniqueStatements(guide?.regulated ?? [node.summary])}
+      />
+      <StatementBlock
+        title="Коли застосовується"
+        items={uniqueStatements(guide?.appliesWhen)}
+      />
+      <StatementBlock
+        title="Умови"
+        items={uniqueStatements(guide?.conditions)}
+      />
+      <StatementBlock
+        title="Винятки й межі"
+        items={uniqueStatements(guide?.exceptions)}
+      />
+      <StatementBlock
+        title="Правовий наслідок"
+        items={uniqueStatements(
+          guide?.consequences ?? [node.why ?? node.summary]
+        )}
+      />
     </div>
   )
 }
@@ -233,30 +224,6 @@ export function LegalNodeContent({
       <section id="node-model">
         <h2>Правова модель</h2>
         <ModelExplanation node={contentNode} guide={guide} />
-        <div data-not-typeset className="not-typeset mt-6 border-y">
-          <StatementBlock
-            title="Що регулює"
-            items={uniqueStatements(guide?.regulated ?? [contentNode.summary])}
-          />
-          <StatementBlock
-            title="Коли застосовується"
-            items={uniqueStatements(guide?.appliesWhen)}
-          />
-          <StatementBlock
-            title="Умови"
-            items={uniqueStatements(guide?.conditions)}
-          />
-          <StatementBlock
-            title="Винятки й межі"
-            items={uniqueStatements(guide?.exceptions)}
-          />
-          <StatementBlock
-            title="Правовий наслідок"
-            items={uniqueStatements(
-              guide?.consequences ?? [contentNode.why ?? contentNode.summary]
-            )}
-          />
-        </div>
       </section>
 
       <section id="node-workflow">

@@ -4,23 +4,15 @@ import {
 } from "~/data/legal-knowledge/contracts"
 import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
+import {
+  residenceOfficeDeadlines,
+  residenceOfficeDeadlineClaims,
+} from "~/data/shared/residence-office-deadlines"
 
 import { kpaLaw, mapTopicSources, ppsaLaw } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
-const kpaSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-kpa",
-} as const
-
-const ppsaSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-ppsa",
-} as const
-
-type InactivityBody = LegalMapTopicBody
-
-export const inactivityTopic: KnowledgeUnit<InactivityBody> =
+export const inactivityTopic: KnowledgeUnit<LegalMapTopicBody> =
   defineKnowledgeUnit({
     id: "map-topic:inactivity",
     subject: {
@@ -28,15 +20,22 @@ export const inactivityTopic: KnowledgeUnit<InactivityBody> =
       reference: { kind: "map-node", nodeId: "inactivity" },
     },
     summary:
-      "Bezczynność — справа не завершена у строк. Przewlekłość — дії тривають довше, ніж потрібно. Маршрут зазвичай веде через ponaglenie, а потім може перейти до WSA.",
+      "Bezczynność означає незавершення справи в належний строк. Przewlekłość означає, що справу ведуть довше, ніж потрібно. У справах про перебування звичайні засоби захисту слід читати разом зі спеціальним зупиненням строків та судовою практикою.",
     claims: [
+      ...residenceOfficeDeadlineClaims,
       {
         id: "delay-remedy",
-        kind: "requires-verification",
-        text: "Бездіяльність і затягування відрізняються від просто довгого провадження; строк, ponaglenie та подальший судовий шлях перевіряються окремо.",
+        kind: "statute-text",
+        text: kpaLaw.text`${kpaLaw.article("37", "Art. 37 KPA")} розрізняє бездіяльність і затягування та передбачає обґрунтоване ponaglenie.`,
         basis: [
-          { reference: kpaSourceReference, locator: "Art. 35–38" },
-          { reference: ppsaSourceReference, locator: "Art. 149" },
+          {
+            reference: { kind: "official-source", sourceId: "eli-kpa" },
+            locator: "Art. 35–38",
+          },
+          {
+            reference: { kind: "official-source", sourceId: "eli-ppsa" },
+            locator: "Art. 53 § 2b, 54 § 1, 149",
+          },
         ],
       },
     ],
@@ -44,51 +43,66 @@ export const inactivityTopic: KnowledgeUnit<InactivityBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-18",
-      verifiedAt: "2026-07-18",
+      legalStateDate: "2026-09-06",
+      verifiedAt: "2026-09-06",
     },
     body: {
-      title: "Bezczynność і przewlekłość",
-      polish: kpaLaw.text`${kpaLaw.articleRange("35", "38", { start: "art. 35", end: "38" })} KPA → skarga do WSA`,
-      sources: [mapTopicSources.kpa, mapTopicSources.ppsa],
+      title: "Бездіяльність і затягування справи",
+      polish: "Bezczynność, przewlekłość, ponaglenie",
+      sources: [
+        mapTopicSources.kpa,
+        mapTopicSources.ppsa,
+        {
+          label: "Спецзакон про допомогу громадянам України",
+          url: "https://eli.gov.pl/eli/DU/2025/337/ogl",
+          note: "Зупинення строків розгляду визначених справ wojewodą; перевірено 06.09.2026 разом зі змінами 2026 року.",
+        },
+        {
+          label: "MSWiA: відповідь RPO від 30.06.2026",
+          url: "https://bip.brpo.gov.pl/sites/default/files/2026-08/Odpowiedz_MSWiA_cudzoziemcy_legalizacja_pobytu_przewleklosc_30_06_2026.pdf",
+          note: "Сторінки 7–9 пояснюють відмінність судової оцінки від застосування правила адміністрацією.",
+        },
+        {
+          label: "WSA w Poznaniu, II SAB/Po 314/25",
+          url: "https://orzeczenia.nsa.gov.pl/doc/1E120C483B",
+          note: "Рішення від 12.03.2026. На дату перевірки 06.09.2026 у CBOSA позначене як неостаточне.",
+        },
+      ],
       guide: {
         introduction: [
-          kpaLaw.text`${kpaLaw.articleRange("35", "38", { start: "Art. 35", end: "38" })} KPA розрізняють bezczynność і przewlekłość та передбачають ponaglenie. PPSA дозволяє подальшу skargę do WSA після wniesienia ponaglenia.`,
+          "Довге очікування може означати різні порушення. Bezczynność виникає, коли справу не завершено в законний або належно повідомлений додатковий строк. Przewlekłość стосується способу ведення справи: дії тривають довше, ніж необхідно. Постійне листування не виключає затягування, якщо орган повторно просить те, що вже має, і не пояснює потреби в новій перевірці.",
         ],
         regulated: [
-          "Строки розгляду, виключені періоди, обов’язок повідомити про затримку, новий строк, ponaglenie, відповідальність працівника й судові наслідки бездіяльності.",
+          kpaLaw.text`Звичайний порядок за ${kpaLaw.articleRange("35", "38", { start: "art. 35", end: "38" })} KPA охоплює строк вирішення, повідомлення про затримку та ponaglenie, тобто обґрунтоване звернення про бездіяльність або затягування. Судовий контроль регулює PPSA.`,
         ],
         appliesWhen: [
-          "Bezczynność виникає, коли справу не завершено у законний або повідомлений строк; przewlekłość — коли провадження триває довше, ніж потрібно для його вирішення.",
+          "Для висновку потрібні вид справи, компетентний орган, початок застосовного строку та хронологія дій. Кількість місяців від першого звернення без цих відомостей не встановлює порушення.",
         ],
         conditions: [
-          kpaLaw.text`За ${kpaLaw.article("35", "art. 35")} KPA справи вирішуються без зайвої затримки; орієнтовні загальні строки становлять місяць, два місяці для особливо складної справи та місяць в апеляційному провадженні (postępowanie odwoławcze), з урахуванням ${kpaLaw.article("35", "art. 35 § 5")}.`,
-          "Ponaglenie містить обґрунтування і подається до organu wyższego stopnia через organ, який веде справу, або до цього organu, якщо вищого немає.",
+          kpaLaw.text`За ${kpaLaw.article("35", "art. 35 KPA")} справу вирішують без зайвої затримки, а за достатніх наявних доказів невідкладно. Загальні граничні строки становлять місяць для справи з пояснювальним провадженням, два місяці для особливо складної справи від початку провадження, місяць для апеляції від її отримання. Спеціальний закон може визначати інший строк.`,
+          kpaLaw.text`${kpaLaw.article("35", "Art. 35 § 5 KPA")} виключає, зокрема, визначені законом періоди окремих дій, зупинення провадження, медіації та затримки з вини сторони або з незалежних від органу причин. Відомості про запит і відповідь пояснюють причину конкретної паузи; сам факт листування не виправдовує весь період очікування.`,
         ],
         exceptions: [
-          kpaLaw.text`Сам календарний сплив загального строку не доводить бездіяльності без перевірки строків спеціального закону, zawieszenia, затримок з вини сторони та інших періодів, які ${kpaLaw.article("35", "art. 35 § 5")} виключає з обчислення.`,
+          residenceOfficeDeadlines.statutoryRule,
+          residenceOfficeDeadlines.statutoryLimits,
         ],
         consequences: [
-          kpaLaw.text`Орган, що розглядає ponaglenie, може встановити бездіяльність або затягування, визначити строк завершення, наказати з’ясувати причини й відповідальних. WSA за ${ppsaLaw.article("149", "art. 149")} PPSA може зобов’язати видати акт, встановити rażące naruszenie prawa, накласти grzywnę або присудити суму.`,
+          kpaLaw.text`У звичайному порядку орган, що розглядає ponaglenie, установлює наявність порушення та чи було воно грубим; за умовами ${kpaLaw.article("37", "art. 37 KPA")} визначає строк завершення та заходи для з'ясування причин. За ${ppsaLaw.article("149", "art. 149 PPSA")} суд може встановити бездіяльність, зобов'язати орган до дії та окремо вирішує питання грубого порушення. Грошова санкція чи сума на користь заявника не присуджуються автоматично.`,
         ],
         procedure: [
-          kpaLaw.text`Хронологія включає wszczęcie, кожне wezwanie й відповідь, періоди zawieszenia, ${kpaLaw.article("36", "art. 36")} zawiadomienia, нові строки, дату ponaglenia та фактичні дії organu після нього.`,
+          kpaLaw.text`Ponaglenie подають до вищого органу через орган, який веде справу, а якщо вищого немає, до самого органу. Обґрунтування показує конкретні дати, дії та невиправдані періоди очікування. За ${kpaLaw.article("37", "art. 37 § 3a KPA")} звернення до спливу строку зі звичайної або спеціальної норми залишають без розгляду.`,
+          ppsaLaw.text`За ${ppsaLaw.article("53", "art. 53 § 2b PPSA")} скаргу на бездіяльність або затягування можна внести після подання ponaglenia до належного органу. Чекати позитивної відповіді на нього закон не вимагає. ${ppsaLaw.article("54", "Art. 54 § 1 PPSA")} передбачає подання скарги через орган, чию бездіяльність оскаржують.`,
         ],
         foreignersContext: [
-          "У справах pobytowych довге очікування не змінює саме по собі матеріальних умов дозволу. Актуальність роботи, доходу, адреси й сімейних обставин може потребувати оновлення незалежно від спору про bezczynność.",
+          residenceOfficeDeadlines.courtDistinction,
+          residenceOfficeDeadlines.courtExample,
+          "Спір про затримку не замінює доказів умов дозволу. Доки справа триває, зміна роботи, доходу або сімейних обставин може вимагати нових матеріалів незалежно від розгляду ponaglenia чи судової скарги.",
         ],
       } satisfies LegalNodeGuide,
       checkpoints: [
-        "Який строк застосовується?",
-        "Чи organ повідомив про затримку й новий строк?",
-        "Кому подається ponaglenie?",
-        "Чи після ponaglenia є підстава для WSA?",
-      ],
-      steps: [
-        kpaLaw.text`Визнач строк за ${kpaLaw.article("35", "art. 35")} або спеціальним законом.`,
-        kpaLaw.text`Перевір повідомлення за ${kpaLaw.article("36", "art. 36")}.`,
-        kpaLaw.text`Подай ponaglenie за ${kpaLaw.article("37", "art. 37")}.`,
-        "За потреби оціни skargę do WSA через organ.",
+        "Чи хронологія відрізняє час роботи органу від періодів, які закон виключає?",
+        "Чи є доказ внесення ponaglenia до належного органу?",
+        "Чи пояснення враховує вид справи, орган та період затримки, а не тільки назву спецзакону?",
       ],
     },
   })
@@ -101,6 +115,5 @@ export const inactivityMapNode: LegalNode = {
   polish: inactivityTopic.body.polish,
   summary: inactivityTopic.summary,
   checkpoints: [...(inactivityTopic.body.checkpoints ?? [])],
-  steps: [...(inactivityTopic.body.steps ?? [])],
   sources: [...inactivityTopic.body.sources],
 }
