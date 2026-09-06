@@ -269,3 +269,10 @@
 - Split the route into overview, stages, 36 reusable document entries and references. Added a corporate work-permit guide with a fictional Polish fragment, plus a filled employment comparison in the business-evidence guide. The catalogue now contains 60 document guides.
 - Recorded official ELI and Podlaski UW checks in `content-review/writing-2026-09-05/batches/18-business-case-guide.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Five complete case routes remain pending.
 - Full verification passed with 98 application tests and a production build. Desktop/mobile examples, keyboard table scrolling, checklist selection and case/document/provision navigation passed. Fresh loads had no browser console errors after an earlier development hot-reload mismatch.
+
+## 2026-09-06 complete family case guide
+
+- Reworked the six-stage family guide around a wife joining a husband with pobyt stały, a two-address discrepancy and a dated evidence response. The guide distinguishes sponsor status, family relationship, the applicant's location and additional conditions.
+- Split the route into overview, stages, 33 reusable document entries and references. Added a filled maintenance comparison to the family-evidence guide and aligned its address example. Conditional paper forms remain distinct from MOS requirements.
+- Recorded official ELI, UdSC and Podlaski UW checks in `content-review/writing-2026-09-05/batches/19-family-case-guide.md`. Scoped checks are dated 06.09.2026; the atlas baseline and independent-review status remain unchanged. Four complete case routes remain pending.
+- Full verification passed with 99 application tests and a production build. Desktop/mobile pages, filled examples, keyboard table scrolling, checklist selection and case/document/provision navigation passed without browser console errors.

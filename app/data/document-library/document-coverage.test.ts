@@ -16,7 +16,7 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
-  it.each(["work", "blue-card", "student", "business"])(
+  it.each(["work", "blue-card", "student", "business", "family"])(
     "keeps the %s register complete and places each document at the relevant stage",
     (routeId) => {
       const route = caseGuideRoutes.find((route) => route.id === routeId)!
@@ -56,7 +56,11 @@ describe("document coverage across learning modules", () => {
       expect(at("filing")).toEqual(
         expect.arrayContaining([
           "mos-application",
-          routeId === "student" ? "study-annex" : "employment-annex-1",
+          routeId === "family"
+            ? "civil-status-record"
+            : routeId === "student"
+              ? "study-annex"
+              : "employment-annex-1",
           "upo",
         ])
       )
@@ -76,7 +80,14 @@ describe("document coverage across learning modules", () => {
                   "zus-confirmation",
                   "qualification-evidence",
                 ]
-              : ["zus-confirmation", "qualification-evidence"]),
+              : routeId === "family"
+                ? [
+                    "family-evidence",
+                    "civil-status-record",
+                    "income-evidence",
+                    "housing-evidence",
+                  ]
+                : ["zus-confirmation", "qualification-evidence"]),
           "sworn-translation",
         ])
       )
@@ -132,6 +143,28 @@ describe("document coverage across learning modules", () => {
           "study-progress",
           "tuition-payment",
           "temporary-residence-notification",
+        ] as const)
+          expect(
+            route.documents.find((entry) => ids(entry.item).includes(id))?.level
+          ).toBe("conditional")
+      }
+      if (routeId === "family") {
+        expect(at("filing")).not.toContain("employment-annex-1")
+        expect(at("decision")).toContain("temporary-residence-notification")
+        expect(at("filing")).toEqual(
+          expect.arrayContaining([
+            "family-abroad-application",
+            "family-application-consent",
+          ])
+        )
+        for (const id of [
+          "family-abroad-application",
+          "family-application-consent",
+          "apostille-legalisation",
+          "sworn-translation",
+          "income-evidence",
+          "health-insurance",
+          "housing-evidence",
         ] as const)
           expect(
             route.documents.find((entry) => ids(entry.item).includes(id))?.level

@@ -216,8 +216,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/family-evidence.ts",
-    "contentHash": "daf32692a4668d17914ce7b711ad62b72cdb626faf65acdcc6ad01fff85872c5",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+    "contentHash": "0faa65aedeee1a159282230d445e24fd533acfdb12fbb79a7c1b20ebc2b8f1b4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/civil-status-record.ts",
@@ -473,5 +473,25 @@
     "path": "app/data/document-library/editorial/guides/corporate-work-permit.ts",
     "contentHash": "bdbed3d34ba7ad2180de430ecfc58521f70a0a2c15a5b0439c083e05b6b01465",
     "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/family.ts",
+    "contentHash": "1ba98b73a61707e6fe7d49f79903c466888e3df53e57cc4cb68d910b03351cd6",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/family/documents.ts",
+    "contentHash": "6eede18f32e928ca59616f870c7abd1bdabee9d2d6daf7ce68841309905cffae",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/family/stages.ts",
+    "contentHash": "e1d8b643531d1add76335513945621194a3d7e923bb5a8f89ec3554ce50f35be",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/family/reference.ts",
+    "contentHash": "ef903918854288e5d1442874f4cf63d445b0d466ef50040d900d5960ff2ebbd6",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
   }
 ]

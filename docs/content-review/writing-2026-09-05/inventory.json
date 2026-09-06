@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1780,
-    "reviewed": 94,
+    "totalFiles": 1783,
+    "reviewed": 98,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 63,
+      "supporting-copy": 66,
       "case-guide": 9,
       "evidence-document": 60,
       "provision": 1478,
@@ -119,6 +119,27 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
     },
     {
+      "path": "app/data/case-guides/editorial/family/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "6eede18f32e928ca59616f870c7abd1bdabee9d2d6daf7ce68841309905cffae",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/family/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "ef903918854288e5d1442874f4cf63d445b0d466ef50040d900d5960ff2ebbd6",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/family/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "e1d8b643531d1add76335513945621194a3d7e923bb5a8f89ec3554ce50f35be",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+    },
+    {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
       "family": "case-guide",
       "contentHash": "5dcdffcaaf09f001a6af50ac22a8fed99b714de2b48c366bd3336080a3a2f990",
@@ -142,9 +163,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/family.ts",
       "family": "case-guide",
-      "contentHash": "78592d8c50608d578d17c0edbb9468cc4a65a82d72ea3c346be1067f4bd42d2c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1ba98b73a61707e6fe7d49f79903c466888e3df53e57cc4cb68d910b03351cd6",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
@@ -408,9 +429,9 @@
     {
       "path": "app/data/document-library/editorial/guides/family-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "daf32692a4668d17914ce7b711ad62b72cdb626faf65acdcc6ad01fff85872c5",
+      "contentHash": "0faa65aedeee1a159282230d445e24fd533acfdb12fbb79a7c1b20ebc2b8f1b4",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/08-family-and-finances.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/fingerprint-record.ts",
