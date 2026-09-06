@@ -446,8 +446,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
-    "contentHash": "8394087c48aa3b2c5b5207a32db9c3eb56260c45a5c83368e4f1b2948e38e526",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+    "contentHash": "403f61ab921ca096dd8154720ad4dbfe84c7eaf43aa95b0a8171929e009ea1cc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
   },
   {
     "path": "app/data/case-guides/editorial/routes/business.ts",
@@ -538,5 +538,25 @@
     "path": "app/data/case-guides/editorial/resident/reference.ts",
     "contentHash": "4b16595f5eee7f02f3657f4a4a55dc054515b369ebceb7bdab73efd9b21bf539",
     "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/cukr.ts",
+    "contentHash": "0f2c520107bee28403b5cb7ea90be0e7635bc81ad61666a9fc9e38842b9fbc4c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/cukr/documents.ts",
+    "contentHash": "6a605a4e63714571a9eda9ef7de42160d1cf41062d4a2d98cc04dd77f7cc69ab",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/cukr/stages.ts",
+    "contentHash": "cc09988cce4b893e2c91e2bc609882d6f0305fdc8c5bc079e83c30f76f8e7f39",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/cukr/reference.ts",
+    "contentHash": "7b8125979140dc7fee6dc40810216538a0bd082d91f233bdd2c5a679a1c65c3a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
   }
 ]

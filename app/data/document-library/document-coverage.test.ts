@@ -16,6 +16,71 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
+  it("keeps CUKR registry checks separate from filing attachments and collection", () => {
+    const route = caseGuideRoutes.find((route) => route.id === "cukr")!
+    const at = (stageId: string) =>
+      route.stages.find((stage) => stage.id === stageId)!.documents
+    const registerIds = route.documents.flatMap((entry) => ids(entry.item))
+    expect(new Set(registerIds).size).toBe(registerIds.length)
+    expect(
+      new Set(
+        route.stages.flatMap((stage) =>
+          stage.documents.flatMap((entry) => ids(entry.item))
+        )
+      )
+    ).toEqual(new Set(registerIds))
+    expect(
+      at("filing")
+        .filter((entry) => entry.level === "required")
+        .flatMap((entry) => ids(entry.item))
+    ).toEqual([
+      "cukr-application",
+      "digital-photo",
+      "stamp-duty-proof",
+      "residence-card-fee-proof",
+    ])
+    expect(at("status").flatMap((entry) => ids(entry.item))).toEqual(
+      expect.arrayContaining([
+        "passport",
+        "pesel-ukr-confirmation",
+        "fingerprint-record",
+        "signature-specimen",
+      ])
+    )
+    for (const excluded of [
+      "employment-annex-1",
+      "mos-application",
+      "proceeding-certificate",
+    ])
+      expect(registerIds).not.toContain(excluded)
+    expect(
+      at("decision").find((entry) =>
+        ids(entry.item).includes("administrative-decision")
+      )?.level
+    ).toBe("conditional")
+    expect(at("filing").flatMap((entry) => ids(entry.item))).not.toContain(
+      "temporary-residence-notification"
+    )
+    expect(at("decision").flatMap((entry) => ids(entry.item))).toContain(
+      "temporary-residence-notification"
+    )
+    for (const entry of route.documents) {
+      if (entry.kind === "action")
+        expect(entry.guidance && documentById.has(entry.guidance)).toBe(true)
+      else expect(ids(entry.item)).toHaveLength(1)
+      if (typeof entry.law !== "string") {
+        const wrongProcedure = entry.law.parts.some(
+          (part) =>
+            "target" in part &&
+            part.target.kind === "legal-provision" &&
+            /^ustawa-o-cudzoziemcach-art-(105|106|108)/.test(
+              part.target.provisionId
+            )
+        )
+        expect(wrongProcedure).toBe(false)
+      }
+    }
+  })
   it.each([
     "work",
     "blue-card",

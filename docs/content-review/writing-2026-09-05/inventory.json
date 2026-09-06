@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1790,
-    "reviewed": 107,
+    "totalFiles": 1793,
+    "reviewed": 111,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 72,
+      "supporting-copy": 75,
       "case-guide": 9,
       "evidence-document": 61,
       "provision": 1478,
@@ -119,6 +119,27 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
     },
     {
+      "path": "app/data/case-guides/editorial/cukr/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "6a605a4e63714571a9eda9ef7de42160d1cf41062d4a2d98cc04dd77f7cc69ab",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/cukr/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "7b8125979140dc7fee6dc40810216538a0bd082d91f233bdd2c5a679a1c65c3a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/cukr/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "cc09988cce4b893e2c91e2bc609882d6f0305fdc8c5bc079e83c30f76f8e7f39",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
+    },
+    {
       "path": "app/data/case-guides/editorial/family/documents.ts",
       "family": "supporting-copy",
       "contentHash": "6eede18f32e928ca59616f870c7abd1bdabee9d2d6daf7ce68841309905cffae",
@@ -198,9 +219,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/cukr.ts",
       "family": "case-guide",
-      "contentHash": "c60876de19a8496981bcf5613ab28bda7c0a7ed5226a5ca3e10124ac4f4ce6f7",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "0f2c520107bee28403b5cb7ea90be0e7635bc81ad61666a9fc9e38842b9fbc4c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/family.ts",
@@ -688,9 +709,9 @@
     {
       "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
       "family": "evidence-document",
-      "contentHash": "8394087c48aa3b2c5b5207a32db9c3eb56260c45a5c83368e4f1b2948e38e526",
+      "contentHash": "403f61ab921ca096dd8154720ad4dbfe84c7eaf43aa95b0a8171929e009ea1cc",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/trainee-volunteer-annex.ts",
@@ -12056,7 +12077,7 @@
     {
       "path": "app/features/case-guides/ui/case-guide-shared.tsx",
       "family": "shared-renderer",
-      "contentHash": "5ddab10cf14068130dea9fba9525f13e0e2718ce6b40c08909e156f07f4146f7",
+      "contentHash": "ed01581a4b01d9f33f241787281466048ea950bb7a2d6f012b48d88badb52a4c",
       "writing": "pending",
       "evidence": null
     },
@@ -12098,7 +12119,7 @@
     {
       "path": "app/features/case-guides/ui/case-registers.tsx",
       "family": "shared-renderer",
-      "contentHash": "a67011c91ad08fdf5924dfdcad0504f47cfcf468ddce00ce4ee445ad86fec273",
+      "contentHash": "4caf6c15a3760c2b57f3b78e85408fa854687ec77626ea7b213c99e8203ccfd6",
       "writing": "pending",
       "evidence": null
     },

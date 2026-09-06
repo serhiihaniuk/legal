@@ -9,7 +9,10 @@ function documentStatusVariant(level: string) {
 
 export function DocumentStatus({ document }: { document: CaseGuideDocument }) {
   return (
-    <Badge variant={documentStatusVariant(document.level)}>
+    <Badge
+      variant={documentStatusVariant(document.level)}
+      className="h-auto max-w-full whitespace-normal"
+    >
       {document.status}
     </Badge>
   )

@@ -291,3 +291,11 @@
 - Recorded official ELI, UdSC and RPO/MSWiA checks in `content-review/writing-2026-09-05/batches/21-resident-case-guide.md`. Scoped legal checks are dated 06.09.2026. The atlas baseline, corpus-wide visual audit and independent legal review remain unchanged.
 - Split the all-guide and all-document rendering loops into individual tests after reproducing their timeouts. Limited concurrent test workers to two after concurrent corpus imports also timed out. Assertions and timeout limits remain intact; the removed GitHub workflow stays removed.
 - Full verification passed with 169 application tests, 68 corpus tests, 15 review-tool tests and the production build. Desktop/mobile reading, independent disclosures and case/document navigation passed without browser errors. Inventory validation confirms 107 reviewed files out of 1,790. CUKR and other purposes remain as complete case-guide reviews.
+
+## 2026-09-06 CUKR case guide
+
+- Reworked all six stages around a passport correction, CUKR filing, the end of a pending ordinary temporary proceeding and personal collection. The completed fictional case distinguishes issuance, readiness information and the start of the permit, then follows a September address notice.
+- Split the route into overview, stages, 23 typed document definitions with one preparation action, and reference material. Added coverage assertions for the required filing package, conditional records and stage/register consistency. The existing notification guide now contains a Polish CUKR address-change fragment.
+- Recorded official ELI and UdSC checks in `content-review/writing-2026-09-05/batches/22-cukr-case-guide.md`. Scoped checks are dated 06.09.2026. The atlas baseline and independent-review status remain unchanged.
+- Fixed mobile register title/status wrapping and scoped specimen tests to each labelled letter. Full verification passed with 170 application tests, 68 corpus tests, 15 review-tool tests and the production build. Layout checks passed at 360 and 1440 px; a separate browser run verified case/document navigation in both directions without browser errors.
+- Inventory validation records 111 accepted files out of 1,793. Other purposes is the last complete case-guide review. Map and law writing, remaining interface copy, source-layout fidelity and independent legal review remain open.

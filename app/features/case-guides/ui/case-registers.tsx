@@ -74,7 +74,7 @@ export function DocumentRegister({
             key={`${legalTextPlainText(document.item)}-${legalTextPlainText(document.owner)}`}
             className="py-4"
           >
-            <div className="flex items-start justify-between gap-3">
+            <div className="flex flex-col items-start gap-2">
               <h3 className="text-base font-semibold">
                 <LegalText text={document.item} context="reference-section" />
               </h3>

@@ -85,7 +85,7 @@ describe("document explanations", () => {
         section.example?.sample ? [section.example.sample] : []
       )
       if (!samples.length) continue
-      const { container, unmount } = render(
+      const { unmount } = render(
         <MemoryRouter>
           <DocumentDetailContent document={document} />
         </MemoryRouter>
@@ -110,9 +110,9 @@ describe("document explanations", () => {
             screen.getByRole("region", { name: sample.title }).tabIndex
           ).toBe(0)
         } else {
-          const letter = container.querySelector(
-            `figure [lang="${sample.language}"]`
-          )
+          const figure = screen.getByText(sample.title).closest("figure")
+          const letter = figure?.querySelector(`[lang="${sample.language}"]`)
+          expect(figure).not.toBeNull()
           expect(letter).not.toBeNull()
           for (const paragraph of sample.paragraphs)
             expect(letter?.textContent).toContain(paragraph)
