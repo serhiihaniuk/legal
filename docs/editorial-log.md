@@ -329,3 +329,10 @@
 - The selected case subtype is now revealed on direct mobile loading, route changes, browser Back and resizing. Only the navigation container scrolls horizontally; the document keeps its vertical position.
 - Both case navigation strips hide their scrollbar with the existing utility and retain horizontal scrolling. Full verification passed with 176 application tests and the production build. Browser checks covered 360 px and 1440 px without page overflow or errors.
 - Evidence is recorded in `content-review/writing-2026-09-05/batches/26-case-navigation.md`. The writing inventory records 121 accepted files out of 1,799. No legal content or legal-state date changed.
+
+## 2026-09-06 Map contents and organization audit
+
+- Reviewed the map's chapter assignments, parent hierarchy, topic roles and shared article contract before starting the prose rewrite, following the user's change of priority.
+- Recorded a disposition for all 63 authored topics in `content-review/writing-2026-09-05/map-contents.md`, including moves, distinct article purposes, proposed splits and a merge of repeated decision analysis. The target separates subject chapters from an illustrative case sequence.
+- Identified missing dedicated map treatment of post-decision events, permission versus the card, procedural suspension/termination and several subjects hidden in broad topics. Existing case/document coverage is distinguished from map gaps. The old weekly learning schedule and a wrongly targeted external legal reference remain explicit migration tasks.
+- Compared all 63 disposition IDs with authored topic IDs. All match exactly once. The current journey has 62 unique known IDs and omits only `study-loop`. This documentation-only audit changes neither live navigation nor legal claims and grants no writing or independent legal acceptance.
