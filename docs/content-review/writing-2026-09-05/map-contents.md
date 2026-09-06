@@ -103,7 +103,7 @@ Numbers refer to the target chapters above. "Retain" means retain a distinct top
 | `principle-trust` | 7 | Retain. Explain information and justified reliance through a bounded example. |
 | `principle-participation` | 7 | Retain. Explain participation and the opportunity to address material before a decision. |
 | `principle-two-instance` | 9 | Move beside appeals. Distinguish two-instance review and finality without duplicating appeal instructions. |
-| `deadlines-delivery` | 7 | Keep as a connecting article; separate service, calculation and restoration into named explanations with dated examples. |
+| `deadlines-delivery` | 7 | Completed in batch 32 as a connecting article. Six named sections distinguish the recipient, paper and electronic service, calculation, timely filing and restoration, with dated examples. |
 | `wezwanie` | 7 | Retain. Explain the legal role of each demand and its stated consequence through an annotated fragment. |
 | `wezwanie-workflow` | 7 | Retain only as the completed response example. Reuse definitions from the reading article and document guides. |
 | `inactivity` | 7 | Retain the recently reviewed topic. Court references must remain reachable here, not only after a decision. |
@@ -127,7 +127,7 @@ These are gaps in dedicated map treatment or discoverability. They are not claim
 | Residence permission versus the physical card, collection, validity and replacement | Case guides, document guides, scattered residence paragraphs | A chapter 8 article explaining the different objects and events, with links to existing specimens. |
 | Changes after a decision, notification, amendment, withdrawal and expiry | Route-specific case stages and brief temporary-residence passages | A chapter 8 comparison that distinguishes the mechanisms before referring to route-specific rules. |
 | Suspension and termination of proceedings | Mentions in decisions, remedies and case guides | Named chapter 7 explanations, with the triggering event and procedural result clearly distinguished. |
-| Missed procedural deadline | Buried inside `deadlines-delivery`; evidence specimens exist | A findable explanation of restoration with a completed chronology, preserving its conditions and limits. |
+| Missed procedural deadline | Batch 32 adds a named restoration section in `deadlines-delivery` and links the existing evidence specimen | Connecting treatment completed, including the seven-day chronology, absence-of-fault condition, simultaneous missed act, competent organ and stay-of-execution limits. |
 | Employment without a separate work permit and notification-based work | General work topic, Ukrainian topics and notification guides | A named comparison within chapter 4, not a fifth generic permit instrument. |
 | Distinct study, research, internship, volunteer and mobility routes | One broad map topic; law modules and conditional form guides | Named explanations with an explicit source/form mapping. Do not imply that one university document covers them all. |
 | Graduates and the other categories hidden by `other-stay` | Graduate case guide and document guides; thin map paragraph | An informative category overview plus complete treatment of the materially different grounds. |

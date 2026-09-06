@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1800,
-    "reviewed": 129,
+    "reviewed": 130,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11587,9 +11587,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/deadlines-delivery.ts",
       "family": "map-topic",
-      "contentHash": "df7b9e7fbf0e1ce7ce410f7846a68a2afe4cef82c99053729099ff83ab03038d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "89d64600c803d4d3f4141d44b2a33f5b668294bb450e725455a257cc14a48b4c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/32-delivery-and-deadlines.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/decision-appeal.ts",

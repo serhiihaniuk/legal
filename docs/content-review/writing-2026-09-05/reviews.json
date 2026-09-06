@@ -648,5 +648,10 @@
     "path": "app/data/legal-map/editorial/topics/organ-party.ts",
     "contentHash": "40ac96aea6f1556f8216498bd30cc0f2dddb8a61a83cb374ed6718ec229965f0",
     "evidence": "docs/content-review/writing-2026-09-05/batches/31-authority-party-representation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/deadlines-delivery.ts",
+    "contentHash": "89d64600c803d4d3f4141d44b2a33f5b668294bb450e725455a257cc14a48b4c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/32-delivery-and-deadlines.md"
   }
 ]

@@ -1,5 +1,12 @@
 # Editorial improvement log
 
+## 2026-09-06 Delivery and deadlines
+
+- Replaced the map's generic deadline fields with six explanations of the recipient, paper service, electronic service, calculation, timely filing and restoration. Completed dated examples show how the conclusion follows from the delivery evidence and calendar.
+- Corrected the scope of event-day exclusion and the stay-of-execution rule. Kept paper awizo distinct from electronic deemed service. The restoration section links the existing filled obstacle chronology and does not imply that hospitalization automatically proves absence of fault.
+- Official source checks, scoped legal-state date and verification are recorded in `content-review/writing-2026-09-05/batches/32-delivery-and-deadlines.md`. Writing acceptance is 130 of 1,800 files; the atlas baseline and independent legal-review status remain unchanged.
+- Full verification passed with 186 application tests. Desktop/mobile rendering, the restoration anchor, keyboard access to the document guide and reference resolution were checked.
+
 ## 2026-09-06 Student case, funds and ended-study notice
 
 - Reworked the student case around one fictional master's application. Its six stages connect admissibility, the university annex, two tuition receipts, a completed budget, an evidence response and the decision. The route distinguishes full-time study, other educational purposes, mobility, work rights and changed study status.

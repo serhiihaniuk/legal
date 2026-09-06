@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 31 rewrites the authority-and-party parent page with definitions, named distinctions and completed examples of competence, representation, service and disqualification. Writing acceptance is now 129 of 1,800 files. The deadlines/delivery split, deeper route pages and other map dispositions remain pending; see `batches/31-authority-party-representation.md`.
+Batch 32 rewrites delivery and deadlines as a connecting article with six named explanations and dated examples. Restoration now has a direct contents entry and a link to the filled obstacle chronology. Writing acceptance is now 130 of 1,800 files. The remaining map dispositions, deeper route pages, corpus layout audit and independent legal review remain pending; see `batches/32-delivery-and-deadlines.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
