@@ -518,5 +518,25 @@
     "path": "app/data/document-library/editorial/guides/karta-polaka.ts",
     "contentHash": "0689a501453856a7d510a9ed5997a706248d604a2fdae8ba805adcf035edb16a",
     "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
+    "contentHash": "c245692fc3981f969fc6fb6bc72f7ec62b8cb6d788a14b4fc8196380c828a40d",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/resident/documents.ts",
+    "contentHash": "ab019efca844d5bce448bd4e7c78aee85f7657da435610069b522fcaefedf68a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/resident/stages.ts",
+    "contentHash": "87e643286d93140048d0e5ce13e9da02a95b3577cbe8197ea1bfdf47b1055c18",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/resident/reference.ts",
+    "contentHash": "4b16595f5eee7f02f3657f4a4a55dc054515b369ebceb7bdab73efd9b21bf539",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
   }
 ]

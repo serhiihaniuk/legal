@@ -10,5 +10,7 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     include: ["app/**/*.test.{ts,tsx}"],
+    // Parallel corpus imports can exhaust the per-test timeout on large CPUs.
+    maxWorkers: 2,
   },
 })

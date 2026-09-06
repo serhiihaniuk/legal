@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1787,
-    "reviewed": 103,
+    "totalFiles": 1790,
+    "reviewed": 107,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 69,
+      "supporting-copy": 72,
       "case-guide": 9,
       "evidence-document": 61,
       "provision": 1478,
@@ -161,6 +161,27 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
     },
     {
+      "path": "app/data/case-guides/editorial/resident/documents.ts",
+      "family": "supporting-copy",
+      "contentHash": "ab019efca844d5bce448bd4e7c78aee85f7657da435610069b522fcaefedf68a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/resident/reference.ts",
+      "family": "supporting-copy",
+      "contentHash": "4b16595f5eee7f02f3657f4a4a55dc054515b369ebceb7bdab73efd9b21bf539",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+    },
+    {
+      "path": "app/data/case-guides/editorial/resident/stages.ts",
+      "family": "supporting-copy",
+      "contentHash": "87e643286d93140048d0e5ce13e9da02a95b3577cbe8197ea1bfdf47b1055c18",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+    },
+    {
       "path": "app/data/case-guides/editorial/routes/blue-card.ts",
       "family": "case-guide",
       "contentHash": "5dcdffcaaf09f001a6af50ac22a8fed99b714de2b48c366bd3336080a3a2f990",
@@ -191,9 +212,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
       "family": "case-guide",
-      "contentHash": "3516a291676424970b1d5bf11ae1cd659aa3a962a213ae8822d049190c7e29d1",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "c245692fc3981f969fc6fb6bc72f7ec62b8cb6d788a14b4fc8196380c828a40d",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/other.ts",

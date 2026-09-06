@@ -16,7 +16,15 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
-  it.each(["work", "blue-card", "student", "business", "family", "permanent"])(
+  it.each([
+    "work",
+    "blue-card",
+    "student",
+    "business",
+    "family",
+    "permanent",
+    "long-term-eu",
+  ])(
     "keeps the %s register complete and places each document at the relevant stage",
     (routeId) => {
       const route = caseGuideRoutes.find((route) => route.id === routeId)!
@@ -55,14 +63,20 @@ describe("document coverage across learning modules", () => {
       expect(at("status")).toContain("status-documents")
       expect(at("filing")).toEqual(
         expect.arrayContaining([
-          routeId === "permanent" ? "permanent-application" : "mos-application",
-          routeId === "permanent"
-            ? "karta-polaka"
-            : routeId === "family"
-              ? "civil-status-record"
-              : routeId === "student"
-                ? "study-annex"
-                : "employment-annex-1",
+          routeId === "long-term-eu"
+            ? "resident-application"
+            : routeId === "permanent"
+              ? "permanent-application"
+              : "mos-application",
+          routeId === "long-term-eu"
+            ? "housing-evidence"
+            : routeId === "permanent"
+              ? "karta-polaka"
+              : routeId === "family"
+                ? "civil-status-record"
+                : routeId === "student"
+                  ? "study-annex"
+                  : "employment-annex-1",
           "upo",
         ])
       )
@@ -78,27 +92,34 @@ describe("document coverage across learning modules", () => {
                 "employment-contract",
               ]
             : ["health-insurance"]),
-          ...(routeId === "permanent"
-            ? []
-            : routeId === "student"
-              ? ["income-evidence", "housing-evidence", "tuition-payment"]
-              : routeId === "business"
-                ? [
-                    "business-evidence",
-                    "employment-contract",
-                    "income-evidence",
-                    "housing-evidence",
-                    "zus-confirmation",
-                    "qualification-evidence",
-                  ]
-                : routeId === "family"
+          ...(routeId === "long-term-eu"
+            ? [
+                "income-evidence",
+                "housing-evidence",
+                "polish-language-proof",
+                "zus-confirmation",
+              ]
+            : routeId === "permanent"
+              ? []
+              : routeId === "student"
+                ? ["income-evidence", "housing-evidence", "tuition-payment"]
+                : routeId === "business"
                   ? [
-                      "family-evidence",
-                      "civil-status-record",
+                      "business-evidence",
+                      "employment-contract",
                       "income-evidence",
                       "housing-evidence",
+                      "zus-confirmation",
+                      "qualification-evidence",
                     ]
-                  : ["zus-confirmation", "qualification-evidence"]),
+                  : routeId === "family"
+                    ? [
+                        "family-evidence",
+                        "civil-status-record",
+                        "income-evidence",
+                        "housing-evidence",
+                      ]
+                    : ["zus-confirmation", "qualification-evidence"]),
           "sworn-translation",
         ])
       )
@@ -180,6 +201,50 @@ describe("document coverage across learning modules", () => {
           expect(
             route.documents.find((entry) => ids(entry.item).includes(id))?.level
           ).toBe("conditional")
+      }
+      if (routeId === "long-term-eu") {
+        for (const id of [
+          "mos-application",
+          "employment-annex-1",
+          "temporary-residence-notification",
+        ])
+          expect(registerIds).not.toContain(id)
+        for (const id of [
+          "employment-contract",
+          "polish-language-proof",
+          "civil-status-record",
+          "zus-confirmation",
+        ] as const)
+          expect(
+            route.documents.find((entry) => ids(entry.item).includes(id))?.level
+          ).toBe("conditional")
+        expect(
+          route.documents.find((entry) =>
+            ids(entry.item).includes("housing-evidence")
+          )?.level
+        ).toBe("required")
+        const references = route.documents.flatMap((entry) =>
+          typeof entry.law === "string"
+            ? []
+            : entry.law.parts.flatMap((part) =>
+                "target" in part && part.target.kind === "legal-provision"
+                  ? [part.target.provisionId]
+                  : []
+              )
+        )
+        expect(
+          references.some((id) =>
+            /^ustawa-o-cudzoziemcach-art-(106|203)/.test(id)
+          )
+        ).toBe(false)
+        expect(references).toEqual(
+          expect.arrayContaining([
+            "ustawa-o-cudzoziemcach-art-219a",
+            "ustawa-o-cudzoziemcach-art-219d",
+            "ustawa-o-cudzoziemcach-art-222a",
+            "ustawa-o-cudzoziemcach-art-229",
+          ])
+        )
       }
       if (routeId === "permanent") {
         for (const id of [

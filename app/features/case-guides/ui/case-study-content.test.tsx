@@ -269,8 +269,9 @@ describe("case guide continuity", () => {
     ).toHaveLength(2)
   })
 
-  it("folds all reference sections by default and opens them independently in every guide", () => {
-    for (const route of caseGuideRoutes) {
+  it.each(caseGuideRoutes)(
+    "folds reference sections independently in $id",
+    (route) => {
       const { unmount } = render(
         <MemoryRouter>
           <CaseStudyContent route={route} updatedAt="2026-07-18" />
@@ -294,7 +295,7 @@ describe("case guide continuity", () => {
       expect(triggers[1].getAttribute("aria-expanded")).toBe("true")
       unmount()
     }
-  })
+  )
 
   it("opens the document register for a direct deadline link", () => {
     render(

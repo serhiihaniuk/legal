@@ -9,8 +9,9 @@ import { DocumentCatalogOverview } from "./document-catalog-overview"
 afterEach(cleanup)
 
 describe("document explanations", () => {
-  it("renders every authored section and example at a reachable table-of-contents anchor", () => {
-    for (const document of documentCatalog) {
+  it.each(documentCatalog)(
+    "renders reachable sections and examples in $id",
+    (document) => {
       const { container, unmount } = render(
         <MemoryRouter>
           <DocumentDetailContent document={document} />
@@ -33,7 +34,7 @@ describe("document explanations", () => {
       }
       unmount()
     }
-  })
+  )
 
   it("gives travel history completed reasoning", () => {
     const history = documentById.get("stay-history")!
