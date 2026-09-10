@@ -453,3 +453,9 @@ Full verification passed with 198 application tests and production build. Deskto
 Restyled the homepage around a full-height particle hero, centered typography and two navigation actions. The static directory retains six destinations and live content counts. Documentation pages retain their shell. Particle density is the original 230; mobile point size compensates for narrow screens. Added a reusable logo brief and project description.
 
 Full verification passed with 202 application tests. The final mobile adjustment also passed typecheck, lifecycle tests, Chromium checks and build. Browser checks covered motion controls, reduced motion, navigation cleanup, 360 px overflow and WebGL fallback. Writing acceptance is 149 of 1,805 files. No legal baseline changed. Evidence: docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md.
+
+### 2026-09-10: anatomy of a legal rule
+
+Rewrote the map foundation article around the KPA signature and formal-defect rules. Added a completed example with a filled rule-analysis table and a separate explanation of cumulative conditions. Verified the bounded source provisions against official ELI on 10.09.2026; the global baseline is unchanged.
+
+Full verification passed with 202 application tests. Reference previews and Chromium checks passed, including direct navigation, authored sections, desktop/mobile overflow and keyboard table scrolling. Writing acceptance is 150 of 1,805 files. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/44-legal-norm-anatomy.md. Next: special-vs-kpa.
