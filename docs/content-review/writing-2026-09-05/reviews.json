@@ -853,5 +853,20 @@
     "path": "app/data/legal-map/editorial/topics/business-stay.ts",
     "contentHash": "532df4ce9b28dd8de92392d98fba5c29a35472359e692ab7319f2300cd6432a3",
     "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/permanent-resident.ts",
+    "contentHash": "244eaee05519390bc3b72ead04ab48c4a639c5ee71d921ad19a312e4ae3d0e6f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/permanent.ts",
+    "contentHash": "1eba4bb7a5ae461f006368349fccf4f9cddf37336645e80841b4f60093fa204b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/long-term-eu.ts",
+    "contentHash": "16c0ae83143cc787e6cd806c6bdf906cc9ab9180e0411adae1c0e55ae900829e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md"
   }
 ]

@@ -537,3 +537,9 @@ Official sources checked on 10.09.2026; global baseline unchanged. Full verifica
 Rewrote the three detailed map branches with subject-specific explanations and completed tables. Work now distinguishes permit conditions, employer changes, paper amendments and two job-loss notices. Blue Card separates qualifications, guaranteed pay, transitional decisions and mobility. Business separates personal income, company results and evidence of future prospects. Corrected the named-employer qualifier in the shared work-case deadline entry.
 
 Official sources checked on 10.09.2026; global baseline unchanged. Subagent source/draft reviews and root verification caught the notice starting event and an overly broad contract-link label. Full verification, reference previews and desktop/mobile checks passed. Evidence: docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md. Next: permanent/resident comparison and detailed articles. Whole-project independent legal acceptance remains open.
+
+### 2026-09-10: permanent residence and EU long-term residence
+
+Rewrote the comparison and both detailed map articles with completed fictional tables. The pages separate statutory categories, qualifying years, continuity, income, language, MOS filing, card validity and status loss. Independent draft review corrected the accompanying-family scope and made the example filing-day status explicit. Browser validation caught raw article citations missed by TypeScript; typed references and runtime checks resolved the import failure.
+
+Official sources checked on 10.09.2026; global baseline unchanged. Full verification, reference previews and desktop/mobile browser checks passed. Writing acceptance is 171 of 1,805 files. Evidence: docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md. Next: labour-market entry and its legal instruments. Whole-project independent legal acceptance remains open.

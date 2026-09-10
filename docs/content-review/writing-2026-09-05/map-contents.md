@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 57: the work, Blue Card and business branches now contain distinct authored articles with completed examples. Their stable routes and chapter placement remain. Next are the permanent/resident comparison and detailed articles. The findings below preserve the original pre-migration audit; completed changes are recorded in numbered batches.
+Latest implementation note, batch 58: the permanent/resident parent and its two children now explain the different conditions, residence calculations and status consequences through completed examples. Stable routes and chapter placement remain. Next are labour-market entry and its legal instruments. The findings below preserve the original pre-migration audit; completed changes are recorded in numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 

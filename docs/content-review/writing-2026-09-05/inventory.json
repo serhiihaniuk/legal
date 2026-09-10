@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 168,
+    "reviewed": 171,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11769,9 +11769,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/long-term-eu.ts",
       "family": "map-topic",
-      "contentHash": "928292947f76b896641e7ee0c7af14fa506542a2982fb30ecee48231176fd0e4",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "16c0ae83143cc787e6cd806c6bdf906cc9ab9180e0411adae1c0e55ae900829e",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/mos-procedure.ts",
@@ -11811,16 +11811,16 @@
     {
       "path": "app/data/legal-map/editorial/topics/permanent-resident.ts",
       "family": "map-topic",
-      "contentHash": "7ea8b2356dc6b4dee9bf68740f2bb5b49ffe5b89878922958bc7d52143483564",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "244eaee05519390bc3b72ead04ab48c4a639c5ee71d921ad19a312e4ae3d0e6f",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/permanent.ts",
       "family": "map-topic",
-      "contentHash": "826000a2f0e88fe3de5568c7be9d405b9b2610b1afcd9c384c55e187de04c11a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1eba4bb7a5ae461f006368349fccf4f9cddf37336645e80841b4f60093fa204b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/person-status.ts",
