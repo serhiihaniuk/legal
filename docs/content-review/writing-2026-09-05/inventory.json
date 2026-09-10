@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1802,
-    "reviewed": 143,
+    "reviewed": 144,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -12000,9 +12000,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/wsa.ts",
       "family": "map-topic",
-      "contentHash": "78c24d1898ac1daee330565b8cac9ab62354324bdd33229364e314a84fcf22c6",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "8275f4b047d99ae16ac24a8cb07ae5987a5da3cd8bfcf0cd0ab663a24ffeccd2",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/40-wsa-review.md"
     },
     {
       "path": "app/data/legal-map/journey.ts",

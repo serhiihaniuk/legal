@@ -2,40 +2,77 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
+import { residenceOfficeDeadlines } from "~/data/shared/residence-office-deadlines"
 import type { LegalNode } from "~/data/shared/legal-types"
-
 import { kpaLaw, mapTopicSources, ppsaLaw } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
-const ppsaSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-ppsa",
-} as const
+const documents = createEvidenceDocumentTextAuthor()
+const ministryUrl =
+  "https://bip.brpo.gov.pl/sites/default/files/2026-08/Odpowiedz_MSWiA_cudzoziemcy_legalizacja_pobytu_przewleklosc_30_06_2026.pdf"
 
-const nsaReference = {
-  kind: "external",
-  url: "https://orzeczenia.nsa.gov.pl/cbo/query",
-} as const
-
-type WsaBody = LegalMapTopicBody
-
-export const wsaTopic: KnowledgeUnit<WsaBody> = defineKnowledgeUnit({
+export const wsaTopic: KnowledgeUnit<LegalMapTopicBody> = defineKnowledgeUnit({
   id: "map-topic:wsa",
   subject: {
     family: "map-topic",
     reference: { kind: "map-node", nodeId: "wsa" },
   },
   summary:
-    "Суд перевіряє законність адміністративного акта або бездіяльності. Загальний строк скарги на рішення — 30 днів; подання відбувається через organ.",
+    "Skarga do WSA відкриває судову перевірку законності рішення або визначеної законом бездіяльності. Предмет скарги визначає її передумови, строк і можливий результат. Скасування відмови та надання дозволу є різними результатами.",
   claims: [
     {
-      id: "wsa-legal-control",
-      kind: "requires-verification",
-      text: "WSA контролює законність адміністрації, але не є третьою адміністративною інстанцією та не замінює organ у вирішенні справи по суті.",
+      id: "judicial-review-and-filing",
+      kind: "statute-text",
+      text: "PPSA окремо регулює доступ до суду, представництво, зміст і подання скарги, судові витрати та межі розгляду. Для звичайної скарги на рішення діє тридцятиденний строк від вручення й подання через орган.",
       basis: [
-        { reference: ppsaSourceReference, locator: "Art. 3, 50–61, 145–153" },
-        { reference: nsaReference, locator: "official case-law database" },
+        {
+          reference: { kind: "official-source", sourceId: "eli-ppsa" },
+          locator:
+            "Art. 3, 12b, 34–37, 46–61, 64a–64e, 83, 106, 133–134, 219–220, 243–246",
+        },
+      ],
+    },
+    {
+      id: "judgment-and-remedy",
+      kind: "statute-text",
+      text: "Результат судової перевірки залежить від предмета й установленого порушення. PPSA розрізняє відхилення скарги по суті, її процесуальне відкидання, скасування акта та інші повноваження суду. Касаційна скарга і заява про мотивування мають окремі строки.",
+      basis: [
+        {
+          reference: { kind: "official-source", sourceId: "eli-ppsa" },
+          locator: "Art. 58, 141–142, 145–154, 173–177, 194",
+        },
+        {
+          reference: { kind: "official-source", sourceId: "eli-kpa" },
+          locator:
+            "Art. 77 § 1, 80, 107 § 3, 138 § 2; fictional evidence example",
+        },
+      ],
+    },
+    {
+      id: "residence-delay-limits",
+      kind: "statute-text",
+      text: residenceOfficeDeadlines.statutoryRule,
+      basis: [
+        {
+          reference: {
+            kind: "external",
+            url: "https://eli.gov.pl/eli/DU/2025/337/ogl",
+          },
+          locator: "Art. 100d ust. 1–4",
+        },
+      ],
+    },
+    {
+      id: "residence-delay-court-practice",
+      kind: "official-guidance",
+      text: residenceOfficeDeadlines.courtDistinction,
+      basis: [
+        {
+          reference: { kind: "external", url: ministryUrl },
+          locator: "MSWiA reply of 30.06.2026, p. 9",
+        },
       ],
     },
   ],
@@ -43,42 +80,134 @@ export const wsaTopic: KnowledgeUnit<WsaBody> = defineKnowledgeUnit({
   review: {
     reviewStatus: "reviewed",
     language: "uk",
-    legalStateDate: "2026-07-18",
-    verifiedAt: "2026-07-18",
+    legalStateDate: "2026-09-10",
+    verifiedAt: "2026-09-10",
   },
   body: {
-    title: "Skarga do WSA",
-    polish: ppsaLaw.text`${ppsaLaw.article("3", "art. 3")}, ${ppsaLaw.articleRange("50", "61", { start: "50", end: "61" })}, ${ppsaLaw.articleRange("145", "153", { start: "145", end: "153" })} p.p.s.a.`,
-    sources: [mapTopicSources.ppsa, mapTopicSources.nsa],
-    guide: {
+    title: "Skarga do WSA: як суд перевіряє адміністративну справу",
+    polish: "Kontrola sądowoadministracyjna, skarga i wyrok",
+    sources: [
+      {
+        ...mapTopicSources.ppsa,
+        note: "Перевірено 10.09.2026: доступ до суду, подання, представництво, витрати, результати та оскарження. Текст зі зміною Dz.U. 2026 poz. 846.",
+      },
+      {
+        ...mapTopicSources.kpa,
+        note: "Перевірено 10.09.2026: оцінка доказів, мотивування рішення та повернення справи на новий розгляд.",
+      },
+      {
+        label: "Зміна PPSA, Dz.U. 2026 poz. 846",
+        url: "https://eli.gov.pl/eli/DU/2026/846/ogl",
+        note: "Положення щодо PPSA діють із 26.06.2026. Звичайний строк скарги на рішення залишився тридцятиденним.",
+      },
+      {
+        label: "Specustawa: строки проваджень перед wojewodą",
+        url: "https://eli.gov.pl/eli/DU/2025/337/ogl",
+        note: "Перевірено 10.09.2026: спеціальні строки проваджень у тексті від 22.05.2026.",
+      },
+      {
+        label: "MSWiA: відповідь RPO від 30.06.2026",
+        url: ministryUrl,
+        note: "Сторінка 9 розрізняє застосування спеціальної норми адміністрацією та судом. Це позиція міністерства, а не рішення в справі читача.",
+      },
+    ],
+    related: ["extraordinary-wsa", "appeal", "complaint", "inactivity"],
+    guide: defineLegalMapArticle({
+      kind: "article",
       introduction: [
-        "PPSA регулює skargę do Wojewódzkiego Sądu Administracyjnego. WSA контролює законність адміністрації, але не є третьою адміністративною інстанцією і за загальним правилом не замінює organ у вирішенні справи по суті.",
+        "Wojewódzki sąd administracyjny, скорочено WSA, перевіряє законність діяльності адміністрації. Skarga є зверненням, яке ставить конкретний акт, дію або визначену законом бездіяльність під судовий контроль. Після відмови в дозволі питання для суду полягає в тому, чи законно орган вирішив справу. Під час тривалого очікування предмет може бути іншим: чи порушив орган обов'язок своєчасного розгляду.",
+        "Odwołanie розглядає адміністративний орган, а skargę до WSA розглядає суд за окремим законом PPSA. Для працівника це означає зміну правил подання, представництва й оскарження. Копія попереднього odwołania не пояснює автоматично, яке порушення має перевірити суд.",
       ],
-      regulated: [
-        kpaLaw.text`${ppsaLaw.article("3", "Art. 3")} PPSA визначає предмет судового контролю; ${ppsaLaw.articleRange("50", "54", { start: "art. 50", end: "54" })} — право і шлях skargi; ${ppsaLaw.article("61", "art. 61")} — виконання акту; ${ppsaLaw.articleRange("145", "153", { start: "art. 145", end: "153" })} — види судових розв’язань і їх наслідки.`,
+      sections: [
+        {
+          id: "scope-of-review",
+          title: "Що суд перевіряє в рішенні",
+          paragraphs: [
+            ppsaLaw.text`За ${ppsaLaw.article("145", "art. 145 § 1 PPSA")} підставами скасування можуть бути порушення матеріального права, яке вплинуло на результат; порушення, що дає підставу для wznowienia; або інше процесуальне порушення, яке могло істотно вплинути на результат. Наприклад, орган застосував умову не того дозволу або не розглянув доказ щодо вирішальної умови. Самого невдоволення відмовою недостатньо, щоб пояснити таке порушення.`,
+            ppsaLaw.text`${ppsaLaw.article("133", "Art. 133")} пов'язує судовий розгляд із матеріалами справи. За ${ppsaLaw.article("106", "art. 106 § 3")} суд може провести додатковий доказ із документа, якщо це потрібно для істотних сумнівів і не спричинить надмірного продовження розгляду. Це не повторне повне збирання пакета на дозвіл. Новий договір, укладений після оскарженого рішення, сам по собі не доводить незаконності того рішення.`,
+            ppsaLaw.text`За ${ppsaLaw.article("134", "art. 134 § 1")} суд діє в межах конкретної справи, але за загальним правилом не зв'язаний лише наведеними стороною запереченнями чи статтями. Закон містить окремий виняток для визначених податкових скарг. У звичайній справі про перебування суд може помітити інше порушення, проте скарга все одно повинна зрозуміло називати оскаржене рішення й проблему.`,
+          ],
+        },
+        {
+          id: "which-complaint",
+          title: "Відмова, повернення справи чи відсутність рішення",
+          paragraphs: [
+            ppsaLaw.text`Заявник, якого стосується відмова, захищає свій interes prawny, тобто правовий інтерес у цій справі. ${ppsaLaw.article("50", "Art. 50")} визначає право на скаргу, а ${ppsaLaw.article("52", "art. 52 § 1–2")} зазвичай вимагає вичерпати доступні адміністративні засоби. Після звичайного odwołania не потрібно додатково відкривати wznowienie або nieważność лише заради доступу до WSA.`,
+            ppsaLaw.text`Wniosek o ponowne rozpatrzenie є зверненням до того самого органу про повторний розгляд. ${ppsaLaw.article("52", "Art. 52 § 3")} дозволяє звернутися до суду без нього, але виключає таке спрощення для консула та міністра закордонних справ у зазначених справах іноземців. Це правило не скасовує загального обов'язку пройти звичайне odwołanie, якщо саме воно доступне.`,
+            ppsaLaw.text`Якщо друга інстанція скасувала рішення й повернула справу на новий розгляд за ${kpaLaw.article("138", "art. 138 § 2 KPA")}, застосовують sprzeciw. Це спеціальне судове заперечення проти повернення справи. ${ppsaLaw.article("64c", "Art. 64c PPSA")} передбачає чотирнадцять днів від вручення й подання через орган; за ${ppsaLaw.article("64e", "art. 64e")} суд перевіряє передумови такого повернення. Натомість рішення залишити відмову в силі оскаржують звичайною skargą.`,
+            ppsaLaw.text`Для bezczynności, тобто невчинення належної дії, або przewlekłości, тобто затягування розгляду, ${ppsaLaw.article("53", "art. 53 § 2b")} дозволяє скаргу після подання ponaglenia до належного органу. Ця норма не вимагає чекати відповіді на ponaglenie. Але допустимість звернення та наявність самого порушення є різними питаннями.`,
+            residenceOfficeDeadlines.statutoryRule,
+            residenceOfficeDeadlines.statutoryLimits,
+            residenceOfficeDeadlines.courtDistinction,
+          ],
+        },
+        {
+          id: "filing-and-representation",
+          title: "Як скарга потрапляє до суду і хто її підписує",
+          paragraphs: [
+            ppsaLaw.text`Звичайну скаргу на рішення подають протягом тридцяти днів від його вручення за ${ppsaLaw.article("53", "art. 53 § 1")}. За ${ppsaLaw.article("54", "art. 54 § 1–2")} лист адресують належному WSA, але передають через орган, чий акт оскаржують. За загальним правилом орган передає суду скаргу, повні впорядковані матеріали та свою відповідь у тридцятиденний строк; для зазначених у цій нормі консульських справ і справ міністра закордонних справ передбачено шістдесят днів. У листі через Szefa UdSC оскарженим актом зазвичай буде його рішення другої інстанції, а не лише первісна відмова воєводи.`,
+            ppsaLaw.text`${ppsaLaw.article("46", "Art. 46")} вимагає реквізитів судового листа: суд, сторони, вид звернення, вимога, підпис і перелік додатків; для першого листа також адреси та належні ідентифікаційні дані. ${ppsaLaw.article("57", "Art. 57")} додає позначення оскарженого акта, органу та порушення права або правового інтересу. За ${ppsaLaw.article("47", "art. 47")} до паперового листа додають потрібні копії для вручення іншим сторонам. Назви документів у додатках мають відповідати тому, що фактично подано.`,
+            ppsaLaw.text`За ${ppsaLaw.article("34", "art. 34")} сторона може діяти особисто. ${ppsaLaw.article("35", "Art. 35")} визначає, хто може представляти її в суді: зокрема adwokat, radca prawny, чоловік або дружина, брати й сестри, предки чи нащадки, а також інші названі законом особи. Працівник легалізації не набуває такого права лише тому, що вже представляв клієнта перед воєводою. Потрібні і допустимий представник, і повноваження на судову справу; подання довіреності регулює ${ppsaLaw.article("37", "art. 37")}.`,
+            ppsaLaw.text`Для електронного подання ${ppsaLaw.article("12b", "art. 12b")} передбачає elektroniczną skrzynkę podawczą, також при поданні через орган. ${ppsaLaw.article("46", "Art. 46 § 2a–2b")} визначає електронний підпис листа й додатків. Звичайний електронний лист або завантаження файла до MOS не слід вважати судовим поданням за цими правилами. Доказ електронного прийняття зберігають разом із відправленим змістом.`,
+            documents.text`${documents.document("delivery-proof", "Доказ вручення рішення")} пояснює початок строку, а ${documents.document("dispatch-proof", "доказ подання скарги")} підтверджує вчинену дію. Це різні документи. Дата, надрукована на скарзі, не доводить її своєчасного подання.`,
+            ppsaLaw.text`Судовий wpis є платою за судове звернення, окремою від оплати заяви на дозвіл. За ${ppsaLaw.article("219", "art. 219")} належну судову плату сплачують при поданні на рахунок належного суду або в його касу. Несплата належного wpisu після судової вимоги може спричинити odrzucenie за ${ppsaLaw.article("220", "art. 220 § 3")}. Prawo pomocy означає допомогу щодо витрат і представництва. За ${ppsaLaw.articleRange("243", "246", { start: "art. 243", end: "246" })} її можна просити до або під час справи, обґрунтувавши неможливість понести відповідні витрати. Саме бажання мати безоплатного представника цієї умови не доводить.`,
+          ],
+        },
+        {
+          id: "complaint-example",
+          title: "Приклад: доказ був у справі, але рішення його не пояснює",
+          paragraphs: [
+            kpaLaw.text`Вимога розглянути весь доказовий матеріал випливає з ${kpaLaw.article("77", "art. 77 § 1 KPA")}, оцінити його в сукупності з ${kpaLaw.article("80", "art. 80")}, а пояснити встановлені факти та оцінку доказів із ${kpaLaw.article("107", "art. 107 § 3")}. У скарзі важливо показати, як пропуск конкретного документа пов'язаний із причиною відмови.`,
+          ],
+          example: {
+            title: "Від пропущеної довідки до повторного розгляду",
+            facts: [
+              "Вигадана справа 2026 року. Szef UdSC залишив у силі відмову в тимчасовому перебуванні через недоведене страхування. У матеріалах апеляції були поліс, підтвердження оплати й довідка страховика про період покриття. Рішення не пояснювало довідку, хоча від її змісту залежала оцінка саме цієї причини відмови. Рішення вручено 20 липня; заявник особисто підписав і подав скаргу через орган 12 серпня.",
+            ],
+            sample: {
+              kind: "letter",
+              language: "pl",
+              title: "Фрагмент обґрунтованої skargi",
+              note: "Вигаданий навчальний фрагмент, не повний формуляр. Реквізити сторони, адреси, номер рішення, підпис і перелік додатків тут опущено; у поданому листі вони потрібні.",
+              paragraphs: [
+                "Do właściwego Wojewódzkiego Sądu Administracyjnego, za pośrednictwem Szefa Urzędu do Spraw Cudzoziemców",
+                "Skarga na decyzję Szefa Urzędu do Spraw Cudzoziemców utrzymującą w mocy odmowę udzielenia zezwolenia na pobyt czasowy, doręczoną mi 20 lipca 2026 r. Zaskarżam tę decyzję w całości i wnoszę o jej uchylenie.",
+                "Zarzucam naruszenie art. 77 § 1 i art. 80 KPA w związku z art. 107 § 3 KPA przez pominięcie przy ocenie ubezpieczenia zaświadczenia ubezpieczyciela znajdującego się w aktach postępowania odwoławczego oraz niewyjaśnienie jego znaczenia w uzasadnieniu decyzji.",
+                "Zaświadczenie dotyczy okresu ochrony objętego oceną organu. Wraz z polisą i potwierdzeniem opłaty zostało złożone przed wydaniem decyzji. Organ stwierdził brak wykazania ubezpieczenia, ale nie wyjaśnił, dlaczego wskazane zaświadczenie nie potwierdza tej okoliczności. Uchybienie mogło mieć istotny wpływ na wynik sprawy, ponieważ właśnie niewykazanie ubezpieczenia było przyczyną odmowy.",
+              ],
+            },
+            reasoning: [
+              ppsaLaw.text`За тридцятиденним строком із ${ppsaLaw.article("53", "art. 53 § 1 PPSA")} та правилами обчислення ${ppsaLaw.article("83", "art. 83")} тридцятий день після вручення припав на 19 серпня, середу. Подання 12 серпня було своєчасним. Заявник зберіг підтвердження прийняття, копію скарги та копії названих матеріалів. Він оскаржив оцінку документів, які вже існували у справі, а не запропонував суду нову підставу перебування.`,
+              "У цьому вигаданому прикладі суд установив, що неврахування довідки могло істотно вплинути на результат, і скасував оскаржене рішення. Це завершений результат судової перевірки. Суд не встановив замість органу, що всі умови дозволу виконані. Після набрання судовим рішенням законної сили орган повторно розглянув питання страхування з урахуванням судових вказівок; самого дозволу на цьому етапі ще не було.",
+            ],
+            conclusion:
+              "Скарга усунула рішення, ухвалене з установленим процесуальним порушенням. Для працівника наступним предметом контролю стало виконання судових вказівок і нове рішення органу. Копія сприятливого судового рішення не замінила дозвіл.",
+          },
+        },
+        {
+          id: "judgment-and-execution",
+          title: "Що змінює скарга, а що змінює судове рішення",
+          paragraphs: [
+            ppsaLaw.text`Подання саме по собі не зупиняє виконання акта за ${ppsaLaw.article("61", "art. 61 § 1")}. Після передачі скарги суд може на заяву сторони зупинити виконання за умов ${ppsaLaw.article("61", "§ 3")}, зокрема за небезпеки значної шкоди або наслідків, які важко повернути назад. Заява повинна пояснювати цю небезпеку щодо конкретного акта. Це окреме питання від того, чи скаргу буде задоволено. Судове звернення саме по собі не є дозволом на перебування або працю.`,
+            ppsaLaw.text`Odrzucenie означає, що суд не перейшов до перевірки скарги по суті через процесуальну перешкоду. Приклади ${ppsaLaw.article("58", "art. 58")}: пропущений строк або неусунені формальні недоліки. Oddalenie за ${ppsaLaw.article("151", "art. 151")} означає, що суд розглянув скаргу по суті й не задовольнив її. Українське слово «відхилив» без польського терміна приховує цю різницю й може призвести до помилки в подальшому засобі оскарження.`,
+            ppsaLaw.text`Uwzględnienie означає задоволення скарги. Для рішення або postanowienia ${ppsaLaw.article("145", "art. 145")} передбачає, залежно від порушення, скасування повністю чи частково, встановлення nieważności або видання з порушенням права. Після задоволення скарги на акт чи дію ${ppsaLaw.article("152", "art. 152")} за загальним правилом усуває їхні правові наслідки до набрання судовим рішенням законної сили, якщо суд не постановив інакше. Це інший момент і інша норма, ніж саме подання скарги.`,
+            ppsaLaw.text`За ${ppsaLaw.article("153", "art. 153")} правова оцінка й указівки суду зв'язують орган і суди в цій справі, якщо право не змінилося. Тому після скасування потрібно читати разом sentencję, тобто резолютивну частину, та uzasadnienie, тобто мотивування. Перша показує, який акт і в якій частині усунуто; друге пояснює порушення та подальший розгляд.`,
+            ppsaLaw.text`Твердження «WSA ніколи не визначає результат справи» було б надто широким. ${ppsaLaw.article("145a", "Art. 145a")} за визначених умов зобов'язує орган ухвалити рішення із зазначенням способу вирішення, крім адміністративного розсуду. Для бездіяльності ${ppsaLaw.article("149", "art. 149")} передбачає обов'язок діяти, оцінку грубого порушення, а за додаткових умов також висновок щодо права чи обов'язку, штраф або грошову суму. Жоден із цих результатів не випливає автоматично з назви skargi.`,
+          ],
+        },
+        {
+          id: "after-wsa",
+          title: "Після WSA: мотивування, NSA і виконання",
+          paragraphs: [
+            ppsaLaw.text`Після oddalenia skargi ${ppsaLaw.article("141", "art. 141 § 2")} вимагає заяви про письмове мотивування протягом семи днів від оголошення судового рішення або вручення копії його резолютивної частини у відповідній ситуації. Не можна просто чекати повний текст, припускаючи, що він завжди надійде автоматично. Загальне правило складання мотивування з ініціативи суду та цей виняток потрібно розрізняти.`,
+            ppsaLaw.text`Skarga kasacyjna до Naczelnego Sądu Administracyjnego, скорочено NSA, оскаржує судове рішення. За ${ppsaLaw.article("177", "art. 177 § 1")} її подають через WSA, який ухвалив оскаржене рішення, протягом тридцяти днів від вручення рішення з мотивуванням. Тепер адресатом подання є суд, а не Szef UdSC. ${ppsaLaw.article("174", "Art. 174")} визначає касаційні підстави; простого повторення адміністративного odwołania недостатньо.`,
+            ppsaLaw.text`За ${ppsaLaw.article("175", "art. 175")} касаційну скаргу за загальним правилом складає adwokat або radca prawny; закон містить конкретні винятки. Право особисто подати первісну скаргу до WSA не переноситься на складання касації. Для призначення представника в межах prawa pomocy та його висновку про відсутність касаційних підстав ${ppsaLaw.article("177", "art. 177 § 3–6")} передбачає окремі правила строку.`,
+            ppsaLaw.text`Не кожне postanowienie WSA оскаржують касацією. Наприклад, проти відкидання скарги через пропущений строк або неусунені формальні недоліки ${ppsaLaw.article("194", "art. 194 § 1–2")} передбачає zażalenie до NSA протягом семи днів від вручення ухвали. Спочатку встановлюють вид судового рішення, потім засіб і строк.`,
+            ppsaLaw.text`Якщо сприятливе судове рішення вже набрало законної сили, робота переходить до його виконання. Для невиконання судового рішення щодо бездіяльності або затягування ${ppsaLaw.article("154", "art. 154 § 1")} передбачає окрему скаргу з вимогою штрафу після письмової вимоги до органу виконати судове рішення або вирішити справу. Це не нова скарга на первісну відмову. У матеріалах зберігають саме судове рішення, мотивування, відомості про законну силу та дії органу після нього.`,
+          ],
+        },
       ],
-      appliesWhen: [
-        "Щодо ostatecznej decyzji, визначених postanowień, інших оскаржуваних актів і дій, bezczynności або przewlekłości після виконання передумов PPSA.",
-      ],
-      conditions: [
-        kpaLaw.text`За ${ppsaLaw.article("52", "art. 52")} PPSA skarga зазвичай допустима після вичерпання odwołania, zażalenia або ponaglenia, якщо такий засіб існував.`,
-        "Skarga на rozstrzygnięcie подається у 30-денний строк від doręczenia через organ, дія або бездіяльність якого оскаржується.",
-        "Суд перевіряє порушення матеріального права, процесуальні порушення, що могли істотно вплинути на результат, і підстави nieważności.",
-      ],
-      exceptions: [
-        kpaLaw.text`Skarga сама по собі не зупиняє виконання акту. Зупинення можливе за умов ${ppsaLaw.article("61", "art. 61")} PPSA органом або судом.`,
-        kpaLaw.text`Коли доступний wniosek o ponowne rozpatrzenie sprawy, PPSA інколи дозволяє skargę без нього, але ${ppsaLaw.article("52", "art. 52 § 3")} містить спеціальний виняток для справ cudzoziemców у компетенції ministra właściwego do spraw zagranicznych та для konsula.`,
-      ],
-      consequences: [
-        kpaLaw.text`WSA може скасувати decyzję або postanowienie, встановити nieważność чи видання з порушенням права, відхилити skargę або у справах бездіяльності зобов’язати organ діяти. Правова оцінка й вказівки суду зв’язують organ за ${ppsaLaw.article("153", "art. 153")} PPSA.`,
-      ],
-      procedure: [
-        "Після подання skargi через organ він передає її разом з aktami й відповіддю до суду; суд перевіряє допустимість, межі законності та видає wyrok або postanowienie. Подальша skarga kasacyjna до NSA має окремі умови.",
-      ],
-      foreignersContext: [
-        "У справі про pobyt WSA оцінює, чи Szef UdSC і wojewoda правильно застосували право, встановили факти та забезпечили процедуру. Навіть після скасування негативної decyzji дозвіл не завжди виникає автоматично — справа часто повертається organowi.",
-      ],
-    } satisfies LegalNodeGuide,
+    }),
   },
 })
 
@@ -90,4 +219,5 @@ export const wsaMapNode: LegalNode = {
   polish: wsaTopic.body.polish,
   summary: wsaTopic.summary,
   sources: [...wsaTopic.body.sources],
+  related: [...(wsaTopic.body.related ?? [])],
 }

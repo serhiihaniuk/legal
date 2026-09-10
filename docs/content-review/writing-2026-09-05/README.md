@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 39 rewrites reopening, invalidity and the comparison of administrative and court review, with filled examples and scoped official-source checks. Writing acceptance is 143 of 1,802 files. The user requested a stop for today after this batch. Resume with the detailed WSA article; the remaining map dispositions, law modules, corpus layout audit and independent legal review remain pending. See `batches/39-special-review.md`.
+Batch 40 rewrites the detailed WSA article with a fictional complaint, completed outcome and scoped official-source checks. Writing acceptance is 144 of 1,802 files. Dedicated judicial-complaint and court-judgment document guides are the next coverage gap. Remaining map dispositions, law modules, corpus layout audit and independent legal review stay pending. See `batches/40-wsa-review.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 

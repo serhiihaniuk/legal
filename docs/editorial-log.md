@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-10 WSA complaint, review and judgment
+
+Rewrote the complete WSA map article with six subject sections and a fictional Polish complaint. It explains court access, representation, fees and legal aid, procedural rejection and dismissal on the merits, suspension, judgment effects, cassation and enforcement. The completed example connects an overlooked certificate to annulment and reconsideration without promising a permit.
+
+Checked PPSA including its June amendment, KPA evidence rules, the special residence-office suspension and the attributed MSWiA explanation. Full verification and reference previews passed. Desktop/mobile layout, the example anchor and keyboard document navigation were inspected. Writing acceptance is 144 of 1,802; independent legal acceptance and the global baseline remain unchanged. Evidence and the judicial-document coverage gap are recorded in docs/content-review/writing-2026-09-05/batches/40-wsa-review.md.
+
 ## 2026-09-06 Reopening, invalidity and court-review comparison
 
 Rewrote three complete map articles with distinct explanations and filled fictional comparisons. Corrected the final-decision framing of court review, the difference between opening reopening and repealing a decision, and the conditional duty to suspend execution under KPA. Checked KPA, the 2021 invalidity transition and PPSA including the June 2026 amendment. The global baseline and independent acceptance remain unchanged.

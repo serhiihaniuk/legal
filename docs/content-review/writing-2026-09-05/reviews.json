@@ -728,5 +728,10 @@
     "path": "app/data/legal-map/editorial/topics/invalidity.ts",
     "contentHash": "7b8d7412a28e878f02302ea282ccbdfba0aba20971fa388f2e5bfbf53def78a0",
     "evidence": "docs/content-review/writing-2026-09-05/batches/39-special-review.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/wsa.ts",
+    "contentHash": "8275f4b047d99ae16ac24a8cb07ae5987a5da3cd8bfcf0cd0ab663a24ffeccd2",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/40-wsa-review.md"
   }
 ]
