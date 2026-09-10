@@ -36,7 +36,7 @@
 
 - Shared line treatment (2026-09-05): use quiet one-pixel rules for page edges, column boundaries, and section divisions. Cross marks belong at actual horizontal/vertical intersections. Reading pages use continuous rules in the navigation gutters and a plain divider below the introduction. Keep text backgrounds clear, hide unused column rules on smaller screens, and omit decorative lines in print. Shared styling lives in `app/atlas-lines.css`; it uses theme tokens and adds no motion or pointer targets.
 
-- Homepage direction (2026-09-05): use the existing monochrome palette, a large serif headline, generous spacing, and six numbered navigation rows with fine dividers. The homepage introduces an explanatory reference for working staff. Its decorative SVG connects facts, norms, evidence, and actions; it draws once on arrival and remains static with reduced motion. Keep this illustration out of reading pages. Stack the hero and section index on narrow screens.
+- Homepage direction (2026-09-10): use a full-height centered hero, large sans-serif headline, two pill-shaped navigation actions and the supplied particle animation. Keep the six numbered directory rows below the hero. See the homepage particles section for motion and fallback behavior.
 
 - Najpierw orientacja, potem szczegół.
 - Mapa domyślnie pokazuje poziom orientacyjny; pełna głębokość jest świadomą akcją użytkownika.
@@ -75,7 +75,7 @@
 
 ### Page contracts
 
-- Homepage frame (2026-09-05): share the header's outer width and inset. Use the shared 13 px, 1 px crosses at the outer section and footer intersections. Keep the hero as a two-column composition without documentation sidebars, and cap the illustration width so the wider frame does not enlarge it excessively.
+- Homepage frame (2026-09-10): the homepage has a simple header without documentation grid lines or intersection marks. Its hero spans the viewport width; the directory below uses an 80rem content width and stacks on narrow screens. Documentation pages retain their existing shell.
 - Two-option law section navigation (2026-09-05): show explanations and provisions as shadcn tabs in compact navigation. Keep longer module indexes as comboboxes and the KPA three-section control as a Select.
 
 - Compact navigation (2026-09-05): use shadcn Select for up to seven options and a button-triggered Combobox with title filtering for longer indexes. Keep selected labels and options fully readable with wrapping, visible field labels, and touch targets of at least 44 px. Popups stay within the viewport. Route values remain controlled by the page; typing and dismissing a list must not navigate.
@@ -200,3 +200,9 @@ Editorial preview modules are lazy-loaded when a card opens and cached by stable
 - Keep completed case explanations. Legacy generic practice URLs redirect to the corresponding act's completed example; no worksheet or assessment is required.
 
 - The global header shares the documentation shell width and sidebar columns. Place the logo in the left column and navigation in the middle. Use 13 px intersection crosses with 1 px strokes at the header, upper grid rule, and bottom closing rule. Hide decorative crosses on mobile and in print.
+
+## Homepage particles (2026-09-10)
+
+The hero fills the first screen below the header. Center the Legalizacja wordmark, Ukrainian headline, short description and two primary navigation actions. Use the supplied particle package at its original density of 230 and original palette behind the hero. Compensate for width-based point-size scaling below 1200 px so particles stay visible on phones; retain desktop size above that width. The directory below is static, with a short introduction, live content counts and six numbered navigation rows.
+
+Load the renderer after mounting and preserve usable content if WebGL is unavailable. Respect reduced motion, provide a pause control and release GPU resources when navigating away. Pointer tracking must preserve text selection and link interaction. Print omits the canvas and its control.

@@ -748,5 +748,15 @@
     "path": "app/data/legal-map/editorial/topics/start-case.ts",
     "contentHash": "32640d6802902e654c70802c9e7c517392fa8289f32219ca7d88961ec48e284b",
     "evidence": "docs/content-review/writing-2026-09-05/batches/42-factual-description.md"
+  },
+  {
+    "path": "app/routes/home.tsx",
+    "contentHash": "715557c1149b614b5d65d1fa6946f164ab988a7229a8888af1b8fe89d4b2adcd",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md"
+  },
+  {
+    "path": "app/features/home/ui/home-particles.tsx",
+    "contentHash": "860609f6446df4a073b07e57c64bed5ba928dc453c34f5746abfc2c2b7f87c4a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md"
   }
 ]

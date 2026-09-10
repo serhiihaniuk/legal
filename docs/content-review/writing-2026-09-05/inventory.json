@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1804,
-    "reviewed": 147,
+    "totalFiles": 1805,
+    "reviewed": 149,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 81,
+      "supporting-copy": 82,
       "case-guide": 9,
       "evidence-document": 67,
       "provision": 1478,
@@ -30,7 +30,7 @@
     {
       "path": "app/components/layout/site-header.tsx",
       "family": "shared-renderer",
-      "contentHash": "20b799e8b31edcb0ec05bb7550d8fb29381b29f5c2e3c64a189c3b3a34616014",
+      "contentHash": "1d017ef282501b4d2b3149ee0b23691540c16e4eaecde478e7f3467c5d4e0a82",
       "writing": "pending",
       "evidence": null
     },
@@ -12341,6 +12341,13 @@
       "evidence": null
     },
     {
+      "path": "app/features/home/ui/home-particles.tsx",
+      "family": "supporting-copy",
+      "contentHash": "860609f6446df4a073b07e57c64bed5ba928dc453c34f5746abfc2c2b7f87c4a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md"
+    },
+    {
       "path": "app/features/law-library/model/kpa/kpa-route.ts",
       "family": "shared-renderer",
       "contentHash": "c9739be48f26cb17a4deabe9e325379a0d2c6f7bff769a4ef71bae7f75d92958",
@@ -12560,9 +12567,9 @@
     {
       "path": "app/routes/home.tsx",
       "family": "route-copy",
-      "contentHash": "e342b0206f2473c8688b6d90268be7691b65263b4afa9b214148751ef23f093c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "715557c1149b614b5d65d1fa6946f164ab988a7229a8888af1b8fe89d4b2adcd",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md"
     },
     {
       "path": "app/routes/kpa.tsx",

@@ -1,1 +1,1 @@
-export { AtlasIllustration } from "./ui/atlas-illustration"
+export { HomeParticles } from "./ui/home-particles"

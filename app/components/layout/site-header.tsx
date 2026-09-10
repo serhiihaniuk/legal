@@ -37,7 +37,10 @@ export function SiteHeader() {
   const { pathname } = useLocation()
 
   return (
-    <header className="atlas-site-header sticky top-0 z-50 w-full bg-background">
+    <header
+      data-home={pathname === "/" ? "" : undefined}
+      className="atlas-site-header sticky top-0 z-50 w-full bg-background"
+    >
       <div className="atlas-shell container-wrapper px-2">
         <div className="atlas-header-grid relative grid h-(--header-height) grid-cols-[1fr_auto] items-center border-x border-[var(--atlas-line)] lg:grid-cols-[var(--atlas-sidebar-width)_minmax(0,1fr)] xl:grid-cols-[var(--atlas-sidebar-width)_minmax(0,1fr)_var(--atlas-sidebar-width)]">
           <div className="atlas-header-brand flex h-full items-center px-2.5">
@@ -112,7 +115,7 @@ export function SiteHeader() {
               </nav>
             </SheetContent>
           </Sheet>
-          <ShellIntersections />
+          {pathname !== "/" && <ShellIntersections />}
         </div>
       </div>
     </header>

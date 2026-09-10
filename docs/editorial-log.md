@@ -447,3 +447,9 @@ Checked KPA, the relevant foreigners-act provisions and the UdSC MOS signature n
 Rewrote the opening map topic to distinguish facts, assertions, evidence and legal conclusions. Added a filled fictional chronology and completed analysis, with typed links to the chronology and evidence-matrix guides. Checked the bounded KPA evidence rules on 10.09.2026. The stable route and global legal baseline remain unchanged.
 
 Full verification passed with 198 application tests and production build. Desktop/mobile review covered contents links, document navigation, keyboard table scrolling, overflow and browser errors. Writing acceptance is 147 of 1,804 files. The changed page's prior legal attestations were reset to pending by ledger regeneration. The next foundation topic is legal-anatomy; the broader rewrite and independent review remain unfinished. Evidence: `docs/content-review/writing-2026-09-05/batches/42-factual-description.md`.
+
+### 2026-09-10: homepage particles and logo brief
+
+Restyled the homepage around a full-height particle hero, centered typography and two navigation actions. The static directory retains six destinations and live content counts. Documentation pages retain their shell. Particle density is the original 230; mobile point size compensates for narrow screens. Added a reusable logo brief and project description.
+
+Full verification passed with 202 application tests. The final mobile adjustment also passed typecheck, lifecycle tests, Chromium checks and build. Browser checks covered motion controls, reduced motion, navigation cleanup, 360 px overflow and WebGL fallback. Writing acceptance is 149 of 1,805 files. No legal baseline changed. Evidence: docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md.
