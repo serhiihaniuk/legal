@@ -227,6 +227,8 @@ export const permanentStages: CaseGuideStage[] = [
       "Справу закривають після прочитаного рішення та належних дій із документами. У календарі залишається строк пластикової карти, а не вигаданий строк закінчення постійного дозволу.",
     documents: [
       d.appeal,
+      d.judicialComplaint,
+      d.courtJudgment,
       d.decision,
       d.delivery,
       d.polaka,

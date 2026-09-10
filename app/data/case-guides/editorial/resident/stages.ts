@@ -257,6 +257,8 @@ export const residentStages: CaseGuideStage[] = [
       "Подальший план розрізняє оскарження, видачу карти, її наступне оформлення та можливе відкликання статусу. У прикладі заявник ще очікує рішення.",
     documents: [
       d.appeal,
+      d.judicialComplaint,
+      d.courtJudgment,
       d.decision,
       d.delivery,
       d.card,

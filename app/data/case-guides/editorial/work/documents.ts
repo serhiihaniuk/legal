@@ -7,6 +7,8 @@ import {
   proceduralOrderEvidence,
   administrativeAppealEvidence,
   proceduralComplaintEvidence,
+  judicialComplaintEvidence,
+  courtJudgmentEvidence,
   workNotificationEvidence,
 } from "../../shared-document-requirements"
 
@@ -179,6 +181,8 @@ export const workDocuments = {
   order: proceduralOrderEvidence,
   appeal: administrativeAppealEvidence,
   complaint: proceduralComplaintEvidence,
+  judicialComplaint: judicialComplaintEvidence,
+  courtJudgment: courtJudgmentEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 // One definition per document; the register includes every stage's material.

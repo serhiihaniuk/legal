@@ -2,6 +2,7 @@ import type { CaseGuideDocument } from "./types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 
+const ppsa = createLegalTextAuthor("ppsa")
 const kpa = createLegalTextAuthor("kpa")
 const work = createLegalTextAuthor("powierzanie-pracy")
 const documents = createEvidenceDocumentTextAuthor()
@@ -78,4 +79,26 @@ export const workNotificationEvidence: CaseGuideDocument = {
   proves:
     "Що і коли повідомлено до PUP. Законність перебування та відповідність фактичної роботи заявленим умовам перевіряють окремо",
   law: work.text`${work.article("5a", "Art. 5a")}: повідомлення і спеціальне правило збою системи; ${work.external("art. 40–41 закону Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}: попередні подання й перехідні правила.`,
+}
+
+export const judicialComplaintEvidence: CaseGuideDocument = {
+  item: documents.text`${documents.document("judicial-complaint", "Skarga do WSA з додатками й доказом подання")}`,
+  status: "якщо сторона звертається до адміністративного суду після рішення",
+  level: "conditional",
+  owner:
+    "Сторона або допустимий судовий представник; звичайне подання через орган",
+  proves:
+    "Яке рішення і з яких причин оскаржено. Передану версію зіставляють із доказом вручення рішення та подання скарги; реєстрація ще не означає її задоволення",
+  law: ppsa.text`${ppsa.articleRange("46", "61", { start: "Art. 46", end: "61 PPSA" })}: зміст, доступ, строк, подання та виконання.`,
+}
+
+export const courtJudgmentEvidence: CaseGuideDocument = {
+  item: documents.text`${documents.document("court-judgment", "Wyrok WSA з мотивуванням і відомостями про законну силу")}`,
+  status: "якщо суд уже розглянув скаргу",
+  level: "conditional",
+  owner:
+    "Суд видає; сторона зберігає копію, мотивування й відомості про вручення та оскарження",
+  proves:
+    "Результат судового розгляду та вказівки для подальшої справи. Скасування відмови саме не підтверджує надання дозволу; законну силу встановлюють окремо",
+  law: ppsa.text`${ppsa.article("138", "Art. 138 PPSA")}, ${ppsa.article("141", "art. 141")}, ${ppsa.article("153", "art. 153")} і ${ppsa.articleRange("168", "171", { start: "art. 168", end: "171" })}: зміст, мотивування, вказівки й законна сила.`,
 }

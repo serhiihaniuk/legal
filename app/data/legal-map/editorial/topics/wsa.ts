@@ -111,6 +111,12 @@ export const wsaTopic: KnowledgeUnit<LegalMapTopicBody> = defineKnowledgeUnit({
         note: "Сторінка 9 розрізняє застосування спеціальної норми адміністрацією та судом. Це позиція міністерства, а не рішення в справі читача.",
       },
     ],
+    documents: [
+      documents.text`${documents.document("judicial-complaint", "Skarga do WSA з додатками")}`,
+      documents.text`${documents.document("court-judgment", "Wyrok WSA з мотивуванням")}`,
+      documents.text`${documents.document("delivery-proof", "Доказ вручення")}`,
+      documents.text`${documents.document("dispatch-proof", "Доказ подання")}`,
+    ],
     related: ["extraordinary-wsa", "appeal", "complaint", "inactivity"],
     guide: defineLegalMapArticle({
       kind: "article",
@@ -219,5 +225,6 @@ export const wsaMapNode: LegalNode = {
   polish: wsaTopic.body.polish,
   summary: wsaTopic.summary,
   sources: [...wsaTopic.body.sources],
+  documents: [...(wsaTopic.body.documents ?? [])],
   related: [...(wsaTopic.body.related ?? [])],
 }

@@ -293,6 +293,8 @@ export const otherStages: CaseGuideStage[] = [
       "Подання відповіді, надання дозволу, видача карти та право працювати залишаються окремими висновками з окремими доказами.",
     documents: [
       d.appeal,
+      d.judicialComplaint,
+      d.courtJudgment,
       d.decision,
       d.delivery,
       d.card,

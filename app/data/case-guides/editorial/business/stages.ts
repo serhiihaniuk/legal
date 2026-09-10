@@ -310,6 +310,8 @@ export const businessStages: CaseGuideStage[] = [
       "Межі рішення та наступні обов'язки зрозумілі. Доведена зайнятість компанії не підміняє читання самого результату справи.",
     documents: [
       d.appeal,
+      d.judicialComplaint,
+      d.courtJudgment,
       d.decision,
       d.card,
       d.delivery,

@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 40 rewrites the detailed WSA article with a fictional complaint, completed outcome and scoped official-source checks. Writing acceptance is 144 of 1,802 files. Dedicated judicial-complaint and court-judgment document guides are the next coverage gap. Remaining map dispositions, law modules, corpus layout audit and independent legal review stay pending. See `batches/40-wsa-review.md`.
+Batch 41 adds illustrated court-complaint and judgment guides and connects both conditionally to all nine case routes. Writing acceptance is 146 of 1,804 files. Remaining map articles, law modules, provision commentary, corpus layout audit and independent legal review stay pending. See `batches/41-court-documents.md`.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 

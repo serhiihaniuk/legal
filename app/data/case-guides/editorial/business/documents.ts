@@ -5,6 +5,8 @@ import {
   proceduralOrderEvidence,
   administrativeAppealEvidence,
   proceduralComplaintEvidence,
+  judicialComplaintEvidence,
+  courtJudgmentEvidence,
 } from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
@@ -193,6 +195,8 @@ export const businessDocuments = {
   order: proceduralOrderEvidence,
   appeal: administrativeAppealEvidence,
   complaint: proceduralComplaintEvidence,
+  judicialComplaint: judicialComplaintEvidence,
+  courtJudgment: courtJudgmentEvidence,
   notification: {
     item: document(
       "temporary-residence-notification",

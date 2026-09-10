@@ -299,6 +299,8 @@ export const studentStages: CaseGuideStage[] = [
       "Працівник може пояснити строк і межі наданого дозволу або предмет оскарження. Внутрішня справа містить дату наступної перевірки та обов'язок реагувати на припинення навчання.",
     documents: [
       d.appeal,
+      d.judicialComplaint,
+      d.courtJudgment,
       d.decision,
       d.card,
       d.delivery,

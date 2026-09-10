@@ -18,6 +18,8 @@ export type EvidenceDocumentId =
   | "procedural-order"
   | "administrative-appeal"
   | "procedural-complaint"
+  | "judicial-complaint"
+  | "court-judgment"
   | "zus-confirmation"
   | "business-register-information"
   | "crbr-information"
@@ -172,6 +174,8 @@ export const evidenceDocumentIds = [
   "procedural-order",
   "administrative-appeal",
   "procedural-complaint",
+  "judicial-complaint",
+  "court-judgment",
   "zus-confirmation",
   "business-register-information",
   "crbr-information",

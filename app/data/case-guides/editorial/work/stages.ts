@@ -311,6 +311,8 @@ export const workStages: CaseGuideStage[] = [
       "Умови наданого дозволу зіставлено з роботою в компанії A. Заявник і роботодавець знають власні обов'язки, а перед новою роботою потрібно окремо встановити її правову підставу.",
     documents: [
       d.appeal,
+      d.judicialComplaint,
+      d.courtJudgment,
       d.decision,
       d.delivery,
       d.card,

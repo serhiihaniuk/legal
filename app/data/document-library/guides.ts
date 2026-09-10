@@ -1,3 +1,5 @@
+import judicialComplaintTopic from "./editorial/guides/judicial-complaint"
+import courtJudgmentTopic from "./editorial/guides/court-judgment"
 import deadlineObstacleDocumentTopic from "./editorial/guides/deadline-obstacle"
 import proceduralOrderTopic from "./editorial/guides/procedural-order"
 import administrativeAppealTopic from "./editorial/guides/administrative-appeal"
@@ -92,6 +94,8 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    judicialComplaintTopic.body,
+    courtJudgmentTopic.body,
     blueCardNotificationDocumentTopic.body,
     temporaryResidenceNotificationDocumentTopic.body,
     corporateWorkPermitDocumentTopic.body,

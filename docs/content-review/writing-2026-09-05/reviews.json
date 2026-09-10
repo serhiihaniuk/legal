@@ -366,8 +366,8 @@
   },
   {
     "path": "app/data/case-guides/shared-document-requirements.ts",
-    "contentHash": "2ea54f8f81deab16f932b3fe1eb921ee148241b7b5c194d61b2ebed818fae6bf",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "ad39ea6aea2a0365bd1148d200f67cfd5ad831e8d824a93ec00fc510a6d4edbc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/routes/work.ts",
@@ -376,13 +376,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/work/documents.ts",
-    "contentHash": "8ec287f0714231dd1d49abf4992f341f3d6e04bbb28dd48e86dc1b94e9e653fa",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "ff4fc449214b85ca5735dfa470ea5053944576abc47bf3bd3a2a392be3ab02ca",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/work/stages.ts",
-    "contentHash": "f061a195c0476fb2399b55b9e90deaadd9adb5e9f104d049e2331cdda360fbf2",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "67e0b8c5ec84161146ca3f1b062205a79a662f28b8430010764d0ca1ebe94aa8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/work/reference.ts",
@@ -396,13 +396,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/blue-card/documents.ts",
-    "contentHash": "d21c49a295fbf984850e0b640af75b59d3f75d3156d570babe7360b5b0e4cc05",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "5bc9f3c2b1effdbcc316814cdb7464c53b71e0b534365f57a3d755c169157d12",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/blue-card/stages.ts",
-    "contentHash": "95c444a2c6bdacd970e342b25234c682233ec8aed950d21052f1fd7e144fa275",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "0f5e75a3f1f8088bfa61b80167651a9ed9e17bf115ad4ebf5f210b67a14bea9c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/blue-card/reference.ts",
@@ -426,13 +426,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/student/documents.ts",
-    "contentHash": "d071ba558964894ebc7276514d988fa29c2bf0701d966ac9a3937e36f777fc3a",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "05a6802e174b7c7969fd44858187355652f3fcddd4e36d3a735cebd8d84dfe79",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/student/stages.ts",
-    "contentHash": "30ccb73fca08b22441ad0cfc21d33f2011c735dff348e991c607fc4717a39609",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "92983c07dd0514dc70660b7fe2fcad0b46a0c7c6ceddd4737c72c396880d401d",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/student/reference.ts",
@@ -451,13 +451,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/business/documents.ts",
-    "contentHash": "3ecb174b30ade976c050efcff72b41c6777b4c6ae0b2f17c8508b75fcb31685c",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "dadf4570de90a4873f2d81d1362fb7d432b74a1c2ec180bdc15c818cd338eb52",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/business/stages.ts",
-    "contentHash": "0b6c7a624728268319731646935f97cd6f4c906d2d74c613fe8baada165f5bed",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "c7702a0a497fbf91995195c31a8c442273db79f9744e438797e861c9e32dbb54",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/business/reference.ts",
@@ -476,13 +476,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/family/documents.ts",
-    "contentHash": "9ba6c07f9f8d853da4b5fc193bce6f4e71a4fc774a4ec13f8ea724a691e55a02",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "cc152d8e78d68a5ba0076de56460b09989155f7e1a390e1cf99ac93579e8b9ef",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/family/stages.ts",
-    "contentHash": "ac71eb3af0c0b579cd4129c703208c7bdceb41f24a1368b7e8d96310aaa676db",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "3c2615557aa2aa2649968de6d7f0dcfd6da78842b15e820f417e341ab39228bc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/family/reference.ts",
@@ -496,13 +496,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/permanent/documents.ts",
-    "contentHash": "1fa0196a327b7772fed0914d2f7c16a8b9d951f048ec090e70c38068fdaf4a24",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "ac939b7143234f32618b5f57fb2761bb847c5507a04218a15626ae8532acd544",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/permanent/stages.ts",
-    "contentHash": "5043f03ab3722877bede7b58a7e1c644efb03019996642d96fb1aa6ea7429ef6",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "0d131ea63da387afa955f9774226b3d18c61418e8b66decd013b7554ffe0cc84",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/permanent/reference.ts",
@@ -521,13 +521,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/resident/documents.ts",
-    "contentHash": "6928f70fb7f98210982ff277f16f477b29017c6d55be215249a4b6371e16c7ef",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "cd8d6f661767f313de07dabfe575b0b6f25b2352504c3efd59415f8360452dc7",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/resident/stages.ts",
-    "contentHash": "bc0c2cbb8b480fb46e67f5a8f32df9e1809edb802e20df218c06b5d19a0326d3",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "84e55e9e8b3e89e5c9e8883a27c514590b73311028339bef5458e15442449ab9",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/resident/reference.ts",
@@ -541,13 +541,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/cukr/documents.ts",
-    "contentHash": "52285371d74aae4cd8b2f4488d1e808693e312dc723c255009e2d4af7f8d9613",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "07c8e0a28930285d5594dfb4b41c58003089d19d3d71dcab61effb470e48694f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/cukr/stages.ts",
-    "contentHash": "a546cbb7924b7e9883550b4ad534d57086f68f888900d36f1374a019a6aec69f",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "7061c64e50f95a02025519394baa19f165481ad723c51748534f3763765bd604",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/cukr/reference.ts",
@@ -561,13 +561,13 @@
   },
   {
     "path": "app/data/case-guides/editorial/other/documents.ts",
-    "contentHash": "57556602c9c418be3dbd609fba87dfe115aef3743bad744e7bc4365c33dee192",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "075415fa3e37a651c26de3f036a5b3aaf5a86ad1d2446e47208daeeb31ede59e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/other/stages.ts",
-    "contentHash": "7c7becd79c75c772faa4a729828f5a5a5ad8f395f2d7d54a336d79f7a12317c7",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/38-outgoing-remedies.md"
+    "contentHash": "8742b951bf0fb212f7e647867c563a7b368f659fcb038d3d72d9f3ff75260710",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/other/reference.ts",
@@ -731,7 +731,17 @@
   },
   {
     "path": "app/data/legal-map/editorial/topics/wsa.ts",
-    "contentHash": "8275f4b047d99ae16ac24a8cb07ae5987a5da3cd8bfcf0cd0ab663a24ffeccd2",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/40-wsa-review.md"
+    "contentHash": "d809d74256fca2e8203e3282188a062ba62c3a7df7bd3ec118e373762c9e8bdc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/judicial-complaint.ts",
+    "contentHash": "9f96d3d5de69e2d1efaa4c7009dd510bc4e4e3d921cb4f52154f15cfea034c12",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/court-judgment.ts",
+    "contentHash": "4dab2bf263431b0c3cb91fae5007ab6f53645c53e0f8fa97387e351f98dfaf12",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
   }
 ]

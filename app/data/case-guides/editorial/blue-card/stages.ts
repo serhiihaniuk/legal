@@ -320,6 +320,8 @@ export const blueCardStages: CaseGuideStage[] = [
       "Є прочитаний результат справи та запис конкретних обов'язків. Власник нового дозволу розуміє, що зміна роботи потребує перевірки нових умов і повідомлення, а давній дозвіл може вимагати іншої процедури.",
     documents: [
       d.appeal,
+      d.judicialComplaint,
+      d.courtJudgment,
       d.decision,
       d.delivery,
       d.card,

@@ -5,6 +5,8 @@ import {
   proceduralOrderEvidence,
   administrativeAppealEvidence,
   proceduralComplaintEvidence,
+  judicialComplaintEvidence,
+  courtJudgmentEvidence,
 } from "../../shared-document-requirements"
 import { document } from "../shared/document-reference"
 import { temporaryResidenceDocuments as common } from "../shared/temporary-residence-documents"
@@ -205,6 +207,8 @@ export const residentDocuments = {
   order: proceduralOrderEvidence,
   appeal: administrativeAppealEvidence,
   complaint: proceduralComplaintEvidence,
+  judicialComplaint: judicialComplaintEvidence,
+  courtJudgment: courtJudgmentEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const residentDocumentRegister: CaseGuideDocument[] = [
@@ -233,6 +237,8 @@ export const residentDocumentRegister: CaseGuideDocument[] = [
   residentDocuments.order,
   residentDocuments.appeal,
   residentDocuments.complaint,
+  residentDocuments.judicialComplaint,
+  residentDocuments.courtJudgment,
   residentDocuments.delivery,
   residentDocuments.requirements,
   residentDocuments.response,

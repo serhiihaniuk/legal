@@ -16,10 +16,12 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
-  it("places outgoing remedies in their conditional stages with illustrated guides and reverse references", () => {
+  it("places remedies and court results in their conditional stages with illustrated guides and reverse references", () => {
     for (const [id, stageId, nodeId] of [
       ["administrative-appeal", "decision", "appeal"],
       ["procedural-complaint", "procedure", "complaint"],
+      ["judicial-complaint", "decision", "wsa"],
+      ["court-judgment", "decision", "wsa"],
     ] as const) {
       const document = documentById.get(id)
       expect(document).toBeDefined()

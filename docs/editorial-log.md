@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-10 Court complaint and judgment guides
+
+Added two document guides with fictional Polish specimens, explanations of each part and completed examples. The complaint guide distinguishes filing from judicial success. The judgment guide explains the result, reasoning, finality and subsequent remedies. Both appear conditionally in all nine case routes and link back to the WSA topic.
+
+Verified the relevant PPSA provisions on 10 September. Application tests, review-ledger tests, reference previews and production build passed; desktop/mobile specimens and keyboard navigation were inspected. The catalog now has 67 guides, with writing acceptance at 146 of 1,804 files. Regenerated the stale legal-review inventory; baseline validation passes, and 94 obsolete cross-review acceptances were reset to pending by hash checks. No new independent acceptance was granted. Details are in docs/content-review/writing-2026-09-05/batches/41-court-documents.md.
+
 ## 2026-09-10 WSA complaint, review and judgment
 
 Rewrote the complete WSA map article with six subject sections and a fictional Polish complaint. It explains court access, representation, fees and legal aid, procedural rejection and dismissal on the merits, suspension, judgment effects, cassation and enforcement. The completed example connects an overlooked certificate to annulment and reconsideration without promising a permit.

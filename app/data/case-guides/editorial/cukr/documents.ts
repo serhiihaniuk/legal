@@ -7,6 +7,8 @@ import {
   proceduralOrderEvidence,
   administrativeAppealEvidence,
   proceduralComplaintEvidence,
+  judicialComplaintEvidence,
+  courtJudgmentEvidence,
   workNotificationEvidence,
 } from "../../shared-document-requirements"
 
@@ -173,6 +175,8 @@ export const cukrDocuments = {
   order: proceduralOrderEvidence,
   appeal: administrativeAppealEvidence,
   complaint: proceduralComplaintEvidence,
+  judicialComplaint: judicialComplaintEvidence,
+  courtJudgment: courtJudgmentEvidence,
 } satisfies Record<string, CaseGuideDocument>
 
 export const cukrDocumentRegister: CaseGuideDocument[] =
