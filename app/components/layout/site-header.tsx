@@ -3,6 +3,7 @@ import { Menu } from "lucide-react"
 import { Link, useLocation } from "react-router"
 
 import { Button } from "~/components/ui/button"
+import { Brand } from "~/components/brand"
 import {
   Sheet,
   SheetClose,
@@ -50,7 +51,7 @@ export function SiteHeader() {
               render={<Link to="/" />}
               className="px-2.5"
             >
-              Legalizacja
+              <Brand />
             </Button>
           </div>
           <nav
@@ -94,7 +95,9 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[min(22rem,90vw)]">
               <SheetHeader className="border-b">
-                <SheetTitle>Legalizacja</SheetTitle>
+                <SheetTitle>
+                  <Brand />
+                </SheetTitle>
                 <SheetDescription>Навчальний атлас права</SheetDescription>
               </SheetHeader>
               <nav className="grid px-4" aria-label="Мобільна навігація">

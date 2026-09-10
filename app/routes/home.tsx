@@ -2,6 +2,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react"
 import { Link, useLoaderData } from "react-router"
 
 import { buttonVariants } from "~/components/ui/button"
+import { Brand } from "~/components/brand"
 import { caseGuideRouteById } from "~/data/case-guides/routes"
 import { listEvidenceDocuments } from "~/data/document-library"
 import { legalReferenceRegistry } from "~/data/legal-corpus/reference-registry.generated"
@@ -75,7 +76,7 @@ export default function Home() {
         <HomeParticles />
         <div className="home-hero-content">
           <p className="home-brand">
-            <span aria-hidden="true">§</span> Legalizacja
+            <Brand />
           </p>
           <h1 id="home-title" className="home-title">
             Польське право.
@@ -170,7 +171,7 @@ export default function Home() {
         <footer className="home-end">
           <div>
             <Link to="/" className="home-end-brand">
-              Legalizacja
+              <Brand />
             </Link>
             <p>Польські терміни. Українські пояснення.</p>
           </div>
