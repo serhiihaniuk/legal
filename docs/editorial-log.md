@@ -489,3 +489,9 @@ Verified the foreigners act, the new EU-family consolidation published as Dz.U. 
 Rewrote entry-current-basis with separate explanations of entry conditions, current lawful stay and documents for a later return. Added a filled five-row timeline covering a D visa, timely application, certificate, visa expiry and proposed travel. Explained why the certificate does not extend the visa, and preserved visa-free and statutory entry exceptions.
 
 Verified the foreigners act, Schengen Borders Code, certificate form, commencement communiqué and scoped UdSC guidance on 10.09.2026. Global baseline unchanged. Full repository verification, reference previews, desktop/mobile layout, table keyboard scrolling and example anchor checks passed. Writing inventory and ledgers were regenerated for this batch; independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/49-entry-current-basis.md. Next: visa and visa-free.
+
+### 2026-09-10: visa limits and visa-free day counting
+
+Rewrote visa and visa-free with explanations of territory, validity, days, entries, nationality-specific eligibility and the rolling 90/180 limit. Added completed comparisons for a used single entry and a 90-day trip, including the first excluded day. Corrected the universal biometric-passport requirement.
+
+Checked scoped official EU and Polish sources on 10.09.2026; the global baseline is unchanged. Full verification, reference previews, calendar arithmetic, desktop/mobile rendering, keyboard table scrolling and section anchors passed. Writing inventory and ledgers were regenerated. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/50-visas-and-visa-free.md. Next: pending-stay and remaining current-status topics.

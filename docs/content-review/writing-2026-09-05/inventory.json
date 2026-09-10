@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 155,
+    "reviewed": 157,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11965,16 +11965,16 @@
     {
       "path": "app/data/legal-map/editorial/topics/visa-free.ts",
       "family": "map-topic",
-      "contentHash": "17a6192871e188506b83a92e39e7d6d6c9fc19acd0b6a3c109d69b711c68f0e3",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "3454e120c61789d8eab12f47bb9dba6d1af95f93f15f6cfc64e30ca3abcc54d7",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/50-visas-and-visa-free.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/visa.ts",
       "family": "map-topic",
-      "contentHash": "e04fea3a5df60c20f64f3874237de0b5d0ff87f895492b87d8f6c91bc2d19259",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d25f6a293459b29e6cd537d7f8da897cde6917da9bc62b2c711b56a947c092a2",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/50-visas-and-visa-free.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/wezwanie-workflow.ts",

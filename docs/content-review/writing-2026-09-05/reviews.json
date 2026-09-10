@@ -788,5 +788,15 @@
     "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
     "contentHash": "abb849f0aada334a1c137c6726564b23d1dcca6a0c9b9d8b1e6f1e61ca40b921",
     "evidence": "docs/content-review/writing-2026-09-05/batches/49-entry-current-basis.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/visa.ts",
+    "contentHash": "d25f6a293459b29e6cd537d7f8da897cde6917da9bc62b2c711b56a947c092a2",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/50-visas-and-visa-free.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/visa-free.ts",
+    "contentHash": "3454e120c61789d8eab12f47bb9dba6d1af95f93f15f6cfc64e30ca3abcc54d7",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/50-visas-and-visa-free.md"
   }
 ]
