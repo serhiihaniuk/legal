@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 154,
+    "reviewed": 155,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11685,9 +11685,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
       "family": "map-topic",
-      "contentHash": "88a7bc41d1306d41900d44060198cae9a9c5afa93ec8b36f018f53f615dfbc97",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "abb849f0aada334a1c137c6726564b23d1dcca6a0c9b9d8b1e6f1e61ca40b921",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/49-entry-current-basis.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/evidence-matrix.ts",

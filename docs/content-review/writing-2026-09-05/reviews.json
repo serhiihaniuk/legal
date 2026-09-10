@@ -783,5 +783,10 @@
     "path": "app/data/legal-map/editorial/topics/person-status.ts",
     "contentHash": "b2fd0e5f696f1f0cf4f3ed58c76e31c945b418b3f26319d0cd781232010e66ae",
     "evidence": "docs/content-review/writing-2026-09-05/batches/48-person-status.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
+    "contentHash": "abb849f0aada334a1c137c6726564b23d1dcca6a0c9b9d8b1e6f1e61ca40b921",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/49-entry-current-basis.md"
   }
 ]

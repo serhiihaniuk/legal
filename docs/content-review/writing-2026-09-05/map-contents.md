@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 48: all five orientation topics (`start-case`, `legal-anatomy`, `special-vs-kpa`, `two-keys`, `source-check`) now have authored explanations with completed examples. Their routes and primary chapter are unchanged. `person-status` also has an authored explanation and completed classification record. Next are `entry-current-basis` and the current-stay topics. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
+Latest implementation note, batch 49: the five orientation topics, person-status and entry-current-basis now have authored explanations with completed examples. Their routes and primary chapters are unchanged. Next are visa and visa-free. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 

@@ -2,25 +2,25 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
+import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
-
-import { mapTopicSources } from "../authoring"
+import { foreignersLaw, mapTopicSources } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
+const documents = createEvidenceDocumentTextAuthor()
+const schengenUrl =
+  "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02016R0399-20251012"
+const commencementUrl = "https://eli.gov.pl/api/acts/MP/2026/370/text.pdf"
+const certificateUrl = "https://eli.gov.pl/api/acts/DU/2026/386/text.pdf"
+const mosUrl = "https://www.gov.pl/web/udsc/mos-qa"
 const aliensSourceReference = {
   kind: "official-source",
   sourceId: "eli-ustawa-o-cudzoziemcach",
 } as const
+const schengenReference = { kind: "external", url: schengenUrl } as const
 
-const schengenReference = {
-  kind: "external",
-  url: "https://eur-lex.europa.eu/eli/reg/2016/399/oj",
-} as const
-
-type EntryCurrentBasisBody = LegalMapTopicBody
-
-export const entryCurrentBasisTopic: KnowledgeUnit<EntryCurrentBasisBody> =
+export const entryCurrentBasisTopic: KnowledgeUnit<LegalMapTopicBody> =
   defineKnowledgeUnit({
     id: "map-topic:entry-current-basis",
     subject: {
@@ -28,15 +28,52 @@ export const entryCurrentBasisTopic: KnowledgeUnit<EntryCurrentBasisBody> =
       reference: { kind: "map-node", nodeId: "entry-current-basis" },
     },
     summary:
-      "Розділяй право в’їзду, право перебування та право повторного в’їзду. Віза C, віза D, ruch bezwizowy та karta pobytu мають різну логіку.",
+      "Законний в'їзд пояснює початок перебування. Щоб визначити підставу на сьогодні, потрібні також строки й події після в'їзду. Заява на дозвіл може підтримувати законність перебування в Польщі, але не замінює документа для повернення після виїзду.",
     claims: [
       {
         id: "entry-stay-return",
-        kind: "requires-verification",
-        text: "Право в’їзду, поточний pobyt і можливість повторного в’їзду після виїзду перевіряються як окремі правові питання.",
+        kind: "practical-inference",
+        text: "Підстава попереднього в'їзду, законність перебування на дату аналізу та документи для наступного перетину кордону потребують окремих висновків.",
         basis: [
-          { reference: aliensSourceReference, locator: "stay documents" },
-          { reference: schengenReference, locator: "entry conditions" },
+          {
+            reference: aliensSourceReference,
+            locator: "Art. 59; art. 108 ust. 1–2; art. 242",
+          },
+          {
+            reference: schengenReference,
+            locator: "Article 6(1), (2) and (5)",
+          },
+        ],
+      },
+      {
+        id: "pending-application-stay",
+        kind: "statute-text",
+        text: "За дотримання строку подання заяви на тимчасове перебування та відсутності формальних недоліків або їх усунення в строк перебування в Польщі вважається законним від дня подання до остаточності рішення. Ця норма не застосовується в разі зупинення провадження на прохання сторони.",
+        basis: [
+          {
+            reference: aliensSourceReference,
+            locator: "Art. 108 ust. 1 pkt 2 and ust. 2",
+          },
+        ],
+      },
+      {
+        id: "certificate-and-visa",
+        kind: "practical-inference",
+        text: "Підтвердження подання заяви не продовжує строк візи і не набуває значення чинної карти перебування для перетину кордону.",
+        basis: [
+          {
+            reference: aliensSourceReference,
+            locator: "Art. 59; art. 108; art. 242",
+          },
+          {
+            reference: { kind: "external", url: certificateUrl },
+            locator: "Annex: certificate content and scope",
+          },
+          {
+            reference: { kind: "external", url: commencementUrl },
+            locator:
+              "Commencement on 27 April 2026, including art. 108 ust. 1 pkt 1 and ust. 3–10",
+          },
         ],
       },
     ],
@@ -44,117 +81,164 @@ export const entryCurrentBasisTopic: KnowledgeUnit<EntryCurrentBasisBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-18",
-      verifiedAt: "2026-07-18",
+      legalStateDate: "2026-09-10",
+      verifiedAt: "2026-09-10",
     },
     body: {
       title: "В’їзд і поточна підстава",
       polish: "wjazd i legalny pobyt",
-      sources: [mapTopicSources.aliens, mapTopicSources.schengen],
-      guide: {
-        introduction: [
-          "Право в’їзду, право залишатися в Польщі та право повторно в’їхати після виїзду є різними питаннями. Поточна підстава визначається за документом, строком, використаними днями та подіями після в’їзду.",
-        ],
-        regulated: [
-          "В’їзд регулюють Schengen Borders Code, правила віз і ustawa o cudzoziemcach; перебування може випливати з wizy, ruchu bezwizowego, zezwolenia, ochrony або спеціальної норми.",
-        ],
-        appliesWhen: [
-          "Аналіз проводиться при кожній новій справі, перед виїздом, після закінчення документа та при переході між статусами.",
-        ],
-        conditions: [
-          "Потрібні чинний документ подорожі, точна підстава, період її дії та відсутність події, що її припинила.",
-        ],
-        exceptions: [
-          "Легальність pobytu під час очікування на decyzję може діяти лише в Польщі й не є самостійним документом для повторного в’їзду.",
-        ],
-        consequences: [
-          "Неправильний розрахунок строку змінює допустимість заяви, ризик odmowy wszczęcia та можливість законного повернення після подорожі.",
-        ],
-        procedure: [
-          "Будується хронологія в’їздів і виїздів, перевіряються wiza/karta/decyzja, а потім окремо оцінюються pobyt, praca і powrót.",
-        ],
-        foreignersContext: [
-          "Для osoby з UKR виїзд і реєстровий status оцінюються за спеціальними правилами, а після CUKR — за правилами zezwolenia na pobyt czasowy та документа podroży.",
-        ],
-      } satisfies LegalNodeGuide,
-      why: "Перш ніж готувати нову заяву, треба знати, на якій підставі особа перебуває сьогодні й до якої дати.",
-      checkpoints: [
-        "Який документ був підставою в’їзду?",
-        "Скільки днів використано?",
-        "Чи є заборона/відмова?",
-        "Чи виїзд під час процедури дозволить повернутися?",
+      sources: [
+        {
+          ...mapTopicSources.aliens,
+          note: "Перевірено 10.09.2026: національна віза, перебування під час заяви та значення чинної карти перебування.",
+        },
+        {
+          label: "Ustawa o cudzoziemcach: текст зі змінами",
+          url: "https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf",
+          note: "Редакційний текст від 07.04.2026. Дату запровадження довідки перевірено окремо за комунікатом міністра.",
+        },
+        {
+          label: "Schengen Borders Code: Article 6",
+          url: schengenUrl,
+          note: "Консолідована редакція від 12.10.2025. Перевірено 10.09.2026 умови короткого перебування, обчислення днів і винятки щодо в'їзду.",
+        },
+        {
+          label: "Запровадження нових правил з 27.04.2026",
+          url: commencementUrl,
+          note: "M.P. 2026 poz. 370 визначає дату набрання чинності, зокрема, правилами про довідку замість штампа.",
+        },
+        {
+          label: "Офіційний зразок довідки про подання заяви",
+          url: certificateUrl,
+          note: "Dz.U. 2026 poz. 386. Форма підтверджує подання та пояснює законність перебування в Польщі.",
+        },
+        {
+          label: "UdSC: MOS, pytania i odpowiedzi",
+          url: mosUrl,
+          note: "Перевірено 10.09.2026 відповіді про UPO та довідку після перевірки органом. Це пояснення роботи системи.",
+        },
       ],
       documents: [
-        {
-          kind: "authored-legal-text",
-          plainText: "паспорт",
-          parts: [
-            {
-              text: "паспорт",
-              target: { kind: "evidence-document", documentId: "passport" },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "віза",
-          parts: [
-            {
-              text: "віза",
-              target: { kind: "evidence-document", documentId: "visa" },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "штампи/дані перетину",
-          parts: [
-            {
-              text: "штампи/дані перетину",
-              target: { kind: "evidence-document", documentId: "stay-history" },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "карта pobytu",
-          parts: [
-            {
-              text: "карта pobytu",
-              target: {
-                kind: "evidence-document",
-                documentId: "residence-card",
-              },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "рішення",
-          parts: [
-            {
-              text: "рішення",
-              target: {
-                kind: "evidence-document",
-                documentId: "administrative-decision",
-              },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "довідка про trwającą procedurę",
-          parts: [
-            {
-              text: "довідка про trwającą procedurę",
-              target: {
-                kind: "evidence-document",
-                documentId: "proceeding-certificate",
-              },
-            },
-          ],
-        },
+        documents.text`${documents.document("passport", "Паспорт")}`,
+        documents.text`${documents.document("visa", "Віза")}`,
+        documents.text`${documents.document("stay-history", "Хронологія перебування")}`,
+        documents.text`${documents.document("residence-card", "Карта перебування")}`,
+        documents.text`${documents.document("proceeding-certificate", "Довідка про подання заяви")}`,
       ],
+      related: [
+        "person-status",
+        "visa",
+        "visa-free",
+        "pending-stay",
+        "two-keys",
+      ],
+      guide: defineLegalMapArticle({
+        kind: "article",
+        introduction: [
+          "Поточна підстава перебування відповідає на питання, чому особа може залишатися в Польщі саме сьогодні. Відмітка про давній в'їзд показує подію в минулому. Між цією подією та сьогоднішньою датою могла закінчитися віза, бути подана заява або почати діяти інша підстава.",
+          "Нижче розглянуто звичайні правила для громадянина третьої держави. Перебування громадян UE та членів їхніх сімей, тимчасовий захист й інші спеціальні режими мають власні умови. Їх не можна оцінювати лише за строком останньої візи.",
+        ],
+        sections: [
+          {
+            id: "three-questions",
+            title: "В'їзд, перебування і повернення мають різні підстави",
+            paragraphs: [
+              foreignersLaw.text`Wjazd означає допуск через кордон. Для звичайного короткого перебування ${foreignersLaw.external("art. 6 ust. 1 kodeksu granicznego Schengen", schengenUrl)} передбачає умови щодо документа подорожі, візи, якщо вона потрібна, мети, коштів та інших обставин. Чинна віза не усуває решти умов. У цій самій нормі є окремі винятки, тому відсутність одного документа не слід описувати як абсолютну заборону в'їзду в будь-якій ситуації.`,
+              "Legalny pobyt означає, що перебування в певній державі на певну дату має правову підставу. Підстава може зберігатися після закінчення документа, за яким особа в'їхала, якщо це прямо передбачає інша норма. І навпаки, факт колись законного в'їзду не дає необмеженого строку перебування.",
+              foreignersLaw.text`Повторний в'їзд є новим перетином кордону. За ${foreignersLaw.article("242", "art. 242 ustawy o cudzoziemcach")} чинна karta pobytu разом із документом подорожі дає змогу багаторазово перетинати кордон без візи. Це конкретне значення карти. Довідка про подання заяви такого значення не має, хоча вона може підтверджувати обставини законного перебування в Польщі.`,
+              "Отже, у справі можуть одночасно бути правильними два висновки: особа законно залишається в Польщі, але наявні документи не підтверджують можливості повернутися після запланованого виїзду. Це не суперечність. Висновки стосуються різних дій.",
+            ],
+          },
+          {
+            id: "dates-and-territory",
+            title: "Строк документа не завжди дорівнює дозволеному перебуванню",
+            paragraphs: [
+              documents.text`У ${documents.document("visa", "візі")} важливі період чинності, дозволена кількість днів, територія та кількість в'їздів. Наприклад, віза може бути ще чинною за календарем, але дозволені нею дні вже використані. Позначка про кількість в'їздів відповідає на інше питання: чи можна використати цю візу для наступного в'їзду.`,
+              foreignersLaw.text`Для звичайного короткого перебування правило ${foreignersLaw.external("90 днів у кожному 180-денному періоді", schengenUrl)} є рухомим: для кожного дня перебування дивляться на попередні 180 днів. Виїзд сам по собі не запускає нові 90 днів. День в'їзду і день виїзду включаються до підрахунку. Ruch bezwizowy означає звільнення від вимоги мати візу за відповідних умов, а не звільнення від цього обмеження чи інших умов в'їзду.`,
+              foreignersLaw.text`Польська національна віза D має іншу тривалість і призначення. ${foreignersLaw.article("59", "Art. 59")} пов'язує її з перебуванням у Польщі понад 90 днів у межах чинності візи. За ${foreignersLaw.external("art. 6 ust. 2 kodeksu granicznego Schengen", schengenUrl)} періоди, дозволені довгостроковою візою або дозволом на перебування, не включаються до розрахунку короткого перебування за цією нормою. Це не означає необмеженого перебування в інших державах.`,
+              documents.text`Тому ${documents.document("stay-history", "хронологія перебування")} має показувати державу, дати й підставу кожного періоду. Запис «був у Європі з травня» не дозволяє відрізнити проживання за дозволом від короткої поїздки. Якщо дата повернення невідома, її залишають непідтвердженою: вигадана дата створила б хибний підрахунок.`,
+            ],
+          },
+          {
+            id: "application-and-return",
+            title: "Заява підтримує перебування, але не продовжує візу",
+            paragraphs: [
+              foreignersLaw.text`${foreignersLaw.article("108", "Art. 108 ust. 1 pkt 2")} стосується заяви про дозвіл на тимчасове перебування. Якщо строк подання збережено, а формальних недоліків немає або їх усунено вчасно, перебування в Польщі вважається законним від дня подання до дня, коли рішення стане ostateczna, тобто остаточним в адміністративному порядку. Саме повідомлення «заяву відправлено» ще не встановлює всі ці умови.`,
+              foreignersLaw.text`Межа прямо вказана в ${foreignersLaw.article("108", "art. 108 ust. 2")}: правило про законність перебування не застосовується в разі зупинення провадження на прохання сторони. Звичайне очікування розгляду й таке зупинення не є одним станом справи. Висновок про підставу потребує актуальних відомостей про провадження.`,
+              foreignersLaw.text`Для заяв за новими правилами, запровадженими ${foreignersLaw.external("з 27 квітня 2026 року", commencementUrl)}, передбачено zaświadczenie, довідку про подання заяви, замість штампа в паспорті. В ${foreignersLaw.external("офіційному зразку", certificateUrl)} є дата подання й пояснення законності перебування в Польщі. ${foreignersLaw.external("UdSC розрізняє UPO та цю довідку", mosUrl)}: підтвердження відправлення отримують після подання, а довідку формують після перевірки й затвердження органом.`,
+              documents.text`${documents.document("proceeding-certificate", "Довідка про подання заяви")} не переписує строк візи й не замінює ${documents.document("residence-card", "чинної карти перебування")}. Перед поїздкою питання повернення оцінюють за документами та правилами, які діятимуть на дату перетину. Якщо особа має іншу чинну підставу в'їзду або може скористатися безвізовим режимом, її перевіряють окремо. Саме очікування рішення такою відповіддю не є.`,
+            ],
+          },
+          {
+            id: "stay-timeline-example",
+            title: "Приклад: віза закінчилася, заява ще розглядається",
+            paragraphs: [
+              "Хронологія нижче показує, як підстава перебування змінюється без нового перетину кордону. Окремий рядок про поїздку не дозволяє непомітно перенести висновок про перебування на питання повернення.",
+            ],
+            example: {
+              title:
+                "Законне перебування 10 вересня і непідтверджене повернення",
+              facts: [
+                "Умовний приклад. Особа в'їхала до Польщі 1 травня 2026 року за візою D. Чинність візи й дозволений нею строк охоплюють перебування до 31 серпня. 20 серпня особа належно подала через MOS заяву на тимчасове перебування без формальних недоліків. 28 серпня орган видав довідку. На 10 вересня рішення ще немає, провадження на прохання сторони не зупинено. Особа планує виїзд за межі Schengen і повернення, для якого їй потрібна віза; іншої чинної візи, карти чи окремої підстави в'їзду в прикладі немає.",
+              ],
+              sample: {
+                kind: "table",
+                title: "Заповнена хронологія підстави перебування",
+                note: "Навчальний запис за вигаданими фактами. Дати й висновки стосуються лише цього прикладу.",
+                columns: ["Дата та подія", "Матеріал", "Що встановлено"],
+                rows: [
+                  {
+                    id: "entry",
+                    cells: [
+                      "01.05.2026: в'їзд до Польщі",
+                      "Паспорт, віза D та дані перетину",
+                      "Віза охоплює цей період. Дозволені дні не вичерпано.",
+                    ],
+                  },
+                  {
+                    id: "filing",
+                    cells: [
+                      "20.08.2026: належне подання заяви",
+                      "Матеріали заяви; відсутність формальних недоліків підтверджено",
+                      foreignersLaw.text`Умови ${foreignersLaw.article("108", "art. 108 ust. 1")} виконані. Перебування за цією нормою рахується від подання, а не від пізнішої видачі довідки.`,
+                    ],
+                  },
+                  {
+                    id: "certificate",
+                    cells: [
+                      "28.08.2026: видано довідку",
+                      "Довідка з датою подання 20.08.2026",
+                      "Довідка підтверджує подання. Строк візи залишається до 31 серпня.",
+                    ],
+                  },
+                  {
+                    id: "today",
+                    cells: [
+                      "10.09.2026: заява розглядається",
+                      "Довідка й актуальний стан провадження",
+                      "Віза вже закінчилася. Перебування в Польщі законне за нормою про заяву; остаточного рішення та зазначеного винятку немає.",
+                    ],
+                  },
+                  {
+                    id: "trip",
+                    cells: [
+                      "Заплановане повернення після виїзду",
+                      "Прострочена віза; довідка про заяву",
+                      "Ці матеріали не підтверджують необхідної підстави повторного в'їзду. Подорож не можна вважати забезпеченою лише через законність перебування в Польщі.",
+                    ],
+                  },
+                ],
+              },
+              reasoning: [
+                "Закінчення візи не створило прогалини в перебуванні за наведеними фактами: умови норми про заяву вже виконані від 20 серпня. Видача довідки 28 серпня не переносить початок цієї підстави на вісім днів пізніше.",
+                "Для повернення бракує іншого елемента: чинного документа або окремої правової підстави в'їзду. Довідка підтверджує подання заяви, але не перетворюється на візу. В прикладі немає фактів для безвізового в'їзду чи іншого винятку. Якби такі факти були, висновок про повернення потребував би окремої оцінки.",
+              ],
+              conclusion:
+                "На 10 вересня перебування в Польщі має підтверджену підставу. Можливість повернення після виїзду за наявними матеріалами не підтверджена. Запис у справі містить обидва висновки; позначка «очікує карту» приховала б цю різницю.",
+            },
+          },
+        ],
+      }),
     },
   })
 
@@ -165,8 +249,7 @@ export const entryCurrentBasisMapNode: LegalNode = {
   title: entryCurrentBasisTopic.body.title,
   polish: entryCurrentBasisTopic.body.polish,
   summary: entryCurrentBasisTopic.summary,
-  why: entryCurrentBasisTopic.body.why,
-  checkpoints: [...(entryCurrentBasisTopic.body.checkpoints ?? [])],
   documents: [...(entryCurrentBasisTopic.body.documents ?? [])],
   sources: [...entryCurrentBasisTopic.body.sources],
+  related: [...(entryCurrentBasisTopic.body.related ?? [])],
 }

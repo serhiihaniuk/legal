@@ -483,3 +483,9 @@ Full verification, reference previews and desktop/mobile Chromium checks passed.
 Rewrote person-status with separate explanations of identity, citizenship, residence status and evidence. Added a completed five-row record showing why the Ukrainian spouse of a German worker in Poland falls within the EU-family analysis. Distinguished missing proof from proof of unlawful stay and preserved the separate scope of entry, work and UKR topics.
 
 Verified the foreigners act, the new EU-family consolidation published as Dz.U. 2026 poz. 1065 and the scoped official guidance on 10.09.2026. The global baseline is unchanged. Full verification, reference previews and desktop/mobile Chromium checks passed. Writing acceptance is 154 of 1,805 files; independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/48-person-status.md. Next: entry-current-basis.
+
+### 2026-09-10: entry, current stay and return after travel
+
+Rewrote entry-current-basis with separate explanations of entry conditions, current lawful stay and documents for a later return. Added a filled five-row timeline covering a D visa, timely application, certificate, visa expiry and proposed travel. Explained why the certificate does not extend the visa, and preserved visa-free and statutory entry exceptions.
+
+Verified the foreigners act, Schengen Borders Code, certificate form, commencement communiqué and scoped UdSC guidance on 10.09.2026. Global baseline unchanged. Full repository verification, reference previews, desktop/mobile layout, table keyboard scrolling and example anchor checks passed. Writing inventory and ledgers were regenerated for this batch; independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/49-entry-current-basis.md. Next: visa and visa-free.

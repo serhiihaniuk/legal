@@ -2810,7 +2810,7 @@
       "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
       "family": "map-topic",
       "lane": "teaching-pages",
-      "documentId": "passport",
+      "documentId": null,
       "contentId": "entry-current-basis",
       "provisionId": null,
       "provisionIndex": null,
@@ -2818,7 +2818,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "88a7bc41d1306d41900d44060198cae9a9c5afa93ec8b36f018f53f615dfbc97",
+      "contentHash": "abb849f0aada334a1c137c6726564b23d1dcca6a0c9b9d8b1e6f1e61ca40b921",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
