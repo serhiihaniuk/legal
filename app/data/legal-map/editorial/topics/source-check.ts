@@ -2,35 +2,23 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
+import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
-
-import { mapTopicSources } from "../authoring"
+import { kpaLaw, mapTopicSources } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
-const kpaSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-kpa",
-} as const
+const documents = createEvidenceDocumentTextAuthor()
+const publicationUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/1691/text/O/D20251691.pdf"
+const amendmentUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/769/text/T/D20250769L.pdf"
+const promulgationUrl =
+  "https://eli.gov.pl/api/acts/DU/2019/1461/text/T/D20191461L.pdf"
+const rclUrl =
+  "https://rcl.gov.pl/wp-content/uploads/2025/03/Teksty_jednolite_26032025.pdf"
 
-const aliensSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-ustawa-o-cudzoziemcach",
-} as const
-
-const workSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-powierzanie-pracy",
-} as const
-
-const nsaReference = {
-  kind: "external",
-  url: "https://orzeczenia.nsa.gov.pl/cbo/query",
-} as const
-
-type SourceCheckBody = LegalMapTopicBody
-
-export const sourceCheckTopic: KnowledgeUnit<SourceCheckBody> =
+export const sourceCheckTopic: KnowledgeUnit<LegalMapTopicBody> =
   defineKnowledgeUnit({
     id: "map-topic:source-check",
     subject: {
@@ -38,17 +26,45 @@ export const sourceCheckTopic: KnowledgeUnit<SourceCheckBody> =
       reference: { kind: "map-node", nodeId: "source-check" },
     },
     summary:
-      "Починай із oficjalnego ELI, перевір статус акта, текст jednolity, зміни, дати набрання чинності та норми перехідні. Інструкція urzędu допомагає, але не замінює закон.",
+      "Актуальність норми означає, що її редакція підходить до питання й дати у справі. Для цього потрібно знайти офіційну публікацію, відрізнити текст закону від редакційного зведення та врахувати зміни й перехідні правила.",
     claims: [
       {
-        id: "current-law-check",
-        kind: "requires-verification",
-        text: "Застосовний текст визначається юридично релевантною датою, статусом акта, новелами та правилами переходу між редакціями.",
+        id: "consolidation-is-not-a-new-law",
+        kind: "statute-text",
+        text: "Tekst jednolity оголошують у формі obwieszczenia в офіційному журналі. Публікація KPA 2025 року окремо називає включені зміни й відтворює перехідні положення, які не входять до зведеного тексту кодексу в додатку.",
         basis: [
-          { reference: kpaSourceReference, locator: "official ELI record" },
-          { reference: aliensSourceReference, locator: "official ELI record" },
-          { reference: workSourceReference, locator: "official ELI record" },
-          { reference: nsaReference, locator: "official case-law database" },
+          {
+            reference: { kind: "external", url: promulgationUrl },
+            locator: "Art. 16 ust. 1 and 4",
+          },
+          {
+            reference: { kind: "external", url: publicationUrl },
+            locator: "Obwieszczenie, pkt 1–2, first PDF page",
+          },
+        ],
+      },
+      {
+        id: "old-kpa-proceedings",
+        kind: "statute-text",
+        text: "Зміна KPA 2025 року зберігає попередню редакцію для справ, розпочатих і не завершених до набрання нею чинності. Відповідна межа цієї зміни припадає на 13 липня 2025 року.",
+        basis: [
+          {
+            reference: { kind: "external", url: amendmentUrl },
+            locator:
+              "Art. 1, art. 31 ust. 1 and art. 48; publication 12 June 2025",
+          },
+        ],
+      },
+      {
+        id: "source-check-record",
+        kind: "practical-inference",
+        text: "Запис про редакцію має пояснювати зв'язок між питанням, датами справи, офіційним текстом і перехідним правилом. Позначка про завантаження останнього PDF не замінює цього висновку.",
+        basis: [
+          {
+            reference: { kind: "external", url: publicationUrl },
+            locator:
+              "Separate publication, consolidation cutoff and transitional provision on the first page",
+          },
         ],
       },
     ],
@@ -56,58 +72,152 @@ export const sourceCheckTopic: KnowledgeUnit<SourceCheckBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-18",
-      verifiedAt: "2026-07-18",
+      legalStateDate: "2026-09-10",
+      verifiedAt: "2026-09-10",
     },
     body: {
       title: "Як перевіряти актуальність права",
-      polish: "ELI / Dziennik Ustaw / przepisy przejściowe",
+      polish: "ELI, tekst jednolity, tekst ujednolicony, przepisy przejściowe",
       sources: [
-        mapTopicSources.kpa,
-        mapTopicSources.aliens,
-        mapTopicSources.work,
-        mapTopicSources.nsa,
+        {
+          ...mapTopicSources.kpa,
+          note: "Перевірено 10.09.2026 як приклад офіційної публікації зведеного тексту. Висновок для старої справи потребує також акта про зміни.",
+        },
+        {
+          label: "KPA: офіційна публікація разом з obwieszczeniem",
+          url: publicationUrl,
+          note: "Перша сторінка містить межу врахованих змін та перехідне правило, відокремлене від додатка з текстом кодексу.",
+        },
+        {
+          label: "Зміни KPA 2025 року та перехідні правила",
+          url: amendmentUrl,
+          note: "Dz.U. 2025 poz. 769. Перевірено 10.09.2026 у частині набрання чинності та застосування попередньої редакції до незавершених справ.",
+        },
+        {
+          label: "Ustawa o ogłaszaniu aktów normatywnych",
+          url: promulgationUrl,
+          note: "Dz.U. 2019 poz. 1461. Перевірено правила офіційного оголошення зведених текстів; це не перевірка всіх видів публікацій і винятків.",
+        },
+        {
+          label: "RCL: tekst jednolity і tekst ujednolicony",
+          url: rclUrl,
+          note: "Офіційний навчальний матеріал Rządowego Centrum Legislacji. Сторінки 3 та 7–8 пояснюють характер і відмінність текстів; він не замінює закону.",
+        },
       ],
-      guide: {
+      documents: [
+        documents.text`${documents.document("case-assessment", "Робочий висновок у справі")}`,
+      ],
+      related: ["legal-anatomy", "special-vs-kpa", "case-file", "pending-stay"],
+      guide: defineLegalMapArticle({
+        kind: "article",
         introduction: [
-          "Правова норма читається в офіційному тексті з урахуванням статусу акту, дати факту, новел, дат набрання чинності та przepisów przejściowych. Номер статті без редакції на відповідну дату не визначає застосовного права.",
+          "«Актуальний текст» і «текст, застосовний до цієї справи» можуть не збігатися. Сьогоднішнє формулювання потрібне для одного питання, попередня редакція для іншого, якщо перехідне правило зберегло її для раніше розпочатої справи. Дата завантаження PDF цього не вирішує.",
+          "Перевірка починається з конкретного питання. Наприклад, який порядок KPA застосовується до провадження, розпочатого до зміни закону? Наприкінці має бути відповідь із причиною вибору редакції, а не лише посилання на сайт.",
         ],
-        regulated: [
-          "ELI, Dziennik Ustaw і офіційні тексти jednolite показують реквізити акту, status obowiązywania, ogłoszenie, пов’язані зміни та офіційний текст.",
+        sections: [
+          {
+            id: "identify-publication",
+            title: "Який саме документ відкрито в ELI",
+            paragraphs: [
+              "ELI допомагає знайти офіційний акт за його назвою та публікацією. Dz.U. означає Dziennik Ustaw, офіційний журнал, а poz. є номером позиції в певному році. Запис Dz.U. 2025 poz. 1691 ідентифікує публікацію зведеного тексту KPA; він не означає, що кодекс ухвалили у 2025 році.",
+              "На сторінці варто розрізняти назву закону і назву obwieszczenia, повідомлення про оголошення його зведеного тексту. Статус obowiązujący в записі не є відповіддю про дію кожного речення для кожної старої справи. Потрібні також зміст норми, її зміни та часова сфера застосування.",
+              kpaLaw.text`Tekst jednolity є офіційно оголошеним зведеним текстом, у який включено зміни. За ${kpaLaw.external("art. 16 ust. 1 і 4 закону про оголошення нормативних актів", promulgationUrl)} його оголошують у формі obwieszczenia в офіційному журналі. Це спосіб зібрати текст для читання, а не ухвалення всього закону заново.`,
+              kpaLaw.text`Tekst ujednolicony є редакційним зведенням змін. Воно зручне для навігації, але не має того самого характеру офіційної публікації, що tekst jednolity. Цю відмінність пояснює ${kpaLaw.external("Rządowe Centrum Legislacji", rclUrl)}. Якщо формулювання або дата викликають сумнів, підставу висновку відновлюють за опублікованим текстом і актами про зміни.`,
+            ],
+          },
+          {
+            id: "dates-and-notes",
+            title: "Дата публікації, дата зміни та дата у справі",
+            paragraphs: [
+              "Data ogłoszenia означає дату офіційної публікації. Wejście w życie є набранням чинності. Data wydania в реквізитах акта позначає ще іншу дату: ухвалення або видання документа. Їх не можна підміняти датою створення файла на комп'ютері.",
+              kpaLaw.text`У ${kpaLaw.external("публікації KPA, Dz.U. 2025 poz. 1691", publicationUrl)} повідомлення датоване 7 листопада, а журнал опубліковано 3 грудня 2025 року. У першому пункті повідомлення зазначено зміни з приписів, оголошених перед 3 листопада. Отже, дата грудневого PDF сама по собі не встановлює ні початку дії кодексу, ні редакції для будь-якої грудневої дії.`,
+              "Akty zmieniające є законами або іншими належними актами, які змінюють попереднє формулювання. Для потрібної статті важливий точний припис про зміну та його набрання чинності. Якщо в одному акті різні частини починають діяти в різні дні, загальна дата в реквізитах не замінює читання винятків.",
+              "Примітка біля фрагмента може показувати майбутню редакцію, попередню редакцію або джерело зміни. Перед використанням такого фрагмента потрібно прочитати саму примітку. Видиме в PDF нове формулювання ще не доводить, що його вже можна застосувати до події, яку аналізують.",
+              "Przepisy przejściowe визначають, як зміна стосується ситуацій на межі редакцій. Вони можуть прив'язувати відповідь до початку провадження, подання заяви, укладення договору чи іншого факту. Вибір потрібної дати випливає з відповідного правила; не існує одного універсального принципу «завжди беремо закон на день подання».",
+            ],
+          },
+          {
+            id: "kpa-transition-example",
+            title: "Як новий PDF приводить до попередньої редакції KPA",
+            paragraphs: [
+              kpaLaw.text`Перша сторінка ${kpaLaw.external("офіційної публікації KPA", publicationUrl)} окремо відтворює перехідне положення, яке не входить до зведеного тексту кодексу в додатку. За ${kpaLaw.external("art. 31 ust. 1 закону про зміни, Dz.U. 2025 poz. 769", amendmentUrl)} до справ за KPA, розпочатих і не завершених до набрання цією зміною чинності, застосовують попередню редакцію KPA.`,
+              kpaLaw.text`Закон про зміни опубліковано 12 червня 2025 року. Його ${kpaLaw.external("art. 48", amendmentUrl)} встановлює набрання чинності після 30 днів із переліченими винятками. Зміна KPA не належить до цих винятків; для неї межа припадає на 13 липня 2025 року. Тому прочитати нове речення кодексу недостатньо: потрібно знати, чи була справа вже відкрита й незавершена до цієї межі.`,
+            ],
+            example: {
+              title: "Запис про вибір редакції для справи, відкритої в червні",
+              facts: [
+                "Умовний приклад. Потрібно встановити, чи поширюється зміна KPA 2025 року на провадження, розпочате 20 червня 2025 року і не завершене до 13 липня. Обидва факти підтверджено матеріалами справи. Працівник відкрив грудневу публікацію KPA, але не приймає дату PDF за відповідь.",
+              ],
+              sample: {
+                kind: "table",
+                title: "Заповнена картка перевірки редакції",
+                note: "Вигаданий робочий запис із реальними реквізитами законів. Він показує застосування однієї перехідної норми, а не повний висновок про справу.",
+                columns: ["Поле запису", "Установлено"],
+                rows: [
+                  {
+                    id: "question",
+                    cells: [
+                      "Питання",
+                      "Чи застосувати до цього провадження KPA у редакції після зміни 2025 року?",
+                    ],
+                  },
+                  {
+                    id: "facts",
+                    cells: [
+                      "Часові факти",
+                      "Провадження розпочато 20.06.2025; до 13.07.2025 не завершено.",
+                    ],
+                  },
+                  {
+                    id: "publication",
+                    cells: [
+                      "Відкритий текст",
+                      "KPA, Dz.U. 2025 poz. 1691. Прочитано також obwieszczenie перед додатком із кодексом.",
+                    ],
+                  },
+                  {
+                    id: "amendment",
+                    cells: [
+                      "Акт про зміни",
+                      kpaLaw.text`Dz.U. 2025 poz. 769; ${kpaLaw.external("art. 1, 31 ust. 1 і 48", amendmentUrl)}. Для зміни KPA дата набрання чинності 13.07.2025.`,
+                    ],
+                  },
+                  {
+                    id: "conclusion",
+                    cells: [
+                      "Висновок у межах цієї зміни",
+                      "Застосовується попередня редакція KPA. Підстава вибору: справа вже була розпочата й не завершена до часової межі.",
+                    ],
+                  },
+                  {
+                    id: "scope",
+                    cells: [
+                      "Межа перевірки",
+                      "Перевірено 10.09.2026. Це висновок про зміну 2025 року; інші зміни та спеціальні правила оцінюють окремо.",
+                    ],
+                  },
+                ],
+              },
+              reasoning: [
+                "Матеріали справи встановили часові факти, а закон визначив їхнє значення. Висновок змінив не вік файла, а перехідний припис, знайдений на початку офіційної публікації й звірений з актом про зміни.",
+                "Якби провадження розпочалося вже після цієї межі, воно не відповідало б умові наведеного перехідного правила. Це порівняння не встановлює автоматично всіх правил для пізнішої справи: залишаються інші зміни й можливі спеціальні приписи.",
+              ],
+              conclusion:
+                "Новіший зведений текст допоміг знайти правило, яке зберігає попередню редакцію. Дата публікації не зробила нове формулювання автоматично застосовним до старого провадження.",
+            },
+          },
+          {
+            id: "reproducible-conclusion",
+            title: "Що зберегти, щоб висновок можна було перевірити",
+            paragraphs: [
+              documents.text`У ${documents.document("case-assessment", "робочому висновку у справі")} потрібні назва акта, реквізити публікації, точний припис, посилання на джерело, дата перевірки й причина вибору редакції. Якщо результат залежить від дати початку провадження, поруч має бути видно, який матеріал цю дату підтверджує. Перелік посилань без такого зв'язку не дозволяє відтворити аналіз.`,
+              "Після нової зміни закону попередню нотатку не просто переписують під найновіший текст. Спочатку з'ясовують, чи змінився потрібний припис і чи охоплює зміна саме цю справу. Так само новий документ у справі може змінити встановлену дату або факт, від яких залежав вибір редакції.",
+              "Офіційна інструкція органу має іншу роль: вона може пояснювати канал подання, роботу порталу чи потрібну форму. Судове рішення пояснює застосування права в певній справі й може мати значення для тлумачення. Інструкцію читають разом із її правовою підставою, а судову тезу разом із фактами, редакцією норми та змістом рішення. Їх не слід записувати так, ніби це буквальний текст закону.",
+              "Якщо потрібне перехідне положення або факт не знайдено, у висновку називають саме цю прогалину. «Редакцію ще не встановлено, бо невідома дата початку провадження» дає наступному працівнику конкретне питання. Позначка «право перевірено» за тих самих матеріалів приховала б невирішену частину аналізу.",
+            ],
+          },
         ],
-        appliesWhen: [
-          "Перед формулюванням правової підстави, оцінкою wezwania або decyzji, визначенням строку та використанням адміністративної інструкції.",
-        ],
-        conditions: [
-          "Застосовний текст визначається датою подання, датою процесуальної дії або іншою юридично релевантною датою та правилами переходу між редакціями.",
-          "Матеріальна норма, KPA, PPSA, rozporządzenie і офіційне роз’яснення мають різну юридичну силу й функцію.",
-        ],
-        exceptions: [
-          "Tekst jednolity полегшує читання, але не замінює перевірки пізніших змін і їх wejścia w życie. Майбутня опублікована зміна не застосовується до поточного факту до набрання чинності, якщо перехідна норма не встановлює іншого.",
-        ],
-        consequences: [
-          "Використання нечинної або майбутньої редакції змінює перелік передумов, орган, строк чи наслідок і може зробити весь правовий висновок хибним.",
-        ],
-        procedure: [
-          "Перевірка охоплює офіційний запис ELI, статус акта, tekst jednolity, перелік новел, daty wejścia w życie, przepisy przejściowe, а після цього — точний artykuł, ustęp, punkt і відсилання.",
-        ],
-        foreignersContext: [
-          "Право cudzoziemców часто змінюється й містить спеціальні та перехідні режими. Офіційна сторінка urzędu пояснює практичний канал, але не замінює ustawy o cudzoziemcach, закону про працю cudzoziemców і KPA.",
-        ],
-      } satisfies LegalNodeGuide,
-      checkpoints: [
-        "Яка дата стану фактичного і подання?",
-        "Чи норма вже набула чинності?",
-        "Чи є текст jednolity новіший за нотатку?",
-        "Чи przepis przejściowy залишає старі правила для цієї справи?",
-      ],
-      steps: [
-        "Відкрий ELI.",
-        "Перевір статус акта та akty zmieniające.",
-        "Прочитай дату wejścia w życie.",
-        "Знайди przepisy przejściowe.",
-        "Лише потім дивись urzędowe FAQ та orzecznictwo.",
-      ],
+      }),
     },
   })
 
@@ -118,7 +228,7 @@ export const sourceCheckMapNode: LegalNode = {
   title: sourceCheckTopic.body.title,
   polish: sourceCheckTopic.body.polish,
   summary: sourceCheckTopic.summary,
-  checkpoints: [...(sourceCheckTopic.body.checkpoints ?? [])],
-  steps: [...(sourceCheckTopic.body.steps ?? [])],
   sources: [...sourceCheckTopic.body.sources],
+  documents: [...(sourceCheckTopic.body.documents ?? [])],
+  related: [...(sourceCheckTopic.body.related ?? [])],
 }

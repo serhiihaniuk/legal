@@ -773,5 +773,10 @@
     "path": "app/data/legal-map/editorial/topics/two-keys.ts",
     "contentHash": "050a46ac83e93e0a3e4fb3305ddc1a4bd47c6ec6ebdc8eaee9707a5c2b868d53",
     "evidence": "docs/content-review/writing-2026-09-05/batches/46-two-keys.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/source-check.ts",
+    "contentHash": "99e950cc93e3b6b0f12a7ce2b32f0a735832ff830c4732cb435e353810d09402",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/47-source-check.md"
   }
 ]

@@ -115,8 +115,8 @@ describe("map article contents", () => {
   })
 
   it("preserves not-yet-migrated article content during the rewrite", () => {
-    const node = nodeById.get("source-check")
-    if (!node) throw new Error("Missing source-check fixture")
+    const node = nodeById.get("pending-stay")
+    if (!node) throw new Error("Missing pending-stay fixture")
     const { container } = render(
       <MemoryRouter>
         <LegalNodeContent
