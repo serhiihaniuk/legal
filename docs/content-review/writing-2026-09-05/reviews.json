@@ -751,8 +751,8 @@
   },
   {
     "path": "app/routes/home.tsx",
-    "contentHash": "715557c1149b614b5d65d1fa6946f164ab988a7229a8888af1b8fe89d4b2adcd",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md"
+    "contentHash": "a05cb5c04ec620d24b4323880e32f510002bf3405d6143e032d4063070ed6f66",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/46-two-keys.md"
   },
   {
     "path": "app/features/home/ui/home-particles.tsx",
@@ -768,5 +768,10 @@
     "path": "app/data/legal-map/editorial/topics/special-vs-kpa.ts",
     "contentHash": "8fb4c3d0d60a3e7affea476b534f9a7cc98948e7edc31db55faec0bb33a4e007",
     "evidence": "docs/content-review/writing-2026-09-05/batches/45-kpa-special-rules.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/two-keys.ts",
+    "contentHash": "050a46ac83e93e0a3e4fb3305ddc1a4bd47c6ec6ebdc8eaee9707a5c2b868d53",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/46-two-keys.md"
   }
 ]

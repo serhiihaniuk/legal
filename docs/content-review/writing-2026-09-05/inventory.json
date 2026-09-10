@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 151,
+    "reviewed": 152,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -30,7 +30,7 @@
     {
       "path": "app/components/layout/site-header.tsx",
       "family": "shared-renderer",
-      "contentHash": "1d017ef282501b4d2b3149ee0b23691540c16e4eaecde478e7f3467c5d4e0a82",
+      "contentHash": "c3863cb33865ef481880e003578c26c1684c61d6c5f3ab5e73e57a620f916c64",
       "writing": "pending",
       "evidence": null
     },
@@ -11937,9 +11937,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/two-keys.ts",
       "family": "map-topic",
-      "contentHash": "8211d568117b5f77f8dbe8d5ca92a20dbce81ef06846f451f3d1cb52455537cf",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "050a46ac83e93e0a3e4fb3305ddc1a4bd47c6ec6ebdc8eaee9707a5c2b868d53",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/46-two-keys.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/ukr-baseline-2026.ts",
@@ -12546,7 +12546,7 @@
     {
       "path": "app/root.tsx",
       "family": "supporting-copy",
-      "contentHash": "5ee68536a939aed4c8635d26cf9d0c85ba551b98d31f2a67018defa48969ee3a",
+      "contentHash": "85d775cd5cd57295d79deef6a781c3b2a1bc81b199083579a7232c7796b2ed30",
       "writing": "pending",
       "evidence": null
     },
@@ -12567,9 +12567,9 @@
     {
       "path": "app/routes/home.tsx",
       "family": "route-copy",
-      "contentHash": "715557c1149b614b5d65d1fa6946f164ab988a7229a8888af1b8fe89d4b2adcd",
+      "contentHash": "a05cb5c04ec620d24b4323880e32f510002bf3405d6143e032d4063070ed6f66",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/43-homepage-particles.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/46-two-keys.md"
     },
     {
       "path": "app/routes/kpa.tsx",

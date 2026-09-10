@@ -465,3 +465,9 @@ Full verification passed with 202 application tests. Reference previews and Chro
 Rewrote the foundation article to separate permit conditions, procedure and transition rules. Added a filled employer-case note and a completed example of an application received before MOS launched. Verified the bounded KPA, foreigners-act and amending-act provisions plus official UdSC guidance on 10.09.2026. The global baseline is unchanged.
 
 Full verification, reference previews and desktop/mobile Chromium checks passed. Writing acceptance is 151 of 1,805 files; independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/45-kpa-special-rules.md. Next: two-keys and source-check.
+
+### 2026-09-10: lawful stay and permission to work
+
+Rewrote two-keys as a standalone article about compatible residence and work grounds, status-based access, actual job conditions and pending proceedings. Added three completed examples, including a filled employer-change note. Verified the bounded employment-act and foreigners-act provisions against ELI on 10.09.2026. The global baseline is unchanged.
+
+Full verification, reference previews and desktop/mobile Chromium checks passed. Writing acceptance is 152 of 1,805 files after renewing the unchanged homepage prose review for its SVG integration. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/46-two-keys.md. Next: source-check.

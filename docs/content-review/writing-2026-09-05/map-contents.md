@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 45: `start-case`, `legal-anatomy` and `special-vs-kpa` now have authored explanations with completed examples. Their routes and primary chapters are unchanged. Next foundation topics are `two-keys` and `source-check`. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
+Latest implementation note, batch 46: `start-case`, `legal-anatomy`, `special-vs-kpa` and `two-keys` now have authored explanations with completed examples. Their routes and primary chapters are unchanged. The next foundation topic is `source-check`. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 

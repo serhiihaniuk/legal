@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 41 adds illustrated court-complaint and judgment guides and connects both conditionally to all nine case routes. Writing acceptance is 146 of 1,804 files. Remaining map articles, law modules, provision commentary, corpus layout audit and independent legal review stay pending. See `batches/41-court-documents.md`.
+Batch 46 completes the foundation article about lawful stay and permission to work. Current writing acceptance and the remaining scope are recorded in the latest checkpoint below. Earlier batch figures describe those checkpoints, not the present total.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
@@ -78,4 +78,4 @@ Batch 27 implements the primary chapter assignments, stable chapter anchors, dir
 
 Batch 28 implements authored map sections and matching page contents. The first migrated article, `other-stay`, now distinguishes named and residual grounds, explains the graduate route and gives a completed accommodation example. Its source check includes temporary-protection limits. The misplaced article 114 link is corrected. One article receives writing acceptance, bringing the total to 126 of 1,800; the shared renderer change does not accept unmigrated text. Study/research and family classifications, deeper parent articles, the decision merge and remaining map gaps continue next. Law-module rewrites, original-source layout and independent legal review remain open.
 
-Latest checkpoint, batch 45: 151 of 1,805 files have current writing review. Batches 42, 44 and 45 rewrote the facts, legal-norm and KPA/special-law foundation articles with completed examples. Batch 43 restyled the homepage and added the supplied particles and a logo brief. Next are `two-keys` and `source-check`. Remaining map articles, law modules, provision commentary, the original PDF-layout audit and independent legal review remain open. Detailed evidence is in [batch 45](batches/45-kpa-special-rules.md).
+Latest checkpoint, batch 46: 152 of 1,805 files have current writing review. Four foundation articles now have authored explanations and completed examples. Batch 43 restyled the homepage and added particles and a logo brief; the supplied SVG logo is also integrated. Next is `source-check`. Remaining map articles, law modules, provision commentary, the original PDF-layout audit and independent legal review remain open. Detailed evidence is in [batch 46](batches/46-two-keys.md).
