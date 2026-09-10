@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 165,
+    "reviewed": 168,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -331,9 +331,9 @@
     {
       "path": "app/data/case-guides/editorial/work/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "e9b84ff71562cb706a631163d54e9c3ea9d8967e8aa627278b2f48851c9c9600",
+      "contentHash": "fb6c71689096bf7f327aee28adcd72888cdbc6b7ad4786d24b782cbf7b1f04c8",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/stages.ts",
@@ -11594,16 +11594,16 @@
     {
       "path": "app/data/legal-map/editorial/topics/blue-card.ts",
       "family": "map-topic",
-      "contentHash": "82586af40545dcfb83c4508cc2d42b9861009bca7033416d6c91a386469f9b94",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ed7cd382cac9da329f495b7b23defef8bea73d18171874b094dcd7058b896809",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/business-stay.ts",
       "family": "map-topic",
-      "contentHash": "61b2791617dc90e701de13bb594ae4a40af2e0918fd3f41eda5c2fd14d87c48d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "532df4ce9b28dd8de92392d98fba5c29a35472359e692ab7319f2300cd6432a3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/case-file.ts",
@@ -11895,9 +11895,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/stay-work.ts",
       "family": "map-topic",
-      "contentHash": "d8d949d6e1a7c4973ea2b01071b0cae825f73657887ee04a12d7cd514add3291",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1719ef629e7438279ab8a60e0c3cc8c3c5e4dcd7aeb2a502ee989138f03b9c7e",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/study-loop.ts",

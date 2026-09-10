@@ -386,8 +386,8 @@
   },
   {
     "path": "app/data/case-guides/editorial/work/reference.ts",
-    "contentHash": "e9b84ff71562cb706a631163d54e9c3ea9d8967e8aa627278b2f48851c9c9600",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+    "contentHash": "fb6c71689096bf7f327aee28adcd72888cdbc6b7ad4786d24b782cbf7b1f04c8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
   },
   {
     "path": "app/data/case-guides/editorial/routes/blue-card.ts",
@@ -838,5 +838,20 @@
     "path": "app/data/legal-map/editorial/topics/temporary-goals.ts",
     "contentHash": "0414a2da06aed49467885d94215240d6d9ec6c34257a7abcfec24682c1fb1731",
     "evidence": "docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/stay-work.ts",
+    "contentHash": "1719ef629e7438279ab8a60e0c3cc8c3c5e4dcd7aeb2a502ee989138f03b9c7e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/blue-card.ts",
+    "contentHash": "ed7cd382cac9da329f495b7b23defef8bea73d18171874b094dcd7058b896809",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/business-stay.ts",
+    "contentHash": "532df4ce9b28dd8de92392d98fba5c29a35472359e692ab7319f2300cd6432a3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
   }
 ]

@@ -2,230 +2,233 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { foreignersLaw, mapTopicSources, residenceLaw } from "../authoring"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
+import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
+import { foreignersLaw as law, workLaw } from "../authoring"
 import type { LegalNode } from "~/data/shared/legal-types"
-
 import type { LegalMapTopicBody } from "./principle-legality"
 
+const documents = createEvidenceDocumentTextAuthor()
+const aliensUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf"
+const workUrl = "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf"
+const minimumUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/1242/text/O/D20251242.pdf"
+const mosUrl = "https://eli.gov.pl/api/acts/MP/2026/370/text.pdf"
+const ukrUrl = "https://eli.gov.pl/api/acts/DU/2026/203/text/O/D20260203.pdf"
 const aliensSourceReference = {
   kind: "official-source",
   sourceId: "eli-ustawa-o-cudzoziemcach",
 } as const
 
-type StayWorkBody = LegalMapTopicBody
-
-export const stayWorkTopic: KnowledgeUnit<StayWorkBody> = defineKnowledgeUnit({
-  id: "map-topic:stay-work",
-  subject: {
-    family: "map-topic",
-    reference: { kind: "map-node", nodeId: "stay-work" },
-  },
-  summary: foreignersLaw.text`Єдиний дозвіл, у якому мета перебування випливає з роботи. Аналіз складається з позитивних умов ${foreignersLaw.article("114", "art. 114")}, odmowy wszczęcia ${foreignersLaw.article("116", "art. 116")}, відмов по суті ${foreignersLaw.articleRange("117", "117a", { start: "art. 117", end: "117a" })}, treści decyzji ${foreignersLaw.article("118", "art. 118")} та правил зміни/втрати роботи ${foreignersLaw.articleRange("119", "123", { start: "art. 119", end: "123" })}.`,
-  claims: [
-    {
-      id: "work-stay-conditions",
-      kind: "requires-verification",
-      text: "Pobyt czasowy i praca поєднує мету перебування з фактичною працею, але межі рішення та звільнення від zezwolenia на працю потрібно читати окремо.",
-      basis: [{ reference: aliensSourceReference, locator: "Art. 114–126" }],
+export const stayWorkTopic: KnowledgeUnit<LegalMapTopicBody> =
+  defineKnowledgeUnit({
+    id: "map-topic:stay-work",
+    subject: {
+      family: "map-topic",
+      reference: { kind: "map-node", nodeId: "stay-work" },
     },
-  ],
-  relationships: [],
-  review: {
-    reviewStatus: "reviewed",
-    language: "uk",
-    legalStateDate: "2026-07-18",
-    verifiedAt: "2026-07-18",
-  },
-  body: {
-    title: "Pobyt czasowy i praca",
-    polish: foreignersLaw.text`${foreignersLaw.articleRange("114", "126", { start: "art. 114", end: "126" })}`,
-    sources: [mapTopicSources.aliens, mapTopicSources.work],
-    guide: {
-      introduction: [
-        "Pobyt czasowy i praca поєднує мету перебування з виконанням праці, але залишається zezwoleniem pobytowym, за яким заявником і стороною є cudzoziemiec.",
-      ],
-      regulated: [
-        foreignersLaw.text`${foreignersLaw.articleRange("114", "126", { start: "Art. 114", end: "126" })} регулюють позитивні умови, odmowę wszczęcia, odmowę, treść zezwolenia, зміну, втрату роботи та обов’язки.`,
-      ],
-      appliesWhen: [
-        "Праця має бути реальною метою pobytu понад три місяці, а ситуація не повинна належати до іншої спеціальної процедури або виключення.",
-      ],
-      conditions: [
-        foreignersLaw.text`Organ перевіряє, зокрема, umowę/${residenceLaw.annex("2", "Załącznik nr 1")}, винагороду, страхування за ${foreignersLaw.article("114", "art. 114")} ust. 1 pkt 1, реальність podmiotu та відповідність фактичної організації праці заявленій моделі.`,
-      ],
-      exceptions: [
-        foreignersLaw.text`Для osoby zwolnionej z obowiązku posiadania zezwolenia na pracę treść decyzji за ${foreignersLaw.article("118", "art. 118")} може не містити всіх умов прив’язки; вирішальним є конкретне rozstrzygnięcie.`,
-      ],
-      consequences: [
-        "Позитивна decyzja надає pobyt на визначений строк і встановлює межі праці; втрата або зміна роботи може активувати повідомлення, зміну дозволу або нову заяву.",
-      ],
-      procedure: [
-        "Заявник подає MOS, роботодавець електронно підписує właściwy załącznik, organ проводить formalne і dowodowe postępowanie та формулює decyzję.",
-      ],
-      foreignersContext: [
-        foreignersLaw.text`Для osoby з UKR у 2026 році доступ до цієї процедури може випливати з ${foreignersLaw.external("art. 45", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy Dz.U. 2026 poz. 203, але status UKR і powiadomienie pozostają окремими питаннями до надання дозволу.`,
-      ],
-    } satisfies LegalNodeGuide,
-    why: foreignersLaw.text`Назва процедури не означає, що кожна decyzja однаково прив’язана до роботодавця. Для особи, звільненої від zezwolenia na pracę, ${foreignersLaw.article("118", "art. 118")} може не вписувати конкретних умов — вирішальне rozstrzygnięcie, а не шаблон.`,
-    checkpoints: [
-      "Чи мета роботи обґрунтовує pobyt понад 3 місяці?",
-      "Чи є страхування та мінімальна місячна винагорода?",
-      "Хто реальний роботодавець і хто фактично керує працею?",
-      "Чи podmiot веде реальну діяльність і має засоби виконувати обов’язки?",
-      "Чи діє exemption від zezwolenia na pracę?",
-      "Що саме записано в rozstrzygnięciu decyzji?",
-    ],
-    steps: [
-      foreignersLaw.text`Розклади ${foreignersLaw.article("114", "art. 114")} на окремі умови й докази.`,
-      "Перевір odmowę wszczęcia до аналізу merits.",
-      "Зістав umowę, Załącznik nr 1 і фактичну організацію праці.",
-      foreignersLaw.text`Оціни ризики ${foreignersLaw.articleRange("117", "117a", { start: "art. 117", end: "117a" })}, зокрема роботу на користь третьої особи.`,
-      "Після decyzji окремо випиши її межі, obowiązki і тригери зміни.",
-    ],
-    documents: [
+    summary:
+      "Pobyt czasowy i praca є дозволом перебувати в Польщі через виконання роботи. У звичайному рішенні зазначено роботодавця й умови праці; для законного звільнення від дозволу на працю діє інша конструкція. Умови надання, межі рішення та обов'язки після зміни роботи потрібно розрізняти.",
+    claims: [
       {
-        kind: "authored-legal-text",
-        plainText: "wniosek MOS",
-        parts: [
+        id: "work-conditions",
+        kind: "statute-text",
+        text: "Звичайний дозвіл поєднує реальну мету роботи, страхування та встановлені умови винагороди й доступності професії. Звільнення від дозволу на працю усуває лише прямо визначені умови.",
+        basis: [
           {
-            text: "wniosek MOS",
-            target: {
-              kind: "evidence-document",
-              documentId: "mos-application",
-            },
+            reference: aliensSourceReference,
+            locator: "Art. 98 ust. 1; art. 114 ust. 1 and 4–4b",
           },
         ],
       },
       {
-        kind: "authored-legal-text",
-        plainText: "Załącznik nr 1",
-        parts: [
+        id: "decision-and-exemption",
+        kind: "statute-text",
+        text: "За виконання умов звільнення від дозволу на працю в рішенні замість переліку умов прив'язки зазначають право працювати на умовах норми про звільнення.",
+        basis: [
+          { reference: aliensSourceReference, locator: "Art. 118 ust. 1–4" },
+        ],
+      },
+      {
+        id: "change-application",
+        kind: "statute-text",
+        text: "Зміна роботодавця або встановлених умов може вимагати зміни чинного дозволу. Заява про зміну подається на папері; строк чинності дозволу не подовжується.",
+        basis: [
+          { reference: aliensSourceReference, locator: "Art. 119–120a" },
           {
-            text: "Załącznik nr 1",
-            target: {
-              kind: "evidence-document",
-              documentId: "employment-annex-1",
-            },
+            reference: { kind: "external", url: mosUrl },
+            locator: "Commencement on 27 April 2026",
           },
         ],
       },
       {
-        kind: "authored-legal-text",
-        plainText: "umowa o pracę",
-        parts: [
-          {
-            text: "umowa o pracę",
-            target: {
-              kind: "evidence-document",
-              documentId: "employment-contract",
-            },
-          },
-        ],
-      },
-      {
-        kind: "authored-legal-text",
-        plainText: "паспорт / фото",
-        parts: [
-          {
-            text: "паспорт",
-            target: { kind: "evidence-document", documentId: "passport" },
-          },
-          { text: " / " },
-          {
-            text: "фото",
-            target: { kind: "evidence-document", documentId: "digital-photo" },
-          },
-        ],
-      },
-      {
-        kind: "authored-legal-text",
-        plainText: "страхування / ZUS за потреби",
-        parts: [
-          {
-            text: "страхування",
-            target: {
-              kind: "evidence-document",
-              documentId: "health-insurance",
-            },
-          },
-          { text: " / " },
-          {
-            text: "ZUS за потреби",
-            target: {
-              kind: "evidence-document",
-              documentId: "zus-confirmation",
-            },
-          },
-        ],
-      },
-      {
-        kind: "authored-legal-text",
-        plainText: "opłata skarbowa / opłata za kartę",
-        parts: [
-          {
-            text: "opłata skarbowa",
-            target: {
-              kind: "evidence-document",
-              documentId: "stamp-duty-proof",
-            },
-          },
-          { text: " / " },
-          {
-            text: "opłata za kartę",
-            target: {
-              kind: "evidence-document",
-              documentId: "residence-card-fee-proof",
-            },
-          },
-        ],
-      },
-      {
-        kind: "authored-legal-text",
-        plainText:
-          "докази реальної діяльності або представництва — якщо це спірна умова",
-        parts: [
-          {
-            text: "докази реальної діяльності або представництва — якщо це спірна умова",
-            target: {
-              kind: "evidence-document",
-              documentId: "work-organisation-evidence",
-            },
-          },
-        ],
-      },
-      {
-        kind: "authored-legal-text",
-        plainText: "UPO / індекс akt sprawy",
-        parts: [
-          {
-            text: "UPO",
-            target: { kind: "evidence-document", documentId: "upo" },
-          },
-          { text: " / " },
-          {
-            text: "індекс akt sprawy",
-            target: {
-              kind: "evidence-document",
-              documentId: "case-file-index",
-            },
-          },
-        ],
+        id: "job-loss-obligations",
+        kind: "statute-text",
+        text: "Для втрати роботи в зазначеного в дозволі роботодавця закон розділяє повідомлення іноземця протягом 15 робочих днів і роботодавця протягом 15 днів. Захист від окремих підстав відкликання не є дозволом працювати в іншій компанії.",
+        basis: [{ reference: aliensSourceReference, locator: "Art. 121–123" }],
       },
     ],
-  },
-})
+    relationships: [],
+    review: {
+      reviewStatus: "reviewed",
+      language: "uk",
+      legalStateDate: "2026-09-10",
+      verifiedAt: "2026-09-10",
+    },
+    body: {
+      title: "Pobyt czasowy i praca",
+      polish: law.text`${law.articleRange("114", "126", { start: "art. 114", end: "126" })}`,
+      sources: [
+        {
+          label: "Ustawa o cudzoziemcach. Умови, рішення та зміна роботи",
+          url: aliensUrl,
+          note: law.text`Перевірено 10.09.2026 ${law.articleRange("114", "123", { start: "art. 114", end: "123" })}, спеціальну корпоративну підставу ${law.article("126")} та зв'язок із загальними правилами подання.`,
+        },
+        {
+          label: "Закон про працю іноземців. Продовження дозволеної роботи",
+          url: workUrl,
+          note: workLaw.text`${workLaw.article("21")} регулює продовження визначеної роботи під час розгляду наступної заяви. Перевірено 10.09.2026; це не загальне право змінювати роботодавця.`,
+        },
+        {
+          label: "Мінімальна винагорода на 2026 рік. Dz.U. 2025 poz. 1242",
+          url: minimumUrl,
+          note: "З 01.01.2026 місячний мінімум становить 4 806 zł brutto. Сума стосується 2026 року.",
+        },
+        {
+          label: "Початок застосування MOS. M.P. 2026 poz. 370",
+          url: mosUrl,
+          note: "Дата 27.04.2026 визначає застосування нових правил. Електронна нова заява та паперова заява про зміну є різними процедурами.",
+        },
+        {
+          label: "Спеціальні правила для UKR. Dz.U. 2026 poz. 203",
+          url: ukrUrl,
+          note: law.text`${law.external("Art. 45", ukrUrl)} відкриває визначені звичайні категорії та встановлює винятки щодо особистих дій. Перевірено 10.09.2026.`,
+        },
+      ],
+      guide: defineLegalMapArticle({
+        kind: "article",
+        introduction: [
+          law.text`Zezwolenie na pobyt czasowy i pracę за ${law.article("114")} надають іноземцю, для якого робота є причиною наступного періоду перебування. Це один дозвіл із наслідками для перебування й праці, але його наявність не означає право працювати в будь-якій компанії на будь-яких умовах.`,
+          "Заявником є іноземець. Роботодавець підтверджує запропоновану роботу, проте не стає через це стороною його справи про перебування. Договір, додаток роботодавця й рішення виконують різні ролі: домовленість сторін, докази для органу та визначення наданого права.",
+        ],
+        sections: [
+          {
+            id: "available-procedure",
+            title: "Чому трудового договору недостатньо для початку справи",
+            paragraphs: [
+              law.text`Для звичайної підстави мета роботи має виправдовувати перебування понад три місяці за ${law.article("98")}. Перед оцінкою зарплати діють також ${law.article("99")} і ${law.article("116")}: вони визначають перешкоди для початку процедури. Законний в'їзд не відкриває всі види заяв. Значення можуть мати конкретна візова мета, документ іншої держави або відрядження працівника іноземним роботодавцем.`,
+              law.text`Окремої уваги потребує корпоративна роль. Член zarządu юридичної особи без власних часток, охоплений ${law.article("126")}, має спеціальну конструкцію, яка відсилає до економічних умов підприємства. Звичайний перелік умов працівника за ${law.article("114")} не можна механічно використати замість неї.`,
+              law.text`Для охоплених осіб із тимчасовим захистом і UKR ${law.external("art. 45 закону 2026/203", ukrUrl)} дозволяє цей вид звичайної заяви й змінює правила отримання відбитків. Він не означає, що будь-який договір уже відповідає умовам дозволу. Право працювати до рішення залишається окремим питанням.`,
+            ],
+          },
+          {
+            id: "pay-insurance-evidence",
+            title: "Страхування й дві різні перевірки винагороди",
+            paragraphs: [
+              law.text`${law.article("114", "Art. 114 ust. 1")} вимагає страхування, визначеної оплати та виконання умови щодо місцевого переліку професій, якщо вона застосовується. Місцевий перелік є встановленим правовим обмеженням, а не оцінкою менеджера, чи складно знайти працівника. Норму читають разом із винятками й фактично чинним переліком для місця роботи.`,
+              law.text`Винагороду порівнюють із оплатою працівників, які виконують порівнювану роботу за той самий робочий час. Окремо перевіряють повний місячний мінімум: у 2026 році ${law.external("4 806 zł brutto", minimumUrl)} незалежно від частки ставки й виду договору. Половина мінімуму за пів ставки не виконує саме цю умову дозволу. За ${law.article("114", "art. 114 ust. 4b")} суми кількох роботодавців можуть складатися, якщо заявлена мета охоплює роботу в кожного з них і є відповідні додатки.`,
+              documents.text`${documents.document("employment-annex-1", "Załącznik nr 1")} та ${documents.document("employment-contract", "трудовий договір (umowa o pracę)")} мають описувати узгоджені умови. Якщо додаток називає 6 000 zł, а чинний договір 5 500 zł, недостатньо вибрати більшу суму. Потрібні актуальні умови, пояснення дати їх зміни та належне підтвердження. Навіть достатня сума сама по собі не доводить страхування.`,
+              documents.text`За ${law.article("114", "art. 114 ust. 4a")} можна врахувати страхування, яке виникне через заявлену роботу. ${documents.document("health-insurance", "Страхова підстава")} має пояснювати покриття, а не лише містити назву ZUS у переліку файлів. За виконання законного звільнення від дозволу на працю ${law.article("114", "art. 114 ust. 4")} виключає умови місцевого переліку та порівнюваної оплати. Страхування й повний місячний мінімум залишаються.`,
+              law.text`Для регульованої професії ${law.article("115")} зберігає окремі вимоги до права її виконувати. Переклад диплома не замінює визнання або професійного допуску, якщо вони потрібні.`,
+            ],
+          },
+          {
+            id: "real-employer",
+            title: "Яку роботу підтверджують матеріали роботодавця",
+            paragraphs: [
+              law.text`${law.article("117a")} охоплює реальність діяльності, засоби на виконання зобов'язань та ситуацію, коли суб'єкт створено або він діє переважно для полегшення в'їзду іноземців. Тому запис у KRS не завершує оцінку: компанія може існувати юридично, але не мати роботи або коштів на заявлене працевлаштування.`,
+              documents.text`${documents.document("work-organisation-evidence", "Матеріали про організацію роботи")} пояснюють, хто дає завдання, керує працівниками, відповідає за результат і фактично користується працею. Назва договору між компаніями не замінює цих фактів. Якщо залучено клієнта, самі рахунки за послуги ще не пояснюють, чи виконавець організовує власну послугу, чи передає працівників у розпорядження іншої особи.`,
+              law.text`${law.article("117a", "Art. 117a pkt 4")} прямо передбачає відмову, коли працевлаштування відбувалося б через суб'єкта, який не є законно діючою agencją pracy tymczasowej, а робота виконувалася б на користь третьої особи. Висновок потребує встановлення саме цієї організації праці. Слово outsourcing у договорі не усуває норми й не доводить порушення без аналізу фактичних ролей.`,
+              law.text`Окремі перешкоди стосуються визначених порушень, заборгованостей та інших обставин за ${law.article("117")} і загальних підстав ${law.article("100")}. Не кожна довідка з позначкою про борг означає однаковий результат: законні відстрочення й інші прямо передбачені винятки мають значення.`,
+            ],
+          },
+          {
+            id: "filing-and-decision",
+            title: "Від заяви до меж наданого дозволу",
+            paragraphs: [
+              documents.text`Нову заяву подають через ${documents.document("mos-application", "MOS")}. Належний підпис додатка роботодавця є окремим від підпису заявника; ${documents.document("upo", "UPO")} підтверджує отримання заяви. Формально правильне подання не є позитивним рішенням і не усуває недоведеної умови оплати чи діяльності.`,
+              law.text`У звичайній ${law.article("118", "decyzji за art. 118 ust. 1–2")} зазначають строк, роботодавця, посаду або вид роботи, найнижчу винагороду, робочий час і вид договору. Для тимчасового працівника зазначають також pracodawcę użytkownika. За кількох роботодавців умови визначають окремо для кожного.`,
+              law.text`Якщо виконано умови звільнення від дозволу на працю, ${law.article("118", "art. 118 ust. 3–4")} установлює іншу форму рішення: замість цих умов прив'язки воно містить інформацію про право працювати на умовах конкретного звільнення. Це обов'язкова конструкція для охопленої особи, а не довільний вибір органу. Умови самого звільнення мають надалі існувати.`,
+              documents.text`Тому висновок про нову вакансію починається з повної ${documents.document("administrative-decision", "decyzji")}, а не лише з ${documents.document("residence-card", "карти pobytu")}. Напис про доступ до ринку праці на карті не показує всіх меж рішення.`,
+            ],
+          },
+          {
+            id: "changes",
+            title: "Коли потрібне повідомлення, зміна дозволу або нова заява",
+            paragraphs: [
+              law.text`${law.article("119")} перелічує зміни без нового чи зміненого дозволу: зокрема зміну назви посади без зміни обов'язків, збільшення робочого часу з пропорційним збільшенням оплати та заміну цивільного договору на umowę o pracę. За охоплену зміну роботодавець письмово повідомляє wojewodę протягом 15 робочих днів. Відсутність процедури зміни дозволу не означає відсутності цього обов'язку.`,
+              law.text`Для іншого роботодавця, іншого pracodawcy użytkownika або інших зазначених умов ${law.article("120")} передбачає зміну чинного дозволу за заявою іноземця. ${law.article("120a")} вимагає паперової заяви з додатком роботодавця й доказами. Це відрізняється від нової заяви через MOS. Зміна не продовжує чинність дозволу, тому для наступного періоду перебування потрібна відповідна нова заява.`,
+              workLaw.text`Подання заяви про зміну не робить нову роботу дозволеною саме по собі. Якщо робота починається до нового рішення, має існувати інша достатня підстава. ${workLaw.article("21")} захищає визначене продовження попередньої дозволеної роботи за своєчасної формально належної заяви, але не дозволяє вільно перейти до іншої компанії.`,
+            ],
+            example: {
+              title: "Перейменована посада та пропозиція іншої компанії",
+              facts: [
+                "Умовний приклад. Чинне звичайне рішення називає компанію A, посаду magazynier, повний робочий час, umowę o pracę та найнижчу винагороду 6 000 zł brutto. Дозвіл діє до 31.08.2027. Звільнення від дозволу на працю немає. Порівнюємо дві окремі запропоновані зміни, які ще не виконано.",
+              ],
+              sample: {
+                kind: "table",
+                title: "Заповнений запис про дві пропозиції",
+                note: "Вигаданий внутрішній запис, не текст рішення чи форма заяви.",
+                columns: [
+                  "Пропозиція",
+                  "Що фактично змінюється",
+                  "Правовий висновок",
+                ],
+                rows: [
+                  {
+                    id: "rename",
+                    cells: [
+                      "Компанія A називає посаду operator magazynu",
+                      "Той самий роботодавець, обов'язки, час і оплата; змінюється лише назва",
+                      law.text`${law.article("119", "Art. 119 ust. 1 pkt 4")}: зміна дозволу не потрібна; роботодавець має повідомити про подію.`,
+                    ],
+                  },
+                  {
+                    id: "new-employer",
+                    cells: [
+                      "Компанія B пропонує таку саму складську роботу",
+                      "Інша юридична особа, навіть за тих самих обов'язків і зарплати",
+                      law.text`${law.article("120", "Art. 120 ust. 1 pkt 1")}: це підстава просити зміну роботодавця в дозволі, а не просте перейменування посади.`,
+                    ],
+                  },
+                  {
+                    id: "validity",
+                    cells: [
+                      "Компанія B хоче наймати до кінця 2028 року",
+                      "Планована робота виходить за чинність дозволу",
+                      "Процедура зміни не додає часу після 31.08.2027. Наступний період потребує окремої підстави перебування.",
+                    ],
+                  },
+                ],
+              },
+              reasoning: [
+                "Для пропозиції A документ із новою назвою зіставлено зі старим описом обов'язків: зміст роботи справді той самий. Для пропозиції B перевірка реєстрових даних показала іншу юридичну особу. Однакова посада не робить її роботодавцем, указаним у чинному рішенні.",
+                "У прикладі немає іншої підстави праці в B. Тому висновок про необхідність зміни дозволу не є дозволом почати роботу до завершення відповідної процедури. Також окремо залишається оформлення перебування після серпня 2027 року.",
+              ],
+              conclusion:
+                "Пропозиція A потребує повідомлення про фактичне перейменування. Для B потрібна зміна чинного дозволу або інша належна підстава праці; сам новий договір не розширює рішення, видане для A.",
+            },
+          },
+          {
+            id: "job-loss",
+            title: "Втрата роботи: два повідомлення й обмежений захист дозволу",
+            paragraphs: [
+              law.text`За ${law.article("121", "art. 121 ust. 1–3")} іноземець повідомляє про втрату роботи в будь-якого роботодавця, названого в дозволі, протягом 15 робочих днів. Обов'язок вважається виконаним і за своєчасної заяви про зміну, прямо визначеної цією нормою. Названий у дозволі роботодавець має свій обов'язок за ${law.article("121", "art. 121 ust. 4")}: 15 календарних днів від втрати роботи. Повідомлення однієї сторони не замінює автоматично повідомлення іншої.`,
+              law.text`${law.article("123", "Art. 123 ust. 1–2")} за виконаного обов'язку повідомлення або незалежної від іноземця причини його недоставлення протягом 30 днів, які рахують від дня втрати роботи, захищає від визначених підстав відкликання, пов'язаних із припиненням мети чи умов. Для втрати роботи в усіх зазначених роботодавців цей захист застосовується не більше одного разу протягом чинності дозволу. Це не продовження строку дозволу й не дозвіл на будь-яку нову роботу. Для спеціального дозволу через професію, бажану для польської економіки, ${law.article("123", "art. 123 ust. 3")} має інші умови; їх не переносять на звичайний випадок.`,
+              law.text`Припинення роботи не означає автоматичне скасування рішення того самого дня. Водночас після спливу захисного періоду не можна вважати питання вирішеним лише через відсутність листа органу. Потрібно розрізняти строк чинності, можливі підстави відкликання за ${law.article("101")} і ${law.article("122")}, повідомлення та нову підставу праці.`,
+            ],
+          },
+        ],
+      }),
+    },
+  })
 
 export default stayWorkTopic
-
 export const stayWorkMapNode: LegalNode = {
   id: "stay-work",
   title: stayWorkTopic.body.title,
   polish: stayWorkTopic.body.polish,
   summary: stayWorkTopic.summary,
-  why: stayWorkTopic.body.why,
-  checkpoints: [...(stayWorkTopic.body.checkpoints ?? [])],
-  steps: [...(stayWorkTopic.body.steps ?? [])],
-  documents: [...(stayWorkTopic.body.documents ?? [])],
   sources: [...stayWorkTopic.body.sources],
 }

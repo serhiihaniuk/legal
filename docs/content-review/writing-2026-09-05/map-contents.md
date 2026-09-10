@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 56: kept the three residence introductions with distinct roles. Goal-of-stay explains purpose and evidence; temporary-common explains the procedure and its effects; temporary-goals compares permit families before the six detailed branches. Stable routes and chapter placement remain. Next are the detailed work, Blue Card, business and permanent/resident introductions. The findings below preserve the original pre-migration audit; completed changes are recorded in numbered batches.
+Latest implementation note, batch 57: the work, Blue Card and business branches now contain distinct authored articles with completed examples. Their stable routes and chapter placement remain. Next are the permanent/resident comparison and detailed articles. The findings below preserve the original pre-migration audit; completed changes are recorded in numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 

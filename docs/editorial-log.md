@@ -531,3 +531,9 @@ Official sources checked on 10.09.2026; scoped dates and global baseline remain 
 Rewrote the three residence introductions as distinct articles with completed examples and filled comparison tables. Corrected the universal purpose-ranking claim, preserved filing and UKR exceptions, and separated Polish-spouse from foreign-family requirements. An independent draft review also corrected a document target.
 
 Official sources checked on 10.09.2026; global baseline unchanged. Full verification, reference previews and desktop/mobile browser checks passed. Restarted stale development instances after a separate cold-load audit found mismatched stylesheet URLs; desktop/mobile Chromium checks then showed no hydration errors or text movement. Evidence: docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md. Next: detailed work, Blue Card, business and permanent/resident introductions. Whole-project independent legal acceptance remains open.
+
+### 2026-09-10: work, Blue Card and business residence
+
+Rewrote the three detailed map branches with subject-specific explanations and completed tables. Work now distinguishes permit conditions, employer changes, paper amendments and two job-loss notices. Blue Card separates qualifications, guaranteed pay, transitional decisions and mobility. Business separates personal income, company results and evidence of future prospects. Corrected the named-employer qualifier in the shared work-case deadline entry.
+
+Official sources checked on 10.09.2026; global baseline unchanged. Subagent source/draft reviews and root verification caught the notice starting event and an overly broad contract-link label. Full verification, reference previews and desktop/mobile checks passed. Evidence: docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md. Next: permanent/resident comparison and detailed articles. Whole-project independent legal acceptance remains open.
