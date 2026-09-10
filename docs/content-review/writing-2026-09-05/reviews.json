@@ -196,8 +196,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/income-evidence.ts",
-    "contentHash": "24d74ee880e14a01f6335dca13e0f3925ca8bd536578f685064aebba52946e3e",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+    "contentHash": "8bdd45d3c687df7c9988bea2fceecdf08737e615b6c1506d61ad751da0470acf",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/housing-evidence.ts",
@@ -416,23 +416,23 @@
   },
   {
     "path": "app/data/case-guides/editorial/routes/student.ts",
-    "contentHash": "ee436a8613035957012d6035a83d99f8408ee26000756af5e3e0a9f346b15312",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+    "contentHash": "927d7755015d07b2256ec2a56bf1348cbd905de6d5d8512ef171a283114b9349",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/student/documents.ts",
-    "contentHash": "05a6802e174b7c7969fd44858187355652f3fcddd4e36d3a735cebd8d84dfe79",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+    "contentHash": "f24e4f6c81f7adf804f0ba5f96d51ec24a418701b36a45f5ea044b1ceae65e46",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/student/stages.ts",
-    "contentHash": "92983c07dd0514dc70660b7fe2fcad0b46a0c7c6ceddd4737c72c396880d401d",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+    "contentHash": "05a1ba0d629b7a2494627afc1e49768953d17d67fca5f36a863bff67244ac29b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/student/reference.ts",
-    "contentHash": "59aa2257844fd5de161ea43cd2ae7c4d6506fea4a995f17f67a6c4d964c5cb75",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+    "contentHash": "219a25bf063f86c6b48dd4306bb1e48c71ace3f3470c7ed715d6e5a1586ed5f4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
@@ -933,5 +933,10 @@
     "path": "app/data/document-library/editorial/guides/professional-experience-confirmation.ts",
     "contentHash": "392df04bd5d8f49f95933dff78661c8892b9dbeef9c202dd70478c3e8afcce31",
     "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/bank-funds-certificate.ts",
+    "contentHash": "b79c481b86e5c3c0e8c2967a53fc01d1b8eac5a954183182f2a647e50e824306",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   }
 ]

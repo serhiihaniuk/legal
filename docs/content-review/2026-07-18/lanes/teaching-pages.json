@@ -226,7 +226,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "ee436a8613035957012d6035a83d99f8408ee26000756af5e3e0a9f346b15312",
+      "contentHash": "927d7755015d07b2256ec2a56bf1348cbd905de6d5d8512ef171a283114b9349",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -378,6 +378,36 @@
       "officialSourceUrls": [],
       "contentHash": "6f2300343602bbe5596bc8bd2e31afcc8fdfd49266399bac47df3546971f1cf1",
       "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:bank-funds-certificate",
+      "path": "app/data/document-library/editorial/guides/bank-funds-certificate.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "bank-funds-certificate",
+      "contentId": "bank-funds-certificate",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b79c481b86e5c3c0e8c2967a53fc01d1b8eac5a954183182f2a647e50e824306",
+      "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
         "reviewedAt": null,
@@ -1216,7 +1246,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "24d74ee880e14a01f6335dca13e0f3925ca8bd536578f685064aebba52946e3e",
+      "contentHash": "8bdd45d3c687df7c9988bea2fceecdf08737e615b6c1506d61ad751da0470acf",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,

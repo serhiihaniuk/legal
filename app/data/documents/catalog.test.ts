@@ -31,7 +31,7 @@ describe("document context projection", () => {
     }
   })
 
-  it("connects travel history to every route and resolves both halves of combined evidence", () => {
+  it("connects travel history to every route and resolves the student's selected evidence", () => {
     expect(
       documentById
         .get("stay-history")!
@@ -40,7 +40,7 @@ describe("document context projection", () => {
     ).toEqual(caseGuideRoutes.map((route) => route.id).sort())
     expect(
       documentById
-        .get("income-evidence")!
+        .get("bank-funds-certificate")!
         .caseContexts.some((context) => context.routeId === "student")
     ).toBe(true)
     expect(

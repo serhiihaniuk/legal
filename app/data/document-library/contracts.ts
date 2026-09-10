@@ -26,6 +26,7 @@ export type EvidenceDocumentId =
   | "employment-income-certificate"
   | "tax-income-certificate"
   | "bank-statement"
+  | "bank-funds-certificate"
   | "payroll-statement"
   | "zus-health-registration"
   | "zus-rca"
@@ -191,6 +192,7 @@ export const evidenceDocumentIds = [
   "employment-income-certificate",
   "tax-income-certificate",
   "bank-statement",
+  "bank-funds-certificate",
   "payroll-statement",
   "zus-health-registration",
   "zus-rca",

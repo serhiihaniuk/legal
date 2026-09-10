@@ -224,6 +224,35 @@ describe("case guide continuity", () => {
     ).toBe("/documents/professional-experience-confirmation")
   })
 
+  it("opens the student's bank certificate from the visible filing list", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/cases/student"]}>
+        <CaseStudyContent
+          route={getCaseGuideRoute("student")}
+          updatedAt="2026-07-18"
+        />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    expect(
+      screen.getAllByRole("heading", { name: "Документи на цьому етапі" })
+    ).toHaveLength(6)
+    const filing = container.querySelector<HTMLElement>("#case-stage-filing")!
+    expect(
+      within(filing).queryByRole("button", { name: /^Документи/ })
+    ).toBeNull()
+    expect(within(filing).queryByRole("checkbox")).toBeNull()
+    const certificate = filing.querySelector<HTMLAnchorElement>(
+      'a[href="/documents/bank-funds-certificate"]'
+    )!
+    expect(certificate).toBeTruthy()
+    expect(certificate.closest("li")!.textContent).toContain("12.08.2026")
+    fireEvent.click(certificate)
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/bank-funds-certificate")
+  })
+
   it("links register titles to document guides while retaining provision links", () => {
     render(
       <MemoryRouter>

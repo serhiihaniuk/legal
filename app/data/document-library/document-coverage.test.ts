@@ -33,7 +33,9 @@ describe("document coverage across learning modules", () => {
     for (const route of authoredCaseGuideRoutes) {
       for (const stage of route.stages) {
         for (const entry of stage.documents) {
-          if (!["long-term-eu", "work", "blue-card"].includes(route.id))
+          if (
+            !["long-term-eu", "work", "blue-card", "student"].includes(route.id)
+          )
             continue
           expect(isCaseGuideDocumentUse(entry), stage.id).toBe(true)
           if (!isCaseGuideDocumentUse(entry)) continue
@@ -186,6 +188,55 @@ describe("document coverage across learning modules", () => {
       documentById
         .get("professional-experience-confirmation")
         ?.caseContexts.filter((context) => context.routeId === "blue-card")
+    ).toHaveLength(1)
+  })
+
+  it("keeps the student's omitted receipt in the response and reuses the filed funds certificate", () => {
+    const route = authoredCaseGuideRoutes.find(
+      (route) => route.id === "student"
+    )!
+    const submitted = (stageId: string) =>
+      route.stages
+        .find((stage) => stage.id === stageId)!
+        .documents.filter(isCaseGuideDocumentUse)
+        .filter((use) => use.action === "submit")
+        .map((use) => use.document)
+    const filing = submitted("filing")
+    const response = submitted("procedure")
+    const funds = route.documents.find((entry) =>
+      ids(entry.item).includes("bank-funds-certificate")
+    )!
+    expect(funds).toBeDefined()
+    expect(filing).toContain(funds)
+    expect(response).not.toContain(funds)
+    const receipts = route.documents.filter((entry) =>
+      ids(entry.item).includes("tuition-payment")
+    )
+    const first = receipts.find((entry) =>
+      legalTextPlainText(entry.item).includes("05.08")
+    )!
+    const second = receipts.find((entry) =>
+      legalTextPlainText(entry.item).includes("10.08")
+    )!
+    expect(first).toBeDefined()
+    expect(second).toBeDefined()
+    expect(filing).toContain(first)
+    expect(filing).not.toContain(second)
+    expect(response).toContain(second)
+    expect(response).not.toContain(first)
+    for (const packet of [filing, response]) {
+      const targets = packet.flatMap((entry) => ids(entry.item))
+      expect(targets).not.toContain("study-progress")
+      expect(targets).not.toContain("income-evidence")
+      expect(targets).not.toContain("bank-statement")
+    }
+    expect(route.documents.flatMap((entry) => ids(entry.item))).toContain(
+      "visa"
+    )
+    expect(
+      documentById
+        .get("bank-funds-certificate")
+        ?.caseContexts.filter((context) => context.routeId === "student")
     ).toHaveLength(1)
   })
 
@@ -414,6 +465,13 @@ describe("document coverage across learning modules", () => {
         for (const document of stage.documents) {
           const id = ids(document.item)[0]
           expect(route.documents).toContain(document)
+          if (!id) {
+            expect(routeId).toBe("student")
+            expect(legalTextPlainText(document.item)).toBe(
+              "Розрахунок коштів на 01.10.2026–31.12.2027"
+            )
+            continue
+          }
           expect(
             documentById
               .get(id)
@@ -429,7 +487,9 @@ describe("document coverage across learning modules", () => {
         expect.arrayContaining(
           ["work", "blue-card"].includes(routeId)
             ? ["administrative-decision", "residence-card"]
-            : ["status-documents"]
+            : routeId === "student"
+              ? ["visa"]
+              : ["status-documents"]
         )
       )
       expect(at("filing")).toEqual(
@@ -477,7 +537,11 @@ describe("document coverage across learning modules", () => {
             : routeId === "permanent"
               ? []
               : routeId === "student"
-                ? ["income-evidence", "housing-evidence", "tuition-payment"]
+                ? [
+                    "bank-funds-certificate",
+                    "housing-evidence",
+                    "tuition-payment",
+                  ]
                 : routeId === "business"
                   ? [
                       "business-evidence",
@@ -556,7 +620,6 @@ describe("document coverage across learning modules", () => {
         for (const id of [
           "study-confirmation",
           "study-progress",
-          "tuition-payment",
           "temporary-residence-notification",
         ] as const)
           expect(
@@ -754,6 +817,13 @@ describe("document coverage across learning modules", () => {
         if (document.kind === "action") {
           expect(document.guidance).toBeDefined()
           expect(documentById.has(document.guidance!)).toBe(true)
+        } else if (
+          route.id === "student" &&
+          legalTextPlainText(document.item) ===
+            "Розрахунок коштів на 01.10.2026–31.12.2027"
+        ) {
+          expect(document.owner).toBeTruthy()
+          expect(document.proves).toBeTruthy()
         } else
           expect(
             ids(document.item).length,

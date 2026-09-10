@@ -4,6 +4,7 @@ import zusInsuranceHistoryTopic from "./editorial/guides/zus-insurance-history"
 import employmentIncomeCertificateTopic from "./editorial/guides/employment-income-certificate"
 import taxIncomeCertificateTopic from "./editorial/guides/tax-income-certificate"
 import bankStatementTopic from "./editorial/guides/bank-statement"
+import bankFundsCertificateTopic from "./editorial/guides/bank-funds-certificate"
 import zusNoArrearsDocumentTopic from "./editorial/guides/zus-no-arrears"
 import zusHealthRegistrationDocumentTopic from "./editorial/guides/zus-health-registration"
 import zusRcaDocumentTopic from "./editorial/guides/zus-rca"
@@ -150,6 +151,7 @@ export const documentGuides: readonly DocumentGuide[] =
     employmentIncomeCertificateTopic.body,
     taxIncomeCertificateTopic.body,
     bankStatementTopic.body,
+    bankFundsCertificateTopic.body,
     payrollStatementTopic.body,
     zusNoArrearsDocumentTopic.body,
     zusHealthRegistrationDocumentTopic.body,
