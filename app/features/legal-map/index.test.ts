@@ -26,9 +26,11 @@ describe("legal-map public API", () => {
       href: "#node-regulation",
       label: "Правова основа",
     })
-    expect(toc.some((item) => item.href === "#node-materials")).toBe(
-      Boolean(node.documents?.length || node.checkpoints?.length)
-    )
+    expect(toc).toContainEqual({
+      href: "#node-section-proof-and-merits",
+      label: "UPO, довідка та умови дозволу відповідають на різні питання",
+    })
+    expect(toc.some((item) => item.href === "#node-materials")).toBe(false)
   })
 
   it("derives overview navigation from the journey registry", () => {

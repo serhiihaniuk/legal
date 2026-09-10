@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 157,
+    "reviewed": 158,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11804,9 +11804,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/pending-stay.ts",
       "family": "map-topic",
-      "contentHash": "aa2d499f357032726815d5016df253e2e05bbf023d055ae48c3869035eb47ee4",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "c67983c533216e9db139a625ca25a46ba905ca37880d09f5ef383303f27262cc",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/51-pending-stay.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/permanent-resident.ts",

@@ -495,3 +495,9 @@ Verified the foreigners act, Schengen Borders Code, certificate form, commenceme
 Rewrote visa and visa-free with explanations of territory, validity, days, entries, nationality-specific eligibility and the rolling 90/180 limit. Added completed comparisons for a used single entry and a 90-day trip, including the first excluded day. Corrected the universal biometric-passport requirement.
 
 Checked scoped official EU and Polish sources on 10.09.2026; the global baseline is unchanged. Full verification, reference previews, calendar arithmetic, desktop/mobile rendering, keyboard table scrolling and section anchors passed. Writing inventory and ledgers were regenerated. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/50-visas-and-visa-free.md. Next: pending-stay and remaining current-status topics.
+
+### 2026-09-10: residence during pending proceedings
+
+Rewrote pending-stay with explanations of timely filing, formal correction, UPO, certificates, older proceedings, administrative finality, suspension and departure qualifications. Added a completed six-event timeline through an admissible timely appeal. Corrected the source of the certificate and resident-procedure changes.
+
+Scoped official sources checked on 10.09.2026; global baseline unchanged. Updated two tests that assumed this page still used the old template. Focused and full verification, reference previews, desktop/mobile layout, table keyboard scrolling, section anchor and article 222a navigation passed. Writing inventory and ledgers regenerated. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/51-pending-stay.md. Next: status UKR and its connections to ordinary residence routes.

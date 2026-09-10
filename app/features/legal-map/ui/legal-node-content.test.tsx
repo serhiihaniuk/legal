@@ -115,22 +115,31 @@ describe("map article contents", () => {
   })
 
   it("preserves not-yet-migrated article content during the rewrite", () => {
-    const node = nodeById.get("pending-stay")
-    if (!node) throw new Error("Missing pending-stay fixture")
-    const { container } = render(
-      <MemoryRouter>
-        <LegalNodeContent
-          node={node}
-          onNodeSelect={() => {}}
-          onOverviewSelect={() => {}}
-        />
-      </MemoryRouter>
-    )
-    expect(container.querySelector("#node-model")?.textContent).toContain(
-      "Що регулює"
-    )
-    expect(container.querySelector("#node-workflow")).not.toBeNull()
-    for (const item of legalMapNodeToc(node))
-      expect(container.querySelector(item.href)).not.toBeNull()
+    for (const node of allNodes) {
+      const guide = resolveMapTopicPublication(node.id)?.guide
+      if (!guide || guide.kind === "article") continue
+      const { container, unmount } = render(
+        <MemoryRouter>
+          <LegalNodeContent
+            node={node}
+            onNodeSelect={() => {}}
+            onOverviewSelect={() => {}}
+          />
+        </MemoryRouter>
+      )
+      for (const paragraphs of Object.values(guide))
+        if (Array.isArray(paragraphs))
+          for (const text of paragraphs)
+            expect(container.textContent, node.id).toContain(
+              legalTextPlainText(text)
+            )
+      expect(container.querySelector("#node-model")?.textContent).toContain(
+        "Що регулює"
+      )
+      expect(container.querySelector("#node-workflow")).not.toBeNull()
+      for (const item of legalMapNodeToc(node))
+        expect(container.querySelector(item.href)).not.toBeNull()
+      unmount()
+    }
   })
 })

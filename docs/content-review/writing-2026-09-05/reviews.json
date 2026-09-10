@@ -798,5 +798,10 @@
     "path": "app/data/legal-map/editorial/topics/visa-free.ts",
     "contentHash": "3454e120c61789d8eab12f47bb9dba6d1af95f93f15f6cfc64e30ca3abcc54d7",
     "evidence": "docs/content-review/writing-2026-09-05/batches/50-visas-and-visa-free.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/pending-stay.ts",
+    "contentHash": "c67983c533216e9db139a625ca25a46ba905ca37880d09f5ef383303f27262cc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/51-pending-stay.md"
   }
 ]
