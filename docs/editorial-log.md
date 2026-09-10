@@ -477,3 +477,9 @@ Full verification, reference previews and desktop/mobile Chromium checks passed.
 Rewrote source-check with definitions of official and editorial consolidated texts, publication and commencement dates, and transition rules. Added a completed six-row edition-selection card using the KPA transition for a case opened before 13.07.2025. Verified the official KPA publication, amending act, promulgation act and RCL explanation on 10.09.2026. The global baseline is unchanged.
 
 Full verification, reference previews and desktop/mobile Chromium checks passed. All five orientation topics now use authored articles; writing acceptance is 153 of 1,805 files. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/47-source-check.md. Next: person-status and the current-stay topics.
+
+### 2026-09-10: identity and applicable residence rules
+
+Rewrote person-status with separate explanations of identity, citizenship, residence status and evidence. Added a completed five-row record showing why the Ukrainian spouse of a German worker in Poland falls within the EU-family analysis. Distinguished missing proof from proof of unlawful stay and preserved the separate scope of entry, work and UKR topics.
+
+Verified the foreigners act, the new EU-family consolidation published as Dz.U. 2026 poz. 1065 and the scoped official guidance on 10.09.2026. The global baseline is unchanged. Full verification, reference previews and desktop/mobile Chromium checks passed. Writing acceptance is 154 of 1,805 files; independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/48-person-status.md. Next: entry-current-basis.

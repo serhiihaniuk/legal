@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 153,
+    "reviewed": 154,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11825,9 +11825,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/person-status.ts",
       "family": "map-topic",
-      "contentHash": "fd5e486d9d52728beba1344a8cbe6b672cbe8492dc5a1329dc632db6b5862996",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "b2fd0e5f696f1f0cf4f3ed58c76e31c945b418b3f26319d0cd781232010e66ae",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/48-person-status.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/principle-legality.ts",

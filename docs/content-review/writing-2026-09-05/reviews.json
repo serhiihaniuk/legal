@@ -778,5 +778,10 @@
     "path": "app/data/legal-map/editorial/topics/source-check.ts",
     "contentHash": "99e950cc93e3b6b0f12a7ce2b32f0a735832ff830c4732cb435e353810d09402",
     "evidence": "docs/content-review/writing-2026-09-05/batches/47-source-check.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/person-status.ts",
+    "contentHash": "b2fd0e5f696f1f0cf4f3ed58c76e31c945b418b3f26319d0cd781232010e66ae",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/48-person-status.md"
   }
 ]
