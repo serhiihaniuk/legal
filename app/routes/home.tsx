@@ -7,7 +7,12 @@ import { caseGuideRouteById } from "~/data/case-guides/routes"
 import { listEvidenceDocuments } from "~/data/document-library"
 import { legalReferenceRegistry } from "~/data/legal-corpus/reference-registry.generated"
 import { HomeParticles } from "~/features/home"
-import "~/features/home/ui/home.css"
+import homeStyles from "~/features/home/ui/home.css?url"
+import type { Route } from "./+types/home"
+
+export const links: Route.LinksFunction = () => [
+  { rel: "stylesheet", href: homeStyles },
+]
 
 const sections = [
   {
