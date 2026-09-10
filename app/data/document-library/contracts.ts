@@ -31,6 +31,9 @@ export type EvidenceDocumentId =
   | "zus-health-registration"
   | "zus-rca"
   | "business-register-information"
+  | "board-appointment-resolution"
+  | "shareholder-list"
+  | "board-remuneration-resolution"
   | "crbr-information"
   | "stamp-duty-proof"
   | "residence-card-fee-proof"
@@ -197,6 +200,9 @@ export const evidenceDocumentIds = [
   "zus-health-registration",
   "zus-rca",
   "business-register-information",
+  "board-appointment-resolution",
+  "shareholder-list",
+  "board-remuneration-resolution",
   "crbr-information",
   "stamp-duty-proof",
   "residence-card-fee-proof",

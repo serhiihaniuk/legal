@@ -34,7 +34,13 @@ describe("document coverage across learning modules", () => {
       for (const stage of route.stages) {
         for (const entry of stage.documents) {
           if (
-            !["long-term-eu", "work", "blue-card", "student"].includes(route.id)
+            ![
+              "long-term-eu",
+              "work",
+              "blue-card",
+              "student",
+              "business",
+            ].includes(route.id)
           )
             continue
           expect(isCaseGuideDocumentUse(entry), stage.id).toBe(true)
@@ -238,6 +244,72 @@ describe("document coverage across learning modules", () => {
         .get("bank-funds-certificate")
         ?.caseContexts.filter((context) => context.routeId === "student")
     ).toHaveLength(1)
+  })
+
+  it("separates the business applicant's corporate documents from employee contracts and missing RCA reports", () => {
+    const route = authoredCaseGuideRoutes.find(
+      (route) => route.id === "business"
+    )!
+    expect(new Set(route.sources.map((source) => source.url)).size).toBe(
+      route.sources.length
+    )
+    const submitted = (stageId: string) =>
+      route.stages
+        .find((stage) => stage.id === stageId)!
+        .documents.filter(isCaseGuideDocumentUse)
+        .filter((use) => use.action === "submit")
+        .map((use) => use.document)
+    const filing = submitted("filing")
+    const response = submitted("procedure")
+    const registerIds = route.documents.flatMap((entry) => ids(entry.item))
+    for (const umbrella of [
+      "status-documents",
+      "income-evidence",
+      "zus-confirmation",
+      "business-evidence",
+    ]) {
+      expect(registerIds).not.toContain(umbrella)
+    }
+    const contracts = route.documents.filter((entry) =>
+      ids(entry.item).includes("employment-contract")
+    )
+    expect(contracts).toHaveLength(2)
+    for (const contract of contracts) {
+      expect(filing).toContain(contract)
+      expect(response).not.toContain(contract)
+    }
+    for (const id of [
+      "board-appointment-resolution",
+      "shareholder-list",
+      "board-remuneration-resolution",
+    ] as const) {
+      const item = route.documents.find((entry) =>
+        ids(entry.item).includes(id)
+      )!
+      expect(item, id).toBeDefined()
+      expect(filing).toContain(item)
+      expect(response).not.toContain(item)
+      expect(
+        documentById
+          .get(id)
+          ?.caseContexts.filter((context) => context.routeId === "business")
+      ).toHaveLength(1)
+    }
+    const initialReports = filing.filter((entry) =>
+      ids(entry.item).includes("zus-rca")
+    )
+    const missingReports = response.filter((entry) =>
+      ids(entry.item).includes("zus-rca")
+    )
+    expect(initialReports).toHaveLength(2)
+    expect(missingReports).toHaveLength(1)
+    expect(initialReports).not.toContain(missingReports[0])
+    for (const packet of [filing, response]) {
+      const targets = packet.flatMap((entry) => ids(entry.item))
+      expect(targets).not.toContain("crbr-information")
+      expect(targets).not.toContain("qualification-evidence")
+      expect(targets).not.toContain("zus-no-arrears")
+    }
   })
 
   it("places remedies and court results in their conditional stages with illustrated guides and reverse references", () => {
@@ -487,7 +559,7 @@ describe("document coverage across learning modules", () => {
         expect.arrayContaining(
           ["work", "blue-card"].includes(routeId)
             ? ["administrative-decision", "residence-card"]
-            : routeId === "student"
+            : ["student", "business"].includes(routeId)
               ? ["visa"]
               : ["status-documents"]
         )
@@ -522,7 +594,9 @@ describe("document coverage across learning modules", () => {
                 "housing-evidence",
                 "employment-contract",
               ]
-            : ["long-term-eu", "work", "blue-card"].includes(routeId)
+            : ["long-term-eu", "work", "blue-card", "business"].includes(
+                  routeId
+                )
               ? ["zus-health-registration"]
               : ["health-insurance"]),
           ...(routeId === "long-term-eu"
@@ -544,12 +618,10 @@ describe("document coverage across learning modules", () => {
                   ]
                 : routeId === "business"
                   ? [
-                      "business-evidence",
                       "employment-contract",
-                      "income-evidence",
+                      "board-remuneration-resolution",
                       "housing-evidence",
-                      "zus-confirmation",
-                      "qualification-evidence",
+                      "zus-rca",
                     ]
                   : routeId === "family"
                     ? [
@@ -602,16 +674,16 @@ describe("document coverage across learning modules", () => {
         expect(at("status")).toContain("corporate-work-permit")
         expect(at("decision")).toContain("temporary-residence-notification")
         expect(at("filing")).not.toContain("temporary-residence-notification")
-        for (const id of [
-          "employment-annex-1",
-          "crbr-information",
-          "corporate-work-permit",
-          "employment-contract",
-          "qualification-evidence",
-        ] as const)
+        expect(
+          route.documents.find((entry) =>
+            ids(entry.item).includes("zus-no-arrears")
+          )?.level
+        ).toBe("conditional")
+        for (const id of ["crbr-information", "qualification-evidence"]) {
           expect(
-            route.documents.find((entry) => ids(entry.item).includes(id))?.level
-          ).toBe("conditional")
+            route.documents.flatMap((entry) => ids(entry.item))
+          ).not.toContain(id)
+        }
       }
       if (routeId === "student") {
         expect(at("filing")).not.toContain("study-progress")

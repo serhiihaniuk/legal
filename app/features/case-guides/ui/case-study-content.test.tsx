@@ -253,6 +253,40 @@ describe("case guide continuity", () => {
     ).toBe("/documents/bank-funds-certificate")
   })
 
+  it("opens the business applicant's remuneration resolution from its visible filing list", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/cases/business"]}>
+        <CaseStudyContent
+          route={getCaseGuideRoute("business")}
+          updatedAt="2026-07-18"
+        />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    expect(
+      screen.getAllByRole("heading", { name: "Документи на цьому етапі" })
+    ).toHaveLength(6)
+    const filing = container.querySelector<HTMLElement>("#case-stage-filing")!
+    expect(
+      within(filing).queryByRole("button", { name: /^Документи/ })
+    ).toBeNull()
+    expect(within(filing).queryByRole("checkbox")).toBeNull()
+    const resolution = filing.querySelector<HTMLAnchorElement>(
+      'a[href="/documents/board-remuneration-resolution"]'
+    )!
+    expect(resolution).toBeTruthy()
+    expect(
+      filing.querySelector('a[href="/documents/board-appointment-resolution"]')
+    ).toBeTruthy()
+    expect(
+      filing.querySelector('a[href="/documents/shareholder-list"]')
+    ).toBeTruthy()
+    fireEvent.click(resolution)
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/board-remuneration-resolution")
+  })
+
   it("links register titles to document guides while retaining provision links", () => {
     render(
       <MemoryRouter>
@@ -321,12 +355,11 @@ describe("case guide continuity", () => {
       ["Електронна заява MOS", "mos-application"],
       ["UPO та збережена заява", "upo"],
       [
-        "KRS/CEIDG і документи про роль у бізнесі",
+        "Актуальна інформація KRS про spółkę z o.o.",
         "business-register-information",
       ],
-      ["CRBR і зв'язки між компаніями", "crbr-information"],
       [
-        "Дозвіл на працю у зв'язку з корпоративною функцією",
+        "Чинний корпоративний дозвіл на працю до 31.12.2026",
         "corporate-work-permit",
       ],
     ]) {

@@ -46,7 +46,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "93c5d057bc7d3a2a34c19b39b40feef35153d653b99dff4835021bd04a534063",
+      "contentHash": "22c02f503abc17fd6fe7deb6db783dd50bb465af3d1a83bfb9670d2364fc1b38",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -497,6 +497,66 @@
       "sourceTextHash": null,
       "officialSourceUrls": [],
       "contentHash": "9e07291a77206c71e8df51519f877a24461691d76f4ebfa65a114c7ad689da4a",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:board-appointment-resolution",
+      "path": "app/data/document-library/editorial/guides/board-appointment-resolution.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "board-appointment-resolution",
+      "contentId": "board-appointment-resolution",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "341bd28a5cc03e33577ab370cf93454304bd288e011423a2c744a7c07b1bb2da",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:board-remuneration-resolution",
+      "path": "app/data/document-library/editorial/guides/board-remuneration-resolution.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "board-remuneration-resolution",
+      "contentId": "board-remuneration-resolution",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "50f76d3734f72dd41623f0c2706867ad847869d75eebfce50a4a5c304f77a1b9",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -1937,6 +1997,36 @@
       "sourceTextHash": null,
       "officialSourceUrls": [],
       "contentHash": "633e0825c64827351d1cd5b717a16627f4ef3b32f9121d5b9c92de33f1888063",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:shareholder-list",
+      "path": "app/data/document-library/editorial/guides/shareholder-list.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "shareholder-list",
+      "contentId": "shareholder-list",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b43e20579d205bdce93ba9a9de8880e92332cd79c974b3913725e9c9b9e24920",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,

@@ -440,26 +440,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
   },
   {
-    "path": "app/data/case-guides/editorial/routes/business.ts",
-    "contentHash": "93c5d057bc7d3a2a34c19b39b40feef35153d653b99dff4835021bd04a534063",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/business/documents.ts",
-    "contentHash": "dadf4570de90a4873f2d81d1362fb7d432b74a1c2ec180bdc15c818cd338eb52",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/business/stages.ts",
-    "contentHash": "c7702a0a497fbf91995195c31a8c442273db79f9744e438797e861c9e32dbb54",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/business/reference.ts",
-    "contentHash": "26258ae1794b1b40ccc4e5359901e620518c338af3b342f2ed53a4a9bd2f1519",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
-  },
-  {
     "path": "app/data/document-library/editorial/guides/corporate-work-permit.ts",
     "contentHash": "bdbed3d34ba7ad2180de430ecfc58521f70a0a2c15a5b0439c083e05b6b01465",
     "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
@@ -938,5 +918,40 @@
     "path": "app/data/document-library/editorial/guides/bank-funds-certificate.ts",
     "contentHash": "b79c481b86e5c3c0e8c2967a53fc01d1b8eac5a954183182f2a647e50e824306",
     "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/documents.ts",
+    "contentHash": "9b4e8576dbafcd8ab55854861c3f476fbf4aa6166c68877baf5f7ac30dc34099",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/stages.ts",
+    "contentHash": "40560e1a45b3a321162a89a31637e76fad8a7bff014a852e170b189904344987",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/reference.ts",
+    "contentHash": "89589adbb9f3869271608bf4c6780c95a5ca845892c2241a6034c25ee842fb3d",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/business.ts",
+    "contentHash": "22c02f503abc17fd6fe7deb6db783dd50bb465af3d1a83bfb9670d2364fc1b38",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/board-appointment-resolution.ts",
+    "contentHash": "341bd28a5cc03e33577ab370cf93454304bd288e011423a2c744a7c07b1bb2da",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/shareholder-list.ts",
+    "contentHash": "b43e20579d205bdce93ba9a9de8880e92332cd79c974b3913725e9c9b9e24920",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/board-remuneration-resolution.ts",
+    "contentHash": "50f76d3734f72dd41623f0c2706867ad847869d75eebfce50a4a5c304f77a1b9",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
   }
 ]

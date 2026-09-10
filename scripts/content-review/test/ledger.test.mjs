@@ -115,7 +115,7 @@ test("generates deterministic inventory counts and lane assignment", () => {
     assert.equal(first.summary.byFamily.provision, 1478)
     assert.equal(first.summary.byFamily["learning-module"], 43)
     assert.equal(first.summary.byFamily["map-topic"], 62)
-    assert.equal(first.summary.byFamily["evidence-document"], 77)
+    assert.equal(first.summary.byFamily["evidence-document"], 80)
     assert.equal(first.summary.byFamily["case-guide"], 9)
     assert.ok(first.summary.byFamily["shared-renderer"] >= 28)
 
@@ -148,6 +148,9 @@ test("generates deterministic inventory counts and lane assignment", () => {
       "court-judgment",
       "professional-experience-confirmation",
       "bank-funds-certificate",
+      "board-appointment-resolution",
+      "shareholder-list",
+      "board-remuneration-resolution",
     ]) {
       const entry = entries.find(
         (entry) =>

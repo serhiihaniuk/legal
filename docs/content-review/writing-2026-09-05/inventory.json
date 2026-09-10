@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1815,
-    "reviewed": 185,
+    "totalFiles": 1818,
+    "reviewed": 188,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 77,
+      "evidence-document": 80,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -107,23 +107,23 @@
     {
       "path": "app/data/case-guides/editorial/business/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "dadf4570de90a4873f2d81d1362fb7d432b74a1c2ec180bdc15c818cd338eb52",
+      "contentHash": "9b4e8576dbafcd8ab55854861c3f476fbf4aa6166c68877baf5f7ac30dc34099",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "26258ae1794b1b40ccc4e5359901e620518c338af3b342f2ed53a4a9bd2f1519",
+      "contentHash": "89589adbb9f3869271608bf4c6780c95a5ca845892c2241a6034c25ee842fb3d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/business/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "c7702a0a497fbf91995195c31a8c442273db79f9744e438797e861c9e32dbb54",
+      "contentHash": "40560e1a45b3a321162a89a31637e76fad8a7bff014a852e170b189904344987",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/cukr/documents.ts",
@@ -240,9 +240,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/business.ts",
       "family": "case-guide",
-      "contentHash": "93c5d057bc7d3a2a34c19b39b40feef35153d653b99dff4835021bd04a534063",
+      "contentHash": "22c02f503abc17fd6fe7deb6db783dd50bb465af3d1a83bfb9670d2364fc1b38",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/cukr.ts",
@@ -418,6 +418,20 @@
       "contentHash": "9e07291a77206c71e8df51519f877a24461691d76f4ebfa65a114c7ad689da4a",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/board-appointment-resolution.ts",
+      "family": "evidence-document",
+      "contentHash": "341bd28a5cc03e33577ab370cf93454304bd288e011423a2c744a7c07b1bb2da",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/board-remuneration-resolution.ts",
+      "family": "evidence-document",
+      "contentHash": "50f76d3734f72dd41623f0c2706867ad847869d75eebfce50a4a5c304f77a1b9",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/business-evidence.ts",
@@ -754,6 +768,13 @@
       "contentHash": "633e0825c64827351d1cd5b717a16627f4ef3b32f9121d5b9c92de33f1888063",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/shareholder-list.ts",
+      "family": "evidence-document",
+      "contentHash": "b43e20579d205bdce93ba9a9de8880e92332cd79c974b3913725e9c9b9e24920",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/signature-specimen.ts",

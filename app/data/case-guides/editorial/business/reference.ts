@@ -6,8 +6,9 @@ import type {
   CaseGuideSource,
 } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
-import { document } from "../shared/document-reference"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 
+const documents = createEvidenceDocumentTextAuthor()
 const law = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const work = createLegalTextAuthor("powierzanie-pracy")
 const kpa = createLegalTextAuthor("kpa")
@@ -17,10 +18,7 @@ export const businessConditions: CaseGuideCondition[] = [
     condition: "Заява допустима з нинішнього статусу",
     factToEstablish:
       "Підстава й період перебування, місце подання та застосовні обмеження або винятки.",
-    evidence: document(
-      "status-documents",
-      "Віза, попередні рішення та підтверджені дати перебування"
-    ),
+    evidence: documents.text`${documents.document("visa", "Національна віза для роботи з перебуванням до 30.09.2026")}, ${documents.document("passport", "паспорт")} та підтверджені дати поїздок.`,
     risk: "Володіння компанією не усуває прострочення перебування або заборони подати заяву.",
     law: law.text`${law.article("99")}, ${law.article("105")}; ${law.external("art. 45 закону Dz.U. 2026 poz. 203", "https://eli.gov.pl/eli/DU/2026/203/ogl")}: окремий виняток для UKR.`,
   },
@@ -28,10 +26,7 @@ export const businessConditions: CaseGuideCondition[] = [
     condition: "Реальна діяльність і роль відповідають бізнесовій підставі",
     factToEstablish:
       "Правова форма, частки, призначення, функція і фактична діяльність. У прикладі заявник є членом zarządu та власником 40 % часток.",
-    evidence: document(
-      "business-register-information",
-      "Реєстрові й корпоративні документи разом із доказами діяльності"
-    ),
+    evidence: documents.text`Актуальна ${documents.document("shareholder-list", "lista wspólników")}, ${documents.document("board-appointment-resolution", "uchwała про призначення")} та ${documents.document("business-register-information", "KRS цієї spółki")}.`,
     risk: "Пасивне володіння частками або назва директор не встановлює правильної підстави.",
     law: law.text`${law.article("142")} ust. 1–3; порівняння з ${law.article("126")}.`,
   },
@@ -40,10 +35,7 @@ export const businessConditions: CaseGuideCondition[] = [
       "Виконано один із передбачених способів підтвердження економічної умови",
     factToEstablish:
       "Належний дохід, рік зайнятості двох відповідних працівників або підтверджені засоби чи дії для майбутнього виконання.",
-    evidence: document(
-      "business-evidence",
-      "Звітність, матеріали зайнятості або підтверджений план діяльності"
-    ),
+    evidence: documents.text`Для обраного варіанта: ${documents.document("employment-contract", "договори A і B")}, ${documents.document("zus-rca", "іменні RCA")}, ${documents.document("payroll-statement", "розрахункові листки")}, ${documents.document("bank-statement", "фактичні виплати")} та ${documents.document("employment-income-certificate", "довідки про зайнятість")}. Дохід компанії або бізнес-план у цьому прикладі не є додатковими обов’язковими пакетами.`,
     risk: "Сума контракту не дорівнює доходу, B2B-підрядник не є працівником за цим критерієм, а прогноз не є вже досягнутим результатом.",
     law: law.text`${law.article("142")} ust. 1 pkt 3 і ust. 3.`,
   },
@@ -51,10 +43,7 @@ export const businessConditions: CaseGuideCondition[] = [
     condition: "Заявник має стабільне регулярне джерело утримання",
     factToEstablish:
       "Його особистий дохід, правова підстава виплат і залежні члени сім'ї.",
-    evidence: document(
-      "income-evidence",
-      "Підстава винагороди, розрахунки та підтвердження виплат"
-    ),
+    evidence: documents.text`${documents.document("board-remuneration-resolution", "Uchwała про регулярну винагороду за powołanie")} та ${documents.document("bank-statement", "виписка особистого рахунку з фактичними виплатами")}.`,
     risk: "Залишок на рахунку spółki не належить автоматично її власнику як особистий дохід.",
     law: law.text`${law.article("142")} ust. 1 pkt 1 lit. b, ust. 3–4; ${law.article("140")} ust. 2.`,
   },
@@ -62,16 +51,7 @@ export const businessConditions: CaseGuideCondition[] = [
     condition: "Є покриття лікування та забезпечене житло",
     factToEstablish:
       "Особисте страхування заявника й місце його проживання у відповідний період.",
-    evidence: {
-      kind: "authored-legal-text",
-      plainText: "Страхування та документ про житло.",
-      parts: [
-        ...document("health-insurance", "Страхування").parts,
-        { text: " та " },
-        ...document("housing-evidence", "документ про житло").parts,
-        { text: "." },
-      ],
-    },
+    evidence: documents.text`Власне ${documents.document("zus-health-registration", "підтвердження eZUS про актуальне медичне страхування заявника")} та ${documents.document("housing-evidence", "підписаний договір його житлової оренди")}.`,
     risk: "Внески за персонал і оренда офісу не доводять цих особистих умов.",
     law: law.text`${law.article("142")} ust. 1 pkt 1 lit. a, pkt 2 і ust. 3.`,
   },
@@ -80,18 +60,7 @@ export const businessConditions: CaseGuideCondition[] = [
       "Виконано спеціальні вимоги й немає застосовної підстави відмови",
     factToEstablish:
       "Потрібна згода на регульовану професію, визначені порушення, податкові та страхові обов'язки; застосовні винятки.",
-    evidence: {
-      kind: "authored-legal-text",
-      plainText:
-        "Документи професійного права, відомості про внески та належні податкові матеріали.",
-      parts: [
-        ...document("qualification-evidence", "Документи професійного права")
-          .parts,
-        { text: ", " },
-        ...document("zus-confirmation", "відомості про внески").parts,
-        { text: " та належні податкові матеріали." },
-      ],
-    },
+    evidence: documents.text`У прикладі регульованої професії немає. Якщо виникне питання про внески, використовують ${documents.document("zus-no-arrears", "довідку ZUS про розрахунки компанії")} та відповідне рішення про розстрочку, якщо воно існує. Для податкової заборгованості потрібна саме довідка податкового органу про незаборгованість або стан заборгованості. Ці документи не включено автоматично до подання 10.08 чи відповіді 28.08.`,
     risk: "Рік зайнятості не усуває іншої перешкоди. Просте посилання на заборгованість також не враховує законної розстрочки чи іншого винятку.",
     law: law.text`${law.article("100")}, ${law.article("143")} і ${law.article("117")} pkt 1–2; можливі ліміти за ${law.article("142a")}.`,
   },
@@ -211,9 +180,29 @@ export const businessAlternatives: CaseGuideNegativeBranch[] = [
 
 export const businessSources: CaseGuideSource[] = [
   {
-    label: "Ustawa o cudzoziemcach",
+    label: "Ustawa o cudzoziemcach, перевірка документів 10.09.2026",
     url: "https://eli.gov.pl/eli/DU/2025/1079/ogl",
-    note: law.text`${law.article("142")}: особисті й економічні умови; ${law.article("143")} і ${law.article("143a")}: відмова та зміст корпоративного дозволу. Перевірено з пізнішими змінами.`,
+    note: law.text`Перевірено ${law.articleRange("142", "143a")} щодо обраного варіанта зайнятості, особистих умов, відмови та змісту корпоративного дозволу; ${law.articleRange("106d", "106f")} щодо подання копій та оригіналів. Ураховано пізніші зміни. Ця перевірка доповнює попередню перевірку гайда від 06.09.2026.`,
+  },
+  {
+    label: "KSH: список учасників і призначення zarządu",
+    url: "https://eli.gov.pl/eli/DU/2024/18/ogl",
+    note: law.text`${law.external("Art. 188 § 3 і art. 201 § 4 KSH", "https://eli.gov.pl/eli/DU/2024/18/ogl")}: актуальна lista wspólników та окрема підстава призначення. KRS не замінює всіх корпоративних документів.`,
+  },
+  {
+    label: "ZUS: медичне страхування оплачуваної особи з powołania",
+    url: "https://www.zus.pl/o-zus/o-nas/programy-transformacji-cyfrowej-zus/zmiany-od-2022-r./faq",
+    note: "Офіційне пояснення про оплачуване powołanie, ZZA для медичного страхування та застосування польського законодавства до іноземної особи. Внески за A/B не є доказом особистого страхування заявника.",
+  },
+  {
+    label: "Медичне страхування: іноземець із візою для роботи",
+    url: "https://eli.gov.pl/eli/DU/2025/1461/ogl",
+    note: law.text`${law.external("Art. 3 ust. 1 pkt 2 і art. 66 ust. 1 pkt 35a закону про świadczenia opieki zdrowotnej", "https://eli.gov.pl/eli/DU/2025/1461/ogl")}: для обраного прикладу встановлено візу саме для роботи, оплачуване powołanie та застосування польського законодавства.`,
+  },
+  {
+    label: "ZUS: власне підтвердження актуального страхування",
+    url: "https://www.zus.pl/pl/baza-wiedzy/o-portalu-pue-/samodzielne-tworzenie-potwierdzen-z-danymi-z-zus/dla-ubezpieczonych",
+    note: "Дані про актуальні zgłoszenia отримує сама застрахована особа. Документ відрізняється від звітів RCA і довідки про незаборгованість платника.",
   },
   {
     label: "Powierzanie pracy cudzoziemcom",

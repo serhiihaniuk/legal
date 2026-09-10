@@ -1,4 +1,7 @@
 import payrollStatementTopic from "./editorial/guides/payroll-statement"
+import boardAppointmentResolutionTopic from "./editorial/guides/board-appointment-resolution"
+import shareholderListTopic from "./editorial/guides/shareholder-list"
+import boardRemunerationResolutionTopic from "./editorial/guides/board-remuneration-resolution"
 import professionalExperienceConfirmationTopic from "./editorial/guides/professional-experience-confirmation"
 import zusInsuranceHistoryTopic from "./editorial/guides/zus-insurance-history"
 import employmentIncomeCertificateTopic from "./editorial/guides/employment-income-certificate"
@@ -104,6 +107,9 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    boardAppointmentResolutionTopic.body,
+    shareholderListTopic.body,
+    boardRemunerationResolutionTopic.body,
     professionalExperienceConfirmationTopic.body,
     judicialComplaintTopic.body,
     courtJudgmentTopic.body,
