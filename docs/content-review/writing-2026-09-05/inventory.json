@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 159,
+    "reviewed": 160,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11958,9 +11958,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/ukraine-routes-2026.ts",
       "family": "map-topic",
-      "contentHash": "71fb18cf8992559138019b346353bd433af839577e369abb48717ffa83a0f6f1",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "ad13d248b669f8a74e062092ed7746144e5ee260d4808916077712c2f61201f5",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/53-ukraine-route-choice.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/visa-free.ts",
@@ -12546,7 +12546,7 @@
     {
       "path": "app/root.tsx",
       "family": "supporting-copy",
-      "contentHash": "85d775cd5cd57295d79deef6a781c3b2a1bc81b199083579a7232c7796b2ed30",
+      "contentHash": "bda1894c1674739efe35ca92cb08e4959237d46fdc200c8128ae733bb768253a",
       "writing": "pending",
       "evidence": null
     },
@@ -12567,9 +12567,9 @@
     {
       "path": "app/routes/home.tsx",
       "family": "route-copy",
-      "contentHash": "a05cb5c04ec620d24b4323880e32f510002bf3405d6143e032d4063070ed6f66",
+      "contentHash": "417a3a8aff9d2cceb8668878b430eacb0bee61e1e2b471ad9bf1dbe1e28928f4",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/46-two-keys.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/53-ukraine-route-choice.md"
     },
     {
       "path": "app/routes/kpa.tsx",

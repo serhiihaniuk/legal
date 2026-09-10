@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 52 rewrites status UKR. Current writing acceptance and remaining scope are recorded in the latest checkpoint below. Earlier figures describe those checkpoints, not the present total.
+Batch 53 rewrites the UKR/CUKR/ordinary-permit comparison. Current writing acceptance and remaining scope are recorded in the latest checkpoint below. Earlier figures describe those checkpoints, not the present total.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
@@ -78,4 +78,4 @@ Batch 27 implements the primary chapter assignments, stable chapter anchors, dir
 
 Batch 28 implements authored map sections and matching page contents. The first migrated article, `other-stay`, now distinguishes named and residual grounds, explains the graduate route and gives a completed accommodation example. Its source check includes temporary-protection limits. The misplaced article 114 link is corrected. One article receives writing acceptance, bringing the total to 126 of 1,800; the shared renderer change does not accept unmigrated text. Study/research and family classifications, deeper parent articles, the decision merge and remaining map gaps continue next. Law-module rewrites, original-source layout and independent legal review remain open.
 
-Latest checkpoint, batch 52: 159 of 1,805 files have current writing review. The five orientation topics and all six current-status chapter topics now have authored explanations and completed examples. Status UKR now distinguishes the PESEL record, protection, identity deadlines, continuity and employment, using the corrected EU extension decision. Next are the UKR/CUKR/ordinary-permit comparison and CUKR article. Remaining map articles, law modules, provision commentary, the original PDF-layout audit and independent legal review remain open. Detailed evidence is in [batch 52](batches/52-status-ukr.md).
+Latest checkpoint, batch 53: 160 of 1,805 files have current writing review. The UKR/CUKR/ordinary-permit comparison now explains the choice, pending proceedings, permit acquisition and separate dates through a completed case note. Next are the detailed CUKR and Ukraine ordinary-permit articles. Remaining map articles, law modules, provision commentary, the original PDF-layout audit and independent legal review remain open. Detailed evidence is in [batch 53](batches/53-ukraine-route-choice.md).

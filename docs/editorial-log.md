@@ -507,3 +507,9 @@ Scoped official sources checked on 10.09.2026; global baseline unchanged. Update
 Rewrote the status UKR map article with six explanatory sections and a completed comparison of current and historical status evidence. Separated the two identity-confirmation rules, employment notification and ordinary permit choice. Verified the new EU protection horizon and the published corrigendum changing the relevant July dates to August. Recorded the discrepancy in the UdSC summary and the remaining companion-page work.
 
 Scoped official-source check on 10.09.2026; global baseline unchanged. Full verification and reference previews passed. Desktop/mobile layout, section anchor and keyboard table scrolling passed without page overflow or console errors. Writing inventory and ledgers regenerated; independent legal acceptance remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/52-status-ukr.md. Next: UKR/CUKR/ordinary-permit comparison and CUKR, including their separately legislated deadlines.
+
+### 2026-09-10: UKR, CUKR and ordinary permit choice
+
+Rewrote the comparison with six explanatory sections and a filled five-row case note. Separated current UKR, permit eligibility, the effect on a pending proceeding, issuance and collection, obligations and independently legislated dates. Verified the CUKR commencement notice and precise statutory duration and absence rules.
+
+Scoped official-source check on 10.09.2026; global baseline unchanged. Full verification and reference previews passed. Desktop/mobile rendering, keyboard table scrolling and a typed article reference passed without page overflow or console errors. Writing inventory and ledgers regenerated; independent legal acceptance remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/53-ukraine-route-choice.md. Next: detailed CUKR and Ukraine ordinary-permit articles.

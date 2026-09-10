@@ -4098,7 +4098,7 @@
       "path": "app/data/legal-map/editorial/topics/ukraine-routes-2026.ts",
       "family": "map-topic",
       "lane": "teaching-pages",
-      "documentId": "passport",
+      "documentId": null,
       "contentId": "ukraine-routes-2026",
       "provisionId": null,
       "provisionIndex": null,
@@ -4106,7 +4106,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "71fb18cf8992559138019b346353bd433af839577e369abb48717ffa83a0f6f1",
+      "contentHash": "ad13d248b669f8a74e062092ed7746144e5ee260d4808916077712c2f61201f5",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -4454,7 +4454,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "a05cb5c04ec620d24b4323880e32f510002bf3405d6143e032d4063070ed6f66",
+      "contentHash": "417a3a8aff9d2cceb8668878b430eacb0bee61e1e2b471ad9bf1dbe1e28928f4",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,

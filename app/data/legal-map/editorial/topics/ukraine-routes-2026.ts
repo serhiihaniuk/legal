@@ -2,25 +2,26 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { foreignersLaw, mapTopicSources } from "../authoring"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
+import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
-
+import { foreignersLaw } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
-const ukraineReference = {
-  kind: "external",
-  url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
-} as const
+const documents = createEvidenceDocumentTextAuthor()
+const specialUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf"
+const transitionUrl =
+  "https://eli.gov.pl/api/acts/DU/2026/203/text/O/D20260203.pdf"
+const protectionUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/223/text/U/D20250223Lj.pdf"
+const commencementUrl =
+  "https://eli.gov.pl/api/acts/MP/2026/371/text/O/M20260371.pdf"
+const qaUrl = "https://www.gov.pl/web/udsc/cukr-QA"
+const extensionUrl =
+  "https://www.gov.pl/web/udsc/przedluzenie-ochrony-czasowej-do-4-marca-2028-r"
 
-const specustawaReference = {
-  kind: "external",
-  url: "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf",
-} as const
-
-type UkraineRoutesBody = LegalMapTopicBody
-
-export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
+export const ukraineRoutesTopic: KnowledgeUnit<LegalMapTopicBody> =
   defineKnowledgeUnit({
     id: "map-topic:ukraine-routes-2026",
     subject: {
@@ -28,15 +29,40 @@ export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
       reference: { kind: "map-node", nodeId: "ukraine-routes-2026" },
     },
     summary:
-      "Для особи з PESEL UKR спочатку існують три окремі правові варіанти: залишатися на тимчасовому захисті, перейти на CUKR або подати одну з дозволених звичайних заяв. Робота за umowa o pracę не обирає маршрут автоматично.",
+      "UKR підтверджує перебування на тимчасовому захисті. CUKR переводить охоплену особу на спеціальний дозвіл, а звичайний pobyt czasowy пов'язаний із визначеною метою. Вибір змінює умови, момент переходу та долю вже відкритої справи.",
     claims: [
       {
-        id: "ukraine-route-choice",
-        kind: "requires-verification",
-        text: "Маршрут UKR, CUKR або звичайного pobytu має окремі умови, момент виникнення права та наслідки для незавершених справ.",
+        id: "ordinary-permit-access",
+        kind: "statute-text",
+        text: "Для охоплених власників UKR перехідний закон усуває перешкоду тимчасового захисту лише для перелічених дозволів; це не загальне звільнення від їхніх умов.",
         basis: [
-          { reference: ukraineReference, locator: "Dz.U. 2026 poz. 203" },
-          { reference: specustawaReference, locator: "Art. 42c–42u" },
+          {
+            reference: { kind: "external", url: transitionUrl },
+            locator: "Art. 45 ust. 1–2",
+          },
+        ],
+      },
+      {
+        id: "filing-and-acquisition",
+        kind: "statute-text",
+        text: "Подання заяви CUKR за основним маршрутом припиняє автоматично за законом охоплену незавершену справу про тимчасове перебування. Сам спеціальний дозвіл виникає при отриманні карти, до кінця її строку дії.",
+        basis: [
+          {
+            reference: { kind: "external", url: specialUrl },
+            locator: "Art. 42i; art. 42p; art. 42r ust. 1–2",
+          },
+        ],
+      },
+      {
+        id: "protection-and-permit",
+        kind: "statute-text",
+        text: "Надання дозволу на тимчасове перебування є окремою підставою припинення тимчасового захисту. Сам факт подання звичайної заяви не тотожний наданню дозволу.",
+        basis: [
+          {
+            reference: { kind: "external", url: protectionUrl },
+            locator:
+              "Art. 109a pkt 1 lit. c; art. 109b ust. 1 pkt 4 lit. c i ust. 2",
+          },
         ],
       },
     ],
@@ -44,155 +70,185 @@ export const ukraineRoutesTopic: KnowledgeUnit<UkraineRoutesBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-18",
-      verifiedAt: "2026-07-18",
+      legalStateDate: "2026-09-10",
+      verifiedAt: "2026-09-10",
     },
     body: {
-      title: "Україна 2026: UKR → CUKR чи звичайний pobyt",
-      polish: "status UKR / karta CUKR / zezwolenie zwykłe",
+      title: "UKR, CUKR чи звичайний дозвіл на перебування",
+      polish: "ochrona czasowa / karta CUKR / zezwolenie na pobyt czasowy",
       sources: [
-        mapTopicSources.ukraineSpecialCurrent,
-        mapTopicSources.ukraine2026,
-        mapTopicSources.cukr,
-        mapTopicSources.cukrQa,
-        mapTopicSources.ukraineChanges,
-      ],
-      guide: {
-        introduction: [
-          foreignersLaw.text`У 2026 році osoba зі status UKR може залишатися в режимі ochrony czasowej, перейти на спеціальний CUKR або, у межах дозволених ${foreignersLaw.external("art. 45", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy z 23.01.2026 категорій, подати звичайну заяву pobytową.`,
-        ],
-        regulated: [
-          foreignersLaw.text`Маршрути визначають specustawa ukraińska, ustawa Dz.U. 2026 poz. 203, ${foreignersLaw.external("art. 42c", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")}–${foreignersLaw.external("42u", "https://eli.gov.pl/api/acts/DU/2025/337/text/U/D20250337Lj.pdf")} та загальні норми ustawy o cudzoziemcach.`,
-        ],
-        appliesWhen: [
-          "Розвилка стосується beneficjenta ochrony czasowej з PESEL UKR, який планує статус після поточного режиму або вже має іншу справу.",
-        ],
-        conditions: [
-          "Кожен маршрут має власні умови: для UKR — збереження statusu; для CUKR — чотири спеціальні реєстрові умови; для звичайного pobytu — повні матеріальні умови обраного дозволу.",
-        ],
-        exceptions: [
-          "Umowa o pracę не є умовою CUKR і не змушує подавати звичайний pobyt; доступність звичайної заяви під час ochrony czasowej існує лише у визначених законом категоріях.",
-        ],
-        consequences: [
-          "Маршрут змінює момент виникнення zezwolenia, обсяг прав, долю UKR, доступ до świadczeń, правила pracy та наслідки незавершених справ.",
-        ],
-        procedure: [
-          "Перед поданням порівнюються поточний status, історія UKR, відкриті справи, строки, матеріальні умови та момент переходу для кожного режиму.",
-        ],
-        foreignersContext: [
-          "Станом на 18.07.2026 офіційна інформація вказує на ochronę czasową до 04.03.2027, а заяву CUKR можна подати через MOS до цієї самої дати.",
-        ],
-      } satisfies LegalNodeGuide,
-      why: "Помилка в цій розвилці змінює умови, документи, момент виникнення дозволу, право до праці та долю status UKR. Подання CUKR також припиняє незавершену стандартну справу.",
-      checkpoints: [
-        "Чи PESEL UKR активний зараз і був активний 04.06.2025?",
-        "Чи status UKR безперервний щонайменше 365 днів?",
-        "Чи дані паспорта, підпис і відбитки повні в реєстрі?",
-        "Чи вже триває інша справа pobytowa?",
-        "Чи клієнт розуміє момент втрати UKR у кожному маршруті?",
-      ],
-      steps: [
-        "Зафіксуй поточний UKR і законність роботи через powiadomienie.",
-        "Перевір чотири умови CUKR та ризик припинення іншої справи.",
-        foreignersLaw.text`Окремо перевір доступність звичайної заяви за ${foreignersLaw.external("art. 45", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy z 23.01.2026.`,
-        "Порівняй момент виникнення права: odbiór CUKR проти ostatecznej decyzji zwykłej.",
-        "Обери маршрут лише після письмової матриці наслідків.",
+        {
+          label: "Specustawa: чинні правила CUKR",
+          url: specialUrl,
+          note: "Текст зі змінами від 22.05.2026. Умови, припинення іншої справи, строк карти, отримання та права після переходу.",
+        },
+        {
+          label: "Перехідний закон 2026 року",
+          url: transitionUrl,
+          note: "Доступ до п'яти категорій звичайних дозволів і спеціальне правило возз'єднання сім'ї.",
+        },
+        {
+          label: "Закон про надання захисту",
+          url: protectionUrl,
+          note: "Поточне перебування та припинення захисту при наданні дозволу.",
+        },
+        {
+          label: "Офіційний початок процедури CUKR",
+          url: commencementUrl,
+          note: "M.P. 2026 poz. 371: визначено 4 травня 2026 року.",
+        },
+        {
+          label: "UdSC: відповіді про CUKR",
+          url: qaUrl,
+          note: "Перевірено 10.09.2026: строк подання, перевірка реєстрів та пояснення наслідків для іншої справи. Загальний строк захисту в старій відповіді не використано.",
+        },
+        {
+          label: "UdSC: новий строк тимчасового захисту",
+          url: extensionUrl,
+          note: "Повідомлення від 06.08.2026 підтверджує продовження до 04.03.2028. Це окрема дата від строку подання CUKR.",
+        },
       ],
       documents: [
-        {
-          kind: "authored-legal-text",
-          plainText: "паспорт / дані PESEL UKR",
-          parts: [
-            {
-              text: "паспорт",
-              target: { kind: "evidence-document", documentId: "passport" },
-            },
-            { text: " / " },
-            {
-              text: "дані PESEL UKR",
-              target: {
-                kind: "evidence-document",
-                documentId: "pesel-ukr-confirmation",
-              },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "історія status UKR",
-          parts: [
-            {
-              text: "історія status UKR",
-              target: {
-                kind: "evidence-document",
-                documentId: "pesel-ukr-confirmation",
-              },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "дати виїздів",
-          parts: [
-            {
-              text: "дати виїздів",
-              target: { kind: "evidence-document", documentId: "stay-history" },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "powiadomienie PUP",
-          parts: [
-            {
-              text: "powiadomienie PUP",
-              target: {
-                kind: "evidence-document",
-                documentId: "ukraine-work-notification",
-              },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "інформація про поточні справи",
-          parts: [
-            {
-              text: "інформація про поточні справи",
-              target: {
-                kind: "evidence-document",
-                documentId: "proceeding-certificate",
-              },
-            },
-          ],
-        },
-        {
-          kind: "authored-legal-text",
-          plainText: "umowa o pracę — для звичайного маршруту, не для CUKR",
-          parts: [
-            {
-              text: "umowa o pracę — для звичайного маршруту, не для CUKR",
-              target: {
-                kind: "evidence-document",
-                documentId: "employment-contract",
-              },
-            },
-          ],
-        },
+        documents.text`${documents.document("pesel-ukr-confirmation", "Поточний UKR та історія статусу")}`,
+        documents.text`${documents.document("passport", "Паспорт і відповідність реєстрових даних")}`,
+        documents.text`${documents.document("proceeding-certificate", "Відомості про вже відкриту справу")}`,
+        documents.text`${documents.document("employment-contract", "Договір для оцінки звичайного робочого маршруту")}`,
       ],
+      guide: defineLegalMapArticle({
+        kind: "article",
+        introduction: [
+          "Людина з UKR та umową o pracę не зобов'язана лише через початок роботи переходити на pobyt i pracę. Спочатку вона вже має певну підставу перебування. Подальший вибір стосується іншого: чи зберігати тимчасовий захист, чи отримувати дозвіл і на яких умовах. Назва договору сама цього вибору не робить.",
+          "Ця розвилка стосується особи, яка зараз користується тимчасовим захистом і має UKR. Якщо захист уже припинився, старе підтвердження PESEL не відкриває автоматично всі описані варіанти. Спершу потрібно встановити поточну підставу перебування.",
+        ],
+        sections: [
+          {
+            id: "different-bases",
+            title: "Три варіанти спираються на різні факти",
+            paragraphs: [
+              foreignersLaw.text`Ochrona czasowa означає тимчасовий захист. Перебування охопленої особи спирається на ${foreignersLaw.external("art. 106 закону про надання захисту", protectionUrl)}. Воно не надане через конкретного роботодавця. Тому зміна роботи сама собою не перетворює UKR на інший дозвіл; збереження захисту та законність роботи мають власні умови.`,
+              foreignersLaw.text`CUKR є спеціальним переходом із захисту на pobyt czasowy. Для основної групи ${foreignersLaw.external("art. 42c specustawy", specialUrl)} вимагає UKR на 4 червня 2025 року, UKR при поданні та щонайменше 365 днів безперервного статусу. Складання різних періодів у сумарний рік не замінює безперервності. Законність перебування на захисті потрібна і при видачі; сама давня історія не замінює чинного права.`,
+              foreignersLaw.text`Умовою CUKR не є наявність роботи, конкретна зарплата чи підприємницький дохід. Це не означає видачу без перевірки: ${foreignersLaw.external("art. 42e", specialUrl)} передбачає підстави відмови, зокрема визначені записи в реєстрах, питання безпеки та несплату зборів. Для охопленої дитини, народженої в Польщі, ${foreignersLaw.external("art. 42d", specialUrl)} установлює окремий зв'язок із захистом дитини та картою матері.`,
+              "Звичайний pobyt czasowy означає дозвіл через певну мету перебування, наприклад працю або сім'ю. Тут потрібно встановити умови саме цієї підстави. Контракт пояснює роботу, але не доводить усіх інших умов і не перетворює звичайну заяву на CUKR.",
+            ],
+          },
+          {
+            id: "ordinary-routes",
+            title: "Які звичайні дозволи доступні під час UKR",
+            paragraphs: [
+              foreignersLaw.text`Тимчасовий захист за загальним правилом є перешкодою для відкриття звичайної справи на pobyt czasowy. ${foreignersLaw.external("Art. 45 ust. 1 перехідного закону", transitionUrl)} усуває її для визначених власників UKR у п'яти категоріях: pobyt i praca за ${foreignersLaw.article("114")}, Blue Card за ${foreignersLaw.article("127")}, діяльність gospodarcza за ${foreignersLaw.article("142")}, член сім'ї громадянина Польщі за ${foreignersLaw.article("158")} та возз'єднання сім'ї за ${foreignersLaw.article("159")}.`,
+              "Цей перелік пояснює доступність процедури, а не наперед позитивний результат. Для робочого дозволу орган оцінює роботу й умови відповідної норми; для сімейного встановлює родинний зв'язок і підставу перебування особи, до якої приєднуються. Студентська довідка сама не додає навчання до цього спеціального переліку.",
+              foreignersLaw.text`Для охопленого возз'єднання ${foreignersLaw.external("art. 45 ust. 2", transitionUrl)} окремо послаблює вимоги до попередньої тривалості перебування спонсора на тимчасових дозволах, кількості таких дозволів і строку останнього. Це не скасовує самого родинного зв'язку та решти застосовних умов. Тому перевірка лише напису на карті спонсора є недостатньою.`,
+            ],
+          },
+          {
+            id: "application-is-not-permit",
+            title:
+              "Подання, видача карти й отримання права мають різні наслідки",
+            paragraphs: [
+              foreignersLaw.text`За звичайним маршрутом дозвіл надають рішенням. ${foreignersLaw.external("Art. 109b ust. 1 pkt 4 lit. c закону про надання захисту", protectionUrl)} пов'язує припинення захисту з наданням дозволу на тимчасове перебування. Сам номер відкритої справи чи підтвердження подання ще не є наданим дозволом. Пластикова карта документує право; не слід переносити на цей маршрут особливий момент отримання CUKR.`,
+              foreignersLaw.text`Для CUKR ${foreignersLaw.external("art. 42r ust. 1", specialUrl)} установлює іншу конструкцію: право на захист перетворюється на дозвіл з дня отримання виданої карти. Повідомлення, що карта готова, ще не є цим переходом. Якщо карту не отримано в межах установлених 60 днів від надання інформації про можливість отримання, її анулюють за ${foreignersLaw.external("art. 42r ust. 2", specialUrl)}.`,
+              foreignersLaw.text`Три роки також потрібно читати точно. За ${foreignersLaw.external("art. 42p ust. 1", specialUrl)} основна карта діє три роки від видачі; дозвіл при отриманні виникає до кінця строку цієї карти. Пізніше отримання не запускає ще один повний трирічний строк. Для дитини за спеціальною нормою строк карти узгоджується зі строком карти матері.`,
+            ],
+          },
+          {
+            id: "pending-case",
+            title: "CUKR не залишає звичайну справу запасним варіантом",
+            paragraphs: [
+              foreignersLaw.text`За ${foreignersLaw.external("art. 42i specustawy", specialUrl)}, коли громадянин України подає заяву CUKR за основною нормою, розпочату за його заявою і ще не завершену справу про надання pobytu czasowego припиняють автоматично за законом. Йдеться про конкретний вид провадження, а не про всі справи цієї людини. Цей наслідок пов'язаний із поданням, а не з майбутнім успішним отриманням карти.`,
+              "Тому одночасна підготовка двох заяв не створює двох незалежних гарантій результату. Якщо звичайне провадження вже припинилося, наступна відмова у CUKR не повертає його автоматично. Окремо залишається питання поточного захисту: за збереження його умов невдала заява сама не доводить незаконність перебування.",
+              documents.text`${documents.document("proceeding-certificate", "Відомості про поточну справу")} мають показувати, за чим особа звернулась і чи завершено провадження. Старий лист із номером справи цього не доводить. ${documents.document("pesel-ukr-confirmation", "Історія UKR")} і відповідність ${documents.document("passport", "паспорта")} даним реєстру відповідають на інші питання. Їх не можна замінити одним загальним висновком про наявність документів.`,
+            ],
+            example: {
+              title: "Працівниця має UKR і чекає на звичайний дозвіл",
+              facts: [
+                "Умовна справа станом на 10 вересня 2026 року. Працівниця безперервно має UKR із березня 2024 року, зокрема на 4 червня 2025 року й сьогодні. Підстав припинення захисту за матеріалами справи не встановлено. Її заява на pobyt i pracę ще розглядається. Після отримання нового паспорта gmina підтвердила, що в реєстрі залишився номер старого документа. Заяву CUKR ще не подано.",
+              ],
+              sample: {
+                kind: "table",
+                title: "Заповнений запис про вибір підстави",
+                note: "Вигаданий внутрішній запис. Це порівняння встановлених фактів, а не рішення органу чи офіційний формуляр.",
+                columns: ["Питання", "Що встановлено", "Що це означає"],
+                rows: [
+                  {
+                    id: "current",
+                    cells: [
+                      "Чи потрібно терміново замінити UKR через саму роботу?",
+                      "Захист чинний; працівниця працює",
+                      "Сам початок роботи не створив обов'язку змінити підставу перебування",
+                    ],
+                  },
+                  {
+                    id: "history",
+                    cells: [
+                      "Чи є потрібна історія для основного CUKR?",
+                      "UKR на контрольну дату і понад 365 днів без перерви",
+                      "Часові умови підтверджено; це ще не перевірка всіх підстав видачі",
+                    ],
+                  },
+                  {
+                    id: "register",
+                    cells: [
+                      "Чи готові реєстрові дані до подання?",
+                      "У реєстрі старий паспорт",
+                      "Потрібне виправлення даних; скан нового паспорта не змінює реєстр сам по собі",
+                    ],
+                  },
+                  {
+                    id: "pending",
+                    cells: [
+                      "Чи залишиться робоча справа після подання CUKR?",
+                      "Тимчасове провадження досі відкрите",
+                      "Подання основного CUKR припинить його за спеціальною нормою",
+                    ],
+                  },
+                  {
+                    id: "decision",
+                    cells: [
+                      "Що вирішено зараз?",
+                      "CUKR не подано; виправлення паспорта розпочато",
+                      "Звичайна справа поки триває; остаточний вибір зроблять після уточнення даних і наслідків переходу",
+                    ],
+                  },
+                ],
+              },
+              reasoning: [
+                "Працівниця не подала другу заяву лише як страховку від очікування. Спочатку розпочато виправлення конкретної невідповідності в реєстрі. Робочий контракт потрібний для оцінки звичайної підстави, але не додає відсутніх даних до CUKR і не зберігає звичайну справу після переходу на іншу процедуру.",
+                "Якщо після виправлення вона свідомо обере CUKR і належно подасть заяву, у записі треба буде відобразити припинення попереднього провадження. До цього моменту сам намір перейти на CUKR такого наслідку не має.",
+              ],
+              conclusion:
+                "У цій справі збережено чинну підставу перебування та вже відкрите провадження, а невідповідність паспорта передано на виправлення. Це обґрунтоване рішення на поточних фактах, а не висновок, що CUKR завжди кращий або гірший за робочий дозвіл.",
+            },
+          },
+          {
+            id: "rights-after-transition",
+            title: "Що змінюється після переходу",
+            paragraphs: [
+              foreignersLaw.text`Після виникнення CUKR ${foreignersLaw.external("art. 42v", specialUrl)} звільняє особу від дозволу на працю, а ${foreignersLaw.external("art. 42w", specialUrl)} дозволяє підприємницьку діяльність на тих самих засадах, що й громадянам Польщі. Ці наслідки належать уже наданому спеціальному дозволу. Вони не починаються від чернетки в MOS або від оплати.`,
+              "Для звичайного дозволу право працювати потрібно читати за його видом і застосовним звільненням. Дозвіл через працю, сімейний дозвіл та Blue Card не можна звести до одного правила лише тому, що всі вони мають вигляд карти. Втрата конкретної роботи може мати інше значення для дозволу через працю, ніж для CUKR.",
+              "Після переходу також не можна автоматично переносити всі права, які були пов'язані саме з UKR. Для виплати, медичного обслуговування чи іншого забезпечення потрібна окрема чинна підстава. Втрата права за режимом захисту не означає, що жодне право за загальними правилами більше неможливе.",
+              foreignersLaw.text`Спеціальний дозвіл має й власні обов'язки. ${foreignersLaw.external("Art. 42u", specialUrl)} передбачає повідомлення про зміну місця перебування протягом 15 робочих днів. За ${foreignersLaw.external("art. 42t", specialUrl)} виїзд із Польщі щонайменше на шість місяців є підставою відкликання дозволу рішенням wojewody. Це інша межа й інший механізм, ніж припинення UKR через виїзд понад 30 днів.`,
+            ],
+          },
+          {
+            id: "separate-dates",
+            title: "Строк захисту не продовжує автоматично строк подання CUKR",
+            paragraphs: [
+              foreignersLaw.text`${foreignersLaw.external("Офіційне повідомлення UdSC від 6 серпня 2026 року", extensionUrl)} підтверджує передбачене рішенням Ради ЄС продовження тимчасового захисту до 4 березня 2028 року. Воно не змінює саме по собі польські строки для інших процедур. Загальний строк захисту також не усуває індивідуальних підстав його припинення.`,
+              foreignersLaw.text`CUKR працює від 4 травня 2026 року відповідно до ${foreignersLaw.external("комунікату M.P. 2026 poz. 371", commencementUrl)}. На дату перевірки ${foreignersLaw.external("офіційна відповідь UdSC про строк подання", qaUrl)} називає 4 березня 2027 року. Ця дата зберігається й у ${foreignersLaw.external("art. 42x specustawy", specialUrl)}, який регулює законність перебування після належного подання охопленою особою. Не слід переносити подання на 2028 рік лише через новину про захист.`,
+              "У робочому записі мають бути окремі дати: до коли діє відповідна підстава перебування, до коли доступне подання, коли видано карту і коли її отримано. Саме змішування цих дат створює помилкове враження, що подання вже дало новий дозвіл або що готову карту можна забрати будь-коли.",
+            ],
+          },
+        ],
+      }),
     },
   })
 
 export default ukraineRoutesTopic
-
 export const ukraineRoutesMapNode: LegalNode = {
   id: "ukraine-routes-2026",
   title: ukraineRoutesTopic.body.title,
   polish: ukraineRoutesTopic.body.polish,
   summary: ukraineRoutesTopic.summary,
-  why: ukraineRoutesTopic.body.why,
-  checkpoints: [...(ukraineRoutesTopic.body.checkpoints ?? [])],
-  steps: [...(ukraineRoutesTopic.body.steps ?? [])],
   documents: [...(ukraineRoutesTopic.body.documents ?? [])],
   sources: [...ukraineRoutesTopic.body.sources],
 }

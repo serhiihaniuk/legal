@@ -751,8 +751,8 @@
   },
   {
     "path": "app/routes/home.tsx",
-    "contentHash": "a05cb5c04ec620d24b4323880e32f510002bf3405d6143e032d4063070ed6f66",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/46-two-keys.md"
+    "contentHash": "417a3a8aff9d2cceb8668878b430eacb0bee61e1e2b471ad9bf1dbe1e28928f4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/53-ukraine-route-choice.md"
   },
   {
     "path": "app/features/home/ui/home-particles.tsx",
@@ -808,5 +808,10 @@
     "path": "app/data/legal-map/editorial/topics/ukr-baseline-2026.ts",
     "contentHash": "1e009163416117195e489e2a012bf5b36d7c379bcf99524f379362dc586c3079",
     "evidence": "docs/content-review/writing-2026-09-05/batches/52-status-ukr.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/ukraine-routes-2026.ts",
+    "contentHash": "ad13d248b669f8a74e062092ed7746144e5ee260d4808916077712c2f61201f5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/53-ukraine-route-choice.md"
   }
 ]
