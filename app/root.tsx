@@ -8,7 +8,18 @@ import {
 } from "react-router"
 
 import type { Route } from "./+types/root"
+import geistCyrillic from "@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2?url"
+import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url"
 import "./app.css"
+
+export const links: Route.LinksFunction = () =>
+  [geistCyrillic, geistLatin].map((href) => ({
+    rel: "preload",
+    href,
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  }))
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -37,6 +37,7 @@
 - Shared line treatment (2026-09-05): use quiet one-pixel rules for page edges, column boundaries, and section divisions. Cross marks belong at actual horizontal/vertical intersections. Reading pages use continuous rules in the navigation gutters and a plain divider below the introduction. Keep text backgrounds clear, hide unused column rules on smaller screens, and omit decorative lines in print. Shared styling lives in `app/atlas-lines.css`; it uses theme tokens and adds no motion or pointer targets.
 
 - Homepage direction (2026-09-10): use a full-height centered hero, large sans-serif headline, two pill-shaped navigation actions and the supplied particle animation. Keep the six numbered directory rows below the hero. See the homepage particles section for motion and fallback behavior.
+- Font loading (2026-09-10): preload the Cyrillic and Latin Geist files in the document head. Keep the Fontsource unicode ranges in `app/fonts.css` with `font-display: optional`. Slow first visits may retain the system font; do not force a late replacement that changes line wrapping.
 
 - Najpierw orientacja, potem szczegół.
 - Mapa domyślnie pokazuje poziom orientacyjny; pełna głębokość jest świadomą akcją użytkownika.
