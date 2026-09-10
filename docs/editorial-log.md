@@ -555,3 +555,11 @@ Writing acceptance: 182 of 1,813 files. Evidence: docs/content-review/writing-20
 ### 2026-09-10: document status labels
 
 Changed the shared case-document status label from a rounded badge to ordinary muted text. Long explanations now wrap without pill backgrounds in registers and legacy stage lists. Wording is unchanged. Verified the resident register at 1440 px, no page overflow; typecheck and production build passed.
+
+### 2026-09-10: employment chapter introduction
+
+Rewrote work-entry as five authored sections explaining the source and limits of work access, evidence, notification, later changes and the subjects covered by the chapter. A completed four-applicant comparison distinguishes status, an exemption paired with stay, a permit for another employer and the Ukrainian transition. A separate reviewer checked the full draft and official sources, then accepted the final hash after corrections to repeated notification and the student-residence reference.
+
+Scoped source check: 10.09.2026, ELI employment act and DU2026/203 and 1072. Global baseline unchanged. Full verification passed with 41 test files and 217 tests; corrected text received subsequent typecheck, previews and build. Desktop and mobile browser checks passed. Writing acceptance: 183 of 1,813 files. Evidence: docs/content-review/writing-2026-09-05/batches/60-work-access-overview.md.
+
+The resident pilot and plain status labels were pushed to main in 8000dfe. The user accepted that layout, so wider case migration is no longer waiting for pilot approval. Remaining content, source-layout review and whole-project legal acceptance remain open.

@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1813,
-    "reviewed": 182,
+    "reviewed": 183,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -12049,9 +12049,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/work-entry.ts",
       "family": "map-topic",
-      "contentHash": "0fa5df8ea2d3049beff19a93ed051d3e4d7e619d24e316b751541f9c9664928f",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "46eab5454e24b285ead5f9dd10deb8eb34cbd9de070da1deeac6c59bf871f5e7",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/60-work-access-overview.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/work-instruments.ts",

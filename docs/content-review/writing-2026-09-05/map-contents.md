@@ -195,3 +195,6 @@ Batch 39 completes the writing dispositions for `extraordinary-wsa`, `reopening`
 Batch 40 completes the `wsa` writing disposition. Its six sections explain judicial review, routes from decisions and inactivity, filing and representation, a completed fictional complaint, judgment effects and subsequent remedies. The catalog still needs separate judicial-complaint and court-judgment guides with conditional case references. Other map dispositions, source-layout work and independent legal acceptance remain open.
 
 Batch 41 adds the judicial-complaint and court-judgment document guides identified after the WSA rewrite. Both have fictional specimens and explicit WSA map references; all nine case routes use them conditionally after a decision. The broader content disposition audit remains open.
+
+
+Batch 60 completes the `work-entry` chapter introduction after the instrument and ordinary-permit articles in batch 59. It explains how status, a separate exemption and a job-specific document produce different outcomes, with a completed four-applicant comparison. Chapter placement and stable IDs are unchanged. Remaining employment topics and other open dispositions still require their own review.

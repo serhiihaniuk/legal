@@ -923,5 +923,10 @@
     "path": "app/data/document-library/editorial/guides/payroll-statement.ts",
     "contentHash": "1e8c04571e8aaddba768cec3ef9aee2a5262b14d966a88e744dc905753793131",
     "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/work-entry.ts",
+    "contentHash": "46eab5454e24b285ead5f9dd10deb8eb34cbd9de070da1deeac6c59bf871f5e7",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/60-work-access-overview.md"
   }
 ]
