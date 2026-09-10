@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 162,
+    "reviewed": 165,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11727,9 +11727,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/goal-of-stay.ts",
       "family": "map-topic",
-      "contentHash": "6e1c585fe4b67a1739608080b39ccfc9778a66d03559ef3eea8e9e8efd60123d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "967adf35147d78f87fab10d287fbb6cf0242f666b66e238db837341180e65071",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/inactivity.ts",
@@ -11916,16 +11916,16 @@
     {
       "path": "app/data/legal-map/editorial/topics/temporary-common.ts",
       "family": "map-topic",
-      "contentHash": "5bb08788f1b2b91b512f6d690a96d7a95a238513732bedaebc126c1a7c447796",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d1afd3e24f07b09e6ad6ede21cfaa1b40e5d674366bf3f94bffda03bd57628f5",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/temporary-goals.ts",
       "family": "map-topic",
-      "contentHash": "23ae430452b3fcb0faa65cf1b9059354d81f4c56a3f1232e89c81e9da270e78c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "0414a2da06aed49467885d94215240d6d9ec6c34257a7abcfec24682c1fb1731",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/temporary-work.ts",

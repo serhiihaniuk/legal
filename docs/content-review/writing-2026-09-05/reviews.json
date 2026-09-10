@@ -823,5 +823,20 @@
     "path": "app/data/legal-map/editorial/topics/ukraine-ordinary-2026.ts",
     "contentHash": "cf619af0c5b0e57aa54b0f6976fff0900934881c4128b139c91b85e494fd7712",
     "evidence": "docs/content-review/writing-2026-09-05/batches/55-ukr-work-permit.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/goal-of-stay.ts",
+    "contentHash": "967adf35147d78f87fab10d287fbb6cf0242f666b66e238db837341180e65071",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/temporary-common.ts",
+    "contentHash": "d1afd3e24f07b09e6ad6ede21cfaa1b40e5d674366bf3f94bffda03bd57628f5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/temporary-goals.ts",
+    "contentHash": "0414a2da06aed49467885d94215240d6d9ec6c34257a7abcfec24682c1fb1731",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/56-residence-introductions.md"
   }
 ]
