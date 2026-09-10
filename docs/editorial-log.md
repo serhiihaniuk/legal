@@ -513,3 +513,9 @@ Scoped official-source check on 10.09.2026; global baseline unchanged. Full veri
 Rewrote the comparison with six explanatory sections and a filled five-row case note. Separated current UKR, permit eligibility, the effect on a pending proceeding, issuance and collection, obligations and independently legislated dates. Verified the CUKR commencement notice and precise statutory duration and absence rules.
 
 Scoped official-source check on 10.09.2026; global baseline unchanged. Full verification and reference previews passed. Desktop/mobile rendering, keyboard table scrolling and a typed article reference passed without page overflow or console errors. Writing inventory and ledgers regenerated; independent legal acceptance remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/53-ukraine-route-choice.md. Next: detailed CUKR and Ukraine ordinary-permit articles.
+
+### 2026-09-10: CUKR procedure and collection
+
+Rewrote the detailed CUKR map article with seven sections, a completed child example and a filled transition chronology. Corrected card duration versus permit acquisition and the six-month revocation threshold. Separated register data, electronic signatures, filing evidence, pending cases, refusal and address obligations.
+
+Official-source check on 10.09.2026; global baseline unchanged. Full verification and reference previews passed. Desktop/mobile rendering, keyboard table scrolling, section anchor and typed KPA reference passed without page overflow or console errors. Navigation test updated for the new title. Writing inventory and ledgers regenerated; independent legal acceptance remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/54-cukr-procedure.md. Next: Ukraine ordinary-permit article and legacy case profile.

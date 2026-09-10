@@ -813,5 +813,10 @@
     "path": "app/data/legal-map/editorial/topics/ukraine-routes-2026.ts",
     "contentHash": "ad13d248b669f8a74e062092ed7746144e5ee260d4808916077712c2f61201f5",
     "evidence": "docs/content-review/writing-2026-09-05/batches/53-ukraine-route-choice.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/cukr-route-2026.ts",
+    "contentHash": "2a640363dbceb0893017a8ffbb525d44b205d8c46fbefc5dbd1dc8279bb3f715",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/54-cukr-procedure.md"
   }
 ]

@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 160,
+    "reviewed": 161,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11622,9 +11622,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/cukr-route-2026.ts",
       "family": "map-topic",
-      "contentHash": "1afe631bbf796fda6f61772f45547ae88e38aacf71ef1c139856cedd70ce4b3a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "2a640363dbceb0893017a8ffbb525d44b205d8c46fbefc5dbd1dc8279bb3f715",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/54-cukr-procedure.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/deadlines-delivery.ts",

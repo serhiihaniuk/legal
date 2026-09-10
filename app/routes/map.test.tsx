@@ -95,9 +95,14 @@ describe("map chapter navigation", () => {
     if (!chapter) return
     expect(chapter.querySelector('[aria-expanded="true"]')).not.toBeNull()
     fireEvent.click(
-      within(chapter).getByRole("button", { name: /^Перейти на CUKR/ })
+      within(chapter).getByRole("button", {
+        name: /^CUKR: від перевірки UKR до отримання карти/,
+      })
     )
-    await screen.findByRole("heading", { level: 1, name: "Перейти на CUKR" })
+    await screen.findByRole("heading", {
+      level: 1,
+      name: "CUKR: від перевірки UKR до отримання карти",
+    })
     expect(router.state.location.pathname).toBe("/map/cukr-route-2026")
     expect(screen.queryByText("Питання етапу")).toBeNull()
     await act(() => router.navigate(-1))

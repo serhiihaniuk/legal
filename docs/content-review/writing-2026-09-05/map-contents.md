@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 53: the UKR/CUKR/ordinary-permit comparison is now an authored article with a completed case note. It stays in the permit chapter; status UKR stays in the current-stay chapter. Next are the detailed CUKR and Ukraine ordinary-permit articles. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
+Latest implementation note, batch 54: the detailed CUKR article now explains its distinct procedure and completed transition chronology. It remains next to the comparison in the permit chapter. Next is the Ukraine ordinary-permit article and the legacy case-profile reconciliation. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 
