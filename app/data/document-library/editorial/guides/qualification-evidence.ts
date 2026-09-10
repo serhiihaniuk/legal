@@ -1,7 +1,9 @@
 import type { DocumentGuide } from "../../contracts"
+import { createEvidenceDocumentTextAuthor } from "../../legal-text"
 import { defineDocumentTopic } from "../define-document-topic"
 import { documentSources, foreignersLaw, workLaw } from "../authoring"
 
+const documents = createEvidenceDocumentTextAuthor()
 const guide: DocumentGuide = {
   id: "qualification-evidence",
   title: "Диплом, досвід і професійні кваліфікації",
@@ -76,31 +78,9 @@ const guide: DocumentGuide = {
       id: "experience-record",
       title: "Що видно в підтвердженні досвіду",
       paragraphs: [
-        "Свідоцтво про роботу з датами підтверджує період, але може не описувати завдання. Тоді zaświadczenie o doświadczeniu zawodowym, підтвердження професійного досвіду від роботодавця, пояснює обов'язки, відповідальність і зміни посади. Автор має бути ідентифікований, а відомості мають стосуватися саме заявника.",
+        documents.text`Свідоцтво про роботу з датами підтверджує період, але може не описувати завдання. Тоді ${documents.document("professional-experience-confirmation", "zaświadczenie o doświadczeniu zawodowym")}, підтвердження професійного досвіду від роботодавця, пояснює обов'язки, відповідальність і зміни посади. Автор має бути ідентифікований, а відомості мають стосуватися саме заявника.`,
         "Два одночасні місця роботи не подвоюють календарний період. Рік після зміни обов'язків також не слід зараховувати до попередньої спеціальності без пояснення. Договори та інші матеріали допомагають перевірити твердження роботодавця.",
       ],
-      example: {
-        title: "Три роки розробки застосунків замість слова specialist",
-        facts: [
-          "Умовний приклад. Заяву Blue Card подають 01.09.2026 для роботи programista aplikacji, код 251401 з офіційного переліку. Первісне підтвердження містило лише посаду specialist і дати. Попередній роботодавець надав уточнення.",
-        ],
-        sample: {
-          kind: "letter",
-          language: "pl",
-          title: "Zaświadczenie o doświadczeniu zawodowym",
-          note: "Вигаданий змістовий фрагмент. Ідентифікаційні дані роботодавця й працівника та підпис не відтворено. Це не офіційний бланк.",
-          paragraphs: [
-            "Okres zatrudnienia: od 01.08.2023 do 31.07.2026, w pełnym wymiarze czasu pracy. Stanowisko w umowie: specialist.",
-            "Przez cały wskazany okres pracownik projektował i rozwijał aplikacje serwerowe w języku Java, tworzył interfejsy API oraz testy automatyczne. Samodzielnie analizował wymagania i dobierał rozwiązania techniczne. Uczestniczył w przeglądach kodu i usuwaniu błędów produkcyjnych.",
-            "Nazwa specialist była wewnętrzną nazwą stanowiska. Obowiązki obejmowały programowanie aplikacji, a nie obsługę zgłoszeń użytkowników. Informacje potwierdzamy na podstawie dokumentacji zatrudnienia i zakresu obowiązków.",
-          ],
-        },
-        reasoning: [
-          "Уточнення пов'язує загальну назву посади з конкретними завданнями розробника. Період становить три роки і повністю лежить у семирічному проміжку перед поданням. Опис нової роботи також передбачає розробку застосунків, тому зв'язок між досвідом і договором став зрозумілим.",
-        ],
-        conclusion:
-          "Документ пояснює характер і тривалість заявленого досвіду. Його достовірність та відповідність рівню вищих кваліфікацій оцінює орган; сам підрахунок років не вирішує всю справу Blue Card.",
-      },
     },
     {
       id: "regulated-profession",
@@ -125,6 +105,7 @@ const guide: DocumentGuide = {
     foreignersLaw.text`${foreignersLaw.article("138a", "Art. 138a: перелік професій для трирічного досвіду")}`,
   ],
   relatedDocuments: [
+    "professional-experience-confirmation",
     "job-search-evidence",
     "status-documents",
     "job-description",

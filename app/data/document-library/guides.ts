@@ -1,4 +1,5 @@
 import payrollStatementTopic from "./editorial/guides/payroll-statement"
+import professionalExperienceConfirmationTopic from "./editorial/guides/professional-experience-confirmation"
 import zusInsuranceHistoryTopic from "./editorial/guides/zus-insurance-history"
 import employmentIncomeCertificateTopic from "./editorial/guides/employment-income-certificate"
 import taxIncomeCertificateTopic from "./editorial/guides/tax-income-certificate"
@@ -102,6 +103,7 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    professionalExperienceConfirmationTopic.body,
     judicialComplaintTopic.body,
     courtJudgmentTopic.body,
     blueCardNotificationDocumentTopic.body,

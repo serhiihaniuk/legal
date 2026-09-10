@@ -16,7 +16,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "5dcdffcaaf09f001a6af50ac22a8fed99b714de2b48c366bd3336080a3a2f990",
+      "contentHash": "f9f6f94d919497d3ab86898d7ecd17dbfdd12040e1b6c6fecdb715a7ccf71840",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -256,7 +256,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "35cc476a22a7a323c3056f617dacf293686226aec8bee7d4b117c11718a08938",
+      "contentHash": "0ca32a33b47663715203da5721e5f30e608cb29a86fbf61dfe9952d432653234",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -1636,7 +1636,37 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "e42320002f75417900ba6df8ac35c5649c00e7193d5714b41776a4cb0e2febed",
+      "contentHash": "4cbd32fa2d975c6a99d01ad29d07bd99f489ac533cd64099571684bfa5de07b7",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:professional-experience-confirmation",
+      "path": "app/data/document-library/editorial/guides/professional-experience-confirmation.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "professional-experience-confirmation",
+      "contentId": "professional-experience-confirmation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "392df04bd5d8f49f95933dff78661c8892b9dbeef9c202dd70478c3e8afcce31",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -1666,7 +1696,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "9cf1a8cb7715ce21bf0bf2f51dac825b270c39c648125b448d1179d909e225d3",
+      "contentHash": "d03df74480c45cece76c0fcbac943dec19134c66636b61ce7dda4c0b2f15dc19",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -4442,27 +4472,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "0fa5df8ea2d3049beff19a93ed051d3e4d7e619d24e316b751541f9c9664928f",
+      "contentHash": "46eab5454e24b285ead5f9dd10deb8eb34cbd9de070da1deeac6c59bf871f5e7",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "0fa5df8ea2d3049beff19a93ed051d3e4d7e619d24e316b751541f9c9664928f",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "0fa5df8ea2d3049beff19a93ed051d3e4d7e619d24e316b751541f9c9664928f",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5318,7 +5342,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "ed01581a4b01d9f33f241787281466048ea950bb7a2d6f012b48d88badb52a4c",
+      "contentHash": "ec2e70f5d58f6a2eb77233649d85bd44c08fe7498f44f5dd78ee7e7eb2c03347",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,

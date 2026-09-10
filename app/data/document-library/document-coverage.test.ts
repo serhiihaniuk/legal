@@ -33,7 +33,8 @@ describe("document coverage across learning modules", () => {
     for (const route of authoredCaseGuideRoutes) {
       for (const stage of route.stages) {
         for (const entry of stage.documents) {
-          if (!["long-term-eu", "work"].includes(route.id)) continue
+          if (!["long-term-eu", "work", "blue-card"].includes(route.id))
+            continue
           expect(isCaseGuideDocumentUse(entry), stage.id).toBe(true)
           if (!isCaseGuideDocumentUse(entry)) continue
           expect(
@@ -125,6 +126,67 @@ describe("document coverage across learning modules", () => {
       expect(references).not.toContain("zus-insurance-history")
       expect(references).not.toContain("tax-income-certificate")
     }
+  })
+
+  it("selects the Blue Card example's experience letters and keeps payment checks conditional", () => {
+    const route = authoredCaseGuideRoutes.find(
+      (route) => route.id === "blue-card"
+    )!
+    const registerIds = route.documents.flatMap((document) =>
+      ids(document.item)
+    )
+    for (const collection of [
+      "status-documents",
+      "qualification-evidence",
+      "income-evidence",
+      "zus-confirmation",
+    ]) {
+      expect(registerIds).not.toContain(collection)
+    }
+    const experience = route.documents.filter((document) =>
+      ids(document.item).includes("professional-experience-confirmation")
+    )
+    expect(experience).toHaveLength(2)
+    expect(
+      new Set(experience.map((document) => legalTextPlainText(document.item)))
+        .size
+    ).toBe(2)
+    const filing = route.stages.find((stage) => stage.id === "filing")!
+    const response = route.stages.find((stage) => stage.id === "procedure")!
+    const submitted = (stage: typeof filing) =>
+      stage.documents
+        .filter(isCaseGuideDocumentUse)
+        .filter((use) => use.action === "submit")
+        .map((use) => use.document)
+    const initialLetters = submitted(filing).filter((document) =>
+      experience.includes(document)
+    )
+    const responseLetters = submitted(response).filter((document) =>
+      experience.includes(document)
+    )
+    expect(initialLetters).toHaveLength(1)
+    expect(responseLetters).toHaveLength(1)
+    expect(responseLetters[0]).not.toBe(initialLetters[0])
+    expect(
+      submitted(response).flatMap((document) => ids(document.item))
+    ).toContain("blue-card-annex")
+    expect(
+      submitted(filing).flatMap((document) => ids(document.item))
+    ).toContain("zus-health-registration")
+    for (const id of ["payroll-statement", "bank-statement"] as const) {
+      const document = route.documents.find((entry) =>
+        ids(entry.item).includes(id)
+      )!
+      expect(document, id).toBeDefined()
+      expect(document.level, id).toBe("conditional")
+      expect(submitted(filing)).not.toContain(document)
+      expect(submitted(response)).not.toContain(document)
+    }
+    expect(
+      documentById
+        .get("professional-experience-confirmation")
+        ?.caseContexts.filter((context) => context.routeId === "blue-card")
+    ).toHaveLength(1)
   })
 
   it("places remedies and court results in their conditional stages with illustrated guides and reverse references", () => {
@@ -365,7 +427,7 @@ describe("document coverage across learning modules", () => {
           .documents.flatMap((document) => ids(document.item))
       expect(at("status")).toEqual(
         expect.arrayContaining(
-          routeId === "work"
+          ["work", "blue-card"].includes(routeId)
             ? ["administrative-decision", "residence-card"]
             : ["status-documents"]
         )
@@ -400,7 +462,7 @@ describe("document coverage across learning modules", () => {
                 "housing-evidence",
                 "employment-contract",
               ]
-            : ["long-term-eu", "work"].includes(routeId)
+            : ["long-term-eu", "work", "blue-card"].includes(routeId)
               ? ["zus-health-registration"]
               : ["health-insurance"]),
           ...(routeId === "long-term-eu"
@@ -432,9 +494,15 @@ describe("document coverage across learning modules", () => {
                         "income-evidence",
                         "housing-evidence",
                       ]
-                    : routeId === "work"
-                      ? ["payroll-statement", "bank-statement"]
-                      : ["zus-confirmation", "qualification-evidence"]),
+                    : routeId === "blue-card"
+                      ? [
+                          "professional-experience-confirmation",
+                          "payroll-statement",
+                          "bank-statement",
+                        ]
+                      : routeId === "work"
+                        ? ["payroll-statement", "bank-statement"]
+                        : ["zus-confirmation", "qualification-evidence"]),
           "sworn-translation",
         ])
       )

@@ -16,22 +16,46 @@ const kpa = createLegalTextAuthor("kpa")
 
 export const blueCardDocuments = {
   ...common,
-  status: {
+  passport: {
+    ...common.passport,
+    item: document("passport", "Дійсний паспорт заявника"),
+  },
+  currentDecision: {
     item: document(
-      "status-documents",
-      "Нинішній дозвіл і попередні документи перебування"
+      "administrative-decision",
+      "Чинне рішення про pobyt czasowy i pracę до 30.09.2026"
     ),
     level: "control",
-    status: "до вибору підстави",
-    owner: "Заявник надає повні рішення, карти та візові дані",
+    status: "до вибору нової заяви",
+    owner: "Заявник надає повне рішення про нинішню роботу в компанії A",
     proves:
-      "Підставу перебування на дату заяви та роботу, яку можна виконувати зараз. Дата видачі попередньої Blue Card має значення для правил зміни роботи",
-    law: law.text`${law.article("99")}, ${law.article("105")}, ${law.article("108")} і ${law.article("131")}; ${law.external("art. 20 закону Dz.U. 2025 poz. 619", "https://eli.gov.pl/eli/DU/2025/619/ogl")}.`,
+      "Підставу нинішнього перебування та дозволені умови роботи. Майбутня Blue Card ще не діє",
+    law: law.text`${law.article("99")}, ${law.article("105")}, ${law.article("108")} і ${law.article("118")}.`,
+  },
+  currentCard: {
+    item: document("residence-card", "Карта до чинного дозволу, до 30.09.2026"),
+    level: "control",
+    status: "наявний документ перебування",
+    owner: "Заявник надає карту разом із повним рішенням",
+    proves: "Документує нинішній статус; не показує всіх умов роботи з рішення",
+    law: law.text`${law.article("242")}; ${law.article("118")}.`,
+  },
+  currentContract: {
+    item: document(
+      "employment-contract",
+      "Нинішній договір про роботу програмістом у компанії A"
+    ),
+    level: "control",
+    status: "робота до 30.09.2026",
+    owner: "Заявник і роботодавець; наявний підписаний договір",
+    proves:
+      "Яку роботу заявник виконує зараз. Новий договір із початком 01.10.2026 не замінює читання нинішніх умов",
+    law: law.text`${law.article("118")}; ${law.article("129")}.`,
   },
   contract: {
     item: document(
       "employment-contract",
-      "Укладений договір про роботу та aneksy"
+      "Новий договір від 12.08.2026: 14 000 zł brutto з 01.10.2026"
     ),
     reviewId: "contract",
     level: "required",
@@ -52,18 +76,42 @@ export const blueCardDocuments = {
       "Роботодавця, умови роботи й заявлену винагороду. Його дані мають відповідати договору та реальній посаді",
     law: law.text`${law.article("106")} ust. 2; ${law.article("106c")} і ${law.article("106d")}. Це назва додатка до заяви; у розпорядженні з формами він має інший порядковий номер.`,
   },
-  qualifications: {
+  experience: {
     item: document(
-      "qualification-evidence",
-      "Освіта або належний досвід; професійний допуск за потреби"
+      "professional-experience-confirmation",
+      "Первинний лист про досвід 2021–2024 років: IT specialist"
     ),
-    level: "required",
-    status: "для роботи, яку заявлено",
-    owner:
-      "Заявник; диплом і матеріали про навчання або документи про фактичний професійний досвід",
+    level: "control",
+    status: "наявний доказ із прогалиною",
+    owner: "Попередній роботодавець видав; заявник подає лист",
     proves:
-      "Для нерегульованої професії: відповідні вищі кваліфікації через освіту або досвід. Для регульованої: формальні кваліфікації й інші необхідні умови виконання професії",
-    law: law.text`${law.article("3")} pkt 6, 6a і 25; ${law.article("127")} pkt 1 lit. b–c і ${law.article("130")}. Диплом і досвід не є двома обов'язковими пакетами одночасно.`,
+      "Період 01.09.2021–31.08.2024 і загальну назву посади. Без опису завдань не показує досвіду програміста потрібного рівня",
+    law: law.text`${law.article("3")} pkt 6a і 25; ${law.article("127")} pkt 1 lit. c.`,
+  },
+  experienceClarification: {
+    item: document(
+      "professional-experience-confirmation",
+      "Уточнений лист попереднього роботодавця від 27.08.2026"
+    ),
+    level: "control",
+    status: "відповідь на питання про зміст досвіду",
+    owner:
+      "Попередній роботодавець описує фактично виконувані завдання та їх період",
+    proves:
+      "Розроблення, тестування й підтримку застосунків у 2021–2024 роках. Читається разом із первинним листом і договором, не стирає стару версію",
+    law: law.text`${law.article("3")} pkt 6a; ${law.article("127")} pkt 1 lit. c; ${kpa.article("80", "Art. 80 KPA")}.`,
+  },
+  priorContract: {
+    item: document(
+      "employment-contract",
+      "Договір із попереднім роботодавцем на період 01.09.2021–31.08.2024"
+    ),
+    level: "control",
+    status: "первинний матеріал про попередню роботу",
+    owner: "Заявник зберігає договір із попереднім роботодавцем",
+    proves:
+      "Домовленість про роботу в названий період. Сам договір не доводить фактичного виконання всіх завдань; його звіряють із підтвердженням роботодавця",
+    law: law.text`${law.article("3")} pkt 6a; ${law.article("127")} pkt 1 lit. c.`,
   },
   blueAnnex: {
     item: document(
@@ -87,40 +135,46 @@ export const blueCardDocuments = {
     law: law.text`${law.article("3")} pkt 24–25; ${law.article("127")}.`,
   },
   insurance: {
-    item: document("health-insurance", "Підтвердження медичного страхування"),
-    level: "required",
-    status: "окрема умова Blue Card",
-    owner:
-      "Заявник; документ про публічне страхування або покриття страховиком лікування в Польщі",
-    proves:
-      "Особу, вид і період належного покриття. Обіцянка укласти договір страхування не підтверджує наявне покриття",
-    law: law.text`${law.article("127")} pkt 1 lit. d. Правило про майбутнє страхування зі звичайного дозволу за ${law.article("114")} ust. 4a не переноситься сюди автоматично.`,
-  },
-  zus: {
-    item: document("zus-confirmation", "Дані ZUS про страхування заявника"),
-    level: "conditional",
-    status: "якщо підстава страхування проходить через ZUS",
-    owner: "Заявник або платник внесків; відомості за потрібний період",
-    proves:
-      "Реєстрацію й медичне страхування саме цієї особи. Окремий переказ внесків компанії не показує весь страховий статус працівника",
-    law: law.text`${law.article("127")} pkt 1 lit. d.`,
-  },
-  income: {
     item: document(
-      "income-evidence",
-      "Розрахунки та виплати за виконану роботу"
+      "zus-health-registration",
+      "Іменне підтвердження поточного медичного страхування з eZUS"
+    ),
+    level: "control",
+    status: "обраний доказ страхування в цьому прикладі",
+    owner:
+      "Заявник отримує документ про своє актуальне zgłoszenie до медичного страхування",
+    proves:
+      "Реєстрацію саме заявника через нинішню роботу. Загальний платіж компанії або відсутність її боргу не підтверджують той самий факт",
+    law: law.text`${law.article("127")} pkt 1 lit. d. Правило про майбутнє страхування за ${law.article("114")} ust. 4a сюди автоматично не переноситься.`,
+  },
+  payroll: {
+    item: document(
+      "payroll-statement",
+      "Pasek wynagrodzenia за липень 2026 року за нинішньою роботою"
     ),
     level: "conditional",
-    status: "якщо треба звірити фактичну оплату",
-    owner: "Роботодавець і заявник; відомості за названі місяці",
+    status: "лише для перевірки фактичного нарахування",
+    owner: "Роботодавець надає індивідуальний розрахунок за названий місяць",
     proves:
-      "Як виконують договірні умови на практиці. Для порога Blue Card вихідною є річна винагорода brutto з договору; банківський залишок або переказ netto цього не замінює",
+      "Нараховану суму brutto, утримання та netto за липень. Не доводить майбутньої зарплати 14 000 zł з жовтня",
+    law: law.text`${law.article("127")} pkt 3; ${kpa.article("80", "Art. 80 KPA")}.`,
+  },
+  bank: {
+    item: document(
+      "bank-statement",
+      "Wyciąg bankowy за період виплати зарплати за липень 2026 року"
+    ),
+    level: "conditional",
+    status: "лише для звірення конкретної виплати",
+    owner: "Заявник отримує виписку за період фактичного переказу",
+    proves:
+      "Дату, платника й суму зарахування. Її зіставляють із липневим розрахунком; переказ netto не замінює річну договірну винагороду brutto",
     law: law.text`${law.article("127")} pkt 3; ${kpa.article("80", "Art. 80 KPA")}.`,
   },
   company: {
     item: document(
       "business-register-information",
-      "KRS/CEIDG і повноваження підписанта"
+      "Актуальна інформація KRS про компанію A"
     ),
     reviewId: "representation",
     level: "control",
@@ -131,18 +185,7 @@ export const blueCardDocuments = {
       "Існування роботодавця й спосіб представництва. Не доводить автоматично реальної діяльності, сплати податків або внесків",
     law: law.text`${law.article("106d")} ust. 4; ${law.article("132")}.`,
   },
-  business: {
-    item: document(
-      "business-evidence",
-      "Матеріали про діяльність, податки та внески роботодавця"
-    ),
-    level: "conditional",
-    status: "для конкретної перевірки або вимоги",
-    owner: "Роботодавець; документи, які відповідають питанню органу",
-    proves:
-      "Реальну діяльність та обставини, пов'язані з підставами відмови. Наявну заборгованість читають разом із законними відстроченнями, розстроченнями та іншими винятками",
-    law: law.text`${law.article("132")}. Це не універсальна вимога завантажити всю бухгалтерію до кожної заяви.`,
-  },
+
   decision: {
     item: document("administrative-decision", "Decyzja про Blue Card"),
     reviewId: "decision",
@@ -188,18 +231,21 @@ export const blueCardDocuments = {
 
 export const blueCardDocumentRegister: CaseGuideDocument[] = [
   blueCardDocuments.passport,
-  blueCardDocuments.status,
+  blueCardDocuments.currentDecision,
+  blueCardDocuments.currentCard,
+  blueCardDocuments.currentContract,
   blueCardDocuments.chronology,
   blueCardDocuments.contract,
   blueCardDocuments.annex,
   blueCardDocuments.blueAnnex,
-  blueCardDocuments.qualifications,
+  blueCardDocuments.experience,
+  blueCardDocuments.experienceClarification,
+  blueCardDocuments.priorContract,
   blueCardDocuments.job,
   blueCardDocuments.insurance,
-  blueCardDocuments.zus,
-  blueCardDocuments.income,
+  blueCardDocuments.payroll,
+  blueCardDocuments.bank,
   blueCardDocuments.company,
-  blueCardDocuments.business,
   blueCardDocuments.translation,
   blueCardDocuments.matrix,
   blueCardDocuments.assessment,

@@ -186,6 +186,44 @@ describe("case guide continuity", () => {
     ).toBe("/documents/employment-contract")
   })
 
+  it("opens the Blue Card experience guide directly from its visible response list", () => {
+    const route = getCaseGuideRoute("blue-card")
+    const { container } = render(
+      <MemoryRouter initialEntries={["/cases/blue-card"]}>
+        <CaseStudyContent route={route} updatedAt="2026-07-18" />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    expect(
+      screen.getAllByRole("heading", { name: "Документи на цьому етапі" })
+    ).toHaveLength(6)
+    for (const stage of route.stages) {
+      const region = within(
+        container.querySelector<HTMLElement>(`#case-stage-${stage.id}`)!
+      )
+      expect(region.queryByRole("button", { name: /^Документи/ })).toBeNull()
+      expect(region.queryByRole("checkbox")).toBeNull()
+    }
+    const response = container.querySelector<HTMLElement>(
+      "#case-stage-procedure"
+    )!
+    const experience = response.querySelector<HTMLAnchorElement>(
+      'a[href="/documents/professional-experience-confirmation"]'
+    )!
+    expect(experience).toBeTruthy()
+    expect(experience.closest("li")!.textContent).toContain("27.08.2026")
+    expect(
+      response.querySelector('a[href="/documents/blue-card-annex"]')
+    ).toBeTruthy()
+    expect(
+      response.querySelector('a[href="/documents/qualification-evidence"]')
+    ).toBeNull()
+    fireEvent.click(experience)
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/professional-experience-confirmation")
+  })
+
   it("links register titles to document guides while retaining provision links", () => {
     render(
       <MemoryRouter>

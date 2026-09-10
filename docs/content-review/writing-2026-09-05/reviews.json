@@ -246,8 +246,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/qualification-evidence.ts",
-    "contentHash": "9cf1a8cb7715ce21bf0bf2f51dac825b270c39c648125b448d1179d909e225d3",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+    "contentHash": "d03df74480c45cece76c0fcbac943dec19134c66636b61ce7dda4c0b2f15dc19",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/job-description.ts",
@@ -386,23 +386,23 @@
   },
   {
     "path": "app/data/case-guides/editorial/routes/blue-card.ts",
-    "contentHash": "5dcdffcaaf09f001a6af50ac22a8fed99b714de2b48c366bd3336080a3a2f990",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/16-blue-card-case-guide.md"
+    "contentHash": "f9f6f94d919497d3ab86898d7ecd17dbfdd12040e1b6c6fecdb715a7ccf71840",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/blue-card/documents.ts",
-    "contentHash": "5bc9f3c2b1effdbcc316814cdb7464c53b71e0b534365f57a3d755c169157d12",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+    "contentHash": "b9e5c55f7e30eaf43ebfc362d3c74d1d4ffe91e2123fc5db9de9505b8b7dab7b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/blue-card/stages.ts",
-    "contentHash": "0f5e75a3f1f8088bfa61b80167651a9ed9e17bf115ad4ebf5f210b67a14bea9c",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+    "contentHash": "9d94a49b11a17839613c3ae0e366a27b0ce92e16857c786b3c67069d213ab636",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/blue-card/reference.ts",
-    "contentHash": "a563c25ebb73da3db875987aac1fd48c894d216e384d859f8aa96744fb7625e6",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+    "contentHash": "98df1e84f7128352a4e6fc858bb9befc63fa48913943238d2ff7ff98a879301e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
   },
   {
     "path": "app/data/case-guides/editorial/shared/temporary-residence-documents.ts",
@@ -928,5 +928,10 @@
     "path": "app/data/legal-map/editorial/topics/work-entry.ts",
     "contentHash": "46eab5454e24b285ead5f9dd10deb8eb34cbd9de070da1deeac6c59bf871f5e7",
     "evidence": "docs/content-review/writing-2026-09-05/batches/60-work-access-overview.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/professional-experience-confirmation.ts",
+    "contentHash": "392df04bd5d8f49f95933dff78661c8892b9dbeef9c202dd70478c3e8afcce31",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
   }
 ]

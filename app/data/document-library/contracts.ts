@@ -47,6 +47,7 @@ export type EvidenceDocumentId =
   | "tuition-payment"
   | "study-progress"
   | "qualification-evidence"
+  | "professional-experience-confirmation"
   | "polish-language-proof"
   | "business-evidence"
   | "settlement-intention"
@@ -211,6 +212,7 @@ export const evidenceDocumentIds = [
   "tuition-payment",
   "study-progress",
   "qualification-evidence",
+  "professional-experience-confirmation",
   "job-search-evidence",
   "polish-language-proof",
   "business-evidence",
