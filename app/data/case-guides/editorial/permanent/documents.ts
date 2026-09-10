@@ -26,17 +26,22 @@ export const permanentDocuments = {
   cardFee: common.cardFee,
   passport: {
     ...common.passport,
+    item: document("passport", "Дійсний паспорт заявника"),
     law: law.text`${law.article("203a")}; ${law.article("203d")} ust. 1 pkt 2; ${law.article("203e")}. Альтернативний документ допускається лише за умовами ${law.article("203a")} ust. 2.`,
   },
   chronology: {
     ...common.chronology,
     law: law.text`${law.article("202")}, ${law.article("203")} ust. 1 pkt 3 і ${law.article("206")}; період для конкретної підстави за ${law.article("195")}.`,
   },
-  status: {
-    item: document("status-documents", "Нинішня підстава перебування"),
+  visa: {
+    item: document(
+      "visa",
+      "Національна віза з дозволеним перебуванням до 30.09.2026"
+    ),
     level: "required",
     status: "до подання",
-    owner: "Заявник; віза або рішення та фактичні дати перебування",
+    owner:
+      "Заявник; обрана чинна національна віза та фактичні дати перебування",
     proves:
       "Право перебувати й останній день для заяви. Karta Polaka не замінює візу або іншу підставу перебування",
     law: law.text`${law.article("196")}, ${law.article("202")} і ${law.article("206")}.`,
@@ -46,37 +51,45 @@ export const permanentDocuments = {
     level: "conditional",
     status: "обов'язкова для підстави з прикладу",
     owner:
-      "Заявник; чинна карта та, за потреби, рішення про її видачу або зміну даних",
+      "Заявник; обрана чинна карта відповідає паспорту, не анульована і не замінена. Додаткове рішення потрібне лише за конкретної зміни чи розбіжності",
     proves:
       "Належність документа цій особі та його чинність. Намір оселитися й законність нинішнього перебування встановлюють окремо",
     law: law.text`${law.article("195")} ust. 1 pkt 9; ${law.external("art. 3, 7, 17 і 20 ustawy o Karcie Polaka", "https://eli.gov.pl/eli/DU/2026/76/ogl")}.`,
   },
   intention: {
-    item: document(
-      "settlement-intention",
-      "Пояснення наміру оселитися та докази"
-    ),
+    kind: "action",
+    guidance: "settlement-intention",
+    item: "Пояснити намір постійного оселення в заяві та відповіді",
     level: "conditional",
     status: "для Karty Polaka або польського походження",
-    owner: "Заявник; опис життєвого плану й матеріали про конкретні обставини",
+    owner:
+      "Заявник пояснює план у заяві 17.08 та відповіді 31.08; окремої обов’язкової заяви про намір не вигадують",
     proves:
       "Намір постійно жити в Польщі. Строк оренди не є строком цього наміру; суперечності потребують пояснення",
     law: law.text`${law.article("195")} ust. 1 pkt 3 або 9. Робота, власне житло й родина не є універсальним обов'язковим набором.`,
   },
   housing: {
-    item: document("housing-evidence", "Договір житла як доказ плану оселення"),
+    item: document(
+      "residential-lease",
+      "Підписана оренда житла у Вроцлаві на 01.08.2026–31.07.2027"
+    ),
     level: "conditional",
     status: "матеріал із прикладу",
-    owner: "Заявник; підписаний договір і пояснення подальших планів",
+    owner:
+      "Заявник; цифрову копію підписаного договору подано 17.08, його оригінал надано 31.08 на вимогу органу",
     proves:
       "Забезпечене місце життя на зазначений період. Річна оренда сама не доводить і не спростовує постійного наміру",
     law: law.text`${law.article("195")} ust. 1 pkt 9; ${kpa.article("80", "art. 80 KPA")}.`,
   },
   employment: {
-    item: document("employment-contract", "Договір роботи в Польщі"),
+    item: document(
+      "employment-contract",
+      "Чинна umowa o pracę заявника в Польщі"
+    ),
     level: "conditional",
     status: "один із доказів обставин у прикладі",
-    owner: "Заявник; чинний договір і підтверджені обставини роботи",
+    owner:
+      "Заявник; чинна umowa o pracę щодо вже розпочатої роботи, вперше подана 31.08",
     proves:
       "Професійний зв'язок із Польщею. Договір не є самостійною умовою для кожного власника Karty Polaka",
     law: law.text`${law.article("195")} ust. 1 pkt 9. Право виконувати роботу перевіряють за окремим законом.`,
@@ -113,14 +126,15 @@ export const permanentDocuments = {
     law: kpa.text`${kpa.articleRange("32", "33", { start: "Art. 32", end: "33 KPA" })}; особистий електронний підпис за ${law.article("203d", "art. 203d ustawy o cudzoziemcach")} ust. 3. Законне представництво за ${law.article("202")} ust. 2 є окремим випадком.`,
   },
   fee: {
-    ...common.fee,
-    item: document(
-      "stamp-duty-proof",
-      "Підстава звільнення або opłata skarbowa 640 zł"
-    ),
-    status: "у прикладі звільнення за Kartą Polaka",
+    kind: "action",
+    guidance: "stamp-duty-proof",
+    item: "Перевірити звільнення від плати за дозвіл за Kartą Polaka",
+    level: "control",
+    status: "640 zł у цьому прикладі не сплачують",
+    owner:
+      "Заявник або представник зіставляє чинну Kartę Polaka й підставу заяви",
     proves:
-      "Сплату або застосовне звільнення від плати за дозвіл. Звільнення власника Karty Polaka не поширюється автоматично на плату за пластикову карту",
+      "Застосування звільнення до власника Karty Polaka з наміром постійного оселення. Це перевірка, не квитанція про неіснуючий платіж. Плата за карту має інше призначення.",
     law: law.text`${law.external("Załącznik do ustawy o opłacie skarbowej, część III, poz. 3", "https://eli.gov.pl/eli/DU/2025/1154/ogl")}.`,
   },
   upo: { ...common.upo, law: law.text`${law.article("203d")} ust. 4–5.` },
@@ -152,7 +166,8 @@ export const permanentDocuments = {
     item: document("administrative-decision", "Рішення про pobyt stały"),
     level: "control",
     status: "після вручення",
-    owner: "Заявник або представник; рішення, вручення та дата остаточності",
+    owner:
+      "Орган видає повне рішення; заявник або представник читає його. Доказ вручення зберігають окремо, остаточність установлюють за матеріалами справи",
     proves:
       "Підставу та результат справи. Безстроковість дозволу відрізняється від десятирічного строку пластикової карти",
     law: law.text`${law.article("195")}, ${law.article("201")}; ${kpa.article("107", "art. 107 KPA")}.`,
@@ -164,7 +179,8 @@ export const permanentDocuments = {
     ),
     level: "control",
     status: "перша видача й подальша заміна",
-    owner: "Заявник; при отриманні перевіряє дані та повернення Karty Polaka",
+    owner:
+      "Заявник; при отриманні перевіряє дані карти й відповідність наданому дозволу. Повернення Karty Polaka є окремою попередньою дією",
     proves:
       "Документує наданий статус. Наступну карту отримують окремо, без нової заяви про надання того самого постійного дозволу",
     law: law.text`${law.article("229")} ust. 2 і 7; ${law.article("230")} ust. 2; ${law.article("243")} ust. 1 pkt 2.`,
@@ -179,7 +195,7 @@ export const permanentDocuments = {
 
 export const permanentDocumentRegister: CaseGuideDocument[] = [
   permanentDocuments.passport,
-  permanentDocuments.status,
+  permanentDocuments.visa,
   permanentDocuments.polaka,
   permanentDocuments.chronology,
   permanentDocuments.intention,

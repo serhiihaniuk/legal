@@ -363,6 +363,49 @@ describe("case guide continuity", () => {
     ).toBe("/documents/polish-graduation-diploma")
   })
 
+  it("shows permanent residence attachments without folding or implying a second lease", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/cases/permanent"]}>
+        <CaseStudyContent
+          route={getCaseGuideRoute("permanent")}
+          updatedAt="2026-07-18"
+        />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    expect(
+      screen.getAllByRole("heading", { name: "Документи на цьому етапі" })
+    ).toHaveLength(6)
+    const filing = container.querySelector<HTMLElement>("#case-stage-filing")!
+    const procedure = container.querySelector<HTMLElement>(
+      "#case-stage-procedure"
+    )!
+    for (const section of [filing, procedure]) {
+      expect(within(section).queryByRole("checkbox")).toBeNull()
+      expect(
+        within(section).queryByRole("button", { name: /^Документи/ })
+      ).toBeNull()
+      expect(
+        section.querySelector('li a[href="/documents/residential-lease"]')
+      ).toBeTruthy()
+    }
+    expect(
+      filing.querySelector('li a[href="/documents/employment-contract"]')
+    ).toBeNull()
+    expect(
+      procedure.querySelector('li a[href="/documents/employment-contract"]')
+    ).toBeTruthy()
+    expect(
+      filing.querySelector('li a[href="/documents/residence-card-fee-proof"]')
+    ).toBeTruthy()
+    fireEvent.click(
+      procedure.querySelector('li a[href="/documents/residential-lease"]')!
+    )
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/residential-lease")
+  })
+
   it("links register titles to document guides while retaining provision links", () => {
     render(
       <MemoryRouter>

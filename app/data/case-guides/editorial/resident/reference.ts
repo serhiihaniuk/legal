@@ -61,8 +61,7 @@ export const residentConditions: CaseGuideCondition[] = [
     condition: "Правова підстава житла й належне подання",
     factToEstablish:
       "Документ про користування житлом, дозволена дата та спосіб подання, підпис і UPO.",
-    evidence:
-      "Актуальна оренда з прикладу, паспорт, фото та збережений пакет MOS.",
+    evidence: documents.text`${documents.document("residential-lease", "Чинний підписаний договір оренди з прикладу")}, паспорт, фото та збережений пакет MOS.`,
     risk: "Meldunek не замінює документа про право користування житлом. Użyczenie від сторонньої людини не належить до винятку для визначених близьких.",
     law: law.text`${law.article("218a")}, ${law.article("219a")}, ${law.article("219c")} і ${law.article("219d")}.`,
   },

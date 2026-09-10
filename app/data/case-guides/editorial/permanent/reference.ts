@@ -5,9 +5,11 @@ import type {
   CaseGuideNegativeBranch,
   CaseGuideSource,
 } from "../../types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import { document } from "../shared/document-reference"
 
+const evidence = createEvidenceDocumentTextAuthor()
 const law = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const kpa = createLegalTextAuthor("kpa")
 const polakaUrl = "https://eli.gov.pl/eli/DU/2026/76/ogl"
@@ -20,8 +22,8 @@ export const permanentConditions: CaseGuideCondition[] = [
     factToEstablish:
       "Власна підстава перебування, використані дні й відсутність застосовної перешкоди. У прикладі дозволене перебування до 30.09.2026, подання 17.08.2026.",
     evidence: document(
-      "status-documents",
-      "Віза або рішення та підтверджені дати перебування"
+      "visa",
+      "Національна віза до 30.09.2026 та підтверджені дати перебування"
     ),
     risk: "Karta Polaka помилково використана як заміна законного перебування.",
     law: law.text`${law.article("196")}, ${law.article("202")} і ${law.article("206")}.`,
@@ -41,10 +43,7 @@ export const permanentConditions: CaseGuideCondition[] = [
     condition: "Намір оселитися в Польщі на постійно",
     factToEstablish:
       "Заявлений життєвий план узгоджується з конкретними обставинами. У прикладі річна оренда і постійний намір потребують пояснення, а не приховування різних строків.",
-    evidence: document(
-      "settlement-intention",
-      "Пояснення, чинна оренда й матеріали про роботу"
-    ),
+    evidence: evidence.text`Обґрунтування в ${evidence.document("permanent-application", "заяві 17.08")} та ${evidence.document("response-letter", "відповідь 31.08")}; окремо ${evidence.document("residential-lease", "підписана оренда")} і ${evidence.document("employment-contract", "umowa o pracę")}.`,
     risk: "Один договір визнано автоматично достатнім або перетворено власність на житло на обов'язкову умову.",
     law: law.text`${law.article("195")} ust. 1 pkt 9; ${kpa.article("77", "art. 77 KPA")} і ${kpa.article("80", "art. 80 KPA")}.`,
   },
@@ -52,10 +51,7 @@ export const permanentConditions: CaseGuideCondition[] = [
     condition: "Належно виконано процесуальні дії",
     factToEstablish:
       "Підпис і UPO, вимоги органу, паспорт та необхідні біометричні дії. Винятки мають власні умови.",
-    evidence: document(
-      "case-file-index",
-      "Заява, UPO, виклики, відповіді й підтвердження дій"
-    ),
+    evidence: evidence.text`${evidence.document("permanent-application", "Підписана заява")}, ${evidence.document("upo", "UPO")}, ${evidence.document("authority-summons", "належний виклик")}, ${evidence.document("response-letter", "відповідь")} та ${evidence.document("dispatch-proof", "підтвердження її подання")}. Особисті дії мають власні записи.`,
     risk: "Доказ наміру використано замість особистої дії або наявність UPO прийнято за підтвердження всіх матеріальних умов.",
     law: law.text`${law.article("203d")}, ${law.article("203e")}, ${law.article("203f")} і ${law.article("203i")}.`,
   },
@@ -63,10 +59,7 @@ export const permanentConditions: CaseGuideCondition[] = [
     condition: "Немає застосовної підстави відмови",
     factToEstablish:
       "Умови дозволу, достовірність матеріалів та інші обставини, які перевіряє орган, з урахуванням винятків для конкретної категорії.",
-    evidence: document(
-      "administrative-decision",
-      "Матеріали справи, результати перевірок і мотиви рішення"
-    ),
+    evidence: evidence.text`Матеріали справи та результати перевірок органу. ${evidence.document("case-assessment", "Робоча оцінка")} фіксує відомі факти й прогалини, але не є довідкою про відсутність усіх підстав відмови. Рішення в прикладі ще не вручено.`,
     risk: "Karta Polaka сприймається як гарантія дозволу; винятки для польського походження перенесено до іншого пункту.",
     law: law.text`${law.article("197")}, ${law.article("198")} і ${law.article("207")}.`,
   },
@@ -86,8 +79,10 @@ export const permanentDeadlines: CaseGuideDeadline[] = [
   {
     stageId: "procedure",
     period: "14 днів у прикладі; до 03.09.2026",
-    trigger: "вручення представнику 20.08.2026 вимоги пояснити намір оселитися",
-    action: "Подати відповідь і матеріали. У прикладі це зроблено 31.08.2026.",
+    trigger:
+      "вручення представнику 20.08.2026 вимоги пояснити намір оселитися й надати оригінал оренди",
+    action:
+      "Подати пояснення, запитаний оригінал оренди та вперше umowę o pracę. У прикладі це зроблено 31.08.2026.",
     consequence:
       "День вручення не включають. Відсутність переконливого доказу може залишити умову недоведеною, навіть якщо лист подано вчасно.",
     law: law.text`${law.article("203f")}; ${kpa.article("40", "art. 40 KPA")} і ${kpa.article("57", "art. 57 KPA")}.`,
@@ -185,9 +180,14 @@ export const permanentAlternatives: CaseGuideNegativeBranch[] = [
 
 export const permanentSources: CaseGuideSource[] = [
   {
+    label: "UdSC: початкові вкладення MOS",
+    url: "https://www.gov.pl/web/udsc/mos-qa",
+    note: "Питання 19: офіційне пояснення первинного додавання підтвердження плати 100 zł за карту. Загальне пояснення плати за дозвіл не скасовує окремого звільнення за Kartą Polaka. Перевірено 10.09.2026.",
+  },
+  {
     label: "Ustawa o cudzoziemcach",
     url: "https://eli.gov.pl/eli/DU/2025/1079/ogl",
-    note: law.text`Категорії ${law.article("195")}, перешкоди та відмова, подання за ${law.article("202")} і ${law.article("203d")}, особисті дії, строки й документи. Читання з пізнішими змінами та датою запуску MOS.`,
+    note: law.text`Перевірено пакет власника Karty Polaka 10.09.2026: ${law.article("195")} ust. 1 pkt 9, подання за ${law.article("202")} і ${law.article("203d")}, вимога оригіналів за ${law.article("203f")}, підтвердження за ${law.article("206")} і видача карти за ${law.article("229")}. Читання з пізнішими змінами та датою запуску MOS. Попередня перевірка інших категорій і окремих варіантів відмови залишається від 06.09.2026.`,
   },
   {
     label: "Перехід до MOS",

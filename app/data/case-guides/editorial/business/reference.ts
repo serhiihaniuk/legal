@@ -51,7 +51,7 @@ export const businessConditions: CaseGuideCondition[] = [
     condition: "Є покриття лікування та забезпечене житло",
     factToEstablish:
       "Особисте страхування заявника й місце його проживання у відповідний період.",
-    evidence: documents.text`Власне ${documents.document("zus-health-registration", "підтвердження eZUS про актуальне медичне страхування заявника")} та ${documents.document("housing-evidence", "підписаний договір його житлової оренди")}.`,
+    evidence: documents.text`Власне ${documents.document("zus-health-registration", "підтвердження eZUS про актуальне медичне страхування заявника")} та ${documents.document("residential-lease", "підписаний договір його житлової оренди")}.`,
     risk: "Внески за персонал і оренда офісу не доводять цих особистих умов.",
     law: law.text`${law.article("142")} ust. 1 pkt 1 lit. a, pkt 2 і ust. 3.`,
   },

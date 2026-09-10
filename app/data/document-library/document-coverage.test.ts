@@ -41,6 +41,7 @@ describe("document coverage across learning modules", () => {
               "student",
               "business",
               "family",
+              "permanent",
             ].includes(route.id)
           )
             continue
@@ -658,6 +659,15 @@ describe("document coverage across learning modules", () => {
           const id = ids(document.item)[0]
           expect(route.documents).toContain(document)
           if (!id) {
+            if (document.kind === "action") {
+              expect(document.guidance).toBeDefined()
+              expect(
+                documentById
+                  .get(document.guidance!)
+                  ?.caseContexts.some((context) => context.routeId === routeId)
+              ).toBe(true)
+              continue
+            }
             expect(routeId).toBe("student")
             expect(legalTextPlainText(document.item)).toBe(
               "Розрахунок коштів на 01.10.2026–31.12.2027"
@@ -679,7 +689,7 @@ describe("document coverage across learning modules", () => {
         expect.arrayContaining(
           ["work", "blue-card"].includes(routeId)
             ? ["administrative-decision", "residence-card"]
-            : ["student", "business", "family"].includes(routeId)
+            : ["student", "business", "family", "permanent"].includes(routeId)
               ? ["visa"]
               : ["status-documents"]
         )
@@ -692,7 +702,7 @@ describe("document coverage across learning modules", () => {
               ? "permanent-application"
               : "mos-application",
           routeId === "long-term-eu"
-            ? "housing-evidence"
+            ? "residential-lease"
             : routeId === "permanent"
               ? "karta-polaka"
               : routeId === "family"
@@ -708,17 +718,12 @@ describe("document coverage across learning modules", () => {
       expect(at("evidence")).toEqual(
         expect.arrayContaining([
           ...(routeId === "permanent"
-            ? [
-                "karta-polaka",
-                "settlement-intention",
-                "housing-evidence",
-                "employment-contract",
-              ]
+            ? ["karta-polaka", "residential-lease", "employment-contract"]
             : ["long-term-eu", "work", "blue-card", "business"].includes(
                   routeId
                 )
               ? ["zus-health-registration"]
-              : routeId === "family"
+              : ["family", "student"].includes(routeId)
                 ? ["private-health-insurance-policy"]
                 : ["health-insurance"]),
           ...(routeId === "long-term-eu"
@@ -726,7 +731,7 @@ describe("document coverage across learning modules", () => {
                 "employment-income-certificate",
                 "tax-income-certificate",
                 "bank-statement",
-                "housing-evidence",
+                "residential-lease",
                 "polish-language-proof",
                 "zus-insurance-history",
               ]
@@ -735,14 +740,14 @@ describe("document coverage across learning modules", () => {
               : routeId === "student"
                 ? [
                     "bank-funds-certificate",
-                    "housing-evidence",
+                    "residential-lease",
                     "tuition-payment",
                   ]
                 : routeId === "business"
                   ? [
                       "employment-contract",
                       "board-remuneration-resolution",
-                      "housing-evidence",
+                      "residential-lease",
                       "zus-rca",
                     ]
                   : routeId === "family"
@@ -761,7 +766,9 @@ describe("document coverage across learning modules", () => {
                       : routeId === "work"
                         ? ["payroll-statement", "bank-statement"]
                         : ["zus-confirmation", "qualification-evidence"]),
-          ...(routeId === "family" ? [] : ["sworn-translation"]),
+          ...(["family", "permanent"].includes(routeId)
+            ? []
+            : ["sworn-translation"]),
         ])
       )
       expect(at("procedure")).toEqual(
@@ -866,7 +873,7 @@ describe("document coverage across learning modules", () => {
           ).toBe("conditional")
         expect(
           route.documents.find((entry) =>
-            ids(entry.item).includes("housing-evidence")
+            ids(entry.item).includes("residential-lease")
           )?.level
         ).toBe("required")
         const references = route.documents.flatMap((entry) =>
@@ -903,15 +910,19 @@ describe("document coverage across learning modules", () => {
           expect(registerIds).not.toContain(id)
         for (const id of [
           "karta-polaka",
-          "settlement-intention",
           "employment-contract",
-          "housing-evidence",
+          "residential-lease",
           "civil-status-record",
         ] as const)
           expect(
             route.documents.find((entry) => ids(entry.item).includes(id))?.level
           ).toBe("conditional")
         expect(at("decision")).toContain("karta-polaka")
+        const intention = route.documents.find(
+          (entry) => entry.guidance === "settlement-intention"
+        )
+        expect(intention?.kind).toBe("action")
+        expect(registerIds).not.toContain("settlement-intention")
         const references = route.documents.flatMap((entry) =>
           typeof entry.law === "string"
             ? []

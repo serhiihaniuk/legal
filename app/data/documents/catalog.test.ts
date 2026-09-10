@@ -45,7 +45,7 @@ describe("document context projection", () => {
     ).toBe(true)
     expect(
       documentById
-        .get("health-insurance")!
+        .get("private-health-insurance-policy")!
         .caseContexts.some((context) => context.routeId === "student")
     ).toBe(true)
   })

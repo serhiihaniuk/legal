@@ -301,7 +301,7 @@ export const businessDocuments = {
   },
   housing: {
     item: document(
-      "housing-evidence",
+      "residential-lease",
       "Підписаний договір оренди житла заявника в Польщі"
     ),
     level: "required",

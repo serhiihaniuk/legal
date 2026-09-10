@@ -340,11 +340,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
   },
   {
-    "path": "app/data/document-library/editorial/guides/settlement-intention.ts",
-    "contentHash": "633e0825c64827351d1cd5b717a16627f4ef3b32f9121d5b9c92de33f1888063",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/13-special-applications-and-annexes.md"
-  },
-  {
     "path": "app/data/document-library/editorial/guides/case-assessment.ts",
     "contentHash": "569456a8ff792014889b47aafdc1fdfc0071008ddb82f5bc6cfb4c4da0bfeeb3",
     "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
@@ -420,18 +415,8 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   },
   {
-    "path": "app/data/case-guides/editorial/student/documents.ts",
-    "contentHash": "f24e4f6c81f7adf804f0ba5f96d51ec24a418701b36a45f5ea044b1ceae65e46",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
-  },
-  {
     "path": "app/data/case-guides/editorial/student/stages.ts",
     "contentHash": "05a1ba0d629b7a2494627afc1e49768953d17d67fca5f36a863bff67244ac29b",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/student/reference.ts",
-    "contentHash": "219a25bf063f86c6b48dd4306bb1e48c71ace3f3470c7ed715d6e5a1586ed5f4",
     "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
   },
   {
@@ -445,26 +430,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/18-business-case-guide.md"
   },
   {
-    "path": "app/data/case-guides/editorial/routes/permanent.ts",
-    "contentHash": "41e94670dbfa422d9a4857204b369c3c2a671b5c3c5b588022f545f6e3832226",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/permanent/documents.ts",
-    "contentHash": "39526362593fe8ae396020f1dca4dab3565235056fa526cda5cf0fc5bd2bc245",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/62-filing-certificate-variants.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/permanent/stages.ts",
-    "contentHash": "0d131ea63da387afa955f9774226b3d18c61418e8b66decd013b7554ffe0cc84",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/permanent/reference.ts",
-    "contentHash": "7464a9016e2fd2e593d65edb43a597aef7202167a92b6c2f035329f804ff093c",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
-  },
-  {
     "path": "app/data/document-library/editorial/guides/karta-polaka.ts",
     "contentHash": "0689a501453856a7d510a9ed5997a706248d604a2fdae8ba805adcf035edb16a",
     "evidence": "docs/content-review/writing-2026-09-05/batches/20-permanent-case-guide.md"
@@ -475,18 +440,8 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   },
   {
-    "path": "app/data/case-guides/editorial/resident/documents.ts",
-    "contentHash": "7d0f1f78258b102bdbc7f467d9834e239068a1949ced57ca3fd2fba37dadce68",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/62-filing-certificate-variants.md"
-  },
-  {
     "path": "app/data/case-guides/editorial/resident/stages.ts",
     "contentHash": "2520753e61c692a7fe2ff30b56fc9b2a101a09b9110cce823bb94b5b3386d1b6",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/resident/reference.ts",
-    "contentHash": "6f38c8dccc1158cc9cca46448ebf6343543d254fe90aaaddf8bf4aef296f5d48",
     "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   },
   {
@@ -870,18 +825,8 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
   },
   {
-    "path": "app/data/case-guides/editorial/business/documents.ts",
-    "contentHash": "9b4e8576dbafcd8ab55854861c3f476fbf4aa6166c68877baf5f7ac30dc34099",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
-  },
-  {
     "path": "app/data/case-guides/editorial/business/stages.ts",
     "contentHash": "40560e1a45b3a321162a89a31637e76fad8a7bff014a852e170b189904344987",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/business/reference.ts",
-    "contentHash": "89589adbb9f3869271608bf4c6780c95a5ca845892c2241a6034c25ee842fb3d",
     "evidence": "docs/content-review/writing-2026-09-05/batches/65-business-documents.md"
   },
   {
@@ -925,11 +870,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
   },
   {
-    "path": "app/data/document-library/editorial/guides/residential-lease.ts",
-    "contentHash": "c2a3d0662c9486d26f149cdf954c256f1fd88538bc7f41d9d643e39540abc8ee",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
-  },
-  {
     "path": "app/data/document-library/editorial/guides/work-location-confirmation.ts",
     "contentHash": "fcbb24ffc1c52ff5658b7129b73d56d5ea49d0ebbce026fbc771abeb675a46da",
     "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
@@ -960,11 +900,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
   },
   {
-    "path": "app/data/document-library/editorial/guides/private-health-insurance-policy.ts",
-    "contentHash": "0711ab5e1ec8d21fb427fadc6cb51579d73fe5fcd61c261c5d89b2afd33deb67",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
-  },
-  {
     "path": "app/data/document-library/editorial/guides/job-search-evidence.ts",
     "contentHash": "e92c29340c24d56e20f44bb048ac6f5fa778ed32d9038071ec1e7992e660f677",
     "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
@@ -973,5 +908,70 @@
     "path": "app/data/document-library/editorial/guides/polish-graduation-diploma.ts",
     "contentHash": "5089cb0929b42044ede4cc68686bfbae074ef2cabf364cb13f3f50c62ea1c315",
     "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/permanent/documents.ts",
+    "contentHash": "6893ca5ea040769c2d4222b938c5fe3af24d7b9817d72f05ee3b0bc9cd636391",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/68-permanent-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/permanent/stages.ts",
+    "contentHash": "0441a9024f35e9ba795c34eb6c44e74081cdfbd4b960e91884de414f0d22852f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/68-permanent-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/permanent/reference.ts",
+    "contentHash": "ecfd071ead2a3212f1a7ffbe6368cb8a90dbfb6041fe15ef28c67e317bae694d",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/68-permanent-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/permanent.ts",
+    "contentHash": "fcf3223126352cf730a0d3cc6654270b87b82f81ef8a74a648fed774a5551917",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/68-permanent-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/settlement-intention.ts",
+    "contentHash": "0a11a2ddb5eb8d11036b3a6a126345877967529ad82110f728d2e150f1dacc96",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/68-permanent-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/residential-lease.ts",
+    "contentHash": "319993e7b6de3aed3d101bb0bfa050538a7b673e6c4a18268454fde724dc43c0",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/private-health-insurance-policy.ts",
+    "contentHash": "d0012d5545cb8b6517a4119b221cdbaf7de2a6f8c96acd97e78e6ebfbdbd28d7",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/student/documents.ts",
+    "contentHash": "3d78ebdd4e22c7c2ff3efdab3e8652bb0748684481f6e175a2bfd5c95e364196",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/student/reference.ts",
+    "contentHash": "9cc78653531614f1a68e2f3f91fb1aa3ede444889786c2af0d274ac23c6f8b35",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/documents.ts",
+    "contentHash": "82fe9c300fbc701c2f3bcbcd428d2d58001d052b6d871e6970710547fcb76d17",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/business/reference.ts",
+    "contentHash": "5adfea768709a75b3a2e7f6089e8f04a4e6fa7ca594f987c855aae8ce4e34ae2",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/resident/documents.ts",
+    "contentHash": "bfdcd90de7c1125aaea6292da62125a4e5449c9860a1ae4eb5d95b432dabd26c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/resident/reference.ts",
+    "contentHash": "6f0cde01528e312ec03030d32a22882105340c2bf669ebf05abfa80cd9b5cbcc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
   }
 ]

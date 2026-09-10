@@ -70,7 +70,7 @@ export const studentConditions: CaseGuideCondition[] = [
     factToEstablish:
       "Платежі заявника за житло, комунальні послуги та спільні витрати; застосовний виняток за громадянством.",
     evidence: document(
-      "housing-evidence",
+      "residential-lease",
       "Підписаний договір оренди з повними витратами заявника 1 200 zł на місяць"
     ),
     risk: "Адреса або meldunek не показує, скільки грошей залишається після витрат на проживання.",
@@ -81,7 +81,7 @@ export const studentConditions: CaseGuideCondition[] = [
     factToEstablish:
       "Публічне медичне страхування або підтверджене покриття страховиком; його актуальність і період.",
     evidence: document(
-      "health-insurance",
+      "private-health-insurance-policy",
       "Обраний оплачений приватний поліс із покриттям лікування в Польщі та його умови"
     ),
     risk: "Студентський квиток або будь-який туристичний поліс не доводить автоматично цієї умови.",

@@ -142,7 +142,7 @@ export const studentDocuments = {
   },
   housing: {
     item: document(
-      "housing-evidence",
+      "residential-lease",
       "Підписаний договір оренди: 1 200 zł на місяць з усіма житловими платежами"
     ),
     level: "conditional",
@@ -155,7 +155,7 @@ export const studentDocuments = {
   },
   insurance: {
     item: document(
-      "health-insurance",
+      "private-health-insurance-policy",
       "Оплачений приватний поліс із покриттям лікування в Польщі та його умови"
     ),
     reviewId: "insurance",
@@ -164,7 +164,7 @@ export const studentDocuments = {
     owner:
       "Заявник надає чинний приватний поліс і умови; оплата та покриття визначені в обраному документі",
     proves:
-      "Страхування в системі охорони здоров'я або покриття страховиком лікування в Польщі. Студентський квиток сам по собі цього не доводить",
+      "Покриття страховиком лікування заявника в Польщі за чинним оплаченим полісом та його умовами. Студентський квиток сам по собі цього не доводить",
     law: law.text`${law.article("144")} ust. 1 pkt 2 lit. a.`,
   },
   attorney: {
