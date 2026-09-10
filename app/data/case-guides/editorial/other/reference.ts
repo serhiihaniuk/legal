@@ -5,8 +5,11 @@ import type {
   CaseGuideNegativeBranch,
   CaseGuideSource,
 } from "../../types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import { document } from "../shared/document-reference"
+
+const evidence = createEvidenceDocumentTextAuthor()
 
 const law = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const kpa = createLegalTextAuthor("kpa")
@@ -17,10 +20,7 @@ export const otherConditions: CaseGuideCondition[] = [
     condition: "Допустима заява випускника під час законного перебування",
     factToEstablish:
       "Чинна підстава 13.07, відсутність застосовної заборони почати провадження та дата завершення студій.",
-    evidence: document(
-      "status-documents",
-      "Попередній дозвіл і документи перебування разом із хронологією"
-    ),
+    evidence: evidence.text`${evidence.document("administrative-decision", "Попереднє студентське рішення")} і ${evidence.document("residence-card", "студентська карта")}; хронологія та перевірка подальших рішень.`,
     risk: "Строк на карті не доводить відсутності рішення про відкликання; диплом не скасовує процесуальних перешкод.",
     law: law.text`${law.article("99")}, ${law.article("105")}, ${law.article("190")} pkt 3 і ${law.article("190a")}.`,
   },
@@ -29,7 +29,7 @@ export const otherConditions: CaseGuideCondition[] = [
     factToEstablish:
       "Заклад, вид завершеної освіти й дата завершення; дату видачі документа записано окремо.",
     evidence: document(
-      "qualification-evidence",
+      "polish-graduation-diploma",
       "Диплом завершення вищих студій у Польщі"
     ),
     risk: "Сертифікат курсу або польський переклад іноземного диплома не доводить потрібної обставини.",
@@ -50,10 +50,7 @@ export const otherConditions: CaseGuideCondition[] = [
     condition: "Медичне страхування або належне покриття лікування",
     factToEstablish:
       "Період, територія і зміст покриття, а також виконання умов, від яких залежить його дія.",
-    evidence: document(
-      "health-insurance",
-      "Повний поліс, продовження, оплата й підтвердження страховика"
-    ),
+    evidence: evidence.text`${evidence.document("private-health-insurance-policy", "Повний поліс, продовження від 01.07 і підтвердження страховика від 18.08")}; окреме ${evidence.document("bank-statement", "банківське підтвердження оплати 01.07")}.`,
     risk: "Перша сторінка до 30.09 не пояснює подальше покриття; новий поліс не страхує попередню прогалину автоматично.",
     law: law.text`${law.article("188")} ust. 1a pkt 1.`,
   },
@@ -62,8 +59,8 @@ export const otherConditions: CaseGuideCondition[] = [
     factToEstablish:
       "Де заявник може проживати, на якій підставі та протягом якого періоду.",
     evidence: document(
-      "housing-evidence",
-      "Договір або інший належний доказ забезпеченого житла"
+      "residential-lease",
+      "Підписана оренда кімнати на 01.07.2026–30.06.2027"
     ),
     risk: "Адреса для листування або зазначена без підтвердження адреса не встановлює можливості проживати.",
     law: law.text`${law.article("188")} ust. 1a pkt 2.`,
@@ -71,8 +68,8 @@ export const otherConditions: CaseGuideCondition[] = [
   {
     condition: "Кошти на утримання та повернення",
     factToEstablish:
-      "Фактично доступна сума, період, утриманці та окремі кошти на повернення.",
-    evidence: document("income-evidence", "Фінансові документи та розрахунок"),
+      "Власні доступні 35 000 zł на 10.07, одноосібне господарство без утриманців, планові витрати й прибуття з Індії для визначення коштів на повернення.",
+    evidence: evidence.text`${evidence.document("bank-funds-certificate", "Довідка польського банку від 10.07 про 35 000 zł")} та власний розрахунок 29 500 zł на дев’ять місяців і повернення.`,
     risk: "Сам залишок не показує періоду. Вимогу коштів для випускника не підмінюють вимогою трудового доходу з іншої категорії.",
     law: law.text`${law.article("188")} ust. 1a pkt 3 і ust. 6.`,
   },
@@ -214,9 +211,19 @@ export const otherAlternatives: CaseGuideNegativeBranch[] = [
 
 export const otherSources: CaseGuideSource[] = [
   {
+    label: "Кошти випускника, Dz.U. 2019 poz. 773",
+    url: "https://eli.gov.pl/eli/DU/2019/773/ogl",
+    note: law.text`Перевірено 10.09.2026: ${law.external("§ 2", "https://eli.gov.pl/eli/DU/2019/773/ogl")} визначає кошти на повернення за країною прибуття; ${law.external("§ 3", "https://eli.gov.pl/eli/DU/2019/773/ogl")} визначає документи, зокрема довідку банку із місцезнаходженням у Польщі та місяць до подання; ${law.external("§ 4", "https://eli.gov.pl/eli/DU/2019/773/ogl")} стосується перерахунку валют. У прикладі власні кошти вже у PLN.`,
+  },
+  {
+    label: "Критерії допомоги, Dz.U. 2024 poz. 1044",
+    url: "https://eli.gov.pl/eli/DU/2024/1044/ogl",
+    note: law.text`${law.external("§ 1", "https://eli.gov.pl/eli/DU/2024/1044/ogl")}: критерій для особи, яка веде одноосібне господарство, становить 1 010 zł. ${law.article("188")} ust. 6 вимагає місячних коштів вище застосовного критерію. Перевірено 10.09.2026; практичний бюджет прикладу не є окремим законним порогом.`,
+  },
+  {
     label: "Ustawa o cudzoziemcach, актуальний текст Sejmu",
     url: "https://eli.gov.pl/eli/DU/2025/1079/ogl",
-    note: law.text`Перевірено 06.09.2026: ${law.article("186")} ust. 1 pkt 6–7, ${law.article("188")}, ${law.article("190")}, ${law.article("190a")}; окремі категорії за ${law.article("181")}, ${law.article("185a")}, ${law.article("187")}. Текст враховує зміни Dz.U. 2025 poz. 1794 і Dz.U. 2026 poz. 203.`,
+    note: law.text`Перевірено конкретний пакет випускника 10.09.2026: ${law.article("186")} ust. 1 pkt 6–7, ${law.article("188")}, ${law.article("190")}, ${law.article("190a")}; попередня перевірка окремих категорій за ${law.article("181")}, ${law.article("185a")}, ${law.article("187")} залишається від 06.09.2026. Текст враховує зміни Dz.U. 2025 poz. 1794 і Dz.U. 2026 poz. 203.`,
   },
   {
     label: "MOS і початок електронного подання",

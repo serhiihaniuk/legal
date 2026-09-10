@@ -166,7 +166,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "cf03fd9813d0fe52ee458f61290ab797fb85535cafbf091d18190fe742392ae4",
+      "contentHash": "540d416a2cd04fa15b27fd1cd455ee8de308dc62743a8d80d2990e92ee81ed82",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -406,7 +406,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "b79c481b86e5c3c0e8c2967a53fc01d1b8eac5a954183182f2a647e50e824306",
+      "contentHash": "48e5df222753a9ba514c3d456ccbc5f9b6863f64965605e33050d2cbd40a6b28",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -1366,7 +1366,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "27200c52d3aa09d4f57385dd66fbd35046d1b81d0723a086807912dc82803e7e",
+      "contentHash": "e92c29340c24d56e20f44bb048ac6f5fa778ed32d9038071ec1e7992e660f677",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -1594,6 +1594,36 @@
       }
     },
     {
+      "id": "evidence-document:polish-graduation-diploma",
+      "path": "app/data/document-library/editorial/guides/polish-graduation-diploma.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "polish-graduation-diploma",
+      "contentId": "polish-graduation-diploma",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "5089cb0929b42044ede4cc68686bfbae074ef2cabf364cb13f3f50c62ea1c315",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:polish-language-proof",
       "path": "app/data/document-library/editorial/guides/polish-language-proof.ts",
       "family": "evidence-document",
@@ -1666,7 +1696,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "d1b4183d60c60166340503e2b72fadc9e675e52a6a4a7f55b40f1f36b61d167c",
+      "contentHash": "0711ab5e1ec8d21fb427fadc6cb51579d73fe5fcd61c261c5d89b2afd33deb67",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,

@@ -329,6 +329,40 @@ describe("case guide continuity", () => {
     ).toBe("/documents/work-location-confirmation")
   })
 
+  it("opens the graduate diploma directly from an unfolded filing list", () => {
+    const { container } = render(
+      <MemoryRouter initialEntries={["/cases/other"]}>
+        <CaseStudyContent
+          route={getCaseGuideRoute("other")}
+          updatedAt="2026-07-18"
+        />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    expect(
+      screen.getAllByRole("heading", { name: "Документи на цьому етапі" })
+    ).toHaveLength(6)
+    const filing = container.querySelector<HTMLElement>("#case-stage-filing")!
+    expect(
+      within(filing).queryByRole("button", { name: /^Документи/ })
+    ).toBeNull()
+    expect(within(filing).queryByRole("checkbox")).toBeNull()
+    for (const id of [
+      "polish-graduation-diploma",
+      "bank-funds-certificate",
+      "residential-lease",
+      "private-health-insurance-policy",
+    ]) {
+      expect(filing.querySelector(`li a[href="/documents/${id}"]`)).toBeTruthy()
+    }
+    fireEvent.click(
+      filing.querySelector('li a[href="/documents/polish-graduation-diploma"]')!
+    )
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/polish-graduation-diploma")
+  })
+
   it("links register titles to document guides while retaining provision links", () => {
     render(
       <MemoryRouter>

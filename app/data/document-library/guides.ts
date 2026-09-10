@@ -1,5 +1,6 @@
 import privateHealthInsurancePolicyTopic from "./editorial/guides/private-health-insurance-policy"
 import residentialLeaseTopic from "./editorial/guides/residential-lease"
+import polishGraduationDiplomaTopic from "./editorial/guides/polish-graduation-diploma"
 import workLocationConfirmationTopic from "./editorial/guides/work-location-confirmation"
 import payrollStatementTopic from "./editorial/guides/payroll-statement"
 import boardAppointmentResolutionTopic from "./editorial/guides/board-appointment-resolution"
@@ -112,6 +113,7 @@ export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
     privateHealthInsurancePolicyTopic.body,
     residentialLeaseTopic.body,
+    polishGraduationDiplomaTopic.body,
     workLocationConfirmationTopic.body,
     boardAppointmentResolutionTopic.body,
     shareholderListTopic.body,

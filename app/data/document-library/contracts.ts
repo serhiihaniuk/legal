@@ -47,6 +47,7 @@ export type EvidenceDocumentId =
   | "health-insurance"
   | "private-health-insurance-policy"
   | "residential-lease"
+  | "polish-graduation-diploma"
   | "work-location-confirmation"
   | "income-evidence"
   | "housing-evidence"
@@ -219,6 +220,7 @@ export const evidenceDocumentIds = [
   "health-insurance",
   "private-health-insurance-policy",
   "residential-lease",
+  "polish-graduation-diploma",
   "work-location-confirmation",
   "income-evidence",
   "housing-evidence",

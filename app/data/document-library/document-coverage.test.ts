@@ -313,6 +313,52 @@ describe("document coverage across learning modules", () => {
     }
   })
 
+  it("keeps the graduate insurance correction separate from already submitted graduation and funding evidence", () => {
+    const route = authoredCaseGuideRoutes.find((route) => route.id === "other")!
+    const submitted = (stageId: string) =>
+      route.stages
+        .find((stage) => stage.id === stageId)!
+        .documents.filter(isCaseGuideDocumentUse)
+        .filter((use) => use.action === "submit")
+        .map((use) => use.document)
+    const filing = submitted("filing")
+    const reply = submitted("procedure")
+    for (const id of [
+      "polish-graduation-diploma",
+      "bank-funds-certificate",
+      "residential-lease",
+      "job-search-evidence",
+    ] as const) {
+      const items = filing.filter((entry) => ids(entry.item).includes(id))
+      expect(items.length, id).toBeGreaterThan(0)
+      for (const item of items) expect(reply).not.toContain(item)
+    }
+    const initialPolicy = filing.filter((entry) =>
+      ids(entry.item).includes("private-health-insurance-policy")
+    )
+    const replyPolicies = reply.filter((entry) =>
+      ids(entry.item).includes("private-health-insurance-policy")
+    )
+    expect(initialPolicy).toHaveLength(1)
+    expect(replyPolicies.length).toBeGreaterThanOrEqual(3)
+    expect(
+      reply.some((entry) => ids(entry.item).includes("bank-statement"))
+    ).toBe(true)
+    for (const id of [
+      "income-evidence",
+      "qualification-evidence",
+      "housing-evidence",
+      "health-insurance",
+      "payroll-statement",
+      "employment-income-certificate",
+    ]) {
+      expect(filing.flatMap((entry) => ids(entry.item))).not.toContain(id)
+    }
+    expect(new Set(route.sources.map((source) => source.url)).size).toBe(
+      route.sources.length
+    )
+  })
+
   it("keeps the family reply about two addresses separate from its initial status and income packet", () => {
     const route = authoredCaseGuideRoutes.find(
       (route) => route.id === "family"
@@ -460,7 +506,10 @@ describe("document coverage across learning modules", () => {
       (stage) => stage.id === "filing"
     )!.documents
     const filingIds = filing.flatMap((entry) => ids(entry.item))
-    expect(new Set(registerIds).size).toBe(registerIds.length)
+    const registerTitles = route.documents.map((entry) =>
+      legalTextPlainText(entry.item)
+    )
+    expect(new Set(registerTitles).size).toBe(registerTitles.length)
     expect(
       new Set(
         route.stages.flatMap((stage) =>
@@ -471,19 +520,19 @@ describe("document coverage across learning modules", () => {
     expect(filingIds).toEqual(
       expect.arrayContaining([
         "mos-application",
-        "qualification-evidence",
+        "polish-graduation-diploma",
         "job-search-evidence",
-        "health-insurance",
-        "housing-evidence",
-        "income-evidence",
+        "private-health-insurance-policy",
+        "residential-lease",
+        "bank-funds-certificate",
         "upo",
       ])
     )
     for (const id of [
-      "qualification-evidence",
-      "health-insurance",
-      "housing-evidence",
-      "income-evidence",
+      "polish-graduation-diploma",
+      "private-health-insurance-policy",
+      "residential-lease",
+      "bank-funds-certificate",
     ] as const)
       expect(filing.find((entry) => ids(entry.item).includes(id))?.level).toBe(
         "required"
@@ -969,9 +1018,12 @@ describe("document coverage across learning modules", () => {
           expect(document.guidance).toBeDefined()
           expect(documentById.has(document.guidance!)).toBe(true)
         } else if (
-          route.id === "student" &&
-          legalTextPlainText(document.item) ===
-            "Розрахунок коштів на 01.10.2026–31.12.2027"
+          (route.id === "student" &&
+            legalTextPlainText(document.item) ===
+              "Розрахунок коштів на 01.10.2026–31.12.2027") ||
+          (route.id === "other" &&
+            legalTextPlainText(document.item) ===
+              "Робочий розрахунок коштів на дев’ять місяців")
         ) {
           expect(document.owner).toBeTruthy()
           expect(document.proves).toBeTruthy()

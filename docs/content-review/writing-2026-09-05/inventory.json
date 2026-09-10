@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1821,
-    "reviewed": 191,
+    "totalFiles": 1822,
+    "reviewed": 192,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 83,
+      "evidence-document": 84,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -170,23 +170,23 @@
     {
       "path": "app/data/case-guides/editorial/other/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "075415fa3e37a651c26de3f036a5b3aaf5a86ad1d2446e47208daeeb31ede59e",
+      "contentHash": "6882f44197f95f28ca139f94eee14b4b6df0bc624eb68f8db7409a451c0d27bb",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "4bc6ab211d6616887cf6c4305c41c9c8c7c44f640b7e54dad7f4fc75a58017dc",
+      "contentHash": "a1470b5d531aa0f17b3f2dc38f0cf6580c603bd0a0c7efe54353041fc5cb7b6a",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "8742b951bf0fb212f7e647867c563a7b368f659fcb038d3d72d9f3ff75260710",
+      "contentHash": "48abca3f9c307b434ad2c8587a08d664e91efd0bbb742873d96751dbe203ba7f",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/documents.ts",
@@ -268,9 +268,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/other.ts",
       "family": "case-guide",
-      "contentHash": "cf03fd9813d0fe52ee458f61290ab797fb85535cafbf091d18190fe742392ae4",
+      "contentHash": "540d416a2cd04fa15b27fd1cd455ee8de308dc62743a8d80d2990e92ee81ed82",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/permanent.ts",
@@ -394,9 +394,9 @@
     {
       "path": "app/data/document-library/editorial/guides/bank-funds-certificate.ts",
       "family": "evidence-document",
-      "contentHash": "b79c481b86e5c3c0e8c2967a53fc01d1b8eac5a954183182f2a647e50e824306",
+      "contentHash": "48e5df222753a9ba514c3d456ccbc5f9b6863f64965605e33050d2cbd40a6b28",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/64-student-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/bank-statement.ts",
@@ -618,9 +618,9 @@
     {
       "path": "app/data/document-library/editorial/guides/job-search-evidence.ts",
       "family": "evidence-document",
-      "contentHash": "27200c52d3aa09d4f57385dd66fbd35046d1b81d0723a086807912dc82803e7e",
+      "contentHash": "e92c29340c24d56e20f44bb048ac6f5fa778ed32d9038071ec1e7992e660f677",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/23-other-purposes-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/judicial-complaint.ts",
@@ -672,6 +672,13 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
     },
     {
+      "path": "app/data/document-library/editorial/guides/polish-graduation-diploma.ts",
+      "family": "evidence-document",
+      "contentHash": "5089cb0929b42044ede4cc68686bfbae074ef2cabf364cb13f3f50c62ea1c315",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
+    },
+    {
       "path": "app/data/document-library/editorial/guides/polish-language-proof.ts",
       "family": "evidence-document",
       "contentHash": "5f4719738b227c4f581e321276e89c13e0b81a3326d6832ef40bf4f5f8f54bfa",
@@ -688,9 +695,9 @@
     {
       "path": "app/data/document-library/editorial/guides/private-health-insurance-policy.ts",
       "family": "evidence-document",
-      "contentHash": "d1b4183d60c60166340503e2b72fadc9e675e52a6a4a7f55b40f1f36b61d167c",
+      "contentHash": "0711ab5e1ec8d21fb427fadc6cb51579d73fe5fcd61c261c5d89b2afd33deb67",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/67-graduate-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/procedural-complaint.ts",
