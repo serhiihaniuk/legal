@@ -115,11 +115,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
   },
   {
-    "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",
-    "contentHash": "0f055e0abb3a02200891c4ff8b615355e1cd9fb968e9c1ccce90e2b4517a638b",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
-  },
-  {
     "path": "app/features/documents/ui/document-detail-content.tsx",
     "contentHash": "d64efcb92f6aa22d8db0474f3b37df574809c5c86f561470709e3907e946f5e3",
     "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
@@ -201,8 +196,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/income-evidence.ts",
-    "contentHash": "f85f37b55a8530646715ae859b8ea8d5a6b7a63a2e50077161f418ec41754eb4",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/17-student-case-guide.md"
+    "contentHash": "24d74ee880e14a01f6335dca13e0f3925ca8bd536578f685064aebba52946e3e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/housing-evidence.ts",
@@ -516,23 +511,23 @@
   },
   {
     "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
-    "contentHash": "c245692fc3981f969fc6fb6bc72f7ec62b8cb6d788a14b4fc8196380c828a40d",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/21-resident-case-guide.md"
+    "contentHash": "333e56c65e51c2fdabdbfe1fc0be2ee067fe1cd187fe7cf0210fe5bb8337f424",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   },
   {
     "path": "app/data/case-guides/editorial/resident/documents.ts",
-    "contentHash": "cd8d6f661767f313de07dabfe575b0b6f25b2352504c3efd59415f8360452dc7",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+    "contentHash": "27d182fce973ceccfed893411f05453715c7526fab14e082746e9bb43059be91",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   },
   {
     "path": "app/data/case-guides/editorial/resident/stages.ts",
-    "contentHash": "84e55e9e8b3e89e5c9e8883a27c514590b73311028339bef5458e15442449ab9",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+    "contentHash": "2520753e61c692a7fe2ff30b56fc9b2a101a09b9110cce823bb94b5b3386d1b6",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   },
   {
     "path": "app/data/case-guides/editorial/resident/reference.ts",
-    "contentHash": "f80793e28b56cca8ed939178f815dc306747b8d185fee66caa4e555909f77fdc",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+    "contentHash": "6f38c8dccc1158cc9cca46448ebf6343543d254fe90aaaddf8bf4aef296f5d48",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   },
   {
     "path": "app/data/case-guides/editorial/routes/cukr.ts",
@@ -866,7 +861,67 @@
   },
   {
     "path": "app/data/legal-map/editorial/topics/long-term-eu.ts",
-    "contentHash": "16c0ae83143cc787e6cd806c6bdf906cc9ab9180e0411adae1c0e55ae900829e",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md"
+    "contentHash": "40dee58a1e32209ada2d1a66076d60411f1e517a73d01680bd916db93fa4ef21",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/work-instruments.ts",
+    "contentHash": "e7506ac08cc040ddb68980c95791e851d9ac5a7dd2e0ce1e6a3f8fd49ef97f9c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/work-permit.ts",
+    "contentHash": "aa0169d8ae681a5933f420724e7ffe36c6578a0c2e5740d61ed1fb9e229bdc8f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",
+    "contentHash": "0f055e0abb3a02200891c4ff8b615355e1cd9fb968e9c1ccce90e2b4517a638b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
+  },
+  {
+    "path": "app/features/case-guides/ui/case-stage-documents.tsx",
+    "contentHash": "3115b45089536d0e93db15df4387744bb1741fefb168f339d8344f40cb78c089",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/zus-insurance-history.ts",
+    "contentHash": "83564b7384e955c071ff1d8e2273ba259c1f1ba42272b3ca5ae766047311e632",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/zus-health-registration.ts",
+    "contentHash": "86e31f8ba5c88199660b401f86fb89b0fabfe1d6c96b086d8c9779be4db599dd",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/zus-no-arrears.ts",
+    "contentHash": "41de4744109747fd4826376c01dbaa5b556a1cb22750ca5b5b075091a8c3ade8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/zus-rca.ts",
+    "contentHash": "9889b68abc32824a9cb5f0ab8e7a74efe5a02f8b1fe5a72ab8ffdfb61c8112b3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/employment-income-certificate.ts",
+    "contentHash": "996357917c34425f89f83f1b4216748ec889dd945648282e148e25f07847e875",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/tax-income-certificate.ts",
+    "contentHash": "03373cbf8c1dd3e5b14157e20d5c21f18e0bdb2c614f024bf1016329aa455ebd",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/bank-statement.ts",
+    "contentHash": "953a747b914f3722d84aa9b848900970a02463ad66d08fbe39dd6dbe7bc34b62",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/payroll-statement.ts",
+    "contentHash": "1e8c04571e8aaddba768cec3ef9aee2a5262b14d966a88e744dc905753793131",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
   }
 ]

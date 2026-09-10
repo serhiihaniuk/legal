@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest"
 import { caseGuideRoutes } from "~/data/case-guides/routes"
+import { unwrapCaseGuideDocument } from "~/data/case-guides/document-use"
 import { documentById, documentCatalog } from "./catalog"
 
 describe("document context projection", () => {
@@ -7,7 +8,9 @@ describe("document context projection", () => {
     for (const route of caseGuideRoutes) {
       for (const document of [
         ...route.documents,
-        ...route.stages.flatMap((stage) => stage.documents),
+        ...route.stages.flatMap((stage) =>
+          stage.documents.map(unwrapCaseGuideDocument)
+        ),
       ]) {
         if (typeof document.item === "string") continue
         for (const part of document.item.parts) {

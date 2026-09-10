@@ -1,12 +1,25 @@
 import { describe, expect, it } from "vitest"
 import { allNodes } from "~/data/legal-map"
-import { caseGuideRoutes } from "~/data/case-guides/routes"
+import { caseGuideRoutes as authoredCaseGuideRoutes } from "~/data/case-guides/routes"
+import {
+  isCaseGuideDocumentUse,
+  unwrapCaseGuideDocument,
+} from "~/data/case-guides/document-use"
 import {
   legalTextPlainText,
   type LegalTextValue,
 } from "~/data/legal-library/legal-text"
 import { documentById } from "~/data/documents/catalog"
 import { documentFormLinks } from "./form-links"
+
+const caseGuideRoutes = authoredCaseGuideRoutes.map((route) => ({
+  ...route,
+  stages: route.stages.map((stage) => ({
+    ...stage,
+    documents: stage.documents.map(unwrapCaseGuideDocument),
+  })),
+}))
+
 const ids = (value: LegalTextValue) =>
   typeof value === "string"
     ? []
@@ -16,6 +29,43 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
+  it("requires explicit document actions throughout the resident pilot without changing other guides", () => {
+    for (const route of authoredCaseGuideRoutes) {
+      for (const stage of route.stages) {
+        for (const entry of stage.documents) {
+          if (route.id !== "long-term-eu") {
+            expect(isCaseGuideDocumentUse(entry), route.id).toBe(false)
+            continue
+          }
+          expect(isCaseGuideDocumentUse(entry), stage.id).toBe(true)
+          if (!isCaseGuideDocumentUse(entry)) continue
+          expect(
+            legalTextPlainText(entry.instruction).trim().length
+          ).toBeGreaterThan(0)
+          expect(route.documents).toContain(entry.document)
+        }
+      }
+    }
+  })
+
+  it("keeps one resident backlink for repeated uses of each specific evidence document", () => {
+    for (const id of [
+      "employment-income-certificate",
+      "tax-income-certificate",
+      "bank-statement",
+      "zus-insurance-history",
+      "zus-health-registration",
+    ] as const) {
+      const contexts = documentById
+        .get(id)
+        ?.caseContexts.filter((context) => context.routeId === "long-term-eu")
+      expect(contexts, id).toHaveLength(1)
+      expect(contexts![0]).toHaveProperty("item")
+      expect(contexts![0]).not.toHaveProperty("instruction")
+      expect(contexts![0]).not.toHaveProperty("action")
+    }
+  })
+
   it("places remedies and court results in their conditional stages with illustrated guides and reverse references", () => {
     for (const [id, stageId, nodeId] of [
       ["administrative-appeal", "decision", "appeal"],
@@ -286,13 +336,17 @@ describe("document coverage across learning modules", () => {
                 "housing-evidence",
                 "employment-contract",
               ]
-            : ["health-insurance"]),
+            : routeId === "long-term-eu"
+              ? ["zus-health-registration"]
+              : ["health-insurance"]),
           ...(routeId === "long-term-eu"
             ? [
-                "income-evidence",
+                "employment-income-certificate",
+                "tax-income-certificate",
+                "bank-statement",
                 "housing-evidence",
                 "polish-language-proof",
-                "zus-confirmation",
+                "zus-insurance-history",
               ]
             : routeId === "permanent"
               ? []
@@ -408,7 +462,7 @@ describe("document coverage across learning modules", () => {
           "employment-contract",
           "polish-language-proof",
           "civil-status-record",
-          "zus-confirmation",
+          "zus-insurance-history",
         ] as const)
           expect(
             route.documents.find((entry) => ids(entry.item).includes(id))?.level

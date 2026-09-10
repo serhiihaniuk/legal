@@ -1,6 +1,9 @@
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 import type { DocumentGuide } from "../../contracts"
 import { defineDocumentTopic } from "../define-document-topic"
 import { documentSources, foreignersLaw } from "../authoring"
+
+const documents = createEvidenceDocumentTextAuthor()
 
 const guide: DocumentGuide = {
   id: "income-evidence",
@@ -89,6 +92,16 @@ const guide: DocumentGuide = {
       ],
     },
     {
+      id: "resident-employer-and-zus",
+      title: "Для резидента: що взяти у роботодавця, а що у ZUS",
+      paragraphs: [
+        "Якщо джерелом доходу є робота, zaświadczenie o zatrudnieniu i wynagrodzeniu від роботодавця пояснює працевлаштування та заробіток. Для перевірки потрібні дати роботи й період, за який наведено суми. Довідка про нинішню зарплату не описує автоматично попередні роки або роботу в іншого роботодавця.",
+        documents.text`У ${documents.document("zus-insurance-history", "гайді ZUS із прикладом запиту US-7")} пояснено, як замовити історію страхування з помісячними базами внесків. Вона допомагає зіставити особу, платників і періоди. Це інший матеріал, ніж довідка роботодавця про заробіток або його відсутність боргів перед ZUS.`,
+        "Наприклад, Świętokrzyski UW називає серед доказів для резидента історію ZUS із місяцями та базами внесків і довідку податкового органу про дохід. Це приклад адміністративного переліку. Конкретний обсяг звіряють із питанням у справі та wezwanie; одна назва документа не робить його достатнім.",
+        "Після отримання матеріалів зіставляють той самий період. Договір і довідка роботодавця пояснюють джерело та умови оплати, ZUS показує страхові дані, PIT і банківська історія допомагають перевірити дохід і виплати. Базу внесків із ZUS не переписують у висновок як суму netto.",
+      ],
+    },
+    {
       id: "student-bank-proof",
       title: "Як банківська довідка підтверджує кошти студента",
       paragraphs: [
@@ -174,7 +187,7 @@ const guide: DocumentGuide = {
   ],
   relatedDocuments: [
     "employment-contract",
-    "zus-confirmation",
+    "zus-insurance-history",
     "evidence-matrix",
     "housing-evidence",
     "upo",
@@ -186,6 +199,11 @@ const guide: DocumentGuide = {
   ],
   sources: [
     documentSources.aliens,
+    {
+      label: "Świętokrzyski UW: приклади доказів доходу резидента",
+      url: "https://www.gov.pl/web/uw-swietokrzyski/rezydent-dlugoterminowy-ue",
+      note: "Перевірено 10.09.2026 лише перелік довідок роботодавця, ZUS і податкового органу. Процедуру подання та сферу дворічного винятку визначають актуальні приписи, а не ця сторінка.",
+    },
     {
       label: "Фінансові докази для навчання, Dz.U. 2022 poz. 78",
       url: "https://eli.gov.pl/eli/DU/2022/78/ogl",

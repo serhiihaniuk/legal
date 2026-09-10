@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 58 rewrites the permanent/resident comparison and both detailed articles with completed examples. Current writing acceptance and remaining scope are recorded in the latest checkpoint below. Earlier figures describe those checkpoints, not the present total.
+Batch 59 completes two employment articles and a resident document pilot. The pilot lists concrete documents and actions openly in each stage; other case migrations await the user's review.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
@@ -78,4 +78,4 @@ Batch 27 implements the primary chapter assignments, stable chapter anchors, dir
 
 Batch 28 implements authored map sections and matching page contents. The first migrated article, `other-stay`, now distinguishes named and residual grounds, explains the graduate route and gives a completed accommodation example. Its source check includes temporary-protection limits. The misplaced article 114 link is corrected. One article receives writing acceptance, bringing the total to 126 of 1,800; the shared renderer change does not accept unmigrated text. Study/research and family classifications, deeper parent articles, the decision merge and remaining map gaps continue next. Law-module rewrites, original-source layout and independent legal review remain open.
 
-Latest checkpoint, batch 58: 171 of 1,805 files have current writing review. Permanent residence and EU long-term residence now have distinct explanations and completed comparisons, including a dated residence calculation. Next are labour-market entry and its legal instruments. Remaining map articles, law modules, provision commentary, the original PDF-layout audit and independent legal review remain open. Detailed evidence is in [batch 58](batches/58-permanent-resident-routes.md).
+Latest checkpoint, batch 59: 182 of 1,813 files have current writing review. The resident pilot shows open, stage-specific document lists with concrete ZUS and income guides. Eight document guides were added, including fictional fragments and obtaining instructions. An all-case audit records the remaining ambiguous document groups; the resident pilot is accepted and the other case presentations await migration. Two employment map articles are also complete; work-entry remains next in that lane. Law writing, source-layout review and independent legal acceptance stay open. Evidence is in [batch 59](batches/59-work-instruments-and-zus.md).

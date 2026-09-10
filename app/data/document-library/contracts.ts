@@ -21,6 +21,14 @@ export type EvidenceDocumentId =
   | "judicial-complaint"
   | "court-judgment"
   | "zus-confirmation"
+  | "zus-no-arrears"
+  | "zus-insurance-history"
+  | "employment-income-certificate"
+  | "tax-income-certificate"
+  | "bank-statement"
+  | "payroll-statement"
+  | "zus-health-registration"
+  | "zus-rca"
   | "business-register-information"
   | "crbr-information"
   | "stamp-duty-proof"
@@ -177,6 +185,14 @@ export const evidenceDocumentIds = [
   "judicial-complaint",
   "court-judgment",
   "zus-confirmation",
+  "zus-no-arrears",
+  "zus-insurance-history",
+  "employment-income-certificate",
+  "tax-income-certificate",
+  "bank-statement",
+  "payroll-statement",
+  "zus-health-registration",
+  "zus-rca",
   "business-register-information",
   "crbr-information",
   "stamp-duty-proof",

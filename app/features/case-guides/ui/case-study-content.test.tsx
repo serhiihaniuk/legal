@@ -9,6 +9,7 @@ import {
 import { MemoryRouter, useLocation } from "react-router"
 import { caseGuideCases, getCaseGuideCase } from "~/data/case-guides/navigation"
 import { caseGuideRoutes, getCaseGuideRoute } from "~/data/case-guides/routes"
+import { unwrapCaseGuideDocument } from "~/data/case-guides/document-use"
 import { getEvidenceDocumentPath } from "~/data/document-library/navigation"
 import { legalTextPlainText } from "~/data/legal-library/legal-text"
 import { DocumentRegister } from "./case-registers"
@@ -195,7 +196,9 @@ describe("case guide continuity", () => {
     for (const route of caseGuideRoutes) {
       for (const document of [
         ...route.documents,
-        ...route.stages.flatMap((stage) => stage.documents),
+        ...route.stages.flatMap((stage) =>
+          stage.documents.map(unwrapCaseGuideDocument)
+        ),
       ]) {
         if (typeof document.item === "string") continue
         for (const part of document.item.parts) {

@@ -3,6 +3,7 @@ import type {
   CaseGuideDocument,
 } from "~/data/case-guides/types"
 import { caseGuideRoutes } from "~/data/case-guides/routes"
+import { unwrapCaseGuideDocument } from "~/data/case-guides/document-use"
 import { allNodes, type IndexedNode } from "~/data/legal-map/index"
 import { type LegalTextValue } from "~/data/legal-library/legal-text"
 import {
@@ -71,7 +72,9 @@ for (const node of allNodes) {
 for (const route of caseGuideRoutes) {
   for (const document of [
     ...route.documents,
-    ...route.stages.flatMap((stage) => stage.documents),
+    ...route.stages.flatMap((stage) =>
+      stage.documents.map(unwrapCaseGuideDocument)
+    ),
   ]) {
     if (document.guidance)
       contextsByDocumentId.get(document.guidance)?.caseContexts.push({

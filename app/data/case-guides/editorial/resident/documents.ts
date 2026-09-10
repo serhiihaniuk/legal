@@ -45,18 +45,53 @@ export const residentDocuments = {
       "Фактичні періоди, підстави й виїзди разом із джерелами дат. Зарахування повністю, наполовину або виключення пояснюють окремо від запису справжніх дат",
     law: law.text`${law.article("211")} ust. 1; ${law.article("212")}; ${law.article("219")} ust. 1 pkt 3 i 7.`,
   },
-  income: {
+  employerIncome: {
     item: document(
-      "income-evidence",
-      "Історія доходу: PIT, нарахування й виплати"
+      "employment-income-certificate",
+      "Zaświadczenie o zatrudnieniu i wynagrodzeniu: довідка роботодавця"
     ),
-    level: "required",
-    status: "три роки в цьому прикладі",
-    owner:
-      "Заявник; документи від платників доходу, подані декларації та банківська історія",
+    level: "conditional",
+    status: "дохід від роботи в цьому прикладі",
+    owner: "Кадри або бухгалтерія кожного роботодавця за потрібний період",
     proves:
-      "Джерело, регулярність і розмір доходу за потрібний період з урахуванням утриманців. Один PIT або залишок на рахунку не замінює історії",
-    law: law.text`${law.article("211")} ust. 1 pkt 1 i ust. 2; ${law.article("140")} ust. 2. Два роки застосовуються лише у випадку ${law.article("212")} ust. 1 pkt 1.`,
+      "Період роботи, умови оплати й зазначені роботодавцем нарахування або виплати. Поточна ставка не підтверджує сама всю попередню історію",
+    law: law.text`${law.article("211")} ust. 1 pkt 1 i ust. 2. Це обраний доказ трудового доходу, а не універсальний додаток до кожної заяви.`,
+  },
+  taxIncome: {
+    item: document(
+      "tax-income-certificate",
+      "Zaświadczenie o dochodach z Urzędu Skarbowego: довідки за податкові роки"
+    ),
+    level: "conditional",
+    status: "річні відомості про дохід у прикладі",
+    owner: "Заявник запитує довідки у податкового органу за визначені роки",
+    proves:
+      "Податкові відомості за роками. Довідка за 2025 рік не встановлює дохід у 2026 році або щомісячні виплати",
+    law: law.text`${law.article("211")} ust. 1 pkt 1 i ust. 2. Вид доказу визначають за джерелом доходу й питанням, яке потрібно пояснити.`,
+  },
+  bank: {
+    item: document(
+      "bank-statement",
+      "Wyciąg bankowy: виписка за липень 2026 року"
+    ),
+    level: "conditional",
+    status: "для пояснення червневої виплати на вимогу органу",
+    owner: "Заявник отримує у своєму банку виписку з потрібною операцією",
+    proves:
+      "Переказ 10.07.2026 з призначенням wynagrodzenie za czerwiec. Цю виписку подають для конкретної розбіжності, а не як універсальний документ усіх заявників",
+    law: law.text`${law.article("211")} ust. 1 pkt 1; ${kpa.article("75", "art. 75 KPA")}.`,
+  },
+  payroll: {
+    item: document(
+      "payroll-statement",
+      "Pasek wynagrodzenia: розрахунок зарплати за червень 2026 року"
+    ),
+    level: "conditional",
+    status: "додаток до відповіді в прикладі",
+    owner: "Бухгалтерія роботодавця",
+    proves:
+      "Нарахування й суму до виплати 3200 zł netto за конкретний місяць. Дату фактичного переказу встановлюють окремо",
+    law: law.text`${law.article("211")} ust. 1 pkt 1; ${kpa.article("75", "art. 75 KPA")}.`,
   },
   employment: {
     item: document(
@@ -71,26 +106,28 @@ export const residentDocuments = {
     law: law.text`${law.article("211")} ust. 1 pkt 1 i ust. 2. Дохід може мати інше належне джерело; umowa o pracę не є універсально обов'язковою.`,
   },
   insurance: {
-    item: document("health-insurance", "Чинне медичне страхування"),
-    level: "required",
-    status: "окрема умова дозволу",
-    owner:
-      "Заявник; підтвердження права на медичні послуги або покриття витрат страховиком",
+    item: document(
+      "zus-health-registration",
+      "Potwierdzenie zgłoszenia do ubezpieczenia zdrowotnego з eZUS"
+    ),
+    level: "conditional",
+    status: "поточне страхування через роботу в прикладі",
+    owner: "Заявник отримує підтвердження своїх поточних даних у eZUS",
     proves:
-      "Належне медичне покриття в Польщі. Старе працевлаштування саме не підтверджує чинного страхування",
+      "Поточний запис про zgłoszenie до медичного страхування. Історія внесків та відсутність боргу роботодавця є іншими питаннями; за іншої підстави страхування потрібен відповідний доказ",
     law: law.text`${law.article("211")} ust. 1 pkt 2.`,
   },
   zus: {
     item: document(
-      "zus-confirmation",
-      "Дані ZUS про страхування та розрахунки"
+      "zus-insurance-history",
+      "Zaświadczenie o przebiegu ubezpieczeń: історія страхування заявника"
     ),
     level: "conditional",
-    status: "для страхування через роботу в прикладі",
+    status: "для перевірки роботи й страхування в прикладі",
     owner:
-      "Заявник і платник внесків; реєстрація, періоди та належні розрахунки",
+      "Заявник замовляє дані ZUS про себе за потрібний період; у гайді є приклад запиту US-7",
     proves:
-      "Зв'язок особи зі страховим титулом і періодами внесків. База внесків не тотожна сумі виплати на рахунок",
+      "Платників, періоди страхування й бази внесків за місяцями для зіставлення з документами про дохід. База внесків не є виплатою netto; довідка роботодавця про відсутність боргів не замінює історії працівника",
     law: law.text`${law.article("211")} ust. 1 pkt 1 i 2.`,
   },
   language: {
@@ -215,7 +252,10 @@ export const residentDocumentRegister: CaseGuideDocument[] = [
   residentDocuments.passport,
   residentDocuments.status,
   residentDocuments.chronology,
-  residentDocuments.income,
+  residentDocuments.employerIncome,
+  residentDocuments.taxIncome,
+  residentDocuments.bank,
+  residentDocuments.payroll,
   residentDocuments.employment,
   residentDocuments.insurance,
   residentDocuments.zus,

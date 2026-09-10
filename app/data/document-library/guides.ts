@@ -1,3 +1,11 @@
+import payrollStatementTopic from "./editorial/guides/payroll-statement"
+import zusInsuranceHistoryTopic from "./editorial/guides/zus-insurance-history"
+import employmentIncomeCertificateTopic from "./editorial/guides/employment-income-certificate"
+import taxIncomeCertificateTopic from "./editorial/guides/tax-income-certificate"
+import bankStatementTopic from "./editorial/guides/bank-statement"
+import zusNoArrearsDocumentTopic from "./editorial/guides/zus-no-arrears"
+import zusHealthRegistrationDocumentTopic from "./editorial/guides/zus-health-registration"
+import zusRcaDocumentTopic from "./editorial/guides/zus-rca"
 import judicialComplaintTopic from "./editorial/guides/judicial-complaint"
 import courtJudgmentTopic from "./editorial/guides/court-judgment"
 import deadlineObstacleDocumentTopic from "./editorial/guides/deadline-obstacle"
@@ -136,6 +144,14 @@ export const documentGuides: readonly DocumentGuide[] =
     administrativeAppealTopic.body,
     proceduralComplaintTopic.body,
     zusConfirmationTopic.body,
+    zusInsuranceHistoryTopic.body,
+    employmentIncomeCertificateTopic.body,
+    taxIncomeCertificateTopic.body,
+    bankStatementTopic.body,
+    payrollStatementTopic.body,
+    zusNoArrearsDocumentTopic.body,
+    zusHealthRegistrationDocumentTopic.body,
+    zusRcaDocumentTopic.body,
     businessRegisterInformationTopic.body,
     crbrInformationTopic.body,
     stampDutyProofTopic.body,

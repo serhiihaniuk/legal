@@ -543,3 +543,15 @@ Official sources checked on 10.09.2026; global baseline unchanged. Subagent sour
 Rewrote the comparison and both detailed map articles with completed fictional tables. The pages separate statutory categories, qualifying years, continuity, income, language, MOS filing, card validity and status loss. Independent draft review corrected the accompanying-family scope and made the example filing-day status explicit. Browser validation caught raw article citations missed by TypeScript; typed references and runtime checks resolved the import failure.
 
 Official sources checked on 10.09.2026; global baseline unchanged. Full verification, reference previews and desktop/mobile browser checks passed. Writing acceptance is 171 of 1,805 files. Evidence: docs/content-review/writing-2026-09-05/batches/58-permanent-resident-routes.md. Next: labour-market entry and its legal instruments. Whole-project independent legal acceptance remains open.
+
+### 2026-09-10: employment articles and resident document pilot
+
+Completed two employment map articles and the resident pilot. Each resident stage now shows an open list of named documents with a prepare, submit, review or update action. Repeated mentions explain reuse; the targeted July bank statement and June payroll calculation address one discrepancy rather than becoming universal requirements. Eight separate guides explain the relevant income and ZUS documents with completed fictional fragments. Other case presentations await the user's review; their ambiguity audit is saved.
+
+Scoped official sources were checked on 10.09.2026, including ELI, ZUS, podatki.gov.pl, PIP and bank instructions. Global legal baseline unchanged. An independent pilot review corrected the health link and payslip chronology; further guide review added the resident-specific insurance rule. Full verification passed with 41 test files and 217 tests, and 75-document reference previews passed. Subsequent typecheck, focused coverage checks and build passed after the bounded insurance addition. Desktop/mobile lists have no page overflow. Actual pointer and keyboard link activation work; the failed automated click hit the gap between lines of an inline link.
+
+Writing acceptance: 182 of 1,813 files. Evidence: docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md. Not committed or pushed during this pilot review. Next: user review of resident before wider case migration; work-entry remains next in the map lane. Whole-project legal acceptance and PDF-layout review remain open.
+
+### 2026-09-10: document status labels
+
+Changed the shared case-document status label from a rounded badge to ordinary muted text. Long explanations now wrap without pill backgrounds in registers and legacy stage lists. Wording is unchanged. Verified the resident register at 1440 px, no page overflow; typecheck and production build passed.

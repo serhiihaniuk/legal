@@ -20,6 +20,14 @@ export type CaseGuideDocument = Omit<
   reviewId?: CaseDocumentReviewId
 }
 
+export type CaseGuideDocumentAction = "prepare" | "submit" | "review" | "update"
+
+export type CaseGuideDocumentUse = {
+  document: CaseGuideDocument
+  action: CaseGuideDocumentAction
+  instruction: LegalTextValue
+}
+
 export type CaseGuideDeadline = Omit<
   CaseDeadline,
   "period" | "trigger" | "action" | "consequence" | "law"
@@ -75,7 +83,7 @@ export type CaseGuideStage = {
   actor: LegalTextValue
   actions: LegalTextValue[]
   outcome: LegalTextValue
-  documents: CaseGuideDocument[]
+  documents: (CaseGuideDocument | CaseGuideDocumentUse)[]
   risks: CaseGuideStageRisk[]
   materials: CaseGuideMaterial[]
 }

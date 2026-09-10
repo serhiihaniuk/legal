@@ -136,7 +136,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "c245692fc3981f969fc6fb6bc72f7ec62b8cb6d788a14b4fc8196380c828a40d",
+      "contentHash": "333e56c65e51c2fdabdbfe1fc0be2ee067fe1cd187fe7cf0210fe5bb8337f424",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -378,6 +378,36 @@
       "officialSourceUrls": [],
       "contentHash": "6f2300343602bbe5596bc8bd2e31afcc8fdfd49266399bac47df3546971f1cf1",
       "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:bank-statement",
+      "path": "app/data/document-library/editorial/guides/bank-statement.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "bank-statement",
+      "contentId": "bank-statement",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "953a747b914f3722d84aa9b848900970a02463ad66d08fbe39dd6dbe7bc34b62",
+      "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
         "reviewedAt": null,
@@ -904,6 +934,36 @@
       }
     },
     {
+      "id": "evidence-document:employment-income-certificate",
+      "path": "app/data/document-library/editorial/guides/employment-income-certificate.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "employment-income-certificate",
+      "contentId": "employment-income-certificate",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "996357917c34425f89f83f1b4216748ec889dd945648282e148e25f07847e875",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:evidence-matrix",
       "path": "app/data/document-library/editorial/guides/evidence-matrix.ts",
       "family": "evidence-document",
@@ -1156,7 +1216,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "f85f37b55a8530646715ae859b8ea8d5a6b7a63a2e50077161f418ec41754eb4",
+      "contentHash": "24d74ee880e14a01f6335dca13e0f3925ca8bd536578f685064aebba52946e3e",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -1337,6 +1397,36 @@
       "sourceTextHash": null,
       "officialSourceUrls": [],
       "contentHash": "90949ab27769fd62dc7e2c524315b14fab4752d407d901b980486aa308ed18d5",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:payroll-statement",
+      "path": "app/data/document-library/editorial/guides/payroll-statement.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "payroll-statement",
+      "contentId": "payroll-statement",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "1e8c04571e8aaddba768cec3ef9aee2a5262b14d966a88e744dc905753793131",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -2044,6 +2134,36 @@
       }
     },
     {
+      "id": "evidence-document:tax-income-certificate",
+      "path": "app/data/document-library/editorial/guides/tax-income-certificate.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "tax-income-certificate",
+      "contentId": "tax-income-certificate",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "03373cbf8c1dd3e5b14157e20d5c21f18e0bdb2c614f024bf1016329aa455ebd",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:temporary-residence-notification",
       "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
       "family": "evidence-document",
@@ -2268,6 +2388,126 @@
       "officialSourceUrls": [],
       "contentHash": "0f055e0abb3a02200891c4ff8b615355e1cd9fb968e9c1ccce90e2b4517a638b",
       "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:zus-health-registration",
+      "path": "app/data/document-library/editorial/guides/zus-health-registration.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "zus-health-registration",
+      "contentId": "zus-health-registration",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "86e31f8ba5c88199660b401f86fb89b0fabfe1d6c96b086d8c9779be4db599dd",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:zus-insurance-history",
+      "path": "app/data/document-library/editorial/guides/zus-insurance-history.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "zus-insurance-history",
+      "contentId": "zus-insurance-history",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "83564b7384e955c071ff1d8e2273ba259c1f1ba42272b3ca5ae766047311e632",
+      "sourceReviewStatus": "reviewed",
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:zus-no-arrears",
+      "path": "app/data/document-library/editorial/guides/zus-no-arrears.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "zus-no-arrears",
+      "contentId": "zus-no-arrears",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "41de4744109747fd4826376c01dbaa5b556a1cb22750ca5b5b075091a8c3ade8",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:zus-rca",
+      "path": "app/data/document-library/editorial/guides/zus-rca.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "zus-rca",
+      "contentId": "zus-rca",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9889b68abc32824a9cb5f0ab8e7a74efe5a02f8b1fe5a72ab8ffdfb61c8112b3",
+      "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
         "reviewedAt": null,
@@ -3190,7 +3430,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "16c0ae83143cc787e6cd806c6bdf906cc9ab9180e0411adae1c0e55ae900829e",
+      "contentHash": "40dee58a1e32209ada2d1a66076d60411f1e517a73d01680bd916db93fa4ef21",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -4238,27 +4478,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "95a26115dce15aeb9daf9f31dc55e81c85bb4cd9dcba228dfb806d51bc3ec7e4",
+      "contentHash": "e7506ac08cc040ddb68980c95791e851d9ac5a7dd2e0ce1e6a3f8fd49ef97f9c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "95a26115dce15aeb9daf9f31dc55e81c85bb4cd9dcba228dfb806d51bc3ec7e4",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "95a26115dce15aeb9daf9f31dc55e81c85bb4cd9dcba228dfb806d51bc3ec7e4",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -4274,27 +4508,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "e45f4a66fa51e1ba9fa7b81db5d4d2e1e0f0fef5a87293b8426c846011b6f5c9",
+      "contentHash": "aa0169d8ae681a5933f420724e7ffe36c6578a0c2e5740d61ed1fb9e229bdc8f",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "e45f4a66fa51e1ba9fa7b81db5d4d2e1e0f0fef5a87293b8426c846011b6f5c9",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "e45f4a66fa51e1ba9fa7b81db5d4d2e1e0f0fef5a87293b8426c846011b6f5c9",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5024,7 +5252,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "c4a158e2dbd433d41c501290efbfc56a1473b0cf749e026a8ca5c9d5fc0df3ae",
+      "contentHash": "ebf77352019b6547382daaff9872172076231fda94b5da9e6b3433940860a4e0",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,

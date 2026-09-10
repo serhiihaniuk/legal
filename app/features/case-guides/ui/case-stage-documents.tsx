@@ -1,6 +1,11 @@
 import { CasePreparationActions } from "./case-preparation-actions"
 import { LegalLink } from "~/components/references"
-import type { CaseGuideStage } from "~/data/case-guides/types"
+import type {
+  CaseGuideDocument,
+  CaseGuideDocumentAction,
+  CaseGuideStage,
+} from "~/data/case-guides/types"
+import { isCaseGuideDocumentUse } from "~/data/case-guides/document-use"
 import { LegalText } from "~/components/references"
 import { Checkbox } from "~/components/ui/checkbox"
 import {
@@ -17,14 +22,51 @@ import { DocumentStatus } from "./case-guide-shared"
 import { CaseDocumentReview } from "./case-document-review"
 import { CaseStageDisclosure } from "./case-stage-disclosure"
 
+const actionLabels = {
+  prepare: "Підготувати",
+  submit: "Подати",
+  review: "Звірити наявне",
+  update: "Оновити за потреби",
+} satisfies Record<CaseGuideDocumentAction, string>
+
 export function CaseStageDocuments({ stage }: { stage: CaseGuideStage }) {
   if (stage.documents.length === 0) return null
-  const documents = stage.documents.filter(
+  const uses = stage.documents.filter(isCaseGuideDocumentUse)
+  const legacyEntries = stage.documents.filter(
+    (entry): entry is CaseGuideDocument => !isCaseGuideDocumentUse(entry)
+  )
+  const documents = legacyEntries.filter(
     (document) => document.kind !== "action"
   )
   return (
     <>
-      <CasePreparationActions documents={stage.documents} />
+      {uses.length ? (
+        <section className="py-5">
+          <h4 className="font-medium">Документи на цьому етапі</h4>
+          <ul className="mt-4 list-none space-y-4 p-0">
+            {uses.map((use, index) => (
+              <li key={`${use.action}-${index}`}>
+                <p className="text-sm leading-6">
+                  <span className="font-medium">
+                    {actionLabels[use.action]}:{" "}
+                  </span>
+                  <LegalText
+                    text={use.document.item}
+                    context="reference-section"
+                  />
+                </p>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                  <LegalText
+                    text={use.instruction}
+                    context="reference-section"
+                  />
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+      <CasePreparationActions documents={legacyEntries} />
       {documents.length ? (
         <CaseStageDisclosure
           id={`documents-${stage.id}`}

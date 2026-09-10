@@ -6,9 +6,11 @@ import type {
   CaseGuideSource,
 } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 
 const law = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const kpa = createLegalTextAuthor("kpa")
+const documents = createEvidenceDocumentTextAuthor()
 const delayUrl =
   "https://bip.brpo.gov.pl/pl/content/rpo-cudzoziemcy-postepowania-legalizacyjne-przewleklosc-mswia-odpowiedz"
 
@@ -34,17 +36,15 @@ export const residentConditions: CaseGuideCondition[] = [
     condition: "Стабільний регулярний дохід",
     factToEstablish:
       "Законне джерело, розмір і регулярність за три роки у прикладі, включно з утриманцями.",
-    evidence:
-      "Договори, декларації з UPO, розрахункові листи й банківські виплати за відповідні періоди.",
-    risk: "PIT підсумовує податкові дані, а банківський баланс показує одну дату. Жоден із них окремо не пояснює всю історію доходу.",
+    evidence: documents.text`У цьому прикладі ${documents.document("employment-income-certificate", "довідка роботодавця про працевлаштування та заробіток")}, ${documents.document("tax-income-certificate", "довідка податкового органу про дохід")} та ${documents.document("zus-insurance-history", "іменна історія страхування ZUS")} описують різні частини перевірюваного періоду. ${documents.document("bank-statement", "Липневу банківську виписку")} долучено адресно, щоб пояснити червневу виплату.`,
+    risk: "Довідка про нинішню зарплату не описує автоматично три попередні роки, податковий підсумок не показує кожен місяць, а база внесків ZUS не є сумою виплати. Це набір доказів для цього джерела доходу, не універсальна вимога однакових документів від усіх заявників.",
     law: law.text`${law.article("211")} ust. 1 pkt 1 i ust. 2; ${law.article("140")} ust. 2.`,
   },
   {
     condition: "Належне медичне страхування",
     factToEstablish:
       "Чинне право на медичні послуги або належне покриття витрат страховиком у Польщі.",
-    evidence:
-      "Документи страхового титулу й дані ZUS або належне підтвердження від страховика.",
+    evidence: documents.text`Для працівника з цього прикладу ${documents.document("zus-health-registration", "підтвердження поточної реєстрації в медичному страхуванні з eZUS")}. За іншої підстави потрібний документ про відповідне право на послуги або покриття витрат страховиком.`,
     risk: "Дохід та страхування є різними умовами. Стара реєстрація після припинення роботи може вже не пояснювати нинішнього покриття.",
     law: law.text`${law.article("211")} ust. 1 pkt 2.`,
   },
@@ -176,6 +176,21 @@ export const residentAlternatives: CaseGuideNegativeBranch[] = [
 ]
 
 export const residentSources: CaseGuideSource[] = [
+  {
+    label: "Świętokrzyski UW: окремі документи про дохід",
+    url: "https://www.gov.pl/web/uw-swietokrzyski/rezydent-dlugoterminowy-ue",
+    note: "Адміністративний перелік окремо називає довідку роботодавця, історію ZUS із місячними базами та довідку податкового органу. Давні паперові інструкції й скорочений опис Blue Card на сторінці не використано як чинні правила цього прикладу.",
+  },
+  {
+    label: "ZUS: довідка про перебіг страхування",
+    url: "https://www.zus.pl/en/-/jak-uzyskac-zaswiadczenie-o-przebiegu-ubezpieczen-spolecznych",
+    note: "Запит US-7 та видана іменна довідка є різними документами. Період і зміст запиту добирають до перевірюваної історії.",
+  },
+  {
+    label: "ZUS: поточне підтвердження з eZUS",
+    url: "https://www.zus.pl/pl/baza-wiedzy/o-portalu-pue-/samodzielne-tworzenie-potwierdzen-z-danymi-z-zus/dla-ubezpieczonych",
+    note: "Формування іменного підтвердження з обраними даними, зокрема про актуальну реєстрацію. Це не довідка про борги платника.",
+  },
   {
     label: "Ustawa o cudzoziemcach",
     url: "https://eli.gov.pl/eli/DU/2025/1079/ogl",
