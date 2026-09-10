@@ -763,5 +763,10 @@
     "path": "app/data/legal-map/editorial/topics/legal-anatomy.ts",
     "contentHash": "210f253d85ad2104844c04c3d94bcafd31a753118f65e88d79cd82c64fab33e6",
     "evidence": "docs/content-review/writing-2026-09-05/batches/44-legal-norm-anatomy.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/special-vs-kpa.ts",
+    "contentHash": "8fb4c3d0d60a3e7affea476b534f9a7cc98948e7edc31db55faec0bb33a4e007",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/45-kpa-special-rules.md"
   }
 ]

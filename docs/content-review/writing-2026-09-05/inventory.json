@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 150,
+    "reviewed": 151,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11881,9 +11881,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/special-vs-kpa.ts",
       "family": "map-topic",
-      "contentHash": "78784fa8032a82a0393bc6177d43bf415eb15d4d4f8fc2888f57040089ac1820",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "8fb4c3d0d60a3e7affea476b534f9a7cc98948e7edc31db55faec0bb33a4e007",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/45-kpa-special-rules.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/start-case.ts",

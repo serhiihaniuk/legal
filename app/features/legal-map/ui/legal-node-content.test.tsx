@@ -115,8 +115,8 @@ describe("map article contents", () => {
   })
 
   it("preserves not-yet-migrated article content during the rewrite", () => {
-    const node = nodeById.get("special-vs-kpa")
-    if (!node) throw new Error("Missing special-vs-kpa fixture")
+    const node = nodeById.get("two-keys")
+    if (!node) throw new Error("Missing two-keys fixture")
     const { container } = render(
       <MemoryRouter>
         <LegalNodeContent

@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 42: `start-case` now explains facts, assertions, evidence and conclusions through a filled chronology. Its route and primary chapter are unchanged. Batches 30-41 record the intervening family, procedure, remedies and court-document work. The foundation articles `legal-anatomy` and `special-vs-kpa` remain pending. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
+Latest implementation note, batch 45: `start-case`, `legal-anatomy` and `special-vs-kpa` now have authored explanations with completed examples. Their routes and primary chapters are unchanged. Next foundation topics are `two-keys` and `source-check`. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 

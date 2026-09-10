@@ -459,3 +459,9 @@ Full verification passed with 202 application tests. The final mobile adjustment
 Rewrote the map foundation article around the KPA signature and formal-defect rules. Added a completed example with a filled rule-analysis table and a separate explanation of cumulative conditions. Verified the bounded source provisions against official ELI on 10.09.2026; the global baseline is unchanged.
 
 Full verification passed with 202 application tests. Reference previews and Chromium checks passed, including direct navigation, authored sections, desktop/mobile overflow and keyboard table scrolling. Writing acceptance is 150 of 1,805 files. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/44-legal-norm-anatomy.md. Next: special-vs-kpa.
+
+### 2026-09-10: KPA and special rules
+
+Rewrote the foundation article to separate permit conditions, procedure and transition rules. Added a filled employer-case note and a completed example of an application received before MOS launched. Verified the bounded KPA, foreigners-act and amending-act provisions plus official UdSC guidance on 10.09.2026. The global baseline is unchanged.
+
+Full verification, reference previews and desktop/mobile Chromium checks passed. Writing acceptance is 151 of 1,805 files; independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/45-kpa-special-rules.md. Next: two-keys and source-check.
