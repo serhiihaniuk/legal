@@ -7,7 +7,9 @@ import type {
 } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
 import { document } from "../shared/document-reference"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 
+const documents = createEvidenceDocumentTextAuthor()
 const law = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const kpa = createLegalTextAuthor("kpa")
 const work = createLegalTextAuthor("powierzanie-pracy")
@@ -17,10 +19,7 @@ export const familyConditions: CaseGuideCondition[] = [
     condition: "Правильна підстава й спосіб подання",
     factToEstablish:
       "Власний статус заявниці, дозволений період і місце перебування. У прикладі вона в Польщі та подає нову заяву до закінчення дозволених візою днів.",
-    evidence: document(
-      "status-documents",
-      "Віза або попереднє рішення разом із датами поїздок"
-    ),
+    evidence: documents.text`${documents.document("visa", "Національна віза заявниці з перебуванням до 30.09.2026")}, ${documents.document("passport", "її паспорт")} та підтверджені дати поїздок.`,
     risk: "Дозвіл чоловіка не продовжує перебування дружини. Перебування особи за кордоном може змінити форму, але не створює сімейної підстави.",
     law: law.text`${law.article("99")}, ${law.article("105")}, ${law.article("106l")}; спеціальні випадки ${law.article("165")}.`,
   },
@@ -28,10 +27,7 @@ export const familyConditions: CaseGuideCondition[] = [
     condition: "Член сім'ї в Польщі має передбачений статус",
     factToEstablish:
       "Вид дозволу чоловіка; історія дозволів лише тоді, коли її вимагає відповідна категорія.",
-    evidence: document(
-      "family-evidence",
-      "Рішення про pobyt stały та чинна карта чоловіка"
-    ),
+    evidence: documents.text`${documents.document("administrative-decision", "Рішення чоловіка про pobyt stały")} і його ${documents.document("residence-card", "чинна karta pobytu")}.`,
     risk: "Строк пластикової карти переплутано з тривалістю фактичного перебування за послідовними дозволами.",
     law: law.text`${law.article("159")} ust. 1 pkt 1: для прикладу lit. a, а дворічна історія в іншому варіанті за lit. e.`,
   },
@@ -50,10 +46,7 @@ export const familyConditions: CaseGuideCondition[] = [
     condition: "Зрозумілі фактичні обставини шлюбу",
     factToEstablish:
       "Причина двох адрес, тимчасовий період роботи та збережене сімейне житло.",
-    evidence: document(
-      "family-evidence",
-      "Пояснення та матеріали про конкретну розбіжність"
-    ),
+    evidence: documents.text`Пояснення подружжя, ${documents.document("work-location-confirmation", "підтвердження тимчасового місця роботи чоловіка")}, ${documents.document("residential-lease", "сімейний договір житлової оренди")} та ${documents.document("bank-statement", "липневі й серпневі платежі за житло")}. Роботодавець підтверджує роботу, а не фактичні ночівлі або обставини шлюбу.`,
     risk: "Акт показує шлюб, але не пояснює різних адрес; різні адреси самі по собі не доводять фіктивності.",
     law: law.text`${law.article("169")}; ${law.article("165")} ust. 1; ${kpa.article("80", "art. 80 KPA")}.`,
   },
@@ -61,10 +54,7 @@ export const familyConditions: CaseGuideCondition[] = [
     condition: "Є потрібне регулярне джерело утримання",
     factToEstablish:
       "Склад сім'ї, обов'язок утримання, належно визначений місячний дохід і його повторюваність. Виняток перевіряють до вимоги документа.",
-    evidence: document(
-      "income-evidence",
-      "Підстава доходу, розрахунки та виплати"
-    ),
+    evidence: documents.text`${documents.document("employment-contract", "Umowa o pracę чоловіка")}, ${documents.document("employment-income-certificate", "довідка роботодавця")}, ${documents.document("payroll-statement", "розрахункові листки за 05–07.2026")} і ${documents.document("bank-statement", "три виконані виплати по 6 200 zł")}. Три місяці є обраними фактами прикладу, не універсальним строком доказування.`,
     risk: "Разовий залишок не встановлює регулярності; врахування лише заявниці приховує інших утриманців.",
     law: law.text`${law.article("159")} ust. 1 pkt 2 lit. b і ust. 2–2b; ${law.article("163")}; ${law.article("140")} ust. 2.`,
   },
@@ -72,10 +62,7 @@ export const familyConditions: CaseGuideCondition[] = [
     condition: "Заявниця має покриття лікування та забезпечене житло",
     factToEstablish:
       "Страхування саме заявниці та підстава користуватися житлом. Кожна умова й кожний виняток мають окрему перевірку.",
-    evidence: document(
-      "health-insurance",
-      "Страхове підтвердження разом з окремим документом про житло"
-    ),
+    evidence: documents.text`${documents.document("private-health-insurance-policy", "Оплачений приватний поліс саме заявниці та його умови")} і ${documents.document("residential-lease", "підписаний договір житлової оренди у Вроцлаві")}.`,
     risk: "Поліс чоловіка не доводить включення дружини. Звільнення від доходу та житла не завжди скасовує страхування.",
     law: law.text`${law.article("159")} ust. 1 pkt 2 lit. a, pkt 3 і ust. 2–2b.`,
   },
@@ -203,9 +190,9 @@ export const familyAlternatives: CaseGuideNegativeBranch[] = [
 
 export const familySources: CaseGuideSource[] = [
   {
-    label: "Ustawa o cudzoziemcach",
+    label: "Перевірка конкретного сімейного пакета, 10.09.2026",
     url: "https://eli.gov.pl/eli/DU/2025/1079/ogl",
-    note: law.text`${law.article("159")}: умови; ${law.article("163")}: утримання; ${law.article("169")}: перевірка шлюбу; ${law.article("162")}: строк дозволу. Прочитано з пізнішими змінами та правилами подання.`,
+    note: law.text`Ustawa o cudzoziemcach: перевірено ${law.article("159")}, ${law.article("163")} і ${law.article("169")} щодо статусу чоловіка, утримання, особистого страхування та пояснення двох адрес; ${law.article("162")} щодо строку дозволу; ${law.article("106d")} і ${law.article("106f")} щодо подання сканів і вимоги оригіналів; ${law.article("108")} щодо підтвердження після перевірки органом. Прочитано з пізнішими змінами та правилами подання. Це доповнення до попередньої перевірки гайда від 06.09.2026.`,
   },
   {
     label: "Powierzanie pracy cudzoziemcom",

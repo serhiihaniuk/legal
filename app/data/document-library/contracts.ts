@@ -45,6 +45,9 @@ export type EvidenceDocumentId =
   | "case-file-index"
   | "civil-status-record"
   | "health-insurance"
+  | "private-health-insurance-policy"
+  | "residential-lease"
+  | "work-location-confirmation"
   | "income-evidence"
   | "housing-evidence"
   | "study-confirmation"
@@ -214,6 +217,9 @@ export const evidenceDocumentIds = [
   "case-file-index",
   "civil-status-record",
   "health-insurance",
+  "private-health-insurance-policy",
+  "residential-lease",
+  "work-location-confirmation",
   "income-evidence",
   "housing-evidence",
   "study-confirmation",

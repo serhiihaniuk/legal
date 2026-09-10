@@ -106,7 +106,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "1ba98b73a61707e6fe7d49f79903c466888e3df53e57cc4cb68d910b03351cd6",
+      "contentHash": "c02a483a319447714d72c980d4d740dd4109a62e27b8436937551a44408dbf9c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -1654,6 +1654,36 @@
       }
     },
     {
+      "id": "evidence-document:private-health-insurance-policy",
+      "path": "app/data/document-library/editorial/guides/private-health-insurance-policy.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "private-health-insurance-policy",
+      "contentId": "private-health-insurance-policy",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "d1b4183d60c60166340503e2b72fadc9e675e52a6a4a7f55b40f1f36b61d167c",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:procedural-complaint",
       "path": "app/data/document-library/editorial/guides/procedural-complaint.ts",
       "family": "evidence-document",
@@ -1937,6 +1967,36 @@
       "sourceTextHash": null,
       "officialSourceUrls": [],
       "contentHash": "dbc6fa145cb7cbaecae0f14274128c4dee88a246fcd876348ba8f898ad58584a",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:residential-lease",
+      "path": "app/data/document-library/editorial/guides/residential-lease.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "residential-lease",
+      "contentId": "residential-lease",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "c2a3d0662c9486d26f149cdf954c256f1fd88538bc7f41d9d643e39540abc8ee",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -2477,6 +2537,36 @@
       "sourceTextHash": null,
       "officialSourceUrls": [],
       "contentHash": "3f278fcf5f8c9801321ec5d27b044363edad3fed3ffaf506ad8e7d5c72ade804",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:work-location-confirmation",
+      "path": "app/data/document-library/editorial/guides/work-location-confirmation.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "work-location-confirmation",
+      "contentId": "work-location-confirmation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "fcbb24ffc1c52ff5658b7129b73d56d5ea49d0ebbce026fbc771abeb675a46da",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,

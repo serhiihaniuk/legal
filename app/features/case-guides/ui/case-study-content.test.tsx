@@ -287,6 +287,48 @@ describe("case guide continuity", () => {
     ).toBe("/documents/board-remuneration-resolution")
   })
 
+  it("keeps family filing and response documents visible with distinct guide destinations", () => {
+    const route = getCaseGuideRoute("family")
+    const { container } = render(
+      <MemoryRouter initialEntries={["/cases/family"]}>
+        <CaseStudyContent route={route} updatedAt="2026-07-18" />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    expect(
+      screen.getAllByRole("heading", { name: "Документи на цьому етапі" })
+    ).toHaveLength(6)
+    for (const stage of route.stages) {
+      const region = within(
+        container.querySelector<HTMLElement>(`#case-stage-${stage.id}`)!
+      )
+      expect(region.queryByRole("button", { name: /^Документи/ })).toBeNull()
+      expect(region.queryByRole("checkbox")).toBeNull()
+    }
+    const filing = container.querySelector<HTMLElement>("#case-stage-filing")!
+    for (const id of ["private-health-insurance-policy", "residential-lease"]) {
+      expect(filing.querySelector(`li a[href="/documents/${id}"]`)).toBeTruthy()
+    }
+    expect(
+      filing.querySelector('li a[href="/documents/work-location-confirmation"]')
+    ).toBeNull()
+    const response = container.querySelector<HTMLElement>(
+      "#case-stage-procedure"
+    )!
+    const location = response.querySelector<HTMLAnchorElement>(
+      'li a[href="/documents/work-location-confirmation"]'
+    )!
+    expect(location.closest("li")!.textContent).toContain("28.08")
+    const lease = response.querySelector<HTMLAnchorElement>(
+      'li a[href="/documents/residential-lease"]'
+    )!
+    expect(lease.closest("li")!.textContent).toContain("повторно не долучали")
+    fireEvent.click(location)
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/work-location-confirmation")
+  })
+
   it("links register titles to document guides while retaining provision links", () => {
     render(
       <MemoryRouter>

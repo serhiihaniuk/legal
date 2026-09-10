@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1818,
-    "reviewed": 188,
+    "totalFiles": 1821,
+    "reviewed": 191,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 80,
+      "evidence-document": 83,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -149,23 +149,23 @@
     {
       "path": "app/data/case-guides/editorial/family/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "cc152d8e78d68a5ba0076de56460b09989155f7e1a390e1cf99ac93579e8b9ef",
+      "contentHash": "fddbe0a81601371bf16d9a478e656c411d99ad421bc969cab70e5987572d086e",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/family/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "f9aaeb0f06f8a7de628f5ea5f3d7bdf9f8e9dc2b73c76d10889b5c251896a319",
+      "contentHash": "5768795e43c9f1192b2d134dee7dd98a10b1cf62ee24c8c431c7b1ad212a2541",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/family/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "3c2615557aa2aa2649968de6d7f0dcfd6da78842b15e820f417e341ab39228bc",
+      "contentHash": "92b9664a3868553872934b49893cfe29855ad36b45127262a93330507c75ca34",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/other/documents.ts",
@@ -254,9 +254,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/family.ts",
       "family": "case-guide",
-      "contentHash": "1ba98b73a61707e6fe7d49f79903c466888e3df53e57cc4cb68d910b03351cd6",
+      "contentHash": "c02a483a319447714d72c980d4d740dd4109a62e27b8436937551a44408dbf9c",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/19-family-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/routes/long-term-eu.ts",
@@ -686,6 +686,13 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
     },
     {
+      "path": "app/data/document-library/editorial/guides/private-health-insurance-policy.ts",
+      "family": "evidence-document",
+      "contentHash": "d1b4183d60c60166340503e2b72fadc9e675e52a6a4a7f55b40f1f36b61d167c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
+    },
+    {
       "path": "app/data/document-library/editorial/guides/procedural-complaint.ts",
       "family": "evidence-document",
       "contentHash": "e91de0e584902f89b93f4ae8d33a72645814b2007e6f1ddca2bfb4556f0f71e0",
@@ -754,6 +761,13 @@
       "contentHash": "dbc6fa145cb7cbaecae0f14274128c4dee88a246fcd876348ba8f898ad58584a",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/residential-lease.ts",
+      "family": "evidence-document",
+      "contentHash": "c2a3d0662c9486d26f149cdf954c256f1fd88538bc7f41d9d643e39540abc8ee",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/response-letter.ts",
@@ -880,6 +894,13 @@
       "contentHash": "3f278fcf5f8c9801321ec5d27b044363edad3fed3ffaf506ad8e7d5c72ade804",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/work-location-confirmation.ts",
+      "family": "evidence-document",
+      "contentHash": "fcbb24ffc1c52ff5658b7129b73d56d5ea49d0ebbce026fbc771abeb675a46da",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/66-family-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/work-organisation-evidence.ts",

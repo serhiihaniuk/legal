@@ -1,3 +1,6 @@
+import privateHealthInsurancePolicyTopic from "./editorial/guides/private-health-insurance-policy"
+import residentialLeaseTopic from "./editorial/guides/residential-lease"
+import workLocationConfirmationTopic from "./editorial/guides/work-location-confirmation"
 import payrollStatementTopic from "./editorial/guides/payroll-statement"
 import boardAppointmentResolutionTopic from "./editorial/guides/board-appointment-resolution"
 import shareholderListTopic from "./editorial/guides/shareholder-list"
@@ -107,6 +110,9 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    privateHealthInsurancePolicyTopic.body,
+    residentialLeaseTopic.body,
+    workLocationConfirmationTopic.body,
     boardAppointmentResolutionTopic.body,
     shareholderListTopic.body,
     boardRemunerationResolutionTopic.body,
