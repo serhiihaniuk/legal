@@ -4040,27 +4040,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "85b389aa72658d3454fc39e4ae49d44b6ea5c3bc7f93ec1a76883e459ad966e6",
+      "contentHash": "1e009163416117195e489e2a012bf5b36d7c379bcf99524f379362dc586c3079",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "85b389aa72658d3454fc39e4ae49d44b6ea5c3bc7f93ec1a76883e459ad966e6",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "85b389aa72658d3454fc39e4ae49d44b6ea5c3bc7f93ec1a76883e459ad966e6",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 51: the five orientation topics, person-status, entry-current-basis, visa, visa-free and pending-stay now have authored explanations with completed examples. Their routes and primary chapters are unchanged. Next are status UKR and its connections to ordinary residence routes. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
+Latest implementation note, batch 52: the five orientation topics and all six topics about the person and current stay now have authored explanations with completed examples. Their routes and primary chapters are unchanged. Next are the UKR/CUKR/ordinary-permit comparison and CUKR article, with special attention to the distinction between the EU protection horizon and Polish procedural deadlines. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 

@@ -501,3 +501,9 @@ Checked scoped official EU and Polish sources on 10.09.2026; the global baseline
 Rewrote pending-stay with explanations of timely filing, formal correction, UPO, certificates, older proceedings, administrative finality, suspension and departure qualifications. Added a completed six-event timeline through an admissible timely appeal. Corrected the source of the certificate and resident-procedure changes.
 
 Scoped official sources checked on 10.09.2026; global baseline unchanged. Updated two tests that assumed this page still used the old template. Focused and full verification, reference previews, desktop/mobile layout, table keyboard scrolling, section anchor and article 222a navigation passed. Writing inventory and ledgers regenerated. Independent legal review remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/51-pending-stay.md. Next: status UKR and its connections to ordinary residence routes.
+
+### 2026-09-10: status UKR and continuity
+
+Rewrote the status UKR map article with six explanatory sections and a completed comparison of current and historical status evidence. Separated the two identity-confirmation rules, employment notification and ordinary permit choice. Verified the new EU protection horizon and the published corrigendum changing the relevant July dates to August. Recorded the discrepancy in the UdSC summary and the remaining companion-page work.
+
+Scoped official-source check on 10.09.2026; global baseline unchanged. Full verification and reference previews passed. Desktop/mobile layout, section anchor and keyboard table scrolling passed without page overflow or console errors. Writing inventory and ledgers regenerated; independent legal acceptance remains pending. Evidence: docs/content-review/writing-2026-09-05/batches/52-status-ukr.md. Next: UKR/CUKR/ordinary-permit comparison and CUKR, including their separately legislated deadlines.

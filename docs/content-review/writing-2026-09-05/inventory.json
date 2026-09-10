@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1805,
-    "reviewed": 158,
+    "reviewed": 159,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11944,9 +11944,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/ukr-baseline-2026.ts",
       "family": "map-topic",
-      "contentHash": "85b389aa72658d3454fc39e4ae49d44b6ea5c3bc7f93ec1a76883e459ad966e6",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1e009163416117195e489e2a012bf5b36d7c379bcf99524f379362dc586c3079",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/52-status-ukr.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/ukraine-ordinary-2026.ts",

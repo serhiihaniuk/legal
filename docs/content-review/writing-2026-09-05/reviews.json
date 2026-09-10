@@ -803,5 +803,10 @@
     "path": "app/data/legal-map/editorial/topics/pending-stay.ts",
     "contentHash": "c67983c533216e9db139a625ca25a46ba905ca37880d09f5ef383303f27262cc",
     "evidence": "docs/content-review/writing-2026-09-05/batches/51-pending-stay.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/ukr-baseline-2026.ts",
+    "contentHash": "1e009163416117195e489e2a012bf5b36d7c379bcf99524f379362dc586c3079",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/52-status-ukr.md"
   }
 ]
