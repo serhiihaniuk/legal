@@ -79,6 +79,7 @@ const guide: DocumentGuide = {
         foreignersLaw.text`${foreignersLaw.article("106d", "Art. 106d ust. 3–6")} визначає, хто підписує заяву й окремі додатки, та пов’язує подання з потрібними підписами й отриманням UPO. Звичайну заяву повнолітнього дієздатного іноземця підписує сам заявник. Повноваження представника не передає йому це право. Підпис роботодавця стосується його додатка.`,
         "UPO, Urzędowe Poświadczenie Odbioru, є підтвердженням отримання заяви системою. Пізніше працівник органу перевіряє заяву й додатки. Тому збережені PDF, XML і UPO мають належати одній надісланій версії, а не суміші чернеток.",
         foreignersLaw.text`Наступне wezwanie може стосуватися особистих дій за ${foreignersLaw.article("106e", "Art. 106e")} або документів за ${foreignersLaw.article("106f", "Art. 106f")}. Це окремі вимоги зі своїми строками й наслідками. Факт електронного подання не скасовує особистої явки, коли вона потрібна.`,
+        foreignersLaw.text`Для заявника з тимчасовим захистом і UKR, який просить один із дозволів за ${foreignersLaw.external("art. 45 ust. 1 закону Dz.U. 2026 poz. 203", "https://eli.gov.pl/api/acts/DU/2026/203/text/O/D20260203.pdf#page=40")}, зокрема pobyt czasowy i pracę, загальний виклик за ${foreignersLaw.article("106e", "art. 106e ust. 1")} не застосовується. За ust. 3–6 цього спеціального правила орган використовує реєстрові відбитки, а якщо їх немає або передання неможливе, бере їх після надання дозволу. Взірець підпису для карти все одно подають на належній формі або пристрої органу. Він не замінює електронного підпису заяви. Сам спосіб подання через MOS і підписання додатка роботодавцем залишаються чинними.`,
       ],
     },
     {
@@ -104,6 +105,11 @@ const guide: DocumentGuide = {
     documentSources.aliens,
     documentSources.regulation553,
     documentSources.mosQa,
+    {
+      label: "Особисті дії заявника з UKR. Dz.U. 2026 poz. 203",
+      url: "https://eli.gov.pl/api/acts/DU/2026/203/text/O/D20260203.pdf#page=40",
+      note: foreignersLaw.text`Перевірено 10.09.2026 лише ${foreignersLaw.external("art. 45 ust. 1 і 3–6", "https://eli.gov.pl/api/acts/DU/2026/203/text/O/D20260203.pdf#page=40")}: виняток із загального виклику, реєстрові відбитки та взірець підпису. Він не скасовує електронного подання за ${foreignersLaw.articleRange("106c", "106d", { start: "art. 106c", end: "106d" })} ustawy o cudzoziemcach.`,
+    },
   ],
   relatedDocuments: [
     "employment-annex-1",
@@ -144,7 +150,7 @@ export const mosApplicationTopic: KnowledgeUnit<DocumentGuide> =
       {
         id: "post-filing-actions",
         kind: "statute-text",
-        text: foreignersLaw.text`Після подання орган викликає особу для дій за ${foreignersLaw.article("106e", "Art. 106e")} зі строком щонайменше 7 днів або вимагає докази за ${foreignersLaw.article("106f", "Art. 106f")} зі строком щонайменше 14 днів. Невиконання визначених особистих дій за умов і з винятками ${foreignersLaw.article("106i", "Art. 106i")} веде до umorzenia, тобто закриття провадження.`,
+        text: foreignersLaw.text`Коли до заявника застосовується загальний порядок ${foreignersLaw.article("106e", "Art. 106e")}, строк виклику для особистих дій становить щонайменше 7 днів. Вимога доказів за ${foreignersLaw.article("106f", "Art. 106f")} має строк щонайменше 14 днів. Ці правила не роблять особисту явку універсальною вимогою для кожної заяви в MOS. Невиконання визначених особистих дій за умов і з винятками ${foreignersLaw.article("106i", "Art. 106i")} веде до umorzenia, тобто закриття провадження.`,
         basis: [
           {
             reference: {

@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-Batch 54 rewrites the detailed CUKR article. Current writing acceptance and remaining scope are recorded in the latest checkpoint below. Earlier figures describe those checkpoints, not the present total.
+Batch 55 rewrites the ordinary work/residence route for UKR and reconciles its companion document guides. Current writing acceptance and remaining scope are recorded in the latest checkpoint below. Earlier figures describe those checkpoints, not the present total.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
@@ -78,4 +78,4 @@ Batch 27 implements the primary chapter assignments, stable chapter anchors, dir
 
 Batch 28 implements authored map sections and matching page contents. The first migrated article, `other-stay`, now distinguishes named and residual grounds, explains the graduate route and gives a completed accommodation example. Its source check includes temporary-protection limits. The misplaced article 114 link is corrected. One article receives writing acceptance, bringing the total to 126 of 1,800; the shared renderer change does not accept unmigrated text. Study/research and family classifications, deeper parent articles, the decision merge and remaining map gaps continue next. Law-module rewrites, original-source layout and independent legal review remain open.
 
-Latest checkpoint, batch 54: 161 of 1,805 files have current writing review. The detailed CUKR article now explains eligibility, register data, filing, pending proceedings, collection and obligations with a completed chronology. Next is the Ukraine ordinary-permit article and reconciliation of the legacy case profile. Remaining map articles, law modules, provision commentary, the original PDF-layout audit and independent legal review remain open. Detailed evidence is in [batch 54](batches/54-cukr-procedure.md).
+Latest checkpoint, batch 55: 162 of 1,805 files have current writing review. The UKR ordinary-work article now explains conditions, evidence, filing, register fingerprints, protection and the decision with a completed salary example. Three document guides now explain the same UKR exception. Removed unused legacy case data; the nine current guides remain canonical. Next are goal-of-stay, temporary-common and temporary-goals. Remaining map articles, law modules, provision commentary, the original PDF-layout audit and independent legal review remain open. Detailed evidence is in [batch 55](batches/55-ukr-work-permit.md).

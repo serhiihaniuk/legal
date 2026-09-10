@@ -151,8 +151,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/mos-application.ts",
-    "contentHash": "5dbbee7ebb1c0a3cb6e1f3a0fd69b4d869d8a0f55e393ab00f1aba52977877d1",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+    "contentHash": "7c187550fa295cf9dde68fd5c73658326fe651213dc1549741228b580cbebf15",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/55-ukr-work-permit.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/proceeding-certificate.ts",
@@ -271,8 +271,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/passport.ts",
-    "contentHash": "bed6a116ef00387c51f3e038339ff90b4b2e31796d276985c2d7e7f5f71eb5eb",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
+    "contentHash": "90949ab27769fd62dc7e2c524315b14fab4752d407d901b980486aa308ed18d5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/55-ukr-work-permit.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/visa.ts",
@@ -311,8 +311,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/fingerprint-record.ts",
-    "contentHash": "871f0b143e4fc9817b6c301f031078c1cebf90d7cf47952a40ffca39c318dd7c",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/12-residence-applications-and-biometrics.md"
+    "contentHash": "fbdae69b2450fef6372d71277a63957bc034cfb8d07398af1f8ae9d672fa81ec",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/55-ukr-work-permit.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/signature-specimen.ts",
@@ -818,5 +818,10 @@
     "path": "app/data/legal-map/editorial/topics/cukr-route-2026.ts",
     "contentHash": "2a640363dbceb0893017a8ffbb525d44b205d8c46fbefc5dbd1dc8279bb3f715",
     "evidence": "docs/content-review/writing-2026-09-05/batches/54-cukr-procedure.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/ukraine-ordinary-2026.ts",
+    "contentHash": "cf619af0c5b0e57aa54b0f6976fff0900934881c4128b139c91b85e494fd7712",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/55-ukr-work-permit.md"
   }
 ]

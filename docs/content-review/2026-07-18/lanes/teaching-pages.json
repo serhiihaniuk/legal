@@ -1036,7 +1036,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "871f0b143e4fc9817b6c301f031078c1cebf90d7cf47952a40ffca39c318dd7c",
+      "contentHash": "fbdae69b2450fef6372d71277a63957bc034cfb8d07398af1f8ae9d672fa81ec",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -1306,7 +1306,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "5dbbee7ebb1c0a3cb6e1f3a0fd69b4d869d8a0f55e393ab00f1aba52977877d1",
+      "contentHash": "7c187550fa295cf9dde68fd5c73658326fe651213dc1549741228b580cbebf15",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -1336,7 +1336,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "bed6a116ef00387c51f3e038339ff90b4b2e31796d276985c2d7e7f5f71eb5eb",
+      "contentHash": "90949ab27769fd62dc7e2c524315b14fab4752d407d901b980486aa308ed18d5",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -2296,7 +2296,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "d79728e8ac95b55cbb7556a1a0e19dc6181ecc5387168fc7289a369d3eaabe61",
+      "contentHash": "103430a3b5f991c7d7021ba6b200474e1c05025a522bdff69bbe34978b05693f",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -4064,27 +4064,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "52d53ff8b76ff81167a41c3f68d0364feb4f78e9479e42ab4a9ea374dcc91880",
+      "contentHash": "cf619af0c5b0e57aa54b0f6976fff0900934881c4128b139c91b85e494fd7712",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "52d53ff8b76ff81167a41c3f68d0364feb4f78e9479e42ab4a9ea374dcc91880",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "52d53ff8b76ff81167a41c3f68d0364feb4f78e9479e42ab4a9ea374dcc91880",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

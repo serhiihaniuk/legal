@@ -2,25 +2,25 @@ import {
   defineKnowledgeUnit,
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
-import { foreignersLaw, mapTopicSources } from "../authoring"
-import type { LegalNodeGuide } from "~/data/legal-map/node-guide-types"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
+import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
-
+import { foreignersLaw, workLaw } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
-const ukraineReference = {
-  kind: "external",
-  url: "https://eli.gov.pl/eli/DU/2026/203/ogl",
-} as const
+const documents = createEvidenceDocumentTextAuthor()
+const transitionUrl =
+  "https://eli.gov.pl/api/acts/DU/2026/203/text/O/D20260203.pdf"
+const protectionUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/223/text/U/D20250223Lj.pdf"
+const aliensUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/1079/text/U/D20251079Lj.pdf"
+const workUrl = "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf"
+const minimumUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/1242/text/O/D20251242.pdf"
+const mosUrl = "https://www.gov.pl/web/udsc/info-mos"
 
-const aliensSourceReference = {
-  kind: "official-source",
-  sourceId: "eli-ustawa-o-cudzoziemcach",
-} as const
-
-type UkraineOrdinaryBody = LegalMapTopicBody
-
-export const ukraineOrdinaryTopic: KnowledgeUnit<UkraineOrdinaryBody> =
+export const ukraineOrdinaryTopic: KnowledgeUnit<LegalMapTopicBody> =
   defineKnowledgeUnit({
     id: "map-topic:ukraine-ordinary-2026",
     subject: {
@@ -28,15 +28,46 @@ export const ukraineOrdinaryTopic: KnowledgeUnit<UkraineOrdinaryBody> =
       reference: { kind: "map-node", nodeId: "ukraine-ordinary-2026" },
     },
     summary:
-      "Особа з UKR може подати цю заяву завдяки спеціальному винятку, але мусить виконати повні матеріальні умови Ustawy o cudzoziemcach. UKR триває до надання звичайного дозволу.",
+      "Особа з чинним UKR може перейти на pobyt czasowy i pracę, якщо робота й докази відповідають умовам цього дозволу. Спеціальні правила відкривають процедуру та спрощують отримання відбитків. Вони не скасовують вимогу до місячної винагороди й не роблять заяву новою підставою праці.",
     claims: [
       {
-        id: "ordinary-route-is-not-exemption",
-        kind: "requires-verification",
-        text: "Спеціальний доступ до процедури не звільняє від повного доказування умов обраного звичайного дозволу.",
+        id: "ukr-access-and-biometrics",
+        kind: "statute-text",
+        text: "Для охопленої особи з UKR усунуто перешкоду через тимчасовий захист. Відбитки використовують із реєстру, а за їх відсутності чи неможливості передання отримують після надання дозволу.",
         basis: [
-          { reference: ukraineReference, locator: "Art. 45" },
-          { reference: aliensSourceReference, locator: "Art. 114–126" },
+          {
+            reference: { kind: "external", url: transitionUrl },
+            locator: "Art. 45 ust. 1, 3–6",
+          },
+        ],
+      },
+      {
+        id: "work-exemption-and-monthly-minimum",
+        kind: "statute-text",
+        text: "Звільнення від дозволу на працю виключає умови місцевого переліку й порівнюваної оплати, але не повний місячний мінімум для pobyt czasowy i pracę.",
+        basis: [
+          {
+            reference: {
+              kind: "official-source",
+              sourceId: "eli-ustawa-o-cudzoziemcach",
+            },
+            locator: "Art. 114 ust. 1 pkt 3–5; ust. 4–4b",
+          },
+        ],
+      },
+      {
+        id: "protection-and-work-after-grant",
+        kind: "statute-text",
+        text: "Надання тимчасового дозволу припиняє захист. Для законно присутніх громадян України поза захистом діє окреме перехідне застосування правил праці за повідомленням.",
+        basis: [
+          {
+            reference: { kind: "external", url: protectionUrl },
+            locator: "Art. 109b ust. 1 pkt 4 lit. c; ust. 2",
+          },
+          {
+            reference: { kind: "external", url: transitionUrl },
+            locator: "Art. 41",
+          },
         ],
       },
     ],
@@ -44,51 +75,159 @@ export const ukraineOrdinaryTopic: KnowledgeUnit<UkraineOrdinaryBody> =
     review: {
       reviewStatus: "reviewed",
       language: "uk",
-      legalStateDate: "2026-07-18",
-      verifiedAt: "2026-07-18",
+      legalStateDate: "2026-09-10",
+      verifiedAt: "2026-09-10",
     },
     body: {
-      title: "Подати звичайний pobyt czasowy i pracę",
-      polish: foreignersLaw.text`${foreignersLaw.external("art. 45", "https://eli.gov.pl/eli/DU/2026/203/ogl")} Dz.U. 2026 poz. 203 + ${foreignersLaw.articleRange("114", "126", { start: "art. 114", end: "126" })}`,
+      title: "З UKR на pobyt czasowy i pracę",
+      polish: "zezwolenie na pobyt czasowy i pracę dla osoby ze statusem UKR",
       sources: [
-        mapTopicSources.ukraine2026,
-        mapTopicSources.aliens,
-        mapTopicSources.mosWork,
-        mapTopicSources.mosWorkQa,
+        {
+          label: "Закон 2026/203: спеціальна процедура UKR",
+          url: transitionUrl,
+          note: "Перевірено 10.09.2026: доступ до дозволів, відбитки та перехідні правила праці.",
+        },
+        {
+          label: "Ustawa o cudzoziemcach: умови та зміст дозволу",
+          url: aliensUrl,
+          note: "Мета перебування, винагорода, страхування, звільнення, рішення та обов'язки після нього.",
+        },
+        {
+          label: "Закон про захист: припинення ochrony czasowej",
+          url: protectionUrl,
+          note: "Надання дозволу та інші самостійні підстави припинення захисту.",
+        },
+        {
+          label: "Закон про працю іноземців: powiadomienie PUP",
+          url: workUrl,
+          note: "Умови повідомлення про працю та події, що потребують нового повідомлення.",
+        },
+        {
+          label: "Мінімальна винагорода у 2026 році",
+          url: minimumUrl,
+          note: "4 806 zł на місяць від 01.01.2026. Сума для прикладу, а не незмінний поріг на наступні роки.",
+        },
+        {
+          label: "UdSC: електронне подання через MOS",
+          url: mosUrl,
+          note: "Запуск від 27.04.2026, підпис додатка та підтвердження подання. Особиста явка для UKR має спеціальні правила.",
+        },
       ],
-      guide: {
+      documents: [
+        documents.text`${documents.document("pesel-ukr-confirmation", "Підтвердження чинного UKR")}`,
+        documents.text`${documents.document("mos-application", "Заява MOS і підтвердження подання")}`,
+        documents.text`${documents.document("employment-annex-1", "Załącznik nr 1 роботодавця")}`,
+        documents.text`${documents.document("employment-contract", "Договір та зміни до умов роботи")}`,
+        documents.text`${documents.document("health-insurance", "Підтвердження медичного страхування")}`,
+      ],
+      guide: defineLegalMapArticle({
+        kind: "article",
         introduction: [
-          foreignersLaw.text`${foreignersLaw.external("Art. 45", "https://eli.gov.pl/eli/DU/2026/203/ogl")} ustawy Dz.U. 2026 poz. 203 дозволяє визначеним beneficjentom ochrony czasowej подати окремі звичайні заяви pobytowe, незважаючи на загальне обмеження для ochrony czasowej.`,
+          "Pobyt czasowy i pracę є дозволом на перебування через конкретну роботу. Для людини з UKR це спосіб перейти з тимчасового захисту на звичайну підставу перебування. Тут важливі два окремі питання: чи дозволено розпочати цю процедуру та чи доведено умови майбутнього дозволу.",
         ],
-        regulated: [
-          "Виняток відкриває доступ до перелічених процедур, але їх повні матеріальні умови, відмови та наслідки залишаються в ustawie o cudzoziemcach.",
+        sections: [
+          {
+            id: "access-to-procedure",
+            title: "Чому тимчасовий захист не блокує цю заяву",
+            paragraphs: [
+              foreignersLaw.text`Загалом тимчасовий захист є перешкодою для відкриття звичайної справи про pobyt czasowy. ${foreignersLaw.external("Art. 45 ust. 1 закону 2026/203", transitionUrl)} установлює виняток для особи, яка законно перебуває за визначеною підставою захисту й має UKR. Для заяви за ${foreignersLaw.article("114", "art. 114 ust. 1")} перешкоду через захист усунуто; інші підстави відмови у відкритті справи не зникають.`,
+              "Спеціальний перелік також охоплює Blue Card, визначені дозволи через підприємницьку діяльність і сім'ю. Це не доступ до будь-якого дозволу на вибір. Для звичайного робочого маршруту не потрібно доводити контрольну дату UKR та 365 днів, установлені для основного CUKR. Натомість потрібні актуальні умови дозволу на перебування та працю.",
+              documents.text`${documents.document("pesel-ukr-confirmation", "Дані про UKR")} пояснюють доступ до спеціальної процедури, а ${documents.document("employment-contract", "трудовий договір")} пояснює роботу. Договір не доводить чинність захисту, а запис UKR не доводить майбутню винагороду чи реальність вакансії.`,
+            ],
+          },
+          {
+            id: "work-and-evidence",
+            title:
+              "Звільнення від дозволу на працю не скасовує місячний мінімум",
+            paragraphs: [
+              foreignersLaw.text`Робота має обґрунтовувати перебування понад три місяці за ${foreignersLaw.article("98", "art. 98 ust. 1")}. ${foreignersLaw.article("114", "Art. 114")} вимагає медичного страхування або належного покриття лікування страховиком. Закон також визнає майбутнє страхування, яке виникне через роботу, що є підставою заяви. Відсутність поточного запису ZUS і відсутність будь-якої страхової підстави тому не є одним фактом.`,
+              foreignersLaw.text`Для отримувача тимчасового захисту ${workLaw.article("3", "art. 3 ust. 1 pkt 12 закону про працю іноземців")} установлює доступ до праці без окремого дозволу. Повідомлення роботодавця має власні правила. За ${foreignersLaw.article("114", "art. 114 ust. 4")} особа, яка виконує умови звільнення від дозволу на працю, не підпадає під вимоги місцевого переліку професій та порівнюваної оплати з пунктів 3 і 4. Але пункт 5 про повний місячний мінімум залишається. Його не ділять пропорційно ставці й не замінюють погодинною ставкою за umową zlecenia. У 2026 році це ${foreignersLaw.external("4 806 zł brutto на місяць", minimumUrl)}.`,
+              foreignersLaw.text`Коли підставою заяви є праця в кількох роботодавців, ${foreignersLaw.article("114", "art. 114 ust. 4b")} дозволяє скласти винагороди з їхніх додатків. Банківський залишок чи переказ від родича не замінюють таку винагороду. За ${foreignersLaw.article("115", "art. 115")} зберігаються вимоги до регульованої професії, а за ${foreignersLaw.article("117a", "art. 117a")} оцінюють діяльність, кошти роботодавця та фактичну організацію роботи. Достатня цифра в додатку не усуває цих питань.`,
+            ],
+            example: {
+              title: "Пів ставки та два різні висновки про оплату",
+              facts: [
+                "Умовний завершений приклад. У вересні 2026 року громадянин України з чинним UKR працює на пів ставки за umową o pracę з оплатою 3 000 zł brutto на місяць. Робота планується ще на рік. Умови законної поточної праці та страхування підтверджені. У додатку до заяви спочатку зазначено ті самі 3 000 zł.",
+              ],
+              sample: {
+                kind: "table",
+                title: "Запис перевірки винагороди",
+                note: "Вигаданий робочий запис. Суми пояснюють конкретну умову дозволу у 2026 році.",
+                columns: ["Матеріал", "Що встановлено", "Висновок"],
+                rows: [
+                  {
+                    id: "initial-contract",
+                    cells: [
+                      "Договір і перший додаток",
+                      "Пів ставки, 3 000 zł brutto на місяць",
+                      "Повного порога 4 806 zł для дозволу не досягнуто",
+                    ],
+                  },
+                  {
+                    id: "annex-only",
+                    cells: [
+                      "Новий додаток із сумою 5 000 zł",
+                      "Договір ще містить 3 000 zł; причину розбіжності не пояснено",
+                      "Самого переписаного поля недостатньо для узгодженого висновку",
+                    ],
+                  },
+                  {
+                    id: "actual-change",
+                    cells: [
+                      "Підписана зміна договору та відповідний додаток",
+                      "Сторони справді погодили 5 000 zł з визначеної дати",
+                      "Вимогу до суми підтверджено для нових умов; інші умови перевіряють окремо",
+                    ],
+                  },
+                ],
+              },
+              reasoning: [
+                "Пропорційний мінімум оплати праці для пів ставки та повний місячний поріг дозволу на перебування та працю відповідають на різні питання. Сама сума 3 000 zł не означає, що поточна робота незаконна, але її недостатньо для цієї умови дозволу. Підвищення до 5 000 zł у прикладі є реальною домовленістю сторін, підтвердженою узгодженими матеріалами, а не виправленням цифри задля заяви.",
+              ],
+              conclusion:
+                "Початковий комплект не доводив потрібну винагороду. Після справжньої зміни умов цю прогалину усунуто. Це висновок про одну умову, а не гарантія надання дозволу; роботодавець і мета перебування все ще мають відповідати закону.",
+            },
+          },
+          {
+            id: "mos-filing",
+            title: "Подана заява, підписаний додаток і докази роботи",
+            paragraphs: [
+              foreignersLaw.text`Від 27 квітня 2026 року нові заяви цього виду подають електронно через MOS. ${foreignersLaw.external("UdSC пояснює послідовність подання", mosUrl)}: заповнення, додатки, електронні підписи та відправлення. Чернетка або посилання, яке ще очікує дії роботодавця, не є завершеним поданням.`,
+              documents.text`${documents.document("employment-annex-1", "Załącznik nr 1")} є заявою роботодавця про запропоновані умови праці. У MOS його підписує належна особа з боку роботодавця за отриманим посиланням. Підпис заявника під власною заявою цього не замінює. Після відправлення ${documents.document("mos-application", "заяви")} зберігають UPO, Urzędowe Poświadczenie Odbioru, разом із надісланим комплектом. UPO підтверджує прийняття відправлення, а не виконання умов дозволу.`,
+              documents.text`${documents.document("employment-contract", "Договір і його зміни")} пояснюють, що сторони справді погодили; ${documents.document("health-insurance", "страхові матеріали")} показують особу, підставу та період покриття. Якщо додаток і договір містять різні суми, потрібне пояснення, яка домовленість діє та від якої дати. Ще один скан без пояснення розбіжності не відповідає на питання органу.`,
+            ],
+          },
+          {
+            id: "ukr-biometrics",
+            title: "Для UKR відбитки не завжди беруть перед рішенням",
+            paragraphs: [
+              foreignersLaw.text`${foreignersLaw.external("Art. 45 ust. 3–6", transitionUrl)} передбачає використання відбитків із спеціального реєстру. Для охопленого заявника виключено звичайні приписи про особисту явку й паспорт, отримання відбитків та відповідне wezwanie в зазначеному законом обсязі. Загальну інструкцію MOS про візит не можна механічно переносити на цю процедуру.`,
+              "Якщо відбитків немає в реєстрі або їх неможливо передати, wojewoda отримує їх після надання дозволу. Брак переданих відбитків тому не слід автоматично описувати як невиконану умову їх отримання до рішення. Зразок підпису для карти залишається потрібним: його подають на визначеному формулярі або за допомогою пристрою wojewody.",
+              documents.text`Спрощення не забороняє органу з'ясовувати особу. У передбачених законом обґрунтованих випадках wojewoda може вимагати чинний ${documents.document("passport", "документ подорожі")} чи його копію, а за відповідного винятку інший документ про особу. Конкретне wezwanie читають за його змістом: які дані потрібні й на якій підставі. Наявність UKR не дозволяє ігнорувати будь-який запит.`,
+            ],
+          },
+          {
+            id: "waiting-and-current-work",
+            title: "Очікування рішення не створює нових прав на працю",
+            paragraphs: [
+              foreignersLaw.text`Сама заява про pobyt czasowy i pracę не припиняє тимчасовий захист. Але ${foreignersLaw.external("art. 109b закону про захист", protectionUrl)} передбачає інші події його припинення, зокрема виїзд понад 30 днів, відмову від захисту чи отримання захисту в іншій державі ЄС. Тому фраза «UKR гарантовано діє до рішення» неправильна. Нову подію в справі потрібно співвіднести з чинною підставою перебування.`,
+              foreignersLaw.text`${foreignersLaw.article("108", "Art. 108")} окремо визначає законність перебування під час розгляду своєчасної заяви, яка відповідає формальним вимогам або належно доповнена. За цим правилом перебування визнають законним до дня, коли рішення стане остаточним; за частиною 2 це правило не застосовується, якщо провадження зупинене на прохання заявника. Це не дозвіл на працю і не універсальна підстава для повторного в'їзду. Підтвердження подання не замінює документів та умов, за якими людина працює зараз.`,
+              foreignersLaw.text`За механізмом ${workLaw.article("5a", "art. 5a закону про працю іноземців")} роботодавець повідомляє про нову працю через praca.gov.pl протягом семи днів від її початку. Powiadomienie PUP означає повідомлення відповідного органу зайнятості; його дані співвідносять із фактичною роботою. Заявник не виконує цей обов'язок роботодавця своєю заявою про перебування. Для повідомлень до 5 березня 2026 року ${foreignersLaw.external("art. 40 закону 2026/203", transitionUrl)} зберігає окреме перехідне правило.`,
+            ],
+          },
+          {
+            id: "decision-and-obligations",
+            title: "Що змінює рішення і які обов'язки залишаються",
+            paragraphs: [
+              foreignersLaw.text`За ${foreignersLaw.external("art. 109b ust. 1 pkt 4 lit. c", protectionUrl)} надання pobyt czasowy припиняє тимчасовий захист. У звичайному робочому маршруті підставою є наданий рішенням дозвіл. Не потрібно переносити сюди правило CUKR, де спеціальний дозвіл виникає при отриманні карти. Карту та рішення читають разом: позначка доступу до ринку праці не пояснює всіх умов праці.`,
+              foreignersLaw.text`Зазвичай ${foreignersLaw.article("118", "art. 118 ust. 1")} передбачає в рішенні роботодавця та визначені умови роботи. Якщо особа виконує умови звільнення від дозволу на працю, частини 3 і 4 передбачають інший зміст: можливість працювати на умовах правила про звільнення. Відсутність назви роботодавця тому не означає, що будь-яка майбутня робота дозволена без перевірки.`,
+              foreignersLaw.text`Для громадянина України, який законно перебуває в Польщі й уже не користується захистом, ${foreignersLaw.external("art. 41 закону 2026/203", transitionUrl)} протягом трьох років від набрання ним чинності 5 березня 2026 року зберігає відповідне застосування правил праці за повідомленням. Вихід із UKR тому не обов'язково означає потребу в окремому дозволі на працю. Правило обмежене строком і громадянством: його не можна переносити на кожну особу, яка колись мала UKR.`,
+              foreignersLaw.text`${workLaw.article("5a", "Art. 5a ust. 5")} вимагає нового повідомлення при зміні виду договору, посади чи виду роботи, зменшенні часу або винагороди. Саме отримання рішення про перебування не назване там окремою подією для повторного повідомлення. Зміни роботи водночас не можна приховувати за старим повідомленням, якщо вони підпадають під ці правила.`,
+              foreignersLaw.text`Коли припинилася причина надання дозволу, ${foreignersLaw.article("113", "art. 113")} вимагає повідомити wojewodę протягом 15 робочих днів. Окремий ${foreignersLaw.article("121", "art. 121")} стосується втрати праці в роботодавця, зазначеного в дозволі. Ці обов'язки не слід змішувати з повідомленням роботодавця до PUP. Відсутність прив'язки до роботодавця не перетворює дозвіл на працю на перебування без заявленої мети.`,
+            ],
+          },
         ],
-        appliesWhen: [
-          foreignersLaw.text`Маршрут діє лише для категорії заяви, прямо охопленої ${foreignersLaw.external("art. 45", "https://eli.gov.pl/eli/DU/2026/203/ogl")}, зокрема відповідних трудових або бізнесових підстав.`,
-        ],
-        conditions: [
-          foreignersLaw.text`Заява подається через MOS і доводить кожну умову обраного дозволу; для pobyt czasowy i pracę значення мають ${foreignersLaw.articleRange("114", "126", { start: "art. 114", end: "126" })} та фактичні умови праці.`,
-        ],
-        exceptions: [
-          "Спеціальний доступ до процедури не є звільненням від materialnych przesłanek і не перетворює umowy o pracę на автоматичний дозвіл.",
-        ],
-        consequences: [
-          "Status UKR зберігається до надання звичайного дозволу, після чого підставою стає decyzja; зміст дозволу й обов’язки залежать від конкретної процедури.",
-        ],
-        procedure: [
-          "Обирається дозволена категорія, готується електронна заява та додатки, виконується postępowanie dowodowe, а результат виникає за правилами звичайної decyzji.",
-        ],
-        foreignersContext: [
-          "Цей маршрут відрізняється від CUKR доказуванням мети, змістом decyzji та моментом переходу зі status UKR.",
-        ],
-      } satisfies LegalNodeGuide,
-      checkpoints: [
-        "MOS і Załącznik nr 1",
-        "Умова роботи понад 3 місяці",
-        "Страхування й мінімальна винагорода",
-        "Три різні види wezwania",
-        "Treść decyzji та exemption від zezwolenia na pracę",
-      ],
+      }),
     },
   })
 
@@ -99,6 +238,6 @@ export const ukraineOrdinaryMapNode: LegalNode = {
   title: ukraineOrdinaryTopic.body.title,
   polish: ukraineOrdinaryTopic.body.polish,
   summary: ukraineOrdinaryTopic.summary,
-  checkpoints: [...(ukraineOrdinaryTopic.body.checkpoints ?? [])],
+  documents: [...(ukraineOrdinaryTopic.body.documents ?? [])],
   sources: [...ukraineOrdinaryTopic.body.sources],
 }
