@@ -1,6 +1,6 @@
-# Pending CUKR document-use migration
+# CUKR document-use migration
 
-Read-only product audit on 10.09.2026 by legacy_case_audit. This note queues implementation. It does not accept the current case, change its review date or claim that all nine cases have migrated. CUKR still contains six raw document arrays. No product files or tests were changed for this audit.
+Implemented on 10.09.2026 following the read-only audit by legacy_case_audit below. The initial audit and proposed lists are retained as source and scope evidence. Final changes, independent review and verification follow them.
 
 ## Read scope
 
@@ -69,3 +69,33 @@ The existing procedure/decision alternatives should retain their legal guidance.
 ## Next bounded work and verification
 
 Author the four CUKR files plus the bounded residence-card guide addition. Keep the existing registry/action distinction and select no new event without an explicit fictional clarification. Add semantic coverage for the initial packet, no supplemental packet, three card dates, registry actions and address notification. Verify all six lists use `documentUse`; keep the count of migrated routes evidence-based. Then run the repository checks and desktop/mobile rendering, including direct card-guide navigation and conditional rows. None of those implementation checks was run or accepted in this planning audit.
+
+## Implementation and independent review
+
+The four authored CUKR files now use documentUse in all six stages. Registry/history, correction, fingerprints and signature are guided actions. The employer contract, sent notification and its receipt are distinct from the applicant's CUKR packet. The 15 May submission contains the application, photo and two payment proofs; its UPO is an output after sending. Private indexes and matrix records are not additional uploads. The selected case has no supplemental demand or response packet.
+
+The readiness action, physical card and collection chronology are separate. The card row names its actual annotation, Poprzednio posiadacz ochrony czasowej. The 4 September address notification has a separate dispatch record. Conditional refusal, complaint and response records remain explicitly conditional. All selected dates and the positive outcome are preserved.
+
+The residence-card guide now qualifies ordinary decision-based rules and adds a completed CUKR three-date comparison. It explains issuance-based validity, collection-based permit creation, the child exception, the 60-day collection rule and the address notification. No positive decision, collection certificate, message channel or printed expiry was invented. The illustration is a fictional working record, not an official form.
+
+Independent reviewer legacy_case_audit read all five files completely and checked final corrections against current special-act sources. Reviewer ukr_filing_review separately refreshed the retained ordinary-card provisions and the UdSC explanation on 10 September. The old template citation on the UdSC page is expressly excluded as evidence of current card design. A child-rule PDF pointer and the printed annotation were corrected before acceptance.
+
+Accepted SHA-256:
+
+- documents.ts: FAD7369ECCCCA9480C1B4FCD3C88FB6D233D9F4AEA0CF8921626B2ED8D172859
+- stages.ts: EC773B557246E8D9742B61485D9B45CC1DBE4284F7FE6C55F2AB19DE86EDFCED
+- reference.ts: E918F417DD6AA432BB20168DB1D7C2D6149440A27B84D58A70D15E4E635C9B5B
+- routes/cukr.ts: 7DE91C3680CA189E9880B10DE75994C1090678A8582555528DBDAD6C8CE13C7A
+- residence-card.ts: D69A3BD2B3DC4C684DC68392108F4EC66234A41ED8C5AD86C411F00164F02CCD
+
+The shared coverage assertion now checks every stage of all nine cases, without a migration allowlist. CUKR regression checks distinguish the four submitted destinations, prefiling records, registry actions and readiness from the physical card. Record uniqueness concerns actual materials, not a guide ID: different PUP, response and address receipts may share the dispatch-proof guide. Focused typecheck and 55 document/case rendering tests passed after updating the old assumptions.
+
+Browser inspection confirmed six visible document lists before disclosure interaction (9, 4, 6, 6, 12 and 12 entries). The selected packet reads directly at 360 px, with no horizontal overflow. Keyboard navigation from the actual card row reaches the expanded card guide and its fictional comparison. Final verification and delivery remain to be recorded below.
+
+## Final verification and pause
+
+Full npm run verify passed on 10.09.2026, including type checks, generated registry/source-reader checks, lint/format, application tests, corpus/review-tooling/editorial checks and production build. Reference previews passed for 85 documents and nine cases. Baseline ledger validation passed with 1,733 entries. Desktop and mobile checks found no horizontal overflow or browser errors; all six stage lists were visible without opening document disclosures, and the card-guide link and comparison worked. The temporary browser session is closed.
+
+Initial focused failures were a test-only widened string type and old expectations that guide IDs were unique and registry checks were uploaded-document links. The tests now check actual record uniqueness, separate action guidance and the real initial packet. Focused typecheck plus 55 tests then passed, followed by the full run. No further authored changes followed the accepted hashes.
+
+The user requested finishing this task, pushing, then pausing. This batch is complete; do not start the next content batch until the user resumes. The broad writing, corpus fidelity and independent edition-review objective remains unfinished and is preserved in the README.

@@ -5,18 +5,19 @@ import type {
   CaseGuideSource,
 } from "../../types"
 import { createLegalTextAuthor } from "~/data/legal-library/legal-text"
+import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 import { cukrSource as source, law } from "./documents"
 
 const kpa = createLegalTextAuthor("kpa")
 const work = createLegalTextAuthor("powierzanie-pracy")
+const documents = createEvidenceDocumentTextAuthor()
 
 export const cukrConditions: CaseGuideCondition[] = [
   {
     condition: "Право на захист та історія UKR для дорослого заявника",
     factToEstablish:
       "У прикладі громадянин України має безперервний UKR від 15.03.2024; статус був на 04.06.2025, при заяві й до отримання карти.",
-    evidence:
-      "Реєстрові відомості, паспорт та встановлена хронологія. Виїздів у прикладі не було.",
+    evidence: documents.text`Перевірені реєстрові відомості, ${documents.document("passport", "чинний паспорт")} та робоча хронологія. Виїздів не було. Окремої довідки про всю історію або її завантаження приклад не встановлює.`,
     risk: "Нинішній UKR не доводить минулих дат. Для дитини, народженої в Польщі, діє окрема категорія.",
     law: law.text`${law.external("Art. 42c", source + "#page=21")} та ${law.external("art. 42d", source + "#page=22")}.`,
   },
@@ -24,7 +25,7 @@ export const cukrConditions: CaseGuideCondition[] = [
     condition: "Повні й актуальні дані реєстрів",
     factToEstablish:
       "Після квітневої заміни паспорта старі реквізити у PESEL виправлено 12.05.2026. Відбитки й зразок підпису дорослого заявника вже збережені.",
-    evidence: "Чинний паспорт та повторна перевірка реєстру до подання.",
+    evidence: documents.text`${documents.document("passport", "Чинний паспорт")} та повторна перевірка реєстру до подання. Наявність відбитків і підпису встановлено в реєстрі; нових біометричних форм заявник не подавав.`,
     risk: "Чернетка з новим номером не змінює старого запису PESEL. Зразок підпису та електронний підпис заяви не взаємозамінні.",
     law: law.text`${law.external("Art. 42g", source + "#page=25")} і ${law.external("art. 42h", source + "#page=29")}.`,
   },
@@ -32,8 +33,7 @@ export const cukrConditions: CaseGuideCondition[] = [
     condition: "Належне подання та обидва платежі",
     factToEstablish:
       "15.05.2026 власна заява підписана й відправлена через MOS. До неї додані фото та докази сплати 100 zł і 340 zł.",
-    evidence:
-      "Збережені UPO, PDF/XML та фактично подані файли, а не лише скриншот чернетки.",
+    evidence: documents.text`${documents.document("cukr-application", "Збережена заява у PDF/XML")}, ${documents.document("upo", "UPO від 15.05")}, фото та два платіжні підтвердження від 14.05. UPO отримано після надсилання, воно не є початковим вкладенням.`,
     risk: "Несплата має спеціальний наслідок відмови. Відправлення паперу чи електронного листа не замінює MOS.",
     law: law.text`${law.external("Art. 42e", source + "#page=22")}, ${law.external("art. 42f", source + "#page=23")} і ${law.external("art. 42s", source + "#page=32")}.`,
   },
@@ -50,8 +50,7 @@ export const cukrConditions: CaseGuideCondition[] = [
     condition: "Отримання карти в межах окремого строку",
     factToEstablish:
       "Карту видано 10.08.2026, інформацію про готовність надано 17.08.2026, карту отримано 28.08.2026.",
-    evidence:
-      "Карта з її строком, повідомлення та запис про особисте отримання.",
+    evidence: documents.text`${documents.document("residence-card", "Фізична карта CUKR")} зі строком, окремо інформація органу, доступна від 17.08, та робочий запис про отримання 28.08. Стандартної довідки про готовність або отримання приклад не передбачає.`,
     risk: "Отримання створює дозвіл лише до кінця строку карти. Воно не починає нових трьох років.",
     law: law.text`${law.external("Art. 42p", source + "#page=31")} і ${law.external("art. 42r", source + "#page=31")}.`,
   },
@@ -176,7 +175,7 @@ export const cukrSources: CaseGuideSource[] = [
   {
     label: "Specustawa: CUKR",
     url: source,
-    note: "Текст зі змінами, опрацьований Sejm 22.05.2026; спеціальні умови, подання, відмова, отримання й подальші обов'язки. Перевірено 06.09.2026.",
+    note: "Текст зі змінами, опрацьований Sejm 22.05.2026. 10.09.2026 звірено розмежування реєстрових перевірок, вкладень, видачі, інформації про отримання, особистого отримання та адресного повідомлення. Це перевірка обраної справи, не нова дата всієї бази права.",
   },
   {
     label: "Початок застосування CUKR",
@@ -191,7 +190,7 @@ export const cukrSources: CaseGuideSource[] = [
   {
     label: "UdSC: запитання й відповіді про CUKR",
     url: "https://www.gov.pl/web/udsc/cukr-QA",
-    note: "Практичне пояснення MOS, двох оплат, перевірки реєстру, поїздок і отримання. Перевірено 06.09.2026.",
+    note: "10.09.2026 звірено пояснення реєстрових даних, перенесення наявної біометрії, двох оплат, спеціального MOS та отримання. Канал індивідуального повідомлення про готовність у прикладі не визначено.",
   },
   {
     label: "Зміни щодо захисту та підтвердження особи",

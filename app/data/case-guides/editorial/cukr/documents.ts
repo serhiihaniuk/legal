@@ -9,7 +9,6 @@ import {
   proceduralComplaintEvidence,
   judicialComplaintEvidence,
   courtJudgmentEvidence,
-  workNotificationEvidence,
 } from "../../shared-document-requirements"
 
 export const cukrSource =
@@ -29,7 +28,9 @@ export const cukrDocuments = {
     law: law.text`${law.external("Art. 42g ust. 1", cukrSource + "#page=25")}; ${law.external("art. 42k", cukrSource + "#page=30")} і ${law.article("248")} щодо отримання карти.`,
   },
   registry: {
-    item: document("pesel-ukr-confirmation", "Дані PESEL та історія UKR"),
+    item: "Перевірка даних PESEL та історії UKR",
+    kind: "action",
+    guidance: "pesel-ukr-confirmation",
     level: "control",
     status: "реєстрова перевірка",
     owner: "Заявник уточнює дані; MOS та орган перевіряють реєстри",
@@ -54,7 +55,36 @@ export const cukrDocuments = {
   },
   assessment: common.assessment,
   matrix: common.matrix,
-  work: workNotificationEvidence,
+  employment: {
+    item: document("employment-contract", "Чинна umowa o pracę"),
+    level: "control",
+    status: "для окремої перевірки роботи",
+    owner: "Працівник і роботодавець; договір уже укладено до CUKR",
+    proves:
+      "Узгоджені умови наявної роботи. Договір не доводить історію UKR й не є додатком до обраної заяви CUKR",
+    law: law.text`${law.external("Art. 42c", cukrSource + "#page=21")}: робота не є самостійною умовою цього переходу.`,
+  },
+  work: {
+    item: document(
+      "ukraine-work-notification",
+      "Подане роботодавцем powiadomienie PUP"
+    ),
+    level: "control",
+    status: "наявне повідомлення щодо роботи",
+    owner: "Роботодавець; працівник читає збережений зміст повідомлення",
+    proves:
+      "Яку роботу й умови повідомив роботодавець. Сам текст без підтвердження не встановлює дату належного подання",
+    law: law.text`${law.external("UdSC: робота до й після отримання CUKR", "https://www.gov.pl/web/udsc/cukr-QA")}; повідомлення стосується праці, а не заяви на карту.`,
+  },
+  workReceipt: {
+    item: document("dispatch-proof", "Підтвердження подання powiadomienia PUP"),
+    level: "control",
+    status: "доказ подання повідомлення роботодавця",
+    owner: "Роботодавець; зберігає квитанцію відповідного подання",
+    proves:
+      "Факт і дату подання саме повідомлення PUP. Це не UPO заявника щодо CUKR",
+    law: law.text`${law.external("UdSC: CUKR і робота", "https://www.gov.pl/web/udsc/cukr-QA")}; робочу підставу до переходу встановлюють окремо.`,
+  },
   application: {
     item: document("cukr-application", "Електронна заява на CUKR"),
     level: "required",
@@ -98,10 +128,16 @@ export const cukrDocuments = {
   },
   upo: {
     ...common.upo,
+    item: document("upo", "UPO заяви CUKR від 15.05.2026"),
+    proves:
+      "Факт і дату надсилання заяви CUKR. Збережені PDF/XML заяви й додатки є окремими файлами; квитанція не є картою або дозволом",
     law: law.text`${law.external("Art. 42g ust. 1 і 2", cukrSource + "#page=25")}; ${law.external("UdSC: підписання та збереження подання", "https://www.gov.pl/web/udsc/cukr-QA")}.`,
   },
   fingerprints: {
     ...common.fingerprints,
+    item: "Перевірка наявних відбитків у реєстрі",
+    kind: "action",
+    guidance: "fingerprint-record",
     owner: "Gmina та реєстр; орган отримує вже збережені біометричні дані",
     status: "реєстрова умова з передбаченими винятками",
     proves:
@@ -109,10 +145,9 @@ export const cukrDocuments = {
     law: law.text`${law.external("Art. 42g", cukrSource + "#page=25")} та ${law.external("art. 42h", cukrSource + "#page=29")}.`,
   },
   signature: {
-    item: document(
-      "signature-specimen",
-      "Зразок власноручного підпису в реєстрі"
-    ),
+    item: "Перевірка зразка власноручного підпису в реєстрі",
+    kind: "action",
+    guidance: "signature-specimen",
     level: "control",
     status: "від 12 років, крім установленої неможливості",
     owner: "Заявник та gmina; доповнення до відправлення заяви",
@@ -132,17 +167,24 @@ export const cukrDocuments = {
   },
   index: common.index,
   dispatch: common.dispatch,
-  card: {
-    item: document(
-      "residence-card",
-      "Карта CUKR, повідомлення про готовність і дата отримання"
-    ),
+  readiness: {
+    item: "Інформація органу про можливість отримання карти",
+    kind: "action",
+    guidance: "residence-card",
     level: "control",
-    status: "після виготовлення та при отриманні",
-    owner:
-      "Wojewoda повідомляє про готовність; повнолітній заявник отримує карту особисто",
+    status: "орган надав 17.08.2026",
+    owner: "Орган надає інформацію; заявник встановлює дату її доступності",
     proves:
-      "Окремо дату доступності інформації, дату отримання та строк на карті. Повідомлення саме не перетворює захист на дозвіл",
+      "Дату початку строку отримання. Канал повідомлення в прикладі не визначено; окремого стандартного посвідчення готовності не припускаємо",
+    law: law.text`${law.external("Art. 42r ust. 2", cukrSource + "#page=32")}: 60 днів від надання інформації органом.`,
+  },
+  card: {
+    item: document("residence-card", "Карта CUKR, отримана 28.08.2026"),
+    level: "control",
+    status: "видана 10.08, особисто отримана 28.08.2026",
+    owner: "Wojewoda видає документ; повнолітній заявник отримує його особисто",
+    proves:
+      "Особу власника, позначку Poprzednio posiadacz ochrony czasowej і строк документа. Дату надання інформації про отримання встановлюють окремо; подію особистого отримання записано в хронології",
     law: law.text`${law.external("Art. 42p", cukrSource + "#page=31")} і ${law.external("art. 42r", cukrSource + "#page=31")}.`,
   },
   refusal: {
@@ -170,6 +212,18 @@ export const cukrDocuments = {
     proves:
       "Нові адресні відомості й виконання обов'язку. Копію повідомлення доповнює доказ подання",
     law: law.text`${law.external("Art. 42u", cukrSource + "#page=33")}: 15 робочих днів і наслідок неналежного повідомлення.`,
+  },
+  addressReceipt: {
+    item: document(
+      "dispatch-proof",
+      "Доказ подання адресного повідомлення 04.09.2026"
+    ),
+    level: "control",
+    status: "після переїзду 01.09.2026",
+    owner: "Власник CUKR зберігає доказ поряд із повідомленням",
+    proves:
+      "Належне подання повідомлення про зміну місця перебування. Попереднє UPO заяви на карту цього не підтверджує",
+    law: law.text`${law.external("Art. 42u", cukrSource + "#page=33")}: повідомлення wojewodzie, який видав карту.`,
   },
   obstacle: deadlineObstacleEvidence,
   order: proceduralOrderEvidence,

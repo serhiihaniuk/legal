@@ -29,22 +29,12 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
-  it("requires explicit document actions throughout migrated case guides", () => {
+  it("requires explicit document actions throughout all nine case guides", () => {
+    expect(authoredCaseGuideRoutes).toHaveLength(9)
     for (const route of authoredCaseGuideRoutes) {
+      expect(route.stages).toHaveLength(6)
       for (const stage of route.stages) {
         for (const entry of stage.documents) {
-          if (
-            ![
-              "long-term-eu",
-              "work",
-              "blue-card",
-              "student",
-              "business",
-              "family",
-              "permanent",
-            ].includes(route.id)
-          )
-            continue
           expect(isCaseGuideDocumentUse(entry), stage.id).toBe(true)
           if (!isCaseGuideDocumentUse(entry)) continue
           expect(
@@ -53,6 +43,56 @@ describe("document coverage across learning modules", () => {
           expect(route.documents).toContain(entry.document)
         }
       }
+    }
+  })
+
+  it("keeps the CUKR upload packet separate from registry and employment checks", () => {
+    const route = authoredCaseGuideRoutes.find((route) => route.id === "cukr")!
+    const filing = route.stages.find((stage) => stage.id === "filing")!
+    const submitted = filing.documents.flatMap((entry) =>
+      isCaseGuideDocumentUse(entry) && entry.action === "submit"
+        ? ids(entry.document.item)
+        : []
+    )
+    expect(submitted.sort()).toEqual(
+      [
+        "cukr-application",
+        "digital-photo",
+        "stamp-duty-proof",
+        "residence-card-fee-proof",
+      ].sort()
+    )
+    for (const stage of route.stages.filter((stage) =>
+      ["status", "qualification", "evidence"].includes(stage.id)
+    )) {
+      expect(
+        stage.documents.some(
+          (entry) => isCaseGuideDocumentUse(entry) && entry.action === "submit"
+        ),
+        stage.id
+      ).toBe(false)
+    }
+    expect(
+      route.stages
+        .filter((stage) => ["status", "qualification"].includes(stage.id))
+        .flatMap((stage) => stage.documents)
+        .flatMap((entry) => ids(unwrapCaseGuideDocument(entry).item))
+    ).not.toContain("upo")
+    for (const guidance of [
+      "pesel-ukr-confirmation",
+      "fingerprint-record",
+      "signature-specimen",
+    ] as const) {
+      const action = route.documents.find(
+        (document) => document.guidance === guidance
+      )
+      expect(action?.kind, guidance).toBe("action")
+      expect(
+        route.documents.some((document) =>
+          ids(document.item).includes(guidance)
+        ),
+        guidance
+      ).toBe(false)
     }
   })
 
@@ -568,7 +608,11 @@ describe("document coverage across learning modules", () => {
     const at = (stageId: string) =>
       route.stages.find((stage) => stage.id === stageId)!.documents
     const registerIds = route.documents.flatMap((entry) => ids(entry.item))
-    expect(new Set(registerIds).size).toBe(registerIds.length)
+    expect(new Set(route.documents).size).toBe(route.documents.length)
+    const recordNames = route.documents.map((entry) =>
+      legalTextPlainText(entry.item)
+    )
+    expect(new Set(recordNames).size).toBe(recordNames.length)
     expect(
       new Set(
         route.stages.flatMap((stage) =>
@@ -589,10 +633,23 @@ describe("document coverage across learning modules", () => {
     expect(at("status").flatMap((entry) => ids(entry.item))).toEqual(
       expect.arrayContaining([
         "passport",
+        "employment-contract",
+        "ukraine-work-notification",
+        "dispatch-proof",
+      ])
+    )
+    expect(at("status").map((entry) => entry.guidance)).toEqual(
+      expect.arrayContaining([
         "pesel-ukr-confirmation",
         "fingerprint-record",
         "signature-specimen",
       ])
+    )
+    expect(at("procedure").flatMap((entry) => ids(entry.item))).not.toContain(
+      "residence-card"
+    )
+    expect(at("procedure").map((entry) => entry.guidance)).toContain(
+      "residence-card"
     )
     for (const excluded of [
       "employment-annex-1",

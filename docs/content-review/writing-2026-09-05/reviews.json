@@ -165,11 +165,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
   },
   {
-    "path": "app/data/document-library/editorial/guides/residence-card.ts",
-    "contentHash": "0235e002173460eb179226e0665ec429e8a298158084b8d54f5a9c4fad7d1690",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
-  },
-  {
     "path": "app/data/document-library/editorial/guides/residence-card-fee-proof.ts",
     "contentHash": "eb23c14a38ee5d7bac2ff4218750605bab66c12773be29a00d04d7310c8356d8",
     "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
@@ -443,26 +438,6 @@
     "path": "app/data/case-guides/editorial/resident/stages.ts",
     "contentHash": "2520753e61c692a7fe2ff30b56fc9b2a101a09b9110cce823bb94b5b3386d1b6",
     "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/routes/cukr.ts",
-    "contentHash": "0f2c520107bee28403b5cb7ea90be0e7635bc81ad61666a9fc9e38842b9fbc4c",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/cukr/documents.ts",
-    "contentHash": "07c8e0a28930285d5594dfb4b41c58003089d19d3d71dcab61effb470e48694f",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/cukr/stages.ts",
-    "contentHash": "7061c64e50f95a02025519394baa19f165481ad723c51748534f3763765bd604",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
-  },
-  {
-    "path": "app/data/case-guides/editorial/cukr/reference.ts",
-    "contentHash": "7b8125979140dc7fee6dc40810216538a0bd082d91f233bdd2c5a679a1c65c3a",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/22-cukr-case-guide.md"
   },
   {
     "path": "app/data/shared/residence-office-deadlines.ts",
@@ -983,5 +958,30 @@
     "path": "app/data/document-library/editorial/guides/registered-work-declaration.ts",
     "contentHash": "31271bd5c20a7175f375cdc76b59262ef2ea7be33e24a87244de95bbb10970a9",
     "evidence": "docs/content-review/writing-2026-09-05/batches/71-registered-work-declaration.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/cukr/documents.ts",
+    "contentHash": "fad7369ecccca9480c1b4fcd3c88fb6d233d9f4aea0cf8921626b2ed8d172859",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/72-cukr-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/cukr/stages.ts",
+    "contentHash": "ec773b557246e8d9742b61485d9b45cc1dbe4284f7fe6c55f2ab19de86edfced",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/72-cukr-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/cukr/reference.ts",
+    "contentHash": "e918f417dd6aa432bb20168db1d7c2d6149440a27b84d58a70d15e4e635c9b5b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/72-cukr-documents.md"
+  },
+  {
+    "path": "app/data/case-guides/editorial/routes/cukr.ts",
+    "contentHash": "7de91c3680ca189e9880b10de75994c1090678a8582555528dbdad6c8ce13c7a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/72-cukr-documents.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/residence-card.ts",
+    "contentHash": "d69a3bd2b3dc4c684dc68392108f4ec66234a41ed8c5ad86c411f00164f02ccd",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/72-cukr-documents.md"
   }
 ]

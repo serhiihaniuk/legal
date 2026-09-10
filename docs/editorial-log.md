@@ -607,3 +607,7 @@ Thirteen exact authored hashes passed independent bounded review against officia
 ## 2026-09-10: registered work declaration
 
 Rewrote the oświadczenie map article and added a dedicated guide for the registered document. Both include coordinated fictional Polish material. Registration, actual start, contract transmission and later continuation are explained as separate events. An independent source review corrected the conditional agency attachment, one date phrase and a typed range link. Scope and accepted hashes are in writing batches 70–71. CUKR's six remaining legacy document lists have a source-backed migration plan in pending batch 72; they are not yet implemented.
+
+## 2026-09-10: CUKR documents and card dates
+
+Migrated all six CUKR stages to visible document actions. Registry and employment checks are separate from the four-item upload packet. UPO follows submission; readiness information, physical card, collection and address notification are distinct. Expanded the residence-card guide with the CUKR exception and a completed three-date example. Five authored files received independent scoped review, with a separate refresh of the retained ordinary-card sources. Batch 72 records hashes and verification. The user requested pushing this batch and then pausing; broader unfinished work remains in the review README.
