@@ -200,6 +200,10 @@ export const residentDocuments = {
   upo: { ...common.upo, law: law.text`${law.article("219d")} ust. 4–5.` },
   certificate: {
     ...common.certificate,
+    item: document(
+      "proceeding-certificate",
+      "Zaświadczenie про подання заяви на pobyt rezydenta długoterminowego UE"
+    ),
     law: law.text`${law.article("222a")}. Довідка про належне подання не є візою, картою чи окремим дозволом на роботу.`,
   },
   summons: {

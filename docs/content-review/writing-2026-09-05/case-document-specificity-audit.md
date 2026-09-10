@@ -99,3 +99,9 @@ For each migrated row verify: exact document name; issuer; person/company concer
 The current type system verifies that a target ID exists. It does not verify that a label promising a personal ZUS history links to that history, or that a compound row contains every promised document. Add bounded semantic coverage for the migrated rows: expected concrete IDs by case key and stage, plus a check that explanatory collections cannot silently substitute for a specific required document. Preserve natural alternative evidence and explicit action guidance rather than banning every collection link.
 
 No product files were changed for this audit. The checks above ran on the live working-tree data; concurrent subsequent edits should be compared against this snapshot. New document recommendations are editorial boundaries, not declarations that every named form is legally mandatory.
+
+## Implementation checkpoint, 10.09.2026
+
+The resident pilot and document split were delivered in `8000dfe`. Batch 61 applies explicit document actions to all six ordinary-work stages. Known decisions/cards, contract and aneks, personal current eZUS, and conditional payroll/bank evidence now have specific labels and destinations. Repeated rows identify review, updating or the requested original, rather than another complete submission.
+
+Batch 62 corrects the filing-certificate destination for permanent residence and EU resident status. One guide now explains the three statutory forms and the two case rows name their own variant. These label corrections do not migrate the remaining permanent-residence stage lists. Blue Card, business, family, student and graduate distinctions above remain open.

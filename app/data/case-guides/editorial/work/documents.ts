@@ -16,11 +16,14 @@ const law = createLegalTextAuthor("ustawa-o-cudzoziemcach")
 const kpa = createLegalTextAuthor("kpa")
 
 export const workDocuments = {
-  passport: common.passport,
-  status: {
+  passport: {
+    ...common.passport,
+    item: document("passport", "Дійсний паспорт заявника"),
+  },
+  currentDecision: {
     item: document(
-      "status-documents",
-      "Попередній дозвіл, карта та інші документи про статус"
+      "administrative-decision",
+      "Чинне рішення про pobyt czasowy i pracę до 31.08.2026"
     ),
     level: "control",
     status: "до вибору заяви",
@@ -30,17 +33,40 @@ export const workDocuments = {
       "Чинну підставу перебування і, якщо дозвіл містить умови праці, роботу, яку він охоплює. Самої дати на карті недостатньо",
     law: law.text`${law.article("99")}, ${law.article("105")}, ${law.article("108")} і ${law.article("118")}.`,
   },
+  currentCard: {
+    item: document("residence-card", "Карта до чинного дозволу, до 31.08.2026"),
+    level: "control",
+    status: "документ нинішнього статусу",
+    owner: "Заявник надає свою карту",
+    proves:
+      "Посвідчує наданий статус; умови роботи встановлюють із повного рішення, а не лише з напису на карті",
+    law: law.text`${law.article("242")}; ${law.article("118")}.`,
+  },
   chronology: common.chronology,
   contract: {
-    item: document("employment-contract", "Umowa o pracę"),
+    item: document(
+      "employment-contract",
+      "Umowa o pracę з початковою сумою 5 500 zł"
+    ),
     reviewId: "contract",
     level: "control",
     status: "доказ у цьому прикладі",
-    owner:
-      "Працівник і роботодавець; договір разом з усіма підписаними aneksami",
+    owner: "Заявник і роботодавець; підписаний договір із початковими умовами",
     proves:
       "Домовленість про посаду, час, оплату та період роботи. Виплату зарплати і фактичні обов'язки підтверджують окремі матеріали",
     law: law.text`${law.article("114")}. Ця підстава допускає також інші договори; umowa o pracę не є універсально обов'язковим видом договору.`,
+  },
+  contractAmendment: {
+    item: document(
+      "employment-contract",
+      "Aneks від 20.07.2026: 6 000 zł із 01.08.2026"
+    ),
+    level: "control",
+    status: "підписана зміна договору в цьому прикладі",
+    owner: "Заявник і компанія A підписали; заявник зберігає оригінал",
+    proves:
+      "Зміну договірної зарплати з визначеної дати. Не підтверджує фактичної виплати та не замінює Załącznika nr 1 роботодавця",
+    law: law.text`${law.article("114")}; оригінал на вимогу за ${law.article("106f")}.`,
   },
   annex: {
     item: document("employment-annex-1", "Załącznik nr 1"),
@@ -56,15 +82,15 @@ export const workDocuments = {
   company: {
     item: document(
       "business-register-information",
-      "KRS/CEIDG і повноваження підписанта"
+      "Актуальна інформація KRS про компанію A"
     ),
     reviewId: "representation",
     level: "control",
     status: "перевірка роботодавця",
     owner:
-      "Працівник перевіряє реєстр; роботодавець пояснює додаткове уповноваження",
+      "Працівник отримує інформацію з KRS і звіряє осіб та спосіб представництва",
     proves:
-      "Існування суб'єкта та спосіб представництва на дату підпису. Запис у реєстрі не доводить платоспроможності або реальної роботи",
+      "Існування компанії A та зареєстрований спосіб представництва. Окреме уповноваження підписанта не є частиною KRS; реєстр не доводить платоспроможності",
     law: law.text`${law.article("106d")} ust. 4; ${law.article("117a")}.`,
   },
   organisation: {
@@ -80,64 +106,42 @@ export const workDocuments = {
       "Хто доручає роботу, керує нею та отримує її результат. Назва outsourcing сама по собі не визначає правової моделі",
     law: law.text`${law.article("117a")} pkt 4; ${law.article("118")} ust. 1 pkt 1.`,
   },
-  business: {
-    item: document(
-      "business-evidence",
-      "Матеріали про діяльність і кошти роботодавця"
-    ),
-    level: "conditional",
-    status: "для встановленого питання або вимоги органу",
-    owner:
-      "Роботодавець; відповідні договори, замовлення, звітність, відомості про податки та внески",
-    proves:
-      "Реальність потреби у працівнику та можливість виконувати зобов'язання. Це не вимога завантажити всю бухгалтерію в кожній справі",
-    law: law.text`${law.article("117")} pkt 1 і ${law.article("117a")}. Законні відстрочення, розстрочення та інші зазначені в законі винятки враховують окремо.`,
-  },
   insurance: {
-    item: document("health-insurance", "Підстава медичного страхування"),
+    item: document(
+      "zus-health-registration",
+      "Potwierdzenie zgłoszenia do ubezpieczenia zdrowotnego з eZUS"
+    ),
     level: "control",
-    status: "умова дозволу",
-    owner:
-      "Заявник і роботодавець; чинне покриття або документи про роботу, з якої воно виникне",
+    status: "підтвердження чинного страхового запису в цьому прикладі",
+    owner: "Заявник формує іменне підтвердження у своєму eZUS",
     proves:
-      "Публічне медичне страхування або покриття страховиком витрат лікування в Польщі. Майбутнє страхування через заявлену роботу має окреме правило",
-    law: law.text`${law.article("114")} ust. 1 pkt 1 і ust. 4a. Якщо страхування виникне через цю роботу, відсутність поточного запису ZUS сама по собі не означає невиконання умови.`,
+      "Поточний запис про медичне страхування заявника на дату створення документа. Не доводить виплату зарплати, відсутність боргу компанії чи майбутнє покриття",
+    law: law.text`${law.article("114")} ust. 1 pkt 1. Для страхування через майбутню роботу діє ust. 4a; цей документ не є універсальним обов'язковим вкладенням.`,
   },
-  zus: {
+  payroll: {
     item: document(
-      "zus-confirmation",
-      "Підтвердження ZUS за відповідний період"
+      "payroll-statement",
+      "Pasek wynagrodzenia за липень 2026 року"
     ),
     level: "conditional",
-    status: "якщо підтверджуєте вже наявне страхування",
-    owner:
-      "Заявник або платник внесків; дані про реєстрацію та медичне страхування",
+    status: "лише якщо перевіряють фактичне нарахування за липень",
+    owner: "Компанія A надає іменний розрахунок заявника за названий місяць",
     proves:
-      "Особу, страхову підставу й період, які видно в документі. Платіж внесків компанії не ідентифікує автоматично страхування конкретної особи",
-    law: law.text`${law.article("114")} ust. 1 pkt 1.`,
+      "Нараховану липневу зарплату, відрахування та суму до виплати. Не доводить надходження коштів і не підтверджує нову договірну суму із серпня",
+    law: law.text`${law.article("114")} ust. 1 pkt 4–5; оцінка за ${kpa.article("80", "Art. 80 KPA")}.`,
   },
-  income: {
-    item: document("income-evidence", "Нарахування і виплата зарплати"),
-    level: "conditional",
-    status: "якщо робота вже виконується або орган перевіряє оплату",
-    owner:
-      "Роботодавець і заявник; розрахунок зарплати та підтвердження виплат за названий період",
-    proves:
-      "Як договірні суми реалізовано на практиці. Суму netto на рахунку не порівнюють безпосередньо з порогом brutto",
-    law: law.text`${law.article("114")} ust. 1 pkt 4–5; ${kpa.article("80", "Art. 80 KPA")}.`,
-  },
-  qualifications: {
+  bank: {
     item: document(
-      "qualification-evidence",
-      "Кваліфікації для регульованої професії"
+      "bank-statement",
+      "Wyciąg bankowy за період виплати в серпні 2026 року: зарплата за липень"
     ),
     level: "conditional",
-    status: "якщо професія регульована",
+    status: "якщо перевіряють липневу виплату, здійснену в серпні",
     owner:
-      "Заявник; документ про право виконувати професію, визнання або іншу необхідну кваліфікацію",
+      "Заявник отримує виписку свого рахунку за період відповідної операції",
     proves:
-      "Виконання професійної вимоги. Звичайний диплом і його переклад не завжди дають право працювати в регульованій професії",
-    law: law.text`${law.article("115")}; ${law.article("117")} pkt 2 lit. a.`,
+      "Фактичне надходження, платника, дату й призначення. Зв'язок із липнем установлюють за призначенням і розрахунком, а не лише за місяцем переказу",
+    law: law.text`${kpa.article("80", "Art. 80 KPA")}; поріг brutto за ${law.article("114")} не замінюють сумою netto на рахунку.`,
   },
   translation: common.translation,
   matrix: common.matrix,
@@ -158,7 +162,10 @@ export const workDocuments = {
   fingerprints: common.fingerprints,
   signature: common.signature,
   decision: {
-    item: document("administrative-decision", "Decyzja у справі"),
+    item: document(
+      "administrative-decision",
+      "Нове рішення про pobyt czasowy i pracę для компанії A"
+    ),
     reviewId: "decision",
     level: "control",
     status: "після вручення",
@@ -168,7 +175,7 @@ export const workDocuments = {
     law: law.text`${law.article("118")}; ${kpa.article("107", "Art. 107 KPA")}.`,
   },
   card: {
-    item: document("residence-card", "Karta pobytu"),
+    item: document("residence-card", "Карта до нового дозволу для компанії A"),
     level: "control",
     status: "після видачі карти",
     owner: "Заявник; при отриманні звіряє особисті дані та строк документа",

@@ -126,6 +126,10 @@ export const permanentDocuments = {
   upo: { ...common.upo, law: law.text`${law.article("203d")} ust. 4–5.` },
   certificate: {
     ...common.certificate,
+    item: document(
+      "proceeding-certificate",
+      "Zaświadczenie про подання заяви на pobyt stały"
+    ),
     law: law.text`${law.article("206")}. Це результат перевірки умов подання; не вкладення до початкової заяви й не документ для перетину кордону.`,
   },
   summons: {

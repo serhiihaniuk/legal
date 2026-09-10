@@ -29,14 +29,11 @@ const ids = (value: LegalTextValue) =>
           : []
       )
 describe("document coverage across learning modules", () => {
-  it("requires explicit document actions throughout the resident pilot without changing other guides", () => {
+  it("requires explicit document actions throughout migrated case guides", () => {
     for (const route of authoredCaseGuideRoutes) {
       for (const stage of route.stages) {
         for (const entry of stage.documents) {
-          if (route.id !== "long-term-eu") {
-            expect(isCaseGuideDocumentUse(entry), route.id).toBe(false)
-            continue
-          }
+          if (!["long-term-eu", "work"].includes(route.id)) continue
           expect(isCaseGuideDocumentUse(entry), stage.id).toBe(true)
           if (!isCaseGuideDocumentUse(entry)) continue
           expect(
@@ -63,6 +60,70 @@ describe("document coverage across learning modules", () => {
       expect(contexts![0]).toHaveProperty("item")
       expect(contexts![0]).not.toHaveProperty("instruction")
       expect(contexts![0]).not.toHaveProperty("action")
+    }
+  })
+
+  it("names the work example's evidence without turning optional payment checks into filing requirements", () => {
+    const route = authoredCaseGuideRoutes.find((route) => route.id === "work")!
+    const registerIds = route.documents.flatMap((document) =>
+      ids(document.item)
+    )
+    for (const collection of [
+      "status-documents",
+      "zus-confirmation",
+      "income-evidence",
+      "qualification-evidence",
+      "business-evidence",
+    ]) {
+      expect(registerIds).not.toContain(collection)
+    }
+    const filing = route.stages.find((stage) => stage.id === "filing")!
+    const contractDocuments = route.documents.filter((entry) =>
+      ids(entry.item).includes("employment-contract")
+    )
+    expect(contractDocuments).toHaveLength(2)
+    expect(
+      new Set(contractDocuments.map((entry) => legalTextPlainText(entry.item)))
+        .size
+    ).toBe(2)
+    for (const document of contractDocuments) {
+      const use = filing.documents.find(
+        (entry) => unwrapCaseGuideDocument(entry) === document
+      )!
+      expect(isCaseGuideDocumentUse(use)).toBe(true)
+      if (isCaseGuideDocumentUse(use)) expect(use.action).toBe("submit")
+    }
+    for (const id of ["payroll-statement", "bank-statement"] as const) {
+      const document = route.documents.find((entry) =>
+        ids(entry.item).includes(id)
+      )!
+      expect(document, id).toBeDefined()
+      expect(document.level, id).toBe("conditional")
+      expect(filing.documents.map(unwrapCaseGuideDocument)).not.toContain(
+        document
+      )
+      expect(
+        documentById
+          .get(id)
+          ?.caseContexts.filter((context) => context.routeId === "work")
+      ).toHaveLength(1)
+    }
+    const insurance = route.documents.find((entry) =>
+      ids(entry.item).includes("zus-health-registration")
+    )!
+    expect(insurance).toBeDefined()
+    expect(insurance.level).not.toBe("required")
+    expect(
+      route.stages
+        .find((stage) => stage.id === "procedure")!
+        .documents.map(unwrapCaseGuideDocument)
+    ).toContain(insurance)
+    for (const stage of route.stages) {
+      const references = stage.documents.flatMap((entry) =>
+        ids(unwrapCaseGuideDocument(entry).item)
+      )
+      expect(references).not.toContain("zus-insurance-history")
+      expect(references).not.toContain("tax-income-certificate")
     }
   })
 
@@ -276,7 +337,7 @@ describe("document coverage across learning modules", () => {
       const registerIds = route.documents.flatMap((document) =>
         ids(document.item)
       )
-      expect(new Set(registerIds).size).toBe(registerIds.length)
+      expect(new Set(route.documents).size).toBe(route.documents.length)
       for (const stage of route.stages) {
         for (const material of stage.materials) {
           if (material.href.startsWith("/map/"))
@@ -285,15 +346,12 @@ describe("document coverage across learning modules", () => {
               material.href
             ).toBe(true)
         }
-        const stageIds = stage.documents.flatMap((document) =>
-          ids(document.item)
+        expect(new Set(stage.documents).size, stage.id).toBe(
+          stage.documents.length
         )
-        expect(new Set(stageIds).size, stage.id).toBe(stageIds.length)
         for (const document of stage.documents) {
           const id = ids(document.item)[0]
-          expect(
-            route.documents.find((entry) => ids(entry.item).includes(id))
-          ).toEqual(document)
+          expect(route.documents).toContain(document)
           expect(
             documentById
               .get(id)
@@ -305,7 +363,13 @@ describe("document coverage across learning modules", () => {
         route.stages
           .find((stage) => stage.id === stageId)!
           .documents.flatMap((document) => ids(document.item))
-      expect(at("status")).toContain("status-documents")
+      expect(at("status")).toEqual(
+        expect.arrayContaining(
+          routeId === "work"
+            ? ["administrative-decision", "residence-card"]
+            : ["status-documents"]
+        )
+      )
       expect(at("filing")).toEqual(
         expect.arrayContaining([
           routeId === "long-term-eu"
@@ -336,7 +400,7 @@ describe("document coverage across learning modules", () => {
                 "housing-evidence",
                 "employment-contract",
               ]
-            : routeId === "long-term-eu"
+            : ["long-term-eu", "work"].includes(routeId)
               ? ["zus-health-registration"]
               : ["health-insurance"]),
           ...(routeId === "long-term-eu"
@@ -368,7 +432,9 @@ describe("document coverage across learning modules", () => {
                         "income-evidence",
                         "housing-evidence",
                       ]
-                    : ["zus-confirmation", "qualification-evidence"]),
+                    : routeId === "work"
+                      ? ["payroll-statement", "bank-statement"]
+                      : ["zus-confirmation", "qualification-evidence"]),
           "sworn-translation",
         ])
       )

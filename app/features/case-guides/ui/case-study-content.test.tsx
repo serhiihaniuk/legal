@@ -20,6 +20,17 @@ import { CaseOverview } from "./case-overview"
 
 afterEach(cleanup)
 
+function legacyWorkRoute() {
+  const route = getCaseGuideRoute("work")
+  return {
+    ...route,
+    stages: route.stages.map((stage) => ({
+      ...stage,
+      documents: stage.documents.map(unwrapCaseGuideDocument),
+    })),
+  }
+}
+
 function CurrentPath() {
   return <output aria-label="Current path">{useLocation().pathname}</output>
 }
@@ -34,7 +45,7 @@ describe("case guide continuity", () => {
         />
       </MemoryRouter>
     )
-    expect(screen.getByText("Гайд перевірено: 06.09.2026")).toBeTruthy()
+    expect(screen.getByText("Гайд перевірено: 10.09.2026")).toBeTruthy()
     expect(screen.queryByText("Стан права: 18.07.2026")).toBeNull()
     rerender(
       <MemoryRouter>
@@ -45,7 +56,7 @@ describe("case guide continuity", () => {
       </MemoryRouter>
     )
     expect(screen.getByText("Стан права: 18.07.2026")).toBeTruthy()
-    expect(screen.queryByText("Гайд перевірено: 06.09.2026")).toBeNull()
+    expect(screen.queryByText("Гайд перевірено: 10.09.2026")).toBeNull()
   })
 
   it("keeps document families above their case subtypes", () => {
@@ -89,8 +100,8 @@ describe("case guide continuity", () => {
     ).toBe("#case-registers")
   })
 
-  it("opens documents and risks independently and preserves document controls", async () => {
-    const route = getCaseGuideRoute("work")
+  it("opens legacy documents and risks independently and preserves document controls", async () => {
+    const route = legacyWorkRoute()
     const { container } = render(
       <MemoryRouter>
         <CaseStudyContent route={route} updatedAt="2026-07-18" />
@@ -114,6 +125,67 @@ describe("case guide continuity", () => {
     expect(documents.getAttribute("aria-expanded")).toBe("true")
   })
 
+  it("shows six open work document lists and distinguishes the response from the filing packet", () => {
+    const route = getCaseGuideRoute("work")
+    const { container } = render(
+      <MemoryRouter initialEntries={["/cases/work"]}>
+        <CaseStudyContent route={route} updatedAt="2026-07-18" />
+        <CurrentPath />
+      </MemoryRouter>
+    )
+    expect(
+      screen.getAllByRole("heading", { name: "Документи на цьому етапі" })
+    ).toHaveLength(6)
+    for (const stage of route.stages) {
+      const region = within(
+        container.querySelector<HTMLElement>(`#case-stage-${stage.id}`)!
+      )
+      expect(region.queryByRole("button", { name: /^Документи/ })).toBeNull()
+      expect(region.queryByRole("checkbox")).toBeNull()
+    }
+    const filing = within(
+      container.querySelector<HTMLElement>("#case-stage-filing")!
+    )
+    const amendmentName = "Aneks від 20.07.2026: 6 000 zł із 01.08.2026"
+    const filedContract = filing.getByRole("link", {
+      name: "Umowa o pracę з початковою сумою 5 500 zł",
+    })
+    const filedAmendment = filing.getByRole("link", { name: amendmentName })
+    expect(filedContract.getAttribute("href")).toBe(
+      "/documents/employment-contract"
+    )
+    expect(filedAmendment.closest("li")!.textContent).toContain("скан")
+    const procedure = within(
+      screen.getByRole("region", {
+        name: "Контролюємо провадження і відповіді на wezwania",
+      })
+    )
+    const original = procedure.getByRole("link", { name: amendmentName })
+    expect(original.closest("li")!.textContent).toContain(
+      "18.08.2026 надати оригінал"
+    )
+    expect(original.closest("li")!.textContent).toContain(
+      "Його скан уже є в заяві"
+    )
+    const insurance = procedure.getByRole("link", {
+      name: "Potwierdzenie zgłoszenia do ubezpieczenia zdrowotnego з eZUS",
+    })
+    expect(insurance.getAttribute("href")).toBe(
+      "/documents/zus-health-registration"
+    )
+    expect(insurance.closest("li")!.textContent).toContain(
+      "У початковому пакеті цього прикладу його не було"
+    )
+    expect(
+      procedure.queryByRole("link", { name: /Pasek wynagrodzenia/ })
+    ).toBeNull()
+    expect(procedure.queryByRole("link", { name: /Wyciąg bankowy/ })).toBeNull()
+    fireEvent.click(original)
+    expect(
+      screen.getByRole("status", { name: "Current path" }).textContent
+    ).toBe("/documents/employment-contract")
+  })
+
   it("links register titles to document guides while retaining provision links", () => {
     render(
       <MemoryRouter>
@@ -122,9 +194,16 @@ describe("case guide continuity", () => {
     )
     for (const [name, href] of [
       ["Електронна заява MOS", "/documents/mos-application"],
-      ["Скани всіх сторінок дійсного паспорта", "/documents/passport"],
+      ["Дійсний паспорт заявника", "/documents/passport"],
       ["Załącznik nr 1", "/documents/employment-annex-1"],
-      ["Umowa o pracę", "/documents/employment-contract"],
+      [
+        "Umowa o pracę з початковою сумою 5 500 zł",
+        "/documents/employment-contract",
+      ],
+      [
+        "Aneks від 20.07.2026: 6 000 zł із 01.08.2026",
+        "/documents/employment-contract",
+      ],
     ]) {
       for (const link of screen.getAllByRole("link", { name })) {
         expect(link.getAttribute("href")).toBe(href)
@@ -140,16 +219,16 @@ describe("case guide continuity", () => {
     )
   })
 
-  it("keeps document navigation separate from checklist selection", async () => {
+  it("keeps legacy document navigation separate from checklist selection", async () => {
     render(
       <MemoryRouter initialEntries={["/cases/work"]}>
-        <CaseStageDocuments stage={getCaseGuideRoute("work").stages[0]} />
+        <CaseStageDocuments stage={legacyWorkRoute().stages[0]} />
         <CurrentPath />
       </MemoryRouter>
     )
     fireEvent.click(screen.getByRole("button", { name: /^Документи/ }))
     const link = await screen.findByRole("link", {
-      name: "Скани всіх сторінок дійсного паспорта",
+      name: "Дійсний паспорт заявника",
     })
     const checkbox = screen.getByRole("checkbox", { name: link.textContent! })
     expect(link.closest("label")).toBeNull()
@@ -217,8 +296,8 @@ describe("case guide continuity", () => {
     }
   })
 
-  it("shows document checks and a recovery explanation within the stage", async () => {
-    const stage = getCaseGuideRoute("work").stages.find(
+  it("shows legacy document checks and a recovery explanation within the stage", async () => {
+    const stage = legacyWorkRoute().stages.find(
       (stage) => stage.id === "qualification"
     )
     expect(stage).toBeDefined()

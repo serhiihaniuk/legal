@@ -191,9 +191,9 @@
     {
       "path": "app/data/case-guides/editorial/permanent/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "ac939b7143234f32618b5f57fb2761bb847c5507a04218a15626ae8532acd544",
+      "contentHash": "39526362593fe8ae396020f1dca4dab3565235056fa526cda5cf0fc5bd2bc245",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/62-filing-certificate-variants.md"
     },
     {
       "path": "app/data/case-guides/editorial/permanent/reference.ts",
@@ -212,9 +212,9 @@
     {
       "path": "app/data/case-guides/editorial/resident/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "27d182fce973ceccfed893411f05453715c7526fab14e082746e9bb43059be91",
+      "contentHash": "7d0f1f78258b102bdbc7f467d9834e239068a1949ced57ca3fd2fba37dadce68",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/62-filing-certificate-variants.md"
     },
     {
       "path": "app/data/case-guides/editorial/resident/reference.ts",
@@ -289,9 +289,9 @@
     {
       "path": "app/data/case-guides/editorial/routes/work.ts",
       "family": "case-guide",
-      "contentHash": "35cc476a22a7a323c3056f617dacf293686226aec8bee7d4b117c11718a08938",
+      "contentHash": "0ca32a33b47663715203da5721e5f30e608cb29a86fbf61dfe9952d432653234",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/15-work-case-guide.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/61-work-case-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/shared/temporary-residence-documents.ts",
@@ -324,23 +324,23 @@
     {
       "path": "app/data/case-guides/editorial/work/documents.ts",
       "family": "supporting-copy",
-      "contentHash": "ff4fc449214b85ca5735dfa470ea5053944576abc47bf3bd3a2a392be3ab02ca",
+      "contentHash": "58c679137130a51fc9c9b7959af30499f040a0cdaa188f165fe1632d8b497f07",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/61-work-case-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/reference.ts",
       "family": "supporting-copy",
-      "contentHash": "fb6c71689096bf7f327aee28adcd72888cdbc6b7ad4786d24b782cbf7b1f04c8",
+      "contentHash": "aa4f5a812e9c30566f1ecfc9da929c6123af4d90fbc717175030eb38b10d1046",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/61-work-case-documents.md"
     },
     {
       "path": "app/data/case-guides/editorial/work/stages.ts",
       "family": "supporting-copy",
-      "contentHash": "67e0b8c5ec84161146ca3f1b062205a79a662f28b8430010764d0ca1ebe94aa8",
+      "contentHash": "1d561f0d8845996e9cc7a8fe31610834ee9ba60732343ad678df6a0de40d6e03",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/61-work-case-documents.md"
     },
     {
       "path": "app/data/case-guides/navigation.ts",
@@ -681,9 +681,9 @@
     {
       "path": "app/data/document-library/editorial/guides/proceeding-certificate.ts",
       "family": "evidence-document",
-      "contentHash": "e42320002f75417900ba6df8ac35c5649c00e7193d5714b41776a4cb0e2febed",
+      "contentHash": "4cbd32fa2d975c6a99d01ad29d07bd99f489ac533cd64099571684bfa5de07b7",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/05-representation-and-filing.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/62-filing-certificate-variants.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/qualification-evidence.ts",

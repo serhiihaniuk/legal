@@ -563,3 +563,11 @@ Rewrote work-entry as five authored sections explaining the source and limits of
 Scoped source check: 10.09.2026, ELI employment act and DU2026/203 and 1072. Global baseline unchanged. Full verification passed with 41 test files and 217 tests; corrected text received subsequent typecheck, previews and build. Desktop and mobile browser checks passed. Writing acceptance: 183 of 1,813 files. Evidence: docs/content-review/writing-2026-09-05/batches/60-work-access-overview.md.
 
 The resident pilot and plain status labels were pushed to main in 8000dfe. The user accepted that layout, so wider case migration is no longer waiting for pilot approval. Remaining content, source-layout review and whole-project legal acceptance remain open.
+
+### 2026-09-10: work-case documents and filing certificates
+
+Migrated all six work-case stages to visible document lists with explicit actions. Separated the contract, dated aneks and employer annex; identified the initial scans and later requested original. Current personal eZUS has its own destination, while payroll and bank records remain conditional. Repeated references describe review or updating existing material. The completed example retains its dates, amounts and response requirements.
+
+Rewrote the filing-certificate guide to explain the temporary, permanent and EU-resident forms, UPO distinction, filing and issue dates, and statutory limits. Permanent and resident case labels now identify their form. Separate reviewers accepted the authored changes after official ELI, UdSC and ZUS checks scoped to 10.09.2026. Global baseline remains 18.07.2026.
+
+Full verification passed with 41 application test files and 219 tests, corpus and editorial checks, and production build. Reference previews passed. Desktop/mobile browser checks showed meaningful open lists and certificate content without page overflow or console errors. Writing acceptance remains 183 of 1,813 files. Evidence: batches 61 and 62 in docs/content-review/writing-2026-09-05/batches. Remaining case migration, map/law writing, source-layout review and whole-project legal acceptance remain open.
