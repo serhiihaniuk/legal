@@ -441,3 +441,9 @@ Desktop/mobile rendering, contents navigation, the family-evidence document link
 Rewrote the map parent article with definitions of the organ, office, competence, party, appointed representative and statutory representative. Completed examples explain conflicting addresses, employer participation, forwarded service and a related caseworker. Existing document specimens remain linked through typed references.
 
 Checked KPA, the relevant foreigners-act provisions and the UdSC MOS signature notice on 06.09.2026. The page distinguishes ordinary temporary-residence proceedings from the ICT party exception and special filing procedures. Desktop/mobile rendering, contents navigation, document navigation, reference previews and full verification passed. Writing acceptance is 129 of 1,800 files; independent review remains pending. Evidence: `docs/content-review/writing-2026-09-05/batches/31-authority-party-representation.md`.
+
+### 2026-09-10: factual description and working chronology
+
+Rewrote the opening map topic to distinguish facts, assertions, evidence and legal conclusions. Added a filled fictional chronology and completed analysis, with typed links to the chronology and evidence-matrix guides. Checked the bounded KPA evidence rules on 10.09.2026. The stable route and global legal baseline remain unchanged.
+
+Full verification passed with 198 application tests and production build. Desktop/mobile review covered contents links, document navigation, keyboard table scrolling, overflow and browser errors. Writing acceptance is 147 of 1,804 files. The changed page's prior legal attestations were reset to pending by ledger regeneration. The next foundation topic is legal-anatomy; the broader rewrite and independent review remain unfinished. Evidence: `docs/content-review/writing-2026-09-05/batches/42-factual-description.md`.

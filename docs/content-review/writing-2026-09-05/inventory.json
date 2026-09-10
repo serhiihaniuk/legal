@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1804,
-    "reviewed": 146,
+    "reviewed": 147,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 81,
@@ -11888,9 +11888,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/start-case.ts",
       "family": "map-topic",
-      "contentHash": "b2a667bdf8659eeaf5baa199611eb76ce74faebc856c0867d4bc2fa1270ceacb",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "32640d6802902e654c70802c9e7c517392fa8289f32219ca7d88961ec48e284b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/42-factual-description.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/stay-work.ts",

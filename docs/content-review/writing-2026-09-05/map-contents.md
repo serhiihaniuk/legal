@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 29: `study-research` now provides the parent comparison with separate sections for studies, university documents, student mobility, research, internships and European volunteering. Its URL and primary chapter are unchanged. Detailed child explanations and the other dispositions below remain pending; this rewrite does not complete the full branch.
+Latest implementation note, batch 42: `start-case` now explains facts, assertions, evidence and conclusions through a filled chronology. Its route and primary chapter are unchanged. Batches 30-41 record the intervening family, procedure, remedies and court-document work. The foundation articles `legal-anatomy` and `special-vs-kpa` remain pending. The findings below preserve the original pre-migration audit; completed changes are recorded in the numbered batches.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 

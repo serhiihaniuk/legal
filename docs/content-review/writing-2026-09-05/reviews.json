@@ -743,5 +743,10 @@
     "path": "app/data/document-library/editorial/guides/court-judgment.ts",
     "contentHash": "4dab2bf263431b0c3cb91fae5007ab6f53645c53e0f8fa97387e351f98dfaf12",
     "evidence": "docs/content-review/writing-2026-09-05/batches/41-court-documents.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/start-case.ts",
+    "contentHash": "32640d6802902e654c70802c9e7c517392fa8289f32219ca7d88961ec48e284b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/42-factual-description.md"
   }
 ]

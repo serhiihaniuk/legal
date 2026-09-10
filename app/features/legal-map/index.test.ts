@@ -11,8 +11,8 @@ import {
 
 describe("legal-map public API", () => {
   it("resolves canonical nodes, stages, and conditional node sections", () => {
-    const node = resolveLegalMapNode("start-case")
-    expect(node?.id).toBe("start-case")
+    const node = resolveLegalMapNode("legal-anatomy")
+    expect(node?.id).toBe("legal-anatomy")
     expect(chapterForNode(node)).toBe("orientation")
     expect(resolveLegalMapNode("missing-node")).toBeUndefined()
 

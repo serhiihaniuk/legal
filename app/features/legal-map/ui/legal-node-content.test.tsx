@@ -115,8 +115,8 @@ describe("map article contents", () => {
   })
 
   it("preserves not-yet-migrated article content during the rewrite", () => {
-    const node = nodeById.get("start-case")
-    if (!node) throw new Error("Missing start-case fixture")
+    const node = nodeById.get("legal-anatomy")
+    if (!node) throw new Error("Missing legal-anatomy fixture")
     const { container } = render(
       <MemoryRouter>
         <LegalNodeContent
