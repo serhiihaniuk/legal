@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1822,
-    "reviewed": 192,
+    "totalFiles": 1823,
+    "reviewed": 194,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 84,
+      "evidence-document": 85,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -733,6 +733,13 @@
       "contentHash": "d03df74480c45cece76c0fcbac943dec19134c66636b61ce7dda4c0b2f15dc19",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/63-blue-card-documents.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/registered-work-declaration.ts",
+      "family": "evidence-document",
+      "contentHash": "31271bd5c20a7175f375cdc76b59262ef2ea7be33e24a87244de95bbb10970a9",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/71-registered-work-declaration.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/requirements-table.ts",
@@ -11769,9 +11776,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/declaration.ts",
       "family": "map-topic",
-      "contentHash": "94058fda4de63c58c994c6475b591f48f49b9db4df050cfe15249c7d625d8070",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "f3c9708d88e22ae28b2e8841ac1977d2807929078086fd086c099ed510cd5e0f",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/70-declaration.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/delegation.ts",

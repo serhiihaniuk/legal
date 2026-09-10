@@ -146,20 +146,17 @@ Full project verification and reference previews passed. All three examples were
 - Added shared decorative crosses at every visible top and bottom intersection. Final crosses are 13 px with a 1 px stroke. Added a matching bottom rule across the documentation grid.
 - Checked desktop alignment, bottom intersections, mobile menu navigation, and overflow at 360, 1024, 1280, and 2200 px. Fixed the mobile menu's link/button semantics. Typecheck and production build passed. No content changes or commit.
 
-
 ## 2026-09-05 act-first library catalog
 
 - Put Polish act names and citations first in the catalog and sidebar, with Ukrainian descriptions below. Made the act reader the primary action and explanations secondary. Updated direct act URLs to open the first provision in source order.
 - Revised the introduction and navigation labels around reading legal documents. Legal explanations and source text remain unchanged.
 - Validation: typecheck and build passed. Checked the catalog at desktop and 360 px, sidebar navigation, and all five direct act routes. No overflow or console errors observed. No commit.
 
-
 ## 2026-09-05 shared shell and section combobox
 
 - Made the centered 100rem documentation shell the shared default for law, documents, cases, the map, and the topic guide. Removed the law-only variant; each page still chooses its reading width.
 - Replaced the provision index's native section selector with the existing shadcn combobox. Supports title filtering, wrapped options, keyboard selection, and an empty state while keeping the selected section's provision list below it.
 - Validation: typecheck, production build, and the updated navigation test passed. Confirmed identical 1600 px shells across five modules at a 2200 px viewport and no overflow at 360 px. Checked combobox filtering, keyboard selection, and provision navigation inside the Sheet. No legal content changes or commit.
-
 
 ## 2026-09-05 law library navigation and reading
 
@@ -169,7 +166,6 @@ Full project verification and reference previews passed. All three examples were
 - Checked the five official ELI act records on 05.09.2026 and the example's [KPA art. 54](https://eli.gov.pl/api/acts/DU/2025/1691/text/O/D20251691.pdf#page=13) and [foreigners act art. 114](https://eli.gov.pl/api/acts/DU/2025/1079/text/O/D20251079.pdf#page=65). This was an interface and orientation pass, not a fresh legal review of every provision. The atlas baseline remains 18.07.2026; independent-review attestations remain unchanged.
 - Validation: full verify passed with 80 application tests, followed by a final production build and reference-preview checks. Browser checks covered catalog, act explanation, provision, annex, KPA case breakdown, and legacy example redirect at desktop and 360 px. Checked index selection, keyboard open/Escape and restored focus. No horizontal overflow or browser errors observed. No commit.
 
-
 ## 2026-09-05 document coverage across modules
 
 - Expanded the document catalog from 34 to 57 entries. Added missing official attachments, separate CUKR/permanent/resident applications, response letters, dispatch evidence, working records, and explanations of status and work-organisation materials.
@@ -177,7 +173,6 @@ Full project verification and reference previews passed. All three examples were
 - Added the appropriate forms and response materials to case stages and registers. Kept conditional use explicit, including family applications from abroad and ICT. Moved CUKR account setup and registry updates into preparation actions.
 - Checked official [regulation 553](https://eli.gov.pl/eli/DU/2026/553/ogl), [permanent form 488](https://eli.gov.pl/eli/DU/2026/488/ogl), [resident form 487](https://eli.gov.pl/eli/DU/2026/487/ogl), [foreigners act](https://eli.gov.pl/eli/DU/2025/1079/ogl), [KPA](https://eli.gov.pl/eli/DU/2025/1691/ogl), and [UdSC CUKR guidance](https://www.gov.pl/web/udsc/cukr-QA) on 05.09.2026. Page-level dates record this scoped check; the atlas baseline remains 18.07.2026.
 - Validation: full verify passed with 76 application tests; final build and reference previews passed for 57 documents. Production browser checks covered all 57 document pages and nine case routes at 360 px without overflow, plus form/guide navigation and the linked map list. No console errors. Fixed review-inventory extraction so cited acts cannot replace document IDs. Independent-review attestations remain unchanged. No commit.
-
 
 ## 2026-09-05 documents and deadline timeline
 
@@ -229,6 +224,7 @@ Full project verification and reference previews passed. All three examples were
 - Validation: `npm run verify` passed, including 57 application tests and the corpus/editorial checks. Reference-preview validation passed. Final typecheck and production build passed after the presentation adjustments. Browser checks confirmed the revised KPA text, reading-guide navigation, a new provision link, and no horizontal overflow on checked pages at 360 px and desktop widths.
 - Pending: the separate strict content-review ledger reports 11 stale file hashes, including one untouched navigation file. Its previous independent attestations were not renewed. Installation also reported 19 dependency vulnerabilities (10 moderate, 9 high); dependency remediation is outside this editorial pass. Existing build warnings concern large bundles and the deprecated `envFile` option.
 - Next editorial pass: replace inferred definitions and generic examples in non-KPA explanations, preserve their authored section headings, and deepen the form-versus-evidence explanation.
+
 # 2026-09-05 filled document examples
 
 - Added filled specimens to the evidence matrix, requirements table, travel chronology, file index and response letter. The examples distinguish missing evidence, unconfirmed dates, received files and actual submission. The Polish letter is a labelled fictional fragment.
@@ -607,3 +603,7 @@ Eight exact authored hashes passed independent review against scoped official so
 Permanent residence now has six visible lists. The initial lease copy, requested original and first employment-contract submission are distinct; the settlement guide contains a matching Polish response. Permit-fee exemption, representative-fee assessment and the selected card payment remain separate. Student, business and resident lease references and the student private-policy reference lead to focused guides with the relevant distinctions.
 
 Thirteen exact authored hashes passed independent bounded review against official sources checked on 10 September. Full verification passed with 239 application tests, corpus/review/editorial checks and production build. Preview, ledger and inventory checks also passed. Desktop/mobile pages, keyboard document navigation and reverse contexts were checked without viewport overflow or recorded runtime errors. Writing acceptance remains 192 of 1,822 files; the global legal baseline is unchanged. Evidence: batches 68 and 69 under docs/content-review/writing-2026-09-05/batches. Unfinished map and law writing, source fidelity and whole-project legal acceptance remain open.
+
+## 2026-09-10: registered work declaration
+
+Rewrote the oświadczenie map article and added a dedicated guide for the registered document. Both include coordinated fictional Polish material. Registration, actual start, contract transmission and later continuation are explained as separate events. An independent source review corrected the conditional agency attachment, one date phrase and a typed range link. Scope and accepted hashes are in writing batches 70–71. CUKR's six remaining legacy document lists have a source-backed migration plan in pending batch 72; they are not yet implemented.

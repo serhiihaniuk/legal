@@ -1864,6 +1864,36 @@
       }
     },
     {
+      "id": "evidence-document:registered-work-declaration",
+      "path": "app/data/document-library/editorial/guides/registered-work-declaration.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "registered-work-declaration",
+      "contentId": "registered-work-declaration",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "31271bd5c20a7175f375cdc76b59262ef2ea7be33e24a87244de95bbb10970a9",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:requirements-table",
       "path": "app/data/document-library/editorial/guides/requirements-table.ts",
       "family": "evidence-document",
@@ -3142,27 +3172,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "94058fda4de63c58c994c6475b591f48f49b9db4df050cfe15249c7d625d8070",
+      "contentHash": "f3c9708d88e22ae28b2e8841ac1977d2807929078086fd086c099ed510cd5e0f",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "94058fda4de63c58c994c6475b591f48f49b9db4df050cfe15249c7d625d8070",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "94058fda4de63c58c994c6475b591f48f49b9db4df050cfe15249c7d625d8070",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

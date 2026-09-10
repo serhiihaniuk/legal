@@ -1,3 +1,4 @@
+import registeredWorkDeclarationTopic from "./editorial/guides/registered-work-declaration"
 import privateHealthInsurancePolicyTopic from "./editorial/guides/private-health-insurance-policy"
 import residentialLeaseTopic from "./editorial/guides/residential-lease"
 import polishGraduationDiplomaTopic from "./editorial/guides/polish-graduation-diploma"
@@ -111,6 +112,7 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    registeredWorkDeclarationTopic.body,
     privateHealthInsurancePolicyTopic.body,
     residentialLeaseTopic.body,
     polishGraduationDiplomaTopic.body,

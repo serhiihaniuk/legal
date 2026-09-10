@@ -973,5 +973,15 @@
     "path": "app/data/case-guides/editorial/resident/reference.ts",
     "contentHash": "6f0cde01528e312ec03030d32a22882105340c2bf669ebf05abfa80cd9b5cbcc",
     "evidence": "docs/content-review/writing-2026-09-05/batches/69-existing-document-destinations.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/declaration.ts",
+    "contentHash": "f3c9708d88e22ae28b2e8841ac1977d2807929078086fd086c099ed510cd5e0f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/70-declaration.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/registered-work-declaration.ts",
+    "contentHash": "31271bd5c20a7175f375cdc76b59262ef2ea7be33e24a87244de95bbb10970a9",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/71-registered-work-declaration.md"
   }
 ]
