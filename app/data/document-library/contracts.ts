@@ -5,6 +5,9 @@ export type EvidenceDocumentId =
   | "work-permit-non-start-notification"
   | "work-permit-interruption-notification"
   | "work-permit-end-notification"
+  | "declaration-start-notification"
+  | "declaration-non-start-notification"
+  | "declaration-end-notification"
   | "work-permit"
   | "agency-user-arrangements"
   | "agency-referral-confirmation"
@@ -194,6 +197,9 @@ export const evidenceDocumentIds = [
   "work-permit-non-start-notification",
   "work-permit-interruption-notification",
   "work-permit-end-notification",
+  "declaration-start-notification",
+  "declaration-non-start-notification",
+  "declaration-end-notification",
   "work-permit",
   "agency-user-arrangements",
   "agency-referral-confirmation",

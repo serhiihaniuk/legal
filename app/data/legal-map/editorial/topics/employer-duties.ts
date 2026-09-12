@@ -23,6 +23,8 @@ const declarationLaunchUrl =
   "https://www.gov.pl/attachment/3f96f9df-8924-4ec3-83bd-157f7d1533c2"
 const oldApplicationsUrl =
   "https://www.gov.pl/web/uw-mazowiecki/od-1-czerwca-2026-r-nowa-funkcjonalnosc-na-pracagovpl---elektronizacja-procedur-informacyjnych"
+const declarationFormsUrl =
+  "https://tarnow.praca.gov.pl/-/wazne-zmiany-dla-pracodawcow-zatrudniajacych-cudzoziemcow-od-1-czerwca-2026-roku"
 const servicesUrl =
   "https://www.praca.gov.pl/eurzad/html/pomoc/zatrudnianie_cudzoziemcow.htm"
 const workReference = {
@@ -69,6 +71,8 @@ export const employerDutiesTopic: KnowledgeUnit<LegalMapTopicBody> =
       title: "Обов’язки роботодавця",
       polish: law.text`${law.articleRange("4", "5")}, ${law.articleRange("17", "20")}, ${law.article("33")}, ${law.articleRange("68", "70")}`,
       documents: [
+        documents.text`${documents.document("declaration-start-notification", "PSZ-PPPC про початок роботи")}: подане 3 липня щодо фактичного початку роботи B 1 липня. Це окрема дія після передання договору.`,
+        documents.text`${documents.document("declaration-end-notification", "PSZ-PZPC про раннє завершення")}: подане 17 серпня щодо завершення роботи B 15 серпня. Повідомлення про непочаток для нього не потрібне, оскільки він фактично працював.`,
         documents.text`${documents.document("work-permit-end-notification", "ZC-PZPC про завершення роботи")}: подане для працівника A в прикладі, оскільки до кінця його дозволу лишилося понад два місяці. ZC-PNPC про непочаток і ZC-PPPC про перерву для цього факту не подають.`,
         documents.text`${documents.document("work-permit", "Zezwolenie na pracę")}: дозволені умови роботи працівника A в прикладі. Для B підставою є зареєстроване oświadczenie, тому окремого такого дозволу для нього не додають.`,
         documents.text`${documents.document("passport", "Паспорт")} і, у вибраному нижче прикладі, ${documents.document("visa", "національна віза для праці")}: особа, строк та підстава перебування. В інших ситуаціях перевіряють відповідний документ або статус, а не шукають візу в кожній справі.`,
@@ -78,6 +82,11 @@ export const employerDutiesTopic: KnowledgeUnit<LegalMapTopicBody> =
         documents.text`${documents.document("dispatch-proof", "Підтвердження подання")}: дата й адресат конкретного повідомлення. Зберігається разом із самим поданим повідомленням.`,
       ],
       sources: [
+        {
+          label: "PUP Tarnów: форми для нових і старіших записів",
+          url: declarationFormsUrl,
+          note: "Перевірено 12.09.2026 пояснення про повідомлення й форми для записів до 01.06.2026. Це технічна інструкція; обов’язки та наслідки встановлює закон. Інші додатки, згадані на цій сторінці, тут не визначаються.",
+        },
         {
           label: "Mazowiecki UW: спосіб повідомлення для старіших заяв",
           url: oldApplicationsUrl,
@@ -171,9 +180,9 @@ export const employerDutiesTopic: KnowledgeUnit<LegalMapTopicBody> =
             title:
               "Oświadczenie, спеціальне powiadomienie та дозвіл на перебування мають власні строки",
             paragraphs: [
-              law.text`За ${law.article("70", "art. 70 ust. 1")} польський суб'єкт, чиє oświadczenie зареєстровано, повідомляє відповідного starostę про фактичний початок роботи протягом семи днів від початку. Послуга називається Powiadomienie o podjęciu pracy przez cudzoziemca (PSZ-PPPC). Якщо робота не почалася, подають Powiadomienie o niepodjęciu pracy przez cudzoziemca (PSZ-PNPC) протягом 14 днів від дати початку, записаної в ewidencji. Це не строк від довільної дати, яку роботодавець обговорив із працівником.`,
-              law.text`Тимчасово не почати й остаточно відмовитися від початку є різними фактами. Якщо людина вже не почне роботу або завершила її раніше зареєстрованої дати, ${law.article("70", "art. 70 ust. 2")} передбачає Powiadomienie, że cudzoziemiec zakończył pracę lub nie podejmie pracy (PSZ-PZPC). Тут закон не встановлює числового строку в сім чи 14 днів. Саме це повідомлення спричиняє unieważnienie wpisu z mocy prawa за ${law.article("70", "art. 70 ust. 5")}: запис втрачає чинність у силу закону, без потреби в окремому рішенні про це. Звичайне повідомлення про затримку початку такого наслідку не має.`,
-              "Названі послуги відповідають новому режиму oświadczeń. У довідці praca.gov.pl залишаються також старі форми. Код із попередньої справи не треба автоматично переносити до нового запису; перевіряють, до якого oświadczenia належить дія.",
+              documents.text`За ${law.article("70", "art. 70 ust. 1")} польський суб'єкт, чиє oświadczenie зареєстровано, повідомляє відповідного starostę про фактичний початок роботи протягом семи днів від початку. Послуга називається ${documents.document("declaration-start-notification", "Powiadomienie o podjęciu pracy przez cudzoziemca (PSZ-PPPC)")}. Якщо робота не почалася, подають ${documents.document("declaration-non-start-notification", "Powiadomienie o niepodjęciu pracy przez cudzoziemca (PSZ-PNPC)")} протягом 14 днів від дати початку, записаної в ewidencji. Це не строк від довільної дати, яку роботодавець обговорив із працівником.`,
+              documents.text`Тимчасово не почати й остаточно відмовитися від початку є різними фактами. Якщо людина вже не почне роботу або завершила її раніше зареєстрованої дати, ${law.article("70", "art. 70 ust. 2")} передбачає ${documents.document("declaration-end-notification", "Powiadomienie, że cudzoziemiec zakończył pracę lub nie podejmie pracy (PSZ-PZPC)")}. Тут закон не встановлює числового строку в сім чи 14 днів. Саме це повідомлення спричиняє unieważnienie wpisu z mocy prawa за ${law.article("70", "art. 70 ust. 5")}: запис втрачає чинність у силу закону, без потреби в окремому рішенні про це. Звичайне повідомлення про затримку початку такого наслідку не має.`,
+              law.text`Дата запису впливає на вибір форми. ${law.external("PUP Tarnów", declarationFormsUrl)} описує попередні форми для записів до 01.06.2026; їх не замінюють довільно схожою новою послугою. Це питання технічного обслуговування, а не інші строки за старим законом: ${law.article("103", "art. 103 ust. 3")} поширює цей закон також на oświadczenia, зареєстровані за попередніми правилами. Для старішого запису спосіб подання звіряють із чинною інструкцією свого PUP.`,
               documents.text`${documents.document("ukraine-work-notification", "Powiadomienie o powierzeniu pracy cudzoziemcowi")} (PSZ-PPWPU) за ${law.article("5a")} стосується окремого режиму. Польський роботодавець подає його до PUP за своїм місцезнаходженням або постійним місцем проживання протягом семи днів від фактичного початку. Повторне повідомлення протягом семи днів пов'язане з переліченими змінами: виду договору, посади чи виду роботи, зменшення часу або кількості годин, зменшення місячної чи погодинної винагороди. Не кожна зміна даних є такою подією.`,
               law.text`${law.article("5a")} безпосередньо регулює тимчасовий захист. ${law.external("Art. 41 ustawy z 23.01.2026", transitionUrl)} поширює відповідне застосування на законно перебуваючих громадян України без такого захисту протягом трьох років від 05.03.2026. ${law.external("Art. 40", transitionUrl)} зберігає визначені попередні повідомлення. Сам факт зміни закону не означає, що для кожного вже працюючого громадянина України потрібне нове повідомлення.`,
               foreignersLaw.text`Zezwolenie na pobyt czasowy i pracę не є звичайним zezwoleniem na pracę з попереднього розділу. ${foreignersLaw.article("119", "Art. 119 ust. 2")} дає роботодавцеві 15 робочих днів для визначених змін, а ${foreignersLaw.article("121", "art. 121 ust. 4")} дає роботодавцеві, названому в дозволі, 15 календарних днів для повідомлення про втрату роботи. Власний обов'язок іноземця за ${foreignersLaw.article("121", "art. 121 ust. 1")} має строк 15 робочих днів. Адресатом є відповідний wojewoda, з окремим правилом для дозволу, виданого в другій інстанції. Повідомлення роботодавця і дія працівника потребують окремої перевірки.`,

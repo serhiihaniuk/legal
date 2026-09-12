@@ -1,3 +1,6 @@
+import declarationStartNotificationTopic from "./editorial/guides/declaration-start-notification"
+import declarationNonStartNotificationTopic from "./editorial/guides/declaration-non-start-notification"
+import declarationEndNotificationTopic from "./editorial/guides/declaration-end-notification"
 import workPermitNonStartNotificationTopic from "./editorial/guides/work-permit-non-start-notification"
 import workPermitInterruptionNotificationTopic from "./editorial/guides/work-permit-interruption-notification"
 import workPermitEndNotificationTopic from "./editorial/guides/work-permit-end-notification"
@@ -129,6 +132,9 @@ export const documentGuides: readonly DocumentGuide[] =
     workPermitNonStartNotificationTopic.body,
     workPermitInterruptionNotificationTopic.body,
     workPermitEndNotificationTopic.body,
+    declarationStartNotificationTopic.body,
+    declarationNonStartNotificationTopic.body,
+    declarationEndNotificationTopic.body,
     workPermitDocumentTopic.body,
     agencyUserArrangementsTopic.body,
     agencyReferralConfirmationTopic.body,
