@@ -2,11 +2,11 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1843,
-    "reviewed": 236,
+    "totalFiles": 1844,
+    "reviewed": 243,
     "byFamily": {
       "shared-renderer": 38,
-      "supporting-copy": 82,
+      "supporting-copy": 83,
       "case-guide": 9,
       "evidence-document": 106,
       "provision": 1478,
@@ -1143,9 +1143,9 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-1.ts",
       "family": "provision",
-      "contentHash": "0071349e97119f74eb28da96ba6debac4870eda80cbd9cc70fa6311ffd78a7b6",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "aac89b92902ae3b0f5e51d08db337f609581e5e53f95c83af83a970330af00f5",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-10.ts",
@@ -1990,9 +1990,9 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-2.ts",
       "family": "provision",
-      "contentHash": "3a5dfe8e860f282ab797a6e8b07f2734b0e1d5c519ad9e429197f432446f4427",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "6a8a7e0d2a081718c2f550320f8b3d1f59ae448df37dd297ef45b84eed9f323f",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-20.ts",
@@ -2522,16 +2522,16 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-2a.ts",
       "family": "provision",
-      "contentHash": "31d7dd0e18360d125bf0e97dbc483ec8489846b5438e36aaa357edbdb86da9e6",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "590d75b4dca4cbf12616d2e336e10f9188aa0bc8dc9f3cd6ed1fbeee3a15a10b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-3.ts",
       "family": "provision",
-      "contentHash": "4a6d431c34f264d77bfc46ecdf762d58aa119716ea6df78dc244849f643527a6",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "a11a382f10a3166c28f51460057e5fb2198f6c5b188fd6f4d3b78bf02d85ce18",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-30.ts",
@@ -2634,9 +2634,9 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-4.ts",
       "family": "provision",
-      "contentHash": "830814a72aa9138aaa6c89c39a1b2cfc1923d428d352a8817dfdad10b64c63bf",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "221af97c185677d095372beae315f36a26fddea2d101d9d813e9d99e66b8707a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-40.ts",
@@ -2732,9 +2732,9 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-5.ts",
       "family": "provision",
-      "contentHash": "bdff11054360ed4bcfb2c1e7d9174e35d77a0f0e2f19b9538ece03639d1a5afc",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "13d6171692f5a587b50b8c72c92a1bcc8ed45f72256aefeaf6612f178f5284cc",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-50.ts",
@@ -12747,6 +12747,13 @@
       "evidence": null
     },
     {
+      "path": "app/features/law-library/ui/provision/provision-explanation.tsx",
+      "family": "supporting-copy",
+      "contentHash": "01ac8b7eba8136fd9e63f9af58039fd4f0fdb78b2032568d00c2da118f65b301",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+    },
+    {
       "path": "app/features/law-library/ui/provision/provision-rule-breakdown.tsx",
       "family": "supporting-copy",
       "contentHash": "2c89a53fb3e411ef0257ac8d1628ec0e84eb860b294d1169b2d3664873ab46b3",
@@ -12882,7 +12889,7 @@
     {
       "path": "app/routes/law-provision.tsx",
       "family": "route-copy",
-      "contentHash": "d32c3334834237d79cf0e7ca28d889b0a64d27aac2076a23c7b8221a436e2bc4",
+      "contentHash": "fbf7fc2d7866b6261a8548c9a29a591f81a8e3b5ed97989092328b9b2d86eb0a",
       "writing": "pending",
       "evidence": null
     },

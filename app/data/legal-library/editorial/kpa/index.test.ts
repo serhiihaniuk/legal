@@ -48,8 +48,8 @@ describe("canonical KPA editorial", () => {
       expect(resolution.explanation.documentId).toBe("kpa")
       expect(resolution.explanation.provisionId).toBe("kpa-art-1")
       expect(resolution.explanation.sourceEditionId).toBe("kpa-2025-1691")
-      expect(resolution.explanation.legalStateDate).toBe("2026-07-18")
-      expect(resolution.explanation.verifiedAt).toBe("2026-07-18")
+      expect(resolution.explanation.legalStateDate).toBe("2026-09-12")
+      expect(resolution.explanation.verifiedAt).toBe("2026-09-12")
       expect(resolution.explanation.reviewStatus).toBe("reviewed")
       expect(resolution.explanation.language).toBe("uk")
       expect(resolution.explanation.claims).toEqual([
@@ -64,6 +64,13 @@ describe("canonical KPA editorial", () => {
           sourceLocator: "Art. 1",
         }),
       ])
+    }
+    const unchanged = await getExplanation("kpa", "kpa-art-6")
+    expect(unchanged.status).toBe("reviewed")
+    if (unchanged.status === "reviewed") {
+      expect(unchanged.explanation.legalStateDate).toBe("2026-07-18")
+      expect(unchanged.explanation.verifiedAt).toBe("2026-07-18")
+      expect(unchanged.explanation.sourceEditionId).toBe("kpa-2025-1691")
     }
   })
 })

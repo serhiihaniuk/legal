@@ -1,6 +1,6 @@
 import { sourceNoteRanges } from "~/data/legal-library/source-layout"
 import { ProvisionSourceReader } from "~/features/law-library/ui/provision/provision-source-reader"
-import { ProvisionRuleBreakdown } from "~/features/law-library/ui/provision/provision-rule-breakdown"
+import { ProvisionExplanation } from "~/features/law-library/ui/provision/provision-explanation"
 import { ProvisionDocumentGuide } from "~/features/law-library/ui/provision/provision-document-guide"
 import { ArrowLeft, ArrowRight, FileText } from "lucide-react"
 import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router"
@@ -12,11 +12,7 @@ import {
   formatProvisionEffectiveDate,
   LegalProvisionSelector,
 } from "~/features/law-library"
-import {
-  LegalLink,
-  LegalText,
-  OfficialSourceLink,
-} from "~/components/references"
+import { LegalLink, OfficialSourceLink } from "~/components/references"
 import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 import {
@@ -34,7 +30,7 @@ import {
   parseLegalProvisionReference,
 } from "~/data/legal-library"
 import { resolveProvisionPublication } from "~/data/legal-knowledge"
-import { legalTextPlainText } from "~/data/legal-library/legal-text"
+import { buildProvisionExplanationView } from "~/features/law-library/model/provision-explanation"
 import { officialSourceIdByLegalDocument } from "~/data/legal-library/references/official-sources"
 import { DocumentArticle } from "~/components/patterns/document-content"
 import { DefinitionRows } from "~/components/patterns/definition-rows"
@@ -42,17 +38,10 @@ import { DefinitionRows } from "~/components/patterns/definition-rows"
 const toc = [
   { href: "#legal-provision-overview", label: "Огляд норми" },
   { href: "#legal-provision-explanation", label: "Як читати норму" },
-  { href: "#legal-provision-claims", label: "Шари пояснення" },
+  { href: "#legal-provision-claims", label: "Додаткові пояснення" },
   { href: "#legal-provision-source", label: "Текст норми" },
   { href: "#legal-provision-place", label: "Місце в акті" },
 ] as const
-
-const claimKindLabels = {
-  "statute-text": "Прямо з тексту припису",
-  "official-guidance": "Офіційне роз’яснення",
-  "case-law": "Orzecznictwo",
-  "practical-inference": "Практичний висновок",
-} as const
 
 const provisionStatusLabels = {
   active: "чинна",
@@ -106,6 +95,9 @@ export default function LawProvisionRoute() {
   const provisions = listProvisions(document.id)
   const reviewedExplanation =
     explanation.status === "reviewed" ? explanation.explanation : undefined
+  const explanationView = reviewedExplanation
+    ? buildProvisionExplanationView(reviewedExplanation)
+    : undefined
   const provisionReference = parseLegalProvisionReference({
     kind: "legal-provision",
     documentId: document.id,
@@ -153,7 +145,7 @@ export default function LawProvisionRoute() {
         />
       }
       toc={
-        reviewedExplanation
+        explanationView?.additionalClaims.length
           ? toc
           : toc.filter((item) => item.href !== "#legal-provision-claims")
       }
@@ -320,77 +312,19 @@ export default function LawProvisionRoute() {
         {provisionReference ? (
           <ProvisionDocumentGuide reference={provisionReference} />
         ) : null}
-        <section id="legal-provision-explanation">
-          <h2>Як читати цю норму</h2>
-          {reviewedExplanation ? (
-            <>
-              <p className="text-lg leading-8">
-                <LegalText
-                  context="provision-page"
-                  text={reviewedExplanation.summary}
-                />
-              </p>
-              <ProvisionRuleBreakdown rules={reviewedExplanation.rules} />
-              <h3>Правовий наслідок</h3>
-              <p>
-                <LegalText
-                  context="provision-page"
-                  text={reviewedExplanation.legalEffect}
-                />
-              </p>
-              <h3>Місце у справі іноземця</h3>
-              <p>
-                <LegalText
-                  context="provision-page"
-                  text={reviewedExplanation.foreignersCase}
-                />
-              </p>
-            </>
-          ) : (
+        {explanationView ? (
+          <ProvisionExplanation view={explanationView} />
+        ) : (
+          <section id="legal-provision-explanation">
+            <h2>Як читати цю норму</h2>
             <blockquote>
               Для цієї норми ще немає пояснення, перевіреного для редакції{" "}
               {edition.manifest.citation}. Нижче доступний польський текст і
               точна сторінка офіційного PDF. Неперевірена чернетка не
               показується як навчальний матеріал.
             </blockquote>
-          )}
-        </section>
-
-        {reviewedExplanation ? (
-          <section id="legal-provision-claims">
-            <h2>Відрізняйте текст норми від висновку</h2>
-            <p>
-              Під час роботи позначайте, що прямо випливає з przepisu, а що є
-              офіційним поясненням, orzecznictwem або практичним висновком.
-            </p>
-            <div
-              data-not-typeset
-              className="not-typeset mt-6 divide-y border-y"
-            >
-              {reviewedExplanation.claims.map((claim, index) => (
-                <div
-                  key={`${claim.kind}-${legalTextPlainText(claim.text)}-${index}`}
-                  className="grid gap-2 py-4 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-5"
-                >
-                  <div>
-                    <strong className="block text-sm">
-                      {claimKindLabels[claim.kind]}
-                    </strong>
-                    {claim.sourceLocator ? (
-                      <span className="mt-1 block font-mono text-xs text-muted-foreground">
-                        {claim.sourceLocator}
-                      </span>
-                    ) : null}
-                  </div>
-                  <p className="text-sm leading-6 text-muted-foreground">
-                    <LegalText context="provision-page" text={claim.text} />
-                  </p>
-                </div>
-              ))}
-            </div>
           </section>
-        ) : null}
-
+        )}
         <section id="legal-provision-source">
           <h2>
             {provision.kind === "annex"

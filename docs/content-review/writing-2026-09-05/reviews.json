@@ -1263,5 +1263,40 @@
     "path": "app/data/legal-library/learning/modules/powierzanie-pracy/uczestnicy-i-definicje.ts",
     "contentHash": "8f974c621dfa2e2fa18faefe85948907509da683c8da51c1da22446bd894b4cf",
     "evidence": "docs/content-review/writing-2026-09-05/batches/101-work-definitions.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/kpa/articles/article-art-1.ts",
+    "contentHash": "aac89b92902ae3b0f5e51d08db337f609581e5e53f95c83af83a970330af00f5",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/kpa/articles/article-art-2.ts",
+    "contentHash": "6a8a7e0d2a081718c2f550320f8b3d1f59ae448df37dd297ef45b84eed9f323f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/kpa/articles/article-art-2a.ts",
+    "contentHash": "590d75b4dca4cbf12616d2e336e10f9188aa0bc8dc9f3cd6ed1fbeee3a15a10b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/kpa/articles/article-art-3.ts",
+    "contentHash": "a11a382f10a3166c28f51460057e5fb2198f6c5b188fd6f4d3b78bf02d85ce18",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/kpa/articles/article-art-4.ts",
+    "contentHash": "221af97c185677d095372beae315f36a26fddea2d101d9d813e9d99e66b8707a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/kpa/articles/article-art-5.ts",
+    "contentHash": "13d6171692f5a587b50b8c72c92a1bcc8ed45f72256aefeaf6612f178f5284cc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+  },
+  {
+    "path": "app/features/law-library/ui/provision/provision-explanation.tsx",
+    "contentHash": "01ac8b7eba8136fd9e63f9af58039fd4f0fdb78b2032568d00c2da118f65b301",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
   }
 ]
