@@ -1198,5 +1198,20 @@
     "path": "app/data/legal-map/editorial/topics/delegation.ts",
     "contentHash": "85fa538fd7404f37cc98dd3f1350d7735e21f60554cfa03b2f63792d710ff2bb",
     "evidence": "docs/content-review/writing-2026-09-05/batches/95-posting-work-permit.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/a1-certificate.ts",
+    "contentHash": "b1571a19c0b3349a07c7158cf68f3cfb9c27e36a03713b33fac2a9a6d1e7c630",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
+    "contentHash": "34241f47e37ee9b26c34238542c2c8217f6f2093a9b2606189ec6a8dcd1186d2",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/delegation.ts",
+    "contentHash": "7762507ccd749e0a8cb0ca83f49b3680e39c65df00ad75d37fe5c29a5e66edb4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
   }
 ]

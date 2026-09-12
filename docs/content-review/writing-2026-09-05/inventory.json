@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1840,
-    "reviewed": 230,
+    "totalFiles": 1841,
+    "reviewed": 231,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 103,
+      "evidence-document": 104,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -362,6 +362,13 @@
       "contentHash": "894ff93de3f6d917bd47acdf83142e16a0516a354110220e28c149e6b18f3229",
       "writing": "pending",
       "evidence": null
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/a1-certificate.ts",
+      "family": "evidence-document",
+      "contentHash": "b1571a19c0b3349a07c7158cf68f3cfb9c27e36a03713b33fac2a9a6d1e7c630",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/administrative-appeal.ts",
@@ -744,9 +751,9 @@
     {
       "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
       "family": "evidence-document",
-      "contentHash": "949bd68ad6b597e3910b7b5bff3f2e2d330c783c0072bb224deb8f31e9b24909",
+      "contentHash": "34241f47e37ee9b26c34238542c2c8217f6f2093a9b2606189ec6a8dcd1186d2",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/95-posting-work-permit.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
@@ -11909,9 +11916,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/delegation.ts",
       "family": "map-topic",
-      "contentHash": "85fa538fd7404f37cc98dd3f1350d7735e21f60554cfa03b2f63792d710ff2bb",
+      "contentHash": "7762507ccd749e0a8cb0ca83f49b3680e39c65df00ad75d37fe5c29a5e66edb4",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/95-posting-work-permit.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/document-matrix.ts",

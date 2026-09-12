@@ -123,6 +123,7 @@ const guide: DocumentGuide = {
     "Чи не підміняють дозволом окремі питання перебування, повідомлення PIP та соціального страхування?",
   ],
   relatedDocuments: [
+    "a1-certificate",
     "work-permit",
     "corporate-work-permit",
     "seasonal-work-permit",
