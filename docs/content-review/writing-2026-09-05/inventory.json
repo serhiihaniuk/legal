@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1832,
-    "reviewed": 209,
+    "totalFiles": 1836,
+    "reviewed": 213,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 95,
+      "evidence-document": 99,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -992,6 +992,34 @@
       "contentHash": "e650b15ab5e60d9e32c3c93a7a04eec1c631c9e95ef2af417e3a4fd2c55358ea",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/07-company-records.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/work-permit-end-notification.ts",
+      "family": "evidence-document",
+      "contentHash": "b050eab1c4ec213dfabffb1894479ddba94b95111db09c5538011e386719bdaa",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/work-permit-interruption-notification.ts",
+      "family": "evidence-document",
+      "contentHash": "e0a2fc8c6a2a334ebe869f2bb3493efa8ce48244fe25fca0a22bfc1550b9ff1a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/work-permit-non-start-notification.ts",
+      "family": "evidence-document",
+      "contentHash": "9d306983ff62000f5502b7a984e897e899e0a4721502ddeb5d59789bafe42387",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/work-permit.ts",
+      "family": "evidence-document",
+      "contentHash": "4d40410641d38cd5b24983de0f1d00639c403436fb8fbc53abb87c4cb5ec91cc",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/86-work-permit.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",
@@ -11874,9 +11902,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
       "family": "map-topic",
-      "contentHash": "59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20",
+      "contentHash": "63166aec58a2024e2b9cba2684f9109b1e06a43bb60f5545c17c70a5c874daa6",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/77-employer-duties.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
@@ -12196,9 +12224,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/work-permit.ts",
       "family": "map-topic",
-      "contentHash": "aa0169d8ae681a5933f420724e7ffe36c6578a0c2e5740d61ed1fb9e229bdc8f",
+      "contentHash": "5fa5af8830b866bd77b8e828cad4f089c652fd943b2b09d3cecb5df05b74a20d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/59-work-instruments-and-zus.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/86-work-permit.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/wsa.ts",

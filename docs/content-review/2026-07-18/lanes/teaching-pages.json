@@ -2974,6 +2974,126 @@
       }
     },
     {
+      "id": "evidence-document:work-permit-end-notification",
+      "path": "app/data/document-library/editorial/guides/work-permit-end-notification.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "work-permit-end-notification",
+      "contentId": "work-permit-end-notification",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "b050eab1c4ec213dfabffb1894479ddba94b95111db09c5538011e386719bdaa",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:work-permit-interruption-notification",
+      "path": "app/data/document-library/editorial/guides/work-permit-interruption-notification.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "work-permit-interruption-notification",
+      "contentId": "work-permit-interruption-notification",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "e0a2fc8c6a2a334ebe869f2bb3493efa8ce48244fe25fca0a22bfc1550b9ff1a",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:work-permit-non-start-notification",
+      "path": "app/data/document-library/editorial/guides/work-permit-non-start-notification.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "work-permit-non-start-notification",
+      "contentId": "work-permit-non-start-notification",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "9d306983ff62000f5502b7a984e897e899e0a4721502ddeb5d59789bafe42387",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:work-permit",
+      "path": "app/data/document-library/editorial/guides/work-permit.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "work-permit",
+      "contentId": "work-permit",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "4d40410641d38cd5b24983de0f1d00639c403436fb8fbc53abb87c4cb5ec91cc",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:zus-confirmation",
       "path": "app/data/document-library/editorial/guides/zus-confirmation.ts",
       "family": "evidence-document",
@@ -3598,7 +3718,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20",
+      "contentHash": "63166aec58a2024e2b9cba2684f9109b1e06a43bb60f5545c17c70a5c874daa6",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -5042,7 +5162,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "aa0169d8ae681a5933f420724e7ffe36c6578a0c2e5740d61ed1fb9e229bdc8f",
+      "contentHash": "5fa5af8830b866bd77b8e828cad4f089c652fd943b2b09d3cecb5df05b74a20d",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,

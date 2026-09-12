@@ -2,6 +2,10 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
+  | "work-permit-non-start-notification"
+  | "work-permit-interruption-notification"
+  | "work-permit-end-notification"
+  | "work-permit"
   | "agency-user-arrangements"
   | "agency-referral-confirmation"
   | "employment-agency-register"
@@ -187,6 +191,10 @@ export type EvidenceDocumentReferenceResolution =
     }
 
 export const evidenceDocumentIds = [
+  "work-permit-non-start-notification",
+  "work-permit-interruption-notification",
+  "work-permit-end-notification",
+  "work-permit",
   "agency-user-arrangements",
   "agency-referral-confirmation",
   "employment-agency-register",

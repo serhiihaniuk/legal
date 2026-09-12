@@ -1,3 +1,7 @@
+import workPermitNonStartNotificationTopic from "./editorial/guides/work-permit-non-start-notification"
+import workPermitInterruptionNotificationTopic from "./editorial/guides/work-permit-interruption-notification"
+import workPermitEndNotificationTopic from "./editorial/guides/work-permit-end-notification"
+import workPermitDocumentTopic from "./editorial/guides/work-permit"
 import agencyUserArrangementsTopic from "./editorial/guides/agency-user-arrangements"
 import agencyReferralConfirmationTopic from "./editorial/guides/agency-referral-confirmation"
 import employmentAgencyRegisterTopic from "./editorial/guides/employment-agency-register"
@@ -122,6 +126,10 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    workPermitNonStartNotificationTopic.body,
+    workPermitInterruptionNotificationTopic.body,
+    workPermitEndNotificationTopic.body,
+    workPermitDocumentTopic.body,
     agencyUserArrangementsTopic.body,
     agencyReferralConfirmationTopic.body,
     employmentAgencyRegisterTopic.body,

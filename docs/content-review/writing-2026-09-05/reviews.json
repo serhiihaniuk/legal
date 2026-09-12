@@ -1058,5 +1058,35 @@
     "path": "app/data/document-library/editorial/guides/agency-referral-confirmation.ts",
     "contentHash": "d5883b9cfda101c9afc72e333a7f355a6b5f5b853a38015cae0b578f6a3c8b11",
     "evidence": "docs/content-review/writing-2026-09-05/batches/85-agency-user-arrangements.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/work-permit.ts",
+    "contentHash": "4d40410641d38cd5b24983de0f1d00639c403436fb8fbc53abb87c4cb5ec91cc",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/86-work-permit.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/work-permit.ts",
+    "contentHash": "5fa5af8830b866bd77b8e828cad4f089c652fd943b2b09d3cecb5df05b74a20d",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/86-work-permit.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/work-permit-non-start-notification.ts",
+    "contentHash": "9d306983ff62000f5502b7a984e897e899e0a4721502ddeb5d59789bafe42387",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/work-permit-interruption-notification.ts",
+    "contentHash": "e0a2fc8c6a2a334ebe869f2bb3493efa8ce48244fe25fca0a22bfc1550b9ff1a",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/work-permit-end-notification.ts",
+    "contentHash": "b050eab1c4ec213dfabffb1894479ddba94b95111db09c5538011e386719bdaa",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
+    "contentHash": "63166aec58a2024e2b9cba2684f9109b1e06a43bb60f5545c17c70a5c874daa6",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/87-work-permit-notifications.md"
   }
 ]
