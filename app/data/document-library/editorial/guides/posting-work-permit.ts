@@ -123,6 +123,7 @@ const guide: DocumentGuide = {
     "Чи не підміняють дозволом окремі питання перебування, повідомлення PIP та соціального страхування?",
   ],
   relatedDocuments: [
+    "posting-assignment-letter",
     "foreign-employer-register",
     "a1-certificate",
     "work-permit",

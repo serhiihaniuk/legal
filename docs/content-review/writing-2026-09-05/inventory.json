@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1842,
-    "reviewed": 232,
+    "totalFiles": 1843,
+    "reviewed": 233,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 105,
+      "evidence-document": 106,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -590,9 +590,9 @@
     {
       "path": "app/data/document-library/editorial/guides/employment-contract.ts",
       "family": "evidence-document",
-      "contentHash": "fa60988d73b1607be0b782c357f550645dd566a475a1b4d988a7b0966cf5e9d0",
+      "contentHash": "819ff812c8d8177a301378234f48a468b787d1f2061f5863680bf7fe3f9fe4f5",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/03-employment-and-insurance.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/98-assignment-evidence-preparation.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/employment-income-certificate.ts",
@@ -756,11 +756,18 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/10-qualifications-and-language.md"
     },
     {
+      "path": "app/data/document-library/editorial/guides/posting-assignment-letter.ts",
+      "family": "evidence-document",
+      "contentHash": "e92a7df4e43bf545ebc238eab990d7182855565a163d82dd1d36c5409d3bf117",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/98-assignment-evidence-preparation.md"
+    },
+    {
       "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
       "family": "evidence-document",
-      "contentHash": "f436829a8f8c83029bb0a535dbe5b87221417c04af95fa2f9126b08004717865",
+      "contentHash": "6988ae70b73b92d66711e6b5b8623631c5aafec208ceb7c173347044f39e2459",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/97-foreign-employer-register-preparation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/98-assignment-evidence-preparation.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
@@ -11923,9 +11930,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/delegation.ts",
       "family": "map-topic",
-      "contentHash": "e9671770719d39b9260c2bf5fe9e49b7df787d489560bd8ede1d6e3aba19e233",
+      "contentHash": "a79a0cdc7db7b88ee44fb2b3eabc129c86333c1dfda8e5002fd4d06394fba16c",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/97-foreign-employer-register-preparation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/98-assignment-evidence-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/document-matrix.ts",

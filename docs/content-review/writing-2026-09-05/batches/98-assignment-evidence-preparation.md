@@ -48,3 +48,26 @@ Name the actual supporting records individually: foreign employment contract and
 Before implementation, the author and independent reviewer should agree on the final document title and specimen facts. Recheck the cited provisions and the selected foreign-law assumptions if the example goes beyond a private factual letter. A Polish employment-contract destination must not silently supply foreign contract law. Current precise guides may be linked for the register, issued permit, PIP notice, A1, translation and actual payment records where their role is explained; use plain record names where no honest exact destination exists.
 
 Only this preparation file was authored. No product changes, generated files, tests, build, global baseline update or commit were performed. Future guide writing, independent full review, integration and browser verification remain pending.
+
+## Completed 12.09.2026
+
+Added posting-assignment-letter.ts with four explanatory sections and a completed Polish illustrative private letter. The example separates employment from actual foreign work and planned Polish work. After root review, the author added current 3–5 August task/time records so the employer's 5 August statement does not infer present work solely from May–July history. The preparer's comparison ends on 6 August; there is no filed application, issued permit or completed October assignment. The selected historical period is not a statutory minimum. The Polish specimen is explicitly not an official form or sworn translation.
+
+Ohm authored the guide; Copernicus independently read every field, section and specimen paragraph. Root read the complete draft and final current-work changes. The final grammar correction changed only the Ukrainian case ending. Source checks covered current work act 621, art. 40 ust. 1 and art. 41, and regulation 1629, §4 pkt 1, 3–7 and §8 ust. 1–3, 8. The reviewer confirmed current act status and the listed amendments. Posting act 1682, art. 14, 25 and 26, was checked for the scope distinction; the final guide does not expand into a full inspection manual.
+
+Root added a bounded foreign-contract section to employment-contract.ts, linking the actual assignment guide. It explains Rzym I art. 8, the ordinary-workplace rule, fallback and closer-connection exception, then distinguishes compulsory Polish posting conditions and contractual amendments. Root and the reviewer checked the current EUR-Lex consolidation 02008R0593-20080724 and posting act 1682, art. 4–5 and 26. Source notes date this limited verification to 12.09.2026; the existing guide-wide 05.09 date and old example remain unchanged. This does not determine the applicable Indian contract law.
+
+Integration adds an optional evidence row and one explanatory paragraph to delegation.ts, plus a related-document link from the posting permit. No existing permit or exemption fiction changed. Runtime IDs, the catalog, knowledge imports and the fixed document count were updated to 106.
+
+Final independently accepted SHA256 values:
+
+- posting-assignment-letter.ts: E92A7DF4E43BF545EBC238EAB990D7182855565A163D82DD1D36C5409D3BF117
+- employment-contract.ts: 819FF812C8D8177A301378234F48A468B787D1F2061F5863680BF7FE3F9FE4F5
+- delegation.ts: A79A0CDC7DB7B88EE44FB2B3EABC129C86333C1DFDA8E5002FD4D06394FBA16C
+- posting-work-permit.ts: 6988AE70B73B92D66711E6B5B8623631C5AAFEC208CEB7C173347044F39E2459
+
+The first runtime check caught bare legal citations in root's two new employment-contract source notes. Both notes now use explicit typed external citations without changing their words. The independent reviewer accepted the final wrappers and destinations. The final full npm run verify passed: both typechecks, generated checks, lint, formatting, 263 application tests, 70 corpus tests with one skipped, 15 review tests, editorial validation and production build. Reference previews passed for 106 documents, 62 map nodes, nine cases and 2,573 provisions. The baseline review ledger contains 1,753 entries; this is not strict whole-project legal acceptance.
+
+Root visually inspected the actual letter at 1440×1000 and 360×800. Neither viewport had horizontal overflow. The mobile employment-contract page rendered the new section and correct Rome I destination. Keyboard activation of the actual map and contract links opened the assignment-letter route. A first keyboard command using an unquoted PowerShell ref failed in the shell; the quoted-ref retry passed. Final browser error output was empty; console output contained Vite and React DevTools messages. The isolated batch98 browser was closed. Application screenshots: C:/Users/Serge/.agent-browser/tmp/screenshots/screenshot-1789238177382.png and screenshot-1789238182327.png.
+
+Batch 99 inventories the remaining law modules and records the required authored-example projection fix as part of the anatomy pilot. Remaining law-module/provision writing, shared copy, source fidelity and whole-project legal acceptance keep the full goal active.

@@ -15,6 +15,7 @@ import pipPostingDeclarationTopic from "./editorial/guides/pip-posting-declarati
 import postingWorkPermitTopic from "./editorial/guides/posting-work-permit"
 import a1CertificateTopic from "./editorial/guides/a1-certificate"
 import foreignEmployerRegisterTopic from "./editorial/guides/foreign-employer-register"
+import postingAssignmentLetterTopic from "./editorial/guides/posting-assignment-letter"
 import seasonalArrivalStatementTopic from "./editorial/guides/seasonal-arrival-statement"
 import seasonalRegistrationCertificateTopic from "./editorial/guides/seasonal-registration-certificate"
 import seasonalWorkPermitTopic from "./editorial/guides/seasonal-work-permit"
@@ -149,6 +150,7 @@ export const documentGuides: readonly DocumentGuide[] =
     postingWorkPermitTopic.body,
     a1CertificateTopic.body,
     foreignEmployerRegisterTopic.body,
+    postingAssignmentLetterTopic.body,
     seasonalArrivalStatementTopic.body,
     seasonalRegistrationCertificateTopic.body,
     seasonalWorkPermitTopic.body,

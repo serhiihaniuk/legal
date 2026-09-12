@@ -1246,7 +1246,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "fa60988d73b1607be0b782c357f550645dd566a475a1b4d988a7b0966cf5e9d0",
+      "contentHash": "819ff812c8d8177a301378234f48a468b787d1f2061f5863680bf7fe3f9fe4f5",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -1954,6 +1954,36 @@
       }
     },
     {
+      "id": "evidence-document:posting-assignment-letter",
+      "path": "app/data/document-library/editorial/guides/posting-assignment-letter.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "posting-assignment-letter",
+      "contentId": "posting-assignment-letter",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "e92a7df4e43bf545ebc238eab990d7182855565a163d82dd1d36c5409d3bf117",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:posting-work-permit",
       "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
       "family": "evidence-document",
@@ -1966,7 +1996,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "f436829a8f8c83029bb0a535dbe5b87221417c04af95fa2f9126b08004717865",
+      "contentHash": "6988ae70b73b92d66711e6b5b8623631c5aafec208ceb7c173347044f39e2459",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -3796,7 +3826,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "e9671770719d39b9260c2bf5fe9e49b7df787d489560bd8ede1d6e3aba19e233",
+      "contentHash": "a79a0cdc7db7b88ee44fb2b3eabc129c86333c1dfda8e5002fd4d06394fba16c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,

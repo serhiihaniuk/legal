@@ -3,12 +3,19 @@ import {
   type KnowledgeUnit,
 } from "~/data/legal-knowledge/contracts"
 import type { DocumentGuide } from "~/data/document-library/contracts"
+import { createEvidenceDocumentTextAuthor } from "../../legal-text"
 import {
   documentSources,
   foreignersLaw,
   regulationLaw,
   workLaw,
 } from "../authoring"
+
+const documents = createEvidenceDocumentTextAuthor()
+const romeUrl =
+  "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:02008R0593-20080724"
+const postingUrl =
+  "https://eli.gov.pl/api/acts/DU/2025/1682/text/O/D20251682.pdf"
 
 const guide: DocumentGuide = {
   id: "employment-contract",
@@ -28,6 +35,16 @@ const guide: DocumentGuide = {
     "Не встановлює сам по собі право перебувати або працювати в Польщі.",
   ],
   explanation: [
+    {
+      id: "foreign-contract-scope",
+      title: "Закордонний договір не стає польським через направлення",
+      paragraphs: [
+        "Наведені нижче правила Kodeksu pracy пояснюють договір, до якого застосовується польське трудове право. У справі про направлення може бути договір із закордонним роботодавцем, за яким людина звичайно працює в іншій державі. Його умови й зміни не оцінюють автоматично за польськими правилами лише тому, що документ додано до польської заяви.",
+        workLaw.text`Коли належне право визначають за регламентом Rzym I, ${workLaw.external("art. 8", romeUrl)} враховує вибір сторін, зберігаючи захист працівника, від якого не можна відступити договором за правом, яке діяло б без такого вибору. Без вибору насамперед важлива держава, у якій або з якої людина звичайно працює. Тимчасова робота в іншій державі сама не змінює цього місця. Якщо за цим правилом право визначити неможливо, застосовують право держави підприємства, через яке працівника найнято. Водночас за тіснішого зв'язку договору з іншою державою застосовують її право.`,
+        workLaw.text`Це питання права договору, а не дозволу на працю. При направленні залишаються відповідні обов'язкові польські умови праці за ${workLaw.external("art. 4–5 ustawy o delegowaniu", postingUrl)}; для роботодавців із третіх держав враховують ${workLaw.external("art. 26", postingUrl)}. Іноземне право в договорі не усуває цих гарантій.`,
+        documents.text`${documents.document("posting-assignment-letter", "Лист роботодавця про направлення")} може описувати існуючі відносини й майбутнє завдання. Він сам по собі не є погодженою зміною договору. Якщо змінюються договірні умови, потрібну форму та спосіб зміни визначають за застосовними правилами; лист не дає роботодавцю необмеженого права змінити їх одноосібно.`,
+      ],
+    },
     {
       id: "compare-versions",
       title: "Читати договір разом зі змінами",
@@ -77,12 +94,23 @@ const guide: DocumentGuide = {
     "Дата початку дії кожної зміни, зрозуміла працівникові мовна версія і підписи сторін.",
   ],
   relatedDocuments: [
+    "posting-assignment-letter",
     "employment-annex-1",
     "income-evidence",
     "business-register-information",
     "work-organisation-evidence",
   ],
   sources: [
+    {
+      label: "Rzym I: право, застосовне до трудового договору",
+      url: romeUrl,
+      note: workLaw.text`12.09.2026 перевірено ${workLaw.external("art. 8", romeUrl)} про вибір права, звичайне місце роботи та тимчасову роботу в іншій державі. Цей припис визначає право договору, а не право працювати чи перебувати в Польщі.`,
+    },
+    {
+      label: "Польські умови праці при направленні",
+      url: postingUrl,
+      note: workLaw.text`12.09.2026 перевірено ${workLaw.external("art. 4–5 і 26", postingUrl)} для відмежування права договору від обов'язкових умов при направленні. Це уточнення меж сторінки, не перевірка всього закордонного трудового права.`,
+    },
     documentSources.work,
     documentSources.aliens,
     {

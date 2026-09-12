@@ -175,7 +175,7 @@ const FAMILY_COUNTS = {
   provision: 1478,
   "learning-module": 43,
   "map-topic": 61,
-  "evidence-document": 105,
+  "evidence-document": 106,
   "case-guide": 9,
 }
 
