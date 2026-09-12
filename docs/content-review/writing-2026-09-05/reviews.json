@@ -346,8 +346,8 @@
   },
   {
     "path": "app/data/document-library/editorial/guides/ukraine-work-notification.ts",
-    "contentHash": "ec56e924758ccd0bf8476dfd17f850296815c591b40136303ec541717a542662",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
+    "contentHash": "369293ce3ddc071069376ea5041f08094eea10d72f18e9060158000b80be0c74",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/110-notification-nationality-qualification.md"
   },
   {
     "path": "app/data/case-guides/shared-document-requirements.ts",
@@ -791,8 +791,8 @@
   },
   {
     "path": "app/data/legal-map/editorial/topics/work-entry.ts",
-    "contentHash": "46eab5454e24b285ead5f9dd10deb8eb34cbd9de070da1deeac6c59bf871f5e7",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/60-work-access-overview.md"
+    "contentHash": "75588d8c5a4c536310f24ad05e4d50ad5d73080b7d29be7c765a397f54613f25",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/110-notification-nationality-qualification.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/professional-experience-confirmation.ts",
@@ -1016,8 +1016,8 @@
   },
   {
     "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
-    "contentHash": "59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/77-employer-duties.md"
+    "contentHash": "960b689819760ef4bd522be332defd3f50be02a67ac473bbd6029c8558b9e559",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/110-notification-nationality-qualification.md"
   },
   {
     "path": "app/data/document-library/editorial/guides/employment-certificate.ts",
@@ -1308,5 +1308,10 @@
     "path": "app/data/legal-library/learning/modules/powierzanie-pracy/instrumenty-dostepu.ts",
     "contentHash": "e59895433d72f03a272c1d3d4e2188980034d945dabf890ec09471998293f221",
     "evidence": "docs/content-review/writing-2026-09-05/batches/105-work-instruments.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/powierzanie-pracy/obowiazki-podmiotu.ts",
+    "contentHash": "cfcf3b03bc42644811d4f895f1bd067c32a5a3c9b2607eb9269749e1573f3d75",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/107-employer-duties.md"
   }
 ]

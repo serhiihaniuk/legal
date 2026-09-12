@@ -99,6 +99,49 @@ const moduleView: LegalLearningModuleView = {
 }
 
 describe("legal learning reference treatment", () => {
+  it("keeps the introduction in reading order with its explicit references and optional stage", () => {
+    const { container } = render(
+      <MemoryRouter>
+        <LegalLearningModuleContent
+          module={{
+            ...moduleView,
+            stage: undefined,
+            outcome: "Самостійний вступ до теми.",
+            positionIntro: "Зв'язок із процедурою.",
+            question: "Яке питання пояснює цей модуль?",
+            neededWhen: kpaText.text`Значення ${kpaText.article("64", "цієї норми")} для заяви.`,
+            boundary: kpaText.text`Межа ${kpaText.article("57", "іншої норми")}.`,
+          }}
+          navigation={{}}
+        />
+      </MemoryRouter>
+    )
+    const intro = container.querySelector("#legal-learning-overview")
+    const position = container.querySelector("#legal-learning-position")
+    if (!(intro instanceof HTMLElement) || !(position instanceof HTMLElement))
+      throw new Error("Missing module introduction")
+    expect(intro.textContent).toContain("Самостійний вступ до теми.")
+    expect(intro.textContent).not.toContain("Про що це пояснення")
+    expect(
+      [...position.querySelectorAll("p")].map((p) => p.textContent)
+    ).toEqual([
+      "Зв'язок із процедурою.",
+      "Яке питання пояснює цей модуль?",
+      "Значення цієї норми для заяви.",
+      "Межа іншої норми.",
+    ])
+    expect(
+      within(position)
+        .getByRole("link", { name: "цієї норми" })
+        .getAttribute("href")
+    ).toBe("/law/kpa/provisions/kpa-art-64")
+    expect(
+      within(position)
+        .getByRole("link", { name: "іншої норми" })
+        .getAttribute("href")
+    ).toBe("/law/kpa/provisions/kpa-art-57")
+  })
+
   it("does not turn plain citation text or a matching prefix into a guessed link", () => {
     const { container } = render(
       <MemoryRouter>

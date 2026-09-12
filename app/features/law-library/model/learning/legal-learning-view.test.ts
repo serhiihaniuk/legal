@@ -199,6 +199,7 @@ describe("authored learning module projection", () => {
     expect(view.terms).toEqual([])
     expect(view.method).toEqual([])
     expect(view.positionIntro).toBeUndefined()
+    expect(view.stage).toBeUndefined()
     expect(() => findModuleProvisions(authoredModule, [])).not.toThrow()
   })
 

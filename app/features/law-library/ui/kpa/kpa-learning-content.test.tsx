@@ -2,7 +2,10 @@ import { cleanup, render } from "@testing-library/react"
 import { MemoryRouter } from "react-router"
 import { afterEach, describe, expect, it } from "vitest"
 
-import { kpaGuideModules } from "~/data/legal-library/learning/kpa"
+import {
+  kpaGuideModules,
+  kpaGuideModuleArticles,
+} from "~/data/legal-library/learning/kpa"
 import { legalLearningPlainText } from "~/data/legal-library/learning/legal-text"
 import { KpaLearningContent } from "./kpa-learning-content"
 
@@ -30,6 +33,9 @@ describe("KPA authored module rendering", () => {
       expect(
         container.querySelector("#legal-learning-position")?.textContent
       ).toContain(openingBoundary)
+      expect(
+        container.querySelector("#legal-learning-position p")?.textContent
+      ).toBe(kpaGuideModuleArticles[id as "anatomy" | "system" | "delay"].stage)
       const closing = container.querySelector("#legal-learning-nuances")
       expect(closing?.textContent).not.toContain(openingBoundary)
       for (const text of [

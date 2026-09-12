@@ -56,15 +56,16 @@ export function LegalLearningOverview({
           <LearningText text={module.polish} />
         </p>
         <p className="text-lg leading-8">
-          <strong>Про що це пояснення:</strong>{" "}
           <LearningText text={module.outcome} />
         </p>
       </DocumentHeader>
 
       <section id={headings.position.id}>
-        <p className="text-sm font-medium text-muted-foreground">
-          {module.stage}
-        </p>
+        {module.stage ? (
+          <p className="text-sm font-medium text-muted-foreground">
+            {module.stage}
+          </p>
+        ) : null}
         <h2>{headings.position.title}</h2>
         {module.positionIntro ? (
           <p>
@@ -72,30 +73,19 @@ export function LegalLearningOverview({
           </p>
         ) : null}
 
-        <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
-          {module.question ? (
-            <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-              <p className="text-sm font-medium">Головне питання</p>
-              <p className="text-sm leading-6 text-muted-foreground">
-                <LearningText text={module.question} />
-              </p>
-            </div>
-          ) : null}
-          <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Коли це потрібно</p>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LearningText text={module.neededWhen} />
-            </p>
-          </div>
-          {module.boundary ? (
-            <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-              <p className="text-sm font-medium">Важливе застереження</p>
-              <p className="text-sm leading-6 text-muted-foreground">
-                <LearningText text={module.boundary} />
-              </p>
-            </div>
-          ) : null}
-        </div>
+        {module.question ? (
+          <p>
+            <LearningText text={module.question} />
+          </p>
+        ) : null}
+        <p>
+          <LearningText text={module.neededWhen} />
+        </p>
+        {module.boundary ? (
+          <p>
+            <LearningText text={module.boundary} />
+          </p>
+        ) : null}
 
         {module.coursePhases?.length ? (
           <div data-not-typeset className="not-typeset mt-10">

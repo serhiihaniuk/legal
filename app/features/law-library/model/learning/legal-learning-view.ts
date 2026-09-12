@@ -66,7 +66,7 @@ export type LegalLearningModuleView = {
   legalState: string
   explanationReview?: { legalStateDate: string; verifiedAt: string }
   outcome: LegalLearningText
-  stage: string
+  stage?: string
   positionIntro?: LegalLearningText
   question?: LegalLearningText
   neededWhen: LegalLearningText
@@ -164,7 +164,6 @@ export function buildLegalLearningModuleView({
   )
 
   const terms = module.terms ?? (isReadingModule ? readingGuide.terms : [])
-  const firstSection = module.sections[0]
 
   return {
     order: module.order,
@@ -180,9 +179,7 @@ export function buildLegalLearningModuleView({
           }
         : undefined,
     outcome: module.outcome,
-    stage: isReadingModule
-      ? "Орієнтація в документі"
-      : (firstSection?.title ?? "Робота з правовим механізмом"),
+    stage: isReadingModule ? "Орієнтація в документі" : undefined,
     question: module.caseQuestion,
     neededWhen: module.placeInWork,
     courseTitle: isReadingModule

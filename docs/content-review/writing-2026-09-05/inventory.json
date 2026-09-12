@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 245,
+    "reviewed": 246,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -1010,9 +1010,9 @@
     {
       "path": "app/data/document-library/editorial/guides/ukraine-work-notification.ts",
       "family": "evidence-document",
-      "contentHash": "ec56e924758ccd0bf8476dfd17f850296815c591b40136303ec541717a542662",
+      "contentHash": "369293ce3ddc071069376ea5041f08094eea10d72f18e9060158000b80be0c74",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/14-working-notes-deadlines-and-notifications.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/110-notification-nationality-qualification.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/upo.ts",
@@ -11629,9 +11629,9 @@
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/obowiazki-podmiotu.ts",
       "family": "learning-module",
-      "contentHash": "b346b819032e4f23bb8180930923496c4fc82fca77406998234d4285ee153dd1",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "cfcf3b03bc42644811d4f895f1bd067c32a5a3c9b2607eb9269749e1573f3d75",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/107-employer-duties.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/outsourcing-a-praca-tymczasowa.ts",
@@ -11951,9 +11951,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
       "family": "map-topic",
-      "contentHash": "473240c629aca88cf49e3452d674139cb3e1352e11f29eb1fddf1ad0a8dfa1b5",
+      "contentHash": "960b689819760ef4bd522be332defd3f50be02a67ac473bbd6029c8558b9e559",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/88-declaration-notifications.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/110-notification-nationality-qualification.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
@@ -12259,9 +12259,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/work-entry.ts",
       "family": "map-topic",
-      "contentHash": "46eab5454e24b285ead5f9dd10deb8eb34cbd9de070da1deeac6c59bf871f5e7",
+      "contentHash": "75588d8c5a4c536310f24ad05e4d50ad5d73080b7d29be7c765a397f54613f25",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/60-work-access-overview.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/110-notification-nationality-qualification.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/work-instruments.ts",
@@ -12623,7 +12623,7 @@
     {
       "path": "app/features/law-library/model/learning/legal-learning-view.ts",
       "family": "shared-renderer",
-      "contentHash": "e90735c8a0ae307546e76c86136b9ca865e2c2aeb729dd9d053e78b5d20bf976",
+      "contentHash": "1eed6276da58fdf547f569bebb0020913eb33f8878ed3cb3de441bdc2a672907",
       "writing": "pending",
       "evidence": null
     },
@@ -12700,7 +12700,7 @@
     {
       "path": "app/features/law-library/ui/learning/legal-learning-overview.tsx",
       "family": "shared-renderer",
-      "contentHash": "fe294000d37c482d689b8079997dc85a61bad59c54688cf98c14a257b90a2f7c",
+      "contentHash": "f171f40782d6000cc7f65a0cf4a16a3b76805a8d4bb313faf25fb4470824e772",
       "writing": "pending",
       "evidence": null
     },
