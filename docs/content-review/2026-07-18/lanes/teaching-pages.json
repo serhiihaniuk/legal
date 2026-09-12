@@ -346,7 +346,37 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "51348d8e9efa5e7340b3153573d41532a3122981c16db1be1a7a811d3ae39d63",
+      "contentHash": "d5883b9cfda101c9afc72e333a7f355a6b5f5b853a38015cae0b578f6a3c8b11",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:agency-user-arrangements",
+      "path": "app/data/document-library/editorial/guides/agency-user-arrangements.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "agency-user-arrangements",
+      "contentId": "agency-user-arrangements",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "f34b7c9cec15e5294ac2daddd14911d3cd4f68d264cc7b3823c6de0f87ccc848",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -977,6 +1007,36 @@
       "sourceTextHash": null,
       "officialSourceUrls": [],
       "contentHash": "f8606a995757b3dae8139fe3a9dfb4d4a58f4c9dd8b3ce98b32ba2893c5d2769",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:employment-agency-register",
+      "path": "app/data/document-library/editorial/guides/employment-agency-register.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "employment-agency-register",
+      "contentId": "employment-agency-register",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "7e65e603a1f73b0abd48f8014db4bb657753cc1514828cb5c129d4d94f2ca6ef",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -4084,7 +4144,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "8bcfe1ad04a5255686fd344f0e7d12729e018bedef714cfe1c30dd41d5e5281a",
+      "contentHash": "b6babff1891c27c2328a46f70340ab77c1108571b3a1c98aa28dd102b0917e2b",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -4652,7 +4712,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "09b8f08b22d7bb78bf18261aad29bf859ef0c22ce9ce1e8a1159120c3668792e",
+      "contentHash": "a4985413a617f5cab4c671ae7f9bcc8f268d7be087d5b736c39c148f0b38bed1",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,

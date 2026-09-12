@@ -651,3 +651,9 @@ Full verification passed with 247 application tests, 70 passing corpus tests, 15
 Added separate guides for Świadectwo pracy, the agency civil-work certificate and the user employer's period register, each with a completed Polish specimen. Their issuers, issue rules, evidence limits and relationship to actual periods are distinct. The map now links each document with its conditional role. Independent review accepted all three guides and the integration against official sources checked for 12.09.2026.
 
 Full verification passed with 250 application tests, 70 passing corpus tests, 15 review tests and build. Final links received renewed typecheck, previews and build. Desktop/mobile examples, section anchors, table keyboard scrolling and document/map navigation passed without browser errors. Batch 83 records sources and hashes. Writing acceptance is 207 of 1,830 active files; the global legal baseline remains 18.07.2026.
+
+## 2026-09-12: KRAZ and agency-user arrangements
+
+Added separate guides for current KRAZ service scope and written agency-user arrangements, with completed Polish specimens and conditional map references. Independent source and writing review accepted both guides and exact integration changes. The arrangements guide explains when one agreement can also confirm a referral, without requiring duplicate papers. Sources were checked for 12.09.2026; the atlas baseline remains 18.07.2026.
+
+Full verification passed: 252 application tests, 70 corpus tests with one existing skip, 15 review tests and production build. Previews passed for 95 document guides. Desktop/mobile examples, keyboard table scrolling, section anchors and map/document navigation passed without browser errors. Batches 84–85 record exact hashes and remaining scope. Writing acceptance is 209 of 1,832 active files.

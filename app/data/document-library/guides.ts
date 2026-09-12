@@ -1,4 +1,6 @@
+import agencyUserArrangementsTopic from "./editorial/guides/agency-user-arrangements"
 import agencyReferralConfirmationTopic from "./editorial/guides/agency-referral-confirmation"
+import employmentAgencyRegisterTopic from "./editorial/guides/employment-agency-register"
 import employmentCertificateTopic from "./editorial/guides/employment-certificate"
 import temporaryCivilWorkCertificateTopic from "./editorial/guides/temporary-civil-work-certificate"
 import temporaryWorkPeriodRegisterTopic from "./editorial/guides/temporary-work-period-register"
@@ -120,7 +122,9 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    agencyUserArrangementsTopic.body,
     agencyReferralConfirmationTopic.body,
+    employmentAgencyRegisterTopic.body,
     employmentCertificateTopic.body,
     temporaryCivilWorkCertificateTopic.body,
     temporaryWorkPeriodRegisterTopic.body,

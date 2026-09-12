@@ -2,7 +2,9 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
+  | "agency-user-arrangements"
   | "agency-referral-confirmation"
+  | "employment-agency-register"
   | "employment-certificate"
   | "temporary-civil-work-certificate"
   | "temporary-work-period-register"
@@ -185,7 +187,9 @@ export type EvidenceDocumentReferenceResolution =
     }
 
 export const evidenceDocumentIds = [
+  "agency-user-arrangements",
   "agency-referral-confirmation",
+  "employment-agency-register",
   "employment-certificate",
   "temporary-civil-work-certificate",
   "temporary-work-period-register",

@@ -1020,21 +1020,6 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/77-employer-duties.md"
   },
   {
-    "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
-    "contentHash": "09b8f08b22d7bb78bf18261aad29bf859ef0c22ce9ce1e8a1159120c3668792e",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
-  },
-  {
-    "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
-    "contentHash": "8bcfe1ad04a5255686fd344f0e7d12729e018bedef714cfe1c30dd41d5e5281a",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/81-outsourcing.md"
-  },
-  {
-    "path": "app/data/document-library/editorial/guides/agency-referral-confirmation.ts",
-    "contentHash": "51348d8e9efa5e7340b3153573d41532a3122981c16db1be1a7a811d3ae39d63",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/82-agency-document-preparation.md"
-  },
-  {
     "path": "app/data/document-library/editorial/guides/employment-certificate.ts",
     "contentHash": "f7c93df820c12610eac6954f764b8eff42588757413cd84b84768b393754ebd9",
     "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
@@ -1048,5 +1033,30 @@
     "path": "app/data/document-library/editorial/guides/temporary-work-period-register.ts",
     "contentHash": "435ee95c973a1857b4b09fff4ebcac6cc9a3e0a870cfb2d3fe463b57caab6de7",
     "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/employment-agency-register.ts",
+    "contentHash": "7e65e603a1f73b0abd48f8014db4bb657753cc1514828cb5c129d4d94f2ca6ef",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/84-employment-agency-register.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
+    "contentHash": "b6babff1891c27c2328a46f70340ab77c1108571b3a1c98aa28dd102b0917e2b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/84-employment-agency-register.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/agency-user-arrangements.ts",
+    "contentHash": "f34b7c9cec15e5294ac2daddd14911d3cd4f68d264cc7b3823c6de0f87ccc848",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/85-agency-user-arrangements.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
+    "contentHash": "a4985413a617f5cab4c671ae7f9bcc8f268d7be087d5b736c39c148f0b38bed1",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/85-agency-user-arrangements.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/agency-referral-confirmation.ts",
+    "contentHash": "d5883b9cfda101c9afc72e333a7f355a6b5f5b853a38015cae0b578f6a3c8b11",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/85-agency-user-arrangements.md"
   }
 ]

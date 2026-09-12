@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1830,
-    "reviewed": 207,
+    "totalFiles": 1832,
+    "reviewed": 209,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 93,
+      "evidence-document": 95,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -380,9 +380,16 @@
     {
       "path": "app/data/document-library/editorial/guides/agency-referral-confirmation.ts",
       "family": "evidence-document",
-      "contentHash": "51348d8e9efa5e7340b3153573d41532a3122981c16db1be1a7a811d3ae39d63",
+      "contentHash": "d5883b9cfda101c9afc72e333a7f355a6b5f5b853a38015cae0b578f6a3c8b11",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/82-agency-document-preparation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/85-agency-user-arrangements.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/agency-user-arrangements.ts",
+      "family": "evidence-document",
+      "contentHash": "f34b7c9cec15e5294ac2daddd14911d3cd4f68d264cc7b3823c6de0f87ccc848",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/85-agency-user-arrangements.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/apostille-legalisation.ts",
@@ -530,6 +537,13 @@
       "contentHash": "f8606a995757b3dae8139fe3a9dfb4d4a58f4c9dd8b3ce98b32ba2893c5d2769",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/04-correspondence.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/employment-agency-register.ts",
+      "family": "evidence-document",
+      "contentHash": "7e65e603a1f73b0abd48f8014db4bb657753cc1514828cb5c129d4d94f2ca6ef",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/84-employment-agency-register.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/employment-annex-1.ts",
@@ -11979,9 +11993,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
       "family": "map-topic",
-      "contentHash": "8bcfe1ad04a5255686fd344f0e7d12729e018bedef714cfe1c30dd41d5e5281a",
+      "contentHash": "b6babff1891c27c2328a46f70340ab77c1108571b3a1c98aa28dd102b0917e2b",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/81-outsourcing.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/84-employment-agency-register.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/pending-stay.ts",
@@ -12105,9 +12119,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
       "family": "map-topic",
-      "contentHash": "09b8f08b22d7bb78bf18261aad29bf859ef0c22ce9ce1e8a1159120c3668792e",
+      "contentHash": "a4985413a617f5cab4c671ae7f9bcc8f268d7be087d5b736c39c148f0b38bed1",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/85-agency-user-arrangements.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/two-keys.ts",
