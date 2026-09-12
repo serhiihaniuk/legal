@@ -25,37 +25,6 @@ const kpaProvisionById = new Map(
   listProvisions("kpa").map((provision) => [provision.id, provision])
 )
 
-const kpaCoursePhases = [
-  {
-    number: "01",
-    title: "Зрозуміти систему",
-    description:
-      "Сфера KPA, будова норми та загальні засади, за якими оцінюється вся поведінка органу.",
-    modules: "Модулі 1–3",
-  },
-  {
-    number: "02",
-    title: "Встановити учасників і початок справи",
-    description:
-      "Компетентний орган, сторона, представник, спосіб wszczęcia та формальна перевірка podania.",
-    modules: "Модулі 4–6",
-  },
-  {
-    number: "03",
-    title: "Провести справу",
-    description:
-      "Akta, докази, doręczenia, строки, wezwania та реакція на бездіяльність або затягування.",
-    modules: "Модулі 7–10 і 13",
-  },
-  {
-    number: "04",
-    title: "Завершити й перевірити результат",
-    description:
-      "Decyzja, milczące załatwienie, odwołanie, надзвичайний перегляд і контроль WSA.",
-    modules: "Модулі 11–12 і 14–15",
-  },
-] as const
-
 export type KpaLearningContentProps = {
   selectedId: string
   articleExplanations: LegalExplanation<"kpa">[]
@@ -102,13 +71,6 @@ export function KpaLearningContent({
     question: guideModule.questions[0]?.prompt,
     neededWhen: layers.practical.practice,
     boundary: layers.beginner.pitfall,
-    courseTitle:
-      guideModule.id === "system" ? "Карта всього курсу KPA" : undefined,
-    courseDescription:
-      guideModule.id === "system"
-        ? "Курс іде тим самим шляхом, яким рухається адміністративна справа: від визначення правил до доказів, рішення та контролю."
-        : undefined,
-    coursePhases: guideModule.id === "system" ? kpaCoursePhases : undefined,
     mechanismParagraphs: lesson.sections ? [] : lesson.paragraphs,
     mechanismSections: lesson.sections,
     layers: lesson.sections

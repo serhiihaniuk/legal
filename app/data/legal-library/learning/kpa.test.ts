@@ -10,15 +10,20 @@ import {
 } from "./kpa"
 
 describe("canonical KPA learning", () => {
-  it("preserves the authored anatomy sections and completed example in the generic curriculum", () => {
-    const authored = kpaGuideModules.find((module) => module.id === "anatomy")
-    const projected = getLegalLearningModules("kpa").find(
-      (module) => module.id === "anatomy"
-    )
-    expect(authored?.lesson.sections?.length).toBeGreaterThan(0)
-    expect(authored?.lesson.caseExample.sample).toBeDefined()
-    expect(projected?.sections).toEqual(authored?.lesson.sections)
-    expect(projected?.caseExample).toEqual(authored?.lesson.caseExample)
+  it.each(["anatomy", "system"])(
+    "preserves the authored %s sections and completed example in the generic curriculum",
+    (id) => {
+      const authored = kpaGuideModules.find((module) => module.id === id)
+      const projected = getLegalLearningModules("kpa").find(
+        (module) => module.id === id
+      )
+      expect(authored?.lesson.sections?.length).toBeGreaterThan(0)
+      expect(authored?.lesson.caseExample.sample).toBeDefined()
+      expect(projected?.sections).toEqual(authored?.lesson.sections)
+      expect(projected?.caseExample).toEqual(authored?.lesson.caseExample)
+    }
+  )
+  it("matches the anatomy provision panel to the authored scope", () => {
     expect(kpaGuideModuleArticles.anatomy.articles).toEqual(["40", "57", "124"])
   })
   it("registers a real generic curriculum and module list", () => {
