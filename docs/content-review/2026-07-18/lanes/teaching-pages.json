@@ -1024,6 +1024,36 @@
       }
     },
     {
+      "id": "evidence-document:employment-certificate",
+      "path": "app/data/document-library/editorial/guides/employment-certificate.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "employment-certificate",
+      "contentId": "employment-certificate",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "f7c93df820c12610eac6954f764b8eff42588757413cd84b84768b393754ebd9",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:employment-contract",
       "path": "app/data/document-library/editorial/guides/employment-contract.ts",
       "family": "evidence-document",
@@ -2584,6 +2614,36 @@
       }
     },
     {
+      "id": "evidence-document:temporary-civil-work-certificate",
+      "path": "app/data/document-library/editorial/guides/temporary-civil-work-certificate.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "temporary-civil-work-certificate",
+      "contentId": "temporary-civil-work-certificate",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "cb4dff31a174204c15914b1a6bf844e9e737b75f25bfde542b453b66721ec3f8",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:temporary-residence-notification",
       "path": "app/data/document-library/editorial/guides/temporary-residence-notification.ts",
       "family": "evidence-document",
@@ -2597,6 +2657,36 @@
       "sourceTextHash": null,
       "officialSourceUrls": [],
       "contentHash": "403f61ab921ca096dd8154720ad4dbfe84c7eaf43aa95b0a8171929e009ea1cc",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:temporary-work-period-register",
+      "path": "app/data/document-library/editorial/guides/temporary-work-period-register.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "temporary-work-period-register",
+      "contentId": "temporary-work-period-register",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "435ee95c973a1857b4b09fff4ebcac6cc9a3e0a870cfb2d3fe463b57caab6de7",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -4562,7 +4652,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "8888997b7ce1640b3f545cef0be4c14ebecf732d3479bbfa8c95fb7a3d2b7e6d",
+      "contentHash": "09b8f08b22d7bb78bf18261aad29bf859ef0c22ce9ce1e8a1159120c3668792e",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,

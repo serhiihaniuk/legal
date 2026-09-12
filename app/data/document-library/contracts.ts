@@ -3,6 +3,9 @@ import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
   | "agency-referral-confirmation"
+  | "employment-certificate"
+  | "temporary-civil-work-certificate"
+  | "temporary-work-period-register"
   | "pip-posting-declaration"
   | "seasonal-work-permit"
   | "seasonal-registration-certificate"
@@ -183,6 +186,9 @@ export type EvidenceDocumentReferenceResolution =
 
 export const evidenceDocumentIds = [
   "agency-referral-confirmation",
+  "employment-certificate",
+  "temporary-civil-work-certificate",
+  "temporary-work-period-register",
   "pip-posting-declaration",
   "seasonal-work-permit",
   "seasonal-registration-certificate",

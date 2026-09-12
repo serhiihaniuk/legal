@@ -1,4 +1,7 @@
 import agencyReferralConfirmationTopic from "./editorial/guides/agency-referral-confirmation"
+import employmentCertificateTopic from "./editorial/guides/employment-certificate"
+import temporaryCivilWorkCertificateTopic from "./editorial/guides/temporary-civil-work-certificate"
+import temporaryWorkPeriodRegisterTopic from "./editorial/guides/temporary-work-period-register"
 import pipPostingDeclarationTopic from "./editorial/guides/pip-posting-declaration"
 import seasonalArrivalStatementTopic from "./editorial/guides/seasonal-arrival-statement"
 import seasonalRegistrationCertificateTopic from "./editorial/guides/seasonal-registration-certificate"
@@ -118,6 +121,9 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
     agencyReferralConfirmationTopic.body,
+    employmentCertificateTopic.body,
+    temporaryCivilWorkCertificateTopic.body,
+    temporaryWorkPeriodRegisterTopic.body,
     pipPostingDeclarationTopic.body,
     seasonalArrivalStatementTopic.body,
     seasonalRegistrationCertificateTopic.body,

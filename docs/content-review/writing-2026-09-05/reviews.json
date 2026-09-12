@@ -1021,8 +1021,8 @@
   },
   {
     "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
-    "contentHash": "8888997b7ce1640b3f545cef0be4c14ebecf732d3479bbfa8c95fb7a3d2b7e6d",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/82-agency-document-preparation.md"
+    "contentHash": "09b8f08b22d7bb78bf18261aad29bf859ef0c22ce9ce1e8a1159120c3668792e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
   },
   {
     "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
@@ -1033,5 +1033,20 @@
     "path": "app/data/document-library/editorial/guides/agency-referral-confirmation.ts",
     "contentHash": "51348d8e9efa5e7340b3153573d41532a3122981c16db1be1a7a811d3ae39d63",
     "evidence": "docs/content-review/writing-2026-09-05/batches/82-agency-document-preparation.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/employment-certificate.ts",
+    "contentHash": "f7c93df820c12610eac6954f764b8eff42588757413cd84b84768b393754ebd9",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/temporary-civil-work-certificate.ts",
+    "contentHash": "cb4dff31a174204c15914b1a6bf844e9e737b75f25bfde542b453b66721ec3f8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/temporary-work-period-register.ts",
+    "contentHash": "435ee95c973a1857b4b09fff4ebcac6cc9a3e0a870cfb2d3fe463b57caab6de7",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/83-temporary-work-records.md"
   }
 ]

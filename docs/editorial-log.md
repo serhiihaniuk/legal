@@ -645,3 +645,9 @@ Fixed a separate importer defect that included the next form’s header in the p
 Rewrote outsourcing around actual service organization, separate refusal procedures and a completed cleaning-service comparison. Added a focused user-issued referral-confirmation guide with a filled Polish date correction. Its map and seasonal references explain when it applies; the permanent-resident example gains no unnecessary application. Independent reviewers accepted the article, new guide and integration deltas against official sources checked for 12.09.2026.
 
 Full verification passed with 247 application tests, 70 passing corpus tests, 15 review tests and production build. Final metadata changes received typecheck, focused coverage tests and another build. Desktop/mobile layout, keyboard table scrolling, source anchors and document navigation passed. Writing batches 81–82 record exact hashes and remaining scope. Writing acceptance is 204 of 1,827 files; the global legal baseline stays 18.07.2026.
+
+## 2026-09-12: temporary-work period records
+
+Added separate guides for Świadectwo pracy, the agency civil-work certificate and the user employer's period register, each with a completed Polish specimen. Their issuers, issue rules, evidence limits and relationship to actual periods are distinct. The map now links each document with its conditional role. Independent review accepted all three guides and the integration against official sources checked for 12.09.2026.
+
+Full verification passed with 250 application tests, 70 passing corpus tests, 15 review tests and build. Final links received renewed typecheck, previews and build. Desktop/mobile examples, section anchors, table keyboard scrolling and document/map navigation passed without browser errors. Batch 83 records sources and hashes. Writing acceptance is 207 of 1,830 active files; the global legal baseline remains 18.07.2026.
