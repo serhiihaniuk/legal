@@ -334,6 +334,36 @@
       }
     },
     {
+      "id": "evidence-document:agency-referral-confirmation",
+      "path": "app/data/document-library/editorial/guides/agency-referral-confirmation.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "agency-referral-confirmation",
+      "contentId": "agency-referral-confirmation",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "51348d8e9efa5e7340b3153573d41532a3122981c16db1be1a7a811d3ae39d63",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:apostille-legalisation",
       "path": "app/data/document-library/editorial/guides/apostille-legalisation.ts",
       "family": "evidence-document",
@@ -2176,7 +2206,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "6fbc6881d9124e1f2422d3739964a87960627adac04b7e9c1355110be343efd7",
+      "contentHash": "d932ed27db5d8d4f218b8cd4038941422b716d5c8b6cb24850909acfb372324b",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -3956,7 +3986,7 @@
       "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
       "family": "map-topic",
       "lane": "teaching-pages",
-      "documentId": "work-organisation-evidence",
+      "documentId": null,
       "contentId": "outsourcing-case",
       "provisionId": null,
       "provisionIndex": null,
@@ -3964,7 +3994,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "62a2d7138659f9c18c7bc107ad6f027d9516e51fd6e16f857049a7ad6a140448",
+      "contentHash": "8bcfe1ad04a5255686fd344f0e7d12729e018bedef714cfe1c30dd41d5e5281a",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -4532,7 +4562,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "28fe7665acd70761f3fcb2543564a6a6f5ae46e11647a0f054b216231aaa6dad",
+      "contentHash": "8888997b7ce1640b3f545cef0be4c14ebecf732d3479bbfa8c95fb7a3d2b7e6d",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,

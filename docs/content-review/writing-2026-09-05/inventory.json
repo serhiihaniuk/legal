@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1826,
-    "reviewed": 202,
+    "totalFiles": 1827,
+    "reviewed": 204,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 89,
+      "evidence-document": 90,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -376,6 +376,13 @@
       "contentHash": "50306ea625a9364a2e7ede8b754a0a0c68f5d802c9cd42380f3353ab8c673ef0",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/06-decisions-and-cards.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/agency-referral-confirmation.ts",
+      "family": "evidence-document",
+      "contentHash": "51348d8e9efa5e7340b3153573d41532a3122981c16db1be1a7a811d3ae39d63",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/82-agency-document-preparation.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/apostille-legalisation.ts",
@@ -807,9 +814,9 @@
     {
       "path": "app/data/document-library/editorial/guides/seasonal-registration-certificate.ts",
       "family": "evidence-document",
-      "contentHash": "6fbc6881d9124e1f2422d3739964a87960627adac04b7e9c1355110be343efd7",
+      "contentHash": "d932ed27db5d8d4f218b8cd4038941422b716d5c8b6cb24850909acfb372324b",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/74-seasonal-documents.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/82-agency-document-preparation.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/seasonal-work-permit.ts",
@@ -11951,9 +11958,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/outsourcing-case.ts",
       "family": "map-topic",
-      "contentHash": "62a2d7138659f9c18c7bc107ad6f027d9516e51fd6e16f857049a7ad6a140448",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "8bcfe1ad04a5255686fd344f0e7d12729e018bedef714cfe1c30dd41d5e5281a",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/81-outsourcing.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/pending-stay.ts",
@@ -12077,9 +12084,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
       "family": "map-topic",
-      "contentHash": "28fe7665acd70761f3fcb2543564a6a6f5ae46e11647a0f054b216231aaa6dad",
+      "contentHash": "8888997b7ce1640b3f545cef0be4c14ebecf732d3479bbfa8c95fb7a3d2b7e6d",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/79-temporary-work.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/82-agency-document-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/two-keys.ts",

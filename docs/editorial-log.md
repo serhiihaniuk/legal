@@ -639,3 +639,9 @@ Full verification passed with 246 application tests and production build. Final 
 Rewrote temporary work with agency/user roles, conditional KRAZ rules, named records and a completed comparison of periods through three agencies. Independent review accepted the final article. Corrected its period-limit reference to the temporary-workers act.
 
 Fixed a separate importer defect that included the next form’s header in the preceding annex. Rebuilt the same source edition with unchanged PDF bytes and checked all ten affected boundaries independently. University and family ranges are now 32–34 and 55–68. Full verification passed with 246 application tests, 70 passing corpus tests and build; final article checks, previews, keyboard navigation and desktop/mobile review also passed. Batches 79–80 record exact scope and remaining work. Global legal baseline is unchanged.
+
+## 2026-09-12: outsourcing and agency referral confirmation
+
+Rewrote outsourcing around actual service organization, separate refusal procedures and a completed cleaning-service comparison. Added a focused user-issued referral-confirmation guide with a filled Polish date correction. Its map and seasonal references explain when it applies; the permanent-resident example gains no unnecessary application. Independent reviewers accepted the article, new guide and integration deltas against official sources checked for 12.09.2026.
+
+Full verification passed with 247 application tests, 70 passing corpus tests, 15 review tests and production build. Final metadata changes received typecheck, focused coverage tests and another build. Desktop/mobile layout, keyboard table scrolling, source anchors and document navigation passed. Writing batches 81–82 record exact hashes and remaining scope. Writing acceptance is 204 of 1,827 files; the global legal baseline stays 18.07.2026.
