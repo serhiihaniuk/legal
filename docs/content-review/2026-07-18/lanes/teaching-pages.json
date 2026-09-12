@@ -3764,7 +3764,7 @@
       "path": "app/data/legal-map/editorial/topics/document-types.ts",
       "family": "map-topic",
       "lane": "teaching-pages",
-      "documentId": "passport",
+      "documentId": null,
       "contentId": "document-types",
       "provisionId": null,
       "provisionIndex": null,
@@ -3772,7 +3772,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "8e55e2ac21d9dea061a7ac31d61f5fd5c10d775a941623ab2cf989401dd8cbe9",
+      "contentHash": "b6e7f8297099ebd39dac49055653982a692d8b69cc9ca50bf9205d64363637ac",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -3892,27 +3892,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "867d8f2f37081fa8b2d3c8dd8445e79ef2888e5c7f3324cdceda7b036f044cf6",
+      "contentHash": "d69479436f23d625ebf39ce8428db82af5ec6f2977985b88e3248e610652baf4",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "867d8f2f37081fa8b2d3c8dd8445e79ef2888e5c7f3324cdceda7b036f044cf6",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "867d8f2f37081fa8b2d3c8dd8445e79ef2888e5c7f3324cdceda7b036f044cf6",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

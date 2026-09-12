@@ -1128,5 +1128,15 @@
     "path": "app/data/legal-map/editorial/topics/evidence-matrix.ts",
     "contentHash": "2bb87c3ff9dff132b1c6b27c257b692021f6b15ce9993ccf15bbdcbc2ff3dcb9",
     "evidence": "docs/content-review/writing-2026-09-05/batches/89-evidence-map-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/document-types.ts",
+    "contentHash": "b6e7f8297099ebd39dac49055653982a692d8b69cc9ca50bf9205d64363637ac",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/90-evidence-types-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/evidence.ts",
+    "contentHash": "d69479436f23d625ebf39ce8428db82af5ec6f2977985b88e3248e610652baf4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/90-evidence-types-preparation.md"
   }
 ]

@@ -1,0 +1,9 @@
+# Case files and foreign documents: pending review
+
+Preparation on 12.09.2026. Root read both complete legacy map topics during batch 90. Neither article has been rewritten or accepted by this preparation.
+
+`case-file.ts` contains a specific incorrect explanation: art. 74a KPA does not extend access to electronic documents. It preserves the data subject's rights under art. 15 GDPR. Electronic access is addressed by art. 73 § 3. Root read arts. 66a–74a in the official consolidated KPA PDF, Dz.U. 2025 poz. 1691, on 12.09.2026. The rewrite must distinguish ordinary inspection and copies, authenticated copies requiring an important interest, optional electronic access, restricted material under art. 74 and the appealable refusal. Explain the difference between the authority's file and the applicant's chronology with a completed Polish file index or access request and its actual result. Retain limits beside each access claim and use distinct existing document guides.
+
+`foreign-documents.ts` remains a short legacy explanation. It needs a comparison of translation, copy certification, apostille/legalization and the underlying fact. Verify the applicable Polish-Ukrainian treaty exemption, the exact EU public-document scope and the Hague Convention before choosing completed examples. Distinguish residence translation requirements from work-procedure requirements, and avoid suggesting that every foreign document needs authentication or has a universal expiry date. Keep the original document, any required authentication and translation visibly connected in the example.
+
+Both rewrites still require current official-source checks, complete authored articles, independent review, reference/backlink checks and desktop/mobile verification. This preparation does not renew their old legal-review dates or the global baseline.

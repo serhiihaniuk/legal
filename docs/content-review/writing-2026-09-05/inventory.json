@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1839,
-    "reviewed": 218,
+    "reviewed": 220,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11916,9 +11916,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/document-types.ts",
       "family": "map-topic",
-      "contentHash": "8e55e2ac21d9dea061a7ac31d61f5fd5c10d775a941623ab2cf989401dd8cbe9",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "b6e7f8297099ebd39dac49055653982a692d8b69cc9ca50bf9205d64363637ac",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/90-evidence-types-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
@@ -11944,9 +11944,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/evidence.ts",
       "family": "map-topic",
-      "contentHash": "867d8f2f37081fa8b2d3c8dd8445e79ef2888e5c7f3324cdceda7b036f044cf6",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d69479436f23d625ebf39ce8428db82af5ec6f2977985b88e3248e610652baf4",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/90-evidence-types-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/extraordinary-wsa.ts",
