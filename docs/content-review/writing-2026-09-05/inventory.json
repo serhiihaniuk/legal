@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1823,
-    "reviewed": 195,
+    "totalFiles": 1826,
+    "reviewed": 198,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 85,
+      "evidence-document": 88,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -789,6 +789,27 @@
       "contentHash": "18c401a900dff716a1bb51ab92b8a33741cd27b7d0c8a269c0a87ff20249ae72",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/01-working-records.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/seasonal-arrival-statement.ts",
+      "family": "evidence-document",
+      "contentHash": "bbc3f4677221ade593872a057d7d23bc231a743607e202583d5c2f36ea6083bd",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/74-seasonal-documents.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/seasonal-registration-certificate.ts",
+      "family": "evidence-document",
+      "contentHash": "6fbc6881d9124e1f2422d3739964a87960627adac04b7e9c1355110be343efd7",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/74-seasonal-documents.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/seasonal-work-permit.ts",
+      "family": "evidence-document",
+      "contentHash": "62c0d51c2a17b4d3cdf4d81fa9de3b7e44180634e8a29a2bc71c9eb843bd10a5",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/74-seasonal-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/settlement-intention.ts",
@@ -11993,9 +12014,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/seasonal.ts",
       "family": "map-topic",
-      "contentHash": "1dbde2f826f0146a26578396544b28eca046417b7c9583fc943e22e8f750a567",
+      "contentHash": "2768d1a543ac8a6cf7cca9ef956a547803bd412ec27ef7ee7c6bc89e7e0dc3a7",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/73-seasonal-work.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/74-seasonal-documents.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/source-check.ts",

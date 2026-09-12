@@ -2104,6 +2104,96 @@
       }
     },
     {
+      "id": "evidence-document:seasonal-arrival-statement",
+      "path": "app/data/document-library/editorial/guides/seasonal-arrival-statement.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "seasonal-arrival-statement",
+      "contentId": "seasonal-arrival-statement",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "bbc3f4677221ade593872a057d7d23bc231a743607e202583d5c2f36ea6083bd",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:seasonal-registration-certificate",
+      "path": "app/data/document-library/editorial/guides/seasonal-registration-certificate.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "seasonal-registration-certificate",
+      "contentId": "seasonal-registration-certificate",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "6fbc6881d9124e1f2422d3739964a87960627adac04b7e9c1355110be343efd7",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
+      "id": "evidence-document:seasonal-work-permit",
+      "path": "app/data/document-library/editorial/guides/seasonal-work-permit.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "seasonal-work-permit",
+      "contentId": "seasonal-work-permit",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "62c0d51c2a17b4d3cdf4d81fa9de3b7e44180634e8a29a2bc71c9eb843bd10a5",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:settlement-intention",
       "path": "app/data/document-library/editorial/guides/settlement-intention.ts",
       "family": "evidence-document",
@@ -4178,7 +4268,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "1dbde2f826f0146a26578396544b28eca046417b7c9583fc943e22e8f750a567",
+      "contentHash": "2768d1a543ac8a6cf7cca9ef956a547803bd412ec27ef7ee7c6bc89e7e0dc3a7",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,

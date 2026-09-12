@@ -615,3 +615,7 @@ Migrated all six CUKR stages to visible document actions. Registry and employmen
 ## 2026-09-12: seasonal work and its distinct documents
 
 Rewrote the seasonal map topic as six authored sections with a completed orchard example and Polish working comparison. Registration, arrival, permit, extension, contract transmission and residence now have distinct roles and deadlines. A separate reviewer accepted the exact final hash after correcting the Poland-entry clock, contract destination, compensation scope and formal-defect call deadline. Full verification passed with 241 application tests and production build; previews and desktop/mobile checks passed. Batch 73 records sources, evidence and remaining dedicated-document gaps. The global legal baseline remains 18.07.2026.
+
+## 2026-09-12: three seasonal document guides
+
+Added separate guides and filled fictional specimens for the registration certificate, arrival statement and permit. Linked all three from the seasonal article and verified reverse contexts. Independent review accepted all four exact hashes. Sources, corrections and verification are recorded in writing batch 74. Type checks, 244 application tests, 68 corpus tests, 15 review-tool tests, editorial validation, previews and build passed. Desktop/mobile checks found no viewport overflow or final browser errors. The global legal baseline remains unchanged.

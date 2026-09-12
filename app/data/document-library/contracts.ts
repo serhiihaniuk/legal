@@ -2,6 +2,9 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
+  | "seasonal-work-permit"
+  | "seasonal-registration-certificate"
+  | "seasonal-arrival-statement"
   | "registered-work-declaration"
   | "job-search-evidence"
   | "karta-polaka"
@@ -177,6 +180,9 @@ export type EvidenceDocumentReferenceResolution =
     }
 
 export const evidenceDocumentIds = [
+  "seasonal-work-permit",
+  "seasonal-registration-certificate",
+  "seasonal-arrival-statement",
   "registered-work-declaration",
   "corporate-work-permit",
   "karta-polaka",

@@ -1,3 +1,6 @@
+import seasonalArrivalStatementTopic from "./editorial/guides/seasonal-arrival-statement"
+import seasonalRegistrationCertificateTopic from "./editorial/guides/seasonal-registration-certificate"
+import seasonalWorkPermitTopic from "./editorial/guides/seasonal-work-permit"
 import registeredWorkDeclarationTopic from "./editorial/guides/registered-work-declaration"
 import privateHealthInsurancePolicyTopic from "./editorial/guides/private-health-insurance-policy"
 import residentialLeaseTopic from "./editorial/guides/residential-lease"
@@ -112,6 +115,9 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    seasonalArrivalStatementTopic.body,
+    seasonalRegistrationCertificateTopic.body,
+    seasonalWorkPermitTopic.body,
     registeredWorkDeclarationTopic.body,
     privateHealthInsurancePolicyTopic.body,
     residentialLeaseTopic.body,
