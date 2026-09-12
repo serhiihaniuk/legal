@@ -1,4 +1,7 @@
-import { defineLegalLearningCurriculum } from "./types"
+import {
+  defineLegalLearningCurriculum,
+  publishLegalLearningModule,
+} from "./types"
 
 import { roleOfRegulationLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/role-of-regulation"
 import { chooseFormLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/choose-form"
@@ -13,10 +16,10 @@ export const temporaryResidenceApplicationLearningCurriculum =
     description:
       "Курс вчить читати rozporządzenie і wzory formularzy як інструкцію до форми, не підміняючи ними матеріальні умови ustawy o cudzoziemcach.",
     modules: [
-      roleOfRegulationLearningModuleTopic.body,
-      chooseFormLearningModuleTopic.body,
-      consistentFieldsLearningModuleTopic.body,
-      formVersusProofLearningModuleTopic.body,
-      submissionAuditLearningModuleTopic.body,
-    ],
+      roleOfRegulationLearningModuleTopic,
+      chooseFormLearningModuleTopic,
+      consistentFieldsLearningModuleTopic,
+      formVersusProofLearningModuleTopic,
+      submissionAuditLearningModuleTopic,
+    ].map(publishLegalLearningModule),
   })

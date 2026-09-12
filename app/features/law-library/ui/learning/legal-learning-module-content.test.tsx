@@ -91,6 +91,25 @@ const moduleView: LegalLearningModuleView = {
 }
 
 describe("legal learning reference treatment", () => {
+  it("distinguishes the explanation's legal state and check date from the source edition", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <LegalLearningModuleContent
+          module={{
+            ...moduleView,
+            explanationReview: {
+              legalStateDate: "2026-09-10",
+              verifiedAt: "2026-09-12",
+            },
+          }}
+          navigation={{}}
+        />
+      </MemoryRouter>
+    )
+    expect(getByText("Стан права в поясненні: 2026-09-10")).toBeDefined()
+    expect(getByText("Перевірено: 2026-09-12")).toBeDefined()
+    expect(getByText("Текст акта: стан на 2026-07-18")).toBeDefined()
+  })
   it("opens the new guide's first provision when navigating between modules", () => {
     const { container, rerender } = render(
       <MemoryRouter>

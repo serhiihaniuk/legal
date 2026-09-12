@@ -1258,5 +1258,10 @@
     "path": "app/data/legal-library/learning/modules/kpa/system.ts",
     "contentHash": "d11a4633749eb0e0ef6e6b9273576d9ce07ac4b292b96fa021e99a83e88d872d",
     "evidence": "docs/content-review/writing-2026-09-05/batches/100-kpa-system.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/powierzanie-pracy/uczestnicy-i-definicje.ts",
+    "contentHash": "8f974c621dfa2e2fa18faefe85948907509da683c8da51c1da22446bd894b4cf",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/101-work-definitions.md"
   }
 ]

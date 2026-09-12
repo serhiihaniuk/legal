@@ -13,6 +13,7 @@ import {
 import type {
   LegalLearningCoursePhase,
   LegalLearningModule,
+  LegalLearningPublication,
   LegalLearningExample,
   LegalLearningSection,
 } from "~/data/legal-library/learning/types"
@@ -64,6 +65,7 @@ export type LegalLearningModuleView = {
   polish: LegalLearningText
   provisionScope: LegalLearningText
   legalState: string
+  explanationReview?: { legalStateDate: string; verifiedAt: string }
   outcome: LegalLearningText
   stage: string
   positionIntro?: LegalLearningText
@@ -112,14 +114,6 @@ function explanationTitle(
   return title.charAt(0).toLocaleUpperCase("uk") + title.slice(1)
 }
 
-function normalizedLocator(locator: string): string {
-  return locator
-    .toLocaleLowerCase("pl")
-    .replace(/załącznik\s+nr\s+/, "załącznik ")
-    .replace(/\s+/g, " ")
-    .trim()
-}
-
 export function findModuleProvisions(
   module: LegalLearningModule,
   provisions: readonly LegalProvision[]
@@ -150,29 +144,14 @@ export function findModuleProvisions(
       ...(section.warning ? [section.warning] : []),
     ]),
   ]
-  const text = authoredTexts.map(legalLearningPlainText).join(" ")
   const explicitProvisionIds = new Set(
     authoredTexts
       .flatMap(legalLearningProvisionReferences)
       .map((reference) => reference.provisionId)
   )
-  const locators = new Set<string>()
-  for (const match of text.matchAll(/\bart\.\s*(\d+[a-z]?)/gi)) {
-    locators.add(`art. ${match[1].toLocaleLowerCase("pl")}`)
-  }
-  for (const match of text.matchAll(/§\s*(\d+[a-z]?)/gi)) {
-    locators.add(`§ ${match[1].toLocaleLowerCase("pl")}`)
-  }
-  for (const match of text.matchAll(/załącznik(?:\s+nr)?\s*(\d+)/gi)) {
-    locators.add(`załącznik ${match[1]}`)
-  }
 
   return provisions
-    .filter(
-      (provision) =>
-        explicitProvisionIds.has(provision.id) ||
-        locators.has(normalizedLocator(provision.locator))
-    )
+    .filter((provision) => explicitProvisionIds.has(provision.id))
     .slice(0, 10)
 }
 
@@ -183,7 +162,7 @@ export function buildLegalLearningModuleView({
   reviewedProvisions,
 }: {
   documentId: LegalDocumentId
-  module: LegalLearningModule
+  module: LegalLearningPublication
   legalState: string
   reviewedProvisions: readonly ReviewedProvision[]
 }): LegalLearningModuleView {
@@ -213,6 +192,13 @@ export function buildLegalLearningModuleView({
     polish: module.polish,
     provisionScope: module.provisionScope,
     legalState,
+    explanationReview:
+      module.sourceReview?.reviewStatus === "reviewed"
+        ? {
+            legalStateDate: module.sourceReview.legalStateDate,
+            verifiedAt: module.sourceReview.verifiedAt,
+          }
+        : undefined,
     outcome: module.outcome,
     stage: isReadingModule
       ? "Орієнтація в документі"

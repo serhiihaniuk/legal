@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1843,
-    "reviewed": 235,
+    "reviewed": 236,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11643,9 +11643,9 @@
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/uczestnicy-i-definicje.ts",
       "family": "learning-module",
-      "contentHash": "a2965ee6c41b416adc8cdb2ed6b16578f4fc0bafa65e2950cebf744395e50b6a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "8f974c621dfa2e2fa18faefe85948907509da683c8da51c1da22446bd894b4cf",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/101-work-definitions.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/zmiany-i-ciaglosc.ts",
@@ -11804,28 +11804,28 @@
     {
       "path": "app/data/legal-library/learning/powierzanie-pracy.ts",
       "family": "supporting-copy",
-      "contentHash": "86516630c66a4bba69614faf1eef048edc194fc5bc52a4ac755e52967f380c56",
+      "contentHash": "e04124677236e64f453a82f994a0d3b288c1c496124091ba144a25d29451352d",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/legal-library/learning/ppsa.ts",
       "family": "supporting-copy",
-      "contentHash": "49e78654924ffa31e1981a72cea45591447059052b6863d7da554d3823e65b1f",
+      "contentHash": "03b0a641e6d330bad02928e2f0033b00da8845aedfb1dc7cb7263d2eee65f93a",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/legal-library/learning/rozporzadzenie-wniosek-pobyt-czasowy.ts",
       "family": "supporting-copy",
-      "contentHash": "9b0711aaaae688c0cb176de05096b3c01d86ebb2f48f2f12a94410a23b9f9327",
+      "contentHash": "3ae2169664e150ae99e67644a997756d6849331c4439e513a84b8ba110aee92a",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/legal-library/learning/ustawa-o-cudzoziemcach.ts",
       "family": "supporting-copy",
-      "contentHash": "b0f018e1bdef0ab4cf07d7d7f10b6b304b236e89a9083aa4edac90fd7657a164",
+      "contentHash": "ab29de3cc690bc5720881913e69248aef88c19e95f64396cdf90b91ed2813597",
       "writing": "pending",
       "evidence": null
     },
@@ -12623,7 +12623,7 @@
     {
       "path": "app/features/law-library/model/learning/legal-learning-view.ts",
       "family": "shared-renderer",
-      "contentHash": "833bda7270513bb9e9db521a23ec5fa232a76278c30530b68a84efe2e6ac8539",
+      "contentHash": "df57672d493c3b76d7397bbb72cf62259ac096c718b0383c8bf3c65892d9d3d9",
       "writing": "pending",
       "evidence": null
     },
@@ -12700,7 +12700,7 @@
     {
       "path": "app/features/law-library/ui/learning/legal-learning-overview.tsx",
       "family": "shared-renderer",
-      "contentHash": "fc7f02caa91cc7327f591eff5ba884124aaad042eb38a73b8c40523a9717218f",
+      "contentHash": "fe294000d37c482d689b8079997dc85a61bad59c54688cf98c14a257b90a2f7c",
       "writing": "pending",
       "evidence": null
     },

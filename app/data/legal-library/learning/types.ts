@@ -2,6 +2,10 @@ import type { LegalDocumentId } from "../contracts"
 import { defineLegalTextContent } from "../legal-text"
 import type { LegalLearningText } from "./legal-text"
 import type { DocumentSample } from "~/data/document-library/contracts"
+import type {
+  KnowledgeReview,
+  KnowledgeUnit,
+} from "~/data/legal-knowledge/contracts"
 
 export type AuthoredLearningDocumentId = LegalDocumentId
 
@@ -45,13 +49,23 @@ export type LegalLearningModule = {
   exercise?: LegalLearningText
 }
 
+export type LegalLearningPublication = LegalLearningModule & {
+  sourceReview?: KnowledgeReview
+}
+
+export function publishLegalLearningModule(
+  unit: KnowledgeUnit<LegalLearningModule>
+): LegalLearningPublication {
+  return { ...unit.body, sourceReview: unit.review }
+}
+
 export type LegalLearningCurriculum<
   D extends AuthoredLearningDocumentId = AuthoredLearningDocumentId,
 > = {
   documentId: D
   title: string
   description: string
-  modules: readonly LegalLearningModule[]
+  modules: readonly LegalLearningPublication[]
 }
 
 export function defineLegalLearningContent<const T>(content: T): T {

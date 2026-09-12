@@ -1,4 +1,7 @@
-import { defineLegalLearningCurriculum } from "./types"
+import {
+  defineLegalLearningCurriculum,
+  publishLegalLearningModule,
+} from "./types"
 
 import { entryAndCurrentBasisLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/entry-and-current-basis"
 import { temporaryResidencePurposesLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/temporary-residence-purposes"
@@ -16,14 +19,14 @@ export const foreignersActLearningCurriculum = defineLegalLearningCurriculum({
   description:
     "Дев’ять модулів для аналізу статусу cudzoziemiec: від wjazd і celu pobytu до документів, засобів захисту та повернення. Спочатку встановлюй факти, потім підставу, доказ, дію і наслідок.",
   modules: [
-    entryAndCurrentBasisLearningModuleTopic.body,
-    temporaryResidencePurposesLearningModuleTopic.body,
-    stayAndWorkRightLearningModuleTopic.body,
-    applicationEvidenceProcedureLearningModuleTopic.body,
-    familyStudyResearchBusinessLearningModuleTopic.body,
-    permanentAndEuLongTermResidentLearningModuleTopic.body,
-    cardsAndDocumentsLearningModuleTopic.body,
-    refusalWithdrawalExpiryRemediesLearningModuleTopic.body,
-    returnAndDateSensitiveAnalysisLearningModuleTopic.body,
-  ],
+    entryAndCurrentBasisLearningModuleTopic,
+    temporaryResidencePurposesLearningModuleTopic,
+    stayAndWorkRightLearningModuleTopic,
+    applicationEvidenceProcedureLearningModuleTopic,
+    familyStudyResearchBusinessLearningModuleTopic,
+    permanentAndEuLongTermResidentLearningModuleTopic,
+    cardsAndDocumentsLearningModuleTopic,
+    refusalWithdrawalExpiryRemediesLearningModuleTopic,
+    returnAndDateSensitiveAnalysisLearningModuleTopic,
+  ].map(publishLegalLearningModule),
 })

@@ -1,4 +1,7 @@
-import { defineLegalLearningCurriculum } from "./types"
+import {
+  defineLegalLearningCurriculum,
+  publishLegalLearningModule,
+} from "./types"
 import { legalStayWorkModuleTopic } from "./modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy"
 import { uczestnicyIDefinicjeLearningModuleTopic } from "./modules/powierzanie-pracy/uczestnicy-i-definicje"
 import { instrumentyDostepuLearningModuleTopic } from "./modules/powierzanie-pracy/instrumenty-dostepu"
@@ -13,12 +16,12 @@ export const workActLearningCurriculum = defineLegalLearningCurriculum({
   description:
     "Сім модулів для перевірки доступу cudzoziemca до роботи: від pobyt і ролей учасників до документів, змін, контролю та фактичної моделі роботи.",
   modules: [
-    legalStayWorkModuleTopic.body,
-    uczestnicyIDefinicjeLearningModuleTopic.body,
-    instrumentyDostepuLearningModuleTopic.body,
-    obowiazkiPodmiotuLearningModuleTopic.body,
-    zmianyICiagloscLearningModuleTopic.body,
-    kontrolaISankcjeLearningModuleTopic.body,
-    outsourcingAPracaTymczasowaLearningModuleTopic.body,
-  ],
+    legalStayWorkModuleTopic,
+    uczestnicyIDefinicjeLearningModuleTopic,
+    instrumentyDostepuLearningModuleTopic,
+    obowiazkiPodmiotuLearningModuleTopic,
+    zmianyICiagloscLearningModuleTopic,
+    kontrolaISankcjeLearningModuleTopic,
+    outsourcingAPracaTymczasowaLearningModuleTopic,
+  ].map(publishLegalLearningModule),
 })

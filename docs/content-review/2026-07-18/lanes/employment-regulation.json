@@ -220,27 +220,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
         "https://eli.gov.pl/eli/DU/2025/621/ogl"
       ],
-      "contentHash": "a2965ee6c41b416adc8cdb2ed6b16578f4fc0bafa65e2950cebf744395e50b6a",
+      "contentHash": "8f974c621dfa2e2fa18faefe85948907509da683c8da51c1da22446bd894b4cf",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "a2965ee6c41b416adc8cdb2ed6b16578f4fc0bafa65e2950cebf744395e50b6a",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "a2965ee6c41b416adc8cdb2ed6b16578f4fc0bafa65e2950cebf744395e50b6a",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

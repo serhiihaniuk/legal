@@ -8,7 +8,7 @@ import { temporaryResidenceApplicationLearningCurriculum } from "./rozporzadzeni
 import type {
   AuthoredLearningDocumentId,
   LegalLearningCurriculum,
-  LegalLearningModule,
+  LegalLearningPublication,
 } from "./types"
 import { foreignersActLearningCurriculum } from "./ustawa-o-cudzoziemcach"
 
@@ -40,7 +40,7 @@ export function getLegalLearningCurriculum(
 
 export function getLegalLearningModules(
   documentId: LegalDocumentId
-): readonly LegalLearningModule[] {
+): readonly LegalLearningPublication[] {
   const curriculum = legalLearningCurricula[documentId]
   const readingGuide = getDocumentReadingGuide(documentId)
   return [
@@ -55,7 +55,7 @@ export function getLegalLearningModules(
 export function getLegalLearningModule(
   documentId: LegalDocumentId,
   moduleId: string
-): LegalLearningModule | undefined {
+): LegalLearningPublication | undefined {
   return getLegalLearningModules(documentId).find(
     (module) => module.id === moduleId
   )

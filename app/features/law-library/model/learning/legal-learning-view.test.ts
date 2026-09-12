@@ -7,6 +7,7 @@ import {
 } from "~/data/legal-library"
 import { createLegalLearningTextAuthor } from "~/data/legal-library/learning/legal-text"
 import type { LegalLearningModule } from "~/data/legal-library/learning/types"
+import type { ExplanationReviewStatus } from "~/data/legal-library/contracts"
 
 import {
   buildLegalLearningModuleView,
@@ -91,6 +92,73 @@ describe("legal explanation view adapter", () => {
 })
 
 describe("authored learning module projection", () => {
+  it("does not turn other acts or quoted article numbers into same-number local provisions", () => {
+    const work = createLegalLearningTextAuthor("powierzanie-pracy")
+    const kpa = createLegalLearningTextAuthor("kpa")
+    const module: LegalLearningModule = {
+      ...authoredModule,
+      provisionScope: work.text`${work.article("2")}`,
+      sections: [
+        {
+          id: "imported-definitions",
+          title: "Визначення з іншого акта",
+          paragraphs: [
+            work.text`${work.external("art. 7 ustawy o zatrudnianiu pracowników tymczasowych", "https://eli.gov.pl/eli/DU/2025/236/ogl")}`,
+            kpa.text`${kpa.article("5")}`,
+          ],
+        },
+      ],
+      caseExample: {
+        title: "Приклад",
+        facts: "Факти",
+        analysis: "Аналіз",
+        lesson: "Висновок",
+        sample: {
+          kind: "letter",
+          language: "pl",
+          title: "Cytowany fragment",
+          note: "Przykład",
+          paragraphs: ["art. 6"],
+        },
+      },
+    }
+    expect(
+      findModuleProvisions(module, listProvisions("powierzanie-pracy")).map(
+        (item) => item.locator
+      )
+    ).toEqual(["Art. 2"])
+  })
+  it.each<ExplanationReviewStatus>([
+    "reviewed",
+    "draft",
+    "stale",
+    "blocked",
+    "superseded",
+  ])(
+    "keeps the edition date and only publishes a reviewed module date (%s)",
+    (reviewStatus) => {
+      const view = buildLegalLearningModuleView({
+        documentId: "powierzanie-pracy",
+        module: {
+          ...authoredModule,
+          sourceReview: {
+            reviewStatus,
+            language: "uk",
+            legalStateDate: "2026-09-10",
+            verifiedAt: "2026-09-12",
+          },
+        },
+        legalState: "2026-07-18",
+        reviewedProvisions: [],
+      })
+      expect(view.legalState).toBe("2026-07-18")
+      expect(view.explanationReview).toEqual(
+        reviewStatus === "reviewed"
+          ? { legalStateDate: "2026-09-10", verifiedAt: "2026-09-12" }
+          : undefined
+      )
+    }
+  )
   it("preserves complete sections and the authored example without requiring an exercise", () => {
     const view = project(authoredModule)
 

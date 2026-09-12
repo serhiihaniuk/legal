@@ -1,4 +1,7 @@
-import { defineLegalLearningCurriculum } from "./types"
+import {
+  defineLegalLearningCurriculum,
+  publishLegalLearningModule,
+} from "./types"
 
 import { scopeLearningModuleTopic } from "./modules/ppsa/scope"
 import { admissibilityLearningModuleTopic } from "./modules/ppsa/admissibility"
@@ -14,12 +17,12 @@ export const ppsaLearningCurriculum = defineLegalLearningCurriculum<"ppsa">({
   description:
     "Практичний курс про судовий контроль administracji publicznej у справах іноземців: від класифікації проблеми до наслідків рішення.",
   modules: [
-    scopeLearningModuleTopic.body,
-    admissibilityLearningModuleTopic.body,
-    partiesAndFileLearningModuleTopic.body,
-    reviewAndSuspensionLearningModuleTopic.body,
-    judgmentsAndEffectsLearningModuleTopic.body,
-    cassationAndNsaLearningModuleTopic.body,
-    executionAndCostsLearningModuleTopic.body,
-  ],
+    scopeLearningModuleTopic,
+    admissibilityLearningModuleTopic,
+    partiesAndFileLearningModuleTopic,
+    reviewAndSuspensionLearningModuleTopic,
+    judgmentsAndEffectsLearningModuleTopic,
+    cassationAndNsaLearningModuleTopic,
+    executionAndCostsLearningModuleTopic,
+  ].map(publishLegalLearningModule),
 })

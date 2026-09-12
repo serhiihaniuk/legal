@@ -33,8 +33,21 @@ export function LegalLearningOverview({
               </span>
             </Badge>
             <span className="text-xs text-muted-foreground">
-              Стан права: {module.legalState}
+              {module.explanationReview
+                ? `Стан права в поясненні: ${module.explanationReview.legalStateDate}`
+                : `Стан права: ${module.legalState}`}
             </span>
+            {module.explanationReview ? (
+              <span className="text-xs text-muted-foreground">
+                Перевірено: {module.explanationReview.verifiedAt}
+              </span>
+            ) : null}
+            {module.explanationReview &&
+            module.explanationReview.legalStateDate !== module.legalState ? (
+              <span className="text-xs text-muted-foreground">
+                Текст акта: стан на {module.legalState}
+              </span>
+            ) : null}
           </>
         }
       >
