@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1839,
-    "reviewed": 220,
+    "reviewed": 222,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11853,9 +11853,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/case-file.ts",
       "family": "map-topic",
-      "contentHash": "5f239de7ce3acdf6e649dc4eb87ac3498536873cae571acc5aa6e0faa5fcb82c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "e674cfc807e4d13c78506889ae1bf66f101c8ac5fb00f933086244cfacd4b0d2",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/91-case-file-foreign-documents-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/complaint.ts",
@@ -11944,9 +11944,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/evidence.ts",
       "family": "map-topic",
-      "contentHash": "d69479436f23d625ebf39ce8428db82af5ec6f2977985b88e3248e610652baf4",
+      "contentHash": "59085bc76fe4081e85a3d0de33d19e45bf944e8dd02424baa209f19eb28809e6",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/90-evidence-types-preparation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/91-case-file-foreign-documents-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/extraordinary-wsa.ts",
@@ -11965,9 +11965,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/foreign-documents.ts",
       "family": "map-topic",
-      "contentHash": "6fb60fbe116521bbd5350c318925b6183e6a52df5f665965386fe13100064184",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "29246f8f1779f24514944c169d4b33ce9d88187ec5ab16a193be5e8c723132b3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/91-case-file-foreign-documents-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/goal-of-stay.ts",

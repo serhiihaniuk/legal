@@ -5,7 +5,7 @@ import {
 import { createEvidenceDocumentTextAuthor } from "~/data/document-library/legal-text"
 import { defineLegalMapArticle } from "~/data/legal-map/node-guide-types"
 import type { LegalNode } from "~/data/shared/legal-types"
-import { kpaLaw as law } from "../authoring"
+import { foreignersLaw, kpaLaw as law } from "../authoring"
 import type { LegalMapTopicBody } from "./principle-legality"
 
 const documents = createEvidenceDocumentTextAuthor()
@@ -55,6 +55,11 @@ export const evidenceTopic: KnowledgeUnit<EvidenceBody> = defineKnowledgeUnit({
     ],
     sources: [
       {
+        label: "Ustawa o cudzoziemcach: сторона за кордоном",
+        url: "https://eli.gov.pl/eli/DU/2025/1079/ogl",
+        note: foreignersLaw.text`${foreignersLaw.article("10", "Art. 10 ust. 1")}: виняток із визначених правил доступу та участі, коли іноземець перебуває за кордоном без представника для ведення справи, який проживає в Польщі.`,
+      },
+      {
         label: "KPA: проведення й оцінка доказів",
         url: "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         note: law.text`Перевірено 12.09.2026 ${law.article("7")}, ${law.article("10")}, ${law.articleRange("67", "69")}, ${law.articleRange("73", "75")}, ${law.articleRange("77", "86")} і ${law.article("107", "art. 107 § 3–5")}. Приклад пояснює загальні правила KPA й не встановлює матеріальних умов конкретного дозволу на перебування.`,
@@ -89,6 +94,7 @@ export const evidenceTopic: KnowledgeUnit<EvidenceBody> = defineKnowledgeUnit({
             law.text`Під час допиту важливе джерело знань свідка: власне спостереження, прочитаний запис чи чужа розповідь. ${law.article("82")} визначає осіб, яких не можна допитувати як свідків, зокрема нездатних сприймати або повідомляти свої спостереження. ${law.article("83")} окремо регулює право визначених близьких осіб відмовитися від показань і право не відповідати на певні питання. Перед допитом орган роз'яснює відповідні права та відповідальність за неправдиві показання. Знайомство зі стороною саме собою не виключає людину зі свідків.`,
             law.text`Допит фіксують у протоколі за ${law.article("67", "art. 67 § 2 pkt 2")}. За ${law.article("68")} у ньому мають бути учасники, хід дії, встановлене та зауваження присутніх; протокол зачитують і підписують. ${law.article("69", "Art. 69 § 1")} вимагає зачитати протокол допиту й подати його на підпис особі, яка дала показання, невідкладно після них. Запис уточнювального питання дозволяє пізніше побачити, чому загальна фраза свідка має обмежене значення.`,
             law.text`За ${law.article("73", "art. 73 § 1")} сторона може ознайомлюватися з матеріалами справи, робити нотатки, копії та виписки, також після її завершення. Це дозволяє зіставити протокол із документами, які вже є в органу. Обмеження доступу за ${law.article("74")} стосуються, зокрема, визначеної секретної інформації та матеріалів, вилучених із доступу через важливий державний інтерес; відмова оформлюється postanowieniem із правом на zażalenie.`,
+            foreignersLaw.text`У провадженні за ustawą o cudzoziemcach діє окремий виняток. За ${foreignersLaw.article("10", "art. 10 ust. 1")} не застосовують ${law.article("73", "art. 73 § 1 і 1a")}, ${law.article("79")} та ${law.article("81")} KPA, якщо іноземець перебуває за кордоном і не призначив представника для ведення справи, який проживає в Польщі. Обидві обставини мають значення. Сам виїзд не дає підстав переносити це виключення на особу, яка має такого представника.`,
           ],
           example: {
             title: "Свідок бачив два відвідування, а не весь місяць проживання",
@@ -146,7 +152,12 @@ export const evidenceTopic: KnowledgeUnit<EvidenceBody> = defineKnowledgeUnit({
       ],
     }),
     why: "Участь у дослідженні доказу допомагає відокремити власні спостереження, чужі слова та висновки. Орган повинен пояснити, які факти з них установлені.",
-    related: ["document-types", "document-matrix", "evidence-matrix"],
+    related: [
+      "document-types",
+      "document-matrix",
+      "evidence-matrix",
+      "case-file",
+    ],
   },
 })
 

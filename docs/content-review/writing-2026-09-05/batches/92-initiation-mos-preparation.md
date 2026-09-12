@@ -1,0 +1,9 @@
+# Initiation and MOS: pending review
+
+Preparation on 12.09.2026 during batch 91. Root read both complete legacy map topics, initiation.ts and mos-procedure.ts. Neither is accepted by this preparation.
+
+The next pair must distinguish the legal beginning of proceedings from the technical act of completing a MOS form. Keep initiation about the request, initiating authority, relevant date, competence, minimum filing requirements and the possible refusal to initiate. The existing formal-completeness article already explains signature cure versus proof of conditions; link it instead of repeating its full example. Verify arts. 61–66 KPA and amendments, including electronic filing and the scope of art. 61a. A completed dated example should explain what reached the authority and what procedural consequence followed.
+
+MOS needs the actual filing sequence with its distinct actors and records. Its legacy introduction says all listed applications use MOS without preserving exceptions there. Verify current commencement notices, special-act provisions, transitional cases, statutory representatives, applicant signatures, attachment roles, receipt and later appearance. Distinguish the ordinary residence applications from CUKR. Explain whether subsequent correspondence uses the same channel rather than assuming that every response enters an electronic file through MOS. Use actual official instructions for any named file format or button. Do not enter personal data or submit a live application for testing.
+
+Current-source verification, complete authored rewrites, completed examples, independent review, generated references and responsive browser checks remain required. These two map articles remain unfinished. The broader document, law-writing and original-source fidelity tasks retain their scope.
