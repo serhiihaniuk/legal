@@ -1188,5 +1188,15 @@
     "path": "app/data/legal-map/editorial/topics/principle-two-instance.ts",
     "contentHash": "9b912fa6cc19c5b89c2fd0d4169533d204a02932228a70b16d3c7c6b58f0a611",
     "evidence": "docs/content-review/writing-2026-09-05/batches/94-two-instance-overview-preparation.md"
+  },
+  {
+    "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
+    "contentHash": "949bd68ad6b597e3910b7b5bff3f2e2d330c783c0072bb224deb8f31e9b24909",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/95-posting-work-permit.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/delegation.ts",
+    "contentHash": "85fa538fd7404f37cc98dd3f1350d7735e21f60554cfa03b2f63792d710ff2bb",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/95-posting-work-permit.md"
   }
 ]

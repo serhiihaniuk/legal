@@ -1894,6 +1894,36 @@
       }
     },
     {
+      "id": "evidence-document:posting-work-permit",
+      "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "posting-work-permit",
+      "contentId": "posting-work-permit",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "949bd68ad6b597e3910b7b5bff3f2e2d330c783c0072bb224deb8f31e9b24909",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:power-of-attorney",
       "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
       "family": "evidence-document",
@@ -3706,7 +3736,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "d6adec52854f4a73fcdf8ae3217e8fcac71e0786433237ce7d161183b42c7905",
+      "contentHash": "85fa538fd7404f37cc98dd3f1350d7735e21f60554cfa03b2f63792d710ff2bb",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
