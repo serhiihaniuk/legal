@@ -1,4 +1,10 @@
-import { cleanup, render, within } from "@testing-library/react"
+import {
+  cleanup,
+  fireEvent,
+  render,
+  waitFor,
+  within,
+} from "@testing-library/react"
 import { afterEach, describe, expect, it } from "vitest"
 import { MemoryRouter } from "react-router"
 
@@ -7,6 +13,7 @@ import {
   type LegalLearningModuleView,
 } from "~/features/law-library/model/learning/legal-learning-view"
 import type { LegalLearningModule } from "~/data/legal-library/learning/types"
+import { createLegalLearningTextAuthor } from "~/data/legal-library/learning/legal-text"
 
 import {
   getLegalLearningContentToc,
@@ -20,6 +27,7 @@ const target = {
   documentId: "kpa",
   provisionId: "kpa-art-64",
 } as const
+const kpaText = createLegalLearningTextAuthor("kpa")
 
 const moduleView: LegalLearningModuleView = {
   order: 1,
@@ -71,7 +79,7 @@ const moduleView: LegalLearningModuleView = {
           rules: [
             {
               locator: "§ 1",
-              explanation: "Art. 64 KPA застосовується до braków formalnych.",
+              explanation: kpaText.text`${kpaText.article("64", "Art. 64 KPA")} застосовується до braków formalnych.`,
             },
           ],
           legalEffect: "Art. 64 KPA визначає наслідок.",
@@ -91,6 +99,134 @@ const moduleView: LegalLearningModuleView = {
 }
 
 describe("legal learning reference treatment", () => {
+  it("does not turn plain citation text or a matching prefix into a guessed link", () => {
+    const { container } = render(
+      <MemoryRouter>
+        <LegalLearningModuleContent
+          module={{
+            ...moduleView,
+            provisionGuide: {
+              ...moduleView.provisionGuide,
+              items: moduleView.provisionGuide.items.map((item) => ({
+                ...item,
+                reference: "Art. 6",
+                target: {
+                  kind: "legal-provision",
+                  documentId: "kpa",
+                  provisionId: "kpa-art-6",
+                },
+                explanation: {
+                  ...item.explanation,
+                  summary: "Art. 6 і Art. 64 KPA згадано у звичайному тексті.",
+                },
+              })),
+            },
+          }}
+          navigation={{}}
+        />
+      </MemoryRouter>
+    )
+    const trigger = container.querySelector('[data-slot="accordion-trigger"]')
+    if (!(trigger instanceof HTMLElement)) throw new Error("Missing trigger")
+    expect(trigger.textContent).toContain(
+      "Art. 6 і Art. 64 KPA згадано у звичайному тексті."
+    )
+    const links = within(trigger).getAllByRole("link")
+    expect(links).toHaveLength(1)
+    expect(links[0].textContent).toBe("Art. 6")
+    expect(links[0].getAttribute("data-reference-context")).toBe(
+      "reference-section"
+    )
+  })
+
+  it.each([undefined, "Braki formalne"])(
+    "keeps the summary once through accordion toggles with title %s",
+    async (title) => {
+      const { container } = render(
+        <MemoryRouter>
+          <LegalLearningModuleContent
+            module={{
+              ...moduleView,
+              articleGroups: [],
+              provisionGuide: {
+                ...moduleView.provisionGuide,
+                items: moduleView.provisionGuide.items.map((item) => ({
+                  ...item,
+                  title,
+                })),
+              },
+            }}
+            navigation={{}}
+          />
+        </MemoryRouter>
+      )
+      const accordion = container.querySelector('[data-slot="accordion"]')
+      const trigger = container.querySelector('[data-slot="accordion-trigger"]')
+      if (!accordion || !trigger) throw new Error("Missing provision accordion")
+      const summary = "Art. 64 KPA встановлює порядок дій."
+      expect(accordion.textContent?.split(summary)).toHaveLength(2)
+      expect(trigger.textContent).toContain(summary)
+      if (title) expect(trigger.textContent).toContain(title)
+      const panel = container.querySelector('[data-slot="accordion-content"]')
+      expect(panel?.textContent).not.toContain(summary)
+      for (const text of [
+        "Art. 64 KPA застосовується до braków formalnych.",
+        "Art. 64 KPA визначає наслідок.",
+        "Art. 64 KPA має значення для справи.",
+        "Відкрити повне пояснення Art. 64 KPA",
+      ]) {
+        expect(panel?.textContent).toContain(text)
+      }
+      fireEvent.click(trigger)
+      await waitFor(() =>
+        expect(trigger.getAttribute("aria-expanded")).toBe("false")
+      )
+      expect(accordion.textContent?.split(summary)).toHaveLength(2)
+      fireEvent.click(trigger)
+      await waitFor(() =>
+        expect(trigger.getAttribute("aria-expanded")).toBe("true")
+      )
+      expect(accordion.textContent?.split(summary)).toHaveLength(2)
+      expect(
+        container.querySelector("#legal-learning-provisions dl")
+      ).toBeNull()
+    }
+  )
+
+  it("retains a supplied title and summary with equal words but different reference destinations", () => {
+    const law = createLegalLearningTextAuthor("kpa")
+    const { container } = render(
+      <MemoryRouter>
+        <LegalLearningModuleContent
+          module={{
+            ...moduleView,
+            provisionGuide: {
+              ...moduleView.provisionGuide,
+              items: moduleView.provisionGuide.items.map((item) => ({
+                ...item,
+                title: law.text`${law.article("64", "Важливий припис")}`,
+                explanation: {
+                  ...item.explanation,
+                  summary: law.text`${law.article("57", "Важливий припис")}`,
+                },
+              })),
+            },
+          }}
+          navigation={{}}
+        />
+      </MemoryRouter>
+    )
+    const trigger = container.querySelector('[data-slot="accordion-trigger"]')
+    if (!(trigger instanceof HTMLElement)) throw new Error("Missing trigger")
+    const links = within(trigger).getAllByRole("link", {
+      name: "Важливий припис",
+    })
+    expect(links).toHaveLength(2)
+    expect(links[0].getAttribute("href")).not.toBe(
+      links[1].getAttribute("href")
+    )
+  })
+
   it("distinguishes the explanation's legal state and check date from the source edition", () => {
     const { getByText } = render(
       <MemoryRouter>
@@ -226,6 +362,22 @@ describe("authored learning content", () => {
       reviewedProvisions: [],
     })
   }
+
+  it("keeps the unavailable-explanation message without manufacturing repeated overview rows", () => {
+    const { container, getByText } = render(
+      <MemoryRouter>
+        <LegalLearningModuleContent
+          module={project(authoredModule)}
+          navigation={{}}
+        />
+      </MemoryRouter>
+    )
+    expect(getByText("Перевірене пояснення норм готується")).toBeDefined()
+    expect(container.querySelector("#legal-learning-provisions dl")).toBeNull()
+    expect(
+      container.querySelector("#legal-learning-provisions")?.textContent
+    ).not.toContain(authoredModule.outcome)
+  })
 
   it("renders each authored section locally once and preserves the completed example and table", () => {
     const view = project(authoredModule)

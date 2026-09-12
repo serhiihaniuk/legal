@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react"
-import type { ReactNode } from "react"
 
 import type { DocumentHeading } from "~/components/patterns/document-content"
 import { LegalLink, LegalText as LearningText } from "~/components/references"
@@ -10,44 +9,7 @@ import {
   AccordionTrigger,
 } from "~/components/ui/accordion"
 import type { LegalLearningModuleView } from "~/features/law-library/model/learning/legal-learning-view"
-import {
-  legalLearningPlainText,
-  type LegalLearningText,
-} from "~/data/legal-library/learning/legal-text"
-
-function ProvisionText({
-  text,
-  reference,
-  target,
-}: {
-  text: LegalLearningText
-  reference: string
-  target?: LegalLearningModuleView["provisionGuide"]["items"][number]["target"]
-}) {
-  if (typeof text !== "string" || !target || !text.includes(reference)) {
-    return <LearningText text={text} context="prose" />
-  }
-
-  const content: ReactNode[] = []
-  let cursor = 0
-  let matchIndex = text.indexOf(reference)
-  while (matchIndex !== -1) {
-    if (matchIndex > cursor) content.push(text.slice(cursor, matchIndex))
-    content.push(
-      <LegalLink
-        key={`${matchIndex}-${reference}`}
-        reference={target}
-        context="prose"
-      >
-        {reference}
-      </LegalLink>
-    )
-    cursor = matchIndex + reference.length
-    matchIndex = text.indexOf(reference, cursor)
-  }
-  if (cursor < text.length) content.push(text.slice(cursor))
-  return <>{content}</>
-}
+import { legalLearningPlainText } from "~/data/legal-library/learning/legal-text"
 
 function formatRuleCount(count: number) {
   const lastTwo = count % 100
@@ -88,52 +50,42 @@ function ProvisionGuide({
         {guide.items.map((item) => (
           <AccordionItem key={item.id} value={item.id}>
             <AccordionTrigger className="py-5 hover:no-underline">
-              <span className="grid min-w-0 flex-1 gap-2 pr-5 text-left sm:grid-cols-[8rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5">
-                <span className="font-mono text-sm font-medium text-foreground">
-                  {item.target ? (
-                    <LegalLink
-                      reference={item.target}
-                      context="reference-section"
-                    >
-                      {item.reference}
-                    </LegalLink>
-                  ) : (
-                    item.reference
-                  )}
+              <span className="grid min-w-0 flex-1 gap-2 pr-5 text-left">
+                <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                  <span className="font-mono text-sm font-medium text-foreground">
+                    {item.target ? (
+                      <LegalLink
+                        reference={item.target}
+                        context="reference-section"
+                      >
+                        {item.reference}
+                      </LegalLink>
+                    ) : (
+                      item.reference
+                    )}
+                  </span>
+                  <span className="text-xs leading-6 font-normal whitespace-nowrap text-muted-foreground">
+                    {formatRuleCount(item.explanation.rules.length)}
+                  </span>
                 </span>
                 <span className="grid gap-1">
-                  <span className="text-sm leading-6 font-medium text-foreground sm:text-base">
-                    <LearningText text={item.title} />
-                  </span>
+                  {item.title ? (
+                    <span className="text-sm leading-6 font-medium text-foreground sm:text-base">
+                      <LearningText text={item.title} />
+                    </span>
+                  ) : null}
                   <span className="text-sm leading-6 font-normal text-muted-foreground">
-                    <ProvisionText
+                    <LearningText
                       text={item.explanation.summary}
-                      reference={item.reference}
-                      target={item.target}
+                      context="prose"
                     />
                   </span>
-                </span>
-                <span className="text-xs leading-6 font-normal whitespace-nowrap text-muted-foreground">
-                  {formatRuleCount(item.explanation.rules.length)}
                 </span>
               </span>
             </AccordionTrigger>
 
             <AccordionContent className="border-t bg-muted/40 px-4 pt-5 pb-7 sm:px-6">
               <div className="flex w-full min-w-0 flex-col gap-7">
-                <section>
-                  <h4 className="text-sm font-semibold">
-                    Що встановлює ця частина
-                  </h4>
-                  <p className="mt-2 text-base leading-7 text-muted-foreground">
-                    <ProvisionText
-                      text={item.explanation.summary}
-                      reference={item.reference}
-                      target={item.target}
-                    />
-                  </p>
-                </section>
-
                 {item.explanation.rules.length ? (
                   <section>
                     <h4 className="text-sm font-semibold">
@@ -162,10 +114,9 @@ function ProvisionGuide({
                               )}
                             </p>
                             <p className="text-base leading-7 text-muted-foreground">
-                              <ProvisionText
+                              <LearningText
                                 text={rule.explanation}
-                                reference={item.reference}
-                                target={item.target}
+                                context="prose"
                               />
                             </p>
                           </div>
@@ -178,10 +129,9 @@ function ProvisionGuide({
                 <section className="border-t pt-6">
                   <h4 className="text-sm font-semibold">Правовий наслідок</h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
-                    <ProvisionText
+                    <LearningText
                       text={item.explanation.legalEffect}
-                      reference={item.reference}
-                      target={item.target}
+                      context="prose"
                     />
                   </p>
                 </section>
@@ -191,10 +141,9 @@ function ProvisionGuide({
                     Значення у справі іноземця
                   </h4>
                   <p className="mt-2 text-base leading-7 text-muted-foreground">
-                    <ProvisionText
+                    <LearningText
                       text={item.explanation.foreignersCase}
-                      reference={item.reference}
-                      target={item.target}
+                      context="prose"
                     />
                   </p>
                   {item.target ? (
@@ -229,34 +178,38 @@ export function LegalLearningProvisions({
   return (
     <section id={heading.id}>
       <h2>{heading.title}</h2>
-      <p>
-        Спочатку подивіться на роль частин механізму, а нижче розкрийте кожну з
-        них. Так видно не лише номер, а питання, умови, докази і наслідок.
-      </p>
-      <dl>
-        {module.articleGroups.map((group) => (
-          <div
-            key={`${legalLearningPlainText(group.reference)}-${legalLearningPlainText(group.role)}`}
-          >
-            <dt lang="pl">
-              {group.target ? (
-                <LegalLink reference={group.target} context="reference-section">
-                  <LearningText text={group.reference} />
-                </LegalLink>
-              ) : (
-                <LearningText text={group.reference} />
-              )}
-            </dt>
-            <dd>
-              <ProvisionText
-                text={group.role}
-                reference={legalLearningPlainText(group.reference)}
-                target={group.target}
-              />
-            </dd>
-          </div>
-        ))}
-      </dl>
+      {module.articleGroups.length ? (
+        <>
+          <p>
+            Спочатку подивіться на роль частин механізму, а нижче розкрийте
+            кожну з них. Так видно не лише номер, а питання, умови, докази і
+            наслідок.
+          </p>
+          <dl>
+            {module.articleGroups.map((group) => (
+              <div
+                key={`${legalLearningPlainText(group.reference)}-${legalLearningPlainText(group.role)}`}
+              >
+                <dt lang="pl">
+                  {group.target ? (
+                    <LegalLink
+                      reference={group.target}
+                      context="reference-section"
+                    >
+                      <LearningText text={group.reference} />
+                    </LegalLink>
+                  ) : (
+                    <LearningText text={group.reference} />
+                  )}
+                </dt>
+                <dd>
+                  <LearningText text={group.role} context="prose" />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </>
+      ) : null}
 
       <ProvisionGuide guide={module.provisionGuide} />
     </section>

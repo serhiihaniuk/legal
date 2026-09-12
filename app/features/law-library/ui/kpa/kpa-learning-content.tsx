@@ -105,7 +105,7 @@ export function KpaLearningContent({
           reference: article
             ? `art. ${article} KPA`
             : (provision?.locator ?? explanation.provisionId),
-          title: entry?.shortTitle ?? explanation.summary,
+          title: entry?.shortTitle,
           target: parseLegalProvisionReference({
             kind: "legal-provision",
             documentId: "kpa",

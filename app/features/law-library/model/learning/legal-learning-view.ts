@@ -6,7 +6,6 @@ import type {
 } from "~/data/legal-library/contracts"
 import { getDocumentReadingGuide } from "~/data/legal-library/learning"
 import {
-  legalLearningPlainText,
   legalLearningProvisionReferences,
   type LegalLearningText,
 } from "~/data/legal-library/learning/legal-text"
@@ -38,7 +37,7 @@ export type LegalLearningArticleGroup = {
 export type LegalExplanationView = {
   id: string
   reference: string
-  title: LegalLearningText
+  title?: LegalLearningText
   target?: LegalProvisionReference
   explanation: LegalExplanation
 }
@@ -46,7 +45,7 @@ export type LegalExplanationView = {
 export function toLegalExplanationView({
   explanation,
   reference,
-  title = explanation.summary,
+  title,
   target,
   id = `provision-${explanation.provisionId}`,
 }: {
@@ -94,24 +93,6 @@ export type LegalLearningModuleView = {
 type ReviewedProvision = {
   provision: LegalProvision
   explanation: LegalExplanation
-}
-
-function explanationTitle(
-  provision: LegalProvision,
-  explanation: LegalExplanation
-): string {
-  const withoutLocator = legalLearningPlainText(explanation.summary)
-    .replace(
-      new RegExp(
-        `^(?:art\\.|§|załącznik(?: nr)?)\\s*${provision.locator.replace(/\D/g, "")}\\s*`,
-        "i"
-      ),
-      ""
-    )
-    .trim()
-  const title = withoutLocator.split(/[.;:]/)[0]?.trim()
-  if (!title) return `Пояснення ${provision.locator}`
-  return title.charAt(0).toLocaleUpperCase("uk") + title.slice(1)
 }
 
 export function findModuleProvisions(
@@ -174,7 +155,6 @@ export function buildLegalLearningModuleView({
       toLegalExplanationView({
         explanation,
         reference: provision.locator,
-        title: explanationTitle(provision, explanation),
         target: parseLegalProvisionReference({
           kind: "legal-provision",
           documentId,
@@ -216,22 +196,7 @@ export function buildLegalLearningModuleView({
     mechanismSections: module.sections,
     layers: [],
     terms,
-    articleGroups: reviewedProvisions.length
-      ? reviewedProvisions.map(({ provision, explanation }) => ({
-          reference: provision.locator,
-          role: explanation.summary,
-          target: parseLegalProvisionReference({
-            kind: "legal-provision",
-            documentId,
-            provisionId: provision.id,
-          }),
-        }))
-      : [
-          {
-            reference: module.provisionScope,
-            role: module.outcome,
-          },
-        ],
+    articleGroups: [],
     provisionGuide: {
       countLabel: reviewedProvisions.length
         ? `${reviewedProvisions.length} перевірених норм у цьому модулі`

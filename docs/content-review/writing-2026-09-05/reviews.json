@@ -1303,5 +1303,10 @@
     "path": "app/data/legal-library/learning/modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy.ts",
     "contentHash": "aed69296d3dd68a910fd284d1a9ddf43033e5c99e5e38782445117a9abffad63",
     "evidence": "docs/content-review/writing-2026-09-05/batches/103-work-access.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/powierzanie-pracy/instrumenty-dostepu.ts",
+    "contentHash": "e59895433d72f03a272c1d3d4e2188980034d945dabf890ec09471998293f221",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/105-work-instruments.md"
   }
 ]

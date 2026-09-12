@@ -88,10 +88,39 @@ describe("legal explanation view adapter", () => {
     expect(view).not.toHaveProperty("rules")
     expect(view).not.toHaveProperty("legalEffect")
     expect(view).not.toHaveProperty("foreignersCase")
+
+    expect(
+      toLegalExplanationView({
+        explanation: resolution.explanation,
+        reference: "art. 64 KPA",
+      }).title
+    ).toBeUndefined()
   })
 })
 
 describe("authored learning module projection", () => {
+  it("keeps an actual provision summary without copying it into a title or role overview", async () => {
+    const provision = listProvisions("powierzanie-pracy").find(
+      (item) => item.locator === "Art. 2"
+    )
+    if (!provision) throw new Error("Missing work-act article 2")
+    const resolution = await getExplanation("powierzanie-pracy", provision.id)
+    if (resolution.status !== "reviewed")
+      throw new Error("Missing article 2 explanation")
+    const view = buildLegalLearningModuleView({
+      documentId: "powierzanie-pracy",
+      module: authoredModule,
+      legalState: "2026-07-18",
+      reviewedProvisions: [{ provision, explanation: resolution.explanation }],
+    })
+    expect(view.articleGroups).toEqual([])
+    expect(view.provisionGuide.items[0]?.title).toBeUndefined()
+    expect(view.provisionGuide.items[0]?.explanation).toBe(
+      resolution.explanation
+    )
+    expect(project(authoredModule).articleGroups).toEqual([])
+  })
+
   it("does not turn other acts or quoted article numbers into same-number local provisions", () => {
     const work = createLegalLearningTextAuthor("powierzanie-pracy")
     const kpa = createLegalLearningTextAuthor("kpa")

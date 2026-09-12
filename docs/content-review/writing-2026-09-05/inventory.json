@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 244,
+    "reviewed": 245,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -11608,9 +11608,9 @@
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/instrumenty-dostepu.ts",
       "family": "learning-module",
-      "contentHash": "f6ba8d4b2decc440ddc592d8262e197cf27622d42712c7c651e87ca7b3bd487d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "e59895433d72f03a272c1d3d4e2188980034d945dabf890ec09471998293f221",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/105-work-instruments.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/kontrola-i-sankcje.ts",
@@ -12623,7 +12623,7 @@
     {
       "path": "app/features/law-library/model/learning/legal-learning-view.ts",
       "family": "shared-renderer",
-      "contentHash": "df57672d493c3b76d7397bbb72cf62259ac096c718b0383c8bf3c65892d9d3d9",
+      "contentHash": "e90735c8a0ae307546e76c86136b9ca865e2c2aeb729dd9d053e78b5d20bf976",
       "writing": "pending",
       "evidence": null
     },
@@ -12651,7 +12651,7 @@
     {
       "path": "app/features/law-library/ui/kpa/kpa-learning-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "ec8a75d9b8934fe0aebc3cb14de5390872206defd8cd98a80864db26647fbf76",
+      "contentHash": "14c61bb1e1aeaa9285dfe7b96ac841226ac872701f2451eadbe125a69dabc327",
       "writing": "pending",
       "evidence": null
     },
@@ -12707,7 +12707,7 @@
     {
       "path": "app/features/law-library/ui/learning/legal-learning-provisions.tsx",
       "family": "shared-renderer",
-      "contentHash": "93a792232f6327a54e9bb3c5133f3935207d72a3eafba9a7866dfa5922ce8e87",
+      "contentHash": "62c1335e6ad066a69f338bd11cd12b9962d685f097948d3ad4a4f536736147d8",
       "writing": "pending",
       "evidence": null
     },
