@@ -204,3 +204,5 @@ Batch 73 completes the seasonal article writing disposition after the declaratio
 Batch 74 closes the seasonal permit, registration-certificate and arrival-statement catalog gaps. Each has its own guide and typed links in both directions. The next employment article is delegowanie. Other dispositions remain open.
 
 Batch 75 completes delegation in place with a source-reviewed comparison, separate PIP and insurance roles, and concrete existing document references. Posting document gaps remain recorded in pending batch 76; the read-only employment audit and upcoming order are in batch 75.
+
+Batch 76 closes the PIP declaration destination gap and links it from delegation. Posting permit and A1 remain separate gaps; employer duties source preparation is recorded in pending batch 77. This does not accept the remaining employment topics.

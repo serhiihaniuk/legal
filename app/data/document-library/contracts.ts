@@ -2,6 +2,7 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
+  | "pip-posting-declaration"
   | "seasonal-work-permit"
   | "seasonal-registration-certificate"
   | "seasonal-arrival-statement"
@@ -180,6 +181,7 @@ export type EvidenceDocumentReferenceResolution =
     }
 
 export const evidenceDocumentIds = [
+  "pip-posting-declaration",
   "seasonal-work-permit",
   "seasonal-registration-certificate",
   "seasonal-arrival-statement",

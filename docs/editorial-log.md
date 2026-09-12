@@ -623,3 +623,7 @@ Added separate guides and filled fictional specimens for the registration certif
 ## 2026-09-12: delegowanie and separate legal questions
 
 Rewrote delegowanie as six sections with a completed twenty-day comparison. Corrected the service exemptions and employer statement, distinguished PIP notice and inspection deadlines, and added primary EU insurance sources. Independent review accepted the final article. Full verification and desktop/mobile keyboard navigation passed. Writing batch 75 records sources and hash; posting document guides remain next. The global legal baseline is unchanged.
+
+## 2026-09-12: PIP declaration and worker annex
+
+Added a dedicated PIP declaration guide with a filled selected-field specimen. Distinguished the submitted worker/address annex from records retained for inspection, separate permissions and later change notices. All six official PDF pages and the live service instructions were checked; independent review accepted the guide and map-link delta. Full verification, previews, desktop/mobile rendering and keyboard links passed. Evidence is in writing batch 76. The remaining posting documents and employer-duty review stay open.

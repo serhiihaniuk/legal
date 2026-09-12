@@ -1,3 +1,4 @@
+import pipPostingDeclarationTopic from "./editorial/guides/pip-posting-declaration"
 import seasonalArrivalStatementTopic from "./editorial/guides/seasonal-arrival-statement"
 import seasonalRegistrationCertificateTopic from "./editorial/guides/seasonal-registration-certificate"
 import seasonalWorkPermitTopic from "./editorial/guides/seasonal-work-permit"
@@ -115,6 +116,7 @@ function defineDocumentGuideContent<const T extends readonly DocumentGuide[]>(
 
 export const documentGuides: readonly DocumentGuide[] =
   defineDocumentGuideContent([
+    pipPostingDeclarationTopic.body,
     seasonalArrivalStatementTopic.body,
     seasonalRegistrationCertificateTopic.body,
     seasonalWorkPermitTopic.body,

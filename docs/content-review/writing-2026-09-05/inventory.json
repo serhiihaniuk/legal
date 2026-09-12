@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1826,
-    "reviewed": 199,
+    "totalFiles": 1827,
+    "reviewed": 200,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 88,
+      "evidence-document": 89,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -670,6 +670,13 @@
       "contentHash": "a744d49eb472c9bdefa7d5d218eb6b23781b463bf6beda3d706b8c10c83fffb5",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/11-identity-and-status.md"
+    },
+    {
+      "path": "app/data/document-library/editorial/guides/pip-posting-declaration.ts",
+      "family": "evidence-document",
+      "contentHash": "464c68364c0dd41ffd87ec0adf9d290c8b7afeb528863ca5d78977225cbb052b",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/76-posting-documents.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/polish-graduation-diploma.ts",
@@ -11804,9 +11811,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/delegation.ts",
       "family": "map-topic",
-      "contentHash": "875bcdc0d6925c4115fa4b2c94adbea49457ff8316287d6738b05cb1a80e50c4",
+      "contentHash": "d6adec52854f4a73fcdf8ae3217e8fcac71e0786433237ce7d161183b42c7905",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/75-delegation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/76-posting-documents.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/document-matrix.ts",

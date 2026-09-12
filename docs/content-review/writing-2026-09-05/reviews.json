@@ -1005,8 +1005,13 @@
     "evidence": "docs/content-review/writing-2026-09-05/batches/74-seasonal-documents.md"
   },
   {
+    "path": "app/data/document-library/editorial/guides/pip-posting-declaration.ts",
+    "contentHash": "464c68364c0dd41ffd87ec0adf9d290c8b7afeb528863ca5d78977225cbb052b",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/76-posting-documents.md"
+  },
+  {
     "path": "app/data/legal-map/editorial/topics/delegation.ts",
-    "contentHash": "875bcdc0d6925c4115fa4b2c94adbea49457ff8316287d6738b05cb1a80e50c4",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/75-delegation.md"
+    "contentHash": "d6adec52854f4a73fcdf8ae3217e8fcac71e0786433237ce7d161183b42c7905",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/76-posting-documents.md"
   }
 ]

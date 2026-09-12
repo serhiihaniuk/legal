@@ -1594,6 +1594,36 @@
       }
     },
     {
+      "id": "evidence-document:pip-posting-declaration",
+      "path": "app/data/document-library/editorial/guides/pip-posting-declaration.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "pip-posting-declaration",
+      "contentId": "pip-posting-declaration",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "464c68364c0dd41ffd87ec0adf9d290c8b7afeb528863ca5d78977225cbb052b",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:polish-graduation-diploma",
       "path": "app/data/document-library/editorial/guides/polish-graduation-diploma.ts",
       "family": "evidence-document",
@@ -3292,7 +3322,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "875bcdc0d6925c4115fa4b2c94adbea49457ff8316287d6738b05cb1a80e50c4",
+      "contentHash": "d6adec52854f4a73fcdf8ae3217e8fcac71e0786433237ce7d161183b42c7905",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
