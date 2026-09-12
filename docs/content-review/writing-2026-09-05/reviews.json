@@ -1313,5 +1313,20 @@
     "path": "app/data/legal-library/learning/modules/powierzanie-pracy/obowiazki-podmiotu.ts",
     "contentHash": "cfcf3b03bc42644811d4f895f1bd067c32a5a3c9b2607eb9269749e1573f3d75",
     "evidence": "docs/content-review/writing-2026-09-05/batches/107-employer-duties.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/powierzanie-pracy/zmiany-i-ciaglosc.ts",
+    "contentHash": "206932d8ad2d1ba2a601181953adeb4e908c9ee3ac49dad1ba91efb5f091f3e3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/109-work-changes.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
+    "contentHash": "1d87a7b2645d5bc898690b58ee75757cb0e6a5c27ee788a68feb90ffbfe41da3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/113-work-continuation-commentaries.md"
+  },
+  {
+    "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-71.ts",
+    "contentHash": "37ff5b873d7ff0f4799e690c2ed598638206dc83723b6faa2e4d09e418a942fb",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/113-work-continuation-commentaries.md"
   }
 ]

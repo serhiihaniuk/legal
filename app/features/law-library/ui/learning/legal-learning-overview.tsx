@@ -24,14 +24,6 @@ export function LegalLearningOverview({
         badges={
           <>
             <Badge variant="secondary">Модуль {module.order}</Badge>
-            <Badge variant="outline" className="h-auto max-w-full">
-              <span className="min-w-0 whitespace-normal">
-                <LearningText
-                  text={module.provisionScope}
-                  context="reference-section"
-                />
-              </span>
-            </Badge>
             <span className="text-xs text-muted-foreground">
               {module.explanationReview
                 ? `Стан права в поясненні: ${module.explanationReview.legalStateDate}`
@@ -54,6 +46,12 @@ export function LegalLearningOverview({
         <h1>{module.title}</h1>
         <p className="text-muted-foreground" lang="pl">
           <LearningText text={module.polish} />
+        </p>
+        <p className="text-sm leading-6 text-muted-foreground">
+          <LearningText
+            text={module.provisionScope}
+            context="reference-section"
+          />
         </p>
         <p className="text-lg leading-8">
           <LearningText text={module.outcome} />

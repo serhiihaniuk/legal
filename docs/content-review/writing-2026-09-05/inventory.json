@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 246,
+    "reviewed": 249,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -3481,9 +3481,9 @@
     {
       "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
       "family": "provision",
-      "contentHash": "5bf1abb968f51118b021e9801aa4e5dbb6fa53552353ccf8374de3ed60ae1a08",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1d87a7b2645d5bc898690b58ee75757cb0e6a5c27ee788a68feb90ffbfe41da3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/113-work-continuation-commentaries.md"
     },
     {
       "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-22.ts",
@@ -3873,9 +3873,9 @@
     {
       "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-71.ts",
       "family": "provision",
-      "contentHash": "8dc6d353541831d09bce2736d98d0b700c9dc0e49193fdd0b89291f82b8f40b7",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "37ff5b873d7ff0f4799e690c2ed598638206dc83723b6faa2e4d09e418a942fb",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/113-work-continuation-commentaries.md"
     },
     {
       "path": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-72.ts",
@@ -11650,9 +11650,9 @@
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/zmiany-i-ciaglosc.ts",
       "family": "learning-module",
-      "contentHash": "6efe71f825243f838168d49958b3c679d0f9765b55f99cb73865c82e7a80e054",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "206932d8ad2d1ba2a601181953adeb4e908c9ee3ac49dad1ba91efb5f091f3e3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/109-work-changes.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/ppsa/admissibility.ts",
@@ -12700,7 +12700,7 @@
     {
       "path": "app/features/law-library/ui/learning/legal-learning-overview.tsx",
       "family": "shared-renderer",
-      "contentHash": "f171f40782d6000cc7f65a0cf4a16a3b76805a8d4bb313faf25fb4470824e772",
+      "contentHash": "614c543c642002fdb8f37fc2f4cb65e9b590f4f7b2065f45fad7846c5b1c6c6c",
       "writing": "pending",
       "evidence": null
     },

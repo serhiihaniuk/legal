@@ -236,27 +236,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
         "https://eli.gov.pl/eli/DU/2025/621/ogl"
       ],
-      "contentHash": "6efe71f825243f838168d49958b3c679d0f9765b55f99cb73865c82e7a80e054",
+      "contentHash": "206932d8ad2d1ba2a601181953adeb4e908c9ee3ac49dad1ba91efb5f091f3e3",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "6efe71f825243f838168d49958b3c679d0f9765b55f99cb73865c82e7a80e054",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "6efe71f825243f838168d49958b3c679d0f9765b55f99cb73865c82e7a80e054",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -1596,27 +1590,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
         "https://eli.gov.pl/eli/DU/2025/621/ogl"
       ],
-      "contentHash": "5bf1abb968f51118b021e9801aa4e5dbb6fa53552353ccf8374de3ed60ae1a08",
+      "contentHash": "1d87a7b2645d5bc898690b58ee75757cb0e6a5c27ee788a68feb90ffbfe41da3",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "5bf1abb968f51118b021e9801aa4e5dbb6fa53552353ccf8374de3ed60ae1a08",
-          "sourceTextHash": "139068c5e561f7014f4be97152211a8a926035d589edab0ae83e09f55432c145"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "5bf1abb968f51118b021e9801aa4e5dbb6fa53552353ccf8374de3ed60ae1a08",
-          "sourceTextHash": "139068c5e561f7014f4be97152211a8a926035d589edab0ae83e09f55432c145"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -3836,27 +3824,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
         "https://eli.gov.pl/eli/DU/2025/621/ogl"
       ],
-      "contentHash": "8dc6d353541831d09bce2736d98d0b700c9dc0e49193fdd0b89291f82b8f40b7",
+      "contentHash": "37ff5b873d7ff0f4799e690c2ed598638206dc83723b6faa2e4d09e418a942fb",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "8dc6d353541831d09bce2736d98d0b700c9dc0e49193fdd0b89291f82b8f40b7",
-          "sourceTextHash": "4c145d1bf6762a92e0b6c36306b98501cb2f6ef68497a44f73a9a4a65dd5cfc1"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "8dc6d353541831d09bce2736d98d0b700c9dc0e49193fdd0b89291f82b8f40b7",
-          "sourceTextHash": "4c145d1bf6762a92e0b6c36306b98501cb2f6ef68497a44f73a9a4a65dd5cfc1"
-        }
+        "hashAttestation": null
       }
     },
     {

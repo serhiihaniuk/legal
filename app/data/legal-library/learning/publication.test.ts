@@ -4,6 +4,7 @@ import { uczestnicyIDefinicjeLearningModuleTopic } from "./modules/powierzanie-p
 import { legalStayWorkModuleTopic } from "./modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy"
 import { instrumentyDostepuLearningModuleTopic } from "./modules/powierzanie-pracy/instrumenty-dostepu"
 import { obowiazkiPodmiotuLearningModuleTopic } from "./modules/powierzanie-pracy/obowiazki-podmiotu"
+import { zmianyICiagloscLearningModuleTopic } from "./modules/powierzanie-pracy/zmiany-i-ciaglosc"
 import { scopeLearningModuleTopic } from "./modules/ppsa/scope"
 import { entryAndCurrentBasisLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/entry-and-current-basis"
 import { chooseFormLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/choose-form"
@@ -14,6 +15,7 @@ describe("learning publication metadata", () => {
     ["powierzanie-pracy", legalStayWorkModuleTopic],
     ["powierzanie-pracy", instrumentyDostepuLearningModuleTopic],
     ["powierzanie-pracy", obowiazkiPodmiotuLearningModuleTopic],
+    ["powierzanie-pracy", zmianyICiagloscLearningModuleTopic],
     ["ppsa", scopeLearningModuleTopic],
     ["ustawa-o-cudzoziemcach", entryAndCurrentBasisLearningModuleTopic],
     ["rozporzadzenie-wniosek-pobyt-czasowy", chooseFormLearningModuleTopic],
