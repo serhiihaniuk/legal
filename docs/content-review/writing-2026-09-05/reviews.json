@@ -1153,5 +1153,15 @@
     "path": "app/data/legal-map/editorial/topics/evidence.ts",
     "contentHash": "59085bc76fe4081e85a3d0de33d19e45bf944e8dd02424baa209f19eb28809e6",
     "evidence": "docs/content-review/writing-2026-09-05/batches/91-case-file-foreign-documents-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/initiation.ts",
+    "contentHash": "fb5d295ff4387a3c8e0af883152b8a6f58a54ef7a5d87991807d28642fbe9f40",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/92-initiation-mos-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/mos-procedure.ts",
+    "contentHash": "65abb693ae105fb82e3a6be51c774c526430fda8c6d37634f4c0e29867422228",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/92-initiation-mos-preparation.md"
   }
 ]
