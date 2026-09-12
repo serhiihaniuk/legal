@@ -983,5 +983,10 @@
     "path": "app/data/document-library/editorial/guides/residence-card.ts",
     "contentHash": "d69a3bd2b3dc4c684dc68392108f4ec66234a41ed8c5ad86c411f00164f02ccd",
     "evidence": "docs/content-review/writing-2026-09-05/batches/72-cukr-documents.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/seasonal.ts",
+    "contentHash": "1dbde2f826f0146a26578396544b28eca046417b7c9583fc943e22e8f750a567",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/73-seasonal-work.md"
   }
 ]

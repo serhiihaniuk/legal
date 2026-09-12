@@ -198,3 +198,5 @@ Batch 41 adds the judicial-complaint and court-judgment document guides identifi
 
 
 Batch 60 completes the `work-entry` chapter introduction after the instrument and ordinary-permit articles in batch 59. It explains how status, a separate exemption and a job-specific document produce different outcomes, with a completed four-applicant comparison. Chapter placement and stable IDs are unchanged. Remaining employment topics and other open dispositions still require their own review.
+
+Batch 73 completes the seasonal article writing disposition after the declaration article in batches 70–71. Chapter placement stays unchanged. Dedicated seasonal permit, registration-certificate and arrival-statement guides remain catalog gaps. Other employment topics and the broader dispositions remain open.

@@ -611,3 +611,7 @@ Rewrote the oświadczenie map article and added a dedicated guide for the regist
 ## 2026-09-10: CUKR documents and card dates
 
 Migrated all six CUKR stages to visible document actions. Registry and employment checks are separate from the four-item upload packet. UPO follows submission; readiness information, physical card, collection and address notification are distinct. Expanded the residence-card guide with the CUKR exception and a completed three-date example. Five authored files received independent scoped review, with a separate refresh of the retained ordinary-card sources. Batch 72 records hashes and verification. The user requested pushing this batch and then pausing; broader unfinished work remains in the review README.
+
+## 2026-09-12: seasonal work and its distinct documents
+
+Rewrote the seasonal map topic as six authored sections with a completed orchard example and Polish working comparison. Registration, arrival, permit, extension, contract transmission and residence now have distinct roles and deadlines. A separate reviewer accepted the exact final hash after correcting the Poland-entry clock, contract destination, compensation scope and formal-defect call deadline. Full verification passed with 241 application tests and production build; previews and desktop/mobile checks passed. Batch 73 records sources, evidence and remaining dedicated-document gaps. The global legal baseline remains 18.07.2026.

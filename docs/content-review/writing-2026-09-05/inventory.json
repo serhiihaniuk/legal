@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1823,
-    "reviewed": 194,
+    "reviewed": 195,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11993,9 +11993,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/seasonal.ts",
       "family": "map-topic",
-      "contentHash": "7403a8211e04fafda0a8fb404a2af8a608fe3dbda1a3c39fad36f61f2958a279",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1dbde2f826f0146a26578396544b28eca046417b7c9583fc943e22e8f750a567",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/73-seasonal-work.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/source-check.ts",
