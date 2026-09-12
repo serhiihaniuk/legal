@@ -4466,27 +4466,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "0ac7d6af75d234931fe6ec88e3be92d9d0debd224c3b47283abe870d33dc104f",
+      "contentHash": "cfa5f4af59ea114ff9f49899372ed9fe349d9f014eb983fc46ebd88e88ee5dd3",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "0ac7d6af75d234931fe6ec88e3be92d9d0debd224c3b47283abe870d33dc104f",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "0ac7d6af75d234931fe6ec88e3be92d9d0debd224c3b47283abe870d33dc104f",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -4502,27 +4496,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "63634305de18c67892e3cea6539bc67b316973d45e643078977f4c649afadc26",
+      "contentHash": "a859ccb33f788f3eed9b497858b449c619519ce33e803cdcfa7ad13b5a6f387c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "63634305de18c67892e3cea6539bc67b316973d45e643078977f4c649afadc26",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "63634305de18c67892e3cea6539bc67b316973d45e643078977f4c649afadc26",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -4538,27 +4526,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "11af3c38cae3834d4ccf7c35d6ead8c75cf9127bba559ea06ee0165976e56690",
+      "contentHash": "7cc485299e71b08a8ca085c27e05e120f33e3cb66d2babda3c42da16459b00ac",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "11af3c38cae3834d4ccf7c35d6ead8c75cf9127bba559ea06ee0165976e56690",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "11af3c38cae3834d4ccf7c35d6ead8c75cf9127bba559ea06ee0165976e56690",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

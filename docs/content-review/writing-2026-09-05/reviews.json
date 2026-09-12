@@ -1163,5 +1163,20 @@
     "path": "app/data/legal-map/editorial/topics/mos-procedure.ts",
     "contentHash": "65abb693ae105fb82e3a6be51c774c526430fda8c6d37634f4c0e29867422228",
     "evidence": "docs/content-review/writing-2026-09-05/batches/92-initiation-mos-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/principle-legality.ts",
+    "contentHash": "cfa5f4af59ea114ff9f49899372ed9fe349d9f014eb983fc46ebd88e88ee5dd3",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/93-kpa-principles-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/principle-trust.ts",
+    "contentHash": "7cc485299e71b08a8ca085c27e05e120f33e3cb66d2babda3c42da16459b00ac",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/93-kpa-principles-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/principle-participation.ts",
+    "contentHash": "a859ccb33f788f3eed9b497858b449c619519ce33e803cdcfa7ad13b5a6f387c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/93-kpa-principles-preparation.md"
   }
 ]

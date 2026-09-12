@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1839,
-    "reviewed": 224,
+    "reviewed": 227,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -12077,23 +12077,23 @@
     {
       "path": "app/data/legal-map/editorial/topics/principle-legality.ts",
       "family": "map-topic",
-      "contentHash": "0ac7d6af75d234931fe6ec88e3be92d9d0debd224c3b47283abe870d33dc104f",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "cfa5f4af59ea114ff9f49899372ed9fe349d9f014eb983fc46ebd88e88ee5dd3",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/93-kpa-principles-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/principle-participation.ts",
       "family": "map-topic",
-      "contentHash": "63634305de18c67892e3cea6539bc67b316973d45e643078977f4c649afadc26",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "a859ccb33f788f3eed9b497858b449c619519ce33e803cdcfa7ad13b5a6f387c",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/93-kpa-principles-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/principle-trust.ts",
       "family": "map-topic",
-      "contentHash": "11af3c38cae3834d4ccf7c35d6ead8c75cf9127bba559ea06ee0165976e56690",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "7cc485299e71b08a8ca085c27e05e120f33e3cb66d2babda3c42da16459b00ac",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/93-kpa-principles-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/principle-two-instance.ts",

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest"
+import { principleLegalityTopic } from "~/data/legal-map/editorial/topics/principle-legality"
 
 import { resolveMapTopicPublication } from "./map-topic-publication"
 
@@ -9,8 +10,7 @@ describe("map-topic publication resolution", () => {
     expect(publication).toMatchObject({
       title: "Законність і факти",
       status: "reviewed",
-      summary:
-        "Organ діє на підставі права та вживає дій для точного з’ясування фактичного стану.",
+      summary: principleLegalityTopic.summary,
       unit: {
         id: "map-topic:principle-legality",
         subject: {
