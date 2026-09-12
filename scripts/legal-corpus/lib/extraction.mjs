@@ -794,7 +794,14 @@ function extractParagraphLedUnits(pages) {
     }
 
     const leading = page.text.slice(0, markers[0].index).trim()
-    if (current && leading) {
+    // PDF extraction can place the new form's page counter before its title.
+    // A journal header and that counter do not continue the preceding annex.
+    const newAnnexHeaderOnly =
+      markers[0].kind === "annex" &&
+      /^Dziennik Ustaw\s+[–-]\s+\d+\s+[–-]\s+Poz\.\s+\d+(?:\s+\d+)?$/u.test(
+        leading
+      )
+    if (current && leading && !newAnnexHeaderOnly) {
       current.textParts.push(leading)
       current.endPdfPage = page.pdfPage
     }

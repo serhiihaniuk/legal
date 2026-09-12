@@ -1018,5 +1018,10 @@
     "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
     "contentHash": "59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20",
     "evidence": "docs/content-review/writing-2026-09-05/batches/77-employer-duties.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
+    "contentHash": "28fe7665acd70761f3fcb2543564a6a6f5ae46e11647a0f054b216231aaa6dad",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/79-temporary-work.md"
   }
 ]

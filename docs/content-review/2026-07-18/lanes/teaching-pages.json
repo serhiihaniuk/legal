@@ -4532,27 +4532,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "026f71f9a4874419ec139057d3025ecb12cb7259bb7f92ee8a6dffb65674e74d",
+      "contentHash": "28fe7665acd70761f3fcb2543564a6a6f5ae46e11647a0f054b216231aaa6dad",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "026f71f9a4874419ec139057d3025ecb12cb7259bb7f92ee8a6dffb65674e74d",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "026f71f9a4874419ec139057d3025ecb12cb7259bb7f92ee8a6dffb65674e74d",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

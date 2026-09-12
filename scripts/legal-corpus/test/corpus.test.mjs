@@ -470,6 +470,72 @@ test("extracts paragraph-led regulations and annexes with stable IDs", () => {
   )
 })
 
+test("does not extend an annex onto the next form's journal header or page counter", () => {
+  const provisions = extractProvisions(
+    [
+      {
+        pdfPage: 32,
+        text: "Załącznik nr 6\nTreść załącznika uczelni.",
+        hasTextLayer: true,
+      },
+      { pdfPage: 34, text: "Podpis osoby upoważnionej.", hasTextLayer: true },
+      {
+        pdfPage: 35,
+        text: "Dziennik Ustaw – 35 – Poz. 553\n1\nZałącznik nr 7\nWZÓR ICT",
+        hasTextLayer: true,
+      },
+      {
+        pdfPage: 55,
+        text: "Dziennik Ustaw – 55 – Poz. 553\nZałącznik nr 8\nWZÓR RODZINNY",
+        hasTextLayer: true,
+      },
+    ],
+    {
+      documentId: "regulation",
+      editionId: "regulation-2026-553",
+      sourcePdfSha256: "a".repeat(64),
+      profile: "polish-regulation-paragraph-v1",
+    }
+  )
+  assert.equal(provisions[0].endPdfPage, 34)
+  assert.equal(
+    provisions[0].text,
+    "Załącznik nr 6\nTreść załącznika uczelni.\nPodpis osoby upoważnionej."
+  )
+  assert.equal(provisions[1].startPdfPage, 35)
+  assert.equal(provisions[1].endPdfPage, 35)
+  assert.equal(provisions[2].startPdfPage, 55)
+})
+
+test("preserves actual continuation before another annex, including shared-page endings", () => {
+  const provisions = extractProvisions(
+    [
+      {
+        pdfPage: 1,
+        text: "Załącznik nr 1\nPierwsza część.",
+        hasTextLayer: true,
+      },
+      {
+        pdfPage: 2,
+        text: "Dziennik Ustaw – 2 – Poz. 553\nKońcowe objaśnienie poprzedniego załącznika.\nZałącznik nr 2\nNowa treść.",
+        hasTextLayer: true,
+      },
+    ],
+    {
+      documentId: "regulation",
+      editionId: "regulation-2026-553",
+      sourcePdfSha256: "a".repeat(64),
+      profile: "polish-regulation-paragraph-v1",
+    }
+  )
+  assert.equal(provisions[0].endPdfPage, 2)
+  assert.match(
+    provisions[0].text,
+    /Końcowe objaśnienie poprzedniego załącznika\.$/u
+  )
+  assert.equal(provisions[1].startPdfPage, 2)
+})
+
 test("treats a duplicate article locator as a fatal diagnostic carrying both page positions instead of silently keeping one occurrence", () => {
   const pages = [
     {

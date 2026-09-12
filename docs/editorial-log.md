@@ -633,3 +633,9 @@ Added a dedicated PIP declaration guide with a filled selected-field specimen. D
 Rewrote employer duties with separate work-permit, declaration, protection and residence notification rules. A filled two-worker comparison identifies actual submissions and their different effects. Independent review corrected the art. 22 exception and accepted the final hash; specific channel-launch gaps stay qualified. Removed the obsolete weekly-schedule article from internal publication while preserving its redirect.
 
 Full verification passed with 246 application tests and production build. Final prose changes received renewed typecheck, editorial, preview and build checks. Desktop/mobile rendering, table keyboard scrolling, document navigation and the old redirect passed. Writing batches 77–78 record sources, acceptance and remaining scope. Global legal baseline stays 18.07.2026.
+
+## 2026-09-12: temporary work and corrected PDF annex boundaries
+
+Rewrote temporary work with agency/user roles, conditional KRAZ rules, named records and a completed comparison of periods through three agencies. Independent review accepted the final article. Corrected its period-limit reference to the temporary-workers act.
+
+Fixed a separate importer defect that included the next form’s header in the preceding annex. Rebuilt the same source edition with unchanged PDF bytes and checked all ten affected boundaries independently. University and family ranges are now 32–34 and 55–68. Full verification passed with 246 application tests, 70 passing corpus tests and build; final article checks, previews, keyboard navigation and desktop/mobile review also passed. Batches 79–80 record exact scope and remaining work. Global legal baseline is unchanged.

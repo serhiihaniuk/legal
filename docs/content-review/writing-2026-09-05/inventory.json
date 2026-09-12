@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1826,
-    "reviewed": 201,
+    "reviewed": 202,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -12077,9 +12077,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/temporary-work.ts",
       "family": "map-topic",
-      "contentHash": "026f71f9a4874419ec139057d3025ecb12cb7259bb7f92ee8a6dffb65674e74d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "28fe7665acd70761f3fcb2543564a6a6f5ae46e11647a0f054b216231aaa6dad",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/79-temporary-work.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/two-keys.ts",

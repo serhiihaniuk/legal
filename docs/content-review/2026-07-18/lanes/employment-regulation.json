@@ -5094,7 +5094,7 @@
       "provisionIndex": 10,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "bd6e20ea2cbb8ef6243c4c13bd7911ee96540652b18884cd666a6f5b3174269c",
+      "sourceTextHash": "5ec8d142dfcdf82371bbcf4f2dd9f46a0edae8792562190fc86c0664bc36c4a1",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5103,24 +5103,18 @@
       "contentHash": "b0ae8bb004f3599d1e7402fc1a9c4c06f109ea6e94c74dd48d2064042d68e6d4",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "b0ae8bb004f3599d1e7402fc1a9c4c06f109ea6e94c74dd48d2064042d68e6d4",
-          "sourceTextHash": "bd6e20ea2cbb8ef6243c4c13bd7911ee96540652b18884cd666a6f5b3174269c"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "b0ae8bb004f3599d1e7402fc1a9c4c06f109ea6e94c74dd48d2064042d68e6d4",
-          "sourceTextHash": "bd6e20ea2cbb8ef6243c4c13bd7911ee96540652b18884cd666a6f5b3174269c"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5134,7 +5128,7 @@
       "provisionIndex": 19,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "51f27dc594b05975cbe13e56acae457bf8789b37c0dfd1c67b7655e22d47a5e0",
+      "sourceTextHash": "ac4e36938a109c9e6c2d8dc8ee2d82359c5ace9f1c175dd5bdf3a0cf68e82b63",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5143,24 +5137,18 @@
       "contentHash": "f3f28ead9494548ef1c0ea7d1d2a8f5e0b01f20ed80b28f27b6e7086b3f30a1a",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "f3f28ead9494548ef1c0ea7d1d2a8f5e0b01f20ed80b28f27b6e7086b3f30a1a",
-          "sourceTextHash": "51f27dc594b05975cbe13e56acae457bf8789b37c0dfd1c67b7655e22d47a5e0"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "f3f28ead9494548ef1c0ea7d1d2a8f5e0b01f20ed80b28f27b6e7086b3f30a1a",
-          "sourceTextHash": "51f27dc594b05975cbe13e56acae457bf8789b37c0dfd1c67b7655e22d47a5e0"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5214,7 +5202,7 @@
       "provisionIndex": 11,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "8600592ad1deb764cd2efb373767801c0b0b3804e86a1e5f6442fbd9e33b1b5d",
+      "sourceTextHash": "3225d3bc6a6fb40ea237c3d1f92c0e55219b86e7801b0871f969366d6a542012",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5223,24 +5211,18 @@
       "contentHash": "ae4e50932134ac9e31c2d16fe99e7bb475053e3b71923b427fd7d41e8761a42c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "ae4e50932134ac9e31c2d16fe99e7bb475053e3b71923b427fd7d41e8761a42c",
-          "sourceTextHash": "8600592ad1deb764cd2efb373767801c0b0b3804e86a1e5f6442fbd9e33b1b5d"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "ae4e50932134ac9e31c2d16fe99e7bb475053e3b71923b427fd7d41e8761a42c",
-          "sourceTextHash": "8600592ad1deb764cd2efb373767801c0b0b3804e86a1e5f6442fbd9e33b1b5d"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5254,7 +5236,7 @@
       "provisionIndex": 12,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "09f86eb33ee91f0027252f3247fc183a82124d2a9aacdd31fb360fc16ae9ccb9",
+      "sourceTextHash": "fa61690e4a887fbb1d5a1214bf0d83d604dab9d5144db3a1842fd1dd0170566d",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5263,24 +5245,18 @@
       "contentHash": "a495167988b7e140ddd88a970c2f3210b376ee81199b485efe3641a15beb74a2",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "a495167988b7e140ddd88a970c2f3210b376ee81199b485efe3641a15beb74a2",
-          "sourceTextHash": "09f86eb33ee91f0027252f3247fc183a82124d2a9aacdd31fb360fc16ae9ccb9"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "a495167988b7e140ddd88a970c2f3210b376ee81199b485efe3641a15beb74a2",
-          "sourceTextHash": "09f86eb33ee91f0027252f3247fc183a82124d2a9aacdd31fb360fc16ae9ccb9"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5294,7 +5270,7 @@
       "provisionIndex": 13,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "91cf87944992165b8e8a2dfde4bfb0e07811c60bdde9675d42de05ebb4b6148b",
+      "sourceTextHash": "962630c3fbd0080242a05b468a8d97688907a6d54e9ab85666dc8315cd16e399",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5303,24 +5279,18 @@
       "contentHash": "cb5b5d3fdae1236f4ed7246029bec6cd035107d6bc2782832f775b1522745b34",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "cb5b5d3fdae1236f4ed7246029bec6cd035107d6bc2782832f775b1522745b34",
-          "sourceTextHash": "91cf87944992165b8e8a2dfde4bfb0e07811c60bdde9675d42de05ebb4b6148b"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "cb5b5d3fdae1236f4ed7246029bec6cd035107d6bc2782832f775b1522745b34",
-          "sourceTextHash": "91cf87944992165b8e8a2dfde4bfb0e07811c60bdde9675d42de05ebb4b6148b"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5334,7 +5304,7 @@
       "provisionIndex": 14,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "e351ed165c63a07a7aa06a48e33d18f4231b846d90d132ab2b03926a1ffc87a7",
+      "sourceTextHash": "0f50e2409681cfcd32cf294884a0a5e7be7e55f047a3fa33fa42792846544c4b",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5343,24 +5313,18 @@
       "contentHash": "37c4bfcb47e56504393f3af3d53ee59adfdf6dcf833fa8d97eee40c3fd101ded",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "37c4bfcb47e56504393f3af3d53ee59adfdf6dcf833fa8d97eee40c3fd101ded",
-          "sourceTextHash": "e351ed165c63a07a7aa06a48e33d18f4231b846d90d132ab2b03926a1ffc87a7"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "37c4bfcb47e56504393f3af3d53ee59adfdf6dcf833fa8d97eee40c3fd101ded",
-          "sourceTextHash": "e351ed165c63a07a7aa06a48e33d18f4231b846d90d132ab2b03926a1ffc87a7"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5374,7 +5338,7 @@
       "provisionIndex": 15,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "b2eb7a0465a122bbb916bc3e658ddcfdaff9902b2de52c9a05bf97dd3727d23d",
+      "sourceTextHash": "b522ba0dd2573592775cf7564a60bdaf1c280cfe83a217e9accd073262ea3e1a",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5383,24 +5347,18 @@
       "contentHash": "4756ea04b4b2d8e3a34dba2f3111a1ddad44c5aaf3dfe132f0052861ab4e8bab",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "4756ea04b4b2d8e3a34dba2f3111a1ddad44c5aaf3dfe132f0052861ab4e8bab",
-          "sourceTextHash": "b2eb7a0465a122bbb916bc3e658ddcfdaff9902b2de52c9a05bf97dd3727d23d"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "4756ea04b4b2d8e3a34dba2f3111a1ddad44c5aaf3dfe132f0052861ab4e8bab",
-          "sourceTextHash": "b2eb7a0465a122bbb916bc3e658ddcfdaff9902b2de52c9a05bf97dd3727d23d"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5414,7 +5372,7 @@
       "provisionIndex": 16,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "f53d2ac7dc18d28884a2fb761c87a5dc4f7f05f98e232bbf049967f1c5879f70",
+      "sourceTextHash": "d3560bbc3dc55951b9c3b9727e91a7710bb058afdcb841083408f2965e4d134f",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5423,24 +5381,18 @@
       "contentHash": "90c620a0a61b45ffb5c9da15e835ecc973ad6ac3ea12c1113ccf113fc1045eb6",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "90c620a0a61b45ffb5c9da15e835ecc973ad6ac3ea12c1113ccf113fc1045eb6",
-          "sourceTextHash": "f53d2ac7dc18d28884a2fb761c87a5dc4f7f05f98e232bbf049967f1c5879f70"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "90c620a0a61b45ffb5c9da15e835ecc973ad6ac3ea12c1113ccf113fc1045eb6",
-          "sourceTextHash": "f53d2ac7dc18d28884a2fb761c87a5dc4f7f05f98e232bbf049967f1c5879f70"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5454,7 +5406,7 @@
       "provisionIndex": 17,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "020a8f7c91b82791532e870e3944d1f51682630cf4ec672b0589f04f259d6ac8",
+      "sourceTextHash": "78d94fdab8719fed68692a7513487369c2ef43451d32041453feb69cfe0b94c7",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5463,24 +5415,18 @@
       "contentHash": "51821c29b99639581c6396cceb428353c082078658af988d9c01aeaf2c2feecb",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "51821c29b99639581c6396cceb428353c082078658af988d9c01aeaf2c2feecb",
-          "sourceTextHash": "020a8f7c91b82791532e870e3944d1f51682630cf4ec672b0589f04f259d6ac8"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "51821c29b99639581c6396cceb428353c082078658af988d9c01aeaf2c2feecb",
-          "sourceTextHash": "020a8f7c91b82791532e870e3944d1f51682630cf4ec672b0589f04f259d6ac8"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -5494,7 +5440,7 @@
       "provisionIndex": 18,
       "sourceProvisionCount": 20,
       "currentSourceEdition": "rozporzadzenie-wniosek-pobyt-czasowy-2026-553",
-      "sourceTextHash": "7e97f664fc8c3e5fd42b99b3193f85ed81847f065ed476033a3c76a85193aea8",
+      "sourceTextHash": "e4bc55b2bdfc5f8247770c3f86ff63412160657c76e0b3da330e0e159eeb876b",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2026/553",
         "https://eli.gov.pl/api/acts/DU/2026/553/text/O/D20260553.pdf",
@@ -5503,24 +5449,18 @@
       "contentHash": "78746fe41525d82a09aa281c4c70863d456e29b36bdeb03426e4970d7fd53b65",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "78746fe41525d82a09aa281c4c70863d456e29b36bdeb03426e4970d7fd53b65",
-          "sourceTextHash": "7e97f664fc8c3e5fd42b99b3193f85ed81847f065ed476033a3c76a85193aea8"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "78746fe41525d82a09aa281c4c70863d456e29b36bdeb03426e4970d7fd53b65",
-          "sourceTextHash": "7e97f664fc8c3e5fd42b99b3193f85ed81847f065ed476033a3c76a85193aea8"
-        }
+        "hashAttestation": null
       }
     },
     {
