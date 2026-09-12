@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1839,
-    "reviewed": 227,
+    "reviewed": 229,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -12000,9 +12000,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/kpa-principles.ts",
       "family": "map-topic",
-      "contentHash": "a5216e32dd61ef7d982c0ed42348aab1e4c31789fcb6e08ad4f931e7325a00a6",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "b1d6a0ea09e5ab005397f77957bcfd495bef2d886ecd1449762ad8b71a5bfc07",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/94-two-instance-overview-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/legal-anatomy.ts",
@@ -12098,9 +12098,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/principle-two-instance.ts",
       "family": "map-topic",
-      "contentHash": "ab11a837d066a75701c1d887d48ba87ffaee6b1d7fa618dc9ced06cd04e281e4",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "9b912fa6cc19c5b89c2fd0d4169533d204a02932228a70b16d3c7c6b58f0a611",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/94-two-instance-overview-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/reopening.ts",

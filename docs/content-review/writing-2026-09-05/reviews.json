@@ -1178,5 +1178,15 @@
     "path": "app/data/legal-map/editorial/topics/principle-participation.ts",
     "contentHash": "a859ccb33f788f3eed9b497858b449c619519ce33e803cdcfa7ad13b5a6f387c",
     "evidence": "docs/content-review/writing-2026-09-05/batches/93-kpa-principles-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/kpa-principles.ts",
+    "contentHash": "b1d6a0ea09e5ab005397f77957bcfd495bef2d886ecd1449762ad8b71a5bfc07",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/94-two-instance-overview-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/principle-two-instance.ts",
+    "contentHash": "9b912fa6cc19c5b89c2fd0d4169533d204a02932228a70b16d3c7c6b58f0a611",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/94-two-instance-overview-preparation.md"
   }
 ]
