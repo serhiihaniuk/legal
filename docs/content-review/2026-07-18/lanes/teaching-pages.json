@@ -3742,27 +3742,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "0bdb8dbc404cb675755cc42771b08815df3e70c6b35848182008c3c3bc934d19",
+      "contentHash": "20800fe84970b42bc88605d92edde55c1f95fc91809569a6c9e49cb67b28c312",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "0bdb8dbc404cb675755cc42771b08815df3e70c6b35848182008c3c3bc934d19",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "0bdb8dbc404cb675755cc42771b08815df3e70c6b35848182008c3c3bc934d19",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -3868,27 +3862,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "e6a3fbd7099be326b4f831dbedda7fd396df963b9fca1d7c44cc9264fad69beb",
+      "contentHash": "2bb87c3ff9dff132b1c6b27c257b692021f6b15ce9993ccf15bbdcbc2ff3dcb9",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "e6a3fbd7099be326b4f831dbedda7fd396df963b9fca1d7c44cc9264fad69beb",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "e6a3fbd7099be326b4f831dbedda7fd396df963b9fca1d7c44cc9264fad69beb",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

@@ -1118,5 +1118,15 @@
     "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
     "contentHash": "473240c629aca88cf49e3452d674139cb3e1352e11f29eb1fddf1ad0a8dfa1b5",
     "evidence": "docs/content-review/writing-2026-09-05/batches/88-declaration-notifications.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/document-matrix.ts",
+    "contentHash": "20800fe84970b42bc88605d92edde55c1f95fc91809569a6c9e49cb67b28c312",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/89-evidence-map-preparation.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/evidence-matrix.ts",
+    "contentHash": "2bb87c3ff9dff132b1c6b27c257b692021f6b15ce9993ccf15bbdcbc2ff3dcb9",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/89-evidence-map-preparation.md"
   }
 ]
