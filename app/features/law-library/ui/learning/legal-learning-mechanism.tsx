@@ -18,19 +18,57 @@ export function LegalLearningMechanism({
           <LearningText text={paragraph} />
         </p>
       ))}
+      {module.mechanismSections?.map((section) => (
+        <section key={section.id} id={`legal-learning-section-${section.id}`}>
+          <h3>{section.title}</h3>
+          {section.paragraphs.map((paragraph, index) => (
+            <p key={index}>
+              <LearningText text={paragraph} />
+            </p>
+          ))}
+          {section.steps?.length ? (
+            <ol>
+              {section.steps.map((step, index) => (
+                <li key={index}>
+                  <LearningText text={step} />
+                </li>
+              ))}
+            </ol>
+          ) : null}
+          {section.evidence?.length ? (
+            <>
+              <h4>Документи й докази</h4>
+              <ul>
+                {section.evidence.map((item, index) => (
+                  <li key={index}>
+                    <LearningText text={item} />
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+          {section.warning ? (
+            <p>
+              <LearningText text={section.warning} />
+            </p>
+          ) : null}
+        </section>
+      ))}
 
-      <div data-not-typeset className="not-typeset mt-7 divide-y border-y">
-        {module.layers.map((layer) => (
-          <div key={layer.label} className="py-5">
-            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              {layer.label}
-            </p>
-            <p className="mt-2 max-w-4xl text-base leading-7">
-              <LearningText text={layer.text} />
-            </p>
-          </div>
-        ))}
-      </div>
+      {module.layers.length ? (
+        <div data-not-typeset className="not-typeset mt-7 divide-y border-y">
+          {module.layers.map((layer) => (
+            <div key={layer.label} className="py-5">
+              <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                {layer.label}
+              </p>
+              <p className="mt-2 max-w-4xl text-base leading-7">
+                <LearningText text={layer.text} />
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : null}
 
       {module.terms.length ? (
         <>

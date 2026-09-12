@@ -53,29 +53,35 @@ export function LegalLearningOverview({
           {module.stage}
         </p>
         <h2>{headings.position.title}</h2>
-        <p>
-          <LearningText text={module.positionIntro} />
-        </p>
+        {module.positionIntro ? (
+          <p>
+            <LearningText text={module.positionIntro} />
+          </p>
+        ) : null}
 
         <div data-not-typeset className="not-typeset mt-6 divide-y border-y">
-          <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Головне питання</p>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LearningText text={module.question} />
-            </p>
-          </div>
+          {module.question ? (
+            <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
+              <p className="text-sm font-medium">Головне питання</p>
+              <p className="text-sm leading-6 text-muted-foreground">
+                <LearningText text={module.question} />
+              </p>
+            </div>
+          ) : null}
           <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
             <p className="text-sm font-medium">Коли це потрібно</p>
             <p className="text-sm leading-6 text-muted-foreground">
               <LearningText text={module.neededWhen} />
             </p>
           </div>
-          <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-            <p className="text-sm font-medium">Важливе застереження</p>
-            <p className="text-sm leading-6 text-muted-foreground">
-              <LearningText text={module.boundary} />
-            </p>
-          </div>
+          {module.boundary ? (
+            <div className="grid gap-1 py-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
+              <p className="text-sm font-medium">Важливе застереження</p>
+              <p className="text-sm leading-6 text-muted-foreground">
+                <LearningText text={module.boundary} />
+              </p>
+            </div>
+          ) : null}
         </div>
 
         {module.coursePhases?.length ? (

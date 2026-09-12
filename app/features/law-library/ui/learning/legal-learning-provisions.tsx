@@ -80,6 +80,7 @@ function ProvisionGuide({
       </header>
 
       <Accordion
+        key={guide.items.map((item) => item.id).join(":")}
         multiple
         defaultValue={firstItem ? [firstItem.id] : []}
         className="border-y"

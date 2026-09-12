@@ -10,7 +10,7 @@ import {
   buildLegalLearningModuleView,
   findModuleProvisions,
   LegalLearningModuleContent,
-  legalLearningContentToc,
+  getLegalLearningContentToc,
   LawDocumentMobileNavigation,
   LawDocumentNavigation,
 } from "~/features/law-library"
@@ -122,7 +122,7 @@ export default function LawDocumentLearningRoute() {
           activeModuleId={module.id}
         />
       }
-      toc={legalLearningContentToc}
+      toc={getLegalLearningContentToc(moduleView)}
     >
       <LawDocumentMobileNavigation
         document={document}

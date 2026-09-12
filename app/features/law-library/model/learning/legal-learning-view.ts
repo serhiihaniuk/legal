@@ -6,16 +6,15 @@ import type {
 } from "~/data/legal-library/contracts"
 import { getDocumentReadingGuide } from "~/data/legal-library/learning"
 import {
-  concatLegalLearningText,
-  joinLegalLearningText,
   legalLearningPlainText,
   legalLearningProvisionReferences,
-  legalLearningTextSlice,
   type LegalLearningText,
 } from "~/data/legal-library/learning/legal-text"
 import type {
   LegalLearningCoursePhase,
   LegalLearningModule,
+  LegalLearningExample,
+  LegalLearningSection,
 } from "~/data/legal-library/learning/types"
 import { parseLegalProvisionReference } from "~/data/legal-library/query"
 
@@ -67,14 +66,15 @@ export type LegalLearningModuleView = {
   legalState: string
   outcome: LegalLearningText
   stage: string
-  positionIntro: LegalLearningText
-  question: LegalLearningText
+  positionIntro?: LegalLearningText
+  question?: LegalLearningText
   neededWhen: LegalLearningText
-  boundary: LegalLearningText
+  boundary?: LegalLearningText
   courseTitle?: string
   courseDescription?: string
   coursePhases?: readonly LegalLearningCoursePhase[]
   mechanismParagraphs: readonly LegalLearningText[]
+  mechanismSections?: readonly LegalLearningSection[]
   layers: readonly LegalLearningLayer[]
   terms: readonly LegalLearningTerm[]
   articleGroups: readonly LegalLearningArticleGroup[]
@@ -84,12 +84,7 @@ export type LegalLearningModuleView = {
     description: string
     items: readonly LegalExplanationView[]
   }
-  caseExample: {
-    title: LegalLearningText
-    facts: LegalLearningText
-    analysis: LegalLearningText
-    lesson: LegalLearningText
-  }
+  caseExample?: LegalLearningExample
   pitfalls: readonly LegalLearningText[]
   method: readonly LegalLearningText[]
 }
@@ -97,38 +92,6 @@ export type LegalLearningModuleView = {
 type ReviewedProvision = {
   provision: LegalProvision
   explanation: LegalExplanation
-}
-
-function uniqueStrings(items: readonly (string | undefined)[]): string[] {
-  return [...new Set(items.filter((item): item is string => Boolean(item)))]
-}
-
-function uniqueTexts(
-  items: readonly (LegalLearningText | undefined)[]
-): LegalLearningText[] {
-  const seen = new Set<string>()
-  return items.filter((item): item is LegalLearningText => {
-    if (item === undefined) return false
-    const plainText = legalLearningPlainText(item)
-    if (seen.has(plainText)) return false
-    seen.add(plainText)
-    return true
-  })
-}
-
-function sentenceContaining(
-  text: LegalLearningText,
-  token: string
-): LegalLearningText | undefined {
-  const plainText = legalLearningPlainText(text)
-  for (const match of plainText.matchAll(/[^.!?]+[.!?]?/gu)) {
-    const sentence = match[0].trim()
-    if (!sentence.toLocaleLowerCase("pl").includes(token)) continue
-    const leadingSpace = match[0].length - match[0].trimStart().length
-    const start = (match.index ?? 0) + leadingSpace
-    return legalLearningTextSlice(text, start, start + sentence.length)
-  }
-  return undefined
 }
 
 function explanationTitle(
@@ -149,32 +112,6 @@ function explanationTitle(
   return title.charAt(0).toLocaleUpperCase("uk") + title.slice(1)
 }
 
-function buildTerms(
-  module: LegalLearningModule,
-  paragraphs: readonly LegalLearningText[]
-): LegalLearningTerm[] {
-  return uniqueStrings(
-    legalLearningPlainText(module.polish)
-      .split(/[;,]/)
-      .map((term) => term.trim())
-  )
-    .slice(0, 6)
-    .map((term) => {
-      const token = term.split(/\s+/)[0]?.toLocaleLowerCase("pl")
-      const matchingSentence = token
-        ? paragraphs
-            .map((paragraph) => sentenceContaining(paragraph, token))
-            .find((sentence) => sentence !== undefined)
-        : undefined
-      return {
-        term,
-        meaning:
-          matchingSentence ??
-          `Поняття ${term} треба читати у визначеній групі норм і перевіряти за фактами конкретної справи.`,
-      }
-    })
-}
-
 function normalizedLocator(locator: string): string {
   return locator
     .toLocaleLowerCase("pl")
@@ -192,12 +129,24 @@ export function findModuleProvisions(
     module.outcome,
     module.caseQuestion,
     module.placeInWork,
-    module.exercise,
+    ...(module.caseExample
+      ? [
+          module.caseExample.title,
+          module.caseExample.facts,
+          module.caseExample.analysis,
+          module.caseExample.lesson,
+          ...(module.caseExample.sample?.kind === "table"
+            ? module.caseExample.sample.rows.flatMap((row) => row.cells)
+            : (module.caseExample.sample?.paragraphs ?? [])),
+        ]
+      : []),
+    ...(module.terms ?? []).flatMap((term) => [term.term, term.meaning]),
     ...module.sections.flatMap((section) => [
       section.title,
       ...section.paragraphs,
       ...(section.questions ?? []),
       ...(section.steps ?? []),
+      ...(section.evidence ?? []),
       ...(section.warning ? [section.warning] : []),
     ]),
   ]
@@ -227,25 +176,6 @@ export function findModuleProvisions(
     .slice(0, 10)
 }
 
-function formatAnalysis(
-  steps: readonly LegalLearningText[]
-): LegalLearningText {
-  if (!steps.length) {
-    return "Визначаємо факт, знаходимо поняття і норму, розкладаємо її на умови, додаємо докази, дію, наслідок та доступний засіб захисту."
-  }
-  const numberedSteps = steps.map((step, index) => {
-    const plainText = legalLearningPlainText(step)
-    const withoutFinalPeriod = plainText.endsWith(".")
-      ? legalLearningTextSlice(step, 0, plainText.length - 1)
-      : step
-    return concatLegalLearningText(`${index + 1}) `, withoutFinalPeriod)
-  })
-  return concatLegalLearningText(
-    joinLegalLearningText(numberedSteps, "; "),
-    "."
-  )
-}
-
 export function buildLegalLearningModuleView({
   documentId,
   module,
@@ -259,19 +189,6 @@ export function buildLegalLearningModuleView({
 }): LegalLearningModuleView {
   const readingGuide = getDocumentReadingGuide(documentId)
   const isReadingModule = readingGuide?.module.id === module.id
-  const paragraphs = module.sections.flatMap((section) => section.paragraphs)
-  const warnings = uniqueTexts(
-    module.sections.map((section) => section.warning)
-  )
-  const steps = uniqueTexts(
-    module.sections.flatMap((section) => section.steps ?? [])
-  )
-  const evidence = uniqueTexts(
-    module.sections.flatMap((section) => section.evidence ?? [])
-  )
-  const questions = uniqueTexts(
-    module.sections.flatMap((section) => section.questions ?? [])
-  )
 
   const provisionGuideItems = reviewedProvisions.map(
     ({ provision, explanation }) =>
@@ -287,18 +204,8 @@ export function buildLegalLearningModuleView({
       })
   )
 
-  const terms = isReadingModule
-    ? readingGuide.terms
-    : buildTerms(module, paragraphs)
+  const terms = module.terms ?? (isReadingModule ? readingGuide.terms : [])
   const firstSection = module.sections[0]
-  const _secondSection = module.sections[1]
-  const mainRule = firstSection?.paragraphs[0] ?? module.outcome
-  const readingMethod =
-    firstSection?.paragraphs[1] ??
-    (steps.length ? formatAnalysis(steps.slice(0, 4)) : module.placeInWork)
-  const boundary =
-    warnings[0] ??
-    "Ця група норм не дає відповіді без перевірки повних фактів, дати, пов’язаних приписів та застосовної редакції."
 
   return {
     order: module.order,
@@ -310,10 +217,8 @@ export function buildLegalLearningModuleView({
     stage: isReadingModule
       ? "Орієнтація в документі"
       : (firstSection?.title ?? "Робота з правовим механізмом"),
-    positionIntro: firstSection?.paragraphs[0] ?? module.placeInWork,
     question: module.caseQuestion,
     neededWhen: module.placeInWork,
-    boundary,
     courseTitle: isReadingModule
       ? `Карта курсу: ${readingGuide?.module.title ?? module.title}`
       : undefined,
@@ -321,12 +226,9 @@ export function buildLegalLearningModuleView({
       ? readingGuide?.courseDescription
       : undefined,
     coursePhases: isReadingModule ? readingGuide?.phases : undefined,
-    mechanismParagraphs: paragraphs,
-    layers: [
-      { label: "Основне правило", text: mainRule },
-      { label: "Як читати і застосовувати", text: readingMethod },
-      { label: "Межа або важливий виняток", text: boundary },
-    ],
+    mechanismParagraphs: [],
+    mechanismSections: module.sections,
+    layers: [],
     terms,
     articleGroups: reviewedProvisions.length
       ? reviewedProvisions.map(({ provision, explanation }) => ({
@@ -354,31 +256,13 @@ export function buildLegalLearningModuleView({
           : "Стаття за статтею",
       description: reviewedProvisions.length
         ? "Розкрийте норму, щоб побачити її реальну структуру, правовий наслідок і місце в роботі зі справою. Пояснення звірене з локальним офіційним текстом."
-        : "Модуль пояснює механізм вище, але не підміняє відсутній незалежний review окремих норм неперевіреною чернеткою.",
+        : "Окремі пояснення норм для цього модуля ще не доступні. Польський текст можна прочитати в розділі статей акта.",
       items: provisionGuideItems,
     },
-    caseExample: isReadingModule
-      ? readingGuide.caseExample
-      : {
-          title: `Робоча ситуація: ${module.title}`,
-          facts: module.caseQuestion,
-          analysis: formatAnalysis(steps.length ? steps : questions),
-          lesson: concatLegalLearningText(
-            module.outcome,
-            " Практична перевірка: ",
-            module.exercise
-          ),
-        },
-    pitfalls: warnings.length ? warnings : [boundary],
-    method: steps.length
-      ? steps
-      : [
-          ...questions.map((question) =>
-            concatLegalLearningText("Дайте відповідь: ", question)
-          ),
-          ...evidence.map((item) =>
-            concatLegalLearningText("Перевірте документ: ", item)
-          ),
-        ],
+    caseExample:
+      module.caseExample ??
+      (isReadingModule ? readingGuide.caseExample : undefined),
+    pitfalls: [],
+    method: [],
   }
 }

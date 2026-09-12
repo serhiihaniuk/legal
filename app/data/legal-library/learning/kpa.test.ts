@@ -2,9 +2,25 @@ import { describe, expect, it } from "vitest"
 
 import { listProvisions } from "../query"
 import { getLegalLearningCurriculum, getLegalLearningModules } from "."
-import { kpaArticleIndex, kpaArticleSections } from "./kpa"
+import {
+  kpaArticleIndex,
+  kpaArticleSections,
+  kpaGuideModules,
+  kpaGuideModuleArticles,
+} from "./kpa"
 
 describe("canonical KPA learning", () => {
+  it("preserves the authored anatomy sections and completed example in the generic curriculum", () => {
+    const authored = kpaGuideModules.find((module) => module.id === "anatomy")
+    const projected = getLegalLearningModules("kpa").find(
+      (module) => module.id === "anatomy"
+    )
+    expect(authored?.lesson.sections?.length).toBeGreaterThan(0)
+    expect(authored?.lesson.caseExample.sample).toBeDefined()
+    expect(projected?.sections).toEqual(authored?.lesson.sections)
+    expect(projected?.caseExample).toEqual(authored?.lesson.caseExample)
+    expect(kpaGuideModuleArticles.anatomy.articles).toEqual(["40", "57", "124"])
+  })
   it("registers a real generic curriculum and module list", () => {
     const curriculum = getLegalLearningCurriculum("kpa")
     const modules = getLegalLearningModules("kpa")

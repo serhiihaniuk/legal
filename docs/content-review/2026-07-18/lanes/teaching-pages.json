@@ -5546,7 +5546,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "1431604b41833aaab32a85c68f7e2be71319e40c5b022bd09b48ecf5fef6cce4",
+      "contentHash": "64c78f83cf7dfbd71ad6aba8a25a6a0cabeb98c621612a5cb66abbaea4b88886",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -6410,27 +6410,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "03017b9ae3550ba3d920e82404d0f4f1512f270fdf902a75b775a4fc65a0ce52",
+      "contentHash": "833bda7270513bb9e9db521a23ec5fa232a76278c30530b68a84efe2e6ac8539",
       "sourceReviewStatus": null,
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "03017b9ae3550ba3d920e82404d0f4f1512f270fdf902a75b775a4fc65a0ce52",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "03017b9ae3550ba3d920e82404d0f4f1512f270fdf902a75b775a4fc65a0ce52",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -6482,7 +6476,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "5416088dde00bcbfc78e378cdf47aa891e7a81b494c4dde764485caf39fdafbf",
+      "contentHash": "201b056d6e64fb84844467fcae819df564eb2148fafcf8b5b9cfd203a3e7ca08",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -6578,27 +6572,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "8de0b2ad9a3c3d0f0475de8a5ebb9f83814fdf0678406304bbee5f567ca70e6b",
+      "contentHash": "f4e083415a0ac880cf92634aeaf1bc9bf562aef44424c8468315f8324b714503",
       "sourceReviewStatus": null,
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "8de0b2ad9a3c3d0f0475de8a5ebb9f83814fdf0678406304bbee5f567ca70e6b",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "8de0b2ad9a3c3d0f0475de8a5ebb9f83814fdf0678406304bbee5f567ca70e6b",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -6614,27 +6602,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "35ae07f678e8e5aa47ceffd4888386d981aa8c4d3d664ca5a5e61d0846b7b0ed",
+      "contentHash": "3922af0d8bb50b7df92326a55288f8b23ac1e3d349e5e392c6a88ed36e8bf496",
       "sourceReviewStatus": null,
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "35ae07f678e8e5aa47ceffd4888386d981aa8c4d3d664ca5a5e61d0846b7b0ed",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "35ae07f678e8e5aa47ceffd4888386d981aa8c4d3d664ca5a5e61d0846b7b0ed",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -6650,7 +6632,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "ff3b575ea9109df4fd86cb1567d2b4cc12f653e2b95d4c83d1102b59940a83ac",
+      "contentHash": "83fb169e12bae46f3356264611fa18e6a49b61ce04c708202c5710b939a1af75",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -6680,27 +6662,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "72826e34ad233b4aada318901681757f6cfbb81a8d381fffbf142f52ee25be83",
+      "contentHash": "30d08f3d6e3daeff74dff4bb7d4cc22e940526db4c11cae1aa2e18375fbd997f",
       "sourceReviewStatus": null,
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "72826e34ad233b4aada318901681757f6cfbb81a8d381fffbf142f52ee25be83",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "72826e34ad233b4aada318901681757f6cfbb81a8d381fffbf142f52ee25be83",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -6716,7 +6692,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "69d027e8cea29a7bb8d39cdc2e325ef166d37842039441916b609a4091eb1034",
+      "contentHash": "fc7f02caa91cc7327f591eff5ba884124aaad042eb38a73b8c40523a9717218f",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -6746,27 +6722,21 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "234885876b92f7b325fb91bd7ab11aa3b298f581f5ad0524d12da6b55cecb597",
+      "contentHash": "93a792232f6327a54e9bb3c5133f3935207d72a3eafba9a7866dfa5922ce8e87",
       "sourceReviewStatus": null,
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "234885876b92f7b325fb91bd7ab11aa3b298f581f5ad0524d12da6b55cecb597",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "234885876b92f7b325fb91bd7ab11aa3b298f581f5ad0524d12da6b55cecb597",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {

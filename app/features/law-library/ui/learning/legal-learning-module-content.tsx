@@ -33,8 +33,8 @@ const legalLearningHeadings = defineDocumentHeadings({
   },
   example: {
     id: "legal-learning-example",
-    title: "Повний приклад у справі іноземця",
-    tocLabel: "Повний приклад",
+    title: "Розібраний приклад",
+    tocLabel: "Розібраний приклад",
   },
   nuances: {
     id: "legal-learning-nuances",
@@ -46,6 +46,16 @@ const legalLearningHeadings = defineDocumentHeadings({
 export const legalLearningContentToc = tableOfContentsFromHeadings(
   legalLearningHeadings
 )
+
+export function getLegalLearningContentToc(module: LegalLearningModuleView) {
+  return legalLearningContentToc.filter((item) => {
+    if (item.href === `#${legalLearningHeadings.example.id}`)
+      return Boolean(module.caseExample)
+    if (item.href === `#${legalLearningHeadings.nuances.id}`)
+      return Boolean(module.pitfalls.length || module.method.length)
+    return true
+  })
+}
 
 type ModuleNavigation = {
   previousLabel?: string

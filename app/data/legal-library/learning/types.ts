@@ -1,6 +1,7 @@
 import type { LegalDocumentId } from "../contracts"
 import { defineLegalTextContent } from "../legal-text"
 import type { LegalLearningText } from "./legal-text"
+import type { DocumentSample } from "~/data/document-library/contracts"
 
 export type AuthoredLearningDocumentId = LegalDocumentId
 
@@ -21,6 +22,14 @@ export type LegalLearningSection = {
   warning?: LegalLearningText
 }
 
+export type LegalLearningExample = {
+  title: LegalLearningText
+  facts: LegalLearningText
+  analysis: LegalLearningText
+  lesson: LegalLearningText
+  sample?: DocumentSample
+}
+
 export type LegalLearningModule = {
   id: string
   order: number
@@ -31,7 +40,9 @@ export type LegalLearningModule = {
   caseQuestion: LegalLearningText
   placeInWork: LegalLearningText
   sections: readonly LegalLearningSection[]
-  exercise: LegalLearningText
+  caseExample?: LegalLearningExample
+  terms?: readonly { term: string; meaning: LegalLearningText }[]
+  exercise?: LegalLearningText
 }
 
 export type LegalLearningCurriculum<

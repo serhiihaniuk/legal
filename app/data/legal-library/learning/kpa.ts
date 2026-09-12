@@ -1,5 +1,6 @@
 import { legalLibraryRegistry } from "~/data/legal-corpus/registry.generated"
 import { defineLegalLearningCurriculum } from "./types"
+import type { LegalLearningExample, LegalLearningSection } from "./types"
 
 import {
   createLegalTextAuthor,
@@ -65,6 +66,7 @@ export type KpaGuideSource = {
 
 export type KpaGuideLesson = {
   paragraphs: LegalTextValue[]
+  sections?: readonly LegalLearningSection[]
   articles: Array<{
     reference: LegalTextValue
     role: LegalTextValue
@@ -73,12 +75,7 @@ export type KpaGuideLesson = {
     term: string
     meaning: LegalTextValue
   }>
-  caseExample: {
-    title: LegalTextValue
-    facts: LegalTextValue
-    analysis: LegalTextValue
-    lesson: LegalTextValue
-  }
+  caseExample: LegalLearningExample
   findInText: LegalTextValue[]
 }
 
@@ -1213,7 +1210,7 @@ export const kpaGuideModuleArticles = {
   },
   anatomy: {
     stage: "Будова й логіка норми",
-    articles: ["5", "7", "54", "107"],
+    articles: ["40", "57", "124"],
   },
   principles: {
     stage: "Загальні процесуальні стандарти",
@@ -1414,7 +1411,9 @@ export const kpaLearningCurriculum = defineLegalLearningCurriculum({
     outcome: module.outcome,
     caseQuestion: module.questions[0]?.prompt ?? module.outcome,
     placeInWork: module.layers.practical.practice,
-    sections: [
+    caseExample: module.lesson.caseExample,
+    terms: module.lesson.terms,
+    sections: module.lesson.sections ?? [
       {
         id: `${module.id}-beginner`,
         title: "Початківець",

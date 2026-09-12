@@ -39,6 +39,7 @@ export { LawLibraryNavigation } from "./ui/navigation/law-library-navigation"
 export {
   LegalLearningModuleContent,
   legalLearningContentToc,
+  getLegalLearningContentToc,
 } from "./ui/learning/legal-learning-module-content"
 export { LegalProvisionSelector } from "./ui/provision/legal-provision-selector"
 export {

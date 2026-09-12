@@ -99,7 +99,7 @@ export function KpaLearningContent({
     outcome: guideModule.outcome,
     stage: moduleContext.stage,
     positionIntro: layers.beginner.practice,
-    question: guideModule.questions[0]?.prompt ?? guideModule.title,
+    question: guideModule.questions[0]?.prompt,
     neededWhen: layers.practical.practice,
     boundary: layers.beginner.pitfall,
     courseTitle:
@@ -109,18 +109,21 @@ export function KpaLearningContent({
         ? "Курс іде тим самим шляхом, яким рухається адміністративна справа: від визначення правил до доказів, рішення та контролю."
         : undefined,
     coursePhases: guideModule.id === "system" ? kpaCoursePhases : undefined,
-    mechanismParagraphs: lesson.paragraphs,
-    layers: [
-      { label: "Основне правило", text: layers.beginner.law },
-      {
-        label: "Як воно працює на практиці",
-        text: layers.practical.law,
-      },
-      {
-        label: "Межа або важливий виняток",
-        text: layers.advanced.law,
-      },
-    ],
+    mechanismParagraphs: lesson.sections ? [] : lesson.paragraphs,
+    mechanismSections: lesson.sections,
+    layers: lesson.sections
+      ? []
+      : [
+          { label: "Основне правило", text: layers.beginner.law },
+          {
+            label: "Як воно працює на практиці",
+            text: layers.practical.law,
+          },
+          {
+            label: "Межа або важливий виняток",
+            text: layers.advanced.law,
+          },
+        ],
     terms: lesson.terms,
     articleGroups: lesson.articles,
     provisionGuide: {

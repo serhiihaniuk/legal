@@ -1248,5 +1248,10 @@
     "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
     "contentHash": "6988ae70b73b92d66711e6b5b8623631c5aafec208ceb7c173347044f39e2459",
     "evidence": "docs/content-review/writing-2026-09-05/batches/98-assignment-evidence-preparation.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/anatomy.ts",
+    "contentHash": "b48ef4e27eef0472ec4280c698aead4e0922c4c74cdaf2f3173118d62295357e",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/99-law-module-rendering-and-anatomy.md"
   }
 ]
