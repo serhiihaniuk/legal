@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { getLegalLearningModule } from "."
 import { uczestnicyIDefinicjeLearningModuleTopic } from "./modules/powierzanie-pracy/uczestnicy-i-definicje"
+import { legalStayWorkModuleTopic } from "./modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy"
 import { scopeLearningModuleTopic } from "./modules/ppsa/scope"
 import { entryAndCurrentBasisLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/entry-and-current-basis"
 import { chooseFormLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/choose-form"
@@ -8,6 +9,7 @@ import { chooseFormLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-
 describe("learning publication metadata", () => {
   it.each([
     ["powierzanie-pracy", uczestnicyIDefinicjeLearningModuleTopic],
+    ["powierzanie-pracy", legalStayWorkModuleTopic],
     ["ppsa", scopeLearningModuleTopic],
     ["ustawa-o-cudzoziemcach", entryAndCurrentBasisLearningModuleTopic],
     ["rozporzadzenie-wniosek-pobyt-czasowy", chooseFormLearningModuleTopic],

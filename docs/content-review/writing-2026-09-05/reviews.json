@@ -1298,5 +1298,10 @@
     "path": "app/features/law-library/ui/provision/provision-explanation.tsx",
     "contentHash": "01ac8b7eba8136fd9e63f9af58039fd4f0fdb78b2032568d00c2da118f65b301",
     "evidence": "docs/content-review/writing-2026-09-05/batches/102-kpa-opening-commentary.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy.ts",
+    "contentHash": "aed69296d3dd68a910fd284d1a9ddf43033e5c99e5e38782445117a9abffad63",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/103-work-access.md"
   }
 ]

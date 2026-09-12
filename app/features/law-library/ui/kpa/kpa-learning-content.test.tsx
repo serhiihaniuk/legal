@@ -1,12 +1,47 @@
-import { render } from "@testing-library/react"
+import { cleanup, render } from "@testing-library/react"
 import { MemoryRouter } from "react-router"
-import { describe, expect, it } from "vitest"
+import { afterEach, describe, expect, it } from "vitest"
 
 import { kpaGuideModules } from "~/data/legal-library/learning/kpa"
 import { legalLearningPlainText } from "~/data/legal-library/learning/legal-text"
 import { KpaLearningContent } from "./kpa-learning-content"
 
+afterEach(cleanup)
+
 describe("KPA authored module rendering", () => {
+  it.each(["anatomy", "system", "delay"])(
+    "shows the %s opening boundary once and retains distinct closing explanations",
+    (id) => {
+      const module = kpaGuideModules.find((item) => item.id === id)
+      if (!module) throw new Error(`Missing ${id} module`)
+      const { container } = render(
+        <MemoryRouter>
+          <KpaLearningContent
+            selectedId={id}
+            articleExplanations={[]}
+            onSelectModule={() => {}}
+          />
+        </MemoryRouter>
+      )
+      const openingBoundary = legalLearningPlainText(
+        module.layers.beginner.pitfall
+      )
+      expect(container.textContent?.split(openingBoundary)).toHaveLength(2)
+      expect(
+        container.querySelector("#legal-learning-position")?.textContent
+      ).toContain(openingBoundary)
+      const closing = container.querySelector("#legal-learning-nuances")
+      expect(closing?.textContent).not.toContain(openingBoundary)
+      for (const text of [
+        module.layers.practical.pitfall,
+        module.layers.advanced.pitfall,
+        ...module.method,
+      ]) {
+        expect(closing?.textContent).toContain(legalLearningPlainText(text))
+      }
+    }
+  )
+
   it.each(["anatomy", "system"])(
     "retains the %s article and specimen without adding a course overview",
     (id) => {

@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 243,
+    "reviewed": 244,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -11622,9 +11622,9 @@
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy.ts",
       "family": "learning-module",
-      "contentHash": "643174780aecf65fb9d50447c79e27d402157992956b284af238a7cc2862b14c",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "aed69296d3dd68a910fd284d1a9ddf43033e5c99e5e38782445117a9abffad63",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/103-work-access.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/obowiazki-podmiotu.ts",
@@ -12651,7 +12651,7 @@
     {
       "path": "app/features/law-library/ui/kpa/kpa-learning-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "b08f39a052a64468472428274a31660abfa423f7dd8b37a3cd603deae832433a",
+      "contentHash": "ec8a75d9b8934fe0aebc3cb14de5390872206defd8cd98a80864db26647fbf76",
       "writing": "pending",
       "evidence": null
     },

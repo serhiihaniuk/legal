@@ -115,11 +115,7 @@ export function KpaLearningContent({
       }),
     },
     caseExample: lesson.caseExample,
-    pitfalls: [
-      layers.beginner.pitfall,
-      layers.practical.pitfall,
-      layers.advanced.pitfall,
-    ],
+    pitfalls: [layers.practical.pitfall, layers.advanced.pitfall],
     method: guideModule.method,
   }
 
