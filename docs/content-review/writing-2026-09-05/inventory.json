@@ -2,8 +2,8 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1827,
-    "reviewed": 200,
+    "totalFiles": 1826,
+    "reviewed": 201,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -12,7 +12,7 @@
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
-      "map-topic": 62,
+      "map-topic": 61,
       "map-journey": 1,
       "study-plan": 1,
       "study-topic": 8,
@@ -11727,7 +11727,7 @@
     {
       "path": "app/data/legal-map/data.ts",
       "family": "map-group-copy",
-      "contentHash": "103430a3b5f991c7d7021ba6b200474e1c05025a522bdff69bbe34978b05693f",
+      "contentHash": "f8b15eeebfa448f1bdafad9333568bd59d2d82826a2d5ea5162c2cace80a9552",
       "writing": "pending",
       "evidence": null
     },
@@ -11832,9 +11832,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
       "family": "map-topic",
-      "contentHash": "a7b76af4da3dcbd136225a474d6427a958914dd17d9c54bfd2e5c3669f2b356f",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/77-employer-duties.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/entry-current-basis.ts",
@@ -12052,13 +12052,6 @@
       "contentHash": "1719ef629e7438279ab8a60e0c3cc8c3c5e4dcd7aeb2a502ee989138f03b9c7e",
       "writing": "reviewed",
       "evidence": "docs/content-review/writing-2026-09-05/batches/57-work-permit-routes.md"
-    },
-    {
-      "path": "app/data/legal-map/editorial/topics/study-loop.ts",
-      "family": "map-topic",
-      "contentHash": "5f93cd70228a6ba47ad796fda80cfcec6321c5db63168528726141ab6c97b977",
-      "writing": "pending",
-      "evidence": null
     },
     {
       "path": "app/data/legal-map/editorial/topics/study-research.ts",

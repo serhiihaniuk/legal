@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest"
-import { allNodes } from "./index"
+import { allNodes, nodeById } from "./index"
+import {
+  knowledgeUnitById,
+  resolveMapTopicPublication,
+} from "~/data/legal-knowledge"
 import {
   legalMapChapters,
   legalMapChapterForHash,
@@ -14,14 +18,24 @@ describe("map contents ownership", () => {
     const ids = legalMapChapters.flatMap((chapter) => chapter.nodeIds)
     expect(new Set(ids).size).toBe(ids.length)
     expect(ids).toHaveLength(legalMapTopicCount)
-    expect(
-      [...ids, ...legalMapCompatibilityDestinations.keys()].sort()
-    ).toEqual(allNodes.map((node) => node.id).sort())
+    expect(ids.slice().sort()).toEqual(
+      allNodes
+        .filter((node) => !legalMapCompatibilityDestinations.has(node.id))
+        .map((node) => node.id)
+        .sort()
+    )
     for (const chapter of legalMapChapters) {
       expect(legalMapChapterNodes(chapter).map((node) => node.id)).toEqual(
         chapter.nodeIds
       )
     }
+  })
+
+  it("retains the weekly schedule redirect without publishing its retired content", () => {
+    expect(legalMapCompatibilityDestinations.get("study-loop")).toBe("/study")
+    expect(nodeById.has("study-loop")).toBe(false)
+    expect(knowledgeUnitById.has("map-topic:study-loop")).toBe(false)
+    expect(resolveMapTopicPublication("study-loop")).toBeUndefined()
   })
 
   it("keeps old anchors while separating present status, routes and procedural remedies", () => {

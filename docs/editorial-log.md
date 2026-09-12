@@ -627,3 +627,9 @@ Rewrote delegowanie as six sections with a completed twenty-day comparison. Corr
 ## 2026-09-12: PIP declaration and worker annex
 
 Added a dedicated PIP declaration guide with a filled selected-field specimen. Distinguished the submitted worker/address annex from records retained for inspection, separate permissions and later change notices. All six official PDF pages and the live service instructions were checked; independent review accepted the guide and map-link delta. Full verification, previews, desktop/mobile rendering and keyboard links passed. Evidence is in writing batch 76. The remaining posting documents and employer-duty review stay open.
+
+## 2026-09-12: employer events and retired learning schedule
+
+Rewrote employer duties with separate work-permit, declaration, protection and residence notification rules. A filled two-worker comparison identifies actual submissions and their different effects. Independent review corrected the art. 22 exception and accepted the final hash; specific channel-launch gaps stay qualified. Removed the obsolete weekly-schedule article from internal publication while preserving its redirect.
+
+Full verification passed with 246 application tests and production build. Final prose changes received renewed typecheck, editorial, preview and build checks. Desktop/mobile rendering, table keyboard scrolling, document navigation and the old redirect passed. Writing batches 77–78 record sources, acceptance and remaining scope. Global legal baseline stays 18.07.2026.

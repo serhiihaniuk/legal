@@ -47,7 +47,6 @@ import {
   specialVsKpaMapNode,
   stayWorkMapNode,
   startCaseMapNode,
-  studyLoopMapNode,
   studyResearchMapNode,
   temporaryCommonMapNode,
   temporaryGoalsMapNode,
@@ -304,10 +303,6 @@ export const legalData = {
             related: ["deadlines-delivery", "wsa"],
           },
           sourceCheckMapNode,
-          {
-            ...studyLoopMapNode,
-            related: ["legal-anatomy", "source-check", "wezwanie-workflow"],
-          },
         ],
       },
     ],

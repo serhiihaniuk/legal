@@ -1,12 +1,12 @@
-# Employer duties: pending source audit
+# Employer duties and event-specific notifications
 
 ## Status and scope
 
-Source audit completed on 12.09.2026 by `legacy_case_audit`. Implementation and independent writing acceptance are pending. This record does not mark the topic reviewed in the writing inventory and does not accept any product-file hash.
+Completed on 12.09.2026. Source preparation below was followed by a complete rewrite, independent review and application verification. The accepted hash and remaining source limits are recorded at the end.
 
 The audit read the complete current `app/data/legal-map/editorial/topics/employer-duties.ts`, checked its document destinations, and verified the official sources below. It prepares the employment chapter's shared explanation of duties triggered by hiring, changes, interruptions and termination. It does not replace the separate instrument articles or repeat the seasonal research completed in batches 73 and 74.
 
-No product files were changed. No typecheck, build, publication tests or browser review were performed for this audit.
+The initial source audit changed no product files. Its findings are retained below; the later implementation and verification are recorded separately.
 
 ## Reader question and proposed boundary
 
@@ -85,9 +85,31 @@ Work-law art. 5a now covers temporary protection. Under 2026/203 art. 41 its rul
 
 `ukraine-work-notification` already exists. `temporary-residence-notification` and `blue-card-notification` concern different residence duties and should not be used as generic employer notification destinations. Any future guide split should follow the completed example's actual records, not create empty pages for every conceivable document.
 
-## Unresolved points before implementation acceptance
+## Limits identified during source preparation
 
 1. Work-law art. 109 retains a technical transition for arts. 18(2) and 33(1), among other actions. The verified 29.04.2026 communication poz. 7 expressly activates art. 19 reporting; poz. 8 covers art. 70(2–3). Neither establishes rollout for arts. 18 or 33. Verify the applicable current channel before writing a categorical portal instruction for these events. No dedicated current form code was verified for them in this audit.
 2. The 20.06.2026 amendment permits the contract-system alternative and separately provides for rollout. No launch communication confirming every new eUmowy function was verified. The established `PGP-UZC` copy route is sufficient for a bounded example.
 3. Do not convert a local authority's fallback filing instruction into national law. The Gdańsk sheet mentions e-Doręczenia if the notification option is unavailable; the statute's system-malfunction rule and the particular case must still be distinguished.
-4. Final authored prose, exact specimen dates, typed references, document guide scope, rendered navigation and publication checks remain unreviewed. This record is preparation only.
+4. Final prose, specimen dates, references and rendered navigation were still unreviewed at this stage. Their later acceptance is recorded below.
+
+## Additional channel and form check
+
+ukr_filing_review independently checked the live 2025 and 2026 ministerial journals and targeted official portal documentation on 12.09.2026. The 2025 journal listed 37 entries; the 2026 journal listed 18, with its latest revision on 20 August. The verified 29 April notices cover art. 19 and art. 70(2–3), not art. 18(2) or art. 33(1). No subsequent relevant notice or documented dedicated form was found. Current art. 109 still names these provisions. This is an unverified activation gap, not proof that a live system lacks those functions. Avoid categorical current portal instructions for them.
+
+Root also downloaded and visually inspected the one-page June 2026 Gdańsk notification sheet cited above. It shows ZC-PNPC, ZC-PPPC and ZC-PZPC with their distinct events. Its local fallback instruction remains administrative guidance for that authority. The image is evidence of the published explanatory sheet, not inspection of the authenticated submission interface.
+
+## Completed article and independent acceptance
+
+Six authored sections explain checks before work, understandable contract content and contract transmission, work-permit events, the other instruments, actual performance and retained records, and a completed two-worker comparison. The fictional June 2026 permit and registered declaration both cover July through December. The workers actually start on 1 July and end on 15 August. The employer submits the two different end notices on 17 August. A filled Polish working register identifies the submitted notices and their separate submission receipts.
+
+The independent full read found an omitted consequence in art. 22(1)(6) and the art. 22(3) exception. The final article explains that reasons and a declaration of intended use matter for non-start and interruption notices; this exception does not cover early ending. Review also clarified the instruments' June issue dates, explained unieważnienie wpisu in Ukrainian and restored ongoing information and prompt-correction duties. Root read the article and these final changes.
+
+legacy_case_audit accepted app/data/legal-map/editorial/topics/employer-duties.ts at SHA-256 59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20. The acceptance is bounded to this article and its checked sources, not the project-wide legal baseline. The channel activation gaps above remain qualified in the article. Dedicated ordinary-permit and declaration notification guides remain separate catalog gaps.
+
+## Verification
+
+The combined batch 77–78 full verification passed with 246 application tests, type checks, lint, formatting, reader checks, 68 passing corpus tests and one existing skip, 15 review-tool tests, editorial validation and build. After the final source-review paragraphs changed, typecheck, editorial validation, previews and build were checked again. Previews cover 89 documents and 62 map nodes after retirement of the old weekly schedule.
+
+Root inspected the desktop article at 1440 px and the Polish specimen at 360 px. Neither viewport overflowed. The table scrolled with ArrowRight while the page stayed at 360 px. Direct loading of the completed-example anchor placed its heading below the fixed header. Keyboard activation opened the registered-declaration guide; Back preserved the article anchor. Final source paragraphs and browser errors were checked after the review correction.
+
+Writing acceptance reaches 201 of 1,826 active files together with batch 78. The removed weekly-schedule file is not counted as reviewed. Global legal baseline remains 18.07.2026; this article's scoped source check is dated 12.09.2026.

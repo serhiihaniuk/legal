@@ -187,23 +187,22 @@ import unit182 from "../../legal-map/editorial/topics/source-check"
 import unit183 from "../../legal-map/editorial/topics/special-vs-kpa"
 import unit184 from "../../legal-map/editorial/topics/start-case"
 import unit185 from "../../legal-map/editorial/topics/stay-work"
-import unit186 from "../../legal-map/editorial/topics/study-loop"
-import unit187 from "../../legal-map/editorial/topics/study-research"
-import unit188 from "../../legal-map/editorial/topics/temporary-common"
-import unit189 from "../../legal-map/editorial/topics/temporary-goals"
-import unit190 from "../../legal-map/editorial/topics/temporary-work"
-import unit191 from "../../legal-map/editorial/topics/two-keys"
-import unit192 from "../../legal-map/editorial/topics/ukr-baseline-2026"
-import unit193 from "../../legal-map/editorial/topics/ukraine-ordinary-2026"
-import unit194 from "../../legal-map/editorial/topics/ukraine-routes-2026"
-import unit195 from "../../legal-map/editorial/topics/visa"
-import unit196 from "../../legal-map/editorial/topics/visa-free"
-import unit197 from "../../legal-map/editorial/topics/wezwanie"
-import unit198 from "../../legal-map/editorial/topics/wezwanie-workflow"
-import unit199 from "../../legal-map/editorial/topics/work-entry"
-import unit200 from "../../legal-map/editorial/topics/work-instruments"
-import unit201 from "../../legal-map/editorial/topics/work-permit"
-import unit202 from "../../legal-map/editorial/topics/wsa"
+import unit186 from "../../legal-map/editorial/topics/study-research"
+import unit187 from "../../legal-map/editorial/topics/temporary-common"
+import unit188 from "../../legal-map/editorial/topics/temporary-goals"
+import unit189 from "../../legal-map/editorial/topics/temporary-work"
+import unit190 from "../../legal-map/editorial/topics/two-keys"
+import unit191 from "../../legal-map/editorial/topics/ukr-baseline-2026"
+import unit192 from "../../legal-map/editorial/topics/ukraine-ordinary-2026"
+import unit193 from "../../legal-map/editorial/topics/ukraine-routes-2026"
+import unit194 from "../../legal-map/editorial/topics/visa"
+import unit195 from "../../legal-map/editorial/topics/visa-free"
+import unit196 from "../../legal-map/editorial/topics/wezwanie"
+import unit197 from "../../legal-map/editorial/topics/wezwanie-workflow"
+import unit198 from "../../legal-map/editorial/topics/work-entry"
+import unit199 from "../../legal-map/editorial/topics/work-instruments"
+import unit200 from "../../legal-map/editorial/topics/work-permit"
+import unit201 from "../../legal-map/editorial/topics/wsa"
 
 export const authoredKnowledgeUnits = [
   unit0,
@@ -408,5 +407,4 @@ export const authoredKnowledgeUnits = [
   unit199,
   unit200,
   unit201,
-  unit202,
 ] as const

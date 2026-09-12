@@ -206,3 +206,5 @@ Batch 74 closes the seasonal permit, registration-certificate and arrival-statem
 Batch 75 completes delegation in place with a source-reviewed comparison, separate PIP and insurance roles, and concrete existing document references. Posting document gaps remain recorded in pending batch 76; the read-only employment audit and upcoming order are in batch 75.
 
 Batch 76 closes the PIP declaration destination gap and links it from delegation. Posting permit and A1 remain separate gaps; employer duties source preparation is recorded in pending batch 77. This does not accept the remaining employment topics.
+
+Batch 77 completes the employer-duties article in its existing chapter. The event-based explanation and completed comparison now distinguish actual notifications from receipts and payroll evidence. Dedicated ordinary-permit/declaration notification guides remain gaps. Batch 78 finishes the earlier retirement of study-loop by removing internal registrations and preserving the public redirect. Temporary work and outsourcing remain unaccepted employment articles; batch 79 records the next source audit.

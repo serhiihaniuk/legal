@@ -1013,5 +1013,10 @@
     "path": "app/data/legal-map/editorial/topics/delegation.ts",
     "contentHash": "d6adec52854f4a73fcdf8ae3217e8fcac71e0786433237ce7d161183b42c7905",
     "evidence": "docs/content-review/writing-2026-09-05/batches/76-posting-documents.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
+    "contentHash": "59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/77-employer-duties.md"
   }
 ]

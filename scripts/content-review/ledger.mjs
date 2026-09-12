@@ -174,7 +174,7 @@ const DOCUMENT_CONFIG_ROOT = "legal-corpus/documents"
 const FAMILY_COUNTS = {
   provision: 1478,
   "learning-module": 43,
-  "map-topic": 62,
+  "map-topic": 61,
   "evidence-document": 89,
   "case-guide": 9,
 }

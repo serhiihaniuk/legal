@@ -2956,7 +2956,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "103430a3b5f991c7d7021ba6b200474e1c05025a522bdff69bbe34978b05693f",
+      "contentHash": "f8b15eeebfa448f1bdafad9333568bd59d2d82826a2d5ea5162c2cace80a9552",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -3410,7 +3410,7 @@
       "path": "app/data/legal-map/editorial/topics/employer-duties.ts",
       "family": "map-topic",
       "lane": "teaching-pages",
-      "documentId": "residence-card",
+      "documentId": null,
       "contentId": "employer-duties",
       "provisionId": null,
       "provisionIndex": null,
@@ -3418,7 +3418,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "a7b76af4da3dcbd136225a474d6427a958914dd17d9c54bfd2e5c3669f2b356f",
+      "contentHash": "59a2180abf744a0f5317e1303fbee531378cea8cbcf795d827dccbc253664e20",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,
@@ -4427,42 +4427,6 @@
         "status": "pending",
         "blockers": [],
         "hashAttestation": null
-      }
-    },
-    {
-      "id": "map-topic:study-loop",
-      "path": "app/data/legal-map/editorial/topics/study-loop.ts",
-      "family": "map-topic",
-      "lane": "teaching-pages",
-      "documentId": null,
-      "contentId": "study-loop",
-      "provisionId": null,
-      "provisionIndex": null,
-      "sourceProvisionCount": null,
-      "currentSourceEdition": null,
-      "sourceTextHash": null,
-      "officialSourceUrls": [],
-      "contentHash": "5f93cd70228a6ba47ad796fda80cfcec6321c5db63168528726141ab6c97b977",
-      "sourceReviewStatus": "reviewed",
-      "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:23.271Z",
-        "status": "accepted",
-        "blockers": [],
-        "hashAttestation": {
-          "contentHash": "5f93cd70228a6ba47ad796fda80cfcec6321c5db63168528726141ab6c97b977",
-          "sourceTextHash": null
-        }
-      },
-      "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:23.602Z",
-        "status": "accepted",
-        "blockers": [],
-        "hashAttestation": {
-          "contentHash": "5f93cd70228a6ba47ad796fda80cfcec6321c5db63168528726141ab6c97b977",
-          "sourceTextHash": null
-        }
       }
     },
     {
