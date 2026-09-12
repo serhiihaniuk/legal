@@ -1,6 +1,6 @@
 # Complete writing and content review
 
-The user resumed on 12.09.2026. Batch 74 adds three independently reviewed seasonal document guides and connects them to the map article. All nine current case guides already use explicit document actions throughout their stages. The remaining scope below stays open.
+The user resumed on 12.09.2026. Batch 75 completes the delegowanie article after the three seasonal document guides in batch 74. All nine current case guides already use explicit document actions throughout their stages. The remaining scope below stays open.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.
 
@@ -91,3 +91,5 @@ Latest checkpoint, batches 68–69: permanent residence now has six visible list
 Batch 73 explains seasonal activity, initial and arrival documents, four distinct pending-work rules, time limits, changes, housing and residence. A completed orchard example contains a filled Polish document comparison. Scoped official-source and independent article review are dated 12.09.2026. Dedicated seasonal document guides and remaining map articles are still pending.
 
 Batch 74 closes the three seasonal document gaps recorded in batch 73. All 88 current document guides have matching writing acceptance. The new guides have distinct fictional specimens and source-reviewed roles, with desktop/mobile and reverse-link checks. Writing acceptance is 198 of 1,826 files. Delegowanie is next; other employment topics, law writing, source fidelity and whole-project legal acceptance remain open.
+
+Batch 75 completes delegowanie with six sections, distinct work/PIP/residence/A1 questions and a completed German-versus-Indian employer comparison. Independent review accepted the exact final file; full verification and desktop/mobile navigation checks passed. Writing acceptance is 199 of 1,826 files. Pending batch 76 records the actual PIP declaration service and all six official PDF pages for the next document guide. Employer duties, temporary work and outsourcing remain next in the employment chapter; the broader goal stays open.

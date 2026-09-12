@@ -619,3 +619,7 @@ Rewrote the seasonal map topic as six authored sections with a completed orchard
 ## 2026-09-12: three seasonal document guides
 
 Added separate guides and filled fictional specimens for the registration certificate, arrival statement and permit. Linked all three from the seasonal article and verified reverse contexts. Independent review accepted all four exact hashes. Sources, corrections and verification are recorded in writing batch 74. Type checks, 244 application tests, 68 corpus tests, 15 review-tool tests, editorial validation, previews and build passed. Desktop/mobile checks found no viewport overflow or final browser errors. The global legal baseline remains unchanged.
+
+## 2026-09-12: delegowanie and separate legal questions
+
+Rewrote delegowanie as six sections with a completed twenty-day comparison. Corrected the service exemptions and employer statement, distinguished PIP notice and inspection deadlines, and added primary EU insurance sources. Independent review accepted the final article. Full verification and desktop/mobile keyboard navigation passed. Writing batch 75 records sources and hash; posting document guides remain next. The global legal baseline is unchanged.

@@ -1,6 +1,6 @@
 # Map contents review
 
-Latest implementation note, batch 59: work-instruments now compares the applicable employment procedures, and work-permit explains the ordinary Polish-entity permit with a completed salary example. The existing comparison/child split remains appropriate. Work-entry is next, then the remaining labour-market children. The ZUS guide and its income/resident references were clarified following user feedback. The findings below preserve the original pre-migration audit; completed changes are recorded in numbered batches.
+Latest implementation note, batch 75: the employment chapter has six accepted articles, including delegowanie. Focused posting documents are next, followed by employer duties, temporary work and outsourcing. Earlier findings below preserve the pre-migration audit; numbered batches record completed changes.
 
 Reviewed on 06.09.2026. This is an information-architecture review, not acceptance of the legal claims in the existing pages. It precedes the map rewrite requested by the user. No topic receives writing or independent legal acceptance from this document.
 
@@ -202,3 +202,5 @@ Batch 60 completes the `work-entry` chapter introduction after the instrument an
 Batch 73 completes the seasonal article writing disposition after the declaration article in batches 70–71. Chapter placement stays unchanged. Dedicated seasonal permit, registration-certificate and arrival-statement guides remain catalog gaps. Other employment topics and the broader dispositions remain open.
 
 Batch 74 closes the seasonal permit, registration-certificate and arrival-statement catalog gaps. Each has its own guide and typed links in both directions. The next employment article is delegowanie. Other dispositions remain open.
+
+Batch 75 completes delegation in place with a source-reviewed comparison, separate PIP and insurance roles, and concrete existing document references. Posting document gaps remain recorded in pending batch 76; the read-only employment audit and upcoming order are in batch 75.

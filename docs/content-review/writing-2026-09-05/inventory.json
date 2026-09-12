@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1826,
-    "reviewed": 198,
+    "reviewed": 199,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
@@ -11804,9 +11804,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/delegation.ts",
       "family": "map-topic",
-      "contentHash": "8aefc3c5441d28449d70e55b34abf8cc4266d902ae0715bfa6542eeb4c823ee5",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "875bcdc0d6925c4115fa4b2c94adbea49457ff8316287d6738b05cb1a80e50c4",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/75-delegation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/document-matrix.ts",

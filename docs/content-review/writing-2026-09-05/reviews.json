@@ -1003,5 +1003,10 @@
     "path": "app/data/document-library/editorial/guides/seasonal-work-permit.ts",
     "contentHash": "62c0d51c2a17b4d3cdf4d81fa9de3b7e44180634e8a29a2bc71c9eb843bd10a5",
     "evidence": "docs/content-review/writing-2026-09-05/batches/74-seasonal-documents.md"
+  },
+  {
+    "path": "app/data/legal-map/editorial/topics/delegation.ts",
+    "contentHash": "875bcdc0d6925c4115fa4b2c94adbea49457ff8316287d6738b05cb1a80e50c4",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/75-delegation.md"
   }
 ]
