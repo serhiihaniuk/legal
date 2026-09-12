@@ -1444,6 +1444,36 @@
       }
     },
     {
+      "id": "evidence-document:foreign-employer-register",
+      "path": "app/data/document-library/editorial/guides/foreign-employer-register.ts",
+      "family": "evidence-document",
+      "lane": "teaching-pages",
+      "documentId": "foreign-employer-register",
+      "contentId": "foreign-employer-register",
+      "provisionId": null,
+      "provisionIndex": null,
+      "sourceProvisionCount": null,
+      "currentSourceEdition": null,
+      "sourceTextHash": null,
+      "officialSourceUrls": [],
+      "contentHash": "f11917a6a8281b966a2dd78aac9e47eb441e80bef639d18e798aaa4bd65ade65",
+      "sourceReviewStatus": null,
+      "authorReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      },
+      "crossReview": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
+        "blockers": [],
+        "hashAttestation": null
+      }
+    },
+    {
       "id": "evidence-document:health-insurance",
       "path": "app/data/document-library/editorial/guides/health-insurance.ts",
       "family": "evidence-document",
@@ -1936,7 +1966,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "34241f47e37ee9b26c34238542c2c8217f6f2093a9b2606189ec6a8dcd1186d2",
+      "contentHash": "f436829a8f8c83029bb0a535dbe5b87221417c04af95fa2f9126b08004717865",
       "sourceReviewStatus": null,
       "authorReview": {
         "reviewer": null,
@@ -3766,7 +3796,7 @@
       "currentSourceEdition": null,
       "sourceTextHash": null,
       "officialSourceUrls": [],
-      "contentHash": "7762507ccd749e0a8cb0ca83f49b3680e39c65df00ad75d37fe5c29a5e66edb4",
+      "contentHash": "e9671770719d39b9260c2bf5fe9e49b7df787d489560bd8ede1d6e3aba19e233",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
         "reviewer": null,

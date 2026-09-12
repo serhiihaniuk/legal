@@ -2,6 +2,7 @@ import type { LegalTextValue } from "~/data/legal-library/legal-text"
 import type { OfficialSource } from "~/data/shared/legal-types"
 
 export type EvidenceDocumentId =
+  | "foreign-employer-register"
   | "a1-certificate"
   | "posting-work-permit"
   | "work-permit-non-start-notification"
@@ -212,6 +213,7 @@ export const evidenceDocumentIds = [
   "pip-posting-declaration",
   "posting-work-permit",
   "a1-certificate",
+  "foreign-employer-register",
   "seasonal-work-permit",
   "seasonal-registration-certificate",
   "seasonal-arrival-statement",

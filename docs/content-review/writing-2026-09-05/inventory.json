@@ -2,13 +2,13 @@
   "scope": "All authored product prose, including explanations, examples, guides, and interface copy. Generated Polish source text is audited separately.",
   "skill": "legal-explanatory-writing",
   "summary": {
-    "totalFiles": 1841,
-    "reviewed": 231,
+    "totalFiles": 1842,
+    "reviewed": 232,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 82,
       "case-guide": 9,
-      "evidence-document": 104,
+      "evidence-document": 105,
       "provision": 1478,
       "learning-module": 43,
       "map-group-copy": 1,
@@ -637,6 +637,13 @@
       "evidence": "docs/content-review/writing-2026-09-05/batches/55-ukr-work-permit.md"
     },
     {
+      "path": "app/data/document-library/editorial/guides/foreign-employer-register.ts",
+      "family": "evidence-document",
+      "contentHash": "f11917a6a8281b966a2dd78aac9e47eb441e80bef639d18e798aaa4bd65ade65",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/97-foreign-employer-register-preparation.md"
+    },
+    {
       "path": "app/data/document-library/editorial/guides/health-insurance.ts",
       "family": "evidence-document",
       "contentHash": "51e1685394a3cdf546f6694f70a47a10a5c2f07f87d27a804750e019abb2c73c",
@@ -751,9 +758,9 @@
     {
       "path": "app/data/document-library/editorial/guides/posting-work-permit.ts",
       "family": "evidence-document",
-      "contentHash": "34241f47e37ee9b26c34238542c2c8217f6f2093a9b2606189ec6a8dcd1186d2",
+      "contentHash": "f436829a8f8c83029bb0a535dbe5b87221417c04af95fa2f9126b08004717865",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/97-foreign-employer-register-preparation.md"
     },
     {
       "path": "app/data/document-library/editorial/guides/power-of-attorney.ts",
@@ -11916,9 +11923,9 @@
     {
       "path": "app/data/legal-map/editorial/topics/delegation.ts",
       "family": "map-topic",
-      "contentHash": "7762507ccd749e0a8cb0ca83f49b3680e39c65df00ad75d37fe5c29a5e66edb4",
+      "contentHash": "e9671770719d39b9260c2bf5fe9e49b7df787d489560bd8ede1d6e3aba19e233",
       "writing": "reviewed",
-      "evidence": "docs/content-review/writing-2026-09-05/batches/96-a1-preparation.md"
+      "evidence": "docs/content-review/writing-2026-09-05/batches/97-foreign-employer-register-preparation.md"
     },
     {
       "path": "app/data/legal-map/editorial/topics/document-matrix.ts",
