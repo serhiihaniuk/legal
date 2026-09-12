@@ -225,6 +225,7 @@ function configuredExtractionOptions(config, sourcePdfSha256) {
     excludedArticleOccurrences:
       config.extraction.excludedArticleOccurrences ?? [],
     futureTextExclusions: config.extraction.futureTextExclusions ?? [],
+    articleEndBoundaries: config.extraction.articleEndBoundaries ?? [],
     provisionStatusOverrides: config.extraction.provisionStatusOverrides ?? [],
   }
 }

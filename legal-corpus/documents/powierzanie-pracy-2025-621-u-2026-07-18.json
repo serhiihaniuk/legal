@@ -54,6 +54,78 @@
         "matchIndex": 1794,
         "reason": "Lower-case intra-article reference in Art. 58 is not a provision boundary."
       }
+    ],
+    "articleEndBoundaries": [
+      {
+        "locator": "Art. 25",
+        "pdfPage": 30,
+        "endMarker": "umowy nie stanowią inaczej.",
+        "expectedTrailingText": "Rozdział 2\nZezwolenie na pracę cudzoziemca na rzecz polskiego podmiotu powierzającego\npracę cudzoziemcowi",
+        "reason": "Article 25 ends on page 30 before the separate chapter 2 heading and article 26."
+      },
+      {
+        "locator": "Art. 34",
+        "pdfPage": 36,
+        "endMarker": "2003 r. o zatrudnianiu pracowników tymczasowych.",
+        "expectedTrailingText": "Rozdział 3\nZezwolenie na pracę w związku z pełnieniem określonej funkcji",
+        "reason": "Article 34 ends on page 36 before the separate chapter 3 heading and article 35."
+      },
+      {
+        "locator": "Art. 39",
+        "pdfPage": 37,
+        "endMarker": "w związku z udzieloną mu prokurą.",
+        "expectedTrailingText": "©Kancelaria Sejmu s. 38/100\n2026-06-17\nRozdział 4\nZezwolenie na pracę w związku z delegowaniem cudzoziemca przez podmiot\nzagraniczny na terytorium Rzeczypospolitej Polskiej",
+        "reason": "Article 39 ends on page 37; page 38 begins the separate chapter 4 before article 40."
+      },
+      {
+        "locator": "Art. 44",
+        "pdfPage": 40,
+        "endMarker": "i w innym celu niż wykonanie usługi.",
+        "expectedTrailingText": "Rozdział 5\nZezwolenie na pracę sezonową",
+        "reason": "Article 44 ends on page 40 before the separate chapter 5 heading and article 45."
+      },
+      {
+        "locator": "Art. 60",
+        "pdfPage": 48,
+        "endMarker": "się ostateczna, starosta z urzędu unieważnia wpis do ewidencji wniosków.",
+        "expectedTrailingText": "©Kancelaria Sejmu s. 49/100\n2026-06-17\nRozdział 6\nOświadczenie o powierzeniu pracy cudzoziemcowi",
+        "reason": "Article 60 ends on page 48; page 49 begins the separate chapter 6 before article 61."
+      },
+      {
+        "locator": "Art. 71",
+        "pdfPage": 57,
+        "endMarker": "na podstawie umowy o pracę.",
+        "expectedTrailingText": "©Kancelaria Sejmu s. 58/100\n2026-06-17\nRozdział 7\nIndywidualne konta oraz przetwarzanie danych w systemach\nteleinformatycznych",
+        "reason": "Article 71 ends on page 57; page 58 begins the separate chapter 7 before article 72."
+      },
+      {
+        "locator": "Art. 77",
+        "pdfPage": 68,
+        "endMarker": "na terytorium Rzeczypospolitej Polskiej.",
+        "expectedTrailingText": "Rozdział 8\nSzczególne działania w zakresie aktywizacji zawodowej i integracji społecznej\ncudzoziemców",
+        "reason": "Article 77 ends on page 68 before the separate chapter 8 heading and article 78."
+      },
+      {
+        "locator": "Art. 83",
+        "pdfPage": 73,
+        "endMarker": "2) pomocy prawnej i administracyjnej w zakresie dostępu do rynku pracy.",
+        "expectedTrailingText": "Rozdział 9\nPrzepisy karne",
+        "reason": "Article 83 ends on page 73 before the separate chapter 9 heading and article 84."
+      },
+      {
+        "locator": "Art. 86",
+        "pdfPage": 75,
+        "endMarker": "o wykroczenia (Dz. U. z 2024 r. poz. 977 i 1544 oraz z 2025 r. poz. 620).",
+        "expectedTrailingText": "Rozdział 10\nZmiany w przepisach",
+        "reason": "Article 86 ends on page 75 before the separate chapter 10 heading and article 87."
+      },
+      {
+        "locator": "Art. 101",
+        "pdfPage": 96,
+        "endMarker": "cudzoziemców w stosunku do obywateli polskich.”.",
+        "expectedTrailingText": "©Kancelaria Sejmu s. 97/100\n2026-06-17\nRozdział 11\nPrzepisy przejściowe i przepis końcowy",
+        "reason": "Article 101's quoted replacement and the amending article end on page 96; page 97 begins the separate chapter 11 before article 102."
+      }
     ]
   }
 }

@@ -6,6 +6,32 @@ import { getDocument, listProvisions } from "~/data/legal-library"
 import { parseProvisionBlocks, separateSourceNotes } from "./source-text-model"
 
 describe("structured source text", () => {
+  it("ends work article 71 before the next chapter and preserves all four paragraphs", () => {
+    const provision = listProvisions("powierzanie-pracy").find(
+      (item) => item.locator === "Art. 71"
+    )!
+    const source = separateSourceNotes(
+      provision.text,
+      sourceNoteRanges(provision)
+    )
+    const blocks = parseProvisionBlocks(source.text)
+    expect(blocks.map((block) => block.marker)).toEqual([
+      "1.",
+      "2.",
+      "3.",
+      "4.",
+    ])
+    expect(blocks[3].text).toMatch(/na podstawie umowy o pracę\.$/u)
+    expect(provision.text).not.toContain("Rozdział 7")
+    expect(provision.startPdfPage).toBe(57)
+    expect(provision.endPdfPage).toBe(57)
+    expect(
+      listProvisions("powierzanie-pracy").find(
+        (item) => item.locator === "Art. 72"
+      )?.startPdfPage
+    ).toBe(58)
+  })
+
   it("retains original nested markers and keeps inline legal references inside sentences", () => {
     const blocks = parseProvisionBlocks(
       "Art. 40. 1. Warunki:\n1) pierwszy punkt:\na) litera,\nb) druga litera;\n2) art. 303 ust. 1 pozostaje odniesieniem.\n1a. Dodatkowy ustęp.\n§ 2. Kolejny paragraf."

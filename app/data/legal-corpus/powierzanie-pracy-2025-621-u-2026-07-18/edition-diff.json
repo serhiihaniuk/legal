@@ -503,12 +503,8 @@
       "provisionId": "powierzanie-pracy-art-21",
       "references": [
         {
-          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
-          "line": 18
-        },
-        {
-          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
-          "line": 41
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-71.ts",
+          "line": 56
         }
       ]
     },
@@ -1230,7 +1226,12 @@
     },
     {
       "provisionId": "powierzanie-pracy-art-71",
-      "references": []
+      "references": [
+        {
+          "file": "app/data/legal-library/editorial/powierzanie-pracy/articles/article-art-21.ts",
+          "line": 51
+        }
+      ]
     },
     {
       "provisionId": "powierzanie-pracy-art-72",

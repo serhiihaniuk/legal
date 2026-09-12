@@ -451,9 +451,10 @@ function assertNoDuplicateLocators(items, describe) {
 }
 
 /**
- * @typedef {{ article: string, pdfPage: number, endPdfPage: number, textParts: string[] }} ArticleAccumulator
+ * @typedef {{ article: string, pdfPage: number, endPdfPage: number, textParts: Array<{ pdfPage: number, text: string }> }} ArticleAccumulator
  * @typedef {{ locator: string, pdfPage: number, matchIndex: number }} ArticleOccurrence
  * @typedef {{ locator: string, startMarker: string, endMarker?: string, effectiveDate: string }} FutureTextExclusion
+ * @typedef {{ locator: string, pdfPage: number, endMarker: string, expectedTrailingText: string, reason: string }} ArticleEndBoundary
  * @typedef {{ locator: string, status: string, effectiveDate?: string }} ProvisionStatusOverride
  */
 
@@ -617,11 +618,90 @@ function applyFutureTextExclusions(articles, exclusions) {
 }
 
 /**
+ * Trim only source-reviewed endings. Exact markers and discarded text prevent a
+ * changed PDF or a quoted chapter heading from silently losing provision text.
+ * Complete source pages remain untouched.
+ * @param {ReturnType<typeof applyFutureTextExclusions>} articles
+ * @param {Page[]} pages
+ * @param {ArticleEndBoundary[]} boundaries
+ * @param {ArticleAccumulator[]} articleSources
+ */
+function applyArticleEndBoundaries(
+  articles,
+  pages,
+  boundaries,
+  articleSources
+) {
+  const seen = new Set()
+  for (const [index, boundary] of boundaries.entries()) {
+    const field = `extraction.articleEndBoundaries[${index}]`
+    if (seen.has(boundary.locator)) {
+      failExtraction(
+        "Duplicate article end boundary",
+        "extraction.duplicate-article-end",
+        field
+      )
+    }
+    seen.add(boundary.locator)
+    const article = articles.find(
+      (item) => `Art. ${item.article}` === boundary.locator
+    )
+    const marker = normalizeText(boundary.endMarker)
+    const tail = normalizeText(boundary.expectedTrailingText)
+    const sourcePages = pages.filter(
+      (page) => page.pdfPage === boundary.pdfPage
+    )
+    if (
+      !article ||
+      !marker ||
+      !tail ||
+      sourcePages.length !== 1 ||
+      boundary.pdfPage < article.pdfPage ||
+      boundary.pdfPage > article.endPdfPage
+    ) {
+      failExtraction(
+        "Article end boundary does not identify a source page and provision",
+        "extraction.article-end-target-mismatch",
+        field
+      )
+    }
+    const matches = literalMatchIndexes(article.text, marker)
+    const articleSource = articleSources.find(
+      (item) => `Art. ${item.article}` === boundary.locator
+    )
+    const pageMatches = (articleSource?.textParts ?? [])
+      .filter((part) => part.pdfPage === boundary.pdfPage)
+      .flatMap((part) => literalMatchIndexes(normalizeText(part.text), marker))
+    if (matches.length !== 1 || pageMatches.length !== 1) {
+      failExtraction(
+        "Article ending must occur exactly once in the provision and its own fragment on the ending page",
+        "extraction.article-end-marker-mismatch",
+        field,
+        { articleMatches: matches.length, pageMatches: pageMatches.length }
+      )
+    }
+    const end = matches[0] + marker.length
+    if (normalizeText(article.text.slice(end)) !== tail) {
+      failExtraction(
+        "Text after the article ending differs from the reviewed structural tail",
+        "extraction.article-end-tail-mismatch",
+        field
+      )
+    }
+    article.text = article.text.slice(0, end)
+    article.endPdfPage = boundary.pdfPage
+    article.status = articleStatus(article.text)
+  }
+  return articles
+}
+
+/**
  * @param {Page[]} pages
  * @param {{
  *   ignoredArticleOccurrences?: ArticleOccurrence[],
  *   excludedArticleOccurrences?: ArticleOccurrence[],
  *   futureTextExclusions?: FutureTextExclusion[],
+ *   articleEndBoundaries?: ArticleEndBoundary[],
  * }} [options]
  */
 export function extractArticles(
@@ -630,6 +710,7 @@ export function extractArticles(
     ignoredArticleOccurrences = [],
     excludedArticleOccurrences = [],
     futureTextExclusions = [],
+    articleEndBoundaries = [],
   } = {}
 ) {
   /** @type {ArticleAccumulator[]} */
@@ -677,7 +758,7 @@ export function extractArticles(
 
     if (matches.length === 0) {
       if (current && page.text) {
-        current.textParts.push(page.text)
+        current.textParts.push({ pdfPage: page.pdfPage, text: page.text })
         current.endPdfPage = page.pdfPage
       }
       continue
@@ -685,7 +766,7 @@ export function extractArticles(
 
     const leading = page.text.slice(0, matches[0].match.index).trim()
     if (current && leading) {
-      current.textParts.push(leading)
+      current.textParts.push({ pdfPage: page.pdfPage, text: leading })
       current.endPdfPage = page.pdfPage
     }
 
@@ -708,7 +789,12 @@ export function extractArticles(
         article,
         pdfPage: page.pdfPage,
         endPdfPage: page.pdfPage,
-        textParts: [page.text.slice(match.index, end).trim()],
+        textParts: [
+          {
+            pdfPage: page.pdfPage,
+            text: page.text.slice(match.index, end).trim(),
+          },
+        ],
       }
     }
   }
@@ -746,14 +832,22 @@ export function extractArticles(
   }))
 
   const normalized = articles.map(({ textParts, ...article }) => {
-    const text = normalizeText(textParts.join("\n"))
+    const text = normalizeText(textParts.map((part) => part.text).join("\n"))
     return {
       ...article,
       status: articleStatus(text),
       text,
     }
   })
-  return applyFutureTextExclusions(normalized, futureTextExclusions)
+  return applyFutureTextExclusions(
+    applyArticleEndBoundaries(
+      normalized,
+      pages,
+      articleEndBoundaries,
+      articles
+    ),
+    futureTextExclusions
+  )
 }
 
 /**
@@ -854,6 +948,7 @@ function extractParagraphLedUnits(pages) {
  *   excludedArticleOccurrences?: ArticleOccurrence[],
  *   futureTextExclusions?: FutureTextExclusion[],
  *   provisionStatusOverrides?: ProvisionStatusOverride[],
+ *   articleEndBoundaries?: ArticleEndBoundary[],
  * }} [options]
  * @returns {Provision[]}
  */
@@ -868,6 +963,7 @@ export function extractProvisions(
     excludedArticleOccurrences = [],
     futureTextExclusions = [],
     provisionStatusOverrides = [],
+    articleEndBoundaries = [],
   } = /** @type {any} */ ({})
 ) {
   if (!documentId || !editionId || !sourcePdfSha256) {
@@ -883,6 +979,7 @@ export function extractProvisions(
           ignoredArticleOccurrences,
           excludedArticleOccurrences,
           futureTextExclusions,
+          articleEndBoundaries,
         }).map((article) => ({
           kind: "article",
           locator: `Art. ${article.article}`,

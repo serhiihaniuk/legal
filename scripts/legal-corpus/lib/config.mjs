@@ -267,6 +267,77 @@ function validateArticleOccurrences(value, field, diagnostics) {
 
 /**
  * @param {unknown} value
+ * @param {any} extraction
+ * @param {Diagnostic[]} diagnostics
+ */
+function validateArticleEndBoundaries(value, extraction, diagnostics) {
+  if (value === undefined) return
+  const field = "extraction.articleEndBoundaries"
+  const code = "config.invalid-article-end-boundaries"
+  if (
+    !Array.isArray(value) ||
+    value.length === 0 ||
+    extraction.profile !== "polish-statute-art-v1"
+  ) {
+    diagnostics.push({
+      severity: "fatal",
+      code,
+      path: field,
+      message:
+        "Article end boundaries require a non-empty array and the article extraction profile",
+    })
+    return
+  }
+  const seen = new Set()
+  value.forEach((entry, index) => {
+    const entryField = `${field}[${index}]`
+    if (!isPlainObject(entry)) {
+      diagnostics.push({
+        severity: "fatal",
+        code,
+        path: entryField,
+        message: "Article end boundary must be an object",
+      })
+      return
+    }
+    for (const key of [
+      "locator",
+      "endMarker",
+      "expectedTrailingText",
+      "reason",
+    ]) {
+      requireString(entry[key], `${entryField}.${key}`, diagnostics)
+    }
+    if (
+      typeof entry.locator !== "string" ||
+      !/^Art\. \d+[a-z⁰¹²³⁴⁵⁶⁷⁸⁹]*$/u.test(entry.locator) ||
+      seen.has(entry.locator)
+    ) {
+      diagnostics.push({
+        severity: "fatal",
+        code,
+        path: `${entryField}.locator`,
+        message: "Article end locator must be canonical and unique",
+      })
+    }
+    seen.add(entry.locator)
+    if (
+      !Number.isInteger(entry.pdfPage) ||
+      entry.pdfPage < 1 ||
+      entry.pdfPage > extraction.expectedPageCount
+    ) {
+      diagnostics.push({
+        severity: "fatal",
+        code,
+        path: `${entryField}.pdfPage`,
+        message: "Article end page must be within the expected PDF page range",
+      })
+    }
+  })
+}
+
+/**
+ * @param {unknown} value
  * @param {unknown} legalStateDate
  * @param {Diagnostic[]} diagnostics
  */
@@ -1032,6 +1103,11 @@ export function validateConfig(config) {
     validateFutureTextExclusions(
       config.extraction.futureTextExclusions,
       config.legalStateDate,
+      diagnostics
+    )
+    validateArticleEndBoundaries(
+      config.extraction.articleEndBoundaries,
+      config.extraction,
       diagnostics
     )
     validateProvisionStatusOverrides(

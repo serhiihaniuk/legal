@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 249,
+    "reviewed": 250,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -11615,9 +11615,9 @@
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/kontrola-i-sankcje.ts",
       "family": "learning-module",
-      "contentHash": "c299c5cf96580086a05053656c03d0061a68442436e1ddda40ade3403e8cb9aa",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "03e874040e43741dc8cae0277cfea185d2b51ab41132527be18250c4fa779108",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/111-control-sanctions.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/legalny-pobyt-a-rynek-pracy.ts",

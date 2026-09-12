@@ -54,27 +54,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
         "https://eli.gov.pl/eli/DU/2025/621/ogl"
       ],
-      "contentHash": "c299c5cf96580086a05053656c03d0061a68442436e1ddda40ade3403e8cb9aa",
+      "contentHash": "03e874040e43741dc8cae0277cfea185d2b51ab41132527be18250c4fa779108",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "c299c5cf96580086a05053656c03d0061a68442436e1ddda40ade3403e8cb9aa",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "c299c5cf96580086a05053656c03d0061a68442436e1ddda40ade3403e8cb9aa",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -584,7 +578,7 @@
       "provisionIndex": 102,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "7ba7fb4ee009669a76d59474ad38165bae5f9040f09f03501a5ce677ec8c9b50",
+      "sourceTextHash": "6ac8c8df38257837284e41a4fdde3af6f84838e937072ca22d16fb69ffd56383",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -593,24 +587,18 @@
       "contentHash": "1b92b86ed7ca525a19c3fe2d30e5c32fd1c0efd7898bcf752c50052acf58a568",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "1b92b86ed7ca525a19c3fe2d30e5c32fd1c0efd7898bcf752c50052acf58a568",
-          "sourceTextHash": "7ba7fb4ee009669a76d59474ad38165bae5f9040f09f03501a5ce677ec8c9b50"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "1b92b86ed7ca525a19c3fe2d30e5c32fd1c0efd7898bcf752c50052acf58a568",
-          "sourceTextHash": "7ba7fb4ee009669a76d59474ad38165bae5f9040f09f03501a5ce677ec8c9b50"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -1738,7 +1726,7 @@
       "provisionIndex": 26,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "23823b67c4d7c7b496756c1cdad6c5f696e2cdf2ee5155d73443245f39cadfa9",
+      "sourceTextHash": "1dce0b18b8568404b3e4e4e6f81bec42cddb7506e7bd6d0f4018173b8f7b3957",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -1747,24 +1735,18 @@
       "contentHash": "84d482b00c0a927c8c6f54034eafc60c7e0742be759b6617b3ad6cfdb5a08db0",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "84d482b00c0a927c8c6f54034eafc60c7e0742be759b6617b3ad6cfdb5a08db0",
-          "sourceTextHash": "23823b67c4d7c7b496756c1cdad6c5f696e2cdf2ee5155d73443245f39cadfa9"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "84d482b00c0a927c8c6f54034eafc60c7e0742be759b6617b3ad6cfdb5a08db0",
-          "sourceTextHash": "23823b67c4d7c7b496756c1cdad6c5f696e2cdf2ee5155d73443245f39cadfa9"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -2138,7 +2120,7 @@
       "provisionIndex": 35,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "f7e05d5d08c1bcfa9d65426c4061a5f0db0a994191cf522d8587a3c120090a33",
+      "sourceTextHash": "fa6a6e0918d390ec25f227dd32de586c07726fba8657c223e7508e8c66458294",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -2147,24 +2129,18 @@
       "contentHash": "7ed7f1847d65e4340e294cd35f55c0b616230801d89b846bd0108256b552666a",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "7ed7f1847d65e4340e294cd35f55c0b616230801d89b846bd0108256b552666a",
-          "sourceTextHash": "f7e05d5d08c1bcfa9d65426c4061a5f0db0a994191cf522d8587a3c120090a33"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "7ed7f1847d65e4340e294cd35f55c0b616230801d89b846bd0108256b552666a",
-          "sourceTextHash": "f7e05d5d08c1bcfa9d65426c4061a5f0db0a994191cf522d8587a3c120090a33"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -2338,7 +2314,7 @@
       "provisionIndex": 40,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "eda7ee5bf7a191efa44fe3a5dc67a12edbf89b9fa5922d34ccbd58aa0efba5f1",
+      "sourceTextHash": "5bc12945d246667fa656455704054c173de9c9f675fac5fb94e3256a4fb5af81",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -2347,24 +2323,18 @@
       "contentHash": "7631b4c4f1c090cf220266e98bf2667fb0303f0a219538c13aaab5899e516c2c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "7631b4c4f1c090cf220266e98bf2667fb0303f0a219538c13aaab5899e516c2c",
-          "sourceTextHash": "eda7ee5bf7a191efa44fe3a5dc67a12edbf89b9fa5922d34ccbd58aa0efba5f1"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "7631b4c4f1c090cf220266e98bf2667fb0303f0a219538c13aaab5899e516c2c",
-          "sourceTextHash": "eda7ee5bf7a191efa44fe3a5dc67a12edbf89b9fa5922d34ccbd58aa0efba5f1"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -2578,7 +2548,7 @@
       "provisionIndex": 45,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "1d21daa2e3d13d507c4f6afd3e7bd1e44a599b5807353dcad0398bec4f1586e1",
+      "sourceTextHash": "ac5fa5d09762829df18f766dfa8b710ea1a2c756981a201db5ff476c3d1f3dbf",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -2587,24 +2557,18 @@
       "contentHash": "97d92b8e7dfbbdce621a4968c168c138bd6f24244b6cae00c6caf4a9fb294ce5",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "97d92b8e7dfbbdce621a4968c168c138bd6f24244b6cae00c6caf4a9fb294ce5",
-          "sourceTextHash": "1d21daa2e3d13d507c4f6afd3e7bd1e44a599b5807353dcad0398bec4f1586e1"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "97d92b8e7dfbbdce621a4968c168c138bd6f24244b6cae00c6caf4a9fb294ce5",
-          "sourceTextHash": "1d21daa2e3d13d507c4f6afd3e7bd1e44a599b5807353dcad0398bec4f1586e1"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -3338,7 +3302,7 @@
       "provisionIndex": 61,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "dcb9dae94c87d51e604807066c7cef27654cefb35920acff3d5fc67ca158d59e",
+      "sourceTextHash": "ffd74a1fbc05605eff51c5421d6e6e1d7734384d875bb205738fe7aa14243e8b",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -3347,24 +3311,18 @@
       "contentHash": "400cc9f481569881938478d84f4f0622bf08d702c2dc42cde04200bc201c30c8",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "400cc9f481569881938478d84f4f0622bf08d702c2dc42cde04200bc201c30c8",
-          "sourceTextHash": "dcb9dae94c87d51e604807066c7cef27654cefb35920acff3d5fc67ca158d59e"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "400cc9f481569881938478d84f4f0622bf08d702c2dc42cde04200bc201c30c8",
-          "sourceTextHash": "dcb9dae94c87d51e604807066c7cef27654cefb35920acff3d5fc67ca158d59e"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -3818,7 +3776,7 @@
       "provisionIndex": 72,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "4c145d1bf6762a92e0b6c36306b98501cb2f6ef68497a44f73a9a4a65dd5cfc1",
+      "sourceTextHash": "94d7774327133c4e84df5714c1a37247b58ad42c70f4ccfad036617b37ece81f",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -4052,7 +4010,7 @@
       "provisionIndex": 78,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "8ffe7e9b0a634ee537d8e19290eebabaf81b501661d5e3414bc2fa079dfbc159",
+      "sourceTextHash": "da2ce96dc7af35929da9408ae0b4a1e4dfaec34cf3b5725edc65f901bfe657f4",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -4061,24 +4019,18 @@
       "contentHash": "30044b8e8a412bbd00d35a6777864481f86e6fee6f4390c00932855472981742",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "30044b8e8a412bbd00d35a6777864481f86e6fee6f4390c00932855472981742",
-          "sourceTextHash": "8ffe7e9b0a634ee537d8e19290eebabaf81b501661d5e3414bc2fa079dfbc159"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "30044b8e8a412bbd00d35a6777864481f86e6fee6f4390c00932855472981742",
-          "sourceTextHash": "8ffe7e9b0a634ee537d8e19290eebabaf81b501661d5e3414bc2fa079dfbc159"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -4332,7 +4284,7 @@
       "provisionIndex": 84,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "4a8937677dda116d833065f4d5d4f64512ad5f74d218893bbf639e42b5127369",
+      "sourceTextHash": "2a2e3ae5f2edc993174ebdbd85c2a36d5b160f6a00625b9d0b8d77ba7d922235",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -4341,24 +4293,18 @@
       "contentHash": "cddbdd7437bf8514de7349e13079cde15a534e5559d0b02012d5d03761342d8e",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "cddbdd7437bf8514de7349e13079cde15a534e5559d0b02012d5d03761342d8e",
-          "sourceTextHash": "4a8937677dda116d833065f4d5d4f64512ad5f74d218893bbf639e42b5127369"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "cddbdd7437bf8514de7349e13079cde15a534e5559d0b02012d5d03761342d8e",
-          "sourceTextHash": "4a8937677dda116d833065f4d5d4f64512ad5f74d218893bbf639e42b5127369"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -4452,7 +4398,7 @@
       "provisionIndex": 87,
       "sourceProvisionCount": 115,
       "currentSourceEdition": "powierzanie-pracy-2025-621-u-2026-07-18",
-      "sourceTextHash": "376d34924cba00fd70b5b0134188b12295721403a5a66f3d732c51e4744cac1d",
+      "sourceTextHash": "22ec78769dfae0af30b8f3a05b377fdb372f79d6a8508755992ede98979d2769",
       "officialSourceUrls": [
         "https://api.sejm.gov.pl/eli/acts/DU/2025/621",
         "https://eli.gov.pl/api/acts/DU/2025/621/text/U/D20250621Lj.pdf",
@@ -4461,24 +4407,18 @@
       "contentHash": "308b656e3c38d600b93fc22146fdd8942406d3ea9697bc2549bf3841828e412c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:22.642Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "308b656e3c38d600b93fc22146fdd8942406d3ea9697bc2549bf3841828e412c",
-          "sourceTextHash": "376d34924cba00fd70b5b0134188b12295721403a5a66f3d732c51e4744cac1d"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:22.952Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "308b656e3c38d600b93fc22146fdd8942406d3ea9697bc2549bf3841828e412c",
-          "sourceTextHash": "376d34924cba00fd70b5b0134188b12295721403a5a66f3d732c51e4744cac1d"
-        }
+        "hashAttestation": null
       }
     },
     {

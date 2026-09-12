@@ -345,7 +345,7 @@
     ]
   },
   "powierzanie-pracy-2025-621-u-2026-07-18/powierzanie-pracy-art-25": {
-    "textHash": "23823b67c4d7c7b496756c1cdad6c5f696e2cdf2ee5155d73443245f39cadfa9",
+    "textHash": "1dce0b18b8568404b3e4e4e6f81bec42cddb7506e7bd6d0f4018173b8f7b3957",
     "ranges": [
       {
         "start": 272,
@@ -421,16 +421,6 @@
         "start": 905,
         "end": 944,
         "page": 37
-      }
-    ]
-  },
-  "powierzanie-pracy-2025-621-u-2026-07-18/powierzanie-pracy-art-39": {
-    "textHash": "eda7ee5bf7a191efa44fe3a5dc67a12edbf89b9fa5922d34ccbd58aa0efba5f1",
-    "ranges": [
-      {
-        "start": 512,
-        "end": 551,
-        "page": 38
       }
     ]
   },
@@ -534,16 +524,6 @@
       }
     ]
   },
-  "powierzanie-pracy-2025-621-u-2026-07-18/powierzanie-pracy-art-60": {
-    "textHash": "dcb9dae94c87d51e604807066c7cef27654cefb35920acff3d5fc67ca158d59e",
-    "ranges": [
-      {
-        "start": 1098,
-        "end": 1137,
-        "page": 49
-      }
-    ]
-  },
   "powierzanie-pracy-2025-621-u-2026-07-18/powierzanie-pracy-art-62": {
     "textHash": "3242e8343b13a39afce03fa7763448ee515af583718134b361e9135325ae9f39",
     "ranges": [
@@ -606,16 +586,6 @@
         "start": 1163,
         "end": 1202,
         "page": 57
-      }
-    ]
-  },
-  "powierzanie-pracy-2025-621-u-2026-07-18/powierzanie-pracy-art-71": {
-    "textHash": "4c145d1bf6762a92e0b6c36306b98501cb2f6ef68497a44f73a9a4a65dd5cfc1",
-    "ranges": [
-      {
-        "start": 1636,
-        "end": 1675,
-        "page": 58
       }
     ]
   },
@@ -900,7 +870,7 @@
     ]
   },
   "powierzanie-pracy-2025-621-u-2026-07-18/powierzanie-pracy-art-101": {
-    "textHash": "7ba7fb4ee009669a76d59474ad38165bae5f9040f09f03501a5ce677ec8c9b50",
+    "textHash": "6ac8c8df38257837284e41a4fdde3af6f84838e937072ca22d16fb69ffd56383",
     "ranges": [
       {
         "start": 1731,
@@ -911,11 +881,6 @@
         "start": 3695,
         "end": 3734,
         "page": 96
-      },
-      {
-        "start": 5410,
-        "end": 5449,
-        "page": 97
       }
     ]
   },

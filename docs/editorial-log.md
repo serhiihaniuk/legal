@@ -777,3 +777,9 @@ Shared introductions no longer repeat the first section heading or narrow paragr
 Rewrote changes and continuity into five explanations with a completed Polish X/Y comparison, and rewrote articles 21 and 71 with their exact conditions and outcomes. Independent source review accepted the full texts for 12.09.2026. The example separates administrative finality from refusal service, with lawful stay established independently. Shared module references now use a readable paragraph instead of a long badge.
 
 Full verification passed with 310 application tests, 70 corpus tests and one skipped, 15 review tests and production build. Reference previews, responsive pages, table keyboard scrolling and typed navigation passed. Writing acceptance is 249 of 1,844 files. Batches 109, 112 and 113 record acceptance and checks; batch 111 prepares control and sanctions. The generated text of article 71 still includes the following chapter heading and is assigned to source-fidelity investigation. The broader goal remains active.
+
+## 12.09.2026: PIP control and verified chapter boundaries
+
+Rewrote control and sanctions with five explanatory sections and a completed three-part Polish record. Independent review accepted the scoped September sources and corrected the specific KPW mandate ceiling. Ten source-reviewed chapter endings are now excluded from the preceding work-act articles; four ending pages are corrected. Original PDF pages and quoted amendments remain intact.
+
+Full verification passed with 312 application tests, 75 corpus tests and one skipped, 15 review tests and production build. Reference previews, baseline ledger validation and desktop/mobile keyboard checks passed. Writing acceptance is 250 of 1,844 files, with 34 modules and 1,470 commentaries pending. Batches 111 and 114 record evidence. The user requested a root-level daily handoff, push and shutdown; no next batch was started.
