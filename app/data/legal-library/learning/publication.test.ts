@@ -6,6 +6,7 @@ import { instrumentyDostepuLearningModuleTopic } from "./modules/powierzanie-pra
 import { obowiazkiPodmiotuLearningModuleTopic } from "./modules/powierzanie-pracy/obowiazki-podmiotu"
 import { zmianyICiagloscLearningModuleTopic } from "./modules/powierzanie-pracy/zmiany-i-ciaglosc"
 import { kontrolaISankcjeLearningModuleTopic } from "./modules/powierzanie-pracy/kontrola-i-sankcje"
+import { outsourcingAPracaTymczasowaLearningModuleTopic } from "./modules/powierzanie-pracy/outsourcing-a-praca-tymczasowa"
 import { scopeLearningModuleTopic } from "./modules/ppsa/scope"
 import { entryAndCurrentBasisLearningModuleTopic } from "./modules/ustawa-o-cudzoziemcach/entry-and-current-basis"
 import { chooseFormLearningModuleTopic } from "./modules/rozporzadzenie-wniosek-pobyt-czasowy/choose-form"
@@ -18,6 +19,7 @@ describe("learning publication metadata", () => {
     ["powierzanie-pracy", obowiazkiPodmiotuLearningModuleTopic],
     ["powierzanie-pracy", zmianyICiagloscLearningModuleTopic],
     ["powierzanie-pracy", kontrolaISankcjeLearningModuleTopic],
+    ["powierzanie-pracy", outsourcingAPracaTymczasowaLearningModuleTopic],
     ["ppsa", scopeLearningModuleTopic],
     ["ustawa-o-cudzoziemcach", entryAndCurrentBasisLearningModuleTopic],
     ["rozporzadzenie-wniosek-pobyt-czasowy", chooseFormLearningModuleTopic],

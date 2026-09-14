@@ -783,3 +783,9 @@ Full verification passed with 310 application tests, 70 corpus tests and one ski
 Rewrote control and sanctions with five explanatory sections and a completed three-part Polish record. Independent review accepted the scoped September sources and corrected the specific KPW mandate ceiling. Ten source-reviewed chapter endings are now excluded from the preceding work-act articles; four ending pages are corrected. Original PDF pages and quoted amendments remain intact.
 
 Full verification passed with 312 application tests, 75 corpus tests and one skipped, 15 review tests and production build. Reference previews, baseline ledger validation and desktop/mobile keyboard checks passed. Writing acceptance is 250 of 1,844 files, with 34 modules and 1,470 commentaries pending. Batches 111 and 114 record evidence. The user requested a root-level daily handoff, push and shutdown; no next batch was started.
+
+## 14.09.2026: outsourcing module and day-end handoff
+
+Completed the outsourcing and temporary-work module with five explanations and fifteen Polish comparison cells. Independent review accepted the final text and source note for their scoped September 14 claims. Root read both and checked the rendered page. Batch 116 closes the previously recorded mobile-navigation question using existing behavior; batch 117 prepares KPA principles without implementing or accepting that module.
+
+Full verification passed with 313 application tests, 75 corpus tests and one skipped, 15 review tests and production build. Previews, baseline ledger validation, writing-inventory checks and desktop/mobile keyboard checks passed. Writing acceptance is 251 of 1,844 files. Thirty-three law modules and 1,470 commentaries remain pending, along with shared copy, source fidelity and whole-project legal acceptance. The root `TODAY-2026-09-14.md` records completed work and the exact continuation point. Work stops after delivery at the user's request.

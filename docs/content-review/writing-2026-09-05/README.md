@@ -1,5 +1,7 @@
 # Complete writing and content review
 
+Latest checkpoint, 14.09.2026: batch 115 completes the outsourcing module, batch 116 confirms the existing mobile-navigation fix, and batch 117 prepares KPA principles without implementing it. Writing acceptance is 251 of 1,844 files; 33 modules and 1,470 commentaries remain pending. Full verification passed with 313 application tests, 75 corpus tests plus one skipped, and 15 review tests. The root `TODAY-2026-09-14.md` is the current handoff. Earlier checkpoints below retain their historical counts. Work stops after this delivery at the user's request.
+
 The user resumed on 12.09.2026. Batches 81–82 complete the outsourcing article and add the user-employer referral-confirmation guide with a filled correction example. All nine current case guides already use explicit document actions throughout their stages. The remaining scope below stays open.
 
 The user requested completion of the outstanding writing, document coverage, worked examples, source-text layout, and independent legal-review work, with periodic commits and pushes to main. This record tracks that scope. It does not replace the implementation plan or retroactively approve the old legal-review ledger.

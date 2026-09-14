@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 250,
+    "reviewed": 251,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -11636,9 +11636,9 @@
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/outsourcing-a-praca-tymczasowa.ts",
       "family": "learning-module",
-      "contentHash": "f4f345ea61199cfe60750995bea5ec030e0c055cdf4d95c021b81beeae4de946",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "c8a5030753b1d25e202bee1f7927b77218788941269e0bd9021eb713adeda5b9",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/115-outsourcing-module.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/powierzanie-pracy/uczestnicy-i-definicje.ts",
