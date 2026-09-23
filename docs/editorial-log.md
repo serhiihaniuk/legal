@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Time limits and service
+
+Rewrote the KPA module with six sections and a completed fifteen-cell PURDE chronology. The explanation separates authority and party periods, valid service, filing and restoration, with scoped residence-law qualifications. Independent review accepted the complete module and source note. Twelve bounded commentary corrections clarify conditions and repair typed destinations without renewing full acceptance.
+
+Full verification passes with 331 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Reference previews, baseline ledger validation and desktop/mobile keyboard checks pass. Writing acceptance is 257 of 1,844 files. The next module is summons; the goal remains active. Evidence: [batch 123](content-review/writing-2026-09-05/batches/123-kpa-time-service.md).
+
 ## 2026-09-23 Case files and evidence
 
 Rewrote the KPA module with five authored sections and a completed fifteen-cell missing-annex comparison. Access, certification, evidence requests, participation and assessment now have concrete mechanisms and limits. Independent review accepted the full module and source note for 23 September. Six bounded commentary corrections remain separate from full writing acceptance.

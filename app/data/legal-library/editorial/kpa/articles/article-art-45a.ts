@@ -1,4 +1,7 @@
+import { createLegalTextAuthor } from "../../../legal-text"
 import { defineKpaEditorialPart } from "../define-kpa-part"
+
+const kpaLaw = createLegalTextAuthor("kpa")
 export default defineKpaEditorialPart({
   documentId: "kpa",
   editionId: "kpa-2025-1691",
@@ -28,8 +31,7 @@ export default defineKpaEditorialPart({
             "Organ повинен невідкладно скласти і зберегти в актах adnotację про неможливість встановити адресу представника.",
         },
       ],
-      legalEffect:
-        "Неналежна реєстрова адреса організації може завершитися skutecznym doręczeniem без фактичного odbioru після виконання спеціальної процедури.",
+      legalEffect: kpaLaw.text`Неналежна реєстрова адреса організації може завершитися врученням без фактичного отримання після виконання спеціальної процедури. Стаття діє з 13 липня 2025 року. За ${kpaLaw.external("art. 31 ust. 1 ustawy zmieniającej, Dz.U. 2025 poz. 769", "https://eli.gov.pl/api/acts/DU/2025/769/text/O/D20250769.pdf")} до справ, розпочатих і не завершених до цієї дати, застосовують попередню редакцію KPA.`,
       foreignersCase:
         "Якщо компанія-роботодавець є адресатом у пов’язаному провадженні, актуальність її реєстрової адреси та адрес представників впливає на skutek doręczenia.",
     },

@@ -4,7 +4,7 @@ import { defineKpaEditorialPart } from "../define-kpa-part"
 
 const kpaLaw = createLegalTextAuthor("kpa")
 
-const ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2024/1045/ogl"
+const ELECTRONIC_DELIVERY_ACT_URL = "https://eli.gov.pl/eli/DU/2026/3/ogl"
 export default defineKpaEditorialPart({
   documentId: "kpa",
   editionId: "kpa-2025-1691",

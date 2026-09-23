@@ -16,8 +16,8 @@ export default defineKpaEditorialPart({
       summary:
         "Статтю скасовано. У чинному KPA вона не містить правила про doręczenia.",
       rules: [],
-      legalEffect: kpaLaw.text`${kpaLaw.article("39", "Art. 39")}² не може бути чинною підставою вручення або обчислення його наслідків.`,
-      foreignersCase: kpaLaw.text`Старе посилання на ${kpaLaw.article("39", "art. 39")}² у матеріалах справи іноземця потрібно перевіряти за редакцією, чинною на дату вручення.`,
+      legalEffect: kpaLaw.text`${kpaLaw.article("39-2", "Art. 39²")} не може бути чинною підставою вручення або обчислення його наслідків.`,
+      foreignersCase: kpaLaw.text`Старе посилання на ${kpaLaw.article("39-2", "art. 39²")} у матеріалах справи іноземця потрібно перевіряти за редакцією, чинною на дату вручення.`,
     },
   ],
 })

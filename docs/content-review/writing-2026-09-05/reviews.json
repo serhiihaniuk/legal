@@ -1363,5 +1363,10 @@
     "path": "app/data/legal-library/learning/modules/kpa/files-evidence.ts",
     "contentHash": "6e3edec2b787e4bcae73835f0ed3d3dbf6ccb06be4e6fd89f5da35859327feaf",
     "evidence": "docs/content-review/writing-2026-09-05/batches/122-kpa-files-evidence.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/time-service.ts",
+    "contentHash": "c3ac8b70194229b4653fe701babf63719e4076020d592ff74689c90b8494538c",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/123-kpa-time-service.md"
   }
 ]

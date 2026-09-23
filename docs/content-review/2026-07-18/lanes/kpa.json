@@ -526,27 +526,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "44bedbf7fc2db22b436719c02139725b74920635c3d0262ed3c5ecd7b030e88b",
+      "contentHash": "c3ac8b70194229b4653fe701babf63719e4076020d592ff74689c90b8494538c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "44bedbf7fc2db22b436719c02139725b74920635c3d0262ed3c5ecd7b030e88b",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "44bedbf7fc2db22b436719c02139725b74920635c3d0262ed3c5ecd7b030e88b",
-          "sourceTextHash": null
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -8872,27 +8866,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "502bcf4f6080ae8d4cafdc9818367fe39262c4c62c8eb376ac091dc5d5c0c5be",
+      "contentHash": "9eb8e69ed0d7223b80e4352a37c0b5eced7894482b20e5352661b7ab24847fbb",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "502bcf4f6080ae8d4cafdc9818367fe39262c4c62c8eb376ac091dc5d5c0c5be",
-          "sourceTextHash": "a037ba5d5be1a66ae5f6cd222774643238c1bad5372908b9f7bdb9fd1ba0fa5a"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "502bcf4f6080ae8d4cafdc9818367fe39262c4c62c8eb376ac091dc5d5c0c5be",
-          "sourceTextHash": "a037ba5d5be1a66ae5f6cd222774643238c1bad5372908b9f7bdb9fd1ba0fa5a"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -8912,27 +8900,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "75141e744bffdecc008f5e9b2ff97e94f5fb806389af26132ed348d4572fe9d5",
+      "contentHash": "a1ffce01bd05bcb5a969c670a77bda20bb8a236501781bf185f41d42a7b26e46",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "75141e744bffdecc008f5e9b2ff97e94f5fb806389af26132ed348d4572fe9d5",
-          "sourceTextHash": "fda14237690752433596979de48d0ce3f02a6392cb7afa3d96f36612f6292136"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "75141e744bffdecc008f5e9b2ff97e94f5fb806389af26132ed348d4572fe9d5",
-          "sourceTextHash": "fda14237690752433596979de48d0ce3f02a6392cb7afa3d96f36612f6292136"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -8952,27 +8934,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "4dfe496eb5f7945c2a47f33ab54dead27b0dc2b83b369ecf777a8ead4b535ee6",
+      "contentHash": "41d15541e263641178cbf25905ce1e8a86e0b7a8975427964c38f545cdbd9b90",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "4dfe496eb5f7945c2a47f33ab54dead27b0dc2b83b369ecf777a8ead4b535ee6",
-          "sourceTextHash": "981be47cb0034f55ef0c45019cad0cb1b4391232c1d1a12f8395696e0b6b9a84"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "4dfe496eb5f7945c2a47f33ab54dead27b0dc2b83b369ecf777a8ead4b535ee6",
-          "sourceTextHash": "981be47cb0034f55ef0c45019cad0cb1b4391232c1d1a12f8395696e0b6b9a84"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -8992,27 +8968,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "1abb76561f663cd28fa617d71ff55ef1c08bc0954bfe5c3d0afebfd77085f36e",
+      "contentHash": "1a27d3997b0d87c28e937e852b2c959f565e29f226f3f9c9b081791cbb69d740",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "1abb76561f663cd28fa617d71ff55ef1c08bc0954bfe5c3d0afebfd77085f36e",
-          "sourceTextHash": "8eb9e2a9b16ea2cd8891cf64149904ccbf5bec2b503d568848d1e0aefca44113"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "1abb76561f663cd28fa617d71ff55ef1c08bc0954bfe5c3d0afebfd77085f36e",
-          "sourceTextHash": "8eb9e2a9b16ea2cd8891cf64149904ccbf5bec2b503d568848d1e0aefca44113"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9066,27 +9036,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "3910fc8a6dd02e96d8fe9c6f119508cac2143cac9608354868178751e34ab5b9",
+      "contentHash": "e5de4d6f911233ee9b4b279f3344299f5eb86eff5a18a102b6d80db5ad83eaa4",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "3910fc8a6dd02e96d8fe9c6f119508cac2143cac9608354868178751e34ab5b9",
-          "sourceTextHash": "c1187aca0cf4723701195c29ba5cfb00d4300838b27304140255340be4cb1728"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "3910fc8a6dd02e96d8fe9c6f119508cac2143cac9608354868178751e34ab5b9",
-          "sourceTextHash": "c1187aca0cf4723701195c29ba5cfb00d4300838b27304140255340be4cb1728"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9146,27 +9110,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "dab86652d75d4ba4a55d17eb388acb7ed0488083d3c677498d0c17cf348dc35e",
+      "contentHash": "90e152d01bf3987af5ec53e1c399a0a80b830b601c9894c267567a64e37ffc8c",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "dab86652d75d4ba4a55d17eb388acb7ed0488083d3c677498d0c17cf348dc35e",
-          "sourceTextHash": "b561f0760e44781c36264391864851379d3289ab30df82eda8eef1f610cc851a"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "dab86652d75d4ba4a55d17eb388acb7ed0488083d3c677498d0c17cf348dc35e",
-          "sourceTextHash": "b561f0760e44781c36264391864851379d3289ab30df82eda8eef1f610cc851a"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9186,27 +9144,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "64d8a473d2d8cb1ced7bb625fb054bdfa14af46dc5bdc9f4045d72aa2ab64820",
+      "contentHash": "a94aeddcba72c574b285e3843fef8a7c85547583f900bbe61c5b69aab5847093",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "64d8a473d2d8cb1ced7bb625fb054bdfa14af46dc5bdc9f4045d72aa2ab64820",
-          "sourceTextHash": "a3dacbbb7e587c433f3b2ef870e47b9936c254625d8c5e0648c7037348a9e638"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "64d8a473d2d8cb1ced7bb625fb054bdfa14af46dc5bdc9f4045d72aa2ab64820",
-          "sourceTextHash": "a3dacbbb7e587c433f3b2ef870e47b9936c254625d8c5e0648c7037348a9e638"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9226,27 +9178,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "a1bfd0264d0e24f95391a3297beed64dd5fc3528ed585e3c502703830235bd6b",
+      "contentHash": "abd622f1a67594a7f2a621f8ba458559218cd5c96f5c735ac8383976cdf0cc46",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "a1bfd0264d0e24f95391a3297beed64dd5fc3528ed585e3c502703830235bd6b",
-          "sourceTextHash": "f61e3edd061d75b9c07d6791cdcb49f65f75e43e2929f752ecfff0d361ffb112"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "a1bfd0264d0e24f95391a3297beed64dd5fc3528ed585e3c502703830235bd6b",
-          "sourceTextHash": "f61e3edd061d75b9c07d6791cdcb49f65f75e43e2929f752ecfff0d361ffb112"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9306,27 +9252,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "cd97760eb226f568184f3919a9171f26daeddb2faf2b0caee24e46166b4472e7",
+      "contentHash": "7157f8a109352a676d9b96999b11ed15c7940c9947de0187aa8c1ca341bf0963",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "cd97760eb226f568184f3919a9171f26daeddb2faf2b0caee24e46166b4472e7",
-          "sourceTextHash": "496bb12c551c0e4ac0424ec686ef31785963fedba50822c383d412b46c117f45"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "cd97760eb226f568184f3919a9171f26daeddb2faf2b0caee24e46166b4472e7",
-          "sourceTextHash": "496bb12c551c0e4ac0424ec686ef31785963fedba50822c383d412b46c117f45"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9426,27 +9366,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "86d38c5f0cf88cc8dd837fff8aba031c7476af292f8ffa10b861db9af206b98d",
+      "contentHash": "fa74bb5229c40ac82635b4a91fdbe29debd1500a267a9665d2bc31dfd16ce978",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "86d38c5f0cf88cc8dd837fff8aba031c7476af292f8ffa10b861db9af206b98d",
-          "sourceTextHash": "67bc1b29832277be9fe1ba5bd4ba87fd1a2d59d81102dfccac3eb68409e61261"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "86d38c5f0cf88cc8dd837fff8aba031c7476af292f8ffa10b861db9af206b98d",
-          "sourceTextHash": "67bc1b29832277be9fe1ba5bd4ba87fd1a2d59d81102dfccac3eb68409e61261"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9546,27 +9480,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "aca8d110869698b1b031e0bd552b4dbd040f34ac0532584b4d5f9abb94792271",
+      "contentHash": "0080425e3c2d1ce983b6e785d7abee642429bfb4dc4144440d979ed4814479db",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "aca8d110869698b1b031e0bd552b4dbd040f34ac0532584b4d5f9abb94792271",
-          "sourceTextHash": "43e59f8db09fcbbb521f4d1f0b616b013100f057a6411a7605beed750a8281bc"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "aca8d110869698b1b031e0bd552b4dbd040f34ac0532584b4d5f9abb94792271",
-          "sourceTextHash": "43e59f8db09fcbbb521f4d1f0b616b013100f057a6411a7605beed750a8281bc"
-        }
+        "hashAttestation": null
       }
     },
     {
@@ -9900,27 +9828,21 @@
         "https://eli.gov.pl/api/acts/DU/2025/1691/text/T/D20251691L.pdf",
         "https://eli.gov.pl/eli/DU/2025/1691/ogl"
       ],
-      "contentHash": "6d73f94c6b9fd720d75ff2f2098441cad4e8bdd3546c31d5628eda18c649fb4f",
+      "contentHash": "163baac3a4491cfe6384b56b8d5fd0399cb639efafc9c11164c2ca7d7f46b9a4",
       "sourceReviewStatus": "reviewed",
       "authorReview": {
-        "reviewer": "codex-author-review",
-        "reviewedAt": "2026-07-18T12:29:19.927Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "6d73f94c6b9fd720d75ff2f2098441cad4e8bdd3546c31d5628eda18c649fb4f",
-          "sourceTextHash": "4ee6603d28515c5274ce8c44208c50de3af2fb2b85a609827a38872bcd417f79"
-        }
+        "hashAttestation": null
       },
       "crossReview": {
-        "reviewer": "codex-independent-cross-review",
-        "reviewedAt": "2026-07-18T12:29:20.285Z",
-        "status": "accepted",
+        "reviewer": null,
+        "reviewedAt": null,
+        "status": "pending",
         "blockers": [],
-        "hashAttestation": {
-          "contentHash": "6d73f94c6b9fd720d75ff2f2098441cad4e8bdd3546c31d5628eda18c649fb4f",
-          "sourceTextHash": "4ee6603d28515c5274ce8c44208c50de3af2fb2b85a609827a38872bcd417f79"
-        }
+        "hashAttestation": null
       }
     },
     {
