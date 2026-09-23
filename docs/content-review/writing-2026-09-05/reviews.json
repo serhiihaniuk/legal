@@ -1388,5 +1388,10 @@
     "path": "app/data/legal-library/learning/modules/kpa/appeal.ts",
     "contentHash": "54acbb42459a0951b2c92ff7163401863e7f09178c6b854160f6da759cc23d0f",
     "evidence": "docs/content-review/writing-2026-09-05/batches/127-kpa-appeals.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/extraordinary.ts",
+    "contentHash": "6bb0d1da46ef5d8e6d2360aeb570e43664722f58f441a5926e77504b3faa6f72",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/129-kpa-extraordinary.md"
   }
 ]

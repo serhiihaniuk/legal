@@ -849,3 +849,9 @@ Full verification passed with 312 application tests, 75 corpus tests and one ski
 Completed the outsourcing and temporary-work module with five explanations and fifteen Polish comparison cells. Independent review accepted the final text and source note for their scoped September 14 claims. Root read both and checked the rendered page. Batch 116 closes the previously recorded mobile-navigation question using existing behavior; batch 117 prepares KPA principles without implementing or accepting that module.
 
 Full verification passed with 313 application tests, 75 corpus tests and one skipped, 15 review tests and production build. Previews, baseline ledger validation, writing-inventory checks and desktop/mobile keyboard checks passed. Writing acceptance is 251 of 1,844 files. Thirty-three law modules and 1,470 commentaries remain pending, along with shared copy, source fidelity and whole-project legal acceptance. The root `TODAY-2026-09-14.md` records completed work and the exact continuation point. Work stops after delivery at the user's request.
+
+## 23.09.2026: extraordinary review and its limits
+
+Rewrote the extraordinary-review module into six sections with a completed twelve-cell Polish example. Independent review accepted the full module and source record for 23 September 2026. The text distinguishes opening, established defects, time limits and the issued limited result. Six bounded commentary corrections remain separate from full commentary acceptance. Global baseline and corpus editions are unchanged.
+
+Full verification passes with 343 application tests, 75 corpus tests and one skipped, 15 review tests and production build. Reference previews, ledger validation, desktop/mobile rendering, table keyboard scrolling and legal/document navigation pass. Writing acceptance is 262 of 1,844 files. Batch 129 records evidence; batch 130 prepares the remaining KPA court module. Work pauses after delivery at the user's request.

@@ -1369,6 +1369,8 @@ export const kpaGuideModuleArticles = {
   extraordinary: {
     stage: "Перегляд остаточної decyzji",
     articles: [
+      "16",
+      "57",
       "145",
       "145a",
       "145aa",

@@ -80,6 +80,7 @@ describe("KPA authored module rendering", () => {
     "decisions",
     "appeal",
     "delay",
+    "extraordinary",
   ])(
     "retains the %s article and specimen without adding a course overview",
     (id) => {
