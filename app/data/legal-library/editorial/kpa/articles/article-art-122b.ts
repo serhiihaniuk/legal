@@ -1,4 +1,8 @@
+import { createLegalTextAuthor } from "../../../legal-text"
+
 import { defineKpaEditorialPart } from "../define-kpa-part"
+
+const kpaLaw = createLegalTextAuthor("kpa")
 export default defineKpaEditorialPart({
   documentId: "kpa",
   editionId: "kpa-2025-1691",
@@ -14,8 +18,7 @@ export default defineKpaEditorialPart({
       rules: [
         {
           locator: "pkt 1–3",
-          explanation:
-            "Вирішальною є дата поштового надсилання за підтвердженням, вручення уповноваженою особою або введення акта до системи teleinformatycznego.",
+          explanation: kpaLaw.text`Залежно від способу дії враховують дату поштового відправлення за підтвердженням, вручення за підтвердженням працівником органу чи іншою уповноваженою особою або введення акта до інформаційної системи у випадку, визначеному ${kpaLaw.article("39-1", "art. 39¹")}. Останнє правило не стосується будь-якого внутрішнього запису в системі установи.`,
         },
       ],
       legalEffect:

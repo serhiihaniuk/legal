@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Silent settlement
+
+Rewrote the module with five explanatory sections and a completed Polish registration chronology. It distinguishes the enabling provision, the organ's relevant action, the silent result, annotation and later certificate. Independent review accepts the complete module and source note for 23 September. Four bounded commentary corrections remain separate from full writing acceptance.
+
+Full verification passes with 335 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Previews, baseline ledger validation and desktop/mobile keyboard checks pass. Writing acceptance is 259 of 1,844 files. Decisions and orders are prepared next; the goal remains active. Evidence: [batch 125](content-review/writing-2026-09-05/batches/125-kpa-silence.md).
+
 ## 2026-09-23 Summons and the required action
 
 Rewrote summons with five sections and a completed fifteen-cell Polish chronology. It explains participant roles, local assistance, urgent contact, obstacles, sanctions and attendance costs. Independent review accepted the full module and source note for 23 September. Five bounded commentary corrections remain separate from full writing acceptance.

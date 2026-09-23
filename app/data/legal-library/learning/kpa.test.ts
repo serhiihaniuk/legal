@@ -31,6 +31,7 @@ describe("canonical KPA learning", () => {
     "files-evidence",
     "time-service",
     "summons",
+    "silence",
   ])(
     "preserves the authored %s sections and completed example in the generic curriculum",
     (id) => {

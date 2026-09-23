@@ -13,7 +13,7 @@ export default defineKpaEditorialPart({
       article: "122d",
       provisionId: "kpa-art-122d",
       reviewStatus: "reviewed",
-      summary: kpaLaw.text`У справах, що вирішуються мовчазно, не діють ${kpaLaw.article("10", "art. 10")} і 79a, а zawieszenie зупиняє строк на milczące załatwienie.`,
+      summary: kpaLaw.text`У справах, що вирішуються мовчазно, не діють ${kpaLaw.article("10", "art. 10")} і ${kpaLaw.article("79a", "art. 79a")}, а zawieszenie зупиняє строк на milczące załatwienie.`,
       rules: [
         {
           locator: "§ 1",

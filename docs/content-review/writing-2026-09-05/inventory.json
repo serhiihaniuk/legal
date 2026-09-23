@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 258,
+    "reviewed": 259,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -1353,21 +1353,21 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-122b.ts",
       "family": "provision",
-      "contentHash": "0869803433135c2eee03ba9dcb8c0a44e05f658056906b75c0ae976604a78662",
+      "contentHash": "0c2d774db6e98f5c6ea353c715ee5a280be0ad505c0ef977c57f60d11728c2fd",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-122c.ts",
       "family": "provision",
-      "contentHash": "c1a4048eebb0e9a39c329747b85ce03f3ff9fa974844c823290a3bd6be0f7c80",
+      "contentHash": "4fb94a678307422c15fb55f6a3abd9971ad7f14f2ad734a2ffd55e9c6652b889",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-122d.ts",
       "family": "provision",
-      "contentHash": "2704ff09b0d6a43e79f1b116bcffd56c1726fee9d9d8e0a23e1b69c5e819f93f",
+      "contentHash": "8accf038a5be98527516948af296ac32e4bb475d367538fd174f9a10ab2142be",
       "writing": "pending",
       "evidence": null
     },
@@ -1388,7 +1388,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-122g.ts",
       "family": "provision",
-      "contentHash": "9a3f1a20f01ee249cc09a5344f16fd02d21b5f8d442a40c3de2d1da3707594b5",
+      "contentHash": "1fc46235f5e36eb311ad189e5f00a97c508928eeda67999ab8a53ddb084ed3ca",
       "writing": "pending",
       "evidence": null
     },
@@ -11580,9 +11580,9 @@
     {
       "path": "app/data/legal-library/learning/modules/kpa/silence.ts",
       "family": "learning-module",
-      "contentHash": "7a086730e1a8a73c79aa91b6a9a4365c5662ddd60dfae8e7a48b410018900027",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "d66fd67b2d4797baeca46c2caefb3cc9e64a2c8be3dc7347fd73fe0aab72ec1e",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/125-kpa-silence.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/kpa/summons.ts",
