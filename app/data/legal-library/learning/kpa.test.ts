@@ -28,6 +28,7 @@ describe("canonical KPA learning", () => {
     "authority",
     "party",
     "initiation",
+    "files-evidence",
   ])(
     "preserves the authored %s sections and completed example in the generic curriculum",
     (id) => {

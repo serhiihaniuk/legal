@@ -1358,5 +1358,10 @@
     "path": "app/data/legal-library/learning/modules/kpa/initiation.ts",
     "contentHash": "9930c234901d7f9c5679f42311be62ed64e4b96b058d8f20e98d67091d6541df",
     "evidence": "docs/content-review/writing-2026-09-05/batches/121-kpa-initiation.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/files-evidence.ts",
+    "contentHash": "6e3edec2b787e4bcae73835f0ed3d3dbf6ccb06be4e6fd89f5da35859327feaf",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/122-kpa-files-evidence.md"
   }
 ]

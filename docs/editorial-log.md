@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Case files and evidence
+
+Rewrote the KPA module with five authored sections and a completed fifteen-cell missing-annex comparison. Access, certification, evidence requests, participation and assessment now have concrete mechanisms and limits. Independent review accepted the full module and source note for 23 September. Six bounded commentary corrections remain separate from full writing acceptance.
+
+Full verification passes with 329 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Reference previews, baseline ledger validation, desktop/mobile rendering and keyboard navigation pass. Writing acceptance is 256 of 1,844 files. Batch 123 prepares time and service; the goal remains active. Evidence: [batch 122](content-review/writing-2026-09-05/batches/122-kpa-files-evidence.md).
+
 ## 2026-09-23 Party, representation and initiation
 
 Rewrote two KPA modules with eleven authored sections and two completed Polish comparisons. The party module separates standing, capacity, mandates, participation and service. Initiation separates filing, formal cure, procedural barriers and merits, with verified electronic-delivery and MOS boundaries. Different agents independently reviewed each full module and source note. Six narrow corrections in existing commentaries remain separate from full writing acceptance.

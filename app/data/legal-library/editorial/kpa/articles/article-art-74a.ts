@@ -15,7 +15,7 @@ export default defineKpaEditorialPart({
       article: "74a",
       provisionId: "kpa-art-74a",
       reviewStatus: "reviewed",
-      summary: kpaLaw.text`Стаття уточнює, що процесуальне право доступу до akt за ${kpaLaw.article("73", "art. 73")} не обмежує окремого права суб’єкта даних за ${kpaLaw.external("art. 15 RODO", RODO_URL)} RODO.`,
+      summary: kpaLaw.text`Стаття уточнює, що процесуальне право доступу до akt за ${kpaLaw.article("73", "art. 73")} не обмежує окремого права суб’єкта даних за ${kpaLaw.external("art. 15 RODO", RODO_URL)}.`,
       rules: [
         {
           locator: "całość",

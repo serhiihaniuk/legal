@@ -23,12 +23,12 @@ export default defineKpaEditorialPart({
         },
         {
           locator: "§ 1b",
-          explanation: kpaLaw.text`У справах skarg i wniosków не розкриваються дані особи, яка подала skargę, за правилами ${kpaLaw.article("236", "art. 236 § 2")}.`,
+          explanation: kpaLaw.text`У визначених ${kpaLaw.article("236", "art. 236 § 2")} провадженнях, які виникли внаслідок skargi, доступ до матеріалів надають без персональних даних скаржника. За ${kpaLaw.article("236", "art. 236 § 3")} скаржник може дозволити органу розкрити свої дані стороні.`,
         },
         {
           locator: "§ 2",
           explanation:
-            "За важливого інтересу сторони organ може uwierzytelnić sporządzone odpisy або копії чи видати uwierzytelnione odpisy з akt.",
+            "Сторона має право вимагати засвідчення копій або odpisów матеріалів справи чи видачі засвідчених odpisów, якщо це обґрунтовано її важливим інтересом.",
         },
         {
           locator: "§ 3",
