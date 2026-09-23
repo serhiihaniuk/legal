@@ -1378,5 +1378,10 @@
     "path": "app/data/legal-library/learning/modules/kpa/silence.ts",
     "contentHash": "d66fd67b2d4797baeca46c2caefb3cc9e64a2c8be3dc7347fd73fe0aab72ec1e",
     "evidence": "docs/content-review/writing-2026-09-05/batches/125-kpa-silence.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/decisions.ts",
+    "contentHash": "7cab260b37cac04abbaa132f04a493e7a8fe1f15361bcbf46903f7f2a4fcc792",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/126-kpa-decisions.md"
   }
 ]

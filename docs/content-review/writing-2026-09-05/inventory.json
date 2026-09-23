@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 259,
+    "reviewed": 260,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -1199,7 +1199,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-106.ts",
       "family": "provision",
-      "contentHash": "be44e60539979540fa992280ba2ccf96d5998845e8f5c29725b3cdb477fd0a74",
+      "contentHash": "49c90bbbe5676bbddbb092767fdd1780d72f0664117496dbe4128257098fe6f6",
       "writing": "pending",
       "evidence": null
     },
@@ -1213,21 +1213,21 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-107.ts",
       "family": "provision",
-      "contentHash": "e5dd2ac1daca9a46deb4e87dfd606b677ecdf525a0deb53c19e522f4252cd50e",
+      "contentHash": "91ac3e582cf8e1623eb26c37ea1fcca1f22dea56d04f3a4c2bf7ff6b5ca994b0",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-108.ts",
       "family": "provision",
-      "contentHash": "0fc20729d88049bbe0aa0e0912a7acbea99e617b26ba36c29f714af661336843",
+      "contentHash": "232f9b86484f1d901122978126deddc5ec2239cdb49b6247ce9eba0460dd6026",
       "writing": "pending",
       "evidence": null
     },
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-109.ts",
       "family": "provision",
-      "contentHash": "e6f7b107275f1a58b4f73dd84f893898454f013845e35eb82253713474d7ac3c",
+      "contentHash": "9539ea5f6b709f6c23737eff4948ea436aaef29bbe5c330a267a4c67ef76365f",
       "writing": "pending",
       "evidence": null
     },
@@ -11531,9 +11531,9 @@
     {
       "path": "app/data/legal-library/learning/modules/kpa/decisions.ts",
       "family": "learning-module",
-      "contentHash": "dcb8b6d557ccf10571b4de14684d80e6fabd64218b0179fa1e290418162b50ec",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "7cab260b37cac04abbaa132f04a493e7a8fe1f15361bcbf46903f7f2a4fcc792",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/126-kpa-decisions.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/kpa/delay.ts",
