@@ -15,7 +15,7 @@ export default defineKpaEditorialPart({
         {
           locator: "§ 1–1a",
           explanation:
-            "Сторона має одне odwołanie, але повністю позитивна decyzja без uzasadnienia є остаточною.",
+            "Від рішення першої інстанції сторона має odwołanie до однієї інстанції. Рішення є остаточним за цим винятком, коли орган відмовився від обґрунтування саме через повне задоволення вимоги сторони.",
         },
         {
           locator: "§ 2",
@@ -25,7 +25,7 @@ export default defineKpaEditorialPart({
         {
           locator: "§ 3",
           explanation:
-            "Від decyzji міністра або SKO подається wniosek o ponowne rozpatrzenie до того самого органу за правилами odwołania.",
+            "Від рішення, яке міністр або samorządowe kolegium odwoławcze (SKO) видали в першій інстанції, odwołanie не передбачене. Незадоволена сторона може подати до того самого органу wniosek o ponowne rozpatrzenie sprawy; правила про odwołanie застосовують відповідно.",
         },
       ],
       legalEffect:

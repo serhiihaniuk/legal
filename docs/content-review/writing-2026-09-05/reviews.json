@@ -1383,5 +1383,10 @@
     "path": "app/data/legal-library/learning/modules/kpa/decisions.ts",
     "contentHash": "7cab260b37cac04abbaa132f04a493e7a8fe1f15361bcbf46903f7f2a4fcc792",
     "evidence": "docs/content-review/writing-2026-09-05/batches/126-kpa-decisions.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/appeal.ts",
+    "contentHash": "54acbb42459a0951b2c92ff7163401863e7f09178c6b854160f6da759cc23d0f",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/127-kpa-appeals.md"
   }
 ]

@@ -18,7 +18,7 @@ export default defineKpaEditorialPart({
       rules: [
         {
           locator: "§ 1",
-          explanation: kpaLaw.text`Зв’язують обставини з ${kpaLaw.article("138", "art. 138 § 2")} та wytyczne wykładni з ${kpaLaw.article("139a", "§ 2a")}; зміна застосовного права знімає пов’язаність.`,
+          explanation: kpaLaw.text`Зв’язують обставини з ${kpaLaw.article("138", "art. 138 § 2")} та wytyczne wykładni з ${kpaLaw.article("138", "art. 138 § 2a")}; зміна застосовного права знімає пов’язаність.`,
         },
         {
           locator: "§ 2",

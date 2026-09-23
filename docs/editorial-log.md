@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Administrative appeals
+
+Rewrote the module with six explanations and a completed Polish appeal, transmission and remand record. The text distinguishes proper filing, execution, investigation, appellate outcomes and court remedies. Independent review accepts the full module and source note for 23 September. Six bounded commentary corrections remain separate from full acceptance.
+
+Full verification passes with 339 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Previews, baseline ledger validation and desktop/mobile keyboard checks pass. Writing acceptance is 261 of 1,844 files. Delay is prepared next; the broader goal remains active. Evidence: [batch 127](content-review/writing-2026-09-05/batches/127-kpa-appeals.md).
+
 ## 2026-09-23 Decisions and orders
 
 Rewrote the module with six explanations and a completed Polish comparison of supplementing an appeal instruction and correcting a typo. The cases show actual filing and different appeal-period starting events. Independent review accepts the full module, source note and visible transition for older proceedings. Four bounded corrections to articles 106–109 remain separate from full commentary acceptance.
