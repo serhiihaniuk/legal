@@ -21,7 +21,14 @@ describe("canonical KPA learning", () => {
       expect(projected?.sourceReview).toEqual(unit.review)
     }
   )
-  it.each(["anatomy", "system", "principles", "authority"])(
+  it.each([
+    "anatomy",
+    "system",
+    "principles",
+    "authority",
+    "party",
+    "initiation",
+  ])(
     "preserves the authored %s sections and completed example in the generic curriculum",
     (id) => {
       const authored = kpaGuideModules.find((module) => module.id === id)

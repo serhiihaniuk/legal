@@ -66,7 +66,14 @@ describe("KPA authored module rendering", () => {
     }
   )
 
-  it.each(["anatomy", "system", "principles", "authority"])(
+  it.each([
+    "anatomy",
+    "system",
+    "principles",
+    "authority",
+    "party",
+    "initiation",
+  ])(
     "retains the %s article and specimen without adding a course overview",
     (id) => {
       const lesson = kpaGuideModules.find((module) => module.id === id)?.lesson

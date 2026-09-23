@@ -7,6 +7,46 @@ import {
 } from "./kpa-route"
 
 describe("KPA route state", () => {
+  it("loads initiation with the signature and deadline rules used in its example", async () => {
+    const data = await loadKpaRouteData({
+      request: new Request("http://localhost/law/kpa/learn/initiation"),
+      params: { moduleId: "initiation" },
+    })
+
+    expect(
+      data.moduleArticleExplanations.map((entry) => entry.provisionId)
+    ).toEqual([
+      "kpa-art-14",
+      "kpa-art-57",
+      "kpa-art-61",
+      "kpa-art-61a",
+      "kpa-art-62",
+      "kpa-art-63",
+      "kpa-art-64",
+      "kpa-art-65",
+      "kpa-art-66",
+    ])
+  })
+  it("loads party, representation, service and deadline provisions together", async () => {
+    const data = await loadKpaRouteData({
+      request: new Request("http://localhost/law/kpa/learn/party"),
+      params: { moduleId: "party" },
+    })
+
+    expect(
+      data.moduleArticleExplanations.map((entry) => entry.provisionId)
+    ).toEqual([
+      "kpa-art-28",
+      "kpa-art-29",
+      "kpa-art-30",
+      "kpa-art-31",
+      "kpa-art-32",
+      "kpa-art-33",
+      "kpa-art-34",
+      "kpa-art-40",
+      "kpa-art-57",
+    ])
+  })
   it("loads the complete authority provision panel in reading order", async () => {
     const data = await loadKpaRouteData({
       request: new Request("http://localhost/law/kpa/learn/authority"),

@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 253,
+    "reviewed": 255,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -2515,7 +2515,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-29.ts",
       "family": "provision",
-      "contentHash": "417d80b83d4a4ebec4bec7dc53d664e03bd6b96dfdc737f1ab5de6275e8a6b0b",
+      "contentHash": "4b39f5bd45f2acc62d1c16de58c4a80f24d45d14291cfe88c04bf31e30b4a22e",
       "writing": "pending",
       "evidence": null
     },
@@ -2543,7 +2543,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-31.ts",
       "family": "provision",
-      "contentHash": "c8e69450961fa86ef625c211486b54b6c146bc5f2a074b825a38965731fa56e0",
+      "contentHash": "f35a13df045c9f873d35f723f1cecac33e3cdc93c5dff098fe601031e6ea2439",
       "writing": "pending",
       "evidence": null
     },
@@ -2564,7 +2564,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-34.ts",
       "family": "provision",
-      "contentHash": "3176d177196ae10395b880ef7bd501f1fa5f0e49e206160d329fdc50be7d89a4",
+      "contentHash": "428afbb9f2c7fe4c178f6a04d5972a4f0f3e042c67ef556af9366944c6b4a766",
       "writing": "pending",
       "evidence": null
     },
@@ -2823,7 +2823,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-61.ts",
       "family": "provision",
-      "contentHash": "06091279c6c396efc46e8b9af1acff733e81946f98dae27926b831d4433d8ba5",
+      "contentHash": "ad725de57913daebcc7523ec8f6737735450c77c0929a7fd080ce1f45be251ad",
       "writing": "pending",
       "evidence": null
     },
@@ -2837,7 +2837,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-62.ts",
       "family": "provision",
-      "contentHash": "5c8be552f7fa59a9381ef049ca53f06072a150e74d30afe905948418bba279c7",
+      "contentHash": "accbe75301c00c629a9f7b59c6e7517ba1c4aff859321469d2244f79beaa1948",
       "writing": "pending",
       "evidence": null
     },
@@ -2865,7 +2865,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-66.ts",
       "family": "provision",
-      "contentHash": "0e6941687c96ec2407eb380a9130087af82d1af62faf3805051459e1b2adbb2a",
+      "contentHash": "29f88984b4ec8f6f3d50209c9f58d9608dc6d659f3fdd192191a4888a1a3268c",
       "writing": "pending",
       "evidence": null
     },
@@ -11496,7 +11496,7 @@
     {
       "path": "app/data/legal-library/learning/kpa.ts",
       "family": "supporting-copy",
-      "contentHash": "f91ca04cb1fcd8e5a922a1a2972359693842cf59bd27a7a4798b3951076f9b9b",
+      "contentHash": "5bc5238b0b527d566fa743a58c9f2fa6a94c347e8241affab256d537278d5cd0",
       "writing": "pending",
       "evidence": null
     },
@@ -11559,16 +11559,16 @@
     {
       "path": "app/data/legal-library/learning/modules/kpa/initiation.ts",
       "family": "learning-module",
-      "contentHash": "9ba105ce446dae3107e00e9576fed70e829aff6266f620fe430e438ecc77d88d",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "9930c234901d7f9c5679f42311be62ed64e4b96b058d8f20e98d67091d6541df",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/121-kpa-initiation.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/kpa/party.ts",
       "family": "learning-module",
-      "contentHash": "2f9339f49fcbd9c2aab3662cf0388723ae0731927509831c9a20f89f0250c8fe",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1fa84da64a6be1cfb934b0618f589fac0805fe4b004010559f1ff2d11e50edaa",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/120-kpa-party.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/kpa/principles.ts",

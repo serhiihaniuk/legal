@@ -19,7 +19,7 @@ export default defineKpaEditorialPart({
         {
           locator: "całość",
           explanation:
-            "Połączenie spraw можливе лише за одночасної однаковості praw, tego samego stanu faktycznego, tej samej podstawy prawnej та właściwości tego samego organu.",
+            "Одне провадження щодо кількох сторін можливе, коли їхні права або обов'язки випливають з того самого фактичного стану й тієї самої правової підстави, а компетентним є той самий organ. Ці умови мають виконуватися одночасно.",
         },
       ],
       legalEffect:

@@ -1254,11 +1254,11 @@ export const kpaGuideModuleArticles = {
   },
   party: {
     stage: "Сторона, представництво і doręczenie",
-    articles: ["28", "29", "30", "31", "32", "33", "34", "40"],
+    articles: ["28", "29", "30", "31", "32", "33", "34", "40", "57"],
   },
   initiation: {
     stage: "Wszczęcie та перевірка podania",
-    articles: ["61", "61a", "62", "63", "64", "65", "66"],
+    articles: ["14", "57", "61", "61a", "62", "63", "64", "65", "66"],
   },
   "files-evidence": {
     stage: "Доступ до akt і доказове провадження",

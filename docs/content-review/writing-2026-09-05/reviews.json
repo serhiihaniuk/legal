@@ -1348,5 +1348,15 @@
     "path": "app/data/legal-library/learning/modules/kpa/authority.ts",
     "contentHash": "fba66c191158fcdab9ac5d12d3d0e6558f4aa344f5411c006659358746028420",
     "evidence": "docs/content-review/writing-2026-09-05/batches/119-kpa-authority.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/party.ts",
+    "contentHash": "1fa84da64a6be1cfb934b0618f589fac0805fe4b004010559f1ff2d11e50edaa",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/120-kpa-party.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/initiation.ts",
+    "contentHash": "9930c234901d7f9c5679f42311be62ed64e4b96b058d8f20e98d67091d6541df",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/121-kpa-initiation.md"
   }
 ]

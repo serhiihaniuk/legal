@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Party, representation and initiation
+
+Rewrote two KPA modules with eleven authored sections and two completed Polish comparisons. The party module separates standing, capacity, mandates, participation and service. Initiation separates filing, formal cure, procedural barriers and merits, with verified electronic-delivery and MOS boundaries. Different agents independently reviewed each full module and source note. Six narrow corrections in existing commentaries remain separate from full writing acceptance.
+
+The actual provision panels now contain nine entries each, with loader and publication coverage. Full verification passes with 327 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Previews, baseline ledger validation, desktop/mobile rendering and keyboard navigation pass. Writing acceptance is 255 of 1,844 files. Batch 122 prepares files and evidence; the goal remains active. Evidence: batches 120 and 121.
+
 ## 2026-09-23 Authority and employee exclusion
 
 Rewrote the authority module with five sections and a completed twelve-cell Polish comparison. Competence, forwarding, return, employee replacement and authority exclusion have separate conditions and consequences. Fresh official KPA checks and independent full-module review are recorded in batch 119. Added missing provision-panel entries and a loader regression covering all fourteen entries in order. Corrected two narrower statements in article 25/27 commentaries without claiming their full writing acceptance.
