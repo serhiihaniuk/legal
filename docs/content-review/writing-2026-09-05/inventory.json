@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 252,
+    "reviewed": 253,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -2277,7 +2277,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-25.ts",
       "family": "provision",
-      "contentHash": "3ca6294051d1163f6d181a6e647837641e9b72419ff475dafeaa0a6c6b7627bd",
+      "contentHash": "54094ec4986d9cbfc4dba31c82b4034f2df4c1ea4002120eb21559c25680cde5",
       "writing": "pending",
       "evidence": null
     },
@@ -2494,7 +2494,7 @@
     {
       "path": "app/data/legal-library/editorial/kpa/articles/article-art-27.ts",
       "family": "provision",
-      "contentHash": "e4ca8cafd21afec517cd4bf2742765fd8b529a69e7397f1ab07fe1d714aee110",
+      "contentHash": "87b79f2be12d57c084b87684b3c27a5bf350402c2f911d88eb088db3f7337e25",
       "writing": "pending",
       "evidence": null
     },
@@ -11496,7 +11496,7 @@
     {
       "path": "app/data/legal-library/learning/kpa.ts",
       "family": "supporting-copy",
-      "contentHash": "b7a30a79468c30833414c8f0557e8a30963b52ae4dd6395784459f790ed3f2d3",
+      "contentHash": "f91ca04cb1fcd8e5a922a1a2972359693842cf59bd27a7a4798b3951076f9b9b",
       "writing": "pending",
       "evidence": null
     },
@@ -11517,9 +11517,9 @@
     {
       "path": "app/data/legal-library/learning/modules/kpa/authority.ts",
       "family": "learning-module",
-      "contentHash": "668da4081b5b0c43fa2be371d74cf9fb1c6cdae7e632ab9e35b980a7e3f6e11e",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "fba66c191158fcdab9ac5d12d3d0e6558f4aa344f5411c006659358746028420",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/119-kpa-authority.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/kpa/court.ts",

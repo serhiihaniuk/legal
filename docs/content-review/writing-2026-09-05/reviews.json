@@ -1343,5 +1343,10 @@
     "path": "app/data/legal-library/learning/modules/kpa/principles.ts",
     "contentHash": "1817de2cb3e417273fcbf9d3d3759e75a20ae5f04c1b8f9bc00997bc30a51c47",
     "evidence": "docs/content-review/writing-2026-09-05/batches/117-kpa-principles.md"
+  },
+  {
+    "path": "app/data/legal-library/learning/modules/kpa/authority.ts",
+    "contentHash": "fba66c191158fcdab9ac5d12d3d0e6558f4aa344f5411c006659358746028420",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/119-kpa-authority.md"
   }
 ]

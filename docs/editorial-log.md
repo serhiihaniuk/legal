@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Authority and employee exclusion
+
+Rewrote the authority module with five sections and a completed twelve-cell Polish comparison. Competence, forwarding, return, employee replacement and authority exclusion have separate conditions and consequences. Fresh official KPA checks and independent full-module review are recorded in batch 119. Added missing provision-panel entries and a loader regression covering all fourteen entries in order. Corrected two narrower statements in article 25/27 commentaries without claiming their full writing acceptance.
+
+Full verification passed with 321 application tests, production build, reference previews and baseline ledger validation. Desktop/mobile rendering, local table scrolling and keyboard reference navigation passed. Writing acceptance is 253 of 1,844 files. Party and representation are prepared in batch 120; the goal remains active.
+
 ## 2026-09-23 KPA principles and review dates
 
 Rewrote the principles module into five authored sections with a completed fictional comparison of an incorrect institutional date, a certified decision copy and the issuer's clarification. Independent full-module and source-note review accepted the final content against official KPA sources checked on 23 September. The atlas baseline remains unchanged.

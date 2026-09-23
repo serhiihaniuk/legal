@@ -1,8 +1,37 @@
 import { describe, expect, it } from "vitest"
 
-import { resolveKpaRouteState, toKpaSelectionUrl } from "./kpa-route"
+import {
+  loadKpaRouteData,
+  resolveKpaRouteState,
+  toKpaSelectionUrl,
+} from "./kpa-route"
 
 describe("KPA route state", () => {
+  it("loads the complete authority provision panel in reading order", async () => {
+    const data = await loadKpaRouteData({
+      request: new Request("http://localhost/law/kpa/learn/authority"),
+      params: { moduleId: "authority" },
+    })
+
+    expect(
+      data.moduleArticleExplanations.map((entry) => entry.provisionId)
+    ).toEqual([
+      "kpa-art-17",
+      "kpa-art-18",
+      "kpa-art-19",
+      "kpa-art-20",
+      "kpa-art-21",
+      "kpa-art-22",
+      "kpa-art-23",
+      "kpa-art-24",
+      "kpa-art-25",
+      "kpa-art-26",
+      "kpa-art-27",
+      "kpa-art-65",
+      "kpa-art-66",
+      "kpa-art-268a",
+    ])
+  })
   it("keeps legacy guide selections in the query-string contract", () => {
     const searchParams = new URLSearchParams("module=system")
     const state = resolveKpaRouteState({ params: {}, searchParams })
