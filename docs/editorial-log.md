@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Summons and the required action
+
+Rewrote summons with five sections and a completed fifteen-cell Polish chronology. It explains participant roles, local assistance, urgent contact, obstacles, sanctions and attendance costs. Independent review accepted the full module and source note for 23 September. Five bounded commentary corrections remain separate from full writing acceptance.
+
+Full verification passes with 333 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Reference previews, baseline ledger validation and desktop/mobile keyboard checks pass. Writing acceptance is 258 of 1,844 files. Silent settlement is prepared next; the goal remains active. Evidence: [batch 124](content-review/writing-2026-09-05/batches/124-kpa-summons.md).
+
 ## 2026-09-23 Time limits and service
 
 Rewrote the KPA module with six sections and a completed fifteen-cell PURDE chronology. The explanation separates authority and party periods, valid service, filing and restoration, with scoped residence-law qualifications. Independent review accepted the complete module and source note. Twelve bounded commentary corrections clarify conditions and repair typed destinations without renewing full acceptance.

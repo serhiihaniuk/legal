@@ -13,7 +13,7 @@ export default defineKpaEditorialPart({
       article: "53",
       provisionId: "kpa-art-53",
       reviewStatus: "reviewed",
-      summary: kpaLaw.text`Стаття встановлює виняток із територіальних полегшень ${kpaLaw.article("51", "art. 51")} і 52, коли характер справи або дії потребує проведення czynności саме перед organem prowadzącym.`,
+      summary: kpaLaw.text`Стаття встановлює виняток із територіальних полегшень ${kpaLaw.article("51", "art. 51")} і ${kpaLaw.article("52", "art. 52")}, коли характер справи або дії потребує проведення czynności саме перед organem prowadzącym.`,
       rules: [
         {
           locator: "całość",

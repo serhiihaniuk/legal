@@ -1311,7 +1311,7 @@ export const kpaGuideModuleArticles = {
   },
   summons: {
     stage: "Wezwanie та виконання викликаної дії",
-    articles: ["50", "51", "52", "53", "54", "55", "56"],
+    articles: ["50", "51", "52", "53", "54", "55", "56", "88"],
   },
   silence: {
     stage: "Milczące załatwienie sprawy",
