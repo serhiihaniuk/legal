@@ -3,7 +3,7 @@
   "skill": "legal-explanatory-writing",
   "summary": {
     "totalFiles": 1844,
-    "reviewed": 251,
+    "reviewed": 252,
     "byFamily": {
       "shared-renderer": 38,
       "supporting-copy": 83,
@@ -11496,7 +11496,7 @@
     {
       "path": "app/data/legal-library/learning/kpa.ts",
       "family": "supporting-copy",
-      "contentHash": "284b73717b866222f622d9ccde5f9145ffacfdfe6285da829968490f3703635d",
+      "contentHash": "b7a30a79468c30833414c8f0557e8a30963b52ae4dd6395784459f790ed3f2d3",
       "writing": "pending",
       "evidence": null
     },
@@ -11573,9 +11573,9 @@
     {
       "path": "app/data/legal-library/learning/modules/kpa/principles.ts",
       "family": "learning-module",
-      "contentHash": "1d2210b0a53fa13b157310752e60a5e34308396c06b8d484ee1ea9d123f6c69a",
-      "writing": "pending",
-      "evidence": null
+      "contentHash": "1817de2cb3e417273fcbf9d3d3759e75a20ae5f04c1b8f9bc00997bc30a51c47",
+      "writing": "reviewed",
+      "evidence": "docs/content-review/writing-2026-09-05/batches/117-kpa-principles.md"
     },
     {
       "path": "app/data/legal-library/learning/modules/kpa/silence.ts",
@@ -12651,7 +12651,7 @@
     {
       "path": "app/features/law-library/ui/kpa/kpa-learning-content.tsx",
       "family": "shared-renderer",
-      "contentHash": "14c61bb1e1aeaa9285dfe7b96ac841226ac872701f2451eadbe125a69dabc327",
+      "contentHash": "6726814aabc4a0d5358b243d12625403724864e2a14ad2754c03729a1db1b58a",
       "writing": "pending",
       "evidence": null
     },

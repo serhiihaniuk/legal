@@ -151,3 +151,7 @@ Batches 109, 112 and 113 complete changes and continuity, make module reference 
 ## End-of-day checkpoint, 12.09.2026
 
 Batches 111 and 114 complete the control/sanctions explanation and ten verified chapter-boundary corrections. Full checks pass with 312 application tests, 75 corpus tests plus one skipped, and 15 review tests. Writing acceptance is 250 of 1,844 files; 34 law modules and 1,470 provision commentaries remain pending. Source fidelity and whole-project legal acceptance remain open. The root file `TODAY-2026-09-12.md` records the day, remaining scope and next starting point. The user requested stopping after delivery and shutting down the computer.
+
+## Checkpoint, 23.09.2026
+
+Batches 117–118 complete KPA principles and fix lost review dates. Full verification passed with 318 application tests, reference previews, baseline ledger validation and desktop/mobile checks. Writing acceptance is 252 of 1,844 files. Remaining work includes 32 law modules, 1,470 provision commentaries, shared copy, source fidelity and whole-project legal acceptance. Batch 119 prepares the authority module without accepting its current text. The root TODAY-2026-09-23.md records completed work and the next starting point.

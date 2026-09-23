@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 KPA principles and review dates
+
+Rewrote the principles module into five authored sections with a completed fictional comparison of an incorrect institutional date, a certified decision copy and the issuer's clarification. Independent full-module and source-note review accepted the final content against official KPA sources checked on 23 September. The atlas baseline remains unchanged.
+
+Fixed lost KPA review metadata and separated explanation verification from the source edition's 14 July date. Regression tests reproduced the missing metadata and rendered date before the fix. Full verification passed with 318 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Reference previews, baseline ledger validation and desktop/mobile keyboard checks passed. Writing acceptance is 252 of 1,844 files. The authority module is prepared, not rewritten. Evidence: batches 117–119 and root `TODAY-2026-09-23.md`.
+
 ## 2026-09-10 Court complaint and judgment guides
 
 Added two document guides with fictional Polish specimens, explanations of each part and completed examples. The complaint guide distinguishes filing from judicial success. The judgment guide explains the result, reasoning, finality and subsequent remedies. Both appear conditionally in all nine case routes and link back to the WSA topic.

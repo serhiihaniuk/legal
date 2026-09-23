@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest"
 
 import { listProvisions } from "../query"
 import { getLegalLearningCurriculum, getLegalLearningModules } from "."
+import { kpaSystemLearningModuleTopic } from "./modules/kpa/system"
+import { kpaPrinciplesLearningModuleTopic } from "./modules/kpa/principles"
 import {
   kpaArticleIndex,
   kpaArticleSections,
@@ -10,7 +12,16 @@ import {
 } from "./kpa"
 
 describe("canonical KPA learning", () => {
-  it.each(["anatomy", "system"])(
+  it.each([kpaSystemLearningModuleTopic, kpaPrinciplesLearningModuleTopic])(
+    "preserves authored review metadata for $body.id through public navigation",
+    (unit) => {
+      const projected = getLegalLearningModules("kpa").find(
+        (module) => module.id === unit.body.id
+      )
+      expect(projected?.sourceReview).toEqual(unit.review)
+    }
+  )
+  it.each(["anatomy", "system", "principles"])(
     "preserves the authored %s sections and completed example in the generic curriculum",
     (id) => {
       const authored = kpaGuideModules.find((module) => module.id === id)

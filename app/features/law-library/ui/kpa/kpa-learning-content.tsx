@@ -2,7 +2,8 @@ import {
   LegalLearningModuleContent,
   legalLearningContentToc,
 } from "~/features/law-library/ui/learning/legal-learning-module-content"
-import { listProvisions } from "~/data/legal-library"
+import { getDocument, getEdition, listProvisions } from "~/data/legal-library"
+import { getLegalLearningModule } from "~/data/legal-library/learning"
 import type { LegalExplanation } from "~/data/legal-library/contracts"
 import { kpaArticleIndex } from "~/data/legal-library/learning/kpa"
 import {
@@ -24,6 +25,9 @@ export const kpaLearningContentToc = legalLearningContentToc
 const kpaProvisionById = new Map(
   listProvisions("kpa").map((provision) => [provision.id, provision])
 )
+const kpaSourceLegalState =
+  getEdition("kpa", getDocument("kpa")?.currentEditionId)?.manifest
+    .legalStateDate ?? kpaGuideLegalState
 
 export type KpaLearningContentProps = {
   selectedId: string
@@ -58,13 +62,21 @@ export function KpaLearningContent({
   )
   const previousModule = kpaGuideModules[moduleIndex - 1]
   const nextModule = kpaGuideModules[moduleIndex + 1]
+  const sourceReview = getLegalLearningModule("kpa", selectedId)?.sourceReview
 
   const moduleView: LegalLearningModuleView = {
     order: guideModule.order,
     title: guideModule.title,
     polish: guideModule.polish,
     provisionScope: guideModule.articles,
-    legalState: guideModule.legalState ?? kpaGuideLegalState,
+    legalState: kpaSourceLegalState,
+    explanationReview:
+      sourceReview?.reviewStatus === "reviewed"
+        ? {
+            legalStateDate: sourceReview.legalStateDate,
+            verifiedAt: sourceReview.verifiedAt,
+          }
+        : undefined,
     outcome: guideModule.outcome,
     stage: moduleContext.stage,
     positionIntro: layers.beginner.practice,

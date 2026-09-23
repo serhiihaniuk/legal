@@ -102,24 +102,26 @@ export const kpaGuideLevels: Array<{
   },
 ]
 
+const kpaGuideModuleTopics = [
+  kpaSystemLearningModuleTopic,
+  kpaAnatomyLearningModuleTopic,
+  kpaPrinciplesLearningModuleTopic,
+  kpaAuthorityLearningModuleTopic,
+  kpaPartyLearningModuleTopic,
+  kpaInitiationLearningModuleTopic,
+  kpaFilesEvidenceLearningModuleTopic,
+  kpaTimeServiceLearningModuleTopic,
+  kpaSummonsLearningModuleTopic,
+  kpaSilenceLearningModuleTopic,
+  kpaDecisionsLearningModuleTopic,
+  kpaAppealLearningModuleTopic,
+  kpaDelayLearningModuleTopic,
+  kpaExtraordinaryLearningModuleTopic,
+  kpaCourtLearningModuleTopic,
+]
+
 export const kpaGuideModules = defineLegalTextContent(
-  [
-    kpaSystemLearningModuleTopic.body,
-    kpaAnatomyLearningModuleTopic.body,
-    kpaPrinciplesLearningModuleTopic.body,
-    kpaAuthorityLearningModuleTopic.body,
-    kpaPartyLearningModuleTopic.body,
-    kpaInitiationLearningModuleTopic.body,
-    kpaFilesEvidenceLearningModuleTopic.body,
-    kpaTimeServiceLearningModuleTopic.body,
-    kpaSummonsLearningModuleTopic.body,
-    kpaSilenceLearningModuleTopic.body,
-    kpaDecisionsLearningModuleTopic.body,
-    kpaAppealLearningModuleTopic.body,
-    kpaDelayLearningModuleTopic.body,
-    kpaExtraordinaryLearningModuleTopic.body,
-    kpaCourtLearningModuleTopic.body,
-  ],
+  kpaGuideModuleTopics.map((unit) => unit.body),
   "kpaGuideModules"
 ) satisfies KpaGuideModule[]
 
@@ -1402,7 +1404,8 @@ export const kpaLearningCurriculum = defineLegalLearningCurriculum({
   title: "KPA — kurs czytania procedury",
   description:
     "Курс іде тим самим шляхом, яким рухається адміністративна справа: від визначення правил до доказів, рішення та контролю.",
-  modules: kpaGuideModules.map((module) => ({
+  modules: kpaGuideModuleTopics.map(({ body: module, review }) => ({
+    sourceReview: review,
     id: module.id,
     order: module.order,
     title: module.title,

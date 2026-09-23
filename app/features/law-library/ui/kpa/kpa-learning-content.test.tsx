@@ -7,11 +7,29 @@ import {
   kpaGuideModuleArticles,
 } from "~/data/legal-library/learning/kpa"
 import { legalLearningPlainText } from "~/data/legal-library/learning/legal-text"
+import { getLegalLearningModule } from "~/data/legal-library/learning"
 import { KpaLearningContent } from "./kpa-learning-content"
 
 afterEach(cleanup)
 
 describe("KPA authored module rendering", () => {
+  it("distinguishes the reviewed explanation date from the source edition date", () => {
+    const review = getLegalLearningModule("kpa", "system")?.sourceReview
+    const { getByText } = render(
+      <MemoryRouter>
+        <KpaLearningContent
+          selectedId="system"
+          articleExplanations={[]}
+          onSelectModule={() => {}}
+        />
+      </MemoryRouter>
+    )
+    expect(
+      getByText(`Стан права в поясненні: ${review?.legalStateDate}`)
+    ).toBeDefined()
+    expect(getByText(`Перевірено: ${review?.verifiedAt}`)).toBeDefined()
+    expect(getByText("Текст акта: стан на 2026-07-14")).toBeDefined()
+  })
   it.each(["anatomy", "system", "delay"])(
     "shows the %s opening boundary once and retains distinct closing explanations",
     (id) => {
@@ -48,7 +66,7 @@ describe("KPA authored module rendering", () => {
     }
   )
 
-  it.each(["anatomy", "system"])(
+  it.each(["anatomy", "system", "principles"])(
     "retains the %s article and specimen without adding a course overview",
     (id) => {
       const lesson = kpaGuideModules.find((module) => module.id === id)?.lesson
