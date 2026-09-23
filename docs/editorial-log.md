@@ -1,5 +1,11 @@
 # Editorial improvement log
 
+## 2026-09-23 Delay and ponaglenie
+
+Rewrote delay with six explanations and a completed eighteen-cell Polish record. Independent review accepted the full module, current residence/MOS boundaries and source note. Article 37 has one bounded correction; the shared court-example status and legal-force wording have a separate full scoped review. Global source editions are unchanged.
+
+Full verification passes with 341 application tests, 75 corpus tests plus one skipped, 15 review tests and production build. Previews, baseline ledger validation and responsive keyboard checks pass. Writing acceptance remains 261 of 1,844 because delay already had a prior accepted entry. Twenty-three modules remain, including extraordinary and court in KPA. Evidence: [batch 128](content-review/writing-2026-09-05/batches/128-kpa-delay.md). The broader goal remains active.
+
 ## 2026-09-23 Administrative appeals
 
 Rewrote the module with six explanations and a completed Polish appeal, transmission and remand record. The text distinguishes proper filing, execution, investigation, appellate outcomes and court remedies. Independent review accepts the full module and source note for 23 September. Six bounded commentary corrections remain separate from full acceptance.

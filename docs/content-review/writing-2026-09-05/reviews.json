@@ -441,8 +441,8 @@
   },
   {
     "path": "app/data/shared/residence-office-deadlines.ts",
-    "contentHash": "f09955e80509857b39f6395425be15fdd83ba54bc4b1b002cf2d82aad2e925ab",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/25-case-office-deadlines.md"
+    "contentHash": "556a67288a9f424570bf0a71883e3ef8c2d57557d0f6aea8111f21a2abc9b7a8",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/128-kpa-delay.md"
   },
   {
     "path": "app/data/legal-map/editorial/topics/inactivity.ts",
@@ -451,8 +451,8 @@
   },
   {
     "path": "app/data/legal-library/learning/modules/kpa/delay.ts",
-    "contentHash": "9f1df569fe251bc48bebbda9d066557b9c5c5216f1744a05c773a984c9909b07",
-    "evidence": "docs/content-review/writing-2026-09-05/batches/24-delay-and-court-review.md"
+    "contentHash": "e2ae9ba009469501a425b311bc6a0045c2cf3bd93d5882eef5838033d61ba906",
+    "evidence": "docs/content-review/writing-2026-09-05/batches/128-kpa-delay.md"
   },
   {
     "path": "app/routes/case.tsx",
